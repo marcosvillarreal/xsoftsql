@@ -1,0 +1,35 @@
+*TOCAR AGREGAROBJETO.OBJCOMPROBANTE
+		agregar logica para idctanada
+*TOCAR ACTUALIZAFAC.GENERARCTACTE
+		agregar logica que si es idctanada RETURN
+*TOCAR ACTUALIZAFAC.GENERARCTACTECUOTA	
+		agregar logica que si es idctanada RETURN
+
+*LISTAPATRONPEDIDO
+	productos pesables se imprimen independiente de la cantidad
+	totaliza por los totales en el paravario
+*BUSCOCOMPRO
+	agregar logica para buscar por detalle de la cabeza en ASIENTOS
+	agregamos comprobante id=0 ASIENTO CONTABLE, para origen AST
+	ordenar por detalle o por fecha
+	tambien ordenarlo por fecha en AJUSTES
+*IMPUTADOR DE CTACTE
+	comprobantes afectados pueden ser tambien creditos que provengan de compra o ventas
+	(regish,regisf).
+*REGFACPEDIDO
+	logica para seleccionar todos los comprobantes de un PATRON
+*SUBIVACPRA
+	creamos reporte SUBIVACPRA_VERT	
+*REGSTOCK
+	el comprobante consultado. lo obtenia del proximo numero disponible y no del maopera
+	dejar mostarr en la impresion una cantidad =0, y el precio se calcula si es pesable el
+	producto
+*PARAVARIO
+	creamos los totales por danone, mastellone y nutricia, y parametrizamos la ctacte
+*CBIOPRECIO
+	tocar abmproducto,cbioprecio1,cbioprecio2,actualizafac.cbioprecio.
+	para que guarde la fecha actual de cada cbio, asi tenemos un registro.
+*GENIMPSAO (PENDIENTE)
+	marcar los asientos de sao y controlar que no puedan grabar un asiento con esa misma fecha.
+*REGFACPEDIDO
+	agregar cartel mientras se generan las facturas en el grabardato.

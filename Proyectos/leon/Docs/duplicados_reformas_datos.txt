@@ -1,0 +1,31 @@
+Cambios a Efectuar con las Disposición de Almacenaje Electronico de Duplicados.
+
+Registracion Cpra
+*Se debera indicar si el comprobante proviene de un Controlador Fiscal.
+*Se debera almacenar el primer numero y ultimo numero en caso de que poseaa mas de una hoja.
+(O si ingresamos el ultimo, la cantidad de hojas)
+*Hay Compras echas al exterior?
+	* Datos de Importaciones
+	* Código de la Aduna que despacho, Código de destinacion (Hay tabla), Numero de Despacho,
+	Digito Verificador, Fecha del despacho.
+*Se debe implementar un archivo donde almacenar el cai del proveedor segun el comprobante+fecha.
+(Si el siguiente comprobante valida el registro ingresado anterior, no se pide, sino que se usa ese cai)
+
+Contador.
+El archivo Otras_Perce. No dice nada de percepciones de iva o ganancias que nos podrian hacer.
+
+
+
+
+El procedimiento de obtención del código de seguridad se basa en el algoritmo de código resumen 'hash' denominado 'MD5', y consta de los siguientes pasos:
+
+
+Con los datos que constan en el libro de ventas se generará el archivo denominado 'Hashvtas'.
+Al archivo obtenido en el punto 1 se incorporarán los datos del libro de compras, generándose de este modo el archivo 'Hashcpras'.
+Al archivo aludido en el punto precedente se sumarán los datos de detalle de facturas, generándose el archivo 'Hashdet'.
+Al 'Hashdet' se agregarán los datos de cabecera de facturas, obteniéndose el archivo 'Hash1'.
+Asimismo, se calculará el débito fiscal contenido en las operaciones del archivo de ventas.
+Finalmente, al archivo generado en el punto 4 se le añadirá la información del punto 5, la Clave Unica de Identificación Tributaria (C.U.I.T.) del contribuyente y el periodo fiscal que se ingresa, obteniéndose 'Código de Seguridad'.
+
+
+

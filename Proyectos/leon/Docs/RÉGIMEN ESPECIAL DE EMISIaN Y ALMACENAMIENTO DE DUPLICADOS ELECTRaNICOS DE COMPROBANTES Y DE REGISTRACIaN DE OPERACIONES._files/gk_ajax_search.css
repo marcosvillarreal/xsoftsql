@@ -1,0 +1,20 @@
+#gk_ajax_search { position: absolute; right: 9999px; z-index: 1000001; width: 300px; background: transparent url('images/search_area_bg.png') no-repeat 280px 1px; opacity:1; transition: opacity 0.25s ease-in; -moz-transition: opacity 0.25s ease-in; -webkit-transition: opacity 0.25s ease-in; display:none; }
+
+#gk_ajax_search.hide { opacity: 0; } 
+#gk_ajax_search .gk_ajax_search_wrap {background: #fff; margin-top:5px; border-radius:3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; box-shadow: 0 1px 9px #333; -webkit-box-shadow: 0 1px 9px #333; -moz-box-shadow: 0 1px 9px #333; padding: 16px; font-size: 11px; position: relative; }
+#gk_ajax_search .gk_ajax_search_total { float: left; margin: 0 0 6px; font-size: 10px }
+#gk_ajax_search .gk_ajax_search_close { float: right; height: 16px; width: 16px; margin: -5px -8px -6px 0; cursor: pointer; text-indent: -99999em;  background: url('images/search_close.png') no-repeat 0 0;  }
+#gk_ajax_search .gk_ajax_search_close:hover { background-position: 100% 0}
+#gk_ajax_search .gk_ajax_search_results {  clear: both; padding: 0 0 8px; border-top: 1px solid #ddd; }
+#gk_ajax_search .gk_ajax_search_results .search-results { margin: 0; padding: 0; }
+#gk_ajax_search .gk_ajax_search_results .highlight { background: #f5f18a; }
+#gk_ajax_search .gk_ajax_search_results .result-title { width: 96%; padding: 3px 6px; font-weight:bold; background: #fffee8; border: none;  }
+#gk_ajax_search .gk_ajax_search_results .result-text { clear: both; }
+#gk_ajax_search .gk_ajax_search_results .result-title:first-child { border-top: none; }
+#gk_ajax_search .gk_ajax_search_results .result-category { font-size: 9px; color: #aaa; }
+#gk_ajax_search .gk_ajax_search_results .result-created { color:#999; text-align:right; font-size:9px; font-style: italic; }
+#gk_ajax_search .gk_ajax_search_more { text-align: center; border-top: 1px solid #eaeaea; padding: 8px 0 0 0; line-height: 11px; clear: both; cursor:pointer; margin-top: 5px; }
+#gk_ajax_search .gk_ajax_search_more:hover { color: #cb260a; }
+#gk_ajax_search .gkHidden { display: none; }
+
+#mod-search-searchword.loader { background: #fff url('images/loader.gif') no-repeat 95% center; }

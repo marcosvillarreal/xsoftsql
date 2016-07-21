@@ -1,0 +1,355 @@
+/*
+#------------------------------------------------------------------------
+# The World News II -July 2011 template (for Joomla 1.6/1.7)
+#
+# Copyright (C) 2007-2011 Gavick.com. All Rights Reserved.
+# License:  Copyrighted Commercial Software
+# Website:  http://www.gavick.com
+# Support:  support@gavick.com
+ */
+/* fonts */
+body {
+	font: normal 13px/1.8 Arial, sans-serif;
+}
+
+/* main layout */
+html {
+	height: 100%;
+	min-height: 100%;
+	border-bottom: 1px solid transparent;
+}
+
+.clear {
+	clear: both;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.gkWrap {
+	max-width: 1200px;
+}
+
+#mainContent > div {
+	margin-top: 8px;
+}
+
+#mainContent > div:first-child {
+	margin-top: 0;
+}
+
+#gkMainBlock {
+	margin-bottom: 0 !important;
+}
+
+#gkContentMainbody {
+	padding: 0 !important;
+}
+
+#gkComponentWrap {
+	padding: 0 !important;
+}
+
+.gkWrap {
+	margin: 0 auto;
+}
+
+.gkWrap:after,.gkMain:after,#gkComponentWrap:after,#gkContentMainbody:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#gkTop1,#gkTop2,#gkUser1,#gkUser2,#gkBottom1,#gkBottom2,#gkMainBlock,#gkLeftMiddle,#gkRightMiddle,#gkHeader {
+	display: block;
+	width: 100%;
+}
+
+.gkCol {
+	display: block;
+	float: left;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+#gkBottom1,#gkBottom2 {
+	margin-top: 8px;
+}
+
+#gkBottomWrap > div:first-child {
+	margin-top: 0;
+}
+
+#gkPage,#gkMainbody {
+	margin-bottom: 8px;
+}
+
+#gkLeft {
+	padding-right: 8px !important;
+}
+
+#gkContentTop {
+	margin-bottom: 8px !important;
+}
+
+#gkContentBottom {
+	margin-top: 8px !important;
+}
+
+#gkContent {
+	padding-top: 0 !important;
+}
+
+/* USER/TOP/BOTTOM columns */
+.gkColFull > .box,.gkColLeft > .box,.gkColCenter > .box,.gkColRight > .box {
+	margin-left: 0px;
+}
+
+.gkColLeft > .box {
+	margin-left: 0;
+}
+
+.gkColRight > .box {
+	margin-right: 0;
+}
+
+.gkColFull > .box {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.gkColLeft > div {
+	margin-right: 4px !important;
+}
+
+.gkColCenter > div {
+	margin-left: 4px !important;
+	margin-right: 4px !important;
+}
+
+.gkColRight > div {
+	margin-left: 4px !important;
+}
+
+#gkRight > div,#gkLeft > div {
+	margin-top: 8px;
+}
+
+#gkRight > div:first-child,#gkLeft > div:first-child {
+	margin-top: 0;
+}
+
+/* TBLR */
+.gkPaddingT {
+	padding-top: 8px !important;
+}
+
+.gkPaddingB {
+	padding-bottom: 8px !important;
+}
+
+.gkPaddingL {
+	padding-left: 8px !important;
+}
+
+.gkPaddingR {
+	padding-right: 8px !important;
+}
+
+.gkPaddingTB {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+}
+
+.gkPaddingTL {
+	padding-top: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingTR {
+	padding-top: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingBL {
+	padding-bottom: 8px !important;
+	padding-left: 8px !important;
+}
+
+.gkPaddingBR {
+	padding-bottom: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingLR {
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingTBL {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+	padding-left: 8px !important;
+}
+
+.gkPaddingTBR {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingTLR {
+	padding-top: 8px !important;
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingBLR {
+	padding-bottom: 8px !important;
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+}
+
+.gkPaddingTBLR {
+	padding: 8px !important;
+}
+
+.gkMarginT {
+	padding-top: 12px !important;
+}
+
+.gkMarginB {
+	padding-bottom: 12px !important;
+}
+
+.gkMarginL {
+	padding-left: 12px !important;
+}
+
+.gkMarginR {
+	padding-right: 12px !important;
+}
+
+.gkMarginTB {
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
+
+.gkMarginTL {
+	padding-top: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginTR {
+	padding-top: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginBL {
+	padding-bottom: 12px !important;
+	padding-left: 12px !important;
+}
+
+.gkMarginBR {
+	padding-bottom: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginLR {
+	padding-left: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginTBL {
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+	padding-left: 12px !important;
+}
+
+.gkMarginTBR {
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginTLR {
+	padding-top: 12px !important;
+	padding-left: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginBLR {
+	padding-bottom: 12px !important;
+	padding-left: 12px !important;
+	padding-right: 12px !important;
+}
+
+.gkMarginTBLR {
+	padding: 12px !important;
+}
+
+/* Joomla columns */
+.cols-1 {
+	display: block;
+	float: none !important;
+	margin: 0 !important;
+}
+
+.cols-2 .column-1 {
+	width: 46%;
+	float: left;
+}
+
+.cols-2 .column-2 {
+	width: 46%;
+	float: right;
+	margin: 0;
+}
+
+.cols-3 .column-1 {
+	float: left;
+	width: 29%;
+	padding: 0px 5px;
+	margin-right: 4%;
+}
+
+.cols-3 .column-2 {
+	float: left;
+	width: 29%;
+	margin-left: 0;
+	padding: 0px 5px;
+}
+
+.cols-3 .column-3 {
+	float: right;
+	width: 29%;
+	padding: 0px 5px;
+}
+
+.items-row {
+	padding-bottom: 20px !important;
+}
+
+.column-1,.column-2,.column-3 {
+	padding: 0;
+}
+
+.column-2 {
+	width: 55%;
+	margin-left: 40%;
+}
+
+.column-3 {
+	width: 30%;
+}
+
+.blog-more {
+	padding: 10px 5px;
+}
