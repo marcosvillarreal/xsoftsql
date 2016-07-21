@@ -1,0 +1,136 @@
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\RegisteredOrganization
+
+ 
+**************************************************
+*** DEFINIR ESTAS VARIABLES PARA LEER LA REGISTRY
+**************************************************
+*** Claves principales
+#DEFINE HKEY_CLASSES_ROOT   -2147483648
+#DEFINE HKEY_CURRENT_USER   -2147483647
+#DEFINE HKEY_LOCAL_MACHINE  -2147483646
+#DEFINE HKEY_USERS          -2147483645
+#DEFINE HKEY_CURRENT_CONFIG -2147483653
+#DEFINE HKEY_DYN_DATA       -2147483654
+*** Tipos de acceso
+#DEFINE KEY_QUERY_VALUE               1
+#DEFINE KEY_SET_VALUE                 2
+#DEFINE KEY_CREATE_SUB_KEY            4
+#DEFINE KEY_ENUMERATE_SUB_KEYS        8
+#DEFINE KEY_NOTIFY                   16
+#DEFINE KEY_CREATE_LINK              32
+#DEFINE KEY_READ                       KEY_QUERY_VALUE + KEY_ENUMERATE_SUB_KEYS + KEY_NOTIFY
+#DEFINE KEY_WRITE                      KEY_SET_VALUE + KEY_CREATE_SUB_KEY
+#DEFINE KEY_EXECUTE                    KEY_READ
+#DEFINE KEY_ALL_ACCESS                 KEY_QUERY_VALUE + KEY_SET_VALUE + KEY_CREATE_SUB_KEY + KEY_ENUMERATE_SUB_KEYS + KEY_NOTIFY + KEY_CREATE_LINK
+ 
+
+**************************************************
+***  ESTE ES EL EJEMPLO  *************************
+**************************************************
+ 
+LOCAL lcSubKey
+lcSubKey = "SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+lcValue = "RegisteredOrganization"
+? ReadRegistryString(HKEY_LOCAL_MACHINE, lcSubKey, lcValue)
+ 
+RETURN
+ 
+**************************************************
+FUNCTION ReadRegistryString
+**************************************************
+*** Leo un valor de la registry
+*** tnHKEY    -  HKEY value (in CGIServ.h)
+*** tcSubkey  -  The Registry subkey value
+*** tcEntry   -  The actual Key to retrieve
+*** tlInteger -  Optional - Return an DWORD value
+**************************************************
+ LPARAMETERS tnHKey, tcSubkey, tcEntry, tlInteger
+ 
+ LOCAL lnRet, nKey, nType, nSize, cValor
+ 
+ **** Declaro funciones API
+ DECLARE ;
+  INTEGER RegOpenKeyEx ;
+  IN WIN32API ;
+  INTEGER  nKey, ;
+  STRING   cSubKey, ;
+  INTEGER  nReserved, ;
+  INTEGER  nSamDesired, ;
+  INTEGER @nResult
+ 
+ DECLARE ;
+  INTEGER RegCloseKey ;
+  IN WIN32API ;
+  INTEGER  nKey
+ 
+ DECLARE ;
+  INTEGER RegQueryValueEx ;
+  IN WIN32API ;
+  INTEGER  nKey, ;
+  STRING   cValueName, ;
+  INTEGER  nReserved, ;
+  INTEGER @nType, ;
+  STRING  @cData, ;
+  INTEGER @nSizeData
+ 
+ nKey = 0
+ nType = 0
+ nSize = 255
+ cValor = REPLICATE( CHR(0), nSize )
+ 
+ lnRet = RegOpenKeyEx( tnHKEY, tcSubkey, 0, KEY_READ, @nKey )
+ IF lnRet # 0
+  RETURN .NULL.
+ ENDIF
+ lnRet = RegQueryValueEx( nKey, tcEntry, 0, @nType, @cValor, @nSize )
+ = RegCloseKey( nKey )
+ IF lnRet # 0
+  RETURN .NULL.
+ ENDIF
+ RETURN SUBSTR(cValor, 1, nSize-1)
+ENDFUNC
+**************************************************
+
+*************************************
+
+** Ejemplo de Registry.vcx:
+** Abrir una llave (key) usando el metodo OpenKey().
+** Si no especificas una llave, el default es HKEY_CLASSES_ROOT
+ 
+ oReg = NEWOBJECT("registry",HOME(1)+"ffc\registry.vcx")
+ lcKey = "VisualFoxPro.ApplicationCurVer"
+ if oReg.OpenKey(lckey) = 0
+   * sin error
+   lcvalue = ""
+   if oReg.GetKeyValue("", @lcvalue) = 0
+     * sin error
+     ? lcvalue
+   endif
+   oReg.CloseKey()
+ endif
+ 
+
+**********************
+
+ WScr=CreateObject("WSCript.Shell")
+
+*--Escribir valores
+Wscr.RegWrite("HKEY_CURRENT_USER\Software\Microsoft\MessengerService\ListCache\.NET Messenger Service\usuario","Usua...@msn1234.com")
+
+Wscr.RegWrite("HKEY_CURRENT_USER\Software\Microsoft\MessengerService\ListCache\.NET Messenger Service\password","clavesecreta")
+
+*-- Leer valores
+lcUsuario = Wscr.RegRead("HKEY_CURRENT_USER\Software\Microsoft\MessengerService\ListCache\.NET Messenger Service\usuario")
+
+lcPass = Wscr.RegRead("HKEY_CURRENT_USER\Software\Microsoft\MessengerService\ListCache\.NET Messenger Service\password")
+
+*--Borrar claves del registro
+Wscr.RegDelete("HKEY_CURRENT_USER\Software\Microsoft\MessengerService\ListCache\.NET Messenger Service\usuario")
+
+ Wscr.RegDelete("HKEY_CURRENT_USER\Software\Microsoft\MessengerService\ListCache\.NET Messenger Service\password")
+
+Nota:  el password se guarda como texto plano,  a menos que guardes una cadena previamente encriptada.
+
+Las claves aqui usadas son las del messenger de Xp, no tengo otro windows para ver si son las mismas, pero creo que no.
+
+-- 
