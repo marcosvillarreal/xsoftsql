@@ -6,7 +6,7 @@
 *
 clear all
 set classlib to
-l='c:'
+l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 
