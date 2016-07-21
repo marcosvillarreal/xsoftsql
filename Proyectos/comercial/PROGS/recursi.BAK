@@ -1,0 +1,27 @@
+FUNCTION RecurAbrevia
+PARAMETERS lcAlias,lcAbrevia,lnPos,lnLeft,lcCadena,lcResult
+LOCAL i,lbEncontro
+
+lcCaracter = LEFT(lcAbrevia,1)
+IF EsLetraNumerico(lcCaracter)$'?'
+	RETURN .f.
+ENDIF 
+
+*Caso base una letra
+IF lnLeft=1
+	SELECT (lcAlias)
+	LOCATE FOR LEFT(switch,lnPos)=lcCadena+lcCaracter
+	IF !LEFT(switch,lnPos)=lcCadena+lcCaracter
+		lbEncontro = .t.
+		lcResult = lcCadena+lcCaracter
+	ENDIF 
+ELSE
+	lcCadena = lcCadena + LEFT(lcAbrevia,1)
+	i = 0
+	lbEncontro = .f.
+	DO WHILE !lbEncontro AND i < LEN(SUBSTR(lcAbrevia,2))
+		lbEncontro = RecurAbrevia(lcAlias,SUBSTR(lcAbrevia,i+2),lnPos,lnLeft-1,lcCadena,@lcResult)
+		i = i + 1
+	ENDDO
+ENDIF 
+RETURN lbEncontro
