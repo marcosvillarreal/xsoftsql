@@ -1,0 +1,324 @@
+PARAMETERS ldvacio,lcpath,lcBase
+LOCAL lcData,lnid,lcfecha
+ldvacio = IIF(PCOUNT()<1,"",ldvacio)
+lcpath = IIF(PCOUNT()<2,"",lcpath)
+lcData = lcBase
+
+DO setup
+SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
+SET PROCEDURE  TO  syserror.prg ADDITIVE 
+
+SET SAFETY OFF
+
+SET CPCOMPILE TO 1252
+codepage = 1252
+SET CPDIALOG ON
+Oavisar.proceso('S','Abriendo archivos') 
+llok = .t.
+llok = CargarTabla(lcData,'Producto',.t.)
+llok = CargarTabla(lcData,'Variedad',.t.)
+llok = CargarTabla(lcData,'TipoFrio',.t.)
+llok = CargarTabla(lcData,'Rubro',.t.)
+llok = CargarTabla(lcData,'Marca',.t.)
+llok = CargarTabla(lcData,'SubProducto',.t.)
+llok = CargarTabla(lcData,'BloqueoProd',.t.)
+llok = CargarTabla(lcData,'GamaBase',.t.)
+llok = CargarTabla(lcData,'Deposito',.t.)
+llok = CargarTabla(lcData,'Ubicacion',.t.)
+llok = CargarTabla(lcData,'FuerzaVta')
+llok = CargarTabla(lcData,'CateCtacte')
+llok = CargarTabla(lcData,'Ctacte')
+llok = CargarTabla(lcData,'PlanCue')
+llok = CargarTabla(lcData,'AreaNegRubro',.t.)
+llok = CargarTabla(lcData,'PerceProducto',.t.)
+llok = CargarTabla(lcData,'PerceRubro',.t.)
+llok = CargarTabla(lcData,'Provincia')
+llok = CargarTabla(lcData,'Forma')
+SET SAFETY ON
+
+IF !llok
+	RETURN .f.
+ENDIF
+
+Oavisar.proceso('S','Abriendo archivos') 
+
+USE ALLTRIM(lcpath )+"\gestion\seccion" IN 0 ALIAS FsrSeccion EXCLUSIVE 
+
+USE  ALLTRIM(lcpath )+"\gestion\proveed" in 0 alias FsrAcreedor EXCLUSIVE
+
+USE  ALLTRIM(lcpath )+"\gestion\articulo" in 0 alias FsrArticulo EXCLUSIVE	
+
+USE ALLTRIM(lcpath )+"\gestion\marcas" in 0 alias FsrMarca EXCLUSIVE
+
+USE ALLTRIM(lcpath )+"\gestion\localida" in 0 alias FsrLocalidad EXCLUSIVE
+
+USE ALLTRIM(lcpath )+"\gestion\deposito" IN 0 ALIAS Fsrdeposito EXCLUSIVE
+
+USE ALLTRIM(lcpath )+"\gestion\provinci" IN 0 ALIAS FsrProvincia EXCLUSIVE
+
+
+lnid = RecuperarID("CsrRubro",goapp.sucursal10)
+
+SELECT FsrSeccion
+Oavisar.proceso('S','Procesando RUBROS') 
+GO top
+SCAN FOR !EOF()
+    lnnumero	= FsrSeccion.numero
+    lntipoprod 	= FsrSeccion.cuentavta &&Guardamos la cuenta contable
+    lntipovta   = 1
+    lnretibruto = 0
+    lnidfrzvta  = CsrFuerzaVta.id
+    lnolista 	= 1
+    lnporcecomi = 0
+    lnporcedev 	= 0
+    lnporcesuge = 0
+    lntasavied 	= 0
+    lntasapata 	= 0
+	lcnombre	= NombreNi(ALLTRIM(UPPER(FsrSeccion.nombre)))
+                             
+    INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta,nolista;
+    ,porcecomi,porcesuge,porcedev,tasavied,tasapata) ;
+    VALUES (lnid,lnnumero,lcnombre,lntipoprod,lntipovta,lnretibruto,lnidfrzvta,lnolista;
+    ,lnporcecomi,lnporcesuge,lnporcedev,lntasavied,lntasapata)
+    lnid = lnid + 1
+
+ENDSCAN
+
+
+lnid = RecuperarID("CsrMarca",goapp.sucursal10)
+
+SELECT FsrMarca
+Oavisar.proceso('S','Procesando MARCAS') 
+GO top
+SCAN FOR !EOF()
+    IF delogico
+       LOOP 
+    ENDIF 
+   	lnnumero 	= FsrMarca.numero
+   	lnflete		= 0
+   	lnflete2	= 0
+   	lnidfrzavta	= CsrFuerzaVta.id
+   	lcnombre	= NombreNi(ALLTRIM(UPPER(FsrMarca.nombre)))
+   	  	   
+   	INSERT INTO Csrmarca (id,numero,nombre,flete,flete2,idfuerzavta);
+   	VALUES (lnid,lnnumero,lcnombre,lnflete,lnflete2,lnidfrzavta)
+   	lnid = lnid + 1
+  
+ENDSCAN
+
+lnid = RecuperarID("CsrProducto",goapp.sucursal10)
+lnidperceprod = RecuperarID("CsrPerceProducto",goapp.sucursal10)
+
+
+SELECT FsrArticulo
+Oavisar.proceso('S','Procesando PRODUCTOS') 
+GO top
+SCAN FOR !EOF()
+	STORE 0 TO 	lnidctavta,lnidctacpra,lnnomodifica,lnsegflete,lncostobon,lncostorepo,lncostoulcpra;
+	,lnmargen4,lnprevta4,lnprevtaf4,lnminimofac,lnpeso,lnvolumen,lnidenvase,lndesc1,lndesc2,lndesc3;
+	,lnmin1,lnmin2,lnmin3,lninternoporce,lnctaaorden,lncprakilos,lnsiinforma,lnesinsumo,lnpeso;
+	,lnsubsidiado,lnidingbrutoslp,lnfracciona,lnnolista,lnnofactura,lnespromocion,lnvtakilos,lndivisible;
+	,lnimportado,lnidmarca,lnidctacte,lnidRubro,lnidFrio
+	
+	SELECT CsrProducto
+	LOCATE FOR numero=FsrArticulo.numero 
+	IF numero=FsrArticulo.numero
+		SELECT FsrArticulo
+		LOOP 
+	ENDIF
+	
+	lcnombre = NombreNi(alltrim(FsrArticulo.nombre))
+	lnidctacte = 0
+	lnfrio = 0
+	lnidmarca = 0
+	
+    SELECT CsrCtacte
+    LOCATE FOR cnumero=LTRIM(STR(50000+Fsrarticulo.proveedor))
+    IF FOUND()
+    	lnidctacte = Csrctacte.id
+    ELSE
+    	LOCATE FOR cnombre$'MOLISUD' AND ctaacreedor = 1
+    	IF cnombre$'MOLISUD' AND ctaacreedor = 1
+    		lnidctacte = Csrctacte.id
+    	ENDIF 
+    ENDIF
+
+    SELECT CsrRubro
+    LOCATE FOR numero=Fsrarticulo.seccion
+    IF FOUND()
+        lnidrubro = CsrRubro.id
+    ENDIF
+    
+    SELECT CsrMarca
+    LOCATE FOR numero=Fsrarticulo.marca
+    IF FOUND()
+       lnidmarca = CsrMarca.id
+    ENDIF
+	
+	lcforma = FsrArticulo.univenta
+	lcforma = IIF(lcforma$'BLS','BOLSA',LTRIM(STRTRAN(UPPER(lcforma),'.','')))
+	lcforma = IIF(lcforma$'BOLSAS','BOLSA',LTRIM(STRTRAN(UPPER(lcforma),'.','')))
+	SELECT CsrForma.* FROM CsrForma WHERE nombre = lcforma INTO CURSOR FsrForma READWRITE 
+	SELECT FsrForma
+	lnidforma = IIF(RECCOUNT('FsrForma')#0,FsrForma.id,1)
+
+    lnfracciona 	= IIF(Fsrarticulo.fraccion='S',1,0)
+    lnidestado 		= 1
+    lnidiva        	= IIF(Fsrarticulo.tablaiva=1,1100000002,1100000001)
+    lnnolista    	= 0 && IIF(FsrArticulo.figlista="N",1,0)
+    lnnofactu   	= 0 &&IIF(FsrArticulo.nofactu,1,0)
+    lnespromo 		= 0 &&IF(FsrArticulo.escodboni="S",1,0)
+    lnidtipovta 	= 1 &&IIF(FsrArticulo.quefactura="B",2,1)
+    lnvtakilos		= 0
+    lnsireparto		= 0
+   	lnpeso			= FsrArticulo.peso     
+	lninterno		= IIF(ISNULL(FsrArticulo.interno),0.00,FsrArticulo.interno)
+	ldfecha			= DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
+	ldfeculcpra		= ldfecha
+	ldfecmodi		= ldfecha
+	ldfecoferta		= ldfecha
+	
+	IF !EMPTY(Fsrarticulo.fechaulcpr)
+		ldfeculcpra = DATETIME(YEAR(FsrArticulo.fechaulcpr),MONTH(FsrArticulo.fechaulcpr),DAY(FsrArticulo.fechaulcpr),0,0,0)
+	ENDIF		
+			
+	lnprevta1 = FsrArticulo.PREVenta1
+	lnprevta2 = FsrArticulo.PREVenta2
+	lnprevta3 = FsrArticulo.PREVenta3
+	lnsugerido= FsrArticulo.PREVenta4
+
+	lnprevtaf1 = FsrArticulo.PREVENTA1 * 1.21
+	lnprevtaf2 = FsrArticulo.PREVEnta2 * 1.21
+	lnprevtaf3 = FsrArticulo.PREVEnta3 * 1.21
+	
+	lnmargen1 = FsrArticulo.utilidad
+	lnmargen2 = FsrArticulo.utilidad2
+	lnmargen3 = FsrArticulo.utilidad3
+	
+	lnidctacpra = FsrArticulo.cuenta
+	lnidctavta  = FsrArticulo.cuenta
+
+	lnidunidad 		= 1100000001
+	lnidtprod		= 1100000001
+	lnidtamano		= 1100000001
+	lnidcatego		= 1100000001
+	lnidubicacio	= 1100000001
+	lnidorigen		= 1100000001
+	lnidingbrutos	= 1100000001
+	lnidmoneda		= 1100000001
+	lcnombre 		= NombreNi(alltrim(FsrArticulo.nombre))
+	lccontrolador	= FsrArticulo.nombre_plu
+	lcnommayorista	= FsrArticulo.nombre_may
+	lnppt			= 0&&FsrArticulo.itc
+	lnitc			= 0&&IIF(EMPTY(FsrArticulo.leyenda),0,(IIF(ALLTRIM(FsrArticulo.leyenda)='I',1,2)))
+	lnnumero 	 = FsrArticulo.numero
+	lcnombulto 	 = ''
+	lccodalfa	 = LTRIM(STR(lnNumero))
+	lnincluirped = 1
+	lncosto	 	 = FsrArticulo.costo
+	lnflete		 = FsrArticulo.flete
+	lnbonif1     = FsrArticulo.bonif1
+	lnbonif2	 = FsrArticulo.bonif2
+	lnbonif3	 = FsrArticulo.bonif3
+	lnbonif4	 = FsrArticulo.bonif4
+	ldfeculvta   = ldfecha
+	ldfecalta	 = ldfecha
+	lnunibulto	 = FsrArticulo.unibulto
+	lnpuntope	 = FsrArticulo.puntope
+	lcswitch	 = "00000"
+	lccodartprod = ""
+	
+	*Guardamos el numero de FsrArticulo.envase que es una referencia a CsrAticulo.numero del envase
+	*Una vez caragdo todos los productos, recorremos los que idenvase#0 y buscamos el articulo = envase.
+	lnidenvase = 0
+						
+	INSERT INTO CsrProducto(id,numero,nombre,nombulto,codalfa,idctacte,idmarca;
+	,idctavta,idctacpra,idforma,idunidad,idtprod,idtipovta,idtamano,idcatego,idrubro;
+	,idestado,idubicacio,idorigen,nomodifica,incluirped,idiva,idmoneda,costo,flete;
+	,segflete,interno,bonif1,bonif2,bonif3,bonif4,costobon,costorepo,costoulcpra,feculcpra;
+	,margen1,prevta1,prevtaf1,margen2,prevta2,prevtaf2,margen3,prevta3,prevtaf3;
+	,margen4,prevta4,prevtaf4,feculvta,fecalta,fecmodi,unibulto,nofactura,nolista;
+	,espromocion,minimofac,peso,volumen,fracciona,puntope,switch,idenvase,sugerido;
+	,idfrio,divisible,desc1,desc2,desc3,min1,min2,min3,codartprod,vtakilos,fecoferta;
+	,internoporce,controlador,nommayorista,ppt,itc,subsidiado,ctaaorden,cprakilos;
+	,siinforma,importado,esinsumo);
+	VALUES	(lnid,lnnumero,lcnombre,lcnombulto,lccodalfa,lnidctacte,lnidmarca,lnidctavta,lnidctacpra;
+	,lnidforma,lnidunidad,lnidtprod,lnidtipovta,lnidtamano,lnidcatego,lnidrubro,lnidestado,lnidubicacio;
+	,lnidorigen,lnnomodifica,lnincluirped,lnidiva,lnidmoneda,lncosto,lnflete,lnsegflete,lninterno;
+	,lnbonif1,lnbonif2,lnbonif3,lnbonif4,lncostobon,lncostorepo,lncostoulcpra,ldfeculcpra,lnmargen1;
+	,lnprevta1,lnprevtaf1,lnmargen2,lnprevta2,lnprevtaf2,lnmargen3,lnprevta3,lnprevtaf3,lnmargen4;
+	,lnprevta4,lnprevtaf4,ldfeculvta,ldfecalta,ldfecmodi,lnunibulto,lnnofactura,lnnolista,lnespromocion;
+	,lnminimofac,lnpeso,lnvolumen,lnfracciona,lnpuntope,lcswitch,lnidenvase,lnsugerido,lnidfrio,lndivisible;
+	,lndesc1,lndesc2,lndesc3,lnmin1,lnmin2,lnmin3,lccodartprod,lnvtakilos,ldfecoferta,lninternoporce;
+	,lccontrolador,lcnommayorista,lnppt,lnitc,lnsubsidiado,lnctaaorden,lncprakilos,lnsiinforma,lnimportado;
+	,lnesinsumo)
+	
+	IF FsrArticulo.llevaib$'S'
+		SELECT CsrProvincia
+		GO TOP 
+		SCAN 
+			lnidprovincia	= CsrProvincia.id
+			lcswitch		= '10000'
+			INSERT INTO CsrPerceProducto(id,idarticulo,idprovincia,switch);
+			VALUES (lnidperceprod,lnid,lnidprovincia,lcswitch)
+			lnidperceprod = lnidperceprod + 1
+			SELECT CsrProvincia
+		ENDSCAN 
+	ENDIF 
+	lnid = lnid + 1
+
+	SELECT FsrArticulo   				
+ENDSCAN
+
+***Buscamos los productos que son envases
+SELECT CsrEnvase.* FROM CsrProducto as CsrEnvase WHERE CsrEnvase.numero in (SELECT CsrProducto.idenvase FROM CsrProducto WHERE idenvase#0 );
+INTO CURSOR CsrEnvase READWRITE 
+
+SELECT CsrProducto
+GO TOP 
+SCAN 
+	IF idenvase=0
+		LOOP 
+	ENDIF 
+	SELECT CsrEnvase
+	LOCATE FOR numero = CsrProducto.idenvase
+	lnidenvase = 0
+	IF numero = CsrProducto.idenvase
+		lnidenvase = CsrEnvase.id
+	ENDIF 
+	replace idenvase WITH lnidenvase IN CsrProducto
+ENDSCAN  
+
+lnid = RecuperarID("CsrDeposito",goapp.sucursal10)
+
+SELECT FsrDeposito
+Oavisar.proceso('S','Procesando DEPOSITO') 
+GO top
+SCAN FOR !EOF()
+   	lnnumero		= FsrDeposito.numero
+	lnllevastock	= 1
+   	lcnombre		= NombreNi(FsrDeposito.nombre)
+
+	INSERT INTO Csrdeposito (id,numero,nombre,llevastock);
+	VALUES (lnid,FsrDeposito.numero,lcnombre,lnllevastock)
+	lnid = lnid + 1
+
+ENDSCAN
+
+
+
+Oavisar.proceso('N') 
+=MESSAGEBOX('Proceso terminado! ')
+
+	
+USE IN FsrSeccion 
+USE IN FsrAcreedor
+USE IN FsrArticulo 
+USE IN FsrMarca
+USE IN FsrLocalidad 
+USE IN Fsrdeposito 
+USE IN FsrProvincia 
+
+CLOSE tables
+CLOSE INDEXES
+CLOSE DATABASES
