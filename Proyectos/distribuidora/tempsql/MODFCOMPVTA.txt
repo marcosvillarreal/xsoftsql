@@ -1,0 +1,17 @@
+SELECT Csrmaopera.*,Csrcategoiva.abrevia as nomtipoiva,ISNULL(CsrCabefac.cnombre,SPACE(30)) as nomcte,ISNULL(CsrCabefac.total,0) as importe
+,CsrCabefac.idlotemaopera as idlotemaopera,ISNULL(STR(CsrVendedor.numero,3)+' '+CsrVendedor.nombre,SPACE(20)) as nomvendedor
+,ISNULL(Csrcomprobante.cnombre,' ') as nomcompro,Csrcabefac.idtipoiva as idtipoiva,ISNULL(STR(Csrfletero.numero,3)+' '+Csrfletero.nombre,SPACE(20)) as nomflete
+,ISNULL(Csrdetanrocaja.nrocaja,0) as nrocaja,ISNULL(CsrUsuarios.nombre,SPACE(15)) as NomOpera
+from maopera as Csrmaopera
+left join cabefac as Csrcabefac on Csrmaopera.id = CsrCabefac.idmaopera
+left join categoiva as Csrcategoiva on Csrcabefac.idtipoiva = Csrcategoiva.id
+left join Vendedor as Csrvendedor on Csrmaopera.idvendedor = CsrVendedor.id
+left join comprobante as Csrcomprobante on Csrmaopera.idcomproba = Csrcomprobante.id
+left join fletero as Csrfletero on Csrcabefac.idfletero = Csrfletero.id
+left join detanrocaja as Csrdetanrocaja on Csrmaopera.iddetanrocaja = Csrdetanrocaja.id
+left join usuarios as CsrUsuarios on CsrMaopera.idoperador = CsrUsuarios.id
+where CsrMaopera.origen in ('FPE','FAC') and CsrMaopera.clasecomp<>'K' and CsrMaopera.estado<>'1'
+and LEFT(CsrMaopera.numcomp,1)<>'' AND Csrmaopera.fechasis >= '20160711' AND Csrmaopera.fechasis < '20160712' 
+and Csrmaopera.idvendedor >=0 and Csrcabefac.idfletero = 1100000007 
+and CsrCabefac.rendida=0 
+order by CsrVendedor.numero,Csrmaopera.numcomp

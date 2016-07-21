@@ -1,0 +1,20 @@
+SELECT 'ZB' as grupo,LTRIM(isnull(CsrPlanCue.nombre,space(30))) as nombre,isnull(CsrPlanCue.cuenta,0) as cuenta
+,CsrTablaAsi.debehaber
+,SUM((Case when Csrtablaasi.debehaber='D' 
+	then ISNULL(Csrtablaasi.importe,CAST( 0 AS NUMERIC(11,2))) else CAST( 0 AS NUMERIC(11,2)) end)) as TotalD
+,SUM((Case when Csrtablaasi.debehaber='H' 
+	then ISNULL(Csrtablaasi.importe,CAST( 0 AS NUMERIC(11,2))) else CAST( 0 AS NUMERIC(11,2)) end)) as TotalH
+from Cabecpra as CsrCabeza
+left join maopera as Csrmaopera on CsrCabeza.idmaopera = Csrmaopera.id
+left join categoiva as Csrcategoiva on CsrCabeza.idtipoiva = Csrcategoiva.id
+left join comprobante as Csrcomprobante on Csrmaopera.idcomproba = Csrcomprobante.id
+left join cabeasi as CsrCabeasi on CsrMaopera.id = CsrCabeasi.idmaopera
+left join tablaasi as csrtablaasi on Csrmaopera.id = csrtablaasi.idmaopera
+left join plancue as CsrPlanCue on CsrTablaasi.idcuenta = CsrPlanCue.id and CsrCabeasi.idejercicio = CsrPlanCue.idejercicio
+
+
+where CsrCabeza.pefiscal >= 201606 and CsrCabeza.pefiscal < 201607 and Csrmaopera.origen IN ('CPR') and Csrmaopera.clasecomp IN ('A','B','C','U') 
+AND LEFT(CsrMaopera.numcomp,1)<>' '
+ and CsrComprobante.libroiva=1 and CsrCabeza.idctacte  > 0 and CsrMaopera.estado='0'
+and CsrMaopera.idcomproba  > 0
+Group By CsrPlanCue.nombre,CsrPlanCue.cuenta,CsrTablaasi.debehaber

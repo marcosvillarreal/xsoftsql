@@ -1,0 +1,3 @@
+SELECT TOP 1 CsrNroPatron.* FROM FletePlanilla as CsrNroPatron 
+WHERE convert(int,left(convert(varchar(12),id),2)) = '11'
+ORDER BY numero DESC 

@@ -1,0 +1,8 @@
+		SELECT Csrproducto.id,Csrproducto.nombre as nomprod,Csrproducto.numero as numprod,CAST(0 as Numeric(10,3)) as Saldo_uni
+		,CAST(0 as Numeric(10,3)) as Saldo_kil,CAST(0 as int) as idvariedad,SPACE(30) as nomvariedad	
+		,sum(CsrProducto.vtakilos+CsrProducto.cprakilos) as pesable
+		FROM producto as csrproducto
+		left join movstock as Csrmovstock ON Csrproducto.id = ISNULL(Csrmovstock.idarticulo,0)
+		left join subproducto as Csrsubproducto on Csrmovstock.idsubarti = Csrsubproducto.id
+		WHERE (Csrproducto.id>0 and isnull(CsrSubProducto.idvariedad,0) >= 0 and CsrMovStock.iddeposito IN (1100000010))
+		GROUP BY Csrproducto.id,csrproducto.nombre,csrproducto.numero

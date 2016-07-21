@@ -1,0 +1,1 @@
+SELECT CsrDepositoFac.* FROM Deposito as CsrDepositoFac where CsrDepositoFac.nombre LIKE '%' and llevastock=1 UNION ALL SELECT CsrDepositoFac.* FROM Deposito as CsrDepositoFac where CsrDepositoFac.nombre LIKE '%%' and not( CsrDepositoFac.nombre LIKE '%') and llevastock=1

@@ -1,0 +1,32 @@
+Select distinct Csrcuerpo.id,Csrcuerpo.fechasis,Csrcuerpo.switch
+,LEFT(Csrcuerpo.numcomp,1)+' '+SUBSTRING(Csrcuerpo.numcomp,2,4)+' '+RIGHT(Csrcuerpo.numcomp,8) as numcomp
+,ISNULL(Csrcabefac.idrutavdor,CAST(0 as int)) as idrutavdor
+,CAST(0 as int) as idzona,CAST(0 as int) as nrozona, SPACE(10) as nomzona
+,CsrCabefac.idctacte,Csrcabefac.ctacte as ctacte,Csrcabefac.cnombre as cnombre
+,ISNULL(Csrcabefac.total,0)* Csrcabefac.signo as total
+,Csrcabefac.idfletero as idfletero,CsrRubro.idfuerzavta,0 as estadotilde
+,ISNULL(Csrvendedor.id,0) as idvendedor
+,ISNULL(Csrvendedor.nombre,'SIN VENDEDOR') as nomvdor
+,ISNULL(Csrvendedor.numero,CAST(0 as int)) as nrovdor
+,ISNULL(CsrCabeRuta.idrutavdor,CAST(0 as int)) as idrutactacte
+,(case when ISNULL(CsrCabeRuta.idrutavdor,CAST(0 as int)) = ISNULL(Csrcabefac.idrutavdor,CAST(0 as int))
+	then 1 else 0 end) as OrdenRuta
+,CAST(0 as int) as idfrio,ISNULL(CSRTIPOFRIO.NOMBRE,SPACE(15)) AS NOMFRIO
+,CAST(0 as int) as otrofrio
+from maopera as Csrcuerpo
+inner join cabefac as Csrcabefac on Csrcuerpo.id = Csrcabefac.idmaopera
+left join rutavdor as Csrrutavdor on ISNULL(Csrcabefac.idrutavdor,0) = ISNULL(Csrrutavdor.id,-1)
+
+left join vendedor as Csrvendedor on Csrcuerpo.idvendedor = Csrvendedor.id
+left join cuerfac as CsrCuerfac on CsrCuerpo.id = CsrCuerfac.idmaopera and CsrCabefac.id = CsrCuerfac.idcabeza
+left join cuerruta as CsrCuerRuta on CsrCabefac.idctacte = CsrCuerRuta.idctacte
+left join caberuta as CsrCabeRuta on CsrCuerRuta.idcaberuta = CsrCabeRuta.id
+left join TIPOFRIO AS CSRTIPOFRIO ON CSRCABEFAC.IDFRIO = CSRTIPOFRIO.ID
+left join producto as csrProducto on CsrCuerfac.idarticulo = CsrProducto.id
+left join rubro as CsrRubro on CsrProducto.idrubro = CsrRubro.id
+left join FleteCarga as CsrFleteCarga on CsrCuerpo.id = CsrFleteCarga.idmaopera and ISNULL(RIGHT(LEFT(CsrFleteCarga.switch,3),1),'0')='0'
+where Csrcuerpo.clasecomp<>'K' and CsrCuerpo.estado='0' and len(Csrcuerpo.numcomp)>0  and LEFT(CsrCuerpo.switch,1)<>'1'   
+ and Csrvendedor.id IN (1100000019) and ISNULL(CsrCabefac.id,0) > 0  and ISNULL(CsrCuerfac.id,0) >0
+and left(CsrCuerpo.switch,1)<>'1' and ISNULL(CsrCabefac.rendida,1) = 0
+and ISNULL(CsrFleteCarga.id,0) = 0  and isnull(CsrCabefac.idfletero,0) = 1100000003
+order by ordenruta,numcomp
