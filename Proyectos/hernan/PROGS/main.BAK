@@ -35,6 +35,9 @@ Set cursor on
 
 lcdd=alltrim(curdir()) && directorio de arranque
 
+cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
+cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\hernan\'
 *-- RUTA
@@ -54,6 +57,10 @@ If lldesarrollo
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib
+   
+   cRutaCAE	= _rutabmps + '\caevacio.jpg'
+   cLogoFAC	= _rutabmps + '\logofac.jpg'
+   
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -108,7 +115,8 @@ ObjReporter.AddProperty('titulo1',"")
 ObjReporter.AddProperty('titulo2',"")
 ObjReporter.AddProperty('titulo3',"")
 ObjReporter.AddProperty('titulo4',"")
-
+objReporter.AddProperty('logofac',cLogoFac)
+ObjReporter.AddProperty('numcae',cRutaCAE)
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo
