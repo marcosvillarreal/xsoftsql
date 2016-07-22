@@ -10,7 +10,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 *
 
 set classlib to
-l='c:'
+l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 

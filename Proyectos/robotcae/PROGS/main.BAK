@@ -16,8 +16,10 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestión de Ventas"
-
+lctituloGestion = "Solicitar FE"
+IF cModulo$"1"
+	lctituloGestion = "Impresion FE"
+ENDIF 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
