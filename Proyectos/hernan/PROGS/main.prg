@@ -87,6 +87,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB TO _reportlistener.vcx ADDITIVE 
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
+   SET CLASSLIB  TO  ZIP ADDITIVE 
 *clear all
 
 _screen.lockscreen=.t.
