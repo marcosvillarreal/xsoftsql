@@ -1,22 +1,3 @@
- Alias CSRIMPIVA registro          1
-Control activo  ROBOT
-25-06-2015 13:45:48 , Error nº:         12
-Error No se encuentra la variable 'FECVTOCAE'.
-Linea nº replace cae WITH CsrCabeza.cae,fecvtocae WITH CsrCabeza.fecvtocae,caetipo WITH CsrCabeza.caetipo
- Alias FSRCABEZA registro     295735
-Control activo  ROBOT
-25-06-2015 13:51:13 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº RENAME this.Pathorigen+cName+".CA1" TO this.Pathorigen+cName+".CA2"
- Alias FSRCABEZA registro     295735
-Control activo  ROBOT
-25-06-2015 13:54:29 , Error nº:       1102
-Error No se puede crear el archivo c:\afip\00795835.ca2.
-Linea nº COPY FILE this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA2"
- Alias  registro          0
-Control activo  ROBOT
-25-06-2015 14:12:54 , Error nº:       1733
-Error No se encuentra la definición de clase PRUEBAROBOT.
 Linea nº oRobot = CREATEOBJECT('PruebaRobot')
  Alias CSRCENTRO registro          2
 Control activo  ROBOT
@@ -43,6 +24,8 @@ Control activo  BASECONECTOR1.OROBOT.INIT
 25-06-2015 15:32:20 , Error nº:       1734
 Error No se encuentra la propiedad PLANPAGO.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,cuit
+
+
 
 
 
@@ -432,7 +415,11 @@ Linea nº INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp
 
 
 
+
+
 mp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,Ti
+
+
 
 
 
@@ -704,7 +691,11 @@ poCbte,Letra,NroCAE,VtoCAE,CAECheck ) VALUES (STR(loObjFactura.hojaactual,4)+STR
 
 
 
+
+
 dyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,
+
+
 
 
 
@@ -980,7 +971,11 @@ Linea nº INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp
 
 
 
+
+
 mp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,Ti
+
+
 
 
 
@@ -1250,7 +1245,11 @@ poCbte,Letra,NroCAE,VtoCAE,CAECheck ) VALUES (STR(loObjFactura.hojaactual,4)+STR
 
 
 
+
+
 dyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,
+
+
 
 
 
@@ -1406,6 +1405,8 @@ Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
 25-06-2015 16:51:27 , Error nº:          9
 Error No coinciden los tipos de datos.
 Linea nº INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta ,Kilos,FecOferta,Orden) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,nCodigo,cPrecioUni ,cBonifica,cPrecioFin,cTotal,
+
+
 
 
 
@@ -1950,6 +1951,8 @@ Linea nº CREATE CURSOR CsrCabeDeta (orden n(12),comprobante c(15),direccion c(30
 
 
 
+
+
 aderia c(20),corredor c(25),detalle c(255) )
  Alias CSRIMPUESTO registro          1
 Control activo  MAIN
@@ -1981,6 +1984,8 @@ Control activo  MAIN
 19-02-2016 14:00:32 , Error nº:         12
 Error No se encuentra la variable 'CUIT'.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,cuit
+
+
 
 
 
@@ -2159,6 +2164,8 @@ Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4
 
 
 
+
+
 liente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -2255,6 +2262,8 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
 
 
 
@@ -2655,7 +2664,11 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
 
 
 
@@ -2691,7 +2704,11 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
 
 
 
@@ -2778,12 +2795,16 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
 
 
 
@@ -2827,4 +2848,24 @@ Error No se encuentra el alias 'FSRCABEZA'.
 Linea nº SELECT FsrCabeza
  Alias CSRCABEZA registro          1
 Control activo  MAIN
-06-05-2016 16:49:50 , Error nº:         13Error No se encuentra el alias 'FSRCABEZA'.Linea nº SELECT FsrCabeza Alias CSRCABEZA registro          1Control activo  MAIN
+06-05-2016 16:49:50 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+02-08-2016 11:30:22 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONFIG'.
+Linea nº lntipocaja = VAL(Csrparaconfig.tipocaja)
+ Alias CSRPARADIARIO registro          1
+Control activo  MAIN
+02-08-2016 11:32:17 , Error nº:         13
+Error No se encuentra el alias 'CSRCATEGOIVA'.
+Linea nº SELECT CsrCategoiva
+ Alias FSRTIPOCBTE registro          6
+Control activo  MAIN
+02-08-2016 11:52:23 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº IF LEN(str(cDocumento,15))=0 &&No vienen nada en el campo, chequeamos el campo cuit
+ Alias CSRIMPUESTO registro          2
+Control activo  MAIN
+02-08-2016 11:54:36 , Error nº:         12Error No se encuentra la variable 'DOCUMENTO'.Linea nº IF len(Documento)<11 Alias CSRIMPUESTO registro          2Control activo  MAIN
