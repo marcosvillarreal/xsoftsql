@@ -70,7 +70,7 @@ left join ClaseValor as CsrClaseValor on CsrValor.idclase = CsrClaseValor.id
 
 left join vendedor as CsrCabeVendedor on CsrMaopera.idvendedor = CsrCabeVendedor.id 
 where CsrMaopera.origen IN ('FAC','FPE') and  not (Csrmaopera.clasecomp in ('K')) and Csrmaopera.estado<>'1'
-and Csrcabefac.fecha >= '20160601' AND Csrcabefac.fecha < '20160701' 
+and Csrcabefac.fecha >= '20160701' AND Csrcabefac.fecha < '20160801' 
 and csrcuerfac.idarticulo>0 and Csrcabefac.Idctacte>-1 and Csrcuerfac.Idarticulo>-1 and Csrproducto.idestado in (1,2) 
 and CsrCtacte.Idcanalvta >0  and CsrCabefac.Idfletero >0  and ISNULL(CsrMaopera.Idvendedor,0)>-1
 and ((CsrMaopera.clasecomp='X' and ISNULL(CsrCabefac.facturado,0)=0) or CsrMaopera.clasecomp<>'X')
