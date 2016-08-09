@@ -9,7 +9,7 @@ left join tablaimp as csrtablaimp on Csrmaopera.id = csrtablaimp.idmaopera
 left join tipoiva as csrtipoiva on Csrtablaimp.tasa = CsrTipoiva.tasa
 where Csrmaopera.origen IN ('FAC','FPE') and Csrmaopera.clasecomp IN ('A','B','C','U') 
 AND LEFT(CsrMaopera.numcomp,1)='' and CsrTablaImp.tipoconce IN ('IG','OI')
-and CsrMaopera.estado = 0 and CsrCabeza.idmaopera = 110000005949
+and CsrMaopera.estado = 0 and CsrCabeza.idmaopera = 110000148864
 Group By CsrMaopera.id ,CsrTipoiva.SiapCpraVta
 union all
 SELECT 'B' as grupo, CsrMaopera.id as orden,0 estado
@@ -22,6 +22,6 @@ left join maopera as Csrmaopera on CsrCabeza.idmaopera = Csrmaopera.id
 left join tablaimp as csrtablaimp on Csrmaopera.id = csrtablaimp.idmaopera
 where Csrmaopera.origen IN ('FAC','FPE') and Csrmaopera.clasecomp IN ('A','B','C','U') 
 AND LEFT(CsrMaopera.numcomp,1)='' and not CsrTablaImp.tipoconce IN ('IG','OI')
-and CsrMaopera.estado = 0 and CsrCabeza.idmaopera = 110000005949
+and CsrMaopera.estado = 0 and CsrCabeza.idmaopera = 110000148864
 Group By CsrMaopera.id ,CsrTablaImp.tipoconce,CsrTablaImp.tasa
 Order by CsrMaopera.id

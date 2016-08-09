@@ -13,5 +13,5 @@ left join ctacte as Csrctacte on CsrCabeza.idctacte = CsrCtacte.id
 left join afipcomproba as CsrCode on CsrCabeza.idtipocbte = CsrCode.id 
 where Csrmaopera.origen IN ('FAC','FPE') and Csrmaopera.clasecomp IN ('A','B','C','U') 
 AND LEFT(CsrMaopera.numcomp,1)='' and CsrCabeza.infocae = 0
-and CsrMaopera.estado = 0 and CsrCabeza.idmaopera = 110000005949
+and CsrMaopera.estado = 0 and CsrCabeza.idmaopera = 110000148864
 Order by CsrMaopera.id
