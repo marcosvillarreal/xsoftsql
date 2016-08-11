@@ -1,9 +1,0 @@
-SELECT '20160711' as fecha
-,CsrProducto.numero as codigo,CsrProducto.nombre
-,isnull(CsrExistenc.existe,0) as existe , isnull(CsrExistenc.iddeposito,0) as iddeposito
-,'PQT' as nomforma
-From Producto as CsrProducto 
-left join Rubro as CsrRubro on CsrProducto.idrubro = CsrRubro.id
-left join Existenc as CsrExistenc on CsrProducto.id = CsrExistenc.idarticulo
-Where CsrRubro.id = 1100000105 
-and isnull(CsrExistenc.iddeposito,1100000001) = 1100000001

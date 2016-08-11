@@ -1,6 +1,0 @@
-SELECT CsrExistenc.*
-FROM producto as csrproducto
-left join subproducto as Csrsubproducto ON Csrproducto.id=ISNULL(csrsubproducto.idarticulo,0)
-left join variedad as Csrvariedad on Csrsubproducto.idvariedad = Csrvariedad.id
-left join existenc as Csrexistenc on Csrproducto.id = Csrexistenc.idarticulo and (csrsubproducto.id=csrexistenc.idsubarti or (csrexistenc.idsubarti=0 and ISNULL(csrsubproducto.id,0)=0))
-WHERE Csrproducto.id IN (1100000459,1100000455,1100000456,1100000555,1100000454,1100000458,1100000457,1100000460,1100000450,1100000464,1100000461,1100000447,1100000448,1100000449,1100000465,1100000451,1100000787,1100000788,1100000462,1100000463,1100000446,1100000453,1100000452) and CsrExistenc.iddeposito IN (0,1100000002) and (existe<>0 OR kilos<>0)

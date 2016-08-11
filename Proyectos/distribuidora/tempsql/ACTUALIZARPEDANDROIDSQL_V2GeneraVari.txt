@@ -1,9 +1,0 @@
-			SELECT CueVari.id, convert(int,CueVari.idcuepedido) as idcuepedido
-			,convert(int,CueVari.codigoArticulo) as articulo_numero
-			,convert(int,CueVari.codigoVariedad) as variedad_codigo
-			,CueVari.cantidad
-			FROM CabPedido as CabePedido
-			Left Join CuePedido on CabePedido.id = CuePedido.idcabpedido
-			Inner Join CuePedidoVariedad as CueVari on CuePedido.id = CueVari.idcuepedido
-			Where CabePedido.id in (107326)
-			order by cuevari.id

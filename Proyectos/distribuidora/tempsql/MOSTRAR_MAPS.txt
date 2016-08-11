@@ -1,0 +1,24 @@
+	SELECT Distinct CsrCtacte.id as idctacte,CONVERT(int,CsrCtacte.cnumero) as cnumero
+	,CsrCtacte.cnombre,CsrCtacte.cdireccion as direccion
+	,CsrLocalidad.nombre as localidad
+	,CsrProvincia.nombre as provincia 
+	,ISNULL(CsrCtaCte_2.lat,SPACE(20)) as lat
+	,ISNULL(CsrCtaCte_2.lng,SPACE(20)) as lng
+	from Ctacte as CsrCtacte
+	left join Localidad as CsrLocalidad on CsrCtacte.idlocalidad = CsrLocalidad.id
+	left join Provincia as CsrProvincia on CsrCtacte.idprovincia = CsrProvincia.id
+	left join CanalVta as CsrCanalVta on CsrCtacte.idcanalvta = CsrCanalvta.id
+	left join PlanPago as CsrPlanPago on CsrCtacte.idplanpago = CsrPlanPago.id
+	left join CuerRuta as CsrCuerruta on Csrctacte.id = CsrCuerruta.idCtacte
+	left join CabeRuta as CsrCaberuta on CsrCuerruta.idcaberuta = CsrCaberuta.id
+	left join RutaVdor as CsrRutaVdor on CsrCaberuta.idrutaVdor = CsrRutaVdor.id
+	left join Vendedor as CsrVendedor on CsrRutaVdor.idvendedor = CsrVendedor.id
+	left join FuerzaVta as Csrfuerzavta on CsrRutaVdor.idfuerzavta = CsrFuerzaVta.id
+	left join Barrio as CsrBarrio on CsrCtacte.idbarrio = CsrBarrio.id
+	left join Sector as CsrSector on CsrBarrio.idsector = CsrSector.id
+	left join Ctacte_2 as CsrCtacte_2 on CsrCtacte.id = CsrCtacte_2.idctacte
+	where CsrCtacte.Id>-1 and CsrCtacte.ctadeudor=1 and CsrCanalVta.Id>-1 and CsrLocalidad.Id>-1 
+	and  Csrctacte.estadocta=0 and   (CsrPlanPAgo.numero <> '')   
+	and CsrCtacte.ctadeudor = 1 and CsrCtacte.idcategoria  > 0 
+	and CsrBarrio.idsector  > 0 and CsrCtacte.idbarrio > 0
+	 Order by  CONVERT(int,CsrCtacte.cnumero),CsrCtacte.id

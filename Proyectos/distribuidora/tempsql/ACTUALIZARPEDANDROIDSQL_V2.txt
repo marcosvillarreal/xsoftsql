@@ -1,8 +1,0 @@
-SELECT CsrPediPda.* FROM PediPda as CsrPediPda
-left join NMaopera as CsrNMaopera on CsrPediPda.idmaopera = CsrNMaopera.id
-left join Ctacte as CsrCtacte on CsrPediPda.idctacte = CsrCtacte.id
-where LEFT(ISNULL(CsrNMaopera.clasecomp,''),1)<>'K'
-and LEFT(ISNULL(CsrNMaopera.estado,'0'),1)='0'
-and CsrCtacte.cnumero =1278 and CsrPediPda.idpedido = 107326
-and CsrPediPda.origen='ANDRO'
-and ISNULL(CsrPediPda.pedidoid_pm,'') = '559604F0-C662-420A-8A12-C46A3F32A5D8                                                                                                                                                                    '

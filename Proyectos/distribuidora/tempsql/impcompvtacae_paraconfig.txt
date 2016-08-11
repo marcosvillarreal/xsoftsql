@@ -1,4 +1,0 @@
-Select Csrparaconfig.*,isnull(Csrlocalidad.idprovincia,0) as idprovincia 
-from paraconfig as Csrparaconfig 
-left join localidad as Csrlocalidad on Csrparaconfig.idlocalidad = Csrlocalidad.id
-WHERE idcentrorecep = 1100000001

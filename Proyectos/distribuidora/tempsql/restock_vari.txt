@@ -1,9 +1,0 @@
-		SELECT Csrproducto.id,Csrproducto.nombre as nomprod,Csrproducto.numero as numprod
-		,SUM(csrMovstock.cantidad * CsrMovstock.signo) as Saldo_uni	,SUM(csrMovstock.kilos * CsrMovstock.signo) as Saldo_kil
-		,CAST(0 as int) as idvariedad,SPACE(30) as nomvariedad
-		,sum(CsrProducto.vtakilos+CsrProducto.cprakilos) as pesable
-		FROM movstock as csrmovstock
-		left join producto as Csrproducto ON Csrmovstock.idarticulo = ISNULL(Csrproducto.id,0)
-		left join subproducto as Csrsubproducto on Csrmovstock.idsubarti = Csrsubproducto.id
-		WHERE (Csrmovstock.idarticulo>0 and Csrmovstock.FECHA < '20160705' and isnull(CsrSubProducto.idvariedad,0) >= 0 and CsrMovStock.iddeposito IN (1100000010))
-		GROUP BY Csrproducto.id,csrproducto.nombre,csrproducto.numero
