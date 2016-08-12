@@ -10,7 +10,7 @@ nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
 *===================
 
 set classlib to
-l='c:'
+l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 
