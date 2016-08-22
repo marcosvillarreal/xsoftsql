@@ -1,3 +1,60 @@
+<<<<<<< HEAD
+=======
+ Alias CSRCOMPROBAINTERNO registro          1
+Control activo  MAIN
+26-08-2015 20:13:06 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº IF VAL(lntotalcomp) <> lntotalgastos
+ Alias CSRAUXPLANCUE registro          2
+Control activo  MAIN
+26-08-2015 20:14:51 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº IF VAL(lntotalcomp) <> lntotalgastos
+ Alias CSRAUXPLANCUE registro          2
+Control activo  MAIN
+27-08-2015 15:26:09 , Error nº:         13
+Error No se encuentra el alias ''.
+Linea nº SELECT (lcAlias)
+ Alias CSRALERTAS registro          1
+Control activo  MAIN
+28-08-2015 10:27:37 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº IF this.Value < CTOD('01-01-1900')
+ Alias CSRFLETERO registro          1
+Control activo  IMPCOMPVTACAE.CONTAINERELECTOR.FECHA_CALENDARIO1.TXTFECHA.VALID
+28-08-2015 10:28:33 , Error nº:          1
+Error El archivo 'csrmaopera.dbf' no existe.
+Linea nº SELECT Csrmaopera.*,SPACE(20) as NomOpera FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE
+ Alias  registro          0
+Control activo  IMPCOMPVTACAE.LOAD
+28-08-2015 10:52:35 , Error nº:       1925
+Error OFACCAE es un miembro desconocido.
+Linea nº this.oFACCAE.p_orden = CsrAuxCabefac.idmaopera
+ Alias CSRPREFITERMI registro         28
+Control activo  IMPCOMPVTACAE.ACEPTAR1.CLICK
+28-08-2015 10:58:51 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº lnrecno = RECNO("CsrOperacion")
+ Alias CSRFLETERO registro          1
+Control activo  IMPCOMPVTACAE.CHKGRID1GRAL.CLICK
+07-09-2015 10:59:32 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
+ Alias CSRAUXILIAR registro          1
+Control activo  MAIN
+11-09-2015 12:11:11 , Error nº:         12
+Error No se encuentra la variable 'NETOGRAVADO'.
+Linea nº REPLACE ALL netogravado WITH netosinbonificar - bonificacion
+ Alias CSRLOGISTICA registro          9
+Control activo  MAIN
+11-09-2015 12:35:34 , Error nº:         12
+Error No se encuentra la variable 'IDARTICULO'.
+Linea nº IF NOT SEEK(idarticulo,"CsrSinUbica","idarticulo")
+ Alias CSRUBICACION registro          5
+Control activo  MAIN
+11-09-2015 12:36:25 , Error nº:          1
+Error El archivo 'csrnmaopera.dbf' no existe.
+>>>>>>> origin/master
 Linea nº SELECT CsrNMaopera.* FROM CsrNMaopera WHERE RECNO()<0 INTO CURSOR CsrAuxMaopera READWRITE
  Alias CSRAUXILIAR registro          1
 Control activo  LISPATRONCARGAPEDIDOS.LOAD
@@ -142,10 +199,13 @@ Linea nº SELECT CsrNCabefac.*, CAST(0 as int) as idvendedor,SPACE(30) as nomvdor
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 fac READWRITE
  Alias CSRAUXCARGA registro          1
 Control activo  LISPATRONCARGAPEDIDOS.LOAD
@@ -844,10 +904,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
 
 
@@ -891,10 +954,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
 
 
@@ -938,10 +1004,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
 
 
@@ -985,10 +1054,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -1032,10 +1104,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1079,10 +1154,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias CSRMOVBCOCAR registro          1
 Control activo  REGFACVTA.LOAD
@@ -1130,10 +1208,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
 
 
@@ -1176,10 +1257,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
 
 
@@ -1222,10 +1306,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
 
 
@@ -1268,10 +1355,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -1314,10 +1404,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1360,10 +1453,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias CSRMOVBCOCAR registro          1
 Control activo  REGFACVTA.LOAD
@@ -1454,10 +1550,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
 
 
@@ -1493,10 +1592,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
 
 
@@ -1532,10 +1634,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
 
 
@@ -1571,10 +1676,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -1610,10 +1718,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1649,10 +1760,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGFACVTA.LOAD
@@ -1742,10 +1856,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
 
 
@@ -1775,10 +1892,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
 
 
@@ -1808,10 +1928,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
 
 
@@ -1841,10 +1964,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -1874,10 +2000,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1907,10 +2036,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGFACVTA.LOAD
@@ -1987,10 +2119,13 @@ Linea nº SELECT 0 as idgrupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 civa,(totalng-costosiva-promocion) as ganancia ,(round(((ganancia/costosiva)*100),4)) as margen,(round(TotalNG-Promocion,2)) as importefinal FROM Csraux INTO CURSOR CsrImprimir READWRITE
  Alias CSRAUX registro          1
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2054,10 +2189,13 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvendedor,nomvendedo
 
 
@@ -2071,10 +2209,13 @@ unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 r,idctacte,ctacte,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo INTO CURSOR CsrImprimir READWRITE
  Alias CSRPROVEEDOR registro        300
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2153,6 +2294,7 @@ Error El archivo 'csraux.dbf' no existe.
 Linea nº SELECT 0 as Grupo,CsrAux.* from CsrAux order by Grupo into cursor CsrImprimir READWRITE
  Alias CSRIMPRIMIR registro          1
 Control activo  EST_VENTADEVOLUCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+<<<<<<< HEAD
 22-08-2016 13:40:24 , Error nº:       1806
 Error SQL: no se encuentra la columna 'IDINGBRUTOS'.
 Linea nº DELETE FROM CsrImprimir WHERE idingbrutos<>CsrTipoIngBrutos.id
@@ -2184,3 +2326,6 @@ Linea nº .estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos
  Alias _CSRPRODUCTO registro          1
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 22-08-2016 15:35:02 , Error nº:       1925Error ESTADITICA es un miembro desconocido.Linea nº .estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos<>"+strtrim(CsrTipoIngBrutos.id),"") Alias _CSRPRODUCTO registro          1Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+=======
+12-08-2016 13:15:49 , Error nº:         13Error No se encuentra el alias 'CSRTEMPCAE'.Linea nº thisform.lbltimer.Caption = "Fecha Fac:"+DTOC(TTOD(CsrTempFechaCAEA.fechafac))+" CAEA Solicitado:"+CsrTempCAE.caea Alias CSRTEMPCAEA registro          1Control activo  MAIN
+>>>>>>> origin/master
