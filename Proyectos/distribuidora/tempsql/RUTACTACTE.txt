@@ -1,0 +1,8 @@
+Select isnull(Csrcaberuta.id,0) as id,isnull(Csrcaberuta.idrutavdor,0)as idrutavdor
+,isnull(Csrcaberuta.dia,0) as dia,ISNULL(zonaruta.idzona,0) as idzona 
+from ruta as csrRuta
+left join rutavdor on csrruta.id = rutavdor.idruta
+left join caberuta as Csrcaberuta on Csrcaberuta.idrutavdor = rutavdor.id
+left join zonaruta on csrruta.id = zonaruta.idruta
+WHERE rutavdor.idruta=  1100000001 and rutavdor.idfuerzavta=1100000001 
+AND ISNULL(Csrcaberuta.dia,2.00) = 2.00
