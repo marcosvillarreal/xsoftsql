@@ -6,4 +6,4 @@
 		    FROM maopera as Csrmaopera
 		    left join cabefac as Csrcabefac on Csrmaopera.id = Csrcabefac.idmaopera
 		    left join comprobante as Csrcomprobante on Csrmaopera.idcomproba = Csrcomprobante.id
-			WHERE not Csrmaopera.clasecomp in ('K','0') and (CSRCABEFAC.CTACTE='100' AND CSRMAOPERA.NUMCOMP LIKE '%%') and Csrmaopera.estado<>'1' and CsrMaopera.idcomproba IN (1,3,2) and (Csrmaopera.origen='FAC' or Csrmaopera.origen='FPE') order by csrmaopera.numcomp
+			WHERE not Csrmaopera.clasecomp in ('K','0') and (CSRCABEFAC.FECHA='20160830' AND CSRMAOPERA.NUMCOMP LIKE '%%') and Csrmaopera.estado<>'1' and CsrMaopera.idcomproba IN (1) and (Csrmaopera.origen='FAC' or Csrmaopera.origen='FPE') order by csrmaopera.numcomp

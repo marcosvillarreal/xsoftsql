@@ -1,0 +1,38 @@
+Select 'B' as grupoDato,Csrcuerpo.*,ISNULL(Csrfletecarga.idmaopera,0) as idmaopera,0 as idvendedor,SPACE(15) as numcomp,SPACE(6) as ctacte,CsrNcuerfac.nombre as cnombre,0 as totalComp
+,GETDATE() as fechafac,SPACE(30) as cdireccion,0 as nrovdor,SPACE(30) as nomvdor
+,CsrNcuerfac.id as idcuerfac,CsrNcuerfac.idarticulo as idarticulo,CsrNcuerfac.codigo as codigo,csrNcuerfac.cantidad as cantidad
+,CsrNcuerfac.univenta as univenta,CsrNcuerfac.unibulto as unibulto, CsrNcuerfac.cantorig as cantorig
+,ISNULL(Csrrubro.numero,0) as nrorubro,0000000.00 as total,CsrNCuerfac.kilos , CsrProducto.peso
+,00 as signo, CsrProducto.idubicacio as idubicacion, CsrProducto.vtakilos as pesable,ISNULL(CsrEnvase.numero ,0) as CodEnvase
+,ISNULL(substring(CsrCuerpo.switch,5,1),'0') as comprome,CAST(0 as numeric(1,0)) as idcuervari,CsrProducto.idenvase
+,CsrProducto.idctacte,CsrNCuerfac.escambio,CsrUbicacion.numero as cubicacion
+from fleteplanilla as Csrcuerpo
+left join fletecarga as Csrfletecarga on Csrcuerpo.id = Csrfletecarga.idfleteplan
+left join Nmaopera as CsrNmaopera on Csrfletecarga.idmaopera = CsrNmaopera.id
+left join Ncuerfac as CsrNcuerfac ON Csrfletecarga.idmaopera = CsrNcuerfac.idmaopera
+left join producto as Csrproducto on CsrNcuerfac.idarticulo = Csrproducto.id
+left join rubro as Csrrubro on Csrproducto.idrubro = Csrrubro.id
+left join producto as CsrEnvase on CsrProducto.idenvase = CsrEnvase.id
+left join ubicacion as CsrUbicacion on CsrProducto.idubicacio = CsrUbicacion.id
+where CsrCuerpo.id = 1100000524 and  CsrCuerpo.estado='0' and CsrNmaopera.clasecomp<>'K' and CsrNmaopera.estado='0'
+and substring(CsrCuerpo.switch,3,1)='1' and CsrNcuerfac.cantorig<>0 
+ and left(Csrnmaopera.switch,1)='0' 
+ and LEFT(CsrFleteCarga.switch,1)='0'
+UNION ALL
+Select 'C' as grupoDato,Csrcuerpo.*,ISNULL(Csrfletecarga.idmaopera,0) as idmaopera,0 as idvendedor,SPACE(15) as numcomp,SPACE(6) as ctacte
+,ISNULL(Csrsubproducto.nombre,' ') as cnombre,0 as totalComp,GETDATE() as fechafac,SPACE(30) as cdireccion,0 as nrovdor,SPACE(30) as nomvdor
+,ISNULL(CsrNcuervari.idcuerfac,0) as idcuerfac,ISNULL(CsrSubproducto.idvariedad,0) as idarticulo,SPACE(8) as codigo,ISNULL(CsrNcuervari.cantidad,0) as cantidad
+,0 as univenta,CAST(CsrNcuervari.idsubarti as int) as unibulto, ISNULL(CsrNcuervari.cantorig,0) as  cantorig 
+,00000 as nrorubro,CAST(0 as numeric(12,2)) as total,CAST(0 as numeric(10,2)) as kilos,CAST(0 as numeric(12,3)) as peso
+,00 as signo, CAST(0 as int ) as idubicacion, CAST(0 as numeric(1,0)) as pesable, 0 as CodEnvase
+,ISNULL(substring(CsrCuerpo.switch,5,1),'0') as comprome,CsrNCuervari.id as  idcuervari,CAST(0 as int) as idenvase
+,CAST(0 as int) as idctacte,CsrNCuervari.escambio,SPACE(4) as cubicacion
+from fleteplanilla as Csrcuerpo
+left join fletecarga as Csrfletecarga on Csrcuerpo.id = Csrfletecarga.idfleteplan
+left join Nmaopera as CsrNmaopera on Csrfletecarga.idmaopera = CsrNmaopera.id
+left join NCuervari as CsrNcuervari on Csrfletecarga.idmaopera = CsrNcuervari.idmaopera
+left join subproducto as CsrSubproducto on CsrNcuervari.idsubarti = CsrSubproducto.id
+where CsrCuerpo.id = 1100000524 and  CsrCuerpo.estado='0'  and CsrNmaopera.clasecomp<>'K' and CsrNmaopera.estado='0'
+and substring(CsrCuerpo.switch,3,1)='1'  AND CsrNCuervari.idcuerfac <> 0  
+and left(Csrnmaopera.switch,1)='0' 
+and LEFT(CsrFleteCarga.switch,1)='0'

@@ -1,0 +1,29 @@
+		Select distinct Csrfleteplanilla.fecha as fechasis,Csrcuerpo.id,Csrcuerpo.idvendedor,CsrCuerpo.switch,Csrcuerpo.sucursal,Csrcuerpo.terminal
+		,Csrcuerpo.sector,Csrcuerpo.iddetanrocaja,Csrcuerpo.turno,Csrcuerpo.puestocaja,CsrCuerpo.idcotizadolar,Csrcuerpo.idoperador
+		,LEFT(Csrcuerpo.numcomp,1)+' '+SUBSTRING(Csrcuerpo.numcomp,2,4)+' '+RIGHT(Csrcuerpo.numcomp,8) as numcomp
+		,ISNULL(Csrncabefac.idrutavdor,0) as idrutavdor,ISNULL(Csrzonaruta.idzona,0) as idzona
+		,ISNULL(Csrzona.numero,0) as nrozona,ISNULL(Csrzona.nombre,' ') as nomzona
+		,Csrncabefac.ctacte as ctacte,Csrncabefac.cnombre as cnombre,ISNULL(Csrfleteplanilla.idfletero,0) as idfletero
+		,ISNULL(Csrncabefac.total,0) as total,0 as estadotilde,Csrvendedor.nombre as nomvdor
+		,Csrctacte.ctalogistica,SPACE(6) as pefiscal, CsrCtacte.id as idctacte
+		,CsrFletePlanilla.switch as FleteSwitch,CsrFletero.numero as numflete
+		,CsrFleteplanilla.id as idfleteplan,CsrFletePlanilla.numero as nropatron
+		,ISNULL(CsrNCabefac.esremito,0) as esremito
+		from fleteplanilla as Csrfleteplanilla
+		left join fletecarga as Csrfletecarga on Csrfleteplanilla.id = Csrfletecarga.idfleteplan
+		left join Nmaopera as Csrcuerpo on Csrfletecarga.idmaopera = CsrCuerpo.id
+		left join ncabefac as Csrncabefac on Csrcuerpo.id = Csrncabefac.idmaopera
+		left join rutavdor as Csrrutavdor on ISNULL(Csrncabefac.idrutavdor,0) = ISNULL(Csrrutavdor.id,-1)
+		left join zonaruta as Csrzonaruta on ISNULL(Csrrutavdor.idruta,0) = ISNULL(Csrzonaruta.idruta,-1)
+		left join zona as Csrzona on ISNULL(Csrzonaruta.idzona,0) = Csrzona.id
+		left join ncuerfac as CsrNCuerfac on CsrCuerpo.id = CsrNCuerfac.idmaopera
+		left join ncuervari as CsrNcuervari on CsrCuerpo.id = CsrNCuervari.idmaopera
+		left join vendedor as Csrvendedor on Csrcuerpo.idvendedor = Csrvendedor.id
+		left join ctacte as CsrCtacte on CsrNcabefac.idctacte = CsrCtacte.id
+		left join fletero as CsrFletero on CsrFleteplanilla.idfletero = CsrFletero.id
+		
+		where CsrCuerpo.clasecomp<>'K' and CsrCuerpo.estado='0'	and LEFT(CsrCuerpo.switch,1)='0' and CsrFleteplanilla.estado=0 and LEFT(CsrFleteplanilla.switch,1)<>'1' 
+		and substring(Csrfleteplanilla.switch,3,1)='1'	
+		and Csrfleteplanilla.fecha <= '20160830' 
+		
+		ORDER BY CsrNcabefac.idctacte

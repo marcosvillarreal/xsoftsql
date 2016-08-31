@@ -1,0 +1,22 @@
+Select distinct 'A' as grupoDato,Csrcuerpo.*,ISNULL(Csrfletecarga.idmaopera,0) as idmaopera,ISNULL(CsrNmaopera.idvendedor,0) as idvendedor
+,LEFT(ISNULL(CsrNmaopera.numcomp,' '),1)+' '+SUBSTRING(ISNULL(CsrNmaopera.numcomp,SPACE(6)),2,4)+' '+RIGHT(ISNULL(CsrNmaopera.numcomp,SPACE(8)),8) as numcomp
+,ISNULL(CsrNcabefac.ctacte,SPACE(6)) as ctacte,ISNULL(CsrNcabefac.cnombre,SPACE(30)) as cnombre
+,ISNULL(CsrNcabefac.total,0) as totalComp
+,ISNULL(CsrNcabefac.fecha,GETDATE()) as fechafac,ISNULL(CsrNcabefac.cdireccion,SPACE(30)) as cdireccion
+,ISNULL(Csrvendedor.numero,0) as nrovdor,ISNULL(Csrvendedor.nombre,SPACE(30)) as nomvdor
+,ISNULL(CsrNcabefac.idctacte,0) as idcuerfac,CAST(0 as int) as idarticulo,SPACE(8) as codigo,CAST(0 as numeric(10,2)) as cantidad,0 as univenta,CAST(0 as int) as unibulto
+,00000 as nrorubro,CAST(0 as numeric(12,2)) as total
+,CsrNcabefac.signo as signo, CAST(0 as int ) as idubicacion, CAST(0 as numeric(1,0)) as pesable,CAST(0 as numeric(12,3)) as kilos
+,0 as comprome,CsrCuerpo.nombre as descripcion,CsrCtacte.ctalogistica
+,ISNULL(CsrGuiaVdor.numero,0) as nroguiavdor,ISNULL(CsrGuiaVdor.nombre,SPACE(30)) as nomguiavdor,ISNULL(CsrGuiaVdor.id,CAST(0 as int)) as idguiavdor
+from fleteplanilla as Csrcuerpo
+left join fletecarga as Csrfletecarga on Csrcuerpo.id = Csrfletecarga.idfleteplan
+left join Nmaopera as CsrNmaopera on Csrfletecarga.idmaopera = CsrNmaopera.id
+left join Ncabefac as CsrNcabefac on Csrfletecarga.idmaopera = CsrNcabefac.idmaopera
+left join vendedor as Csrvendedor on CsrNmaopera.idvendedor = Csrvendedor.id
+left join ctacte as CsrCtacte on CsrNCabefac.idctacte = CsrCtacte.id
+	left join vendedor as csrguiavdor on CsrNMaopera.idvendedor = Csrguiavdor.id
+where  CsrCuerpo.fecha between '20160706' and '20160706' 
+and CsrCuerpo.estado='0' AND CsrCuerpo.idfletero = 1100000007 and CsrNmaopera.clasecomp<>'K' and CsrNmaopera.estado='0'
+and substring(CsrCuerpo.switch,3,1)=1  and left(Csrnmaopera.switch,1)='1' and CsrCuerpo.id > 0
+and LEFT(CsrFleteCarga.switch,1)='2'

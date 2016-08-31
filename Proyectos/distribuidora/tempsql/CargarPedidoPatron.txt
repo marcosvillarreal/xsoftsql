@@ -1,0 +1,13 @@
+SELECT distinct CsrCabeza.id,CsrCabeza.idmaopera,CsrCabeza.ctacte
+,CsrCabeza.cnombre,CsrCabeza.fecha,CsrOpera.numcomp
+,CsrCtacte.fecins01 as fechareba,CsrCtacte.inscri01 as numreba
+From NMaopera as CsrOpera
+inner join NCabefac as CsrCabeza on CsrOpera.id = CsrCabeza.idmaopera
+Left join Ctacte as CsrCtacte on CsrCabeza.idctacte = CsrCtacte.id
+inner join NCuerfac as CsrCuerpo on CsrCabeza.id = CsrCuerpo.idcabeza
+inner join Producto as CsrArticulo on CsrCuerpo.idarticulo = CsrArticulo.id
+inner join Rubro as CsrRubro on CsrArticulo.idrubro = CsrRubro.id
+left join TipoProd as CsrTipo on CsrRubro.idtipoprod = CsrTipo.id
+inner join Provincia as CsrProvincia on CsrCtacte.idprovincia = CsrProvincia.id
+Where CsrOpera.id in (110000005127) and CsrProvincia.numero = 2
+and isnull(left(CsrTipo.switch,1),'0')='1' and CsrCtacte.fecins01 <= getdate()

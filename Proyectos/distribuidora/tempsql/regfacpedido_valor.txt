@@ -1,0 +1,7 @@
+Select Csrvalor.id,Csrvalor.numero,Csrvalor.nombre,Csrvalor.regisa,Csrvalor.regisb,Csrvalor.regisd,Csrvalor.regisf,Csrvalor.regisc,Csrvalor.regisk,Csrvalor.idctabco
+,isnull(Csrvalorctacon.idctaa,0) as idctaa,isnull(Csrvalorctacon.idctab,0) as idctab,isnull(Csrvalorctacon.idctad,0) as idctad,isnull(Csrvalorctacon.idctaf,0) as idctaf
+,isnull(Csrvalorctacon.idctac,0) as idctac,isnull(Csrvalorctacon.idctak,0) as idctak,Csrclasevalor.numero as clasevalor
+from valor as Csrvalor
+left join clasevalor as Csrclasevalor on Csrvalor.idclase = Csrclasevalor.id
+left join valorctacon as Csrvalorctacon on Csrvalor.id = Csrvalorctacon.idvalor
+where csrvalor.regisf=1 and Csrvalorctacon.idejercicio= 1100000015

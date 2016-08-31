@@ -1,0 +1,9 @@
+		select cuepedido.id as idcuepedido,convert(int,cuepedido.codigoarticulo) as articulo_numero
+		,cuepedido.cantidad
+		,cuepedido.bonif1,cuepedido.idcabpedido
+		,isnull(CueVari.id,0) as idcuepedidovari
+		,convert(int,ISNULL(CueVari.codigoVariedad,'0')) as variedad_codigo
+		,isnull(CueVari.cantidad,0) as variedad_cantidad
+		from cuepedido
+		left join cuepedidovariedad as CueVari on cuepedido.id = CueVari.idcuepedido	
+		Where CuePedido.idcabpedido = 124001	

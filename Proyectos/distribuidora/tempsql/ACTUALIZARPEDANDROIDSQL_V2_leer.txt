@@ -1,0 +1,23 @@
+		SELECT CabePedido.id
+		,convert(int,cabepedido.codigocliente) as clientes_numero
+		,convert(int,CabePedido.vales) as vales
+		,CabePedido.Observaciones,convert(int,CabePedido.Remito) as remito
+		,CabePedido.fecha as fecha
+		,CabePedido.horain
+		,ISNULL(CabePedido.fechadeentrega,CabePedido.fecha) as fechaentrega
+		,convert(int,cabepedido.vendedor) as vendedor_codigo
+		,convert(int,CabePedido.chksum) as chksum
+		,convert(int,CabePedido.TipoDePedido) as tipodepedido
+		,ISNULL(COUNT(CuePedido.id),0) as cantarticulos
+		,ISNULL(SUM(ISNULL(CuePedido.bonif1,0)+ISNULL(CuePedido.bonif2,0)),0) as totbonif
+		,ISNULL(Clientes.nombre,SPACE(30)) as clientes_nombre
+		,convert(varchar(200),cabepedido.pedidoid) as pedidoid_pm
+		FROM CabPedido as CabePedido
+		left join Clientes on CabePedido.codigoCliente = Clientes.numero and CabePedido.idempresa = Clientes.idempresa
+		lEFT JOIN CuePedido on CabePedido.id = CuePedido.idcabpedido
+		Where CabePedido.idempresa = 3         
+		and ISNULL(loteexportacion,'') = '' and ISNULL(chksum,0) >= 0
+		Group By  CabePedido.id, codigocliente,fecha , horain ,  chksum  , Vales 
+	      , CabePedido.Observaciones , TipoDePedido , vendedor, Remito 
+	      ,Clientes.nombre,fechadeentrega,CabePedido.pedidoid
+		
