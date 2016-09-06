@@ -15,7 +15,7 @@
 		FROM CabPedido as CabePedido
 		left join Clientes on CabePedido.codigoCliente = Clientes.numero and CabePedido.idempresa = Clientes.idempresa
 		lEFT JOIN CuePedido on CabePedido.id = CuePedido.idcabpedido
-		Where CabePedido.idempresa = 3         
+		Where CabePedido.idempresa = 8         
 		and ISNULL(loteexportacion,'') = '' and ISNULL(chksum,0) >= 0
 		Group By  CabePedido.id, codigocliente,fecha , horain ,  chksum  , Vales 
 	      , CabePedido.Observaciones , TipoDePedido , vendedor, Remito 

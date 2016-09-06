@@ -1,5 +1,0 @@
-SELECT TOP 1 numero + 1 As PrimerHueco
-FROM producto as a
-WHERE NOT EXISTS( SELECT 1 FROM producto as b WHERE b.numero= a.numero+1 )
-
-order by a.numero

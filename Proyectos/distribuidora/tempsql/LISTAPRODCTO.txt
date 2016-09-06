@@ -1,3 +1,0 @@
-		SELECT CsrProducto.* FROM Producto as Csrproducto WHERE Csrproducto.NOMBRE LIKE '%prueba%' AND idestado IN (1)
-		AND Csrproducto.idctacte>0 AND Csrproducto.idrubro>0 AND Csrproducto.idmarca>0 AND( nofactura = 0 OR  nolista =1 OR  espromocion = 0)
-		ORDER BY CsrProducto.nombre
