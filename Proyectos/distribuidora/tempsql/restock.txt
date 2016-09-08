@@ -1,0 +1,31 @@
+	SELECT  'B' as clave,Csrmovstock.id,Csrmovstock.idarticulo,Csrmovstock.fecha,Csrmovstock.importe,Csrmovstock.iddeposito
+,Csrcomprobante.cabrevia+' '+LEFT(Csrmaopera.numcomp,1)+' '+substring(Csrmaopera.numcomp,2,4)+'-'+RIGHT(Csrmaopera.numcomp,8) as nomcompro
+,ISNULL(CsrCuerdeta.detalle,
+	ISNULL(csrcabefac.ctacte+' '+csrcabefac.cnombre,
+		ISNULL(csrancabefac.ctacte+' '+csrancabefac.cnombre,
+			ISNULL(CsrCabeCpra.ctacte+' '+CsrCabeCpra.cnombre,' ')))) as detalle
+,CAST(0 as int)  as idvariedad,SPACE(30)  as nomvariedad,SPACE(10) as chrfecha
+,(Case Csrmovstock.signo when 1 then Csrmovstock.cantidad else 000000.000 end) as entra_uni
+,(Case Csrmovstock.signo when 1 then 000000.000 else Csrmovstock.cantidad end) as sale_uni
+,CsrMovstock.cantidad * CsrMovstock.signo as Saldo_uni
+,(Case Csrmovstock.signo when 1 then Csrmovstock.kilos else 000000.000 end) as entra_kil
+,(Case Csrmovstock.signo when 1 then 000000.000 else Csrmovstock.kilos end) as sale_kil
+,(CsrProducto.vtakilos+CsrProducto.cprakilos) as pesable
+,CsrMovstock.kilos * CsrMovstock.signo as Saldo_kil
+,Csrproducto.nombre as nomprod,Csrproducto.numero as numprod,Csrdeposito.nombre as nomdepo,CsrDeposito.numero as numdepo
+,CsrMovStock.idmaopera
+FROM movstock as Csrmovstock
+left join producto as Csrproducto ON Csrmovstock.idarticulo = Csrproducto.id
+left join subproducto as Csrsubproducto on Csrmovstock.idsubarti = Csrsubproducto.id
+left join variedad as Csrvariedad on Csrsubproducto.idvariedad = Csrvariedad.id
+left join deposito as Csrdeposito on Csrmovstock.iddeposito = Csrdeposito.id
+left join Cuerdeta as Csrcuerdeta on Csrmovstock.idorigen = CsrCuerdeta.idcuerfac
+left join maopera as Csrmaopera on Csrmovstock.idmaopera = Csrmaopera.id
+left join cabefac as csrcabefac on csrmaopera.id = csrcabefac.idmaopera
+left join comprobante as csrcomprobante on Csrmaopera.idcomproba = Csrcomprobante.id
+left join anmaopera as CsrAnMaopera on CsrMaopera.id = CsrAnMaopera.idmaopera
+left join cabefac as CsrAnCabefac on CsrAnMaopera.idafecta = CsrAnCabefac.idmaopera
+left join cabecpra as CsrCabeCpra on CsrMaopera.id = CsrCabeCpra.idmaopera
+WHERE ( CsrMovStock.fecha Between '20160101' and '20160909') AND Csrmovstock.idarticulo IN (1100000352) and isnull(CsrSubProducto.idvariedad,0) >= 0
+and CsrMovStock.iddeposito IN (1100000001)
+	ORDER BY CsrProducto.id,Csrmovstock.fecha,CsrMovStock.id
