@@ -1,269 +1,3 @@
-<<<<<<< HEAD
-=======
- Alias CSRCOMPROBAINTERNO registro          1
-Control activo  MAIN
-26-08-2015 20:13:06 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº IF VAL(lntotalcomp) <> lntotalgastos
- Alias CSRAUXPLANCUE registro          2
-Control activo  MAIN
-26-08-2015 20:14:51 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº IF VAL(lntotalcomp) <> lntotalgastos
- Alias CSRAUXPLANCUE registro          2
-Control activo  MAIN
-27-08-2015 15:26:09 , Error nº:         13
-Error No se encuentra el alias ''.
-Linea nº SELECT (lcAlias)
- Alias CSRALERTAS registro          1
-Control activo  MAIN
-28-08-2015 10:27:37 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF this.Value < CTOD('01-01-1900')
- Alias CSRFLETERO registro          1
-Control activo  IMPCOMPVTACAE.CONTAINERELECTOR.FECHA_CALENDARIO1.TXTFECHA.VALID
-28-08-2015 10:28:33 , Error nº:          1
-Error El archivo 'csrmaopera.dbf' no existe.
-Linea nº SELECT Csrmaopera.*,SPACE(20) as NomOpera FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE
- Alias  registro          0
-Control activo  IMPCOMPVTACAE.LOAD
-28-08-2015 10:52:35 , Error nº:       1925
-Error OFACCAE es un miembro desconocido.
-Linea nº this.oFACCAE.p_orden = CsrAuxCabefac.idmaopera
- Alias CSRPREFITERMI registro         28
-Control activo  IMPCOMPVTACAE.ACEPTAR1.CLICK
-28-08-2015 10:58:51 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº lnrecno = RECNO("CsrOperacion")
- Alias CSRFLETERO registro          1
-Control activo  IMPCOMPVTACAE.CHKGRID1GRAL.CLICK
-07-09-2015 10:59:32 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
- Alias CSRAUXILIAR registro          1
-Control activo  MAIN
-11-09-2015 12:11:11 , Error nº:         12
-Error No se encuentra la variable 'NETOGRAVADO'.
-Linea nº REPLACE ALL netogravado WITH netosinbonificar - bonificacion
- Alias CSRLOGISTICA registro          9
-Control activo  MAIN
-11-09-2015 12:35:34 , Error nº:         12
-Error No se encuentra la variable 'IDARTICULO'.
-Linea nº IF NOT SEEK(idarticulo,"CsrSinUbica","idarticulo")
- Alias CSRUBICACION registro          5
-Control activo  MAIN
-11-09-2015 12:36:25 , Error nº:          1
-Error El archivo 'csrnmaopera.dbf' no existe.
->>>>>>> origin/master
-Linea nº SELECT CsrNMaopera.* FROM CsrNMaopera WHERE RECNO()<0 INTO CURSOR CsrAuxMaopera READWRITE
- Alias CSRAUXILIAR registro          1
-Control activo  LISPATRONCARGAPEDIDOS.LOAD
-11-09-2015 12:36:28 , Error nº:          1
-Error El archivo 'csrncabefac.dbf' no existe.
-Linea nº SELECT CsrNCabefac.*, CAST(0 as int) as idvendedor,SPACE(30) as nomvdor,1 as estado,CAST(0 as i) as idfleteplanilla ,SPACE(20) as numcomp,SPACE(30) as descripcion,0 as ctalogistica FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabe
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> origin/master
-fac READWRITE
- Alias CSRAUXCARGA registro          1
-Control activo  LISPATRONCARGAPEDIDOS.LOAD
-11-09-2015 12:36:44 , Error nº:          9
-Error No coinciden los tipos de datos.
-Linea nº IF RECCOUNT('CsrSinUbica')
- Alias CSRIMPCUE registro          2
-Control activo  MAIN
-11-09-2015 13:16:33 , Error nº:       1429
-Error Código de excepción OLE IDispatch 0 de ADODB.Recordset: La operación no está permitida si el objeto está abierto..
-Linea nº Orslista.CursorLocation   = 3  && adUseClient
- Alias CURPERFIL registro        252
-Control activo  MAIN
-11-09-2015 13:18:42 , Error nº:         13
-Error No se encuentra el alias 'CSRTEMPFECHACAEA'.
-Linea nº dFecha = TTOD(CsrTempFechaCAEA.fechafac)
- Alias CURPERFIL registro        252
-Control activo  MAIN
-11-09-2015 14:02:02 , Error nº:       1925
-Error _CBOMESFISCALDESDE es un miembro desconocido.
-Linea nº cMonth		= strzero(._cbomesfiscaldesde.Value,2)
- Alias CSRCAEA registro          1
-Control activo  INF_CAEA.ACEPTAR2.CLICK
-11-09-2015 14:02:32 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF nQuincena = 2
- Alias CSRCAEA registro          1
-Control activo  INF_CAEA.ACEPTAR2.CLICK
-16-09-2015 11:16:40 , Error nº:       1925
-Error PAGE1 es un miembro desconocido.
-Linea nº lcrubros  = .page1.kitgrillatildarrubros.cadenaelegidos()
- Alias _CSRPRODUCTO registro          1
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-16-09-2015 11:18:01 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF THIS.Cantidadelegidos=THIS.Cantidadtotal AND this.forzardevolucioncadena=.f.
- Alias _CSRPRODUCTO registro         29
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-16-09-2015 11:21:15 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF THIS.Cantidadelegidos=THIS.Cantidadtotal AND this.forzardevolucioncadena=.f.
- Alias _CSRPRODUCTO registro         29
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-16-09-2015 11:21:40 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF THIS.Cantidadelegidos=THIS.Cantidadtotal AND this.forzardevolucioncadena=.f.
- Alias _CSRPRODUCTO registro         29
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-25-09-2015 13:42:22 , Error nº:          1
-Error El archivo 'csrcursor.dbf' no existe.
-Linea nº SELECT idctacte,cnumero,cnombre,idarticulo,numero, nombre ,unibulto,idvariedad,variedad,kilos ,cantidad as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel FROM CsrCursor INTO CURSOR CsrImprimir READWRITE
- Alias _CSRCTACTE registro          2
-Control activo  LISCPRAARTI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-25-09-2015 13:43:58 , Error nº:          1
-Error El archivo 'csrcursor.dbf' no existe.
-Linea nº SELECT idctacte,cnumero,cnombre,idarticulo,numero, nombre ,unibulto,idvariedad,variedad,kilos ,cantidad as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel FROM CsrCursor INTO CURSOR CsrImprimir READWRITE
- Alias _CSRCTACTE registro          2
-Control activo  LISCPRAARTI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-09-2015 12:20:39 , Error nº:         41
 Error El archivo memo c:\xsoftsql\proyectos\leon\forms\exportar\genera_pala.sct no existe o no es válido.
 Linea nº 
@@ -904,6 +638,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -912,6 +651,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
 
 
 
@@ -1004,6 +748,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1012,6 +761,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
 
 
 
@@ -1104,6 +858,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1112,6 +871,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
 
 
 
@@ -1208,6 +972,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1216,6 +985,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
 
 
 
@@ -1306,6 +1080,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1314,6 +1093,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
 
 
 
@@ -1404,6 +1188,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1412,6 +1201,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
 
 
 
@@ -1550,6 +1344,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1558,6 +1357,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
 
 
 
@@ -1634,6 +1438,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1642,6 +1451,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
 
 
 
@@ -1718,6 +1532,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1726,6 +1545,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
 
 
 
@@ -1856,6 +1680,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1864,6 +1693,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
 
 
 
@@ -1928,6 +1762,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1936,6 +1775,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
 
 
 
@@ -2000,6 +1844,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2008,6 +1857,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
 
 
 
@@ -2119,6 +1973,11 @@ Linea nº SELECT 0 as idgrupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2189,6 +2048,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2197,6 +2061,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 =======
 >>>>>>> origin/master
 unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvendedor,nomvendedo
+
+
+
+
+
 
 
 
@@ -2305,7 +2174,17 @@ Error SQL: no se encuentra la columna 'IDINGBRUTOS'.
 Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
 
 
+
+
+
+
+
 gbrutos ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvended
+
+
+
+
+
 
 
 or,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo INTO CURSOR CsrImprimir READWRITE
@@ -2315,7 +2194,17 @@ Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 Error SQL: la cláusula GROUP BY falta o no es válida.
 Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
 
+
+
+
+
+
 gbrutos ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvended
+
+
+
+
+
 
 or,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        314
@@ -2325,7 +2214,48 @@ Error ESTADITICA es un miembro desconocido.
 Linea nº .estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos<>"+strtrim(CsrTipoIngBrutos.id),"")
  Alias _CSRPRODUCTO registro          1
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-22-08-2016 15:35:02 , Error nº:       1925Error ESTADITICA es un miembro desconocido.Linea nº .estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos<>"+strtrim(CsrTipoIngBrutos.id),"") Alias _CSRPRODUCTO registro          1Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+22-08-2016 15:35:02 , Error nº:       1925
+Error ESTADITICA es un miembro desconocido.
+Linea nº .estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos<>"+strtrim(CsrTipoIngBrutos.id),"")
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 =======
-12-08-2016 13:15:49 , Error nº:         13Error No se encuentra el alias 'CSRTEMPCAE'.Linea nº thisform.lbltimer.Caption = "Fecha Fac:"+DTOC(TTOD(CsrTempFechaCAEA.fechafac))+" CAEA Solicitado:"+CsrTempCAE.caea Alias CSRTEMPCAEA registro          1Control activo  MAIN
+12-08-2016 13:15:49 , Error nº:         13
+Error No se encuentra el alias 'CSRTEMPCAE'.
+Linea nº thisform.lbltimer.Caption = "Fecha Fac:"+DTOC(TTOD(CsrTempFechaCAEA.fechafac))+" CAEA Solicitado:"+CsrTempCAE.caea
+ Alias CSRTEMPCAEA registro          1
+Control activo  MAIN
 >>>>>>> origin/master
+13-09-2016 12:04:48 , Error nº:       1807
+Error SQL: la cláusula GROUP BY falta o no es válida.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(
+
+
+
+TotalNG-Promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbru
+
+
+
+tos INTO CURSOR CsrImprimir READWRITE
+ Alias CSRDATOS registro        206
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+13-09-2016 12:21:35 , Error nº:       1961
+Error Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.
+Linea nº MKDIR &goapp.rutasalidareporte
+ Alias CSRIMPRIMIR registro          3
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
+13-09-2016 12:22:16 , Error nº:       1961
+Error Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.
+Linea nº MKDIR &goapp.rutasalidareporte
+ Alias CSRIMPRIMIR registro          2
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
+13-09-2016 12:22:49 , Error nº:       1961
+Error Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.
+Linea nº MKDIR &goapp.rutasalidareporte
+ Alias CSRIMPRIMIR registro          2
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
+13-09-2016 12:25:46 , Error nº:       1961Error Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.Linea nº MKDIR &goapp.rutasalidareporte Alias CSRIMPRIMIR registro          2Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
