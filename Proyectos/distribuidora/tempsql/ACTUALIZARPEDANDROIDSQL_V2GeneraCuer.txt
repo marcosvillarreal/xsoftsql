@@ -1,9 +1,0 @@
-			SELECT cuepedido.id,idcabpedido,convert(int,cuepedido.codigoarticulo) as articulo_numero
-			,convert(int,idvariedad) as idvariedad,cantidad
-			,convert(int,cuepedido.univta) as univta,convert(int,cuepedido.estado) as estado
-			,observaciones,cuepedido.bonif1,cuepedido.bonif2
-			,precio
-			FROM CuePedido
-			left join articulos on cuepedido.idarticulo = articulos.id
-			Where idcabpedido in (126976)
-			Order by cuepedido.id

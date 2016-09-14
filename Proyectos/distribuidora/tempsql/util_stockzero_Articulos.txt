@@ -1,6 +1,0 @@
-SELECT CsrProducto.* 
-,ISNULL(CsrSubProducto.id,CAST(0 as int)) as idsubarti 
-,ISNULL(CsrSubProducto.idvariedad,CAST(0 as int)) as idvariedad 
-FROM producto as csrproducto
-left join subproducto as Csrsubproducto ON Csrproducto.id=ISNULL(csrsubproducto.idarticulo,0)
-WHERE Csrproducto.id>0

@@ -1,9 +1,0 @@
-SELECT distinct CsrMovStock.id
-FROM producto as csrproducto
-left join subproducto as Csrsubproducto ON Csrproducto.id=ISNULL(csrsubproducto.idarticulo,0)
-left join variedad as Csrvariedad on Csrsubproducto.idvariedad = Csrvariedad.id
-left join movstock as csrmovstock on Csrproducto.id = Csrmovstock.idarticulo and (csrsubproducto.id=ISNULL(csrmovstock.idsubarti,0) or csrmovstock.idsubarti=0)
-left join maopera as CsrMaopera on CsrMovStock.idmaopera = CsrMaopera.id
-Where CsrMaopera.estado=0 and CsrMaopera.clasecomp<>'K'
-and LEFT(CsrMovStock.switch,2) like '_1'
-and Csrproducto.id>0 

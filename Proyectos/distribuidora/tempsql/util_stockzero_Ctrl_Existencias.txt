@@ -1,6 +1,0 @@
-SELECT TOP 1 CsrExistenc.idarticulo
-FROM producto as csrproducto
-left join subproducto as Csrsubproducto ON Csrproducto.id=ISNULL(csrsubproducto.idarticulo,0)
-left join variedad as Csrvariedad on Csrsubproducto.idvariedad = Csrvariedad.id
-left join existenc as Csrexistenc on Csrproducto.id = Csrexistenc.idarticulo and (csrsubproducto.id=csrexistenc.idsubarti or (csrexistenc.idsubarti=0 and ISNULL(csrsubproducto.id,0)=0))
-WHERE Csrproducto.id>0 and CsrExistenc.iddeposito >=0 and (existe<>existedisp OR kilos<>kilosdisp)
