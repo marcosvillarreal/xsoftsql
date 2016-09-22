@@ -652,16 +652,16 @@ IF ntam>0 then
 	DIMENSION amatriz(ntam)
 ENDIF
 
-FUNCTION seek_dato
-PARAMETERS tcdatobuscado,tbtipobusqueda
-IF tbtipobusqueda
-	SET NEAR ON
-ELSE
-	SET NEAR OFF
-ENDIF
-SEEK(tcdatobuscado)
-SET NEAR OFF
-RETURN .T.
+*!*	FUNCTION seek_dato
+*!*	PARAMETERS tcdatobuscado,tbtipobusqueda
+*!*	IF tbtipobusqueda
+*!*		SET NEAR ON
+*!*	ELSE
+*!*		SET NEAR OFF
+*!*	ENDIF
+*!*	SEEK(tcdatobuscado)
+*!*	SET NEAR OFF
+*!*	RETURN .T.
 
 FUNCTION strzero
 PARAMETERS tcdato,tntamfinal,tndecimal
