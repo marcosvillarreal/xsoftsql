@@ -1568,12 +1568,12 @@ IF lok
 					
 					*Alamacenamos la copia
 					lcCopia = ADDBS(lcCurdir) + "copias"
-					OAVISAR.usuario(lcCopia)
+					*OAVISAR.usuario(lcCopia)
 					IF NOT DIRECTORY( lcCopia )
 						MKDIR &lcCopia
 					ENDIF 
 					lcGestCopia = ADDBS(lcCopia)+STRTRAN(TRIM(CsrSistema.programa),'.EXE','')+DTOS(DATE())+strzero(HOUR(DATETIME()),2)+strzero(MINUTE(DATETIME()),2)+'.EXE'
-					OAVISAR.usuario(lcGestCopia)
+					*OAVISAR.usuario(lcGestCopia)
 					COPY FILE &lcExe TO &lcGestCopia
 					
 					oShell = createobject("WScript.Shell")					 

@@ -10,7 +10,7 @@ nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
 *===================
 
 set classlib to
-l='c:'
+l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 
@@ -198,8 +198,8 @@ IF TYPE('goApp')='O'
 	   	 
 	*IF !lldesarrollo	
 		SET SYSMENU TO
-		DO FORM guardaexe_idprograma
-		*DO FORM guardaexe
+		*DO FORM guardaexe_idprograma
+		DO FORM guardaexe
 	*ENDIF 
 		   
 	_screen.visible=.t.	   
