@@ -1493,13 +1493,24 @@ RETURN .t.
 
 
 FUNCTION CrearCursorAdapter
-PARAMETERS lcaliasCursor,lccmdSelectCursor,cursorbuffermodeoverride
+PARAMETERS lcaliasCursor,lccmdSelectCursor,cursorbuffermodeoverride,lbCartel
 
 IF USED(lcaliasCursor)
    USE IN (lcaliasCursor)
 ENDIF
 
-cursorbuffermodeoverride = IIF(PCOUNT()<3,5,cursorbuffermodeoverride)
+&&Si se obvia el parametro del buffer.
+&&trae un falso. Asi que lo tomamos como un objeto.
+IF PCOUNT()<3
+	cursorbuffermodeoverride = 5
+ELSE
+	IF VARTYPE(loCursorbuffermodeoverride)='N'
+		cursorbuffermodeoverride = loCursorbuffermodeoverride
+	ELSE
+		cursorbuffermodeoverride = 5
+	ENDIF 
+ENDIF 
+lbcartel				=  IIF(PCOUNT()<4,.t.,lbCartel)
 
 lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(13)," ")
@@ -1529,7 +1540,7 @@ LOCAL lreturn
 lreturn = .f.
 
 IF !OCAlista.CursorFill()
-	IF AERROR(laError) > 0
+	IF AERROR(laError) > 0 AND lbCartel 
 		=Oavisar.Usuario("Error al obtener datos:"+laError[2]+" alias "+lcaliasCursor+CHR(13)+lccmdSelectCursor,0)
 	ENDIF
 ELSE
