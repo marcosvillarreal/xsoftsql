@@ -1498,7 +1498,7 @@ PARAMETERS lcaliasCursor,lccmdSelectCursor,loCursorbuffermodeoverride,lbCartel
 IF USED(lcaliasCursor)
    USE IN (lcaliasCursor)
 ENDIF
-stop()
+
 
 &&Si se obvia el parametro del buffer.
 &&trae un falso. Asi que lo tomamos como un objeto.
