@@ -1,0 +1,62 @@
+COMPEL
+
+	-ABMMARCAS ... AGREGAR GRILLATILDAR/AGREGAR(1) CON RUBROS
+	-ABMRUBROS ... AGREGAR [1]MARCAS Y [1] FAMILIAS
+	-ABMFAMILIAS ... AGREGAR [1]RUBROS Y [1] TIPOS
+	-ABMTIPOS	... AGERGAR [1] FAMILIAS
+	
+	Crear Tablas Familias Tipos
+		Familia*
+			id
+			nombre
+			numero
+			switch c(5)
+		CategoTipo*
+			id
+			numero
+			nombre
+			switch c(5)
+			
+	Crear Asociacion Marcas-Rubros Rubros-Familia Familia-Tipo
+		AfeCateProd*
+			id
+			idpadre
+			idhijo
+			clave c(2)
+			switch c(5)
+			estado n(1) clave
+
+			
+	Crear ProductoDeta*
+		idarticulo
+		Descripcion varchar(500)
+		Switch c(5)   '0' Descripcion '1' Comentario
+		
+	Modf Productos*
+		codinterno '@@@@000' codalfa c(7)
+		codalfaprov c(15)
+		idfamilia
+		idcatetipo
+		cotidolar
+		precioendolar n(1) (.ENDOLAR)
+		
+	Modf CbioPrecio*
+		Cotidolar
+		precioendolar n(1) (.ENDOLAR)
+		
+		
+	Preguntas del proceso de venta
+	 Cuando se compromete la mercaderia que esta reservada para una venta? Orden de Venta.
+	 
+	 Cabefac*
+		EstadoOrdenDeVenta
+		
+	Regfaccpra
+		-Sacamos el bloqueo por proveedor para facturar un producto.
+		-En los listados... cuando se pide proveedor para el producto. 
+			Que hacenos si le facturo uno que no esta en al abm?
+			
+
+
+	 
+		

@@ -1,0 +1,20 @@
+DO setup
+SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
+SET PROCEDURE  TO  syserror.prg ADDITIVE 
+SET PROCEDURE  TO  recursi.prg ADDITIVE 
+
+CREATE CURSOR CsrPrueba (switch c(5))
+INSERT INTO CsrPrueba VALUES ('AD')
+INSERT INTO CsrPrueba VALUES ('AA')
+INSERT INTO CsrPrueba VALUES ('AP')
+INSERT INTO CsrPrueba VALUES ('AB')
+lcNombre = 'ADAP'
+lcDato = ""
+IF Recursividad('CsrPrueba',lcNombre,2,2,"",@lcDato)
+	?'El dato es: '+lcDato
+ELSE
+	lcNombre = lcDato+'AB'
+	lcDato = ""
+	Recursividad('CsrPrueba',lcNombre,2,2,"",@lcDato)
+	?'El dato2 es: '+lcDato
+ENDIF 	
