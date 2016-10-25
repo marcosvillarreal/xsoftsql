@@ -498,8 +498,9 @@ ENDIF
 IF LEN(LTRIM(lcArchivo))=0
 	RETURN 
 ENDIF 
+lldesarrollo=(_vfp.startmode()#4)
 lcRuta = SYS(5)+ "\tempsql\"+ALLTRIM(goapp.initcatalo)
-IF VARTYPE(goapp.rutaaplicacion)$'C'
+IF VARTYPE(goapp.rutaaplicacion)$'C' AND NOT lldesarrollo
 	lcRutaApli = IIF(LEN(ALLTRIM(goapp.rutaaplicacion))#0,goapp.rutaaplicacion,"")
 	lcRutaApli = RTRIM(lcRutaApli) + IIF(RIGHT(lcRutaApli,1)="\" or LEN(LTRIM(lcRutaApli))=0,"","\") &&Si es vacio o tiene \. Mantiene lo mismo.
 	lcRuta = IIF(LEN(LTRIM(lcRutaApli))#0,lcRutaApli+ "tempsql",lcRuta)	
