@@ -1,849 +1,3 @@
-22-09-2016 16:22:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 16:22:58 , Objeto      : regfacvta_cae.key_43
-22-09-2016 16:22:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 16:22:58 , Nº de Linea :          8
-22-09-2016 16:22:58 , En el Fuente: 	thisform.actualizar()
-22-09-2016 16:22:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 16:22:58 , Objeto      : regfacvta_cae.actualizar
-22-09-2016 16:22:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 16:22:58 , Nº de Linea :        198
-22-09-2016 16:22:58 , En el Fuente: 						IF .SolicitoCAE()
-22-09-2016 16:22:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 16:22:59 , Objeto      : regfacvta_cae.solicitocae
-22-09-2016 16:22:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 16:22:59 , Nº de Linea :         18
-22-09-2016 16:22:59 , En el Fuente: this.oFacCAE.fac_solicitacae()
-22-09-2016 16:22:59 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-22-09-2016 16:22:59 , Objeto      : regfacvta_cae.ofaccae.fac_solicitacae
-22-09-2016 16:22:59 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-22-09-2016 16:22:59 , Nº de Linea :          1
-22-09-2016 16:22:59 , En el Fuente: this.solicitar_cae()
-22-09-2016 16:22:59 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-22-09-2016 16:23:00 , Objeto      : regfacvta_cae.ofaccae.solicitar_cae
-22-09-2016 16:23:00 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-22-09-2016 16:23:00 , Nº de Linea :          8
-22-09-2016 16:23:00 , En el Fuente: 		this.solicitar_proceso()
-22-09-2016 16:23:00 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-22-09-2016 16:23:00 , Objeto      : regfacvta_cae.ofaccae.solicitar_proceso
-22-09-2016 16:23:00 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-22-09-2016 16:23:00 , Nº de Linea :         76
-22-09-2016 16:23:00 , En el Fuente: 		cDocumento		= strtrim(OscCabefac.dni)
-22-09-2016 17:02:37 , MAIN, Error: No se encuentra la variable 'CCUIT_CAPTION'.;Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Ex
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tra02,Extra03,Extra04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007,HeadTot001 ,EmpresaRamo,EmpresaNom,E
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,DetaReparto,EmpresaCuit,Cuit_Caption ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-dyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTip
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-oCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit ,cCuit_Caption);Error :         12;Ultimo Alias Activo: CSRCABECARTEL;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00009QFD04ID.TMP;Ultimo Control activo: 
-22-09-2016 17:02:37 , Pila de llamadas
-22-09-2016 17:02:38 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-22-09-2016 17:02:38 , Objeto      : main
-22-09-2016 17:02:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-22-09-2016 17:02:38 , Nº de Linea :        285
-22-09-2016 17:02:38 , En el Fuente: 	Read events   
-22-09-2016 17:02:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 17:02:38 , Objeto      : regfacvta_cae.cmdimprimir.click
-22-09-2016 17:02:39 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-22-09-2016 17:02:39 , Nº de Linea :         35
 22-09-2016 17:02:39 , En el Fuente: 			.imprimir(thisform.lcimpresora,loimpresoraelegida.tipo,2)	
 22-09-2016 17:02:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 22-09-2016 17:02:39 , Objeto      : regfacvta_cae.imprimir
@@ -865,6 +19,22 @@ oCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit ,cCuit_Capti
 22-09-2016 17:02:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
 22-09-2016 17:02:41 , Nº de Linea :        259
 22-09-2016 17:02:41 , En el Fuente: 	INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp			,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono			,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06			,BodyIm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1166,7 +336,39 @@ p001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck			,DetaHoja,DetaReparto,EmpresaCuit,Cuit_Caption )	VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1)			,cComprobante,cFecCompr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1468,7 +670,39 @@ oba,cNumComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoi
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 06,cBodyImp007,cBodyTot001,cBodyTot002			,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005			,cHeadImp006,cHeadImp007,cHeadTot001			,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA			,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1785,6 +1019,22 @@ a			,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit			,cCuit_Caption)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 : 
 22-09-2016 17:38:39 , Pila de llamadas
 22-09-2016 17:38:40 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -1951,6 +1201,22 @@ a			,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit			,cCuit_Caption)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .TMP;Ultimo Control activo: 
 27-09-2016 22:28:15 , Pila de llamadas
 27-09-2016 22:28:15 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
@@ -1964,6 +1230,22 @@ a			,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit			,cCuit_Caption)
 27-09-2016 22:28:16 , Nº de Linea :         11
 27-09-2016 22:28:16 , En el Fuente: SELECT CsrSeteo
 17-10-2016 10:57:02 , MAIN, Error: No se encuentra el alias 'CSRCTACTE'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          4 ID;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2241,6 +1523,22 @@ P\0000AM1500PH.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\000049AH02GR.TMP;Ultimo Control activo: 
 20-10-2016 14:50:39 , Pila de llamadas
 20-10-2016 14:50:39 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2249,6 +1547,22 @@ mo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\000049AH02GR.TMP
 20-10-2016 14:50:39 , Nº de Linea :          1
 20-10-2016 14:50:40 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 20-10-2016 15:21:44 , CBIOPRECIO1.INIT, Error: No se encuentra la propiedad COSTOAGREGADO.;Linea : lObjprecio.costoagregado	= ._txtcostoagre.Value;Error :       1734;Ultimo Alias Activo: CSRPRODPRECIO;Ultimo registro:          2 CNOMBRE;DBF: C:\USERS\CHI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2513,6 +1827,22 @@ VI\APPDATA\LOCAL\TEMP\00008U890060.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 VI\APPDATA\LOCAL\TEMP\00008U89007W.TMP;Ultimo Control activo: 
 20-10-2016 15:26:49 , Pila de llamadas
 20-10-2016 15:26:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio1_4.sct
@@ -2541,6 +1871,22 @@ VI\APPDATA\LOCAL\TEMP\00008U89007W.TMP;Ultimo Control activo:
 20-10-2016 15:26:52 , Nº de Linea :         47
 20-10-2016 15:26:52 , En el Fuente: 	lObjprecio.costoagregado	= ._txtcostoagre.Value
 20-10-2016 15:28:03 , CBIOPRECIO1.INIT, Error: No se encuentra el alias 'LOBJPRODUCTO'.;Linea : lObjprecio.prevtacon  = lObjProducto.prevtacon;Error :         13;Ultimo Alias Activo: CSRPRODPRECIO;Ultimo registro:          2 CNOMBRE;DBF: C:\USERS\CHIVI\A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2773,6 +2119,22 @@ PPDATA\LOCAL\TEMP\00008U8900B9.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 P\00008U8900FS.TMP;Ultimo Control activo: 
 20-10-2016 15:31:05 , Pila de llamadas
 20-10-2016 15:31:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio1_4.sct
@@ -2806,6 +2168,22 @@ P\00008U8900FS.TMP;Ultimo Control activo:
 20-10-2016 15:31:09 , Nº de Linea :          4
 20-10-2016 15:31:09 , En el Fuente: nCostoA		= lObjPrecio.costoagre
 20-10-2016 15:31:35 , CBIOPRECIO1.INIT, Error: No se encuentra la variable 'NBONIFLISTA'.;Linea : nPreVtaI	= red(nPrevta/red(1 + (nBonifLista/100),this.decimales),this.decimales);Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3005,6 +2383,22 @@ P\00008U8900FS.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 VI\APPDATA\LOCAL\TEMP\00008U8900L4.TMP;Ultimo Control activo: CNOMBRE
 20-10-2016 15:32:39 , Pila de llamadas
 20-10-2016 15:32:40 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
@@ -3028,6 +2422,22 @@ VI\APPDATA\LOCAL\TEMP\00008U8900L4.TMP;Ultimo Control activo: CNOMBRE
 20-10-2016 15:32:41 , Nº de Linea :          3
 20-10-2016 15:32:41 , En el Fuente: lobjprecio.tipoflete = 'I' &&CsrProdPrecio.tipoflete
 20-10-2016 15:43:24 , CBIOPRECIO1.INIT, Error: No se encuentra la variable '_MCOSTOBON'.;Linea : lObjprecio.boniftotal      = red((mcosto-_mcostobon)/mcosa*100 ,this.decimales);Error :         12;Ultimo Alias Activo: CSRPRODPRECIO;Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3198,6 +2608,22 @@ VI\APPDATA\LOCAL\TEMP\00008U8900L4.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  CNOMBRE;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008U89010E.TMP;Ultimo Control activo: 
 20-10-2016 15:43:45 , Pila de llamadas
 20-10-2016 15:43:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio1_4.sct
@@ -3286,6 +2712,22 @@ VI\APPDATA\LOCAL\TEMP\00008U8900L4.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00008U8902Q8.TMP;Ultimo Control activo: 
 20-10-2016 16:33:37 , Pila de llamadas
 20-10-2016 16:33:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio1_4.sct
@@ -3294,6 +2736,22 @@ VI\APPDATA\LOCAL\TEMP\00008U8900L4.TMP;Ultimo Control activo: CNOMBRE
 20-10-2016 16:33:38 , Nº de Linea :         19
 20-10-2016 16:33:38 , En el Fuente: 	.agregaobjeto.objseteoparam(@lObjeto)
 26-10-2016 13:00:06 , ABMPRODUCTO.KEYPRESS, Error: No se encuentra la variable 'COSTOREPO'.;Linea : lobjPrecioactual.AddProperty('costoreposicion',Csrproducto.costorepo);Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          2 NOMB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3415,7 +2873,39 @@ RE;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B30P01R0.TMP;Ultimo Control activo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as nom_rubro ,SPACE(30) as nom_famili ,SPACE(30) as nom_tipo ,fechapre FROM CsrAuxArticulo WHERE nombre LIKE('&cValor') INTO CURSOR CsrAuxCursor READWRITE;Error :       1806;Ultimo Alias Activo: CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\COMERCI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3517,6 +3007,22 @@ O\FUENTES\ARTICULO.DBF;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		FROM CsrAuxArticulo WHERE nombre LIKE('&cValor') INTO CURSOR CsrAuxCursor READWRITE  
 26-10-2016 13:11:16 , ACTUALIZADOR.CMDBUSCAR.CLICK, Error: No se encuentra el alias 'CSRAUXCURSOR'.;Linea : SELECT CsrAuxCursor;Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 26-10-2016 13:11:17 , Pila de llamadas
@@ -3531,6 +3037,22 @@ O\FUENTES\ARTICULO.DBF;Ultimo Control activo:
 26-10-2016 13:11:18 , Nº de Linea :         53
 26-10-2016 13:11:18 , En el Fuente: SELECT CsrAuxCursor 
 26-10-2016 17:54:26 , ABMPRODUCTO.CMDAGREGAR.CLICK, Error: No se encuentra la variable 'PREVTA1'.;Linea : REPLACE idctacte WITH NVL(idctacte,0),idctavta WITH NVL(idctavta,0),idctacpra WITH NVL(idctavta,0),idorigen WITH NVL(idorigen,1) ,idrubro WITH NVL(i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3608,6 +3130,22 @@ drubro,1),idcatego WITH NVL(idcatego,1),idiva WITH NVL(idiva,1),idtamano WITH NV
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,prevta1 WITH NVL(prevta1,0),prevta2 WITH NVL(prevta2,0),prevta3 WITH NVL(prevta3,0),prevta3 WITH NVL(prevta3,0) ,prevta4 WITH NVL(prevta4,0),margen1 WITH NVL(margen1,0),margen2 WITH NVL(margen2,0),margen3 WITH NVL(margen3,0),margen4 WITH NVL(margen4,0) 
 
 
@@ -3647,7 +3185,39 @@ drubro,1),idcatego WITH NVL(idcatego,1),idiva WITH NVL(idiva,1),idtamano WITH NV
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,switch WITH 'NNNNNNNNNN',nofactura WITH NVL(nofactura,0),nolista WITH NVL(nolista,0) IN Csrproducto;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000085QH001W.TMP;Ultimo Control a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3733,7 +3303,39 @@ ctivo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o WITH NVL(idtamano,1),feculvta WITH DATETIME(),idtipovta WITH NVL(idtipovta,1),idtprod WITH NVL(idtprod,1),idubicacio WITH NVL(idubicacio,1),idestado WITH 1,costo WITH NVL(costo,0),prevta1 WITH NVL(prevta1,0),prevta2 WITH NVL(prevta2,0),prevta3 WITH NVL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3805,8 +3407,40 @@ o WITH NVL(idtamano,1),feculvta WITH DATETIME(),idtipovta WITH NVL(idtipovta,1),
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 nolista,0) IN Csrproducto
 26-10-2016 17:55:42 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.CLICK, Error: PAGE2 es un miembro desconocido.;Linea : .page2.refresh();Error :       1925;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3880,6 +3514,22 @@ nolista,0) IN Csrproducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0085QH001W.TMP;Ultimo Control activo: 
 26-10-2016 17:56:18 , Pila de llamadas
 26-10-2016 17:56:22 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -3888,6 +3538,22 @@ nolista,0) IN Csrproducto
 26-10-2016 17:56:22 , Nº de Linea :         25
 26-10-2016 17:56:22 , En el Fuente: 	.page2.refresh()
 27-10-2016 18:26:07 , ACTUALIZADOR.CMDINSERTAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec));Error :         11;Ultimo Alias Activo: CSRAUXCURSOR;Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3958,6 +3624,22 @@ nolista,0) IN Csrproducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004MX500UF.TMP;Ultimo Control activo: 
 27-10-2016 18:26:37 , Pila de llamadas
 27-10-2016 18:26:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\otros\actualizador.sct
@@ -3971,6 +3653,22 @@ tro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004MX500UF.TMP;Ultimo 
 27-10-2016 18:26:43 , Nº de Linea :         38
 27-10-2016 18:26:45 , En el Fuente: 			cCod = cCod + cSep + strtrim(CsrAuxCursor.codigo_pro)
 27-10-2016 18:28:28 , ACTUALIZADOR.CMDINSERTAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec));Error :         11;Ultimo Alias Activo: CSRAUXCURSOR;Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4024,6 +3722,22 @@ tro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004MX500UF.TMP;Ultimo 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TC90098.TMP;Ultimo Control activo: 
 27-10-2016 18:36:07 , Pila de llamadas
 27-10-2016 18:36:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\otros\actualizador.sct
@@ -4042,6 +3756,22 @@ tro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004MX500UF.TMP;Ultimo 
 27-10-2016 18:36:18 , Nº de Linea :        529
 27-10-2016 18:36:20 , En el Fuente: RETURN ALLTRIM(STR(lnValor,lnTam,lnDec))
 27-10-2016 18:36:44 , ACTUALIZADOR.CMDINSERTAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : cCod = cCod + cSep + strtrim(CsrAuxCursor.numero,8);Error :        107;Ultimo Alias Activo: CSRAUXCURSOR;Ultimo registr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4071,6 +3801,22 @@ o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TC90098.TMP;Ultimo Co
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EMP\00002TC900GT.TMP;Ultimo Control activo: 
 27-10-2016 18:38:45 , Pila de llamadas
 27-10-2016 18:38:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\otros\actualizador.sct
@@ -4087,6 +3833,22 @@ EMP\00002TC900GT.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 F;Ultimo Control activo: 
 27-10-2016 18:58:33 , Pila de llamadas
 27-10-2016 18:58:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\otros\actualizador.sct
@@ -4099,3 +3861,89 @@ F;Ultimo Control activo:
 27-10-2016 18:58:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\otros\actualizador.sct
 27-10-2016 18:58:41 , Nº de Linea :         29
 27-10-2016 18:58:41 , En el Fuente: 				GO CsrAuxCursor.registro
+10-11-2016 11:36:00 , ABMRUBROS._TEXTBOX1.KEYPRESS, Error: _TXTABREVIA es un miembro desconocido.;Linea : thisform.contenedor1.pframe1.page1._txtabrevia.Value = LEFT(lcSwitch,lnLeft);Error :       1925;Ultimo Alias Activo: CSRRUBROCTACON;Ultimo registro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006TQH00CC.TMP;Ultimo Control activo: NOMBRE
+10-11-2016 11:36:00 , Pila de llamadas
+10-11-2016 11:36:01 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:36:01 , Objeto      : abmrubros._textbox1.keypress
+10-11-2016 11:36:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:36:01 , Nº de Linea :        125
+10-11-2016 11:36:01 , En el Fuente: 	    ThisForm.Buscarcmd1.Buscar(.F.,ALLTRIM(this.Value))
+10-11-2016 11:36:01 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+10-11-2016 11:36:01 , Objeto      : abmrubros.buscarcmd1.buscar
+10-11-2016 11:36:01 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+10-11-2016 11:36:01 , Nº de Linea :         90
+10-11-2016 11:36:01 , En el Fuente: 	loGrid.setfocus()
+10-11-2016 11:36:02 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:36:02 , Objeto      : abmrubros.contenedor1.gridabm1.afterrowcolchange
+10-11-2016 11:36:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:36:02 , Nº de Linea :         21
+10-11-2016 11:36:02 , En el Fuente: 	     .ProcesarAfterRow()
+10-11-2016 11:36:02 , Programa    : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
+10-11-2016 11:36:02 , Objeto      : abmrubros.procesarafterrow
+10-11-2016 11:36:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
+10-11-2016 11:36:03 , Nº de Linea :         25
+10-11-2016 11:36:03 , En el Fuente: 	thisform.contenedor1.pframe1.page1._txtabrevia.Value = LEFT(lcSwitch,lnLeft)
+10-11-2016 11:44:29 , ABMRUBROS.CMDSALVAR.CLICK, Error: CHKPERCEIBRUTO es un miembro desconocido.;Linea : lnperce = thisform.contenedor1.pframe1.page1.chkperceibruto.Value;Error :       1925;Ultimo Alias Activo: CSROTROCODIGO;Ultimo registro:          1 
+
+
+
+
+
+
+
+
+
+;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006TQH03KY.TMP;Ultimo Control activo: 
+10-11-2016 11:44:29 , Pila de llamadas
+10-11-2016 11:44:29 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:44:29 , Objeto      : abmrubros.cmdsalvar.click
+10-11-2016 11:44:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:44:29 , Nº de Linea :          9
+10-11-2016 11:44:29 , En el Fuente: 		llok=.salvar()
+10-11-2016 11:44:29 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:44:29 , Objeto      : abmrubros.salvar
+10-11-2016 11:44:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:44:30 , Nº de Linea :         19
+10-11-2016 11:44:30 , En el Fuente:    llok=thisform.validar()
+10-11-2016 11:44:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
+10-11-2016 11:44:30 , Objeto      : abmrubros.validar
+10-11-2016 11:44:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
+10-11-2016 11:44:31 , Nº de Linea :         22
+10-11-2016 11:44:31 , En el Fuente: 	lnperce = thisform.contenedor1.pframe1.page1.chkperceibruto.Value
+10-11-2016 11:45:28 , ABMRUBROS.CMDSALVAR.CLICK, Error: CHKPERCEIBRUTO es un miembro desconocido.;Linea : lnperce = thisform.contenedor1.pframe1.page1.chkperceibruto.Value;Error :       1925;Ultimo Alias Activo: CSROTROCODIGO;Ultimo registro:          1 
+
+
+
+;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006TQH03VL.TMP;Ultimo Control activo: 
+10-11-2016 11:45:29 , Pila de llamadas
+10-11-2016 11:45:29 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:45:29 , Objeto      : abmrubros.cmdsalvar.click
+10-11-2016 11:45:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:45:30 , Nº de Linea :          9
+10-11-2016 11:45:30 , En el Fuente: 		llok=.salvar()
+10-11-2016 11:45:30 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:45:30 , Objeto      : abmrubros.salvar
+10-11-2016 11:45:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
+10-11-2016 11:45:30 , Nº de Linea :         19
+10-11-2016 11:45:30 , En el Fuente:    llok=thisform.validar()
+10-11-2016 11:45:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
+10-11-2016 11:45:30 , Objeto      : abmrubros.validar
+10-11-2016 11:45:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
+10-11-2016 11:45:30 , Nº de Linea :         22
+10-11-2016 11:45:30 , En el Fuente: 	lnperce = thisform.contenedor1.pframe1.page1.chkperceibruto.Value
