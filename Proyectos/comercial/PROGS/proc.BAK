@@ -5,6 +5,7 @@ FUNCTION pelocuit
 PARAMETERS lccuit
 lccuit=ALLTRIM(STRTRAN(lccuit,'-',''))
 lccuit=ALLTRIM(STRTRAN(lccuit,'/',''))
+lccuit=ALLTRIM(STRTRAN(lccuit,'.',''))
 lccuit=LEFT(lccuit+space(11),11)
 RETURN lccuit
 
