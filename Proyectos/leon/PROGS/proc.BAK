@@ -1526,6 +1526,23 @@ ENDIF
 
 =LeerDatosEmpresa()
 
+IF USED('CsrPAraVario')
+	USE IN CsrPAraVario
+ENDIF 
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrParaVario.* FROM paravario as CsrParavario WHERE idorigen = <<Goapp.terminal>> and nombre='REPORTE<<strzero(goapp.terminal,4)>>'
+ENDTEXT 
+IF CrearCursorAdapter("Csrparavario",lcCmd)
+	IF RECCOUNT('csrparavario')#0
+		goapp.rutasalidareporte = CsrParaVario.detalle
+	ENDIF 
+ENDIF
+ 
+IF USED('CsrPAraVario')
+	USE IN CsrPAraVario
+ENDIF 
+
 RETURN .t.
 
 
@@ -1565,6 +1582,7 @@ IF lok
 	Goapp.empresautisobreinterno	= IIF(CsrEmpresa.utisobreinterno=1,.t.,.f.)
 	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',IIF(goapp.ldesarrollo,"",SYS(5)+CURDIR()))
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
+	goApp.empresaconvenio			= DefaultVar('CsrEmpresa.esconvenio',.f.)
 ENDIF
 
 
