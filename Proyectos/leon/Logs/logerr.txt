@@ -104,996 +104,6 @@
 
 
 
->>>>>>> origin/master
-
-
-
-
-
-
-
-
-
-
-bro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idingbrutos ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
-ivo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00007THL00DF.TMP;Ultimo Control activo: 
-04-08-2016 16:59:02 , Pila de llamadas
-04-08-2016 16:59:02 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-04-08-2016 16:59:02 , Objeto      : est_ventadevolucion.imprimir_vistaprevia1.impresora.click
-04-08-2016 16:59:02 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-04-08-2016 16:59:03 , Nº de Linea :          5
-04-08-2016 16:59:03 , En el Fuente: 	llOK=thisform.CrearInforme()
-04-08-2016 16:59:03 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-04-08-2016 16:59:03 , Objeto      : est_ventadevolucion.crearinforme
-04-08-2016 16:59:03 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-04-08-2016 16:59:03 , Nº de Linea :         17
-04-08-2016 16:59:03 , En el Fuente: SELECT 0 as Grupo,CsrAux.* from CsrAux       order by Grupo into cursor CsrImprimir READWRITE 
-05-08-2016 14:23:49 , EST_VENTADEVOLUCION.INIT, Error: TXTPORDESDE es un miembro desconocido.;Linea : thisform.txtpordesde.Value=100.00;Error :       1925;Ultimo Alias Activo: _CSRPRODUCTO;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\MARCO\APPDATA\L
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> origin/master
-
-
-
-
-
-
-
-
- ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo INTO CURSOR CsrImprimir READW
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
-OCAL\TEMP\0000DH5500QR.TMP;Ultimo Control activo: 
-05-08-2016 14:23:49 , Pila de llamadas
-05-08-2016 14:23:49 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-05-08-2016 14:23:49 , Objeto      : est_ventadevolucion.init
-05-08-2016 14:23:49 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-05-08-2016 14:23:50 , Nº de Linea :          2
-05-08-2016 14:23:50 , En el Fuente: thisform.txtpordesde.Value=100.00
-05-08-2016 14:25:20 , EST_VENTADEVOLUCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'NOMCTACTE'.;Linea : SELECT 1 as grupohoja,idvendedor,nomvendedor,idctacte,nomctacte,idrubro,nomrubro,codigo,articulo,unidades,vtakilo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> origin/master
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
-s,costosiva,importefinal,devolucion FROM CsrAuxiliar INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000DH5500RO.TMP;Ultimo Control activo: 
-05-08-2016 14:25:21 , Pila de llamadas
-05-08-2016 14:25:22 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-05-08-2016 14:25:22 , Objeto      : est_ventadevolucion.imprimir_vistaprevia1.impresora.click
-05-08-2016 14:25:22 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-05-08-2016 14:25:22 , Nº de Linea :          5
-05-08-2016 14:25:22 , En el Fuente: 	llOK=thisform.CrearInforme()
-05-08-2016 14:25:22 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-05-08-2016 14:25:22 , Objeto      : est_ventadevolucion.crearinforme
-05-08-2016 14:25:23 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-05-08-2016 14:25:23 , Nº de Linea :         10
-05-08-2016 14:25:23 , En el Fuente: 	this.crearlistado()
-05-08-2016 14:25:23 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-05-08-2016 14:25:24 , Objeto      : est_ventadevolucion.crearlistado
-05-08-2016 14:25:24 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventadevolucion.sct
-05-08-2016 14:25:24 , Nº de Linea :         58
-05-08-2016 14:25:24 , En el Fuente: 	 SELECT 1 as grupohoja,idvendedor,nomvendedor,idctacte,nomctacte,idrubro,nomrubro,codigo,articulo,unidades,vtakilos,costosiva,importefinal,devolucion	 FROM CsrAuxiliar INTO CURSOR CsrImprimir READWRITE 
-05-08-2016 14:28:54 , EST_VENTADEVOLUCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csraux.dbf' no existe.;Linea : SELECT 0 as Grupo,CsrAux.* from CsrAux order by Grupo into cursor CsrImprimir READWRITE;Error :          1;Ultimo Alias Act
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> origin/master
-
-RITE;Error :       1806;Ultimo Alias Activo: CSRAUX;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000C1E1002N.TMP;Ultimo Control activo: 
-22-08-2016 13:44:42 , Pila de llamadas
-22-08-2016 13:44:43 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-22-08-2016 13:44:44 , Objeto      : est_margenutil.imprimir_vistaprevia1.impresora.click
-22-08-2016 13:44:44 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-22-08-2016 13:44:44 , Nº de Linea :          5
-22-08-2016 13:44:44 , En el Fuente: 	llOK=thisform.CrearInforme()
-22-08-2016 13:44:45 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_margenutil.sct
-22-08-2016 13:44:46 , Objeto      : est_margenutil.crearinforme
-22-08-2016 13:44:46 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_margenutil.sct
-22-08-2016 13:44:47 , Nº de Linea :         68
-22-08-2016 13:44:48 , En el Fuente: SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca,idarticulo,INT(VAL(codigo)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-) as codigo,articulo,idingbrutos,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinalFROM Csraux GROUP BY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1150,6 +160,26 @@ RITE;Error :       1806;Ultimo Alias Activo: CSRAUX;Ultimo registro:          1 
 
  idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articuloINTO CURSOR CsrImprimir READWRITE 
 22-08-2016 15:04:08 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1431,7 +461,47 @@ ubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 s ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo INTO CURSOR CsrImprimir READ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1721,7 +791,47 @@ WRITE;Error :       1807;Ultimo Alias Activo: CSRDATOS;Ultimo registro:        3
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinalFROM Csraux GROUP BY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1997,6 +1107,26 @@ WRITE;Error :       1807;Ultimo Alias Activo: CSRDATOS;Ultimo registro:        3
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 5;Ultimo Alias Activo: _CSRPRODUCTO;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000C1E100RI.TMP;Ultimo Control activo: 
 22-08-2016 15:33:13 , Pila de llamadas
 22-08-2016 15:33:14 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2010,6 +1140,26 @@ WRITE;Error :       1807;Ultimo Alias Activo: CSRDATOS;Ultimo registro:        3
 22-08-2016 15:33:15 , Nº de Linea :         32
 22-08-2016 15:33:16 , En el Fuente: 	.estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos<>"+strtrim(CsrTipoIngBrutos.id),"")
 22-08-2016 15:35:03 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: ESTADITICA es un miembro desconocido.;Linea : .estaditica.filtro = IIF(CsrTipoIngBrutos.id#9,"CsrProducto.idingbrutos<>"+strtrim(CsrTipoIngBrutos.id),"");Error :       192
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2300,6 +1450,26 @@ ivo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00003TVT05T8.TMP;Ultimo Control activo: 
 12-08-2016 13:15:50 , Pila de llamadas
 12-08-2016 13:15:50 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -2314,6 +1484,26 @@ o registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00003TVT05T8.TMP;
 12-08-2016 13:15:51 , En el Fuente: 		thisform.lbltimer.Caption = "Fecha Fac:"+DTOC(TTOD(CsrTempFechaCAEA.fechafac))+" CAEA Solicitado:"+CsrTempCAE.caea
 >>>>>>> origin/master
 13-09-2016 12:04:49 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2571,6 +1761,26 @@ ubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 os) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY suc
 
 
@@ -2700,7 +1910,47 @@ os) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRDATOS;Ultimo registro:        206 ;DBF: C:\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2965,7 +2215,47 @@ USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B1MX00P6.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia,CAST(0 as n(11,2)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3215,8 +2505,48 @@ as margen,sum(round(TotalNG-Promocion,2)) as importefinalFROM Csraux LEFT JOIN C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 articulo,idingbrutosINTO CURSOR CsrImprimir READWRITE 
 13-09-2016 12:21:35 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK, Error: Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.;Linea : MKDIR &goapp.rutasalidareporte;Error :       1961;Ultimo Alias Activo: CSRIMPRI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3472,6 +2802,26 @@ MIR;Ultimo registro:          3 STR(SUCURSAL)+STR(IDVENDEDOR)+STR(IDCTACTE)+STR(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MIR;Ultimo registro:          2 STR(SUCURSAL)+STR(IDVENDEDOR)+STR(IDCTACTE)+STR(IDRUBRO)+STR(IDMARCA)+STR(CODIGO);DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B1MX01YH.TMP;Ultimo Control activo: 
 13-09-2016 12:22:16 , Pila de llamadas
 13-09-2016 12:22:16 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3485,6 +2835,26 @@ MIR;Ultimo registro:          2 STR(SUCURSAL)+STR(IDVENDEDOR)+STR(IDCTACTE)+STR(
 13-09-2016 12:22:17 , Nº de Linea :         15
 13-09-2016 12:22:17 , En el Fuente: 		MKDIR &goapp.rutasalidareporte
 13-09-2016 12:22:50 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK, Error: Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.;Linea : MKDIR &goapp.rutasalidareporte;Error :       1961;Ultimo Alias Activo: CSRIMPRI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3724,6 +3094,26 @@ MIR;Ultimo registro:          2 STR(SUCURSAL)+STR(IDVENDEDOR)+STR(IDCTACTE)+STR(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MIR;Ultimo registro:          2 STR(SUCURSAL)+STR(IDVENDEDOR)+STR(IDCTACTE)+STR(IDRUBRO)+STR(IDMARCA)+STR(CODIGO);DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B1MX020W.TMP;Ultimo Control activo: 
 13-09-2016 12:25:47 , Pila de llamadas
 13-09-2016 12:25:48 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3737,6 +3127,26 @@ MIR;Ultimo registro:          2 STR(SUCURSAL)+STR(IDVENDEDOR)+STR(IDCTACTE)+STR(
 13-09-2016 12:25:48 , Nº de Linea :         16
 13-09-2016 12:25:48 , En el Fuente: 		MKDIR &goapp.rutasalidareporte
 13-09-2016 13:46:21 , MAIN, Error: No se encuentra la propiedad INCLUYEDEVOL.;Linea : IF this.incluyedevol;Error :       1734;Ultimo Alias Activo: _CSRPRODUCTO;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00007O5L00A3.TMP;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3975,6 +3385,26 @@ timo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00007O5L00JC.TMP;Ultimo Control activo: 
 13-09-2016 13:49:15 , Pila de llamadas
 13-09-2016 13:49:16 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4008,6 +3438,26 @@ DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00007O5L00JC.TMP;Ultimo Control activo:
 13-09-2016 13:49:19 , Nº de Linea :        104
 13-09-2016 13:49:19 , En el Fuente: 	lcDevol				= IIF(this.incluyeiva,"Csrcuerfac.devolciva ","Csrcuerfac.devolsiva")
 13-09-2016 13:50:34 , MAIN, Error: Falta algún operando.;Linea : then CAST(ROUND(((<<lcPrecio>>) * Csrcuerfac.cantidad -<<lcBonif>-<<lcDevol>>>)*  CsrCabefac.signo ,3) as numeric(18,2));Error :       1231;Ultimo Alias Activo: _CSRPRODUCTO;Ultimo registro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4207,6 +3657,26 @@ DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00007O5L00JC.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo registro:          0 ;DBF: ;Ultimo Control activo: 
 22-09-2016 11:14:45 , Pila de llamadas
 22-09-2016 11:14:45 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4225,6 +3695,26 @@ imo registro:          0 ;DBF: ;Ultimo Control activo:
 22-09-2016 11:14:46 , Nº de Linea :       1349
 22-09-2016 11:14:46 , En el Fuente: 
 22-09-2016 11:15:57 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4387,6 +3877,26 @@ imo registro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   2005;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B47D007V.TMP;Ultimo Control activo: 
 23-09-2016 12:17:39 , Pila de llamadas
 23-09-2016 12:17:41 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4395,6 +3905,26 @@ imo registro:          0 ;DBF: ;Ultimo Control activo:
 23-09-2016 12:17:41 , Nº de Linea :        244
 23-09-2016 12:17:44 , En el Fuente: 	DO FORM frmmenu
 26-10-2016 11:08:59 , EXPORTAR_COPIAS_AFIP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CRESPUESTA'.;Linea : RETURN cRespuesta;Error :         12;Ultimo Alias Activo: CSRAUXVTAALICUOTA;Ultimo registro:       7702 ;DBF: C:\US
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4553,6 +4083,26 @@ ERS\CHIVI\APPDATA\LOCAL\TEMP\00002WI1001S.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ATA\LOCAL\TEMP\000005C900KP.TMP;Ultimo Control activo: 
 27-10-2016 14:33:59 , Pila de llamadas
 27-10-2016 14:34:02 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid.sct
@@ -4571,6 +4121,26 @@ ATA\LOCAL\TEMP\000005C900KP.TMP;Ultimo Control activo:
 27-10-2016 14:34:10 , Nº de Linea :          7
 27-10-2016 14:34:10 , En el Fuente: 	LOCATE FOR clasevalor="F"   && contado pendiente
 27-10-2016 14:34:32 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la variable 'LLDESARROLLO'.;Linea : IF llDesarrollo;Error :         12;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4686,6 +4256,26 @@ TEMP\000005C900O0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 C900T0.TMP;Ultimo Control activo: 
 27-10-2016 14:36:39 , Pila de llamadas
 27-10-2016 14:36:43 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid.sct
@@ -4699,6 +4289,26 @@ C900T0.TMP;Ultimo Control activo:
 27-10-2016 14:36:48 , Nº de Linea :         39
 27-10-2016 14:36:49 , En el Fuente: SET ORDER TO karchi
 27-10-2016 14:50:59 , REGNOTAPEDANDROID._TXTFOCOINI.GOTFOCUS, Error: La ruta o el nombre de archivo no es válido.;Linea : CURSORTOXML('CabePedido',cRuta+"ZCabPedido"+cArchivo,1,512+32,0);Error :        202;Ultimo Alias Activo: CABEPEDIDO;Ultimo registro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4822,6 +4432,26 @@ C900T0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000005C901G9.TMP;Ultimo Control activo: 
 27-10-2016 14:51:53 , Pila de llamadas
 27-10-2016 14:51:55 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid.sct
@@ -4886,6 +4516,26 @@ C900T0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 H01V5.TMP;Ultimo Control activo: 
 11-11-2016 11:23:54 , Pila de llamadas
 11-11-2016 11:23:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
@@ -4909,6 +4559,26 @@ H01V5.TMP;Ultimo Control activo:
 11-11-2016 11:23:56 , Nº de Linea :        146
 11-11-2016 11:23:56 , En el Fuente: 
 11-11-16 11:53:26 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnLenDetalle = IIF(thisform.tipoprov='RN',112,IIF(not goapp.empresaconvenio,52,51));Error :          9;Ultimo Alias Activo: CSRLISTACTACTE;Ultimo registro:          1 CUIT;DBF: C:\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4965,6 +4635,26 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ATQH02F8.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 E;Ultimo registro:          1 CUIT;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ATQH02G9.TMP;Ultimo Control activo: 
 11-11-16 11:54:07 , Pila de llamadas
 11-11-16 11:54:07 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
@@ -4985,6 +4675,26 @@ E;Ultimo registro:          1 CUIT;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AT
 11-11-2016 11:57:29 , EXPORTAR_AFIP.INIT, Error: El archivo 'crearcursoradapter.prg' no existe.;Linea : =CrearCursorAdapter('CsrProvincia',lcCmd);Error :          1;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPD
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ATA\LOCAL\TEMP\0000ATQH02OQ.TMP;Ultimo Control activo: 
 11-11-2016 11:57:29 , Pila de llamadas
 11-11-2016 11:57:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
@@ -4997,3 +4707,120 @@ ATA\LOCAL\TEMP\0000ATQH02OQ.TMP;Ultimo Control activo:
 11-11-2016 11:57:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
 11-11-2016 11:57:30 , Nº de Linea :          4
 11-11-2016 11:57:30 , En el Fuente: =CrearCursorAdapter('CsrProvincia',lcCmd)
+14-11-2016 11:20:48 , EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'NUMCOMPAFE'.;Linea : lcletracomp	= LEFT(CsrCuerpo.numcompafe,1);Error :         12;Ultimo Alias Activo: CSRPROVINCIA;Ultimo registro:         22 ;D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000445L00DK.TMP;Ultimo Control activo: 
+14-11-2016 11:20:48 , Pila de llamadas
+14-11-2016 11:20:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-2016 11:20:48 , Objeto      : exportar_afip.imprimir_vistaprevia1.excel.click
+14-11-2016 11:20:49 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-2016 11:20:49 , Nº de Linea :          5
+14-11-2016 11:20:49 , En el Fuente: llOK=thisform.CrearInforme(1)
+14-11-2016 11:20:49 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-2016 11:20:49 , Objeto      : exportar_afip.crearinforme
+14-11-2016 11:20:49 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-2016 11:20:49 , Nº de Linea :         41
+14-11-2016 11:20:50 , En el Fuente: 			.exportaribtorete(lndias)
+14-11-2016 11:20:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-2016 11:20:50 , Objeto      : exportar_afip.exportaribtorete
+14-11-2016 11:20:50 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-2016 11:20:50 , Nº de Linea :        425
+14-11-2016 11:20:50 , En el Fuente: 			lcletracomp	= LEFT(CsrCuerpo.numcompafe,1)
+14-11-16 17:16:47 , EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : _importe	= strzero(VAL(_importe),11,2);Error :         11;Ultimo Alias Activo: CSRCUERPO;Ultimo regist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B761001J.TMP;Ultimo Control activo: 
+14-11-16 17:16:47 , Pila de llamadas
+14-11-16 17:16:47 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:16:47 , Objeto      : exportar_afip.imprimir_vistaprevia1.excel.click
+14-11-16 17:16:47 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:16:47 , Nº de Linea :          5
+14-11-16 17:16:48 , En el Fuente: llOK=thisform.CrearInforme(1)
+14-11-16 17:16:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:16:48 , Objeto      : exportar_afip.crearinforme
+14-11-16 17:16:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:16:48 , Nº de Linea :         39
+14-11-16 17:16:48 , En el Fuente:     		.exportaribtoperce(lndias)
+14-11-16 17:16:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:16:48 , Objeto      : exportar_afip.exportaribtoperce
+14-11-16 17:16:49 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:16:49 , Nº de Linea :        254
+14-11-16 17:16:49 , En el Fuente: 							_importe	= strzero(VAL(_importe),11,2)
+14-11-16 17:19:47 , EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : _importe	= strzero(VAL(_importe),11,2);Error :         11;Ultimo Alias Activo: CSRCUERPO;Ultimo regist
+
+
+
+
+
+
+
+
+
+ro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B761002G.TMP;Ultimo Control activo: 
+14-11-16 17:19:47 , Pila de llamadas
+14-11-16 17:19:47 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:19:47 , Objeto      : exportar_afip.imprimir_vistaprevia1.excel.click
+14-11-16 17:19:47 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:19:47 , Nº de Linea :          5
+14-11-16 17:19:47 , En el Fuente: llOK=thisform.CrearInforme(1)
+14-11-16 17:19:47 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:19:47 , Objeto      : exportar_afip.crearinforme
+14-11-16 17:19:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:19:48 , Nº de Linea :         39
+14-11-16 17:19:48 , En el Fuente:     		.exportaribtoperce(lndias)
+14-11-16 17:19:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:19:48 , Objeto      : exportar_afip.exportaribtoperce
+14-11-16 17:19:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:19:48 , Nº de Linea :        254
+14-11-16 17:19:48 , En el Fuente: 							_importe	= strzero(VAL(_importe),11,2)
+14-11-16 17:21:14 , EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : _importe	= strzero(VAL(_importe),11,2);Error :         11;Ultimo Alias Activo: CSRCUERPO;Ultimo regist
+
+
+
+
+ro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B761003I.TMP;Ultimo Control activo: 
+14-11-16 17:21:15 , Pila de llamadas
+14-11-16 17:21:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:21:15 , Objeto      : exportar_afip.imprimir_vistaprevia1.excel.click
+14-11-16 17:21:15 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:21:16 , Nº de Linea :          5
+14-11-16 17:21:16 , En el Fuente: llOK=thisform.CrearInforme(1)
+14-11-16 17:21:16 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:21:16 , Objeto      : exportar_afip.crearinforme
+14-11-16 17:21:16 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:21:16 , Nº de Linea :         39
+14-11-16 17:21:16 , En el Fuente:     		.exportaribtoperce(lndias)
+14-11-16 17:21:16 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:21:16 , Objeto      : exportar_afip.exportaribtoperce
+14-11-16 17:21:16 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
+14-11-16 17:21:16 , Nº de Linea :        254
+14-11-16 17:21:17 , En el Fuente: 							_importe	= strzero(VAL(_importe),11,2)
