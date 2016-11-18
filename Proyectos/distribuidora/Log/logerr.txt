@@ -1,1202 +1,40 @@
-25-10-2016 , Objeto      : regfacvta.calculobonirubro
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :         10
-25-10-2016 , En el Fuente: IF idrubro = thisform.loObjBonifica.idrubro AND FechaHoraCero(CsrBoniRubro.fecha)>=FechaHoraCero(CsrAuxCabefac.fecha)
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-25-10-2016 , Objeto      : fechahoracero
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-25-10-2016 , Nº de Linea :       2446
-25-10-2016 , En el Fuente: RETURN ldfechahoracero
-25-10-2016 , REGFACVTA.GRID2.COLUMN6.TEXT1.GOTFOCUS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0);Error :         11;Ultimo Alia
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-s Activo: CSRBONIRUBRO;Ultimo registro:          2 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000162X01S5.TMP;Ultimo Control activo: DESPOR
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2.column6.text1.gotfocus
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :          2
-25-10-2016 , En el Fuente: 	this.LostFocus()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2.column6.text1.lostfocus
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :          1
-25-10-2016 , En el Fuente: thisform.grid2_lostfocusdto()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2_lostfocusdto
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :          7
-25-10-2016 , En el Fuente: 			llok = .grid2_control(lcSetFocus,lcGotfocus)
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2_control
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :        167
-25-10-2016 , En el Fuente: 	 	nBoniRubro = .CalculoBoniRubro()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.calculobonirubro
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :         10
-25-10-2016 , En el Fuente: IF idrubro = thisform.loObjBonifica.idrubro AND FechaHoraCero(CsrBoniRubro.fecha)>=FechaHoraCero(CsrAuxCabefac.fecha)
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-25-10-2016 , Objeto      : fechahoracero
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-25-10-2016 , Nº de Linea :       2444
-25-10-2016 , En el Fuente: ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
-25-10-2016 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0);Error :         11;Ultimo Alias Activo: CSRBONIRUBRO;Ultimo regi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-stro:          2 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000CQVD00OO.TMP;Ultimo Control activo: 
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-25-10-2016 , Objeto      : main
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-25-10-2016 , Nº de Linea :        250
-25-10-2016 , En el Fuente: 	Read events   
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2.column6.text1.gotfocus
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :          2
-25-10-2016 , En el Fuente: 	this.LostFocus()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2.column6.text1.lostfocus
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :          1
-25-10-2016 , En el Fuente: thisform.grid2_lostfocusdto()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2_lostfocusdto
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :          7
-25-10-2016 , En el Fuente: 			llok = .grid2_control(lcSetFocus,lcGotfocus)
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.grid2_control
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :        167
-25-10-2016 , En el Fuente: 	 	nBoniRubro = .CalculoBoniRubro()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Objeto      : regfacvta.calculobonirubro
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-25-10-2016 , Nº de Linea :         10
-25-10-2016 , En el Fuente: IF idrubro = thisform.loObjBonifica.idrubro AND FechaHoraCero(CsrBoniRubro.fecha)>=FechaHoraCero(CsrAuxCabefac.fecha)
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-25-10-2016 , Objeto      : fechahoracero
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-25-10-2016 , Nº de Linea :       2444
-25-10-2016 , En el Fuente: ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
-25-10-2016 , SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'stop.prg' no existe.;Linea : stop();Error :          1;Ultimo Alias Activo: _CSRFLETERO;Ultimo registro:          3 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000864P0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1E7.TMP;Ultimo Control activo: 
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-25-10-2016 , Objeto      : subfactura.imprimir_vistaprevia1.impresora.click
-25-10-2016 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-25-10-2016 , Nº de Linea :          5
-25-10-2016 , En el Fuente: 	llOK=thisform.CrearInforme()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subfactura.sct
-25-10-2016 , Objeto      : subfactura.crearinforme
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subfactura.sct
-25-10-2016 , Nº de Linea :        208
-25-10-2016 , En el Fuente: stop()
-25-10-2016 , SUBFACTURA.PAGEFRAME1.PAGE1.KITGRILLATILDARFLETERO.INIT, Error: El archivo 'csrfletero.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-25-10-2016 , Objeto      : subfactura.pageframe1.page1.kitgrillatildarfletero.init
-25-10-2016 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-25-10-2016 , Nº de Linea :         35
-25-10-2016 , En el Fuente:       select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid         ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07         ,&lc8 as wcampo08,&lc9 as wcampo09       from &lcalias       order by &lcorden into cursor &mi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-cursor READWRITE
-25-10-2016 , MAIN, Error: La referencia al subíndice no es válida.;Linea : lcnomdia = Nomdia[dow(fec)];Error :         31;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 GRUPO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00001V610098.TMP;Ultimo Cont
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rol activo: 
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-25-10-2016 , Objeto      : main
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-25-10-2016 , Nº de Linea :        250
-25-10-2016 , En el Fuente: 	Read events   
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Objeto      : reginformabcocar.cmdaceptar.click
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Nº de Linea :          4
-25-10-2016 , En el Fuente: 			.leermovbco()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Objeto      : reginformabcocar.leermovbco
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Nº de Linea :         40
-25-10-2016 , En el Fuente: 	lcdia = nombredia(CTOD(CsrCuerpo.fechavto))+" "+CsrCuerpo.fechavto
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-25-10-2016 , Objeto      : nombredia
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-25-10-2016 , Nº de Linea :        561
-25-10-2016 , En el Fuente: 		lcnomdia = Nomdia[dow(fec)]
-25-10-2016 , REGINFORMABCOCAR.CMDACEPTAR.CLICK, Error: La referencia al subíndice no es válida.;Linea : lcnomdia = Nomdia[dow(fec)];Error :         31;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 GRUPO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\0000CBGP002W.TMP;Ultimo Control activo: 
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Objeto      : reginformabcocar.cmdaceptar.click
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Nº de Linea :          4
-25-10-2016 , En el Fuente: 			.leermovbco()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Objeto      : reginformabcocar.leermovbco
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\reginformabcocar.sct
-25-10-2016 , Nº de Linea :         41
-25-10-2016 , En el Fuente: 	lcdia = nombredia(CTOD(CsrCuerpo.fechavto))+" "+CsrCuerpo.fechavto
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-25-10-2016 , Objeto      : nombredia
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-25-10-2016 , Nº de Linea :        561
-25-10-2016 , En el Fuente: 		lcnomdia = Nomdia[dow(fec)]
-25-10-2016 , MAIN, Error: No se encuentra la variable 'MOTIVO'.;Linea : COUNT FOR motivo<>0 TO lnNoVta;Error :         12;Ultimo Alias Activo: CSRBONIF;Ultimo registro:          1 STR(CODIGO,8)+STR(CODVARI,8);DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000CB
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-GP00QP.TMP;Ultimo Control activo: 
-25-10-2016 , Pila de llamadas
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-25-10-2016 , Objeto      : main
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-25-10-2016 , Nº de Linea :        250
-25-10-2016 , En el Fuente: 	Read events   
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-25-10-2016 , Objeto      : regnotapedandroid._txtfocoini.gotfocus
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-25-10-2016 , Nº de Linea :          1
-25-10-2016 , En el Fuente: thisform.cmdleer.Click()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-25-10-2016 , Objeto      : regnotapedandroid.cmdleer.click
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-25-10-2016 , Nº de Linea :          1
-25-10-2016 , En el Fuente: IF NOT thisform.iniciarimportacion()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-25-10-2016 , Objeto      : regnotapedandroid.iniciarimportacion
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-25-10-2016 , Nº de Linea :         10
-25-10-2016 , En el Fuente: 	DO FORM actualizarpedandroidsql_v2 WITH loObjeto NAME lobjform linked   
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Objeto      : actualizarpedandroidsql_v2.grid1.column5.text1.keypress
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Nº de Linea :          5
-25-10-2016 , En el Fuente: 	this.Parent.Parent.KeyPress(nKeyCode, nShiftAltCtrl)
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Objeto      : actualizarpedandroidsql_v2.grid1.keypress
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Nº de Linea :         51
-25-10-2016 , En el Fuente:     thisform.cmdaceptar.Click()    
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Objeto      : actualizarpedandroidsql_v2.cmdaceptar.click
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Nº de Linea :          1
-25-10-2016 , En el Fuente: thisform.actualizaarchivos()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Objeto      : actualizarpedandroidsql_v2.actualizaarchivos
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Nº de Linea :         24
-25-10-2016 , En el Fuente: 	 		thisform.actualizar()
-25-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Objeto      : actualizarpedandroidsql_v2.actualizar
-25-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
-25-10-2016 , Nº de Linea :         11
-25-10-2016 , En el Fuente: 	COUNT FOR motivo<>0 TO lnNoVta
-27-10-2016 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          0 ;DBF: ;Ultimo Control activo: 
-27-10-2016 , Pila de llamadas
-27-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-27-10-2016 , Objeto      : main
-27-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-27-10-2016 , Nº de Linea :        220
-27-10-2016 , En el Fuente: 	LeerEmpresa()
-27-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-27-10-2016 , Objeto      : leerempresa
-27-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-27-10-2016 , Nº de Linea :       1491
-27-10-2016 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-27-10-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-27-10-2016 , Objeto      : crearcursoradapter
 27-10-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
 27-10-2016 , Nº de Linea :       1320
 27-10-2016 , En el Fuente: 
 27-10-2016 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1379,6 +217,39 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ro:          0 ;DBF: ;Ultimo Control activo: 
 28-10-2016 , Pila de llamadas
 28-10-2016 , Programa    : j:\xsoftsql\desarrollo\forms\regseteoparam.sct
@@ -1392,6 +263,39 @@ ro:          0 ;DBF: ;Ultimo Control activo:
 28-10-2016 , Nº de Linea :          1
 28-10-2016 , En el Fuente: SELECT CsrSeteoParam.*,0  as estado FROM CsrSeteoParam WHERE RECNO()<1 INTO CURSOR CsrAuxParametros READWRITE 
 08-11-2016 , ABMCANALVTA.LOAD, Error: No se encuentra el alias 'CSRLISTAPRECIO'.;Linea : SELECT CsrListaPrecio;Error :         13;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 NUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX00Y2.TMP;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1554,6 +458,39 @@ imo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 08-11-2016 , Pila de llamadas
 08-11-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1632,8 +569,74 @@ ampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :  
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cursor READWRITE
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'NETOGRAVADO'.;Linea : REPLACE ALL netogravado WITH netosinbonificar - bonificacion;Error :         12;Ultimo Alias Activo: CSRLOGISTICA;Ultimo regist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1787,7 +790,73 @@ ro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX01DH.TMP;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ro,idVendedor,CodVendedor,nomvendedor ,idvdorfac,codvdorfac,nomvdorfac ,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad ,idcanalvta,comision ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1919,6 +988,39 @@ ificacion) as Bonificacion ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBulto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ion,SUM(ImporteFinal) as ImporteFinal ,SUM(costosiva) as CostoSiva,SUM(costoCiva) as CostoCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY fecha,idmaopera,numcomp,cl
 
 
@@ -1985,7 +1087,73 @@ ion,SUM(ImporteFinal) as ImporteFinal ,SUM(costosiva) as CostoSiva,SUM(costoCiva
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 asecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codfletero,nomfletero,idVendedor,CodVendedor,nomvendedor ,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad ,idvdorfac,codvdorfac,n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2129,7 +1297,73 @@ omvdorfac,idcanalvta,comision INTO CURSOR ZsrAuxiliar READWRITE;Error :       18
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dcategoria,idrubro,codrubro,nomrubro		,idvariedad,codvariedad,nomvariedad		,idcanalvta,comision		,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion		,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(internos) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2253,7 +1487,73 @@ as Internos		,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(netosinb
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a		,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b		,SUM(Netogravado) as NetoGravado FROM &lcAlias		GROUP BY fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso		,idFletero,codfletero,nomfle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2377,7 +1677,73 @@ tero,idVendedor,CodVendedor,nomvendedor		,idCtacte,ctacte,nomcliente,idcategoria
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ro,idVendedor,CodVendedor,nomvendedor ,idvdorfac,codvdorfac,nomvdorfac ,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad ,idcanalvta,comision ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2499,6 +1865,39 @@ ificacion) as Bonificacion ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBulto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ion,SUM(ImporteFinal) as ImporteFinal ,SUM(costosiva) as CostoSiva,SUM(costoCiva) as CostoCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY fecha,idmaopera,numcomp,cl
 
 
@@ -2560,7 +1959,73 @@ ion,SUM(ImporteFinal) as ImporteFinal ,SUM(costosiva) as CostoSiva,SUM(costoCiva
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 asecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codfletero,nomfletero,idVendedor,CodVendedor,nomvendedor ,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad ,idvdorfac,codvdorfac,n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2693,7 +2158,73 @@ omvdorfac,idcanalvta,comision INTO CURSOR ZsrAuxiliar READWRITE;Error :       18
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dcategoria,idrubro,codrubro,nomrubro		,idvariedad,codvariedad,nomvariedad		,idcanalvta,comision		,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion		,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(internos) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2805,7 +2336,73 @@ as Internos		,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(netosinb
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a		,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b		,SUM(Netogravado) as NetoGravado FROM &lcAlias		GROUP BY fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso		,idFletero,codfletero,nomfle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2863,6 +2460,39 @@ a		,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b	
 
 tero,idVendedor,CodVendedor,nomvendedor		,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro		,idvariedad,codvariedad,nomvariedad ,idvdorfac,codvdorfac,nomvdorfac,idcanalvta,comision INTO CURSOR ZsrAuxiliar READWRITE 
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'NETOGRAVADO'.;Linea : REPLACE ALL netogravado WITH netosinbonificar - bonificacion;Error :         12;Ultimo Alias Activo: CSRLOGISTICA;Ultimo regist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2983,6 +2613,39 @@ ro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX01ON.TMP;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX01Q0.TMP;Ultimo Control activo: 
 08-11-2016 , Pila de llamadas
 08-11-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3001,6 +2664,39 @@ ro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX01Q0.TMP;Ultimo C
 08-11-2016 , Nº de Linea :          7
 08-11-2016 , En el Fuente: REPLACE ALL netogravado WITH netosinbonificar - bonificacion
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'IDCANALVTA'.;Linea : SELECT fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codfletero,nomflete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3088,7 +2784,73 @@ ro,idVendedor,CodVendedor,nomvendedor ,idvdorfac,codvdorfac,nomvdorfac ,idCtacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  as Bonificacion ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(internos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(netosinbonificar) as netosinbonificar ,SUM(totalNG) as TotalNG,SUM(promocion) as promocion,SUM(Im
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3176,7 +2938,73 @@ porteFinal) as ImporteFinal ,SUM(costosiva) as CostoSiva,SUM(costoCiva) as Costo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 eunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codfletero,nomfletero,idVendedor,CodVendedor,nomvendedor ,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad ,idvdorfac,codvdorfac,nomvdorfac,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3275,7 +3103,73 @@ idcanalvta,comicanal INTO CURSOR ZsrAuxiliar READWRITE;Error :       1806;Ultimo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dcategoria,idrubro,codrubro,nomrubro		,idvariedad,codvariedad,nomvariedad		,comicanal		,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion		,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(internos) as Interno
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3353,7 +3247,73 @@ s		,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(netosinbonificar) 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 c_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b		,SUM(Netogravado) as NetoGravado FROM &lcAlias		GROUP BY fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso		,idFletero,codfletero,nomfletero,idVen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3394,6 +3354,39 @@ c_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b		,SUM(Neto
 
 dedor,CodVendedor,nomvendedor		,idCtacte,ctacte,nomcliente,idcategoria,idrubro,codrubro,nomrubro		,idvariedad,codvariedad,nomvariedad ,idvdorfac,codvdorfac,nomvdorfac,idcanalvta,comicanal INTO CURSOR ZsrAuxiliar READWRITE 
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'NETOGRAVADO'.;Linea : REPLACE ALL netogravado WITH netosinbonificar - bonificacion;Error :         12;Ultimo Alias Activo: CSRLOGISTICA;Ultimo regist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3481,6 +3474,39 @@ ro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX02BW.TMP;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 S;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX02CZ.TMP;Ultimo Control activo: 
 08-11-2016 , Pila de llamadas
 08-11-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3499,6 +3525,39 @@ S;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX02
 08-11-2016 , Nº de Linea :         14
 08-11-2016 , En el Fuente: 	replace ALL idcanalvta WITH 0,codcanalvta WITH 0,nomcanalvta WITH 0 FOR comicanal = 0
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomrubro as nombre ,codvendedor,nomvendedor ,codcanalvta,no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3554,6 +3613,39 @@ mcanalvta,comicanal ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vt
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,0 as codcanalvta,SPACE(30) as nomcanalvta,0 as comicanal ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kil
 
 
@@ -3582,7 +3674,73 @@ dor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,ar
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 os ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3645,7 +3803,73 @@ imo Alias Activo: CSRSEGUIMIENTO;Ultimo registro:        363 ;DBF: C:\USERS\ADMI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3693,8 +3917,74 @@ n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 or,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad CANALVTA.;Linea : Oscatter.codigo	 = Oscatter.canalvta;Error :       1734;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         20 STR(IDVENDEDOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3748,7 +4038,73 @@ or,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor ,codcanalvta,nomcanalvta,comicanal UNION 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3786,6 +4142,39 @@ ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomrubro as n
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 guimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unidades) as unida
 
 
@@ -3805,7 +4194,73 @@ guimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 des,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3850,7 +4305,73 @@ CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRSEGUIMIE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor ,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,nomvendedo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3880,7 +4401,73 @@ r,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 or UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3910,7 +4497,73 @@ OM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,comica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3938,6 +4591,39 @@ nal UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nom
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unidades
 
 
@@ -3952,7 +4638,73 @@ FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3988,7 +4740,73 @@ digo INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4010,7 +4828,73 @@ nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4032,7 +4916,73 @@ as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 nidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4052,6 +5002,39 @@ icanal UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mi FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unida
 
 
@@ -4062,7 +5045,73 @@ mi FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idru
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 des) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4089,7 +5138,73 @@ des) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvended
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4101,7 +5216,73 @@ or,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4109,6 +5290,39 @@ dor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo a
 
 )) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad PORCECOMI.;Linea : IF Oscatter.porcecomi = 0;Error :       1734;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4125,3 +5339,737 @@ RUPO,1)+STR(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX03NI.TMP;U
 08-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
 08-11-2016 , Nº de Linea :        134
 08-11-2016 , En el Fuente: 		IF Oscatter.porcecomi = 0
+17-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT idvendedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre ,codvendedor,nomvendedor ,SUM(u
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanal UNION ALL SELECT idv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre ,codvendedor,nomvendedor ,CAST(0 as n(11,2)) as unidades, CAST(0 as n(11,2))as importe,CAST(0 as n(11,2)) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi, 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ as clave ,idrubro as id_r,codrubro as codigo_r ,nomrubro as nombre_r ,SUM(unidades) as unidades_r,SUM(netogravado)as importe_r,SUM(vtakilos) as kilos_r ,comicanal as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND comicanal<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanal UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomrubro as nombre ,codvendedor,nomvendedor ,SUM(unidades) as unidades,SUM(ne
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+togravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+digo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor OR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRSEGUIMIENTO;Ultimo registro:        609 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP500YN.TMP;Ultimo Control activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+17-11-2016 , Objeto      : plancomivende_v2.imprimir_vistaprevia1.impresora.click
+17-11-2016 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+17-11-2016 , Nº de Linea :          5
+17-11-2016 , En el Fuente: 	llOK=thisform.CrearInforme()
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
+17-11-2016 , Objeto      : plancomivende_v2.crearinforme
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
+17-11-2016 , Nº de Linea :        143
+17-11-2016 , En el Fuente: SELECT idvendedor,0 as grupo,idcanalvta as id,codcanalvta as codigo,nomcanalvta as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2)) as comi, 1 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ltro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idcanalvta as id,codcanalvta as codigo,nomcanalvta as nombre ,codvendedor,nomvendedor,CAST(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 as n(11,2)) as unidades, CAST(0 as n(11,2))as importe,CAST(0 as n(11,2)) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi, 1 as clave ,idrubro as id_r,codrubro as codigo_r,nomrubro as nombre_r,SUM(unidades) as unidades_r,SUM(netogravado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+)as importe_r,SUM(vtakilos) as kilos_r ,comicanal as porcomi_r,CAST(0 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanalUNION ALL SE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave,0 as 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as ki
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+los ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
+17-11-2016 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct no existe o no es válido.;Linea : ...;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'LCCMD'.;Linea : IF NOT CrearCursorAdapter('CsrDeuda',lcCmd);Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 FECHA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3SP5031G.TMP;Ultimo Control activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.init
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :          3
+17-11-2016 , En el Fuente: thisform.leeravisos()
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.leeravisos
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :         14
+17-11-2016 , En el Fuente: 	IF NOT CrearCursorAdapter('CsrDeuda',lcCmd)
+17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'TIPO'.;Linea : REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle ,tipo WITH nTipo, leido WITH 0 IN csrauxiliar;Error :         12;Ultimo Alias Activo: CSRDEUDA;Ultimo registro:      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP5031W.TMP;Ultimo Control activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.init
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :          3
+17-11-2016 , En el Fuente: thisform.leeravisos()
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.leeravisos
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :         22
+17-11-2016 , En el Fuente: 		REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle   			,tipo WITH nTipo, leido WITH 0 IN csrauxiliar
+17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'CNOMBRE'.;Linea : cDetalle	= ALLTRIM(CsrDeuda.ctacte) +" " + ALLTRIM(CsrDeuda.cnombre)+ " " + strtrim(CsrDeuda.saldo,11,2);Error :         12;Ultimo Alias Activo: CSRDEUDA;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP503MY.TMP;Ultimo Control activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.init
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :          3
+17-11-2016 , En el Fuente: thisform.leeravisos()
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.leeravisos
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :         21
+17-11-2016 , En el Fuente: 		cDetalle	= ALLTRIM(CsrDeuda.ctacte) +" " + ALLTRIM(CsrDeuda.cnombre)+ " " + strtrim(CsrDeuda.saldo,11,2) 
+17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra el alias 'CSRDUEDA'.;Linea : REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle ,tipo WITH nTipo, leido WITH 0, saldo WITH CsrDueda.saldo IN csrauxiliar;Error :         13;Ultimo Alias Activo: CSR
+
+
+
+
+
+
+
+
+
+DEUDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP503RY.TMP;Ultimo Control activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.init
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :          3
+17-11-2016 , En el Fuente: thisform.leeravisos()
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Objeto      : frmavisos.leeravisos
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
+17-11-2016 , Nº de Linea :         24
+17-11-2016 , En el Fuente: 		REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle   			,tipo WITH nTipo, leido WITH 0, saldo WITH CsrDueda.saldo IN csrauxiliar
+17-11-2016 , MAIN, Error: BTNAVISO es un miembro desconocido.;Linea : IF VAL(thisform.btnaviso.Caption)<>0;Error :       1925;Ultimo Alias Activo: CURPERFIL;Ultimo registro:        243 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP5045J.TMP;Ultimo Contr
+
+
+
+ol activo: 
+17-11-2016 , Pila de llamadas
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+17-11-2016 , Objeto      : main
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+17-11-2016 , Nº de Linea :        250
+17-11-2016 , En el Fuente: 	Read events   
+17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+17-11-2016 , Objeto      : frmmenu1.timer4.timer
+17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+17-11-2016 , Nº de Linea :          1
+17-11-2016 , En el Fuente: IF VAL(thisform.btnaviso.Caption)<>0
