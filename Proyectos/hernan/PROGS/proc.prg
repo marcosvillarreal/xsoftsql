@@ -75,6 +75,7 @@ RETURN lcDocumento
 
 FUNCTION DevolverEjercicioContable
 PARAMETERS lcpefiscal,lnidejercicio,lnejercicio
+
 	lnidejercicio = 0
 	lnejercicio = 0
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
