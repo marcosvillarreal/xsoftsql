@@ -561,6 +561,142 @@ ENDCASE
 
 RETURN lcNombre
 
+
+FUNCTION TablaMarcas
+LPARAMETERS cMarca
+LOCAL cNomMarca
+
+cNomProveedor = ''		
+DO CASE
+CASE cMarca$"3 M"
+	cNomMarca ='3M'
+CASE cMarca$"ACINDAR"
+	cNomMarca ='ACINDRA'
+CASE cMarca$"AGRO INSUMO"
+	cNomMarca ='AGRO INSUMOS'
+CASE LEFT(cMarca,3)$"BER"
+	cNomMarca ='BERMON'
+CASE cMarca$"BIL-BEX"
+	cNomMarca ='BIL-VEX'
+CASE cMarca$"BIONENESIS"
+	cNomMarca ="BIOGENESIS BAGO"
+CASE cMarca$"BLACK & DEKER"
+	cNomMarca ="BLACK & BECKER"
+CASE cMarca$"BOLSA BAHIA"
+	cNomMarca ="BOLSAS BAHIA"
+CASE LEFT(cMarca,6)$"BRIGGS"
+	cNomMarca ="BRIGGS & STRATTON"
+CASE cMarca$"CARBUDUNDUM"
+	cNomMarca ="CARBORUNDUM"
+CASE cMarca$"CARRETELES"
+	cNomMarca ="CARRETELES RAFA"
+CASE LEFT(cMarca,5)$"CORTI"
+	cNomMarca ="CORTRIFIL"
+CASE LEFT(cMarca,5)$"DAVID"
+	cNomMarca ="DAVISON"
+CASE LEFT(cMarca,5)$"DELTA"
+	cNomMarca ="DELTA PANS"
+CASE LEFT(cMarca,5)$"DISAH"
+	cNomMarca ="DISAH BAHIA S.A."
+CASE LEFT(cMarca,3)$"DOW"
+	cNomMarca ="DOW AGROSCIENCE"
+CASE cMarca$"FERRIEMD"
+	cNomMarca ="FERRIMED"
+CASE LEFT(cMarca,6)$"FOREST"
+	cNomMarca ="FOREST & GARDEN"
+CASE cMarca$"FRAMMER"
+	cNomMarca ="FRAMER"
+CASE cMarca$"GAMA"
+	cNomMarca ="GAMMA"
+CASE cMarca$"HEFA"
+	cNomMarca ="HE-FA"
+CASE LEFT(cMarca,4)$"INGE"
+	cNomMarca ="INGERSOLL"
+CASE LEFT(cMarca,4)$"INMU"
+	cNomMarca ="INMUNO VET"
+CASE LEFT(cMarca,9)$"INVERSBIO"
+	cNomMarca ="INVERSBIO S.R.L."
+CASE LEFT(cMarca,2)$"KO"
+	cNomMarca ="KONIG"
+CASE LEFT(cMarca,6)$"MET RI"
+	cNomMarca ="MET. RIVERA"
+CASE LEFT(cMarca,4)$"MILW"
+	cNomMarca ="MILWAUKEE"
+CASE cMarca$"MOLDPAST"
+	cNomMarca ="MOLDPAS"
+CASE cMarca$"NOVARTIS"
+	cNomMarca ="NOVARTI"
+CASE cMarca$"OLEO MAC"
+	cNomMarca ="OLEO-MAC"
+CASE cMarca$"POXIPOL"
+	cNomMarca ="POXI-POL"
+CASE LEFT(cMarca,5)$"PROQU"
+	cNomMarca ="POQUIM"
+CASE cMarca$"CARBUDUNDUM"
+	cNomMarca ="CARBORUNDUM"
+	
+
+
+
+
+
+
+CASE LEFT(cCodAlfa,4)$"NAPA-NAPD-NAPM-NAPP-NAPT-NAPX"
+	cNomProveedor ='POYNAL S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NAPZB-NRWD-NRFUS-NRVAR" AND VAL(RIGHT(cCodAlfa,3))>=400 AND VAL(RIGHT(cCodAlfa,3))<=499
+	cNomProveedor ='PROV. SERV. S.A.'
+CASE LEFT(cCodAlfa,5)$"NRATR"
+	cNomProveedor ='ARGENSIL S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NRSIL"
+	cNomProveedor ='PROCHEM S.A.'
+CASE LEFT(cCodAlfa,5)$"NRFUL"
+	cNomProveedor ='FERREIRA CARLOS ALBERTO'
+CASE LEFT(cCodAlfa,5)$"LUBRI" OR (LEFT(cCodAlfa,5)$"NRLUB" AND VAL(RIGHT(cCodAlfa,4))<=2999)
+	cNomProveedor ='FERCOL LUBRICANTES S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NRLUB" AND VAL(RIGHT(cCodAlfa,4))>=3000 AND VAL(RIGHT(cCodAlfa,4))<=5000
+	cNomProveedor ='EXCO S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NRCEP" AND VAL(RIGHT(cCodAlfa,4))>=100 AND VAL(RIGHT(cCodAlfa,4))<=999
+	cNomProveedor ='INTERCLEAN BRUSH CO. S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NRCEP" AND VAL(RIGHT(cCodAlfa,4))>=1000 AND VAL(RIGHT(cCodAlfa,4))<=2500
+	cNomProveedor ='FS-FRANCISCO SALZANO SAICIA'
+CASE LEFT(cCodAlfa,4)$"NAPA-NAPD-NAPM-NAPP-NAPT-NAPX"
+	cNomProveedor ='FS-FRANCISCO SALZANO SAICIA'
+CASE LEFT(cCodAlfa,5)$"NRTEP" AND VAL(RIGHT(cCodAlfa,4))>=1 AND VAL(RIGHT(cCodAlfa,4))<=29
+	cNomProveedor ='TEXTIL DOSS S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NRTEP" AND VAL(RIGHT(cCodAlfa,4))>=30 AND VAL(RIGHT(cCodAlfa,4))<60
+	cNomProveedor ='SILVETEX S.A.'
+CASE cCodAlfa$"NRTEP0060"
+	cNomProveedor ='LUPAÑOS SH DE RAMIREZ FP Y MJ'
+CASE LEFT(cCodAlfa,5)$"NRTEP" AND VAL(RIGHT(cCodAlfa,4))>=70 AND VAL(RIGHT(cCodAlfa,4))<=90
+	cNomProveedor ='INTERCLEAN BRUSH CO. S.R.L.'
+CASE LEFT(cCodAlfa,5)$"NRCIC"
+	cNomProveedor ='FERNANDO CICARE'
+CASE LEFT(cCodAlfa,4)$"RNB-RNE-RNF-RNH-RNJ-RNL" OR LEFT(cCodAlfa,5)$"WEFAP-WEWAP"
+	cNomProveedor ='R. NETO S.A.'
+CASE LEFT(cCodAlfa,5)$"CUMIN" AND VAL(RIGHT(cCodAlfa,4))>=7000 AND VAL(RIGHT(cCodAlfa,4))<=7999
+	cNomProveedor ='POLVER S.R.L.'
+CASE LEFT(cCodAlfa,5)$"FABRA"
+	cNomProveedor ='EMIRIAN SA'
+CASE LEFT(cCodAlfa,5)$"NRELK-NRELT"
+	cNomProveedor ='DAMIANI JULIO'
+CASE LEFT(cCodAlfa,5)$"NRAB"
+	cNomProveedor ='EST.MET.POWER S.A.I.C.F.I'
+CASE LEFT(cCodAlfa,5)$"NRFUS-NRWD4"
+	cNomProveedor ='PROV. SERV. S.A.'
+CASE LEFT(cCodAlfa,5)$"NRGAS"
+	cNomProveedor ='BROGAS S.C.A.'
+CASE LEFT(cCodAlfa,5)$"NRPEN"
+	cNomProveedor ='J.V.S. INTERAMERICANA S.A.'
+CASE (LEFT(cCodAlfa,5)$"NRACC-NRCOL") OR cCodAlfa='NRTEOP0080'
+	cNomProveedor ='T & T S.A.' 
+CASE cCodAlfa = "FERRETERIA"
+	cNomProveedor = 'ROLFO SRL'
+CASE LEFT(cCodAlfa,5)$""
+	cNomProveedor = ''									
+OTHERWISE
+ENDCASE
+RETURN cNomProveedor
+
 *------------------------------------------
 * FUNCION ObtenerID(lcAlias,lnSucursal)
 *------------------------------------------

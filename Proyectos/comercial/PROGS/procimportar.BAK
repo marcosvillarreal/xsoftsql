@@ -560,3 +560,21 @@ CASE '' $ lcLocalidad
 ENDCASE
 
 RETURN lcNombre
+
+*------------------------------------------
+* FUNCION ObtenerID(lcAlias,lnSucursal)
+*------------------------------------------
+* Funcion para generar el id = sucursal + id.
+* lcAlias = Nombre de la tabla
+* lnSucursal = numero d ela sucursal.
+*------------------------------------------
+FUNCTION ObtenerID
+PARAMETERS lcAlias
+TEXT TO lcCmdOb TEXTMERGE NOSHOW 
+SELECT MAX(id) as max_id FROM <<lcAlias>> 
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrObtener',lcCmdOb)
+	thisform.release 
+	RETURN -1
+ENDIF 
+RETURN CsrObtener.max_id +1 
