@@ -655,10 +655,72 @@ CASE LEFT(cMarca,5)$"STIHL"
 CASE LEFT(cMarca,6)$"TECNOF"
 	cNomMarca ="TECNOFARM S.R.L."
 CASE LEFT(cMarca,7)$"TOP MAN"
-	cNomMarca ="TOP-MAN"				
+	cNomMarca ="TOP-MAN"
+CASE lentrim(cMarca)=0
+	cNomMarca ="GENERAL"				
 OTHERWISE
+	cNomMarca = cMarca
 ENDCASE
 RETURN cNomMarca
+
+
+FUNCTION TablaPrecios
+LPARAMETERS cProv
+LOCAL cNomProveedor
+
+cNomProveedor = ''		
+DO CASE
+CASE "BERMON"$cProv
+	cNomProveedor	= "ALEJANDRO BERMON"
+CASE "HUCAL"$cProv
+	cNomProveedor	= "AGRO HUCAL"
+CASE "ALVEAR"$cProv
+	cNomProveedor	= "AGRO ALVEAR"
+CASE "AGROBULON"$STRTRAN(cProv," ","")
+	cNomProveedor	= "AGRO BULON"
+CASE "BULONFER"$cProv OR "BULNFER"$cProv OR "BUONFER"$cProv
+	cNomProveedor	= "BULONFER S.A."
+CASE "INSUMOS"$cProv
+	cNomProveedor	= "AGRO INSUMOS"
+CASE "BULLFLEX"$cProv
+	cNomProveedor	= "CARAVANAS BULLFLEX"
+CASE "AGROMAD"$cProv
+	cNomProveedor	= "AGRO MADERAS"
+CASE "AGRSUR"$cProv
+	cNomProveedor	= "AGROSUR"
+CASE "ANGAR"$cProv OR "AN-GAR"$cProv OR "AN GAR"$cProv
+	cNomProveedor	= "AN-GAR"
+CASE "ASCHER"$cProv
+	cNomProveedor	= "ASCHERI & CIA."
+CASE "CARDONE DANIEL"$cProv
+	cNomProveedor	= "CARDONE DANIEL CARLOS"
+CASE "ORTIZ"$cProv
+	cNomProveedor	= "CARLOS P. ORTIZ"
+CASE "BRAGA"$cProv
+	cNomProveedor	= "CAÑOS BRAGANZA"
+CASE "CENTRO DE"$cProv
+	cNomProveedor	= "CENTRO DE BATERIAS"
+CASE "CODIMAT"$cProv
+	cNomProveedor	= "CODIMAT S.A."
+CASE "CONO SUR"$cProv
+	cNomProveedor	= "CONO SUR S.A."
+CASE "DELLA VALL"$cProv OR "DELA VALLE"$cProv OR "VALLA"$cProv
+	cNomProveedor	= "DELLA VALLE Y CIA."
+CASE "DISAH"$cProv
+	cNomProveedor	= "DISAH BAHIA S.A."
+CASE "LISBOA"$cProv
+	cNomProveedor	= "DIST LISBOA"
+CASE "GREGORIO"$cProv
+	cNomProveedor	= "DIST GREGORIO"
+CASE "FAMACO"$cProv
+	cNomProveedor	= "FAMACON S.A."
+
+CASE lentrim(cProv)=0
+	cNomProveedor ="GENERAL"				
+OTHERWISE
+	cNomProveedor = cProv
+ENDCASE
+RETURN cNomProveedor
 
 *------------------------------------------
 * FUNCION ObtenerID(lcAlias,lnSucursal)
