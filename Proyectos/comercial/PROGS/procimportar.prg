@@ -714,7 +714,58 @@ CASE "GREGORIO"$cProv
 	cNomProveedor	= "DIST GREGORIO"
 CASE "FAMACO"$cProv
 	cNomProveedor	= "FAMACON S.A."
-
+CASE "FEDERICO GO"$cProv
+	cNomProveedor	= "FEDERICO GONZALES"
+CASE "Y FERN"$cProv
+	cNomProveedor	= "FERNANDEZ Y FERNANDEZ"
+CASE "FERRERO"$cProv OR "MEIFA"$cProv
+	cNomProveedor	= "FERRERO MEIFA"
+CASE "FERRI"$cProv OR "FERREM"$cProv
+	cNomProveedor	= "FERRIMED S.A."
+CASE "TITO"$cProv
+	cNomProveedor	= "FERRETERIA TITO"
+CASE "GIORDA"$cProv
+	cNomProveedor	= "GIORDANINO"
+CASE "GOMA T"$cProv
+	cNomProveedor	= "GOMATODO"
+CASE "SIMPA"$cProv
+	cNomProveedor	= "GRUPO SIMPA S.A."
+CASE "INCAHUEN"$cProv OR "INCH"$cProv
+	cNomProveedor	= "INCAHUEN S.R.L."
+CASE "INGERS"$cProv OR "INGRES"$cProv
+	cNomProveedor	= "INGERSOL"
+CASE "IPESA"$cProv
+	cNomProveedor	= "IPESA SILO"
+CASE "ITURRIA"$cProv
+	cNomProveedor	= "ITURRIA S.A."
+CASE "GALLARDO"$cProv
+	cNomProveedor	= "JAVIER NESTOR GALLARDO"
+CASE "JEREZ"$cProv 
+	cNomProveedor	= "JEREZ HNOS."
+CASE "AGUDA"$cProv
+	cNomProveedor	= "LA AGUADA"
+CASE "LA FERETERA"$cProv OR "LA FERREE"$cProv
+	cNomProveedor	= "LA FERRETERA"
+CASE "MECANO"$cProv OR "INCH"$cProv
+	cNomProveedor	= "MECANO GANADERO S.A."
+CASE "MERIAL"$cProv 
+	cNomProveedor	= "MERIAL ARGENTINA S.A."
+CASE "METFER"$cProv 
+	cNomProveedor	= "METFER"
+CASE "MEYER"$cProv
+	cNomProveedor	= "MEYER SACIF"
+CASE "MOLDPLA"$cProv 
+	cNomProveedor	= "MOLDPLAS PAMPERO S.R.L."
+CASE "OVER"$cProv 
+	cNomProveedor	= "OVER S.A."
+CASE "PAPIERT"$cProv 
+	cNomProveedor	= "PAPIERTEI"	
+CASE "MEGALUX"$cProv 
+	cNomProveedor	= "PINTURAS MEGALUX S.R.L."
+CASE "PROQUI"$cProv 
+	cNomProveedor	= "PROQUIM"
+*R
+	
 CASE lentrim(cProv)=0
 	cNomProveedor ="GENERAL"				
 OTHERWISE

@@ -663,6 +663,108 @@ OTHERWISE
 ENDCASE
 RETURN cNomMarca
 
+
+FUNCTION TablaPrecios
+LPARAMETERS cProv
+LOCAL cNomProveedor
+
+cNomProveedor = ''		
+DO CASE
+CASE "BERMON"$cProv
+	cNomProveedor	= "ALEJANDRO BERMON"
+CASE "HUCAL"$cProv
+	cNomProveedor	= "AGRO HUCAL"
+CASE "ALVEAR"$cProv
+	cNomProveedor	= "AGRO ALVEAR"
+CASE "AGROBULON"$STRTRAN(cProv," ","")
+	cNomProveedor	= "AGRO BULON"
+CASE "BULONFER"$cProv OR "BULNFER"$cProv OR "BUONFER"$cProv
+	cNomProveedor	= "BULONFER S.A."
+CASE "INSUMOS"$cProv
+	cNomProveedor	= "AGRO INSUMOS"
+CASE "BULLFLEX"$cProv
+	cNomProveedor	= "CARAVANAS BULLFLEX"
+CASE "AGROMAD"$cProv
+	cNomProveedor	= "AGRO MADERAS"
+CASE "AGRSUR"$cProv
+	cNomProveedor	= "AGROSUR"
+CASE "ANGAR"$cProv OR "AN-GAR"$cProv OR "AN GAR"$cProv
+	cNomProveedor	= "AN-GAR"
+CASE "ASCHER"$cProv
+	cNomProveedor	= "ASCHERI & CIA."
+CASE "CARDONE DANIEL"$cProv
+	cNomProveedor	= "CARDONE DANIEL CARLOS"
+CASE "ORTIZ"$cProv
+	cNomProveedor	= "CARLOS P. ORTIZ"
+CASE "BRAGA"$cProv
+	cNomProveedor	= "CAÑOS BRAGANZA"
+CASE "CENTRO DE"$cProv
+	cNomProveedor	= "CENTRO DE BATERIAS"
+CASE "CODIMAT"$cProv
+	cNomProveedor	= "CODIMAT S.A."
+CASE "CONO SUR"$cProv
+	cNomProveedor	= "CONO SUR S.A."
+CASE "DELLA VALL"$cProv OR "DELA VALLE"$cProv OR "VALLA"$cProv
+	cNomProveedor	= "DELLA VALLE Y CIA."
+CASE "DISAH"$cProv
+	cNomProveedor	= "DISAH BAHIA S.A."
+CASE "LISBOA"$cProv
+	cNomProveedor	= "DIST LISBOA"
+CASE "GREGORIO"$cProv
+	cNomProveedor	= "DIST GREGORIO"
+CASE "FAMACO"$cProv
+	cNomProveedor	= "FAMACON S.A."
+CASE "FEDERICO GO"$cProv
+	cNomProveedor	= "FEDERICO GONZALES"
+CASE "Y FERN"$cProv
+	cNomProveedor	= "FERNANDEZ Y FERNANDEZ"
+CASE "FERRERO"$cProv OR "MEIFA"$cProv
+	cNomProveedor	= "FERRERO MEIFA"
+CASE "FERRI"$cProv OR "FERREM"$cProv
+	cNomProveedor	= "FERRIMED S.A."
+CASE "TITO"$cProv
+	cNomProveedor	= "FERRETERIA TITO"
+CASE "GIORDA"$cProv
+	cNomProveedor	= "GIORDANINO"
+CASE "GOMA T"$cProv
+	cNomProveedor	= "GOMATODO"
+CASE "SIMPA"$cProv
+	cNomProveedor	= "GRUPO SIMPA S.A."
+CASE "INCAHUEN"$cProv OR "INCH"$cProv
+	cNomProveedor	= "INCAHUEN S.R.L."
+CASE "INGERS"$cProv OR "INGRES"$cProv
+	cNomProveedor	= "INGERSOL"
+CASE "IPESA"$cProv
+	cNomProveedor	= "IPESA SILO"
+CASE "ITURRIA"$cProv
+	cNomProveedor	= "ITURRIA S.A."
+CASE "GALLARDO"$cProv
+	cNomProveedor	= "JAVIER NESTOR GALLARDO"
+CASE "JEREZ"$cProv 
+	cNomProveedor	= "JEREZ HNOS."
+CASE "AGUDA"$cProv
+	cNomProveedor	= "LA AGUADA"
+CASE "LA FERETERA"$cProv OR "LA FERREE"$cProv
+	cNomProveedor	= "LA FERRETERA"
+CASE "MECANO"$cProv OR "INCH"$cProv
+	cNomProveedor	= "MECANO GANADERO S.A."
+CASE "MERIAL"$cProv 
+	cNomProveedor	= "MERIAL ARGENTINA S.A."
+CASE "METFER"$cProv 
+	cNomProveedor	= "METFER"
+CASE "MEYER"$cProv
+	cNomProveedor	= "MEYER SACIF"
+CASE "MOLDPLA"$cProv 
+	cNomProveedor	= "MOLDPLAS PAMPERO S.R.L."
+*o
+	
+CASE lentrim(cProv)=0
+	cNomProveedor ="GENERAL"				
+OTHERWISE
+	cNomProveedor = cProv
+ENDCASE
+RETURN cNomProveedor
+
 *------------------------------------------
 * FUNCION ObtenerID(lcAlias,lnSucursal)
 *------------------------------------------
