@@ -67,7 +67,7 @@ INSERT INTO CsrRubro (id,numero,nombre) VALUES (lnidRubro,0,"GENERICO")
 
 lnidRubro = lnidRubro + 1 
 
-stop()
+*stop()
  
 SELECT CsrProdRubro
 SCAN
@@ -133,9 +133,6 @@ SCAN
 	
 	SELECT CsrCuentaX
 ENDSCAN 
-
-SELECT CsrFamilia
-vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

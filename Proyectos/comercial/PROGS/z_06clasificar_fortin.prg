@@ -35,7 +35,7 @@ lnidAfe = RecuperarID('CsrAfeCateProd',Goapp.sucursal10)
 
 *!*	INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
 *!*	VALUES (lnidAfe,lnidFamGral,lnidTipoGral,'FT',"00000",0)
-stop()
+*stop()
  
 SELECT CsrProducto
 SCAN
@@ -95,7 +95,6 @@ SCAN
 	SELECT CsrProducto
 ENDSCAN 
 
-vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

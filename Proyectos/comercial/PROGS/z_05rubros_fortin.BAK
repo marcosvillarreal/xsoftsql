@@ -67,7 +67,7 @@ INSERT INTO CsrRubro (id,numero,nombre) VALUES (lnidRubro,0,"GENERICO")
 
 lnidRubro = lnidRubro + 1 
 
-stop()
+*stop()
  
 SELECT CsrProdRubro
 SCAN
@@ -98,17 +98,20 @@ SCAN
 			lbhallado	= .f.
 		ENDIF 
 		IF lbhallado
-	 
-			INSERT INTO CsrFamilia (id,numero,nombre,switch);
-			VALUES (lnidFam,CsrCuentaX.numero,CsrCuentaX.nombre,"00000")
-			
-			lnidFamilia = lnidFam
-			
-			INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
-			VALUES (lnidAfe,lnidFam,lnidTipoGral,'FT',"00000",0)
-			
-			lnidAfe = lnidAfe + 1 
-			lnidFam = lnidFam + 1 
+	 		SELECT CsrFamilia
+	 		LOCATE FOR numero = CsrCuentaX.numero
+	 		IF numero <> CsrCuentaX.numero
+				INSERT INTO CsrFamilia (id,numero,nombre,switch);
+				VALUES (lnidFam,CsrCuentaX.numero,CsrCuentaX.nombre,"00000")
+				
+				lnidFamilia = lnidFam
+				
+				INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+				VALUES (lnidAfe,lnidFam,lnidTipoGral,'FT',"00000",0)
+				
+				lnidAfe = lnidAfe + 1 
+				lnidFam = lnidFam + 1 
+			ENDIF 
 		ENDIF 
 		
 		INSERT INTO CsrRubro (id,numero,nombre,switch);
@@ -131,6 +134,8 @@ SCAN
 	SELECT CsrCuentaX
 ENDSCAN 
 
+SELECT CsrFamilia
+vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

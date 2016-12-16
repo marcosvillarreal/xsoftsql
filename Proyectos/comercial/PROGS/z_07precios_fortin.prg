@@ -16,7 +16,9 @@ Oavisar.proceso('S','Abriendo archivos')
 llok = .t.
 llok = CargarTabla(lcData,'Producto')
 llok = CargarTabla(lcData,'ProdPrecio',.t.)
-
+llok = CargarTabla(lcData,'TipoIVA')
+llok = CargarTabla(lcData,'Ctacte',.t.)
+llok = CargarTabla(lcData,'Localidad')
 SET SAFETY ON
 
 IF !llok
@@ -27,107 +29,208 @@ SET SAFETY ON
 Oavisar.proceso('S','Abriendo archivos') 
 
 
-*USE ALLTRIM(lcpath )+"\gestion\seccion" IN 0 ALIAS CsrSeccion EXCLUSIVE 
+USE  ALLTRIM(lcpath )+"\precios" in 0 alias CsrPrecios EXCLUSIVE	
 
-USE  ALLTRIM(lcpath )+"\precios" in 0 alias CsrPrecio EXCLUSIVE	
-
-USE  ALLTRIM(lcpath )+"\precios" in 0 alias CsrPrecio EXCLUSIVE	
+USE  ALLTRIM(lcpath )+"\articulo" in 0 alias CsrArticulo EXCLUSIVE	
 
 Oavisar.proceso('S','Procesando '+alias()) 
 
 LOCAL lnid
 
 lnid = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
+lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
-SELECT CsrArticulo
-
+nDecimalesP = 3
+nNumeroCtacte	= 0
+SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
+
+*stop()
 SCAN FOR !EOF()
-	SELECT CsrProducto
-	IF DELETED()
-		SELECT CsrArticulo
-		LOOP 
-	ENDIF 
-	LOCATE FOR numero=VAL(CsrArticulo.numero )
-	IF numero=VAL(CsrArticulo.numero)
-		SELECT CsrArticulo
+*!*		IF numero <> 1
+*!*			LOOP 
+*!*		ENDIF 
+*!*		stop()
+
+	SELECT CsrArticulo
+	LOCATE FOR VAL(numero )= CsrProducto.numero AND NOT borrado
+	IF VAL(numero )<> CsrProducto.numero
+		SELECT CsrProducto
 		LOOP 
 	ENDIF
+	cProvArticulo	 = TablaPrecios(ALLTRIM(CsrArticulo.proveedor))
 	
-	STORE 0 TO   ncodigo , nidctacte , nidmarca , nidforma , nidunidad , nidtprod , nidtipovta; 
-           , nidtamano , nidcatego , nidrubro , nidestado , nidubicacio , nidorigen ;
-           , nincluirped , nidmoneda , nidiva , nunibulto , nnofactura , nnolista , nespromocion ;
-           , nminimofac , npeso , nvolumen , nfracciona , npuntope, ndivisible ,nnomodifica  ;
-           , nctaaorden, nesinsumo , nidfamilia , nidcategotipo, ncotidolar , nendolar 
-    STORE "" TO  cnombre , ccodalfa , ccontrolador , cnommayorista , ccodalfaprov , ccodbarra14;
-           , ccodbarra13 
-    STORE DATE() TO  dfeculcpra , dfeculvta , dfecalta , dfecmodi , dfeculpre
-           
-	cnombre		= NombreNi(alltrim(CsrArticulo.nombre))
-	ncodigo		= VAL(Csrarticulo.NUMERO)
-	ccodalfa	= ALLTRIM(CsrArticulo.codigo_fac)
-	ccodalfaprov = ALLTRIM(CsrArticulo.codigo_pro)
+	SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
 	
-	cnommayorista	= cnombre
-	ccontrolador	= cnombre
-	*Almacenamos el codigo anterior para luego importar las secciones con productos
-    nidrubro	= Csrarticulo.seccion
-    
-    lcMarca 	= CsrArticulo.marca
-    lcMarca		= TablaMarcas(lcMarca)
-    
-    SELECT CsrMarca
-    LOCATE FOR nombre=lcMarca
-    IF NOT FOUND()
-	   	GO TOP 
-	ENDIF 
-   	nidmarca = CsrMarca.id
-    
-	SELECT CsrUbicacion
+	SELECT CsrPrecio
 	GO TOP 
-	nidubicacio = CsrUbicacion.id
-	
-   	nidestado 	= IIF(empty(Csrarticulo.debaja),1,2)
-    nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
-    nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
-    nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
-	cswitch		= "00000"
+	SCAN 
+		cProvPrecio	 = TablaPrecios(ALLTRIM(CsrPrecio.nombre))
+		&&El precio tiene que estar borrado y ser distinto al del articulo
+		IF CsrPrecio.borrado AND cProvPrecio<>cProvArticulo
+			LOOP 
+		ENDIF 
+		
+		STORE 0 TO   nid, nidarticulo , nidctacte , nidestado  , ncostocpra , naumento ;
+	           , ncosto , nbonif1 , nbonif2 , nbonif3 , nbonif4 , nbonif5 , nboniftotal ;
+	           ,ncostobon , ninterno ;
+	           , ninternoporce , nflete , nsegflete , ntotalflete , ncostosiva , ncostociva ;
+	           , nmargen1 , nutilciva1 ;
+	           , nutilsiva1 , nredondeo , ncostoagre , nfleteagre , npreconciva , npreconfsiva ;
+	           , npreconfciva ;
+	           , nprepubciva , nprepubfsiva , nprepubfciva  , ncotidolar , nendolar ;
+	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1;
+	   			, nAlicuota
+	   	        
+	    STORE DATE() TO  dfecmodi 
+		
+		nIdArticulo	= CsrProducto.id
+	   	nidestado 	= 1
+	   	cswitch		= "00000"
+		
+		
+		SELECT CsrCtacte
+		LOCATE FOR cnombre = cProvPrecio
+		IF FOUND()
+			nIdCtacte = CsrCtacte.id
+		ENDIF 
+		
+		IF NOT EMPTY(CsrPrecio.fecha)   
+			dfecmodi = DATETIME(YEAR(CsrPrecio.fecha),MONTH(CsrPrecio.fecha),DAY(CsrPrecio.fecha),0,0,0)
+		ENDIF 		
+		
+		SELECT CsrTipoIva
+		LOCATE FOR id = CsrProducto.idiva
+		nAlicuota = CsrTipoIva.tasa
+		
+		nCostoCpra	= CsrPrecio.Costo
+		nAumento	= CsrPrecio.aumento							
+		nCosto		= red((nCostoCpra * nAumento) / 100,nDecimalesP) + nCostoCpra
+		nBonif1		= CsrPrecio.bonif1
+		nBonif2		= CsrPrecio.bonif2
+		nBonif3		= CsrPrecio.bonif3
+		nBonif4		= CsrPrecio.bonif4
+		nBonif5		= CsrPrecio.bonif5
+		nCostoBon	= nCosto - red(nCosto *(nbonif1/100),nDecimalesP)
+		nCostoBon	= nCostoBon - red(nCostoBon *(nbonif2/100),nDecimalesP)
+		nCostoBon	= nCostoBon - red(nCostoBon *(nbonif3/100),nDecimalesP)
+		nCostoBon	= nCostoBon - red(nCostoBon *(nbonif4/100),nDecimalesP)
+		nCostoBon	= nCostoBon - red(nCostoBon *(nbonif5/100),nDecimalesP)
+		nBonifTotal	= red((nCosto - nCostoBon)/nCosto*100 ,ndecimalesP)
+		nFlete		= CsrPrecio.Flete
+		nSegFlete	= CsrPrecio.SeFlete
+		nTotalFlete	= nFlete + red((nFlete*nSegFlete/100),ndecimalesP)
+		nIvaCosto	= red((nCostoBon + nTotalFlete) * nAlicuota/100, nDecimalesP)
+		nCostoSiva	= nCostoBon + nTotalFlete + nInterno
+		nCostoCiva	= nCostoSiva + nIvaCosto
+		nMargen1	= CsrPrecio.utilidad
+		nCostoAgre	= CsrPrecio.costoagre
+		nFleteAgre	= 0
+		nPreConCiva	= CsrPrecio.preventa
+		nPreVenta	= red(nPreConCiva * (1 - nAlicuota /100),nDecimalesP)
+		nPreventa	= IIF(nPreVenta = 0,nCosto,nPReventa)
+		IF nCostoCiva<>0	
+			nUtilCiva1	= nPreConCiva - nCostoCiva
+			nUtilSiva1	= red(nUtilCiva1 * 100 / 121,nDecimalesP)
+			nPreVenta	= nCostoSiva + nUtilSiva1
+		ENDIF 
+		nRedondeo		= CsrArticulo.redondeo
+		
+		nPreConFSiva	= a_red(nRedondeo,nPreVenta + nCostoAgre + nFleteAgre)
+		nPreConFCiva	= a_red(nRedondeo,nPreConCIva + nCostoAgre + nFleteAgre)
+		nIncremento		= CsrPrecio.Bonlis2
+		nIncremento		= red(1+(nIncremento/100),4)
+		nPrePubCiva		= red(nPreConCiva * nIncremento,nDecimalesP)
+		
+		nPrePubFCiva	= red((nPreConCiva  + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)
+		nPrePubFSiva	= red(nPreConCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
+		nPrePubFSiva	= red((nPrePubFSiva + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)	
+		
+		nPrePubFCiva	= a_red(nRedondeo,nPrePubFCiva)
+		nPrePubFSiva	= a_red(nRedondeo,nPrePubFSiva)
+		
+		INSERT INTO  prodprecio  ( id, idarticulo , idctacte , idestado  , costocpra , aumento ;
+	           , costo , bonif1 , bonif2 , bonif3 , bonif4 , bonif5 , boniftotal , costobon , interno ;
+	           , internoporce , flete , segflete , totalflete , costosiva , costociva , margen1 , utilciva1 ;
+	           , utilsiva1 , redondeo , costoagre , fleteagre , preconciva , preconfsiva , preconfciva ;
+	           , prepubciva , prepubfsiva , prepubfciva , fecmodi , switch , cotidolar , endolar ;
+	           , costoulcpra , preotrociva1 , preotrofsiva1 , preotrofciva1 );
+	     VALUES  ( lnid, nidarticulo , nidctacte , nidestado  , ncostocpra , naumento ;
+	           , ncosto , nbonif1 , nbonif2 , nbonif3 , nbonif4 , nbonif5 , nboniftotal ,ncostobon , ninterno ;
+	           , ninternoporce , nflete , nsegflete , ntotalflete , ncostosiva , ncostociva , nmargen1 , nutilciva1 ;
+	           , nutilsiva1 , nredondeo , ncostoagre , nfleteagre , npreconciva , npreconfsiva , npreconfciva ;
+	           , nprepubciva , nprepubfsiva , nprepubfciva , dfecmodi , cswitch , ncotidolar , nendolar ;
+	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1) 
+	    
+	   
+		lnid = lnid + 1
+		
+		&&Insertamos proveedor
+		IF nidCtacte = 0
+			
+				
+			STORE 0 TO lnidlocalidad,lnidprovincia,lntipoiva,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica;
+			,lnctabanco,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta;
+		    ,lnbonif1,lnbonif2,lncopiatkt,lnconvenio,lnsaldoauto,lnidbarrio,lnlista,lnidcateibrng,lncomision;
+		    ,lnidtipodoc,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif;
+		    ,lndiasvto,lnplanpago
+		    
+		   	STORE "" TO lccnumero,lccnombre,lccdireccion,lccpostal,lcctelefono2,lcctelefono,lcemail,lccuit;
+		    ,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc
+		    
+		    STORE 1 TO 	lnctaacreedor, lnidcanalvta
+		    
+		    STORE DATETIME(1900,01,01,0,0,0) TO ldfechalta,ldfecins01,ldfecultcompra,ldfecultpago
+			nNumeroCtacte	= nNumeroCtacte + 1  
+			lccnumero		= ALLTRIM(STR(50000+nNumeroCtacte))
+			lccnombre		= cProvPrecio
+			lcobserva		= "IMPORTADO"
+			lntipoiva 		= 1
+			lccuit 			= "00-00000000-0"
+			lnidcategoria 	= 1100000003
+			lnidplanpago	= 1100000002
+					
+			SELECT CsrLocalidad
+			LOCATE FOR ALLTRIM(nombre) = ALLTRIM("CARMEN DE PATAGONES")
+			IF FOUND()
+				lnidlocalidad = CsrLocalidad.id
+				lnidprovincia = CsrLocalidad.idprovincia
+				lccpostal = CsrLocalidad.cpostal
+			ENDIF
 
-	IF NOT EMPTY(Csrarticulo.fechapre)   
-		dfecmodi = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
-	ENDIF 		
-									
+			lccnombre = NombreNi(ALLTRIM(UPPER(lccnombre)))
+		     
+			INSERT INTO Csrctacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono2;
+			,ctelefono,email,tipoiva,cuit,idcategoria,ctadeudor,ctaacreedor,ctalogistica,ctabanco,ctaotro;
+			,ctaorden,idplanpago,idcanalvta,fechalta,observa,saldo,saldoant,estadocta,bonif1,bonif2,copiatkt;
+			,inscri01,fecins01,inscri02,inscri03,convenio,saldoauto,idbarrio,lista,idcateibrng,ingbrutos;
+			,comision,fecultcompra,fecultpago,numdoc,idtipodoc,existeibto,existegan,diasvto,idtablaint,esrecodevol;
+			,totalizabonif);
+		    VALUES(lnidctacte,lccnumero,lccnombre,lccdireccion,lccpostal,lnidlocalidad,lnidprovincia,lcctelefono2;
+		    ,lcctelefono,lcemail,lntipoiva,lccuit,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica,lnctabanco;
+		    ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
+		    ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
+		    ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
+		    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif)
+			
+			replace idctacte WITH lnidctacte IN CsrProdPrecio
+			
+			lnidctacte = lnidctacte + 1 			
+			
+    	ENDIF 
+    	&&Actualizamos el precio en csrproducto
+    	IF cProvPrecio = cProvArticulo
+    		SELECT CsrProdPrecio
+    		SCATTER NAME OscPrecio
+    		SELECT CsrProducto
+    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmod,switch
+    	ENDIF 
+		SELECT CsrPrecio
+	ENDSCAN 
+	USE IN CsrPrecio 
 	
-	INSERT INTO  producto  ( id , numero  , nombre  , codalfa , idctacte , idmarca ;
-           , idforma , idunidad , idtprod , idtipovta ;
-           , idtamano , idcatego , idrubro , idestado , idubicacio , idorigen ;
-           , nomodifica , incluirped , idmoneda , idiva , feculcpra , feculvta ;
-           , fecalta , fecmodi , unibulto , nofactura , nolista , espromocion ;
-           , minimofac , peso , volumen , fracciona , puntope, switch , divisible ;
-           , controlador , nommayorista , ctaaorden, esinsumo , idfamilia ;
-           , idcategotipo, codalfaprov , cotidolar , endolar , codbarra14;
-           , codbarra13 , feculpre ) ;
-     VALUES  ( lnid , ncodigo , cnombre , ccodalfa , nidctacte , nidmarca ;
-           , nidforma , nidunidad , nidtprod , nidtipovta ;
-           , nidtamano , nidcatego , nidrubro , nidestado , nidubicacio , nidorigen ;
-           , nnomodifica , nincluirped , nidmoneda , nidiva , dfeculcpra , dfeculvta ;
-           , dfecalta , dfecmodi , nunibulto , nnofactura , nnolista , nespromocion ;
-           , nminimofac , npeso , nvolumen , nfracciona , npuntope, cswitch , ndivisible ;
-           , ccontrolador , cnommayorista , nctaaorden, nesinsumo , nidfamilia ;
-           , nidcategotipo, ccodalfaprov , ncotidolar , nendolar , ccodbarra14 ;
-           , ccodbarra13 , dfeculpre) 
-    
-    cObservacion = CsrArticulo.observa
-    IF lentrim(cObservacion)<>0
-    	INSERT INTO CsrProductoDeta (id, idarticulo, descripcion, switch );
-    	VALUES (lniddeta, lnid , cObservacion , "30000")
-    	
-    	lniddeta = lniddeta + 1 
-    ENDIF 	        
-	lnid = lnid + 1
-
-	 SELECT CsrArticulo   				
+	SELECT CsrProducto   				
 ENDSCAN
 
 
@@ -139,5 +242,6 @@ CLOSE DATABASES
 	
 *USE IN  CsrSeccion 
 USE IN  CsrArticulo 
-USE in CsrmarcaVie 
+USE in CsrPrecios
+
 

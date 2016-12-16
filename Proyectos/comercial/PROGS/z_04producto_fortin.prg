@@ -72,11 +72,16 @@ SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()
-	SELECT CsrProducto
+	*SELECT CsrProducto
 	IF DELETED()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF 
+	IF CsrArticulo.borrado
+		LOOP 
+	ENDIF 
+	
+	SELECT CsrProducto
 	LOCATE FOR numero=VAL(CsrArticulo.numero )
 	IF numero=VAL(CsrArticulo.numero)
 		SELECT CsrArticulo
@@ -87,15 +92,15 @@ SCAN FOR !EOF()
            , nidtamano , nidcatego , nidrubro , nidestado , nidubicacio , nidorigen ;
            , nincluirped , nidmoneda , nidiva , nunibulto , nnofactura , nnolista , nespromocion ;
            , nminimofac , npeso , nvolumen , nfracciona , npuntope, ndivisible ,nnomodifica  ;
-           , nctaaorden, nesinsumo , nidfamilia , nidcategotipo, ncotidolar , nendolar 
+           , nctaaorden, nesinsumo , nidfamilia , nidcategotipo, ncotidolar , nendolar ,nredondeo 
     STORE "" TO  cnombre , ccodalfa , ccontrolador , cnommayorista , ccodalfaprov , ccodbarra14;
            , ccodbarra13 
     STORE DATE() TO  dfeculcpra , dfeculvta , dfecalta , dfecmodi , dfeculpre
            
 	cnombre		= NombreNi(alltrim(CsrArticulo.nombre))
 	ncodigo		= VAL(Csrarticulo.NUMERO)
-	ccodalfa	= ALLTRIM(CsrArticulo.codigo_fac)
-	ccodalfaprov = ALLTRIM(CsrArticulo.codigo_pro)
+	ccodalfaprov	= ALLTRIM(CsrArticulo.codigo_fac)
+	ccodalfa = ALLTRIM(CsrArticulo.codigo_pro)
 	
 	cnommayorista	= cnombre
 	ccontrolador	= cnombre
@@ -117,9 +122,10 @@ SCAN FOR !EOF()
 	nidubicacio = CsrUbicacion.id
 	
    	nidestado 	= IIF(empty(Csrarticulo.debaja),1,2)
-    nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
+    nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,1,3),8))
     nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
     nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
+    nredondeo	= CsrArticulo.redondeo
 	cswitch		= "00000"
 
 	IF NOT EMPTY(Csrarticulo.fechapre)   

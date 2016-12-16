@@ -744,22 +744,75 @@ CASE "JEREZ"$cProv
 	cNomProveedor	= "JEREZ HNOS."
 CASE "AGUDA"$cProv
 	cNomProveedor	= "LA AGUADA"
-CASE "LA FERETERA"$cProv OR "LA FERREE"$cProv
+CASE "LA FERETERA"$cProv OR "LA FERREE"$cProv OR NOT "TITA"$cProv
 	cNomProveedor	= "LA FERRETERA"
 CASE "MECANO"$cProv OR "INCH"$cProv
 	cNomProveedor	= "MECANO GANADERO S.A."
 CASE "MERIAL"$cProv 
 	cNomProveedor	= "MERIAL ARGENTINA S.A."
+CASE "METALTECN"$cProv 
+	cNomProveedor	= "METALTECNICA S.R.L."
 CASE "METFER"$cProv 
 	cNomProveedor	= "METFER"
 CASE "MEYER"$cProv
 	cNomProveedor	= "MEYER SACIF"
 CASE "MOLDPLA"$cProv 
 	cNomProveedor	= "MOLDPLAS PAMPERO S.R.L."
-*o
-	
+CASE "OVER"$cProv 
+	cNomProveedor	= "OVER S.A."
+CASE "PAPIERT"$cProv 
+	cNomProveedor	= "PAPIERTEI"	
+CASE "MEGALUX"$cProv 
+	cNomProveedor	= "PINTURAS MEGALUX S.R.L."
+CASE "PROQUI"$cProv 
+	cNomProveedor	= "PROQUIM"
+CASE "RC"$LEFT(cProv ,2)
+	cNomProveedor	= "RC DISTRIBUCIONES"
+CASE "REGA"$cProv 
+	cNomProveedor	= "REGA S.A."
+CASE "RICHMOND"$cProv 
+	cNomProveedor	= "RICHMOND VET PHARMA"
+CASE "RUEDAGRO"$cProv 
+	cNomProveedor	= "RUEDAGRO S.R.L."
+CASE "SEERY"$cProv 
+	cNomProveedor	= "SEERY MARTIN"
+CASE "SIA LOGISTICA"$cProv 
+	cNomProveedor	= "SIA LOGISTICA S.A."
+CASE "SIMPA"$cProv 
+	cNomProveedor	= "SIMPA S.A."
+CASE "SIXCOM"$cProv 
+	cNomProveedor	= "SIXCOM S.A."
+CASE "SOC. IND."$cProv OR "SOCIEDAD IND"$cProv
+	cNomProveedor	= "SOCIEDAD INDUSTRIAL ARGENTINA"
+CASE "SOLMONI"$cProv OR "SOMONI"$cProv
+	cNomProveedor	= "SOLMONI CARLOS"
+CASE "STHIL"$cProv OR "STIHL"$cProv
+	cNomProveedor	= "STIHL MONOIMPLEMENTOS S.A."
+CASE "TECNOFARM"$cProv 
+	cNomProveedor	= "TECNOFARM S.R.L."
+CASE "TECNOSAN"$cProv 
+	cNomProveedor	= "TECNOSAN S.R.L."
+CASE "TERAR"$cProv 
+	cNomProveedor	= "TERRAR"
+CASE "TEXILO"$cProv 
+	cNomProveedor	= "TEXILO S.A."
+CASE "TUBO"$cProv 
+	cNomProveedor	= "TUBOFORTE S.A."
+CASE "URIARTE"$cProv OR "URIANTE"$cProv
+	cNomProveedor	= "URIARTE TALDEA S.A."
+CASE "VENTACO"$cProv 
+	cNomProveedor	= "VENTACO S.A."
+CASE "VIFAVET"$cProv 
+	cNomProveedor	= "VIFAVET S.A."
+CASE "VILLA NUEVA"$cProv 
+	cNomProveedor	= "VILLA NUEVA S.A."
+CASE "VON FRANK"$cProv 
+	cNomProveedor	= "VON FRANKEN S.A.I.C."
+CASE "WURTH"$cProv 
+	cNomProveedor	= "WURTH ARGENTINA S.A."
+
 CASE lentrim(cProv)=0
-	cNomProveedor ="GENERAL"				
+	cNomProveedor ="GENERICO"				
 OTHERWISE
 	cNomProveedor = cProv
 ENDCASE

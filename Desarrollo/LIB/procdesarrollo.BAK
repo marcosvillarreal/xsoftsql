@@ -1,3 +1,18 @@
+FUNCTION A_RED
+parameters _aredondeo,a_importe
+
+if _Aredondeo<>0
+   _Aimporte=red(_Aimporte,4)
+   _Decimales=red((_Aimporte - int(_Aimporte) ),3)
+   _resul=int(_decimales/_aredondeo)
+   _resto=mod(_decimales,_Aredondeo)
+   if _Resto>0
+      _Aimporte=int(_Aimporte)+(_aredondeo*(_resul+1))
+   endif
+endif
+return _Aimporte
+
+
 *----------------------------------------------------
 *-Retardo
 *----------------------------------------------------
@@ -59,7 +74,7 @@ RETURN USED(tcAlias)
 *------------------------------------------------------------
 FUNCTION VerErrorSQL
 PARAMETERS nError
-stop()
+
 LOCAL cMensaje
 DO CASE 
 CASE nError=0
