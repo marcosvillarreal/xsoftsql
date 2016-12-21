@@ -132,558 +132,15 @@
 
 
 
-mcanalvta,comicanal ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvende
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-dor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,0 as codcanalvta,SPACE(30) as nomcanalvta,0 as comicanal ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kil
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-os ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Alias Activo: CSRSEGUIMIENTO;Ultimo registro:        363 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX0341.TMP;Ultimo Control activo: 
-08-11-2016 , Pila de llamadas
-08-11-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-08-11-2016 , Objeto      : plancomivende_v2.imprimir_vistaprevia1.impresora.click
-08-11-2016 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-08-11-2016 , Nº de Linea :          5
-08-11-2016 , En el Fuente: 	llOK=thisform.CrearInforme()
-08-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
-08-11-2016 , Objeto      : plancomivende_v2.crearinforme
-08-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
-08-11-2016 , Nº de Linea :        119
-08-11-2016 , En el Fuente: SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,nomvendedor,codcanalvta,nomcanalvta,comicanal,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor
+
+
+
+
+
+
 
 
 
@@ -947,8 +404,20 @@ n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 
 
 
 
+
+
+
+
+
+
 or,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad CANALVTA.;Linea : Oscatter.codigo	 = Oscatter.canalvta;Error :       1734;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         20 STR(IDVENDEDOR
+
+
+
+
+
+
 
 
 
@@ -1218,7 +687,19 @@ or,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,
 
 
 
+
+
+
+
+
+
 ades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor ,codcanalvta,nomcanalvta,comicanal UNION 
+
+
+
+
+
+
 
 
 
@@ -1472,6 +953,12 @@ ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomrubro as n
 
 
 
+
+
+
+
+
+
 guimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unidades) as unida
 
 
@@ -1599,7 +1086,19 @@ guimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,
 
 
 
+
+
+
+
+
+
 des,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO 
+
+
+
+
+
+
 
 
 
@@ -1860,7 +1359,19 @@ CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRSEGUIMIE
 
 
 
+
+
+
+
+
+
  as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor ,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,nomvendedo
+
+
+
+
+
+
 
 
 
@@ -2106,7 +1617,19 @@ r,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,C
 
 
 
+
+
+
+
+
+
 or UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FR
+
+
+
+
+
+
 
 
 
@@ -2352,7 +1875,19 @@ OM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,
 
 
 
+
+
+
+
+
+
 ades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,comica
+
+
+
+
+
+
 
 
 
@@ -2596,6 +2131,12 @@ nal UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nom
 
 
 
+
+
+
+
+
+
 FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unidades
 
 
@@ -2718,7 +2259,19 @@ FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro
 
 
 
+
+
+
+
+
+
 ) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,co
+
+
+
+
+
+
 
 
 
@@ -2970,7 +2523,19 @@ digo INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: C
 
 
 
+
+
+
+
+
+
  as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,
+
+
+
+
+
+
 
 
 
@@ -3208,7 +2773,19 @@ nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) a
 
 
 
+
+
+
+
+
+
 ,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) 
+
+
+
+
+
+
 
 
 
@@ -3446,7 +3023,19 @@ as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo
 
 
 
+
+
+
+
+
+
 nidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,com
+
+
+
+
+
+
 
 
 
@@ -3682,6 +3271,12 @@ icanal UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,
 
 
 
+
+
+
+
+
+
 mi FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unida
 
 
@@ -3800,7 +3395,19 @@ mi FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idru
 
 
 
+
+
+
+
+
+
 des) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo
+
+
+
+
+
+
 
 
 
@@ -4043,7 +3650,19 @@ des) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(
 
 
 
+
+
+
+
+
+
 2)) as comi FROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvended
+
+
+
+
+
+
 
 
 
@@ -4271,7 +3890,19 @@ or,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos
 
 
 
+
+
+
+
+
+
 dor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2
+
+
+
+
+
+
 
 
 
@@ -4387,6 +4018,12 @@ dor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo a
 
 )) as comi FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
 08-11-2016 , PLANCOMIVENDE_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad PORCECOMI.;Linea : IF Oscatter.porcecomi = 0;Error :       1734;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(G
+
+
+
+
+
+
 
 
 
@@ -4619,7 +4256,19 @@ RUPO,1)+STR(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008TMX03NI.TMP;U
 
 
 
+
+
+
+
+
+
 nidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as
+
+
+
+
+
+
 
 
 
@@ -4835,7 +4484,19 @@ nidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicana
 
 
 
+
+
+
+
+
+
 endedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre ,codvendedor,nomvendedor ,CAST(0 as n(11,2)) as unidades, CAST(0 as n(11,2))as importe,CAST(0 as n(11,2)) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi, 1
+
+
+
+
+
+
 
 
 
@@ -5051,7 +4712,19 @@ endedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre
 
 
 
+
+
+
+
+
+
 > 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanal UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomrubro as nombre ,codvendedor,nomvendedor ,SUM(unidades) as unidades,SUM(ne
+
+
+
+
+
+
 
 
 
@@ -5267,7 +4940,19 @@ togravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0
 
 
 
+
+
+
+
+
+
 _r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as co
+
+
+
+
+
+
 
 
 
@@ -5483,7 +5168,19 @@ digo ,articulo as nombre ,codvendedor,nomvendedor ,SUM(unidades) as unidades,SUM
 
 
 
+
+
+
+
+
+
 n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor OR
+
+
+
+
+
+
 
 
 
@@ -5705,7 +5402,19 @@ DER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :       1
 
 
 
+
+
+
+
+
+
 2)) as comi, 1 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE fi
+
+
+
+
+
+
 
 
 
@@ -5911,7 +5620,19 @@ ltro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,
 
 
 
+
+
+
+
+
+
 0 as n(11,2)) as unidades, CAST(0 as n(11,2))as importe,CAST(0 as n(11,2)) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi, 1 as clave ,idrubro as id_r,codrubro as codigo_r,nomrubro as nombre_r,SUM(unidades) as unidades_r,SUM(netogravado
+
+
+
+
+
+
 
 
 
@@ -6117,7 +5838,19 @@ ltro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,
 
 
 
+
+
+
+
+
+
 LECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave,0 as 
+
+
+
+
+
+
 
 
 
@@ -6323,7 +6056,19 @@ id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(
 
 
 
+
+
+
+
+
+
  BY idvendedor,idrubro,codrubro,nomrubro,codvendedor,nomvendedor UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo,articulo as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as ki
+
+
+
+
+
+
 
 
 
@@ -6529,10 +6274,22 @@ los ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave,0 as id
 
 
 
+
+
+
+
+
+
 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idarticulo,codigo,articulo,codvendedor,nomvendedor ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
 17-11-2016 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct no existe o no es válido.;Linea : ...;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 17-11-2016 , Pila de llamadas
 17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'LCCMD'.;Linea : IF NOT CrearCursorAdapter('CsrDeuda',lcCmd);Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 FECHA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
+
+
+
 
 
 
@@ -6742,6 +6499,12 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 
 
 
+
+
+
+
+
+
     1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP5031W.TMP;Ultimo Control activo: 
 17-11-2016 , Pila de llamadas
 17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
@@ -6755,6 +6518,12 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 17-11-2016 , Nº de Linea :         22
 17-11-2016 , En el Fuente: 		REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle   			,tipo WITH nTipo, leido WITH 0 IN csrauxiliar
 17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'CNOMBRE'.;Linea : cDetalle	= ALLTRIM(CsrDeuda.ctacte) +" " + ALLTRIM(CsrDeuda.cnombre)+ " " + strtrim(CsrDeuda.saldo,11,2);Error :         12;Ultimo Alias Activo: CSRDEUDA;Ultimo registro: 
+
+
+
+
+
+
 
 
 
@@ -6942,6 +6711,12 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 
 
 
+
+
+
+
+
+
 DEUDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP503RY.TMP;Ultimo Control activo: 
 17-11-2016 , Pila de llamadas
 17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
@@ -6955,6 +6730,12 @@ DEUDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003S
 17-11-2016 , Nº de Linea :         24
 17-11-2016 , En el Fuente: 		REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle   			,tipo WITH nTipo, leido WITH 0, saldo WITH CsrDueda.saldo IN csrauxiliar
 17-11-2016 , MAIN, Error: BTNAVISO es un miembro desconocido.;Linea : IF VAL(thisform.btnaviso.Caption)<>0;Error :       1925;Ultimo Alias Activo: CURPERFIL;Ultimo registro:        243 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP5045J.TMP;Ultimo Contr
+
+
+
+
+
+
 
 
 
@@ -7119,7 +6900,19 @@ ol activo:
 
 
 
+
+
+
+
+
+
 +"Total de pedidos con articulos = "+STR(nTotalPedido)+ CHR(13)+"Total de pedidos sin articulos = "+STR(nTotalNoPedido)+ CHR(13)+IIF(this.controlar_reba,"Total de pedidos R.E.B.A. vencido = "+STR(nTotalReba),"")+ CHR(13)+IIF(this.vtaenfrio,"Total de pedi
+
+
+
+
+
+
 
 
 
@@ -7276,8 +7069,20 @@ dos con frio = "+STR(nTotalFrio),""));Error :         11;Ultimo Alias Activo: CS
 
 
 
+
+
+
+
+
+
 rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de pedidos R.E.B.A. vencido = "+STR(nTotalReba),"")+						CHR(13)+IIF(this.vtaenfrio,"Total de pedidos con frio = "+STR(nTotalFrio),""))
 22-11-2016 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra el alias 'CSRPARAVARIO'.;Linea : SELECT CsrParaVario;Error :         13;Ultimo Alias Activo: CSRAUXCABEPED;Ultimo registro:          3 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BJ
+
+
+
+
+
+
 
 
 
@@ -7421,6 +7226,12 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 
 
 
+
+
+
+
+
+
 7T04OM.TMP;Ultimo Control activo: 
 22-11-2016 , Pila de llamadas
 22-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid_v2.sct
@@ -7444,6 +7255,12 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 22-11-2016 , Nº de Linea :         13
 22-11-2016 , En el Fuente: SELECT CsrParaVario
 22-11-2016 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la etiqueta de índice.;Linea : SET ORDER TO idcuerpo;Error :       1683;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          6 IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
 
 
 
@@ -7559,6 +7376,12 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 
 
 
+
+
+
+
+
+
 0AFBD0347.TMP;Ultimo Control activo: 
 22-11-2016 , Pila de llamadas
 22-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid_v2.sct
@@ -7582,6 +7405,12 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 22-11-2016 , Nº de Linea :         67
 22-11-2016 , En el Fuente: 				SELECT CsrAuxVisita
 22-11-2016 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la variable 'CSRAUXPEDIPAD'.;Linea : GATHER NAME CsrAuxPediPad;Error :         12;Ultimo Alias Activo: CSRAUXPEDIPAD;Ultimo registro:          4 IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
+
+
+
+
+
 
 
 
@@ -7675,6 +7504,12 @@ L\TEMP\0000AFBD03AU.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
 \0000AFBD04JH.TMP;Ultimo Control activo: 
 22-11-2016 , Pila de llamadas
 22-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid_v2.sct
@@ -7721,6 +7556,12 @@ L\TEMP\0000AFBD03AU.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
 TMP;Ultimo Control activo: 
 24-11-2016 , Pila de llamadas
 24-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listaprecio_v1.sct
@@ -7729,6 +7570,12 @@ TMP;Ultimo Control activo:
 24-11-2016 , Nº de Linea :          2
 24-11-2016 , En el Fuente: thisform._cboprecio.Value = 1
 24-11-2016 , LISTAPRECIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'LNPREUNITA'.;Linea : lnprearti		= lnpreunita;Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
+
+
+
 
 
 
@@ -7789,6 +7636,12 @@ AL\TEMP\00001TE101P3.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
 l activo: CODEXTEND
 07-12-2016 , Pila de llamadas
 07-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -7823,6 +7676,12 @@ l activo: CODEXTEND
 
 
 
+
+
+
+
+
+
 rol activo: 
 07-12-2016 , Pila de llamadas
 07-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
@@ -7836,6 +7695,12 @@ rol activo:
 07-12-2016 , Nº de Linea :        254
 07-12-2016 , En el Fuente: 	IF lFletefijo
 07-12-2016 , MAIN, Error: No hay ninguna tabla abierta en el área de trabajo actual.;Linea : CURSORSETPROP("Buffering",5,"CsrCursor");Error :         52;Ultimo Alias Activo: _CSRCOMPROBANTE;Ultimo registro:          3 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
+
+
+
 
 
 
@@ -7870,3 +7735,36 @@ LOCAL\TEMP\00008XE106W6.TMP;Ultimo Control activo:
 07-12-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\buscompro.sct
 07-12-2016 , Nº de Linea :         43
 07-12-2016 , En el Fuente:    CURSORSETPROP("Buffering",5,"CsrCursor")
+20-12-2016 , Z_04PRODUCTO_COMPEL, Error: El archivo no existe.;Linea : APPEND FROM  "c:\lista.txt" SDF;Error :          1;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008JYH006D.TMP;Ultimo Control ac
+
+
+
+
+
+tivo: 
+20-12-2016 , Pila de llamadas
+20-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.fxp
+20-12-2016 , Objeto      : z_04producto_compel
+20-12-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.prg
+20-12-2016 , Nº de Linea :         58
+20-12-2016 , En el Fuente: APPEND FROM  "c:\lista.txt" SDF
+20-12-2016 , Z_04PRODUCTO_COMPEL, Error: No se encuentra la variable 'DETA03'.;Linea : replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:        258 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
+AL\TEMP\00008JYH00H5.TMP;Ultimo Control activo: 
+20-12-2016 , Pila de llamadas
+20-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.fxp
+20-12-2016 , Objeto      : z_04producto_compel
+20-12-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.prg
+20-12-2016 , Nº de Linea :         62
+20-12-2016 , En el Fuente: replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+20-12-2016 , Z_04PRODUCTO_COMPEL, Error: No se encuentra la variable 'FECHA'.;Linea : INSERT INTO FsrArticulo (fecha,tipo,articulo,marca,observa,rubro,familia,comentario,email) VALUES (lcfecha,lcTipo,lcModelo,lcMarca,lcObservaciones,lcrubro,lcFamilia,lcC
+
+omentario,lcEmail);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008JYH00IB.TMP;Ultimo Control activo: 
+20-12-2016 , Pila de llamadas
+20-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.fxp
+20-12-2016 , Objeto      : z_04producto_compel
+20-12-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.prg
+20-12-2016 , Nº de Linea :        155
+20-12-2016 , En el Fuente: 		INSERT INTO FsrArticulo (fecha,tipo,articulo,marca,observa,rubro,familia,comentario,email)		VALUES (lcfecha,lcTipo,lcModelo,lcMarca,lcObservaciones,lcrubro,lcFamilia,lcComentario,lcEmail)

@@ -5,6 +5,7 @@ lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase
 
 DO setup
+
 SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
 SET PROCEDURE  TO  syserror.prg ADDITIVE 
 
