@@ -1,1214 +1,3 @@
-25-11-2016 12:42:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\buscar_objparam.sct
-25-11-2016 12:42:50 , Objeto      : rf_frm_buscargrd.keypress
-25-11-2016 12:42:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\buscar_objparam.sct
-25-11-2016 12:42:50 , Nº de Linea :         14
-25-11-2016 12:42:50 , En el Fuente: 		this.buscar1.cntBarra.cmdAceptar.click
-25-11-2016 12:42:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\buscar_objparam.sct
-25-11-2016 12:42:50 , Objeto      : rf_frm_buscargrd.buscar1.cntbarra.cmdaceptar.click
-25-11-2016 12:42:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\buscar_objparam.sct
-25-11-2016 12:42:51 , Nº de Linea :          2
-25-11-2016 12:42:51 , En el Fuente:    thisform.armaselect()
-25-11-2016 12:42:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\buscar_objparam.sct
-25-11-2016 12:42:51 , Objeto      : rf_frm_buscargrd.armaselect
-25-11-2016 12:42:51 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\buscar_objparam.sct
-25-11-2016 12:42:51 , Nº de Linea :         57
-25-11-2016 12:42:51 , En el Fuente: 			IF oParametro.lBuscoExtra01 OR oParametro.lBuscoExtra02
-25-11-2016 12:43:04 , REGFACVTA_CAE.GRID2.COLUMN2.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'IDENVASE'.;Linea : REPLACE idarticulo WITH Csrproducto.id,codigo WITH LTRIM(STR(Csrproducto.numero)),nombre WITH Csrproducto.nombre ,univenta WITH lnun
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-iventa,idctavta WITH Csrproducto.idctavta,unibulto WITH Csrproducto.unibulto ,idfuerzavta WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen ,perceibruto WITH Csrproducto.perceibruto,nofactura WITH 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase ,pesable WITH CsrProducto.vtakilos,idfrio WITH CsrProducto.idfrio,idareaneg WITH CsrProducto.idarea ,Registro WITH RECNO(),CodExtend WITH LTRIM(STR(Csrproducto.numero)),endolar WITH CsrProducto.end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-olar+1 ,CodAlfa WITH CsrProducto.codalfa,actualizaprecio WITH IIF(actualizaprecio=0,1,actualizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TA\LOCAL\TEMP\0000ACQX02MC.TMP;Ultimo Control activo: 
-25-11-2016 12:43:05 , Pila de llamadas
-25-11-2016 12:43:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 12:43:05 , Objeto      : regfacvta_cae.grid2.column2.text1.lostfocus
-25-11-2016 12:43:05 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 12:43:05 , Nº de Linea :          4
-25-11-2016 12:43:05 , En el Fuente: 		thisform.kitbuscarProd.f_lostfocusSay()
-25-11-2016 12:43:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 12:43:06 , Objeto      : regfacvta_cae.kitbuscarprod.f_lostfocussay
-25-11-2016 12:43:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 12:43:06 , Nº de Linea :         16
-25-11-2016 12:43:06 , En el Fuente: REPLACE idarticulo WITH Csrproducto.id,codigo WITH LTRIM(STR(Csrproducto.numero)),nombre WITH Csrproducto.nombre,univenta WITH lnuniventa,idctavta WITH Csrproducto.idctavta,unibulto WITH Csrproducto.unibulto,idfuerzavt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen,perceibruto WITH Csrproducto.perceibruto,nofactura WITH Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase,pesable WITH CsrProducto.vtakilo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-s,idfrio WITH CsrProducto.idfrio,idareaneg WITH CsrProducto.idarea ,Registro WITH RECNO(),CodExtend WITH LTRIM(STR(Csrproducto.numero)),endolar WITH CsrProducto.endolar+1,CodAlfa WITH CsrProducto.codalfa,actualizaprecio WITH IIF(actualizaprecio=0,1,actua
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-lizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac
-25-11-2016 12:47:35 , REGFACVTA_CAE.GRID2.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la propiedad BUSCAREXTRA02.;Linea : this.Parent.buscarextra02 = .f.;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\CH
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IVI\APPDATA\LOCAL\TEMP\0000ACQX033J.TMP;Ultimo Control activo: NOMBRE
-25-11-2016 12:47:35 , Pila de llamadas
-25-11-2016 12:47:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 12:47:36 , Objeto      : regfacvta_cae.grid2.column2.text1.keypress
-25-11-2016 12:47:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 25-11-2016 12:47:36 , Nº de Linea :         20
 25-11-2016 12:47:36 , En el Fuente:       this.LostFocus()
 25-11-2016 12:47:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -1222,6 +11,23 @@ IVI\APPDATA\LOCAL\TEMP\0000ACQX033J.TMP;Ultimo Control activo: NOMBRE
 25-11-2016 12:47:37 , Nº de Linea :         74
 25-11-2016 12:47:37 , En el Fuente: 			this.Parent.buscarextra02 = .f.
 25-11-2016 12:49:14 , REGFACVTA_CAE.GRID2.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la propiedad BUSCAREXTRA02.;Linea : this.Parent.buscarextra02 = .f.;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\CH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1513,7 +319,41 @@ IVI\APPDATA\LOCAL\TEMP\0000ACQX03I8.TMP;Ultimo Control activo: NOMBRE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 venta,idctavta WITH Csrproducto.idctavta,unibulto WITH Csrproducto.unibulto ,idfuerzavta WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen ,perceibruto WITH Csrproducto.perceibruto,nofactura WITH C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1783,7 +623,41 @@ srproducto.nofactura,idenvase WITH Csrproducto.idenvase ,pesable WITH CsrProduct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lar+1 ,CodAlfa WITH CsrProducto.codalfa,actualizaprecio WITH IIF(actualizaprecio=0,1,actualizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDAT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2064,7 +938,41 @@ A\LOCAL\TEMP\0000ACQX043V.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen,perceibruto WITH Csrproducto.perceibruto,nofactura WITH Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase,pesable WITH CsrProducto.vtakilo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2324,8 +1232,42 @@ s,idfrio WITH CsrProducto.idfrio,idareaneg WITH CsrProducto.idarea ,Registro WIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac
 25-11-2016 14:57:50 , ABMPRODUCTO._TEXTBOX1.KEYPRESS, Error: No coinciden los tipos de datos.;Linea : REPLACE cnombre WITH Csrctacte.cnombre,costociva WITH 0,margen1 WITH 0,prepubfciva WITH 0 ,preconfciva WITH 0,fecha WITH CTOD('1900-01-01'),idctacte WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2604,6 +1546,23 @@ H Csrctacte.id ,cnumero WITH Csrctacte.cnumero,id WITH 0 ,registro WITH RECNO();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 stro WITH RECNO()
 25-11-2016 15:20:12 , ACTUALIZADOR._TXTCOD_FAC.KEYPRESS, Error: SQL: no se encuentra la columna 'COD_MARCA'.;Linea : SELECT 	0 as chck,numero,codigo_pro ,codigo_fac,nombre,proveedor ,cod_marca,cod_rubro ,cod_famili,cod_tipo ,SPACE(30) as nom_marca ,SPACE
 
@@ -2723,7 +1682,41 @@ stro WITH RECNO()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (30) as nom_rubro ,SPACE(30) as nom_famili ,SPACE(30) as nom_tipo ,fechapre ,RECNO() as registro FROM CsrAuxArticulo WHERE nombre LIKE('&cValor') AND codigo_fac LIKE('&cCodFac') INTO CURSOR CsrAuxCursor READWRITE;Error :       1806;Ultimo Alias Activo: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2967,6 +1960,23 @@ SRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\COMERCIO\FUENTES\ARTICULO.DBF
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		,RECNO() as registro		FROM CsrAuxArticulo WHERE nombre LIKE('&cValor') AND codigo_fac LIKE('&cCodFac') INTO CURSOR CsrAuxCursor READWRITE  
 25-11-2016 15:20:34 , ACTUALIZADOR._TXTBUSQUEDA.KEYPRESS, Error: SQL: no se encuentra la columna 'COD_MARCA'.;Linea : SELECT 	0 as chck,numero,codigo_pro ,codigo_fac,nombre,proveedor ,cod_marca,cod_rubro ,cod_famili,cod_tipo ,SPACE(30) as nom_marca ,SPAC
 
@@ -3082,7 +2092,41 @@ SRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\COMERCIO\FUENTES\ARTICULO.DBF
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 E(30) as nom_rubro ,SPACE(30) as nom_famili ,SPACE(30) as nom_tipo ,fechapre ,RECNO() as registro FROM CsrAuxArticulo WHERE nombre LIKE('&cValor') AND codigo_fac LIKE('&cCodFac') INTO CURSOR CsrAuxCursor READWRITE;Error :       1806;Ultimo Alias Activo: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3318,8 +2362,42 @@ CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		,RECNO() as registro		FROM CsrAuxArticulo WHERE nombre LIKE('&cValor') AND codigo_fac LIKE('&cCodFac') INTO CURSOR CsrAuxCursor READWRITE  
 25-11-2016 15:35:55 , REGFACVTA_CAE.GRID2.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la propiedad COSTOBASE.;Linea : lobjprecio.costobase= lObjProducto.costobase;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3553,6 +2631,23 @@ CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT0151.TMP;Ultimo Control activo: CANTIDAD
 25-11-2016 16:26:06 , Pila de llamadas
 25-11-2016 16:26:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -3576,6 +2671,23 @@ CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo C
 25-11-2016 16:26:08 , Nº de Linea :          8
 25-11-2016 16:26:08 , En el Fuente: =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id")
 25-11-2016 16:26:09 , REGFACVTA_CAE.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'FECOFERTA'.;Linea : IF !EMPTY(CsrprodAreaNeg.fecoferta);Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:         26 ;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3785,6 +2897,23 @@ CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT03NG.TMP;Ultimo Control activo: CANTIDAD
 25-11-2016 16:39:10 , Pila de llamadas
 25-11-2016 16:39:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -3808,6 +2937,23 @@ CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo C
 25-11-2016 16:39:12 , Nº de Linea :          8
 25-11-2016 16:39:12 , En el Fuente: =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id")
 25-11-2016 16:40:36 , REGFACVTA_CAE.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra la etiqueta de índice.;Linea : =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id");Error :       1683;Ultimo Alias Activo: CSRPRODAREANEG;Ultimo registro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3992,7 +3138,41 @@ CSRAUXARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 iventa,idctavta WITH Csrproducto.idctavta,unibulto WITH Csrproducto.unibulto ,idfuerzavta WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen ,perceibruto WITH Csrproducto.perceibruto,nofactura WITH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4148,7 +3328,41 @@ Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase ,pesable WITH CsrProduc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 olar+1 ,CodAlfa WITH CsrProducto.codalfa,actualizaprecio WITH IIF(actualizaprecio=0,1,actualizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4311,7 +3525,41 @@ TA\LOCAL\TEMP\00008YRT09BR.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen,perceibruto WITH Csrproducto.perceibruto,nofactura WITH Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase,pesable WITH CsrProducto.vtakilo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4459,8 +3707,42 @@ s,idfrio WITH CsrProducto.idfrio,idareaneg WITH CsrProducto.idarea ,Registro WIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac
 25-11-2016 17:45:14 , REGFACVTA.KEYPRESS, Error: No se encuentra la propiedad DEVOLVERCID.;Linea : thisform.idfactura = thisform.devolvercid();Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4621,6 +3903,23 @@ L\TEMP\00008YRT0A8Q.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT09YN.TMP;Ultimo Control activo: CODEXTEND
 25-11-2016 17:47:18 , Pila de llamadas
 25-11-2016 17:47:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -4639,6 +3938,23 @@ L\TEMP\00008YRT0A8Q.TMP;Ultimo Control activo:
 25-11-2016 17:47:20 , Nº de Linea :          7
 25-11-2016 17:47:20 , En el Fuente: lobjprecio.aumento	= lObjProducto.aumento &&Es un porcentaje
 01-12-2016 11:52:37 , MAIN, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRHIJO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000258P00D0.TMP;Ultimo Control activ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4770,6 +4086,23 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Alias Activo: CSRPADRE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000258P00M9.TMP;Ultimo Control activo: 
 01-12-2016 11:54:08 , Pila de llamadas
 01-12-2016 11:54:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4778,6 +4111,23 @@ o:
 01-12-2016 11:54:09 , Nº de Linea :         23
 01-12-2016 11:54:09 , En el Fuente: DO FORM &lcabm WITH lcid,.t. TO lcidtabla
 16-12-2016 13:18:23 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABMMARCA.TXTID.INIT, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4886,6 +4236,23 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103BP.TMP;Ultimo Control activo: 
 16-12-2016 13:18:39 , Pila de llamadas
 16-12-2016 13:18:40 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4894,6 +4261,23 @@ o:
 16-12-2016 13:18:40 , Nº de Linea :          1
 16-12-2016 13:18:40 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 16-12-2016 13:22:55 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE8.KITBUSCAOALTAENCTACPRA.TXTID.INIT, Error: No se encuentra la variable 'IDCTACPRA'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         12;Ultimo Alias Activo: _CSRPERCEPROV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4994,6 +4378,23 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103OO.TMP;Ultimo Control activo: 
 16-12-2016 13:24:12 , Pila de llamadas
 16-12-2016 13:24:12 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5045,6 +4446,23 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103Y8.TMP;Ultimo Control activo: 
 16-12-2016 13:25:49 , Pila de llamadas
 16-12-2016 13:25:50 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5053,6 +4471,23 @@ o:
 16-12-2016 13:25:50 , Nº de Linea :          1
 16-12-2016 13:25:50 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 16-12-2016 13:34:49 , PIDOPRECIO.INIT, Error: No se encuentra el alias 'CSRRUBRO'.;Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5147,6 +4582,23 @@ CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1069D.TMP;Ultimo Control activo: 
 16-12-2016 13:39:15 , Pila de llamadas
 16-12-2016 13:39:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\parametros\paravario.sct
@@ -5170,6 +4622,23 @@ CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETE
 16-12-2016 13:39:18 , Nº de Linea :         21
 16-12-2016 13:39:18 , En el Fuente: SELECT CsrProducto
 16-12-2016 15:16:25 , REGIMPORTARSQL.CONTAINERENCABEZA.PAGEFRAME1.PAGE1.KITGRILLATILDARIMPORTAR.LOSTFOCUS, Error: El archivo no está abierto.;Linea : SCAN;Error :       1113;Ultimo Alias Activo: _CSROPEIMP;Ultimo registro:          3 CNUMERO;DBF: C:\USER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5236,9 +4705,43 @@ S\CHIVI\APPDATA\LOCAL\TEMP\00002CQX00GY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 : 
 16-12-2016 15:17:45 , Pila de llamadas
 16-12-2016 15:47:54 , PARAVARIO.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: _CSRMARCA;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5299,6 +4802,23 @@ P0E5L.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  CSRAUXPRECIO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4SP0EV4.TMP;Ultimo Control activo: COSTOCPRA
 16-12-2016 15:59:04 , Pila de llamadas
 16-12-2016 15:59:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -5330,6 +4850,23 @@ P0E5L.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4SP0FDG.TMP;Ultimo Control activo: 
 16-12-2016 16:03:57 , Pila de llamadas
 16-12-2016 16:03:58 , Programa    : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
@@ -5343,6 +4880,23 @@ P0E5L.TMP;Ultimo Control activo:
 16-12-2016 16:03:58 , Nº de Linea :          8
 16-12-2016 16:03:59 , En el Fuente: IF !CrearCursorAdapter('CsrSeteo',lcCmdParam)
 16-12-2016 16:31:00 , PIDOPRECIO.INIT, Error: No se encuentra el alias 'CSRRUBRO'.;Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5364,3 +4918,93 @@ CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETE
 16-12-2016 16:31:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
 16-12-2016 16:31:02 , Nº de Linea :         16
 16-12-2016 16:31:02 , En el Fuente: replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3		,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5		,margen1 WITH CsrRubro.margen1 in CsrAuxPrecio
+21-12-2016 15:00:29 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCUERPROMO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008IYX00DX.TMP;Ultimo Control activ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o: 
+21-12-2016 15:00:29 , Pila de llamadas
+21-12-2016 15:00:30 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+21-12-2016 15:00:30 , Objeto      : main
+21-12-2016 15:00:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+21-12-2016 15:00:30 , Nº de Linea :        285
+21-12-2016 15:00:30 , En el Fuente: 	Read events   
+21-12-2016 15:00:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+21-12-2016 15:00:30 , Objeto      : frmmenu1.treeview.dblclick
+21-12-2016 15:00:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+21-12-2016 15:00:30 , Nº de Linea :         10
+21-12-2016 15:00:30 , En el Fuente: 	   &lcCmd
+21-12-2016 15:00:30 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
+21-12-2016 15:00:31 , Objeto      : ejecutamenu
+21-12-2016 15:00:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
+21-12-2016 15:00:31 , Nº de Linea :       1575
+21-12-2016 15:00:31 , En el Fuente: 						DO FORM &lcForm
+21-12-2016 15:00:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:31 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.txtexiste1.init
+21-12-2016 15:00:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:31 , Nº de Linea :          1
+21-12-2016 15:00:31 , En el Fuente: this.Parent.refrescardato("")
+21-12-2016 15:00:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:31 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.refrescardato
+21-12-2016 15:00:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:32 , Nº de Linea :         19
+21-12-2016 15:00:32 , En el Fuente: This.traerdatos(.t.,lccmd) 
+21-12-2016 15:00:32 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:32 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.traerdatos
+21-12-2016 15:00:32 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:32 , Nº de Linea :         32
+21-12-2016 15:00:32 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
+21-12-2016 15:00:48 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCUERPROMO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008IYX00HH.TMP;Ultimo Control activ
+
+
+
+
+
+
+
+
+
+o: 
+21-12-2016 15:00:48 , Pila de llamadas
+21-12-2016 15:00:48 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+21-12-2016 15:00:48 , Objeto      : main
+21-12-2016 15:00:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+21-12-2016 15:00:49 , Nº de Linea :        285
+21-12-2016 15:00:49 , En el Fuente: 	Read events   
+21-12-2016 15:00:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+21-12-2016 15:00:49 , Objeto      : frmmenu1.treeview.dblclick
+21-12-2016 15:00:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+21-12-2016 15:00:49 , Nº de Linea :         10
+21-12-2016 15:00:49 , En el Fuente: 	   &lcCmd
+21-12-2016 15:00:49 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
+21-12-2016 15:00:49 , Objeto      : ejecutamenu
+21-12-2016 15:00:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
+21-12-2016 15:00:49 , Nº de Linea :       1575
+21-12-2016 15:00:49 , En el Fuente: 						DO FORM &lcForm
+21-12-2016 15:00:49 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:50 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.txtexiste1.init
+21-12-2016 15:00:50 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:50 , Nº de Linea :          1
+21-12-2016 15:00:50 , En el Fuente: this.Parent.refrescardato("")
+21-12-2016 15:00:50 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:51 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.refrescardato
+21-12-2016 15:00:51 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:51 , Nº de Linea :         19
+21-12-2016 15:00:51 , En el Fuente: This.traerdatos(.t.,lccmd) 
+21-12-2016 15:00:51 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:51 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.traerdatos
+21-12-2016 15:00:52 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-12-2016 15:00:52 , Nº de Linea :         32
+21-12-2016 15:00:52 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   

@@ -166,7 +166,12 @@ IF TYPE('goApp')='O'
 	           		                          
 	do setup
 	_screen.LockScreen=.f.
-	 
+	
+	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
+
+    WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+    DO Verifica_OCX WITH "Check"
+    
 	Grabar_Log('Acceso al sistema, antes de autenticar') 
 	 
 	DO directivasfiscal    && en procfiscal.prg

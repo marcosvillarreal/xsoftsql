@@ -46,19 +46,20 @@ IF USED('FsrArticulo')
 	USE IN FsrArticulo
 ENDIF 
 
-CREATE CURSOR FsrArticulo (codigo c(8),Articulo c(100),Precio c(20),CodBarra c(20),rubro c(50);
-	,CodProveedor c(15),Marca c(50))
+CREATE CURSOR FsrArticulo (codigo c(8),Articulo c(100),Precio c(20),CodBarra c(20),Codrubro c(50);
+	,CodProveedor c(15),CodMarca c(50))
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250))
 		
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
-APPEND FROM  "j:\bic.txt" SDF
+APPEND FROM  "j:\bic.csv" SDF
 
+lcSeparador =  ";"&&"	"
 lcDelimitador = "^"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta01 WITH RTRIM(STRTRAN(deta01,lcSeparador,lcDelimitador))+lcDelimitador
+replace ALL deta02 WITH RTRIM(STRTRAN(deta02,lcSeparador,lcDelimitador))+lcDelimitador
 *!*	replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 *!*	replace ALL deta04 WITH STRTRAN(deta04,"	",lcDelimitador)
 *!*	replace ALL deta05 WITH STRTRAN(deta05,"	",lcDelimitador)
@@ -127,7 +128,7 @@ DO WHILE NOT EOF()
 			ENDIF 
 			lcArticulo			= UPPER((IIF(j + i=2,lcCadena,lcArticulo)))
 			lcCosto				= UPPER((IIF(j + i=3,lcCadena,lcCosto)))
-			lcCodBarra		 	= UPPER(IIF(j + i=4,STR(VAL(STRTRAN(LimpiarCadena(lcCadena),' ','')),15),lcCodBarra))
+			lcCodBarra		 	= UPPER(IIF(j + i=4,alltrim((STRTRAN(LimpiarCadena(lcCadena),' ',''))),lcCodBarra))
 			lcRubro				= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcRubro)))
 			lcCodProveedor		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcCodProveedor)))
 			lcMarca				= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcMarca)))
@@ -154,7 +155,7 @@ DO WHILE NOT EOF()
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		INSERT INTO FsrArticulo (CODIGO,articulo,marca,precio,rubro,codbarra,codproveedor);
+		INSERT INTO FsrArticulo (CODIGO,articulo,Codmarca,precio,Codrubro,codbarra,codproveedor);
 		VALUES (lcCodigo,lcArticulo,lcMarca,lcCosto,lcrubro,lcCodBarra,lcCodProveedor)
 		
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
