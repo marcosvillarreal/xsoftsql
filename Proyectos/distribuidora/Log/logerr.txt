@@ -1,204 +1,10 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRSEGUIMIENTO;Ultimo registro:        609 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP500YN.TMP;Ultimo Control activo: 
-17-11-2016 , Pila de llamadas
-17-11-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-11-2016 , Objeto      : plancomivende_v2.imprimir_vistaprevia1.impresora.click
-17-11-2016 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-11-2016 , Nº de Linea :          5
-17-11-2016 , En el Fuente: 	llOK=thisform.CrearInforme()
-17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
 17-11-2016 , Objeto      : plancomivende_v2.crearinforme
 17-11-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende_v2.sct
 17-11-2016 , Nº de Linea :        143
 17-11-2016 , En el Fuente: SELECT idvendedor,0 as grupo,idcanalvta as id,codcanalvta as codigo,nomcanalvta as nombre ,codvendedor,nomvendedor,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,
+
+
+
 
 
 
@@ -570,7 +376,13 @@ DER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :       1
 
 
 
+
+
+
 ltro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanalUNION ALL SELECT idvendedor,0 as grupo,idcanalvta as id,codcanalvta as codigo,nomcanalvta as nombre ,codvendedor,nomvendedor,CAST(
+
+
+
 
 
 
@@ -942,7 +754,13 @@ ltro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,
 
 
 
+
+
+
 )as importe_r,SUM(vtakilos) as kilos_r ,comicanal as porcomi_r,CAST(0 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanalUNION ALL SE
+
+
+
 
 
 
@@ -1314,7 +1132,13 @@ LECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo,nomrubro as nombre ,
 
 
 
+
+
+
 id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=0 AND comicanal = 0 GROUP
+
+
+
 
 
 
@@ -1686,7 +1510,13 @@ id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(
 
 
 
+
+
+
 los ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 
+
+
+
 
 
 
@@ -1876,6 +1706,9 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 17-11-2016 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct no existe o no es válido.;Linea : ...;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 17-11-2016 , Pila de llamadas
 17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'LCCMD'.;Linea : IF NOT CrearCursorAdapter('CsrDeuda',lcCmd);Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 FECHA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
 
 
 
@@ -2251,6 +2084,9 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 
 
 
+
+
+
     1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP5031W.TMP;Ultimo Control activo: 
 17-11-2016 , Pila de llamadas
 17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
@@ -2264,6 +2100,9 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 17-11-2016 , Nº de Linea :         22
 17-11-2016 , En el Fuente: 		REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle   			,tipo WITH nTipo, leido WITH 0 IN csrauxiliar
 17-11-2016 , FRMAVISOS.INIT, Error: No se encuentra la variable 'CNOMBRE'.;Linea : cDetalle	= ALLTRIM(CsrDeuda.ctacte) +" " + ALLTRIM(CsrDeuda.cnombre)+ " " + strtrim(CsrDeuda.saldo,11,2);Error :         12;Ultimo Alias Activo: CSRDEUDA;Ultimo registro: 
+
+
+
 
 
 
@@ -2617,6 +2456,9 @@ as n(6,2)) as comi_rFROM CsrSeguimiento WHERE filtro=1 GROUP BY idvendedor,idart
 
 
 
+
+
+
 DEUDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP503RY.TMP;Ultimo Control activo: 
 17-11-2016 , Pila de llamadas
 17-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmaavisos.sct
@@ -2630,6 +2472,9 @@ DEUDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003S
 17-11-2016 , Nº de Linea :         24
 17-11-2016 , En el Fuente: 		REPLACE fecha WITH csrDeuda.fecha, detalle WITH cDetalle   			,tipo WITH nTipo, leido WITH 0, saldo WITH CsrDueda.saldo IN csrauxiliar
 17-11-2016 , MAIN, Error: BTNAVISO es un miembro desconocido.;Linea : IF VAL(thisform.btnaviso.Caption)<>0;Error :       1925;Ultimo Alias Activo: CURPERFIL;Ultimo registro:        243 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003SP5045J.TMP;Ultimo Contr
+
+
+
 
 
 
@@ -2960,7 +2805,13 @@ ol activo:
 
 
 
+
+
+
 +"Total de pedidos con articulos = "+STR(nTotalPedido)+ CHR(13)+"Total de pedidos sin articulos = "+STR(nTotalNoPedido)+ CHR(13)+IIF(this.controlar_reba,"Total de pedidos R.E.B.A. vencido = "+STR(nTotalReba),"")+ CHR(13)+IIF(this.vtaenfrio,"Total de pedi
+
+
+
 
 
 
@@ -3283,8 +3134,14 @@ dos con frio = "+STR(nTotalFrio),""));Error :         11;Ultimo Alias Activo: CS
 
 
 
+
+
+
 rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de pedidos R.E.B.A. vencido = "+STR(nTotalReba),"")+						CHR(13)+IIF(this.vtaenfrio,"Total de pedidos con frio = "+STR(nTotalFrio),""))
 22-11-2016 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra el alias 'CSRPARAVARIO'.;Linea : SELECT CsrParaVario;Error :         13;Ultimo Alias Activo: CSRAUXCABEPED;Ultimo registro:          3 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BJ
+
+
+
 
 
 
@@ -3594,6 +3451,9 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 
 
 
+
+
+
 7T04OM.TMP;Ultimo Control activo: 
 22-11-2016 , Pila de llamadas
 22-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid_v2.sct
@@ -3617,6 +3477,9 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 22-11-2016 , Nº de Linea :         13
 22-11-2016 , En el Fuente: SELECT CsrParaVario
 22-11-2016 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la etiqueta de índice.;Linea : SET ORDER TO idcuerpo;Error :       1683;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          6 IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
 
 
 
@@ -3898,6 +3761,9 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 
 
 
+
+
+
 0AFBD0347.TMP;Ultimo Control activo: 
 22-11-2016 , Pila de llamadas
 22-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid_v2.sct
@@ -3921,6 +3787,9 @@ rticulos = "+STR(nTotalNoPedido)+						CHR(13)+IIF(this.controlar_reba,"Total de
 22-11-2016 , Nº de Linea :         67
 22-11-2016 , En el Fuente: 				SELECT CsrAuxVisita
 22-11-2016 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la variable 'CSRAUXPEDIPAD'.;Linea : GATHER NAME CsrAuxPediPad;Error :         12;Ultimo Alias Activo: CSRAUXPEDIPAD;Ultimo registro:          4 IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
+
+
 
 
 
@@ -4180,6 +4049,9 @@ L\TEMP\0000AFBD03AU.TMP;Ultimo Control activo:
 
 
 
+
+
+
 \0000AFBD04JH.TMP;Ultimo Control activo: 
 22-11-2016 , Pila de llamadas
 22-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid_v2.sct
@@ -4309,6 +4181,9 @@ L\TEMP\0000AFBD03AU.TMP;Ultimo Control activo:
 
 
 
+
+
+
 TMP;Ultimo Control activo: 
 24-11-2016 , Pila de llamadas
 24-11-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listaprecio_v1.sct
@@ -4317,6 +4192,9 @@ TMP;Ultimo Control activo:
 24-11-2016 , Nº de Linea :          2
 24-11-2016 , En el Fuente: thisform._cboprecio.Value = 1
 24-11-2016 , LISTAPRECIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'LNPREUNITA'.;Linea : lnprearti		= lnpreunita;Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
 
 
 
@@ -4543,6 +4421,9 @@ AL\TEMP\00001TE101P3.TMP;Ultimo Control activo:
 
 
 
+
+
+
 l activo: CODEXTEND
 07-12-2016 , Pila de llamadas
 07-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -4660,6 +4541,9 @@ l activo: CODEXTEND
 
 
 
+
+
+
 rol activo: 
 07-12-2016 , Pila de llamadas
 07-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
@@ -4673,6 +4557,9 @@ rol activo:
 07-12-2016 , Nº de Linea :        254
 07-12-2016 , En el Fuente: 	IF lFletefijo
 07-12-2016 , MAIN, Error: No hay ninguna tabla abierta en el área de trabajo actual.;Linea : CURSORSETPROP("Buffering",5,"CsrCursor");Error :         52;Ultimo Alias Activo: _CSRCOMPROBANTE;Ultimo registro:          3 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
 
 
 
@@ -4873,6 +4760,9 @@ LOCAL\TEMP\00008XE106W6.TMP;Ultimo Control activo:
 
 
 
+
+
+
 tivo: 
 20-12-2016 , Pila de llamadas
 20-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.fxp
@@ -4881,6 +4771,9 @@ tivo:
 20-12-2016 , Nº de Linea :         58
 20-12-2016 , En el Fuente: APPEND FROM  "c:\lista.txt" SDF
 20-12-2016 , Z_04PRODUCTO_COMPEL, Error: No se encuentra la variable 'DETA03'.;Linea : replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:        258 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
 
 
 
@@ -5047,6 +4940,9 @@ AL\TEMP\00008JYH00H5.TMP;Ultimo Control activo:
 
 
 
+
+
+
 omentario,lcEmail);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008JYH00IB.TMP;Ultimo Control activo: 
 20-12-2016 , Pila de llamadas
 20-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z_04producto_compel.fxp
@@ -5055,6 +4951,9 @@ omentario,lcEmail);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo regis
 20-12-2016 , Nº de Linea :        155
 20-12-2016 , En el Fuente: 		INSERT INTO FsrArticulo (fecha,tipo,articulo,marca,observa,rubro,familia,comentario,email)		VALUES (lcfecha,lcTipo,lcModelo,lcMarca,lcObservaciones,lcrubro,lcFamilia,lcComentario,lcEmail)
 21-12-2016 , Z_04PRODUCTO_COMPEL, Error: El archivo no existe.;Linea : APPEND FROM  "j:\bic.txt" SDF;Error :          1;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000A7T5000R.TMP;Ultimo Control acti
+
+
+
 
 
 
@@ -5211,6 +5110,9 @@ vo:
 
 
 
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 21-12-2016 , Pila de llamadas
 21-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -5229,6 +5131,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 21-12-2016 , Nº de Linea :       1320
 21-12-2016 , En el Fuente: 
 21-12-2016 , IMPORTADOR_LIB.KITBUSCAOALTAENABM1.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\000
+
+
+
 
 
 
@@ -5376,6 +5281,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
 0A7T50118.TMP;Ultimo Control activo: 
 21-12-2016 , Pila de llamadas
 21-12-2016 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5394,6 +5302,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 21-12-2016 , Nº de Linea :         32
 21-12-2016 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 21-12-2016 , IMPORTADOR_LIB.KITBUSCAOALTAENABM1.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\000
+
+
+
 
 
 
@@ -5519,6 +5430,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
 tivo: 
 21-12-2016 , Pila de llamadas
 21-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\importador_lib.sct
@@ -5527,6 +5441,9 @@ tivo:
 21-12-2016 , Nº de Linea :          3
 21-12-2016 , En el Fuente: SELECT CsrRubro
 21-12-2016 , IMPORTADOR_LIB.CMDACEPTAR.CLICK, Error: No se encuentra la propiedad ACCION.;Linea : this.accion = "A";Error :       1734;Ultimo Alias Activo: FSRARTICULO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000776101UR.TMP;U
+
+
+
 
 
 
@@ -5637,6 +5554,9 @@ ltimo Control activo:
 
 
 
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 21-12-2016 , Pila de llamadas
 21-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -5655,6 +5575,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 21-12-2016 , Nº de Linea :       1320
 21-12-2016 , En el Fuente: 
 22-12-2016 , IMPORTADOR_LIB.CMDACEPTAR.CLICK, Error: No se encuentra el alias 'CSRTIPOIVA'.;Linea : nIdIVa		= CsrTipoiva.id;Error :         13;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007YTL00QM.
+
+
+
 
 
 
@@ -5743,6 +5666,9 @@ TMP;Ultimo Control activo:
 
 
 
+
+
+
 DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007YTL00ZT.TMP;Ultimo Control activo: 
 22-12-2016 , Pila de llamadas
 22-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\importador_lib.sct
@@ -5761,6 +5687,9 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007YTL00ZT.TMP;Ultimo Control activo:
 22-12-2016 , Nº de Linea :       1310
 22-12-2016 , En el Fuente: lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
 22-12-2016 , IMPORTADOR_LIB.CMDACEPTAR.CLICK, Error: No se encuentra la variable 'CCODBARRA14'.;Linea : cCodBarra14	= IIF(lentrim(lcCodBarra)=14,ALLTRIM(lcCodBarra),cCodBarra14);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          2
+
+
+
 
 
 
@@ -5827,6 +5756,9 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007YTL00ZT.TMP;Ultimo Control activo:
 
 
 
+
+
+
 MP;Ultimo Control activo: 
 22-12-2016 , Pila de llamadas
 22-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\importador_lib.sct
@@ -5845,6 +5777,9 @@ MP;Ultimo Control activo:
 22-12-2016 , Nº de Linea :        147
 22-12-2016 , En el Fuente: 	IF VAL(CodRubro)=0
 22-12-2016 , IMPORTADOR_LIB.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRTIPOIVA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+
+
+
 
 
 
@@ -5890,9 +5825,15 @@ MP;Ultimo Control activo:
 
 
 
+
+
+
 7YTL03PP.TMP;Ultimo Control activo: 
 22-12-2016 , Pila de llamadas
 23-12-2016 , IMPORTADOR_LIB.INIT, Error: El tipo de datos no es válido para esta propiedad.;Linea : this.lblultimo.Caption = "Ultimo Codigo Asignado "+strtrim(CsrMAxProd.codigo);Error :       1732;Ultimo Alias Activo: CSRMAXPROD;Ultimo registro:         
+
+
+
 
 
 
@@ -5922,6 +5863,9 @@ MP;Ultimo Control activo:
 
 
 
+
+
+
  1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003HFT007A.TMP;Ultimo Control activo: 
 23-12-2016 , Pila de llamadas
 23-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\importador_lib.sct
@@ -5937,6 +5881,9 @@ MP;Ultimo Control activo:
 23-12-2016 , IMPORTADOR_LIB.INIT, Error: El tipo de datos no es válido para esta propiedad.;Linea : this.lblultimo.Caption = "Ultimo Codigo Asignado "+strtrim(CsrMAxProd.codigo);Error :       1732;Ultimo Alias Activo: CSRMAXPROD;Ultimo registro:         
 
 
+
+
+
  1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003HFT009Q.TMP;Ultimo Control activo: 
 23-12-2016 , Pila de llamadas
 23-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\importador_lib.sct
@@ -5949,3 +5896,12 @@ MP;Ultimo Control activo:
 23-12-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\importador_lib.sct
 23-12-2016 , Nº de Linea :          9
 23-12-2016 , En el Fuente: 	this.lblultimo.Caption = "Ultimo Codigo Asignado "+strtrim(CsrMAxProd.codigo)
+27-12-2016 , FRMAVISOS.GRID1.INIT, Error: No se encuentra la propiedad DYNAMICFONTBOLD.;Linea : THIS.Setall("DynamicFontBold",cCondicion,"TextBox");Error :       1734;Ultimo Alias Activo: CSRALERTAS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDAT
+
+A\LOCAL\TEMP\000050JT01VQ.TMP;Ultimo Control activo: 
+27-12-2016 , Pila de llamadas
+27-12-2016 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmavisos.sct
+27-12-2016 , Objeto      : frmavisos.grid1.init
+27-12-2016 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmavisos.sct
+27-12-2016 , Nº de Linea :         10
+27-12-2016 , En el Fuente: THIS.Setall("DynamicFontBold",cCondicion,"TextBox")
