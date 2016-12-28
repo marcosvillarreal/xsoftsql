@@ -122,7 +122,7 @@ SCAN FOR !EOF()
 	nidubicacio = CsrUbicacion.id
 	
    	nidestado 	= IIF(empty(Csrarticulo.debaja),1,2)
-    nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,1,3),8))
+    nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,3),8))
     nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
     nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
     nredondeo	= CsrArticulo.redondeo

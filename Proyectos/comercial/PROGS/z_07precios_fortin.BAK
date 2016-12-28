@@ -48,10 +48,10 @@ GO top
 
 *stop()
 SCAN FOR !EOF()
-	IF numero <> 1
-		LOOP 
-	ENDIF 
-	stop()
+*!*		IF numero <> 1
+*!*			LOOP 
+*!*		ENDIF 
+*!*		stop()
 
 	SELECT CsrArticulo
 	LOCATE FOR VAL(numero )= CsrProducto.numero AND NOT borrado
@@ -147,8 +147,8 @@ SCAN FOR !EOF()
 		nPrePubFSiva	= red(nPreConCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
 		nPrePubFSiva	= red((nPrePubFSiva + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)	
 		
-		nPrePubFCiva	= a_red(nRedondeo,nPrePubFCiva + nCostoAgre + nFleteAgre)
-		nPrePubFSiva	= a_red(nRedondeo,nPrePubFSiva + nCostoAgre + nFleteAgre)
+		nPrePubFCiva	= a_red(nRedondeo,nPrePubFCiva)
+		nPrePubFSiva	= a_red(nRedondeo,nPrePubFSiva)
 		
 		INSERT INTO  prodprecio  ( id, idarticulo , idctacte , idestado  , costocpra , aumento ;
 	           , costo , bonif1 , bonif2 , bonif3 , bonif4 , bonif5 , boniftotal , costobon , interno ;
