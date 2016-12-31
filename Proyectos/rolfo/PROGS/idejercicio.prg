@@ -1,4 +1,4 @@
-goapp.idejercicio = 1100000016
+goapp.idejercicio = 1100000015
 goapp.terminal = 12
 goapp.idusuario = 1
 oavisar.usuario('goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
