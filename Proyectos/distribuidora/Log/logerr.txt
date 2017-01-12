@@ -180,3 +180,100 @@
 10-01-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
 10-01-2017 , Nº de Linea :          1
 10-01-2017 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
+11-01-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+11-01-2017 , Pila de llamadas
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+11-01-2017 , Objeto      : main
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+11-01-2017 , Nº de Linea :        225
+11-01-2017 , En el Fuente: 	LeerEmpresa()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+11-01-2017 , Objeto      : leerempresa
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+11-01-2017 , Nº de Linea :       1491
+11-01-2017 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+11-01-2017 , Objeto      : crearcursoradapter
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+11-01-2017 , Nº de Linea :       1320
+11-01-2017 , En el Fuente: 
+11-01-2017 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : CASE "T"$.tipoctacte  AND ._ogrupctacte=1;Error :        107;Ultimo Alias Activo: _CSRCTACTE;Ultimo registro:          2 VAL(CNUMERO);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CTMX00H4.TMP;Ultimo Control activo: 
+11-01-2017 , Pila de llamadas
+11-01-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Objeto      : resctacte.imprimir_vistaprevia1.impresora.click
+11-01-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Nº de Linea :          5
+11-01-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\resctacte.sct
+11-01-2017 , Objeto      : resctacte.crearinforme
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\resctacte.sct
+11-01-2017 , Nº de Linea :         32
+11-01-2017 , En el Fuente: 	CASE "T"$.tipoctacte  AND ._ogrupctacte=1
+11-01-2017 , EST_ULTIMACOMPRA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csraux.dbf' no existe.;Linea : SELECT 0 as grupo, csrclientes.*,csraux.fecha,iif(ISNULL(csraux.numcomp),SPACE(10),csraux.numcomp) as numcomp,IIF(ISNULL(csraux.idfacturo),0,csraux.idfacturo) as idfacturo,IIF(ISNULL(csraux.nomvdor),SPACE(10),csraux.nomvdor) as nomvdorfac FROM csrclientes,csraux WHERE csrclientes.idctacte=csraux.idctacte INTO CURSOR csrimprimir2 readwrite;Error :          1;Ultimo Alias Activo: CSRCLIENTES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CTMX01ZI.TMP;Ultimo Control activo: 
+11-01-2017 , Pila de llamadas
+11-01-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Objeto      : est_ultimacompra.imprimir_vistaprevia1.impresora.click
+11-01-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Nº de Linea :          5
+11-01-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearinforme
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :          6
+11-01-2017 , En el Fuente: 	this.crearlistado()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearlistado
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :        188
+11-01-2017 , En el Fuente: 	SELECT 0 as grupo, csrclientes.*,csraux.fecha,iif(ISNULL(csraux.numcomp),SPACE(10),csraux.numcomp) as numcomp,IIF(ISNULL(csraux.idfacturo),0,csraux.idfacturo) as idfacturo,IIF(ISNULL(csraux.nomvdor),SPACE(10),csraux.nomvdor) as nomvdorfac	FROM csrclientes,csraux WHERE csrclientes.idctacte=csraux.idctacte INTO CURSOR csrimprimir2 readwrite 
+11-01-2017 , EST_ULTIMACOMPRA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrimprimir2.dbf' no existe.;Linea : SELECT csrimprimir2.*,csrvendedor.* from csrimprimir2 inner join csrvendedor on csrvendedor.idctacte=csrimprimir2.idctacte order by csrvendedor.idvendedor,csrimprimir2.idctacte desc into cursor csrimprimir readwrite;Error :          1;Ultimo Alias Activo: CSRCLIENTES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CTMX01ZI.TMP;Ultimo Control activo: 
+11-01-2017 , Pila de llamadas
+11-01-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Objeto      : est_ultimacompra.imprimir_vistaprevia1.impresora.click
+11-01-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Nº de Linea :          5
+11-01-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearinforme
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :          6
+11-01-2017 , En el Fuente: 	this.crearlistado()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearlistado
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :        199
+11-01-2017 , En el Fuente: SELECT csrimprimir2.*,csrvendedor.*from csrimprimir2inner join csrvendedor on csrvendedor.idctacte=csrimprimir2.idctacteorder by csrvendedor.idvendedor,csrimprimir2.idctacte descinto cursor csrimprimir readwrite
+11-01-2017 , EST_ULTIMACOMPRA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csraux.dbf' no existe.;Linea : SELECT 0 as grupo, csrclientes.*,csraux.fecha,iif(ISNULL(csraux.numcomp),SPACE(10),csraux.numcomp) as numcomp,IIF(ISNULL(csraux.idfacturo),0,csraux.idfacturo) as idfacturo,IIF(ISNULL(csraux.nomvdor),SPACE(10),csraux.nomvdor) as nomvdorfac FROM csrclientes,csraux WHERE csrclientes.idctacte=csraux.idctacte INTO CURSOR csrimprimir2 readwrite;Error :          1;Ultimo Alias Activo: CSRCLIENTES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CTMX0204.TMP;Ultimo Control activo: 
+11-01-2017 , Pila de llamadas
+11-01-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Objeto      : est_ultimacompra.imprimir_vistaprevia1.impresora.click
+11-01-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Nº de Linea :          5
+11-01-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearinforme
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :          6
+11-01-2017 , En el Fuente: 	this.crearlistado()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearlistado
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :        188
+11-01-2017 , En el Fuente: 	SELECT 0 as grupo, csrclientes.*,csraux.fecha,iif(ISNULL(csraux.numcomp),SPACE(10),csraux.numcomp) as numcomp,IIF(ISNULL(csraux.idfacturo),0,csraux.idfacturo) as idfacturo,IIF(ISNULL(csraux.nomvdor),SPACE(10),csraux.nomvdor) as nomvdorfac	FROM csrclientes,csraux WHERE csrclientes.idctacte=csraux.idctacte INTO CURSOR csrimprimir2 readwrite 
+11-01-2017 , EST_ULTIMACOMPRA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'IDCTACTE_A'.;Linea : lnidctacte_a=csrimprimir.idctacte_a;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CTMX025V.TMP;Ultimo Control activo: 
+11-01-2017 , Pila de llamadas
+11-01-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Objeto      : est_ultimacompra.imprimir_vistaprevia1.impresora.click
+11-01-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2017 , Nº de Linea :          5
+11-01-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearinforme
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :          6
+11-01-2017 , En el Fuente: 	this.crearlistado()
+11-01-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Objeto      : est_ultimacompra.crearlistado
+11-01-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ultimacompra_v1.sct
+11-01-2017 , Nº de Linea :        212
+11-01-2017 , En el Fuente: 		lnidctacte_a=csrimprimir.idctacte_a
