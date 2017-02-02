@@ -1,0 +1,1 @@
+MODIFY COMMAND j:\xsoftsql\desarrollo\clases\proc.prg AS 1252

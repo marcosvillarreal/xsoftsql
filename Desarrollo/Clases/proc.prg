@@ -1063,63 +1063,63 @@ ENDFUNC
 
 * Desencripta(lc, "MiLlave")
 
-FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
-	LOCAL lc, ln, lcRet,lnClaveMul, lnClaveXor
-
-	IF EMPTY(tcLlave)
-		tcLlave = ""
-	ENDIF
-	=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
-
-	lcRet = ""
-	lc = tcCadena
-
-	DO WHILE LEN(lc) > 0
-		ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
-		IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
-			ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
-		ENDIF
-		lcRet = lcRet+BINTOC(ln-32768,2)
-		lnClaveMul = BITAND(lnClaveMul+59,0xFF)
-		lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
-		lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
-	ENDDO
-	RETURN lcRet
-ENDFUNC
-
-FUNCTION Desencripta(tcCadena, tcLlave)
-	LOCAL lc, ln, lcRet, lnByte,lnClaveMul, lnClaveXor
-	IF EMPTY(tcLlave)
-		tcLlave = ""
-	ENDIF
-	=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
-	lcRet = ""
-	FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
-		lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
-		lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
-		lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
-		lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
-	ENDFOR
-	RETURN lcRet
-ENDFUNC
-
 *!*	FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
+*!*		LOCAL lc, ln, lcRet,lnClaveMul, lnClaveXor
+
+*!*		IF EMPTY(tcLlave)
+*!*			tcLlave = ""
+*!*		ENDIF
+*!*		=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
+
 *!*		lcRet = ""
-*!*		lc = ALLTRIM(tcCadena)
-*!*		for i=1 to LEN(lc)
-*!*	    		lcRet=lcRet+chr(asc(substr(lc,i,1))+25+i)
-*!*		NEXT
+*!*		lc = tcCadena
+
+*!*		DO WHILE LEN(lc) > 0
+*!*			ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
+*!*			IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
+*!*				ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
+*!*			ENDIF
+*!*			lcRet = lcRet+BINTOC(ln-32768,2)
+*!*			lnClaveMul = BITAND(lnClaveMul+59,0xFF)
+*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
+*!*			lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
+*!*		ENDDO
 *!*		RETURN lcRet
 *!*	ENDFUNC
 
 *!*	FUNCTION Desencripta(tcCadena, tcLlave)
+*!*		LOCAL lc, ln, lcRet, lnByte,lnClaveMul, lnClaveXor
+*!*		IF EMPTY(tcLlave)
+*!*			tcLlave = ""
+*!*		ENDIF
+*!*		=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
 *!*		lcRet = ""
-*!*		lc = tcCadena
-*!*		for i=1 to LEN(lc)
-*!*	    		lcRet=lcRet+chr(asc(substr(lc,i,1))-25-i)
-*!*		NEXT
-*!*		RETURN RTRIM(lcRet)
+*!*		FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
+*!*			lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
+*!*			lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
+*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
+*!*			lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
+*!*		ENDFOR
+*!*		RETURN lcRet
 *!*	ENDFUNC
+
+FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
+	lcRet = ""
+	lc = ALLTRIM(tcCadena)
+	for i=1 to LEN(lc)
+    		lcRet=lcRet+chr(asc(substr(lc,i,1))+25+i)
+	NEXT
+	RETURN lcRet
+ENDFUNC
+
+FUNCTION Desencripta(tcCadena, tcLlave)
+	lcRet = ""
+	lc = tcCadena
+	for i=1 to LEN(lc)
+    		lcRet=lcRet+chr(asc(substr(lc,i,1))-25-i)
+	NEXT
+	RETURN RTRIM(lcRet)
+ENDFUNC
 
 *---------------------------------------------
 * Función usada por Encripta y Desencripta
