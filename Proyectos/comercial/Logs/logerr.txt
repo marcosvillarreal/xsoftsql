@@ -1,4341 +1,150 @@
-25-11-2016 15:35:59 , Nº de Linea :          6
-25-11-2016 15:35:59 , En el Fuente: lobjprecio.costobase= lObjProducto.costobase
-25-11-2016 16:26:05 , REGFACVTA_CAE.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra la etiqueta de índice.;Linea : =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id");Error :       1683;Ultimo Alias Activo: CSRPRODAREANEG;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT0151.TMP;Ultimo Control activo: CANTIDAD
-25-11-2016 16:26:06 , Pila de llamadas
-25-11-2016 16:26:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:06 , Objeto      : regfacvta_cae.grid2.column5.text1.lostfocus
-25-11-2016 16:26:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:06 , Nº de Linea :         12
-25-11-2016 16:26:06 , En el Fuente: 			IF !.grid2_lostfocuscant()
-25-11-2016 16:26:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:06 , Objeto      : regfacvta_cae.grid2_lostfocuscant
-25-11-2016 16:26:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:06 , Nº de Linea :          5
-25-11-2016 16:26:07 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-25-11-2016 16:26:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:07 , Objeto      : regfacvta_cae.grid2_control
-25-11-2016 16:26:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:07 , Nº de Linea :        116
-25-11-2016 16:26:07 , En el Fuente: 	   	  	.controlbonificacion()
-25-11-2016 16:26:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:07 , Objeto      : regfacvta_cae.controlbonificacion
-25-11-2016 16:26:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:08 , Nº de Linea :          8
-25-11-2016 16:26:08 , En el Fuente: =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id")
-25-11-2016 16:26:09 , REGFACVTA_CAE.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'FECOFERTA'.;Linea : IF !EMPTY(CsrprodAreaNeg.fecoferta);Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:         26 ;DBF: C:\USERS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\CHIVI\APPDATA\LOCAL\TEMP\00008YRT01A7.TMP;Ultimo Control activo: 
-25-11-2016 16:26:09 , Pila de llamadas
-25-11-2016 16:26:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:10 , Objeto      : regfacvta_cae.grid2.column5.text1.lostfocus
-25-11-2016 16:26:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:10 , Nº de Linea :         12
-25-11-2016 16:26:10 , En el Fuente: 			IF !.grid2_lostfocuscant()
-25-11-2016 16:26:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:10 , Objeto      : regfacvta_cae.grid2_lostfocuscant
-25-11-2016 16:26:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:11 , Nº de Linea :          5
-25-11-2016 16:26:11 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-25-11-2016 16:26:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:11 , Objeto      : regfacvta_cae.grid2_control
-25-11-2016 16:26:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:11 , Nº de Linea :        116
-25-11-2016 16:26:11 , En el Fuente: 	   	  	.controlbonificacion()
-25-11-2016 16:26:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:11 , Objeto      : regfacvta_cae.controlbonificacion
-25-11-2016 16:26:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:26:11 , Nº de Linea :         10
-25-11-2016 16:26:12 , En el Fuente: IF !EMPTY(CsrprodAreaNeg.fecoferta)
-25-11-2016 16:39:10 , REGFACVTA_CAE.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra la etiqueta de índice.;Linea : =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id");Error :       1683;Ultimo Alias Activo: CSRPRODAREANEG;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT03NG.TMP;Ultimo Control activo: CANTIDAD
-25-11-2016 16:39:10 , Pila de llamadas
-25-11-2016 16:39:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:10 , Objeto      : regfacvta_cae.grid2.column5.text1.lostfocus
-25-11-2016 16:39:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:10 , Nº de Linea :         12
-25-11-2016 16:39:11 , En el Fuente: 			IF !.grid2_lostfocuscant()
-25-11-2016 16:39:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:11 , Objeto      : regfacvta_cae.grid2_lostfocuscant
-25-11-2016 16:39:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:11 , Nº de Linea :          5
-25-11-2016 16:39:11 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-25-11-2016 16:39:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:11 , Objeto      : regfacvta_cae.grid2_control
-25-11-2016 16:39:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:12 , Nº de Linea :        116
-25-11-2016 16:39:12 , En el Fuente: 	   	  	.controlbonificacion()
-25-11-2016 16:39:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:12 , Objeto      : regfacvta_cae.controlbonificacion
-25-11-2016 16:39:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:39:12 , Nº de Linea :          8
-25-11-2016 16:39:12 , En el Fuente: =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id")
-25-11-2016 16:40:36 , REGFACVTA_CAE.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra la etiqueta de índice.;Linea : =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id");Error :       1683;Ultimo Alias Activo: CSRPRODAREANEG;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT0472.TMP;Ultimo Control activo: CANTIDAD
-25-11-2016 16:40:36 , Pila de llamadas
-25-11-2016 16:40:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:36 , Objeto      : regfacvta_cae.grid2.column5.text1.lostfocus
-25-11-2016 16:40:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:36 , Nº de Linea :         12
-25-11-2016 16:40:36 , En el Fuente: 			IF !.grid2_lostfocuscant()
-25-11-2016 16:40:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:36 , Objeto      : regfacvta_cae.grid2_lostfocuscant
-25-11-2016 16:40:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:37 , Nº de Linea :          5
-25-11-2016 16:40:37 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-25-11-2016 16:40:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:37 , Objeto      : regfacvta_cae.grid2_control
-25-11-2016 16:40:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:37 , Nº de Linea :        116
-25-11-2016 16:40:38 , En el Fuente: 	   	  	.controlbonificacion()
-25-11-2016 16:40:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:38 , Objeto      : regfacvta_cae.controlbonificacion
-25-11-2016 16:40:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 16:40:38 , Nº de Linea :          8
-25-11-2016 16:40:38 , En el Fuente: =SEEK(thisform.loObjBonifica.idproducto,"CsrprodAreaNeg","id")
-25-11-2016 17:23:27 , REGFACVTA_CAE.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'IDENVASE'.;Linea : REPLACE idarticulo WITH Csrproducto.id,codigo WITH LTRIM(STR(Csrproducto.numero)),nombre WITH Csrproducto.nombre ,univenta WITH lnun
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-iventa,idctavta WITH Csrproducto.idctavta,unibulto WITH Csrproducto.unibulto ,idfuerzavta WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen ,perceibruto WITH Csrproducto.perceibruto,nofactura WITH 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase ,pesable WITH CsrProducto.vtakilos,idfrio WITH CsrProducto.idfrio,idareaneg WITH CsrProducto.idarea ,Registro WITH RECNO(),CodExtend WITH LTRIM(STR(Csrproducto.numero)),endolar WITH CsrProducto.end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-olar+1 ,CodAlfa WITH CsrProducto.codalfa,actualizaprecio WITH IIF(actualizaprecio=0,1,actualizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TA\LOCAL\TEMP\00008YRT09BR.TMP;Ultimo Control activo: CODEXTEND
-25-11-2016 17:23:27 , Pila de llamadas
-25-11-2016 17:23:27 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\regfacvta_cae.sct
-25-11-2016 17:23:27 , Objeto      : regfacvta_cae.grid2.column1.text1.lostfocus
-25-11-2016 17:23:27 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\facelectronica\regfacvta_cae.sct
-25-11-2016 17:23:28 , Nº de Linea :          5
-25-11-2016 17:23:28 , En el Fuente: 			IF thisform.kitbuscarProd.f_lostfocusSay()
-25-11-2016 17:23:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\regfacvta_cae.sct
-25-11-2016 17:23:28 , Objeto      : regfacvta_cae.kitbuscarprod.f_lostfocussay
-25-11-2016 17:23:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\facelectronica\regfacvta_cae.sct
-25-11-2016 17:23:28 , Nº de Linea :         16
-25-11-2016 17:23:29 , En el Fuente: REPLACE idarticulo WITH Csrproducto.id,codigo WITH LTRIM(STR(Csrproducto.numero)),nombre WITH Csrproducto.nombre,univenta WITH lnuniventa,idctavta WITH Csrproducto.idctavta,unibulto WITH Csrproducto.unibulto,idfuerzavt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a WITH Csrproducto.idfuerzavta,alcohol WITH '0',kilos WITH Csrproducto.peso,volumen WITH Csrproducto.volumen,perceibruto WITH Csrproducto.perceibruto,nofactura WITH Csrproducto.nofactura,idenvase WITH Csrproducto.idenvase,pesable WITH CsrProducto.vtakilo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-s,idfrio WITH CsrProducto.idfrio,idareaneg WITH CsrProducto.idarea ,Registro WITH RECNO(),CodExtend WITH LTRIM(STR(Csrproducto.numero)),endolar WITH CsrProducto.endolar+1,CodAlfa WITH CsrProducto.codalfa,actualizaprecio WITH IIF(actualizaprecio=0,1,actua
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-lizaprecio) ,peso WITH Csrproducto.peso IN CsrAuxCuerFac
-25-11-2016 17:45:14 , REGFACVTA.KEYPRESS, Error: No se encuentra la propiedad DEVOLVERCID.;Linea : thisform.idfactura = thisform.devolvercid();Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00008YRT0A8Q.TMP;Ultimo Control activo: 
-25-11-2016 17:45:14 , Pila de llamadas
-25-11-2016 17:45:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:45:15 , Objeto      : regfacvta.keypress
-25-11-2016 17:45:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:45:15 , Nº de Linea :         35
-25-11-2016 17:45:15 , En el Fuente: 	   			this.botoneraCabeza.cmdConsulta.Click()
-25-11-2016 17:45:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:45:15 , Objeto      : regfacvta.botoneracabeza.cmdconsulta.click
-25-11-2016 17:45:16 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:45:16 , Nº de Linea :          1
-25-11-2016 17:45:16 , En el Fuente: thisform.key_f4()  
-25-11-2016 17:45:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:45:16 , Objeto      : regfacvta.key_f4
-25-11-2016 17:45:16 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:45:17 , Nº de Linea :         33
-25-11-2016 17:45:17 , En el Fuente: DO FORM buscompro WITH loObjParametro 
-25-11-2016 17:45:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\buscompro.sct
-25-11-2016 17:45:17 , Objeto      : buscompro.cmdsalir.click
-25-11-2016 17:45:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\buscompro.sct
-25-11-2016 17:45:17 , Nº de Linea :          3
-25-11-2016 17:45:17 , En el Fuente:    thisform.idfactura = thisform.devolvercid()  
-25-11-2016 17:47:18 , REGFACVTA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: No se encuentra la propiedad AUMENTO.;Linea : lobjprecio.aumento	= lObjProducto.aumento &&Es un porcentaje;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008YRT09YN.TMP;Ultimo Control activo: CODEXTEND
-25-11-2016 17:47:18 , Pila de llamadas
-25-11-2016 17:47:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:47:19 , Objeto      : regfacvta.grid2.column1.text1.lostfocus
-25-11-2016 17:47:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:47:19 , Nº de Linea :          5
-25-11-2016 17:47:19 , En el Fuente: 			IF thisform.kitbuscarProd.f_lostfocusSay()
-25-11-2016 17:47:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:47:19 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
-25-11-2016 17:47:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-25-11-2016 17:47:19 , Nº de Linea :         38
-25-11-2016 17:47:20 , En el Fuente: 		thisform.precioprod1.calculaprecio(lObjProducto,@lObjprecio)
-25-11-2016 17:47:20 , Programa    : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
-25-11-2016 17:47:20 , Objeto      : regfacvta.precioprod1.calculaprecio
-25-11-2016 17:47:20 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
-25-11-2016 17:47:20 , Nº de Linea :          7
-25-11-2016 17:47:20 , En el Fuente: lobjprecio.aumento	= lObjProducto.aumento &&Es un porcentaje
-01-12-2016 11:52:37 , MAIN, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRHIJO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000258P00D0.TMP;Ultimo Control activ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o: 
-01-12-2016 11:52:37 , Pila de llamadas
-01-12-2016 11:52:37 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-01-12-2016 11:52:37 , Objeto      : main
-01-12-2016 11:52:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-01-12-2016 11:52:38 , Nº de Linea :        285
-01-12-2016 11:52:38 , En el Fuente: 	Read events   
-01-12-2016 11:52:38 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-01-12-2016 11:52:38 , Objeto      : abmfamilia.contenedor1.pframe1.page1.kitbuscaoaltaenhijo.botonllamarabm1.click
-01-12-2016 11:52:38 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-01-12-2016 11:52:38 , Nº de Linea :         30
-01-12-2016 11:52:39 , En el Fuente: oca=thisform.obtenercursor(lcaliasseek)
-01-12-2016 11:52:39 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-01-12-2016 11:52:39 , Objeto      : abmfamilia.obtenercursor
-01-12-2016 11:52:39 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-01-12-2016 11:52:39 , Nº de Linea :         19
-01-12-2016 11:52:39 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
-01-12-2016 11:54:07 , ABMFAMILIA.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENPADRE.BOTONLLAMARABM1.CLICK, Error: El archivo 'j:\xsoftsql\proyectos\comercial\abmmarca.scx' no existe.;Linea : DO FORM &lcabm WITH lcid,.t. TO lcidtabla;Error :          1;Ultimo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- Alias Activo: CSRPADRE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000258P00M9.TMP;Ultimo Control activo: 
-01-12-2016 11:54:08 , Pila de llamadas
-01-12-2016 11:54:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-01-12-2016 11:54:08 , Objeto      : abmfamilia.contenedor1.pframe1.page1.kitbuscaoaltaenpadre.botonllamarabm1.click
-01-12-2016 11:54:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-01-12-2016 11:54:09 , Nº de Linea :         23
-01-12-2016 11:54:09 , En el Fuente: DO FORM &lcabm WITH lcid,.t. TO lcidtabla
-16-12-2016 13:18:23 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABMMARCA.TXTID.INIT, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE1038L.TMP;Ultimo Control activo: 
-16-12-2016 13:18:23 , Pila de llamadas
-16-12-2016 13:18:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:18:24 , Objeto      : abmproducto.contenedor1.pframe1.page1.kitbuscaoaltaenabmmarca.txtid.init
-16-12-2016 13:18:24 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:18:24 , Nº de Linea :          1
-16-12-2016 13:18:24 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
-16-12-2016 13:18:39 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABMMARCA.TXTID.INIT, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103BP.TMP;Ultimo Control activo: 
-16-12-2016 13:18:39 , Pila de llamadas
-16-12-2016 13:18:40 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:18:40 , Objeto      : abmproducto.contenedor1.pframe1.page1.kitbuscaoaltaenabmmarca.txtid.init
-16-12-2016 13:18:40 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:18:40 , Nº de Linea :          1
-16-12-2016 13:18:40 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
-16-12-2016 13:22:55 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE8.KITBUSCAOALTAENCTACPRA.TXTID.INIT, Error: No se encuentra la variable 'IDCTACPRA'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         12;Ultimo Alias Activo: _CSRPERCEPROV
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103I8.TMP;Ultimo Control activo: 
-16-12-2016 13:22:55 , Pila de llamadas
-16-12-2016 13:22:55 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:22:55 , Objeto      : abmproducto.contenedor1.pframe1.page8.kitbuscaoaltaenctacpra.txtid.init
-16-12-2016 13:22:55 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:22:55 , Nº de Linea :          1
-16-12-2016 13:22:55 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
-16-12-2016 13:24:12 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE8.KITBUSCAOALTAENCTACPRA.TXTID.INIT, Error: No se encuentra la variable 'IDCTACPRA'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         12;Ultimo Alias Activo: _CSRPERCEPROV
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103OO.TMP;Ultimo Control activo: 
-16-12-2016 13:24:12 , Pila de llamadas
-16-12-2016 13:24:12 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:24:12 , Objeto      : abmproducto.contenedor1.pframe1.page8.kitbuscaoaltaenctacpra.txtid.init
-16-12-2016 13:24:12 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:24:12 , Nº de Linea :          1
-16-12-2016 13:24:12 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
-16-12-2016 13:25:49 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE8.KITBUSCAOALTAENCTACPRA.TXTID.INIT, Error: No se encuentra la variable 'IDCTACPRA'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         12;Ultimo Alias Activo: _CSRPERCEPROV
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE103Y8.TMP;Ultimo Control activo: 
-16-12-2016 13:25:49 , Pila de llamadas
-16-12-2016 13:25:50 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:25:50 , Objeto      : abmproducto.contenedor1.pframe1.page8.kitbuscaoaltaenctacpra.txtid.init
-16-12-2016 13:25:50 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 13:25:50 , Nº de Linea :          1
-16-12-2016 13:25:50 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
-16-12-2016 13:34:49 , PIDOPRECIO.INIT, Error: No se encuentra el alias 'CSRRUBRO'.;Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE105GV.TMP;Ultimo Control activo: NOMBRE
-16-12-2016 13:34:49 , Pila de llamadas
-16-12-2016 13:34:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 13:34:50 , Objeto      : pidoprecio.init
-16-12-2016 13:34:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 13:34:50 , Nº de Linea :         28
-16-12-2016 13:34:50 , En el Fuente: 	.iniciarvariables()
-16-12-2016 13:34:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 13:34:50 , Objeto      : pidoprecio.iniciarvariables
-16-12-2016 13:34:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 13:34:50 , Nº de Linea :          8
-16-12-2016 13:34:50 , En el Fuente: 		.antesagregar()
-16-12-2016 13:34:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 13:34:51 , Objeto      : pidoprecio.antesagregar
-16-12-2016 13:34:51 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 13:34:51 , Nº de Linea :         16
-16-12-2016 13:34:51 , En el Fuente: replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3		,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5		,margen1 WITH CsrRubro.margen1 in CsrAuxPrecio
-16-12-2016 13:39:14 , PARAVARIO.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: _CSRMARCA;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000DTE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1069D.TMP;Ultimo Control activo: 
-16-12-2016 13:39:15 , Pila de llamadas
-16-12-2016 13:39:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\parametros\paravario.sct
-16-12-2016 13:39:15 , Objeto      : paravario.aceptar1.click
-16-12-2016 13:39:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\parametros\paravario.sct
-16-12-2016 13:39:16 , Nº de Linea :          3
-16-12-2016 13:39:16 , En el Fuente: 	DO FORM 'cbioprecio2' WITH "2"
-16-12-2016 13:39:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 13:39:16 , Objeto      : cbioprecio2.init
-16-12-2016 13:39:16 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 13:39:16 , Nº de Linea :         27
-16-12-2016 13:39:17 , En el Fuente: 		.cmdprocesar.Click
-16-12-2016 13:39:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 13:39:17 , Objeto      : cbioprecio2.cmdprocesar.click
-16-12-2016 13:39:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 13:39:17 , Nº de Linea :          3
-16-12-2016 13:39:17 , En el Fuente: 	if thisform.procesarlista2()
-16-12-2016 13:39:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 13:39:17 , Objeto      : cbioprecio2.procesarlista2
-16-12-2016 13:39:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 13:39:18 , Nº de Linea :         21
-16-12-2016 13:39:18 , En el Fuente: SELECT CsrProducto
-16-12-2016 15:16:25 , REGIMPORTARSQL.CONTAINERENCABEZA.PAGEFRAME1.PAGE1.KITGRILLATILDARIMPORTAR.LOSTFOCUS, Error: El archivo no está abierto.;Linea : SCAN;Error :       1113;Ultimo Alias Activo: _CSROPEIMP;Ultimo registro:          3 CNUMERO;DBF: C:\USER
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-S\CHIVI\APPDATA\LOCAL\TEMP\00002CQX00GY.TMP;Ultimo Control activo: 
-16-12-2016 15:16:25 , Pila de llamadas
-16-12-2016 15:16:25 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 15:16:25 , Objeto      : regimportarsql.containerencabeza.pageframe1.page1.kitgrillatildarimportar.lostfocus
-16-12-2016 15:16:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 15:16:26 , Nº de Linea :          2
-16-12-2016 15:16:26 , En el Fuente: this.cadenaelegidos()
-16-12-2016 15:16:26 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 15:16:26 , Objeto      : regimportarsql.containerencabeza.pageframe1.page1.kitgrillatildarimportar.cadenaelegidos
-16-12-2016 15:16:26 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-16-12-2016 15:16:26 , Nº de Linea :         11
-16-12-2016 15:16:27 , En el Fuente: SCAN
-16-12-2016 15:16:29 , ON..., Error: El archivo no está abierto.;Linea : SCAN;Error :       1113;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-16-12-2016 15:16:29 , Pila de llamadas
-16-12-2016 15:17:45 , ON..., Error: El archivo 'articulo.dbf' no existe.;Linea : LOCATE FOR numero=VAL(CsrArticulo.numero );Error :          1;Ultimo Alias Activo: CSRARTICULO;Ultimo registro:          1 ;DBF: C:\FORTIN\ARTICULO.DBF;Ultimo Control activo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-: 
-16-12-2016 15:17:45 , Pila de llamadas
-16-12-2016 15:47:54 , PARAVARIO.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: _CSRMARCA;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4S
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-P0E5L.TMP;Ultimo Control activo: 
-16-12-2016 15:47:54 , Pila de llamadas
-16-12-2016 15:47:54 , Programa    : j:\xsoftsql\proyectos\comercial\forms\parametros\paravario_new.sct
-16-12-2016 15:47:54 , Objeto      : paravario.aceptar1.click
-16-12-2016 15:47:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\parametros\paravario_new.sct
-16-12-2016 15:47:55 , Nº de Linea :          3
-16-12-2016 15:47:55 , En el Fuente: 	DO FORM 'cbioprecio2' WITH "2"
-16-12-2016 15:47:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 15:47:55 , Objeto      : cbioprecio2.init
-16-12-2016 15:47:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 15:47:55 , Nº de Linea :         27
-16-12-2016 15:47:55 , En el Fuente: 		.cmdprocesar.Click
-16-12-2016 15:47:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 15:47:56 , Objeto      : cbioprecio2.cmdprocesar.click
-16-12-2016 15:47:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 15:47:56 , Nº de Linea :          3
-16-12-2016 15:47:56 , En el Fuente: 	if thisform.procesarlista2()
-16-12-2016 15:47:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 15:47:56 , Objeto      : cbioprecio2.procesarlista2
-16-12-2016 15:47:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-16-12-2016 15:47:57 , Nº de Linea :         21
-16-12-2016 15:47:57 , En el Fuente: SELECT CsrProducto
-16-12-2016 15:59:04 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la propiedad REDONDEO.;Linea : ._txtpreconfsiva.Value  = a_red(lObjPrecio.redondeo,lobjprecio.prevta);Error :       1734;Ultimo Alias Activo:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- CSRAUXPRECIO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4SP0EV4.TMP;Ultimo Control activo: COSTOCPRA
-16-12-2016 15:59:04 , Pila de llamadas
-16-12-2016 15:59:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-16-12-2016 15:59:04 , Objeto      : abmproducto.contenedor1.pframe1.page1.grid1.column2.text1.keypress
-16-12-2016 15:59:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-16-12-2016 15:59:05 , Nº de Linea :         17
-16-12-2016 15:59:05 , En el Fuente: 	thisform.pidoprecio(nKeyCode)
-16-12-2016 15:59:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-16-12-2016 15:59:05 , Objeto      : abmproducto.pidoprecio
-16-12-2016 15:59:05 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-16-12-2016 15:59:05 , Nº de Linea :         45
-16-12-2016 15:59:05 , En el Fuente: DO FORM pidoprecio WITH loObjeto NAME loForm LINKED TO nRespuesta
-16-12-2016 15:59:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 15:59:06 , Objeto      : pidoprecio.container1._txtpreciocpra.lostfocus
-16-12-2016 15:59:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 15:59:06 , Nº de Linea :          1
-16-12-2016 15:59:06 , En el Fuente: thisform.calculaprecio()
-16-12-2016 15:59:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 15:59:06 , Objeto      : pidoprecio.calculaprecio
-16-12-2016 15:59:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 15:59:06 , Nº de Linea :         65
-16-12-2016 15:59:07 , En el Fuente: 		._txtpreconfsiva.Value  = a_red(lObjPrecio.redondeo,lobjprecio.prevta)
-16-12-2016 16:03:57 , ABMPRODUCTO.PRECIOPROD1.INIT, Error: El archivo 'crearcursoradapter.prg' no existe.;Linea : IF !CrearCursorAdapter('CsrSeteo',lcCmdParam);Error :          1;Ultimo Alias Activo: _CSRPERCEPROV;Ultimo registro:          1 CNUMERO;DBF:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4SP0FDG.TMP;Ultimo Control activo: 
-16-12-2016 16:03:57 , Pila de llamadas
-16-12-2016 16:03:58 , Programa    : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
-16-12-2016 16:03:58 , Objeto      : abmproducto.precioprod1.init
-16-12-2016 16:03:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
-16-12-2016 16:03:58 , Nº de Linea :          3
-16-12-2016 16:03:58 , En el Fuente: loObjAgregar.objseteoparam(@lObjeto)
-16-12-2016 16:03:58 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
-16-12-2016 16:03:58 , Objeto      : agregaobjeto.objseteoparam
-16-12-2016 16:03:58 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
-16-12-2016 16:03:58 , Nº de Linea :          8
-16-12-2016 16:03:59 , En el Fuente: IF !CrearCursorAdapter('CsrSeteo',lcCmdParam)
-16-12-2016 16:31:00 , PIDOPRECIO.INIT, Error: No se encuentra el alias 'CSRRUBRO'.;Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000B4SP0UVO.TMP;Ultimo Control activo: 
-16-12-2016 16:31:00 , Pila de llamadas
-16-12-2016 16:31:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 16:31:00 , Objeto      : pidoprecio.init
-16-12-2016 16:31:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 16:31:01 , Nº de Linea :         28
-16-12-2016 16:31:01 , En el Fuente: 	.iniciarvariables()
-16-12-2016 16:31:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 16:31:01 , Objeto      : pidoprecio.iniciarvariables
-16-12-2016 16:31:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 16:31:01 , Nº de Linea :          8
-16-12-2016 16:31:02 , En el Fuente: 		.antesagregar()
-16-12-2016 16:31:02 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 16:31:02 , Objeto      : pidoprecio.antesagregar
-16-12-2016 16:31:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
-16-12-2016 16:31:02 , Nº de Linea :         16
-16-12-2016 16:31:02 , En el Fuente: replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3		,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5		,margen1 WITH CsrRubro.margen1 in CsrAuxPrecio
-21-12-2016 15:00:29 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCUERPROMO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008IYX00DX.TMP;Ultimo Control activ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o: 
-21-12-2016 15:00:29 , Pila de llamadas
-21-12-2016 15:00:30 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-21-12-2016 15:00:30 , Objeto      : main
-21-12-2016 15:00:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-21-12-2016 15:00:30 , Nº de Linea :        285
-21-12-2016 15:00:30 , En el Fuente: 	Read events   
-21-12-2016 15:00:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-21-12-2016 15:00:30 , Objeto      : frmmenu1.treeview.dblclick
-21-12-2016 15:00:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-21-12-2016 15:00:30 , Nº de Linea :         10
-21-12-2016 15:00:30 , En el Fuente: 	   &lcCmd
-21-12-2016 15:00:30 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
-21-12-2016 15:00:31 , Objeto      : ejecutamenu
-21-12-2016 15:00:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
-21-12-2016 15:00:31 , Nº de Linea :       1575
-21-12-2016 15:00:31 , En el Fuente: 						DO FORM &lcForm
-21-12-2016 15:00:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:31 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.txtexiste1.init
-21-12-2016 15:00:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:31 , Nº de Linea :          1
-21-12-2016 15:00:31 , En el Fuente: this.Parent.refrescardato("")
-21-12-2016 15:00:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:31 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.refrescardato
-21-12-2016 15:00:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:32 , Nº de Linea :         19
-21-12-2016 15:00:32 , En el Fuente: This.traerdatos(.t.,lccmd) 
-21-12-2016 15:00:32 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:32 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.traerdatos
-21-12-2016 15:00:32 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:32 , Nº de Linea :         32
-21-12-2016 15:00:32 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
-21-12-2016 15:00:48 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCUERPROMO;Ultimo registro:          1 ;DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\00008IYX00HH.TMP;Ultimo Control activ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o: 
-21-12-2016 15:00:48 , Pila de llamadas
-21-12-2016 15:00:48 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-21-12-2016 15:00:48 , Objeto      : main
-21-12-2016 15:00:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-21-12-2016 15:00:49 , Nº de Linea :        285
-21-12-2016 15:00:49 , En el Fuente: 	Read events   
-21-12-2016 15:00:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-21-12-2016 15:00:49 , Objeto      : frmmenu1.treeview.dblclick
-21-12-2016 15:00:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-21-12-2016 15:00:49 , Nº de Linea :         10
-21-12-2016 15:00:49 , En el Fuente: 	   &lcCmd
-21-12-2016 15:00:49 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
-21-12-2016 15:00:49 , Objeto      : ejecutamenu
-21-12-2016 15:00:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
-21-12-2016 15:00:49 , Nº de Linea :       1575
-21-12-2016 15:00:49 , En el Fuente: 						DO FORM &lcForm
-21-12-2016 15:00:49 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:50 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.txtexiste1.init
-21-12-2016 15:00:50 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:50 , Nº de Linea :          1
-21-12-2016 15:00:50 , En el Fuente: this.Parent.refrescardato("")
-21-12-2016 15:00:50 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:51 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.refrescardato
-21-12-2016 15:00:51 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:51 , Nº de Linea :         19
-21-12-2016 15:00:51 , En el Fuente: This.traerdatos(.t.,lccmd) 
-21-12-2016 15:00:51 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:51 , Objeto      : abmpromocion.contenedor1.pframe1.page1.kitbuscaoaltaenabonificar.traerdatos
-21-12-2016 15:00:52 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-21-12-2016 15:00:52 , Nº de Linea :         32
-21-12-2016 15:00:52 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
-27-12-2016 18:34:59 , ABMFAMILIA.CMDBORRAR.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT("Csrcursor") > 0;Error :         13;Ultimo Alias Activo: CSRRUBRO;Ultimo registro:          1 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004QA1008
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-F.TMP;Ultimo Control activo: 
-27-12-2016 18:34:59 , Pila de llamadas
-27-12-2016 18:35:02 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-27-12-2016 18:35:02 , Objeto      : abmfamilia.cmdborrar.click
-27-12-2016 18:35:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-27-12-2016 18:35:05 , Nº de Linea :         14
-27-12-2016 18:35:05 , En el Fuente:    lbok = thisform.AntesBorrarDatos(loObjNeg)
-27-12-2016 18:35:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
-27-12-2016 18:35:07 , Objeto      : abmfamilia.antesborrardatos
-27-12-2016 18:35:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\abmrubros.sct
-27-12-2016 18:35:08 , Nº de Linea :         20
-27-12-2016 18:35:08 , En el Fuente: IF RECCOUNT("Csrcursor") > 0
-06-02-2017 16:51:35 , MAIN, Error: Código de excepción OLE IDispatch 0 de Nodes: Element not found.;Linea : This.TreeView.Nodes( "_" + ALLTRIM( sec_codacce ) ).Checked = .t.;Error :       1429;Ultimo Alias Activo: CURPERFIL;Ultimo registro:         47 ;D
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y89009G.TMP;Ultimo Control activo: 
-06-02-2017 16:51:36 , Pila de llamadas
-06-02-2017 16:51:42 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-06-02-2017 16:51:42 , Objeto      : main
-06-02-2017 16:51:43 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-06-02-2017 16:51:43 , Nº de Linea :        279
-06-02-2017 16:51:47 , En el Fuente: 	DO FORM frmmenu
-06-02-2017 16:51:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-06-02-2017 16:51:47 , Objeto      : frmmenu1.init
-06-02-2017 16:51:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-06-02-2017 16:51:50 , Nº de Linea :          4
-06-02-2017 16:51:50 , En el Fuente: DODEFAULT(lcalias)
-06-02-2017 16:51:50 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:51:54 , Objeto      : frmmenu.init
-06-02-2017 16:51:54 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:51:56 , Nº de Linea :          8
-06-02-2017 16:51:56 , En el Fuente: This.CargaPerfiladmin()
-06-02-2017 16:52:02 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:52:02 , Objeto      : frmmenu1.cargaperfiladmin
-06-02-2017 16:52:02 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:52:09 , Nº de Linea :         62
-06-02-2017 16:52:09 , En el Fuente: 	This.TreeView.Nodes( "_" + ALLTRIM( sec_codacce ) ).Checked = .t.
-06-02-2017 16:56:27 , MAIN, Error: Código de excepción OLE IDispatch 0 de Nodes: Element not found.;Linea : This.TreeView.Nodes( "_" + ALLTRIM( sec_codacce ) ).Checked = .t.;Error :       1429;Ultimo Alias Activo: CURPERFIL;Ultimo registro:         47 ;D
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8900GY.TMP;Ultimo Control activo: 
-06-02-2017 16:56:36 , Pila de llamadas
-06-02-2017 16:56:41 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-06-02-2017 16:56:41 , Objeto      : main
-06-02-2017 16:56:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-06-02-2017 16:56:41 , Nº de Linea :        279
-06-02-2017 16:56:44 , En el Fuente: 	DO FORM frmmenu
-06-02-2017 16:56:44 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-06-02-2017 16:56:45 , Objeto      : frmmenu1.init
-06-02-2017 16:56:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-06-02-2017 16:56:51 , Nº de Linea :          4
-06-02-2017 16:56:51 , En el Fuente: DODEFAULT(lcalias)
-06-02-2017 16:56:51 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:56:56 , Objeto      : frmmenu.init
-06-02-2017 16:56:56 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:56:56 , Nº de Linea :          8
-06-02-2017 16:56:56 , En el Fuente: This.CargaPerfiladmin()
-06-02-2017 16:57:02 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:57:03 , Objeto      : frmmenu1.cargaperfiladmin
-06-02-2017 16:57:04 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-06-02-2017 16:57:09 , Nº de Linea :         62
 06-02-2017 16:57:09 , En el Fuente: 	This.TreeView.Nodes( "_" + ALLTRIM( sec_codacce ) ).Checked = .t.
 06-02-2017 17:04:39 , MAIN, Error: No se encuentra el alias 'CSRARTICULO'.;Linea : WHERE csrprodprecio.idarticulo = <<CsrArticulo.id>> and csrprodprecio.idestado =1;Error :         13;Ultimo Alias Activo: CSRPRODPRECIO;Ultimo registro:          1 ;DBF: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4432,6 +241,151 @@ BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8900GY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8901G2.TMP;Ultimo Control activo: 
 06-02-2017 17:09:24 , Pila de llamadas
 06-02-2017 17:09:27 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -4465,6 +419,151 @@ BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8900GY.TMP;Ultimo Control activo:
 06-02-2017 17:09:50 , Nº de Linea :          7
 06-02-2017 17:09:50 , En el Fuente: WHERE csrprodprecio.idarticulo = <<CsrArticulo.id>> and csrprodprecio.idestado =1
 06-02-2017 17:31:11 , MAIN, Error: No se encuentra el alias 'CSRARTICULO'.;Linea : WHERE csrprodprecio.idarticulo = <<CsrArticulo.id>> and csrprodprecio.idestado =1;Error :         13;Ultimo Alias Activo: CSRPRODPRECIO;Ultimo registro:          1 ;DBF: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4524,6 +623,151 @@ BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8900GY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8903HN.TMP;Ultimo Control activo: 
 06-02-2017 21:00:53 , Pila de llamadas
 06-02-2017 21:01:01 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -4556,3 +800,2601 @@ BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003Y8900GY.TMP;Ultimo Control activo:
 06-02-2017 21:01:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\abmprecio.sct
 06-02-2017 21:01:35 , Nº de Linea :          7
 06-02-2017 21:01:35 , En el Fuente: WHERE csrprodprecio.idarticulo = <<CsrArticulo.id>> and csrprodprecio.idestado =1
+09-02-2017 13:41:00 , REGFACVTA.KEYPRESS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF loObjeto.idretorno <> 0;Error :        107;Ultimo Alias Activo: CSRVENDEDOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATA\LOCAL\TEMP\00008E1504OV.TMP;Ultimo Control activo: 
+09-02-2017 13:41:02 , Pila de llamadas
+09-02-2017 13:41:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+09-02-2017 13:41:06 , Objeto      : regfacvta.keypress
+09-02-2017 13:41:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+09-02-2017 13:41:10 , Nº de Linea :        125
+09-02-2017 13:41:10 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoVendedor.Click()
+09-02-2017 13:41:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+09-02-2017 13:41:14 , Objeto      : regfacvta.botoneracuerpo.cmdpidovendedor.click
+09-02-2017 13:41:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+09-02-2017 13:41:14 , Nº de Linea :          9
+09-02-2017 13:41:18 , En el Fuente: 			thisform.pidovendedor()
+09-02-2017 13:41:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+09-02-2017 13:41:18 , Objeto      : regfacvta.pidovendedor
+09-02-2017 13:41:18 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+09-02-2017 13:41:22 , Nº de Linea :         38
+09-02-2017 13:41:22 , En el Fuente: 		IF loObjeto.idretorno <> 0
+09-02-2017 15:15:28 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: CONTENEDOR1 es un miembro desconocido.;Linea : cCadena	= ALLTRIM(UPPER(.contenedor1._txtbuscarcadena.Value));Error :       1925;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC900VV.TMP;Ultimo Control activo: 
+09-02-2017 15:15:32 , Pila de llamadas
+09-02-2017 15:15:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:15:36 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:15:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:15:36 , Nº de Linea :          1
+09-02-2017 15:15:41 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:15:41 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:15:41 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:15:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:15:46 , Nº de Linea :          4
+09-02-2017 15:15:46 , En el Fuente: thisform.armaselect()
+09-02-2017 15:15:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:15:50 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:15:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:15:50 , Nº de Linea :         15
+09-02-2017 15:15:54 , En el Fuente: 	cCadena	= ALLTRIM(UPPER(.contenedor1._txtbuscarcadena.Value))
+09-02-2017 15:16:57 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'NFIL'.;Linea : nFil	= nFil + IIF(SUBSTR(cCadena,j,1)=' ',1,0);Error :         12;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\ADMIN\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TA\LOCAL\TEMP\00001XC900XR.TMP;Ultimo Control activo: 
+09-02-2017 15:16:57 , Pila de llamadas
+09-02-2017 15:17:02 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:17:02 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:17:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:17:02 , Nº de Linea :          1
+09-02-2017 15:17:06 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:17:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:17:06 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:17:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:17:06 , Nº de Linea :          4
+09-02-2017 15:17:10 , En el Fuente: thisform.armaselect()
+09-02-2017 15:17:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:17:10 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:17:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:17:10 , Nº de Linea :         17
+09-02-2017 15:17:15 , En el Fuente: 		nFil	= nFil + IIF(SUBSTR(cCadena,j,1)=' ',1,0)
+09-02-2017 15:20:45 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: La referencia al subíndice no es válida.;Linea : DIMENSION aPalabras(nFil);Error :         31;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+001XC9013F.TMP;Ultimo Control activo: 
+09-02-2017 15:20:45 , Pila de llamadas
+09-02-2017 15:20:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:20:49 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:20:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:20:49 , Nº de Linea :          1
+09-02-2017 15:20:53 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:20:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:20:53 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:20:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:20:57 , Nº de Linea :          4
+09-02-2017 15:20:57 , En el Fuente: thisform.armaselect()
+09-02-2017 15:20:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:20:57 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:21:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:21:01 , Nº de Linea :         21
+09-02-2017 15:21:01 , En el Fuente: 	DIMENSION aPalabras(nFil)
+09-02-2017 15:28:57 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1);Error :       1234;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MIN\APPDATA\LOCAL\TEMP\00001XC901C0.TMP;Ultimo Control activo: 
+09-02-2017 15:28:57 , Pila de llamadas
+09-02-2017 15:29:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:29:00 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:29:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:29:01 , Nº de Linea :          1
+09-02-2017 15:29:03 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:29:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:29:03 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:29:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:29:07 , Nº de Linea :          4
+09-02-2017 15:29:07 , En el Fuente: thisform.armaselect()
+09-02-2017 15:29:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:29:11 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:29:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:29:11 , Nº de Linea :         28
+09-02-2017 15:29:11 , En el Fuente: 		aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1)
+09-02-2017 15:42:25 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1);Error :       1234;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MIN\APPDATA\LOCAL\TEMP\00001XC901LW.TMP;Ultimo Control activo: 
+09-02-2017 15:42:25 , Pila de llamadas
+09-02-2017 15:42:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:42:29 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:42:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:42:29 , Nº de Linea :          1
+09-02-2017 15:42:29 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:42:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:42:29 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:42:33 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:42:33 , Nº de Linea :          4
+09-02-2017 15:42:33 , En el Fuente: thisform.armaselect()
+09-02-2017 15:42:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:42:37 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:42:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:42:41 , Nº de Linea :         28
+09-02-2017 15:42:41 , En el Fuente: 		aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1)
+09-02-2017 15:43:48 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1);Error :       1234;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MIN\APPDATA\LOCAL\TEMP\00001XC901NS.TMP;Ultimo Control activo: 
+09-02-2017 15:43:52 , Pila de llamadas
+09-02-2017 15:43:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:43:55 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:43:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:43:55 , Nº de Linea :          1
+09-02-2017 15:43:59 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:43:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:43:59 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:44:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:44:03 , Nº de Linea :          4
+09-02-2017 15:44:03 , En el Fuente: thisform.armaselect()
+09-02-2017 15:44:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:44:07 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:44:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:44:07 , Nº de Linea :         28
+09-02-2017 15:44:07 , En el Fuente: 		aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1)
+09-02-2017 15:45:41 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1);Error :       1234;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         22 ;DBF: C:\USERS\AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MIN\APPDATA\LOCAL\TEMP\00001XC901PO.TMP;Ultimo Control activo: 
+09-02-2017 15:45:41 , Pila de llamadas
+09-02-2017 15:45:44 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:45:45 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 15:45:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:45:48 , Nº de Linea :          1
+09-02-2017 15:45:48 , En el Fuente: thisform.crearinforme()
+09-02-2017 15:45:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:45:49 , Objeto      : buscoproducto.crearinforme
+09-02-2017 15:45:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:45:49 , Nº de Linea :          4
+09-02-2017 15:45:53 , En el Fuente: thisform.armaselect()
+09-02-2017 15:45:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:45:53 , Objeto      : buscoproducto.armaselect
+09-02-2017 15:45:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 15:45:57 , Nº de Linea :         28
+09-02-2017 15:45:57 , En el Fuente: 		aPalabras(i)	= SUBSTR(cCadPalabra,1,nFin-1)
+09-02-2017 16:13:56 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : awiztlist[m]=proper(awizflist[m]);Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC902B6.TMP;Ultimo Control activo: 
+09-02-2017 16:13:56 , Pila de llamadas
+09-02-2017 16:13:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:13:59 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:14:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:14:00 , Nº de Linea :          1
+09-02-2017 16:14:04 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:14:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:14:04 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:14:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:14:08 , Nº de Linea :          4
+09-02-2017 16:14:08 , En el Fuente: thisform.armaselect()
+09-02-2017 16:14:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:14:08 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:14:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:14:12 , Nº de Linea :         46
+09-02-2017 16:14:12 , En el Fuente:         awiztlist[m]=proper(awizflist[m])
+09-02-2017 16:15:00 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : awiztlist[m]=proper(awizflist[m]);Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC902D5.TMP;Ultimo Control activo: 
+09-02-2017 16:15:00 , Pila de llamadas
+09-02-2017 16:15:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:15:04 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:15:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:15:08 , Nº de Linea :          1
+09-02-2017 16:15:08 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:15:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:15:08 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:15:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:15:12 , Nº de Linea :          4
+09-02-2017 16:15:12 , En el Fuente: thisform.armaselect()
+09-02-2017 16:15:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:15:17 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:15:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:15:17 , Nº de Linea :         46
+09-02-2017 16:15:20 , En el Fuente:         awiztlist[m]=proper(awizflist[m])   
+09-02-2017 16:27:44 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El archivo 'awizflis.prg' no existe.;Linea : aCampos[i,1] = proper(awizflis[m,1]);Error :          1;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\TEMP\00001XC902U6.TMP;Ultimo Control activo: 
+09-02-2017 16:27:44 , Pila de llamadas
+09-02-2017 16:27:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:27:48 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:27:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:27:52 , Nº de Linea :          1
+09-02-2017 16:27:52 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:27:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:27:56 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:27:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:27:56 , Nº de Linea :          4
+09-02-2017 16:28:00 , En el Fuente: thisform.armaselect()
+09-02-2017 16:28:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:28:00 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:28:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:28:04 , Nº de Linea :          5
+09-02-2017 16:28:04 , En el Fuente: 	this.armarwhere()
+09-02-2017 16:28:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:28:04 , Objeto      : buscoproducto.armarwhere
+09-02-2017 16:28:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:28:07 , Nº de Linea :         42
+09-02-2017 16:28:07 , En el Fuente:        	aCampos[i,1] = proper(awizflis[m,1])   
+09-02-2017 16:33:51 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : aCampos[m,1] = proper(awiztlist[m]);Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC9031Z.TMP;Ultimo Control activo: 
+09-02-2017 16:33:51 , Pila de llamadas
+09-02-2017 16:33:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:33:56 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:33:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:33:56 , Nº de Linea :          1
+09-02-2017 16:33:59 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:33:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:34:00 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:34:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:34:03 , Nº de Linea :          4
+09-02-2017 16:34:03 , En el Fuente: thisform.armaselect()
+09-02-2017 16:34:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:34:08 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:34:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:34:11 , Nº de Linea :          5
+09-02-2017 16:34:11 , En el Fuente: 	this.armarwhere()
+09-02-2017 16:34:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:34:11 , Objeto      : buscoproducto.armarwhere
+09-02-2017 16:34:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:34:15 , Nº de Linea :         43
+09-02-2017 16:34:15 , En el Fuente:        	aCampos[m,1] = proper(awiztlist[m])   
+09-02-2017 16:39:21 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: La referencia al subíndice no es válida.;Linea : awiztlist[i]=proper(awizflist[m,1]);Error :         31;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00001XC903PM.TMP;Ultimo Control activo: 
+09-02-2017 16:39:21 , Pila de llamadas
+09-02-2017 16:39:24 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:25 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:39:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:25 , Nº de Linea :          1
+09-02-2017 16:39:28 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:39:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:28 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:39:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:32 , Nº de Linea :          4
+09-02-2017 16:39:32 , En el Fuente: thisform.armaselect()
+09-02-2017 16:39:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:32 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:39:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:36 , Nº de Linea :          5
+09-02-2017 16:39:36 , En el Fuente: 	this.armarwhere()
+09-02-2017 16:39:40 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:40 , Objeto      : buscoproducto.armarwhere
+09-02-2017 16:39:40 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:39:40 , Nº de Linea :         35
+09-02-2017 16:39:45 , En el Fuente:         	awiztlist[i]=proper(awizflist[m,1])   
+09-02-2017 16:49:47 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'CWHERE'.;Linea : this.armarwhere(cWhere);Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C904KR.TMP;Ultimo Control activo: 
+09-02-2017 16:49:47 , Pila de llamadas
+09-02-2017 16:49:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:49:51 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:49:51 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:49:51 , Nº de Linea :          1
+09-02-2017 16:49:55 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:49:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:49:55 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:49:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:49:55 , Nº de Linea :          4
+09-02-2017 16:49:58 , En el Fuente: thisform.armaselect()
+09-02-2017 16:49:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:49:58 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:49:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:49:59 , Nº de Linea :          5
+09-02-2017 16:50:02 , En el Fuente: this.armarwhere(cWhere)
+09-02-2017 16:50:42 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'CWHERE'.;Linea : lcCmd = lcCmdArti + " WHERE " + this.armarwhere(cWhere);Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ADMIN\APPDATA\LOCAL\TEMP\00001XC904NI.TMP;Ultimo Control activo: 
+09-02-2017 16:50:42 , Pila de llamadas
+09-02-2017 16:50:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:50:46 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:50:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:50:46 , Nº de Linea :          1
+09-02-2017 16:50:50 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:50:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:50:50 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:50:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:50:54 , Nº de Linea :          4
+09-02-2017 16:50:54 , En el Fuente: thisform.armaselect()
+09-02-2017 16:50:54 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:50:58 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:50:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:50:58 , Nº de Linea :          5
+09-02-2017 16:51:02 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere(cWhere)
+09-02-2017 16:51:30 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'CWHERE'.;Linea : cWhere	= cWhere + cSepW + aCampos[i,2];Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00001XC904PH.TMP;Ultimo Control activo: 
+09-02-2017 16:51:30 , Pila de llamadas
+09-02-2017 16:51:34 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:34 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 16:51:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:34 , Nº de Linea :          1
+09-02-2017 16:51:38 , En el Fuente: thisform.crearinforme()
+09-02-2017 16:51:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:38 , Objeto      : buscoproducto.crearinforme
+09-02-2017 16:51:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:38 , Nº de Linea :          4
+09-02-2017 16:51:42 , En el Fuente: thisform.armaselect()
+09-02-2017 16:51:42 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:42 , Objeto      : buscoproducto.armaselect
+09-02-2017 16:51:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:45 , Nº de Linea :          5
+09-02-2017 16:51:45 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 16:51:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:49 , Objeto      : buscoproducto.armarwhere
+09-02-2017 16:51:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 16:51:53 , Nº de Linea :         54
+09-02-2017 16:51:53 , En el Fuente: 		cWhere	= cWhere + cSepW + aCampos[i,2]
+09-02-2017 17:03:13 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'CODALFA'.;Linea : .column2.controlsource = 'CsrCursor.codAlfa';Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATA\LOCAL\TEMP\00001XC904YI.TMP;Ultimo Control activo: 
+09-02-2017 17:03:17 , Pila de llamadas
+09-02-2017 17:03:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:03:21 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:03:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:03:21 , Nº de Linea :          1
+09-02-2017 17:03:26 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:03:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:03:26 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:03:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:03:26 , Nº de Linea :         34
+09-02-2017 17:03:26 , En el Fuente:    	.column2.controlsource = 'CsrCursor.codAlfa'
+09-02-2017 17:04:36 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'CODALFA'.;Linea : .column2.controlsource = 'CsrCursor.codAlfa';Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATA\LOCAL\TEMP\00001XC904YN.TMP;Ultimo Control activo: 
+09-02-2017 17:04:39 , Pila de llamadas
+09-02-2017 17:04:43 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:04:43 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:04:43 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:04:43 , Nº de Linea :          1
+09-02-2017 17:04:46 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:04:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:04:46 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:04:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:04:50 , Nº de Linea :         34
+09-02-2017 17:04:50 , En el Fuente:    	.column2.controlsource = 'CsrCursor.codAlfa'
+09-02-2017 17:17:21 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'CODALFAPROV'.;Linea : .column3.controlsource = 'CsrCursor.codalfaprov';Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DMIN\APPDATA\LOCAL\TEMP\00001XC9050X.TMP;Ultimo Control activo: 
+09-02-2017 17:17:25 , Pila de llamadas
+09-02-2017 17:17:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:17:28 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:17:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:17:32 , Nº de Linea :          1
+09-02-2017 17:17:32 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:17:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:17:32 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:17:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:17:36 , Nº de Linea :         36
+09-02-2017 17:17:36 , En el Fuente:    	.column3.controlsource = 'CsrCursor.codalfaprov'
+09-02-2017 17:27:03 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: La referencia al subíndice no es válida.;Linea : aCampos[m,1] = proper(awiztlist[m]);Error :         31;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00001XC9058Y.TMP;Ultimo Control activo: 
+09-02-2017 17:27:04 , Pila de llamadas
+09-02-2017 17:27:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:06 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:27:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:06 , Nº de Linea :          1
+09-02-2017 17:27:11 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:27:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:11 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:27:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:15 , Nº de Linea :          4
+09-02-2017 17:27:15 , En el Fuente: thisform.armaselect()
+09-02-2017 17:27:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:16 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:27:20 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:20 , Nº de Linea :          5
+09-02-2017 17:27:20 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:27:20 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:24 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:27:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:27:24 , Nº de Linea :         42
+09-02-2017 17:27:28 , En el Fuente:        	aCampos[m,1] = proper(awiztlist[m])   
+09-02-2017 17:28:18 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: La referencia al subíndice no es válida.;Linea : aCampos[m,1] = proper(awiztlist[m]);Error :         31;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00001XC905BP.TMP;Ultimo Control activo: 
+09-02-2017 17:28:19 , Pila de llamadas
+09-02-2017 17:28:22 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:22 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:28:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:22 , Nº de Linea :          1
+09-02-2017 17:28:25 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:28:25 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:25 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:28:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:28 , Nº de Linea :          4
+09-02-2017 17:28:28 , En el Fuente: thisform.armaselect()
+09-02-2017 17:28:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:31 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:28:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:31 , Nº de Linea :          5
+09-02-2017 17:28:31 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:28:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:35 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:28:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:28:40 , Nº de Linea :         42
+09-02-2017 17:28:40 , En el Fuente:        	aCampos[m,1] = proper(awiztlist[m])   
+09-02-2017 17:29:21 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'";Error :       1234;Ultimo Alias Activo: CSRCURSOR;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC905DO.TMP;Ultimo Control activo: 
+09-02-2017 17:29:24 , Pila de llamadas
+09-02-2017 17:29:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:28 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:29:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:28 , Nº de Linea :          1
+09-02-2017 17:29:31 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:29:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:31 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:29:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:35 , Nº de Linea :          4
+09-02-2017 17:29:35 , En el Fuente: thisform.armaselect()
+09-02-2017 17:29:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:38 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:29:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:38 , Nº de Linea :          5
+09-02-2017 17:29:41 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:29:41 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:41 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:29:44 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:29:44 , Nº de Linea :         52
+09-02-2017 17:29:44 , En el Fuente: 			aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'"
+09-02-2017 17:32:06 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'";Error :       1234;Ultimo Alias Activo: CSRCURSOR;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC905FN.TMP;Ultimo Control activo: 
+09-02-2017 17:32:09 , Pila de llamadas
+09-02-2017 17:32:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:13 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:32:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:14 , Nº de Linea :          1
+09-02-2017 17:32:14 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:32:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:17 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:32:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:20 , Nº de Linea :          4
+09-02-2017 17:32:21 , En el Fuente: thisform.armaselect()
+09-02-2017 17:32:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:21 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:32:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:24 , Nº de Linea :          5
+09-02-2017 17:32:24 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:32:24 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:28 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:32:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:32:28 , Nº de Linea :         53
+09-02-2017 17:32:31 , En el Fuente: 			aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'"
+09-02-2017 17:36:46 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'";Error :        107;Ultimo Alias 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC905LT.TMP;Ultimo Control activo: 
+09-02-2017 17:36:46 , Pila de llamadas
+09-02-2017 17:36:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:36:49 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:36:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:36:49 , Nº de Linea :          1
+09-02-2017 17:36:53 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:36:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:36:53 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:36:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:36:53 , Nº de Linea :          4
+09-02-2017 17:36:53 , En el Fuente: thisform.armaselect()
+09-02-2017 17:36:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:36:56 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:36:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:36:57 , Nº de Linea :          5
+09-02-2017 17:37:00 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:37:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:37:00 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:37:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:37:04 , Nº de Linea :         53
+09-02-2017 17:37:04 , En el Fuente: 			aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'"
+09-02-2017 17:40:04 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'";Error :        107;Ultimo Alias 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC905R0.TMP;Ultimo Control activo: 
+09-02-2017 17:40:07 , Pila de llamadas
+09-02-2017 17:40:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:10 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:40:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:10 , Nº de Linea :          1
+09-02-2017 17:40:14 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:40:14 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:14 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:40:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:17 , Nº de Linea :          4
+09-02-2017 17:40:17 , En el Fuente: thisform.armaselect()
+09-02-2017 17:40:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:18 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:40:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:21 , Nº de Linea :          5
+09-02-2017 17:40:21 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:40:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:24 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:40:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:40:24 , Nº de Linea :         54
+09-02-2017 17:40:28 , En el Fuente: 			aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'"
+09-02-2017 17:41:04 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'";Error :        107;Ultimo Alias 
+
+
+
+
+
+
+
+
+
+
+
+Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC905R0.TMP;Ultimo Control activo: 
+09-02-2017 17:41:04 , Pila de llamadas
+09-02-2017 17:41:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:08 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:41:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:08 , Nº de Linea :          1
+09-02-2017 17:41:08 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:41:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:11 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:41:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:11 , Nº de Linea :          4
+09-02-2017 17:41:15 , En el Fuente: thisform.armaselect()
+09-02-2017 17:41:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:15 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:41:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:15 , Nº de Linea :          5
+09-02-2017 17:41:18 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:41:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:18 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:41:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:41:22 , Nº de Linea :         54
+09-02-2017 17:41:22 , En el Fuente: 			aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'"
+09-02-2017 17:43:31 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'";Error :        107;Ultimo Alias 
+
+
+
+
+
+Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001XC905T1.TMP;Ultimo Control activo: 
+09-02-2017 17:43:35 , Pila de llamadas
+09-02-2017 17:43:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:39 , Objeto      : buscoproducto.cmdbuscar.click
+09-02-2017 17:43:39 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:42 , Nº de Linea :          1
+09-02-2017 17:43:42 , En el Fuente: thisform.crearinforme()
+09-02-2017 17:43:42 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:42 , Objeto      : buscoproducto.crearinforme
+09-02-2017 17:43:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:46 , Nº de Linea :          4
+09-02-2017 17:43:46 , En el Fuente: thisform.armaselect()
+09-02-2017 17:43:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:49 , Objeto      : buscoproducto.armaselect
+09-02-2017 17:43:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:53 , Nº de Linea :          5
+09-02-2017 17:43:53 , En el Fuente: lcCmd = lcCmdArti + " WHERE " + this.armarwhere()
+09-02-2017 17:43:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:53 , Objeto      : buscoproducto.armarwhere
+09-02-2017 17:43:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\busproducto.sct
+09-02-2017 17:43:57 , Nº de Linea :         54
+09-02-2017 17:43:57 , En el Fuente: 			aPalabras[i,2] = aPalabras[i,2] + cSep + aCampos[j] + " LIKE '%" + aPalabras[i,1] +"%'"
