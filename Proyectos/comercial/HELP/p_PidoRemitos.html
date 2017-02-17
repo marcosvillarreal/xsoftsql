@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+ <html lang="es">
+ 
+<head>
+<title>PidoRemitos</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="estilos.css" />
+</head>
+ 
+<body>
+    <header>
+       <h1>PidoRemitos</h1>
+	   <p>DESCRIPCION: </p>
+	   
+	   <p>PidoRemitos es un formulario que dispone de los remitos flotantes/pendientes de cada cliente. Se utiliza como herramienta del facturador para traer artículos de estos remitos al cuerpo de la factura.</p>
+	   
+	   <p>SECCIONES: </p>
+	   
+	   <p>- KitBuscaoAltaenCtaCte = La primera vez que abrimos el formulario se nos pide el Código de cliente. Por defecto se utiliza el Código del cliente al que le estemos Facturando. Una vez ingresado el Código del Cliente se buscan los Articulos Pendientes del mismo.</p>
+	   
+	   <p>- Grid = Al dar Enter en el Kit de Código se accederá a un Grid con todos los Artículos de Remitos Pendientes del cliente seleccionado. El mismo puede recorrerse en cualquier dirección con la flechas direccionales.
+	   ENTER, nos permitirá movernos a través de una línea de articulo de izquierda a derecha como también aceptar las modificaciones que realicemos.
+	   BARRA, se utiliza para realizar dos acciones distintas. En el caso de estar parados sobre el campo Código o el CheckBox de la línea, se marcará el artículo para ser llevado al cuerpo de la factura una vez que salgamos del mismo. Si utilizamos la BARRA sobre los campos Detalle, Cantidad, Precio o Dto%, la BARRA nos permitirá modificar el valor del campo.
+	   ALT+T / ALT+N son comandos utilizados respectivamente para seleccionar todos los artículos del Grid, o ninguno.
+	   +, nos lleva al Campo de búsqueda por Importe.
+	   F8, al igual que en el Facturador, nos permite eliminar una línea de Artículo.
+	   . , es un comando que puede utilizarse cuando estamos posicionados sobre el campo Precio (en ese momento aparecerá como opción en el Label Ayuda). Con este comando se actualiza el precio del Articulo al precio actual Público (o de Lista).
+	   ESC, sale/cancela.
+	   F10, sale, pidiendo confirmación para guardar los datos.</p>
+	   
+	   <p>- Busqueda = Consiste de una Caja de texto en la cual debemos ingresar el Importe Total que deseamos buscar. Al presionar Enter y en caso de existir, nos direccionará al registro que cuente con ese total.</p>
+	   
+	   <p>CARACTERISTICAS DE USO:</p>
+	   
+	   <p>Una vez que ingresamos un Código de Cliente en el formulario y con el fin de agilizar el uso del mismo, el Código permanecerá constante hasta que cambiemos el Código de Cliente del FACTURADOR.</p>
+	   <p>Codigo no puede modificarse. Si se utiliza la barra sobre el campo, marca la linea. Se checkea el campo Facturar.</p>
+	   <p>Quitarle el check a una linea implica que esta ya no va a estar disponible en el facturador.</p>
+	   <p></p>
+	   <p></p>
+    </header>
+    <footer>
+    </footer>
+</body>
+</html>
