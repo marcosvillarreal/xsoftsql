@@ -1,6 +1,9 @@
-PARAMETERS ldvacio,lcpath,lcBase
+PARAMETERS ldvacio,lcpath,lcBase,lnlimite
+
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
+lnlimite = IIF(PCOUNT(<4,0,lnlimite)
+
 lcData = lcBase
 
 DO setup
@@ -75,6 +78,8 @@ lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
 stop()
 
+i = 0
+
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
@@ -94,6 +99,11 @@ SCAN FOR !EOF()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
+	
+	i = i + 1 
+	IF i > lnlimite
+		EXIT 
+	ENDIF 
 	
 	STORE 0 TO   ncodigo , nidctacte , nidmarca , nidforma , nidunidad , nidtprod , nidtipovta; 
            , nidtamano , nidcatego , nidrubro , nidestado , nidubicacio , nidorigen ;

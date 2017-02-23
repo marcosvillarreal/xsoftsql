@@ -1,4 +1,4 @@
-PARAMETERS ldvacio,lcpath,lcBase
+PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase
@@ -40,6 +40,8 @@ LOCAL lnid
 lnid = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
 lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
+SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo INTO CURSOR CsrPrecio READWRITE 
+
 nDecimalesP = 3
 nNumeroCtacte	= 0
 SELECT CsrProducto
@@ -61,14 +63,17 @@ SCAN FOR !EOF()
 	ENDIF
 	cProvArticulo	 = TablaPrecios(ALLTRIM(CsrArticulo.proveedor))
 	
-	SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
+	*SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
 	
 	SELECT CsrPrecio
-	GO TOP 
-	SCAN 
+	LOCATE FOR codigo = CsrProducto.numero
+	*GO TOP 
+	*SCAN 
+	DO WHILE codigo = CsrProducto.numero AND NOT EOF()
 		cProvPrecio	 = TablaPrecios(ALLTRIM(CsrPrecio.nombre))
 		&&El precio tiene que estar borrado y ser distinto al del articulo
 		IF CsrPrecio.borrado AND cProvPrecio<>cProvArticulo
+			SKIP 
 			LOOP 
 		ENDIF 
 		
@@ -226,8 +231,10 @@ SCAN FOR !EOF()
     		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmod,switch
     	ENDIF 
 		SELECT CsrPrecio
-	ENDSCAN 
-	USE IN CsrPrecio 
+		SKIP 
+	ENDDO 
+	*ENDSCAN 
+	*USE IN CsrPrecio 
 	
 	SELECT CsrProducto   				
 ENDSCAN
@@ -242,5 +249,5 @@ CLOSE DATABASES
 *USE IN  CsrSeccion 
 USE IN  CsrArticulo 
 USE in CsrPrecios
-
+USE IN CsrPrecio
 
