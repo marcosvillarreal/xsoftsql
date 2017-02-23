@@ -76,7 +76,9 @@ lnidfuerzavta = CsrFuerzavta.id
 
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
-stop()
+*stop()
+
+i = 0
 
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -97,6 +99,11 @@ SCAN FOR !EOF()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
+	
+	i = i + 1 
+	IF i > lnlimite
+		EXIT 
+	ENDIF 
 	
 	STORE 0 TO   ncodigo , nidctacte , nidmarca , nidforma , nidunidad , nidtprod , nidtipovta; 
            , nidtamano , nidcatego , nidrubro , nidestado , nidubicacio , nidorigen ;

@@ -2,7 +2,7 @@ PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
-lnlimite = IIF(PCOUNT(<4,0,lnlimite)
+lnlimite = IIF(PCOUNT()<4,0,lnlimite)
 
 lcData = lcBase
 
@@ -76,7 +76,7 @@ lnidfuerzavta = CsrFuerzavta.id
 
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
-stop()
+*stop()
 
 i = 0
 
