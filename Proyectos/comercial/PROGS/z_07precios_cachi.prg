@@ -62,7 +62,7 @@ SCAN FOR !EOF()
 		LOOP 
 	ENDIF
 	cProvArticulo	 = TablaPrecios(ALLTRIM(CsrArticulo.proveedor))
-	
+	lActualizo		 = .f.
 	*SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
 	
 	SELECT CsrPrecio
@@ -228,11 +228,22 @@ SCAN FOR !EOF()
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
-    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmod,switch
+    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
+    		replace fecUlPre WITH OscPrecio.fecmodi
+    		
+    		lActualizo = .t.
     	ENDIF 
 		SELECT CsrPrecio
 		SKIP 
 	ENDDO 
+	
+	IF NOT lActualizo
+		SELECT CsrProdPrecio
+		SCATTER NAME OscPrecio
+		SELECT CsrProducto
+		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
+		replace fecUlPre WITH OscPrecio.fecmodi
+    ENDIF 
 	*ENDSCAN 
 	*USE IN CsrPrecio 
 	
