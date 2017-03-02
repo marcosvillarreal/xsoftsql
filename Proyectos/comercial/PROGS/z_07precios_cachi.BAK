@@ -1,4 +1,4 @@
-PARAMETERS ldvacio,lcpath,lcBase
+PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase
@@ -228,7 +228,9 @@ SCAN FOR !EOF()
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
-    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmod,switch
+    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
+    		replace fecUlPre WITH OscPrecio.fecmodi
+    		
     	ENDIF 
 		SELECT CsrPrecio
 		SKIP 
