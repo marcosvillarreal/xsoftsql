@@ -1544,6 +1544,7 @@ lreturn = .f.
 IF !OCAlista.CursorFill()
 	IF AERROR(laError) > 0 AND lbCartel 
 		=Oavisar.Usuario("Error al obtener datos:"+laError[2]+" alias "+lcaliasCursor+CHR(13)+lccmdSelectCursor,0)
+		oavisar.proceso('N')
 	ENDIF
 ELSE
 	OCAlista.CursorDetach()
