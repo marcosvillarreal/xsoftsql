@@ -1,4419 +1,3 @@
-15-02-2017 , Nº de Linea :        255
-15-02-2017 , En el Fuente: 	Read events   
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.grid2.column2.text1.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         20
-15-02-2017 , En el Fuente:       this.LostFocus()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.grid2.column2.text1.lostfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :          3
-15-02-2017 , En el Fuente: 	IF thisform.kitbuscarProd.fn_lostfocus(this.Value)
-15-02-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-15-02-2017 , Objeto      : regfacpub.kitbuscarprod.fn_lostfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-15-02-2017 , Nº de Linea :        123
-15-02-2017 , En el Fuente: 			DO FORM buscar_objparam NAME oform LINKED WITH oBuscar TO luvalorbuscado
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\buscar_objparam.sct
-15-02-2017 , Objeto      : rf_frm_buscargrd.init
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\buscar_objparam.sct
-15-02-2017 , Nº de Linea :         73
-15-02-2017 , En el Fuente: 	.buscar1.Inicializar(@laCampo,@laTitulo,@laOrden,@laType,tuvalorbuscado,llaceptotexto)
-15-02-2017 , Programa    : j:\xsoftsql\desarrollo\clases\clasesgenerales.vct
-15-02-2017 , Objeto      : rf_frm_buscargrd.buscar1.inicializar
-15-02-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\clasesgenerales.vct
-15-02-2017 , Nº de Linea :         21
-15-02-2017 , En el Fuente: this.CargarGrilla(1) && Actualiza la información de la grilla.
-15-02-2017 , Programa    : j:\xsoftsql\desarrollo\clases\clasesgenerales.vct
-15-02-2017 , Objeto      : rf_frm_buscargrd.buscar1.cargargrilla
-15-02-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\clasesgenerales.vct
-15-02-2017 , Nº de Linea :         13
-15-02-2017 , En el Fuente: 	this.grdBuscar.columns(lnInd).width=fsize(this.aCampo(lnInd),lcAlias)* _screen.fontsize + 20 && ANCHO DE COLUMNAS SEGUN ANCHO DE CAMPO Y TAMAÑO DE LETRA
-15-02-2017 , REGFACPUB.GRID2.COLUMN2.TEXT1.LOSTFOCUS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT (lcalias);Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: NOMBRE
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.grid2.column2.text1.lostfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :          3
-15-02-2017 , En el Fuente: 	IF thisform.kitbuscarProd.fn_lostfocus(this.Value)
-15-02-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-15-02-2017 , Objeto      : regfacpub.kitbuscarprod.fn_lostfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-15-02-2017 , Nº de Linea :        123
-15-02-2017 , En el Fuente: 			DO FORM buscar_objparam NAME oform LINKED WITH oBuscar TO luvalorbuscado
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\buscar_objparam.sct
-15-02-2017 , Objeto      : rf_frm_buscargrd.init
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\buscar_objparam.sct
-15-02-2017 , Nº de Linea :         59
-15-02-2017 , En el Fuente: SELECT (lcalias) 
-15-02-2017 , REGFACPUB.GRID2.COLUMN2.TEXT1.LOSTFOCUS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\00002689013Q.TMP;Ultimo Control activo: NOMBRE
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.grid2.column2.text1.lostfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :          2
-15-02-2017 , En el Fuente: 	SELECT CsrProducto
-15-02-2017 , REGFACPUB.KEYPRESS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002689013Q.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         23
-15-02-2017 , En el Fuente: 	        .k_escape()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.k_escape
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         31
-15-02-2017 , En el Fuente: 	   		.grid2_procesolinea(27)      
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.grid2_procesolinea
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         66
-15-02-2017 , En el Fuente: 	thisform.containerencabeza.kitbuscaoaltaenCtacte.txtexiste1.SetFocus()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.grid2.column2.text1.lostfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :          2
-15-02-2017 , En el Fuente: 	SELECT CsrProducto
-15-02-2017 , REGFACPUB.KEYPRESS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002689013Q.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrFecCaja')=0;Error :         13;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005TS900GS.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-15-02-2017 , Objeto      : main
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-15-02-2017 , Nº de Linea :        255
-15-02-2017 , En el Fuente: 	Read events   
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.containeringreso._txtlostfocus.gotfocus
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :          4
-15-02-2017 , En el Fuente: thisform.controlinicial()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.controlinicial
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         47
-15-02-2017 , En el Fuente: 			IF RECCOUNT('CsrFecCaja')=0
-15-02-2017 , MAIN, Error: El archivo 'csrcbioprecio.dbf' no existe.;Linea : SELECT Csrcbioprecio.*,CAST(0 as int) as numero,SPACE(20) as nombre,0 as estadotilde ,CAST(0 as n(11,2)) as prevtaf1,CAST(0 as n(11,2)) as margen1 ,CAST(0 as n(11,2)) as prevtaf2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3,CAST(0 as n(11,2)) as margen3 ,CAST(0 as n(11,2)) as prevtaf4,CAST(0 as n(11,2)) as margen4 ,CAST(0 as n(9,3)) as fleteporce FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READW
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-RITE;Error :          1;Ultimo Alias Activo: CSRRUBRO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005TS904KR.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-15-02-2017 , Objeto      : main
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-15-02-2017 , Nº de Linea :        255
-15-02-2017 , En el Fuente: 	Read events   
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
-15-02-2017 , Objeto      : frmmenu1.treeview.dblclick
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
-15-02-2017 , Nº de Linea :         10
-15-02-2017 , En el Fuente: 	   &lcCmd
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : ejecutamenu
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1441
-15-02-2017 , En el Fuente: 						DO FORM &lcForm
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\cbioprecio2.sct
-15-02-2017 , Objeto      : cbioprecio2.load
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\cbioprecio2.sct
-15-02-2017 , Nº de Linea :         10
-15-02-2017 , En el Fuente: SELECT Csrcbioprecio.*,CAST(0 as int) as numero,SPACE(20) as nombre,0 as estadotilde ,CAST(0 as n(11,2)) as prevtaf1,CAST(0 as n(11,2)) as margen1,CAST(0 as n(11,2)) as prevtaf2,CAST(0 as n(11,2)) as margen2,CAST(0 as n(11,2)) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-as prevtaf3,CAST(0 as n(11,2)) as margen3,CAST(0 as n(11,2)) as prevtaf4,CAST(0 as n(11,2)) as margen4,CAST(0 as n(9,3)) as fleteporceFROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE 
-15-02-2017 , BUSCOPRODUCTO.LOAD, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : and CsrExistenc.iddeposito = <<CsrParaConfig.iddeposito>> ),CAST(0 as numeric(11,0))) as existe;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D00NK.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.load
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :         18
-15-02-2017 , En el Fuente: and CsrExistenc.iddeposito = <<CsrParaConfig.iddeposito>> ),CAST(0 as numeric(11,0))) as existe
-15-02-2017 , BUSCOPRODUCTO.LOAD, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : and CsrExistenc.iddeposito = <<CsrParaConfig.iddeposito>> ),CAST(0 as numeric(11,0))) as existe;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D00PN.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.load
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :         20
-15-02-2017 , En el Fuente: and CsrExistenc.iddeposito = <<CsrParaConfig.iddeposito>> ),CAST(0 as numeric(11,0))) as existe
-15-02-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          0 ;DBF: ;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-15-02-2017 , Objeto      : main
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-15-02-2017 , Nº de Linea :        225
-15-02-2017 , En el Fuente: 	LeerEmpresa()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : leerempresa
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1491
-15-02-2017 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : crearcursoradapter
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1320
-15-02-2017 , En el Fuente: 
-15-02-2017 , BUSCOPRODUCTO.UNLOAD, Error: LOOBJETO es un miembro desconocido.;Linea : this.loobjeto.cidretorno = thisform.idretorno;Error :       1925;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0009L3D00RN.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.unload
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          5
-15-02-2017 , En el Fuente: 	this.loobjeto.cidretorno = thisform.idretorno
-15-02-2017 , BUSCOPRODUCTO.UNLOAD, Error: LOOBJETO es un miembro desconocido.;Linea : this.loobjeto.cidretorno = thisform.idretorno;Error :       1925;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0009L3D00TI.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.unload
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          5
-15-02-2017 , En el Fuente: 	this.loobjeto.cidretorno = thisform.idretorno
-15-02-2017 , BUSCOPRODUCTO.UNLOAD, Error: LOOBJETO es un miembro desconocido.;Linea : this.loobjeto.cidretorno = thisform.idretorno;Error :       1925;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0009L3D00V5.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.unload
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          5
-15-02-2017 , En el Fuente: 	this.loobjeto.cidretorno = thisform.idretorno
-15-02-2017 , BUSCOPRODUCTO.UNLOAD, Error: LOOBJETO es un miembro desconocido.;Linea : this.loobjeto.cidretorno = thisform.idretorno;Error :       1925;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0009L3D00WJ.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.unload
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          5
-15-02-2017 , En el Fuente: 	this.loobjeto.cidretorno = thisform.idretorno
-15-02-2017 , BUSCOPRODUCTO.UNLOAD, Error: LOOBJETO es un miembro desconocido.;Linea : this.loobjeto.cidretorno = thisform.idretorno;Error :       1925;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9L3D00XY.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.unload
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          5
-15-02-2017 , En el Fuente: 	this.loobjeto.cidretorno = thisform.idretorno
-15-02-2017 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'NOMCTACTE'.;Linea : .column6.controlsource = 'CsrCursor.nomctacte';Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-LOCAL\TEMP\00009L3D0142.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.cmdbuscar.click
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          1
-15-02-2017 , En el Fuente: thisform.crearinforme()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.crearinforme
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :         50
-15-02-2017 , En el Fuente:    	.column6.controlsource = 'CsrCursor.nomctacte'
-15-02-2017 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No se encuentra la variable 'MONEDA'.;Linea : .column10.controlsource = 'CsrCursor.moneda';Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\TEMP\00009L3D015M.TMP;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.cmdbuscar.click
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          1
-15-02-2017 , En el Fuente: thisform.crearinforme()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.crearinforme
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :         51
-15-02-2017 , En el Fuente:    	.column10.controlsource = 'CsrCursor.moneda' 	
-15-02-2017 , BUSCOPRODUCTO.CMDSALIR.CLICK, Error: No se encuentra la propiedad NKEYPRESS.;Linea : this.nKeyPress = 27;Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D015M.TMP;U
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ltimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.cmdsalir.click
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          1
-15-02-2017 , En el Fuente: this.nKeyPress = 27
-15-02-2017 , BUSCOPRODUCTO.CMDBUSCAR.CLICK, Error: No hay ninguna tabla abierta en el área de trabajo actual.;Linea : CURSORSETPROP("Buffering",5,"CsrCursor");Error :         52;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control acti
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-vo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.cmdbuscar.click
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          1
-15-02-2017 , En el Fuente: thisform.crearinforme()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.crearinforme
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :         23
-15-02-2017 , En el Fuente:    CURSORSETPROP("Buffering",5,"CsrCursor")
-15-02-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          0 ;DBF: ;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-15-02-2017 , Objeto      : main
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-15-02-2017 , Nº de Linea :        225
-15-02-2017 , En el Fuente: 	LeerEmpresa()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : leerempresa
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1491
-15-02-2017 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : crearcursoradapter
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1320
-15-02-2017 , En el Fuente: 
-15-02-2017 , BUSCOPRODUCTO.CMDSALIR.CLICK, Error: No se encuentra la propiedad NKEYPRESS.;Linea : this.nKeyPress = 27;Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:         10 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D0181.TMP;U
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ltimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Objeto      : buscoproducto.cmdsalir.click
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\busproducto.sct
-15-02-2017 , Nº de Linea :          1
-15-02-2017 , En el Fuente: this.nKeyPress = 27
-15-02-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          0 ;DBF: ;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-15-02-2017 , Objeto      : main
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-15-02-2017 , Nº de Linea :        225
-15-02-2017 , En el Fuente: 	LeerEmpresa()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : leerempresa
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1491
-15-02-2017 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : crearcursoradapter
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1320
-15-02-2017 , En el Fuente: 
-15-02-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          0 ;DBF: ;Ultimo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-15-02-2017 , Objeto      : main
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-15-02-2017 , Nº de Linea :        225
-15-02-2017 , En el Fuente: 	LeerEmpresa()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : leerempresa
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1491
-15-02-2017 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-15-02-2017 , Objeto      : crearcursoradapter
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-15-02-2017 , Nº de Linea :       1320
-15-02-2017 , En el Fuente: 
-15-02-2017 , REGFACPUB.KEYPRESS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D02PR.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         92
-15-02-2017 , En el Fuente: 			    	.buscarproducto()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.buscarproducto
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         51
-15-02-2017 , En el Fuente: 		SELECT CsrProducto
-15-02-2017 , REGFACPUB.KEYPRESS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D0378.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         92
-15-02-2017 , En el Fuente: 			    	.buscarproducto()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.buscarproducto
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         51
-15-02-2017 , En el Fuente: 		SELECT CsrProducto
-15-02-2017 , REGFACPUB.KEYPRESS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D03OK.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         92
-15-02-2017 , En el Fuente: 			    	.buscarproducto()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.buscarproducto
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         51
-15-02-2017 , En el Fuente: 		SELECT CsrProducto
-15-02-2017 , REGFACPUB.KEYPRESS, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L3D045T.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         92
-15-02-2017 , En el Fuente: 			    	.buscarproducto()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Objeto      : regfacpub.buscarproducto
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-15-02-2017 , Nº de Linea :         51
-15-02-2017 , En el Fuente: 		SELECT CsrProducto
-15-02-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra la propiedad INVOCANDOFORM.;Linea : thisform.invocandoform = .t.;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3D069L.TMP;Ultimo Control activo: CODEXTEND
-15-02-2017 , Pila de llamadas
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-15-02-2017 , Objeto      : regfacvta.keypress
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-15-02-2017 , Nº de Linea :         92
-15-02-2017 , En el Fuente: 			    	.buscarproducto()
-15-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-15-02-2017 , Objeto      : regfacvta.buscarproducto
-15-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-15-02-2017 , Nº de Linea :          1
-15-02-2017 , En el Fuente: thisform.invocandoform = .t.
-22-02-2017 , OBJECTACTE.INIT, Error: _CBOMESFISCALDESDE es un miembro desconocido.;Linea : ._cbomesfiscaldesde.Value 			= MONTH(DATE());Error :       1925;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00007NRD00HE.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          4
-22-02-2017 , En el Fuente:      .iniciavariables()   
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.iniciavariables
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          2
-22-02-2017 , En el Fuente: 	._cbomesfiscaldesde.Value 			= MONTH(DATE())
-22-02-2017 , OBJECTACTE.INIT, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : thisform.refresh();Error :       1881;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00007NRD00IZ.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         11
-22-02-2017 , En el Fuente: thisform.refresh()
-22-02-2017 , OBJECTACTE.INIT, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : thisform.refresh();Error :       1881;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00007NRD00KB.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         11
-22-02-2017 , En el Fuente: thisform.refresh()
-22-02-2017 , OBJECTACTE.INIT, Error: No se encuentra la variable 'MES'.;Linea : INSERT INTO CsrAuxCabeza (idctacte,idproducto,fecha,bonifica,mes,anio) VALUES (0,0,DTOT(DATE()),0,lnMesDesde,lnAnioDesde);Error :         12;Ultimo Alias Activo: CSRAUXCABEZA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD00M7.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         11
-22-02-2017 , En el Fuente:     INSERT INTO CsrAuxCabeza (idctacte,idproducto,fecha,bonifica,mes,anio) VALUES (0,0,DTOT(DATE()),0,lnMesDesde,lnAnioDesde)                                   
-22-02-2017 , OBJECTACTE.INIT, Error: No se encuentra la variable 'MES'.;Linea : INSERT INTO CsrAuxCabeza (idctacte,idproducto,fecha,bonifica,mes,anio) VALUES (0,0,DTOT(DATE()),0,lnMesDesde,lnAnioDesde);Error :         12;Ultimo Alias Activo: CSRAUXCABEZA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD00NC.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         11
-22-02-2017 , En el Fuente:     INSERT INTO CsrAuxCabeza (idctacte,idproducto,fecha,bonifica,mes,anio) VALUES (0,0,DTOT(DATE()),0,lnMesDesde,lnAnioDesde)                                   
-22-02-2017 , OBJECTACTE.INIT, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : thisform.refresh();Error :       1881;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00007NRD00T8.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         14
-22-02-2017 , En el Fuente: thisform.refresh()
-22-02-2017 , OBJECTACTE.INIT, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : thisform.refresh();Error :       1881;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00007NRD00V2.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         14
-22-02-2017 , En el Fuente: thisform.refresh()
-22-02-2017 , OBJECTACTE.INIT, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : thisform.refresh();Error :       1881;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00007NRD00XO.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         14
-22-02-2017 , En el Fuente: thisform.refresh()
-22-02-2017 , OBJECTACTE.INIT, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : thisform.refresh();Error :       1881;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00007NRD00ZJ.TMP;Ultimo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:      .insertacursor()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.insertacursor
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         14
-22-02-2017 , En el Fuente: thisform.refresh()
-22-02-2017 , OBJECTACTE.INIT, Error: No se encuentra la propiedad CONTAINERCABEZA.;Linea : WITH this.containercabeza;Error :       1734;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD014K.TMP;Ul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-timo Control activo: 
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.init
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          4
-22-02-2017 , En el Fuente:      .iniciavariables()   
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.iniciavariables
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          1
-22-02-2017 , En el Fuente: WITH this.containercabeza
-22-02-2017 , OBJECTACTE.CONTAINERPIE._TXTBONIFICA.KEYPRESS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF tcdato<0;Error :        107;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-APPDATA\LOCAL\TEMP\00007NRD01KB.TMP;Ultimo Control activo: BONIFICA
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.containerpie._txtbonifica.keypress
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          5
-22-02-2017 , En el Fuente:         thisform.pierdofocopie(13)
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.pierdofocopie
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         18
-22-02-2017 , En el Fuente: 		lcAnioDesde	= strzero(CsrAuxPie.anio,4)
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-22-02-2017 , Objeto      : strzero
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-22-02-2017 , Nº de Linea :        504
-22-02-2017 , En el Fuente: IF tcdato<0
-22-02-2017 , OBJECTACTE.GRID2.KEYPRESS, Error: No se encuentra la propiedad ANIO.;Linea : this.containerpie._spinneraniofiscaldesde.Value	= Oscatter.anio;Error :       1734;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PPDATA\LOCAL\TEMP\00007NRD01NI.TMP;Ultimo Control activo: ANIO
-22-02-2017 , Pila de llamadas
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.grid2.keypress
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :          6
-22-02-2017 , En el Fuente:         thisform.Key_13Grid2()
-22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Objeto      : objectacte.key_13grid2
-22-02-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
-22-02-2017 , Nº de Linea :         14
-22-02-2017 , En el Fuente: this.containerpie._spinneraniofiscaldesde.Value	= Oscatter.anio
-22-02-2017 , OBJECTACTE.GRID2.KEYPRESS, Error: Error en _spinneraniofiscaldesde - Value : No coinciden los tipos de datos.;Linea : this.containerpie._spinneraniofiscaldesde.Value	= LEFT(STR(Oscatter.periodo,6),4);Error :       1881;Ultimo Alias Activo: C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD01QG.TMP;Ultimo Control activo: ANIO
 22-02-2017 , Pila de llamadas
 22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
 22-02-2017 , Objeto      : objectacte.grid2.keypress
@@ -4426,6 +10,132 @@ SRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
 22-02-2017 , Nº de Linea :         14
 22-02-2017 , En el Fuente: this.containerpie._spinneraniofiscaldesde.Value	= LEFT(STR(Oscatter.periodo,6),4)
 22-02-2017 , OBJECTACTE.CONTAINERPIE._TXTBONIFICA.KEYPRESS, Error: No coinciden los tipos de datos.;Linea : REPLACE idproducto WITH Csrproducto.id,numero WITH Csrproducto.numero,nombre WITH Csrproducto.nombre ,periodo WITH lcAnioDesde + lcMesDesde ,objet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4499,6 +209,132 @@ ivo WITH thisform.containerpie._txtbonifica.value IN CsrAuxiliar;Error :        
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD0216.TMP;Ultimo Control activo: ANIO
 22-02-2017 , Pila de llamadas
 22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
@@ -4512,6 +348,132 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD0216.TMP;Ultimo Control activo: A
 22-02-2017 , Nº de Linea :          4
 22-02-2017 , En el Fuente: ldfecha    = thisform.containerencabeza.fecha_calendario1.txtfecha.Value
 22-02-2017 , OBJECTACTE.GRID2.KEYPRESS, Error: No coinciden los tipos de datos.;Linea : REPLACE fecha WITH ldfecha IN CsrAuxpie;Error :          9;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4569,6 +531,132 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NRD0216.TMP;Ultimo Control activo: A
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ltimo registro:          0 ;DBF: ;Ultimo Control activo: 
 22-02-2017 , Pila de llamadas
 22-02-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\objectacte.sct
@@ -4582,6 +670,132 @@ ltimo registro:          0 ;DBF: ;Ultimo Control activo:
 22-02-2017 , Nº de Linea :          3
 22-02-2017 , En el Fuente: SELECT CsrObjectacte.*,0000 as anio,00 as mes FROM CsrObjectacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE 
 22-02-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4616,6 +830,132 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 22-02-2017 , Nº de Linea :       1320
 22-02-2017 , En el Fuente: 
 22-02-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4654,6 +994,132 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 04-03-2017 , Pila de llamadas
 04-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -4676,7 +1142,259 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ADO, PESO,PESABLE,IDCUERVARI ,IDPRODORIG,IDVARIORIG,ORIGCANTIDAD,IDCUERPO,IDCUERFAC,CodOrden,idvendedor,idmovlicita) VALUES (Csrcuerpo.idcuerfac,Csrcuerpo.idmaopera,Csrcuerpo.idarticulo,Csrcuerpo.codigo,Csrcuerpo.cnombre ,Csrcuerpo.cantorig,Csrcuerpo.uni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4686,7 +1404,259 @@ venta,Csrcuerpo.unibulto,Csrcuerpo.idubicacion,CsrCuerpo.pesable ,CsrCuerpo.Cant
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CsrCuerpo.cantidad,CsrCuerpo.idcuerfac,CsrCuerpo.idcuerfac,VAL(CsrCuerpo.codigo),CsrCuerpo.idvendedor,CsrCuerpo.idmovlicita);Error :         12;Ultimo Alias Activo: CSRAUXCABEFAC;Ultimo registro:          1 IDVENDEDOR;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4707,4 +1677,3804 @@ MP\00008U1502MI.TMP;Ultimo Control activo:
 04-03-2017 , Objeto      : regcambioarticulos.leerpatroncarga
 04-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
 04-03-2017 , Nº de Linea :        168
-04-03-2017 , En el Fuente: 	      INSERT INTO CsrAuxcuerfac (ID,IDMAOPERA,IDARTICULO,CODIGO,NOMBRE,CANTIDAD,UNIVENTA,UNIBULTO	      							,IDUBICACION,PESABLE,CANTORIG,ctacte,cnombre,KILOS,AFACTURAR,IDVARIEDAD,VARIEDAD, ESTADO, PESO,PESABLE,IDCUERVARI	      							,IDPRODORIG,IDVARIORIG,ORIGCANTIDAD,IDCUERPO,IDCUERFAC,CodOrden,idvendedor,idmovlicita)					 VALUES (Csrcuerpo.idcuerfac,Csrcuerpo.idmaopera,Csrcuerpo.idarticulo,Csrcuerpo.codigo,Csrcuerpo.cnombre					 		,Csrcuerpo.cantorig,Csrcuerpo.univenta,Csrcuerpo.unibulto,Csrcuerpo.idubicacion,CsrCuerpo.pesable					 		,CsrCuerpo.CantOrig,CsrAuxCabefac.ctacte, CsrAuxCabefac.cnombre, CsrCuerpo.kilos, CsrCuerpo.cantidad					 		,0,"",1, CsrCuerpo.peso ,CsrCuerpo.pesable,0,CsrCuerpo.idarticulo,CsrCuerpo.idvariedad					 		,CsrCuerpo.cantidad,CsrCuerpo.idcuerfac,CsrCuerpo.idcuerfac,VAL(CsrCuerpo.codigo),CsrCuerpo.idvendedor,CsrCuerpo.idmovlicita)
+04-03-2017 , En el Fuente: 	      INSERT INTO CsrAuxcuerfac (ID,IDMAOPERA,IDARTICULO,CODIGO,NOMBRE,CANTIDAD,UNIVENTA,UNIBULTO	      							,IDUBICACION,PESABLE,CANTORIG,ctacte,cnombre,KILOS,AFACTURAR,IDVARIEDAD,VARIEDAD, ESTADO, PESO,PESABLE,IDCUERVARI	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     							,IDPRODORIG,IDVARIORIG,ORIGCANTIDAD,IDCUERPO,IDCUERFAC,CodOrden,idvendedor,idmovlicita)					 VALUES (Csrcuerpo.idcuerfac,Csrcuerpo.idmaopera,Csrcuerpo.idarticulo,Csrcuerpo.codigo,Csrcuerpo.cnombre					 		,Csrcuerpo.cantorig,Csrcuerpo.univenta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,Csrcuerpo.unibulto,Csrcuerpo.idubicacion,CsrCuerpo.pesable					 		,CsrCuerpo.CantOrig,CsrAuxCabefac.ctacte, CsrAuxCabefac.cnombre, CsrCuerpo.kilos, CsrCuerpo.cantidad					 		,0,"",1, CsrCuerpo.peso ,CsrCuerpo.pesable,0,CsrCuerpo.idarticulo,CsrCuerpo.idv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ariedad					 		,CsrCuerpo.cantidad,CsrCuerpo.idcuerfac,CsrCuerpo.idcuerfac,VAL(CsrCuerpo.codigo),CsrCuerpo.idvendedor,CsrCuerpo.idmovlicita)
+13-03-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra el alias 'CSRANCUERFAC'.;Linea : select (this.cAlias);Error :         13;Ultimo Alias Activo: CSRANMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003PQH01ON.TMP;Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.keypress
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         81
+13-03-2017 , En el Fuente: 			        .cargarconcepto()         
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargarconcepto
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         56
+13-03-2017 , En el Fuente: 		this.cargardatosctacte() 
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargardatosctacte
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         10
+13-03-2017 , En el Fuente: 	this.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: 	thisform.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        162
+13-03-2017 , En el Fuente: 							llok = .GrabarDatoLic()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.grabardatolic
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        116
+13-03-2017 , En el Fuente: llok = loObjNegocio.Salvar('Csrmaopera')
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.odatamaopera.salvar
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :         28
+13-03-2017 , En el Fuente: lbactok=this.salvarcambios()
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.odatamaopera.salvarcambios
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :         74
+13-03-2017 , En el Fuente: 			lbactok=lahijos(i).salvarcambios()
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.odataanmaopera.salvarcambios
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :         74
+13-03-2017 , En el Fuente: 			lbactok=lahijos(i).salvarcambios()
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.odataancuerfac.salvarcambios
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: select (this.cAlias)
+13-03-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra la variable 'OSCMAOPERA'.;Linea : this.actualizafac.afectarlicita(OscMaopera,OscCuerfac);Error :         12;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:          1 IDARTICULO;DBF: C:\USERS\A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DMIN\APPDATA\LOCAL\TEMP\00007KEH01UW.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.keypress
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         81
+13-03-2017 , En el Fuente: 			        .cargarconcepto()         
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargarconcepto
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         56
+13-03-2017 , En el Fuente: 		this.cargardatosctacte() 
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargardatosctacte
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          6
+13-03-2017 , En el Fuente: 	this.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: 	thisform.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        160
+13-03-2017 , En el Fuente: 							llok = .GrabarNotaPedido()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.grabarnotapedido
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        138
+13-03-2017 , En el Fuente: 	   this.actualizafac.afectarlicita(OscMaopera,OscCuerfac)
+13-03-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra la propiedad ORGEN.;Linea : OscNMaopera.orgen = 'FPE';Error :       1734;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:          1 IDARTICULO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH03R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+W.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.keypress
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         81
+13-03-2017 , En el Fuente: 			        .cargarconcepto()         
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargarconcepto
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         56
+13-03-2017 , En el Fuente: 		this.cargardatosctacte() 
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargardatosctacte
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          6
+13-03-2017 , En el Fuente: 	this.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: 	thisform.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        160
+13-03-2017 , En el Fuente: 							llok = .GrabarNotaPedido()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.grabarnotapedido
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        136
+13-03-2017 , En el Fuente: 	   OscNMaopera.orgen = 'FPE'
+13-03-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra la propiedad ORGIEN.;Linea : OscNMaopera.orgien = 'FPE';Error :       1734;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:          1 IDARTICULO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4FM.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.keypress
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         81
+13-03-2017 , En el Fuente: 			        .cargarconcepto()         
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargarconcepto
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         56
+13-03-2017 , En el Fuente: 		this.cargardatosctacte() 
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargardatosctacte
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          6
+13-03-2017 , En el Fuente: 	this.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: 	thisform.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        160
+13-03-2017 , En el Fuente: 							llok = .GrabarNotaPedido()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.grabarnotapedido
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        136
+13-03-2017 , En el Fuente: 	   OscNMaopera.orgien = 'FPE'
+13-03-2017 , REGFACPEDIDO.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF this.Value < CTOD('01-01-1900');Error :        107;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH05N5.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.containerencabeza._txtfoco.gotfocus
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :         12
+13-03-2017 , En el Fuente: 	.leercomprobante()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.leercomprobante
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          5
+13-03-2017 , En el Fuente: stop()
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+13-03-2017 , Objeto      : stop
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+13-03-2017 , Nº de Linea :        599
+13-03-2017 , En el Fuente: 	ENDIF 
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+13-03-2017 , Objeto      : regfacpedido.containerencabeza.fecha_calendario1.txtfecha.valid
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+13-03-2017 , Nº de Linea :          1
+13-03-2017 , En el Fuente: IF this.Value < CTOD('01-01-1900')
+13-03-2017 , MAIN, Error: No se encuentra el alias 'CSRAFELICITADO'.;Linea : SELECT CsrAfeLicitado;Error :         13;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:         13 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH06DA.TMP;Ultimo Control act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+13-03-2017 , Objeto      : main
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+13-03-2017 , Nº de Linea :        255
+13-03-2017 , En el Fuente: 	Read events   
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.aceptar1.click
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          1
+13-03-2017 , En el Fuente: thisform.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          1
+13-03-2017 , En el Fuente: IF thisform.cargarauxiliares()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.cargarauxiliares
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :         90
+13-03-2017 , En el Fuente: 	SELECT CsrAfeLicitado
+13-03-2017 , MAIN, Error: No se encuentra el alias 'OSCCUERFAC'.;Linea : OscNCuerfac.idnmaopera = OscCuerfac.idmaopera;Error :         13;Ultimo Alias Activo: CSRNCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH06Z9.TM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+P;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+13-03-2017 , Objeto      : main
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+13-03-2017 , Nº de Linea :        255
+13-03-2017 , En el Fuente: 	Read events   
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.aceptar1.click
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          1
+13-03-2017 , En el Fuente: thisform.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          1
+13-03-2017 , En el Fuente: IF thisform.cargarauxiliares()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.cargarauxiliares
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :        199
+13-03-2017 , En el Fuente: 	OscNCuerfac.idnmaopera = OscCuerfac.idmaopera
+13-03-2017 , REGFACPEDIDO.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.00 as SubtotSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro, 0 as esremito ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+en,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota ,SPACE(40) as detaref,SPACE(30) as datosfactura,SPACE(30) as detacobranza ,SPACE(30) as detapiecuota01, SPACE(30) as detapiecu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ota02, SPACE(30) as detapiecuota03,SPACE(30) as detacuotapie04 ,0 as nominimofac, 0 as nosaldoauto,SPACE(15) as numcomp ,0 as eslicitacion FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.load
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          3
+13-03-2017 , En el Fuente: thisform.crearcursor()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.crearcursor
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :         25
+13-03-2017 , En el Fuente: SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1	   ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2	   ,CAST(0 as int) as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3	   ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4	   ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ as tasa5	   ,000000000.00 as Baseexe,00 as copiatkt	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1   	   ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3   	   ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4   	   ,SPACE(10) as nomrete5,00000000.00 as retencion5,00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0000000.00 as Baserete5,000.00 as tasarete5   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ubtotSiva   	   ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva   	   ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro, 0 as esremito   	   ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+as Vencimien,00000000.00 as BaseDesctoSiva       ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota       ,SPACE(40) as detaref,SPACE(30) as datosfactura,SPACE(30) as detacobranza       ,SPACE(30) as detapiecuo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ta01, SPACE(30) as detapiecuota02, SPACE(30) as detapiecuota03,SPACE(30) as detacuotapie04       ,0 as nominimofac, 0 as nosaldoauto,SPACE(15) as numcomp       ,0 as eslicitacion       FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac RE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ADWRITE  
+13-03-2017 , REGFACPEDIDO.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.00 as SubtotSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro, 0 as esremito ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+en,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota ,SPACE(40) as detaref,SPACE(30) as datosfactura,SPACE(30) as detacobranza ,SPACE(30) as detapiecuota01, SPACE(30) as detapiecu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ota02, SPACE(30) as detapiecuota03,SPACE(30) as detacuotapie04 ,0 as nominimofac, 0 as nosaldoauto,SPACE(15) as numcomp ,0 as eslicitacion FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.load
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          3
+13-03-2017 , En el Fuente: thisform.crearcursor()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.crearcursor
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :         25
+13-03-2017 , En el Fuente: SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1	   ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2	   ,CAST(0 as int) as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3	   ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4	   ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ as tasa5	   ,000000000.00 as Baseexe,00 as copiatkt	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1   	   ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3   	   ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4   	   ,SPACE(10) as nomrete5,00000000.00 as retencion5,00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0000000.00 as Baserete5,000.00 as tasarete5   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ubtotSiva   	   ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva   	   ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro, 0 as esremito   	   ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+as Vencimien,00000000.00 as BaseDesctoSiva       ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota       ,SPACE(40) as detaref,SPACE(30) as datosfactura,SPACE(30) as detacobranza       ,SPACE(30) as detapiecuo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ta01, SPACE(30) as detapiecuota02, SPACE(30) as detapiecuota03,SPACE(30) as detacuotapie04       ,0 as nominimofac, 0 as nosaldoauto,SPACE(15) as numcomp       ,0 as eslicitacion       FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac RE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ADWRITE  
+13-03-2017 , REGFACPEDIDO.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF this.Value < CTOD('01-01-1900');Error :        107;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH0D9N.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.containerencabeza._txtfoco.gotfocus
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :         12
+13-03-2017 , En el Fuente: 	.leercomprobante()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Objeto      : regfacpedido.leercomprobante
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpedido.sct
+13-03-2017 , Nº de Linea :          5
+13-03-2017 , En el Fuente: stop()
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+13-03-2017 , Objeto      : stop
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+13-03-2017 , Nº de Linea :        599
+13-03-2017 , En el Fuente: 	ENDIF 
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+13-03-2017 , Objeto      : regfacpedido.containerencabeza.fecha_calendario1.txtfecha.valid
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+13-03-2017 , Nº de Linea :          1
+13-03-2017 , En el Fuente: IF this.Value < CTOD('01-01-1900')
+13-03-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra la propiedad IDNMAOPERA.;Linea : IF OscCuerfac.idnmaopera = 0;Error :       1734;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:          1 IDARTICULO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+07KEH0FWW.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.keypress
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         81
+13-03-2017 , En el Fuente: 			        .cargarconcepto()         
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargarconcepto
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         56
+13-03-2017 , En el Fuente: 		this.cargardatosctacte() 
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargardatosctacte
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         10
+13-03-2017 , En el Fuente: 	this.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: 	thisform.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        156
+13-03-2017 , En el Fuente: 							llok = .GrabarDato()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.grabardato
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        127
+13-03-2017 , En el Fuente: 		.actualizafac.grabarcabefac(OscMaopera)
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.actualizafac.grabarcabefac
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :        128
+13-03-2017 , En el Fuente:    	this.cbioafelicita(OscCuerfac)
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.actualizafac.cbioafelicita
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :         18
+13-03-2017 , En el Fuente: IF OscCuerfac.idnmaopera = 0
+13-03-2017 , REGFACVTA.KEYPRESS, Error: No se encuentra el objeto LOOBJAFELICITA.;Linea : loObjAfeLicita.agregar();Error :       1923;Ultimo Alias Activo: CSRAFELICITA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KEH0GBS.TMP;U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ltimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.keypress
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         81
+13-03-2017 , En el Fuente: 			        .cargarconcepto()         
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargarconcepto
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         56
+13-03-2017 , En el Fuente: 		this.cargardatosctacte() 
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cargardatosctacte
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         10
+13-03-2017 , En el Fuente: 	this.key_43()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.key_43
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente: 	thisform.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        156
+13-03-2017 , En el Fuente: 							llok = .GrabarDato()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.grabardato
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        127
+13-03-2017 , En el Fuente: 		.actualizafac.grabarcabefac(OscMaopera)
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.actualizafac.grabarcabefac
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :        129
+13-03-2017 , En el Fuente:    	this.afectarlicita(OscMaopera,OscCuerfac)
+13-03-2017 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Objeto      : regfacvta.actualizafac.afectarlicita
+13-03-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+13-03-2017 , Nº de Linea :         17
+13-03-2017 , En el Fuente:    	loObjAfeLicita.agregar()
+13-03-2017 , REGFACVTA.CMDBORRAR.CLICK, Error: No se puede ejecutar el comando dentro de una transacción.;Linea : INDEX on id TAG id;Error :       1593;Ultimo Alias Activo: CSRPRODFZAVTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\00007KEH0IQB.TMP;Ultimo Control activo: 
+13-03-2017 , Pila de llamadas
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.cmdborrar.click
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         80
+13-03-2017 , En el Fuente: 		.actualizar()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.actualizar
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :        428
+13-03-2017 , En el Fuente: 	.limpiarcursor()		
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.limpiarcursor
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :          7
+13-03-2017 , En el Fuente:     .iniciavariables()
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.iniciavariables
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         39
+13-03-2017 , En el Fuente: 	.traerproductofuerzavta(-1)
+13-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Objeto      : regfacvta.traerproductofuerzavta
+13-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+13-03-2017 , Nº de Linea :         40
+13-03-2017 , En el Fuente: INDEX on id TAG id 
+14-03-2017 , RINDEFLETE.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'NROCAJA'.;Linea : INSERT INTO CsrAuxmaopera (origen,programa,terminal,fechasis,idoperador,idvendedor ,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,nroca
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ja ,iddeposito,pefiscal,estado,idfleteren) VALUES ('RFL',UPPER(.name),Goapp.terminal,CsrparaConfig.fechaserver,goapp.idusuario,.lnidvendedor ,.lnidnrocaja,CsrparaConfig.turno,"00000",Goapp.sucursal,.sectorterminal,.puestocaja ,CsrparaConfig.idcotizadolar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,CsrparaConfig.nrocaja,.lniddeposito,CsrparaConfig.pefiscal,'0',0);Error :         12;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL06AK.TMP;Ultimo Control activo: 
+14-03-2017 , Pila de llamadas
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+14-03-2017 , Objeto      : rindeflete.cmdprocesar.click
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+14-03-2017 , Nº de Linea :          3
+14-03-2017 , En el Fuente: thisform.leermovimientos()
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+14-03-2017 , Objeto      : rindeflete.leermovimientos
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+14-03-2017 , Nº de Linea :         11
+14-03-2017 , En el Fuente: 	this.insertarcursor()
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+14-03-2017 , Objeto      : rindeflete.insertarcursor
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+14-03-2017 , Nº de Linea :         14
+14-03-2017 , En el Fuente: INSERT INTO CsrAuxmaopera (origen,programa,terminal,fechasis,idoperador,idvendedor    ,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,nrocaja    ,iddeposito,pefiscal,estado,idfleteren)VALUES ('RFL',UPPER(.n
+
+
+
+
+
+
+
+
+
+
+
+ame),Goapp.terminal,CsrparaConfig.fechaserver,goapp.idusuario,.lnidvendedor    ,.lnidnrocaja,CsrparaConfig.turno,"00000",Goapp.sucursal,.sectorterminal,.puestocaja    ,CsrparaConfig.idcotizadolar,CsrparaConfig.nrocaja,.lniddeposito,CsrparaConfig.pefiscal
+
+
+
+
+
+
+
+
+
+
+
+,'0',0)
+14-03-2017 , REGPARAMETROS.INIT, Error: No se encuentra la variable 'LLRENDI_RENTREGA'.;Linea : if llrendi_rentrega;Error :         12;Ultimo Alias Activo: CSRSETEOPARAM;Ultimo registro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL074K.TMP
+
+
+
+
+
+
+
+
+
+
+;Ultimo Control activo: 
+14-03-2017 , Pila de llamadas
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+14-03-2017 , Objeto      : regparametros.init
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+14-03-2017 , Nº de Linea :          4
+14-03-2017 , En el Fuente:      .iniciavariables()   
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+14-03-2017 , Objeto      : regparametros.iniciavariables
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+14-03-2017 , Nº de Linea :        197
+14-03-2017 , En el Fuente: 	if llrendi_rentrega		
+14-03-2017 , MAIN, Error: No se encuentra la variable 'IDMAOPERA'.;Linea : INSERT INTO CsrAuxPlancue (id,cuenta,nombre,detalle,debe,haber,idcuenta,tipoconce,nombreobjeto,registro,idmaopera) VALUES (CsrCursor.id,Csrcursor.cuenta,Csrcursor.nomcta,Csrcursor
+
+
+
+
+
+
+.detalle,lndebe,lnhaber ,Csrcursor.idcuenta,CsrCursor.tipoconce,CsrCursor.tipoconce,RECNO(),CsrCursor.idmaopera);Error :         12;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          1 IDCUENTA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AYO903S
+
+
+
+
+
+
+F.TMP;Ultimo Control activo: 
+14-03-2017 , Pila de llamadas
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+14-03-2017 , Objeto      : main
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+14-03-2017 , Nº de Linea :        255
+14-03-2017 , En el Fuente: 	Read events   
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
+14-03-2017 , Objeto      : regasiecierre.cmdconsulta.click
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
+14-03-2017 , Nº de Linea :          1
+14-03-2017 , En el Fuente: thisform.key_f4()  
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
+14-03-2017 , Objeto      : regasiecierre.key_f4
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
+14-03-2017 , Nº de Linea :         63
+14-03-2017 , En el Fuente: 	thisform.muestracomprobante(lcidretorno)
+14-03-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
+14-03-2017 , Objeto      : regasiecierre.muestracomprobante
+14-03-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
+14-03-2017 , Nº de Linea :         84
+14-03-2017 , En el Fuente: 	INSERT INTO CsrAuxPlancue (id,cuenta,nombre,detalle,debe,haber,idcuenta,tipoconce,nombreobjeto,registro,idmaopera)				VALUES (CsrCursor.id,Csrcursor.cuenta,Csrcursor.nomcta,Csrcursor.detalle,lndebe,lnhaber				,Csrcursor.idcuenta,CsrCursor.tipoconce,CsrCursor.tipoconce,RECNO(),CsrCursor.idmaopera)
