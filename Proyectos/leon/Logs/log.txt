@@ -1,76 +1,3 @@
-Control activo CANTIDAD MAIN
-07-10-2015 12:18:23 , Error nº:       1923
-Error No se encuentra el objeto OSCPRODUCTO.
-Linea nº OscProducto.despor = 0
- Alias CSRAUXCUERFAC registro          2
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-07-10-2015 12:18:25 , Error nº:         12
-Error No se encuentra la variable 'OSCPRODUCTO'.
-Linea nº GATHER NAME OscProducto
- Alias CSRAUXCUERFAC registro          2
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-07-10-2015 12:35:19 , Error nº:         13
-Error No se encuentra el alias 'CSRBONIPROD'.
-Linea nº SELECT  CsrBoniProd
- Alias CSRAUXCUERFAC registro          1
-Control activo  MAIN
-20-10-2015 10:38:12 , Error nº:       1925
-Error _TXTDESTINO es un miembro desconocido.
-Linea nº .ArchivoZip=ADDBS(TRIM(this._txtDestino.Value))+'IMPORTAR_'+cPeriodo+'.ZIP'	&& Ruta y nombre del archivo ZIP
- Alias CSREXPORTAR registro        745
-Control activo  MAIN
-28-10-2015 12:35:10 , Error nº:       2082
-Error No se puede actualizar ADODB.Recordset hasta que el cursor, creado mediante el método CursorAdapter.CursorFill, no se asocie a un objeto CursorAdapter.
-Linea nº ENDSCAN
- Alias CSRMOVIMIENTO registro      10068
-Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-28-10-2015 12:36:55 , Error nº:          1
-Error El archivo 'csrctacte.dbf' no existe.
-Linea nº select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
- Alias  registro          0
-Control activo  RESCTACTE.KITGRILLATILDARCTACTE.INIT
-17-12-2015 12:25:31 , Error nº:       1925
-Error OCONTABILIDAD es un miembro desconocido.
-Linea nº IF NOT CrearCursorAdapter('CsrParaConfig',this.ocontabilidad.initparaconfig())
- Alias CSRPARACONFIG registro          1
-Control activo  MAIN
-21-12-2015 11:19:23 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT("CsrAuxCompras")=0
- Alias CSRCOMPROBANTE registro          1
-Control activo  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-21-12-2015 11:34:44 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT("CsrAuxCompras")=0
- Alias  registro          0
-Control activo  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-19-01-2016 10:31:44 , Error nº:       1429
-Error Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..
-Linea nº 
- Alias  registro          0
-Control activo  MAIN
-11-02-2016 13:16:57 , Error nº:         31
-Error La referencia al subíndice no es válida.
-Linea nº lcnomdia = Nomdia[dow(fec)]
- Alias CSRCUERPO registro          1
-Control activo  MAIN
-18-02-2016 14:09:52 , Error nº:          1
-Error El archivo 'csrplancue.dbf' no existe.
-Linea nº select 0 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
- Alias CSRORIGEN registro          8
-Control activo  MAIN
-18-02-2016 14:11:10 , Error nº:       1961
-Error Ya existe un subdirectorio o archivo c:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.
-Linea nº MKDIR &goapp.rutasalidareporte
- Alias CSRIMPRIMIR registro          5
-Control activo  MAIN
-18-02-2016 14:49:06 , Error nº:       1961
-Error Ya existe un subdirectorio o archivo c:\duplicados\duplicados.
-Linea nº MKDIR &cCarpeta
- Alias CSRFECHAS registro          2
-Control activo  MAIN
-24-02-2016 12:53:39 , Error nº:       1924
-Error LOOBJMAOPERA no es un objeto.
 Linea nº lcalias = loObjMaopera.calias  && alias del objeto de negocio
  Alias  registro          0
 Control activo  MAIN
@@ -482,6 +409,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -490,6 +421,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -638,6 +573,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -646,6 +585,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -794,6 +737,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -802,6 +749,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -954,6 +905,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -962,6 +917,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -1108,6 +1067,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1116,6 +1079,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -1262,6 +1229,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1270,6 +1241,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -1464,6 +1439,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1472,6 +1451,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -1604,6 +1587,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1612,6 +1599,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -1744,6 +1735,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1752,6 +1747,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -1938,6 +1937,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -1946,6 +1949,10 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 =======
 >>>>>>> origin/master
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -2066,6 +2073,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2074,6 +2085,10 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 =======
 >>>>>>> origin/master
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -2194,6 +2209,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2202,6 +2221,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 =======
 >>>>>>> origin/master
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -2369,6 +2392,10 @@ Linea nº SELECT 0 as idgrupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2467,6 +2494,10 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 <<<<<<< HEAD
 
 
@@ -2475,6 +2506,10 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 =======
 >>>>>>> origin/master
 unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvendedor,nomvendedo
+
+
+
+
 
 
 
@@ -2639,7 +2674,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvended
+
+
+
+
 
 
 
@@ -2705,7 +2748,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(TotalNG-Promocion,2)) as importefinal FROM Csraux GROUP BY idvendedor,codvended
+
+
+
+
 
 
 
@@ -2784,6 +2835,10 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(totalng-costosiva-promocion) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(
 
 
@@ -2811,7 +2866,15 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
 TotalNG-Promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbru
+
+
+
+
 
 
 
@@ -3001,4 +3064,49 @@ Error No se encuentra la variable 'LCCTACTE'.
 Linea nº lcctacte = lcctacte + lcAnd + " csrctacte.ctaacreedor="+STR(lnctaacreedor,1)
  Alias _CSRVENDEDOR registro         25
 Control activo  MAIN
-21-03-2017 14:15:03 , Error nº:          1Error El archivo 'csrctacte.dbf' no existe.Linea nº select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE Alias  registro          0Control activo  LISSDOCTACTE.KITGRILLATILDARCTACTE.INIT
+21-03-2017 14:15:03 , Error nº:          1
+Error El archivo 'csrctacte.dbf' no existe.
+Linea nº select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
+ Alias  registro          0
+Control activo  LISSDOCTACTE.KITGRILLATILDARCTACTE.INIT
+22-03-2017 16:09:28 , Error nº:          1
+Error El archivo 'csrcabefac.dbf' no existe.
+Linea nº SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 a
+
+
+s ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Bas
+
+
+eexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retenc
+
+
+ion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 
+
+
+as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 a
+
+
+s idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as c
+
+
+talogistica,CAST(0 as int) as Cuota FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
+ Alias  registro          0
+Control activo  REGFACPEDIDO.LOAD
+22-03-2017 16:54:02 , Error nº:       1925
+Error CONTAINERCAMBIO es un miembro desconocido.
+Linea nº .containerCambio.Grid2.RecordSource = ""
+ Alias CSRPARACONFIG registro          1
+Control activo  REGENVASE.INIT
+22-03-2017 17:02:26 , Error nº:         13
+Error No se encuentra el alias 'CSRENVASE'.
+Linea nº SELECT CsrEnvase
+ Alias CSRAUXCUERPO registro        649
+Control activo  REGENVASE.INIT
+22-03-2017 17:49:39 , Error nº:       1806
+Error SQL: no se encuentra la columna 'AS'.
+Linea nº SELECT CsrAuxcuerpo.idmaopera,CsrAuxCuerpo.id as idcuerfac, CsrAuxCuerpo.idarticulo,CsrauxCuerpo.nombre ,CsrAuxCabeza.cnombre as nomctacte ,CsrAuxCuerpo.codigo, as cantidad ,NVL(CsrAuxCuerpovari.idvariedad,0) as idvariedad ,NVL(Abs(CsrAuxCuerpov
+ari.cantidad),Abs(CsrAuxCuerpo.cantidad)) as cantidad ,NVL(CsrAuxCuerpovari.idsubarti,0) as idsubarti ,NVL(CsrAuxCuerpoVari.nombre,'') as nomvariedad FROM CsrAuxCuerpo LEFT JOIN CsrAuxCuerpovari ON CsrAuxCuerpo.idcuervari = CsrAuxCuerpovari.id where (Csr
+AuxCuerpovari.cantidad>0 OR CsrAuxCuerpo.cantidad>0) order BY CsrAuxCuerpo.codigo,CsrAuxCuerpo.idmaopera into CURSOR 'CsrPatron' READWRITE
+ Alias CSRENVASES registro          3
+Control activo  REGENVASE.KEYPRESS
+22-03-2017 17:52:06 , Error nº:         12Error No se encuentra la variable 'CODIGO'.Linea nº .column1.ControlSource='CsrPatron.codigo' Alias CSRPATRON registro          1Control activo  REGENVASE.KEYPRESS
