@@ -17,7 +17,7 @@ llok = .t.
 llok = CargarTabla(lcData,'Producto')
 llok = CargarTabla(lcData,'ProdPrecio',.t.)
 llok = CargarTabla(lcData,'TipoIVA')
-llok = CargarTabla(lcData,'Ctacte',.t.)
+llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'Localidad')
 SET SAFETY ON
 
@@ -43,7 +43,9 @@ lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo INTO CURSOR CsrPrecio READWRITE 
 
 nDecimalesP = 3
-nNumeroCtacte	= 0
+SELECT Csrctacte
+GO BOTTOM 
+nNumeroCtacte	= VAL(CsrCtacte.cnumero)
 SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top

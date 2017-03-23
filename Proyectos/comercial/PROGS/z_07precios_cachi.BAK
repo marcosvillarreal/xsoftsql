@@ -17,7 +17,7 @@ llok = .t.
 llok = CargarTabla(lcData,'Producto')
 llok = CargarTabla(lcData,'ProdPrecio',.t.)
 llok = CargarTabla(lcData,'TipoIVA')
-llok = CargarTabla(lcData,'Ctacte',.t.)
+llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'Localidad')
 SET SAFETY ON
 
@@ -43,7 +43,9 @@ lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo INTO CURSOR CsrPrecio READWRITE 
 
 nDecimalesP = 3
-nNumeroCtacte	= 0
+SELECT Csrctacte
+GO BOTTOM 
+nNumeroCtacte	= CsrCtacte.numero
 SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
@@ -62,7 +64,7 @@ SCAN FOR !EOF()
 		LOOP 
 	ENDIF
 	cProvArticulo	 = TablaPrecios(ALLTRIM(CsrArticulo.proveedor))
-	
+	lActualizo		 = .f.
 	*SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
 	
 	SELECT CsrPrecio
@@ -231,10 +233,19 @@ SCAN FOR !EOF()
     		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
     		replace fecUlPre WITH OscPrecio.fecmodi
     		
+    		lActualizo = .t.
     	ENDIF 
 		SELECT CsrPrecio
 		SKIP 
 	ENDDO 
+	
+	IF NOT lActualizo
+		SELECT CsrProdPrecio
+		SCATTER NAME OscPrecio
+		SELECT CsrProducto
+		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
+		replace fecUlPre WITH OscPrecio.fecmodi
+    ENDIF 
 	*ENDSCAN 
 	*USE IN CsrPrecio 
 	

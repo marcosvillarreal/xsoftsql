@@ -46,7 +46,7 @@ SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 
-*stop()
+stop()
 SCAN FOR !EOF()
 *!*		IF numero <> 1
 *!*			LOOP 
