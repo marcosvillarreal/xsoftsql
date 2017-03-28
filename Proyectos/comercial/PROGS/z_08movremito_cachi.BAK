@@ -1,6 +1,7 @@
 PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
+lnlimite = IIF(PCOUNT()<4,0,lnlimite)
 lcData = lcBase
 
 DO setup
@@ -84,13 +85,13 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
-           
+stop()
+        
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-
-stop()
-DO WHILE NOT EOF()
+i = 0
+DO WHILE NOT EOF() AND i <= lnlimite
 	SELECT CsrMovimien
 	
 	SELECT CsrCtacte
@@ -100,6 +101,7 @@ DO WHILE NOT EOF()
 		LOOP 
 	ENDIF 
 	
+	i = i + 1 
 	cNumComp	= "X000100000001"
 	
 	INSERT INTO Csrmaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor,iddetanrocaja,idcomproba   ;        
@@ -193,14 +195,20 @@ DO WHILE NOT EOF()
            ,ntotal,nlistaprecio,niddeposito,ninternos,nsdocant,ndespor,nactivo)
 		
 		nid = nid + 1 
+		SELECT CsrMovimien
+		SKIP 
 	ENDDO 
 	
 	SELECT CsrMovimien
-	IF NOT EOF()
-		SKIP -1
-	ENDIF 
+*!*		&&Si salio pq cambio de cliente, no muevo
+*!*		IF NOT EOF() AND VAL(Csrctacte.cnumero) <> CsrMovimien.cliente
+*!*			SKIP -1
+*!*		ENDIF 
 	nidmaopera = nidmaopera + 1 
 ENDDO 
+
+SELECT CsrMovRemito
+vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

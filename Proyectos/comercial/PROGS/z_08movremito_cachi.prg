@@ -85,12 +85,12 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
-           
+        
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 i = 0
-DO WHILE NOT EOF() AND i <= lnlimite
+DO WHILE NOT EOF() &&AND i <= lnlimite
 	SELECT CsrMovimien
 	
 	SELECT CsrCtacte
@@ -182,7 +182,7 @@ DO WHILE NOT EOF() AND i <= lnlimite
 		nlistaprecio	= 1
 		niddeposito	= 1100000002
 		nDespor		= 0
-		nActivo		= 0
+		nActivo		= 1
 		
 		SELECT CsrVendedor
 		LOCATE FOR nombre = CsrMovimien.quien
@@ -194,14 +194,20 @@ DO WHILE NOT EOF() AND i <= lnlimite
            ,ntotal,nlistaprecio,niddeposito,ninternos,nsdocant,ndespor,nactivo)
 		
 		nid = nid + 1 
+		SELECT CsrMovimien
+		SKIP 
 	ENDDO 
 	
 	SELECT CsrMovimien
-	IF NOT EOF()
-		SKIP -1
-	ENDIF 
+*!*		&&Si salio pq cambio de cliente, no muevo
+*!*		IF NOT EOF() AND VAL(Csrctacte.cnumero) <> CsrMovimien.cliente
+*!*			SKIP -1
+*!*		ENDIF 
 	nidmaopera = nidmaopera + 1 
 ENDDO 
+
+SELECT CsrMovRemito
+vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
