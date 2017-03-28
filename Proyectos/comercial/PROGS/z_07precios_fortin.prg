@@ -50,8 +50,6 @@ i = 1
 SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-
-stop()
 SCAN FOR !EOF() AND i < lnlimite
 *!*		IF numero <> 1
 *!*			LOOP 
