@@ -137,7 +137,7 @@ SCAN FOR !EOF()
 	SELECT CsrFamilia
 	LOCATE FOR numero = CsrArticulo.cod_famili
 	IF numero = CsrArticulo.cod_famili
-		lnidfamilia =  CsrFamilia.id
+		nidfamilia =  CsrFamilia.id
 	ENDIF 
 	
 	SELECT CsrCategoTipo

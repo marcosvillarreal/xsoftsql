@@ -94,8 +94,8 @@ INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (ln
 
 
 lnid			= RecuperarID('CsrCtacte',Goapp.sucursal10)
-lnidmaopera		= RecuperarID('CsrMaopera',Goapp.sucursal10)
-lnidmovctacte	= RecuperarID('CsrMovCtacte',Goapp.sucursal10)
+*lnidmaopera		= RecuperarID('CsrMaopera',Goapp.sucursal10)
+*lnidmovctacte	= RecuperarID('CsrMovCtacte',Goapp.sucursal10)
 
 LOCAL lnidlocalidad,lntipoiva,lnctalogistica,lnctadeudor,lnctaacreedor,lnidcategoria,lnidprovincia;
 ,lnctabanco,lnctaotro,lnidplanpago,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta,lnbonif1,lnbonif2;

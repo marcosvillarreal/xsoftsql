@@ -1,6 +1,7 @@
 PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
+lnlimite = IIF(PCOUNT()<4,0,lnlimite)
 lcData = lcBase
 
 DO setup
@@ -88,9 +89,8 @@ dfechaserver = DATETIME()
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-
-stop()
-DO WHILE NOT EOF()
+i = 0
+DO WHILE NOT EOF() AND i <= lnlimite
 	SELECT CsrMovimien
 	
 	SELECT CsrCtacte
@@ -100,6 +100,7 @@ DO WHILE NOT EOF()
 		LOOP 
 	ENDIF 
 	
+	i = i + 1 
 	cNumComp	= "X000100000001"
 	
 	INSERT INTO Csrmaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor,iddetanrocaja,idcomproba   ;        

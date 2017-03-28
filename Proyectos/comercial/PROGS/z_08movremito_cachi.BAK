@@ -191,7 +191,8 @@ DO WHILE NOT EOF()
            ,total,listaprecio,iddeposito,internos,sdocant,despor,activo);
      	VALUES (nid,nidmaopera,nidctacte,nidarticulo,cnombre,npreunita,npreunitasiva,dfecha,ncantidad;
            ,ntotal,nlistaprecio,niddeposito,ninternos,nsdocant,ndespor,nactivo)
-
+		
+		nid = nid + 1 
 	ENDDO 
 	
 	SELECT CsrMovimien
