@@ -2,6 +2,7 @@ PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
+lnlimite = IIF(PCOUNT()<4,"",lnlimite)
 lcData = lcBase
 
 DO setup
@@ -45,13 +46,13 @@ nDecimalesP = 3
 SELECT Csrctacte
 GO BOTTOM 
 nNumeroCtacte	= VAL(CsrCtacte.cnumero)
-
+i = 1
 SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 
 stop()
-SCAN FOR !EOF()
+SCAN FOR !EOF() AND i < lnlimite
 *!*		IF numero <> 1
 *!*			LOOP 
 *!*		ENDIF 
@@ -234,7 +235,8 @@ SCAN FOR !EOF()
 	ENDSCAN 
 	USE IN CsrPrecio 
 	
-	SELECT CsrProducto   				
+	SELECT CsrProducto   
+	i = i + 1 				
 ENDSCAN
 
 
