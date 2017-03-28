@@ -116,7 +116,7 @@ SCAN FOR !EOF() AND i <= lnlimite
            
 	cnombre		= NombreNi(alltrim(CsrArticulo.nombre))
 	ncodigo		= VAL(Csrarticulo.NUMERO)
-	ccodalfaprov	= ALLTRIM(CsrArticulo.codigo_fac)
+	
 	ccodalfa = ALLTRIM(CsrArticulo.codigo_pro)
 	
 	cnommayorista	= cnombre
@@ -127,6 +127,7 @@ SCAN FOR !EOF() AND i <= lnlimite
 	IF numero = CsrArticulo.cod_rubro
     	nidrubro	= CsrRubro.id
     ENDIF 
+    ccodalfaprov	= strtrim(CsrRubro.numero,8)+'.'+ccodalfa
     
     SELECT CsrMarca
     LOCATE FOR numero = CsrArticulo.cod_marca

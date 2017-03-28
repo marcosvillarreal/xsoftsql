@@ -1,4 +1,5 @@
-PARAMETERS ldvacio,lcpath,lcBase
+PARAMETERS ldvacio,lcpath,lcBase,lnlimite
+
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase

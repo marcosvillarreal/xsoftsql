@@ -83,7 +83,7 @@ i = 0
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-SCAN FOR !EOF()
+SCAN FOR !EOF() AND i <= lnlimite
 	*SELECT CsrProducto
 	IF DELETED()
 		SELECT CsrArticulo
@@ -101,9 +101,9 @@ SCAN FOR !EOF()
 	ENDIF
 	
 	i = i + 1 
-	IF i > lnlimite
-		EXIT 
-	ENDIF 
+*!*		IF i > lnlimite
+*!*			EXIT 
+*!*		ENDIF 
 	
 	STORE 0 TO   ncodigo , nidctacte , nidmarca , nidforma , nidunidad , nidtprod , nidtipovta; 
            , nidtamano , nidcatego , nidrubro , nidestado , nidubicacio , nidorigen ;
