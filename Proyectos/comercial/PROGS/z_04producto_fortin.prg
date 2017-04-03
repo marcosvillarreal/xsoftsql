@@ -21,7 +21,7 @@ llok = CargarTabla(lcData,'Variedad',.t.)
 llok = CargarTabla(lcData,'Rubro')
 llok = CargarTabla(lcData,'Marca',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
-llok = CargarTabla(lcData,'Ubicacion')
+llok = CargarTabla(lcData,'Ubicacion',.t.)
 SET SAFETY ON
 
 IF !llok
@@ -65,6 +65,11 @@ SCAN FOR !EOF()
 	ENDIF 
 ENDSCAN
 
+lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
+INSERT INTO CsrUbicacion VALUES (lnid,1,'LOCAL COMERCIAL')
+lnid = lnid + 1 
+INSERT INTO CsrUbicacion VALUES (lnid,2,'CORRALON')
+
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
 *stop()
@@ -107,6 +112,8 @@ SCAN FOR !EOF()
 	ccontrolador	= cnombre
 	*Almacenamos el codigo anterior para luego importar las secciones con productos
     nidrubro	= Csrarticulo.seccion
+    
+    nidUbicacion = CargarUbicacion(nidRubro)
     
     lcMarca 	= CsrArticulo.marca
     lcMarca		= TablaMarcas(lcMarca)

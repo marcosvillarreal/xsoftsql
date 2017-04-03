@@ -744,7 +744,7 @@ CASE "JEREZ"$cProv
 	cNomProveedor	= "JEREZ HNOS."
 CASE "AGUDA"$cProv
 	cNomProveedor	= "LA AGUADA"
-CASE "LA FERETERA"$cProv OR "LA FERREE"$cProv OR NOT "TITA"$cProv
+CASE ("LA FERETERA"$cProv OR "LA FERREE"$cProv) AND  NOT "TITA"$cProv
 	cNomProveedor	= "LA FERRETERA"
 CASE "MECANO"$cProv OR "INCH"$cProv
 	cNomProveedor	= "MECANO GANADERO S.A."
