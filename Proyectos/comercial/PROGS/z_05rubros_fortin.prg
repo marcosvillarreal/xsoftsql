@@ -135,7 +135,7 @@ SCAN
 	SELECT CsrCuentaX
 ENDSCAN 
 
-SELECT MAX(CsrProdRubro) as proximonro FROM CsrProdRubro INTO CURSOR CsrNextId
+SELECT MAX(CsrProdRubro.codrubro) as proximonro FROM CsrProdRubro INTO CURSOR CsrNextId
 
 &&Producto de importacion
 INSERT INTO CsrRubro (id,numero,nombre,switch) VALUES (lnidRubro,CsrNextId.proximonro+1,"IMPORTACION",'00010')

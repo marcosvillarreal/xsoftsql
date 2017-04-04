@@ -1,4 +1,4 @@
-PARAMETERS ldfecha,lcpath,lcBase
+PARAMETERS ldfecha,lcpath,lcBase,lnlimite
 lcfecha = IIF(PCOUNT()< 1,"01-08-2010",DTOC(ldfecha))
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase

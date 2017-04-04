@@ -43,6 +43,7 @@ llok = CargarTabla(lcData,'AfeCtacte',.t.)
 llok = CargarTabla(lcData,'CabeOrd',.t.)
 llok = CargarTabla(lcData,'CuerOrd',.t.)
 llok = CargarTabla(lcData,'CuerVariOrd',.t.)
+llok = CargarTabla(lcData,'MovRemito',.t.)
 
 SET SAFETY ON
 IF !llok
@@ -55,7 +56,7 @@ lniddetanrocaja = RecuperarID('CsrDetanroCaja',Goapp.sucursal10)
 
 INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,1,"FUERZA VTA 1")
 lnid = lnid + 1 
-INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,2,"FUERZA VTA 2")
+*INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,2,"FUERZA VTA 2")
 
 STORE 0 TO lnidejercicio,lndebe,lnhaber,lnsaldo,lnnrocaja
 STORE "" TO lcpefiscal,lcswitch

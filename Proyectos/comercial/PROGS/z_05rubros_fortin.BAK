@@ -135,6 +135,12 @@ SCAN
 	SELECT CsrCuentaX
 ENDSCAN 
 
+SELECT MAX(CsrProdRubro) as proximonro FROM CsrProdRubro INTO CURSOR CsrNextId
+
+&&Producto de importacion
+INSERT INTO CsrRubro (id,numero,nombre,switch) VALUES (lnidRubro,CsrNextId.proximonro+1,"IMPORTACION",'00010')
+
+
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
 CLOSE tables
@@ -143,3 +149,4 @@ CLOSE DATABASES
 
 USE IN CsrSeccion 
 USE IN CsrCuentaX
+USE IN CsrNextId

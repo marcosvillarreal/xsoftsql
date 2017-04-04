@@ -66,9 +66,9 @@ SCAN FOR !EOF()
 ENDSCAN
 
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
-INSERT INTO CsrUbicacion VALUES (lnid,1,'LOCAL COMERCIAL')
+INSERT INTO CsrUbicacion VALUES (lnid,'1','LOCAL COMERCIAL')
 lnid = lnid + 1 
-INSERT INTO CsrUbicacion VALUES (lnid,2,'CORRALON')
+INSERT INTO CsrUbicacion VALUES (lnid,'2','CORRALON')
 
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
