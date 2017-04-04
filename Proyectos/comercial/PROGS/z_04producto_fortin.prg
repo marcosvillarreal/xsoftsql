@@ -125,9 +125,9 @@ SCAN FOR !EOF()
 	ENDIF 
    	nidmarca = CsrMarca.id
     
-	SELECT CsrUbicacion
-	GO TOP 
-	nidubicacio = CsrUbicacion.id
+*!*		SELECT CsrUbicacion
+*!*		GO TOP 
+*!*		nidubicacio = CsrUbicacion.id
 	
    	nidestado 	= IIF(empty(Csrarticulo.debaja),1,2)
     nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,3),8))
