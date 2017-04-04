@@ -1,621 +1,12 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: PREPUBARTI
-16-02-2017 12:06:56 , Pila de llamadas
-16-02-2017 12:06:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-16-02-2017 12:06:59 , Objeto      : regfacvta.load
-16-02-2017 12:06:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-16-02-2017 12:06:59 , Nº de Linea :         10
-16-02-2017 12:07:03 , En el Fuente: thisform.crearcursor()
-16-02-2017 12:07:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 16-02-2017 12:07:03 , Objeto      : regfacvta.crearcursor
 16-02-2017 12:07:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 16-02-2017 12:07:07 , Nº de Linea :         22
 16-02-2017 12:07:07 , En el Fuente: SELECT CsrCabefac.*	   ,000000000.00 as Baseexe,00 as copiatkt   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto   	   ,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,000000
+
+
+
+
+
 
 
 
@@ -913,7 +304,17 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 
 
+
+
+
+
+
     ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada       ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail        ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as
+
+
+
+
+
 
 
 
@@ -1211,8 +612,18 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 
 
+
+
+
+
+
 RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
 16-02-2017 13:43:18 , REGFACVTA.LOAD, Error: El archivo 'csrafecabefac.dbf' no existe.;Linea : SELECT CsrAfeCabefac.*,SPACE(13) as nroremito FROM CsrAfeCabefac WHERE RECNO()<1 INTO CURSOR CsrAuxAfeCabefac READWRITE;Error :          1;Ultimo Alias Activo:
+
+
+
+
+
 
 
 
@@ -1532,6 +943,11 @@ RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPA
 
 
 
+
+
+
+
+
 TEMP\000090QX013H.TMP;Ultimo Control activo: DESPOR
 16-02-2017 15:11:17 , Pila de llamadas
 16-02-2017 15:11:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -1555,6 +971,11 @@ TEMP\000090QX013H.TMP;Ultimo Control activo: DESPOR
 16-02-2017 15:11:36 , Nº de Linea :        182
 16-02-2017 15:11:36 , En el Fuente: 	IF RECCOUNT('CsrCbu')#0
 17-02-2017 14:30:26 , REGFACVTA.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : LOCATE FOR csrRemFac.total = VAL(lnimporte);Error :         11;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C
+
+
+
+
+
 
 
 
@@ -1839,6 +1260,11 @@ TEMP\000090QX013H.TMP;Ultimo Control activo: DESPOR
 
 
 
+
+
+
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\000038JT00UO.TMP;Ultimo Control activo: 
 17-02-2017 14:34:36 , Pila de llamadas
 17-02-2017 14:34:40 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -1867,6 +1293,11 @@ TEMP\000090QX013H.TMP;Ultimo Control activo: DESPOR
 17-02-2017 14:35:03 , Nº de Linea :          4
 17-02-2017 14:35:07 , En el Fuente: LOCATE FOR csrRemFac.total = VAL(lnimporte)
 20-02-2017 13:57:12 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva 
+
+
+
+
+
 
 
 
@@ -2100,7 +1531,17 @@ TEMP\000090QX013H.TMP;Ultimo Control activo: DESPOR
 
 
 
+
+
+
+
+
 meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1
+
+
+
+
+
 
 
 
@@ -2334,7 +1775,17 @@ meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0
 
 
 
+
+
+
+
+
  RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrA
+
+
+
+
+
 
 
 
@@ -2576,7 +2027,17 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 
 
+
+
+
+
+
 00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc   
+
+
+
+
+
 
 
 
@@ -2804,7 +2265,17 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 
 
+
+
+
+
+
  canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as 
+
+
+
+
+
 
 
 
@@ -2920,6 +2391,11 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
 20-02-2017 14:32:20 , REGFACVTA.KEYPRESS, Error: No se encuentra el alias 'CSRIMPRESORA'.;Linea : SELECT CsrImpresora;Error :         13;Ultimo Alias Activo: CSRPRODAREANEG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000051XL0B8N.
+
+
+
+
+
 
 
 
@@ -3181,6 +2657,11 @@ TMP;Ultimo Control activo: PREPUBARTI
 
 
 
+
+
+
+
+
 PDATA\LOCAL\TEMP\00001YBT0040.TMP;Ultimo Control activo: 
 22-02-2017 17:19:07 , Pila de llamadas
 22-02-2017 17:19:10 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3214,6 +2695,11 @@ PDATA\LOCAL\TEMP\00001YBT0040.TMP;Ultimo Control activo:
 22-02-2017 17:19:40 , Nº de Linea :         53
 22-02-2017 17:19:40 , En el Fuente: =ALINES(ArrayMuestra,lcCmdMuestra,.f.,"\")
 22-02-2017 17:48:20 , MAIN, Error: El campo CODALFAPROV no acepta valores NULL.;Linea : GATHER NAME OscRegistro FIELDS EXCEPT id,idestado,switch;Error :       1581;Ultimo Alias Activo: CSRARTICULO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
+
+
 
 
 
@@ -3420,6 +2906,11 @@ LOCAL\TEMP\000060AX00L6.TMP;Ultimo Control activo: COSTOCIVA
 
 
 
+
+
+
+
+
 ATA\LOCAL\TEMP\000060AX017U.TMP;Ultimo Control activo: COSTOCIVA
 22-02-2017 17:53:23 , Pila de llamadas
 22-02-2017 17:53:26 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3463,6 +2954,11 @@ ATA\LOCAL\TEMP\000060AX017U.TMP;Ultimo Control activo: COSTOCIVA
 22-02-2017 17:54:02 , Nº de Linea :         29
 22-02-2017 17:54:02 , En el Fuente: 	OscProdPrecio.codalfaprov	= NVL(OscProdPrecio.codalfaptov,"")
 22-02-2017 17:56:06 , MAIN, Error: No se encuentra la propiedad CODALFAPTOV.;Linea : OscProdPrecio.codalfaprov	= NVL(OscProdPrecio.codalfaptov,"");Error :       1734;Ultimo Alias Activo: CSRPRODPRECIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPD
+
+
+
+
+
 
 
 
@@ -3620,6 +3116,11 @@ ATA\LOCAL\TEMP\000060AX01QB.TMP;Ultimo Control activo: COSTOCIVA
 
 
 
+
+
+
+
+
  C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000603T00OO.TMP;Ultimo Control activo: CODALFAPROV
 22-02-2017 18:18:26 , Pila de llamadas
 22-02-2017 18:18:30 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3648,6 +3149,11 @@ ATA\LOCAL\TEMP\000060AX01QB.TMP;Ultimo Control activo: COSTOCIVA
 22-02-2017 18:18:54 , Nº de Linea :         63
 22-02-2017 18:18:58 , En el Fuente: 		       	lcCmdLocate=ALLTRIM(lcindice)+"="+ALLTRIM(STR(thisvalue))
 23-02-2017 10:10:50 , MAIN, Error: No se encuentra la propiedad AUMENTO.;Linea : lobjprecio.aumento	= lObjProducto.aumento &&Es un porcentaje;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
+
+
 
 
 
@@ -3754,6 +3260,11 @@ AL\TEMP\00005V6100SL.TMP;Ultimo Control activo: CODALFAPROV
 
 
 
+
+
+
+
+
  Control activo: NOMBRE
 24-02-2017 11:59:09 , Pila de llamadas
 24-02-2017 11:59:12 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
@@ -3779,6 +3290,11 @@ AL\TEMP\00005V6100SL.TMP;Ultimo Control activo: CODALFAPROV
 23-03-2017 15:04:48 , ON..., Error: La sesión de datos nº 4 no se puede liberar si hay transacciones abiertas.;Linea : llok = .grabardato();Error :       1549;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 23-03-2017 15:04:48 , Pila de llamadas
 27-03-2017 20:02:19 , MAIN, Error: El archivo 'csrcuerfac.dbf' no existe.;Linea : SELECT CsrCuerfac.*,CAST(0 as n(12,0)) as idmovremito,CAST(0 as n(12,0)) as idcuerfac ,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol,' ' as co
+
+
+
+
+
 
 
 
@@ -3836,7 +3352,17 @@ dvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(
 
 
 
+
+
+
+
+
 s comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idctacpra, CAST(0 as int) as idareaneg ,SPACE(30) as nommarca,SPACE(30) as nomrubro,SPACE(15) as codalfa, CAST( '' as m) as Descrip_memo ,0000000.00 as stock,0000000.00 as total
+
+
+
+
+
 
 
 
@@ -3894,6 +3420,11 @@ s comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idc
 
 
 
+
+
+
+
+
 00000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra, 00000000.00 as BaseInterno,  000000000.00 as Baseexe ,SPACE(15) as CodExtend ,0 as actualizaprecio ,CAST(0 as n(12,2)) as prepubarti,SPACE(10) as inf_fecha ,SPACE(20) as inf_nomctact
 
 
@@ -3923,7 +3454,17 @@ s comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idc
 
 
 
+
+
+
+
+
 e,SPACE(20) as inf_remito FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000024UH013Z.TMP;Ultimo Contr
+
+
+
+
+
 
 
 
@@ -4000,7 +3541,17 @@ ol activo:
 
 
 
+
+
+
+
+
 ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as Compro
+
+
+
+
+
 
 
 
@@ -4042,6 +3593,11 @@ meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0
 
 
 
+
+
+
+
+
  as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as
 
 
@@ -4063,7 +3619,17 @@ meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0
 
 
 
+
+
+
+
+
  RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrA
+
+
+
+
+
 
 
 
@@ -4113,7 +3679,17 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 
 
+
+
+
+
+
 00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc   
+
+
+
+
+
 
 
 
@@ -4149,7 +3725,17 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 
 
+
+
+
+
+
  canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as 
+
+
+
+
+
 
 
 
@@ -4169,6 +3755,11 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 
 RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
 27-03-2017 20:48:55 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: Otra persona está usando el registro.;Linea : this.Value = IIF(thisform.lbbuscarcodalfa,UPPER(this.Value),this.Value);Error :        109;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo regist
+
+
+
+
+
 
 
 
@@ -4206,7 +3797,17 @@ ro:          0 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004QVD03D1.TMP
 
 
 
+
+
+
+
+
 dvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondigitada, 0 a
+
+
+
+
+
 
 
 
@@ -4234,7 +3835,17 @@ s comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idc
 
 
 
+
+
+
+
+
 , 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as UniCiva2 ,000
+
+
+
+
+
 
 
 
@@ -4262,7 +3873,17 @@ s comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idc
 
 
 
+
+
+
+
+
 e,SPACE(20) as inf_remito FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002ART01KF.TMP;Ultimo Contr
+
+
+
+
+
 
 
 
@@ -4316,16 +3937,41 @@ ol activo:
 28-03-2017 18:39:37 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva 
 
 
+
+
+
+
+
 ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as Compro
+
+
+
+
+
 
 
 meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1
 
 
+
+
+
+
+
  as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as
 
 
+
+
+
+
+
  RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrA
+
+
+
+
+
 
 
 uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
@@ -4339,4 +3985,36 @@ uxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:   
 28-03-2017 18:39:43 , Objeto      : regfacvta.crearcursor
 28-03-2017 18:39:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 28-03-2017 18:39:47 , Nº de Linea :         22
-28-03-2017 18:39:47 , En el Fuente: SELECT CsrCabefac.*	   ,000000000.00 as Baseexe,00 as copiatkt   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto   	   ,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc       ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada       ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail        ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
+28-03-2017 18:39:47 , En el Fuente: SELECT CsrCabefac.*	   ,000000000.00 as Baseexe,00 as copiatkt   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto   	   ,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,000000
+
+
+
+
+00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc   
+
+
+
+
+    ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada       ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail        ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as
+
+
+
+
+ canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as 
+
+
+
+
+RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
+04-04-2017 12:36:08 , Z_04PRODUCTO_FORTIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF len(lcbdd)=0 OR !llok;Error :         11;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+04-04-2017 12:36:09 , Pila de llamadas
+04-04-2017 12:36:09 , Programa    : j:\xsoftsql\proyectos\comercial\progs\z_04producto_fortin.fxp
+04-04-2017 12:36:09 , Objeto      : z_04producto_fortin
+04-04-2017 12:36:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\z_04producto_fortin.prg
+04-04-2017 12:36:10 , Nº de Linea :         18
+04-04-2017 12:36:10 , En el Fuente: llok = CargarTabla(lcData,'Producto',.t.)
+04-04-2017 12:36:10 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
+04-04-2017 12:36:10 , Objeto      : cargartabla
+04-04-2017 12:36:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
+04-04-2017 12:36:11 , Nº de Linea :        190
+04-04-2017 12:36:11 , En el Fuente: IF len(lcbdd)=0 OR !llok

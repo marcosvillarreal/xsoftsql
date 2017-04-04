@@ -85,13 +85,12 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
-stop()
         
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 i = 0
-DO WHILE NOT EOF() AND i <= lnlimite
+DO WHILE NOT EOF() &&AND i <= lnlimite
 	SELECT CsrMovimien
 	
 	SELECT CsrCtacte
@@ -183,7 +182,7 @@ DO WHILE NOT EOF() AND i <= lnlimite
 		nlistaprecio	= 1
 		niddeposito	= 1100000002
 		nDespor		= 0
-		nActivo		= 0
+		nActivo		= 1
 		
 		SELECT CsrVendedor
 		LOCATE FOR nombre = CsrMovimien.quien

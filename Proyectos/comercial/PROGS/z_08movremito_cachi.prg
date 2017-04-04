@@ -17,9 +17,8 @@ Oavisar.proceso('S','Abriendo archivos')
 llok = .t.
 llok = CargarTabla(lcData,'Producto')
 llok = CargarTabla(lcData,'Ctacte')
-llok = CargarTabla(lcData,'Maopera',.t.)
-llok = CargarTabla(lcData,'MovRemito',.t.)
-*llok = CargarTabla(lcData,'AfeMovRto',.t.)
+llok = CargarTabla(lcData,'Maopera')
+llok = CargarTabla(lcData,'MovRemito')
 llok = CargarTabla(lcData,'Vendedor')
 
 

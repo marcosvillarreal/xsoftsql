@@ -24,6 +24,7 @@ llok = CargarTabla(lcbdd,'Vendedor',.t.)
 SET SAFETY ON
 Oavisar.proceso('S','Abriendo archivos') 
 USE  ALLTRIM(lcpath)+"\remitos" in 0 alias FsrRemito EXCLUSIVE
+USE  ALLTRIM(lcpath)+"\operador" in 0 alias FsrOperador EXCLUSIVE
 
 LOCAL lnid
 nid = RecuperarID('CsrVendedor',Goapp.sucursal10)
@@ -31,11 +32,46 @@ nid = RecuperarID('CsrVendedor',Goapp.sucursal10)
 SELECT distinct quien as nombre FROM FsrRemito INTO CURSOR FsrVendedor READWRITE 
 
 nNumero = 0
+SELECT FsrOperador
+GO TOP
+SCAN
+	IF NOT ventas$'S'
+		LOOP 
+	ENDIF 
+	
+	nnumero	= NNUMERO + 1
+	cnombre	= UPPER(ALLTRIM(nombre))
+	
+	STORE "" TO cclave,cdireccion
+	STORE 0 TO nidctaflete,nplanilla,ncomision,nidctacomision,nidctasueldo,nidgrupocomi;
+				,nidctacte,nacumulavale
+    nestado	= 1 
+    nlista	= 1
+    nprevta	= 1
+	INSERT INTO Csrvendedor(id,numero,nombre,clave,idctaflete,planilla,comision;
+           ,estado,idctacomision,idctasueldo,prevta,idgrupocomi,lista,idctacte;
+           ,acumulavale);
+     VALUES (nid,nnumero,cnombre,cclave,nidctaflete,nplanilla,ncomision;
+           ,nestado,nidctacomision,nidctasueldo,nprevta,nidgrupocomi,nlista,nidctacte;
+           ,nacumulavale)
+	
+	nid = nid + 1 
+ENDSCAN 
+
 SELECT FsrVendedor
 GO TOP
 SCAN
+	cnombre	= UPPER(ALLTRIM(nombre))
+	SELECT CsrVendedor
+	LOCATE FOR ALLTRIM(nombre) = cNombre
+	IF ALLTRIM(nombre) = cNombre
+		SELECT FsrVendedor
+		LOOP 
+	ENDIF 
+	
+	SELECT FsrVendedor
 	nnumero	= NNUMERO + 1
-	cnombre	= nombre
+	
 	STORE "" TO cclave,cdireccion
 	STORE 0 TO nidctaflete,nplanilla,ncomision,nidctacomision,nidctasueldo,nidgrupocomi;
 				,nidctacte,nacumulavale
