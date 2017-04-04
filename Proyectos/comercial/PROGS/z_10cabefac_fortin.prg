@@ -153,10 +153,12 @@ lnidcuervari= RecuperarID('CsrCuerVari',Goapp.sucursal10)
 lnidsub 	= RecuperarID('CsrSubProducto',Goapp.sucursal10)
 lnidproducto= RecuperarID('CsrProducto',Goapp.sucursal10)
 *lnidanmaopera	= RecuperarID('CsrAnMaopera',Goapp.sucursal10)
-lnidctacte			= RecuperarID('CsrCtacte',Goapp.sucursal10)
+lnidctacte			= RecuperarID('CsrCtacte',Goapp.sucursal10) + 1
 SELECT CsrCtacte
 GO BOTTOM 
 nNumeroCtacte = VAL(CsrCtacte.cnumero)
+LOCATE FOR ctadeudor = 1
+lnidcatedeudor	= CsrCtacte.idcategoria
 
 SELECT CsrLocalidad
 IF FSIZE('id')>4
@@ -281,59 +283,61 @@ SCAN FOR !EOF()
     LOCATE FOR ALLTRIM(cnumero)==LTRIM(STR(lncliente))
     lnidctacte = 0 
     lnidcategoria = 0 
-    IF FOUND()
-    	lnidctacte = Csrctacte.id
-        lntipoiva   = CsrCtacte.tipoiva
-        lcnombre  = CsrCtacte.cnombre
-        lcdireccion = CsrCtacte.cdireccion
-        lnidcategoria = CsrCtacte.idcategoria
-    ELSE
-    	STORE 0 TO lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica;
-		,lnctabanco,lnctaotro,lnctaorden,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta;
-	    ,lnbonif1,lnbonif2,lncopiatkt,lnconvenio,lnsaldoauto,lnidbarrio,lnlista,lnidcateibrng,lncomision;
-	    ,lnidtipodoc,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,lnidcategoria;
-	    ,lndiasvto,lnplanpago
-	    
-	   	STORE "" TO lctelefono2,lctelefono,lcemail,lccuit;
-	    ,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc
-	       
-	    STORE 1 TO 	lnctadeudor,lnlista, lnidcanalvta
-	    &&lcEmail			= FsrDeudor.cliente
-	    nNumeroCtacte	= nNumeroCtacte + 1 
-	    lncliente		= nNumeroCtacte
-	    lcnumero		= strtrim(lncliente,8)
-		lnestadocta		= 0
-		ldfechalta		= DATE()
-		lcobserva		= "IMPORTADOR"
-		ldfecins01		= DATETIME(1900,01,01,0,0,0)
-		ldfecultcompra	= DATETIME(1900,01,01,0,0,0)
-		ldfecultpago	= DATETIME(1900,01,01,0,0,0)
-		lnidtablaint	= 0 &&Por defecto es el interes de socio
-		&&Buscamos si existen los tipo de documento valido			
-			
-		lnidcategoria = lnidcatedeudor
+    IF ALLTRIM(cnumero)<>LTRIM(STR(lncliente))
+    	LOCATE FOR ALLTRIM(cuit) = lccuit
+    	IF ALLTRIM(cuit) <> lccuit
+    		LOCATE FOR ALLTRIM(cnombre)==lcNombre
+    		IF NOT FOUND()
+    		    		
+		    	STORE 0 TO lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica;
+				,lnctabanco,lnctaotro,lnctaorden,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta;
+			    ,lnbonif1,lnbonif2,lncopiatkt,lnconvenio,lnsaldoauto,lnidbarrio,lnlista,lnidcateibrng,lncomision;
+			    ,lnidtipodoc,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,lnidcategoria;
+			    ,lndiasvto,lnplanpago
+			    
+			   	STORE "" TO lctelefono2,lctelefono,lcemail,lccuit;
+			    ,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc
+			       
+			    STORE 1 TO 	lnctadeudor,lnlista, lnidcanalvta
+			    &&lcEmail			= FsrDeudor.cliente
+			    nNumeroCtacte	= nNumeroCtacte + 1 
+			    lncliente		= nNumeroCtacte
+			    lcnumero		= strtrim(lncliente,8)
+				lnestadocta		= 0
+				ldfechalta		= DATE()
+				lcobserva		= "IMPORTADOR"
+				ldfecins01		= DATETIME(1900,01,01,0,0,0)
+				ldfecultcompra	= DATETIME(1900,01,01,0,0,0)
+				ldfecultpago	= DATETIME(1900,01,01,0,0,0)
+				lnidtablaint	= 0 &&Por defecto es el interes de socio
+				&&Buscamos si existen los tipo de documento valido			
+					
+				lnidcategoria = lnidcatedeudor
 
-		ldfecfac = CsrCabeza.fecha
-		
-		lcnombre = NombreNi(ALLTRIM(UPPER(lcnombre)))
-		lcdireccion = NombreNi(ALLTRIM(UPPER(lcdireccion)))
-	      
-		INSERT INTO Csrctacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono2;
-		,ctelefono,email,tipoiva,cuit,idcategoria,ctadeudor,ctaacreedor,ctalogistica,ctabanco,ctaotro;
-		,ctaorden,idplanpago,idcanalvta,fechalta,observa,saldo,saldoant,estadocta,bonif1,bonif2,copiatkt;
-		,inscri01,fecins01,inscri02,inscri03,convenio,saldoauto,idbarrio,lista,idcateibrng,ingbrutos;
-		,comision,fecultcompra,fecultpago,numdoc,idtipodoc,existeibto,existegan,diasvto,idtablaint,esrecodevol;
-		,totalizabonif);
-	    VALUES(lnid,lcnumero,lcnombre,lcdireccion,lccp,lnidlocalidad,lnidprovincia,lctelefono2;
-	    ,lctelefono,lcemail,lntipoiva,lccuit,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica,lnctabanco;
-	    ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
-	    ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
-	    ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
-	    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif)
-	    
-		lnid = lnid + 1
-    ENDIF
-    
+				ldfecfac = CsrCabeza.fecha
+				
+				lcnombre = NombreNi(ALLTRIM(UPPER(lcnombre)))
+				lcdireccion = NombreNi(ALLTRIM(UPPER(lcdireccion)))
+			      
+				INSERT INTO Csrctacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono2;
+				,ctelefono,email,tipoiva,cuit,idcategoria,ctadeudor,ctaacreedor,ctalogistica,ctabanco,ctaotro;
+				,ctaorden,idplanpago,idcanalvta,fechalta,observa,saldo,saldoant,estadocta,bonif1,bonif2,copiatkt;
+				,inscri01,fecins01,inscri02,inscri03,convenio,saldoauto,idbarrio,lista,idcateibrng,ingbrutos;
+				,comision,fecultcompra,fecultpago,numdoc,idtipodoc,existeibto,existegan,diasvto,idtablaint,esrecodevol;
+				,totalizabonif);
+			    VALUES(lnid,lcnumero,lcnombre,lcdireccion,lccp,lnidlocalidad,lnidprovincia,lctelefono2;
+			    ,lctelefono,lcemail,lntipoiva,lccuit,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica,lnctabanco;
+			    ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
+			    ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
+			    ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
+			    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif)
+			    
+				lnidctacte = lnidctacte + 1
+			ENDIF 
+		ENDIF 
+	ENDIF 
+    lnidctacte	= Csrctacte.id
+    lnidcategoria = CsrCtacte.idcategoria
 	
 	******Chequeamos que si el comprobante es anulado, recupero la cabeza en anulados.
 	IF "ANULA"$UPPER(CsrCabeza.nombre)

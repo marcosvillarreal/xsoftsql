@@ -153,7 +153,12 @@ lnidcuervari= RecuperarID('CsrCuerVari',Goapp.sucursal10)
 lnidsub 	= RecuperarID('CsrSubProducto',Goapp.sucursal10)
 lnidproducto= RecuperarID('CsrProducto',Goapp.sucursal10)
 *lnidanmaopera	= RecuperarID('CsrAnMaopera',Goapp.sucursal10)
-
+lnidctacte			= RecuperarID('CsrCtacte',Goapp.sucursal10) + 1
+SELECT CsrCtacte
+GO BOTTOM 
+nNumeroCtacte = VAL(CsrCtacte.cnumero)
+LOCATE FOR ctadeudor = 1
+lnidcatedeudor	= CsrCtacte.idcategoria
 
 SELECT CsrLocalidad
 IF FSIZE('id')>4
@@ -247,7 +252,90 @@ SCAN FOR !EOF()
 	ldfecha     = DATETIME(YEAR(Csrcabeza.fecha),MONTH(Csrcabeza.fecha),DAY(Csrcabeza.fecha),0,0,0)
 	ldfecha_vto = DATETIME(YEAR(Csrcabeza.fecha_vto),MONTH(Csrcabeza.fecha_vto),DAY(Csrcabeza.fecha_vto),0,0,0)
 	lcestado 	= '0'
+	lctelefono	= CsrCabeza.telefono
 	
+	lcLocalidadBuscada = Ciudades(lcLocalidad)
+	
+	lnidlocalidad =	1100000006 &&VAL(str(Goapp.sucursal10+10,2)+strzero(6,lntamloc))
+	lnidprovincia =	1100000002 &&VAL(str(Goapp.sucursal10+10,2)+strzero(2,lntamprov))
+	lccp = ""
+	SELECT CsrLocalidad
+	LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
+	IF FOUND()
+		lnidlocalidad = CsrLocalidad.id
+		lnidprovincia = CsrLocalidad.idprovincia
+		lccp = CsrLocalidad.cpostal
+	ENDIF
+	
+	lntipoiva =lntipocuit
+	IF lntipoiva=7
+	   lntipoiva =5
+	ENDIF 
+	
+	SELECT CsrPlanPago
+	LOCATE FOR 	numero = lntipovta
+	IF !numero = lntipovta
+		LOCATE FOR numero = "CCT"
+	ENDIF 
+	lnidplanpago = CsrPlanPago.id
+	
+	SELECT Csrctacte
+    LOCATE FOR ALLTRIM(cnumero)==LTRIM(STR(lncliente))
+    lnidctacte = 0 
+    lnidcategoria = 0 
+    IF FOUND()
+    	lnidctacte = Csrctacte.id
+        lntipoiva   = CsrCtacte.tipoiva
+        lcnombre  = CsrCtacte.cnombre
+        lcdireccion = CsrCtacte.cdireccion
+        lnidcategoria = CsrCtacte.idcategoria
+    ELSE
+    	STORE 0 TO lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica;
+		,lnctabanco,lnctaotro,lnctaorden,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta;
+	    ,lnbonif1,lnbonif2,lncopiatkt,lnconvenio,lnsaldoauto,lnidbarrio,lnlista,lnidcateibrng,lncomision;
+	    ,lnidtipodoc,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,lnidcategoria;
+	    ,lndiasvto,lnplanpago
+	    
+	   	STORE "" TO lctelefono2,lctelefono,lcemail,lccuit;
+	    ,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc
+	       
+	    STORE 1 TO 	lnctadeudor,lnlista, lnidcanalvta
+	    &&lcEmail			= FsrDeudor.cliente
+	    nNumeroCtacte	= nNumeroCtacte + 1 
+	    lncliente		= nNumeroCtacte
+	    lcnumero		= strtrim(lncliente,8)
+		lnestadocta		= 0
+		ldfechalta		= DATE()
+		lcobserva		= "IMPORTADOR"
+		ldfecins01		= DATETIME(1900,01,01,0,0,0)
+		ldfecultcompra	= DATETIME(1900,01,01,0,0,0)
+		ldfecultpago	= DATETIME(1900,01,01,0,0,0)
+		lnidtablaint	= 0 &&Por defecto es el interes de socio
+		&&Buscamos si existen los tipo de documento valido			
+			
+		lnidcategoria = lnidcatedeudor
+
+		ldfecfac = CsrCabeza.fecha
+		
+		lcnombre = NombreNi(ALLTRIM(UPPER(lcnombre)))
+		lcdireccion = NombreNi(ALLTRIM(UPPER(lcdireccion)))
+	      
+		INSERT INTO Csrctacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono2;
+		,ctelefono,email,tipoiva,cuit,idcategoria,ctadeudor,ctaacreedor,ctalogistica,ctabanco,ctaotro;
+		,ctaorden,idplanpago,idcanalvta,fechalta,observa,saldo,saldoant,estadocta,bonif1,bonif2,copiatkt;
+		,inscri01,fecins01,inscri02,inscri03,convenio,saldoauto,idbarrio,lista,idcateibrng,ingbrutos;
+		,comision,fecultcompra,fecultpago,numdoc,idtipodoc,existeibto,existegan,diasvto,idtablaint,esrecodevol;
+		,totalizabonif);
+	    VALUES(lnid,lcnumero,lcnombre,lcdireccion,lccp,lnidlocalidad,lnidprovincia,lctelefono2;
+	    ,lctelefono,lcemail,lntipoiva,lccuit,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica,lnctabanco;
+	    ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
+	    ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
+	    ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
+	    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif)
+	    
+		lnidctacte = lnidctacte + 1
+    ENDIF
+    
 	
 	******Chequeamos que si el comprobante es anulado, recupero la cabeza en anulados.
 	IF "ANULA"$UPPER(CsrCabeza.nombre)
@@ -286,23 +374,6 @@ SCAN FOR !EOF()
 	ldfechaserver 	= ldfecha &&DATETIME()
 	ldfechasis 		= FechaHoraCero(ldfechaserver)
 	
-	lntipoiva =lntipocuit
-	IF lntipoiva=7
-	   lntipoiva =5
-	ENDIF 
-	
-	lcLocalidadBuscada = Ciudades(lcLocalidad)
-	
-	lnidlocalidad =	1100000006 &&VAL(str(Goapp.sucursal10+10,2)+strzero(6,lntamloc))
-	lnidprovincia =	1100000002 &&VAL(str(Goapp.sucursal10+10,2)+strzero(2,lntamprov))
-	lccp = ""
-	SELECT CsrLocalidad
-	LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
-	IF FOUND()
-		lnidlocalidad = CsrLocalidad.id
-		lnidprovincia = CsrLocalidad.idprovincia
-		lccp = CsrLocalidad.cpostal
-	ENDIF
 	
 	lcswitch = "00090"
 	lcDebeHaber	= "D"
@@ -335,17 +406,7 @@ SCAN FOR !EOF()
 		lcclasecomp = clase
 	ENDIF
 	
-    SELECT Csrctacte
-    LOCATE FOR ALLTRIM(cnumero)==LTRIM(STR(lncliente))
-    lnidctacte = 0 
-    lnidcategoria = 0 
-    IF FOUND()
-    	lnidctacte = Csrctacte.id
-        lntipoiva   = CsrCtacte.tipoiva
-        lcnombre  = CsrCtacte.cnombre
-        lcdireccion = CsrCtacte.cdireccion
-        lnidcategoria = CsrCtacte.idcategoria
-    ENDIF
+   
 	
 	STORE 0 TO lnidfletero,lnidfrio
 	
@@ -373,13 +434,7 @@ SCAN FOR !EOF()
     IF numero=Csrcabeza.vendedor
        lnidvendedor = Csrvendedor.id
     ENDIF
-	
-	SELECT CsrPlanPago
-	LOCATE FOR 	numero = lntipovta
-	IF !numero = lntipovta
-		LOCATE FOR numero = "CCT"
-	ENDIF 
-	lnidplanpago = CsrPlanPago.id
+
 	
 	INSERT INTO Csrmaopera (id,origen,programa,terminal,fechasis,idoperador,idvendedor,idcomproba,numcomp;
 	,clasecomp,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,estado,fechaserver);
@@ -390,8 +445,8 @@ SCAN FOR !EOF()
 	, IDLOCALIDAD, IDPROVINCIA,IDFRIO, IDTIPOIVA, CUIT, IDSUBCTA, FECHA, IDPLANPAGO, TOTAL, BONIF1, BONIF2;
 	, SWITCH, LISTAPRECIO, IDFLETERO, IDFUERZAVTA, IDRUTAVDOR,SIGNO,TASAMUNI,DIFERIDA,IDTIPONCREDITO,RENDIDA;
 	,IDCATEGORIA);
-	value (lnidcabeza,lnid,lnidctacte,LTRIM(STR(lncliente)),lcnombre,lcdireccion,"";
-	,"",lnidlocalidad,lnidprovincia,lnidfrio,lntipoiva,lccuit,0,ldfecha,lnidplanpago,lnimporte,lnbonif1;
+	value (lnidcabeza,lnid,lnidctacte,LTRIM(STR(lncliente)),lcnombre,lcdireccion,lctelefono;
+	,lccp,lnidlocalidad,lnidprovincia,lnidfrio,lntipoiva,lccuit,0,ldfecha,lnidplanpago,lnimporte,lnbonif1;
 	,lnbonif2,"F0000",1,lnidfletero,lnidfuerzavta,0,lnsigno,lntasa,lndiferida,lnidnotacredito,lnrendida;
 	,lnidcategoria)
 	
