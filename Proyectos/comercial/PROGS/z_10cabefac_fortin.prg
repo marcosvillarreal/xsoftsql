@@ -13,6 +13,8 @@ SET SAFETY OFF
 SET CPCOMPILE TO 1252
 codepage = 1252
 SET CPDIALOG ON
+SET CENTURY ON 
+
 oavisar.proceso("Abriendo tablas...")
 llok = .t.
 TEXT TO lccmd TEXTMERGE NOSHOW 
@@ -734,6 +736,14 @@ SCAN FOR !EOF()
 		*lnpreunita = (lnpreunitasiva - lninterno) * (1+lnivari/100) + lninterno
 		*lnprearti  = (lnpreartisiva - lninterno) * (1+lnivari/100) + lninterno
 		
+		lnboniofer = 0
+		lnbonicant = 0
+		
+		lnCantidad   	= Csrcuerpo.cantidad * IIF(lnunivta=1,1,lnunibulto)
+		lnKilos         = 0
+		lnvolumen   	= lnKilos
+		lnescambio 		= 0
+		
 		lnpreunita  = Csrcuerpo.importe / lnunibulto 
 		lnprecosto	= CsrCuerpo.costo / lnunibulto
 		lnprearti   = lnpreunita
@@ -760,13 +770,7 @@ SCAN FOR !EOF()
 		ENDIF 
 		
 		
-		lnboniofer = 0
-		lnbonicant = 0
 		
-		lnCantidad   	= Csrcuerpo.cantidad * IIF(lnunivta=1,1,lnunibulto)
-		lnKilos         = 0
-		lnvolumen   	= lnKilos
-		lnescambio 		= 0
 		
 		
 		

@@ -2,7 +2,7 @@ PARAMETERS ldvacio,lcpath,lcBase,lnlimite
 
 ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
-lnlimite = IIF(PCOUNT()<4,"",lnlimite)
+*lnlimite = IIF(PCOUNT()<4,"",lnlimite)
 lcData = lcBase
 
 DO setup
@@ -50,7 +50,7 @@ i = 1
 SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-SCAN FOR !EOF() AND i < lnlimite
+SCAN FOR !EOF() &&AND i < lnlimite
 *!*		IF numero <> 1
 *!*			LOOP 
 *!*		ENDIF 
@@ -65,6 +65,8 @@ SCAN FOR !EOF() AND i < lnlimite
 	cProvArticulo	 = TablaPrecios(ALLTRIM(CsrArticulo.proveedor))
 	
 	SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
+	
+	lActualizo		 = .f.
 	
 	SELECT CsrPrecio
 	GO TOP 
@@ -227,10 +229,21 @@ SCAN FOR !EOF() AND i < lnlimite
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
-    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmod,switch
+    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmodi,switch,codalfaprov
+    		lActualizo = .t.
     	ENDIF 
+    	
 		SELECT CsrPrecio
 	ENDSCAN 
+	
+	IF NOT lActualizo
+		SELECT CsrProdPrecio
+		SCATTER NAME OscPrecio
+		SELECT CsrProducto
+		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
+		replace fecUlPre WITH OscPrecio.fecmodi
+    ENDIF 
+    
 	USE IN CsrPrecio 
 	
 	SELECT CsrProducto   
