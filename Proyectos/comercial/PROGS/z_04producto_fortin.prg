@@ -105,6 +105,9 @@ SCAN FOR !EOF()
            
 	cnombre		= NombreNi(alltrim(CsrArticulo.nombre))
 	ncodigo		= VAL(Csrarticulo.NUMERO)
+	IF nCodigo = 40
+		stop()
+	ENDIF 
 	ccodalfaprov	= ALLTRIM(CsrArticulo.codigo_fac)
 	ccodalfa = ALLTRIM(CsrArticulo.codigo_pro)
 	
@@ -113,7 +116,7 @@ SCAN FOR !EOF()
 	*Almacenamos el codigo anterior para luego importar las secciones con productos
     nidrubro	= Csrarticulo.seccion
     
-    nidUbicacion = CargarUbicacion(nidRubro)
+    nidUbicacio = CargarUbicacion(nidRubro)
     
     lcMarca 	= CsrArticulo.marca
     lcMarca		= TablaMarcas(lcMarca)
@@ -141,7 +144,7 @@ SCAN FOR !EOF()
 	ENDIF 		
 									
 	
-	INSERT INTO  producto  ( id , numero  , nombre  , codalfa , idctacte , idmarca ;
+	INSERT INTO  csrproducto  ( id , numero  , nombre  , codalfa , idctacte , idmarca ;
            , idforma , idunidad , idtprod , idtipovta ;
            , idtamano , idcatego , idrubro , idestado , idubicacio , idorigen ;
            , nomodifica , incluirped , idmoneda , idiva , feculcpra , feculvta ;
