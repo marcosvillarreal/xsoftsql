@@ -686,7 +686,8 @@ SCAN FOR !EOF()
 				nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
 	    		nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
 	    		cswitch		= "00000"
-	    		
+	    		nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(2,8))
+	    		 
 				INSERT INTO  producto  ( id , numero  , nombre  , codalfa , idctacte , idmarca ;
 		           , idforma , idunidad , idtprod , idtipovta ;
 		           , idtamano , idcatego , idrubro , idestado , idubicacio , idorigen ;
@@ -738,11 +739,26 @@ SCAN FOR !EOF()
 		lnprearti   = lnpreunita
 		lninterno  	= Csrcuerpo.internos / lnunibulto 
 		
-		lnprecostosiva = (lnprecosto - lninterno) * (100/lnivari) + lninterno
-		lnpreunitasiva = (lnpreunita- lninterno) * (100/lnivari) + lninterno
-		lnpreartisiva  = (lnprearti - lninterno) * (100/lnivari) + lninterno
+		lnprecostosiva = lnprecosto
+		lnpreunitasiva = lnpreunita
+		lnpreartisiva  = lnprearti
 		
 		lnbonif1 = Csrcuerpo.bonif
+		
+		lnBoniSiva = lnpreunitasiva	* (lnBonif1/100) * lnCantidad
+		lnBoniCiva = lnpreunita	* (lnBonif1/100) * lnCantidad
+		
+		nTotalCiva = Csrcuerpo.importe
+		nTotalSiva = Csrcuerpo.importe
+		
+		IF lnivari # 0
+			lnprecostosiva = (lnprecosto - lninterno) * (100/lnivari) + lninterno
+			lnpreunitasiva = (lnpreunita- lninterno) * (100/lnivari) + lninterno
+			lnpreartisiva  = (lnprearti - lninterno) * (100/lnivari) + lninterno
+			
+			nTotalSiva = (nTotalCiva - lninterno) * (100/lnivari) + lninterno
+		ENDIF 
+		
 		
 		lnboniofer = 0
 		lnbonicant = 0
@@ -752,11 +768,7 @@ SCAN FOR !EOF()
 		lnvolumen   	= lnKilos
 		lnescambio 		= 0
 		
-		lnBoniSiva = lnpreunitasiva	* (lnBonif1/100) * lnCantidad
-		lnBoniCiva = lnpreunita	* (lnBonif1/100) * lnCantidad
 		
-		nTotalCiva = Csrcuerpo.importe
-		nTotalSiva = (nTotalCiva - lninterno) * (100/lnivari) + lninterno
 		
 		INSERT INTO CsrCuerfac (ID, IDMAOPERA, IDCABEZA, IDARTICULO, CODIGO,CODINTERNO, NOMBRE, CANTIDAD, UNIVENTA, UNIBULTO;
 		, ORICOD, SDOCANT, KILOS, LISTAPRECIO, PRECOSTO, PREUNITA, PREARTI, INTERNO, DESPOR, TASAIVA;

@@ -336,10 +336,13 @@ SCAN FOR !EOF()
 			    
 				_lnidctacte = _lnidctacte + 1
 			ENDIF 
-		ENDIF 
+		ENDIF
+		lncliente = VAL(CsrCtacte.cnumero )
 	ENDIF 
     lnidctacte	= Csrctacte.id
     lnidcategoria = CsrCtacte.idcategoria
+   
+    
 	
 	******Chequeamos que si el comprobante es anulado, recupero la cabeza en anulados.
 	IF "ANULA"$UPPER(CsrCabeza.nombre)
