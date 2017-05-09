@@ -847,6 +847,7 @@ ENDFUNC
 *Crea una ruta entre las coordenadas, elimina los marcadores del tipo A,B,C...
 *agrega marcadores comunes en cada direccion que poseen una InfoWindow con Nombre y Direccion
 *ADEMAS pasando cRuta con coordenadas, crea una Linea Roja que recorre esas Coordenadas
+*AGREGO cParadas para los marcadores sobre la ruta cRuta
 *-----------------------------------
 *-----------------------------------
 *-----------------------------------
@@ -857,7 +858,7 @@ ENDFUNC
 
 
 FUNCTION GoogleCoords3
-LPARAMETERS tcDestination,coords,cmarks,cRuta
+LPARAMETERS tcDestination,coords,cmarks,cRuta,cParadas,cVendedor
 
 LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
 LOCAL lcFullURL, lcResponse, lcRouteParameters
@@ -931,29 +932,42 @@ function initialize() {
     trafficLayer.setMap(map);
     
 	var myLatLng = {lat: -38.877337, lng: -62.083059};
- 				   
+	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
 	
     var pinColor = "1900ff";
-    var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
-        new google.maps.Size(21, 34),
-        new google.maps.Point(0,0),
-        new google.maps.Point(10, 34));
-    
-    var markerRuta = new google.maps.Marker({
+		
+    //http://www.lass.it/Web/viewer.aspx?id=4 (lista de imagenes/iconos)
+	//https://medium.com/@barvysta/google-marker-api-lets-play-level-1-dynamic-label-on-marker-f9b94f2e3585 (como editar)
+	var pinImages = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png");
+	
+	var markerIcon = {
+	  url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',
+	  //scaledSize: new google.maps.Size(80, 80),
+	  origin: new google.maps.Point(0, 0),
+	  //anchor: new google.maps.Point(32,65),
+	  labelOrigin: new google.maps.Point(15,8)
+	};
+
+	var markerRuta = new google.maps.Marker({
     position: myLatLng,
     map: map,
-    icon: pinImage,
+	label: {
+		text: '3',
+		fontSize: "10px",
+		fontWeight: "bold"
+	  },
+    icon: markerIcon,
     title: 'Hello World!'
-  });
+	});
 
-  	
-	markerRuta.setMap(map);
-
+ 	<<cParadas>>
+ 	
  	var flightPlanCoordinates = <<cRuta>>;
 	var flightPath = new google.maps.Polyline({
     path: flightPlanCoordinates,
     geodesic: true,
-    strokeColor: '#FF0000',
+    strokeColor: '#9800ff',
     strokeOpacity: 1.0,
     strokeWeight: 2
 	});
@@ -1034,6 +1048,7 @@ google.maps.event.addDomListener(window, "load", initialize);
 </script>
 </head>
 <body>
+	<div > <<cVendedor>> </div>
 	<div id="map-canvas" style="float:left;width:70%; height:100%"></div>
 	<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 </body>
