@@ -1651,6 +1651,7 @@ IF lok
    Goapp.empresapagweb			= DefaultVar('CsrEmpresa.pagweb','')
    Goapp.empresaemail			= DefaultVar('CsrEmpresa.email','')
    goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
+   goapp.rutaaplicacion			= IIF(EMPTY(goapp.rutaaplicacion),SYS(5)+Curdir(),goapp.rutaaplicacion)
   * oavisar.programador(goApp.rutaaplicacion)
 ENDIF
    
