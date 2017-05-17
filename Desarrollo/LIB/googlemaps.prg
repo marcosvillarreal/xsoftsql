@@ -123,7 +123,8 @@ TEXT TO lcHTML NOSHOW TEXTMERGE
                var image = 'http://www.vfpstylemenuframework.com/images/Marker_Outside_Chartreuse.png'; 
 		        var marker = new google.maps.Marker({
 			    map: map, icon: image, title: 'Mover para ver coordenadas',
-			    position: results[0].geometry.location
+			   	position: fenway
+			  //position: results[0].geometry.location
                , draggable: true
 			   });
 			    var coord1  = results[0].geometry.location
