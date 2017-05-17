@@ -44,6 +44,12 @@
 
 *!*	cabefac.rendida			0 = no rendida, 1=rendida
 
+*!*	 CABEORD.switch				1	A= ajuste automatico
+*!*								2	
+*!*								3
+*!*								4   
+*!*								5	
+
 *!*	 FLETEPLANILLA.switch		1 1 = borrado	
 *!*								2
 *!*								3 1 = por notas de pedido
