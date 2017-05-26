@@ -39,6 +39,9 @@ lcdd=alltrim(curdir()) && directorio de arranque
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 
+PUBLIC FOXHELPFILE 
+FOXHELPFILE  =  "help\ayuda.CHM"
+
 If lldesarrollo
 	lcdd=L+'\xsoftsql\proyectos\comercial\'
 	*-- RUTA
@@ -135,9 +138,6 @@ PUBLIC lcConectionODBC,lnconectorODBC
 
 PUBLIC OAvisar
 Oavisar=NewOBJECT('avisar','controles.vcx')
-
-PUBLIC FOXHELPFILE 
-FOXHELPFILE  =  "ayuda.CHM"
 
 Public goapp,ObjReporter
 
