@@ -1,706 +1,3 @@
-07-04-2017 12:36:29 , Objeto      : lispatroncargapedidos.actualizar
-07-04-2017 12:36:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 12:36:29 , Nº de Linea :          7
-07-04-2017 12:36:37 , En el Fuente: 			.imprimir_envase()
-07-04-2017 12:36:37 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 12:36:37 , Objeto      : lispatroncargapedidos.imprimir_envase
-07-04-2017 12:36:37 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 12:36:43 , Nº de Linea :        180
-07-04-2017 12:36:43 , En el Fuente: 			REPLACE Campo003 WITH TRANSFORM(0,'9999')+" + "+TRANSFORM(lnSuelto,"999")				,campo004 WITH TRANSFORM(lnSuelto,'999999')
-07-04-2017 13:17:36 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: No se encuentra la variable 'LNBULTOVAR2'.;Linea : lcvariedad	= lcvariedad + " ("+ ALLTRIM(STR(lnbultovar))+" + "+ALLTRIM(STR(lnbultovar2))+")";Error :         12;Ultimo Alias Activo: CSR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AUXSABOR;Ultimo registro:         47 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004G0902DD.TMP;Ultimo Control activo: 
-07-04-2017 13:17:36 , Pila de llamadas
-07-04-2017 13:17:42 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 13:17:42 , Objeto      : lispatroncargapedidos.aceptar1.click
-07-04-2017 13:17:42 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 13:17:42 , Nº de Linea :          4
-07-04-2017 13:17:48 , En el Fuente: 	.actualizar()
-07-04-2017 13:17:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 13:17:48 , Objeto      : lispatroncargapedidos.actualizar
-07-04-2017 13:17:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 13:17:48 , Nº de Linea :          7
-07-04-2017 13:17:48 , En el Fuente: 			.imprimir_envase()
-07-04-2017 13:17:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 13:17:54 , Objeto      : lispatroncargapedidos.imprimir_envase
-07-04-2017 13:18:00 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-07-04-2017 13:18:00 , Nº de Linea :        225
-07-04-2017 13:18:06 , En el Fuente: 	     	lcvariedad	= lcvariedad + " ("+ ALLTRIM(STR(lnbultovar))+" + "+ALLTRIM(STR(lnbultovar2))+")"
-10-04-2017 12:39:05 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: El archivo 'replace.prg' no existe.;Linea : INSERT INTO CsrimpCue (grupo,Campo001,Campo002,origen,idvendedor,codarti,idvariedad,idenvase) VALUES (lcclave+cgrupo,ALLTRIM(Oscatter.codigo),O
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-scatter.nombre ,STRZERO(Oscatter.idubicacion,10,0),0,0,replace('9',10),lnIdEnvaseProd);Error :          1;Ultimo Alias Activo: CSRAUXCANTIDAD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B11L028C.TMP;Ultimo Control activo: 
-10-04-2017 12:39:05 , Pila de llamadas
-10-04-2017 12:39:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-10-04-2017 12:39:06 , Objeto      : lispatroncargapedidos.aceptar1.click
-10-04-2017 12:39:06 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-10-04-2017 12:39:06 , Nº de Linea :          4
-10-04-2017 12:39:06 , En el Fuente: 	.actualizar()
-10-04-2017 12:39:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-10-04-2017 12:39:06 , Objeto      : lispatroncargapedidos.actualizar
-10-04-2017 12:39:06 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-10-04-2017 12:39:07 , Nº de Linea :          7
-10-04-2017 12:39:07 , En el Fuente: 			.imprimir_envase()
-10-04-2017 12:39:07 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-10-04-2017 12:39:07 , Objeto      : lispatroncargapedidos.imprimir_envase
-10-04-2017 12:39:07 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-10-04-2017 12:39:08 , Nº de Linea :        142
-10-04-2017 12:39:08 , En el Fuente: 		INSERT INTO CsrimpCue (grupo,Campo001,Campo002,origen,idvendedor,codarti,idvariedad,idenvase)   		VALUES (lcclave+cgrupo,ALLTRIM(Oscatter.codigo),Oscatter.nombre    				,STRZERO(Oscatter.idubicacion,10,0),0,0,replace
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-('9',10),lnIdEnvaseProd)
-10-04-2017 12:39:13 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: El archivo 'replace.prg' no existe.;Linea : INSERT INTO CsrimpCue (grupo,Campo001,Campo002,origen,idvendedor,codarti,idvariedad,idenvase) VALUES (lcclave+cgrupo,ALLTRIM(Oscatter.codigo),O
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -901,8 +198,40 @@ scatter.nombre ,STRZERO(Oscatter.idubicacion,10,0),0,0,replace('9',10),lnIdEnvas
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ('9',10),lnIdEnvaseProd)
 10-04-2017 12:43:08 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: No coinciden los tipos de datos.;Linea : INSERT INTO CsrimpCue (grupo,Campo001,Campo002,origen,idvendedor,codarti,idvariedad,idenvase) VALUES (lcclave+cgrupo,ALLTRIM(Oscatter.codigo),Osca
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1232,8 +561,40 @@ tter.nombre ,STRZERO(Oscatter.idubicacion,10,0),0,0,replicate('9',10),lnIdEnvase
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 te('9',10),lnIdEnvaseProd)
 10-04-2017 13:30:47 , LISPATRONCARGAPEDIDOS.LOAD, Error: El archivo 'csrnmaopera.dbf' no existe.;Linea : SELECT CsrNMaopera.* FROM CsrNMaopera WHERE RECNO()<0 INTO CURSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXILIAR;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1546,6 +907,22 @@ registro:          1 IDVENDEDOR;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B11L0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo registro:          0 ;DBF: ;Ultimo Control activo: 
 10-04-2017 13:34:28 , Pila de llamadas
 10-04-2017 13:34:28 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -1564,6 +941,22 @@ imo registro:          0 ;DBF: ;Ultimo Control activo:
 10-04-2017 13:34:30 , Nº de Linea :       1349
 10-04-2017 13:34:30 , En el Fuente: 
 10-04-2017 14:26:36 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: Los archivos .IDX no se pueden ordenar en sentido descendente.;Linea : INDEX on STR(idarticulo,10) + STR(cantidad,11,2) TO orden DESCENDING;Error :       1706;Ultimo Alias Activo: CSRAUXS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1860,6 +1253,22 @@ ABOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B11
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         2 STR(IDARTICULO,10)+STR(CANTIDAD,11,2);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B11L051F.TMP;Ultimo Control activo: 
 10-04-2017 14:41:43 , Pila de llamadas
 10-04-2017 14:41:44 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
@@ -1878,6 +1287,22 @@ ABOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B11
 10-04-2017 14:41:45 , Nº de Linea :        234
 10-04-2017 14:41:46 , En el Fuente: 				REPLACE campo005 WITH TRANSFORM(nbultovar,'999999999') IN CsrImpCue
 11-04-2017 11:43:29 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: No se encuentra la propiedad CANTIDAD.;Linea : lncantidad  = IIF(Oscatter.cantidad=0,0,Oscatter.cantidad);Error :       1734;Ultimo Alias Activo: CSRAUXKILOS;Ultimo registro:          1 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2152,6 +1577,22 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CNPL00LH.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CNPL00RJ.TMP;Ultimo Control activo: 
 11-04-2017 11:45:16 , Pila de llamadas
 11-04-2017 11:45:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
@@ -2170,6 +1611,22 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CNPL00RJ.TMP;Ultimo Control activo:
 11-04-2017 11:45:18 , Nº de Linea :        298
 11-04-2017 11:45:18 , En el Fuente: 	lnunibulto  = IIF(Oscatter.unibulto=0,1,Oscatter.unibulto)
 11-04-2017 11:50:03 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: No se encuentra la propiedad CODENVASE.;Linea : lnCodEnvase = Oscatter.codenvase;Error :       1734;Ultimo Alias Activo: CSRAUXKILOS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2422,7 +1879,39 @@ TA\LOCAL\TEMP\0000CNPL00Z5.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 codigo)+"   "+Oscatter.nombre,'9999999999',Oscatter.nomvdor ,ALLTRIM(Oscatter.ctacte) ,ALLTRIM(Oscatter.cnombre),Oscatter.idvendedor ,Oscatter.idctacte,0);Error :       1734;Ultimo Alias Activo: CSRAUXKILOS;Ultimo registro:          1 ;DBF: C:\USERS\ADMI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2662,8 +2151,40 @@ N\APPDATA\LOCAL\TEMP\0000CNPL016R.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     			,ALLTRIM(Oscatter.ctacte) ,ALLTRIM(Oscatter.cnombre),Oscatter.idvendedor    			,Oscatter.idctacte,0)
 11-04-2017 12:06:49 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: No se encuentra la propiedad CTACTE.;Linea : lcclave = STRZERO(0,10)+left(Oscatter.ctacte+SPACE(8),8);Error :       1734;Ultimo Alias Activo: CSRAUXKILOS;Ultimo registro:          1 ;DBF:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2892,6 +2413,22 @@ N\APPDATA\LOCAL\TEMP\0000CNPL016R.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CNPL01HB.TMP;Ultimo Control activo: 
 11-04-2017 12:09:15 , Pila de llamadas
 11-04-2017 12:09:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
@@ -2910,6 +2447,22 @@ N\APPDATA\LOCAL\TEMP\0000CNPL016R.TMP;Ultimo Control activo:
 11-04-2017 12:09:16 , Nº de Linea :        315
 11-04-2017 12:09:17 , En el Fuente: 	lcclave = STRZERO(0,10)+left(Oscatter.ctacte+SPACE(8),8)
 11-04-2017 12:14:22 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: No se encuentra la variable 'LNMULTI'.;Linea : lnkilosTot	= lnkilos * lnmulti;Error :         12;Ultimo Alias Activo: CSRAUXKILOS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3119,6 +2672,22 @@ LOCAL\TEMP\0000CNPL01ML.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DMIN\APPDATA\LOCAL\TEMP\0000CNPL01RM.TMP;Ultimo Control activo: 
 11-04-2017 12:28:05 , Pila de llamadas
 11-04-2017 12:28:05 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
@@ -3137,6 +2706,22 @@ DMIN\APPDATA\LOCAL\TEMP\0000CNPL01RM.TMP;Ultimo Control activo:
 11-04-2017 12:28:07 , Nº de Linea :        354
 11-04-2017 12:28:07 , En el Fuente:   	IF Oscatter.pesable=1 AND  Oscatter.kilos=0
 24-04-2017 11:35:07 , MAIN, Error: No se encuentra la variable 'COSTROAGRE1'.;Linea : replace costoagre1 WITH NVL(costroagre1,0) IN CsrProducto;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3341,6 +2926,22 @@ DATA\LOCAL\TEMP\00009XXL00CB.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL00SJ.TMP;Ultimo Control activo: 
 24-04-2017 11:38:28 , Pila de llamadas
 24-04-2017 11:38:28 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -3379,6 +2980,22 @@ mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL00SJ.TMP
 24-04-2017 11:38:33 , Nº de Linea :         49
 24-04-2017 11:38:34 , En el Fuente: lObjprecio.utilidadpesos = red(lObjprecio.prevta - lObjprecio.costosiniva - mcostoagresiva,this.decimales)
 24-04-2017 11:40:38 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF mcostoagreciva = 0;Error :        107;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3543,6 +3160,22 @@ mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL00SJ.TMP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ADMIN\APPDATA\LOCAL\TEMP\00009XXL01B4.TMP;Ultimo Control activo: 
 24-04-2017 11:41:59 , Pila de llamadas
 24-04-2017 11:42:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -3576,6 +3209,22 @@ ADMIN\APPDATA\LOCAL\TEMP\00009XXL01B4.TMP;Ultimo Control activo:
 24-04-2017 11:42:04 , Nº de Linea :          8
 24-04-2017 11:42:04 , En el Fuente: IF mcostoagreciva = 0
 24-04-2017 12:34:13 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS, Error: La propiedad COSTOAGREGADO no es un método o evento.;Linea : thisform.precioprod1.costoagregado();Error :       1738;Ultimo Alias Activo: CSRPRODUCTO;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3682,6 +3331,22 @@ imo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL0524.TMP;Ultimo Control activo: MARGEN1
 24-04-2017 12:34:18 , Pila de llamadas
 24-04-2017 12:34:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -3690,6 +3355,22 @@ imo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL0
 24-04-2017 12:34:18 , Nº de Linea :          3
 24-04-2017 12:34:18 , En el Fuente: thisform.precioprod1.costoagregado()
 24-04-2017 12:34:27 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS, Error: La propiedad COSTOAGREGADO no es un método o evento.;Linea : thisform.precioprod1.costoagregado();Error :       1738;Ultimo Alias Activo: CSRPARAVARIO;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3788,6 +3469,22 @@ timo registro:         17 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL04ZJ.T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 timo registro:         17 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL04ZJ.TMP;Ultimo Control activo: MARGEN1
 24-04-2017 12:34:34 , Pila de llamadas
 24-04-2017 12:34:34 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -3796,6 +3493,22 @@ timo registro:         17 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL04ZJ.T
 24-04-2017 12:34:35 , Nº de Linea :          3
 24-04-2017 12:34:35 , En el Fuente: thisform.precioprod1.costoagregado()
 24-04-2017 13:36:50 , CBIOPRECIO1.CMDSALVAR.CLICK, Error: No se encuentra la variable 'COSTOAGRE1'.;Linea : lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1,lobjPrecioActual.costoagre1);Error :         12;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3892,6 +3605,22 @@ mo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG90118.TMP;Ultimo Control activo: 
 24-04-2017 13:44:25 , Pila de llamadas
 24-04-2017 13:44:26 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
@@ -3910,6 +3639,22 @@ mo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\
 24-04-2017 13:44:28 , Nº de Linea :         43
 24-04-2017 13:44:28 , En el Fuente: 	  lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1,lobjPrecioActual.costoagre1)
 24-04-2017 13:46:02 , CBIOPRECIO1.CMDSALVAR.CLICK, Error: No se encuentra la variable 'COSTOAGRE1V'.;Linea : lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1v,lobjPrecioActual.costoagre1);Error :         12;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3983,6 +3728,22 @@ timo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG902KP.TMP;Ultimo Control activo: 
 24-04-2017 14:52:26 , Pila de llamadas
 24-04-2017 14:52:26 , Programa    : j:\xsoftsql\proyectos\leon\forms\cbioprecio2.sct
@@ -4013,6 +3774,22 @@ timo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMI
 24-04-2017 15:06:55 , Nº de Linea :         14
 24-04-2017 15:06:55 , En el Fuente:           loObjcol.controlsource = lCaliasNavega+'.'+lccadena
 24-04-2017 15:20:30 , MAIN, Error: No se encuentra la propiedad COSTROAGRE3.;Linea : lObjPrecio.costoagre = lObjProducto.costroagre3;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4061,6 +3838,22 @@ timo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG9067E.TMP;Ultimo Control activo: 
 24-04-2017 15:20:45 , Pila de llamadas
 24-04-2017 15:20:46 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
@@ -4083,6 +3876,22 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG9067E.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000040SP00B1.TMP;Ultimo Control activo: 
 28-04-2017 16:25:17 , Pila de llamadas
 28-04-2017 16:25:19 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
@@ -4100,3 +3909,88 @@ as Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDAT
 28-04-2017 16:25:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
 28-04-2017 16:25:30 , Nº de Linea :        115
 28-04-2017 16:25:30 , En el Fuente:   			lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoa1,lobjPrecioActual.costoagre1)
+26-05-2017 17:13:26 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OCAL\TEMP\000049HL00H8.TMP;Ultimo Control activo: 
+26-05-2017 17:13:26 , Pila de llamadas
+26-05-2017 17:13:27 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+26-05-2017 17:13:27 , Objeto      : exportadorcsv.imprimir_vistaprevia1.impresora.click
+26-05-2017 17:13:27 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+26-05-2017 17:13:27 , Nº de Linea :          5
+26-05-2017 17:13:28 , En el Fuente: 	llOK=thisform.CrearInforme()
+26-05-2017 17:13:28 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:13:28 , Objeto      : exportadorcsv.crearinforme
+26-05-2017 17:13:28 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:13:28 , Nº de Linea :         13
+26-05-2017 17:13:28 , En el Fuente: 	.generar('ctacte',"PDV's",'.t.',lcCodEmpresa+'-PDV-'+lcfechasola+'.CSV')
+26-05-2017 17:13:28 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:13:28 , Objeto      : exportadorcsv.generar
+26-05-2017 17:13:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:13:29 , Nº de Linea :         14
+26-05-2017 17:13:29 , En el Fuente: 			_existe = .leerctacte()
+26-05-2017 17:13:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:13:29 , Objeto      : exportadorcsv.leerctacte
+26-05-2017 17:13:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:13:29 , Nº de Linea :         32
+26-05-2017 17:13:29 , En el Fuente: SELECT CsrCursor
+26-05-2017 17:22:24 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+         0 ;DBF: ;Ultimo Control activo: 
+26-05-2017 17:22:24 , Pila de llamadas
+26-05-2017 17:22:25 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+26-05-2017 17:22:25 , Objeto      : exportadorcsv.imprimir_vistaprevia1.impresora.click
+26-05-2017 17:22:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+26-05-2017 17:22:25 , Nº de Linea :          5
+26-05-2017 17:22:25 , En el Fuente: 	llOK=thisform.CrearInforme()
+26-05-2017 17:22:25 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:22:26 , Objeto      : exportadorcsv.crearinforme
+26-05-2017 17:22:26 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:22:26 , Nº de Linea :         15
+26-05-2017 17:22:26 , En el Fuente: 	.generar('movStock','Stock','.t.',lcCodEmpresa+'-STK-'+lcfechasola+'.CSV')
+26-05-2017 17:22:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:22:27 , Objeto      : exportadorcsv.generar
+26-05-2017 17:22:27 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:22:27 , Nº de Linea :         18
+26-05-2017 17:22:27 , En el Fuente: 			_existe = .leerMovStock()
+26-05-2017 17:22:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:22:28 , Objeto      : exportadorcsv.leermovstock
+26-05-2017 17:22:28 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:22:28 , Nº de Linea :         56
+26-05-2017 17:22:28 , En el Fuente: SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE 
+26-05-2017 17:29:09 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : lcfechasola = DTOS(.fecha_calendario2.txtfecha.Value);Error :       1940;Ultimo Alias Activo: CSRDETALLE;Ultimo reg
+
+
+istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultimo Control activo: 
+26-05-2017 17:29:09 , Pila de llamadas
+26-05-2017 17:29:10 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+26-05-2017 17:29:10 , Objeto      : exportadorcsv.imprimir_vistaprevia1.impresora.click
+26-05-2017 17:29:10 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+26-05-2017 17:29:10 , Nº de Linea :          5
+26-05-2017 17:29:11 , En el Fuente: 	llOK=thisform.CrearInforme()
+26-05-2017 17:29:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:29:11 , Objeto      : exportadorcsv.crearinforme
+26-05-2017 17:29:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
+26-05-2017 17:29:11 , Nº de Linea :          7
+26-05-2017 17:29:11 , En el Fuente: lcfechasola = DTOS(.fecha_calendario2.txtfecha.Value)
