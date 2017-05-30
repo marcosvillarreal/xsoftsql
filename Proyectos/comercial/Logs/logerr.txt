@@ -26,2243 +26,6 @@
 
 
 
-bicacion FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-16-05-2017 18:14:45 , Pila de llamadas
-16-05-2017 18:14:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:14:46 , Objeto      : regfacvta.load
-16-05-2017 18:14:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:14:46 , Nº de Linea :         10
-16-05-2017 18:14:46 , En el Fuente: thisform.crearcursor()
-16-05-2017 18:14:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:14:46 , Objeto      : regfacvta.crearcursor
-16-05-2017 18:14:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:14:47 , Nº de Linea :         23
-16-05-2017 18:14:47 , En el Fuente: SELECT CsrCabefac.*	   ,000000000.00 as Baseexe,00 as copiatkt   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto   	   ,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,000000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada       ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail        ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
-16-05-2017 18:17:55 , MAIN, Error: No se encuentra la propiedad AUMENTO.;Linea : lobjprecio.aumento	= lObjProducto.aumento &&Es un porcentaje;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AL\TEMP\0000DIQ108E7.TMP;Ultimo Control activo: 
-16-05-2017 18:17:55 , Pila de llamadas
-16-05-2017 18:17:56 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-16-05-2017 18:17:56 , Objeto      : main
-16-05-2017 18:17:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-16-05-2017 18:17:56 , Nº de Linea :        289
-16-05-2017 18:17:56 , En el Fuente: 	Read events   
-16-05-2017 18:17:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:57 , Objeto      : regfacvta.keypress
-16-05-2017 18:17:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:57 , Nº de Linea :         24
-16-05-2017 18:17:57 , En el Fuente: 	    	thisform.copiarcomprobante()
-16-05-2017 18:17:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:57 , Objeto      : regfacvta.copiarcomprobante
-16-05-2017 18:17:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:58 , Nº de Linea :         35
-16-05-2017 18:17:58 , En el Fuente: 	ThisForm.Containerencabeza.KitbuscaoaltaenCtacte.Txtexiste1.SetFocus()
-16-05-2017 18:17:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:58 , Objeto      : regfacvta.grid2.column1.text1.lostfocus
-16-05-2017 18:17:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:58 , Nº de Linea :         35
-16-05-2017 18:17:59 , En el Fuente: 					IF thisform.kitbuscarProd.f_lostfocusSay()
-16-05-2017 18:17:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:17:59 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
-16-05-2017 18:18:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 18:18:00 , Nº de Linea :         57
-16-05-2017 18:18:00 , En el Fuente: 			thisform.precioprod1.calculaprecio(lObjProducto,@lObjprecio)
-16-05-2017 18:18:00 , Programa    : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
-16-05-2017 18:18:00 , Objeto      : regfacvta.precioprod1.calculaprecio
-16-05-2017 18:18:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
-16-05-2017 18:18:01 , Nº de Linea :          7
-16-05-2017 18:18:01 , En el Fuente: lobjprecio.aumento	= lObjProducto.aumento &&Es un porcentaje
-16-05-2017 19:50:46 , MAIN, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF (NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae)  OR  NOT CsrComprobante.clase$"ABC";Error :       1940;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DIQ10H33.TMP;Ultimo Control activo: 
-16-05-2017 19:50:47 , Pila de llamadas
-16-05-2017 19:50:47 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-16-05-2017 19:50:47 , Objeto      : main
-16-05-2017 19:50:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-16-05-2017 19:50:47 , Nº de Linea :        289
-16-05-2017 19:50:47 , En el Fuente: 	Read events   
-16-05-2017 19:50:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:50:47 , Objeto      : regfacvta.botoneracuerpo.cmdimprimir.click
-16-05-2017 19:50:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:50:48 , Nº de Linea :         19
-16-05-2017 19:50:48 , En el Fuente: 			lok = ThisForm.imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,2)
-16-05-2017 19:50:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:50:48 , Objeto      : regfacvta.imprimir
-16-05-2017 19:50:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:50:49 , Nº de Linea :         19
-16-05-2017 19:50:49 , En el Fuente: IF (NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae)  OR  NOT CsrComprobante.clase$"ABC"			
-16-05-2017 19:53:49 , MAIN, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF (NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae)  OR  NOT CsrComprobante.clase$"ABC";Error :       1940;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DIQ10HW4.TMP;Ultimo Control activo: 
-16-05-2017 19:53:49 , Pila de llamadas
-16-05-2017 19:53:50 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-16-05-2017 19:53:50 , Objeto      : main
-16-05-2017 19:53:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-16-05-2017 19:53:50 , Nº de Linea :        289
-16-05-2017 19:53:50 , En el Fuente: 	Read events   
-16-05-2017 19:53:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:53:50 , Objeto      : regfacvta.botoneracuerpo.cmdimprimir.click
-16-05-2017 19:53:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:53:50 , Nº de Linea :         19
-16-05-2017 19:53:50 , En el Fuente: 			lok = ThisForm.imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,2)
-16-05-2017 19:53:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:53:51 , Objeto      : regfacvta.imprimir
-16-05-2017 19:53:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:53:52 , Nº de Linea :         19
-16-05-2017 19:53:52 , En el Fuente: IF (NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae)  OR  NOT CsrComprobante.clase$"ABC"			
-16-05-2017 19:55:34 , MAIN, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF (NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae)  OR  NOT CsrComprobante.clase$"ABC";Error :       1940;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DIQ10IP5.TMP;Ultimo Control activo: 
-16-05-2017 19:55:35 , Pila de llamadas
-16-05-2017 19:55:35 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-16-05-2017 19:55:35 , Objeto      : main
-16-05-2017 19:55:35 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-16-05-2017 19:55:36 , Nº de Linea :        289
-16-05-2017 19:55:36 , En el Fuente: 	Read events   
-16-05-2017 19:55:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:55:36 , Objeto      : regfacvta.botoneracuerpo.cmdimprimir.click
-16-05-2017 19:55:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:55:36 , Nº de Linea :         19
-16-05-2017 19:55:36 , En el Fuente: 			lok = ThisForm.imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,2)
-16-05-2017 19:55:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:55:37 , Objeto      : regfacvta.imprimir
-16-05-2017 19:55:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
-16-05-2017 19:55:37 , Nº de Linea :         19
-16-05-2017 19:55:37 , En el Fuente: IF (NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae)  OR  NOT CsrComprobante.clase$"ABC"			
-17-05-2017 13:13:22 , MAIN, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT csrcursor;Error :         13;Ultimo Alias Activo: _CSRVARIEDAD;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000E70P046Y.TMP;Ultimo Cont
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rol activo: 
-17-05-2017 13:13:22 , Pila de llamadas
-17-05-2017 13:13:22 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-17-05-2017 13:13:22 , Objeto      : main
-17-05-2017 13:13:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-17-05-2017 13:13:23 , Nº de Linea :        289
-17-05-2017 13:13:23 , En el Fuente: 	Read events   
-17-05-2017 13:13:23 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-17-05-2017 13:13:23 , Objeto      : frmmenu1.treeview.dblclick
-17-05-2017 13:13:23 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-17-05-2017 13:13:24 , Nº de Linea :         10
-17-05-2017 13:13:24 , En el Fuente: 	   &lcCmd
-17-05-2017 13:13:24 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
-17-05-2017 13:13:24 , Objeto      : ejecutamenu
-17-05-2017 13:13:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
-17-05-2017 13:13:24 , Nº de Linea :       1577
-17-05-2017 13:13:24 , En el Fuente: 						DO FORM &lcForm WITH lcparam1
-17-05-2017 13:13:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:13:24 , Objeto      : restock.imprimir_vistaprevia1.impresora.click
-17-05-2017 13:13:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:13:25 , Nº de Linea :          5
-17-05-2017 13:13:25 , En el Fuente: 	llOK=thisform.CrearInforme()
-17-05-2017 13:13:25 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\restock.sct
-17-05-2017 13:13:25 , Objeto      : restock.crearinforme
-17-05-2017 13:13:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\restock.sct
-17-05-2017 13:13:25 , Nº de Linea :        174
-17-05-2017 13:13:26 , En el Fuente: SELECT csrcursor
-17-05-2017 13:19:04 , RESTOCK.KITBUSCAOALTAENPRODUCTO.TXTEXISTE1.INIT, Error: No se encuentra la variable 'CODALFAPROV'.;Linea : this.txtexiste1.value = &lccampovalue;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000E70P04C1.TMP;Ultimo Control activo: 
-17-05-2017 13:19:04 , Pila de llamadas
-17-05-2017 13:19:05 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:19:05 , Objeto      : restock.kitbuscaoaltaenproducto.txtexiste1.init
-17-05-2017 13:19:05 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:19:05 , Nº de Linea :          1
-17-05-2017 13:19:05 , En el Fuente: this.Parent.refrescardato("")
-17-05-2017 13:19:05 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:19:05 , Objeto      : restock.kitbuscaoaltaenproducto.refrescardato
-17-05-2017 13:19:05 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:19:05 , Nº de Linea :         26
-17-05-2017 13:19:06 , En el Fuente:    this.txtexiste1.value = &lccampovalue 
-17-05-2017 13:21:26 , RESTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT csrcursor;Error :         13;Ultimo Alias Activo: _CSRVARIEDAD;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDAT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-A\LOCAL\TEMP\0000FDVT001Y.TMP;Ultimo Control activo: 
-17-05-2017 13:21:26 , Pila de llamadas
-17-05-2017 13:21:27 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:21:27 , Objeto      : restock.imprimir_vistaprevia1.impresora.click
-17-05-2017 13:21:27 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-05-2017 13:21:27 , Nº de Linea :          5
-17-05-2017 13:21:28 , En el Fuente: 	llOK=thisform.CrearInforme()
-17-05-2017 13:21:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\restock.sct
-17-05-2017 13:21:28 , Objeto      : restock.crearinforme
-17-05-2017 13:21:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\restock.sct
-17-05-2017 13:21:28 , Nº de Linea :        174
-17-05-2017 13:21:28 , En el Fuente: SELECT csrcursor
-17-05-2017 13:50:26 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : IF 'D'$garchivos(I,5);Error :       1234;Ultimo Alias Activo: CSRFORMS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\TEMP\0000FDVT00MJ.TMP;Ultimo Control activo: 
-17-05-2017 13:50:26 , Pila de llamadas
-17-05-2017 13:50:26 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:50:26 , Objeto      : __utilbuscarobjetos.aceptar2.click
-17-05-2017 13:50:26 , Base Objeto : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:50:26 , Nº de Linea :          1
-17-05-2017 13:50:27 , En el Fuente: thisform.buscarvcx()
-17-05-2017 13:50:27 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:50:27 , Objeto      : __utilbuscarobjetos.buscarvcx
-17-05-2017 13:50:27 , Base Objeto : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:50:27 , Nº de Linea :         26
-17-05-2017 13:50:27 , En el Fuente: this.RecorrerCarpetas(lcdir)
-17-05-2017 13:50:27 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:50:27 , Objeto      : __utilbuscarobjetos.recorrercarpetas
-17-05-2017 13:50:28 , Base Objeto : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:50:28 , Nº de Linea :         11
-17-05-2017 13:50:28 , En el Fuente: 		IF 'D'$garchivos(I,5)
-17-05-2017 13:52:13 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : IF 'D'$garchivos(I,5);Error :       1234;Ultimo Alias Activo: CSRFORMS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\TEMP\0000FDVT00NU.TMP;Ultimo Control activo: 
-17-05-2017 13:52:14 , Pila de llamadas
-17-05-2017 13:52:14 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:52:14 , Objeto      : __utilbuscarobjetos.aceptar2.click
-17-05-2017 13:52:14 , Base Objeto : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:52:14 , Nº de Linea :          1
-17-05-2017 13:52:15 , En el Fuente: thisform.buscarvcx()
-17-05-2017 13:52:15 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:52:15 , Objeto      : __utilbuscarobjetos.buscarvcx
-17-05-2017 13:52:15 , Base Objeto : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:52:16 , Nº de Linea :         26
-17-05-2017 13:52:16 , En el Fuente: this.RecorrerCarpetas(lcdir)
-17-05-2017 13:52:16 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:52:16 , Objeto      : __utilbuscarobjetos.recorrercarpetas
-17-05-2017 13:52:16 , Base Objeto : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
-17-05-2017 13:52:16 , Nº de Linea :         11
-17-05-2017 13:52:17 , En el Fuente: 		IF 'D'$garchivos(I,5)
-17-05-2017 13:53:36 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: El subíndice está fuera del intervalo definido.;Linea : IF 'D'$garchivos(I,5);Error :       1234;Ultimo Alias Activo: CSRFORMS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
-
-
-
 
 
 
@@ -2525,6 +288,56 @@ A\LOCAL\TEMP\0000FDVT001Y.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ERS\ADMIN\APPDATA\LOCAL\TEMP\0000FDVT00PG.TMP;Ultimo Control activo: 
 17-05-2017 13:54:16 , Pila de llamadas
 17-05-2017 13:54:17 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
@@ -2543,6 +356,56 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\0000FDVT00PG.TMP;Ultimo Control activo:
 17-05-2017 13:54:18 , Nº de Linea :          4
 17-05-2017 13:54:18 , En el Fuente: gncantidad = ADIR(gArchivos, lcdir+'*.*','D')  && Create array
 17-05-2017 14:08:21 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : gArchivos[i,1] = gArchi[i,1];Error :         11;Ultimo Alias Activo: CSRFORMS;Ultimo registro:          1 ;DBF: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2788,6 +651,56 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\0000FDVT00PG.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 LOCAL\TEMP\0000FDVT014W.TMP;Ultimo Control activo: 
 17-05-2017 14:09:20 , Pila de llamadas
 17-05-2017 14:09:20 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
@@ -2821,6 +734,56 @@ LOCAL\TEMP\0000FDVT014W.TMP;Ultimo Control activo:
 17-05-2017 14:09:25 , Nº de Linea :          6
 17-05-2017 14:09:25 , En el Fuente: DIMENSION gArchivos[gncantidad,2]
 17-05-2017 14:19:16 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: El archivo 'j:\xsoftsql\proyectos\comercial\forms\exportaciti.scx' no existe.;Linea : USE (_form) IN 0 ALIAS formulario;Error :          1;Ultimo Alias Activo: _CSRFORMS;Ultimo registro:   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3036,6 +999,56 @@ LOCAL\TEMP\0000FDVT014W.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \TEMP\0000FDVT0196.TMP;Ultimo Control activo: 
 17-05-2017 14:24:26 , Pila de llamadas
 17-05-2017 14:24:27 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
@@ -3054,6 +1067,56 @@ LOCAL\TEMP\0000FDVT014W.TMP;Ultimo Control activo:
 17-05-2017 14:24:29 , Nº de Linea :         14
 17-05-2017 14:24:29 , En el Fuente: 		gArchivos[j,1] = gArchi[j,1]
 17-05-2017 14:34:06 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: No se encuentra la variable 'PATH'.;Linea : _form	= ALLTRIM(_csrforms.path);Error :         12;Ultimo Alias Activo: _CSRFORMS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3249,6 +1312,56 @@ TEMP\0000HUYX004W.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 : C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HUYX005N.TMP;Ultimo Control activo: 
 17-05-2017 14:35:44 , Pila de llamadas
 17-05-2017 14:35:44 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
@@ -3347,6 +1460,56 @@ TEMP\0000HUYX004W.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;Error :          9;Ultimo Alias Activo: CSRFORMS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HUYX0096.TMP;Ultimo Control activo: 
 17-05-2017 14:40:09 , Pila de llamadas
 17-05-2017 14:40:09 , Programa    : j:\xsoftsql\desarrollo\forms\__utilbuscarobjetos.sct
@@ -3365,6 +1528,56 @@ TEMP\0000HUYX004W.TMP;Ultimo Control activo:
 17-05-2017 14:40:12 , Nº de Linea :         23
 17-05-2017 14:40:12 , En el Fuente: 		    	INSERT INTO csrforms (id,numero,nombre,path,dir) 		    	VALUES (RECCOUNT('CsrForms')+1,RECCOUNT('CsrForms')+1,garchivos(I,1),lcDir+garchivos(I,1),cCarpeta)
 17-05-2017 14:42:02 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: No coinciden los tipos de datos.;Linea : INSERT INTO csrforms (id,numero,nombre,path,dir) VALUES (RECCOUNT('CsrForms')+1,RECCOUNT('CsrForms')+1,garchivos(I,1),lcDir+garchivos(I,1),cCarpeta)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3552,6 +1765,56 @@ TEMP\0000HUYX004W.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GZT00KE.TMP;Ultimo Control activo: 
 26-05-2017 13:34:34 , Pila de llamadas
 26-05-2017 13:34:34 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3620,6 +1883,56 @@ GZT00KE.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 08GZT00KE.TMP;Ultimo Control activo: 
 26-05-2017 13:34:43 , Pila de llamadas
 26-05-2017 13:34:43 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3633,6 +1946,56 @@ GZT00KE.TMP;Ultimo Control activo:
 26-05-2017 13:34:44 , Nº de Linea :          3
 26-05-2017 13:34:44 , En el Fuente: loObPidoVdor.retiro		=	UPPER(thisform.retiro)
 26-05-2017 13:34:49 , MAIN, Error: No se encuentra el objeto LOOBPIDOVDOR.;Linea : loObPidoVdor.autorizo	=	UPPER(thisform.autorizo);Error :       1923;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3773,6 +2136,56 @@ GZT00KE.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GZT01GF.TMP;Ultimo Control activo: 
 26-05-2017 13:36:48 , Pila de llamadas
 26-05-2017 13:36:48 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3786,6 +2199,56 @@ GZT01GF.TMP;Ultimo Control activo:
 26-05-2017 13:36:49 , Nº de Linea :          2
 26-05-2017 13:36:49 , En el Fuente: loObPidoVdor.idretorno	=	thisform.idretorno 
 26-05-2017 13:40:24 , MAIN, Error: No se encuentra el objeto LOOBPIDOVDOR.;Linea : loObPidoVdor.retiro		=	UPPER(thisform.retiro);Error :       1923;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3867,6 +2330,56 @@ GZT01GF.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00008GZT01GF.TMP;Ultimo Control activo: 
 26-05-2017 13:40:29 , Pila de llamadas
 26-05-2017 13:40:30 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3880,6 +2393,56 @@ GZT01GF.TMP;Ultimo Control activo:
 26-05-2017 13:40:31 , Nº de Linea :          4
 26-05-2017 13:40:31 , En el Fuente: loObPidoVdor.autorizo	=	UPPER(thisform.autorizo)
 26-05-2017 13:48:47 , MAIN, Error: No se encuentra el alias 'CSRAUXCABEFAC'.;Linea : replace retiro WITH loObPidoVdor.retiro,autorizo WITH loObPidoVdor.autorizo IN CsrAuxCabefac;Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3956,6 +2519,56 @@ Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo Control activo: 
 26-05-2017 13:58:05 , Pila de llamadas
 26-05-2017 13:58:06 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3984,6 +2597,56 @@ Ultimo Control activo:
 26-05-2017 13:58:09 , Nº de Linea :          9
 26-05-2017 13:58:09 , En el Fuente: 		replace retiro WITH loObPidoVdor.retiro,autorizo WITH loObPidoVdor.autorizo IN CsrAuxCabefac
 26-05-2017 15:22:29 , PIDODETALLE.CONTAINERENCABEZA.KITBUSCAOALTAENVENDEDOR.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control ac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4050,3 +2713,841 @@ tivo:
 26-05-2017 15:23:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidovendedor.sct
 26-05-2017 15:23:25 , Nº de Linea :          4
 26-05-2017 15:23:25 , En el Fuente: loObPidoVdor.autorizo	=	UPPER(thisform.autorizo)
+30-05-2017 09:13:35 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,00000000.00 as BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as Compro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+meteMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia ,SPACE(30) as retiro,SPACE(30) as autorizo,SPACE(30) as u
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bicacion FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRMOVBCOCAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006YA100T6.TMP;Ultimo Control activo: 
+30-05-2017 09:13:35 , Pila de llamadas
+30-05-2017 09:13:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:13:37 , Objeto      : regfacvta.load
+30-05-2017 09:13:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:13:37 , Nº de Linea :         10
+30-05-2017 09:13:37 , En el Fuente: thisform.crearcursor()
+30-05-2017 09:13:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:13:39 , Objeto      : regfacvta.crearcursor
+30-05-2017 09:13:40 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:13:43 , Nº de Linea :         23
+30-05-2017 09:13:43 , En el Fuente: SELECT CsrCabefac.*	   ,000000000.00 as Baseexe,00 as copiatkt   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto   	   ,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada       ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail        ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
+30-05-2017 09:35:26 , REGFACVTA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'REDONDEO'.;Linea : REPLACE tasaiva WITH lObjprecio.ivari,precostosiva WITH lobjprecio.costoreposicion,interno WITH lObjprecio.interno ,precosto WITH lobjpr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ecio.costosiniva,redondeo WITH lObjPrecio.redondeo IN CsrAuxCuerfac;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006YA1044W.TMP;Ultimo Control activo: 
+30-05-2017 09:35:29 , Pila de llamadas
+30-05-2017 09:35:33 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:35:33 , Objeto      : regfacvta.grid2.column1.text1.lostfocus
+30-05-2017 09:35:33 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:35:33 , Nº de Linea :         35
+30-05-2017 09:35:36 , En el Fuente: 					IF thisform.kitbuscarProd.f_lostfocusSay()
+30-05-2017 09:35:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:35:36 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
+30-05-2017 09:35:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:35:40 , Nº de Linea :         63
+30-05-2017 09:35:40 , En el Fuente: 			REPLACE tasaiva WITH lObjprecio.ivari,precostosiva WITH lobjprecio.costoreposicion,interno WITH lObjprecio.interno					,precosto WITH lobjprecio.costosiniva,redondeo WITH lObjPrecio.redondeo IN CsrAuxCuerfac
+30-05-2017 09:36:00 , REGFACVTA.DESTROY, Error: No se encuentra la variable 'REDONDEO'.;Linea : REPLACE tasaiva WITH lObjprecio.ivari,precostosiva WITH lobjprecio.costoreposicion,interno WITH lObjprecio.interno ,precosto WITH lobjprecio.costosiniva,redon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deo WITH lObjPrecio.redondeo IN CsrAuxCuerfac;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006YA1049F.TMP;Ultimo Control activo: CODEXTEND
+30-05-2017 09:36:03 , Pila de llamadas
+30-05-2017 09:36:07 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+30-05-2017 09:36:07 , Objeto      : regfacvta.destroy
+30-05-2017 09:36:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+30-05-2017 09:36:07 , Nº de Linea :         26
+30-05-2017 09:36:10 , En el Fuente: IF THIS.Save_Size_Pos
+30-05-2017 09:36:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:36:10 , Objeto      : regfacvta.grid2.column1.text1.lostfocus
+30-05-2017 09:36:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:36:13 , Nº de Linea :         35
+30-05-2017 09:36:13 , En el Fuente: 					IF thisform.kitbuscarProd.f_lostfocusSay()
+30-05-2017 09:36:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:36:17 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
+30-05-2017 09:36:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:36:17 , Nº de Linea :         63
+30-05-2017 09:36:20 , En el Fuente: 			REPLACE tasaiva WITH lObjprecio.ivari,precostosiva WITH lobjprecio.costoreposicion,interno WITH lObjprecio.interno					,precosto WITH lobjprecio.costosiniva,redondeo WITH lObjPrecio.redondeo IN CsrAuxCuerfac
+30-05-2017 09:39:38 , REGFACVTA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: REDONDEOLOBJPRECIO es un miembro desconocido.;Linea : lObjprecio.prepubf	= a_red(lObjPrecio.redondeolObjprecio.prepubf * (1 + CsrOperatoria.porce/100));Error :       1925;Ultimo Alias 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Activo: CSROPERATORIA;Ultimo registro:          5 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006YA104QY.TMP;Ultimo Control activo: 
+30-05-2017 09:39:41 , Pila de llamadas
+30-05-2017 09:39:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:39:45 , Objeto      : regfacvta.grid2.column1.text1.lostfocus
+30-05-2017 09:39:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:39:48 , Nº de Linea :         35
+30-05-2017 09:39:48 , En el Fuente: 					IF thisform.kitbuscarProd.f_lostfocusSay()
+30-05-2017 09:39:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:39:48 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
+30-05-2017 09:39:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:39:52 , Nº de Linea :         65
+30-05-2017 09:39:52 , En el Fuente: 			thisform.calculooperatoria(@lObjprecio)
+30-05-2017 09:39:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:39:55 , Objeto      : regfacvta.calculooperatoria
+30-05-2017 09:39:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v2.sct
+30-05-2017 09:39:55 , Nº de Linea :          8
+30-05-2017 09:39:57 , En el Fuente: lObjprecio.prepubf	= a_red(lObjPrecio.redondeolObjprecio.prepubf * (1 + CsrOperatoria.porce/100))
+30-05-2017 10:35:28 , PARAVARIO.CONTAINERENCABEZA.PFRAME1.PAGE1.KITBUSCAOALTAENBA.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Cont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rol activo: 
+30-05-2017 10:35:28 , Pila de llamadas
+30-05-2017 10:35:30 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 10:35:30 , Objeto      : paravario.containerencabeza.pframe1.page1.kitbuscaoaltaenba.txtexiste1.init
+30-05-2017 10:35:30 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 10:35:34 , Nº de Linea :          1
+30-05-2017 10:35:34 , En el Fuente: this.Parent.refrescardato("")
+30-05-2017 10:35:34 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 10:35:34 , Objeto      : paravario.containerencabeza.pframe1.page1.kitbuscaoaltaenba.refrescardato
+30-05-2017 10:35:34 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 10:35:37 , Nº de Linea :         19
+30-05-2017 10:35:37 , En el Fuente: This.traerdatos(.t.,lccmd) 
+30-05-2017 10:35:37 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 10:35:41 , Objeto      : paravario.containerencabeza.pframe1.page1.kitbuscaoaltaenba.traerdatos
+30-05-2017 10:35:41 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 10:35:41 , Nº de Linea :         32
+30-05-2017 10:35:44 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
+30-05-2017 11:25:21 , MAIN, Error: No se encuentra la variable 'LCCMD'.;Linea : IF NOT thisform.obtenerdatos('CsrProducto',lcCmd);Error :         12;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          5 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A10IZU.TMP;Ultimo Control activo: CODIGO
+30-05-2017 11:25:21 , Pila de llamadas
+30-05-2017 11:25:24 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+30-05-2017 11:25:24 , Objeto      : main
+30-05-2017 11:25:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+30-05-2017 11:25:24 , Nº de Linea :        289
+30-05-2017 11:25:27 , En el Fuente: 	Read events   
+30-05-2017 11:25:27 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:28 , Objeto      : regfacvta.keypress
+30-05-2017 11:25:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:28 , Nº de Linea :        115
+30-05-2017 11:25:31 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+30-05-2017 11:25:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:31 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+30-05-2017 11:25:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:34 , Nº de Linea :          9
+30-05-2017 11:25:34 , En el Fuente: 	thisform.llamarpidoremito()
+30-05-2017 11:25:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:38 , Objeto      : regfacvta.llamarpidoremito
+30-05-2017 11:25:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:38 , Nº de Linea :         16
+30-05-2017 11:25:41 , En el Fuente: 	thisform.actualizacuerfac
+30-05-2017 11:25:41 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:41 , Objeto      : regfacvta.actualizacuerfac
+30-05-2017 11:25:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:25:45 , Nº de Linea :         24
+30-05-2017 11:25:45 , En el Fuente: IF NOT thisform.obtenerdatos('CsrProducto',lcCmd)
+30-05-2017 11:27:49 , MAIN, Error: No se encuentra la variable 'PREUNITASIVA'.;Linea : REPLACE nombre WITH CsrRemFac.detalle,cantidad WITH CsrRemFac.sdocant,total WITH CsrRemFac.total ,iddeposito WITH thisform.lniddeposito ,preunita WITH CsrRemFac.preuni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ta,preunitasiva WITH CsrRemFac.preunitasiva,idmovremito WITH CsrRemFac.idremito,despor WITH CsrRemFac.despor IN CsrAuxCuerfac;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MP\00006YA10JI4.TMP;Ultimo Control activo: CODIGO
+30-05-2017 11:27:52 , Pila de llamadas
+30-05-2017 11:27:55 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+30-05-2017 11:27:55 , Objeto      : main
+30-05-2017 11:27:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+30-05-2017 11:27:55 , Nº de Linea :        289
+30-05-2017 11:27:59 , En el Fuente: 	Read events   
+30-05-2017 11:27:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:27:59 , Objeto      : regfacvta.keypress
+30-05-2017 11:28:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:02 , Nº de Linea :        115
+30-05-2017 11:28:02 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+30-05-2017 11:28:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:05 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+30-05-2017 11:28:05 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:09 , Nº de Linea :          9
+30-05-2017 11:28:09 , En el Fuente: 	thisform.llamarpidoremito()
+30-05-2017 11:28:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:12 , Objeto      : regfacvta.llamarpidoremito
+30-05-2017 11:28:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:12 , Nº de Linea :         16
+30-05-2017 11:28:16 , En el Fuente: 	thisform.actualizacuerfac
+30-05-2017 11:28:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:16 , Objeto      : regfacvta.actualizacuerfac
+30-05-2017 11:28:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:28:19 , Nº de Linea :         71
+30-05-2017 11:28:19 , En el Fuente: 			REPLACE nombre WITH CsrRemFac.detalle,cantidad WITH CsrRemFac.sdocant,total WITH CsrRemFac.total			,iddeposito WITH thisform.lniddeposito			,preunita WITH CsrRemFac.preunita,preunitasiva WITH CsrRemFac.preunitasiva,
+
+
+
+
+
+
+
+
+idmovremito WITH CsrRemFac.idremito,despor WITH CsrRemFac.despor IN CsrAuxCuerfac
+30-05-2017 11:31:39 , MAIN, Error: No se encuentra la variable 'PREUNITA'.;Linea : REPLACE preunita WITH lObjprecio.prepubf,preunitasiva WITH lObjprecio.prepub;Error :         12;Ultimo Alias Activo: CSROPERATORIA;Ultimo registro:          6 ;DBF: C:\USE
+
+
+
+
+
+
+
+
+RS\ADMIN\APPDATA\LOCAL\TEMP\00006YA10JZS.TMP;Ultimo Control activo: CODIGO
+30-05-2017 11:31:39 , Pila de llamadas
+30-05-2017 11:31:43 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+30-05-2017 11:31:43 , Objeto      : main
+30-05-2017 11:31:43 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+30-05-2017 11:31:43 , Nº de Linea :        289
+30-05-2017 11:31:46 , En el Fuente: 	Read events   
+30-05-2017 11:31:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:31:46 , Objeto      : regfacvta.keypress
+30-05-2017 11:31:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:31:46 , Nº de Linea :        115
+30-05-2017 11:31:49 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+30-05-2017 11:31:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:31:50 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+30-05-2017 11:31:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:31:53 , Nº de Linea :          9
+30-05-2017 11:31:53 , En el Fuente: 	thisform.llamarpidoremito()
+30-05-2017 11:31:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:31:53 , Objeto      : regfacvta.llamarpidoremito
+30-05-2017 11:31:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:31:56 , Nº de Linea :         16
+30-05-2017 11:31:56 , En el Fuente: 	thisform.actualizacuerfac
+30-05-2017 11:31:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:32:00 , Objeto      : regfacvta.actualizacuerfac
+30-05-2017 11:32:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+30-05-2017 11:32:00 , Nº de Linea :         94
+30-05-2017 11:32:03 , En el Fuente: 			REPLACE preunita WITH lObjprecio.prepubf,preunitasiva WITH lObjprecio.prepub
+30-05-2017 12:02:28 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABMMARCA.TXTID.INIT, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO2
+
+;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006YA10LXF.TMP;Ultimo Control activo: 
+30-05-2017 12:02:28 , Pila de llamadas
+30-05-2017 12:02:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 12:02:31 , Objeto      : abmproducto.contenedor1.pframe1.page1.kitbuscaoaltaenabmmarca.txtid.init
+30-05-2017 12:02:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-05-2017 12:02:35 , Nº de Linea :          1
+30-05-2017 12:02:35 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid

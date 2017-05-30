@@ -99,6 +99,7 @@ SCAN FOR !EOF() &&AND i < lnlimite
 		LOCATE FOR cnombre = cProvPrecio
 		IF FOUND()
 			nIdCtacte = CsrCtacte.id
+			replace ctaacreedor WITH 1 IN Csrctacte
 		ENDIF 
 		
 		IF NOT EMPTY(CsrPrecio.fecha)   
@@ -149,8 +150,9 @@ SCAN FOR !EOF() &&AND i < lnlimite
 		nPrePubCiva		= red(nPreConCiva * nIncremento,nDecimalesP)
 		
 		nPrePubFCiva	= red((nPreConCiva  + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)
-		nPrePubFSiva	= red(nPreConCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
-		nPrePubFSiva	= red((nPrePubFSiva + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)	
+		*nPrePubFSiva	= red(nPreConCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
+		*nPrePubFSiva	= red((nPrePubFSiva + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)	
+		nPrePubFSiva	= red(nPrePubFCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
 		
 		nPrePubFCiva	= a_red(nRedondeo,nPrePubFCiva)
 		nPrePubFSiva	= a_red(nRedondeo,nPrePubFSiva)

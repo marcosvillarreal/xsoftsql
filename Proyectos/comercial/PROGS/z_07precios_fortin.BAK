@@ -66,6 +66,8 @@ SCAN FOR !EOF() &&AND i < lnlimite
 	
 	SELECT * FROM CsrPrecios WHERE VAL(numero)=CsrProducto.numero INTO CURSOR CsrPrecio READWRITE 
 	
+	lActualizo		 = .f.
+	
 	SELECT CsrPrecio
 	GO TOP 
 	SCAN 
@@ -97,6 +99,7 @@ SCAN FOR !EOF() &&AND i < lnlimite
 		LOCATE FOR cnombre = cProvPrecio
 		IF FOUND()
 			nIdCtacte = CsrCtacte.id
+			replace ctaacreedor WITH 1 IN Csrctacte
 		ENDIF 
 		
 		IF NOT EMPTY(CsrPrecio.fecha)   
@@ -227,10 +230,21 @@ SCAN FOR !EOF() &&AND i < lnlimite
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
-    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmod,switch,codalfaprov
+    		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmodi,switch,codalfaprov
+    		lActualizo = .t.
     	ENDIF 
+    	
 		SELECT CsrPrecio
 	ENDSCAN 
+	
+	IF NOT lActualizo
+		SELECT CsrProdPrecio
+		SCATTER NAME OscPrecio
+		SELECT CsrProducto
+		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
+		replace fecUlPre WITH OscPrecio.fecmodi
+    ENDIF 
+    
 	USE IN CsrPrecio 
 	
 	SELECT CsrProducto   
