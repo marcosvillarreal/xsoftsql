@@ -1539,6 +1539,7 @@ RETURN lreturn
 
 FUNCTION EjecutaMenu
 PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9,lcparam10
+	*stop()
 	lcform = IIF(PCOUNT()<1,"",lcForm)
 	lcparam1 = IIF(PCOUNT()<2,"",lcparam1)
 	lcparam2 = IIF(PCOUNT()<3,"",lcparam2)
