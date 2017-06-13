@@ -856,6 +856,37 @@ lcmes[12]= 'Diciembre'
 
 return left(lcmes[lnmes]+space(10),10)
 
+function MesANumArg
+parameters cMes
+local lcmes[12]
+lcmes[1] = 'Enero'
+lcmes[2] = 'Febrero'
+lcmes[3] = 'Marzo'
+lcmes[4] = 'Abril'
+lcmes[5] = 'Mayo'
+lcmes[6] = 'Junio'
+lcmes[7] = 'Julio'
+lcmes[8] = 'Agosto'
+lcmes[9] = 'Septiembre'
+lcmes[10]= 'Octubre'
+lcmes[11]= 'Noviembre'
+lcmes[12]= 'Diciembre'        
+lEncontrado = .f.
+i= 1
+DO WHILE i <= 12 AND NOT lEncontrado
+	IF UPPER(cMes) = UPPER(lcmes[i])
+		EXIT 
+	ENDIF 
+	i = i + 1 
+ENDDO 
+
+IF i > 12
+	oavisar.usuario("Mes incorrecto ("+ALLTRIM(cMes)+")")
+	RETURN 0
+ENDIF 
+
+return i
+
 function Acosto
 parameter lncosto,lncostobon,lncostosiva,lncostociva,lncostorepo
 local lniva

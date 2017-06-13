@@ -6,7 +6,7 @@
 *
 clear all
 set classlib to
-l='c:'
+l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 
@@ -74,7 +74,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE       
-
+   SET PROCEDURE TO leerarchivo.prg ADDITIVE 
+   
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controleslocal ADDITIVE 
@@ -87,6 +88,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB TO _reportlistener.vcx ADDITIVE 
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
+   SET CLASSLIB  TO  ZIP ADDITIVE 
 *clear all
 
 _screen.lockscreen=.t.

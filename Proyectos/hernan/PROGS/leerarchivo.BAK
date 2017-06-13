@@ -1,0 +1,15 @@
+LPARAMETERS cFileVenta
+stop()
+
+IF NOT FILE(cFileVenta)
+	oavisar.usuario('Error al ubicar el archivo.'+CHR(13)+cFileVenta)
+ENDIF 
+
+LOCAL cFile
+
+cFile = FOPEN(cFileVenta)
+DO WHILE NOT FEOF(cFile)
+	cLinea = FGETS(cFile)
+	oavisar.usuario(cLinea)
+ENDDO 
+FCLOSE(cFile)
