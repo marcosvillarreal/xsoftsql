@@ -18,7 +18,7 @@ ENDIF
 CREATE CURSOR CsrVentas (Codigo i,Articulo c(40),cantidad n(12,3),pesable n(1),importe n(11,2))
 
 LOCAL cFile,nLineaHeader
-nLineaHeader = 7
+nLineaHeader = 6
 nLectura = 0
 
 cFile = FOPEN(cFileVenta)
@@ -28,31 +28,38 @@ IF cFile=-1
 	RETURN .f.
 ENDIF 
 
+*stop()
 DO WHILE NOT FEOF(cFile) AND  nLectura < nLineaHeader
 	cLinea = FGETS(cFile)
 	nLectura = nLectura + 1 
 ENDDO 
-
+IF UPPER(ALLTRIM(cLinea)) <> "REPORTE  DE  VENTAS  POR  PRODUCTOS"
+	oavisar.usuario("Error el archivo no es un reporte de la balanza " + CHR(13) + cFileVenta)
+	FCLOSE(cFile)
+	RETURN .f.
+ENDIF 
+cLinea = FGETS(cFile)
 
 *Leemos la fecha del reporte
 cLinea = UPPER(ALLTRIM(FGETS(cFile)))
 nLectura = nLectura + 1 
 
-LOCAL nSep,cDia,cMes,cAnio
-STORE '' TO cDia,cMes,cAnio
+*!*	LOCAL nSep,cDia,cMes,cAnio
+*!*	STORE '' TO cDia,cMes,cAnio
 
-nSep	= AT(',',cLinea)
-cLinea	= RIGHT(cLinea,LEN(cLinea) - nSep)
-nSep	= AT('PÁGINA',cLinea)
-cLinea	= RTRIM(LEFT(cLinea,nSep-1))
-nSep	= AT('DE',cLinea)
-cDia	= strzero(VAL(LEFT(cLinea,nSep-1)),2)
-cAnio	= RIGHT(cLinea,4)
-cLinea	= LTRIM(SUBSTR(cLinea,nSep+2)) &&Elimina el dia
-nSep	= AT(' ',cLinea)
-cLinea	= LEFT(cLinea,nSep-1)
-cMes	= STRzero(MesANumArg(cLinea),2)
-dFecha	= CTOD(cDia + '/' + cMes + '/' +cAnio)
+*!*	nSep	= AT(',',cLinea)
+*!*	cLinea	= RIGHT(cLinea,LEN(cLinea) - nSep)
+*!*	nSep	= AT('PÁGINA',cLinea)
+*!*	cLinea	= RTRIM(LEFT(cLinea,nSep-1))
+*!*	nSep	= AT('DE',cLinea)
+*!*	cDia	= strzero(VAL(LEFT(cLinea,nSep-1)),2)
+*!*	cAnio	= RIGHT(cLinea,4)
+*!*	cLinea	= LTRIM(SUBSTR(cLinea,nSep+2)) &&Elimina el dia
+*!*	nSep	= AT(' ',cLinea)
+*!*	cLinea	= LEFT(cLinea,nSep-1)
+*!*	cMes	= STRzero(MesANumArg(cLinea),2)
+*!*	*Desuso
+*!*	dFecha	= CTOD(cDia + '/' + cMes + '/' +cAnio)
 
 &&Nos movemos hasta el primer articulo
 nLineaHeader = 3
@@ -90,5 +97,6 @@ FCLOSE(cFile)
 
 SELECT CsrVentas
 
+RETURN .t.
 *MODIFY FILE (cFile) NOWAIT
 ENDFUNC 
