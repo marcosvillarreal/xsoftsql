@@ -2,9 +2,14 @@
 FUNCTION ExportarBalanza
 LPARAMETERS cFileVenta
 
+IF EMPTY(cFileVenta)
+	oavisar.usuario('Error ruta del archivo vacia.')
+	RETURN .f.
+ENDIF 
 
 IF NOT FILE(cFileVenta)
 	oavisar.usuario('Error al ubicar el archivo.'+CHR(13)+cFileVenta)
+	RETURN .f.
 ENDIF 
 
 IF USED('CsrVentas')
@@ -20,7 +25,7 @@ cFile = FOPEN(cFileVenta)
 IF cFile=-1
 	oavisar.usuario("Error al abrir el archivo " + CHR(13) + cFileVenta)
 	FCLOSE(cFile)
-	RETURN 
+	RETURN .f.
 ENDIF 
 
 DO WHILE NOT FEOF(cFile) AND  nLectura < nLineaHeader
@@ -57,7 +62,6 @@ DO WHILE NOT FEOF(cFile) AND  nLectura < nLineaHeader
 	nLectura = nLectura + 1 
 ENDDO 
 
-stop()
 &&Tenemos que leer hasta que se lea TOTALES
 nLectura = 0
 lTotales = .f.
@@ -85,6 +89,6 @@ ENDDO
 FCLOSE(cFile)
 
 SELECT CsrVentas
-vista()
+
 *MODIFY FILE (cFile) NOWAIT
 ENDFUNC 
