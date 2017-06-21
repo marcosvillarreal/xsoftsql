@@ -950,18 +950,6 @@ function initialize() {
 	  labelOrigin: new google.maps.Point(15,8)
 	};
 
-	var markerRuta = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-	label: {
-		text: '3',
-		fontSize: "10px",
-		fontWeight: "bold"
-	  },
-    icon: markerIcon,
-    title: 'Hello World!'
-	});
-
  	<<cParadas>>
  	
  	var flightPlanCoordinates = <<cRuta>>;
