@@ -247,6 +247,12 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
+	IF NOT Licencia()
+		CANCEL 
+		CLEAR ALL
+		RETURN 
+	ENDIF 
+	
 	DO FORM frmmenu
 	                     
 	 _screen.visible=.t.	   
