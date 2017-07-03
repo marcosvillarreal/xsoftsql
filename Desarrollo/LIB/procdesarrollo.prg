@@ -27,6 +27,15 @@ DO WHILE nSecond1 + nSec > nSecond2
 ENDDO 
 ENDFUNC 
 
+*----------------------------------------------------
+*-Quitar Acentos
+*----------------------------------------------------
+FUNCTION QuitarAcentos
+LPARAMETERS ccadena
+ccadena = CHRTRAN(ccadena, "АИМСЗаимсз","aeiouAEIOU") 
+RETURN ccadena
+ENDFUNC 
+
 
 FUNCTION CursorAdapterToXML
 PARAMETERS cAlias,cFileName,cEncoding,nOutputFormat,nFlags
