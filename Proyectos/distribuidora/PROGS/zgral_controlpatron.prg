@@ -19,7 +19,7 @@ group by CsrNCuerfac.codigo, CsrProducto.nombre, CsrVariedad.numero, CsrNCuerVar
 ,CsrExistenc.existe ,CsrExistenc.existedisp,CsrNCuerfac.idarticulo
 order by convert(int,CsrNCuerfac.codigo)
 ENDTEXT 
-=SaveSQL(lcCmd,'ControlPatron')
+=SaveSQL(lcCmdPatron,'ControlPatron')
 IF !CrearCursorAdapter("FsrPatron",lcCmdPatron)
 	RETURN 
 ENDIF 
