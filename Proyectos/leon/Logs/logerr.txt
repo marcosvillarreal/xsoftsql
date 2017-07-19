@@ -1,793 +1,3 @@
-11-04-2017 12:28:06 , Nº de Linea :          7
-11-04-2017 12:28:06 , En el Fuente: 			.imprimir_envase()
-11-04-2017 12:28:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-11-04-2017 12:28:07 , Objeto      : lispatroncargapedidos.imprimir_envase
-11-04-2017 12:28:07 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lispatroncargapedidos.sct
-11-04-2017 12:28:07 , Nº de Linea :        354
-11-04-2017 12:28:07 , En el Fuente:   	IF Oscatter.pesable=1 AND  Oscatter.kilos=0
-24-04-2017 11:35:07 , MAIN, Error: No se encuentra la variable 'COSTROAGRE1'.;Linea : replace costoagre1 WITH NVL(costroagre1,0) IN CsrProducto;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DATA\LOCAL\TEMP\00009XXL00CB.TMP;Ultimo Control activo: 
-24-04-2017 11:35:07 , Pila de llamadas
-24-04-2017 11:35:08 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-24-04-2017 11:35:08 , Objeto      : main
-24-04-2017 11:35:08 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-24-04-2017 11:35:08 , Nº de Linea :        249
-24-04-2017 11:35:08 , En el Fuente: 	Read events   
-24-04-2017 11:35:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:09 , Objeto      : abmproducto._textbox1.keypress
-24-04-2017 11:35:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:09 , Nº de Linea :          2
-24-04-2017 11:35:09 , En el Fuente: DODEFAULT(nKeyCode, nShiftAltCtrl)
-24-04-2017 11:35:10 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:35:10 , Objeto      : baseabm._textbox1.keypress
-24-04-2017 11:35:10 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:35:10 , Nº de Linea :        121
-24-04-2017 11:35:10 , En el Fuente: 	    thisform.DespuesObtenerDatos()
-24-04-2017 11:35:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:10 , Objeto      : abmproducto.despuesobtenerdatos
-24-04-2017 11:35:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:11 , Nº de Linea :          1
-24-04-2017 11:35:11 , En el Fuente: thisform.contenedor1.gridabm1.AfterRowColChange()
-24-04-2017 11:35:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:11 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
-24-04-2017 11:35:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:11 , Nº de Linea :          4
-24-04-2017 11:35:11 , En el Fuente:    DODEFAULT(this.ActiveColumn)
-24-04-2017 11:35:11 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:35:11 , Objeto      : baseabm.contenedor1.gridabm1.afterrowcolchange
-24-04-2017 11:35:12 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:35:12 , Nº de Linea :         21
-24-04-2017 11:35:12 , En el Fuente: 	     .ProcesarAfterRow()
-24-04-2017 11:35:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:12 , Objeto      : abmproducto.procesarafterrow
-24-04-2017 11:35:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:35:12 , Nº de Linea :          6
-24-04-2017 11:35:13 , En el Fuente: replace costoagre1 WITH NVL(costroagre1,0) IN CsrProducto
-24-04-2017 11:38:28 , MAIN, Error: No se encuentra la variable 'MCOSTOAGRESIVA'.;Linea : lObjprecio.utilidadpesos = red(lObjprecio.prevta - lObjprecio.costosiniva - mcostoagresiva,this.decimales);Error :         12;Ultimo Alias Activo: CSRPRODCTACON;Ulti
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL00SJ.TMP;Ultimo Control activo: 
-24-04-2017 11:38:28 , Pila de llamadas
-24-04-2017 11:38:28 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-24-04-2017 11:38:28 , Objeto      : main
-24-04-2017 11:38:28 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-24-04-2017 11:38:29 , Nº de Linea :        249
-24-04-2017 11:38:29 , En el Fuente: 	Read events   
-24-04-2017 11:38:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:29 , Objeto      : abmproducto._textbox1.keypress
-24-04-2017 11:38:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:30 , Nº de Linea :          2
-24-04-2017 11:38:30 , En el Fuente: DODEFAULT(nKeyCode, nShiftAltCtrl)
-24-04-2017 11:38:30 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:38:30 , Objeto      : baseabm._textbox1.keypress
-24-04-2017 11:38:30 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:38:30 , Nº de Linea :        121
-24-04-2017 11:38:30 , En el Fuente: 	    thisform.DespuesObtenerDatos()
-24-04-2017 11:38:30 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:31 , Objeto      : abmproducto.despuesobtenerdatos
-24-04-2017 11:38:31 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:31 , Nº de Linea :          1
-24-04-2017 11:38:31 , En el Fuente: thisform.contenedor1.gridabm1.AfterRowColChange()
-24-04-2017 11:38:31 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:31 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
-24-04-2017 11:38:31 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:31 , Nº de Linea :         32
-24-04-2017 11:38:31 , En el Fuente: thisform.calculaprecio()
-24-04-2017 11:38:32 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:32 , Objeto      : abmproducto.calculaprecio
-24-04-2017 11:38:32 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:38:32 , Nº de Linea :         42
-24-04-2017 11:38:32 , En el Fuente: 	thisform.precioprod1.cfpreciovta()
-24-04-2017 11:38:32 , Programa    : j:\xsoftsql\proyectos\leon\clases\onegocioslocal.vct
-24-04-2017 11:38:33 , Objeto      : abmproducto.precioprod1.cfpreciovta
-24-04-2017 11:38:33 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\onegocioslocal.vct
-24-04-2017 11:38:33 , Nº de Linea :         49
-24-04-2017 11:38:34 , En el Fuente: lObjprecio.utilidadpesos = red(lObjprecio.prevta - lObjprecio.costosiniva - mcostoagresiva,this.decimales)
-24-04-2017 11:40:38 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF mcostoagreciva = 0;Error :        107;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0009XXL015Z.TMP;Ultimo Control activo: 
-24-04-2017 11:40:38 , Pila de llamadas
-24-04-2017 11:40:39 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-24-04-2017 11:40:39 , Objeto      : main
-24-04-2017 11:40:39 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-24-04-2017 11:40:39 , Nº de Linea :        249
-24-04-2017 11:40:39 , En el Fuente: 	Read events   
-24-04-2017 11:40:39 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:39 , Objeto      : abmproducto._textbox1.keypress
-24-04-2017 11:40:39 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:40 , Nº de Linea :          2
-24-04-2017 11:40:40 , En el Fuente: DODEFAULT(nKeyCode, nShiftAltCtrl)
-24-04-2017 11:40:40 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:40:40 , Objeto      : baseabm._textbox1.keypress
-24-04-2017 11:40:40 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:40:40 , Nº de Linea :        121
-24-04-2017 11:40:41 , En el Fuente: 	    thisform.DespuesObtenerDatos()
-24-04-2017 11:40:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:41 , Objeto      : abmproducto.despuesobtenerdatos
-24-04-2017 11:40:41 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:41 , Nº de Linea :          1
-24-04-2017 11:40:41 , En el Fuente: thisform.contenedor1.gridabm1.AfterRowColChange()
-24-04-2017 11:40:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:41 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
-24-04-2017 11:40:42 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:42 , Nº de Linea :         32
-24-04-2017 11:40:42 , En el Fuente: thisform.calculaprecio()
-24-04-2017 11:40:42 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:43 , Objeto      : abmproducto.calculaprecio
-24-04-2017 11:40:43 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:40:43 , Nº de Linea :        113
-24-04-2017 11:40:43 , En el Fuente: 	thisform.precioprod1.cfcostoagregado()
-24-04-2017 11:40:43 , Programa    : j:\xsoftsql\proyectos\leon\clases\onegocioslocal.vct
-24-04-2017 11:40:43 , Objeto      : abmproducto.precioprod1.cfcostoagregado
-24-04-2017 11:40:43 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\onegocioslocal.vct
-24-04-2017 11:40:44 , Nº de Linea :          8
-24-04-2017 11:40:44 , En el Fuente: IF mcostoagreciva = 0
-24-04-2017 11:41:59 , ABMPRODUCTO._TEXTBOX1.KEYPRESS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF mcostoagreciva = 0;Error :        107;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro:          1 ;DBF: C:\USERS\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ADMIN\APPDATA\LOCAL\TEMP\00009XXL01B4.TMP;Ultimo Control activo: 
-24-04-2017 11:41:59 , Pila de llamadas
-24-04-2017 11:42:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:00 , Objeto      : abmproducto._textbox1.keypress
-24-04-2017 11:42:00 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:00 , Nº de Linea :          2
-24-04-2017 11:42:00 , En el Fuente: DODEFAULT(nKeyCode, nShiftAltCtrl)
-24-04-2017 11:42:00 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:42:00 , Objeto      : baseabm._textbox1.keypress
-24-04-2017 11:42:01 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
-24-04-2017 11:42:01 , Nº de Linea :        121
-24-04-2017 11:42:01 , En el Fuente: 	    thisform.DespuesObtenerDatos()
-24-04-2017 11:42:01 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:01 , Objeto      : abmproducto.despuesobtenerdatos
-24-04-2017 11:42:01 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:01 , Nº de Linea :          1
-24-04-2017 11:42:01 , En el Fuente: thisform.contenedor1.gridabm1.AfterRowColChange()
-24-04-2017 11:42:01 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:02 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
-24-04-2017 11:42:02 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:02 , Nº de Linea :         32
-24-04-2017 11:42:02 , En el Fuente: thisform.calculaprecio()
-24-04-2017 11:42:02 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
-24-04-2017 11:42:02 , Objeto      : abmproducto.calculaprecio
 24-04-2017 11:42:02 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
 24-04-2017 11:42:02 , Nº de Linea :        113
 24-04-2017 11:42:03 , En el Fuente: 	thisform.precioprod1.cfcostoagregado()
@@ -797,6 +7,30 @@ ADMIN\APPDATA\LOCAL\TEMP\00009XXL01B4.TMP;Ultimo Control activo:
 24-04-2017 11:42:04 , Nº de Linea :          8
 24-04-2017 11:42:04 , En el Fuente: IF mcostoagreciva = 0
 24-04-2017 12:34:13 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS, Error: La propiedad COSTOAGREGADO no es un método o evento.;Linea : thisform.precioprod1.costoagregado();Error :       1738;Ultimo Alias Activo: CSRPRODUCTO;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1079,6 +313,30 @@ imo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL0524.TMP;Ultimo Control activo: MARGEN1
 24-04-2017 12:34:18 , Pila de llamadas
 24-04-2017 12:34:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -1087,6 +345,30 @@ imo registro:         53 NOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL0
 24-04-2017 12:34:18 , Nº de Linea :          3
 24-04-2017 12:34:18 , En el Fuente: thisform.precioprod1.costoagregado()
 24-04-2017 12:34:27 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS, Error: La propiedad COSTOAGREGADO no es un método o evento.;Linea : thisform.precioprod1.costoagregado();Error :       1738;Ultimo Alias Activo: CSRPARAVARIO;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1361,6 +643,30 @@ timo registro:         17 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL04ZJ.T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 timo registro:         17 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL04ZJ.TMP;Ultimo Control activo: MARGEN1
 24-04-2017 12:34:34 , Pila de llamadas
 24-04-2017 12:34:34 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -1369,6 +675,30 @@ timo registro:         17 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XXL04ZJ.T
 24-04-2017 12:34:35 , Nº de Linea :          3
 24-04-2017 12:34:35 , En el Fuente: thisform.precioprod1.costoagregado()
 24-04-2017 13:36:50 , CBIOPRECIO1.CMDSALVAR.CLICK, Error: No se encuentra la variable 'COSTOAGRE1'.;Linea : lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1,lobjPrecioActual.costoagre1);Error :         12;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1641,6 +971,30 @@ mo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG90118.TMP;Ultimo Control activo: 
 24-04-2017 13:44:25 , Pila de llamadas
 24-04-2017 13:44:26 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
@@ -1659,6 +1013,30 @@ mo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\
 24-04-2017 13:44:28 , Nº de Linea :         43
 24-04-2017 13:44:28 , En el Fuente: 	  lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1,lobjPrecioActual.costoagre1)
 24-04-2017 13:46:02 , CBIOPRECIO1.CMDSALVAR.CLICK, Error: No se encuentra la variable 'COSTOAGRE1V'.;Linea : lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1v,lobjPrecioActual.costoagre1);Error :         12;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1908,6 +1286,30 @@ timo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG902KP.TMP;Ultimo Control activo: 
 24-04-2017 14:52:26 , Pila de llamadas
 24-04-2017 14:52:26 , Programa    : j:\xsoftsql\proyectos\leon\forms\cbioprecio2.sct
@@ -1938,6 +1340,30 @@ timo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMI
 24-04-2017 15:06:55 , Nº de Linea :         14
 24-04-2017 15:06:55 , En el Fuente:           loObjcol.controlsource = lCaliasNavega+'.'+lccadena
 24-04-2017 15:20:30 , MAIN, Error: No se encuentra la propiedad COSTROAGRE3.;Linea : lObjPrecio.costoagre = lObjProducto.costroagre3;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2162,6 +1588,30 @@ timo Alias Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG9067E.TMP;Ultimo Control activo: 
 24-04-2017 15:20:45 , Pila de llamadas
 24-04-2017 15:20:46 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
@@ -2180,6 +1630,30 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\0000BWG9067E.TMP;Ultimo Control activo:
 24-04-2017 15:20:48 , Nº de Linea :         49
 24-04-2017 15:20:48 , En el Fuente: 	lObjPrecio.costoagre = lObjProducto.costroagre3
 28-04-2017 16:25:17 , ABMPRODUCTO.CMDSALVAR.CLICK, Error: No se encuentra la variable 'COSTOA1'.;Linea : lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoa1,lobjPrecioActual.costoagre1);Error :         12;Ultimo Ali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2377,6 +1851,30 @@ as Activo: CSRCBIOPRECIO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDAT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\000049HL00H8.TMP;Ultimo Control activo: 
 26-05-2017 17:13:26 , Pila de llamadas
 26-05-2017 17:13:27 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2400,6 +1898,30 @@ OCAL\TEMP\000049HL00H8.TMP;Ultimo Control activo:
 26-05-2017 17:13:29 , Nº de Linea :         32
 26-05-2017 17:13:29 , En el Fuente: SELECT CsrCursor
 26-05-2017 17:22:24 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2578,6 +2100,30 @@ OCAL\TEMP\000049HL00H8.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultimo Control activo: 
 26-05-2017 17:29:09 , Pila de llamadas
 26-05-2017 17:29:10 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2591,6 +2137,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 26-05-2017 17:29:11 , Nº de Linea :          7
 26-05-2017 17:29:11 , En el Fuente: lcfechasola = DTOS(.fecha_calendario2.txtfecha.Value)
 02-06-2017 10:30:06 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2750,6 +2320,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          0 ;DBF: ;Ultimo Control activo: 
 02-06-2017 10:31:50 , Pila de llamadas
 02-06-2017 10:31:50 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2773,6 +2367,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 02-06-2017 10:31:53 , Nº de Linea :         47
 02-06-2017 10:31:53 , En el Fuente: SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE 
 02-06-2017 10:32:33 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2908,6 +2526,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          0 ;DBF: ;Ultimo Control activo: 
 02-06-2017 10:34:24 , Pila de llamadas
 02-06-2017 10:34:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2931,6 +2573,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 02-06-2017 10:34:27 , Nº de Linea :         47
 02-06-2017 10:34:27 , En el Fuente: SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE 
 02-06-2017 10:35:27 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3042,6 +2708,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          0 ;DBF: ;Ultimo Control activo: 
 02-06-2017 10:37:06 , Pila de llamadas
 02-06-2017 10:37:06 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3065,6 +2755,30 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000049HL00JE.TMP;Ultim
 02-06-2017 10:37:08 , Nº de Linea :         57
 02-06-2017 10:37:08 , En el Fuente: SELECT CsrCursor.* FROM CsrCursor INTO CURSOR CsrImportar READWRITE 
 27-06-2017 12:31:05 , REGNOTAPEDANDROID._TXTFOCOINI.GOTFOCUS, Error: La ruta o el nombre de archivo no es válido.;Linea : CURSORTOXML('CabePedido',cRuta+"ZCabPedido"+cArchivo,1,512+32,0);Error :        202;Ultimo Alias Activo: CABEPEDIDO;Ultimo registro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3191,6 +2905,30 @@ ias Activo: CABEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \TEMP\00009HQH01BO.TMP;Ultimo Control activo: 
 27-06-2017 12:57:00 , Pila de llamadas
 27-06-2017 12:57:03 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid.sct
@@ -3224,6 +2962,30 @@ ias Activo: CABEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ARTICULO,10)+IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009HQH04Y4.TMP;Ultimo Control activo: 
 27-06-2017 13:36:00 , Pila de llamadas
 27-06-2017 13:36:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid.sct
@@ -3242,6 +3004,30 @@ ARTICULO,10)+IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009HQH04Y4.TMP;Ultim
 27-06-2017 13:36:12 , Nº de Linea :        272
 27-06-2017 13:36:12 , En el Fuente: 	COPY TO 'TempDBF'+RTRIM(_STR(DATETIME(),20))+'.txt' TYPE CSV 
 27-06-2017 13:37:42 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : COPY TO 'TempDBF'+RTRIM(STR(DATETIME(),20))+'.txt' TYPE CSV;Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3299,3 +3085,425 @@ Ultimo registro:        358 STR(IDARTICULO,10)+IDOPE;DBF: C:\USERS\ADMIN\APPDATA
 14-07-2017 11:59:41 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
 14-07-2017 11:59:41 , Nº de Linea :         14
 14-07-2017 11:59:41 , En el Fuente:           loObjcol.controlsource = lCaliasNavega+'.'+lccadena
+19-07-2017 11:32:45 , ON..., Error: Error al cargar el archivo - número de registro 11. Grid2  <o uno de sus miembros>.  ControlSource : No se encuentra el alias 'CSRAUXILIAR';Linea : oCa.Datasource.ActiveConnection.Begintrans();Error :       2005;Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+19-07-2017 11:32:46 , Pila de llamadas
+19-07-2017 11:35:30 , SUBFACTURA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0000000.00 as SubtotSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRCOMPROBANTE;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+timo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008F7T02ZO.TMP;Ultimo Control activo: 
+19-07-2017 11:35:30 , Pila de llamadas
+19-07-2017 11:35:31 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:35:31 , Objeto      : subfactura.load
+19-07-2017 11:35:31 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:35:31 , Nº de Linea :          2
+19-07-2017 11:35:31 , En el Fuente: thisform.iniciarvariables()
+19-07-2017 11:35:31 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:35:31 , Objeto      : subfactura.iniciarvariables
+19-07-2017 11:35:31 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:35:32 , Nº de Linea :         21
+19-07-2017 11:35:32 , En el Fuente: SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1	   ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2	   ,CAST(0 a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3	   ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4	   ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a5,000.00 as tasa5	   ,000000000.00 as Baseexe,00 as copiatkt	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1   	   ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+arete2	   ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3   	   ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4   	   ,SPACE(10) as nomrete5,00000000.00 as rete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ncion5,000000000.00 as Baserete5,000.00 as tasarete5   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,0000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0.00 as SubtotSiva   	   ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva   	   ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro   	   ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Ven
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cimien,00000000.00 as BaseDesctoSiva       ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota       FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
+19-07-2017 11:37:56 , SUBFACTURA.CMDPROCESAR.CLICK, Error: LBLAYUDA1 es un miembro desconocido.;Linea : ThisForm.lblAyuda1.Caption = "[Esc]=Aborta  [Enter]=Tilda Patron";Error :       1925;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008F7T031Y.TMP;Ultimo Control activo: 
+19-07-2017 11:37:56 , Pila de llamadas
+19-07-2017 11:37:57 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:37:57 , Objeto      : subfactura.cmdprocesar.click
+19-07-2017 11:37:57 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:37:57 , Nº de Linea :          2
+19-07-2017 11:37:58 , En el Fuente: thisform.leernotapedido()
+19-07-2017 11:37:58 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:37:58 , Objeto      : subfactura.leernotapedido
+19-07-2017 11:37:58 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:37:58 , Nº de Linea :         13
+19-07-2017 11:37:58 , En el Fuente: ThisForm.lblAyuda1.Caption = "[Esc]=Aborta  [Enter]=Tilda Patron"
+19-07-2017 11:39:08 , SUBFACTURA.CMDPROCESAR.CLICK, Error: ACEPTAR1 es un miembro desconocido.;Linea : thisform.Aceptar1.Visible = .t.;Error :       1925;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+IN\APPDATA\LOCAL\TEMP\00008F7T032V.TMP;Ultimo Control activo: 
+19-07-2017 11:39:08 , Pila de llamadas
+19-07-2017 11:39:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:39:09 , Objeto      : subfactura.cmdprocesar.click
+19-07-2017 11:39:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:39:09 , Nº de Linea :          2
+19-07-2017 11:39:09 , En el Fuente: thisform.leernotapedido()
+19-07-2017 11:39:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:39:10 , Objeto      : subfactura.leernotapedido
+19-07-2017 11:39:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:39:10 , Nº de Linea :         70
+19-07-2017 11:39:10 , En el Fuente: 		thisform.Aceptar1.Visible = .t.
+19-07-2017 11:41:09 , SUBFACTURA.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad KEY_13GRID2.;Linea : thisform.Key_13Grid2();Error :       1734;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\
+
+
+
+
+
+
+
+
+
+
+APPDATA\LOCAL\TEMP\00008F7T035G.TMP;Ultimo Control activo: ESTADOTILDE
+19-07-2017 11:41:09 , Pila de llamadas
+19-07-2017 11:41:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:09 , Objeto      : subfactura.cmdprocesar.click
+19-07-2017 11:41:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:09 , Nº de Linea :          2
+19-07-2017 11:41:10 , En el Fuente: thisform.leernotapedido()
+19-07-2017 11:41:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:10 , Objeto      : subfactura.leernotapedido
+19-07-2017 11:41:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:11 , Nº de Linea :        123
+19-07-2017 11:41:11 , En el Fuente: thisform.grid2.SetFocus()
+19-07-2017 11:41:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:11 , Objeto      : subfactura.grid2.afterrowcolchange
+19-07-2017 11:41:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:11 , Nº de Linea :          2
+19-07-2017 11:41:12 , En el Fuente:  thisform.Key_13Grid2()
+19-07-2017 11:41:19 , SUBFACTURA.GRID2.AFTERROWCOLCHANGE, Error: No se encuentra la propiedad KEY_13GRID2.;Linea : thisform.Key_13Grid2();Error :       1734;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\
+
+
+
+
+
+ADMIN\APPDATA\LOCAL\TEMP\00008F7T035G.TMP;Ultimo Control activo: ESTADOTILDE
+19-07-2017 11:41:19 , Pila de llamadas
+19-07-2017 11:41:19 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:19 , Objeto      : subfactura.grid2.afterrowcolchange
+19-07-2017 11:41:19 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:19 , Nº de Linea :          2
+19-07-2017 11:41:19 , En el Fuente:  thisform.Key_13Grid2()
+19-07-2017 11:41:23 , SUBFACTURA.GRID2.AFTERROWCOLCHANGE, Error: No se encuentra la propiedad KEY_13GRID2.;Linea : thisform.Key_13Grid2();Error :       1734;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\
+
+
+
+ADMIN\APPDATA\LOCAL\TEMP\00008F7T035G.TMP;Ultimo Control activo: ESTADOTILDE
+19-07-2017 11:41:23 , Pila de llamadas
+19-07-2017 11:41:24 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:24 , Objeto      : subfactura.grid2.afterrowcolchange
+19-07-2017 11:41:24 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:24 , Nº de Linea :          2
+19-07-2017 11:41:24 , En el Fuente:  thisform.Key_13Grid2()
+19-07-2017 11:41:28 , SUBFACTURA.GRID2.AFTERROWCOLCHANGE, Error: No se encuentra la propiedad KEY_13GRID2.;Linea : thisform.Key_13Grid2();Error :       1734;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\
+
+ADMIN\APPDATA\LOCAL\TEMP\00008F7T035G.TMP;Ultimo Control activo: ESTADOTILDE
+19-07-2017 11:41:29 , Pila de llamadas
+19-07-2017 11:41:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:29 , Objeto      : subfactura.grid2.afterrowcolchange
+19-07-2017 11:41:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
+19-07-2017 11:41:29 , Nº de Linea :          2
+19-07-2017 11:41:30 , En el Fuente:  thisform.Key_13Grid2()
