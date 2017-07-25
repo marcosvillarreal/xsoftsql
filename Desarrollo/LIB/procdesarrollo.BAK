@@ -765,6 +765,10 @@ lstOCX(5,1) ="msvcr70.dll"
 lstOCX(5,2) ="msvcr70.dll"
 lstOCX(6,1) ="COMCTL.progctrl.1"
 lstOCX(6,2) ="COMCTL32.ocx"
+lstOCX(7,1) ="MSMAPI.MAPISession.1"
+lstOCX(7,2) ="MSMAPI32.ocx"
+lstOCX(7,1) ="MSMAPI.MAPIMessages.1"
+lstOCX(7,2) ="MSMAPI32.ocx"
 * Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
 * No calculamos porque nosotros le damos la cantidad
 For i = 1 To Alen('lstocx',1)

@@ -752,7 +752,7 @@ If Parameters() = 0
 	Return
 Endif
 *stop()
-Dimension lstOCX(6,2)
+Dimension lstOCX(8,2)
 lstOCX(1,1) = "SSubTimer6.Gsubclass"
 lstOCX(1,2) = "SSubTmr6.dll"
 lstOCX(2,1) ="vbalLbar6.cListBarItem"
@@ -767,8 +767,8 @@ lstOCX(6,1) ="COMCTL.progctrl.1"
 lstOCX(6,2) ="COMCTL32.ocx"
 lstOCX(7,1) ="MSMAPI.MAPISession.1"
 lstOCX(7,2) ="MSMAPI32.ocx"
-lstOCX(7,1) ="MSMAPI.MAPIMessages.1"
-lstOCX(7,2) ="MSMAPI32.ocx"
+lstOCX(8,1) ="MSMAPI.MAPIMessages.1"
+lstOCX(8,2) ="MSMAPI32.ocx"
 * Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
 * No calculamos porque nosotros le damos la cantidad
 For i = 1 To Alen('lstocx',1)
