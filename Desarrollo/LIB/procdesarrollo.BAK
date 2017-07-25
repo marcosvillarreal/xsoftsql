@@ -27,6 +27,15 @@ DO WHILE nSecond1 + nSec > nSecond2
 ENDDO 
 ENDFUNC 
 
+*----------------------------------------------------
+*-Quitar Acentos
+*----------------------------------------------------
+FUNCTION QuitarAcentos
+LPARAMETERS ccadena
+ccadena = CHRTRAN(ccadena, "áéíóúÁÉÍÓÚ","aeiouAEIOU") 
+RETURN ccadena
+ENDFUNC 
+
 
 FUNCTION CursorAdapterToXML
 PARAMETERS cAlias,cFileName,cEncoding,nOutputFormat,nFlags
@@ -826,41 +835,41 @@ ENDFUNC
 
 FUNCTION Licencia
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre like 'WINDSTATE' 
-ENDTEXT 
-IF NOT CrearCursorAdapter('CsrState',lcCmd)
-	RETURN .f.
-ENDIF 
-IF RECCOUNT('CsrState')=0
-	&&Agregamos la licencia con dos meses
-	cCmdText = "INSERT paravario VALUES (1,0,'WINDSTATE',0,0,'Error Critico de Windows',GOMONTH(DATE(),2),0)"
-		  
-	Oca = Ocmd
-	Oca.commandtext = cCmdText
-	Oca.commandtype = 1
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre like 'WINDSTATE' 
+*!*	ENDTEXT 
+*!*	IF NOT CrearCursorAdapter('CsrState',lcCmd)
+*!*		RETURN .f.
+*!*	ENDIF 
+*!*	IF RECCOUNT('CsrState')=0
+*!*		&&Agregamos la licencia con dos meses
+*!*		cCmdText = "INSERT paravario VALUES (1,0,'WINDSTATE',0,0,'Error Critico de Windows',GOMONTH(DATE(),2),0)"
+*!*			  
+*!*		Oca = Ocmd
+*!*		Oca.commandtext = cCmdText
+*!*		Oca.commandtype = 1
 
-	LOCAL loCatchErr As Exception
-	ldebociclar = .t.
-	DO WHILE ldebociclar 
-	   ldebociclar = .f.
-		TRY 
-		  Oca.execute()
-		CATCH TO loCatchErr
-	 	  ldebociclar = .t.
-		ENDTRY   
-	ENDDO 
-	RETURN .T.
-ENDIF 
+*!*		LOCAL loCatchErr As Exception
+*!*		ldebociclar = .t.
+*!*		DO WHILE ldebociclar 
+*!*		   ldebociclar = .f.
+*!*			TRY 
+*!*			  Oca.execute()
+*!*			CATCH TO loCatchErr
+*!*		 	  ldebociclar = .t.
+*!*			ENDTRY   
+*!*		ENDDO 
+*!*		RETURN .T.
+*!*	ENDIF 
 
-&&Si el estado es 1, no se valida los meses
-IF CsrState.estado = 0
-	&&Validamos la fecha
-	IF TTOD(CsrState.fecha) > DATE()
-		oavisar.usuario("Error Critico de Windows, inconsistencia en la información presentada"+CHR(13)+"COMUNICARSE URGENTEMENTE CON EL PROGRAMADOR")
-		RETURN .F.
-	ENDIF 
-ENDIF 
+*!*	&&Si el estado es 1, no se valida los meses
+*!*	IF CsrState.estado = 0
+*!*		&&Validamos la fecha
+*!*		IF TTOD(CsrState.fecha) > DATE()
+*!*			oavisar.usuario("Error Critico de Windows, inconsistencia en la información presentada"+CHR(13)+"COMUNICARSE URGENTEMENTE CON EL PROGRAMADOR")
+*!*			RETURN .F.
+*!*		ENDIF 
+*!*	ENDIF 
 
 
 ENDFUNC 

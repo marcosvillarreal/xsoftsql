@@ -204,7 +204,9 @@ IF TYPE('goApp')='O'
     BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
 	***** fin posicionamiento escritorio
 	
-	
+	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+    DO Verifica_OCX WITH "Check"
+    
 	DO directivasfiscal    && en procfiscal.prg
 	DO directivasHasar
 	
