@@ -119,6 +119,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE 
+   SET PROCEDURE TO googlemaps.prg ADDITIVE 
 *clear all
 
 
