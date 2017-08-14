@@ -4,8 +4,16 @@
 *
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
-clear all
-SET SYSMENU off
+
+LPARAMETERS oIdPrograma
+
+oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
+
+LOCAL nidprograma
+
+nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
+
+
 set classlib to
 l='j:'
 set talk off
@@ -13,7 +21,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestión de Ventas"
+lctituloGestion = "Exportador de Datos"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -234,18 +242,18 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 
-	DO FORM frmlogin
+	*DO FORM frmlogin
 	
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	LOCAL oMenu
-	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
-	oMenu = null
+*!*		LOCAL oMenu
+*!*		oDesktop = ''
+*!*		oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+*!*		oMenu.createMenu()   
+*!*		oMenu = null
 
-	LeerEjercicioPerfil()
+*!*		LeerEjercicioPerfil()
 	
 	IF NOT Licencia()
 		CANCEL 
@@ -253,7 +261,13 @@ IF TYPE('goApp')='O'
 		RETURN 
 	ENDIF 
 	
-	DO FORM frmmenu
+	DO CASE
+	CASE VAL(nidprograma)=1
+		DO FORM genera_swift
+	OTHERWISE
+
+	ENDCASE
+	
 	                     
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
