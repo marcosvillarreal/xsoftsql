@@ -52,6 +52,8 @@ SELECT FsrMovimien.* FROM FsrMovimien WHERE saldocan <> 0 AND NOT DELETED() ORDE
 
 LOCAL lnid,lnidmaopera
 
+stop()
+
 lnidproducto = RecuperarID('CsrProducto',Goapp.sucursal10) + 1
 nidmaopera	 = RecuperarID('CsrMaopera',Goapp.sucursal10)
 nid	 = RecuperarID('CsrMovRemito',Goapp.sucursal10)
@@ -135,7 +137,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 			           , ccodbarra13 
 			    STORE DATE() TO  dfeculcpra , dfeculvta , dfecalta , dfecmodi , dfeculpre
 	    
-				cnombre		= "ARTICULO DE IMPORTACION"
+				cnombre		= "«"+ALLTRIM(CsrMovimien.articulo)+"» "+CsrMovimien.nombre
 				ncodigo		= CsrProducto.numero + 1
 				
 				cnommayorista	= cnombre
@@ -165,6 +167,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 			           , nidcategotipo, ccodalfaprov , ncotidolar , nendolar , ccodbarra14 ;
 			           , ccodbarra13 , dfeculpre) 
 				nidarticulo = lnidproducto
+				lnidproducto = lnidproducto + 1 
 			ENDIF 
 	    ELSE
 	    	nidarticulo = CsrProducto.id

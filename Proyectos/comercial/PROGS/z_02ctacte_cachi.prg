@@ -111,10 +111,10 @@ SCAN
 	,lnctabanco,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta;
     ,lnbonif1,lnbonif2,lncopiatkt,lnconvenio,lnsaldoauto,lnidbarrio,lnlista,lnidcateibrng,lncomision;
     ,lnidtipodoc,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,lnidcategoria;
-    ,lndiasvto,lnplanpago
+    ,lndiasvto,lnplanpago,lndiasprome
     
    STORE "" TO lccnumero,lccnombre,lccdireccion,lccpostal,lcctelefono2,lcctelefono,lcemail,lccuit;
-    ,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc
+    ,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc,lcfax
     
      IF recno('FsrDeudor')/500=INT(RECNO('FsrDeudor')/500)
 	   lcTitulo = "Clientes "+STR(RECNO(),10)   
@@ -129,6 +129,8 @@ SCAN
 	lccnombre		= ALLTRIM(FsrDeudor.nombre)
 	lccdireccion	= ALLTRIM(FsrDeudor.direccion)
 	lcctelefono		= ALLTRIM(FsrDeudor.telefono)
+	lcctelefono2	= ALLTRIM(FsrDeudor.tele2)
+	lcfax			= ALLTRIM(FsrDeudor.fax)
 	ldfechalta		= DATETIME(1900,01,01,0,0,0)
 	lcobserva		= FsrDeudor.observa
 	ldfecins01		= DATETIME(1900,01,01,0,0,0)
@@ -139,6 +141,9 @@ SCAN
 	lcLocalidadBuscada = Ciudades(FsrDeudor.Localidad)
 	lccp = ""
 	lnidtablaint	= 0 &&Por defecto es el interes de socio
+	lnsaldoauto		= FsrDeudor.saldoauto
+	lndiasprome		= FsrDeudor.diasprome
+	
 	&&Buscamos si existen los tipo de documento valido
 	lctipodoc		= LEFT(lcnumDoc,3)
 	SELECT CsrTipoDoc
@@ -205,13 +210,13 @@ SCAN
 	,ctaorden,idplanpago,idcanalvta,fechalta,observa,saldo,saldoant,estadocta,bonif1,bonif2,copiatkt;
 	,inscri01,fecins01,inscri02,inscri03,convenio,saldoauto,idbarrio,lista,idcateibrng,ingbrutos;
 	,comision,fecultcompra,fecultpago,numdoc,idtipodoc,existeibto,existegan,diasvto,idtablaint,esrecodevol;
-	,totalizabonif);
+	,totalizabonif,diasprome,fax);
     VALUES(lnid,lccnumero,lccnombre,lccdireccion,lccpostal,lnidlocalidad,lnidprovincia,lcctelefono2;
     ,lcctelefono,lcemail,lntipoiva,lccuit,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica,lnctabanco;
     ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
     ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
     ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
-    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif)
+    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,lndiasprome,lcfax)
     
 	lnid = lnid + 1
 	

@@ -93,6 +93,10 @@ SCAN FOR !EOF() AND i <= lnlimite
 		LOOP 
 	ENDIF 
 	
+	IF VAL(CsrArticulo.numero )<> 7325
+		*LOOP 
+	ENDIF
+	 
 	SELECT CsrProducto
 	LOCATE FOR numero=VAL(CsrArticulo.numero )
 	IF numero=VAL(CsrArticulo.numero)

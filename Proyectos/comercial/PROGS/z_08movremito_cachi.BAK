@@ -17,9 +17,8 @@ Oavisar.proceso('S','Abriendo archivos')
 llok = .t.
 llok = CargarTabla(lcData,'Producto')
 llok = CargarTabla(lcData,'Ctacte')
-llok = CargarTabla(lcData,'Maopera',.t.)
-llok = CargarTabla(lcData,'MovRemito',.t.)
-*llok = CargarTabla(lcData,'AfeMovRto',.t.)
+llok = CargarTabla(lcData,'Maopera')
+llok = CargarTabla(lcData,'MovRemito')
 llok = CargarTabla(lcData,'Vendedor')
 
 
@@ -52,6 +51,8 @@ Oavisar.proceso('S','Procesando '+alias())
 SELECT FsrMovimien.* FROM FsrMovimien WHERE saldocan <> 0 AND NOT DELETED() ORDER BY cliente,fecha INTO CURSOR CsrMovimien READWRITE 
 
 LOCAL lnid,lnidmaopera
+
+stop()
 
 lnidproducto = RecuperarID('CsrProducto',Goapp.sucursal10) + 1
 nidmaopera	 = RecuperarID('CsrMaopera',Goapp.sucursal10)
@@ -166,6 +167,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 			           , nidcategotipo, ccodalfaprov , ncotidolar , nendolar , ccodbarra14 ;
 			           , ccodbarra13 , dfeculpre) 
 				nidarticulo = lnidproducto
+				lnidproducto = lnidproducto + 1 
 			ENDIF 
 	    ELSE
 	    	nidarticulo = CsrProducto.id

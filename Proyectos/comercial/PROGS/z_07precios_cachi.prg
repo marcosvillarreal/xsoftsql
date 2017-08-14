@@ -42,7 +42,7 @@ lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo INTO CURSOR CsrPrecio READWRITE 
 
-nDecimalesP = 3
+nDecimalesP = 2
 SELECT Csrctacte
 GO BOTTOM 
 nNumeroCtacte	= VAL(CsrCtacte.cnumero)
@@ -101,6 +101,7 @@ SCAN FOR !EOF()
 		LOCATE FOR cnombre = cProvPrecio
 		IF FOUND()
 			nIdCtacte = CsrCtacte.id
+			replace ctaacreedor WITH 1 IN CsrCtaCte
 		ENDIF 
 		
 		IF NOT EMPTY(CsrPrecio.fecha)   
@@ -145,7 +146,10 @@ SCAN FOR !EOF()
 		nRedondeo		= CsrArticulo.redondeo
 				
 		nPrePubFSiva	= a_red(nRedondeo,nPreVenta + nCostoAgre + nFleteAgre)
-		nPrePubFCiva	= a_red(nRedondeo,nPrePubCIva + nCostoAgre + nFleteAgre)
+		&&Recalculamos con el iva
+		nPrePubCiva		= red(nPreVenta* (1 + nAlicuota /100),nDecimalesP)
+		*nPrePubFCiva	= a_red(nRedondeo,nPrePubCIva + nCostoAgre + nFleteAgre)
+		nPrePubFCiva	= a_red(nRedondeo,nPrePubCiva + nCostoAgre + nFleteAgre)
 		nIncremento		= CsrPrecio.Bonlis2
 		nIncremento		= red(1 -(nIncremento/100),4)
 		nPreConCiva		= red(nPrePubCiva * nIncremento,nDecimalesP)
