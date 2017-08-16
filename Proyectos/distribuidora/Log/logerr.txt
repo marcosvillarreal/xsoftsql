@@ -1,950 +1,25 @@
-10-05-2017 , MAIN, Error: El comando contiene una frase o palabra clave no reconocida.;Linea : loObjeto = &lcName;Error :         36;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AIH5019G.TMP;Ultim
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o Control activo: 
-10-05-2017 , Pila de llamadas
-10-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-10-05-2017 , Objeto      : main
-10-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-10-05-2017 , Nº de Linea :        255
-10-05-2017 , En el Fuente: 	Read events   
-10-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-10-05-2017 , Objeto      : regfacpub.cmdwebservice.click
-10-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
-10-05-2017 , Nº de Linea :          4
-10-05-2017 , En el Fuente: loObjeto = &lcName
-10-05-2017 , REGPARAMETROS.LOAD, Error: El archivo 'csrseteoparam.dbf' no existe.;Linea : SELECT CsrSeteoParam.*,0  as estado FROM CsrSeteoParam WHERE RECNO()<1 INTO CURSOR CsrAuxParametros READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo regist
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ro:          0 ;DBF: ;Ultimo Control activo: 
-10-05-2017 , Pila de llamadas
-10-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
-10-05-2017 , Objeto      : regparametros.load
-10-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
-10-05-2017 , Nº de Linea :          2
-10-05-2017 , En el Fuente: this.crearcursores()
-10-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
-10-05-2017 , Objeto      : regparametros.crearcursores
-10-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
-10-05-2017 , Nº de Linea :          1
-10-05-2017 , En el Fuente: SELECT CsrSeteoParam.*,0  as estado FROM CsrSeteoParam WHERE RECNO()<1 INTO CURSOR CsrAuxParametros READWRITE 
-12-05-2017 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra el alias 'CSRAUXCABPED'.;Linea : replace nombre WITH CsrAuxCabPed.observacion IN CsrAuxCuerfac;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 STR(ID
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ARTICULO,10)+IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AART019G.TMP;Ultimo Control activo: 
-12-05-2017 , Pila de llamadas
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Objeto      : regnotapedandroid.cmdsalvar.click
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Nº de Linea :          6
-12-05-2017 , En el Fuente: 		thisform.key_43()  
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Objeto      : regnotapedandroid.key_43
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Nº de Linea :          6
-12-05-2017 , En el Fuente: 	thisform.cargarpedido()
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Objeto      : regnotapedandroid.cargarpedido
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Nº de Linea :        272
-12-05-2017 , En el Fuente: 			replace nombre WITH CsrAuxCabPed.observacion IN CsrAuxCuerfac
-12-05-2017 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la propiedad OBSERVACION.;Linea : replace nombre WITH OscCabeza.observacion IN CsrAuxCuerfac;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 STR(IDAR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TICULO,10)+IDOPE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AART01KI.TMP;Ultimo Control activo: 
-12-05-2017 , Pila de llamadas
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Objeto      : regnotapedandroid.cmdsalvar.click
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Nº de Linea :          6
-12-05-2017 , En el Fuente: 		thisform.key_43()  
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Objeto      : regnotapedandroid.key_43
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Nº de Linea :          6
-12-05-2017 , En el Fuente: 	thisform.cargarpedido()
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Objeto      : regnotapedandroid.cargarpedido
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regnotapedandroid.sct
-12-05-2017 , Nº de Linea :        272
-12-05-2017 , En el Fuente: 			replace nombre WITH OscCabeza.observacion IN CsrAuxCuerfac
-12-05-2017 , EXPORTAR_CPRA_VTA_SUC.INIT, Error: No se encuentra la variable 'SWITCH'.;Linea : SET FILTER TO LEFT(switch,1)='0';Error :         12;Ultimo Alias Activo: _CSRCONEXION;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\00009SSP02NG.TMP;Ultimo Control activo: 
-12-05-2017 , Pila de llamadas
-12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta_suc.sct
-12-05-2017 , Objeto      : exportar_cpra_vta_suc.init
-12-05-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta_suc.sct
 12-05-2017 , Nº de Linea :         14
 12-05-2017 , En el Fuente:    	SET FILTER TO LEFT(switch,1)='0'
 12-05-2017 , EXPORTAR_CPRA_VTA_SUC.INIT, Error: No se encuentra la variable 'CAMPOCOL5'.;Linea : SET FILTER TO LEFT(campocol5,1)='0';Error :         12;Ultimo Alias Activo: _CSRCONEXION;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1279,6 +354,25 @@ L\TEMP\00009SSP02OE.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\00009SSP02PC.TMP;Ultimo Control activo: 
 12-05-2017 , Pila de llamadas
 12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta_suc.sct
@@ -1287,6 +381,25 @@ L\TEMP\00009SSP02PC.TMP;Ultimo Control activo:
 12-05-2017 , Nº de Linea :         15
 12-05-2017 , En el Fuente:    	SET FILTER TO LEFT(campocol5,1)='0'
 12-05-2017 , EXPORTAR_CPRA_VTA_SUC.INIT, Error: No se encuentra la variable 'WCAMPOCOL5'.;Linea : SET FILTER TO LEFT(wcampocol5,1)='0';Error :         12;Ultimo Alias Activo: _CSRCONEXION;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1612,6 +725,25 @@ CAL\TEMP\00009SSP02QA.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\00009SSP02R8.TMP;Ultimo Control activo: 
 12-05-2017 , Pila de llamadas
 12-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta_suc.sct
@@ -1620,6 +752,25 @@ CAL\TEMP\00009SSP02R8.TMP;Ultimo Control activo:
 12-05-2017 , Nº de Linea :         15
 12-05-2017 , En el Fuente:    	SET FILTER TO LEFT(wcampocol5,1)='0'
 12-05-2017 , EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT("CsrAuxVentas")=0;Error :         13;Ultimo Alias Activo: CSRAUXVTAALICUOTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDAT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1950,6 +1101,25 @@ A\LOCAL\TEMP\00009SSP03VF.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CHIVO+FECHAHORA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000096VD01T9.TMP;Ultimo Control activo: 
 19-05-2017 , Pila de llamadas
 19-05-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
@@ -1958,6 +1128,25 @@ CHIVO+FECHAHORA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000096VD01T9.TMP;Ultimo C
 19-05-2017 , Nº de Linea :         13
 19-05-2017 , En el Fuente: thisform.lbltituloform.Caption = CsrConexionCentral.aliasconexion
 19-05-2017 , __UTILBUSCAROBJETOS.ACEPTAR2.CLICK, Error: El archivo ya está en uso.;Linea : USE (_form) IN 0 ALIAS formulario;Error :          3;Ultimo Alias Activo: _CSRFORMS;Ultimo registro:        274 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000096VD06E
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2259,7 +1448,45 @@ G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 efijo,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm ,SPACE(255) as observa FROM CsrNCabefa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2546,7 +1773,45 @@ c WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 monro       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm       ,SPACE(255) as observa       FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2684,6 +1949,25 @@ monro       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien
 
 RSOR CsrAuxcabefac READWRITE  
 19-05-2017 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la propiedad OBSERVACIONES.;Linea : replace nombre WITH '****' + OscCabeza.observaciones IN CsrAuxCuerfac;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2969,6 +2253,25 @@ RSOR CsrAuxcabefac READWRITE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DATA\LOCAL\TEMP\0000EM1500YO.TMP;Ultimo Control activo: 
 14-06-2017 , Pila de llamadas
 14-06-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regasiecierre.sct
@@ -3115,6 +2418,25 @@ DATA\LOCAL\TEMP\0000EM1500YO.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0000G4Y10151.TMP;Ultimo Control activo: 
 14-06-2017 , Pila de llamadas
 14-06-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -3128,6 +2450,25 @@ DATA\LOCAL\TEMP\0000EM1500YO.TMP;Ultimo Control activo:
 14-06-2017 , Nº de Linea :         20
 14-06-2017 , En el Fuente: IF VAL(loObjeto.idretorno) <> 0
 26-06-2017 , MAIN, Error: No se encuentra la variable 'HOJATOTAL'.;Linea : replace ALL hojaactual WITH 1, hojatotal WITH 1 IN CsrAuxCuerfac;Error :         12;Ultimo Alias Activo: CSRSUBPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3419,6 +2760,25 @@ CAL\TEMP\000080LL03L1.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\00006UX50059.TMP;Ultimo Control activo: 
 28-06-2017 , Pila de llamadas
 28-06-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
@@ -3524,6 +2884,25 @@ L\TEMP\00006UX50059.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 29-06-2017 , Pila de llamadas
 29-06-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -3630,6 +3009,25 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 29-06-2017 , Pila de llamadas
 29-06-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -3731,6 +3129,25 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 29-06-2017 , Pila de llamadas
 29-06-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -3749,6 +3166,25 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 29-06-2017 , Nº de Linea :       1320
 29-06-2017 , En el Fuente: 
 29-06-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3919,7 +3355,45 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,12);DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4094,6 +3568,25 @@ banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
 03-07-2017 , LISRESOPERA.ACEPTAR1.CLICK, Error: No se encuentra la variable 'LCDETALLE'.;Linea : REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae ,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,
 
@@ -4158,7 +3651,45 @@ alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4291,6 +3822,25 @@ banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
 03-07-2017 , LISRESOPERA.ACEPTAR1.CLICK, Error: No se encuentra la variable 'LCDETALLE'.;Linea : REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae ,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,
 
@@ -4350,7 +3900,45 @@ alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4474,6 +4062,25 @@ banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
 03-07-2017 , LISRESOPERA.ACEPTAR1.CLICK, Error: No se encuentra la variable 'LCDETALLE'.;Linea : REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae ,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,
 
@@ -4529,7 +4136,45 @@ alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4644,6 +4289,25 @@ banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
 03-07-2017 , LISRESOPERA.ACEPTAR1.CLICK, Error: No coinciden los tipos de datos.;Linea : REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae ,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,banco_d 
 
@@ -4694,7 +4358,45 @@ alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :          9;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,12);DBF: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4799,8 +4501,46 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GIDL026V.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
 03-07-2017 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCOMIVDOR'.;Linea : SELECT CsrComiVdor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+ST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4896,6 +4636,25 @@ R(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000747D001J.TMP;Ultimo Cont
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Control activo: 
 07-07-2017 , Pila de llamadas
 07-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
@@ -4909,6 +4668,25 @@ Control activo:
 07-07-2017 , Nº de Linea :         73
 07-07-2017 , En el Fuente: IF VAL(cnuevonum )= 0
 12-07-2017 , MAIN, Error: No se encuentra la propiedad LNIDCOMPROBAFACB.;Linea : LOCATE FOR id = .lnidcomprobafacb;Error :       1734;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009B0P00HT.TMP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5044,6 +4822,25 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TA\LOCAL\TEMP\00005TS905RP.TMP;Ultimo Control activo: 
 18-07-2017 , Pila de llamadas
 18-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
@@ -5057,6 +4854,25 @@ TA\LOCAL\TEMP\00005TS905RP.TMP;Ultimo Control activo:
 18-07-2017 , Nº de Linea :          6
 18-07-2017 , En el Fuente: thisform.nomprovrete = CsrProvGastos.nombre
 14-08-2017 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : CASE nIdPrograma=1;Error :        107;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5VT009I.TMP;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5083,6 +4899,25 @@ Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0000D5VT00H7.TMP;Ultimo Control activo: 
 14-08-2017 , Pila de llamadas
 14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -5096,6 +4931,25 @@ Ultimo Control activo:
 14-08-2017 , Nº de Linea :       1901
 14-08-2017 , En el Fuente: IF LEFT(Goapp.switchperfil,1)="1"
 14-08-2017 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : CASE nidprograma=1;Error :        107;Ultimo Alias Activo: CSRPOPS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5VT00NX.TMP;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5122,3 +4976,113 @@ timo Control activo:
 14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
 14-08-2017 , Nº de Linea :        266
 14-08-2017 , En el Fuente: 		DO FORM generar_swift
+15-08-2017 , MAIN, Error: No se encuentra la propiedad SALIR.;Linea : thisform.salir = .f.;Error :       1734;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000J021001A.TMP;Ultimo Control activo: 
+15-08-2017 , Pila de llamadas
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+15-08-2017 , Objeto      : main
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+15-08-2017 , Nº de Linea :        266
+15-08-2017 , En el Fuente: 		DO FORM genera_swift
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Objeto      : generarimp.cancelar.click
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Nº de Linea :          1
+15-08-2017 , En el Fuente: thisform.salir = .f.
+15-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'MWEEK'.;Linea : If mweek<>1;Error :         12;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00EI.TMP;Ultimo Control activo: 
+15-08-2017 , Pila de llamadas
+15-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+15-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Nº de Linea :          5
+15-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Objeto      : generarimp.crearinforme
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Nº de Linea :         12
+15-08-2017 , En el Fuente: If mweek<>1 
+15-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : oavisar.usuario(STR(mdatefirst));Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:        
+
+
+
+
+
+
+
+
+
+
+
+  1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL00H1.TMP;Ultimo Control activo: 
+15-08-2017 , Pila de llamadas
+15-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+15-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Nº de Linea :          5
+15-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Objeto      : generarimp.crearinforme
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Nº de Linea :         18
+15-08-2017 , En el Fuente: oavisar.usuario(STR(mdatefirst))
+15-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : oavisar.usuario(STR(mdatefirst));Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:        
+
+
+
+
+
+
+
+  1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL00HR.TMP;Ultimo Control activo: 
+15-08-2017 , Pila de llamadas
+15-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+15-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Nº de Linea :          5
+15-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Objeto      : generarimp.crearinforme
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Nº de Linea :         20
+15-08-2017 , En el Fuente: oavisar.usuario(STR(mdatefirst))
+15-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : oavisar.usuario(STR(sdatefirst));Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:        
+
+
+
+
+  1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL00LK.TMP;Ultimo Control activo: 
+15-08-2017 , Pila de llamadas
+15-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+15-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-08-2017 , Nº de Linea :          5
+15-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Objeto      : generarimp.crearinforme
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Nº de Linea :         21
+15-08-2017 , En el Fuente: oavisar.usuario(STR(sdatefirst))
+15-08-2017 , GENERARIMP.INIT, Error: _TXTDESTINO es un miembro desconocido.;Linea : ._txtDestino.value = 'C:\APLICACIONES\JBS\DATOS\';Error :       1925;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+MP\0000CIDL00MM.TMP;Ultimo Control activo: 
+15-08-2017 , Pila de llamadas
+15-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Objeto      : generarimp.init
+15-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+15-08-2017 , Nº de Linea :          7
+15-08-2017 , En el Fuente: 	._txtDestino.value = 'C:\APLICACIONES\JBS\DATOS\'
