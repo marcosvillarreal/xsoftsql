@@ -1,3 +1,38 @@
+*----------------------------------------------------
+*---Pasaje a FTP
+*----------------------------------------------------
+FUNCTION FTP
+Parameters oFTP,cPaso ,cOrig,cArch,cDesti 
+
+lcrutadest = IIF(PCOUNT()<5,'/',cDesti)
+
+Wait Window "Conectando con el Servidor" Nowait 
+lcrutafuen = ADDBS(cOrig) 
+lcArchivo = cArch 
+Wait Window "enviando "+Alltrim(lcArchivo)+" " Nowait 
+
+stop()
+oFTP.EXECUTE(cPaso,"put "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest)+"/"+Alltrim(lcArchivo)+"") && Agrega el archivo 
+Do While oFTP.stillexecuting=.T. 
+Loop && espera para que termine 
+Enddo 
+
+oFTP.EXECUTE(cPaso,"quit") && salir 
+Wait Window "Cerrando conexión" Nowait 
+Do While oFTP.stillexecuting=.T. 
+Loop && espera 
+Enddo 
+oFTP.EXECUTE(cPaso,"close") && cerrar conexion 
+Wait Window "Saliendo de la conexion" Nowait 
+Do While oFTP.stillexecuting=.T. 
+Loop 
+Enddo
+
+
+*-----------------------------------------------------
+*--Redondeo
+*-----------------------------------------------------
+
 FUNCTION A_RED
 parameters _aredondeo,_aimporte
 

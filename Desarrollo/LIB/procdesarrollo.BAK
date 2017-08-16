@@ -1,3 +1,38 @@
+*----------------------------------------------------
+*---Pasaje a FTP
+*----------------------------------------------------
+FUNCTION FTP
+Parameters oFTP,cPaso ,cOrig,cArch,cDesti 
+
+lcrutadest = IIF(PCOUNT()<5,'/',cDesti)
+
+Wait Window "Conectando con el Servidor" Nowait 
+lcrutafuen = ADDBS(cOrig) 
+lcArchivo = cArch 
+Wait Window "enviando "+Alltrim(lcArchivo)+" " Nowait 
+
+oFTP.EXECUTE(cPaso,"put "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest); 
++"/"+Alltrim(lcArchivo)+"") && Agrega el archivo 
+Do While oFTP.stillexecuting=.T. 
+Loop && espera para que termine 
+Enddo 
+
+oFTP.EXECUTE(cPaso,"quit") && salir 
+Wait Window "Cerrando conexión" Nowait 
+Do While oFTP.stillexecuting=.T. 
+Loop && espera 
+Enddo 
+oFTP.EXECUTE(cPaso,"close") && cerrar conexion 
+Wait Window "Saliendo de la conexion" Nowait 
+Do While oFTP.stillexecuting=.T. 
+Loop 
+Enddo
+
+
+*-----------------------------------------------------
+*--Redondeo
+*-----------------------------------------------------
+
 FUNCTION A_RED
 parameters _aredondeo,_aimporte
 
@@ -752,7 +787,7 @@ If Parameters() = 0
 	Return
 Endif
 *stop()
-Dimension lstOCX(6,2)
+Dimension lstOCX(8,2)
 lstOCX(1,1) = "SSubTimer6.Gsubclass"
 lstOCX(1,2) = "SSubTmr6.dll"
 lstOCX(2,1) ="vbalLbar6.cListBarItem"
@@ -767,8 +802,8 @@ lstOCX(6,1) ="COMCTL.progctrl.1"
 lstOCX(6,2) ="COMCTL32.ocx"
 lstOCX(7,1) ="MSMAPI.MAPISession.1"
 lstOCX(7,2) ="MSMAPI32.ocx"
-lstOCX(7,1) ="MSMAPI.MAPIMessages.1"
-lstOCX(7,2) ="MSMAPI32.ocx"
+lstOCX(8,1) ="MSMAPI.MAPIMessages.1"
+lstOCX(8,2) ="MSMAPI32.ocx"
 * Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
 * No calculamos porque nosotros le damos la cantidad
 For i = 1 To Alen('lstocx',1)

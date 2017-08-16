@@ -5,15 +5,15 @@
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
 
-*!*	LPARAMETERS oIdPrograma
+LPARAMETERS oIdPrograma
 
-*!*	oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
+oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
 
-*!*	LOCAL nidprograma
+LOCAL nidprograma
 
-*!*	nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
+nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
 
-CLEAR ALL
+
 set classlib to
 l='j:'
 set talk off
@@ -242,24 +242,31 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 
-	DO FORM frmlogin
+	*DO FORM frmlogin
 	
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	LOCAL oMenu
-	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
-	oMenu = null
+*!*		LOCAL oMenu
+*!*		oDesktop = ''
+*!*		oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+*!*		oMenu.createMenu()   
+*!*		oMenu = null
 
-	LeerEjercicioPerfil()
+*!*		LeerEjercicioPerfil()
 	
 	IF NOT Licencia()
 		CANCEL 
 		CLEAR ALL
 		RETURN 
 	ENDIF 
+	
+	DO CASE
+	CASE VAL(nidprograma)=1
+		DO FORM genera_swift
+	OTHERWISE
+
+	ENDCASE
 	
 	                     
 	 _screen.visible=.t.	   
