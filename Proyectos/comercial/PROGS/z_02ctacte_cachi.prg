@@ -201,6 +201,9 @@ SCAN
 	SELECT CsrPlanPago
 	LOCATE FOR numero=cBuscar
 	lnidplanpago	= CsrPlanPago.id
+	IF lnidplanpago=0
+		lndiplanpago = 1100000002
+	ENDIF 
 	
 	lccnombre = NombreNi(ALLTRIM(UPPER(lccnombre)))
 	lccdireccion = NombreNi(ALLTRIM(UPPER(lccdireccion)))
