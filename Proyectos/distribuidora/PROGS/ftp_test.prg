@@ -34,53 +34,53 @@
 	
 		MessageBox("Successful Connection", 64, "FTP Message")
 	
-	   * Display the Inital Directory
-		? "--- Inital Directory"
-		ListDir()
-		
-	   * Create a Directory called "Dir_Test" on the FTP Server
-		? "--- Creating Directory (Dir_Test)"
-		IF !sz_ftp.CreateFtpDirectory('Dir_Test')
-			?sz_ftp.GetErrorCode(.T.)
-		ENDIF
-		ListDir()
-		
-	   * Change to that directory
-		? "--- Changing Directory to Dir_Test"
-		IF !sz_ftp.ChangeFtpDirectory("Dir_Test")
-			?sz_ftp.GetErrorCode(.T.)
-		ENDIF
-	    ListDir()
-	
-	   * Copy up a file to the server
-	   * NOTE: If you get Error #2 Cant Find File.  It couldn't find this 
-	   *       TESTFILE.TXT file.
-		? "--- Sending File to FTP Server"		
-		IF !sz_ftp.PutFtpFile("testfile.txt", "testfile.txt")
-			?sz_ftp.GetErrorCode(.T.)
-		ENDIF
-		ListDir()
+*!*		   * Display the Inital Directory
+*!*			? "--- Inital Directory"
+*!*			ListDir()
+*!*			
+*!*		   * Create a Directory called "Dir_Test" on the FTP Server
+*!*			? "--- Creating Directory (Dir_Test)"
+*!*			IF !sz_ftp.CreateFtpDirectory('Dir_Test')
+*!*				?sz_ftp.GetErrorCode(.T.)
+*!*			ENDIF
+*!*			ListDir()
+*!*			
+*!*		   * Change to that directory
+*!*			? "--- Changing Directory to Dir_Test"
+*!*			IF !sz_ftp.ChangeFtpDirectory("Dir_Test")
+*!*				?sz_ftp.GetErrorCode(.T.)
+*!*			ENDIF
+*!*		    ListDir()
+*!*		
+*!*		   * Copy up a file to the server
+*!*		   * NOTE: If you get Error #2 Cant Find File.  It couldn't find this 
+*!*		   *       TESTFILE.TXT file.
+*!*			? "--- Sending File to FTP Server"		
+*!*			IF !sz_ftp.PutFtpFile("testfile.txt", "testfile.txt")
+*!*				?sz_ftp.GetErrorCode(.T.)
+*!*			ENDIF
+*!*			ListDir()
 
-       * Delete the Files 
-		? "--- Removing File Dir.txt to FTP Server"		
-		IF !sz_ftp.DeleteFtpFile("testfile.txt")
-			?sz_ftp.GetErrorCode(.T.)
-		ENDIF
-		ListDir()
+*!*	       * Delete the Files 
+*!*			? "--- Removing File Dir.txt to FTP Server"		
+*!*			IF !sz_ftp.DeleteFtpFile("testfile.txt")
+*!*				?sz_ftp.GetErrorCode(.T.)
+*!*			ENDIF
+*!*			ListDir()
 
        * Change back the Original Directory
 		? "--- Changing Directory back on Level"
-		IF !sz_ftp.ChangeFtpDirectory("..")
+		IF !sz_ftp.ChangeFtpDirectory("distribuidoraurquiza")
 			?sz_ftp.GetErrorCode(.T.)
 		ENDIF
 		ListDir()
 
-       * Remove the Directory From the Server
-		? "--- Removing Directory Dir_Test"
-		IF !sz_ftp.RemoveFtpDirectory("Dir_Test")
-			?sz_ftp.GetErrorCode(.T.)
-		ENDIF
-		ListDir()
+*!*	       * Remove the Directory From the Server
+*!*			? "--- Removing Directory Dir_Test"
+*!*			IF !sz_ftp.RemoveFtpDirectory("Dir_Test")
+*!*				?sz_ftp.GetErrorCode(.T.)
+*!*			ENDIF
+*!*			ListDir()
 				
 		sz_ftp.CloseInternet()
 				
