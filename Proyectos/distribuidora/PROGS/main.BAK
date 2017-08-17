@@ -14,6 +14,7 @@
 *!*	nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
 
 CLEAR ALL
+SET SYSMENU off
 set classlib to
 l='j:'
 set talk off
@@ -261,6 +262,7 @@ IF TYPE('goApp')='O'
 		RETURN 
 	ENDIF 
 	
+	 DO FORM frmmenu
 	                     
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.

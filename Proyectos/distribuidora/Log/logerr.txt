@@ -1,2373 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-banco_d WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :         12;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GIDL024L.TMP;Ultimo Control activo: 
-03-07-2017 , Pila de llamadas
-03-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Objeto      : lisresopera.aceptar1.click
-03-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Nº de Linea :         14
-03-07-2017 , En el Fuente: llok = IIF(thisform.lnhaycierre=1,thisform.Calculasaldos(),thisform.BuscoCaja())
-03-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Objeto      : lisresopera.calculasaldos
-03-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Nº de Linea :        246
-03-07-2017 , En el Fuente: 		REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae				,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,banco_d WITH lbancod				,banco_h WITH lbancoh,detalle3 WITH lcdet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
-03-07-2017 , LISRESOPERA.ACEPTAR1.CLICK, Error: No coinciden los tipos de datos.;Linea : REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae ,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,banco_d 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-WITH lbancod ,banco_h WITH lbancoh,detalle3 WITH lcdetalle3 ,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir;Error :          9;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 STR(IDMAOPERA,12)+STR(ID,12);DBF: 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GIDL026V.TMP;Ultimo Control activo: 
-03-07-2017 , Pila de llamadas
-03-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Objeto      : lisresopera.aceptar1.click
-03-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Nº de Linea :         14
-03-07-2017 , En el Fuente: llok = IIF(thisform.lnhaycierre=1,thisform.Calculasaldos(),thisform.BuscoCaja())
-03-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Objeto      : lisresopera.calculasaldos
-03-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\lisresopera.sct
-03-07-2017 , Nº de Linea :        247
-03-07-2017 , En el Fuente: 		REPLACE nombre WITH lcnombre,detalle WITH lcdetalle,caja_i WITH lcajai,caja_e WITH lcajae				,ctacte_d WITH lctacted,ctacte_h WITH lctacteh,ctabco WITH lctabco,banco_d WITH lbancod				,banco_h WITH lbancoh,detalle3 WITH lcdet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-alle3				,cta_d WITH lctad,impd WITH limpd,cta_h WITH lctah,imph WITH limph IN Csrimprimir
-03-07-2017 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCOMIVDOR'.;Linea : SELECT CsrComiVdor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+ST
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-R(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000747D001J.TMP;Ultimo Control activo: 
-03-07-2017 , Pila de llamadas
-03-07-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-03-07-2017 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
-03-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-03-07-2017 , Nº de Linea :          5
-03-07-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
-03-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende.sct
-03-07-2017 , Objeto      : plancomivende.crearinforme
-03-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\plancomivende.sct
-03-07-2017 , Nº de Linea :        115
-03-07-2017 , En el Fuente: 		SELECT CsrComiVdor
-07-07-2017 , ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.CMDGOOGLE.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF VAL(cnuevonum )= 0;Error :         11;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Control activo: 
-07-07-2017 , Pila de llamadas
-07-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
-07-07-2017 , Objeto      : abmctacte.contenedor1.pframe1.page1.cmdgoogle.click
-07-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
-07-07-2017 , Nº de Linea :         20
-07-07-2017 , En el Fuente: DO FORM abm_maps WITH oParam
-07-07-2017 , Programa    : j:\xsoftsql\desarrollo\forms\abm_maps.sct
-07-07-2017 , Objeto      : abm_maps.cmdsave.click
-07-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\forms\abm_maps.sct
-07-07-2017 , Nº de Linea :         73
-07-07-2017 , En el Fuente: IF VAL(cnuevonum )= 0
-12-07-2017 , MAIN, Error: No se encuentra la propiedad LNIDCOMPROBAFACB.;Linea : LOCATE FOR id = .lnidcomprobafacb;Error :       1734;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009B0P00HT.TMP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;Ultimo Control activo: CDIRECCION
-12-07-2017 , Pila de llamadas
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-12-07-2017 , Objeto      : main
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-12-07-2017 , Nº de Linea :        261
-12-07-2017 , En el Fuente: 	Read events   
-12-07-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-12-07-2017 , Objeto      : regfacvta.containerencabeza.kitbuscaoaltaenctacte.lostfocus
-12-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-12-07-2017 , Nº de Linea :         25
-12-07-2017 , En el Fuente: this.lostfocosay()
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.containerencabeza.kitbuscaoaltaenctacte.lostfocosay
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :          7
-12-07-2017 , En el Fuente: 		lok = .cargarcabefac()
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.cargarcabefac
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :        134
-12-07-2017 , En el Fuente: 			.cambiocomproba(CsrAuxcabefac.idtipoiva)
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.cambiocomproba
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :         43
-12-07-2017 , En el Fuente: 	.leerproximonro(Csrcomprobante.id,.f.)
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.leerproximonro
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :          7
-12-07-2017 , En el Fuente: 	.oreGFACVTA.letraiva(CsrAuxcabefac.idtipoiva)
-12-07-2017 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-12-07-2017 , Objeto      : regfacvta.oregfacvta.letraiva
-12-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-12-07-2017 , Nº de Linea :         61
-12-07-2017 , En el Fuente: 			LOCATE FOR id = .lnidcomprobafacb
-12-07-2017 , REGFACVTA.ACTIVATE, Error: No se puede borrar el objeto OREGFACVTA  porque está en uso.;Linea : clear all;Error :       1951;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-12-07-2017 , Pila de llamadas
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.activate
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :          1
-12-07-2017 , En el Fuente: DODEFAULT()
-12-07-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-12-07-2017 , Objeto      : regfacvta.containerencabeza.kitbuscaoaltaenctacte.lostfocus
-12-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-12-07-2017 , Nº de Linea :         25
-12-07-2017 , En el Fuente: this.lostfocosay()
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.containerencabeza.kitbuscaoaltaenctacte.lostfocosay
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :          7
-12-07-2017 , En el Fuente: 		lok = .cargarcabefac()
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.cargarcabefac
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :        134
-12-07-2017 , En el Fuente: 			.cambiocomproba(CsrAuxcabefac.idtipoiva)
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.cambiocomproba
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :         43
-12-07-2017 , En el Fuente: 	.leerproximonro(Csrcomprobante.id,.f.)
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Objeto      : regfacvta.leerproximonro
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
-12-07-2017 , Nº de Linea :          7
-12-07-2017 , En el Fuente: 	.oreGFACVTA.letraiva(CsrAuxcabefac.idtipoiva)
-12-07-2017 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-12-07-2017 , Objeto      : regfacvta.oregfacvta.letraiva
-12-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-12-07-2017 , Nº de Linea :          9
-12-07-2017 , En el Fuente: 	stop()
-12-07-2017 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
-12-07-2017 , Objeto      : stop
-12-07-2017 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
-12-07-2017 , Nº de Linea :        608
-12-07-2017 , En el Fuente: 	ENDIF 
-12-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-12-07-2017 , Objeto      : main
-12-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-12-07-2017 , Nº de Linea :          7
-12-07-2017 , En el Fuente: clear all
-18-07-2017 , REGCTACTE.CMDIMPRIMIRPDF.CLICK, Error: No se encuentra el alias 'CSRPROVGASTOS'.;Linea : thisform.nomprovrete = CsrProvGastos.nombre;Error :         13;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TA\LOCAL\TEMP\00005TS905RP.TMP;Ultimo Control activo: 
-18-07-2017 , Pila de llamadas
-18-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-07-2017 , Objeto      : regctacte.cmdimprimirpdf.click
-18-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-07-2017 , Nº de Linea :          7
-18-07-2017 , En el Fuente: 	=thisform.imprimir_r()
-18-07-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-07-2017 , Objeto      : regctacte.imprimir_r
-18-07-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-07-2017 , Nº de Linea :          6
-18-07-2017 , En el Fuente: thisform.nomprovrete = CsrProvGastos.nombre
-14-08-2017 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : CASE nIdPrograma=1;Error :        107;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5VT009I.TMP;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ultimo Control activo: 
-14-08-2017 , Pila de llamadas
-14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-14-08-2017 , Objeto      : main
-14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-14-08-2017 , Nº de Linea :        263
-14-08-2017 , En el Fuente: 	CASE nIdPrograma=1
-14-08-2017 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF LEFT(Goapp.switchperfil,1)="1";Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0000D5VT00H7.TMP;Ultimo Control activo: 
-14-08-2017 , Pila de llamadas
-14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-14-08-2017 , Objeto      : main
-14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-14-08-2017 , Nº de Linea :        256
-14-08-2017 , En el Fuente: 	LeerEjercicioPerfil()
-14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-14-08-2017 , Objeto      : leerejercicioperfil
-14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-14-08-2017 , Nº de Linea :       1901
-14-08-2017 , En el Fuente: IF LEFT(Goapp.switchperfil,1)="1"
-14-08-2017 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : CASE nidprograma=1;Error :        107;Ultimo Alias Activo: CSRPOPS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5VT00NX.TMP;Ul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-timo Control activo: 
-14-08-2017 , Pila de llamadas
-14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-14-08-2017 , Objeto      : main
-14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-14-08-2017 , Nº de Linea :        265
-14-08-2017 , En el Fuente: 	CASE nidprograma=1
-14-08-2017 , MAIN, Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\generar_swift.scx' no existe.;Linea : DO FORM generar_swift;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-14-08-2017 , Pila de llamadas
-14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-14-08-2017 , Objeto      : main
-14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-14-08-2017 , Nº de Linea :        266
-14-08-2017 , En el Fuente: 		DO FORM generar_swift
-14-08-2017 , MAIN, Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\generar_swift.scx' no existe.;Linea : DO FORM generar_swift;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-14-08-2017 , Pila de llamadas
-14-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
 14-08-2017 , Objeto      : main
 14-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
 14-08-2017 , Nº de Linea :        266
@@ -2385,6 +15,56 @@ timo Control activo:
 15-08-2017 , Nº de Linea :          1
 15-08-2017 , En el Fuente: thisform.salir = .f.
 15-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'MWEEK'.;Linea : If mweek<>1;Error :         12;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2652,6 +332,56 @@ timo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL00H1.TMP;Ultimo Control activo: 
 15-08-2017 , Pila de llamadas
 15-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2665,6 +395,56 @@ timo Control activo:
 15-08-2017 , Nº de Linea :         18
 15-08-2017 , En el Fuente: oavisar.usuario(STR(mdatefirst))
 15-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : oavisar.usuario(STR(mdatefirst));Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2917,6 +697,56 @@ timo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CIDL00LK.TMP;Ultimo Control activo: 
 15-08-2017 , Pila de llamadas
 15-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2930,6 +760,56 @@ timo Control activo:
 15-08-2017 , Nº de Linea :         21
 15-08-2017 , En el Fuente: oavisar.usuario(STR(sdatefirst))
 15-08-2017 , GENERARIMP.INIT, Error: _TXTDESTINO es un miembro desconocido.;Linea : ._txtDestino.value = 'C:\APLICACIONES\JBS\DATOS\';Error :       1925;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3178,6 +1058,56 @@ MP\0000CIDL00MM.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT003M.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3201,6 +1131,56 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT003M.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :         49
 16-08-2017 , En el Fuente: 	cCodVendedor	= strzero(oDatos.CodVendedor,10)
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad CODVENDEDOR.;Linea : cCodVendedor	= strzero(oDatos.CodVendedor,10);Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3420,6 +1400,56 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT004E.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \APPDATA\LOCAL\TEMP\0000HYBT005A.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3448,6 +1478,56 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT004E.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :        504
 16-08-2017 , En el Fuente: IF tcdato<0
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF LTRIM(cEan13)=0;Error :        107;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3639,6 +1719,56 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT0064.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT006V.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3662,6 +1792,56 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT0064.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :         52
 16-08-2017 , En el Fuente: 	cEan13			= STR(oDatos.ean13,13)
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'DETALLE'.;Linea : replace detalle WITH cCodDist+cCodCorrida+goapp.empresacuit+oDatos.fecha+cCodVendedor +cCodCliente+cTipoComp+cSerieComp+cNumComp+cEan13+c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3829,6 +2009,56 @@ Unidad+cCantidad+cImporte +cSerieAso+cNumAso+cVenta+cUniBulto;Error :         12
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AL\TEMP\0000HYBT00IU.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3852,6 +2082,56 @@ AL\TEMP\0000HYBT00IU.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :          3
 16-08-2017 , En el Fuente: lndia = ThisForm._cbodia.Value
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: _CBODIA es un miembro desconocido.;Linea : lndia = ThisForm._cbodia.Value;Error :       1925;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3999,6 +2279,56 @@ AL\TEMP\0000HYBT00K3.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AL\TEMP\0000HYBT00R2.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4022,6 +2352,56 @@ AL\TEMP\0000HYBT00R2.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :          3
 16-08-2017 , En el Fuente: lndia = ThisForm._cbodia.Value
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: _CBODIA es un miembro desconocido.;Linea : lndia = ThisForm._cbodia.Value;Error :       1925;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4145,6 +2525,56 @@ OCAL\TEMP\0000HYBT00U9.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   92 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT017L.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4163,6 +2593,56 @@ OCAL\TEMP\0000HYBT00U9.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :         39
 16-08-2017 , En el Fuente: _filename=alltrim(_path)+_filename
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : _filename=alltrim(_path)+_filename;Error :        107;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4262,6 +2742,56 @@ OCAL\TEMP\0000HYBT00U9.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \LOCAL\TEMP\0000HYBT0193.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4280,6 +2810,56 @@ OCAL\TEMP\0000HYBT00U9.TMP;Ultimo Control activo:
 16-08-2017 , Nº de Linea :         43
 16-08-2017 , En el Fuente: COPY TO &_filename SDF 
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CDEST'.;Linea : lcrutadest = IIF(PCOUNT()<4,'/',cDest);Error :         12;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4367,6 +2947,56 @@ OCAL\TEMP\0000HYBT00U9.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Error :         12;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HYBT01Z3.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4395,6 +3025,56 @@ Error :         12;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 
 16-08-2017 , Nº de Linea :         15
 16-08-2017 , En el Fuente: Thisform.ftp.EXECUTE(lcPaso,"put "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest); 
 16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: THISFORM sólo puede usarse en un método.;Linea : Thisform.ftp.EXECUTE(cPaso,"put "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest) +"/"+Alltrim(lcArchivo)+"") && Agrega el archiv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4453,6 +3133,56 @@ o;Error :       1929;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         9
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 A\LOCAL\TEMP\0000HYBT021X.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4481,6 +3211,56 @@ A\LOCAL\TEMP\0000HYBT021X.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 A\LOCAL\TEMP\0000HK3T001M.TMP;Ultimo Control activo: 
 16-08-2017 , Pila de llamadas
 16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4503,3 +3283,447 @@ A\LOCAL\TEMP\0000HK3T001M.TMP;Ultimo Control activo:
 16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
 16-08-2017 , Nº de Linea :         39
 16-08-2017 , En el Fuente: =SaveSQL(lcCmd,this.Name+"_vta")
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Request timed out.;Linea : cBuffer = .OpenURL( lcPaso, 0 );Error :       1429;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00F0.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         19
+16-08-2017 , En el Fuente: 	cBuffer = .OpenURL( lcPaso, 0 )
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Request timed out.;Linea : cBuffer = .OpenURL( lcPaso, 0 );Error :       1429;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00FR.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         19
+16-08-2017 , En el Fuente: 	cBuffer = .OpenURL( lcPaso, 0 )
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Unable to connect to remote host.;Linea : .Execute("ftp://ftp.microsoft.com", "DIR *", "", "" );Error :       1429;Ultimo Alias Activo: CSR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00HU.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         24
+16-08-2017 , En el Fuente: 	.Execute("ftp://ftp.microsoft.com", "DIR *", "", "" )
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: STATECHANGED es un método, evento u objeto.;Linea : CASE .stateChanged=12;Error :       1737;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OCAL\TEMP\0000HWQX00IL.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         27
+16-08-2017 , En el Fuente: 	CASE .stateChanged=12
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Unable to complete request.;Linea : .Execute("distribuidores.jbs.com.ar", "DIR *", "", "" );Error :       1429;Ultimo Alias Activo: CSRAUXV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00JC.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         24
+16-08-2017 , En el Fuente: 	.Execute("distribuidores.jbs.com.ar", "DIR *", "", "" )
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Unable to connect to remote host.;Linea : .Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" );Error :       1429;Ultimo Alias Act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00K3.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         24
+16-08-2017 , En el Fuente: 	.Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" )
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Unable to connect to remote host.;Linea : .Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" );Error :       1429;Ultimo Alias Act
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00KU.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         24
+16-08-2017 , En el Fuente: 	.Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" )
+16-08-2017 , GENERARIMP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Código de excepción OLE IDispatch 0 de Inet: Unable to connect to remote host.;Linea : .Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" );Error :       1429;Ultimo Alias Act
+
+
+
+
+
+ivo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000HWQX00LA.TMP;Ultimo Control activo: 
+16-08-2017 , Pila de llamadas
+16-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Objeto      : generarimp.imprimir_vistaprevia1.impresora.click
+16-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-08-2017 , Nº de Linea :          5
+16-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.crearinforme
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         51
+16-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.generar
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         41
+16-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.enviarftp
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :          7
+16-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
+16-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Objeto      : generarimp.ftppud
+16-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
+16-08-2017 , Nº de Linea :         24
+16-08-2017 , En el Fuente: 	.Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" )

@@ -4,7 +4,7 @@
 FUNCTION FTP
 Parameters oFTP,cPaso ,cOrig,cArch,cDesti 
 
-lcrutadest = IIF(PCOUNT()<5,'/',cDesti)
+lcrutadest = IIF(PCOUNT()<5,'',cDesti)
 
 Wait Window "Conectando con el Servidor" Nowait 
 lcrutafuen = ADDBS(cOrig) 
@@ -12,7 +12,8 @@ lcArchivo = cArch
 Wait Window "enviando "+Alltrim(lcArchivo)+" " Nowait 
 
 stop()
-oFTP.EXECUTE(cPaso,"put "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest)+"/"+Alltrim(lcArchivo)+"") && Agrega el archivo 
+cSend = "PUT "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest)+"/"+Alltrim(lcArchivo)+""
+oFTP.EXECUTE(cPaso,cSend) && Agrega el archivo 
 Do While oFTP.stillexecuting=.T. 
 Loop && espera para que termine 
 Enddo 
