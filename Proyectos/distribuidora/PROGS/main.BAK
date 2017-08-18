@@ -95,6 +95,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
 	SET PROCEDURE TO formposition.prg ADDITIVE 
+   SET PROCEDURE TO ftp.prg ADDITIVE
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
