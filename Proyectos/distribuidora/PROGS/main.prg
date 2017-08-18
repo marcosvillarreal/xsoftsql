@@ -70,12 +70,13 @@ If lldesarrollo
    _rutaformsb  =lcdd+'forms\bancario'
    _rutaformsp  =lcdd+'forms\pedidos'
    _rutaformsc  =lcdd+'forms\caja'
+   _rutaformut  =lcdd+'forms\util'
    
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp
+               ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut
                
       
 Endif
