@@ -146,6 +146,11 @@ IF TYPE('goApp')='O'
 	do setup	
 	_screen.LockScreen=.t.
 	
+	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
+
+    WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+    DO Verifica_OCX WITH "Check"
+	
 *!*		**** aca comienza la parte de posicionamiento del escritorio
 	PUBLIC oscreen    
 	LeerXML("screen.xml",@oscreen)  && rescato la posicion de la _screen	

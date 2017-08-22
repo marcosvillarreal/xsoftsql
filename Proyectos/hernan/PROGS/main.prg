@@ -75,6 +75,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE       
    SET PROCEDURE TO balanzasystel.prg ADDITIVE 
+   SET PROCEDURE TO googlemaps.prg ADDITIVE 
    
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
