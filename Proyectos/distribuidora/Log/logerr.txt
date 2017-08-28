@@ -1,1132 +1,3 @@
-17-08-2017 , Objeto      : generarimp.crearinforme
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         51
-17-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.generar
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         41
-17-08-2017 , En el Fuente: 		.EnviarFTP(_filevta)
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.enviarftp
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :          7
-17-08-2017 , En el Fuente: this.ftppud(cArch,cOrig)
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.ftppud
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         24
-17-08-2017 , En el Fuente: 	.Execute("ftp://distribuidores.jbs.com.ar", "DIR *", "", "" )
-17-08-2017 , GENERARIMP.INIT, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cCodCorrida  = STRTRIM(VAL(cDataCorrida)+1);Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IN\APPDATA\LOCAL\TEMP\0000DYQ100CA.TMP;Ultimo Control activo: 
-17-08-2017 , Pila de llamadas
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.init
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         11
-17-08-2017 , En el Fuente: 	.iniciarvariables()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.iniciarvariables
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :          2
-17-08-2017 , En el Fuente: this.cargardatos()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.cargardatos
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         25
-17-08-2017 , En el Fuente: cCodCorrida  = STRTRIM(VAL(cDataCorrida)+1)
-17-08-2017 , GENERARIMP.INIT, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cCodCorrida  = STRTRIM(VAL(cDataCorrida)+1);Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IN\APPDATA\LOCAL\TEMP\0000DYQ100CX.TMP;Ultimo Control activo: 
-17-08-2017 , Pila de llamadas
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.init
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         11
-17-08-2017 , En el Fuente: 	.iniciarvariables()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.iniciarvariables
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :          2
-17-08-2017 , En el Fuente: this.cargardatos()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.cargardatos
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         25
-17-08-2017 , En el Fuente: cCodCorrida  = STRTRIM(VAL(cDataCorrida)+1)
-17-08-2017 , GENERARIMP.INIT, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cCodCorrida  = STRTRIM(VAL(cDataCorrida)+1);Error :         11;Ultimo Alias Activo: CSRDETALLE;Ultimo registro:          1 ;DBF: C:\USERS\ADM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IN\APPDATA\LOCAL\TEMP\0000DYQ100DL.TMP;Ultimo Control activo: 
-17-08-2017 , Pila de llamadas
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.init
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         11
-17-08-2017 , En el Fuente: 	.iniciarvariables()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.iniciarvariables
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :          2
-17-08-2017 , En el Fuente: this.cargardatos()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : generarimp.cargardatos
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         26
-17-08-2017 , En el Fuente: cCodCorrida  = STRTRIM(VAL(cDataCorrida)+1)
-17-08-2017 , GENERA_SWIFT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se reconoce el verbo de comando.;Linea : THIS.;Error :         16;Ultimo Alias Activo: CSRAUXVENTA;Ultimo registro:         93 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DYQ100EY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.TMP;Ultimo Control activo: 
-17-08-2017 , Pila de llamadas
-17-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-08-2017 , Objeto      : genera_swift.imprimir_vistaprevia1.impresora.click
-17-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-08-2017 , Nº de Linea :          5
-17-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.crearinforme
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         51
-17-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.generar
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         43
-17-08-2017 , En el Fuente: 		THIS.
-17-08-2017 , GENERA_SWIFT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: CSRAUXCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-P\0000DYQ1015U.TMP;Ultimo Control activo: 
-17-08-2017 , Pila de llamadas
-17-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-08-2017 , Objeto      : genera_swift.imprimir_vistaprevia1.impresora.click
-17-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-08-2017 , Nº de Linea :          5
-17-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.crearinforme
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         51
-17-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.generar
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         15
-17-08-2017 , En el Fuente: 		lok = .leerctacte()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.leerctacte
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         30
-17-08-2017 , En el Fuente: SELECT CsrCursor
-17-08-2017 , GENERA_SWIFT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad NOMCTACTE.;Linea : cNombre			= RIGHT(ALLTRIM(oDatos.NomCtacte)+SPACE(50),50);Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DYQ1016P.TMP;Ultimo Control activo: 
-17-08-2017 , Pila de llamadas
-17-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-08-2017 , Objeto      : genera_swift.imprimir_vistaprevia1.impresora.click
-17-08-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-08-2017 , Nº de Linea :          5
-17-08-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.crearinforme
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         51
-17-08-2017 , En el Fuente: 			lok = .generar(PeloCuit(goapp.empresacuit)+cFechaGen+cCodCorrida)
-17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Objeto      : genera_swift.generar
-17-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
-17-08-2017 , Nº de Linea :         15
 17-08-2017 , En el Fuente: 		lok = .leerctacte()
 17-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\genera_swift.sct
 17-08-2017 , Objeto      : genera_swift.leerctacte
@@ -1134,6 +5,36 @@ P\0000DYQ1015U.TMP;Ultimo Control activo:
 17-08-2017 , Nº de Linea :         36
 17-08-2017 , En el Fuente: 	cNombre			= RIGHT(ALLTRIM(oDatos.NomCtacte)+SPACE(50),50)
 17-08-2017 , GENERA_SWIFT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cCodigo			= strzero(VAL(oDatos.Codigo),10);Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo regist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1447,6 +348,36 @@ ro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DYQ101C0.TMP;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ror :       1806;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:        122 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DYQ102HK.TMP;Ultimo Control activo: 
 17-08-2017 , Pila de llamadas
 17-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1470,6 +401,36 @@ ror :       1806;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:        122 ;DBF
 17-08-2017 , Nº de Linea :         80
 17-08-2017 , En el Fuente: SELECT distinct CAST(codliente as int) as cliente,codvendedor as vendedor FROM CsrAuxVenta INTO CURSOR CsrAuxVtaRuta READWRITE 
 17-08-2017 , GENERA_SWIFT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CODCLIENTE'.;Linea : SELECT distinct CAST(codcliente as int) as cliente,codvendedor as vendedor FROM CsrAuxVenta INTO CURSOR CsrAuxVtaRuta READWRITE;Erro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1759,6 +720,36 @@ r :         12;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\0000DYQ102JS.TMP;Ultimo Control activo: 
 17-08-2017 , Pila de llamadas
 17-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1782,6 +773,36 @@ OCAL\TEMP\0000DYQ102JS.TMP;Ultimo Control activo:
 17-08-2017 , Nº de Linea :         41
 17-08-2017 , En el Fuente: 	APPEND BLANK IN CsrAuxRuta
 17-08-2017 , GENERA_SWIFT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : cRutas			= strzero(RECNO('CsrAuxRutas'),6);Error :         13;Ultimo Alias Activo: CSRAUXRUTA;Ultimo registro:        419 ;DBF: C:\USERS\ADMIN\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2050,6 +1071,36 @@ TA\LOCAL\TEMP\0000DYQ103EY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         12;Ultimo Alias Activo: CSRAUXRUTA;Ultimo registro:        419 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DYQ103GG.TMP;Ultimo Control activo: 
 17-08-2017 , Pila de llamadas
 17-08-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2073,6 +1124,36 @@ TA\LOCAL\TEMP\0000DYQ103EY.TMP;Ultimo Control activo:
 17-08-2017 , Nº de Linea :         14
 17-08-2017 , En el Fuente: replace detalle WITH cCodDist+cCodCorrida+cFecDesde+cFecHasta+cFecEnvio		+cClientes+cVendedores+cRutas+cVentas IN CsrAuxControl
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra el alias 'CSRBUSPROD'.;Linea : SELECT  CsrBusProd;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37T012Z.TMP;Ultimo Cont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2319,6 +1400,36 @@ rol activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37T019F.TMP;Ultimo Control activo: CODEXTEND
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -2337,6 +1448,36 @@ rol activo: CODEXTEND
 18-08-2017 , Nº de Linea :         20
 18-08-2017 , En el Fuente: and CsrExistenc.iddeposito = <<CsrParaConfig.iddeposito>> ),CAST(0 as numeric(11,0))) as existe
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : and CsrExistenc.iddeposito = <<CsrParaConfig.iddeposito>> ),CAST(0 as numeric(11,0))) as existe;Error :         13;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2560,6 +1701,36 @@ rol activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rol activo: CODEXTEND
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -2588,6 +1759,36 @@ rol activo: CODEXTEND
 18-08-2017 , Nº de Linea :         19
 18-08-2017 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37T01UK.TMP;Ultimo Cont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2797,6 +1998,36 @@ rol activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 P;Ultimo Control activo: CODEXTEND
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -2815,6 +2046,36 @@ P;Ultimo Control activo: CODEXTEND
 18-08-2017 , Nº de Linea :         28
 18-08-2017 , En el Fuente: =saveSQL(lcCmd,this.Name+"_load")
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra la variable 'CODALFAPROV'.;Linea : .column2.controlsource = 'CsrBusProd.codAlfaProv';Error :         12;Ultimo Alias Activo: CSRBUSPROD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2920,6 +2181,36 @@ TEMP\0000B37T027G.TMP;Ultimo Control activo: CODEXTEND
 18-08-2017 , Nº de Linea :         16
 18-08-2017 , En el Fuente:    	.column2.controlsource = 'CsrBusProd.codAlfaProv'
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra la propiedad INCLUYEIVA.;Linea : .column11.controlsource = IIF(thisform.incluyeiva,'CsrBusProd.prevtaf1','CsrBusProd.prevta1' );Error :       1734;Ultimo Alias Activo: CSRBUSPROD;Ultimo registro:    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3106,6 +2397,36 @@ TEMP\0000B37T027G.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\0000B37T03J0.TMP;Ultimo Control activo: CODEXTEND
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -3134,6 +2455,36 @@ L\TEMP\0000B37T03J0.TMP;Ultimo Control activo: CODEXTEND
 18-08-2017 , Nº de Linea :        558
 18-08-2017 , En el Fuente: IF LEN(LTRIM(lcArchivo))=0
 18-08-2017 , REGSTOCK.KEYPRESS, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : .Column2.SetFocus();Error :       1940;Ultimo Alias Activo: CSRBUSPROD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37T04UK.TMP;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3260,6 +2611,36 @@ timo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ol activo: CODEXTEND
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -3278,6 +2659,36 @@ ol activo: CODEXTEND
 18-08-2017 , Nº de Linea :         56
 18-08-2017 , En el Fuente:    		this.Column2.SetFocus()
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra la propiedad CLICK.;Linea : ThisForm.pframe1.page1.Grid1.Column2.Click();Error :       1734;Ultimo Alias Activo: CSRBUSPROD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3385,6 +2796,36 @@ T05DE.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0000B37T05G1.TMP;Ultimo Control activo: 
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -3408,6 +2849,36 @@ T05DE.TMP;Ultimo Control activo: CODEXTEND
 18-08-2017 , Nº de Linea :          2
 18-08-2017 , En el Fuente: thisform.grid1_consultararticulo(CsrCursor.id)
 18-08-2017 , REGSTOCK.KEYPRESS, Error: No se encuentra la propiedad ULTIMOCONTAINER.;Linea : this.ultimocontainer = 'PFRAME';Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3497,6 +2968,36 @@ T05Y8.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 atoria INTO CURSOR CsrAuxOperatoria READWRITE;Error :          1;Ultimo Alias Activo: CSRPARACONFIG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B37T075T.TMP;Ultimo Control activo: CODIGO
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
@@ -3535,6 +3036,36 @@ atoria INTO CURSOR CsrAuxOperatoria READWRITE;Error :          1;Ultimo Alias Ac
 18-08-2017 , Nº de Linea :         21
 18-08-2017 , En el Fuente: SELECT CsrOperatoria.*,CAST(0 as n(12,3)) as prevtadolar,CAST(0 as n(12,3)) as prevtafdolar,CAST(0 as n(12,3)) as prevta,CAST(0 as n(12,3)) as prevtafFROM CsrOperatoria INTO CURSOR CsrAuxOperatoria READWRITE 
 18-08-2017 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : CASE .CodEmpresa = 6 &&Libreria;Error :        107;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         31 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3601,6 +3132,36 @@ FWP009W.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 FWP00XS.TMP;Ultimo Control activo: 
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -3635,6 +3196,36 @@ FWP00XS.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 FWP01NI.TMP;Ultimo Control activo: CODEXTEND
 18-08-2017 , Pila de llamadas
 18-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
@@ -3652,6 +3243,36 @@ FWP01NI.TMP;Ultimo Control activo: CODEXTEND
 22-08-2017 , PATRONCARGAPEDIDOS.CMDPROCESAR.CLICK, Error: El archivo 'csrcuerpo2.dbf' no existe.;Linea : SELECT CsrCuerpo2.* FROM CsrCuerpo2 WHERE RECNO()<1 INTO CURSOR CsrCuerpo READWRITE;Error :          1;Ultimo Alias Activo: CSRPARAVARIO;Ultimo regis
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:         30 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000076DL04GK.TMP;Ultimo Control activo: 
 22-08-2017 , Pila de llamadas
 22-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\patroncargapedidos_urq.sct
@@ -3664,3 +3285,269 @@ tro:         30 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000076DL04GK.TMP;Ultimo 
 22-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\patroncargapedidos_urq.sct
 22-08-2017 , Nº de Linea :        123
 22-08-2017 , En el Fuente: SELECT CsrCuerpo2.* FROM CsrCuerpo2 WHERE RECNO()<1 INTO CURSOR CsrCuerpo READWRITE 
+28-08-2017 , REGFACCPRA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF 'P'$UPPER(this.Value) AND CsrComprobante.clase$'A';Error :         11;Ultimo Alias Activo: CSRVALOR;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000036DL011M.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :          9
+28-08-2017 , En el Fuente: 	IF 'P'$UPPER(this.Value) AND CsrComprobante.clase$'A'
+28-08-2017 , REGFACCPRA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF 'P'$UPPER(this.Value) AND CsrComprobante.clase$'A';Error :         11;Ultimo Alias Activo: CSRVALOR;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000036DL011M.TMP;Ultimo Control activo: CODIGO
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :          9
+28-08-2017 , En el Fuente: 	IF 'P'$UPPER(this.Value) AND CsrComprobante.clase$'A'
+28-08-2017 , REGFACCPRA.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF 'P'$UPPER(this.Value) AND CsrComprobante.clase$'A';Error :         11;Ultimo Alias Activo: CSRVALOR;Ultimo registro:          2 ;DBF: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000036DL011M.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.keypress
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         13
+28-08-2017 , En el Fuente: 	   	    .k_escape()   		
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.k_escape
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         22
+28-08-2017 , En el Fuente:    		thisform.grid2_procesolinea(27)
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.grid2_procesolinea
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         14
+28-08-2017 , En el Fuente: 	thisform.containerencabeza.kitbuscaoaltaenCtacte.txtexiste1.SetFocus()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :          9
+28-08-2017 , En el Fuente: 	IF 'P'$UPPER(this.Value) AND CsrComprobante.clase$'A'
+28-08-2017 , REGFACCPRA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: No se encuentra el alias 'CSRCUERFAC'.;Linea : SELECT CsrCuerfac;Error :         13;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMP\000036DL01F4.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         11
+28-08-2017 , En el Fuente: 		lok = thisform.buscarorigen()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.buscarorigen
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :        106
+28-08-2017 , En el Fuente: SELECT CsrCuerfac
+28-08-2017 , REGFACCPRA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: No se encuentra la propiedad CODEXTEND.;Linea : Oscatter.codextend = Oscatter.codigo;Error :       1734;Ultimo Alias Activo: CSRCUERORD;Ultimo registro:          1 ;DBF: C:\USERS\ADMI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N\APPDATA\LOCAL\TEMP\000036DL0270.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         11
+28-08-2017 , En el Fuente: 		lok = thisform.buscarorigen()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.buscarorigen
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :        114
+28-08-2017 , En el Fuente: 	Oscatter.codextend = Oscatter.codigo
+28-08-2017 , REGFACCPRA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: No se encuentra el alias 'CSRCUERFAC'.;Linea : DO WHILE idcuerfac = CsrCuerfac.id;Error :         13;Ultimo Alias Activo: CSRCUERVARIORD;Ultimo registro:          1 ;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+IN\APPDATA\LOCAL\TEMP\000036DL02LV.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         11
+28-08-2017 , En el Fuente: 		lok = thisform.buscarorigen()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.buscarorigen
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :        158
+28-08-2017 , En el Fuente:     DO WHILE idcuerfac = CsrCuerfac.id
+28-08-2017 , REGSTOCK.INIT, Error: No se encuentra la propiedad TIPOFORM.;Linea : IF This.ProdProvee AND .tipoform$'R';Error :       1734;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         36 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000036DL04AJ.TMP;U
+
+
+
+
+
+
+
+
+
+ltimo Control activo: FECHA
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Objeto      : regstock.init
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Nº de Linea :         33
+28-08-2017 , En el Fuente:  		IF This.ProdProvee AND .tipoform$'R'
+28-08-2017 , REGFACCPRA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF lnopcion=1;Error :        107;Ultimo Alias Activo: CSRCUERORD;Ultimo registro:          3 ;DBF: C:\USERS\A
+
+
+
+
+
+
+
+DMIN\APPDATA\LOCAL\TEMP\000036DL0602.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.containerencabeza._txtparada.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         11
+28-08-2017 , En el Fuente: 		lok = thisform.buscarorigen()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.buscarorigen
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :        195
+28-08-2017 , En el Fuente: thisform.totalcomprobante()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Objeto      : regfaccpra.totalcomprobante
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra_v3.sct
+28-08-2017 , Nº de Linea :         30
+28-08-2017 , En el Fuente: IF lnopcion=1	
+28-08-2017 , REGSTOCK.GRID2.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la variable 'PRECOSTOSIVA'.;Linea : replace precostosiva WITH lobjprecio.costoreposicion;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\000036DL07JZ.TMP;Ultimo Control activo: 
+28-08-2017 , Pila de llamadas
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Objeto      : regstock.grid2.column2.text1.keypress
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Nº de Linea :         14
+28-08-2017 , En el Fuente:       this.LostFocus()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Objeto      : regstock.grid2.column2.text1.lostfocus
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Nº de Linea :          3
+28-08-2017 , En el Fuente: 		thisform.kitbuscarProd.f_lostfocusSay()
+28-08-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Objeto      : regstock.kitbuscarprod.f_lostfocussay
+28-08-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regstock.sct
+28-08-2017 , Nº de Linea :         33
+28-08-2017 , En el Fuente: 		replace precostosiva WITH lobjprecio.costoreposicion
