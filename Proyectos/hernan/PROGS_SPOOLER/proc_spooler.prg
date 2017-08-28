@@ -1,3 +1,22 @@
+FUNCTION GrabarLogs
+PARAMETERS lcArchivo,lcClave,lcDato1
+
+IF FILE("&lcarchivo")
+	Arc = FOPEN("&lcArchivo",12)    
+ELSE 
+	Arc = FCREATE("&lcarchivo")
+ENDIF 
+
+LenRegistro = 100
+IF arc#0
+   lclabel= TIME() + " " + lcClave + " " +  lcDato1
+   pnSize = FSEEK(Arc,0,2)
+   XX= FPUTS(Arc,lclabel,lenregistro)   
+ENDIF 
+=FCLOSE(Arc)		
+
+RETURN 
+
 FUNCTION ObtenerServidorRed
 
 LOCAL lsalgo
