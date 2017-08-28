@@ -190,68 +190,82 @@ RETURN lcChar
 
 
 FUNCTION TablaProveedores
-LPARAMETERS cCodAlfa
+LPARAMETERS cNomProv
 LOCAL cNomProveedor
 
-cNomProveedor = ''		
+nCodP = 0		
 DO CASE
-CASE LEFT(cCodAlfa,5)$"APICA-APICB-APICC-APICD-APICM-APICN-APIPU"
-	cNomProveedor ='PURIFICADORES ARGENTINOS S.A.'
-CASE LEFT(cCodAlfa,4)$"NAPA-NAPD-NAPM-NAPP-NAPT-NAPX"
-	cNomProveedor ='POYNAL S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NAPZB-NRWD-NRFUS-NRVAR" AND VAL(RIGHT(cCodAlfa,3))>=400 AND VAL(RIGHT(cCodAlfa,3))<=499
-	cNomProveedor ='PROV. SERV. S.A.'
-CASE LEFT(cCodAlfa,5)$"NRATR"
-	cNomProveedor ='ARGENSIL S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NRSIL"
-	cNomProveedor ='PROCHEM S.A.'
-CASE LEFT(cCodAlfa,5)$"NRFUL"
-	cNomProveedor ='FERREIRA CARLOS ALBERTO'
-CASE LEFT(cCodAlfa,5)$"LUBRI" OR (LEFT(cCodAlfa,5)$"NRLUB" AND VAL(RIGHT(cCodAlfa,4))<=2999)
-	cNomProveedor ='FERCOL LUBRICANTES S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NRLUB" AND VAL(RIGHT(cCodAlfa,4))>=3000 AND VAL(RIGHT(cCodAlfa,4))<=5000
-	cNomProveedor ='EXCO S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NRCEP" AND VAL(RIGHT(cCodAlfa,4))>=100 AND VAL(RIGHT(cCodAlfa,4))<=999
-	cNomProveedor ='INTERCLEAN BRUSH CO. S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NRCEP" AND VAL(RIGHT(cCodAlfa,4))>=1000 AND VAL(RIGHT(cCodAlfa,4))<=2500
-	cNomProveedor ='FS-FRANCISCO SALZANO SAICIA'
-CASE LEFT(cCodAlfa,4)$"NAPA-NAPD-NAPM-NAPP-NAPT-NAPX"
-	cNomProveedor ='FS-FRANCISCO SALZANO SAICIA'
-CASE LEFT(cCodAlfa,5)$"NRTEP" AND VAL(RIGHT(cCodAlfa,4))>=1 AND VAL(RIGHT(cCodAlfa,4))<=29
-	cNomProveedor ='TEXTIL DOSS S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NRTEP" AND VAL(RIGHT(cCodAlfa,4))>=30 AND VAL(RIGHT(cCodAlfa,4))<60
-	cNomProveedor ='SILVETEX S.A.'
-CASE cCodAlfa$"NRTEP0060"
-	cNomProveedor ='LUPAÑOS SH DE RAMIREZ FP Y MJ'
-CASE LEFT(cCodAlfa,5)$"NRTEP" AND VAL(RIGHT(cCodAlfa,4))>=70 AND VAL(RIGHT(cCodAlfa,4))<=90
-	cNomProveedor ='INTERCLEAN BRUSH CO. S.R.L.'
-CASE LEFT(cCodAlfa,5)$"NRCIC"
-	cNomProveedor ='FERNANDO CICARE'
-CASE LEFT(cCodAlfa,4)$"RNB-RNE-RNF-RNH-RNJ-RNL" OR LEFT(cCodAlfa,5)$"WEFAP-WEWAP"
-	cNomProveedor ='R. NETO S.A.'
-CASE LEFT(cCodAlfa,5)$"CUMIN" AND VAL(RIGHT(cCodAlfa,4))>=7000 AND VAL(RIGHT(cCodAlfa,4))<=7999
-	cNomProveedor ='POLVER S.R.L.'
-CASE LEFT(cCodAlfa,5)$"FABRA"
-	cNomProveedor ='EMIRIAN SA'
-CASE LEFT(cCodAlfa,5)$"NRELK-NRELT"
-	cNomProveedor ='DAMIANI JULIO'
-CASE LEFT(cCodAlfa,5)$"NRAB"
-	cNomProveedor ='EST.MET.POWER S.A.I.C.F.I'
-CASE LEFT(cCodAlfa,5)$"NRFUS-NRWD4"
-	cNomProveedor ='PROV. SERV. S.A.'
-CASE LEFT(cCodAlfa,5)$"NRGAS"
-	cNomProveedor ='BROGAS S.C.A.'
-CASE LEFT(cCodAlfa,5)$"NRPEN"
-	cNomProveedor ='J.V.S. INTERAMERICANA S.A.'
-CASE (LEFT(cCodAlfa,5)$"NRACC-NRCOL") OR cCodAlfa='NRTEOP0080'
-	cNomProveedor ='T & T S.A.' 
-CASE cCodAlfa = "FERRETERIA"
-	cNomProveedor = 'ROLFO SRL'
-CASE LEFT(cCodAlfa,5)$""
-	cNomProveedor = ''									
+CASE 'BAHIA AUTO'$cNomProv 
+	nCodP = 72
+CASE cNomProv$'ALFA' OR cNomProv$'ALA-ALBECA-ALDA-ALF-ALFE-ALFSA'
+	nCodP= 3
+CASE 'AMATR'$cNomProv OR 'AMATIA'$cNomProv
+	nCodP = 205
+CASE 'ARCORE'$cNomProv 
+	nCodP = 297
+CASE 'AUTOP'$cNomProv OR 'AUTOS DE'$cNomProv OR 'AUTP'$cNomProv OR 'AUTOS SE'$cNomProv OR OR 'AUTORA'$cNomProv
+	nCodP = 252
+CASE 'AUTON'$cNomProv OR 'AUTO'$cNomProv OR 'NAU'$cNomProv
+	nCodP = 1
+CASE 'ANS'$LEFT(cNomProv,3) OR 'ANG'$LEFT(cNomProv,3) OR 'AUT0'$LEFT(cNomProv,4)
+	nCodP = 1
+CASE 'BABAGUI'$LEFT(cNomProv,3) OR 'SHELL'$LEFT(cNomProv,5)
+	nCodP = 256	
+CASE 'BAHIA F'$cNomProv OR 'B.F'$cNomProv OR 'B/FIL'$cNomProv OR 'B FIL'$cNomProv
+	nCodP = 178
+CASE 'BAIA F'$cNomProv
+	nCodP = 178
+CASE 'BAL'$LEFT(cNomProv,3) OR 'BASAMO'=cNomProv
+	nCodP = 96
+CASE 'BARD'$LEFT(cNomProv,4) OR 'BARH'$LEFT(cNomProv,4)
+	nCodP = 5
+CASE 'BULON'$LEFT(cNomProv,5) OR 'BOLUN'$LEFT(cNomProv,5)
+	nCodP = 251
+CASE 'ANTONIO'$LEFT(cNomProv,7) OR 'ANTON'$cNomProv OR 'CARBU'$LEFT(cNomProv,5)
+	nCodP = 241
+CASE 'CV'$cNomProv OR 'C V'$cNomProv OR 'C.D.'$cNomProv OR 'C.V.'$cNomProv
+	nCodP = 60
+CASE 'CARLO'$cNomProv AND 'VAZQ'$cNomProv 
+	nCodP = 60
+CASE 'CASA'$cNomProv AND 'ERR'$cNomProv 
+	nCodP = 369
+CASE 'CEDIC'$cNomProv OR ('CEN'$cNomProv AND 'DIS'$cNomProv)
+	nCodP = 306
+CASE ('DISTRI'$cNomProv AND 'CORD'$cNomProv)
+	nCodP = 306
+CASE 'MOSOL'$cNomProv OR 'CROMO'$LEFT(cNomProv,5)
+	nCodP = 220
+CASE 'AMERICA'$LEFT(cNomProv,7) OR 'BRAE'$LEFT(cNomProv,4)
+	nCodP = 330
+CASE 'DAIMA'$LEFT(cNomProv,5) OR 'DAEM'$LEFT(cNomProv,4)
+	nCodP = 330
+CASE 'DISTRAL'=cNomProv OR 'DPF'$LEFT(cNomProv,3)
+	nCodP = 330
+CASE 'DARSU'=cNomProv OR 'DAR'$LEFT(cNomProv,3) OR 'DASU'$LEFT(cNomProv,4)
+	nCodP = 180
+CASE 'VALLE'=cNomProv OR 'DELLA'$cNomProv OR 'DEDIO'$LEFT(cNomProv,5)
+	nCodP = 155
+CASE 'DER'$LEFT(cNomProv,3)
+	nCodP = 384
+CASE 'DIESEL'$LEFT(cNomProv,6) OR 'D/MOTO'$LEFT(cNomProv,6)
+	nCodP = 380
+CASE 'DIMET'=cNomProv
+	nCodP = 213
+CASE 'DISMAR'$cNomProv
+	nCodP = 164
+CASE 'EL HOL'$cNomProv
+	nCodP = 368
+CASE 'ELECTR'$LEFT(cNomProv,6) OR 'ELECTO'$LEFT(cNomProv,6)
+	nCodP = 239
+CASE 'EMB'$LEFT(cNomProv,3) AND 'SUR'$cNomProv
+	nCodP = 260
+CASE 'ZURMAN'=cNomProv
+	nCodP = 0 &&INPA
+CASE 'MAN'$cNomProv
+	nCodP=18
 OTHERWISE
 ENDCASE
-RETURN cNomProveedor
+RETURN nCodP
 
 ENDFUNC 
 
