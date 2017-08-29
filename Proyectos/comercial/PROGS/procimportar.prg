@@ -203,7 +203,7 @@ CASE 'AMATR'$cNomProv OR 'AMATIA'$cNomProv
 	nCodP = 205
 CASE 'ARCORE'$cNomProv 
 	nCodP = 297
-CASE 'AUTOP'$cNomProv OR 'AUTOS DE'$cNomProv OR 'AUTP'$cNomProv OR 'AUTOS SE'$cNomProv OR OR 'AUTORA'$cNomProv
+CASE 'AUTOP'$cNomProv OR 'AUTOS DE'$cNomProv OR 'AUTP'$cNomProv OR 'AUTOS SE'$cNomProv OR 'AUTORA'$cNomProv
 	nCodP = 252
 CASE 'AUTON'$cNomProv OR 'AUTO'$cNomProv OR 'NAU'$cNomProv
 	nCodP = 1
