@@ -191,7 +191,7 @@ RETURN lcChar
 
 FUNCTION TablaProveedores
 LPARAMETERS cNomProv
-LOCAL cNomProveedor
+cNomProv = ALLTRIM(cNomProv)
 
 nCodP = 0		
 DO CASE
@@ -261,8 +261,140 @@ CASE 'EMB'$LEFT(cNomProv,3) AND 'SUR'$cNomProv
 	nCodP = 260
 CASE 'ZURMAN'=cNomProv
 	nCodP = 0 &&INPA
-CASE 'MAN'$cNomProv
+CASE 'MAN'$cNomProv OR 'ET'$LEFT(cNomProv,2) OR '20LA PAMPA'$cNomProv
 	nCodP=18
+CASE 'EXP'$LEFT(cNomProv,3) OR cNomProv$'EXPOY'
+	nCodP=120
+CASE 'FAMAS'$cNomProv OR 'AMASA'=cNomProv OR 'ALTAMIRA'=cNomProv
+	nCodP=25
+CASE 'FAMAZA'$cNomProv OR 'FAMSA'=cNomProv OR 'FANASA'=cNomProv
+	nCodP=25
+CASE 'GARMENDIA'$cNomProv 
+	nCodP=193
+CASE 'GABRIEL'$cNomProv 
+	nCodP=24
+CASE ('G'$cNomProv AND '3'$cNomProv) OR ('GRUP'$cNomProv AND '3'$cNomProv)
+	nCodP=358
+CASE 'GUSPAMAR'$cNomProv
+	nCodP=59
+CASE 'HORNES'$cNomProv OR 'HYH'=cNomProv
+	nCodP=342
+CASE 'IMPERIA'$cNomProv
+	nCodP=103
+CASE 'INCAH'$cNomProv OR 'INCAUE'$cNomProv
+	nCodP=107
+CASE 'HORNES'$cNomProv OR 'HYH'=cNomProv
+	nCodP=342
+CASE 'ITUR'$LEFT(cNomProv,4) OR 'ITUURIA'=cNomProv
+	nCodP=50
+CASE 'IVECAM'$cNomProv
+	nCodP=405
+CASE 'JUMA'$cNomProv OR 'JUNKO'=cNomProv
+	nCodP=359
+CASE 'PAMPA'$cNomProv OR 'LA PAM'$LEFT(cNomProv,6) OR 'LA PM'$LEFT(cNomProv,5)
+	nCodP=30
+CASE 'LABAR'$cNomProv OR 'LA BARE'$LEFT(cNomProv,7) OR 'LABERE'$cNomProv OR 'LOBARE'$cNomProv
+	nCodP=109
+CASE 'MB'$STRTRAN(STRTRAN(STRTRAN(cNomProv,'.',''),'-',''),'/','')
+	nCodP=123
+CASE 'MEGA'$LEFT(cNomProv,4)
+	nCodP=399
+CASE 'MORRONE'$cNomProv
+	nCodP=339
+CASE 'NEUQ'$cNomProv OR 'NEWQU'$cNomProv OR 'YERR'$cNomProv
+	nCodP=108
+CASE 'PANA'$LEFT(cNomProv,4)
+	nCodP=262
+CASE 'IERTT'$cNomProv OR 'PAPI'$LEFT(cNomProv,4) OR 'PAPER'$LEFT(cNomProv,5)
+	nCodP=52
+CASE 'ERTTEI'$cNomProv OR 'PAPPI'$LEFT(cNomProv,5) OR 'IERTEI'$LEFT(cNomProv,6)
+	nCodP=52
+CASE 'PAROL'$cNomProv OR 'APROLO'$LEFT(cNomProv,6) OR 'PAOLO'$cNomProv
+	nCodP=17
+CASE 'PARO'$LEFT(cNomProv,4) OR 'POROLO'$cNomProv OR 'SUD'$LEFT(cNomProv,3)
+	nCodP=17
+CASE 'IERTT'$cNomProv OR 'PAPI'$LEFT(cNomProv,4) OR 'PAPER'$LEFT(cNomProv,5)
+	nCodP=52
+CASE 'CORRADI'$cNomProv
+	nCodP=303
+CASE 'POZZO'$cNomProv
+	nCodP=341
+CASE 'PROF'$cNomProv OR 'PRO F'$LEFT(cNomProv,5)
+	nCodP=235
+CASE 'PRO SE'$STRTRAN(STRTRAN(STRTRAN(cNomProv,'.',' '),'-',' '),'/',' ')
+	nCodP=40
+CASE 'PROMESA'$cNomProv
+	nCodP=314
+CASE 'PROSER'$cNomProv OR 'PROV SER'$cNomProv OR 'PROVS'$cNomProv OR 'PROV SSE'$cNomProv
+	nCodP=40
+CASE 'PROV SE'$STRTRAN(STRTRAN(STRTRAN(cNomProv,'.',' '),'-',' '),'/',' ')
+	nCodP=40
+CASE 'PROTEC'$cNomProv
+	nCodP=375
+CASE 'PAPA'$LEFT(cNomProv,4) OR 'RAPA'$LEFT(cNomProv,4)
+	nCodP=113
+CASE 'GAGRI'$LEFT(cNomProv,5) OR 'HG'$STRTRAN(STRTRAN(STRTRAN(cNomProv,'.',' '),'-',' '),'/',' ')
+	nCodP=24
+CASE 'RINDE'$LEFT(cNomProv,5) OR 'REI'$LEFT(cNomProv,3)
+	nCodP=305
+CASE 'ROD'$LEFT(cNomProv,5) AND ('PART'$cNomProv OR 'MEC'$cNomProv)
+	nCodP=316 	
+CASE 'RODAM'$LEFT(cNomProv,5) OR 'RODAQ'$LEFT(cNomProv,5)
+	nCodP=6 
+CASE 'ROBERTO NANT'$cNomProv
+	nCodP=327
+CASE 'PARTICU'$LEFT(cNomProv,5)
+	nCodP=316 
+CASE ('RODA'$LEFT(cNomProv,4) AND ('PART'$cNomProv)) OR 'RODA'=cNomProv
+	nCodP=316 	
+CASE 'ROSSI'$cNomProv
+	nCodP=201
+CASE 'SEDEC'$LEFT(cNomProv,5) OR 'SID'$LEFT(cNomProv,3) OR 'SDIE'$LEFT(cNomProv,4)
+	nCodP=43
+CASE 'SIE'$LEFT(cNomProv,3) OR 'SISEC'$LEFT(cNomProv,5) OR 'SODE'$LEFT(cNomProv,4)
+	nCodP=43
+CASE 'SURPIE'$LEFT(cNomProv,6) OR 'SURPI'$LEFT(cNomProv,5) 
+	nCodP=261
+CASE 'TARANT'$cNomProv OR 'TARAT'$LEFT(cNomProv,5) OR 'TARQAN'$LEFT(cNomProv,6)
+	nCodP=47
+CASE 'SUS'$cNomProv OR 'SUP'$LEFT(cNomProv,3)
+	nCodP=238
+CASE 'TOYOTA'$cNomProv OR 'AISIN'$cNomProv
+	nCodP=394
+CASE 'TRAMA'$LEFT(cNomProv,5) OR 'CARRE'$LEFT(cNomProv,5)
+	nCodP=216
+CASE 'TRANS'$LEFT(cNomProv,5) OR 'TRANC'$LEFT(cNomProv,5) OR 'TRAS'$LEFT(cNomProv,4)
+	nCodP=119
+CASE 'VENTO'$cNomProv OR 'VEN'$LEFT(cNomProv,3) OR 'VEBT'$LEFT(cNomProv,4) OR 'VETO'$LEFT(cNomProv,4)
+	nCodP=58
+CASE 'WESTAF'$cNomProv
+	nCodP=187
+CASE 'WHURT'$cNomProv OR 'WUR'$LEFT(cNomProv,3)
+	nCodP=99
+CASE 'ZANONI'$cNomProv
+	nCodP=291
+CASE 'CRIS'$LEFT(cNomProv,4) OR 'CRIB'$LEFT(cNomProv,4)
+	nCodP=417
+CASE 'CO TEC'$LEFT(cNomProv,6) OR 'COTEC'$LEFT(cNomProv,5)
+	nCodP=110
+CASE 'BERMUD'$cNomProv OR 'JOSE L'$LEFT(cNomProv,6)
+	nCodP=416
+CASE 'EG'$LEFT(cNomProv,2) OR 'EGSA'$cNomProv OR 'ESGA'$cNomProv
+	nCodP=26
+CASE 'IMPA'$cNomProv OR 'ZURMAN'$cNomProv
+	nCodP=56
+CASE 'JEN'$LEFT(cNomProv,3) OR 'JEM'$LEFT(cNomProv,3) OR 'JFREN'$LEFT(cNomProv,3)
+	nCodP=300
+CASE 'MUZZ'$cNomProv OR 'FEMFR'$LEFT(cNomProv,5) OR 'FENFR'$LEFT(cNomProv,5)
+	nCodP=300
+CASE 'MAZZU'$cNomProv OR 'MUS'$LEFT(cNomProv,3) OR 'FENFR'$LEFT(cNomProv,5)
+	nCodP=300
+CASE 'EGUET'$cNomProv OR 'TERE'$LEFT(cNomProv,4) OR 'TREZ'$LEFT(cNomProv,4)
+	nCodP=300
+CASE 'TRINT'$cNomProv 
+	nCodP=300
+CASE 'GARRET'$cNomProv 
+	nCodP=269
 OTHERWISE
 ENDCASE
 RETURN nCodP
