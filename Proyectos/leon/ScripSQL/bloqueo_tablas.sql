@@ -1,4 +1,4 @@
-use prueba
+use leon
 go
 SELECT request_session_id sessionid,
  resource_type type,
