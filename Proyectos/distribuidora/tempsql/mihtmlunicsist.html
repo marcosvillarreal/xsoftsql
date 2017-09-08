@@ -42,7 +42,7 @@
        var geocoder = null
 		function initialize() {
          geocoder = new google.maps.Geocoder();
-         var fenway = new google.maps.LatLng( -38.8682558000,  -62.0582326000);
+         var fenway = new google.maps.LatLng( -38.8099507000,  -62.1034494000);
 		  var mapOptions = {
              scaleControl: true,
              panControl:true,
@@ -51,8 +51,8 @@
              mapTypeId: google.maps.MapTypeId.ROADMAP,
     	      center: fenway
   		  };
-  		  latitudDiv.innerHTML =  -38.8682558000
-          longitudDiv.innerHTML =  -62.0582326000
+  		  latitudDiv.innerHTML =  -38.8099507000
+          longitudDiv.innerHTML =  -62.1034494000
           var map = new google.maps.Map(document.getElementById('map-canvas'),
               mapOptions);
 
