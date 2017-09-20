@@ -1,182 +1,3 @@
-20-07-2017 12:40:06 , Nº de Linea :         16
-20-07-2017 12:40:06 , En el Fuente: 	.generar('movStock','Stock','.t.',lcCodEmpresa+'-STK-'+lcfechasola+'.CSV')
-20-07-2017 12:40:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
-20-07-2017 12:40:06 , Objeto      : exportadorcsv.generar
-20-07-2017 12:40:06 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
-20-07-2017 12:40:06 , Nº de Linea :         18
-20-07-2017 12:40:06 , En el Fuente: 			_existe = .leerMovStock()
-20-07-2017 12:40:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
-20-07-2017 12:40:07 , Objeto      : exportadorcsv.leermovstock
-20-07-2017 12:40:07 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportadorcsv.sct
-20-07-2017 12:40:07 , Nº de Linea :         34
-20-07-2017 12:40:08 , En el Fuente: SELECT '2' as cuerfac,SPACE(20) as distribuidor,codigoproducto,strtrim(SUM(stock*UniCbo)) as stock,fecha,paquete FROM CsrCursor GROUP BY cuerfac,distribuidor,codigoproducto,fecha,paquete INTO CURSOR CsrImportar READWRI
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TE 
-20-07-2017 12:40:54 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT '2' as cuerfac,SPACE(20) as distribuidor,codigoproducto,strtrim(SUM(stock*UniCbo)) as stock,fecha,paquete FROM CsrCurso
-
 
 
 
@@ -518,8 +339,18 @@ r GROUP BY cuerfac,distribuidor,codigoproducto,fecha,paquete INTO CURSOR CsrImpo
 
 
 
+
+
+
+
+
 TE 
 20-07-2017 12:41:38 , EXPORTADORCSV.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CODIGODISTRIBUIDOR'.;Linea : Replace ALL CodigoDistribuidor WITH thisform.CodDistribuidor FOR Cuerfac = '2';Error :         12;Ultimo Alias Act
+
+
+
+
+
 
 
 
@@ -848,6 +679,11 @@ ivo: CSRIMPORTAR;Ultimo registro:        120 CUERFAC;DBF: C:\USERS\ADMIN\APPDATA
 
 
 
+
+
+
+
+
 TA\LOCAL\TEMP\0000E13D01WC.TMP;Ultimo Control activo: 
 20-07-2017 13:15:32 , Pila de llamadas
 20-07-2017 13:15:33 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -861,6 +697,11 @@ TA\LOCAL\TEMP\0000E13D01WC.TMP;Ultimo Control activo:
 20-07-2017 13:15:34 , Nº de Linea :         57
 20-07-2017 13:15:34 , En el Fuente: SELECT CsrAuxImprimir
 20-07-2017 13:39:21 , SUBFACTURA.COMMAND1.CLICK, Error: No se encuentra el alias 'CSRCUERPO'.;Linea : SELECT CsrCuerpo;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL
+
+
+
+
+
 
 
 
@@ -1163,6 +1004,11 @@ TA\LOCAL\TEMP\0000E13D01WC.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 WRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         16 REGISTRO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000072FD00J3.TMP;Ultimo Control activo: 
 21-07-2017 13:27:38 , Pila de llamadas
 21-07-2017 13:27:39 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -1186,6 +1032,11 @@ WRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      
 21-07-2017 13:27:42 , Nº de Linea :         33
 21-07-2017 13:27:42 , En el Fuente: 		SELECT codigo,sucursal,boca,nombre,observa,codprod,nomprod,cantidad,kilos,fecha		from CsrAuxImprimir  into cursor CsrImprimir READWRITE 
 26-07-2017 11:28:18 , GENSERENISIMA.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : .containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac;Error :         13;Ultimo Alias Activo: CSRAUXI
+
+
+
+
+
 
 
 
@@ -1464,6 +1315,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
 LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000093WP0031.TMP;Ultimo Control activo: 
 26-07-2017 11:28:25 , Pila de llamadas
 26-07-2017 11:28:25 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -1472,6 +1328,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 26-07-2017 11:28:25 , Nº de Linea :          2
 26-07-2017 11:28:26 , En el Fuente: 	.containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac
 26-07-2017 11:28:28 , GENSERENISIMA.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : .containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac;Error :         13;Ultimo Alias Activo: CSRAUXI
+
+
+
+
+
 
 
 
@@ -1741,6 +1602,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
 LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000093WP0031.TMP;Ultimo Control activo: 
 26-07-2017 11:28:36 , Pila de llamadas
 26-07-2017 11:28:36 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -1749,6 +1615,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 26-07-2017 11:28:36 , Nº de Linea :          2
 26-07-2017 11:28:37 , En el Fuente: 	.containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac
 26-07-2017 11:28:40 , GENSERENISIMA.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : .containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac;Error :         13;Ultimo Alias Activo: CSRAUXI
+
+
+
+
+
 
 
 
@@ -2009,6 +1880,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
 LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000093WP0031.TMP;Ultimo Control activo: 
 26-07-2017 11:28:42 , Pila de llamadas
 26-07-2017 11:28:43 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -2017,6 +1893,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 26-07-2017 11:28:43 , Nº de Linea :          2
 26-07-2017 11:28:43 , En el Fuente: 	.containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac
 26-07-2017 11:42:22 , GENSERENISIMA.CMDGENERAR.CLICK, Error: Error de sintaxis.;Linea : COPY TO &cFileName FIELDS EXCEPT registro WITH CHARACTER ';';Error :         10;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         36 REGISTRO;DBF: C:\USERS\AD
+
+
+
+
+
 
 
 
@@ -2271,6 +2152,11 @@ MIN\APPDATA\LOCAL\TEMP\0000G2DL00J1.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 R;Ultimo registro:         36 REGISTRO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000G2DL00LZ.TMP;Ultimo Control activo: 
 26-07-2017 11:43:12 , Pila de llamadas
 26-07-2017 11:43:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -2284,6 +2170,11 @@ R;Ultimo registro:         36 REGISTRO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
 26-07-2017 11:43:13 , Nº de Linea :         88
 26-07-2017 11:43:13 , En el Fuente: 		COPY TO &cFileName FIELDS EXCEPT registro DELIMITED "" WITH CHARACTER ';' 
 26-07-2017 11:44:53 , GENSERENISIMA.CMDGENERAR.CLICK, Error: El comando contiene una frase o palabra clave no reconocida.;Linea : COPY TO &cFileName FIELDS EXCEPT registro DELIMITED WITH CHARACTER ';' TYPE CSV;Error :         36;Ultimo Alias Activo: CSRI
+
+
+
+
+
 
 
 
@@ -2523,6 +2414,11 @@ MPRIMIR;Ultimo registro:         36 REGISTRO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
 
 
 
+
+
+
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000G2DL00T1.TMP;Ultimo Control activo: 
 26-07-2017 11:45:54 , Pila de llamadas
 26-07-2017 11:45:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -2536,6 +2432,11 @@ MPRIMIR;Ultimo registro:         36 REGISTRO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
 26-07-2017 11:45:55 , Nº de Linea :         90
 26-07-2017 11:45:55 , En el Fuente: 		COPY TO &cFileName FIELDS EXCEPT registro  TYPE CSV WITH CHARACTER ';' 
 26-07-2017 11:46:28 , GENSERENISIMA.CMDGENERAR.CLICK, Error: Error de sintaxis.;Linea : COPY TO &cFileName FIELDS EXCEPT registro  WITH CHARACTER ';';Error :         10;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         36 REGISTRO;DBF: C:\USERS\A
+
+
+
+
+
 
 
 
@@ -2761,6 +2662,11 @@ DMIN\APPDATA\LOCAL\TEMP\0000G2DL00UF.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 MIN\APPDATA\LOCAL\TEMP\0000G2DL00WL.TMP;Ultimo Control activo: 
 26-07-2017 11:48:18 , Pila de llamadas
 26-07-2017 11:48:19 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -2774,6 +2680,11 @@ MIN\APPDATA\LOCAL\TEMP\0000G2DL00WL.TMP;Ultimo Control activo:
 26-07-2017 11:48:20 , Nº de Linea :         90
 26-07-2017 11:48:20 , En el Fuente: 		COPY TO &cFileName FIELDS EXCEPT registro WITH CHARACTER ';'  
 26-07-2017 11:48:51 , GENSERENISIMA.CMDGENERAR.CLICK, Error: Error de sintaxis.;Linea : COPY TO &cFileName FIELDS EXCEPT registro WITH CHARACTER ';';Error :         10;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         27 REGISTRO;DBF: C:\USERS\AD
+
+
+
+
+
 
 
 
@@ -2985,6 +2896,11 @@ MIN\APPDATA\LOCAL\TEMP\0000G2DL00Y4.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 : C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000G2DL0242.TMP;Ultimo Control activo: 
 26-07-2017 12:21:55 , Pila de llamadas
 26-07-2017 12:21:56 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -2998,6 +2914,11 @@ MIN\APPDATA\LOCAL\TEMP\0000G2DL00Y4.TMP;Ultimo Control activo:
 26-07-2017 12:21:57 , Nº de Linea :         76
 26-07-2017 12:21:57 , En el Fuente: replace ALL sucursal WITH INT(VAL(sucursal)) IN CsrImprimir
 26-07-2017 12:28:45 , GENSERENISIMA.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : .containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac;Error :         13;Ultimo Alias Activo: CSRAUXI
+
+
+
+
+
 
 
 
@@ -3189,6 +3110,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
 LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000G2DL02H4.TMP;Ultimo Control activo: 
 26-07-2017 12:28:49 , Pila de llamadas
 26-07-2017 12:28:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -3197,6 +3123,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 26-07-2017 12:28:50 , Nº de Linea :          2
 26-07-2017 12:28:51 , En el Fuente: 	.containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac
 26-07-2017 12:28:55 , GENSERENISIMA.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : .containerencabeza.fecha_calendario2.txtfecha.value = Csrparaconfig.fechafac;Error :         13;Ultimo Alias Activo: CSRAUXI
+
+
+
+
+
 
 
 
@@ -3378,6 +3309,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
 \LOCAL\TEMP\0000ARRD00BN.TMP;Ultimo Control activo: 
 27-07-2017 11:36:10 , Pila de llamadas
 27-07-2017 11:36:10 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -3391,6 +3327,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 27-07-2017 11:36:12 , Nº de Linea :         66
 27-07-2017 11:36:12 , En el Fuente: SELECT CsrImprimir
 27-07-2017 11:37:30 , GENSERENISIMA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR2;Ultimo registro:         45 REGISTRO;DBF: C:\USERS\ADMIN
+
+
+
+
+
 
 
 
@@ -3571,6 +3512,11 @@ LIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
 FLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GHS900R2.TMP;Ultimo Control activo: 
 27-07-2017 12:30:25 , Pila de llamadas
 27-07-2017 12:30:26 , Programa    : j:\xsoftsql\proyectos\leon\forms\genserenisima.sct
@@ -3584,6 +3530,11 @@ FLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GHS900R2.TMP;Ultimo Con
 27-07-2017 12:30:27 , Nº de Linea :        127
 27-07-2017 12:30:27 , En el Fuente: thisform.grid2.column7.ControlSource = "CsrAuxiliar.orden"
 16-08-2017 14:56:57 , REGCAMBIOARTICULOS.PRECIOPROD1.INIT, Error: La sesión de datos nº 2 no se puede liberar si hay transacciones abiertas.;Linea : lobjprecio = CREATEOBJECT('custom');Error :       1549;Ultimo Alias Activo: CSRSETEO;Ultimo registro:    
+
+
+
+
+
 
 
 
@@ -3732,6 +3683,11 @@ FLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GHS900R2.TMP;Ultimo Con
 
 
 
+
+
+
+
+
     1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AI2X00YY.TMP;Ultimo Control activo: 
 22-08-2017 11:28:13 , Pila de llamadas
 22-08-2017 11:28:13 , Programa    : j:\xsoftsql\proyectos\leon\forms\regchequerechazado.sct
@@ -3811,7 +3767,17 @@ FLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000GHS900R2.TMP;Ultimo Con
 
 
 
+
+
+
+
+
 (YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias A
+
+
+
+
+
 
 
 
@@ -3952,8 +3918,18 @@ ctivo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
 ncimien       ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm       FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
 30-08-2017 20:04:35 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: El archivo 'csrcabepedido.dbf' no existe.;Linea : SELECT CsrCabePedido.* FROM CsrCabePedido ORDER BY id INTO CURSOR CsrAuxCabePed READWRITE;Error :          1;Ultimo Alias Activo: CUEPEDIDO;
+
+
+
+
+
 
 
 
@@ -4085,6 +4061,11 @@ Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T03RP
 
 
 
+
+
+
+
+
 imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T04D8.TMP;Ultimo Control activo: 
 30-08-2017 20:09:16 , Pila de llamadas
 30-08-2017 20:09:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid_v1.sct
@@ -4098,6 +4079,11 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T04D8.TM
 30-08-2017 20:09:28 , Nº de Linea :         34
 30-08-2017 20:09:28 , En el Fuente: SELECT CuePedido.* FROM CuerPedido ORDER BY idcabeza,codigo INTO CURSOR CsrAuxCuerPed
 30-08-2017 20:10:32 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: SQL: no se encuentra la columna 'IDCABEZA'.;Linea : SELECT CuePedido.* FROM CuePedido ORDER BY idcabeza,codigo INTO CURSOR CsrAuxCuerPed;Error :       1806;Ultimo Alias Activo: CSRAUXCABEPED
+
+
+
+
+
 
 
 
@@ -4213,6 +4199,11 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T04D8.TM
 
 
 
+
+
+
+
+
  Activo: CSRAUXCABEPED;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T04OS.TMP;Ultimo Control activo: 
 30-08-2017 20:12:07 , Pila de llamadas
 30-08-2017 20:12:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid_v1.sct
@@ -4226,6 +4217,11 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T04D8.TM
 30-08-2017 20:12:28 , Nº de Linea :         34
 30-08-2017 20:12:33 , En el Fuente: SELECT CuePedido.*,idcabpedido as idcabeza FROM CuePedido ORDER BY idcabeza,codigo INTO CURSOR CsrAuxCuerPed
 30-08-2017 20:17:16 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: El archivo c:\users\admin\appdata\local\temp\0000737t0589.tmp es de sólo lectura.;Linea : INDEX on idcabeza tag idpedido;Error :       1718;Ultimo Alias Activo: CSRAUXCUERPED;Ultimo registro
+
+
+
+
+
 
 
 
@@ -4327,6 +4323,11 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000737T04D8.TM
 
 
 
+
+
+
+
+
 S\ADMIN\APPDATA\LOCAL\TEMP\0000737T05GC.TMP;Ultimo Control activo: 
 30-08-2017 20:19:43 , Pila de llamadas
 30-08-2017 20:19:47 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid_v1.sct
@@ -4382,7 +4383,17 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000737T05GC.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 s codmotivo ,vales,bonificaciones as bonif1,observaciones ,tipopedido,fechadeentrega,loteexportacion,remito,pedidoid_pm,SPACE(200) as archivo FROM CabePedido ORDER BY id INTO CURSOR CsrAuxCabePed READWRITE;Error :       1806;Ultimo Alias Activo: CUEPEDID
+
+
+
+
+
 
 
 
@@ -4466,8 +4477,18 @@ OVARIEDAD;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
 
 
 
+
+
+
+
+
 loteexportacion,remito,pedidoid_pm,SPACE(200) as archivo FROM CabePedido ORDER BY id INTO CURSOR CsrAuxCabePed READWRITE 
 30-08-2017 20:29:09 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la variable 'IDPEDIDO'.;Linea : SET ORDER TO idpedido;Error :         12;Ultimo Alias Activo: CSRAUXCABEPED;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEM
+
+
+
+
+
 
 
 
@@ -4547,6 +4568,11 @@ P\0000737T0684.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 P\0000737T06D3.TMP;Ultimo Control activo: 
 30-08-2017 20:31:18 , Pila de llamadas
 30-08-2017 20:31:22 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid_v1.sct
@@ -4588,6 +4614,11 @@ P\0000737T06D3.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 L\TEMP\0000GMBT00XN.TMP;Ultimo Control activo: 
 12-09-2017 11:30:37 , Pila de llamadas
 12-09-2017 11:30:38 , Programa    : j:\xsoftsql\proyectos\leon\forms\regnotapedandroid.sct
@@ -4606,6 +4637,11 @@ L\TEMP\0000GMBT00XN.TMP;Ultimo Control activo:
 12-09-2017 11:30:40 , Nº de Linea :         13
 12-09-2017 11:30:40 , En el Fuente: SELECT CabePedido
 12-09-2017 11:33:17 , REGNOTAPEDANDROID._TXTFOCOINI.GOTFOCUS, Error: La ruta o el nombre de archivo no es válido.;Linea : CURSORTOXML('CabePedido',cRuta+"ZCabPedido"+cArchivo,1,512+32,0);Error :        202;Ultimo Alias Activo: CABEPEDIDO;Ultimo registro:
+
+
+
+
+
 
 
 
@@ -4670,6 +4706,11 @@ L\TEMP\0000GMBT00XN.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 \TEMP\0000GMBT021A.TMP;Ultimo Control activo: 
 12-09-2017 11:50:00 , Pila de llamadas
 12-09-2017 11:50:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\patroncargapedidos_v1.sct
@@ -4682,3 +4723,25 @@ L\TEMP\0000GMBT00XN.TMP;Ultimo Control activo:
 12-09-2017 11:50:01 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\patroncargapedidos_v1.sct
 12-09-2017 11:50:01 , Nº de Linea :        111
 12-09-2017 11:50:01 , En el Fuente: SELECT CsrCuerpo
+20-09-2017 16:01:16 , MAIN, Error: No se encuentra el alias 'CSRCUERPO'.;Linea : SELECT CsrCuerpo;Error :         13;Ultimo Alias Activo: CSRBONIPROD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B5ZD00QR.TMP;Ultimo Control acti
+
+
+
+
+vo: 
+20-09-2017 16:01:16 , Pila de llamadas
+20-09-2017 16:01:16 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+20-09-2017 16:01:16 , Objeto      : main
+20-09-2017 16:01:16 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+20-09-2017 16:01:16 , Nº de Linea :        251
+20-09-2017 16:01:17 , En el Fuente: 	Read events   
+20-09-2017 16:01:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacpedido_v1.sct
+20-09-2017 16:01:17 , Objeto      : regfacpedido.cmdprocesar.click
+20-09-2017 16:01:17 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacpedido_v1.sct
+20-09-2017 16:01:18 , Nº de Linea :          2
+20-09-2017 16:01:18 , En el Fuente: thisform.leernotapedido()
+20-09-2017 16:01:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacpedido_v1.sct
+20-09-2017 16:01:18 , Objeto      : regfacpedido.leernotapedido
+20-09-2017 16:01:18 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacpedido_v1.sct
+20-09-2017 16:01:18 , Nº de Linea :         78
+20-09-2017 16:01:19 , En el Fuente: SELECT CsrCuerpo
