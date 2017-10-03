@@ -84,7 +84,7 @@ SCAN
 	
 	lcingbrutosBA = CsrDeudor.ingbrutos
 	
-	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.NroDoc)))
+	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.NroDoc)),15)
 	IF CsrDeudor.tipodoc$'01-02'
 		lcCuit			= Cuit(lcNroDoc)
 	ELSE
@@ -222,7 +222,7 @@ SCAN
 	
 	lcingbrutosBA = CsrAcreedor.ing_brutos
 	
-	lcCuit			= Cuit(strtrim(VAL(PeloCuit(CsrAcreedor.cuit))))
+	lcCuit			= Cuit(strtrim(VAL(PeloCuit(CsrAcreedor.cuit)),15))
 	
 	&&Localidad
 	lnidlocalidad	= 1100000006 
