@@ -26,6 +26,12 @@ llok = CargarTabla(lcData,'CabeRuta',.t.)
 llok = CargarTabla(lcData,'CuerRuta',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
 llok = CargarTabla(lcData,'PlanCue')
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
+ENDTEXT 
+=CrearCursorAdapter('CsrLocalidad',lcCmd)
+
 SET SAFETY ON
 
 IF !llok
@@ -44,6 +50,7 @@ LOCAL lnid
 
 lnid = RecuperarID('CsrVendedor',Goapp.sucursal10)
 
+*stop()
 SELECT CsrVendeVie
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
@@ -83,6 +90,7 @@ lnidfuerzavta  = CsrFuerzaVta.id
 
 lnNumZona = 1
 
+stop()
 &&Armamos las zonas y recorridos por la ciudad
 SELECT CsrCliente
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -92,28 +100,28 @@ SCAN FOR !EOF()
 
 	SELECT Csrctacte
 	LOCATE FOR VAL(cnumero)=VAL(CsrCliente.codigo)
-	IF VAL(cnumero) # CsrCliente.codigo
+	IF VAL(cnumero) # VAL(CsrCliente.codigo)
 		SELECT CsrCliente
 		LOOP 
 	ENDIF 
        		
 	SELECT CsrVendedor
 	LOCATE FOR numero=VAL(CsrCliente.vendedor)
-	IF numero=VAL(CsrCliente.vendedor)
+	IF numero#VAL(CsrCliente.vendedor)
 		SELECT CsrCliente
 		LOOP
 	ENDIF 
 
 	SELECT CsrLocalidad
 	LOCATE FOR id = CsrCtacte.idlocalidad
-	IF id # CsrCtacte.idlocalidad
+	IF id # CsrCtacte.idlocalidad or CsrCtacte.idlocalidad = 0
 		SELECT CsrCliente
 		LOOP 
 	ENDIF 
 	
 	SELECT CsrZona
-	LOCATE FOR abrevia=CsrLocalidad.cpostal
-	IF abrevia=CsrLocalidad.cpostal
+	LOCATE FOR abrevia=LEFT(CsrLocalidad.cpostal,4)
+	IF abrevia#LEFT(CsrLocalidad.cpostal ,4)
 		
 		lcnombre=NombreNi(alltrim(UPPER(CsrLocalidad.nombre)))
    
@@ -159,15 +167,19 @@ SCAN FOR !EOF()
 			VALUES (lnidcabeza,Csrrutavdor.id,VAL(SUBSTR(lcdias,i,1)))
 			lnidcabeza = lnidcabeza + 1
 		ENDIF 
-		IF CsrRecorrido.orden#0
-			SELECT CsrCuerruta
-			LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id AND orden=Csrrecorrido.orden
-			IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id OR orden#CsrRecorrido.orden
-				INSERT INTO Csrcuerruta (id,idcaberuta,idctacte,orden,turno) ;
-				VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,CsrRecorrido.orden,1)
-				lnidcuerruta = lnidcuerruta + 1
-			ENDIF 		   				
-		ENDIF 	   				
+		
+		SELECT CsrCuerruta
+		COUNT ALL FOR idcaberuta=Csrcaberuta.id TO nOrden
+		nOrden = nOrden + 1 
+		
+		SELECT CsrCuerruta
+		LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id &&AND orden=Csrrecorrido.orden
+		IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id &&OR orden#CsrRecorrido.orden
+			INSERT INTO Csrcuerruta (id,idcaberuta,idctacte,orden,turno) ;
+			VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,nOrden,1)
+			lnidcuerruta = lnidcuerruta + 1
+		ENDIF 		   				
+			   				
 	NEXT 
 	SELECT CsrCliente
 ENDSCAN

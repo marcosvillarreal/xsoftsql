@@ -59,7 +59,7 @@ cCadeCtacte = ""
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-stop()
+*stop()
 SCAN 
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = VAL(CsrDeudor.codigo)
@@ -128,7 +128,8 @@ SCAN
 		lnidlocalidad	= 1100001146 &&DARREGUIERA
 	CASE lnPostal = 8512
 		lnidlocalidad	= 1100002777 &&VILLALONGA
-	
+	CASE lnPostal = 8000
+		lnidlocalidad	=1100000345 &&BAHIA BLANCA
 	OTHERWISE
 		SELECT CsrLocalidad
 		LOCATE FOR VAL(cpostal) = lnpostal
@@ -257,7 +258,8 @@ SCAN
 		lnidlocalidad	= 1100019029 &&RAFAELA
 	CASE '3002' $ lcPostal
 		lnidlocalidad	= 1100019118 &&SANTA FE
-	
+	CASE lnPostal = 8000
+		lnidlocalidad	=1100000345 &&BAHIA BLANCA
 	OTHERWISE
 		SELECT CsrLocalidad
 		LOCATE FOR VAL(cpostal) = lnpostal
@@ -324,7 +326,7 @@ Oavisar.proceso('N')
 =MESSAGEBOX('Proceso terminado! ')
 
 SELECT CsrCtacte
-vista()
+*vista()
 
 CLOSE tables
 CLOSE INDEXES
