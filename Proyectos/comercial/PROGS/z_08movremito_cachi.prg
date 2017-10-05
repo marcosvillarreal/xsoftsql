@@ -52,7 +52,7 @@ SELECT FsrMovimien.* FROM FsrMovimien WHERE saldocan <> 0 AND NOT DELETED() ORDE
 
 LOCAL lnid,lnidmaopera
 
-stop()
+*stop()
 
 lnidproducto = RecuperarID('CsrProducto',Goapp.sucursal10) + 1
 nidmaopera	 = RecuperarID('CsrMaopera',Goapp.sucursal10)
@@ -124,6 +124,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 					nidarticulo = CsrProducto.id
 				ENDIF 
 			ELSE 
+				 lHayEdicion = .t.
 				&&Insertar producto con detalle
 				SELECT CsrProducto
 				GO BOTTOM 
