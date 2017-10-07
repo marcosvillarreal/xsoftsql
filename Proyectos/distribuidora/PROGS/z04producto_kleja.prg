@@ -130,17 +130,17 @@ SCAN FOR !EOF()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
-	lcnombre = NombreNi(alltrim(CsrArticulo.desarti))
-	lnidctacte = 0
-	lnidseccion = 0
-	lnidmarca = 0
-	lnidubicacion = 0
 	
-    SELECT CsrCtacte
-    LOCATE FOR cnumero=LTRIM(STR(10000+Csrarticulo.proveedor))
-    IF FOUND()
-    	lnidctacte = Csrctacte.id
-    ENDIF
+	STORE 0 TO lnFlete,nBonif1,nBonif2,nBonif3,nBonif4,nFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnPreventa4
+	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
+	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion
+	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta
+	
+*!*		SELECT CsrCtacte
+*!*	    LOCATE FOR cnumero=LTRIM(STR(10000+Csrarticulo.proveedor))
+*!*	    IF FOUND()
+*!*	    	lnidctacte = Csrctacte.id
+*!*	    ENDIF
 
     SELECT CsrRubro
     LOCATE FOR numero=VAL(Csrarticulo.codrubro)
@@ -157,93 +157,50 @@ SCAN FOR !EOF()
 	SELECT CsrUbicacion
 	GO TOP 
 	lnidubicacion = CsrUbicacion.id
-	
-	DO CASE
-	CASE CsrArticulo.codiva = 
-	CASE CsrArticulo.codiva = 
-	CASE CsrArticulo.codiva = 
-	ENDCASE
-    lnfracciona = 1 &&IIF(Csrarticulo.fraccion='S',1,0)
+
+	lcnombre	= NombreNi(alltrim(CsrArticulo.desarti))
+	lnCodigo	= CsrArticulo.codalias
+	lcCodArti	= CsrArticulo.codArti
+	lnfracciona = 1 &&IIF(Csrarticulo.fraccion='S',1,0)
     lnidestado 	= IIF(empty(Csrarticulo.activo),1,2)
-    lnidiva     = VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
-    lnnolista   = 0 && IIF(Csrarticulo.figlista="N",1,0)
-    lnnofactu   = 0 &&IIF(Csrarticulo.nofactu,1,0)
-    lnespromo 	= 0 &&IF(csrarticulo.escodboni="S",1,0)
+    lnidiva     = 1100000001 &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
+   	lnunibulto	= CsrArticulo.cantxum
     lnidtipovta = 1 &&UNIDADES=1 ,	BULTOS = 2.
-    lnvtakilos	= IIF(CsrArticulo.kilos="K",1,0)
-    lnsireparto	= 0 &&IIF(EMPTY(CsrArticulo.sireparto),0,1)
-   	lnidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
-	lninterno	= IIF(ISNULL(CsrArticulo.interno),0.00,CsrArticulo.interno)
+    lnvtakilos	= IIF(UPPER(CsrArticulo.u_medida)$"KILOS-KG",1,0)
+   	lnidforma 	= 1100000001
 
 	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
-	IF EMPTY(Csrarticulo.fechaulcpr)
-		ldfechaulcpr 	= ldfecha
-	ELSE       
-		ldfechaulcpr = DATETIME(YEAR(Csrarticulo.fechaulcpr),MONTH(Csrarticulo.fechaulcpr),DAY(Csrarticulo.fechaulcpr),0,0,0)
-	ENDIF 		
-	IF EMPTY(Csrarticulo.fechapre)
-		ldfechamodf 	= ldfecha
-	ELSE       
-		ldfechamodf = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
-	ENDIF 		
-	IF EMPTY(Csrarticulo.fechabon)
-		ldfechabonif	= GOMONTH(ldfecha,360*20)
-	ELSE       
-		ldfechabonif = DATETIME(YEAR(Csrarticulo.fechabon),MONTH(Csrarticulo.fechabon),DAY(Csrarticulo.fechabon),0,0,0)
-	ENDIF 	
-	lnCosto	  = CsrArticulo.costo	
-	lnFelte   = 0
-	lnBonif1  = CsrArticulo.bonifica
-	lnBonif2  = CsrArticulo.bonif2
-	lnBonif3  = CsrArticulo.bonif3
-	lnBonif4  = CsrArticulo.bonif4
+	ldfechaulcpr 	= ldfecha
+	ldfechamodf 	= ldfecha
+	ldfechabonif	= GOMONTH(ldfecha,360*20)
 	
-	lnCostoBon	= lnCosto * (100 - lnBonif1)/100
-	lnCostoBon	= lnCostoBon * (100 - lnBonif2)/100
-	lnCostoBon	= lnCostoBon * (100 - lnBonif3)/100
-	lnCostoBon	= lnCostoBon * (100 - lnBonif4)/100
-	
-	lnFlete	  = ROUND(lnCostoBon * (CsrArticulo.flete/100),2)
-	nFletePorce = CsrArticulo.flete
-	
-	lnprevta1 = Csrarticulo.PREVenta1
-	lnprevta2 = Csrarticulo.PREVe2
-	lnprevta3 = Csrarticulo.PREVe3
-	lnsugerido= Csrarticulo.PREVe4
+	lnCosto		= CsrArticulo.p_compra
+	lnCostoBon	= lnCosto
 
-	lnprevtaf1 = Csrarticulo.PREVENTA1 * 1.21
-	lnprevtaf2 = Csrarticulo.PREVE2 * 1.21
-	lnprevtaf3 = Csrarticulo.PREVE3 * 1.21
+	lnprevta1 = Csrarticulo.p_lisiva
+
+	lnprevtaf1 = lnprevta1 * 1.21
+
+	lnUtil1		= CsrArticulo.utilidad
+	lnUtil2		= 0
+	lnUtil3		= 0
+	lnUtil4		= 0
+	lnPeso		= 0					
 	
-	lnidctacpra = 0
-	lnidctavta = 0
-*!*		SELECT CsrPlanCue
-*!*		LOCATE FOR nombre = "COMPRA DE MERCADERIA VARIA"
-*!*		IF FOUND()
-*!*			lnidctacpra = CsrPlanCue.id
-*!*		ENDIF
-*!*		SELECT CsrPlanCue
-*!*		LOCATE FOR nombre = "VENTA DE MERCADERIA VARIA"
-*!*		IF FOUND()
-*!*			lnidctavta = CsrPlanCue.id
-*!*		ENDIF 
-	*Guardamos el numero de CsrArticulo.envase que es una referencia a CsrAticulo.numero del envase
-	*Una vez caragdo todos los productos, recorremos los que idenvase#0 y buscamos el articulo = envase.
-	lnidenvase = VAL(CsrArticulo.envase)
-						
 	INSERT INTO Csrproducto (id,NUMERO,NOMBRE,CODALFA,IDIVA,COSTO,MARGEN1,PREVTA1,MARGEN2,; 
 	PREVTA2,SWITCH,idunidad,idtprod,idtamano,idcatego,idubicacio,idorigen,incluirped,idctacte,idrubro,MARGEN3,;
 	PREVTA3,margen4,prevta4,interno,unibulto,peso,idtipovta,idforma,fracciona,nomodifica,nombulto,puntope,;
 	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
 	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctaVTA,idenvase,fleteporce); 	
-	VALUES (lnid, Csrarticulo.NUMERO, lcnombre, LTRIM(STR(Csrarticulo.numero)), lnidiva, lnCosto,	;
-	Csrarticulo.utilidad, lnPREVta1, Csrarticulo.util2, lnPREVta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, Csrarticulo.util3, ;
-	lnPREVta3, 0,0,lninterno, Csrarticulo.unibulto,Csrarticulo.peso, lnidtipovta,lnidforma,lnfracciona,0,'',Csrarticulo.puntope,;
+	VALUES (lnid, lnCodigo, lcnombre, lcCodArti, lnidiva, lnCosto,	;
+	lnUtil2, lnPREVta1, lnutil2, lnPREVta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
+	lnPREVta3, 0,0,lninterno, lnUniBulto,lnPeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
 	1,1,lnflete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, lnBonif1,lnbonif2, lnbonif3,;
 	lnbonif4 ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnidfrio,;
 	lnsugerido,1,lnsireparto	,IIF(EMPTY(CsrArticulo.codigo_prv),' ',CsrArticulo.codigo_prv),CsrArticulo.bonies, CsrArticulo.minimo,;
-	CsrArticulo.bonies2, CsrArticulo.minimo2, CsrArticulo.bonies3, CsrArticulo.minimo3,LNVTAKILOS,LNVTAKILOS,ldfechabonif,0,lnidctacpra,lnidctavta;
+	CsrArticulo.bonies2, CsrArticulo.minimo2, CsrArticulo.bonies3, CsrArticulo.minimo3,LNVTAKILOS,LNVTAKILOS,ldfechabonif,0;
+	,lnidctacpra,lnidctavta;
 	,lnidenvase,nfletePorce)		
 
 	lnid = lnid + 1
