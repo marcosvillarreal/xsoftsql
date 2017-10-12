@@ -198,6 +198,8 @@ SCAN FOR !EOF() AND i <= lnlimite
 	 SELECT CsrArticulo   				
 ENDSCAN
 
+oavisar.usuario('Recordar importar Articulos y generar Articulo para importacion')
+
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

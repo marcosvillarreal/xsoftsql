@@ -17,13 +17,15 @@ Oavisar.proceso('S','Abriendo archivos')
 llok = .t.
 llok = CargarTabla(lcData,'Producto')
 llok = CargarTabla(lcData,'Ctacte')
-llok = CargarTabla(lcData,'Maopera')
-llok = CargarTabla(lcData,'MovRemito')
+llok = CargarTabla(lcData,'Maopera',.t.)
+llok = CargarTabla(lcData,'MovRemito',.t.)
 llok = CargarTabla(lcData,'Vendedor')
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrRubro.* FROM Rubro as CsrRubro WHERE Switch like '___1_'
+SELECT TOP 1 CsrRubro.*,CsrProducto.id as idarticulo FROM Rubro as CsrRubro 
+inner join Producto as CsrProducto on CsrRubro.id = CsrProducto.idrubro
+WHERE CsrRubro.numero=226
 ENDTEXT 
 IF NOT CrearCursorAdapter('CsrRubro',lccmd)
 	RETURN .f.
@@ -33,6 +35,7 @@ IF RECCOUNT('CsrRubro')=0
 	oavisar.usuario('Importacion cancelada, no hay rubro con edicion de articulos')
 	RETURN .f.
 ENDIF 
+vista()
 
 SET SAFETY ON
 
@@ -59,10 +62,10 @@ nidmaopera	 = RecuperarID('CsrMaopera',Goapp.sucursal10)
 nid	 = RecuperarID('CsrMovRemito',Goapp.sucursal10)
 
 lHayEdicion = .f.
-SELECT CsrProducto
-LOCATE FOR idrubro = CsrRubro.id
-IF idrubro = CsrRubro.id
-	lHayEdicion = .t.
+IF RECCOUNT('CsrRubro')#0
+	IF NVL(CsrRubro.idarticulo,0)<>0
+		lHayEdicion = .t.
+	ENDIF 
 ENDIF 
 
 nDecimalesP = 3
@@ -93,6 +96,13 @@ GO top
 i = 0
 DO WHILE NOT EOF() &&AND i <= lnlimite
 	SELECT CsrMovimien
+	IF CsrMovimien.cliente<>1000
+		SKIP 
+		LOOP
+	ENDIF 
+	IF nid = 110000000015
+		stop()
+	ENDIF 
 	
 	SELECT CsrCtacte
 	LOCATE FOR VAL(cnumero) = CsrMovimien.cliente
@@ -117,12 +127,9 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 		SELECT CsrProducto
 		LOCATE FOR CsrProducto.numero = VAL(CsrMovimien.articulo )
 		IF CsrProducto.numero <> VAL(CsrMovimien.articulo )
+			*stop()
 			IF lHayEdicion
-				SELECT CsrProducto
-				LOCATE FOR idrubro = CsrRubro.id
-				IF idrubro = CsrRubro.id
-					nidarticulo = CsrProducto.id
-				ENDIF 
+				nidarticulo = CsrRubro.idarticulo
 			ELSE 
 				 lHayEdicion = .t.
 				&&Insertar producto con detalle

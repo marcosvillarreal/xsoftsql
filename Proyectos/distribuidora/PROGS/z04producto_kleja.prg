@@ -88,7 +88,11 @@ SCAN FOR !EOF()
 	lnid = lnid + 1
 
 ENDSCAN
-
+INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta,nolista;
+		,porcecomi,porcesuge,porcedev,tasavied,tasapata) ;
+VALUES (lnid,lncodrubro+1,'SIN RUBRO',lntipoprod,lntipovta,lnretibruto,lnidfuerzavta,lnolista;
+		,lnporcecomi,lnporcesuge,lnporcedev,lntasavied,lntasapata)
+		
 lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
 
 SELECT CsrMarcaVie
@@ -107,7 +111,8 @@ SCAN FOR !EOF()
    	VALUES (lnid,lnCodMarca,lcnombre,lnporceflete,lnporceflete2,lnidfuerzavta)
    	lnid = lnid + 1
 ENDSCAN
-
+INSERT INTO Csrmarca (id,numero,nombre,flete,flete2,idfuerzavta);
+VALUES (lnid,lnCodMarca+1,'SIN MARCA',lnporceflete,lnporceflete2,lnidfuerzavta)
 
 &&&&UBICACIONES
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
@@ -131,9 +136,9 @@ SCAN FOR !EOF()
 		LOOP 
 	ENDIF
 	
-	STORE 0 TO lnFlete,nBonif1,nBonif2,nBonif3,nBonif4,nFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnPreventa4
+	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnPreventa4
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
-	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion
+	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta
 	
 *!*		SELECT CsrCtacte
@@ -144,16 +149,19 @@ SCAN FOR !EOF()
 
     SELECT CsrRubro
     LOCATE FOR numero=VAL(Csrarticulo.codrubro)
-    IF FOUND()
-        lnidseccion = CsrRubro.id
-    ENDIF
+    IF NOT FOUND()
+    	GO BOTTOM
+    ENDIF 
+    lnidseccion = CsrRubro.id
     
     SELECT CsrMarca
-    LOCATE FOR numero=Csrarticulo.codflia
-    IF FOUND()
-       lnidmarca = CsrMarca.id
-    ENDIF
-	
+    LOCATE FOR numero=VAL(Csrarticulo.codflia)
+    IF NOT FOUND()
+    	GO BOTTOM 
+    ENDIF 
+    
+    Lnidmarca = CsrMarca.id
+    	
 	SELECT CsrUbicacion
 	GO TOP 
 	lnidubicacion = CsrUbicacion.id
@@ -162,7 +170,7 @@ SCAN FOR !EOF()
 	lnCodigo	= CsrArticulo.codalias
 	lcCodArti	= CsrArticulo.codArti
 	lnfracciona = 1 &&IIF(Csrarticulo.fraccion='S',1,0)
-    lnidestado 	= IIF(empty(Csrarticulo.activo),1,2)
+    lnidestado 	= IIF(Csrarticulo.activo,1,2)
     lnidiva     = 1100000001 &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
    	lnunibulto	= CsrArticulo.cantxum
     lnidtipovta = 1 &&UNIDADES=1 ,	BULTOS = 2.
@@ -194,14 +202,14 @@ SCAN FOR !EOF()
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
 	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctaVTA,idenvase,fleteporce); 	
 	VALUES (lnid, lnCodigo, lcnombre, lcCodArti, lnidiva, lnCosto,	;
-	lnUtil2, lnPREVta1, lnutil2, lnPREVta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
+	lnUtil1, lnPREVta1, lnutil2, lnPREVta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
 	lnPREVta3, 0,0,lninterno, lnUniBulto,lnPeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
 	1,1,lnflete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, lnBonif1,lnbonif2, lnbonif3,;
 	lnbonif4 ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnidfrio,;
-	lnsugerido,1,lnsireparto	,IIF(EMPTY(CsrArticulo.codigo_prv),' ',CsrArticulo.codigo_prv),CsrArticulo.bonies, CsrArticulo.minimo,;
-	CsrArticulo.bonies2, CsrArticulo.minimo2, CsrArticulo.bonies3, CsrArticulo.minimo3,LNVTAKILOS,LNVTAKILOS,ldfechabonif,0;
+	lnsugerido,1,lnsireparto,"",0, 0,;
+	0, 0, 0, 0,LNVTAKILOS,LNVTAKILOS,ldfechabonif,0;
 	,lnidctacpra,lnidctavta;
-	,lnidenvase,nfletePorce)		
+	,lnidenvase,lnfletePorce)		
 
 	lnid = lnid + 1
 
