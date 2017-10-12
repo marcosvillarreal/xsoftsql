@@ -159,7 +159,7 @@ SCAN FOR !EOF() AND i <= lnlimite
     nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,3),8))
     nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
     nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
-    nredondeo	= CsrArticulo.redondeo
+    nredondeo	= 1 &&CsrArticulo.redondeo
 	cswitch		= "00000"
 
 	IF NOT EMPTY(Csrarticulo.fechapre)   

@@ -35,7 +35,7 @@ IF RECCOUNT('CsrRubro')=0
 	oavisar.usuario('Importacion cancelada, no hay rubro con edicion de articulos')
 	RETURN .f.
 ENDIF 
-vista()
+*vista()
 
 SET SAFETY ON
 
@@ -96,13 +96,13 @@ GO top
 i = 0
 DO WHILE NOT EOF() &&AND i <= lnlimite
 	SELECT CsrMovimien
-	IF CsrMovimien.cliente<>1000
-		SKIP 
-		LOOP
-	ENDIF 
-	IF nid = 110000000015
-		stop()
-	ENDIF 
+*!*		IF CsrMovimien.cliente<>1000
+*!*			SKIP 
+*!*			LOOP
+*!*		ENDIF 
+*!*		IF nid = 110000000015
+*!*			stop()
+*!*		ENDIF 
 	
 	SELECT CsrCtacte
 	LOCATE FOR VAL(cnumero) = CsrMovimien.cliente
@@ -217,7 +217,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 ENDDO 
 
 SELECT CsrMovRemito
-vista()
+*vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

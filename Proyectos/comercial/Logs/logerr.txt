@@ -1,828 +1,3 @@
-03-10-2017 12:53:53 , Pila de llamadas
-03-10-2017 12:53:54 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 12:53:54 , Objeto      : regfacvta.load
-03-10-2017 12:53:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 12:53:55 , Nº de Linea :         10
-03-10-2017 12:53:55 , En el Fuente: thisform.crearcursor()
-03-10-2017 12:53:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 12:53:56 , Objeto      : regfacvta.crearcursor
-03-10-2017 12:53:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 12:53:56 , Nº de Linea :         24
-03-10-2017 12:53:56 , En el Fuente: SELECT CsrCabefac.*	   ,000000000.00 as Baseexe,00 as copiatkt   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto   	   ,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,000000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,SPACE(5) as parada       ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail        ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
-03-10-2017 16:56:58 , MAIN, Error: OCA no es un objeto.;Linea : IF LEN(TRIM(oca.tables))=0;Error :       1924;Ultimo Alias Activo: CSRMOTANULA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BABT00O0.TMP;Ultimo Control activo: 
-03-10-2017 16:56:59 , Pila de llamadas
-03-10-2017 16:56:59 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-03-10-2017 16:56:59 , Objeto      : main
-03-10-2017 16:57:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-03-10-2017 16:57:00 , Nº de Linea :        292
-03-10-2017 16:57:00 , En el Fuente: 	Read events   
-03-10-2017 16:57:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 16:57:00 , Objeto      : regfacvta.keypress
-03-10-2017 16:57:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 16:57:00 , Nº de Linea :        167
-03-10-2017 16:57:00 , En el Fuente: 			        .antesdegrabar()      
-03-10-2017 16:57:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 16:57:01 , Objeto      : regfacvta.antesdegrabar
-03-10-2017 16:57:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 16:57:01 , Nº de Linea :         11
-03-10-2017 16:57:01 , En el Fuente: llok = IIF(llok,thisform.cargardatosctacte(),.f.)
-03-10-2017 16:57:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 16:57:01 , Objeto      : regfacvta.cargardatosctacte
-03-10-2017 16:57:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-03-10-2017 16:57:02 , Nº de Linea :         21
-03-10-2017 16:57:02 , En el Fuente: 	this.key_43()
 03-10-2017 16:57:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 03-10-2017 16:57:03 , Objeto      : regfacvta.key_43
 03-10-2017 16:57:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -854,6 +29,20 @@
 03-10-2017 16:57:08 , Nº de Linea :         37
 03-10-2017 16:57:09 , En el Fuente: 	   IF LEN(TRIM(oca.tables))=0
 03-10-2017 17:01:21 , PIDODETALLE.CONTAINERENCABEZA.KITBUSCAOALTAENVENDEDOR.TXTEXISTE1.LOSTFOCUS, Error: OCA no es un objeto.;Linea : IF LEN(TRIM(oca.tables))=0;Error :       1924;Ultimo Alias Activo: CSRVENDEDOR;Ultimo registro:          1 ;DBF: C:\USER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1228,6 +417,20 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000BABT00LF.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\0000BABT00LF.TMP;Ultimo Control activo: 
 03-10-2017 17:01:31 , Pila de llamadas
 03-10-2017 17:01:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidovendedor.sct
@@ -1246,6 +449,20 @@ CAL\TEMP\0000BABT00LF.TMP;Ultimo Control activo:
 03-10-2017 17:01:34 , Nº de Linea :          2
 03-10-2017 17:01:34 , En el Fuente: loObPidoVdor.idretorno	=	thisform.idretorno 
 03-10-2017 17:26:01 , MAIN, Error: OCA no es un objeto.;Linea : IF LEN(TRIM(oca.tables))=0;Error :       1924;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          3 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AW3T00GK.TMP;Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1613,6 +830,20 @@ activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EMP\0000AW3T00GK.TMP;Ultimo Control activo: 
 03-10-2017 17:26:39 , Pila de llamadas
 03-10-2017 17:26:39 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -1626,6 +857,20 @@ EMP\0000AW3T00GK.TMP;Ultimo Control activo:
 03-10-2017 17:26:41 , Nº de Linea :          2
 03-10-2017 17:26:41 , En el Fuente: loObPidoVdor.idretorno	=	thisform.idretorno 
 03-10-2017 17:26:46 , MAIN, Error: No se encuentra el objeto LOOBPIDOVDOR.;Linea : loObPidoVdor.retiro		=	UPPER(thisform.retiro);Error :       1923;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          3 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1924,6 +1169,20 @@ EMP\0000AW3T00GK.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\0000AW3T00GK.TMP;Ultimo Control activo: 
 03-10-2017 17:26:51 , Pila de llamadas
 03-10-2017 17:26:52 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -1937,6 +1196,20 @@ CAL\TEMP\0000AW3T00GK.TMP;Ultimo Control activo:
 03-10-2017 17:26:53 , Nº de Linea :          4
 03-10-2017 17:26:53 , En el Fuente: loObPidoVdor.autorizo	=	UPPER(thisform.autorizo)
 03-10-2017 17:35:25 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : loObPidoVdor.retiro		=	UPPER(thisform.retiro);Error :         11;Ultimo Alias Activo: CSRVENDEDOR;Ultimo registro:          1 ;DBF: C:\USERS\AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2241,6 +1514,20 @@ MIN\APPDATA\LOCAL\TEMP\0000AW3T01QI.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 activo: 
 03-10-2017 17:47:20 , Pila de llamadas
 03-10-2017 17:47:21 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2294,6 +1581,20 @@ activo:
 03-10-2017 17:47:30 , Nº de Linea :         37
 03-10-2017 17:47:30 , En el Fuente: 	   IF LEN(TRIM(oca.tables))=0
 03-10-2017 17:48:52 , MAIN, Error: No se encuentra el objeto LOOBPIDOVDOR.;Linea : loObPidoVdor.idretorno	=	thisform.idretorno;Error :       1923;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          3 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2519,6 +1820,20 @@ EMP\0000AW3T027Q.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \TEMP\0000AW3T027Q.TMP;Ultimo Control activo: 
 03-10-2017 17:48:58 , Pila de llamadas
 03-10-2017 17:48:58 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2532,6 +1847,20 @@ EMP\0000AW3T027Q.TMP;Ultimo Control activo:
 03-10-2017 17:49:00 , Nº de Linea :          3
 03-10-2017 17:49:00 , En el Fuente: loObPidoVdor.retiro		=	UPPER(thisform.retiro)
 03-10-2017 17:49:03 , MAIN, Error: No se encuentra el objeto LOOBPIDOVDOR.;Linea : loObPidoVdor.autorizo	=	UPPER(thisform.autorizo);Error :       1923;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          3 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2776,6 +2105,20 @@ CAL\TEMP\0000AW3T027Q.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \ADMIN\APPDATA\LOCAL\TEMP\0000A6MH02UU.TMP;Ultimo Control activo: 
 04-10-2017 10:06:00 , Pila de llamadas
 04-10-2017 10:06:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\parametros\abmimpresora.sct
@@ -2789,6 +2132,20 @@ CAL\TEMP\0000AW3T027Q.TMP;Ultimo Control activo:
 04-10-2017 10:06:01 , Nº de Linea :          5
 04-10-2017 10:06:02 , En el Fuente: i        = AT('\',Csrimpresora.nombre)
 04-10-2017 10:36:49 , MAIN, Error: No se encuentra la propiedad CANTLINEA.;Linea : .canlinea    = loimpresoraelegida.cantlinea;Error :       1734;Ultimo Alias Activo: CSRIMPRESORA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000055
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2963,6 +2320,20 @@ VT00UA.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ltimo registro:        151 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008HE100EK.TMP;Ultimo Control activo: 
 04-10-2017 22:14:37 , Pila de llamadas
 04-10-2017 22:14:38 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2976,6 +2347,20 @@ ltimo registro:        151 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008HE100EK.
 04-10-2017 22:14:40 , Nº de Linea :          8
 04-10-2017 22:14:40 , En el Fuente: thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3)
 04-10-2017 22:19:58 , MAIN, Error: El tipo de datos no es válido para esta propiedad.;Linea : thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3);Error :       1732;Ultimo Alias Activo: CURPERFIL;U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3109,6 +2494,20 @@ ltimo registro:        151 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008HE100OC.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 : CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T02I4.TMP;Ultimo Control activo: COTIDOLAR
 11-10-2017 12:09:48 , Pila de llamadas
 11-10-2017 12:09:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -3122,6 +2521,20 @@ ltimo registro:        151 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008HE100OC.
 11-10-2017 12:09:49 , Nº de Linea :        281
 11-10-2017 12:09:49 , En el Fuente: replace BaseDtoSiva WITH nTotDtoSiva,BaseDtoCiva WITH nTotDtoCiva IN CsrAuxCabefac
 11-10-2017 12:09:59 , REGFACVTA.CONTAINERENCABEZA._TXTCOTIDOLAR.LOSTFOCUS, Error: No se encuentra la variable 'BASEDTOSIVA'.;Linea : replace BaseDtoSiva WITH nTotDtoSiva,BaseDtoCiva WITH nTotDtoCiva IN CsrAuxCabefac;Error :         12;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3241,6 +2654,20 @@ ltimo registro:        151 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008HE100OC.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ltimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T04SN.TMP;Ultimo Control activo: COTIDOLAR
 11-10-2017 12:22:29 , Pila de llamadas
 11-10-2017 12:22:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -3254,6 +2681,20 @@ ltimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
 11-10-2017 12:22:30 , Nº de Linea :        124
 11-10-2017 12:22:31 , En el Fuente: 	replace dtociva WITH nDtoCiva,dtosiva WITH nDtoSiva IN CsrAuxCuerfac
 11-10-2017 12:22:47 , REGFACVTA.GRID2.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la variable 'NDTOCIVA'.;Linea : replace dtociva WITH nDtoCiva,dtosiva WITH nDtoSiva IN CsrAuxCuerfac;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3366,6 +2807,20 @@ o:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T0570.TMP;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T078V.TMP;Ultimo Control activo: 
 11-10-2017 12:51:28 , Pila de llamadas
 11-10-2017 12:51:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -3394,6 +2849,20 @@ MAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T078V.TMP;Ultimo Control a
 11-10-2017 12:51:33 , Nº de Linea :          5
 11-10-2017 12:51:33 , En el Fuente: IF nimpuesto=0 AND nbase=0
 11-10-2017 12:53:52 , REGFACVTA.GRID2.COLUMN2.TEXT1.KEYPRESS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF nimpuesto=0 AND nbase=0;Error :        107;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3479,6 +2948,20 @@ MAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T07TR.TMP;Ultimo Control a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 LOCAL\TEMP\00008O3T0HHL.TMP;Ultimo Control activo: 
 11-10-2017 14:21:18 , Pila de llamadas
 11-10-2017 14:21:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -3507,6 +2990,20 @@ LOCAL\TEMP\00008O3T0HHL.TMP;Ultimo Control activo:
 11-10-2017 14:21:23 , Nº de Linea :         12
 11-10-2017 14:21:23 , En el Fuente: 	SEEK csrRemFac.preunita = lnimporte
 11-10-2017 14:31:39 , REGFACVTA.KEYPRESS, Error: La tabla no tiene ningún orden de índice establecido.;Linea : SEEK csrRemFac.preunita = lnimporte AND registro <> nRegistro;Error :         26;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3557,6 +3054,20 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008O3T0I5K.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 APPDATA\LOCAL\TEMP\00008O3T0K48.TMP;Ultimo Control activo: 
 11-10-2017 14:40:26 , Pila de llamadas
 11-10-2017 14:40:26 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3584,3 +3095,78 @@ APPDATA\LOCAL\TEMP\00008O3T0K48.TMP;Ultimo Control activo:
 11-10-2017 14:40:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
 11-10-2017 14:40:30 , Nº de Linea :          1
 11-10-2017 14:40:30 , En el Fuente: SELECT CsrAuxCuerfac
+12-10-2017 13:28:08 , REGFACVTA.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : DO WHILE FOUND() AND RECNO()) <= nRegistro;Error :         11;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:         99 ;DBF: C:
+
+
+
+
+
+
+
+
+
+
+
+
+
+\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XC9034N.TMP;Ultimo Control activo: 
+12-10-2017 13:28:08 , Pila de llamadas
+12-10-2017 13:28:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:28:09 , Objeto      : regfacvta.keypress
+12-10-2017 13:28:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:28:09 , Nº de Linea :        133
+12-10-2017 13:28:09 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+12-10-2017 13:28:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:28:09 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+12-10-2017 13:28:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:28:09 , Nº de Linea :          9
+12-10-2017 13:28:09 , En el Fuente: 	thisform.llamarpidoremito()
+12-10-2017 13:28:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:28:10 , Objeto      : regfacvta.llamarpidoremito
+12-10-2017 13:28:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:28:10 , Nº de Linea :          9
+12-10-2017 13:28:10 , En el Fuente: DO FORM pidoremito_2 NAME loFormabmprecio WITH this.lniddeposito LINKED
+12-10-2017 13:28:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:28:10 , Objeto      : pidoremito.container4.text1.lostfocus
+12-10-2017 13:28:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:28:11 , Nº de Linea :          1
+12-10-2017 13:28:11 , En el Fuente: thisform.busqueda()
+12-10-2017 13:28:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:28:11 , Objeto      : pidoremito.busqueda
+12-10-2017 13:28:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:28:11 , Nº de Linea :         17
+12-10-2017 13:28:12 , En el Fuente: 	DO WHILE FOUND() AND RECNO()) <= nRegistro
+12-10-2017 13:29:50 , REGFACVTA.KEYPRESS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : LOCATE FOR registro = nRegistro;Error :        107;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\
+
+
+
+
+
+
+APPDATA\LOCAL\TEMP\00009XC903IW.TMP;Ultimo Control activo: 
+12-10-2017 13:29:50 , Pila de llamadas
+12-10-2017 13:29:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:29:50 , Objeto      : regfacvta.keypress
+12-10-2017 13:29:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:29:50 , Nº de Linea :        133
+12-10-2017 13:29:51 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+12-10-2017 13:29:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:29:51 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+12-10-2017 13:29:51 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:29:51 , Nº de Linea :          9
+12-10-2017 13:29:51 , En el Fuente: 	thisform.llamarpidoremito()
+12-10-2017 13:29:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:29:51 , Objeto      : regfacvta.llamarpidoremito
+12-10-2017 13:29:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+12-10-2017 13:29:52 , Nº de Linea :          9
+12-10-2017 13:29:52 , En el Fuente: DO FORM pidoremito_2 NAME loFormabmprecio WITH this.lniddeposito LINKED
+12-10-2017 13:29:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:29:52 , Objeto      : pidoremito.keypress
+12-10-2017 13:29:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:29:52 , Nº de Linea :         61
+12-10-2017 13:29:52 , En el Fuente: 			thisform.busqueda()
+12-10-2017 13:29:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:29:53 , Objeto      : pidoremito.busqueda
+12-10-2017 13:29:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_2.sct
+12-10-2017 13:29:53 , Nº de Linea :         22
+12-10-2017 13:29:53 , En el Fuente: 		LOCATE FOR registro = nRegistro
