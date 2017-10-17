@@ -81,9 +81,10 @@ lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
 i = 0
 
 SELECT CsrArticulo
+*vista()
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-SCAN FOR !EOF() AND i <= lnlimite
+SCAN FOR !EOF() &&AND i <= lnlimite
 	*SELECT CsrProducto
 	IF DELETED()
 		SELECT CsrArticulo
@@ -93,8 +94,8 @@ SCAN FOR !EOF() AND i <= lnlimite
 		LOOP 
 	ENDIF 
 	
-	IF VAL(CsrArticulo.numero )<> 7325
-		*LOOP 
+	IF VAL(CsrArticulo.numero ) =  62098
+		*stop()
 	ENDIF
 	 
 	SELECT CsrProducto

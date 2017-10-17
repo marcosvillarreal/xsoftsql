@@ -35,7 +35,7 @@ IF RECCOUNT('CsrRubro')=0
 	oavisar.usuario('Importacion cancelada, no hay rubro con edicion de articulos')
 	RETURN .f.
 ENDIF 
-vista()
+*vista()
 
 SET SAFETY ON
 
@@ -217,7 +217,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 ENDDO 
 
 SELECT CsrMovRemito
-vista()
+*vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

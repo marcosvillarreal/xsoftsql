@@ -199,9 +199,9 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 		nidvendedor	= CsrVendedor.id
 		
 		INSERT INTO csrmovremito (id,idmaopera,idctacte,idarticulo,nombre,preunita,preunitasiva,fecha,cantidad;
-           ,total,listaprecio,iddeposito,internos,sdocant,despor,activo);
+           ,total,listaprecio,iddeposito,internos,sdocant,despor,activo,codartimp);
      	VALUES (nid,nidmaopera,nidctacte,nidarticulo,cnombre,npreunita,npreunitasiva,dfecha,ncantidad;
-           ,ntotal,nlistaprecio,niddeposito,ninternos,nsdocant,ndespor,nactivo)
+           ,ntotal,nlistaprecio,niddeposito,ninternos,nsdocant,ndespor,nactivo,VAL(CsrMovimien.articulo ))
 		
 		nid = nid + 1 
 		SELECT CsrMovimien
