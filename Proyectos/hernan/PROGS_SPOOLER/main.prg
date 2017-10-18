@@ -38,7 +38,7 @@ If lldesarrollo
 	
 	_rutaforms2 =lcdd+'forms_spooler'&&
 	_rutaprogs2  =lcdd+'Progs_spooler'&&
-	
+	_rutaformsUTIL  =lcdd+'forms\UTIL'&&
 	_rutaffc  =lcdirdes+'\clases\ffc'	&&
 	_rutaformsDesarrollo =lcdirdes+'\forms'&&
 	_rutaFoxyPreviewer = lcdirdes+'\FoxyPreviewer250a'
@@ -51,6 +51,7 @@ If lldesarrollo
 	Set Path To &_rutaclases,&_rutaprogs,&_rutaprogs2,&_rutamenu,&_rutadatos,&_rutabmps;
 		,&_rutaforms2,&_rutaforms,&_rutareports,&_rutaclased,&_rutalibd;
 		,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutainclude,&_rutaFoxyPreviewer;
+		,&_RUTAFORMSUTIL
 
 	*
 Endif
