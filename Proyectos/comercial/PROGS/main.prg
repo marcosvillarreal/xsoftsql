@@ -274,9 +274,14 @@ IF TYPE('goApp')='O'
 	*--------------------------   
 	
 	LOCAL oMenu
+	PUBLIC Pidsistema
+	Pidsistema=1
 	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
+	*oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+	*oMenu.createMenu() 
+	oMenu = Newobject("createmenu","menu.vcx",.Null.,.T.,oDesktop,goapp.perfilusuario,"'verdana',9","")
+	oMenu.createMenu('datamenu','seguridad','favoritos',Pidsistema)
+	  
 	oMenu = null
 	
 
