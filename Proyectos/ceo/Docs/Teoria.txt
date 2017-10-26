@@ -1,0 +1,77 @@
+Propyencto CEO
+
+Tabla CEO Principal
+Tabla Productos del CEO
+Tabla Distribuidoras (idceo)
+
+Exportaciones de Distribuidoras
+Tabla Clientes y Asociadas (o Filtramos por nombre?)
+Mapeo de Productos CEO + Distribuidora (Si no esta mapeado, ventana para mapear)
+Encabezado de Comprobantes? o Fecha de la Venta
+Cuerpo de las Ventas + precio de la venta
+Stock de Productos
+
+
+Armar la dinamica.
+
+
+Si se reenvia los archivos, se elimina la informacion.
+Clave para las ventas CodCEO+CodDistribuidor+Fecha+CodCliente
+Clave para stock CodCeo+CodDistribuidor+CodArticulo
+
+
+Ventas
+	CodCEO,CodDistribuidor,FecVenta,CodCliente,CodVendedor,CodBarra,Cantidad,UniVenta,Bonif,Importe
+
+Clientes
+	CodCEO,CodDistribuidor,CodCliente,Cliente,Documento,CodDoc,CodCanal,Direccion,Localidad
+	,CodPostal,CodProvincia,CodBarrio,Estado,FecAlta,CoorX,CoorY
+
+Barrios
+	CodCEO,CodDistribuidor,CodBarrio,Barrio
+
+Sectores
+	CodCEO,CodDistribuidor,CodSector,Sector
+
+Canales	
+	CodCEO,CodDistribuidor,CodCanal,Canal
+
+Vendedores	
+	CodCEO,CodDistribuidor,CodVdor,Vdor
+
+Recorrido	
+	CodCEO,CodDistribuidor,CodCliente,CodVdor
+
+Stock
+	CodCEO,CodDistribuidor,CodBarra, Cantidad ,UniVenta , FecStock
+
+
+
+****************************
+Ventas + Sigma
+	 CodDistribuidor,fecha, CodCtacte, EsPromocion, CodVendedor, CodProducto,CodBarra
+	, ImporteFinal, Bonificacion
+	, cantidad , kilos
+
+Ventas + JBS
+	fecha,codvendedor,codcliente,tipocomp,seriecomp,numcomp,ean13,,articulo
+	,univenta,unibulto,cantidad,univenta,cantfac, total
+	
+Stock + Sigma
+	CodDistribuidor,CodProducto,CodBarra,Candidad,Fecha
+	
+Vendedor + Sigma
+	CodDistribuidor,CodVendedor,NomVendedor
+	
+Clientes + Sigma
+	CodDistribuidor,CodCtacte,NomCtacte,CodCanal,NomCanal,Cuit
+	,DireCtacte,NomLocalidad,CPostal,NomProvincia,NomBarrio, CodBarrio
+	,TelefCtacte,NomSector,CodSector,NomVendedor,CodVdor,Estado,FecAlta
+
+Clientes + JBS
+	CodCtacte,cuit,NomCtacte,DireCtacte,cpostal
+	,CategoriaAFIP
+
+Recorrido +  JBS
+	CodCtacte,CodVendedor (Se le asignan los que realizaron la venta)
+
