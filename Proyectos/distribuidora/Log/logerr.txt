@@ -1,7 +1,3 @@
-26-09-2017 , Objeto      : regcambioarticulos.leerpatroncarga
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :        172
-26-09-2017 , En el Fuente: 	      INSERT INTO CsrAuxcuerfac (ID,IDMAOPERA,IDARTICULO,CODIGO,NOMBRE,CANTIDAD,UNIVENTA,UNIBULTO	      							,IDUBICACION,PESABLE,CANTORIG,ctacte,cnombre,KILOS,AFACTURAR,IDVARIEDAD,VARIEDAD, ESTADO, PESO,PESABLE,IDCUERVARI	 
 
 
 
@@ -28,1418 +24,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     							,IDPRODORIG,IDVARIORIG,ORIGCANTIDAD,IDCUERPO,IDCUERFAC,CodOrden,idvendedor,idmovlicita,idfuerzavta)					 VALUES (Csrcuerpo.idcuerfac,Csrcuerpo.idmaopera,Csrcuerpo.idarticulo,Csrcuerpo.codigo,Csrcuerpo.cnombre					 		,Csrcuerpo.cantorig,Csrcue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rpo.univenta,Csrcuerpo.unibulto,Csrcuerpo.idubicacion,CsrCuerpo.pesable					 		,CsrCuerpo.CantOrig,CsrAuxCabefac.ctacte, CsrAuxCabefac.cnombre, CsrCuerpo.kilos, CsrCuerpo.cantidad					 		,0,"",1, CsrCuerpo.peso ,CsrCuerpo.pesable,0,CsrCuerpo.idarticulo,C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-srCuerpo.idvariedad					 		,CsrCuerpo.cantidad,CsrCuerpo.idcuerfac,CsrCuerpo.idcuerfac,VAL(CsrCuerpo.codigo),CsrCuerpo.idvendedor					 		,CsrCuerpo.idmovlicita,CsrCuerpo.idfuerzavta)
-26-09-2017 , REGCAMBIOARTICULOS.GRID1.COLUMN4.TEXT1.KEYPRESS, Error: No se encuentra la variable 'IDFUERZAVTA'.;Linea : REPLACE idarticulo WITH Csrproducto.id,codigo WITH LTRIM(STR(Csrproducto.numero)),nombre WITH Csrproducto.nombre ,univenta WITH lnuniv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-enta,unibulto WITH Csrproducto.unibulto,volumen WITH Csrproducto.volumen ,nofactura WITH Csrproducto.nofactura, pesable WITH CsrProducto.vtakilos, idfrio WITH CsrProducto.idfrio ,ORICOD WITH LTRIM(STR(Csrproducto.numero)),idfuerzavta WITH CsrProducto.idf
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-uerzavta IN CsrAuxCuerFac;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5AH01JW.TMP;Ultimo Control activo: 
-26-09-2017 , Pila de llamadas
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.grid1.column4.text1.keypress
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :         23
-26-09-2017 , En el Fuente:       this.LostFocus()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.grid1.column4.text1.lostfocus
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :          5
-26-09-2017 , En el Fuente: 		thisform.kitbuscarProd.f_lostfocusSay()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.kitbuscarprod.f_lostfocussay
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :         20
-26-09-2017 , En el Fuente: REPLACE idarticulo WITH Csrproducto.id,codigo WITH LTRIM(STR(Csrproducto.numero)),nombre WITH Csrproducto.nombre			,univenta WITH lnuniventa,unibulto WITH Csrproducto.unibulto,volumen WITH Csrproducto.volumen			,nofactura WITH 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Csrproducto.nofactura, pesable WITH CsrProducto.vtakilos, idfrio WITH CsrProducto.idfrio; 
-26-09-2017 , REGCAMBIOARTICULOS.CMDBUSCAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF VAL(thisform.codigoanterior) <> VAL(CsrProducto.numero) AND CsrAuxCuerfac.idfuerzavta <> CsrProducto.idfuerzavta;Error 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:         11;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5AH02RT.TMP;Ultimo Control activo: CODIGO
-26-09-2017 , Pila de llamadas
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.cmdbuscar.click
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :          9
-26-09-2017 , En el Fuente: 	thisform.armargrid1()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.armargrid1
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :         67
-26-09-2017 , En el Fuente: 		.column3.text1.setfocus()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.grid1.column3.text1.valid
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :          9
-26-09-2017 , En el Fuente: 			IF !thisform.kitbuscarProd.f_lostfocusSay()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.kitbuscarprod.f_lostfocussay
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :         10
-26-09-2017 , En el Fuente: IF VAL(thisform.codigoanterior) <> VAL(CsrProducto.numero) AND CsrAuxCuerfac.idfuerzavta <> CsrProducto.idfuerzavta
-26-09-2017 , REGCAMBIOARTICULOS.CMDBUSCAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF thisform.codigoanterior <> VAL(CsrProducto.numero) AND CsrAuxCuerfac.idfuerzavta <> CsrProducto.idfuerzavta;Error :    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     11;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D5AH02VZ.TMP;Ultimo Control activo: CODIGO
-26-09-2017 , Pila de llamadas
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.cmdbuscar.click
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :          9
-26-09-2017 , En el Fuente: 	thisform.armargrid1()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.armargrid1
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :         67
-26-09-2017 , En el Fuente: 		.column3.text1.setfocus()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.grid1.column3.text1.valid
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :          9
-26-09-2017 , En el Fuente: 			IF !thisform.kitbuscarProd.f_lostfocusSay()
-26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Objeto      : regcambioarticulos.kitbuscarprod.f_lostfocussay
-26-09-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
-26-09-2017 , Nº de Linea :         10
-26-09-2017 , En el Fuente: IF thisform.codigoanterior <> VAL(CsrProducto.numero) AND CsrAuxCuerfac.idfuerzavta <> CsrProducto.idfuerzavta
-26-09-2017 , REGCAMBIOARTICULOS.CMDBUSCAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF thisform.codigoanterior <> CsrProducto.numero AND CsrAuxCuerfac.idfuerzavta <> CsrProducto.idfuerzavta;Error :        107
 
 
 
@@ -1762,6 +346,33 @@ Csrproducto.nofactura, pesable WITH CsrProducto.vtakilos, idfrio WITH CsrProduct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ATA\LOCAL\TEMP\0000D5AH033Z.TMP;Ultimo Control activo: 
 26-09-2017 , Pila de llamadas
 26-09-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regcambioarticulo.sct
@@ -1780,6 +391,33 @@ ATA\LOCAL\TEMP\0000D5AH033Z.TMP;Ultimo Control activo:
 26-09-2017 , Nº de Linea :         11
 26-09-2017 , En el Fuente: 		      		REPLACE cambioprod WITH 0 IN CsrAuxCuerfac
 26-09-2017 , REGCAMBIOARTICULOS.GRID1.COLUMN4.TEXT1.KEYPRESS, Error: No coinciden los tipos de datos.;Linea : replace codigo WITH VAL(thisform.codigoanterior) IN CsrAuxCuerfac;Error :          9;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2074,6 +712,33 @@ ATA\LOCAL\TEMP\0000D5AH033Z.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AL\TEMP\00008HE1003Q.TMP;Ultimo Control activo: 
 03-10-2017 , Pila de llamadas
 03-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regarqueo.sct
@@ -2082,6 +747,33 @@ AL\TEMP\00008HE1003Q.TMP;Ultimo Control activo:
 03-10-2017 , Nº de Linea :         26
 03-10-2017 , En el Fuente: IF !.obtenerdatos('CsrParaConfig',lcCmd)
 03-10-2017 , RINDEARQUEO.GRID2.KEYPRESS, Error: El campo IDARQUEO no acepta valores NULL.;Linea : GATHER NAME OscuArqueo FIELDS EXCEPT id;Error :       1581;Ultimo Alias Activo: CSRCUERARQUEO;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2368,6 +1060,33 @@ AL\TEMP\00008HE1003Q.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \TEMP\00008HE100AJ.TMP;Ultimo Control activo: 
 03-10-2017 , Pila de llamadas
 03-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regarqueo.sct
@@ -2513,6 +1232,33 @@ AL\TEMP\00008HE1003Q.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 04-10-2017 , Pila de llamadas
 04-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -2531,6 +1277,33 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 04-10-2017 , Nº de Linea :       1320
 04-10-2017 , En el Fuente: 
 04-10-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2771,6 +1544,33 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ol activo: 
 04-10-2017 , Pila de llamadas
 04-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
@@ -2784,6 +1584,33 @@ ol activo:
 04-10-2017 , Nº de Linea :          5
 04-10-2017 , En el Fuente: If lldesarrollo
 04-10-2017 , FRMMENU1.ACTIVATE, Error: No se encuentra la variable 'LLDESARROLLO'.;Linea : If lldesarrollo;Error :         12;Ultimo Alias Activo: CSRALERTAS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000092Q100K0.TMP;Ultimo Cont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3014,6 +1841,33 @@ rol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00000AH501MX.TMP;Ultimo Control activo: IDCATEGORIA
 04-10-2017 , Pila de llamadas
 04-10-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3027,6 +1881,33 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00000AH501MX.TMP;Ultimo Control activo: IDC
 04-10-2017 , Nº de Linea :          7
 04-10-2017 , En el Fuente: 		replace idplanpago WITH CsrPlanPago.id
 06-10-2017 , COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra el objeto ESTADISTICA.;Linea : estadistica.listacanal= "";Error :       1923;Ultimo Alias Activo: _CSRPRODUCTO;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3227,6 +2108,33 @@ ATA\LOCAL\TEMP\00009SSP02ID.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     1925;Ultimo Alias Activo: CSRDETALLES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009SSP02IY.TMP;Ultimo Control activo: 
 06-10-2017 , Pila de llamadas
 06-10-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -3240,6 +2148,33 @@ ATA\LOCAL\TEMP\00009SSP02ID.TMP;Ultimo Control activo:
 06-10-2017 , Nº de Linea :         62
 06-10-2017 , En el Fuente: ObjReporter.titulo2 = dtoc(thisform.fecha_calendario1.txtfecha.Value)+' - '+dtoc(thisform.fecha_calendario2.txtfecha.Value)
 06-10-2017 , COMPARATIVO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'IDRURBO'.;Linea : SELECT idfletero,nomfletero,codfletero,idvendedor,nomvendedor,codvendedor,idctacte,nomcliente,ctacte ,idrurbo,nomrubro,codrubro,idar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3417,6 +2352,33 @@ ticulo,codigo,articulo,idvariedad,codvariedad,nomvariedad ,CAST(0 as n(11,2)) as
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AST(0 as n(11,2)) as unidades3,CAST(0 as n(11,3)) as vtakilos3,CAST(0 as n(11,2)) as importes3 ,CAST(0 as n(11,2)) as unidades4,CAST(0 as n(11,3)) as vtakilos4,CAST(0 as n(11,2)) as importes4 ,CAST(0 as n(11,2)) as unidadest,CAST(0 as n(11,3)) as vtakilo
 
 
@@ -3506,7 +2468,61 @@ AST(0 as n(11,2)) as unidades3,CAST(0 as n(11,3)) as vtakilos3,CAST(0 as n(11,2)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 st,CAST(0 as n(11,2)) as importest ,CAST(0 as n(11,2)) as unidades5,CAST(0 as n(11,3)) as vtakilos5,CAST(0 as n(11,2)) as importes5 FROM Csr1 WHERE RECNO()<0 INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRDETALLES;Ultimo reg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3692,7 +2708,61 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009SSP02K0.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  as n(11,3)) as vtakilos1,CAST(0 as n(11,2)) as importes1,CAST(0 as n(11,2)) as unidades2,CAST(0 as n(11,3)) as vtakilos2,CAST(0 as n(11,2)) as importes2,CAST(0 as n(11,2)) as unidades3,CAST(0 as n(11,3)) as vtakilos3,CAST(0 as n(11,2)) as importes3,CAST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3864,8 +2934,62 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009SSP02K0.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ST(0 as n(11,2)) as importes5FROM Csr1 WHERE RECNO()<0 INTO CURSOR CsrImprimir READWRITE 
 06-10-2017 , COMPARATIVO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRDETALLES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4044,6 +3168,33 @@ EMP\00009SSP02K0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 S\ADMIN\APPDATA\LOCAL\TEMP\00009SSP02MJ.TMP;Ultimo Control activo: 
 06-10-2017 , Pila de llamadas
 06-10-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4134,6 +3285,33 @@ S\ADMIN\APPDATA\LOCAL\TEMP\00009SSP02MJ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\00009SSP02R6.TMP;Ultimo Control activo: 
 06-10-2017 , Pila de llamadas
 06-10-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -4147,6 +3325,33 @@ L\TEMP\00009SSP02R6.TMP;Ultimo Control activo:
 06-10-2017 , Nº de Linea :        102
 06-10-2017 , En el Fuente: 	CASE CTOD(fecha) >= ldfecha4
 06-10-2017 , COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: COLUMN00X es un miembro desconocido.;Linea : .Column00x.BodyFormat = FormatImporte;Error :       1925;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         84 ;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4312,6 +3517,33 @@ DATA\LOCAL\TEMP\00009SSP03PV.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rom &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 07-10-2017 , Pila de llamadas
 07-10-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4385,8 +3617,62 @@ rom &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cursor READWRITE
 08-10-2017 , COMPARATIVO.COMMAND1.CLICK, Error: No se encuentra la variable 'NOMBRE'.;Linea : SET ORDER TO &lcorden;Error :         12;Ultimo Alias Activo: _CSRSECTOR;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CPAH003I
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4527,6 +3813,33 @@ cursor READWRITE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo Control activo: 
 08-10-2017 , Pila de llamadas
 08-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_comparativosemana.sct
@@ -4550,6 +3863,33 @@ Ultimo Control activo:
 08-10-2017 , Nº de Linea :         24
 08-10-2017 , En el Fuente: SELECT csrcursec
 11-10-2017 , PARACONFIG.CONTAINERENCABEZA.KITBUSCAOALTAENCENTRO.BOTONLLAMARABM1.CLICK, Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\abmcentrorecep.scx' no existe.;Linea : DO FORM &lcabm WITH lcid,.t. TO lcidtabla;Error :          1;Ultimo Alias
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4717,6 +4057,33 @@ Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: 
 24-10-2017 , Pila de llamadas
 24-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -4770,6 +4137,33 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: 
 24-10-2017 , Pila de llamadas
 24-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -4793,6 +4187,33 @@ o:
 24-10-2017 , Nº de Linea :         91
 24-10-2017 , En el Fuente: 	IF sec_tipoacce = 0
 24-10-2017 , MAIN, Error: No se encuentra la variable 'SEC_TIPOACCE'.;Linea : IF sec_tipoacce = 0;Error :         12;Ultimo Alias Activo: CSRALERTAS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ADC9032L.TMP;Ultimo Control activ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4877,6 +4298,33 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: 
 24-10-2017 , Pila de llamadas
 24-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -4900,6 +4348,33 @@ o:
 24-10-2017 , Nº de Linea :         93
 24-10-2017 , En el Fuente: 	IF sec_tipoacce = 0
 24-10-2017 , MAIN, Error: No se encuentra la variable 'SEC_TIPOACCE'.;Linea : IF sec_tipoacce = 0;Error :         12;Ultimo Alias Activo: CSRALERTAS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ADC903XQ.TMP;Ultimo Control activ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4936,6 +4411,33 @@ o:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: 
 24-10-2017 , Pila de llamadas
 24-10-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -4958,3 +4460,160 @@ o:
 24-10-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
 24-10-2017 , Nº de Linea :         93
 24-10-2017 , En el Fuente: 	IF sec_tipoacce = 0
+01-11-2017 , ABMCOMPROBANTE.INIT, Error: No se encuentra el alias 'CSRCLASECOMP'.;Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT );Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+01-11-2017 , Pila de llamadas
+01-11-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+01-11-2017 , Objeto      : abmcomprobante.init
+01-11-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+01-11-2017 , Nº de Linea :          8
+01-11-2017 , En el Fuente: DODEFAULT()
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+01-11-2017 , Objeto      : baseconector.init
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+01-11-2017 , Nº de Linea :          2
+01-11-2017 , En el Fuente: DODEFAULT()
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+01-11-2017 , Objeto      : base.init
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+01-11-2017 , Nº de Linea :          9
+01-11-2017 , En el Fuente: 		.sizer.frmresize()
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.frmresize
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :          7
+01-11-2017 , En el Fuente: 	m.This.ResizeContainer( m.Thisform )
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.resizecontainer
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :          8
+01-11-2017 , En el Fuente: 			.DoInit()
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.doinit
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :         13
+01-11-2017 , En el Fuente: 	.SaveContainer( m.THISFORM )
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.savecontainer
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :         22
+01-11-2017 , En el Fuente: 				.SaveContainer( m.loControl )
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.savecontainer
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :         26
+01-11-2017 , En el Fuente: 					.SaveContainer( m.loSubControl )
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.savecontainer
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :         16
+01-11-2017 , En el Fuente: 			.SaveOriginalSize( m.loControl )
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Objeto      : abmcomprobante.sizer.saveoriginalsize
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+01-11-2017 , Nº de Linea :         87
+01-11-2017 , En el Fuente: 			.ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
+01-11-2017 , SUBIVAVTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRENCABEZADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMP\000034EH044D.TMP;Ultimo Control activo: 
+01-11-2017 , Pila de llamadas
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Objeto      : subivavta.imprimir_vistaprevia1.impresora.click
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Nº de Linea :          5
+01-11-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+01-11-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Objeto      : subivavta.crearinforme
+01-11-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Nº de Linea :        134
+01-11-2017 , En el Fuente: SELECT CsrImprimir
+01-11-2017 , SUBIVAVTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRENCABEZADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+EMP\000034EH0459.TMP;Ultimo Control activo: 
+01-11-2017 , Pila de llamadas
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Objeto      : subivavta.imprimir_vistaprevia1.impresora.click
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Nº de Linea :          5
+01-11-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+01-11-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Objeto      : subivavta.crearinforme
+01-11-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Nº de Linea :        134
+01-11-2017 , En el Fuente: SELECT CsrImprimir
+01-11-2017 , SUBIVAVTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRENCABEZADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+EMP\000034EH0465.TMP;Ultimo Control activo: 
+01-11-2017 , Pila de llamadas
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Objeto      : subivavta.imprimir_vistaprevia1.impresora.click
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Nº de Linea :          5
+01-11-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+01-11-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Objeto      : subivavta.crearinforme
+01-11-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Nº de Linea :        134
+01-11-2017 , En el Fuente: SELECT CsrImprimir
+01-11-2017 , SUBIVAVTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRENCABEZADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+EMP\000034EH0471.TMP;Ultimo Control activo: 
+01-11-2017 , Pila de llamadas
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Objeto      : subivavta.imprimir_vistaprevia1.impresora.click
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Nº de Linea :          5
+01-11-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+01-11-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Objeto      : subivavta.crearinforme
+01-11-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Nº de Linea :        134
+01-11-2017 , En el Fuente: SELECT CsrImprimir
+01-11-2017 , SUBIVAVTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRENCABEZADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+EMP\000034EH04B3.TMP;Ultimo Control activo: 
+01-11-2017 , Pila de llamadas
+01-11-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Objeto      : subivavta.imprimir_vistaprevia1.impresora.click
+01-11-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+01-11-2017 , Nº de Linea :          5
+01-11-2017 , En el Fuente: 	llOK=thisform.CrearInforme()
+01-11-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Objeto      : subivavta.crearinforme
+01-11-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+01-11-2017 , Nº de Linea :        134
+01-11-2017 , En el Fuente: SELECT CsrImprimir
