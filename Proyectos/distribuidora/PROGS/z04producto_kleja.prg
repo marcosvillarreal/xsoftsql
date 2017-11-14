@@ -171,7 +171,7 @@ SCAN FOR !EOF()
 	lcCodArti	= CsrArticulo.codArti
 	lnfracciona = 1 &&IIF(Csrarticulo.fraccion='S',1,0)
     lnidestado 	= IIF(Csrarticulo.activo,1,2)
-    lnidiva     = 1100000001 &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
+    lnidiva     = 1100000002 &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
    	lnunibulto	= CsrArticulo.cantxum
     lnidtipovta = 1 &&UNIDADES=1 ,	BULTOS = 2.
     lnvtakilos	= IIF(UPPER(CsrArticulo.u_medida)$"KILOS-KG",1,0)
