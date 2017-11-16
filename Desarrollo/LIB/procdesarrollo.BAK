@@ -12,7 +12,7 @@ lcArchivo = cArch
 Wait Window "enviando "+Alltrim(lcArchivo)+" " Nowait 
 
 stop()
-cSend = "SEND "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest)+"/"+Alltrim(lcArchivo)+""
+cSend = "PUT "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest)+"/"+Alltrim(lcArchivo)+""
 oFTP.EXECUTE(cPaso,cSend) && Agrega el archivo 
 Do While oFTP.stillexecuting=.T. 
 Loop && espera para que termine 
