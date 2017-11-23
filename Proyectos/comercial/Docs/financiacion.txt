@@ -1,0 +1,247 @@
+function pido_forma
+parameter _dbedit
+
+
+   _ltasa=_tasa
+   _elpagoant=m_pago
+
+   do while .t.
+   set colo to &colog_
+   @ 04,59 get m_pago pict '@K!!!'   valid existe(@m_pago,'PLAN',04,59,04,63,3,'A',16) .and. pago_valido(@_tipovta) .and. ffecha_val(m_fecha,iif(numcli<>0.and.plan->entrega<>100,iif(cliente->diasvto<>0,cliente->diasvto,1),0)).or. lastkey()=05
+   @ 05,53 get Tm_cuotas pict '99' when plan->tasapesos<>0 .or. plan->tasadolar<>0 .or. plan->tnapesos<>0 .or. plan->tnadolar<>0 valid cal_cuo(@_tasa)
+   @ 05,59 get _tasa       pict '9999.99' valid tasa_val(_tasa)
+   @ 05,71 get m_vto       when (plan->entrega<>100.and.plan->cuotas=1) .or. lastkey()=5 valid (m_vto>=m_fecha .or. lastkey()=5)
+   read
+   
+   --Planes con entrega =100 son que no se puede entregar de forma parcial?
+   --Pregunto pq la tabla PLANES todos dicen entrega=100 entonces no entrarian aca
+   --Sera que solo es para cuentas corrientes requieren autorizacion?
+   
+   if plan->entrega<>100 .and. (_lautorizar .or. _rautorizar) && si necesito la autorizacion
+		
+      if !fautoriza(.f.)
+         m_pago=_elpagoant
+         _tasa=_ltasa
+         if !_dbedit
+            ayuda_cuerpo()
+            return .f.
+         else
+            loop
+         endif
+      else
+        exit
+      endif
+   else
+     exit
+   endif
+   enddo
+
+  * if _tasa<>_ltasa
+	 
+	  
+      sacosobra()    ---Esta funcion no le encuentro sentido ya que en el codigo los campos no son descriptivos
+      sele lineas   ---- Cuerfac?
+      go top
+      _hayofer=.f.
+      do while !eof()
+         if oferta<>0
+            _hayofer=.t.
+         endif
+         if _ltasa>0
+
+             _unitario=red( im / (1+_ltasa/100) ) ---PRecio sin iva
+             impofer=_unitario
+             if oferta<>0
+                impofer=red(_unitario - ( _unitario * oferta / 100)) --Precio sin oferta. 
+             endif
+             _xb2 = red(impofer * ca)
+             repl imtot with _xb2    ---UniSinOferta * Cantidad
+             repl im with _unitario  -- Unitario final (con oferta)
+         endif
+         sele lineas
+         skip
+
+      enddo
+ *  endif
+
+   if _dbedit .and. lastkey()<>27
+      fcalcu()     ---Aca hacemos el calculo de cuento entrega?
+   endif
+
+ *  if _tasa<>_ltasa
+      sacosobra()
+      sele lineas
+      go top
+      do while !eof()
+         if _tasa>0
+             _unitario=red( im * (1+_tasa/100) )
+             impofer=_unitario
+             if oferta<>0
+                impofer=red(_unitario - ( _unitario * oferta / 100))
+             endif
+             _xb2 = red(impofer * ca)
+             repl imtot with _xb2
+             repl im with _unitario
+         endif
+         sele lineas
+         skip
+      enddo
+      if _dbedit
+         cleartec()        && limpio para que siga
+      endif
+  * endif
+   if _dbedit
+      cleartec()        && limpio para que siga
+   endif
+   veo_totales()
+   if _hayofer
+      do errores with 'HAY OFERTAS !! VERIFIQUE LOS PRECIOS','ATENCION'
+   endif
+return .t.
+
+
+function pago_valido(_tipovta)
+if lastkey()=05
+   return(.t.)
+endif
+if 'MOROSO'$upper(plan->nombre)
+   set colo to &colon_
+   do errores2 with 'FIGURA COMO MOROSO !!!','ATENCION',_rojo
+   set colo to &colog_
+   return(.f.)
+endif
+_tasa=iif(G_enerado='C',plan->tasa,0)
+
+if plan->entrega=100
+   _estarje=.f.
+   Sele valor ; set order to 1
+   SEEK plan->valor
+   If found() .and. valor->es_clase='A'
+      _estarje=.t.
+   endif
+
+   if _estarje .and. ipocomp<>5
+      select frenoter
+      go 1
+      if !r_lock()
+         set colo to &colon_
+         do errores2 with 'ESTAN HACIENDO OTRA TARJETA!','ATENCION',_rojo
+         set colo to &colog_
+         return(.f.)
+      endif
+   else
+      select frenoter
+      go 1
+      unlock
+   endif
+   _tipovta = 1
+   return(.t.)
+endif
+select frenoter
+go 1
+unlock
+
+
+procedure fcalcu
+panbus=savescreen(13,00,24,30)
+@ 13,00 clea to 24,30
+Set colo to &colob_
+@ 13,00 to 24,30 double
+set colo to &colog_
+_ptotal=m_total_factura
+_pefectivo=0
+_precargo=0
+_ptasa=_tasa
+_tasant=_tasa
+_tasa=0
+
+veo_totales()
+
+clear gets
+set colo to &colog_
+
+--El operador elige el importe de contado y la tasa?
+
+@ 15,02 say 'Importe Contado : ' get _pefectivo pict '99999.99'
+@ 16,02 say 'Tasa a Cobrar ..: ' get _ptasa     pict '99999.99' valid r_cargo(@_precargo)
+@ 17,02 say 'Financiaci¢n % .: ' get _precargo  pict '99999.99'
+@ 18,02 say 'Descuento.......: '
+@ 19,02 say 'Importe Financia: '
+@ 20,02 say 'Tasa Calculada..: '
+@ 22,02 say 'Lo Incorporo ...: '
+read  --hasta que no lee el ultimo no prosigue?
+op=1
+do confisn with 22,02,'Lo Incorporo ',op,.f.
+if op=1 .and. lastkey()<>27
+   _tasa=_precargo
+else
+   _tasa=_tasant
+endif
+@ 05,59 say _tasa pict '9999.99'
+veo_totales()
+restscreen(13,00,24,30,panbus)
+cleartec()
+key_board(5,1)
+return .f.
+
+function r_cargo
+parameter _precargo
+_pdscto=red( _pefectivo * _tasactdo/100)   --_tasactdo no existe en el .prg
+_ptotal=red(m_total_factura + _pdscto )   --- m_total_factura es el total real de la factura?
+
+_pfinancia=red(_ptotal-_pefectivo)			--Total de financiacion
+if _pfinancia<0
+    _pfinancia=0
+endif
+_precargo=red( ((_ptasa*_pfinancia/100) + _Pdscto ) * 100 / m_total_factura )
+if _precargo=0 .and. _pdscto<>0
+   _precargo=red(_pdscto*100/m_total_factura)
+endif
+set colo to &colob_
+@ 18,21 say _pdscto                       pict '99999.99'
+@ 19,21 say _Pfinancia                    pict '99999.99'
+@ 20,21 say _Precargo                     pict '99999.99'
+set colo to &colog_
+return .t.
+
+function fautoriza
+parameter _esprecio
+if _noprecios .or. !_esprecio
+   @ 21,01 clea to 23,28
+   @ 22,02 say 'Clave : '
+   m_clave=space(10)
+   m_clave=acceptat(22,09,10,'',.t.)
+   SET COLO TO &COLOG_
+  * if m_clave<>decripta(_claveprecios) .and. m_clave<>'++'
+   if m_clave<>'1984' .and. m_clave<>'++'
+      do errores2 with 'La Clave de autorizaci¢n no coincide','E  R  R  O  R',_rojo
+      if !_esprecio
+         return .f.
+      endif
+   else
+      if m_clave='++'
+         cualclave=1
+      else
+        cualclave=0
+        if _esprecio
+           _noprecios=.f.
+        endif
+      endif
+   endif
+   ayuda_cuerpo()
+else
+   _noprecios=.t.
+endif
+cleartec()
+return .t.
+
+function sacosobra
+      sele lineas
+      go bott
+      do while !bof() .and.imtot=0 .and. len(alltrim(no))=0 .and. len(alltrim(co))=0
+         if imtot=0 .and. len(alltrim(no))=0 .and. len(alltrim(co))=0
+            delete
+         endif
+         skip -1
+      enddo
+return .t.
