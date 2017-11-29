@@ -262,8 +262,8 @@ IF TYPE('goApp')='O'
 	
 	DO CASE
 	CASE VAL(nidprograma)=1
-		goapp.otherformsclose ="EXPORTADORCSV"
-		DO FORM exportadorcsv WITH .t.
+		goapp.otherformsclose ="GENERA_LASMARIAS"
+		DO FORM genera_lasmarias WITH .t.
 	OTHERWISE
 
 	ENDCASE
