@@ -38,9 +38,9 @@
 *en LEON NO se rinden planillas o cargas, sino facturas						   																													
 *!*	 CABEFAC.switch				1	F= factura normal N=nota pedido P=premio
 *!*								2	N= comprobante originado por facturacion nota pedido (form facpedido)
-*!*								3
-*!*								4   tipofactura
-*!*								5	
+*!*								3	tipofactura
+*!*								4   Mercaderia previamente comprometida
+*!*								5	Estado de la rendicion A (anular) V (cobra vendedor) R (cobra repartidor)
 
 *!*	cabefac.rendida			0 = no rendida, 1=rendida
 

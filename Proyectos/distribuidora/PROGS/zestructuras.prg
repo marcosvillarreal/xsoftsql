@@ -57,7 +57,7 @@
 *!*								5 1 = mercaderia comprometida (impreso el patron)
 
 *!*	 FLETECARGA.switch			1	1 = operacion pasada a cta cte/ 2 = facturada
-*!*								2	
+*!*								2	1 = genero pendiente
 *!*								3	1 = por notas de pedido
 *!*								4
 *!*								5
