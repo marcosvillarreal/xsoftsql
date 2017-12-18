@@ -206,9 +206,9 @@ CASE lcLocalidad  = "CNEL. DORREGO"
 	lcnombre = "CORONEL DORREGO"
 CASE lcLocalidad = "CIUDAD ATLANTIDA"
 	lcnombre = "BARRIO CIUDAD ATLANTIDA"
-CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","") $ "PALTA-PUNTAALTA-PATA"
+CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","") $ "PALTA-PUNTAALTA-PATA-"
 	lcnombre = "PUNTA ALTA"
-CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","")$"BAHIABLANCA-BAHjABLANCA-BBLANCA"
+CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","")$"BAHIABLANCA-BAHjABLANCA-BBLANCA-BAHÍABLANCA"
 	lcnombre = "BAHIA BLANCA"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"BUENOSAIRES-CABA-CADEBSAIRES-CAPFEDERAL-CAPITAL-CIUDADBUE-CAPITALFEDERAL-CDAUTONOMABSAIRES-BS"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
@@ -274,7 +274,9 @@ CASE  ALLTRIM( UPPER(lcLocalidad)) = "GRAL. CERRI"
 	lcnombre = "GENERAL CERRI"
 CASE  ALLTRIM( UPPER(lcLocalidad)) = "GRAL. RODRIGUEZ"
 	lcnombre = "GENERAL RODRIGUEZ"
-CASE ALLTRIM(UPPER(lcLocalidad)) = "GRAL. CONESA" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  = "GRAL. CONESAA" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  = "GRAL.CONESA"
+CASE ALLTRIM(UPPER(lcLocalidad)) = "GRAL. CONESA" .OR. ALLTRIM(UPPER(lcLocalidad))  = "GRAL. CONESAA" .OR. ALLTRIM(UPPER(lcLocalidad))  = "GRAL.CONESA"
+	lcnombre = "GENERAL CONESA"
+CASE "CONESA"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "GENERAL CONESA"
 CASE ALLTRIM(UPPER(lcLocalidad))  = "G.CHAVEZ"
 	lcnombre = "GONALEZ CHAVES"
@@ -310,11 +312,13 @@ CASE  ALLTRIM(UPPER(lcLocalidad))  ="C. PATAGONES" .OR. ALLTRIM(UPPER(lcLocalida
 	lcnombre = "CARMEN DE PATAGONES"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="CAPITAL FEDERALPATAGONES"
 	lcnombre = "CARMEN DE PATAGONES"
-CASE  ALLTRIM(UPPER(lcLocalidad))  ="EL CONDOR"
+CASE  ALLTRIM(UPPER(lcLocalidad))  ="EL CONDOR" OR "CÓNDOR"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "BALNEARIO EL CONDOR"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="GDOR. GALVEZ"
 	lcnombre = "GALVEZ"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="GUADIA MITRE"
+	lcnombre = "GUARDIA MITRE"
+CASE  "MITRE"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "GUARDIA MITRE"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="JOSE CASAS"
 	lcnombre = "JOSE B. CASAS"
@@ -332,6 +336,24 @@ CASE "CONDOR"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "BALNEARIO EL CONDOR"
 CASE "VIEDMA"$ALLTRIM(UPPER(lcLocalidad)) OR "VIDMA"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "VIEDMA"
+CASE "RAMOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "RAMOS MEJIA"
+CASE "SANJAV" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN JAVIER"
+CASE "CIUDAD DE BS AS" $ STRTRAN(STRTRAN(lcLocalidad,"-",""),".","")
+	lcnombre = "CIUDAD DE BUENOS AIRES"
+CASE "SAO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN ANTONIO OESTE"
+CASE "SERRACOL" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") OR "SIERRAC" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SIERRA COLORADA"
+CASE "SERRAGRAN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SIERRA GRANDE"
+CASE "VALCHETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "VALCHETA"
+CASE "VILLALONGA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "VILLA LONGA"
+CASE "IDEVI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") OR "ELJUNCAL" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN JAVIER"
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161

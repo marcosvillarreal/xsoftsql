@@ -1,237 +1,9 @@
-05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Objeto      : regpedidopdte.load
-05-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Nº de Linea :          3
-05-12-2017 , En el Fuente: thisform.crearcursor()
-05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Objeto      : regpedidopdte.crearcursor
-05-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Nº de Linea :          7
-05-12-2017 , En el Fuente: SELECT CsrCabePdte.*       ,CAST(0 as int) as idcarga       ,CAST(0 as n(12,0)) as registro       FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
-05-12-2017 , REGPEDIDOPDTE.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRPARACONFIG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TEMP\0000924P03QT.TMP;Ultimo Control activo: 
-05-12-2017 , Pila de llamadas
-05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Objeto      : regpedidopdte.containerencabeza._txtfoco.gotfocus
-05-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Nº de Linea :          7
-05-12-2017 , En el Fuente: 	.leerentorno()
-05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Objeto      : regpedidopdte.leerentorno
-05-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
-05-12-2017 , Nº de Linea :         22
-05-12-2017 , En el Fuente: IF !thisform.obtenerdatos('CsrProvCtaCon',lcCmd)
-05-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-05-12-2017 , Objeto      : regpedidopdte.obtenerdatos
-05-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-05-12-2017 , Nº de Linea :          9
-05-12-2017 , En el Fuente: oCa = thisform.obtenercursor(lcalias)
-05-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-05-12-2017 , Objeto      : regpedidopdte.obtenercursor
-05-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-05-12-2017 , Nº de Linea :         19
-05-12-2017 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
-05-12-2017 , REGPEDIDOPDTE.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRPARACONFIG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
 
 
 
@@ -634,6 +406,13 @@ TEMP\0000924P03R8.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 00924P03U1.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -829,6 +608,13 @@ TEMP\0000924P03R8.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 APPDATA\LOCAL\TEMP\0000924P03WU.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -842,6 +628,13 @@ APPDATA\LOCAL\TEMP\0000924P03WU.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :         14
 05-12-2017 , En el Fuente: 	.lnidplanpago    = Csrplanpago.id
 05-12-2017 , REGPEDIDOPDTE.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+
+
+
+
+
+
+
 
 
 
@@ -1217,6 +1010,13 @@ TEMP\0000924P03ZT.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 \0000924P041N.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -1230,6 +1030,13 @@ TEMP\0000924P03ZT.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :         74
 05-12-2017 , En el Fuente: IF RECCOUNT('CsrCuerpo')#0 
 05-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSRAUXCUERVARI'.;Linea : SELECT CsrAuxCuerVari;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000924P0
+
+
+
+
+
+
+
 
 
 
@@ -1573,6 +1380,13 @@ TEMP\0000924P03ZT.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 4ZF.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -1591,6 +1405,13 @@ TEMP\0000924P03ZT.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :         17
 05-12-2017 , En el Fuente: SELECT CsrAuxCuerVari
 05-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad HABREMITO.;Linea : IF OscCabeza.habremito = 1 &&Categoria sin Remito;Error :       1734;Ultimo Alias Activo: CSRAUXCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
 
 
 
@@ -1913,6 +1734,13 @@ DATA\LOCAL\TEMP\0000924P052F.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 TEMP\0000924P057G.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -1931,6 +1759,13 @@ TEMP\0000924P057G.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :        139
 05-12-2017 , En el Fuente: 	OscCuerpo.registro = OscCabeza.registro
 05-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra la variable 'CANTIDAD'.;Linea : IF CsrAuxCuerfac.cantidad > 0;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
+
+
+
+
 
 
 
@@ -2234,6 +2069,13 @@ TEMP\0000924P057G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 OCAL\TEMP\0000924P05DZ.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -2252,6 +2094,13 @@ OCAL\TEMP\0000924P05DZ.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :        129
 05-12-2017 , En el Fuente: 		LOCATE FOR idmaopera = OscCuerpo.idmaopera
 05-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad ESREMITO.;Linea : OscCabeza.esremito = OscCuerpo.nofactura;Error :       1734;Ultimo Alias Activo: CSRNCABEFAC;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
 
 
 
@@ -2535,6 +2384,13 @@ EMP\0000924P0636.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 EMP\0000924P065Y.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -2553,6 +2409,13 @@ EMP\0000924P065Y.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :        132
 05-12-2017 , En el Fuente: 		OscCabeza.esremito = OscCuerpo.nofactura
 05-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad ESREMITO.;Linea : OscCabeza.esremito = OscCuerpo.nofactura;Error :       1734;Ultimo Alias Activo: CSRNCABEFAC;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
 
 
 
@@ -2815,6 +2678,13 @@ EMP\0000924P06AT.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 ;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -2828,6 +2698,13 @@ EMP\0000924P06AT.TMP;Ultimo Control activo:
 05-12-2017 , Nº de Linea :         19
 05-12-2017 , En el Fuente: INDEX on idcarga TAG idcarga
 05-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000924P078J.TM
+
+
+
+
+
+
+
 
 
 
@@ -3074,6 +2951,13 @@ P;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 ltimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regfacpedido_k2.sct
@@ -3087,6 +2971,13 @@ ltimo Control activo:
 05-12-2017 , Nº de Linea :         66
 05-12-2017 , En el Fuente: SELECT CsrCuerpo
 05-12-2017 , REGFACPEDIDO.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'IDCARGA'.;Linea : INDEX on idcarga TAG idcarga;Error :         12;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000991L
+
+
+
+
+
+
+
 
 
 
@@ -3304,6 +3195,13 @@ ltimo Control activo:
 
 
 
+
+
+
+
+
+
+
 Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 IDCABEPDTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000991L021S.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regfacpedido_k2.sct
@@ -3317,6 +3215,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 05-12-2017 , Nº de Linea :         92
 05-12-2017 , En el Fuente:    	   	INSERT INTO CsrAuxiliar (idfleteplan,numero,nombre,fecha,numflete,estadotilde)    	   	VALUES (CsrCuerpo.idfleteplan,Csrcuerpo.nropatron,Csrcuerpo.nomzona,DTOC(CsrCuerpo.fechasis),CsrCuerpo.numflete,0)
 05-12-2017 , REGFACPEDIDO.ACEPTAR1.CLICK, Error: No se encuentra la variable 'IDCABEPDTE'.;Linea : INDEX on idcabepdte TAG orden;Error :         12;Ultimo Alias Activo: CSRAUXCABEFAC;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
 
 
 
@@ -3520,6 +3425,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 
 
 
+
+
+
+
+
+
+
 91L05IC.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regfacpedido_k2.sct
@@ -3543,6 +3455,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 05-12-2017 , Nº de Linea :         60
 05-12-2017 , En el Fuente: 	SET ORDER TO idmaope
 05-12-2017 , REGFACPEDIDO.ACEPTAR1.CLICK, Error: No se encuentra la variable 'IDMAOPE'.;Linea : SET ORDER TO idmaope;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 IDCABEPDTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009
+
+
+
+
+
+
+
 
 
 
@@ -3727,6 +3646,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 
 
 
+
+
+
+
+
+
+
 0000991L0G9Z.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regfacpedido_k2.sct
@@ -3740,6 +3666,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 05-12-2017 , Nº de Linea :         57
 05-12-2017 , En el Fuente: IF RECCOUNT('CsrCuerpo')#0 
 05-12-2017 , REGFACPEDIDO.CMDCONSULTA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCuerpo')#0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+
+
+
+
+
+
+
 
 
 
@@ -3887,6 +3820,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 
 
 
+
+
+
+
+
+
+
 .TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regfacpedido_k2.sct
@@ -3900,6 +3840,13 @@ Cuerpo.fechasis),CsrCuerpo.numflete,0);Error :         12;Ultimo Alias Activo: C
 05-12-2017 , Nº de Linea :         83
 05-12-2017 , En el Fuente: SET FILTER TO idzona < -1
 05-12-2017 , REGPEDIDOPDTE.LOAD, Error: El archivo 'csrcabepdte.dbf' no existe.;Linea : SELECT CsrCabePdte.*,0 as esremito,0 as habremito ,CAST(0 as int) as idcarga ,CAST(0 as n(12,0)) as registro FROM CsrCabePdte WHERE RECNO()=1 AND id=0 INTO CURSOR Csr
+
+
+
+
+
+
+
 
 
 
@@ -4030,6 +3977,13 @@ Auxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRCUERPDTE;Ultimo 
 
 
 
+
+
+
+
+
+
+
 \00007BIH0075.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -4043,6 +3997,13 @@ Auxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRCUERPDTE;Ultimo 
 05-12-2017 , Nº de Linea :         55
 05-12-2017 , En el Fuente: IF RECCOUNT('CsrCuerpo')#0 
 05-12-2017 , REGPEDIDOPDTE.CMDCONSULTA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCuerpo')#0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STRID(IDFLETEPLAN,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+
+
+
+
+
+
+
 
 
 
@@ -4158,6 +4119,13 @@ Auxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRCUERPDTE;Ultimo 
 
 
 
+
+
+
+
+
+
+
 \00007BIH02RS.TMP;Ultimo Control activo: 
 05-12-2017 , Pila de llamadas
 05-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -4171,6 +4139,13 @@ Auxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRCUERPDTE;Ultimo 
 05-12-2017 , Nº de Linea :         56
 05-12-2017 , En el Fuente: IF RECCOUNT('CsrCuerpo')#0 
 05-12-2017 , REGPEDIDOPDTE.CMDCONSULTA.CLICK, Error: No se encuentra la variable 'IDZONA'.;Linea : SET FILTER TO idzona < -1;Error :         12;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007BIH02W
+
+
+
+
+
+
+
 
 
 
@@ -4269,6 +4244,13 @@ M.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 USERS\ADMIN\APPDATA\LOCAL\TEMP\00007BIH049D.TMP;Ultimo Control activo: 
 06-12-2017 , Pila de llamadas
 06-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -4287,6 +4269,13 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\00007BIH049D.TMP;Ultimo Control activo:
 06-12-2017 , Nº de Linea :        111
 06-12-2017 , En el Fuente: 	nEsRemito = IIF(OscCuerpo.catego='CF',1,OscCuerpo.nofactura)
 06-12-2017 , REGPEDIDOPDTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad CATEGO.;Linea : nEsRemito = IIF(OscCuerpo.catego='CF',1,OscCuerpo.nofactura);Error :       1734;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          3 ;DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+
 
 
 
@@ -4370,6 +4359,13 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\00007BIH049D.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 L\TEMP\00007BIH04H2.TMP;Ultimo Control activo: 
 06-12-2017 , Pila de llamadas
 06-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -4413,6 +4409,13 @@ L\TEMP\00007BIH04H2.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 MIN\APPDATA\LOCAL\TEMP\00007BIH04IZ.TMP;Ultimo Control activo: 
 06-12-2017 , Pila de llamadas
 06-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpedidopdte.sct
@@ -4431,6 +4434,13 @@ MIN\APPDATA\LOCAL\TEMP\00007BIH04IZ.TMP;Ultimo Control activo:
 06-12-2017 , Nº de Linea :        126
 06-12-2017 , En el Fuente: 		OscatterCab.idfletecarga	= OscatterCab.idcarga
 06-12-2017 , _UTILITARIO_NPEDIDO.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
 
 
 
@@ -4504,7 +4514,21 @@ EMP\0000962X00OU.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 ion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=
+
+
+
+
+
+
+
 
 
 
@@ -4526,11 +4550,32 @@ CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac RE
 
 
 
+
+
+
+
+
+
+
 incia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte,CsrDirecciones.codigo FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
 09-12-2017 , EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: El archivo 'csrdirecciones.dbf' no existe.;Linea : SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as N
 
 
+
+
+
+
+
+
+
 ombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(
+
+
+
+
+
+
+
 
 
 CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :          1;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000702100HN.TMP;Ultimo Control activo: 
@@ -4544,4 +4589,32 @@ CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :          1;Ulti
 09-12-2017 , Objeto      : mostrar_maps.init
 09-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
 09-12-2017 , Nº de Linea :         58
-09-12-2017 , En el Fuente: 	SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion	,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo 	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
+09-12-2017 , En el Fuente: 	SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion	,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecc
+
+
+
+
+
+
+iones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo 	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
+18-12-2017 , Z02CTACTECSV_GRAL, Error: El archivo no existe.;Linea : APPEND FROM  &cArchivo SDF;Error :          1;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009REX01EU.TMP;Ultimo Control activo: 
+18-12-2017 , Pila de llamadas
+18-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z02ctactecsv_gral.fxp
+18-12-2017 , Objeto      : z02ctactecsv_gral
+18-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\z02ctactecsv_gral.prg
+18-12-2017 , Nº de Linea :         39
+18-12-2017 , En el Fuente: APPEND FROM  &cArchivo SDF
+18-12-2017 , Z02CTACTECSV_GRAL, Error: El archivo no existe.;Linea : APPEND FROM  &cArchivo SDF;Error :          1;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009REX01KP.TMP;Ultimo Control activo: 
+18-12-2017 , Pila de llamadas
+18-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z02ctactecsv_gral.fxp
+18-12-2017 , Objeto      : z02ctactecsv_gral
+18-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\z02ctactecsv_gral.prg
+18-12-2017 , Nº de Linea :         39
+18-12-2017 , En el Fuente: APPEND FROM  &cArchivo SDF
+18-12-2017 , Z02CTACTECSV_GRAL, Error: El archivo no existe.;Linea : APPEND FROM  &cArchivo SDF;Error :          1;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009REX0238.TMP;Ultimo Control activo: 
+18-12-2017 , Pila de llamadas
+18-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\z02ctactecsv_gral.fxp
+18-12-2017 , Objeto      : z02ctactecsv_gral
+18-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\z02ctactecsv_gral.prg
+18-12-2017 , Nº de Linea :         39
+18-12-2017 , En el Fuente: APPEND FROM  &cArchivo SDF
