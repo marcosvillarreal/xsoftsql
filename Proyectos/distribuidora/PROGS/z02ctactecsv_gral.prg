@@ -277,9 +277,11 @@ IF LEN(LTRIM(cCadeCtacte)) != 0
 	=oavisar.usuario("No se grabaron algunas clientes, porque estan duplicados"+CHR(13)+cCadeCtacte,0)
 ENDIF 
 
-*!*	*!*	*!*	SELECT CsrCtacte
-*!*	*!*	*!*	GO BOTTOM 
-*!*	*!*	*!*	lnCodProve = VAL(cnumero) + 1
+SELECT CsrCtacte
+GO BOTTOM 
+lnCodProve = VAL(cnumero) + 1
+
+
 *!*	*!*	*!*	SELECT CsrAcreedor
 *!*	*!*	*!*	cCadeCtacte = "" 
 *!*	*!*	*!*	Oavisar.proceso('S','Procesando '+alias()) 
