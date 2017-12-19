@@ -31,7 +31,7 @@ SET SAFETY ON
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(30),Direccion c(100),Localidad c(50),CodPostal c(10),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15),TipoDoc c(50),Documento c(20);
-		,TipoIVA c(50),Vendedor c(3),Zona c(3),obsercli c(100))
+		,TipoIVA c(50),Vendedor c(3),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20))
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
@@ -45,7 +45,7 @@ replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
 Oavisar.proceso('S','Procesando '+alias()) 
 
-lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+
 
 cCadeCtacte = "" 
 
@@ -56,9 +56,9 @@ GO TOP
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 
-
+STOP()
 SCAN 
-	lnCantCampo = 29 &&Hay un campo vacio
+	lnCantCampo = 22 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -131,34 +131,132 @@ SCAN
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			LOOP 
+		ENDIF 
+		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
-		,TipoIVA,Vendedor,Zona) ;
+		,TipoIVA,Vendedor,Zona,ctadeudor) ;
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
-		,lcTipoIVA,lcVendedor,lcZona)
+		,lcTipoIVA,lcVendedor,lcZona,1)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
 	ENDIF 
 ENDSCAN 
 
-lnid = RecuperarID('CsrCatectacte',Goapp.sucursal10)
-lnnumero = 1
-SELECT distinct UPPER(Categoria) as nombre FROM CsrDeudor  INTO CURSOR CsrCategoria
+SET SAFETY OFF 
+SELECT CsrLista
+ZAP 
+SET SAFETY ON 
+cArchivo = ALLTRIM(lcpath )+"\proveedores.txt"
+APPEND FROM  &cArchivo SDF
 
-SELECT CsrCategoria
-GO top
+lcDelimitador = ";"
+replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
+replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+
+
+SELECT CsrLista
+GO TOP 
+*vista()
+lnPrimeraOcurrencia = 1
+leiunarticulo = .f.
+*STOP()
+
 SCAN 
-	INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,CsrCategoria.nombre,0,0,0,'00000')
-	lnid = lnid +1 
-	lnnumero = lnnumero + 1 
+	lnCantCampo = 22 &&Hay un campo vacio
+	lnSiguienteOcurrencia = 1
+	lnCamposLeidos = 1 &&Campos de CsrLista
+	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+
+	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		LOOP 
+	ENDIF 
+	
+	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+		leiunarticulo = .t.
+		STORE "" TO lcAcarreo
+		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
+		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
+		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcobservacion,lcIngBrutos
+		
+		j = 0
+	ELSE
+		IF !leiunarticulo
+			LOOP 
+		ENDIF 
+	ENDIF 
+	
+	DO WHILE lnCamposLeidos<4
+		i = 1
+		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+			lnpos = AT(lcDelimitador,&lcNomCampo,i)
+			IF lnPos#0 &&No es fin de linea
+				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+				lcAcarreo = ""
+			ELSE 
+				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+				EXIT 
+			ENDIF
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			*lcCategoria		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCategoria)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
+			lcobservacion	= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcobservacion)))
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireccion)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcLocalidad)))
+			lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcCodPostal)))
+			*lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcProvincia)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))
+			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcTelefono2)))
+			lcFax			= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcFax)))
+			lcCelular		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCelular)))
+			lcEmail			= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcEmail)))
+			*lcfecAlta		= IIF(j + i=19,lcCadena,lcFecAlta)
+			lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTipoDoc)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcDocumento)))
+			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcTipoIVA)))
+			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcIngBrutos)))
+							
+			lnSiguienteOcurrencia = lnPos + 1
+			i = i + 1
+		ENDDO 
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = lnCamposLeidos + 1
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+			 j = j + (i - 1)
+		ENDIF 
+		IF lnpos#0 AND i+j >= lnCantCampo
+			EXIT 
+		ENDIF 
+	ENDDO 
+
+	IF lnpos#0 AND i+j >= lnCantCampo
+		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+		&&Que se grabaran en csrarti.
+		&&Esta diseñado para leer hasta los precios.
+		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+		
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			LOOP 
+		ENDIF 
+		
+		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
+		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
+		,TipoIVA,Vendedor,Zona,ctadeudor,obsercli,ingbrutos) ;
+		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
+		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
+		,lcTipoIVA,lcVendedor,lcZona,0,lcObservacion,lcIngBrutos)
+				
+		*replace descripcion WITH lmDescripcion IN FsrArticulo
+		leiunarticulo = .f.
+	ENDIF 
 ENDSCAN 
 
-INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,'PROVEEDOR',0,0,0,'01000')
-lnid = lnid +1 
-lnnumero = lnnumero + 1 
-INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,'SERVICIO',0,0,0,'00000')
 
 *!*	SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
 
@@ -174,6 +272,26 @@ INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (ln
 *!*	ENDSCAN
 *!*	vista()
 
+lnid = RecuperarID('CsrCatectacte',Goapp.sucursal10)
+lnnumero = 1
+SELECT distinct UPPER(Categoria) as nombre FROM CsrDeudor  INTO CURSOR CsrCategoria
+
+SELECT CsrCategoria
+GO top
+SCAN 
+	INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,CsrCategoria.nombre,0,0,0,'00000')
+	lnid = lnid +1 
+	lnnumero = lnnumero + 1 
+ENDSCAN 
+
+lnidmercaderia = lnid
+INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,'PROVEEDOR',0,0,0,'01000')
+lnid = lnid +1 
+lnnumero = lnnumero + 1 
+INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,'SERVICIO',0,0,0,'00000')
+
+lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
@@ -181,9 +299,10 @@ GO TOP
 
 *stop()
 SCAN 
+	
  	SELECT CsrCtacte
- 	LOCATE FOR VAL(cnumero) = VAL(CsrDeudor.codigo)
- 	IF VAL(cnumero) = VAL(CsrDeudor.codigo)
+ 	LOCATE FOR VAL(cnumero) = VAL(CsrDeudor.codigo) AND CsrDeudor.ctadeudor = 1
+ 	IF VAL(cnumero) = VAL(CsrDeudor.codigo) AND CsrDeudor.ctadeudor = 1
  		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
  		SELECT CsrDeudor
  		LOOP 
@@ -196,7 +315,7 @@ SCAN
 			,lnbonif1
 	
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
- 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac
+ 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
  	lnctadeudor		= 1
@@ -245,28 +364,51 @@ SCAN
 *!*	    CASE lnlista = VAL(CsrDeudor.Lista)
 *!*	    	lnlista	= 1100000006
 *!*	    ENDCASE 
-
-	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))
-  	lcnumero	= strtrim(VAL(CsrDeudor.codigo),8)
+	lcnumero	= strtrim(VAL(CsrDeudor.codigo),8)
+	IF CsrDeudor.ctadeudor = 0
+		SELECT CsrCtacte
+		GO BOTTOM 
+		lcnumero		= strtrim(VAL(CsrCtacte.cnumero)+1,8)
+		lcOtro01		= CsrDeudor.codigo &&Almacenamos para relacionar al proveedor + articulo
+		lnctadeudor		= 0
+		lnctaacreedor	= 1
+		lcingbrutosBA	= CsrDeudor.ingbrutos
+		lcObserva		= "CONTACTO: " + LTRIM(CsrDeudor.obsercli)
+	ENDIF 
+	
+	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))  	
   	lcDireccion	= UPPER(CsrDeudor.direccion)
   	lcCP		= LTRIM(lcCp)
+  	
   	lcTelefono	= LTRIM(CsrDeudor.telefono)
+  	IF LEN(ALLTRIM(lcTelefono)) = 0
+  		lcTelefono	= LTRIM(CsrDeudor.telefono2)
+  	ELSE
+  		IF LEN(ALLTRIM(CsrDeudor.telefono2)) <> 0
+  			lcObserva	= lcObserva + CHR(13) + "TELEFONO: " +LTRIM(CsrDeudor.telefono2)
+  		ENDIF 
+  	ENDIF 
+  	IF LEN(ALLTRIM(CsrDeudor.CELULAR)) <> 0
+  		lcObserva	= lcObserva + CHR(13) + "CELULAR: " +LTRIM(CsrDeudor.celular)
+  	ENDIF 
+  
   	lcFax		= LTRIM(CsrDeudor.fax)
   	&&Tenemos que agregar el otro telefono a observaciones
   	ldfechac	= ctod(CsrDeudor.fecAlta)
   	lcEmail		= LTRIM(CsrDeudor.email)
-  	lcObserva	= LTRIM(CsrDeudor.obsercli)
+  	
+  	
   		
 	INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
 	,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
-	,totalizabonif,bonif1,fax,email,observa,cdatosfac,dni);
+	,totalizabonif,bonif1,fax,email,observa,cdatosfac,dni,otro01);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
-	,lnconvenio,lndctalogistica,0,0,lnBonif1,lcFax,lcEmail,lcObserva,lcDatosFac,lcDNI)
+	,lnconvenio,lndctalogistica,0,0,lnBonif1,lcFax,lcEmail,lcObserva,lcDatosFac,lcDNI,lcOtro01)
 
 	lnid = lnid + 1
 	
@@ -278,8 +420,7 @@ IF LEN(LTRIM(cCadeCtacte)) != 0
 ENDIF 
 
 SELECT CsrCtacte
-GO BOTTOM 
-lnCodProve = VAL(cnumero) + 1
+VISTA()
 
 
 *!*	*!*	*!*	SELECT CsrAcreedor

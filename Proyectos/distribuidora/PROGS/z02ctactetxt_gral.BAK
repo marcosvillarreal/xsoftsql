@@ -45,7 +45,7 @@ replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
 Oavisar.proceso('S','Procesando '+alias()) 
 
-lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+
 
 cCadeCtacte = "" 
 
@@ -131,8 +131,8 @@ SCAN
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		IF ASC(LTRIM(lcCodigo))=50 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
-			EXIT 
+		IF ASC(LEFT(lcNombre,1))=50 OR ASC(LEFT(lcNombre,1))=92 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			LOOP 
 		ENDIF 
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
@@ -241,6 +241,10 @@ SCAN
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
+		IF ASC(LTRIM(lcCodigo))=50 OR ASC(LTRIM(lcCodigo))=92 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			LOOP 
+		ENDIF 
+		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,obsercli,ingbrutos) ;
@@ -285,6 +289,8 @@ INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (ln
 lnid = lnid +1 
 lnnumero = lnnumero + 1 
 INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,'SERVICIO',0,0,0,'00000')
+
+lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
