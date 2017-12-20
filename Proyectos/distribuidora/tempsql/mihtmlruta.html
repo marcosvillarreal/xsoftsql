@@ -17,7 +17,7 @@ var hostnameRegexp = new RegExp("^https?://.+?/");
 var directionsOverlays = [];
 var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
-var stops = [{"Coord":{"Lat":-38.8873791,"Lng":-62.0691859},"Distance":""},{"Coord":{"Lat":-38.8863970,"Lng":-62.0705357},"Distance":""},{"Coord":{"Lat":-38.8868771,"Lng":-62.0698745},"Distance":""},{"Coord":{"Lat":-38.8889678,"Lng":-62.0670878},"Distance":""},{"Coord":{"Lat":-38.8910160,"Lng":-62.0710067},"Distance":""},{"Coord":{"Lat":-38.8813115,"Lng":-62.0638916},"Distance":""},{"Coord":{"Lat":-38.8915424,"Lng":-62.0628496},"Distance":""},{"Coord":{"Lat":-38.8816311,"Lng":-62.0634707},"Distance":""},{"Coord":{"Lat":-38.893993,"Lng":-62.0692599},"Distance":""},{"Coord":{"Lat":-38.8928181,"Lng":-62.0685851},"Distance":""},{"Coord":{"Lat":-38.8835943,"Lng":-62.0658631},"Distance":""},{"Coord":{"Lat":-38.8901382,"Lng":-62.0566806},"Distance":""},{"Coord":{"Lat":-38.8898984,"Lng":-62.0747272},"Distance":""},{"Coord":{"Lat":-38.88908809446096,"Lng":-62.058947450292976},"Distance":""},{"Coord":{"Lat":-38.8920042,"Lng":-62.0629973},"Distance":""},{"Coord":{"Lat":-38.891343,"Lng":-62.0625979},"Distance":""},{"Coord":{"Lat":-38.8941254,"Lng":-62.0596029},"Distance":""},{"Coord":{"Lat":-38.887638,"Lng":-62.0577775},"Distance":""},{"Coord":{"Lat":-38.8835896,"Lng":-62.0608155},"Distance":""},{"Coord":{"Lat":-38.8798537,"Lng":-62.0592000},"Distance":""},{"Coord":{"Lat":-38.8820246,"Lng":-62.0576327},"Distance":""},{"Coord":{"Lat":-38.8808464,"Lng":-62.0512143},"Distance":""},{"Coord":{"Lat":-38.8799049,"Lng":-62.0613648},"Distance":""},{"Coord":{"Lat":-38.8807203,"Lng":-62.0623514},"Distance":""},{"Coord":{"Lat":-38.8766552,"Lng":-62.0546705},"Distance":""},{"Coord":{"Lat":-38.8885319,"Lng":-62.0698912},"Distance":""},{"Coord":{"Lat":-38.8940701,"Lng":-62.061736},"Distance":""},{"Coord":{"Lat":-38.8842203,"Lng":-62.0624048},"Distance":""},{"Coord":{"Lat":-38.8928719,"Lng":-62.0596148},"Distance":""},{"Coord":{"Lat":-38.8877465,"Lng":-62.0624770},"Distance":""},{"Coord":{"Lat":-38.8818151,"Lng":-62.0510680},"Distance":""},{"Coord":{"Lat":-38.8952472,"Lng":-62.0652834},"Distance":""},{"Coord":{"Lat":-38.8786334,"Lng":-62.0577282},"Distance":""},{"Coord":{"Lat":-38.8844591,"Lng":-62.0643569},"Distance":""},{"Coord":{"Lat":-38.8864098,"Lng":-62.0571730},"Distance":""},{"Coord":{"Lat":-38.8937016,"Lng":-62.0696644},"Distance":""},{"Coord":{"Lat":-38.891423,"Lng":-62.0593458},"Distance":""},{"Coord":{"Lat":-38.8880356,"Lng":-62.068315},"Distance":""},{"Coord":{"Lat":-38.8851620,"Lng":-62.0656412},"Distance":""},{"Coord":{"Lat":-38.8893268,"Lng":-62.0643710},"Distance":""},{"Coord":{"Lat":-38.88971393667261,"Lng":-62.06693448042603},"Distance":""},{"Coord":{"Lat":-38.894055104176616,"Lng":-62.06131925026244},"Distance":""},{"Coord":{"Lat":-38.8822367,"Lng":-62.0515726},"Distance":""}];
+var stops = [{"Coord":{"Lat":-38.8873791,"Lng":-62.0691859},"Distance":""},{"Coord":{"Lat":-38.8845659,"Lng":-62.0794505},"Distance":""},{"Coord":{"Lat":-38.8724478,"Lng":-62.0703874},"Distance":""},{"Coord":{"Lat":-38.8833793,"Lng":-62.079785},"Distance":""},{"Coord":{"Lat":-38.8863970,"Lng":-62.0705357},"Distance":""},{"Coord":{"Lat":-38.8862214,"Lng":-62.0775761},"Distance":""},{"Coord":{"Lat":-38.8868771,"Lng":-62.0698745},"Distance":""},{"Coord":{"Lat":-38.8889678,"Lng":-62.0670878},"Distance":""},{"Coord":{"Lat":-38.8910160,"Lng":-62.0710067},"Distance":""},{"Coord":{"Lat":-38.8833915,"Lng":-62.0635110},"Distance":""},{"Coord":{"Lat":-38.8813115,"Lng":-62.0638916},"Distance":""},{"Coord":{"Lat":-38.89454511024211,"Lng":-62.06177464655764},"Distance":""},{"Coord":{"Lat":-38.8872765,"Lng":-62.0804155},"Distance":""},{"Coord":{"Lat":-38.8915424,"Lng":-62.0628496},"Distance":""},{"Coord":{"Lat":-38.8816311,"Lng":-62.0634707},"Distance":""},{"Coord":{"Lat":-38.8843417,"Lng":-62.0780992},"Distance":""},{"Coord":{"Lat":-38.88472375835197,"Lng":-62.080970780950906},"Distance":""},{"Coord":{"Lat":-38.893993,"Lng":-62.0692599},"Distance":""},{"Coord":{"Lat":-38.8825111,"Lng":-62.0800317},"Distance":""},{"Coord":{"Lat":-38.8928181,"Lng":-62.0685851},"Distance":""},{"Coord":{"Lat":-38.8835943,"Lng":-62.0658631},"Distance":""},{"Coord":{"Lat":-38.8832947,"Lng":-62.0814678},"Distance":""},{"Coord":{"Lat":-38.8860867,"Lng":-62.0776115},"Distance":""},{"Coord":{"Lat":-38.8819003,"Lng":-62.0564555},"Distance":""},{"Coord":{"Lat":-38.8776479,"Lng":-62.0533244},"Distance":""},{"Coord":{"Lat":-38.8872462,"Lng":-62.0693682},"Distance":""},{"Coord":{"Lat":-38.8831096,"Lng":-62.0661519},"Distance":""},{"Coord":{"Lat":-38.8901382,"Lng":-62.0566806},"Distance":""},{"Coord":{"Lat":-38.8898984,"Lng":-62.0747272},"Distance":""},{"Coord":{"Lat":-38.88908809446096,"Lng":-62.058947450292976},"Distance":""},{"Coord":{"Lat":-38.8920042,"Lng":-62.0629973},"Distance":""},{"Coord":{"Lat":-38.891343,"Lng":-62.0625979},"Distance":""},{"Coord":{"Lat":-38.8941254,"Lng":-62.0596029},"Distance":""},{"Coord":{"Lat":-38.887638,"Lng":-62.0577775},"Distance":""},{"Coord":{"Lat":-38.8835896,"Lng":-62.0608155},"Distance":""},{"Coord":{"Lat":-38.8798537,"Lng":-62.0592000},"Distance":""},{"Coord":{"Lat":-38.8820246,"Lng":-62.0576327},"Distance":""},{"Coord":{"Lat":-38.8808464,"Lng":-62.0512143},"Distance":""},{"Coord":{"Lat":-38.8799049,"Lng":-62.0613648},"Distance":""},{"Coord":{"Lat":-38.8838108,"Lng":-62.0748917},"Distance":""},{"Coord":{"Lat":-38.8850070,"Lng":-62.0747745},"Distance":""},{"Coord":{"Lat":-38.8828503,"Lng":-62.0765544},"Distance":""},{"Coord":{"Lat":-38.8807203,"Lng":-62.0623514},"Distance":""},{"Coord":{"Lat":-38.8766552,"Lng":-62.0546705},"Distance":""},{"Coord":{"Lat":-38.8885319,"Lng":-62.0698912},"Distance":""},{"Coord":{"Lat":-38.8897442,"Lng":-62.0749339},"Distance":""},{"Coord":{"Lat":-38.8940701,"Lng":-62.061736},"Distance":""},{"Coord":{"Lat":-38.8940949,"Lng":-62.0659995},"Distance":""},{"Coord":{"Lat":-38.8815769,"Lng":-62.0774300},"Distance":""},{"Coord":{"Lat":-38.8853356,"Lng":-62.0697262},"Distance":""},{"Coord":{"Lat":-38.8842203,"Lng":-62.0624048},"Distance":""},{"Coord":{"Lat":-38.8841110,"Lng":-62.0767201},"Distance":""},{"Coord":{"Lat":-38.8928719,"Lng":-62.0596148},"Distance":""},{"Coord":{"Lat":-38.8877465,"Lng":-62.0624770},"Distance":""},{"Coord":{"Lat":-38.8882496,"Lng":-62.0724939},"Distance":""},{"Coord":{"Lat":-38.8778625,"Lng":-62.0596662},"Distance":""},{"Coord":{"Lat":-38.8886403,"Lng":-62.0719761},"Distance":""},{"Coord":{"Lat":-38.8818151,"Lng":-62.0510680},"Distance":""},{"Coord":{"Lat":-38.8952472,"Lng":-62.0652834},"Distance":""},{"Coord":{"Lat":-38.8786334,"Lng":-62.0577282},"Distance":""},{"Coord":{"Lat":-38.8844591,"Lng":-62.0643569},"Distance":""},{"Coord":{"Lat":-38.8864098,"Lng":-62.0571730},"Distance":""},{"Coord":{"Lat":-38.893159,"Lng":-62.0681287},"Distance":""},{"Coord":{"Lat":-38.8937016,"Lng":-62.0696644},"Distance":""},{"Coord":{"Lat":-38.891423,"Lng":-62.0593458},"Distance":""},{"Coord":{"Lat":-38.8880356,"Lng":-62.068315},"Distance":""},{"Coord":{"Lat":-38.8851620,"Lng":-62.0656412},"Distance":""},{"Coord":{"Lat":-38.8893268,"Lng":-62.0643710},"Distance":""},{"Coord":{"Lat":-38.88971393667261,"Lng":-62.06693448042603},"Distance":""},{"Coord":{"Lat":-38.894055104176616,"Lng":-62.06131925026244},"Distance":""},{"Coord":{"Lat":-38.8822367,"Lng":-62.0515726},"Distance":""}];
 function initialize() {
 	//Ruta de imagenes http://kml4earth.appspot.com/icons.html#shapes
 	
@@ -49,7 +49,7 @@ function initialize() {
 						 marker1.setMap(map);
 						 var infowindow1 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 22 / SAAVEDRA 159"
+						 			content:" 18-12-2017 13:07:00 NO TERNIA DINERO / 22 / SAAVEDRA 159"
 						 			,maxWidth: 200
 						 		});
 						 marker1.addListener('click', function() {infowindow1.open(map, marker1);});
@@ -58,13 +58,13 @@ function initialize() {
 					{
 						var marker2 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8863970, -62.0705357)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8845659, -62.0794505)
+									,icon: icons['noventa'].icon
 								});
 						 marker2.setMap(map);
 						 var infowindow2 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 20 / SAAVEDRA 50"
+						 			content:" NO VENTA / 14 / ROCA Y ROSALES"
 						 			,maxWidth: 200
 						 		});
 						 marker2.addListener('click', function() {infowindow2.open(map, marker2);});
@@ -73,13 +73,13 @@ function initialize() {
 					{
 						var marker3 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8868771, -62.0698745)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8724478, -62.0703874)
+									,icon: icons['noventa'].icon
 								});
 						 marker3.setMap(map);
 						 var infowindow3 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 9 / SAAVEDRA Y ALVEAR"
+						 			content:" NO VENTA / 16 / PUEYRREDON Y 9 DE JULIO"
 						 			,maxWidth: 200
 						 		});
 						 marker3.addListener('click', function() {infowindow3.open(map, marker3);});
@@ -88,13 +88,13 @@ function initialize() {
 					{
 						var marker4 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8889678, -62.0670878)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8833793, -62.079785)
+									,icon: icons['noventa'].icon
 								});
 						 marker4.setMap(map);
 						 var infowindow4 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO ESTABA EL COMPRADOR / 23 / SAAVEDRA 350"
+						 			content:" NO VENTA / 7 / ROCA Y URQUIZA"
 						 			,maxWidth: 200
 						 		});
 						 marker4.addListener('click', function() {infowindow4.open(map, marker4);});
@@ -103,13 +103,13 @@ function initialize() {
 					{
 						var marker5 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8910160, -62.0710067)
+									position:new google.maps.LatLng(-38.8863970, -62.0705357)
 									,icon: icons['motivo'].icon
 								});
 						 marker5.setMap(map);
 						 var infowindow5 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 28 / FLORIDA 297"
+						 			content:" 18-12-2017 13:06:00 NO TERNIA DINERO / 20 / SAAVEDRA 50"
 						 			,maxWidth: 200
 						 		});
 						 marker5.addListener('click', function() {infowindow5.open(map, marker5);});
@@ -118,13 +118,13 @@ function initialize() {
 					{
 						var marker6 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8813115, -62.0638916)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8862214, -62.0775761)
+									,icon: icons['noventa'].icon
 								});
 						 marker6.setMap(map);
 						 var infowindow6 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 31 / AVENIDA TUCUMAN 64"
+						 			content:" NO VENTA / 21 / 25 DE MAYO 39"
 						 			,maxWidth: 200
 						 		});
 						 marker6.addListener('click', function() {infowindow6.open(map, marker6);});
@@ -133,13 +133,13 @@ function initialize() {
 					{
 						var marker7 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8915424, -62.0628496)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8868771, -62.0698745)
+									,icon: icons['motivo'].icon
 								});
 						 marker7.setMap(map);
 						 var infowindow7 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 45 / JESUS MARIA 930"
+						 			content:" 18-12-2017 13:06:00 NO TERNIA DINERO / 9 / SAAVEDRA Y ALVEAR"
 						 			,maxWidth: 200
 						 		});
 						 marker7.addListener('click', function() {infowindow7.open(map, marker7);});
@@ -148,13 +148,13 @@ function initialize() {
 					{
 						var marker8 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8816311, -62.0634707)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8889678, -62.0670878)
+									,icon: icons['motivo'].icon
 								});
 						 marker8.setMap(map);
 						 var infowindow8 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 46 / ALVEAR Y AVENIDA TUCUMAN"
+						 			content:" 18-12-2017 13:07:00 NO ESTABA EL COMPRADOR / 23 / SAAVEDRA 350"
 						 			,maxWidth: 200
 						 		});
 						 marker8.addListener('click', function() {infowindow8.open(map, marker8);});
@@ -163,13 +163,13 @@ function initialize() {
 					{
 						var marker9 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.893993, -62.0692599)
+									position:new google.maps.LatLng(-38.8910160, -62.0710067)
 									,icon: icons['motivo'].icon
 								});
 						 marker9.setMap(map);
 						 var infowindow9 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 65 / LIBERTAD 540"
+						 			content:" 18-12-2017 13:08:00 NEGOCIO NO ENCONTRADO / 28 / FLORIDA 297"
 						 			,maxWidth: 200
 						 		});
 						 marker9.addListener('click', function() {infowindow9.open(map, marker9);});
@@ -178,13 +178,13 @@ function initialize() {
 					{
 						var marker10 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8928181, -62.0685851)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8833915, -62.0635110)
+									,icon: icons['noventa'].icon
 								});
 						 marker10.setMap(map);
 						 var infowindow10 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 26 / FLORIDA 503"
+						 			content:" NO VENTA / 29 / BELGRANO Y MAIPU"
 						 			,maxWidth: 200
 						 		});
 						 marker10.addListener('click', function() {infowindow10.open(map, marker10);});
@@ -193,13 +193,13 @@ function initialize() {
 					{
 						var marker11 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8835943, -62.0658631)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8813115, -62.0638916)
+									,icon: icons['motivo'].icon
 								});
 						 marker11.setMap(map);
 						 var infowindow11 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 27 / ALVEAR 1286"
+						 			content:" 18-12-2017 18:38:00 NEGOCIO NO ENCONTRADO / 31 / AVENIDA TUCUMAN 64"
 						 			,maxWidth: 200
 						 		});
 						 marker11.addListener('click', function() {infowindow11.open(map, marker11);});
@@ -208,13 +208,13 @@ function initialize() {
 					{
 						var marker12 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8901382, -62.0566806)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.89454511024211, -62.06177464655764)
+									,icon: icons['noventa'].icon
 								});
 						 marker12.setMap(map);
 						 var infowindow12 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 100 / GENERAL PAZ 915"
+						 			content:" NO VENTA / 10 / GONZALES FERNANDEZ 910"
 						 			,maxWidth: 200
 						 		});
 						 marker12.addListener('click', function() {infowindow12.open(map, marker12);});
@@ -223,13 +223,13 @@ function initialize() {
 					{
 						var marker13 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8898984, -62.0747272)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8872765, -62.0804155)
+									,icon: icons['noventa'].icon
 								});
 						 marker13.setMap(map);
 						 var infowindow13 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 101 / LIBERTAD 40"
+						 			content:" NO VENTA / 41 / HUMBERTO PRIMO Y VILLANUEVA"
 						 			,maxWidth: 200
 						 		});
 						 marker13.addListener('click', function() {infowindow13.open(map, marker13);});
@@ -238,13 +238,13 @@ function initialize() {
 					{
 						var marker14 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.88908809446096, -62.058947450292976)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8915424, -62.0628496)
+									,icon: icons['venta'].icon
 								});
 						 marker14.setMap(map);
 						 var infowindow14 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 102 / SARMIENTO 724"
+						 			content:" VENTA / 45 / JESUS MARIA 930"
 						 			,maxWidth: 200
 						 		});
 						 marker14.addListener('click', function() {infowindow14.open(map, marker14);});
@@ -253,13 +253,13 @@ function initialize() {
 					{
 						var marker15 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8920042, -62.0629973)
+									position:new google.maps.LatLng(-38.8816311, -62.0634707)
 									,icon: icons['venta'].icon
 								});
 						 marker15.setMap(map);
 						 var infowindow15 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 104 / SAAVEDRA 718"
+						 			content:" VENTA / 46 / ALVEAR Y AVENIDA TUCUMAN"
 						 			,maxWidth: 200
 						 		});
 						 marker15.addListener('click', function() {infowindow15.open(map, marker15);});
@@ -268,13 +268,13 @@ function initialize() {
 					{
 						var marker16 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.891343, -62.0625979)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8843417, -62.0780992)
+									,icon: icons['noventa'].icon
 								});
 						 marker16.setMap(map);
 						 var infowindow16 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 105 / JESUS MARIA 963"
+						 			content:" NO VENTA / 53 / ROSALES Y 25 DE MAYO"
 						 			,maxWidth: 200
 						 		});
 						 marker16.addListener('click', function() {infowindow16.open(map, marker16);});
@@ -283,13 +283,13 @@ function initialize() {
 					{
 						var marker17 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8941254, -62.0596029)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.88472375835197, -62.080970780950906)
+									,icon: icons['noventa'].icon
 								});
 						 marker17.setMap(map);
 						 var infowindow17 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 106 / TRIUNVIRATO 871"
+						 			content:" NO VENTA / 54 / HUMBERTO Y ROSALES"
 						 			,maxWidth: 200
 						 		});
 						 marker17.addListener('click', function() {infowindow17.open(map, marker17);});
@@ -298,13 +298,13 @@ function initialize() {
 					{
 						var marker18 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.887638, -62.0577775)
+									position:new google.maps.LatLng(-38.893993, -62.0692599)
 									,icon: icons['motivo'].icon
 								});
 						 marker18.setMap(map);
 						 var infowindow18 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 107 / MAIPU 718"
+						 			content:" 18-12-2017 09:41:00 NO TERNIA DINERO / 65 / LIBERTAD 540"
 						 			,maxWidth: 200
 						 		});
 						 marker18.addListener('click', function() {infowindow18.open(map, marker18);});
@@ -313,13 +313,13 @@ function initialize() {
 					{
 						var marker19 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8835896, -62.0608155)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8825111, -62.0800317)
+									,icon: icons['noventa'].icon
 								});
 						 marker19.setMap(map);
 						 var infowindow19 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 108 / AVENIDA TUCUMAN 337"
+						 			content:" NO VENTA / 76 / ROCA 361"
 						 			,maxWidth: 200
 						 		});
 						 marker19.addListener('click', function() {infowindow19.open(map, marker19);});
@@ -328,13 +328,13 @@ function initialize() {
 					{
 						var marker20 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8798537, -62.0592000)
+									position:new google.maps.LatLng(-38.8928181, -62.0685851)
 									,icon: icons['venta'].icon
 								});
 						 marker20.setMap(map);
 						 var infowindow20 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 109 / CORDOBA Y BELGRANO"
+						 			content:" VENTA / 26 / FLORIDA 503"
 						 			,maxWidth: 200
 						 		});
 						 marker20.addListener('click', function() {infowindow20.open(map, marker20);});
@@ -343,13 +343,13 @@ function initialize() {
 					{
 						var marker21 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8820246, -62.0576327)
+									position:new google.maps.LatLng(-38.8835943, -62.0658631)
 									,icon: icons['venta'].icon
 								});
 						 marker21.setMap(map);
 						 var infowindow21 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 110 / HIPOLITO IRIGOYEN 1742"
+						 			content:" VENTA / 27 / ALVEAR 1286"
 						 			,maxWidth: 200
 						 		});
 						 marker21.addListener('click', function() {infowindow21.open(map, marker21);});
@@ -358,13 +358,13 @@ function initialize() {
 					{
 						var marker22 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8808464, -62.0512143)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8832947, -62.0814678)
+									,icon: icons['noventa'].icon
 								});
 						 marker22.setMap(map);
 						 var infowindow22 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 111 / LA PLATA 637"
+						 			content:" NO VENTA / 82 / HUMBERTO PRIMO 332"
 						 			,maxWidth: 200
 						 		});
 						 marker22.addListener('click', function() {infowindow22.open(map, marker22);});
@@ -373,13 +373,13 @@ function initialize() {
 					{
 						var marker23 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8799049, -62.0613648)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8860867, -62.0776115)
+									,icon: icons['noventa'].icon
 								});
 						 marker23.setMap(map);
 						 var infowindow23 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA CERRADO / 112 / MORENO 101"
+						 			content:" NO VENTA / 90 / 25 DE MAYO 56"
 						 			,maxWidth: 200
 						 		});
 						 marker23.addListener('click', function() {infowindow23.open(map, marker23);});
@@ -388,13 +388,13 @@ function initialize() {
 					{
 						var marker24 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8807203, -62.0623514)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8819003, -62.0564555)
+									,icon: icons['noventa'].icon
 								});
 						 marker24.setMap(map);
 						 var infowindow24 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 139 / ALVEAR 1604"
+						 			content:" NO VENTA / 95 / CORDOBA 446"
 						 			,maxWidth: 200
 						 		});
 						 marker24.addListener('click', function() {infowindow24.open(map, marker24);});
@@ -403,13 +403,13 @@ function initialize() {
 					{
 						var marker25 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8766552, -62.0546705)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8776479, -62.0533244)
+									,icon: icons['noventa'].icon
 								});
 						 marker25.setMap(map);
 						 var infowindow25 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 143 / ROSARIO 156"
+						 			content:" NO VENTA / 96 / ROSARIO 350"
 						 			,maxWidth: 200
 						 		});
 						 marker25.addListener('click', function() {infowindow25.open(map, marker25);});
@@ -418,13 +418,13 @@ function initialize() {
 					{
 						var marker26 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8885319, -62.0698912)
+									position:new google.maps.LatLng(-38.8872462, -62.0693682)
 									,icon: icons['venta'].icon
 								});
 						 marker26.setMap(map);
 						 var infowindow26 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 144 / GONZALES FERNANDEZ 250"
+						 			content:" VENTA / 98 / SAAVEDRA 145"
 						 			,maxWidth: 200
 						 		});
 						 marker26.addListener('click', function() {infowindow26.open(map, marker26);});
@@ -433,13 +433,13 @@ function initialize() {
 					{
 						var marker27 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8940701, -62.061736)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8831096, -62.0661519)
+									,icon: icons['noventa'].icon
 								});
 						 marker27.setMap(map);
 						 var infowindow27 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 151 / PRIMERA JUNTA 830"
+						 			content:" NO VENTA / 99 / ALBATROS V CASA 152"
 						 			,maxWidth: 200
 						 		});
 						 marker27.addListener('click', function() {infowindow27.open(map, marker27);});
@@ -448,13 +448,13 @@ function initialize() {
 					{
 						var marker28 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8842203, -62.0624048)
+									position:new google.maps.LatLng(-38.8901382, -62.0566806)
 									,icon: icons['motivo'].icon
 								});
 						 marker28.setMap(map);
 						 var infowindow28 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 161 / MAIPU Y JOSE INGENIEROS"
+						 			content:" 18-12-2017 13:09:00 NEGOCIO NO ENCONTRADO / 100 / GENERAL PAZ 915"
 						 			,maxWidth: 200
 						 		});
 						 marker28.addListener('click', function() {infowindow28.open(map, marker28);});
@@ -463,13 +463,13 @@ function initialize() {
 					{
 						var marker29 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8928719, -62.0596148)
+									position:new google.maps.LatLng(-38.8898984, -62.0747272)
 									,icon: icons['motivo'].icon
 								});
 						 marker29.setMap(map);
 						 var infowindow29 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA CERRADO / 165 / DORREGO 931"
+						 			content:" 18-12-2017 17:17:00 NEGOCIO NO ENCONTRADO / 101 / LIBERTAD 40"
 						 			,maxWidth: 200
 						 		});
 						 marker29.addListener('click', function() {infowindow29.open(map, marker29);});
@@ -478,13 +478,13 @@ function initialize() {
 					{
 						var marker30 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8877465, -62.0624770)
+									position:new google.maps.LatLng(-38.88908809446096, -62.058947450292976)
 									,icon: icons['motivo'].icon
 								});
 						 marker30.setMap(map);
 						 var infowindow30 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA CERRADO / 166 / DUFOURQ 1181"
+						 			content:" 18-12-2017 18:38:00 NO TERNIA DINERO / 102 / SARMIENTO 724"
 						 			,maxWidth: 200
 						 		});
 						 marker30.addListener('click', function() {infowindow30.open(map, marker30);});
@@ -493,13 +493,13 @@ function initialize() {
 					{
 						var marker31 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8818151, -62.0510680)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8920042, -62.0629973)
+									,icon: icons['venta'].icon
 								});
 						 marker31.setMap(map);
 						 var infowindow31 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 177 / JESUS MARIA 2015"
+						 			content:" VENTA / 104 / SAAVEDRA 718"
 						 			,maxWidth: 200
 						 		});
 						 marker31.addListener('click', function() {infowindow31.open(map, marker31);});
@@ -508,13 +508,13 @@ function initialize() {
 					{
 						var marker32 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8952472, -62.0652834)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.891343, -62.0625979)
+									,icon: icons['motivo'].icon
 								});
 						 marker32.setMap(map);
 						 var infowindow32 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 186 / CORRIENTES Y FLORIDA"
+						 			content:" 18-12-2017 18:39:00 NO TERNIA DINERO / 105 / JESUS MARIA 963"
 						 			,maxWidth: 200
 						 		});
 						 marker32.addListener('click', function() {infowindow32.open(map, marker32);});
@@ -523,13 +523,13 @@ function initialize() {
 					{
 						var marker33 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8786334, -62.0577282)
+									position:new google.maps.LatLng(-38.8941254, -62.0596029)
 									,icon: icons['motivo'].icon
 								});
 						 marker33.setMap(map);
 						 var infowindow33 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 187 / BELGRANO 1950"
+						 			content:" 18-12-2017 13:10:00 NO TERNIA DINERO / 106 / TRIUNVIRATO 871"
 						 			,maxWidth: 200
 						 		});
 						 marker33.addListener('click', function() {infowindow33.open(map, marker33);});
@@ -538,13 +538,13 @@ function initialize() {
 					{
 						var marker34 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8844591, -62.0643569)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.887638, -62.0577775)
+									,icon: icons['motivo'].icon
 								});
 						 marker34.setMap(map);
 						 var infowindow34 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 188 / GENERAL PAZ 212"
+						 			content:" 18-12-2017 11:52:00 NO TERNIA DINERO / 107 / MAIPU 718"
 						 			,maxWidth: 200
 						 		});
 						 marker34.addListener('click', function() {infowindow34.open(map, marker34);});
@@ -553,13 +553,13 @@ function initialize() {
 					{
 						var marker35 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8864098, -62.0571730)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8835896, -62.0608155)
+									,icon: icons['motivo'].icon
 								});
 						 marker35.setMap(map);
 						 var infowindow35 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 193 / AV. TUCUMAN 679"
+						 			content:" 18-12-2017 18:39:00 NO TERNIA DINERO / 108 / AVENIDA TUCUMAN 337"
 						 			,maxWidth: 200
 						 		});
 						 marker35.addListener('click', function() {infowindow35.open(map, marker35);});
@@ -568,13 +568,13 @@ function initialize() {
 					{
 						var marker36 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8937016, -62.0696644)
+									position:new google.maps.LatLng(-38.8798537, -62.0592000)
 									,icon: icons['venta'].icon
 								});
 						 marker36.setMap(map);
 						 var infowindow36 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 199 / LIBERTAD 502"
+						 			content:" VENTA / 109 / CORDOBA Y BELGRANO"
 						 			,maxWidth: 200
 						 		});
 						 marker36.addListener('click', function() {infowindow36.open(map, marker36);});
@@ -583,13 +583,13 @@ function initialize() {
 					{
 						var marker37 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.891423, -62.0593458)
+									position:new google.maps.LatLng(-38.8820246, -62.0576327)
 									,icon: icons['venta'].icon
 								});
 						 marker37.setMap(map);
 						 var infowindow37 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 200 / ESTOMBA 865"
+						 			content:" VENTA / 110 / HIPOLITO IRIGOYEN 1742"
 						 			,maxWidth: 200
 						 		});
 						 marker37.addListener('click', function() {infowindow37.open(map, marker37);});
@@ -598,13 +598,13 @@ function initialize() {
 					{
 						var marker38 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8880356, -62.068315)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8808464, -62.0512143)
+									,icon: icons['motivo'].icon
 								});
 						 marker38.setMap(map);
 						 var infowindow38 = new google.maps.InfoWindow(
 						 		{
-						 			content:" VENTA / 201 / SAAVEDRA 236"
+						 			content:" 18-12-2017 16:55:00 NO TERNIA DINERO / 111 / LA PLATA 637"
 						 			,maxWidth: 200
 						 		});
 						 marker38.addListener('click', function() {infowindow38.open(map, marker38);});
@@ -613,13 +613,13 @@ function initialize() {
 					{
 						var marker39 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8851620, -62.0656412)
+									position:new google.maps.LatLng(-38.8799049, -62.0613648)
 									,icon: icons['motivo'].icon
 								});
 						 marker39.setMap(map);
 						 var infowindow39 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 203 / CHACABUCO Y BELGRANO"
+						 			content:" 18-12-2017 23:42:00 CERRADO / 112 / MORENO 101"
 						 			,maxWidth: 200
 						 		});
 						 marker39.addListener('click', function() {infowindow39.open(map, marker39);});
@@ -628,13 +628,13 @@ function initialize() {
 					{
 						var marker40 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8893268, -62.0643710)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8838108, -62.0748917)
+									,icon: icons['noventa'].icon
 								});
 						 marker40.setMap(map);
 						 var infowindow40 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NO TERNIA DINERO / 205 / DORREGO Y SARMIENTO"
+						 			content:" NO VENTA / 116 / ROSALES Y BROWN"
 						 			,maxWidth: 200
 						 		});
 						 marker40.addListener('click', function() {infowindow40.open(map, marker40);});
@@ -643,13 +643,13 @@ function initialize() {
 					{
 						var marker41 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.88971393667261, -62.06693448042603)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8850070, -62.0747745)
+									,icon: icons['noventa'].icon
 								});
 						 marker41.setMap(map);
 						 var infowindow41 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA CERRADO / 206 / HIPOLITO IRIGOYEN 881"
+						 			content:" NO VENTA / 118 / ALBERDI 492"
 						 			,maxWidth: 200
 						 		});
 						 marker41.addListener('click', function() {infowindow41.open(map, marker41);});
@@ -658,13 +658,13 @@ function initialize() {
 					{
 						var marker42 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.894055104176616, -62.06131925026244)
-									,icon: icons['motivo'].icon
+									position:new google.maps.LatLng(-38.8828503, -62.0765544)
+									,icon: icons['noventa'].icon
 								});
 						 marker42.setMap(map);
 						 var infowindow42 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 207 / PRIMERA JUNTA 831"
+						 			content:" NO VENTA / 119 / URQUIZA 423"
 						 			,maxWidth: 200
 						 		});
 						 marker42.addListener('click', function() {infowindow42.open(map, marker42);});
@@ -673,16 +673,436 @@ function initialize() {
 					{
 						var marker43 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.8822367, -62.0515726)
+									position:new google.maps.LatLng(-38.8807203, -62.0623514)
 									,icon: icons['motivo'].icon
 								});
 						 marker43.setMap(map);
 						 var infowindow43 = new google.maps.InfoWindow(
 						 		{
-						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 209 / FALUCHO 696"
+						 			content:" 18-12-2017 23:42:00 NEGOCIO NO ENCONTRADO / 139 / ALVEAR 1604"
 						 			,maxWidth: 200
 						 		});
 						 marker43.addListener('click', function() {infowindow43.open(map, marker43);});
+					}
+					
+					{
+						var marker44 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8766552, -62.0546705)
+									,icon: icons['motivo'].icon
+								});
+						 marker44.setMap(map);
+						 var infowindow44 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 20:08:00 NO TERNIA DINERO / 143 / ROSARIO 156"
+						 			,maxWidth: 200
+						 		});
+						 marker44.addListener('click', function() {infowindow44.open(map, marker44);});
+					}
+					
+					{
+						var marker45 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8885319, -62.0698912)
+									,icon: icons['venta'].icon
+								});
+						 marker45.setMap(map);
+						 var infowindow45 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 144 / GONZALES FERNANDEZ 250"
+						 			,maxWidth: 200
+						 		});
+						 marker45.addListener('click', function() {infowindow45.open(map, marker45);});
+					}
+					
+					{
+						var marker46 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8897442, -62.0749339)
+									,icon: icons['noventa'].icon
+								});
+						 marker46.setMap(map);
+						 var infowindow46 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 148 / LIBERTAD 1"
+						 			,maxWidth: 200
+						 		});
+						 marker46.addListener('click', function() {infowindow46.open(map, marker46);});
+					}
+					
+					{
+						var marker47 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8940701, -62.061736)
+									,icon: icons['motivo'].icon
+								});
+						 marker47.setMap(map);
+						 var infowindow47 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 18:39:00 NO TERNIA DINERO / 151 / PRIMERA JUNTA 830"
+						 			,maxWidth: 200
+						 		});
+						 marker47.addListener('click', function() {infowindow47.open(map, marker47);});
+					}
+					
+					{
+						var marker48 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8940949, -62.0659995)
+									,icon: icons['noventa'].icon
+								});
+						 marker48.setMap(map);
+						 var infowindow48 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 156 / JESUS MARIA 636"
+						 			,maxWidth: 200
+						 		});
+						 marker48.addListener('click', function() {infowindow48.open(map, marker48);});
+					}
+					
+					{
+						var marker49 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8815769, -62.0774300)
+									,icon: icons['noventa'].icon
+								});
+						 marker49.setMap(map);
+						 var infowindow49 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 158 / PASSO 393"
+						 			,maxWidth: 200
+						 		});
+						 marker49.addListener('click', function() {infowindow49.open(map, marker49);});
+					}
+					
+					{
+						var marker50 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8853356, -62.0697262)
+									,icon: icons['noventa'].icon
+								});
+						 marker50.setMap(map);
+						 var infowindow50 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 159 / DORREGO 3"
+						 			,maxWidth: 200
+						 		});
+						 marker50.addListener('click', function() {infowindow50.open(map, marker50);});
+					}
+					
+					{
+						var marker51 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8842203, -62.0624048)
+									,icon: icons['motivo'].icon
+								});
+						 marker51.setMap(map);
+						 var infowindow51 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 13:12:00 NO TERNIA DINERO / 161 / MAIPU Y JOSE INGENIEROS"
+						 			,maxWidth: 200
+						 		});
+						 marker51.addListener('click', function() {infowindow51.open(map, marker51);});
+					}
+					
+					{
+						var marker52 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8841110, -62.0767201)
+									,icon: icons['venta'].icon
+								});
+						 marker52.setMap(map);
+						 var infowindow52 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 164 / JUAN JOSE PASO Y ROSALES"
+						 			,maxWidth: 200
+						 		});
+						 marker52.addListener('click', function() {infowindow52.open(map, marker52);});
+					}
+					
+					{
+						var marker53 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8928719, -62.0596148)
+									,icon: icons['motivo'].icon
+								});
+						 marker53.setMap(map);
+						 var infowindow53 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 18:40:00 CERRADO / 165 / DORREGO 931"
+						 			,maxWidth: 200
+						 		});
+						 marker53.addListener('click', function() {infowindow53.open(map, marker53);});
+					}
+					
+					{
+						var marker54 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8877465, -62.0624770)
+									,icon: icons['motivo'].icon
+								});
+						 marker54.setMap(map);
+						 var infowindow54 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 18:40:00 CERRADO / 166 / DUFOURQ 1181"
+						 			,maxWidth: 200
+						 		});
+						 marker54.addListener('click', function() {infowindow54.open(map, marker54);});
+					}
+					
+					{
+						var marker55 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8882496, -62.0724939)
+									,icon: icons['noventa'].icon
+								});
+						 marker55.setMap(map);
+						 var infowindow55 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 167 / ESPAÑA 62"
+						 			,maxWidth: 200
+						 		});
+						 marker55.addListener('click', function() {infowindow55.open(map, marker55);});
+					}
+					
+					{
+						var marker56 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8778625, -62.0596662)
+									,icon: icons['noventa'].icon
+								});
+						 marker56.setMap(map);
+						 var infowindow56 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 168 / SARGENTO CABRAL 67"
+						 			,maxWidth: 200
+						 		});
+						 marker56.addListener('click', function() {infowindow56.open(map, marker56);});
+					}
+					
+					{
+						var marker57 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8886403, -62.0719761)
+									,icon: icons['noventa'].icon
+								});
+						 marker57.setMap(map);
+						 var infowindow57 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 175 / ALVEAR 699"
+						 			,maxWidth: 200
+						 		});
+						 marker57.addListener('click', function() {infowindow57.open(map, marker57);});
+					}
+					
+					{
+						var marker58 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8818151, -62.0510680)
+									,icon: icons['motivo'].icon
+								});
+						 marker58.setMap(map);
+						 var infowindow58 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 23:43:00 NO TERNIA DINERO / 177 / JESUS MARIA 2015"
+						 			,maxWidth: 200
+						 		});
+						 marker58.addListener('click', function() {infowindow58.open(map, marker58);});
+					}
+					
+					{
+						var marker59 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8952472, -62.0652834)
+									,icon: icons['venta'].icon
+								});
+						 marker59.setMap(map);
+						 var infowindow59 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 186 / CORRIENTES Y FLORIDA"
+						 			,maxWidth: 200
+						 		});
+						 marker59.addListener('click', function() {infowindow59.open(map, marker59);});
+					}
+					
+					{
+						var marker60 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8786334, -62.0577282)
+									,icon: icons['motivo'].icon
+								});
+						 marker60.setMap(map);
+						 var infowindow60 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 23:43:00 NO TERNIA DINERO / 187 / BELGRANO 1950"
+						 			,maxWidth: 200
+						 		});
+						 marker60.addListener('click', function() {infowindow60.open(map, marker60);});
+					}
+					
+					{
+						var marker61 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8844591, -62.0643569)
+									,icon: icons['venta'].icon
+								});
+						 marker61.setMap(map);
+						 var infowindow61 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 188 / GENERAL PAZ 212"
+						 			,maxWidth: 200
+						 		});
+						 marker61.addListener('click', function() {infowindow61.open(map, marker61);});
+					}
+					
+					{
+						var marker62 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8864098, -62.0571730)
+									,icon: icons['venta'].icon
+								});
+						 marker62.setMap(map);
+						 var infowindow62 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 193 / AV. TUCUMAN 679"
+						 			,maxWidth: 200
+						 		});
+						 marker62.addListener('click', function() {infowindow62.open(map, marker62);});
+					}
+					
+					{
+						var marker63 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.893159, -62.0681287)
+									,icon: icons['noventa'].icon
+								});
+						 marker63.setMap(map);
+						 var infowindow63 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA / 194 / FLORIDA 542"
+						 			,maxWidth: 200
+						 		});
+						 marker63.addListener('click', function() {infowindow63.open(map, marker63);});
+					}
+					
+					{
+						var marker64 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8937016, -62.0696644)
+									,icon: icons['venta'].icon
+								});
+						 marker64.setMap(map);
+						 var infowindow64 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 199 / LIBERTAD 502"
+						 			,maxWidth: 200
+						 		});
+						 marker64.addListener('click', function() {infowindow64.open(map, marker64);});
+					}
+					
+					{
+						var marker65 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.891423, -62.0593458)
+									,icon: icons['venta'].icon
+								});
+						 marker65.setMap(map);
+						 var infowindow65 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 200 / ESTOMBA 865"
+						 			,maxWidth: 200
+						 		});
+						 marker65.addListener('click', function() {infowindow65.open(map, marker65);});
+					}
+					
+					{
+						var marker66 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8880356, -62.068315)
+									,icon: icons['venta'].icon
+								});
+						 marker66.setMap(map);
+						 var infowindow66 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 201 / SAAVEDRA 236"
+						 			,maxWidth: 200
+						 		});
+						 marker66.addListener('click', function() {infowindow66.open(map, marker66);});
+					}
+					
+					{
+						var marker67 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8851620, -62.0656412)
+									,icon: icons['motivo'].icon
+								});
+						 marker67.setMap(map);
+						 var infowindow67 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 23:40:00 NO TERNIA DINERO / 203 / CHACABUCO Y BELGRANO"
+						 			,maxWidth: 200
+						 		});
+						 marker67.addListener('click', function() {infowindow67.open(map, marker67);});
+					}
+					
+					{
+						var marker68 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8893268, -62.0643710)
+									,icon: icons['motivo'].icon
+								});
+						 marker68.setMap(map);
+						 var infowindow68 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 23:41:00 NO TERNIA DINERO / 205 / DORREGO Y SARMIENTO"
+						 			,maxWidth: 200
+						 		});
+						 marker68.addListener('click', function() {infowindow68.open(map, marker68);});
+					}
+					
+					{
+						var marker69 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.88971393667261, -62.06693448042603)
+									,icon: icons['motivo'].icon
+								});
+						 marker69.setMap(map);
+						 var infowindow69 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 20:08:00 CERRADO / 206 / HIPOLITO IRIGOYEN 881"
+						 			,maxWidth: 200
+						 		});
+						 marker69.addListener('click', function() {infowindow69.open(map, marker69);});
+					}
+					
+					{
+						var marker70 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.894055104176616, -62.06131925026244)
+									,icon: icons['motivo'].icon
+								});
+						 marker70.setMap(map);
+						 var infowindow70 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 23:41:00 NEGOCIO NO ENCONTRADO / 207 / PRIMERA JUNTA 831"
+						 			,maxWidth: 200
+						 		});
+						 marker70.addListener('click', function() {infowindow70.open(map, marker70);});
+					}
+					
+					{
+						var marker71 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8822367, -62.0515726)
+									,icon: icons['motivo'].icon
+								});
+						 marker71.setMap(map);
+						 var infowindow71 = new google.maps.InfoWindow(
+						 		{
+						 			content:" 18-12-2017 23:43:00 NEGOCIO NO ENCONTRADO / 209 / FALUCHO 696"
+						 			,maxWidth: 200
+						 		});
+						 marker71.addListener('click', function() {infowindow71.open(map, marker71);});
 					}
 					
   var trafficLayer = new google.maps.TrafficLayer();
