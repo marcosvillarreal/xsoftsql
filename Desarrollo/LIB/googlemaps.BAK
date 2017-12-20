@@ -123,7 +123,8 @@ TEXT TO lcHTML NOSHOW TEXTMERGE
                var image = 'http://www.vfpstylemenuframework.com/images/Marker_Outside_Chartreuse.png'; 
 		        var marker = new google.maps.Marker({
 			    map: map, icon: image, title: 'Mover para ver coordenadas',
-			    position: results[0].geometry.location
+			   	position: fenway
+			  //position: results[0].geometry.location
                , draggable: true
 			   });
 			    var coord1  = results[0].geometry.location
@@ -321,6 +322,7 @@ var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
 var stops = <<Coords>>
 function initialize() {
+	 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -717,6 +719,18 @@ var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
 var stops = <<Coords>>
 function initialize() {
+	var iconBase = 'http://maps.google.com/mapfiles/kml/paddle/';
+	var icons = {
+		  normal: {
+            icon: iconBase + 'red-circle.png'
+          },
+          noventa: {
+            icon: iconBase + 'blu-blank.png'
+          },
+		   venta: {
+            icon: iconBase + 'red-circle.png'
+          },
+		}; 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -949,25 +963,13 @@ function initialize() {
 	  labelOrigin: new google.maps.Point(15,8)
 	};
 
-	var markerRuta = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-	label: {
-		text: '3',
-		fontSize: "10px",
-		fontWeight: "bold"
-	  },
-    icon: markerIcon,
-    title: 'Hello World!'
-	});
-
  	<<cParadas>>
  	
  	var flightPlanCoordinates = <<cRuta>>;
 	var flightPath = new google.maps.Polyline({
     path: flightPlanCoordinates,
     geodesic: true,
-    strokeColor: '#FF0000',
+    strokeColor: '#9800ff',
     strokeOpacity: 1.0,
     strokeWeight: 2
 	});

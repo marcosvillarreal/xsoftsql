@@ -17,12 +17,674 @@ var hostnameRegexp = new RegExp("^https?://.+?/");
 var directionsOverlays = [];
 var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
-var stops = [{"Coord":{"Lat":-38.850684252804754,"Lng":-62.078216936431886},"Distance":""},{"Coord":{"Lat":-38.850684252804754,"Lng":-62.078216936431886},"Distance":""},{"Coord":{"Lat":-38.8778678,"Lng":-62.0784363},"Distance":""},{"Coord":{"Lat":-38.8803187,"Lng":-62.0780619},"Distance":""},{"Coord":{"Lat":-38.8833793,"Lng":-62.079785},"Distance":""},{"Coord":{"Lat":-38.8797355,"Lng":-62.0743991},"Distance":""},{"Coord":{"Lat":-38.8790630,"Lng":-62.0781080},"Distance":""},{"Coord":{"Lat":-38.8889678,"Lng":-62.0670878},"Distance":""},{"Coord":{"Lat":-38.8790030,"Lng":-62.0716166},"Distance":""},{"Coord":{"Lat":-38.8636944,"Lng":-62.0822742},"Distance":""},{"Coord":{"Lat":-38.8603521,"Lng":-62.0831918},"Distance":""},{"Coord":{"Lat":-38.8789574,"Lng":-62.0826312},"Distance":""},{"Coord":{"Lat":-38.8787738,"Lng":-62.0810883},"Distance":""},{"Coord":{"Lat":-38.8915424,"Lng":-62.0628496},"Distance":""},{"Coord":{"Lat":-38.8816311,"Lng":-62.0634707},"Distance":""},{"Coord":{"Lat":-38.8715599,"Lng":-62.0642101},"Distance":""},{"Coord":{"Lat":-38.8674069,"Lng":-62.0593187},"Distance":""},{"Coord":{"Lat":-38.86426437114946,"Lng":-62.06424692750852},"Distance":""},{"Coord":{"Lat":-38.8843417,"Lng":-62.0780992},"Distance":""},{"Coord":{"Lat":-38.852516240819334,"Lng":-62.080304435473636},"Distance":""},{"Coord":{"Lat":-38.8474781848,"Lng":-62.0877633318},"Distance":""},{"Coord":{"Lat":-38.8767108,"Lng":-62.0816677},"Distance":""},{"Coord":{"Lat":-38.8762774,"Lng":-62.0833589},"Distance":""},{"Coord":{"Lat":-38.8762774,"Lng":-62.0833589},"Distance":""},{"Coord":{"Lat":-38.8777034,"Lng":-62.0697438},"Distance":""},{"Coord":{"Lat":-38.893993,"Lng":-62.0692599},"Distance":""},{"Coord":{"Lat":-38.85361912181314,"Lng":-62.080068401080325},"Distance":""},{"Coord":{"Lat":-38.87427494828544,"Lng":-62.083771264001484},"Distance":""},{"Coord":{"Lat":-38.8733616,"Lng":-62.0761552},"Distance":""},{"Coord":{"Lat":-38.8792158,"Lng":-62.0809605},"Distance":""},{"Coord":{"Lat":-38.8825111,"Lng":-62.0800317},"Distance":""},{"Coord":{"Lat":-38.8720489,"Lng":-62.0571188},"Distance":""},{"Coord":{"Lat":-38.8798311,"Lng":-62.0829962},"Distance":""},{"Coord":{"Lat":-38.8928181,"Lng":-62.0685851},"Distance":""},{"Coord":{"Lat":-38.8835943,"Lng":-62.0658631},"Distance":""},{"Coord":{"Lat":-38.8739608,"Lng":-62.0625104},"Distance":""},{"Coord":{"Lat":-38.8776479,"Lng":-62.0533244},"Distance":""},{"Coord":{"Lat":-38.8776479,"Lng":-62.0533244},"Distance":""},{"Coord":{"Lat":-38.8872462,"Lng":-62.0693682},"Distance":""},{"Coord":{"Lat":-38.88908809446096,"Lng":-62.058947450292976},"Distance":""},{"Coord":{"Lat":-38.887638,"Lng":-62.0577775},"Distance":""},{"Coord":{"Lat":-38.8835896,"Lng":-62.0608155},"Distance":""},{"Coord":{"Lat":-38.8798537,"Lng":-62.0592000},"Distance":""},{"Coord":{"Lat":-38.8820246,"Lng":-62.0576327},"Distance":""},{"Coord":{"Lat":-38.8808464,"Lng":-62.0512143},"Distance":""},{"Coord":{"Lat":-38.8850070,"Lng":-62.0747745},"Distance":""},{"Coord":{"Lat":-38.81134441956729,"Lng":-62.103524588360585},"Distance":""},{"Coord":{"Lat":-38.8780298,"Lng":-62.0783918},"Distance":""},{"Coord":{"Lat":-38.8645436,"Lng":-62.0651600},"Distance":""},{"Coord":{"Lat":-38.8664616,"Lng":-62.0605719},"Distance":""},{"Coord":{"Lat":-38.8807203,"Lng":-62.0623514},"Distance":""},{"Coord":{"Lat":-38.86553959957296,"Lng":-62.07956308619998},"Distance":""},{"Coord":{"Lat":-38.86019744672203,"Lng":-62.084907732293686},"Distance":""},{"Coord":{"Lat":-38.8885319,"Lng":-62.0698912},"Distance":""},{"Coord":{"Lat":-38.8115040992,"Lng":-62.1043037822},"Distance":""},{"Coord":{"Lat":-38.81282655817106,"Lng":-62.09960847669066},"Distance":""},{"Coord":{"Lat":-38.8800797,"Lng":-62.0688372},"Distance":""},{"Coord":{"Lat":-38.8940701,"Lng":-62.061736},"Distance":""},{"Coord":{"Lat":-38.8807087,"Lng":-62.0791687},"Distance":""},{"Coord":{"Lat":-38.8842203,"Lng":-62.0624048},"Distance":""},{"Coord":{"Lat":-38.8841110,"Lng":-62.0767201},"Distance":""},{"Coord":{"Lat":-38.8778625,"Lng":-62.0596662},"Distance":""},{"Coord":{"Lat":-38.8692902,"Lng":-62.0560768},"Distance":""},{"Coord":{"Lat":-38.8678642,"Lng":-62.0567156},"Distance":""},{"Coord":{"Lat":-38.8818151,"Lng":-62.0510680},"Distance":""},{"Coord":{"Lat":-38.851605838,"Lng":-62.0894155725},"Distance":""},{"Coord":{"Lat":-38.8952472,"Lng":-62.0652834},"Distance":""},{"Coord":{"Lat":-38.8844591,"Lng":-62.0643569},"Distance":""},{"Coord":{"Lat":-38.8864098,"Lng":-62.0571730},"Distance":""},{"Coord":{"Lat":-38.8779007,"Lng":-62.0709598},"Distance":""},{"Coord":{"Lat":-38.8088195,"Lng":-62.1029965},"Distance":""},{"Coord":{"Lat":-38.86439,"Lng":-62.0794721},"Distance":""},{"Coord":{"Lat":-38.8937016,"Lng":-62.0696644},"Distance":""},{"Coord":{"Lat":-38.891423,"Lng":-62.0593458},"Distance":""},{"Coord":{"Lat":-38.8880356,"Lng":-62.068315},"Distance":""},{"Coord":{"Lat":-38.8751659,"Lng":-62.0621425},"Distance":""},{"Coord":{"Lat":-38.8851620,"Lng":-62.0656412},"Distance":""},{"Coord":{"Lat":-38.8765941,"Lng":-62.0707614},"Distance":""},{"Coord":{"Lat":-38.8893268,"Lng":-62.0643710},"Distance":""},{"Coord":{"Lat":-38.88971393667261,"Lng":-62.06693448042603},"Distance":""},{"Coord":{"Lat":-38.894055104176616,"Lng":-62.06131925026244},"Distance":""},{"Coord":{"Lat":-38.8807869,"Lng":-62.0809804},"Distance":""},{"Coord":{"Lat":-38.8822367,"Lng":-62.0515726},"Distance":""},{"Coord":{"Lat":-38.8675638,"Lng":-62.0595136},"Distance":""},{"Coord":{"Lat":-38.8836973,"Lng":-62.0596654},"Distance":""},{"Coord":{"Lat":-38.8508690,"Lng":-62.0853352},"Distance":""}];
+var stops = [{"Coord":{"Lat":-38.8873791,"Lng":-62.0691859},"Distance":""},{"Coord":{"Lat":-38.8863970,"Lng":-62.0705357},"Distance":""},{"Coord":{"Lat":-38.8868771,"Lng":-62.0698745},"Distance":""},{"Coord":{"Lat":-38.8889678,"Lng":-62.0670878},"Distance":""},{"Coord":{"Lat":-38.8910160,"Lng":-62.0710067},"Distance":""},{"Coord":{"Lat":-38.8813115,"Lng":-62.0638916},"Distance":""},{"Coord":{"Lat":-38.8915424,"Lng":-62.0628496},"Distance":""},{"Coord":{"Lat":-38.8816311,"Lng":-62.0634707},"Distance":""},{"Coord":{"Lat":-38.893993,"Lng":-62.0692599},"Distance":""},{"Coord":{"Lat":-38.8928181,"Lng":-62.0685851},"Distance":""},{"Coord":{"Lat":-38.8835943,"Lng":-62.0658631},"Distance":""},{"Coord":{"Lat":-38.8901382,"Lng":-62.0566806},"Distance":""},{"Coord":{"Lat":-38.8898984,"Lng":-62.0747272},"Distance":""},{"Coord":{"Lat":-38.88908809446096,"Lng":-62.058947450292976},"Distance":""},{"Coord":{"Lat":-38.8920042,"Lng":-62.0629973},"Distance":""},{"Coord":{"Lat":-38.891343,"Lng":-62.0625979},"Distance":""},{"Coord":{"Lat":-38.8941254,"Lng":-62.0596029},"Distance":""},{"Coord":{"Lat":-38.887638,"Lng":-62.0577775},"Distance":""},{"Coord":{"Lat":-38.8835896,"Lng":-62.0608155},"Distance":""},{"Coord":{"Lat":-38.8798537,"Lng":-62.0592000},"Distance":""},{"Coord":{"Lat":-38.8820246,"Lng":-62.0576327},"Distance":""},{"Coord":{"Lat":-38.8808464,"Lng":-62.0512143},"Distance":""},{"Coord":{"Lat":-38.8799049,"Lng":-62.0613648},"Distance":""},{"Coord":{"Lat":-38.8807203,"Lng":-62.0623514},"Distance":""},{"Coord":{"Lat":-38.8766552,"Lng":-62.0546705},"Distance":""},{"Coord":{"Lat":-38.8885319,"Lng":-62.0698912},"Distance":""},{"Coord":{"Lat":-38.8940701,"Lng":-62.061736},"Distance":""},{"Coord":{"Lat":-38.8842203,"Lng":-62.0624048},"Distance":""},{"Coord":{"Lat":-38.8928719,"Lng":-62.0596148},"Distance":""},{"Coord":{"Lat":-38.8877465,"Lng":-62.0624770},"Distance":""},{"Coord":{"Lat":-38.8818151,"Lng":-62.0510680},"Distance":""},{"Coord":{"Lat":-38.8952472,"Lng":-62.0652834},"Distance":""},{"Coord":{"Lat":-38.8786334,"Lng":-62.0577282},"Distance":""},{"Coord":{"Lat":-38.8844591,"Lng":-62.0643569},"Distance":""},{"Coord":{"Lat":-38.8864098,"Lng":-62.0571730},"Distance":""},{"Coord":{"Lat":-38.8937016,"Lng":-62.0696644},"Distance":""},{"Coord":{"Lat":-38.891423,"Lng":-62.0593458},"Distance":""},{"Coord":{"Lat":-38.8880356,"Lng":-62.068315},"Distance":""},{"Coord":{"Lat":-38.8851620,"Lng":-62.0656412},"Distance":""},{"Coord":{"Lat":-38.8893268,"Lng":-62.0643710},"Distance":""},{"Coord":{"Lat":-38.88971393667261,"Lng":-62.06693448042603},"Distance":""},{"Coord":{"Lat":-38.894055104176616,"Lng":-62.06131925026244},"Distance":""},{"Coord":{"Lat":-38.8822367,"Lng":-62.0515726},"Distance":""}];
 function initialize() {
+	//Ruta de imagenes http://kml4earth.appspot.com/icons.html#shapes
+	
+	var iconBase = 'http://maps.google.com/mapfiles/kml/paddle/';
+	var icons = {
+		  normal: {
+            icon: iconBase + 'red-circle.png'
+          },
+          noventa: {
+            icon: iconBase + 'blu-blank.png'
+          },
+		   venta: {
+            icon: iconBase + 'red-circle.png'
+          },
+          motivo: {
+            icon: iconBase + 'ylw-stars.png'
+          },
+		}; 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-	var marker1=new google.maps.Marker({position:new google.maps.LatLng(-38.850684252804754, -62.078216936431886)});marker1.setMap(map);var infowindow1 = new google.maps.InfoWindow({content:"VENTA / 24 / CALLE RÍO 887",maxWidth: 200});marker1.addListener('click', function() {infowindow1.open(map, marker1);});var marker2=new google.maps.Marker({position:new google.maps.LatLng(-38.850684252804754, -62.078216936431886)});marker2.setMap(map);var infowindow2 = new google.maps.InfoWindow({content:"VENTA / 24 / CALLE RÍO 887",maxWidth: 200});marker2.addListener('click', function() {infowindow2.open(map, marker2);});var marker3=new google.maps.Marker({position:new google.maps.LatLng(-38.8778678, -62.0784363)});marker3.setMap(map);var infowindow3 = new google.maps.InfoWindow({content:"VENTA / 15 / PASSO Y LUIGGI",maxWidth: 200});marker3.addListener('click', function() {infowindow3.open(map, marker3);});var marker4=new google.maps.Marker({position:new google.maps.LatLng(-38.8803187, -62.0780619)});marker4.setMap(map);var infowindow4 = new google.maps.InfoWindow({content:"VENTA / 8 / RIVADAVIA 381",maxWidth: 200});marker4.addListener('click', function() {infowindow4.open(map, marker4);});var marker5=new google.maps.Marker({position:new google.maps.LatLng(-38.8833793, -62.079785)});marker5.setMap(map);var infowindow5 = new google.maps.InfoWindow({content:"VENTA / 7 / ROCA Y URQUIZA",maxWidth: 200});marker5.addListener('click', function() {infowindow5.open(map, marker5);});var marker6=new google.maps.Marker({position:new google.maps.LatLng(-38.8797355, -62.0743991)});marker6.setMap(map);var infowindow6 = new google.maps.InfoWindow({content:"VENTA / 6 / RIVADAVIA 610",maxWidth: 200});marker6.addListener('click', function() {infowindow6.open(map, marker6);});var marker7=new google.maps.Marker({position:new google.maps.LatLng(-38.8790630, -62.0781080)});marker7.setMap(map);var infowindow7 = new google.maps.InfoWindow({content:"VENTA / 2 / JUAN JOSÉ PASO 598",maxWidth: 200});marker7.addListener('click', function() {infowindow7.open(map, marker7);});var marker8=new google.maps.Marker({position:new google.maps.LatLng(-38.8889678, -62.0670878)});marker8.setMap(map);var infowindow8 = new google.maps.InfoWindow({content:"VENTA / 23 / SAAVEDRA 350",maxWidth: 200});marker8.addListener('click', function() {infowindow8.open(map, marker8);});var marker9=new google.maps.Marker({position:new google.maps.LatLng(-38.8790030, -62.0716166)});marker9.setMap(map);var infowindow9 = new google.maps.InfoWindow({content:"VENTA / 33 / BOUCHARDO 515",maxWidth: 200});marker9.addListener('click', function() {infowindow9.open(map, marker9);});var marker10=new google.maps.Marker({position:new google.maps.LatLng(-38.8636944, -62.0822742)});marker10.setMap(map);var infowindow10 = new google.maps.InfoWindow({content:"VENTA / 37 / PASSO 2018",maxWidth: 200});marker10.addListener('click', function() {infowindow10.open(map, marker10);});var marker11=new google.maps.Marker({position:new google.maps.LatLng(-38.8603521, -62.0831918)});marker11.setMap(map);var infowindow11 = new google.maps.InfoWindow({content:"VENTA / 38 / PASSO 2378",maxWidth: 200});marker11.addListener('click', function() {infowindow11.open(map, marker11);});var marker12=new google.maps.Marker({position:new google.maps.LatLng(-38.8789574, -62.0826312)});marker12.setMap(map);var infowindow12 = new google.maps.InfoWindow({content:"VENTA / 43 / HUMBERTO PRIMO 670",maxWidth: 200});marker12.addListener('click', function() {infowindow12.open(map, marker12);});var marker13=new google.maps.Marker({position:new google.maps.LatLng(-38.8787738, -62.0810883)});marker13.setMap(map);var infowindow13 = new google.maps.InfoWindow({content:"VENTA / 44 / ROCA 661",maxWidth: 200});marker13.addListener('click', function() {infowindow13.open(map, marker13);});var marker14=new google.maps.Marker({position:new google.maps.LatLng(-38.8915424, -62.0628496)});marker14.setMap(map);var infowindow14 = new google.maps.InfoWindow({content:"VENTA / 45 / JESUS MARIA 930",maxWidth: 200});marker14.addListener('click', function() {infowindow14.open(map, marker14);});var marker15=new google.maps.Marker({position:new google.maps.LatLng(-38.8816311, -62.0634707)});marker15.setMap(map);var infowindow15 = new google.maps.InfoWindow({content:"VENTA / 46 / ALVEAR Y AVENIDA TUCUMAN",maxWidth: 200});marker15.addListener('click', function() {infowindow15.open(map, marker15);});var marker16=new google.maps.Marker({position:new google.maps.LatLng(-38.8715599, -62.0642101)});marker16.setMap(map);var infowindow16 = new google.maps.InfoWindow({content:"VENTA / 47 / JUJUY 489",maxWidth: 200});marker16.addListener('click', function() {infowindow16.open(map, marker16);});var marker17=new google.maps.Marker({position:new google.maps.LatLng(-38.8674069, -62.0593187)});marker17.setMap(map);var infowindow17 = new google.maps.InfoWindow({content:"VENTA / 48 / CHACO Y SALTA",maxWidth: 200});marker17.addListener('click', function() {infowindow17.open(map, marker17);});var marker18=new google.maps.Marker({position:new google.maps.LatLng(-38.86426437114946, -62.06424692750852)});marker18.setMap(map);var infowindow18 = new google.maps.InfoWindow({content:"VENTA / 52 / BOULOGNE SUR MER 486",maxWidth: 200});marker18.addListener('click', function() {infowindow18.open(map, marker18);});var marker19=new google.maps.Marker({position:new google.maps.LatLng(-38.8843417, -62.0780992)});marker19.setMap(map);var infowindow19 = new google.maps.InfoWindow({content:"VENTA / 53 / ROSALES Y 25 DE MAYO",maxWidth: 200});marker19.addListener('click', function() {infowindow19.open(map, marker19);});var marker20=new google.maps.Marker({position:new google.maps.LatLng(-38.852516240819334, -62.080304435473636)});marker20.setMap(map);var infowindow20 = new google.maps.InfoWindow({content:"VENTA / 55 / ESPORA 3185",maxWidth: 200});marker20.addListener('click', function() {infowindow20.open(map, marker20);});var marker21=new google.maps.Marker({position:new google.maps.LatLng(-38.8474781848, -62.0877633318)});marker21.setMap(map);var infowindow21 = new google.maps.InfoWindow({content:"VENTA / 56 / BARRIO ALBATROS XV CASA 30",maxWidth: 200});marker21.addListener('click', function() {infowindow21.open(map, marker21);});var marker22=new google.maps.Marker({position:new google.maps.LatLng(-38.8767108, -62.0816677)});marker22.setMap(map);var infowindow22 = new google.maps.InfoWindow({content:"VENTA / 57 / ROCA 830",maxWidth: 200});marker22.addListener('click', function() {infowindow22.open(map, marker22);});var marker23=new google.maps.Marker({position:new google.maps.LatLng(-38.8762774, -62.0833589)});marker23.setMap(map);var infowindow23 = new google.maps.InfoWindow({content:"VENTA / 59 / HUMBERTO PRIMO 899",maxWidth: 200});marker23.addListener('click', function() {infowindow23.open(map, marker23);});var marker24=new google.maps.Marker({position:new google.maps.LatLng(-38.8762774, -62.0833589)});marker24.setMap(map);var infowindow24 = new google.maps.InfoWindow({content:"VENTA / 59 / HUMBERTO PRIMO 899",maxWidth: 200});marker24.addListener('click', function() {infowindow24.open(map, marker24);});var marker25=new google.maps.Marker({position:new google.maps.LatLng(-38.8777034, -62.0697438)});marker25.setMap(map);var infowindow25 = new google.maps.InfoWindow({content:"VENTA / 64 / MITRE 951",maxWidth: 200});marker25.addListener('click', function() {infowindow25.open(map, marker25);});var marker26=new google.maps.Marker({position:new google.maps.LatLng(-38.893993, -62.0692599)});marker26.setMap(map);var infowindow26 = new google.maps.InfoWindow({content:"VENTA / 65 / LIBERTAD 540",maxWidth: 200});marker26.addListener('click', function() {infowindow26.open(map, marker26);});var marker27=new google.maps.Marker({position:new google.maps.LatLng(-38.85361912181314, -62.080068401080325)});marker27.setMap(map);var infowindow27 = new google.maps.InfoWindow({content:"VENTA / 68 / ESPORA 3083",maxWidth: 200});marker27.addListener('click', function() {infowindow27.open(map, marker27);});var marker28=new google.maps.Marker({position:new google.maps.LatLng(-38.87427494828544, -62.083771264001484)});marker28.setMap(map);var infowindow28 = new google.maps.InfoWindow({content:"VENTA / 70 / HUMBERTO PRIMO 1041",maxWidth: 200});marker28.addListener('click', function() {infowindow28.open(map, marker28);});var marker29=new google.maps.Marker({position:new google.maps.LatLng(-38.8733616, -62.0761552)});marker29.setMap(map);var infowindow29 = new google.maps.InfoWindow({content:"VENTA / 72 / MURATURE 1005",maxWidth: 200});marker29.addListener('click', function() {infowindow29.open(map, marker29);});var marker30=new google.maps.Marker({position:new google.maps.LatLng(-38.8792158, -62.0809605)});marker30.setMap(map);var infowindow30 = new google.maps.InfoWindow({content:"VENTA / 75 / ROCA 622",maxWidth: 200});marker30.addListener('click', function() {infowindow30.open(map, marker30);});var marker31=new google.maps.Marker({position:new google.maps.LatLng(-38.8825111, -62.0800317)});marker31.setMap(map);var infowindow31 = new google.maps.InfoWindow({content:"VENTA / 76 / ROCA 361",maxWidth: 200});marker31.addListener('click', function() {infowindow31.open(map, marker31);});var marker32=new google.maps.Marker({position:new google.maps.LatLng(-38.8720489, -62.0571188)});marker32.setMap(map);var infowindow32 = new google.maps.InfoWindow({content:"VENTA / 77 / BUENOS AIRES 315",maxWidth: 200});marker32.addListener('click', function() {infowindow32.open(map, marker32);});var marker33=new google.maps.Marker({position:new google.maps.LatLng(-38.8798311, -62.0829962)});marker33.setMap(map);var infowindow33 = new google.maps.InfoWindow({content:"VENTA / 78 / MITRE 63",maxWidth: 200});marker33.addListener('click', function() {infowindow33.open(map, marker33);});var marker34=new google.maps.Marker({position:new google.maps.LatLng(-38.8928181, -62.0685851)});marker34.setMap(map);var infowindow34 = new google.maps.InfoWindow({content:"VENTA / 26 / FLORIDA 503",maxWidth: 200});marker34.addListener('click', function() {infowindow34.open(map, marker34);});var marker35=new google.maps.Marker({position:new google.maps.LatLng(-38.8835943, -62.0658631)});marker35.setMap(map);var infowindow35 = new google.maps.InfoWindow({content:"VENTA / 27 / ALVEAR 1286",maxWidth: 200});marker35.addListener('click', function() {infowindow35.open(map, marker35);});var marker36=new google.maps.Marker({position:new google.maps.LatLng(-38.8739608, -62.0625104)});marker36.setMap(map);var infowindow36 = new google.maps.InfoWindow({content:"VENTA / 80 / PELLEGRINI Y 17 DE AGOSTO",maxWidth: 200});marker36.addListener('click', function() {infowindow36.open(map, marker36);});var marker37=new google.maps.Marker({position:new google.maps.LatLng(-38.8776479, -62.0533244)});marker37.setMap(map);var infowindow37 = new google.maps.InfoWindow({content:"VENTA / 96 / ROSARIO 350",maxWidth: 200});marker37.addListener('click', function() {infowindow37.open(map, marker37);});var marker38=new google.maps.Marker({position:new google.maps.LatLng(-38.8776479, -62.0533244)});marker38.setMap(map);var infowindow38 = new google.maps.InfoWindow({content:"VENTA / 96 / ROSARIO 350",maxWidth: 200});marker38.addListener('click', function() {infowindow38.open(map, marker38);});var marker39=new google.maps.Marker({position:new google.maps.LatLng(-38.8872462, -62.0693682)});marker39.setMap(map);var infowindow39 = new google.maps.InfoWindow({content:"VENTA / 98 / SAAVEDRA 145",maxWidth: 200});marker39.addListener('click', function() {infowindow39.open(map, marker39);});var marker40=new google.maps.Marker({position:new google.maps.LatLng(-38.88908809446096, -62.058947450292976)});marker40.setMap(map);var infowindow40 = new google.maps.InfoWindow({content:"VENTA / 102 / SARMIENTO 724",maxWidth: 200});marker40.addListener('click', function() {infowindow40.open(map, marker40);});var marker41=new google.maps.Marker({position:new google.maps.LatLng(-38.887638, -62.0577775)});marker41.setMap(map);var infowindow41 = new google.maps.InfoWindow({content:"VENTA / 107 / MAIPU 718",maxWidth: 200});marker41.addListener('click', function() {infowindow41.open(map, marker41);});var marker42=new google.maps.Marker({position:new google.maps.LatLng(-38.8835896, -62.0608155)});marker42.setMap(map);var infowindow42 = new google.maps.InfoWindow({content:"VENTA / 108 / AVENIDA TUCUMAN 337",maxWidth: 200});marker42.addListener('click', function() {infowindow42.open(map, marker42);});var marker43=new google.maps.Marker({position:new google.maps.LatLng(-38.8798537, -62.0592000)});marker43.setMap(map);var infowindow43 = new google.maps.InfoWindow({content:"VENTA / 109 / CORDOBA Y BELGRANO",maxWidth: 200});marker43.addListener('click', function() {infowindow43.open(map, marker43);});var marker44=new google.maps.Marker({position:new google.maps.LatLng(-38.8820246, -62.0576327)});marker44.setMap(map);var infowindow44 = new google.maps.InfoWindow({content:"VENTA / 110 / HIPOLITO IRIGOYEN 1742",maxWidth: 200});marker44.addListener('click', function() {infowindow44.open(map, marker44);});var marker45=new google.maps.Marker({position:new google.maps.LatLng(-38.8808464, -62.0512143)});marker45.setMap(map);var infowindow45 = new google.maps.InfoWindow({content:"VENTA / 111 / LA PLATA 637",maxWidth: 200});marker45.addListener('click', function() {infowindow45.open(map, marker45);});var marker46=new google.maps.Marker({position:new google.maps.LatLng(-38.8850070, -62.0747745)});marker46.setMap(map);var infowindow46 = new google.maps.InfoWindow({content:"VENTA / 118 / ALBERDI 492",maxWidth: 200});marker46.addListener('click', function() {infowindow46.open(map, marker46);});var marker47=new google.maps.Marker({position:new google.maps.LatLng(-38.81134441956729, -62.103524588360585)});marker47.setMap(map);var infowindow47 = new google.maps.InfoWindow({content:"VENTA / 123 / NICARAGUA 649",maxWidth: 200});marker47.addListener('click', function() {infowindow47.open(map, marker47);});var marker48=new google.maps.Marker({position:new google.maps.LatLng(-38.8780298, -62.0783918)});marker48.setMap(map);var infowindow48 = new google.maps.InfoWindow({content:"VENTA / 127 / PASSO 690",maxWidth: 200});marker48.addListener('click', function() {infowindow48.open(map, marker48);});var marker49=new google.maps.Marker({position:new google.maps.LatLng(-38.8645436, -62.0651600)});marker49.setMap(map);var infowindow49 = new google.maps.InfoWindow({content:"VENTA / 134 / CALLE SANTA CRUZ 1285",maxWidth: 200});marker49.addListener('click', function() {infowindow49.open(map, marker49);});var marker50=new google.maps.Marker({position:new google.maps.LatLng(-38.8664616, -62.0605719)});marker50.setMap(map);var infowindow50 = new google.maps.InfoWindow({content:"VENTA / 135 / CHACO 657",maxWidth: 200});marker50.addListener('click', function() {infowindow50.open(map, marker50);});var marker51=new google.maps.Marker({position:new google.maps.LatLng(-38.8807203, -62.0623514)});marker51.setMap(map);var infowindow51 = new google.maps.InfoWindow({content:"VENTA / 139 / ALVEAR 1604",maxWidth: 200});marker51.addListener('click', function() {infowindow51.open(map, marker51);});var marker52=new google.maps.Marker({position:new google.maps.LatLng(-38.86553959957296, -62.07956308619998)});marker52.setMap(map);var infowindow52 = new google.maps.InfoWindow({content:"VENTA / 140 / B.PLAN FEDERAL CASA 524 INT 3",maxWidth: 200});marker52.addListener('click', function() {infowindow52.open(map, marker52);});var marker53=new google.maps.Marker({position:new google.maps.LatLng(-38.86019744672203, -62.084907732293686)});marker53.setMap(map);var infowindow53 = new google.maps.InfoWindow({content:"VENTA / 141 / 25 DE MAYO 2410",maxWidth: 200});marker53.addListener('click', function() {infowindow53.open(map, marker53);});var marker54=new google.maps.Marker({position:new google.maps.LatLng(-38.8885319, -62.0698912)});marker54.setMap(map);var infowindow54 = new google.maps.InfoWindow({content:"VENTA / 144 / GONZALES FERNANDEZ 250",maxWidth: 200});marker54.addListener('click', function() {infowindow54.open(map, marker54);});var marker55=new google.maps.Marker({position:new google.maps.LatLng(-38.8115040992, -62.1043037822)});marker55.setMap(map);var infowindow55 = new google.maps.InfoWindow({content:"VENTA / 146 / MIGUEL CANE 247",maxWidth: 200});marker55.addListener('click', function() {infowindow55.open(map, marker55);});var marker56=new google.maps.Marker({position:new google.maps.LatLng(-38.81282655817106, -62.09960847669066)});marker56.setMap(map);var infowindow56 = new google.maps.InfoWindow({content:"VENTA / 147 / COSTA RICA 220",maxWidth: 200});marker56.addListener('click', function() {infowindow56.open(map, marker56);});var marker57=new google.maps.Marker({position:new google.maps.LatLng(-38.8800797, -62.0688372)});marker57.setMap(map);var infowindow57 = new google.maps.InfoWindow({content:"VENTA / 149 / IRIGOYEN 965",maxWidth: 200});marker57.addListener('click', function() {infowindow57.open(map, marker57);});var marker58=new google.maps.Marker({position:new google.maps.LatLng(-38.8940701, -62.061736)});marker58.setMap(map);var infowindow58 = new google.maps.InfoWindow({content:"VENTA / 151 / PRIMERA JUNTA 830",maxWidth: 200});marker58.addListener('click', function() {infowindow58.open(map, marker58);});var marker59=new google.maps.Marker({position:new google.maps.LatLng(-38.8807087, -62.0791687)});marker59.setMap(map);var infowindow59 = new google.maps.InfoWindow({content:"VENTA / 152 / 25 DE MAYO 478",maxWidth: 200});marker59.addListener('click', function() {infowindow59.open(map, marker59);});var marker60=new google.maps.Marker({position:new google.maps.LatLng(-38.8842203, -62.0624048)});marker60.setMap(map);var infowindow60 = new google.maps.InfoWindow({content:"VENTA / 161 / MAIPU Y JOSE INGENIEROS",maxWidth: 200});marker60.addListener('click', function() {infowindow60.open(map, marker60);});var marker61=new google.maps.Marker({position:new google.maps.LatLng(-38.8841110, -62.0767201)});marker61.setMap(map);var infowindow61 = new google.maps.InfoWindow({content:"VENTA / 164 / JUAN JOSE PASO Y ROSALES",maxWidth: 200});marker61.addListener('click', function() {infowindow61.open(map, marker61);});var marker62=new google.maps.Marker({position:new google.maps.LatLng(-38.8778625, -62.0596662)});marker62.setMap(map);var infowindow62 = new google.maps.InfoWindow({content:"VENTA / 168 / SARGENTO CABRAL 67",maxWidth: 200});marker62.addListener('click', function() {infowindow62.open(map, marker62);});var marker63=new google.maps.Marker({position:new google.maps.LatLng(-38.8692902, -62.0560768)});marker63.setMap(map);var infowindow63 = new google.maps.InfoWindow({content:"VENTA / 170 / SAN LUIS 536",maxWidth: 200});marker63.addListener('click', function() {infowindow63.open(map, marker63);});var marker64=new google.maps.Marker({position:new google.maps.LatLng(-38.8678642, -62.0567156)});marker64.setMap(map);var infowindow64 = new google.maps.InfoWindow({content:"VENTA / 176 / FORMOSA Y MENDOZA",maxWidth: 200});marker64.addListener('click', function() {infowindow64.open(map, marker64);});var marker65=new google.maps.Marker({position:new google.maps.LatLng(-38.8818151, -62.0510680)});marker65.setMap(map);var infowindow65 = new google.maps.InfoWindow({content:"VENTA / 177 / JESUS MARIA 2015",maxWidth: 200});marker65.addListener('click', function() {infowindow65.open(map, marker65);});var marker66=new google.maps.Marker({position:new google.maps.LatLng(-38.851605838, -62.0894155725)});marker66.setMap(map);var infowindow66 = new google.maps.InfoWindow({content:"VENTA / 185 / RIO BERMEJO 189",maxWidth: 200});marker66.addListener('click', function() {infowindow66.open(map, marker66);});var marker67=new google.maps.Marker({position:new google.maps.LatLng(-38.8952472, -62.0652834)});marker67.setMap(map);var infowindow67 = new google.maps.InfoWindow({content:"VENTA / 186 / CORRIENTES Y FLORIDA",maxWidth: 200});marker67.addListener('click', function() {infowindow67.open(map, marker67);});var marker68=new google.maps.Marker({position:new google.maps.LatLng(-38.8844591, -62.0643569)});marker68.setMap(map);var infowindow68 = new google.maps.InfoWindow({content:"VENTA / 188 / GENERAL PAZ 212",maxWidth: 200});marker68.addListener('click', function() {infowindow68.open(map, marker68);});var marker69=new google.maps.Marker({position:new google.maps.LatLng(-38.8864098, -62.0571730)});marker69.setMap(map);var infowindow69 = new google.maps.InfoWindow({content:"VENTA / 193 / AV. TUCUMAN 679",maxWidth: 200});marker69.addListener('click', function() {infowindow69.open(map, marker69);});var marker70=new google.maps.Marker({position:new google.maps.LatLng(-38.8779007, -62.0709598)});marker70.setMap(map);var infowindow70 = new google.maps.InfoWindow({content:"VENTA / 195 / MITRE 860",maxWidth: 200});marker70.addListener('click', function() {infowindow70.open(map, marker70);});var marker71=new google.maps.Marker({position:new google.maps.LatLng(-38.8088195, -62.1029965)});marker71.setMap(map);var infowindow71 = new google.maps.InfoWindow({content:"VENTA / 197 / GUTIERREZ Y PANAMA",maxWidth: 200});marker71.addListener('click', function() {infowindow71.open(map, marker71);});var marker72=new google.maps.Marker({position:new google.maps.LatLng(-38.86439, -62.0794721)});marker72.setMap(map);var infowindow72 = new google.maps.InfoWindow({content:"VENTA / 198 / ISLAS MALVINAS 541",maxWidth: 200});marker72.addListener('click', function() {infowindow72.open(map, marker72);});var marker73=new google.maps.Marker({position:new google.maps.LatLng(-38.8937016, -62.0696644)});marker73.setMap(map);var infowindow73 = new google.maps.InfoWindow({content:"VENTA / 199 / LIBERTAD 502",maxWidth: 200});marker73.addListener('click', function() {infowindow73.open(map, marker73);});var marker74=new google.maps.Marker({position:new google.maps.LatLng(-38.891423, -62.0593458)});marker74.setMap(map);var infowindow74 = new google.maps.InfoWindow({content:"VENTA / 200 / ESTOMBA 865",maxWidth: 200});marker74.addListener('click', function() {infowindow74.open(map, marker74);});var marker75=new google.maps.Marker({position:new google.maps.LatLng(-38.8880356, -62.068315)});marker75.setMap(map);var infowindow75 = new google.maps.InfoWindow({content:"VENTA / 201 / SAAVEDRA 236",maxWidth: 200});marker75.addListener('click', function() {infowindow75.open(map, marker75);});var marker76=new google.maps.Marker({position:new google.maps.LatLng(-38.8751659, -62.0621425)});marker76.setMap(map);var infowindow76 = new google.maps.InfoWindow({content:"VENTA / 202 / LUIGGI 1480",maxWidth: 200});marker76.addListener('click', function() {infowindow76.open(map, marker76);});var marker77=new google.maps.Marker({position:new google.maps.LatLng(-38.8851620, -62.0656412)});marker77.setMap(map);var infowindow77 = new google.maps.InfoWindow({content:"VENTA / 203 / CHACABUCO Y BELGRANO",maxWidth: 200});marker77.addListener('click', function() {infowindow77.open(map, marker77);});var marker78=new google.maps.Marker({position:new google.maps.LatLng(-38.8765941, -62.0707614)});marker78.setMap(map);var infowindow78 = new google.maps.InfoWindow({content:"VENTA / 204 / LUIGGI Y AVELLANEDA",maxWidth: 200});marker78.addListener('click', function() {infowindow78.open(map, marker78);});var marker79=new google.maps.Marker({position:new google.maps.LatLng(-38.8893268, -62.0643710)});marker79.setMap(map);var infowindow79 = new google.maps.InfoWindow({content:"VENTA / 205 / DORREGO Y SARMIENTO",maxWidth: 200});marker79.addListener('click', function() {infowindow79.open(map, marker79);});var marker80=new google.maps.Marker({position:new google.maps.LatLng(-38.88971393667261, -62.06693448042603)});marker80.setMap(map);var infowindow80 = new google.maps.InfoWindow({content:"VENTA / 206 / HIPOLITO IRIGOYEN 881",maxWidth: 200});marker80.addListener('click', function() {infowindow80.open(map, marker80);});var marker81=new google.maps.Marker({position:new google.maps.LatLng(-38.894055104176616, -62.06131925026244)});marker81.setMap(map);var infowindow81 = new google.maps.InfoWindow({content:"VENTA / 207 / PRIMERA JUNTA 831",maxWidth: 200});marker81.addListener('click', function() {infowindow81.open(map, marker81);});var marker82=new google.maps.Marker({position:new google.maps.LatLng(-38.8807869, -62.0809804)});marker82.setMap(map);var infowindow82 = new google.maps.InfoWindow({content:"VENTA / 208 / RIVADAVIA 174",maxWidth: 200});marker82.addListener('click', function() {infowindow82.open(map, marker82);});var marker83=new google.maps.Marker({position:new google.maps.LatLng(-38.8822367, -62.0515726)});marker83.setMap(map);var infowindow83 = new google.maps.InfoWindow({content:"VENTA / 209 / FALUCHO 696",maxWidth: 200});marker83.addListener('click', function() {infowindow83.open(map, marker83);});var marker84=new google.maps.Marker({position:new google.maps.LatLng(-38.8675638, -62.0595136)});marker84.setMap(map);var infowindow84 = new google.maps.InfoWindow({content:"VENTA / 210 / SALTA 489",maxWidth: 200});marker84.addListener('click', function() {infowindow84.open(map, marker84);});var marker85=new google.maps.Marker({position:new google.maps.LatLng(-38.8836973, -62.0596654)});marker85.setMap(map);var infowindow85 = new google.maps.InfoWindow({content:"VENTA / 212 / HIPOLITO IRIGOYEN 1585",maxWidth: 200});marker85.addListener('click', function() {infowindow85.open(map, marker85);});var marker86=new google.maps.Marker({position:new google.maps.LatLng(-38.8508690, -62.0853352)});marker86.setMap(map);var infowindow86 = new google.maps.InfoWindow({content:"VENTA / 211 / RIO BERMEJO 887",maxWidth: 200});marker86.addListener('click', function() {infowindow86.open(map, marker86);});
+	
+					{
+						var marker1 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8873791, -62.0691859)
+									,icon: icons['motivo'].icon
+								});
+						 marker1.setMap(map);
+						 var infowindow1 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 22 / SAAVEDRA 159"
+						 			,maxWidth: 200
+						 		});
+						 marker1.addListener('click', function() {infowindow1.open(map, marker1);});
+					}
+					
+					{
+						var marker2 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8863970, -62.0705357)
+									,icon: icons['motivo'].icon
+								});
+						 marker2.setMap(map);
+						 var infowindow2 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 20 / SAAVEDRA 50"
+						 			,maxWidth: 200
+						 		});
+						 marker2.addListener('click', function() {infowindow2.open(map, marker2);});
+					}
+					
+					{
+						var marker3 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8868771, -62.0698745)
+									,icon: icons['motivo'].icon
+								});
+						 marker3.setMap(map);
+						 var infowindow3 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 9 / SAAVEDRA Y ALVEAR"
+						 			,maxWidth: 200
+						 		});
+						 marker3.addListener('click', function() {infowindow3.open(map, marker3);});
+					}
+					
+					{
+						var marker4 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8889678, -62.0670878)
+									,icon: icons['motivo'].icon
+								});
+						 marker4.setMap(map);
+						 var infowindow4 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO ESTABA EL COMPRADOR / 23 / SAAVEDRA 350"
+						 			,maxWidth: 200
+						 		});
+						 marker4.addListener('click', function() {infowindow4.open(map, marker4);});
+					}
+					
+					{
+						var marker5 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8910160, -62.0710067)
+									,icon: icons['motivo'].icon
+								});
+						 marker5.setMap(map);
+						 var infowindow5 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 28 / FLORIDA 297"
+						 			,maxWidth: 200
+						 		});
+						 marker5.addListener('click', function() {infowindow5.open(map, marker5);});
+					}
+					
+					{
+						var marker6 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8813115, -62.0638916)
+									,icon: icons['motivo'].icon
+								});
+						 marker6.setMap(map);
+						 var infowindow6 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 31 / AVENIDA TUCUMAN 64"
+						 			,maxWidth: 200
+						 		});
+						 marker6.addListener('click', function() {infowindow6.open(map, marker6);});
+					}
+					
+					{
+						var marker7 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8915424, -62.0628496)
+									,icon: icons['venta'].icon
+								});
+						 marker7.setMap(map);
+						 var infowindow7 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 45 / JESUS MARIA 930"
+						 			,maxWidth: 200
+						 		});
+						 marker7.addListener('click', function() {infowindow7.open(map, marker7);});
+					}
+					
+					{
+						var marker8 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8816311, -62.0634707)
+									,icon: icons['venta'].icon
+								});
+						 marker8.setMap(map);
+						 var infowindow8 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 46 / ALVEAR Y AVENIDA TUCUMAN"
+						 			,maxWidth: 200
+						 		});
+						 marker8.addListener('click', function() {infowindow8.open(map, marker8);});
+					}
+					
+					{
+						var marker9 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.893993, -62.0692599)
+									,icon: icons['motivo'].icon
+								});
+						 marker9.setMap(map);
+						 var infowindow9 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 65 / LIBERTAD 540"
+						 			,maxWidth: 200
+						 		});
+						 marker9.addListener('click', function() {infowindow9.open(map, marker9);});
+					}
+					
+					{
+						var marker10 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8928181, -62.0685851)
+									,icon: icons['venta'].icon
+								});
+						 marker10.setMap(map);
+						 var infowindow10 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 26 / FLORIDA 503"
+						 			,maxWidth: 200
+						 		});
+						 marker10.addListener('click', function() {infowindow10.open(map, marker10);});
+					}
+					
+					{
+						var marker11 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8835943, -62.0658631)
+									,icon: icons['venta'].icon
+								});
+						 marker11.setMap(map);
+						 var infowindow11 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 27 / ALVEAR 1286"
+						 			,maxWidth: 200
+						 		});
+						 marker11.addListener('click', function() {infowindow11.open(map, marker11);});
+					}
+					
+					{
+						var marker12 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8901382, -62.0566806)
+									,icon: icons['motivo'].icon
+								});
+						 marker12.setMap(map);
+						 var infowindow12 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 100 / GENERAL PAZ 915"
+						 			,maxWidth: 200
+						 		});
+						 marker12.addListener('click', function() {infowindow12.open(map, marker12);});
+					}
+					
+					{
+						var marker13 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8898984, -62.0747272)
+									,icon: icons['motivo'].icon
+								});
+						 marker13.setMap(map);
+						 var infowindow13 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 101 / LIBERTAD 40"
+						 			,maxWidth: 200
+						 		});
+						 marker13.addListener('click', function() {infowindow13.open(map, marker13);});
+					}
+					
+					{
+						var marker14 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.88908809446096, -62.058947450292976)
+									,icon: icons['motivo'].icon
+								});
+						 marker14.setMap(map);
+						 var infowindow14 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 102 / SARMIENTO 724"
+						 			,maxWidth: 200
+						 		});
+						 marker14.addListener('click', function() {infowindow14.open(map, marker14);});
+					}
+					
+					{
+						var marker15 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8920042, -62.0629973)
+									,icon: icons['venta'].icon
+								});
+						 marker15.setMap(map);
+						 var infowindow15 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 104 / SAAVEDRA 718"
+						 			,maxWidth: 200
+						 		});
+						 marker15.addListener('click', function() {infowindow15.open(map, marker15);});
+					}
+					
+					{
+						var marker16 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.891343, -62.0625979)
+									,icon: icons['motivo'].icon
+								});
+						 marker16.setMap(map);
+						 var infowindow16 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 105 / JESUS MARIA 963"
+						 			,maxWidth: 200
+						 		});
+						 marker16.addListener('click', function() {infowindow16.open(map, marker16);});
+					}
+					
+					{
+						var marker17 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8941254, -62.0596029)
+									,icon: icons['motivo'].icon
+								});
+						 marker17.setMap(map);
+						 var infowindow17 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 106 / TRIUNVIRATO 871"
+						 			,maxWidth: 200
+						 		});
+						 marker17.addListener('click', function() {infowindow17.open(map, marker17);});
+					}
+					
+					{
+						var marker18 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.887638, -62.0577775)
+									,icon: icons['motivo'].icon
+								});
+						 marker18.setMap(map);
+						 var infowindow18 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 107 / MAIPU 718"
+						 			,maxWidth: 200
+						 		});
+						 marker18.addListener('click', function() {infowindow18.open(map, marker18);});
+					}
+					
+					{
+						var marker19 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8835896, -62.0608155)
+									,icon: icons['motivo'].icon
+								});
+						 marker19.setMap(map);
+						 var infowindow19 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 108 / AVENIDA TUCUMAN 337"
+						 			,maxWidth: 200
+						 		});
+						 marker19.addListener('click', function() {infowindow19.open(map, marker19);});
+					}
+					
+					{
+						var marker20 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8798537, -62.0592000)
+									,icon: icons['venta'].icon
+								});
+						 marker20.setMap(map);
+						 var infowindow20 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 109 / CORDOBA Y BELGRANO"
+						 			,maxWidth: 200
+						 		});
+						 marker20.addListener('click', function() {infowindow20.open(map, marker20);});
+					}
+					
+					{
+						var marker21 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8820246, -62.0576327)
+									,icon: icons['venta'].icon
+								});
+						 marker21.setMap(map);
+						 var infowindow21 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 110 / HIPOLITO IRIGOYEN 1742"
+						 			,maxWidth: 200
+						 		});
+						 marker21.addListener('click', function() {infowindow21.open(map, marker21);});
+					}
+					
+					{
+						var marker22 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8808464, -62.0512143)
+									,icon: icons['motivo'].icon
+								});
+						 marker22.setMap(map);
+						 var infowindow22 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 111 / LA PLATA 637"
+						 			,maxWidth: 200
+						 		});
+						 marker22.addListener('click', function() {infowindow22.open(map, marker22);});
+					}
+					
+					{
+						var marker23 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8799049, -62.0613648)
+									,icon: icons['motivo'].icon
+								});
+						 marker23.setMap(map);
+						 var infowindow23 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA CERRADO / 112 / MORENO 101"
+						 			,maxWidth: 200
+						 		});
+						 marker23.addListener('click', function() {infowindow23.open(map, marker23);});
+					}
+					
+					{
+						var marker24 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8807203, -62.0623514)
+									,icon: icons['motivo'].icon
+								});
+						 marker24.setMap(map);
+						 var infowindow24 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 139 / ALVEAR 1604"
+						 			,maxWidth: 200
+						 		});
+						 marker24.addListener('click', function() {infowindow24.open(map, marker24);});
+					}
+					
+					{
+						var marker25 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8766552, -62.0546705)
+									,icon: icons['motivo'].icon
+								});
+						 marker25.setMap(map);
+						 var infowindow25 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 143 / ROSARIO 156"
+						 			,maxWidth: 200
+						 		});
+						 marker25.addListener('click', function() {infowindow25.open(map, marker25);});
+					}
+					
+					{
+						var marker26 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8885319, -62.0698912)
+									,icon: icons['venta'].icon
+								});
+						 marker26.setMap(map);
+						 var infowindow26 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 144 / GONZALES FERNANDEZ 250"
+						 			,maxWidth: 200
+						 		});
+						 marker26.addListener('click', function() {infowindow26.open(map, marker26);});
+					}
+					
+					{
+						var marker27 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8940701, -62.061736)
+									,icon: icons['motivo'].icon
+								});
+						 marker27.setMap(map);
+						 var infowindow27 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 151 / PRIMERA JUNTA 830"
+						 			,maxWidth: 200
+						 		});
+						 marker27.addListener('click', function() {infowindow27.open(map, marker27);});
+					}
+					
+					{
+						var marker28 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8842203, -62.0624048)
+									,icon: icons['motivo'].icon
+								});
+						 marker28.setMap(map);
+						 var infowindow28 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 161 / MAIPU Y JOSE INGENIEROS"
+						 			,maxWidth: 200
+						 		});
+						 marker28.addListener('click', function() {infowindow28.open(map, marker28);});
+					}
+					
+					{
+						var marker29 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8928719, -62.0596148)
+									,icon: icons['motivo'].icon
+								});
+						 marker29.setMap(map);
+						 var infowindow29 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA CERRADO / 165 / DORREGO 931"
+						 			,maxWidth: 200
+						 		});
+						 marker29.addListener('click', function() {infowindow29.open(map, marker29);});
+					}
+					
+					{
+						var marker30 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8877465, -62.0624770)
+									,icon: icons['motivo'].icon
+								});
+						 marker30.setMap(map);
+						 var infowindow30 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA CERRADO / 166 / DUFOURQ 1181"
+						 			,maxWidth: 200
+						 		});
+						 marker30.addListener('click', function() {infowindow30.open(map, marker30);});
+					}
+					
+					{
+						var marker31 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8818151, -62.0510680)
+									,icon: icons['motivo'].icon
+								});
+						 marker31.setMap(map);
+						 var infowindow31 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 177 / JESUS MARIA 2015"
+						 			,maxWidth: 200
+						 		});
+						 marker31.addListener('click', function() {infowindow31.open(map, marker31);});
+					}
+					
+					{
+						var marker32 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8952472, -62.0652834)
+									,icon: icons['venta'].icon
+								});
+						 marker32.setMap(map);
+						 var infowindow32 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 186 / CORRIENTES Y FLORIDA"
+						 			,maxWidth: 200
+						 		});
+						 marker32.addListener('click', function() {infowindow32.open(map, marker32);});
+					}
+					
+					{
+						var marker33 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8786334, -62.0577282)
+									,icon: icons['motivo'].icon
+								});
+						 marker33.setMap(map);
+						 var infowindow33 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 187 / BELGRANO 1950"
+						 			,maxWidth: 200
+						 		});
+						 marker33.addListener('click', function() {infowindow33.open(map, marker33);});
+					}
+					
+					{
+						var marker34 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8844591, -62.0643569)
+									,icon: icons['venta'].icon
+								});
+						 marker34.setMap(map);
+						 var infowindow34 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 188 / GENERAL PAZ 212"
+						 			,maxWidth: 200
+						 		});
+						 marker34.addListener('click', function() {infowindow34.open(map, marker34);});
+					}
+					
+					{
+						var marker35 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8864098, -62.0571730)
+									,icon: icons['venta'].icon
+								});
+						 marker35.setMap(map);
+						 var infowindow35 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 193 / AV. TUCUMAN 679"
+						 			,maxWidth: 200
+						 		});
+						 marker35.addListener('click', function() {infowindow35.open(map, marker35);});
+					}
+					
+					{
+						var marker36 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8937016, -62.0696644)
+									,icon: icons['venta'].icon
+								});
+						 marker36.setMap(map);
+						 var infowindow36 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 199 / LIBERTAD 502"
+						 			,maxWidth: 200
+						 		});
+						 marker36.addListener('click', function() {infowindow36.open(map, marker36);});
+					}
+					
+					{
+						var marker37 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.891423, -62.0593458)
+									,icon: icons['venta'].icon
+								});
+						 marker37.setMap(map);
+						 var infowindow37 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 200 / ESTOMBA 865"
+						 			,maxWidth: 200
+						 		});
+						 marker37.addListener('click', function() {infowindow37.open(map, marker37);});
+					}
+					
+					{
+						var marker38 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8880356, -62.068315)
+									,icon: icons['venta'].icon
+								});
+						 marker38.setMap(map);
+						 var infowindow38 = new google.maps.InfoWindow(
+						 		{
+						 			content:" VENTA / 201 / SAAVEDRA 236"
+						 			,maxWidth: 200
+						 		});
+						 marker38.addListener('click', function() {infowindow38.open(map, marker38);});
+					}
+					
+					{
+						var marker39 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8851620, -62.0656412)
+									,icon: icons['motivo'].icon
+								});
+						 marker39.setMap(map);
+						 var infowindow39 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 203 / CHACABUCO Y BELGRANO"
+						 			,maxWidth: 200
+						 		});
+						 marker39.addListener('click', function() {infowindow39.open(map, marker39);});
+					}
+					
+					{
+						var marker40 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8893268, -62.0643710)
+									,icon: icons['motivo'].icon
+								});
+						 marker40.setMap(map);
+						 var infowindow40 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NO TERNIA DINERO / 205 / DORREGO Y SARMIENTO"
+						 			,maxWidth: 200
+						 		});
+						 marker40.addListener('click', function() {infowindow40.open(map, marker40);});
+					}
+					
+					{
+						var marker41 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.88971393667261, -62.06693448042603)
+									,icon: icons['motivo'].icon
+								});
+						 marker41.setMap(map);
+						 var infowindow41 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA CERRADO / 206 / HIPOLITO IRIGOYEN 881"
+						 			,maxWidth: 200
+						 		});
+						 marker41.addListener('click', function() {infowindow41.open(map, marker41);});
+					}
+					
+					{
+						var marker42 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.894055104176616, -62.06131925026244)
+									,icon: icons['motivo'].icon
+								});
+						 marker42.setMap(map);
+						 var infowindow42 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 207 / PRIMERA JUNTA 831"
+						 			,maxWidth: 200
+						 		});
+						 marker42.addListener('click', function() {infowindow42.open(map, marker42);});
+					}
+					
+					{
+						var marker43 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8822367, -62.0515726)
+									,icon: icons['motivo'].icon
+								});
+						 marker43.setMap(map);
+						 var infowindow43 = new google.maps.InfoWindow(
+						 		{
+						 			content:" NO VENTA NEGOCIO NO ENCONTRADO / 209 / FALUCHO 696"
+						 			,maxWidth: 200
+						 		});
+						 marker43.addListener('click', function() {infowindow43.open(map, marker43);});
+					}
+					
   var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
   calcRoute();

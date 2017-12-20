@@ -322,6 +322,7 @@ var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
 var stops = <<Coords>>
 function initialize() {
+	 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -718,6 +719,23 @@ var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
 var stops = <<Coords>>
 function initialize() {
+	//Ruta de imagenes http://kml4earth.appspot.com/icons.html#shapes
+	
+	var iconBase = 'http://maps.google.com/mapfiles/kml/paddle/';
+	var icons = {
+		  normal: {
+            icon: iconBase + 'red-circle.png'
+          },
+          noventa: {
+            icon: iconBase + 'blu-blank.png'
+          },
+		   venta: {
+            icon: iconBase + 'red-circle.png'
+          },
+          motivo: {
+            icon: iconBase + 'ylw-stars.png'
+          },
+		}; 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
