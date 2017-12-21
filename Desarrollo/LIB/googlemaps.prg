@@ -195,8 +195,12 @@ ENDFUNC
 FUNCTION ObtenerXY
 * Show the StreetView
 *RUN /N6 Explorer.EXE &lcFile.FUNCTION GoogleStreetViewMulti
-LPARAMETERS tcDestination,clatitud,clongitud
+LPARAMETERS tcDestination,clatitud,clongitud,lcFileName
+
 tcDestination = IIF(PCOUNT()<1,"",tcDestination)
+lcFileName		= IIF(PCOUNT()<4,tcDestination,lcFileName)
+
+lcFileName	= STRTRAN(STRTRAN(STRTRAN(STRTRAN(STRTRAN(lcFileName,":",""),",",""),"'",""),".","")," ","_")
 
 lCantParam = IIF(PCOUNT()<3,.f.,.t.)
 IF NOT lCantParam
@@ -239,7 +243,9 @@ loXML.OPEN("POST", lcFullURL, .F.)
 loXML.SetRequestHeader("Content-Type", "application/xml")
 loXML.SEND("")
 lcResponse = loXML.ResponseText
-=SaveSql(lcResponse,"obtenerXY_"+tcDestination)
+
+=SaveSql(lcResponse,"obtenerXY_"+lcFileName)
+
 LOCAL lcAddress, lcHTML
 lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
 lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
