@@ -2130,7 +2130,7 @@ ENDIF
 lok =CrearCursorAdapter("CsrCursor",lcCmd)
 
 IF lok
-	IF lnhaycierre=1
+	IF lnhaycierre>=1
 		* busco la primer caja que este sin cerrar
 		SELECT CsrCursor
 		GO top

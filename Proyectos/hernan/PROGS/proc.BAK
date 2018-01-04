@@ -2116,7 +2116,7 @@ IF lnhaycierre=0
 	&&Where CsrPAraConfig.idejercicio = <<goapp.idejercicio>>
 ELSE
 	lcOrderby = ""
-	IF lhaycierre = 2
+	IF lnhaycierre = 2
 		lcOrderby = " desc"
 	ENDIF 
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
