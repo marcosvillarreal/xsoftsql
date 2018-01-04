@@ -2115,11 +2115,15 @@ IF lnhaycierre=0
 	&&Buscamos la caja que pertenezca al rango del ejercicio
 	&&Where CsrPAraConfig.idejercicio = <<goapp.idejercicio>>
 ELSE
+	lcOrderby = ""
+	IF lnhaycierre = 2
+		lcOrderby = " desc"
+	ENDIF 
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT csrdetanrocaja.id as id,csrdetanrocaja.nrocaja as nrocaja,csrdetanrocaja.fecdesde as fecdesde,csrdetanrocaja.fechasta as fechasta,Csrdetanrocaja.switch as switch
 	FROM detanrocaja as csrdetanrocaja
 	where  Csrdetanrocaja.nrocaja >= <<lObjEjercicioActivo.Nrocaja1>> and Csrdetanrocaja.nrocaja <= <<lObjEjercicioActivo.Nrocaja2>>
-	order by Csrdetanrocaja.nrocaja
+	order by Csrdetanrocaja.nrocaja <<lcOrderBy>>
 	ENDTEXT 
 ENDIF
 
