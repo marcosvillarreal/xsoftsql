@@ -168,7 +168,7 @@ IF VARTYPE(cDato)<>'C'
 	oavisar.usuario("Error Function LenTrim() requiere un dato caracter")
 	RETURN 0
 ENDIF 
-RETURN LEN(LTRIM(cDato))
+RETURN LEN(ALLTRIM(cDato))
 *-----------------------------------------------------
 *-----------------------------------------------------
 FUNCTION ObtenerSerialDisck

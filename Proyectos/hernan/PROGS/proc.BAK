@@ -878,7 +878,8 @@ DO WHILE i <= 12 AND NOT lEncontrado
 		EXIT 
 	ENDIF 
 	i = i + 1 
-ENDFOR 
+ENDDO 
+
 IF i > 12
 	oavisar.usuario("Mes incorrecto ("+ALLTRIM(cMes)+")")
 	RETURN 0

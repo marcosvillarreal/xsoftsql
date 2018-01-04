@@ -1,1670 +1,4 @@
 
-DIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006S5L01U6.TMP;Ultimo Control activo: 
-20-12-2017 , Pila de llamadas
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-20-12-2017 , Objeto      : listadovisitas.imprimir_vistaprevia1.vermapa.click
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-20-12-2017 , Nº de Linea :         12
-20-12-2017 , En el Fuente: 	DO FORM &cFormFac WITH oParam
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Objeto      : mostrar_maps_fac.init
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Nº de Linea :         66
-20-12-2017 , En el Fuente: 	SELECT IIF(CsrImprimir.ventas=1,'VENTA','NOVENTA' + IIF(CsrImprimir.idmotivo=0,"",CsrImprimir.nommotivo)) as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion	,CsrDirecciones.nombre as Nombre,CsrDireccio
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-nes.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,IIF(CsrImprimir.ventas=1,'V',IIF(CsrImprimir.idmotivo=0,"N",'M')) as estado	FROM CsrDirecciones LEFT JOIN CsrI
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
-20-12-2017 , MOSTRAR_MAPS_FAC.INIT, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE_2;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006S5L0208.TMP;Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Control activo: 
-20-12-2017 , Pila de llamadas
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Objeto      : mostrar_maps_fac.init
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Nº de Linea :          6
-20-12-2017 , En el Fuente: SELECT CsrImprimir
-20-12-2017 , MOSTRAR_MAPS_FAC.INIT, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE_2;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006S5L0255.TMP;Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Control activo: 
-20-12-2017 , Pila de llamadas
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Objeto      : mostrar_maps_fac.init
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Nº de Linea :          6
-20-12-2017 , En el Fuente: SELECT CsrImprimir
-20-12-2017 , EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'MOTIVO'.;Linea : replace motivo WITH CsrImprimir.motivo;Error :         12;Ultimo Alias Activo: CSRNOVENTA;Ultimo registro:          1 ;DBF: C:\U
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SERS\ADMIN\APPDATA\LOCAL\TEMP\00009C7D0291.TMP;Ultimo Control activo: 
-20-12-2017 , Pila de llamadas
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.imprimir_vistaprevia1.excel.click
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-20-12-2017 , Nº de Linea :          5
-20-12-2017 , En el Fuente: llOK=thisform.CrearInforme()
-20-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.crearinforme
-20-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Nº de Linea :          7
-20-12-2017 , En el Fuente: 		this.crearlistado()
-20-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.crearlistado
-20-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Nº de Linea :        140
-20-12-2017 , En el Fuente: 	ThisForm.Consultageneral
-20-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.consultageneral
-20-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Nº de Linea :        356
-20-12-2017 , En el Fuente: 		replace motivo WITH CsrImprimir.motivo
-20-12-2017 , EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'MOTIVO'.;Linea : replace motivo WITH CsrNoVenta.motivo IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRNOVENTA;Ultimo registro:        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009C7D02DB.TMP;Ultimo Control activo: 
-20-12-2017 , Pila de llamadas
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.imprimir_vistaprevia1.excel.click
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-20-12-2017 , Nº de Linea :          5
-20-12-2017 , En el Fuente: llOK=thisform.CrearInforme()
-20-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.crearinforme
-20-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Nº de Linea :          7
-20-12-2017 , En el Fuente: 		this.crearlistado()
-20-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.crearlistado
-20-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Nº de Linea :        140
-20-12-2017 , En el Fuente: 	ThisForm.Consultageneral
-20-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.consultageneral
-20-12-2017 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_ventavisitas_npedido.sct
-20-12-2017 , Nº de Linea :        356
-20-12-2017 , En el Fuente: 		replace motivo WITH CsrNoVenta.motivo IN CsrImprimir
-20-12-2017 , EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: SQL: no se encuentra la columna 'VENTAS'.;Linea : SELECT IIF(CsrImprimir.ventas=1,'VENTA',RTRIM(CsrImprimir.nommotivo) + IIF(CsrImprimir.idmotivo<>0,'','NO VENTA') ) as Det
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-alle,Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rImprimir.ventas=1,'V',IIF(CsrImprimir.idmotivo=0,"N",'M')) as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Acti
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-vo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009C7D02MM.TMP;Ultimo Control activo: 
-20-12-2017 , Pila de llamadas
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-20-12-2017 , Objeto      : est_ventavisitas_npedido.imprimir_vistaprevia1.vermapa.click
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-20-12-2017 , Nº de Linea :         12
-20-12-2017 , En el Fuente: 	DO FORM &cFormFac WITH oParam
-20-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Objeto      : mostrar_maps_fac.init
-20-12-2017 , Base Objeto : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
-20-12-2017 , Nº de Linea :         66
-20-12-2017 , En el Fuente: 	SELECT IIF(CsrImprimir.ventas=1,'VENTA',RTRIM(CsrImprimir.nommotivo) + IIF(CsrImprimir.idmotivo<>0,'','NO VENTA') ) as Detalle,Fecha,1 as Tilde,CsrDirecciones.direccion as direccion	,CsrDirecciones.nombre as Nombre,CsrDireccio
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-nes.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,IIF(CsrImprimir.ventas=1,'V',IIF(CsrImprimir.idmotivo=0,"N",'M')) as estado	FROM CsrDirecciones LEFT JOIN CsrI
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1686,6 +20,41 @@ nes.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecc
 
 mprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
 20-12-2017 , EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: SQL: no se encuentra la columna 'FECHA'.;Linea : SELECT IIF(CsrImprimir.cestado='V','VENTA',RTRIM(CsrImprimir.motivo) + IIF(lentrim(CsrImprimir.motivo)<>0,'','NO VENTA') ) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1955,7 +324,77 @@ as Detalle,Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDireccione
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IIF(lentrim(CsrImprimir.motivo)<>0,"M",CsrImprimir.cestado) as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Acti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2233,7 +672,77 @@ vo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 irecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,IIF(lentrim(CsrImprimir.motivo)<>0,"M",CsrImprimir.cestado) as estado	FROM CsrDirecciones LEFT JOIN Csr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2367,6 +876,41 @@ irecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,Cs
 
 Imprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
 20-12-2017 , MOSTRAR_MAPS_FAC.INIT, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE_2;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009C7D02R3.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2633,6 +1177,41 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Control activo: 
 20-12-2017 , Pila de llamadas
 20-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
@@ -2767,6 +1346,41 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \00005BT500O8.TMP;Ultimo Control activo: 
 20-12-2017 , Pila de llamadas
 20-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps_fac.sct
@@ -2775,6 +1389,41 @@ Control activo:
 20-12-2017 , Nº de Linea :         76
 20-12-2017 , En el Fuente: 				IF this.origen='EVNP' AND estado='M'
 21-12-2017 , MAIN, Error: No se encuentra el alias 'CSRCTACTE'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AL8P0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3039,6 +1688,41 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      8 NUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00J5.TMP;Ultimo Control activo: 
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\caja\planillacajaterm.sct
@@ -3069,6 +1753,41 @@ Control activo:
 27-12-2017 , Nº de Linea :         15
 27-12-2017 , En el Fuente:    		.lblhasta.caption	= .f.
 27-12-2017 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: FECHA_CALENDARIO1 es un miembro desconocido.;Linea : lcaux=VAL(DTOS(thisform.fecha_calendario1.txtfecha.Value));Error :       1925;Ultimo Alias Activo: CSRPARACONTA;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3294,6 +2013,41 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00L6.TMP;Ultimo Control activo: 
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3307,6 +2061,41 @@ Control activo:
 27-12-2017 , Nº de Linea :          4
 27-12-2017 , En el Fuente: lcaux=VAL(DTOS(thisform.fecha_calendario1.txtfecha.Value))
 27-12-2017 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'AND'.;Linea : and (Csrdetanrocaja.nrocaja  < <<oObjFechaOrden.nOrdenD> AND Csrdetanrocaja.nrocaja <= <oObjFechaOrden.nOrdenH>>);Error :         12;Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3516,6 +2305,41 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Control activo: 
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3529,6 +2353,41 @@ Control activo:
 27-12-2017 , Nº de Linea :         56
 27-12-2017 , En el Fuente: 	.idctacaja = IIF(Csrparaconta.numero=1,idcuenta,0)
 27-12-2017 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : LeerEjercicioDeUnaCaja(INT(VAL(oObjFechaOrden.nOrdenD)));Error :         11;Ultimo Alias Activo: CSRPARACO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3725,6 +2584,41 @@ NTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as Activo: CSRPARACONTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00P4.TMP;Ultimo Control activo: 
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3738,6 +2632,41 @@ as Activo: CSRPARACONTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA
 27-12-2017 , Nº de Linea :        103
 27-12-2017 , En el Fuente:    	WHERE ((CsrParaConta.numero = 1 and CsrParaConta.idejercicio=<<goapp.idejerciciocaja>) OR CsrMaopera.origen IN ('ICA','ECA'))  
 27-12-2017 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : IF VARTYPE(CsrCursor.saldo)="N";Error :         13;Ultimo Alias Activo: CSRPARACONTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\AP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3946,6 +2875,41 @@ PDATA\LOCAL\TEMP\00008BUX00Q0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\caja\planillacaja_v2.sct
 27-12-2017 , Objeto      : planillacaja.init
@@ -3958,6 +2922,41 @@ PDATA\LOCAL\TEMP\00008BUX00Q0.TMP;Ultimo Control activo:
 27-12-2017 , Nº de Linea :         11
 27-12-2017 , En el Fuente: 		.fecha_calendario1.Value	= lObjEjercicioActivo.fecCajadesde
 27-12-2017 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : LeerEjercicioDeUnaCaja(INT(VAL(DTOS(oObjFechaOrden.nFechaD))));Error :         11;Ultimo Alias Activo: CSR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4101,6 +3100,41 @@ PARACONTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BUX01QQ.TMP;Ultimo Control activo: 
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\caja\planillacaja_v2.sct
@@ -4181,6 +3215,41 @@ BUX01QQ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TMP;Ultimo Control activo: 
 27-12-2017 , Pila de llamadas
 27-12-2017 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\caja\planillacaja_v2.sct
@@ -4194,6 +3263,41 @@ TMP;Ultimo Control activo:
 27-12-2017 , Nº de Linea :          6
 27-12-2017 , En el Fuente: DODEFAULT(lcorden,lcEstado)
 27-12-2017 , PLANILLACAJA_V2.INIT, Error: No se encuentra la propiedad LNIDTERMINAL.;Linea : thisform.lnidterminal   = Csrseteotermi.id;Error :       1734;Ultimo Alias Activo: CSRSETEOTERMI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4323,6 +3427,41 @@ EMP\00008BUX01YK.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 29-12-2017 , Pila de llamadas
 29-12-2017 , Programa    : j:\xsoftsql\desarrollo\forms\consultcodbarra.sct
@@ -4331,6 +3470,41 @@ EMP\00008BUX01YK.TMP;Ultimo Control activo:
 29-12-2017 , Nº de Linea :          3
 29-12-2017 , En el Fuente: IF ASC(nKeyCode)='/'
 29-12-2017 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4433,6 +3607,41 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 LOCAL\TEMP\00009TL505AR.TMP;Ultimo Control activo: 
 01-01-2018 , Pila de llamadas
 01-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\patroncargapedidos.sct
@@ -4446,6 +3655,41 @@ LOCAL\TEMP\00009TL505AR.TMP;Ultimo Control activo:
 01-01-2018 , Nº de Linea :         12
 01-01-2018 , En el Fuente: 	replace orden WITH nOrden 
 02-01-2018 , MAIN, Error: Desbordamiento numérico (se han perdido datos).;Linea : REPLACE idctacte WITH CsrCtacte.id,cnombre WITH CsrCtacte.cnombre,cdireccion WITH CsrCtacte.cdireccion ,idtipoiva WITH lnidtipoiva,cuit WITH CsrCtacte.cuit,cpostal WITH Csr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4521,6 +3765,41 @@ Ctacte.cpostal,idcategoria WITH lnidcategoria ,subnumero WITH CsrSubCtacte.subnu
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bonif1,bonif2 WITH CsrCtacte.bonif2,idrutavdor WITH CSrcuerruta.idrutavdor ,nropatron WITH "",vencimien WITH TTOD(fecha)+IIF(ISNULL(CsrCtacte.diasvto),0,CsrCtacte.diasvto
 
 
@@ -4559,7 +3838,77 @@ copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCta
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ) ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac;Error :         39;Ultimo Alias Activo: CSRPLANPAGO;Ultimo registro:          3 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4650,7 +3999,77 @@ copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCta
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 categoria			          ,subnumero WITH CsrSubCtacte.subnumero,idlocalidad WITH lnidlocalidad,subcnombre WITH ""			          ,idprovincia WITH lnidprovincia,ctacte WITH CsrCtacte.cnumero,idplanpago WITH lidplanpago			          ,copiatkt WITH IIF(CsrCtacte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4714,8 +4133,78 @@ copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1			          ,bonif1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 vto),0,CsrCtacte.diasvto)			          ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono			          ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac
 02-01-2018 , REGPEDIDO.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.LOSTFOCUS, Error: Desbordamiento numérico (se han perdido datos).;Linea : REPLACE idctacte WITH CsrCtacte.id,cnombre WITH CsrCtacte.cnombre,cdireccion WITH CsrCtacte.cdireccion ,idtipoiva WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4777,6 +4266,41 @@ H lnidtipoiva,cuit WITH CsrCtacte.cuit,cpostal WITH CsrCtacte.cpostal,idcategori
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 planpago WITH lidplanpago ,copiatkt WITH IIF(CsrCtacte.copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bonif1,bonif2 WITH CsrCtacte.bonif2,idrutavdor WITH CSrcuerruta.idrutavdor ,nropatron WITH "",vencimien WITH TTOD(f
 
 
@@ -4808,7 +4332,77 @@ planpago WITH lidplanpago ,copiatkt WITH IIF(CsrCtacte.copiatkt#0,CsrCtacte.copi
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 echa)+IIF(ISNULL(CsrCtacte.diasvto),0,CsrCtacte.diasvto) ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac;Error :         39;Ultimo Alias Activo: CSRPLANPAGO;Ultimo registro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4881,7 +4475,77 @@ echa)+IIF(ISNULL(CsrCtacte.diasvto),0,CsrCtacte.diasvto) ,SaldoCta WITH CsrCtact
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 categoria			          ,subnumero WITH CsrSubCtacte.subnumero,idlocalidad WITH lnidlocalidad,subcnombre WITH ""			          ,idprovincia WITH lnidprovincia,ctacte WITH CsrCtacte.cnumero,idplanpago WITH lidplanpago			          ,copiatkt WITH IIF(CsrCtacte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4933,8 +4597,78 @@ copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1			          ,bonif1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 vto),0,CsrCtacte.diasvto)			          ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono			          ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac
 02-01-2018 , REGPEDIDO.ACTIVATE, Error: Desbordamiento numérico (se han perdido datos).;Linea : REPLACE idctacte WITH CsrCtacte.id,cnombre WITH CsrCtacte.cnombre,cdireccion WITH CsrCtacte.cdireccion ,idtipoiva WITH lnidtipoiva,cuit WITH CsrCtacte.cuit,cp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4984,6 +4718,41 @@ ostal WITH CsrCtacte.cpostal,idcategoria WITH lnidcategoria ,subnumero WITH CsrS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IIF(CsrCtacte.copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bonif1,bonif2 WITH CsrCtacte.bonif2,idrutavdor WITH CSrcuerruta.idrutavdor ,nropatron WITH "",vencimien WITH TTOD(fecha)+IIF(ISNULL(CsrCtacte.diasvto),0,Csr
 
 
@@ -5009,7 +4778,77 @@ IIF(CsrCtacte.copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,boni
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ctacte.diasvto) ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac;Error :         39;Ultimo Alias Activo: CSRPLANPAGO;Ultimo registro:          3 ;DBF: C:\USERS\ADMIN\APPDATA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5074,7 +4913,77 @@ Ctacte.diasvto) ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefon
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 categoria			          ,subnumero WITH CsrSubCtacte.subnumero,idlocalidad WITH lnidlocalidad,subcnombre WITH ""			          ,idprovincia WITH lnidprovincia,ctacte WITH CsrCtacte.cnumero,idplanpago WITH lidplanpago			          ,copiatkt WITH IIF(CsrCtacte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5112,8 +5021,78 @@ copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1			          ,bonif1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 vto),0,CsrCtacte.diasvto)			          ,SaldoCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono			          ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac
 02-01-2018 , REGPEDIDO.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.LOSTFOCUS, Error: Desbordamiento numérico (se han perdido datos).;Linea : REPLACE copiatkt WITH IIF(CsrCtacte.copiatkt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 IN CsrAuxcabefac;Err
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5161,6 +5140,41 @@ or :         39;Ultimo Alias Activo: CSRPLANPAGO;Ultimo registro:          3 ;DB
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ivo: 
 02-01-2018 , Pila de llamadas
 02-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
@@ -5174,6 +5188,41 @@ ivo:
 02-01-2018 , Nº de Linea :          8
 02-01-2018 , En el Fuente: 	     	.Release
 02-01-2018 , REGCBIOPEDIDO.LOAD, Error: El archivo 'csrncabefac.dbf' no existe.;Linea : SELECT CsrNCabefac.*, 0000000000 as idvendedor,SPACE(30) as nomvdor,1 as estado,0000000000 as idfleteplanilla, SPACE(20) as numcomp FROM CsrNCabefac WHERE RECNO()=1 A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5197,6 +5246,41 @@ ND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Acti
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AZGP0180.TMP;Ultimo Control activo: 
 02-01-2018 , Pila de llamadas
 02-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
@@ -5209,3 +5293,174 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AZGP0180.TMP;Ultimo Control activo:
 02-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
 02-01-2018 , Nº de Linea :          9
 02-01-2018 , En el Fuente: 				nTotKilos = CsrAuxCuerfac.factura*CsrAuxCuerfac.peso
+03-01-2018 , MAIN, Error: No se encuentra la variable 'CTIPOCOMP'.;Linea : cRespuesta = cTipoComp;Error :         12;Ultimo Alias Activo: CSRAUXVENTAS;Ultimo registro:          3 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005C09007T.TMP;Ultimo Control act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: 
+03-01-2018 , Pila de llamadas
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+03-01-2018 , Objeto      : main
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+03-01-2018 , Nº de Linea :        273
+03-01-2018 , En el Fuente: 	Read events   
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+03-01-2018 , Objeto      : frmmenu1.treeview.dblclick
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+03-01-2018 , Nº de Linea :         11
+03-01-2018 , En el Fuente: 	   &lcCmd
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+03-01-2018 , Objeto      : ejecutamenu
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+03-01-2018 , Nº de Linea :       1441
+03-01-2018 , En el Fuente: 						DO FORM &lcForm
+03-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+03-01-2018 , Objeto      : exportar_cpra_vta.imprimir_vistaprevia1.impresora.click
+03-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+03-01-2018 , Nº de Linea :          5
+03-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.crearinforme
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         16
+03-01-2018 , En el Fuente: 	lTodoOK = .exportarcomprasventas(cperiodo)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.exportarcomprasventas
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         12
+03-01-2018 , En el Fuente: 		lok = .calculaventas(cPeriodo)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.calculaventas
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         73
+03-01-2018 , En el Fuente: RETURN This.GenerarVentas(cPeriodo)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.generarventas
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         29
+03-01-2018 , En el Fuente: 		.tipocomp	= This.DGICPRAVTA.TablaAfip("COMPROBANTE",OscVentas.clasecomp,OscVentas.letra)
+03-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+03-01-2018 , Objeto      : exportar_cpra_vta.dgicpravta.tablaafip
+03-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+03-01-2018 , Nº de Linea :         80
+03-01-2018 , En el Fuente: 	cRespuesta = cTipoComp
+03-01-2018 , MAIN, Error: No se encuentra la variable 'CTIPOCOMP'.;Linea : cRespuesta = cTipoComp;Error :         12;Ultimo Alias Activo: CSRAUXVENTAS;Ultimo registro:         29 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005C0900FP.TMP;Ultimo Control act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: 
+03-01-2018 , Pila de llamadas
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+03-01-2018 , Objeto      : main
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+03-01-2018 , Nº de Linea :        273
+03-01-2018 , En el Fuente: 	Read events   
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+03-01-2018 , Objeto      : frmmenu1.treeview.dblclick
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+03-01-2018 , Nº de Linea :         11
+03-01-2018 , En el Fuente: 	   &lcCmd
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+03-01-2018 , Objeto      : ejecutamenu
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+03-01-2018 , Nº de Linea :       1441
+03-01-2018 , En el Fuente: 						DO FORM &lcForm
+03-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+03-01-2018 , Objeto      : exportar_cpra_vta.imprimir_vistaprevia1.impresora.click
+03-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+03-01-2018 , Nº de Linea :          5
+03-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.crearinforme
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         16
+03-01-2018 , En el Fuente: 	lTodoOK = .exportarcomprasventas(cperiodo)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.exportarcomprasventas
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         12
+03-01-2018 , En el Fuente: 		lok = .calculaventas(cPeriodo)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.calculaventas
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         73
+03-01-2018 , En el Fuente: RETURN This.GenerarVentas(cPeriodo)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Objeto      : exportar_cpra_vta.generarventas
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+03-01-2018 , Nº de Linea :         29
+03-01-2018 , En el Fuente: 		.tipocomp	= This.DGICPRAVTA.TablaAfip("COMPROBANTE",OscVentas.clasecomp,OscVentas.letra)
+03-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+03-01-2018 , Objeto      : exportar_cpra_vta.dgicpravta.tablaafip
+03-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+03-01-2018 , Nº de Linea :         80
+03-01-2018 , En el Fuente: 	cRespuesta = cTipoComp
+03-01-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+tro:          0 ;DBF: ;Ultimo Control activo: 
+03-01-2018 , Pila de llamadas
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+03-01-2018 , Objeto      : main
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+03-01-2018 , Nº de Linea :        237
+03-01-2018 , En el Fuente: 	LeerEmpresa()
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+03-01-2018 , Objeto      : leerempresa
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+03-01-2018 , Nº de Linea :       1491
+03-01-2018 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
+03-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+03-01-2018 , Objeto      : crearcursoradapter
+03-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+03-01-2018 , Nº de Linea :       1320
+03-01-2018 , En el Fuente: 

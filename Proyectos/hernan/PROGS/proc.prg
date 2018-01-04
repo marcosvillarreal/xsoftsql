@@ -1825,6 +1825,8 @@ PARAMETERS lnopcion
 * Modifique el valor por defecto, ya que solo hay pocos formularios que usan la fecha de fac.
 lnopcion = IIF(PCOUNT()<1,2,lnopcion)
 
+stop()
+
 LOCAL lcCmd,lok,ldfechaserver,lreturn
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
