@@ -326,6 +326,8 @@ FUNCTION LeerCajaActivaOtroEjercicio(oForm,nidejercicioaleer)
 LOCAL nidejercicio
 oform = IIF(PCOUNT()<1,null,oForm)
 nidejercicio = IIF(PCOUNT()<2,goapp.idejercicio,nidejercicioaleer)
+stop()
+
 IF ISNULL(oForm)
 	RETURN 
 ENDIF 
