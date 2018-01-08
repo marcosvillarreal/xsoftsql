@@ -322,10 +322,11 @@ RETURN llok
 *Configuramos el paraconfig para que use el ejercicioaleer y busque
 *a su vez, la primera caja abierta en ese ejercicio.
 *---------------------------------------------------------------------------
-FUNCTION LeerCajaActivaOtroEjercicio(oForm,nidejercicioaleer)
+FUNCTION LeerCajaActivaOtroEjercicio(oForm,nidejercicioaleer,nUltima)
 LOCAL nidejercicio
 oform = IIF(PCOUNT()<1,null,oForm)
 nidejercicio = IIF(PCOUNT()<2,goapp.idejercicio,nidejercicioaleer)
+nUltima = IIF(PCOUNT()<3,0,nUltima)
 
 
 IF ISNULL(oForm)
@@ -357,7 +358,7 @@ IF !oForm.usarcajaactiva
 	oForm.lnidejercicio	= goapp.idejercicio
 		
 	LOCAL oEjercicioActivo as Object 
-	LeerEjercicioActivo (@oEjercicioActivo,1)
+	LeerEjercicioActivo (@oEjercicioActivo,1+nUltima) &&Si es 2, busca la caja mas cercana
 	IF oEjercicioActivo.idcajaactual != 0
 		
 		replace iddetanrocaja WITH oEjercicioActivo.idcajaactual,nrocaja WITH oEjercicioActivo.cajaactual;
