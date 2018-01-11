@@ -1,1857 +1,3 @@
-
-        297
-11-01-2018 17:01:10 , En el Fuente: 	Read events   
-11-01-2018 17:01:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:11 , Objeto      : regfacvta.keypress
-11-01-2018 17:01:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:11 , Nº de Linea :        191
-11-01-2018 17:01:11 , En el Fuente: 			        .antesdegrabar()      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-as\regfacvta.sct
-11-01-2018 17:01:12 , Objeto      : regfacvta.antesdegrabar
-
-
-tas\regfacvta.sct
-11-01-2018 17:01:12 , Nº de Linea :         11
-11-01-2018 17:01:12 , En el Fuente: llok = IIF(llok,thisform.cargardatosctacte(),.f.)
-11-01-2018 17:01:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:12 , Objeto      : regfacvta.cargardatosctacte
-11-01-2018 17:01:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-
- 17:01:13 , Nº de Linea :         15
-11-01-2018 17:01:13 , En el Fuente: 	this.key_43()
-11-01-2018 17:01:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:13 , Objeto      : regfacvta.key_43
-11-01-2018 17:01:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:14 , Nº de Linea :         13
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-, En el Fuente: 	thisform.actualizar()
-11-01-2018 17:01:14 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:14 , Objeto      : regfacvta.actualizar
-11-01-2018 17:01:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:01:14 , Nº de Linea :         77
-11-01-2018 17:01:14 , En el Fuente: 			BEGIN TRANSACTION 
-11-01-2018 17:05:40 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF LEN(TRIM(lcimpresora))=0 OR lntipoimpresora=0;Error :         11;Ultimo Alias Activo: CSRMAPEOIMP;Ultimo registro:          2 ;DBF: C:\USERS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\ADMIN\APPDATA\LOCAL\TEMP\0000AART00S1.TMP;Ultimo Control activo: IDCOMPROBA
-11-01-2018 17:05:40 , Pila de llamadas
-11-01-2018 17:05:41 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-11-01-2018 17:05:41 , Objeto      : main
-11-01-2018 17:05:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-11-01-2018 17:05:41 , Nº de Linea :        297
-11-01-2018 17:05:41 , En el Fuente: 	Read events   
-11-01-2018 17:05:41 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:41 , Objeto      : regfacvta.keypress
-11-01-2018 17:05:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:41 , Nº de Linea :        191
-11-01-2018 17:05:42 , En el Fuente: 			        .antesdegrabar()      
-11-01-2018 17:05:42 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:42 , Objeto      : regfacvta.antesdegrabar
-11-01-2018 17:05:42 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:42 , Nº de Linea :         11
-11-01-2018 17:05:43 , En el Fuente: llok = IIF(llok,thisform.cargardatosctacte(),.f.)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-t
-11-01-2018 17:05:43 , Objeto      : regfacvta.cargardatosctacte
-11-01-2018 17:05:43 , Nº de Linea :         15
-11-01-2018 17:05:44 , En el Fuente: 	this.key_43()
-
-
-
-: j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:44 , Objeto      : regfacvta.key_43
-11-01-2018 17:05:44 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:44 , Nº de Linea :         13
-11-01-2018 17:05:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:45 , Objeto      : regfacvta.actualizar
-11-01-2018 17:05:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:45 , Nº de Linea :        254
-11-01-2018 17:05:45 , En el Fuente: 					.Imprimir_comproba()
-
-forms\ventas\regfacvta.sct
-11-01-2018 17:05:46 , Objeto      : regfacvta.imprimir_comproba
-
-
-
-
-
-
-
-
-
-l\proyectos\comercial\forms\ventas\regfacvta.sct
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 46
-11-01-2018 17:05:47 , En el Fuente: 			llok = .imprimir(.lcimpresora,Csrprefitermi.tipoimpresora,1)
-11-01-2018 17:05:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:47 , Objeto      : regfacvta.imprimir
-
-l\proyectos\comercial\forms\ventas\regfacvta.sct
-11-01-2018 17:05:48 , Nº de Linea :         63
-11-01-2018 17:05:48 , En el Fuente: llok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro ,0)
 11-01-2018 17:05:48 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
 11-01-2018 17:05:48 , Objeto      : regfacvta.objimpresor.inicioimpresora
 11-01-2018 17:05:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
@@ -1863,6 +9,28 @@ l\proyectos\comercial\forms\ventas\regfacvta.sct
 11-01-2018 17:05:50 , Nº de Linea :          6
 11-01-2018 17:05:50 , En el Fuente: IF LEN(TRIM(lcimpresora))=0 OR lntipoimpresora=0
 11-01-2018 17:09:16 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF LEN(TRIM(lcimpresora))=0 OR lntipoimpresora=0;Error :         11;Ultimo Alias Activo: CSRMAPEOIMP;Ultimo registro:          2 ;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2215,6 +383,28 @@ l\proyectos\comercial\forms\ventas\regfacvta.sct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 11-01-2018 17:21:09 , Pila de llamadas
 11-01-2018 17:21:10 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2223,6 +413,28 @@ lias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo:
 11-01-2018 17:21:10 , Nº de Linea :        271
 11-01-2018 17:21:10 , En el Fuente: 	DO FORM frmlogin
 11-01-2018 17:27:54 , MAIN, Error: No se encuentra el alias 'j:\xsoftsql\proyectos\comercial\logs\log.txt'.;Linea : USE IN ImpCuerVari;Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO+ORDEN;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2539,6 +751,28 @@ OCAL\TEMP\00007R49023X.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\0000AX3D00SW.TMP;Ultimo Control activo: 
 11-01-2018 17:33:35 , Pila de llamadas
 11-01-2018 17:33:35 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2592,6 +826,28 @@ OCAL\TEMP\0000AX3D00SW.TMP;Ultimo Control activo:
 11-01-2018 17:33:42 , Nº de Linea :        116
 11-01-2018 17:33:43 , En el Fuente: USE IN ImpCuerVari  
 11-01-2018 17:46:19 , MAIN, Error: No se encuentra la variable 'UBICACION'.;Linea : INSERT INTO ImpCabeza (id,ubicacion) VALUES (OscCabefac.id,CsrUbicacion.nombre);Error :         12;Ultimo Alias Activo: CSRUBICACION;Ultimo registro:          2 ;DBF: C:\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2852,6 +1108,28 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\00003V2H01L3.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 trol activo: 
 11-01-2018 17:51:00 , Pila de llamadas
 11-01-2018 17:51:00 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2910,6 +1188,28 @@ trol activo:
 11-01-2018 17:51:08 , Nº de Linea :         58
 11-01-2018 17:51:08 , En el Fuente: cRetiro		= OscCabeza.retiro
 11-01-2018 17:52:33 , MAIN, Error: No se encuentra la variable 'CTELEFONO'.;Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3065,7 +1365,51 @@ trol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 saDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra ,DetaHoja,DetaReparto,EmpresaCuit,Cuit_Caption ,Retiro,Autorizo,Ubicacion,Terminal ) VALUES (STR(loObjFactura.hojaactual,4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3221,6 +1565,28 @@ saDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,Empresa
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEm
 
 
@@ -3299,7 +1665,51 @@ mp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pO05,cTipoCbte,cLetra ,cDetaHoja,cDetaRep,cEmpcuit ,cCuit_Caption,cRetiro,cAutorizo,cUbicacion,cTerminal);Error :         12;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003V2H045K.TMP;Ultimo Contr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3496,7 +1906,51 @@ ol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 p001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTot001,BodyTot002			,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005			,HeadImp006,HeadImp007,HeadTot001			,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3622,7 +2076,51 @@ p001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 bante,cFecComproba,cNumComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva			,cCUIT,cTelefono,cPlanPago,cDetaVdor			,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06			,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3748,8 +2246,52 @@ bante,cFecComproba,cNumComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLoc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cTipoCbte,cLetra			,cDetaHoja,cDetaRep,cEmpcuit			,cCuit_Caption,cRetiro,cAutorizo,cUbicacion,cTerminal)
 11-01-2018 17:55:06 , MAIN, Error: No se encuentra el alias 'IMPCUERVARI'.;Linea : SELECT ImpCuerVari;Error :         13;Ultimo Alias Activo: IMPCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003V2H053O.TMP;Ultimo Control ac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3914,6 +2456,28 @@ tivo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 03V2H094H.TMP;Ultimo Control activo: NUMERO
 11-01-2018 18:10:36 , Pila de llamadas
 11-01-2018 18:10:37 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3957,6 +2521,28 @@ tivo:
 11-01-2018 18:10:40 , Nº de Linea :        346
 11-01-2018 18:10:40 , En el Fuente: 			OscCuerfac.CodExtend = OscCuerfac.codinterno
 11-01-2018 18:13:03 , MAIN, Error: No se encuentra la propiedad CODEXTEND.;Linea : OscCuerfac.CodExtend = OscCuerfac.codinterno;Error :       1734;Ultimo Alias Activo: CSRAUXCUERRTRO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4056,6 +2642,28 @@ tivo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003V2H0BR9.TMP;Ultimo Control activo: 
 11-01-2018 18:17:10 , Pila de llamadas
 11-01-2018 18:17:10 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -4084,6 +2692,28 @@ tivo:
 11-01-2018 18:17:13 , Nº de Linea :         18
 11-01-2018 18:17:13 , En el Fuente: 		SELECT CsrMovRemito.* FROM Movremito as CsrMovRemito WHERE idmaopera = <<lnidmaopera>>
 11-01-2018 18:21:58 , MAIN, Error: No se encuentra la variable 'LNIDMAOPERA'.;Linea : SELECT CsrMovRemito.* FROM Movremito as CsrMovRemito WHERE idmaopera = <<lnidmaopera>>;Error :         12;Ultimo Alias Activo: CSRAFEBCOCAR;Ultimo registro:          1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4134,6 +2764,28 @@ tivo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AL\TEMP\00003V2H0FA3.TMP;Ultimo Control activo: 
 11-01-2018 18:28:40 , Pila de llamadas
 11-01-2018 18:28:41 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -4166,3 +2818,141 @@ AL\TEMP\00003V2H0FA3.TMP;Ultimo Control activo:
 11-01-2018 18:28:44 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 11-01-2018 18:28:44 , Nº de Linea :         43
 11-01-2018 18:28:44 , En el Fuente: 	IF this.accion='R' AND this.talonario<>VAL(cTalonario)
+11-01-2018 19:23:02 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCUERPO'.;Linea : replace ALL idctacte WITH 0 IN CsrCuerpo;Error :         13;Ultimo Alias Activo: CSRSETEOTERMI;Ultimo registro:          1 ;DBF: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003PXL00QR.TMP;Ultimo Control activo: 
+11-01-2018 19:23:02 , Pila de llamadas
+11-01-2018 19:23:03 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2018 19:23:03 , Objeto      : subrtopdte.imprimir_vistaprevia1.impresora.click
+11-01-2018 19:23:03 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2018 19:23:03 , Nº de Linea :          5
+11-01-2018 19:23:03 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2018 19:23:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+11-01-2018 19:23:03 , Objeto      : subrtopdte.crearinforme
+11-01-2018 19:23:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+11-01-2018 19:23:03 , Nº de Linea :         85
+11-01-2018 19:23:04 , En el Fuente: 	replace ALL idctacte WITH 0 IN CsrCuerpo
+11-01-2018 19:30:34 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcuerpo.dbf' no existe.;Linea : SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalle FROM CsrCuerpo ORDER BY &cOrder  INTO CURSOR c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+srimprimir READWRITE;Error :          1;Ultimo Alias Activo: CSRSETEOTERMI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003PXL012T.TMP;Ultimo Control activo: 
+11-01-2018 19:30:34 , Pila de llamadas
+11-01-2018 19:30:34 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2018 19:30:34 , Objeto      : subrtopdte.imprimir_vistaprevia1.impresora.click
+11-01-2018 19:30:34 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-01-2018 19:30:34 , Nº de Linea :          5
+11-01-2018 19:30:34 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-01-2018 19:30:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+11-01-2018 19:30:35 , Objeto      : subrtopdte.crearinforme
+11-01-2018 19:30:35 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+11-01-2018 19:30:35 , Nº de Linea :         88
+11-01-2018 19:30:35 , En el Fuente: SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalleFROM CsrCuerpo ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE
+11-01-2018 19:35:17 , MAIN, Error: El archivo 'csrafecompvta.dbf' no existe.;Linea : SELECT CsrAfeCompVta.*,SPACE(13) as nroremito FROM CsrAfeCompVta WHERE RECNO()<1 INTO CURSOR CsrAuxAfeCabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXEXI
+
+
+
+
+
+
+
+
+
+
+
+
+
+STENC;Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDSUBARTI,10)+STRID(IDDEPOSITO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003PXL01UE.TMP;Ultimo Control activo: 
+11-01-2018 19:35:17 , Pila de llamadas
+11-01-2018 19:35:18 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+11-01-2018 19:35:18 , Objeto      : main
+11-01-2018 19:35:18 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+11-01-2018 19:35:18 , Nº de Linea :        297
+11-01-2018 19:35:18 , En el Fuente: 	Read events   
+11-01-2018 19:35:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+11-01-2018 19:35:18 , Objeto      : frmmenu.olecontrol1.itemclick
+11-01-2018 19:35:18 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+11-01-2018 19:35:19 , Nº de Linea :         19
+11-01-2018 19:35:19 , En el Fuente: 		&lcCmd
+11-01-2018 19:35:19 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
+11-01-2018 19:35:19 , Objeto      : ejecutamenu
+11-01-2018 19:35:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
+11-01-2018 19:35:19 , Nº de Linea :       1595
+11-01-2018 19:35:19 , En el Fuente: 						DO FORM &lcForm WITH lcparam1
+11-01-2018 19:35:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:35:19 , Objeto      : regfacvta.load
+11-01-2018 19:35:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:35:19 , Nº de Linea :         10
+11-01-2018 19:35:19 , En el Fuente: thisform.crearcursor()
+11-01-2018 19:35:20 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:35:20 , Objeto      : regfacvta.crearcursor
+11-01-2018 19:35:20 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:35:20 , Nº de Linea :         98
+11-01-2018 19:35:20 , En el Fuente: SELECT CsrAfeCompVta.*,SPACE(13) as nroremito FROM CsrAfeCompVta WHERE RECNO()<1 INTO CURSOR CsrAuxAfeCabefac READWRITE 
+11-01-2018 19:37:13 , MAIN, Error: El archivo 'csrafecompvta.dbf' no existe.;Linea : SELECT CsrAfeCompVta.*,SPACE(13) as nroremito FROM CsrAfeCompVta WHERE RECNO()<1 INTO CURSOR CsrAuxAfeCabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXEXI
+
+
+
+
+
+
+STENC;Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDSUBARTI,10)+STRID(IDDEPOSITO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003PXL02AY.TMP;Ultimo Control activo: 
+11-01-2018 19:37:13 , Pila de llamadas
+11-01-2018 19:37:14 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+11-01-2018 19:37:14 , Objeto      : main
+11-01-2018 19:37:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+11-01-2018 19:37:14 , Nº de Linea :        297
+11-01-2018 19:37:14 , En el Fuente: 	Read events   
+11-01-2018 19:37:14 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+11-01-2018 19:37:14 , Objeto      : frmmenu.olecontrol1.itemclick
+11-01-2018 19:37:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
+11-01-2018 19:37:15 , Nº de Linea :         19
+11-01-2018 19:37:15 , En el Fuente: 		&lcCmd
+11-01-2018 19:37:15 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
+11-01-2018 19:37:15 , Objeto      : ejecutamenu
+11-01-2018 19:37:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
+11-01-2018 19:37:15 , Nº de Linea :       1595
+11-01-2018 19:37:15 , En el Fuente: 						DO FORM &lcForm WITH lcparam1
+11-01-2018 19:37:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:37:15 , Objeto      : regfacvta.load
+11-01-2018 19:37:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:37:16 , Nº de Linea :         10
+11-01-2018 19:37:16 , En el Fuente: thisform.crearcursor()
+11-01-2018 19:37:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:37:16 , Objeto      : regfacvta.crearcursor
+11-01-2018 19:37:16 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-01-2018 19:37:16 , Nº de Linea :         98
+11-01-2018 19:37:16 , En el Fuente: SELECT CsrAfeCompVta.*,SPACE(13) as nroremito FROM CsrAfeCompVta WHERE RECNO()<1 INTO CURSOR CsrAuxAfeCabefac READWRITE 
