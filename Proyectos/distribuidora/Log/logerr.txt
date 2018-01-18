@@ -17,3 +17,131 @@
 12-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
 12-01-2018 , Nº de Linea :         10
 12-01-2018 , En el Fuente: REPLACE tipoiva WITH IIF(tipoiva=0,Csrcategoiva.id,tipoiva),observa WITH '',saldo WITH 0,saldoant WITH 0,email WITH '',cdireccion WITH '',cuit WITH '',ctelefono WITH '',idcategoria WITH IIF(idcategoria=0,Csrcatectacte.id,idcategoria),ctadeudor WITH 0,ctaacreedor WITH 0,ctabanco WITH 0,ctaotro WITH 0,idplanpago WITH IIF(idplanpago=0,Csrplanpago.id,idplanpago),idcanlvta WITH IIF(idcanalvta=0,CsrCanalVta.id,idcanalvta) IN Csrctacte
+18-01-2018 , MAIN, Error: TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(.txtpendiente.Value - .container1.containerretiro3ro._txtimporte.Value,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589502GC.TMP;Ultimo Control activo: 
+18-01-2018 , Pila de llamadas
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+18-01-2018 , Objeto      : main
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+18-01-2018 , Nº de Linea :        273
+18-01-2018 , En el Fuente: 	Read events   
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.keypress
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :         25
+18-01-2018 , En el Fuente: 			        .key_43(2) && + Graba
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.key_43
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :         40
+18-01-2018 , En el Fuente: 					.actualizar()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.actualizar
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :          6
+18-01-2018 , En el Fuente: 			 IF .pidovalores('A')   
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.pidovalores
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :        186
+18-01-2018 , En el Fuente:    	DO FORM pidopagos WITH lcid,loObjValor,lbVerificoTope  TO thisform.quetecla   
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.grid1.column6.text1.keypress
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         13
+18-01-2018 , En el Fuente: 		thisform.procesartildechq()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.procesartildechq
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          5
+18-01-2018 , En el Fuente: 		.container1.containerretiro3ro.lblpendiente.Caption = strtrim(.txtpendiente.Value - .container1.containerretiro3ro._txtimporte.Value,11,2)
+18-01-2018 , MAIN, Error: _TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP;Ultimo Control activo: 
+18-01-2018 , Pila de llamadas
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+18-01-2018 , Objeto      : main
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+18-01-2018 , Nº de Linea :        273
+18-01-2018 , En el Fuente: 	Read events   
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.keypress
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :         25
+18-01-2018 , En el Fuente: 			        .key_43(2) && + Graba
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.key_43
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :         40
+18-01-2018 , En el Fuente: 					.actualizar()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.actualizar
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :          6
+18-01-2018 , En el Fuente: 			 IF .pidovalores('A')   
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Objeto      : regctacte.pidovalores
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
+18-01-2018 , Nº de Linea :        186
+18-01-2018 , En el Fuente:    	DO FORM pidopagos WITH lcid,loObjValor,lbVerificoTope  TO thisform.quetecla   
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.gotfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          3
+18-01-2018 , En el Fuente: 	this.LostFocus()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.lostfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          7
+18-01-2018 , En el Fuente: 	thisform.container1_visible()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1_visible
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         43
+18-01-2018 , En el Fuente: 		oContenedor.Grid1.Column6.Text1.SetFocus()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.gotfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         32
+18-01-2018 , En el Fuente: 	.container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2)
+18-01-2018 , PIDOPAGOS.GRID1.COLUMN3.TEXT1.GOTFOCUS, Error: _TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP;Ultimo Control activo: 
+18-01-2018 , Pila de llamadas
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.gotfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          3
+18-01-2018 , En el Fuente: 	this.LostFocus()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.lostfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          7
+18-01-2018 , En el Fuente: 	thisform.container1_visible()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1_visible
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         43
+18-01-2018 , En el Fuente: 		oContenedor.Grid1.Column6.Text1.SetFocus()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.gotfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         32
+18-01-2018 , En el Fuente: 	.container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2)
+18-01-2018 , PIDOPAGOS.GRID1.COLUMN3.TEXT1.GOTFOCUS, Error: _TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP;Ultimo Control activo: 
+18-01-2018 , Pila de llamadas
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.gotfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          3
+18-01-2018 , En el Fuente: 	this.LostFocus()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.lostfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :          7
+18-01-2018 , En el Fuente: 	thisform.container1_visible()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1_visible
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         43
+18-01-2018 , En el Fuente: 		oContenedor.Grid1.Column6.Text1.SetFocus()
+18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.gotfocus
+18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
+18-01-2018 , Nº de Linea :         32
+18-01-2018 , En el Fuente: 	.container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2)
