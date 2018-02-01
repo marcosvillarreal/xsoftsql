@@ -332,3 +332,106 @@
 29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
 29-01-2018 , Nº de Linea :         11
 29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
+31-01-2018 , PLANCOMIVENDE_K.INIT, Error: No se encuentra la propiedad TIPOORDEN.;Linea : .kitfechaorden1.iniciar(.tipoorden,'1');Error :       1734;Ultimo Alias Activo: CSRPARACONFIG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD01EJ.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.init
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :          6
+31-01-2018 , En el Fuente: 	.kitfechaorden1.iniciar(.tipoorden,'1')
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD01FB.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :          9
+31-01-2018 , En el Fuente: SELECT CsrCursor
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COBRO'.;Linea : nPorceCobro	 = red((cobro*100)/total,2);Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD030K.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         14
+31-01-2018 , En el Fuente: 	nPorceCobro	 = red((cobro*100)/total,2)
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COMISION'.;Linea : replace comision WITH this._txtcomision.Value IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD031U.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         23
+31-01-2018 , En el Fuente: 	replace comision WITH this._txtcomision.Value IN CsrImprimir
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'TOTCOMI'.;Linea : replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD0334.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         25
+31-01-2018 , En el Fuente: 	replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04IC.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         11
+31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04JF.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         11
+31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        327 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04MG.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         41
+31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor 	INTO CURSOR CsrImprimir READWRITE 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        327 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04OI.TMP;Ultimo Control activo: 
+31-01-2018 , Pila de llamadas
+31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
+31-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2018 , Nº de Linea :          5
+31-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Objeto      : plancomivende_k.crearinforme
+31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
+31-01-2018 , Nº de Linea :         40
+31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor 	ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE 
