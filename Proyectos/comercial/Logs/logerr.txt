@@ -1,556 +1,3 @@
-30-01-2018 22:03:32 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
-30-01-2018 22:03:32 , Objeto      : impcomprobante.agregaobjeto.objimpresora
-30-01-2018 22:03:32 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
-30-01-2018 22:03:32 , Nº de Linea :          6
-30-01-2018 22:03:33 , En el Fuente: IF LEN(TRIM(lcimpresora))=0 OR lntipoimpresora=0
-30-01-2018 22:05:03 , IMPCOMPROBANTE.IMAGE1.MOUSEMOVE, Error: No coinciden los tipos de datos.;Linea : IF ldebogenerar;Error :          9;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:         25 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004Q2X01T5.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TMP;Ultimo Control activo: 
-30-01-2018 22:05:03 , Pila de llamadas
-30-01-2018 22:05:04 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-30-01-2018 22:05:04 , Objeto      : impcomprobante.image1.mousemove
-30-01-2018 22:05:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-30-01-2018 22:05:04 , Nº de Linea :          2
-30-01-2018 22:05:05 , En el Fuente: NODEFAULT 
-30-01-2018 22:05:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:05 , Objeto      : impcomprobante.aceptar1.click
-30-01-2018 22:05:05 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:05 , Nº de Linea :          6
-30-01-2018 22:05:06 , En el Fuente: 		.ciclaoperacion()
-30-01-2018 22:05:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:06 , Objeto      : impcomprobante.ciclaoperacion
-30-01-2018 22:05:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:07 , Nº de Linea :         15
-30-01-2018 22:05:07 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
-30-01-2018 22:05:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:07 , Objeto      : impcomprobante.selectoperacion_sql
-30-01-2018 22:05:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:07 , Nº de Linea :         13
-30-01-2018 22:05:07 , En el Fuente: 	this.imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,2,'RCO')		
-30-01-2018 22:05:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:08 , Objeto      : impcomprobante.imprimir
-30-01-2018 22:05:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:05:08 , Nº de Linea :         22
-30-01-2018 22:05:08 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,.formulario,_debogenerar,lnDeboActualizarNro ,0)
-30-01-2018 22:05:08 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:05:09 , Objeto      : impcomprobante.objimpresor.inicioimpresora
-30-01-2018 22:05:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:05:09 , Nº de Linea :         14
-30-01-2018 22:05:10 , En el Fuente: IF ldebogenerar
-30-01-2018 22:11:18 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: SQL: no se encuentra la columna 'IDUBICACION'.;Linea : SELECT CsrAuxCuerrtro.* FROM CsrAuxCuerRtro WHERE idmaopera = lnidmaopera ORDER BY idubicacion,registro INTO CURSOR CsrXcuerfac READWRITE;E
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rror :       1806;Ultimo Alias Activo: CSRAUXCABERTRO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004Q2X0252.TMP;Ultimo Control activo: 
-30-01-2018 22:11:18 , Pila de llamadas
-30-01-2018 22:11:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:19 , Objeto      : impcomprobante.aceptar1.click
-30-01-2018 22:11:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:19 , Nº de Linea :          6
-30-01-2018 22:11:20 , En el Fuente: 		.ciclaoperacion()
-30-01-2018 22:11:20 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:20 , Objeto      : impcomprobante.ciclaoperacion
-30-01-2018 22:11:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:21 , Nº de Linea :         15
-30-01-2018 22:11:21 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
-30-01-2018 22:11:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:21 , Objeto      : impcomprobante.selectoperacion_sql
-30-01-2018 22:11:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:22 , Nº de Linea :         12
-30-01-2018 22:11:22 , En el Fuente: 	this.imprimir('RCO')		
-30-01-2018 22:11:22 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:22 , Objeto      : impcomprobante.imprimir
-30-01-2018 22:11:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:11:23 , Nº de Linea :         21
-30-01-2018 22:11:23 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,.lcimpresora,Csrprefitermi.tipoimpresora,.formulario,.f.,lnDeboActualizarNro ,0)
-30-01-2018 22:11:23 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:11:24 , Objeto      : impcomprobante.objimpresor.inicioimpresora
-30-01-2018 22:11:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:11:24 , Nº de Linea :         57
-30-01-2018 22:11:25 , En el Fuente: 		lok = this.report_retiro(lndeboActualizarNro)
-30-01-2018 22:11:25 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:11:25 , Objeto      : impcomprobante.objimpresor.report_retiro
-30-01-2018 22:11:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:11:25 , Nº de Linea :         55
-30-01-2018 22:11:25 , En el Fuente: this.generarubihojas(lnidmaopera,loObjFactura.canlinea)
-30-01-2018 22:11:26 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:11:26 , Objeto      : impcomprobante.objimpresor.generarubihojas
-30-01-2018 22:11:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-30-01-2018 22:11:26 , Nº de Linea :          7
-30-01-2018 22:11:27 , En el Fuente: SELECT CsrAuxCuerrtro.* FROM CsrAuxCuerRtro WHERE idmaopera = lnidmaopera ORDER BY idubicacion,registro INTO CURSOR CsrXcuerfac READWRITE 
-30-01-2018 22:19:45 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSRUBICACION'.;Linea : SELECT CsrUbicacion;Error :         13;Ultimo Alias Activo: CSRXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Q2X02UH.TMP;Ultimo Control activo: 
-30-01-2018 22:19:46 , Pila de llamadas
-30-01-2018 22:19:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:19:47 , Objeto      : impcomprobante.aceptar1.click
-30-01-2018 22:19:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:19:47 , Nº de Linea :          6
-30-01-2018 22:19:47 , En el Fuente: 		.ciclaoperacion()
-30-01-2018 22:19:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-30-01-2018 22:19:48 , Objeto      : impcomprobante.ciclaoperacion
 30-01-2018 22:19:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
 30-01-2018 22:19:48 , Nº de Linea :         15
 30-01-2018 22:19:48 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
@@ -580,6 +27,28 @@ Q2X02UH.TMP;Ultimo Control activo:
 30-01-2018 22:19:53 , Nº de Linea :        148
 30-01-2018 22:19:53 , En el Fuente: SELECT CsrUbicacion
 30-01-2018 22:21:20 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSRUBICACION'.;Linea : SELECT CsrUbicacion;Error :         13;Ultimo Alias Activo: CSRXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -878,6 +347,28 @@ Q2X02YN.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2X040D.TMP;Ultimo Control activo: 
 30-01-2018 22:31:14 , Pila de llamadas
 30-01-2018 22:31:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
@@ -911,6 +402,28 @@ Q2X02YN.TMP;Ultimo Control activo:
 30-01-2018 22:31:20 , Nº de Linea :         19
 30-01-2018 22:31:20 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
 31-01-2018 16:48:02 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : RETURN VAL(UltCbte);Error :         11;Ultimo Alias Activo: CSROTROSTRIB;Ultimo registro:          3 ;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1173,6 +686,28 @@ IN\APPDATA\LOCAL\TEMP\00003KZT00HQ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IN\APPDATA\LOCAL\TEMP\00003KZT00MS.TMP;Ultimo Control activo: 
 31-01-2018 16:50:34 , Pila de llamadas
 31-01-2018 16:50:34 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
@@ -1211,6 +746,28 @@ IN\APPDATA\LOCAL\TEMP\00003KZT00MS.TMP;Ultimo Control activo:
 31-01-2018 16:50:40 , Nº de Linea :         35
 31-01-2018 16:50:40 , En el Fuente: RETURN VAL(UltCbte)
 31-01-2018 16:51:27 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : RETURN VAL(UltCbte);Error :         11;Ultimo Alias Activo: CSROTROSTRIB;Ultimo registro:          3 ;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1436,6 +993,28 @@ IN\APPDATA\LOCAL\TEMP\00003KZT00MX.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DATA\LOCAL\TEMP\00003KZT01C0.TMP;Ultimo Control activo: 
 31-01-18 17:00:51 , Pila de llamadas
 31-01-18 17:00:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
@@ -1538,7 +1117,51 @@ DATA\LOCAL\TEMP\00003KZT01C0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2" ,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac ,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac;Error :         12;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1721,6 +1344,28 @@ rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac    		,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac
 31-01-2018 17:08:46 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: No se encuentra la variable 'RETENCION1'.;Linea : REPLACE retencion1 WITH lnTotalPB1,tasarete1 WITH lnTasaIB1 ,retencion2 WITH lnTotalPB2,tasarete2 WITH lnTasaIB2 ,BaseExe WITH lnBaseExe,BaseInte
 
@@ -1803,7 +1448,51 @@ ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva W
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2" ,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac ,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac;Error :         12;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1977,8 +1666,52 @@ rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac    		,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac
 31-01-2018 17:10:47 , IMPCOMPVTACAE.INIT, Error: OBJSETEOPARAM es un miembro desconocido.;Linea : IF VARTYPE(.objseteoparam.CodEmpresa)$"N";Error :       1925;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         23 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2135,7 +1868,51 @@ MP\00003KZT02FK.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2" ,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac ,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac;Error :         12;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2294,6 +2071,28 @@ rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac    		,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac
 31-01-2018 17:15:31 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: No se encuentra la variable 'RETENCION1'.;Linea : REPLACE retencion1 WITH lnTotalPB1,tasarete1 WITH lnTasaIB1 ,retencion2 WITH lnTotalPB2,tasarete2 WITH lnTasaIB2 ,BaseExe WITH lnBaseExe,BaseInte
 
@@ -2363,7 +2162,51 @@ ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva W
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2" ,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac ,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac;Error :         12;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2511,8 +2354,52 @@ rno WITH lnBaseInterno ,BaseGra WITH lnBaseGra,BaseIva WITH lnBaseiva ,nomrete1 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva WITH lnBaseSubCiva,total WITH lnTotalFac    		,SubtotSiva WITH lnBaseSubSiva IN CsrAuxCabefac
 31-01-2018 17:20:59 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: No se encuentra la variable 'LNTOTOTROS'.;Linea : lnTotOtros		= lnTotOtros + CsrAuxCursorAsto.TotalOtros;Error :         12;Ultimo Alias Activo: CSRAUXCURSORASTO;Ultimo registro:          1 ;DBF:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2650,6 +2537,28 @@ ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva W
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003KZT03SV.TMP;Ultimo Control activo: 
 31-01-2018 17:22:50 , Pila de llamadas
 31-01-2018 17:22:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
@@ -2668,6 +2577,28 @@ ITH lnBaseiva   		,nomrete1 WITH "IBTO1",nomrete2 WITH "IBTO2"   		,SubtotCiva W
 31-01-2018 17:22:52 , Nº de Linea :        331
 31-01-2018 17:22:52 , En el Fuente: 		lnTotOtros		= lnTotOtros + CsrAuxCursorAsto.TotalOtros
 31-01-2018 17:25:36 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: OIMPUESTOS es un miembro desconocido.;Linea : .oimpuestos.Limpiardatos(@oObjImpFac);Error :       1925;Ultimo Alias Activo: CSRAUXCURSORASTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2785,6 +2716,28 @@ TA\LOCAL\TEMP\00003KZT042C.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ERS\ADMIN\APPDATA\LOCAL\TEMP\00003KZT04EV.TMP;Ultimo Control activo: 
 31-01-2018 17:29:18 , Pila de llamadas
 31-01-2018 17:29:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
@@ -2803,6 +2756,28 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\00003KZT04EV.TMP;Ultimo Control activo:
 31-01-2018 17:29:21 , Nº de Linea :        338
 31-01-2018 17:29:21 , En el Fuente: 		lnTotalPI		= lnTotalPI + CsrAuxCursorAsto.TotalPI 
 31-01-2018 17:31:26 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: No se encuentra el alias 'CSROPERATORIA'.;Linea : cPlanPago	= CsrOperatoria.nombre &&Csrplanpago.nombre;Error :         13;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 ;DBF: C:\USE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2913,6 +2888,28 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00003KZT04MS.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 03KZT0529.TMP;Ultimo Control activo: 
 31-01-2018 17:39:43 , Pila de llamadas
 31-01-2018 17:39:43 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
@@ -2971,6 +2968,28 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00003KZT04MS.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TMP;Ultimo Control activo: PRECONCIVA
 01-02-2018 12:08:37 , Pila de llamadas
 01-02-2018 12:08:39 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2994,6 +3013,28 @@ TMP;Ultimo Control activo: PRECONCIVA
 01-02-2018 12:08:54 , Nº de Linea :         12
 01-02-2018 12:08:56 , En el Fuente: 		nDecimal = this.precioprod1.decimales
 01-02-2018 13:31:04 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF LEN(LTRIM(lcCmd))=0;Error :         11;Ultimo Alias Activo: CSRAUXCUERRTRO;Ultimo registro:          1 ;DBF: C:\USE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3043,6 +3084,28 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD0027.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (thisform.talonario);Error :        107;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD005I.TMP;Ultimo Control activo: 
 01-02-2018 13:32:15 , Pila de llamadas
 01-02-2018 13:32:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
@@ -3070,3 +3133,129 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD0027.TMP;Ultimo Control activo:
 01-02-2018 13:32:42 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
 01-02-2018 13:32:42 , Nº de Linea :         17
 01-02-2018 13:32:46 , En el Fuente: lcCmd = "select Csrprefijonro.* from prefijonro as Csrprefijonro where letra= '"+thisform.lcLetra+"' and prefijo=" + STR(thisform.talonario)
+01-02-2018 14:40:01 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad NUMCOMP.;Linea : OscatterCab.proximonro = Oscatter.numcomp;Error :       1734;Ultimo Alias Activo: CSRMOVIMIENTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATA\LOCAL\TEMP\0000864P006T.TMP;Ultimo Control activo: 
+01-02-2018 14:40:01 , Pila de llamadas
+01-02-2018 14:40:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:04 , Objeto      : impcomprobante.aceptar1.click
+01-02-2018 14:40:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:04 , Nº de Linea :          6
+01-02-2018 14:40:04 , En el Fuente: 		.ciclaoperacion()
+01-02-2018 14:40:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:06 , Objeto      : impcomprobante.ciclaoperacion
+01-02-2018 14:40:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:10 , Nº de Linea :         15
+01-02-2018 14:40:10 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
+01-02-2018 14:40:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:10 , Objeto      : impcomprobante.selectoperacion_sql
+01-02-2018 14:40:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:13 , Nº de Linea :          8
+01-02-2018 14:40:13 , En el Fuente: this.recuperarremito(nidmaopera)
+01-02-2018 14:40:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:17 , Objeto      : impcomprobante.recuperarremito
+01-02-2018 14:40:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 14:40:17 , Nº de Linea :        174
+01-02-2018 14:40:20 , En el Fuente: OscatterCab.proximonro = Oscatter.numcomp
+01-02-2018 15:10:25 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad IDIMPRESORA.;Linea : LOCATE FOR idmapeada = thisform.idimpresora;Error :       1734;Ultimo Alias Activo: CSRMAPEOIMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\APPDATA\LOCAL\TEMP\0000864P012Z.TMP;Ultimo Control activo: 
+01-02-2018 15:10:25 , Pila de llamadas
+01-02-2018 15:10:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:28 , Objeto      : impcomprobante.aceptar1.click
+01-02-2018 15:10:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:28 , Nº de Linea :          6
+01-02-2018 15:10:30 , En el Fuente: 		.ciclaoperacion()
+01-02-2018 15:10:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:31 , Objeto      : impcomprobante.ciclaoperacion
+01-02-2018 15:10:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:33 , Nº de Linea :         15
+01-02-2018 15:10:33 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
+01-02-2018 15:10:33 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:34 , Objeto      : impcomprobante.selectoperacion_sql
+01-02-2018 15:10:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:38 , Nº de Linea :         12
+01-02-2018 15:10:38 , En el Fuente: 	this.imprimir('RTO')		
+01-02-2018 15:10:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:41 , Objeto      : impcomprobante.imprimir
+01-02-2018 15:10:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:10:41 , Nº de Linea :         21
+01-02-2018 15:10:41 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,.lcimpresora,Csrprefitermi.tipoimpresora,.formulario,.f.,lnDeboActualizarNro ,0)
+01-02-2018 15:10:45 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-02-2018 15:10:45 , Objeto      : impcomprobante.objimpresor.inicioimpresora
+01-02-2018 15:10:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-02-2018 15:10:48 , Nº de Linea :         10
+01-02-2018 15:10:48 , En el Fuente: This.mapeoimpresora(@lcNombreImpresora)
+01-02-2018 15:10:48 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-02-2018 15:10:48 , Objeto      : impcomprobante.objimpresor.mapeoimpresora
+01-02-2018 15:10:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-02-2018 15:10:53 , Nº de Linea :         13
+01-02-2018 15:10:53 , En el Fuente: LOCATE FOR idmapeada = thisform.idimpresora
+01-02-2018 15:21:32 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No se encuentra la propiedad IDIMPRESORA.;Linea : thisform.idimpresora = Csrprefitermi.idimpresora;Error :       1734;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:         26 ;DBF: C:\USER
+
+
+
+
+
+
+S\ADMIN\APPDATA\LOCAL\TEMP\0000864P01C4.TMP;Ultimo Control activo: 
+01-02-2018 15:21:36 , Pila de llamadas
+01-02-2018 15:21:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:38 , Objeto      : impcomprobante.aceptar1.click
+01-02-2018 15:21:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:38 , Nº de Linea :          6
+01-02-2018 15:21:41 , En el Fuente: 		.ciclaoperacion()
+01-02-2018 15:21:41 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:41 , Objeto      : impcomprobante.ciclaoperacion
+01-02-2018 15:21:41 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:45 , Nº de Linea :         15
+01-02-2018 15:21:45 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
+01-02-2018 15:21:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:45 , Objeto      : impcomprobante.selectoperacion_sql
+01-02-2018 15:21:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:48 , Nº de Linea :         12
+01-02-2018 15:21:48 , En el Fuente: 	this.imprimir('RTO')		
+01-02-2018 15:21:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:48 , Objeto      : impcomprobante.imprimir
+01-02-2018 15:21:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:52 , Nº de Linea :         12
+01-02-2018 15:21:52 , En el Fuente: 	IF !.leerproximonro(CsrAuxmaopera.idcomproba,lbupdate)
+01-02-2018 15:21:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:55 , Objeto      : impcomprobante.leerproximonro
+01-02-2018 15:21:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-02-2018 15:21:58 , Nº de Linea :         97
+01-02-2018 15:21:58 , En el Fuente: thisform.idimpresora = Csrprefitermi.idimpresora
