@@ -56,9 +56,11 @@ GO TOP
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 
-STOP()
+ldebug = .t.
+
+*STOP()
 SCAN 
-	lnCantCampo = 22 &&Hay un campo vacio
+	lnCantCampo = 29 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -113,6 +115,12 @@ SCAN
 							
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
+			
+			IF VAL(lcCodigo)=1772 and ldebug
+				*stop()
+				ldebug = .f.
+			ENDIF 
+		
 		ENDDO 
 		lnSiguienteOcurrencia = 1
 		lnCamposLeidos = lnCamposLeidos + 1
@@ -131,9 +139,11 @@ SCAN
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		IF ASC(LEFT(lcNombre,1))=50 OR ASC(LEFT(lcNombre,1))=92 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
+		
+		
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
@@ -241,9 +251,10 @@ SCAN
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		IF ASC(LTRIM(lcCodigo))=50 OR ASC(LTRIM(lcCodigo))=92 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
+		
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
@@ -300,6 +311,10 @@ GO TOP
 *stop()
 SCAN 
 	
+	IF VAL(codigo)=1772
+		stop()
+	ENDIF 
+	
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = VAL(CsrDeudor.codigo) AND CsrDeudor.ctadeudor = 1
  	IF VAL(cnumero) = VAL(CsrDeudor.codigo) AND CsrDeudor.ctadeudor = 1
@@ -343,7 +358,7 @@ SCAN
 	ENDIF
 	
 	&&TresPImp	
-	lcTipoiva	= UPPER(CsrDeudor.tipoiva)
+	lcTipoiva	= ALLTRIM(UPPER(CsrDeudor.tipoiva))
 	DO CASE 
 	CASE lcTipoiva$'INSCRIPTO'
 		lntipoiva = 1	&&RI

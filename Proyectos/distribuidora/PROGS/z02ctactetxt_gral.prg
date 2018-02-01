@@ -56,9 +56,11 @@ GO TOP
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 
-STOP()
+ldebug = .t.
+
+*STOP()
 SCAN 
-	lnCantCampo = 22 &&Hay un campo vacio
+	lnCantCampo = 29 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -113,6 +115,12 @@ SCAN
 							
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
+			
+			IF VAL(lcCodigo)=1772 and ldebug
+				*stop()
+				ldebug = .f.
+			ENDIF 
+		
 		ENDDO 
 		lnSiguienteOcurrencia = 1
 		lnCamposLeidos = lnCamposLeidos + 1
@@ -134,6 +142,8 @@ SCAN
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
+		
+		
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
@@ -245,6 +255,7 @@ SCAN
 			LOOP 
 		ENDIF 
 		
+		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,obsercli,ingbrutos) ;
@@ -300,6 +311,10 @@ GO TOP
 *stop()
 SCAN 
 	
+	IF VAL(codigo)=1772
+		stop()
+	ENDIF 
+	
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = VAL(CsrDeudor.codigo) AND CsrDeudor.ctadeudor = 1
  	IF VAL(cnumero) = VAL(CsrDeudor.codigo) AND CsrDeudor.ctadeudor = 1
@@ -319,7 +334,7 @@ SCAN
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
  	lnctadeudor		= 1
- 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente		
+ 	lnidplanpago	= 1100000001 &&Por el momento todos de cuenta corriente		
 	lnidcanalvta	= 1100000006
 	lnlista			= 1
 		
@@ -343,7 +358,7 @@ SCAN
 	ENDIF
 	
 	&&TresPImp	
-	lcTipoiva	= UPPER(CsrDeudor.tipoiva)
+	lcTipoiva	= ALLTRIM(UPPER(CsrDeudor.tipoiva))
 	DO CASE 
 	CASE lcTipoiva$'INSCRIPTO'
 		lntipoiva = 1	&&RI
