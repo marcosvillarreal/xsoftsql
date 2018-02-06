@@ -435,3 +435,93 @@
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         40
 31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor 	ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE 
+05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND500D5.TMP;Ultimo Control activo: 
+05-02-2018 , Pila de llamadas
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+05-02-2018 , Objeto      : main
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+05-02-2018 , Nº de Linea :        275
+05-02-2018 , En el Fuente: 	Read events   
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.grid2.column2.text1.keypress
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :         20
+05-02-2018 , En el Fuente:       this.LostFocus()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.grid2.column2.text1.lostfocus
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :          4
+05-02-2018 , En el Fuente: 		thisform.kitbuscarProd.f_lostfocusSay()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :         65
+05-02-2018 , En el Fuente: 		thisform.determinarlistaprecio(@lnpreunita,@lnpreunitasiva,@lnprearti,@lnpreartisiva,CsrAuxCuerfac.omitirlistas)
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.determinarlistaprecio
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :         51
+05-02-2018 , En el Fuente: lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3)
+05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND50153.TMP;Ultimo Control activo: 
+05-02-2018 , Pila de llamadas
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+05-02-2018 , Objeto      : main
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+05-02-2018 , Nº de Linea :        275
+05-02-2018 , En el Fuente: 	Read events   
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.grid2.column2.text1.keypress
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :         20
+05-02-2018 , En el Fuente:       this.LostFocus()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.grid2.column2.text1.lostfocus
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :          4
+05-02-2018 , En el Fuente: 		thisform.kitbuscarProd.f_lostfocusSay()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.kitbuscarprod.f_lostfocussay
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :         66
+05-02-2018 , En el Fuente: 		thisform.determinarlistaprecio(@lnpreunita,@lnpreunitasiva,@lnprearti,@lnpreartisiva,CsrAuxCuerfac.omitirlistas)
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Objeto      : regfacvta.determinarlistaprecio
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-02-2018 , Nº de Linea :         51
+05-02-2018 , En el Fuente: lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3)
+05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'TOTAL'.;Linea : SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor ,(&lcTotal) as netogravado,unidades,0 as filtro ,idrubro,codrubro,nomrubro,vtakilos,0 as pesable FROM csrobjetivos INTO CURSOR csrseguimiento readwrite;Error :       1806;Ultimo Alias Activo: CSROBJETIVOS;Ultimo registro:         56 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501OO.TMP;Ultimo Control activo: 
+05-02-2018 , Pila de llamadas
+05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+05-02-2018 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
+05-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+05-02-2018 , Nº de Linea :          8
+05-02-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
+05-02-2018 , Objeto      : plancomivende.crearinforme
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
+05-02-2018 , Nº de Linea :         47
+05-02-2018 , En el Fuente: SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor,(&lcTotal) as netogravado,unidades,0 as filtro,idrubro,codrubro,nomrubro,vtakilos,0 as pesableFROM csrobjetivos INTO CURSOR csrseguimiento readwrite
+05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCOMIVDOR'.;Linea : SELECT CsrComiVdor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+STR(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501Q2.TMP;Ultimo Control activo: 
+05-02-2018 , Pila de llamadas
+05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+05-02-2018 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
+05-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+05-02-2018 , Nº de Linea :          8
+05-02-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
+05-02-2018 , Objeto      : plancomivende.crearinforme
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
+05-02-2018 , Nº de Linea :        119
+05-02-2018 , En el Fuente: 		SELECT CsrComiVdor
+05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad DETALLACANALVTA.;Linea : .detallacanalvta = 1;Error :       1734;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:          6 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP;Ultimo Control activo: 
+05-02-2018 , Pila de llamadas
+05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+05-02-2018 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
+05-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+05-02-2018 , Nº de Linea :          8
+05-02-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
+05-02-2018 , Objeto      : plancomivende.crearinforme
+05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
+05-02-2018 , Nº de Linea :         19
+05-02-2018 , En el Fuente: 	.detallacanalvta = 1
