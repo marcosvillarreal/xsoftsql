@@ -42,127 +42,6 @@
 
 
 
-vo:  REGPEDIDO.CONTENEDORBARRIO.CMDBORRAR.LOSTFOCUS
-19-12-2017 , Error: _TXTDNI es un miembro desconocido. Linea : This.Parent._txtdni.SetFocus() Error :       1925 Ultimo Alias Activo: CSRAUXCUERPROMO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008DFT0GL8.TMP Ultimo Control acti
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,6 +62,7 @@ vo:  REGPEDIDO.CONTENEDORBARRIO.CMDBORRAR.LOSTFOCUS
 vo:  REGPEDIDO.KEYPRESS
 19-12-2017 , Acceso al sistema, antes de autenticar
 19-12-2017 , Error: No se encuentra la variable 'IDBARRIO'. Linea : replace idbarrio WITH CsrBarrio.id IN CsrAuxCabefac Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005TL502PA
+
 
 
 
@@ -454,8 +334,10 @@ vo:  REGPEDIDO.KEYPRESS
 
 
 
+
 5TL503U9.TMP Ultimo Control activo:  REGPEDIDO.CONTENEDORBARRIO.CMDSALVAR.CLICK
 19-12-2017 , Error: No se encuentra la propiedad CANTKILOS. Linea : IF OscCuerpo.pesable=1 AND OscCuerpo.cantidad#0 AND OscCuerpo.cantkilos=0 Error :       1734 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\L
+
 
 
 
@@ -724,9 +606,11 @@ OCAL\TEMP\00005TL50KOB.TMP Ultimo Control activo:  REGPEDIDOPDTE.ACEPTAR1.CLICK
 
 
 
+
 R_MAPS.INIT
 20-12-2017 , Acceso al sistema, antes de autenticar
 20-12-2017 , Error: No se encuentra el alias 'CSRIMPRIMIR'. Linea : SELECT CsrImprimir Error :         13 Ultimo Alias Activo: CSRCTACTE_2 Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AE4P00LN.TMP Ultimo Control activo:  MOSTRA
+
 
 
 
@@ -990,8 +874,10 @@ R_MAPS.INIT
 
 
 
+
 o:  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 20-12-2017 , Error: El archivo 'googlecoords2.prg' no existe. Linea : cFile = GoogleCoords2(" ",llamada,cmark) Error :          1 Ultimo Alias Activo: CSRREMFAC Ultimo registro:         27  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006S5L009V.TMP Ultimo C
+
 
 
 
@@ -1249,12 +1135,14 @@ ontrol activo:  MOSTRAR_MAPS.CMD_CARGAR.CLICK
 
 
 
+
 ontrol activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 20-12-2017 , Acceso al sistema, antes de autenticar
 20-12-2017 , Acceso al sistema, antes de autenticar
 20-12-2017 , Acceso al sistema, antes de autenticar
 20-12-2017 , Acceso al sistema, antes de autenticar
 20-12-2017 , Error: SQL: no se encuentra la columna 'VENTA'. Linea : SELECT IIF(CsrImprimir.venta=1,'VENTA','NOVENTA' + IIF(CsrImprimir.idmotivo=0,"",CsrImprimir.nommotivo)) as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,Csr
+
 
 
 
@@ -1506,7 +1394,9 @@ Direcciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDireccione
 
 
 
+
 tado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE Error :       1806 Ultimo Alias Activo: CSRDIRECCIONES Ultimo registro:          1  DBF: C:\USERS\
+
 
 
 
@@ -1758,7 +1648,9 @@ ADMIN\APPDATA\LOCAL\TEMP\00006S5L01SQ.TMP Ultimo Control activo:  LISTADOVISITAS
 
 
 
+
 srDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.ventas=1,'V',IIF(CsrImprimir.idmotivo=0,"N",'M')) as
+
 
 
 
@@ -2008,8 +1900,10 @@ srDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDireccio
 
 
 
+
 RS\ADMIN\APPDATA\LOCAL\TEMP\00006S5L01U6.TMP Ultimo Control activo:  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 20-12-2017 , Error: No se encuentra el alias 'CSRIMPRIMIR'. Linea : SELECT CsrImprimir Error :         13 Ultimo Alias Activo: CSRCTACTE_2 Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006S5L0208.TMP Ultimo Control activo:  MOSTRA
+
 
 
 
@@ -2257,9 +2151,11 @@ R_MAPS_FAC.INIT
 
 
 
+
 R_MAPS_FAC.INIT
 20-12-2017 , Acceso al sistema, antes de autenticar
 20-12-2017 , Error: No se encuentra la variable 'MOTIVO'. Linea : replace motivo WITH CsrImprimir.motivo Error :         12 Ultimo Alias Activo: CSRNOVENTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009C7D0291.TMP Ultimo Contro
+
 
 
 
@@ -2501,8 +2397,10 @@ l activo:  EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
  Ultimo Control activo:  EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 20-12-2017 , Error: SQL: no se encuentra la columna 'VENTAS'. Linea : SELECT IIF(CsrImprimir.ventas=1,'VENTA',RTRIM(CsrImprimir.nommotivo) + IIF(CsrImprimir.idmotivo<>0,'','NO VENTA') ) as Detalle,Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,C
+
 
 
 
@@ -2740,7 +2638,9 @@ srDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDireccio
 
 
 
+
  estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE Error :       1806 Ultimo Alias Activo: CSRDIRECCIONES Ultimo registro:          1  DBF: C:\USERS\
+
 
 
 
@@ -2978,7 +2878,9 @@ ADMIN\APPDATA\LOCAL\TEMP\00009C7D02MM.TMP Ultimo Control activo:  EST_VENTAVISIT
 
 
 
+
 ion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(lentrim(CsrImprimir.motivo)<>0,"M",CsrImprimir.cestado) as
+
 
 
 
@@ -3214,8 +3116,10 @@ ion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDi
 
 
 
+
 ADMIN\APPDATA\LOCAL\TEMP\00009C7D02QC.TMP Ultimo Control activo:  EST_VENTAVISITAS_NPEDIDO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 20-12-2017 , Error: No se encuentra el alias 'CSRIMPRIMIR'. Linea : SELECT CsrImprimir Error :         13 Ultimo Alias Activo: CSRCTACTE_2 Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009C7D02R3.TMP Ultimo Control activo:  MOSTRA
+
 
 
 
@@ -3450,8 +3354,10 @@ R_MAPS_FAC.INIT
 
 
 
+
 R_MAPS_FAC.INIT
 20-12-2017 , Error: No se encuentra la propiedad ORIGEN. Linea : IF this.origen='EVNP' AND estado='M' Error :       1734 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005BT500O8.TMP Ultimo Control ac
+
 
 
 
@@ -3682,6 +3588,7 @@ tivo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 
 
 
+
 P Ultimo Control activo:  MAIN
 21-12-2017 , Acceso al sistema, antes de autenticar
 21-12-2017 , Acceso al sistema, antes de autenticar
@@ -3689,6 +3596,7 @@ P Ultimo Control activo:  MAIN
 27-12-2017 , Acceso al sistema, antes de autenticar
 27-12-2017 , Acceso al sistema, antes de autenticar
 27-12-2017 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : LeerEjercicioActivo(@lObjEjercicioActivo,IIF(VAL(	lcEstado)=1,1,0)) Error :         11 Ultimo Alias Activo: CSRORIGEN Ultimo registro:          8 NUMERO DBF: 
+
 
 
 
@@ -3906,8 +3814,10 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00J5.TMP Ultimo Control activo:  PLANI
 
 
 
+
 0008BUX00KG.TMP Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-12-2017 , Error: FECHA_CALENDARIO1 es un miembro desconocido. Linea : lcaux=VAL(DTOS(thisform.fecha_calendario1.txtfecha.Value)) Error :       1925 Ultimo Alias Activo: CSRPARACONTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
 
 
 
@@ -4119,8 +4029,10 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00J5.TMP Ultimo Control activo:  PLANI
 
 
 
+
   1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00LW.TMP Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-12-2017 , Error: No se encuentra el alias 'CSRPARACONTA'. Linea : .idctacaja = IIF(Csrparaconta.numero=1,idcuenta,0) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1
+
 
 
 
@@ -4328,8 +4240,10 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00J5.TMP Ultimo Control activo:  PLANI
 
 
 
+
 \APPDATA\LOCAL\TEMP\00008BUX00O8.TMP Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-12-2017 , Error: Error de sintaxis. Linea : WHERE ((CsrParaConta.numero = 1 and CsrParaConta.idejercicio=<<goapp.idejerciciocaja>) OR CsrMaopera.origen IN ('ICA','ECA')) Error :         10 Ultimo Alias Activo: CSRPARACONTA Ultimo registro:          1 
+
 
 
 
@@ -4533,6 +4447,7 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX00J5.TMP Ultimo Control activo:  PLANI
 
 
 
+
 ivo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-12-2017 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : SELECT CsrCursor Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-12-2017 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : SELECT CsrCursor Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -4540,6 +4455,7 @@ ivo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-12-2017 , Acceso al sistema, antes de autenticar
 27-12-2017 , Error: No se encuentra el alias 'LOBJEJERCICIOACTIVO'. Linea : .fecha_calendario1.Value	= lObjEjercicioActivo.fecCajadesde Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PLANILLACAJA.INIT
 27-12-2017 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : LeerEjercicioDeUnaCaja(INT(VAL(DTOS(oObjFechaOrden.nFechaD)))) Error :         11 Ultimo Alias Activo: CSRPARACONTA Ultimo registro:          1  DBF: C:\USERS
+
 
 
 
@@ -4731,8 +4647,10 @@ ivo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 trol activo:  PLANILLACAJA_V2.INIT
 27-12-2017 , Error: No se encuentra la variable 'LCORDEN'. Linea : DODEFAULT(lcorden,lcEstado) Error :         12 Ultimo Alias Activo: CSRORIGEN Ultimo registro:          8 NUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008BUX01QQ.TMP Ultimo Control act
+
 
 
 
@@ -4920,6 +4838,7 @@ ivo:  PLANILLACAJA_V2.INIT
 
 
 
+
 ltimo Control activo:  PLANILLACAJA_V2.INIT
 29-12-2017 , Acceso al sistema, antes de autenticar
 29-12-2017 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrProducto')<>0 Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
@@ -5016,8 +4935,10 @@ ltimo Control activo:  PLANILLACAJA_V2.INIT
 
 
 
+
 29-12-2017 , Acceso al sistema, antes de autenticar
 29-12-2017 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
+
 
 
 
@@ -5200,6 +5121,7 @@ ltimo Control activo:  PLANILLACAJA_V2.INIT
 
 
 
+
 ltimo Control activo:  PATRONCARGAPEDIDOS.KEYPRESS
 02-01-2018 , Acceso al sistema, antes de autenticar
 02-01-2018 , Acceso al sistema, antes de autenticar
@@ -5208,6 +5130,7 @@ ltimo Control activo:  PATRONCARGAPEDIDOS.KEYPRESS
 02-01-2018 , Acceso al sistema, antes de autenticar
 02-01-2018 , Acceso al sistema, antes de autenticar
 02-01-2018 , Error: Desbordamiento numérico (se han perdido datos). Linea : REPLACE idctacte WITH CsrCtacte.id,cnombre WITH CsrCtacte.cnombre,cdireccion WITH CsrCtacte.cdireccion ,idtipoiva WITH lnidtipoiva,cuit WITH CsrCtacte.cuit,cpostal WITH CsrCtacte
+
 
 
 
@@ -5369,6 +5292,7 @@ ltimo Control activo:  PATRONCARGAPEDIDOS.KEYPRESS
 
 
 
+
 kt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bonif1,bonif2 WITH CsrCtacte.bonif2,idrutavdor WITH CSrcuerruta.idrutavdor ,nropatron WITH "",vencimien WITH TTOD(fecha)+IIF(ISNULL(CsrCtacte.diasvto),0,CsrCtacte.diasvto) ,Sal
 
 
@@ -5450,7 +5374,9 @@ kt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bo
 
 
 
+
 doCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac Error :         39 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007P55
+
 
 
 
@@ -5612,7 +5538,9 @@ doCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH
 
 
 
+
 .cpostal,idcategoria WITH lnidcategoria ,subnumero WITH CsrSubCtacte.subnumero,idlocalidad WITH lnidlocalidad,subcnombre WITH "" ,idprovincia WITH lnidprovincia,ctacte WITH CsrCtacte.cnumero,idplanpago WITH lidplanpago ,copiatkt WITH IIF(CsrCtacte.copiat
+
 
 
 
@@ -5770,7 +5698,9 @@ kt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bo
 
 
 
+
 doCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac Error :         39 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007P55
+
 
 
 
@@ -5928,7 +5858,9 @@ doCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH
 
 
 
+
 .cpostal,idcategoria WITH lnidcategoria ,subnumero WITH CsrSubCtacte.subnumero,idlocalidad WITH lnidlocalidad,subcnombre WITH "" ,idprovincia WITH lnidprovincia,ctacte WITH CsrCtacte.cnumero,idplanpago WITH lidplanpago ,copiatkt WITH IIF(CsrCtacte.copiat
+
 
 
 
@@ -6084,7 +6016,9 @@ kt#0,CsrCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,bonif1 WITH CsrCtacte.bo
 
 
 
+
 doCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH NVL(CsrCtacte.cdatosfac,"") IN CsrAuxcabefac Error :         39 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007P55
+
 
 
 
@@ -6240,10 +6174,12 @@ doCta WITH CsrCtacte.saldo,ctelefono WITH CsrCtacte.ctelefono ,datosfactura WITH
 
 
 
+
 tro:          3  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007P5501QL.TMP Ultimo Control activo: CDIRECCION REGPEDIDO.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.LOSTFOCUS
 02-01-2018 , Acceso al sistema, antes de autenticar
 02-01-2018 , Acceso al sistema, antes de autenticar
 02-01-2018 , Error: No se encuentra la propiedad RELEASE. Linea : .Release Error :       1734 Ultimo Alias Activo: CSRAUXCARGA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007P5503O0.TMP Ultimo Control activo:  REGCBIOPEDIDO.KEYP
+
 
 
 
@@ -6396,9 +6332,11 @@ RESS
 
 
 
+
 CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo: CSRAUXCARGA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AZGP015L.TMP Ultimo Control activo:  REGCBIOPEDIDO.LOAD
 02-01-2018 , Acceso al sistema, antes de autenticar
 02-01-2018 , Error: No se encuentra la variable 'FACTURA'. Linea : nTotKilos = CsrAuxCuerfac.factura*CsrAuxCuerfac.peso Error :         12 Ultimo Alias Activo: CSRVARIEDAD Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AZGP0180.T
+
 
 
 
@@ -6547,9 +6485,11 @@ MP Ultimo Control activo:  REGCBIOPEDIDO.GRID1.COLUMN7.TEXT1.LOSTFOCUS
 
 
 
+
 MAIN
 03-01-2018 , Acceso al sistema, antes de autenticar
 03-01-2018 , Error: No se encuentra la variable 'CTIPOCOMP'. Linea : cRespuesta = cTipoComp Error :         12 Ultimo Alias Activo: CSRAUXVENTAS Ultimo registro:         29  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005C0900FP.TMP Ultimo Control activo:  
+
 
 
 
@@ -6688,9 +6628,11 @@ MAIN
 
 
 
+
         0  DBF:  Ultimo Control activo:  MAIN
 05-01-2018 , Acceso al sistema, antes de autenticar
 05-01-2018 , Error: No se encuentra la propiedad ARTICULO. Linea : replace codctacte WITH VAL(oscCabe.ctacte),nomctacte WITH osccabe.cnombre,codigo WITH VAL(osccuerpo.codigo) ,articulo WITH osccuerpo.articulo,cantidad WITH osccuerpo.cantidad Error :     
+
 
 
 
@@ -6822,11 +6764,13 @@ MAIN
 
 
 
+
 3CO.TMP Ultimo Control activo:  REGPEDIDOPDTE.ACEPTAR1.CLICK
 05-01-2018 , Acceso al sistema, antes de autenticar
 05-01-2018 , Acceso al sistema, antes de autenticar
 05-01-2018 , Acceso al sistema, antes de autenticar
 05-01-2018 , Error: El archivo 'csrseteoparam.dbf' no existe. Linea : SELECT CsrSeteoParam.*,0  as estado FROM CsrSeteoParam WHERE RECNO()<1 INTO CURSOR CsrAuxParametros READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:
+
 
 
 
@@ -6955,6 +6899,68 @@ MAIN
 
 
 
+
+RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo: IDCOMPROBA REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
+05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo: IDCOMPROBA REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
 05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
 
@@ -7135,62 +7141,6 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo: IDCOMPROBA R
 RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo: IDCOMPROBA REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
 05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo: IDCOMPROBA REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
-05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
 
 
 
@@ -7300,62 +7250,65 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo:  A_CLEARALL
 
 
 
-RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
-05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
 05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS
+05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
+
 
 
 
@@ -7459,8 +7412,10 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo: IDCOMPROBA R
 
 
 
+
 RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo:  MAIN
 05-01-2018 , Error: No se encuentra la variable 'IDCOMPROBA'. Linea : IF STR(CsrComprobante.idcomproba,10)$thisform.idctanada AND RTRIM(CsrPlanPago.numero)='CCT' Error :         12 Ultimo Alias Activo: CSRPLANPAGO Ultimo registro:          3  DBF: C:\USE
+
 
 
 
@@ -7564,8 +7519,10 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\0000ARD502JD.TMP Ultimo Control activo:  MAIN
 
 
 
+
 Control activo: ESTADO REGCBIOPEDIDO.KEYPRESS
 12-01-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF ASC(nKeyCode)='-' Error :         11 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          4 IDMAOPERA DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007R
+
 
 
 
@@ -7649,6 +7606,7 @@ BD06G6.TMP Ultimo Control activo: KILOSEDIT REGCBIOPEDIDO.GRID1.COLUMN7.TEXT1.KE
 
 
 
+
 BD005O.TMP Ultimo Control activo: ESTADO REGCBIOPEDIDO.KEYPRESS
 12-01-2018 , Error: No se encuentra la variable 'IDCANLVTA'. Linea : REPLACE tipoiva WITH IIF(tipoiva=0,Csrcategoiva.id,tipoiva),observa WITH '' ,saldo WITH 0,saldoant WITH 0,email WITH '',cdireccion WITH '',cuit WITH '',ctelefono WITH '' ,idcategoria WI
 
@@ -7689,7 +7647,9 @@ BD005O.TMP Ultimo Control activo: ESTADO REGCBIOPEDIDO.KEYPRESS
 
 
 
+
 TH IIF(idcategoria=0,Csrcatectacte.id,idcategoria),ctadeudor WITH 0,ctaacreedor WITH 0 ,ctabanco WITH 0,ctaotro WITH 0,idplanpago WITH IIF(idplanpago=0,Csrplanpago.id,idplanpago) ,idcanlvta WITH IIF(idcanalvta=0,CsrCanalVta.id,idcanalvta) IN Csrctacte Er
+
 
 
 
@@ -7771,6 +7731,7 @@ ror :         12 Ultimo Alias Activo: CSRCTACTE Ultimo registro:         -1  DBF
 
 
 
+
 UE Ultimo registro:          3 IMPORTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589502GC.TMP Ultimo Control activo:  MAIN
 18-01-2018 , Acceso al sistema, antes de autenticar
 18-01-2018 , Acceso al sistema, antes de autenticar
@@ -7778,6 +7739,7 @@ UE Ultimo registro:          3 IMPORTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
 18-01-2018 , Acceso al sistema, antes de autenticar
 18-01-2018 , Acceso al sistema, antes de autenticar
 18-01-2018 , Error: _TXTPENDIENTE es un miembro desconocido. Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2) Error :       1925 Ultimo Alias Activo: CSRCHEQUE Ultimo registro:          3 IMPO
+
 
 
 
@@ -7841,8 +7803,10 @@ RTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP Ultimo Control activ
 
 
 
+
 RTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP Ultimo Control activo:  PIDOPAGOS.GRID1.COLUMN3.TEXT1.GOTFOCUS
 18-01-2018 , Error: _TXTPENDIENTE es un miembro desconocido. Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2) Error :       1925 Ultimo Alias Activo: CSRCHEQUE Ultimo registro:          3 IMPO
+
 
 
 
@@ -7906,10 +7870,12 @@ RTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP Ultimo Control activ
 
 
 
+
         0  DBF:  Ultimo Control activo:  MAIN
 29-01-2018 , Acceso al sistema, antes de autenticar
 29-01-2018 , Acceso al sistema, antes de autenticar
 29-01-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrCursor')=0 Error :         13 Ultimo Alias Activo: CSRAUXILIAR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL001M.TMP Ultimo Control activo:  EXPORTAR_COT
+
 
 
 
@@ -7965,8 +7931,10 @@ RTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP Ultimo Control activ
 
 
 
+
 .IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-01-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrCursor')=0 Error :         13 Ultimo Alias Activo: CSRAUXILIAR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL003H.TMP Ultimo Control activo:  EXPORTAR_COT
+
 
 
 
@@ -8018,9 +7986,11 @@ RTE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP Ultimo Control activ
 
 
 
+
 .IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-01-2018 , Acceso al sistema, antes de autenticar
 29-01-2018 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF Oscatter.loc_codarba='-1' Error :        107 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL0061.
+
 
 
 
@@ -8066,8 +8036,10 @@ TMP Ultimo Control activo:  EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 MIN\APPDATA\LOCAL\TEMP\00008GLL0078.TMP Ultimo Control activo:  EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-01-2018 , Error: No se encuentra el alias 'OCATTER'. Linea : cCadena		= cCadena + DTOC(Ocatter.fecha) Error :         13 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL008V.TMP Ultimo Control
+
 
 
 
@@ -8110,11 +8082,13 @@ MIN\APPDATA\LOCAL\TEMP\00008GLL0078.TMP Ultimo Control activo:  EXPORTAR_COT.IMP
 
 
 
+
 .IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-01-2018 , Acceso al sistema, antes de autenticar
 29-01-2018 , Acceso al sistema, antes de autenticar
 29-01-2018 , Acceso al sistema, antes de autenticar
 29-01-2018 , Error: No se encuentra la variable 'CADENA2'. Linea : replace cadena2 WITH SUBSTR(cCadena,214,134) Error :         12 Ultimo Alias Activo: CSRAUXILIAR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP Ultim
+
 
 
 
@@ -8154,12 +8128,14 @@ o Control activo:  EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 .IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2018 , Acceso al sistema, antes de autenticar
 30-01-2018 , Acceso al sistema, antes de autenticar
 30-01-2018 , Acceso al sistema, antes de autenticar
 31-01-2018 , Acceso al sistema, antes de autenticar
 31-01-2018 , Error: No se encuentra la propiedad TIPOORDEN. Linea : .kitfechaorden1.iniciar(.tipoorden,'1') Error :       1734 Ultimo Alias Activo: CSRPARACONFIG Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD01EJ.TMP Ultimo 
+
 
 
 
@@ -8193,8 +8169,10 @@ Control activo:  PLANCOMIVENDE_K.INIT
 
 
 
+
 ANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 31-01-2018 , Error: No se encuentra la variable 'COBRO'. Linea : nPorceCobro	 = red((cobro*100)/total,2) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD030K.TMP Ultimo Contr
+
 
 
 
@@ -8224,8 +8202,10 @@ ol activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 XZD031U.TMP Ultimo Control activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 31-01-2018 , Error: No se encuentra la variable 'TOTCOMI'. Linea : replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
 
 
 
@@ -8251,7 +8231,9 @@ EMP\00004XZD0334.TMP Ultimo Control activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVI
 
 
 
+
 ,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:         15 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04IC.TMP Ultimo Control activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IM
+
 
 
 
@@ -8275,7 +8257,9 @@ PRESORA.CLICK
 
 
 
+
 ,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:         15 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04JF.TMP Ultimo Control activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IM
+
 
 
 
@@ -8297,7 +8281,9 @@ PRESORA.CLICK
 
 
 
+
 ) as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor INTO CURSOR CsrImprimir READWRITE Error :       1807 Ultimo Alias Activo: CSRIMP
+
 
 
 
@@ -8317,7 +8303,9 @@ RIMIR Ultimo registro:        327  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004X
 
 
 
+
 ) as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE Error :       1807 Ultimo Alias Activo: CSRIM
+
 
 
 
@@ -8342,10 +8330,12 @@ PRIMIR Ultimo registro:        327  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004
 
 
 
+
  Ultimo Control activo:  MAIN
 05-02-2018 , Acceso al sistema, antes de autenticar
 05-02-2018 , Acceso al sistema, antes de autenticar
 05-02-2018 , Error: No coinciden los tipos de datos. Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3) Error :          9 Ultimo Alias Activo: CSRLISTAPRECIO Ultimo registro:          6  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND50153.TMP
+
 
 
  Ultimo Control activo:  MAIN
@@ -8353,9 +8343,14 @@ PRIMIR Ultimo registro:        327  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004
 05-02-2018 , Acceso al sistema, antes de autenticar
 05-02-2018 , Error: SQL: no se encuentra la columna 'TOTAL'. Linea : SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor ,(&lcTotal) as netogravado,unidades,0 as filtro ,idrubro,codrubro,nomrubro,vtakilos,0 
 
+
 as pesable FROM csrobjetivos INTO CURSOR csrseguimiento readwrite Error :       1806 Ultimo Alias Activo: CSROBJETIVOS Ultimo registro:         56  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501OO.TMP Ultimo Control activo:  PLANCOMIVENDE.IMPRIMIR_VIS
+
 
 TAPREVIA1.IMPRESORA.CLICK
 05-02-2018 , Error: No se encuentra el alias 'CSRCOMIVDOR'. Linea : SELECT CsrComiVdor Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+STR(CODIGO,10) DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
 0007ND501Q2.TMP Ultimo Control activo:  PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-05-02-2018 , Error: No se encuentra la propiedad DETALLACANALVTA. Linea : .detallacanalvta = 1 Error :       1734 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:          6 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP Ultimo Control activo:  PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+05-02-2018 , Error: No se encuentra la propiedad DETALLACANALVTA. Linea : .detallacanalvta = 1 Error :       1734 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:          6 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP Ultimo Control
+ activo:  PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+06-02-2018 , Acceso al sistema, antes de autenticar
