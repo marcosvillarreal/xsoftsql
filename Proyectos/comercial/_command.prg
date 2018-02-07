@@ -1,0 +1,1 @@
+DO j:\xsoftsql\proyectos\comercial\progs\main.prgRESUMEQUIT
