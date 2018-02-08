@@ -1,304 +1,74 @@
-12-01-2018 , REGCBIOPEDIDO.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF ASC(nKeyCode)='/';Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         11 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001ZBD005O.TMP;Ultimo Control activo: ESTADO
-12-01-2018 , Pila de llamadas
-12-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
-12-01-2018 , Objeto      : regcbiopedido.keypress
-12-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
-12-01-2018 , Nº de Linea :         38
-12-01-2018 , En el Fuente: 	IF ASC(nKeyCode)='/'
-12-01-2018 , ABMCTACTE.CMDAGREGAR.CLICK, Error: No se encuentra la variable 'IDCANLVTA'.;Linea : REPLACE tipoiva WITH IIF(tipoiva=0,Csrcategoiva.id,tipoiva),observa WITH '' ,saldo WITH 0,saldoant WITH 0,email WITH '',cdireccion WITH '',cuit WITH '',ctelefono WITH '' ,idcategoria WITH IIF(idcategoria=0,Csrcatectacte.id,idcategoria),ctadeudor WITH 0,ctaacreedor WITH 0 ,ctabanco WITH 0,ctaotro WITH 0,idplanpago WITH IIF(idplanpago=0,Csrplanpago.id,idplanpago) ,idcanlvta WITH IIF(idcanalvta=0,CsrCanalVta.id,idcanalvta) IN Csrctacte;Error :         12;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001ZBD00MR.TMP;Ultimo Control activo: 
-12-01-2018 , Pila de llamadas
-12-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
-12-01-2018 , Objeto      : abmctacte.cmdagregar.click
-12-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
-12-01-2018 , Nº de Linea :         40
-12-01-2018 , En el Fuente: 	.despuesagregar
-12-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
-12-01-2018 , Objeto      : abmctacte.despuesagregar
-12-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\abmctacte.sct
-12-01-2018 , Nº de Linea :         10
-12-01-2018 , En el Fuente: REPLACE tipoiva WITH IIF(tipoiva=0,Csrcategoiva.id,tipoiva),observa WITH '',saldo WITH 0,saldoant WITH 0,email WITH '',cdireccion WITH '',cuit WITH '',ctelefono WITH '',idcategoria WITH IIF(idcategoria=0,Csrcatectacte.id,idcategoria),ctadeudor WITH 0,ctaacreedor WITH 0,ctabanco WITH 0,ctaotro WITH 0,idplanpago WITH IIF(idplanpago=0,Csrplanpago.id,idplanpago),idcanlvta WITH IIF(idcanalvta=0,CsrCanalVta.id,idcanalvta) IN Csrctacte
-18-01-2018 , MAIN, Error: TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(.txtpendiente.Value - .container1.containerretiro3ro._txtimporte.Value,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589502GC.TMP;Ultimo Control activo: 
-18-01-2018 , Pila de llamadas
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-18-01-2018 , Objeto      : main
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-18-01-2018 , Nº de Linea :        273
-18-01-2018 , En el Fuente: 	Read events   
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.keypress
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :         25
-18-01-2018 , En el Fuente: 			        .key_43(2) && + Graba
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.key_43
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :         40
-18-01-2018 , En el Fuente: 					.actualizar()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.actualizar
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :          6
-18-01-2018 , En el Fuente: 			 IF .pidovalores('A')   
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.pidovalores
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :        186
-18-01-2018 , En el Fuente:    	DO FORM pidopagos WITH lcid,loObjValor,lbVerificoTope  TO thisform.quetecla   
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.grid1.column6.text1.keypress
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         13
-18-01-2018 , En el Fuente: 		thisform.procesartildechq()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.procesartildechq
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          5
-18-01-2018 , En el Fuente: 		.container1.containerretiro3ro.lblpendiente.Caption = strtrim(.txtpendiente.Value - .container1.containerretiro3ro._txtimporte.Value,11,2)
-18-01-2018 , MAIN, Error: _TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP;Ultimo Control activo: 
-18-01-2018 , Pila de llamadas
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-18-01-2018 , Objeto      : main
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-18-01-2018 , Nº de Linea :        273
-18-01-2018 , En el Fuente: 	Read events   
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.keypress
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :         25
-18-01-2018 , En el Fuente: 			        .key_43(2) && + Graba
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.key_43
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :         40
-18-01-2018 , En el Fuente: 					.actualizar()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.actualizar
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :          6
-18-01-2018 , En el Fuente: 			 IF .pidovalores('A')   
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Objeto      : regctacte.pidovalores
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regctacte.sct
-18-01-2018 , Nº de Linea :        186
-18-01-2018 , En el Fuente:    	DO FORM pidopagos WITH lcid,loObjValor,lbVerificoTope  TO thisform.quetecla   
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.gotfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          3
-18-01-2018 , En el Fuente: 	this.LostFocus()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.lostfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          7
-18-01-2018 , En el Fuente: 	thisform.container1_visible()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1_visible
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         43
-18-01-2018 , En el Fuente: 		oContenedor.Grid1.Column6.Text1.SetFocus()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.gotfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         32
-18-01-2018 , En el Fuente: 	.container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2)
-18-01-2018 , PIDOPAGOS.GRID1.COLUMN3.TEXT1.GOTFOCUS, Error: _TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP;Ultimo Control activo: 
-18-01-2018 , Pila de llamadas
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.gotfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          3
-18-01-2018 , En el Fuente: 	this.LostFocus()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.lostfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          7
-18-01-2018 , En el Fuente: 	thisform.container1_visible()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1_visible
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         43
-18-01-2018 , En el Fuente: 		oContenedor.Grid1.Column6.Text1.SetFocus()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.gotfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         32
-18-01-2018 , En el Fuente: 	.container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2)
-18-01-2018 , PIDOPAGOS.GRID1.COLUMN3.TEXT1.GOTFOCUS, Error: _TXTPENDIENTE es un miembro desconocido.;Linea : .container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2);Error :       1925;Ultimo Alias Activo: CSRCHEQUE;Ultimo registro:          3 IMPORTE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000589506YL.TMP;Ultimo Control activo: 
-18-01-2018 , Pila de llamadas
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.gotfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          3
-18-01-2018 , En el Fuente: 	this.LostFocus()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.grid1.column3.text1.lostfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :          7
-18-01-2018 , En el Fuente: 	thisform.container1_visible()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1_visible
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         43
-18-01-2018 , En el Fuente: 		oContenedor.Grid1.Column6.Text1.SetFocus()
-18-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Objeto      : pidopagos.container1.containerretiro3ro.gotfocus
-18-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pidopagos.sct
-18-01-2018 , Nº de Linea :         32
-18-01-2018 , En el Fuente: 	.container1.containerretiro3ro.lblpendiente.Caption = strtrim(this._txtpendiente.Value - nTotal ,11,2)
-29-01-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-29-01-2018 , Objeto      : main
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-29-01-2018 , Nº de Linea :        237
-29-01-2018 , En el Fuente: 	LeerEmpresa()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-29-01-2018 , Objeto      : leerempresa
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-29-01-2018 , Nº de Linea :       1491
-29-01-2018 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-29-01-2018 , Objeto      : crearcursoradapter
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-29-01-2018 , Nº de Linea :       1320
-29-01-2018 , En el Fuente: 
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL001M.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
 29-01-2018 , Objeto      : exportar_cot.generarcot
 29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
 29-01-2018 , Nº de Linea :         11
 29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL002O.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         11
-29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL003H.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         11
-29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL004L.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         11
-29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF Oscatter.loc_codarba='-1';Error :        107;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL0061.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         39
-29-01-2018 , En el Fuente: 		IF Oscatter.loc_codarba='-1'
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cCadena		= cCadena + PADR(ALLTRIM(Oscatter.loc_codarba),5," ");Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL0078.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         47
-29-01-2018 , En el Fuente: 		cCadena		= cCadena + PADR(ALLTRIM(Oscatter.loc_codarba),5," ") 
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'OCATTER'.;Linea : cCadena		= cCadena + DTOC(Ocatter.fecha);Error :         13;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GLL008V.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         65
-29-01-2018 , En el Fuente: 		cCadena		= cCadena + DTOC(Ocatter.fecha)
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XC9001H.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         13
-29-01-2018 , En el Fuente: 	lok = .generarcot()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         11
-29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CADENA2'.;Linea : replace cadena2 WITH SUBSTR(cCadena,214,134);Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo: 
+29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CADENA2'.;Linea : replace cadena2 WITH SUBSTR(cCadena,214,134);Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo: 
 29-01-2018 , Pila de llamadas
 29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
@@ -315,7 +85,73 @@
 29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
 29-01-2018 , Nº de Linea :         93
 29-01-2018 , En el Fuente: 		replace cadena2 WITH SUBSTR(cCadena,214,134)
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006MTL00D5.TMP;Ultimo Control activo: 
+29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0006MTL00D5.TMP;Ultimo Control activo: 
 29-01-2018 , Pila de llamadas
 29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
@@ -332,14 +168,146 @@
 29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
 29-01-2018 , Nº de Linea :         11
 29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-31-01-2018 , PLANCOMIVENDE_K.INIT, Error: No se encuentra la propiedad TIPOORDEN.;Linea : .kitfechaorden1.iniciar(.tipoorden,'1');Error :       1734;Ultimo Alias Activo: CSRPARACONFIG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD01EJ.TMP;Ultimo Control activo: 
+31-01-2018 , PLANCOMIVENDE_K.INIT, Error: No se encuentra la propiedad TIPOORDEN.;Linea : .kitfechaorden1.iniciar(.tipoorden,'1');Error :       1734;Ultimo Alias Activo: CSRPARACONFIG;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+004XZD01EJ.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Objeto      : plancomivende_k.init
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :          6
 31-01-2018 , En el Fuente: 	.kitfechaorden1.iniciar(.tipoorden,'1')
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD01FB.TMP;Ultimo Control activo: 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\LOCAL\TEMP\00004XZD01FB.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -351,7 +319,73 @@
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :          9
 31-01-2018 , En el Fuente: SELECT CsrCursor
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COBRO'.;Linea : nPorceCobro	 = red((cobro*100)/total,2);Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD030K.TMP;Ultimo Control activo: 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COBRO'.;Linea : nPorceCobro	 = red((cobro*100)/total,2);Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ADMIN\APPDATA\LOCAL\TEMP\00004XZD030K.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -363,7 +397,73 @@
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         14
 31-01-2018 , En el Fuente: 	nPorceCobro	 = red((cobro*100)/total,2)
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COMISION'.;Linea : replace comision WITH this._txtcomision.Value IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD031U.TMP;Ultimo Control activo: 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COMISION'.;Linea : replace comision WITH this._txtcomision.Value IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD031U.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -375,7 +475,73 @@
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         23
 31-01-2018 , En el Fuente: 	replace comision WITH this._txtcomision.Value IN CsrImprimir
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'TOTCOMI'.;Linea : replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD0334.TMP;Ultimo Control activo: 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'TOTCOMI'.;Linea : replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gistro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD0334.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -387,7 +553,139 @@
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         25
 31-01-2018 , En el Fuente: 	replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04IC.TMP;Ultimo Control activo: 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as tot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+comi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04IC.TMP;Ultimo Co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ntrol activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -398,8 +696,206 @@
 31-01-2018 , Objeto      : plancomivende_k.crearinforme
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         11
-31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE 
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04JF.TMP;Ultimo Control activo: 
+31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WRITE 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as tot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+comi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04JF.TMP;Ultimo Co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ntrol activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -410,8 +906,206 @@
 31-01-2018 , Objeto      : plancomivende_k.crearinforme
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         11
-31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE 
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        327 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04MG.TMP;Ultimo Control activo: 
+31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WRITE 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor INTO CURSOR CsrImprimir R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EADWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        327 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04MG.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -422,8 +1116,206 @@
 31-01-2018 , Objeto      : plancomivende_k.crearinforme
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         41
-31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor 	INTO CURSOR CsrImprimir READWRITE 
-31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        327 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04OI.TMP;Ultimo Control activo: 
+31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor 	INTO CURSOR CsrImprimir READWRITE 
+31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ORDER BY idvendedor  INTO CURSOR CsrImprimir 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+READWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        327 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04OI.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 31-01-2018 , Objeto      : plancomivende_k.imprimir_vistaprevia1.impresora.click
@@ -434,8 +1326,140 @@
 31-01-2018 , Objeto      : plancomivende_k.crearinforme
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         40
-31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor 	ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE 
-05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND500D5.TMP;Ultimo Control activo: 
+31-01-2018 , En el Fuente: 	SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac	,SPACE(1) as numcomp, SPACE(1) as cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor 	ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE 
+05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND500
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D5.TMP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
 05-02-2018 , Objeto      : main
@@ -462,7 +1486,73 @@
 05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
 05-02-2018 , Nº de Linea :         51
 05-02-2018 , En el Fuente: lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3)
-05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND50153.TMP;Ultimo Control activo: 
+05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+53.TMP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
 05-02-2018 , Objeto      : main
@@ -489,7 +1579,139 @@
 05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
 05-02-2018 , Nº de Linea :         51
 05-02-2018 , En el Fuente: lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3)
-05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'TOTAL'.;Linea : SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor ,(&lcTotal) as netogravado,unidades,0 as filtro ,idrubro,codrubro,nomrubro,vtakilos,0 as pesable FROM csrobjetivos INTO CURSOR csrseguimiento readwrite;Error :       1806;Ultimo Alias Activo: CSROBJETIVOS;Ultimo registro:         56 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501OO.TMP;Ultimo Control activo: 
+05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'TOTAL'.;Linea : SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor ,(&lcTotal) as netogravado,unidad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+es,0 as filtro ,idrubro,codrubro,nomrubro,vtakilos,0 as pesable FROM csrobjetivos INTO CURSOR csrseguimiento readwrite;Error :       1806;Ultimo Alias Activo: CSROBJETIVOS;Ultimo registro:         56 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501OO.T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 05-02-2018 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
@@ -500,8 +1722,140 @@
 05-02-2018 , Objeto      : plancomivende.crearinforme
 05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
 05-02-2018 , Nº de Linea :         47
-05-02-2018 , En el Fuente: SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor,(&lcTotal) as netogravado,unidades,0 as filtro,idrubro,codrubro,nomrubro,vtakilos,0 as pesableFROM csrobjetivos INTO CURSOR csrseguimiento readwrite
-05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCOMIVDOR'.;Linea : SELECT CsrComiVdor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+STR(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501Q2.TMP;Ultimo Control activo: 
+05-02-2018 , En el Fuente: SELECT idarticulo,INT(VAL(codigo)) as codigo,articulo,canbultos,idvendedor,codvendedor,nomvendedor,(&lcTotal) as netogravado,unidades,0 as filtro,idrubro,codrubro,nomrubro,vtakilos,0 as pesableFROM csrobjetivos INTO CURSOR csrs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+eguimiento readwrite
+05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCOMIVDOR'.;Linea : SELECT CsrComiVdor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+ST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501Q2.TMP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 05-02-2018 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
@@ -513,7 +1867,73 @@
 05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
 05-02-2018 , Nº de Linea :        119
 05-02-2018 , En el Fuente: 		SELECT CsrComiVdor
-05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad DETALLACANALVTA.;Linea : .detallacanalvta = 1;Error :       1734;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:          6 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP;Ultimo Control activo: 
+05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad DETALLACANALVTA.;Linea : .detallacanalvta = 1;Error :       1734;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:          6 CNUMERO;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 05-02-2018 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
@@ -525,7 +1945,73 @@
 05-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_v3.sct
 05-02-2018 , Nº de Linea :         19
 05-02-2018 , En el Fuente: 	.detallacanalvta = 1
-06-02-2018 , REGCTACTE.KEYPRESS, Error: No se encuentra la definición de clase REPORT_RETEGAN.;Linea : oRetencion = CREATEOBJECT("report_retegan");Error :       1733;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:         11 GRUPO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006KND040Z.TMP;Ultimo Control activo: 
+06-02-2018 , REGCTACTE.KEYPRESS, Error: No se encuentra la definición de clase REPORT_RETEGAN.;Linea : oRetencion = CREATEOBJECT("report_retegan");Error :       1733;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:         11 GRUPO;DBF: C:\USERS\ADMIN\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATA\LOCAL\TEMP\00006KND040Z.TMP;Ultimo Control activo: 
 06-02-2018 , Pila de llamadas
 06-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctacte_v1.sct
 06-02-2018 , Objeto      : regctacte.keypress
@@ -557,7 +2043,73 @@
 06-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
 06-02-2018 , Nº de Linea :          3
 06-02-2018 , En el Fuente: oRetencion = CREATEOBJECT("report_retegan")
-06-02-2018 , REGCTACTE.KEYPRESS, Error: No se encuentra el alias 'CSRPROVCTACTE'.;Linea : .provctacte	= CsrProvCtacte.nombre;Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006KND0524.TMP;Ultimo Control activo: 
+06-02-2018 , REGCTACTE.KEYPRESS, Error: No se encuentra el alias 'CSRPROVCTACTE'.;Linea : .provctacte	= CsrProvCtacte.nombre;Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ND0524.TMP;Ultimo Control activo: 
 06-02-2018 , Pila de llamadas
 06-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctacte_v1.sct
 06-02-2018 , Objeto      : regctacte.keypress
@@ -589,7 +2141,73 @@
 06-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
 06-02-2018 , Nº de Linea :         22
 06-02-2018 , En el Fuente: 	.provctacte	= CsrProvCtacte.nombre
-08-02-2018 , REGCBIOPEDIDO.KEYPRESS, Error: No se encuentra la variable 'ESTADO'.;Linea : replace estado WITH 1;Error :         12;Ultimo Alias Activo: CSRVARIEDAD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009JIH00DU.TMP;Ultimo Control activo: 
+08-02-2018 , REGCBIOPEDIDO.KEYPRESS, Error: No se encuentra la variable 'ESTADO'.;Linea : replace estado WITH 1;Error :         12;Ultimo Alias Activo: CSRVARIEDAD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009JIH00DU.TMP;Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
 08-02-2018 , Objeto      : regcbiopedido.keypress
@@ -601,7 +2219,73 @@
 08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
 08-02-2018 , Nº de Linea :          8
 08-02-2018 , En el Fuente: replace estado WITH 1
-08-02-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+08-02-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tro:          0 ;DBF: ;Ultimo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
 08-02-2018 , Objeto      : main
@@ -618,3 +2302,1086 @@
 08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
 08-02-2018 , Nº de Linea :       1320
 08-02-2018 , En el Fuente: 
+08-02-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tro:          0 ;DBF: ;Ultimo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+08-02-2018 , Objeto      : main
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+08-02-2018 , Nº de Linea :        239
+08-02-2018 , En el Fuente: 	LeerEmpresa()
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+08-02-2018 , Objeto      : leerempresa
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+08-02-2018 , Nº de Linea :       1491
+08-02-2018 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+08-02-2018 , Objeto      : crearcursoradapter
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+08-02-2018 , Nº de Linea :       1320
+08-02-2018 , En el Fuente: 
+08-02-2018 , INFORMEAFIPGAN.CMDAYUDA.CLICK, Error: Falta ) en el nombre de la función.;Linea : if !FILE(&cFile);Error :       1300;Ultimo Alias Activo: CSRCATEGOIVA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XQH00JK.TMP;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.cmdayuda.click
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :          4
+08-02-2018 , En el Fuente: if !FILE(&cFile)
+08-02-2018 , INFORMEAFIPGAN.CMDAYUDA.CLICK, Error: Falta ) en el nombre de la función.;Linea : if !FILE(&cFile);Error :       1300;Ultimo Alias Activo: CSRCATEGOIVA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009XQH00JK.TMP;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.cmdayuda.click
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :          4
+08-02-2018 , En el Fuente: if !FILE(&cFile)
+08-02-2018 , INFORMEAFIPGAN.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\crutacuits' no existe.;Linea : COPY FILE cRutaCuits TO cRutaNew;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ;DBF: ;Ultimo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+08-02-2018 , Objeto      : informeafipgan.imprimir_vistaprevia1.impresora.click
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.crearinforme
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :          3
+08-02-2018 , En el Fuente: IF NOT thisform.recuperararchivos()
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.recuperararchivos
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :          7
+08-02-2018 , En el Fuente: COPY FILE cRutaCuits TO cRutaNew
+08-02-2018 , INFORMEAFIPGAN.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CRUTA'.;Linea : IF thisform.analizarcuit(cRuta);Error :         12;Ultimo Alias Activo: CSRLISTA;Ultimo registro:          1 NCUIT;DBF: C:\USERS\ADMIN\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+APPDATA\LOCAL\TEMP\00007Y1501A3.TMP;Ultimo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+08-02-2018 , Objeto      : informeafipgan.imprimir_vistaprevia1.impresora.click
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.crearinforme
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :         54
+08-02-2018 , En el Fuente: IF thisform.analizarcuit(cRuta)
+08-02-2018 , INFORMEAFIPGAN.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo no existe.;Linea : APPEND FROM &cRutaEx DELIMITED WITH character &lcsep;Error :          1;Ultimo Alias Activo: CUEREXCLUIDO;Ultimo registro:          1 ;DBF: C:\USERS\A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DMIN\APPDATA\LOCAL\TEMP\00007Y1501DJ.TMP;Ultimo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+08-02-2018 , Objeto      : informeafipgan.imprimir_vistaprevia1.impresora.click
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.crearinforme
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :         64
+08-02-2018 , En el Fuente: 		IF NOT thisform.analizarexcluido(cRutaEx)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Objeto      : informeafipgan.analizarexcluido
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
+08-02-2018 , Nº de Linea :         13
+08-02-2018 , En el Fuente: APPEND FROM &cRutaEx DELIMITED WITH character &lcsep
+08-02-2018 , ABMCTACTE.INIT, Error: No se encuentra el alias 'CSRCATEGAN'.;Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT );Error :         13;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7Y1501IX.TMP;Ultimo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.init
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :          2
+08-02-2018 , En el Fuente: DODEFAULT(tcId,_esmodal)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Objeto      : baseabm.init
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: DODEFAULT()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Objeto      : baseconector.init
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Nº de Linea :          2
+08-02-2018 , En el Fuente: DODEFAULT()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Objeto      : base.init
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Nº de Linea :          9
+08-02-2018 , En el Fuente: 		.sizer.frmresize()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.frmresize
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :          7
+08-02-2018 , En el Fuente: 	m.This.ResizeContainer( m.Thisform )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.resizecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: 			.DoInit()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.doinit
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         13
+08-02-2018 , En el Fuente: 	.SaveContainer( m.THISFORM )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.savecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         22
+08-02-2018 , En el Fuente: 				.SaveContainer( m.loControl )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.savecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         26
+08-02-2018 , En el Fuente: 					.SaveContainer( m.loSubControl )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.savecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         16
+08-02-2018 , En el Fuente: 			.SaveOriginalSize( m.loControl )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.saveoriginalsize
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         87
+08-02-2018 , En el Fuente: 			.ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
+08-02-2018 , ABMCTACTE.INIT, Error: No se encuentra el alias 'CSRAUXCONCEPTO'.;Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT );Error :         13;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+007Y1501OE.TMP;Ultimo Control activo: 
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.init
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :          2
+08-02-2018 , En el Fuente: DODEFAULT(tcId,_esmodal)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Objeto      : baseabm.init
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: DODEFAULT()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Objeto      : baseconector.init
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Nº de Linea :          2
+08-02-2018 , En el Fuente: DODEFAULT()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Objeto      : base.init
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+08-02-2018 , Nº de Linea :          9
+08-02-2018 , En el Fuente: 		.sizer.frmresize()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.frmresize
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :          7
+08-02-2018 , En el Fuente: 	m.This.ResizeContainer( m.Thisform )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.resizecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :          8
+08-02-2018 , En el Fuente: 			.DoInit()
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.doinit
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         13
+08-02-2018 , En el Fuente: 	.SaveContainer( m.THISFORM )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.savecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         22
+08-02-2018 , En el Fuente: 				.SaveContainer( m.loControl )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.savecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         26
+08-02-2018 , En el Fuente: 					.SaveContainer( m.loSubControl )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.savecontainer
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         16
+08-02-2018 , En el Fuente: 			.SaveOriginalSize( m.loControl )
+08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Objeto      : abmctacte.sizer.saveoriginalsize
+08-02-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
+08-02-2018 , Nº de Linea :         87
+08-02-2018 , En el Fuente: 			.ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
+08-02-2018 , ABMCTACTE.CMDCANCELAR.CLICK, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00007Y1503YP.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Objeto      : abmctacte.cmdcancelar.click
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Nº de Linea :         27
+08-02-2018 , En el Fuente:     losetfocus.setfocus
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y1503ZF.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y150405.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15040V.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15041L.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15042B.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CMDCANCELAR.CLICK, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00001TZD00A4.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Objeto      : abmctacte.cmdcancelar.click
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Nº de Linea :         27
+08-02-2018 , En el Fuente:     losetfocus.setfocus
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+SERS\ADMIN\APPDATA\LOCAL\TEMP\00001TZD00AU.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
+08-02-2018 , ABMCTACTE.CMDCANCELAR.CLICK, Error: FECHA_CALENDARIO2 es un miembro desconocido.;Linea : .fecha_calendario2.Enabled = lEstado;Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
+
+
+
+
+
+
+
+
+
+\TEMP\0000A1HL00BM.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Objeto      : abmctacte.cmdcancelar.click
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+08-02-2018 , Nº de Linea :         27
+08-02-2018 , En el Fuente:     losetfocus.setfocus
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         16
+08-02-2018 , En el Fuente: 	.fecha_calendario2.Enabled = lEstado
+08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: FECHA_CALENDARIO2 es un miembro desconocido.;Linea : .fecha_calendario2.Enabled = lEstado;Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\USER
+
+
+
+S\ADMIN\APPDATA\LOCAL\TEMP\0000A1HL00CC.TMP;Ultimo Control activo: CNOMBRE
+08-02-2018 , Pila de llamadas
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.contenedor1.gridabm1.afterrowcolchange
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         11
+08-02-2018 , En el Fuente: thisform.oReteGanancia.ProcesoAfterRow(CsrCtacte.cuit,CsrCtacte.id)
+08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Objeto      : abmctacte.oreteganancia.procesoafterrow
+08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
+08-02-2018 , Nº de Linea :         16
+08-02-2018 , En el Fuente: 	.fecha_calendario2.Enabled = lEstado
