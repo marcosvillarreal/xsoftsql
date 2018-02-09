@@ -1,82 +1,3 @@
-29-01-2018 , Objeto      : exportar_cot.generarcot
-29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Nº de Linea :         11
-29-01-2018 , En el Fuente: IF RECCOUNT('CsrCursor')=0
-29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CADENA2'.;Linea : replace cadena2 WITH SUBSTR(cCadena,214,134);Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\U
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo: 
-29-01-2018 , Pila de llamadas
-29-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Objeto      : exportar_cot.imprimir_vistaprevia1.impresora.click
-29-01-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-29-01-2018 , Nº de Linea :          5
-29-01-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-29-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
-29-01-2018 , Objeto      : exportar_cot.crearinforme
 29-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\util\exportar_cot.sct
 29-01-2018 , Nº de Linea :         12
 29-01-2018 , En el Fuente: 	lok = .generarcot()
@@ -86,6 +7,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo:
 29-01-2018 , Nº de Linea :         93
 29-01-2018 , En el Fuente: 		replace cadena2 WITH SUBSTR(cCadena,214,134)
 29-01-2018 , EXPORTAR_COT.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCursor')=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
 
 
 
@@ -234,6 +158,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo:
 
 
 
+
+
+
 004XZD01EJ.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
@@ -242,6 +169,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo:
 31-01-2018 , Nº de Linea :          6
 31-01-2018 , En el Fuente: 	.kitfechaorden1.iniciar(.tipoorden,'1')
 31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA
+
+
+
 
 
 
@@ -385,6 +315,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo:
 
 
 
+
+
+
 \ADMIN\APPDATA\LOCAL\TEMP\00004XZD030K.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -398,6 +331,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo:
 31-01-2018 , Nº de Linea :         14
 31-01-2018 , En el Fuente: 	nPorceCobro	 = red((cobro*100)/total,2)
 31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'COMISION'.;Linea : replace comision WITH this._txtcomision.Value IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:  
+
+
+
 
 
 
@@ -541,6 +477,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00009KI100BH.TMP;Ultimo Control activo:
 
 
 
+
+
+
 gistro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD0334.TMP;Ultimo Control activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -554,6 +493,9 @@ gistro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD0334.TMP;Ulti
 31-01-2018 , Nº de Linea :         25
 31-01-2018 , En el Fuente: 	replace totcomi WITH red((basecomi * comision) / 100,2) IN CsrImprimir
 31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as tot
+
+
+
 
 
 
@@ -685,6 +627,9 @@ comi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR Cs
 
 
 
+
+
+
 ntrol activo: 
 31-01-2018 , Pila de llamadas
 31-01-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -697,6 +642,9 @@ ntrol activo:
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         11
 31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READ
+
+
+
 
 
 
@@ -829,7 +777,13 @@ WRITE
 
 
 
+
+
+
 comi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:         15 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004XZD04JF.TMP;Ultimo Co
+
+
+
 
 
 
@@ -907,6 +861,9 @@ ntrol activo:
 31-01-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k.sct
 31-01-2018 , Nº de Linea :         11
 31-01-2018 , En el Fuente: SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor WHERE RECNO()<1 ORDER BY idvendedor,fechacbro INTO CURSOR CsrImprimir READ
+
+
+
 
 
 
@@ -1039,7 +996,13 @@ WRITE
 
 
 
+
+
+
 SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor INTO CURSOR CsrImprimir R
+
+
+
 
 
 
@@ -1182,6 +1145,9 @@ EADWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:   
 
 
 
+
+
+
 s basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedor group by idvendedor,codvendedor,nomvendedor 	INTO CURSOR CsrImprimir READWRITE 
 31-01-2018 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as idmaopera, idvendedor , codvendedor , nomvendedor , 0 as idcabefac ,SPACE(1) as numcomp, SPACE(1) as cabrevia, 
 
@@ -1249,7 +1215,13 @@ s basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir ORDER BY idvendedo
 
 
 
+
+
+
 SUM(total) as total, SUM(cobrado) as cobrado ,DATETIME() as fechacobro, SUM(neto),porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ORDER BY idvendedor  INTO CURSOR CsrImprimir 
+
+
+
 
 
 
@@ -1392,8 +1364,14 @@ READWRITE;Error :       1807;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:  
 
 
 
+
+
+
 s basecomi,comision	,SUM(totcomi) as totcomi FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor 	ORDER BY idvendedor  INTO CURSOR CsrImprimir READWRITE 
 05-02-2018 , MAIN, Error: No coinciden los tipos de datos.;Linea : lnpreunita		= ROUND(lnpreunita *(1 + nBonif / 100),3);Error :          9;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND500
+
+
+
 
 
 
@@ -1552,6 +1530,9 @@ D5.TMP;Ultimo Control activo:
 
 
 
+
+
+
 53.TMP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -1645,7 +1626,13 @@ D5.TMP;Ultimo Control activo:
 
 
 
+
+
+
 es,0 as filtro ,idrubro,codrubro,nomrubro,vtakilos,0 as pesable FROM csrobjetivos INTO CURSOR csrseguimiento readwrite;Error :       1806;Ultimo Alias Activo: CSROBJETIVOS;Ultimo registro:         56 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501OO.T
+
+
+
 
 
 
@@ -1788,8 +1775,14 @@ MP;Ultimo Control activo:
 
 
 
+
+
+
 eguimiento readwrite
 05-02-2018 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCOMIVDOR'.;Linea : SELECT CsrComiVdor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(IDVENDEDOR,10)+STR(GRUPO,1)+ST
+
+
+
 
 
 
@@ -1933,6 +1926,9 @@ R(CODIGO,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007ND501Q2.TMP;Ultimo Cont
 
 
 
+
+
+
 IN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP;Ultimo Control activo: 
 05-02-2018 , Pila de llamadas
 05-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1946,6 +1942,9 @@ IN\APPDATA\LOCAL\TEMP\00007ND501R6.TMP;Ultimo Control activo:
 05-02-2018 , Nº de Linea :         19
 05-02-2018 , En el Fuente: 	.detallacanalvta = 1
 06-02-2018 , REGCTACTE.KEYPRESS, Error: No se encuentra la definición de clase REPORT_RETEGAN.;Linea : oRetencion = CREATEOBJECT("report_retegan");Error :       1733;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:         11 GRUPO;DBF: C:\USERS\ADMIN\APP
+
+
+
 
 
 
@@ -2109,6 +2108,9 @@ DATA\LOCAL\TEMP\00006KND040Z.TMP;Ultimo Control activo:
 
 
 
+
+
+
 ND0524.TMP;Ultimo Control activo: 
 06-02-2018 , Pila de llamadas
 06-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctacte_v1.sct
@@ -2142,6 +2144,9 @@ ND0524.TMP;Ultimo Control activo:
 06-02-2018 , Nº de Linea :         22
 06-02-2018 , En el Fuente: 	.provctacte	= CsrProvCtacte.nombre
 08-02-2018 , REGCBIOPEDIDO.KEYPRESS, Error: No se encuentra la variable 'ESTADO'.;Linea : replace estado WITH 1;Error :         12;Ultimo Alias Activo: CSRVARIEDAD;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009JIH00DU.TMP;Ultim
+
+
+
 
 
 
@@ -2285,6 +2290,9 @@ o Control activo:
 
 
 
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -2368,6 +2376,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -2451,6 +2462,9 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
 mo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
@@ -2524,6 +2538,9 @@ mo Control activo:
 
 
 
+
+
+
 mo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\afip\informeafipgan.sct
@@ -2532,6 +2549,9 @@ mo Control activo:
 08-02-2018 , Nº de Linea :          4
 08-02-2018 , En el Fuente: if !FILE(&cFile)
 08-02-2018 , INFORMEAFIPGAN.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\crutacuits' no existe.;Linea : COPY FILE cRutaCuits TO cRutaNew;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0
+
+
+
 
 
 
@@ -2680,6 +2700,9 @@ mo Control activo:
 
 
 
+
+
+
 APPDATA\LOCAL\TEMP\00007Y1501A3.TMP;Ultimo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2693,6 +2716,9 @@ APPDATA\LOCAL\TEMP\00007Y1501A3.TMP;Ultimo Control activo:
 08-02-2018 , Nº de Linea :         54
 08-02-2018 , En el Fuente: IF thisform.analizarcuit(cRuta)
 08-02-2018 , INFORMEAFIPGAN.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo no existe.;Linea : APPEND FROM &cRutaEx DELIMITED WITH character &lcsep;Error :          1;Ultimo Alias Activo: CUEREXCLUIDO;Ultimo registro:          1 ;DBF: C:\USERS\A
+
+
+
 
 
 
@@ -2776,6 +2802,9 @@ DMIN\APPDATA\LOCAL\TEMP\00007Y1501DJ.TMP;Ultimo Control activo:
 08-02-2018 , Nº de Linea :         13
 08-02-2018 , En el Fuente: APPEND FROM &cRutaEx DELIMITED WITH character &lcsep
 08-02-2018 , ABMCTACTE.INIT, Error: No se encuentra el alias 'CSRCATEGAN'.;Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT );Error :         13;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo registro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
 
 
 
@@ -2955,6 +2984,9 @@ DMIN\APPDATA\LOCAL\TEMP\00007Y1501DJ.TMP;Ultimo Control activo:
 
 
 
+
+
+
 007Y1501OE.TMP;Ultimo Control activo: 
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
@@ -3055,6 +3087,9 @@ DMIN\APPDATA\LOCAL\TEMP\00007Y1501DJ.TMP;Ultimo Control activo:
 
 
 
+
+
+
 CAL\TEMP\00007Y1503YP.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
@@ -3073,6 +3108,9 @@ CAL\TEMP\00007Y1503YP.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Nº de Linea :         11
 08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
 08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
 
 
 
@@ -3156,6 +3194,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y1503ZF.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
 SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y150405.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
@@ -3169,6 +3210,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y150405.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Nº de Linea :         11
 08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
 08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
 
 
 
@@ -3236,6 +3280,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15040V.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
 SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15041L.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
@@ -3249,6 +3296,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15041L.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Nº de Linea :         11
 08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
 08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
 
 
 
@@ -3300,6 +3350,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00007Y15042B.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
 CAL\TEMP\00001TZD00A4.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
@@ -3318,6 +3371,9 @@ CAL\TEMP\00001TZD00A4.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Nº de Linea :         11
 08-02-2018 , En el Fuente: 	lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.)
 08-02-2018 , ABMCTACTE.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: CHKEXCLUIDO es un miembro desconocido.;Linea : lEstado = IIF(.chkexcluido.Value = 1,.t.,.f.);Error :       1925;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:          1 ;DBF: C:\U
+
+
+
 
 
 
@@ -3352,6 +3408,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00001TZD00AU.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
 \TEMP\0000A1HL00BM.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
@@ -3373,6 +3432,9 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00001TZD00AU.TMP;Ultimo Control activo: CNOMBRE
 
 
 
+
+
+
 S\ADMIN\APPDATA\LOCAL\TEMP\0000A1HL00CC.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Pila de llamadas
 08-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
@@ -3385,3 +3447,18 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000A1HL00CC.TMP;Ultimo Control activo: CNOMBRE
 08-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\abmctacte_vrg.sct
 08-02-2018 , Nº de Linea :         16
 08-02-2018 , En el Fuente: 	.fecha_calendario2.Enabled = lEstado
+09-02-2018 , REGCBIOPEDIDO.INIT, Error: _OGROUPCONFIG es un miembro desconocido.;Linea : thisform.contenedor_Opcion._oGroupConfig.Value = OpcionAvisarK;Error :       1925;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         32 ;DBF: C:\USERS\ADMIN\APPD
+
+
+ATA\LOCAL\TEMP\00007OCP007N.TMP;Ultimo Control activo: 
+09-02-2018 , Pila de llamadas
+09-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
+09-02-2018 , Objeto      : regcbiopedido.init
+09-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
+09-02-2018 , Nº de Linea :         13
+09-02-2018 , En el Fuente: 	.cargarconfig()
+09-02-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
+09-02-2018 , Objeto      : regcbiopedido.cargarconfig
+09-02-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedido.sct
+09-02-2018 , Nº de Linea :         19
+09-02-2018 , En el Fuente: thisform.contenedor_Opcion._oGroupConfig.Value = OpcionAvisarK
