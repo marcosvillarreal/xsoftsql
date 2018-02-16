@@ -80,9 +80,46 @@ GO
 --where id = 1100004029
 --update producto set codartprod='31005515',unibulto=6,peso=0.600,volumen=0.600,codbarra13='7613035799523'
 --where id = 1100004031
-
+--update producto set codartprod='31005512',unibulto=6,peso=0.500,volumen=0.500,codbarra13='7613035799462'
+--where id = 1100004034
+--update producto set codartprod='31005514',unibulto=6,peso=0.500,volumen=0.500,codbarra13='7613035799509'
+--where id = 1100004030
+--update producto set codartprod='31005640',unibulto=6,peso=0.500,volumen=0.500,codbarra13='7798304840035'
+--where id = 1100004035
+--update producto set codartprod='31005524',unibulto=6,peso=0.400,volumen=0.400,codbarra13='7613035874947'
+--where id = 1100004036
+--update producto set codartprod='31005521',unibulto=6,peso=0.340,volumen=0.340,codbarra13='7613035870611'
+--where id = 1100004037
+--update producto set codartprod='31005523',unibulto=6,peso=0.350,volumen=0.350,codbarra13='7613035874022'
+--where id = 1100004038
+--update producto set codartprod='31005510',unibulto=1,peso=1,volumen=1,codbarra13='7613035767485'
+--where id = 1100004039
+--update producto set codartprod='31005509',unibulto=1,peso=1,volumen=1,codbarra13='7613035752634'
+--where id = 1100004041
+--update producto set codartprod='31005634',unibulto=1,peso=1.5,volumen=1.5,codbarra13='7798304840028'
+--where id = 1100004043
+--update producto set codartprod='31005636',unibulto=1,peso=1.5,volumen=1.5,codbarra13='7798304840011'
+--where id = 1100004044
+--update producto set codartprod='31005529',unibulto=30,peso=0.063,volumen=0.063,codbarra13='7613032290092'
+--where id = 1100004101
+--update producto set codartprod='31006251',unibulto=18,peso=0.095,volumen=0.095,codbarra13='7798304840196'
+--where id = 1100004102
+--update producto set codartprod='31006250',unibulto=16,peso=0.076,volumen=0.076,codbarra13='7798304840165'
+--where id = 1100004103
+--update producto set codartprod='31005496',unibulto=30,peso=0.033,volumen=0.033,codbarra13='7613035543300'
+--where id = 1100004195
+--update producto set codartprod='31005468',unibulto=10,peso=0.182,volumen=0.182,codbarra13='7613034913371'
+--where id = 1100004202
+--update producto set codartprod='31005469',unibulto=6,peso=0.180,volumen=0.180,codbarra13='7613034790170'
+--where id = 1100004258
+--update producto set codartprod='31005470',unibulto=6,peso=0.160,volumen=0.160,codbarra13='7613034790217'
+--where id = 1100004259
+--update producto set codartprod='31006252',unibulto=6,peso=0.395,volumen=0.395,codbarra13='7798304840189'
+--where id = 1100004264
+--update producto set codartprod='31006250',unibulto=16,peso=0.076,volumen=0.076,codbarra13='7798304840165'
+--where id = 1100004282
 SELECT        TOP (200) id, numero, nombre,idtipovta, unibulto, peso, volumen, codartprod, codbarra13,costo, idctacte, codbarra14
 FROM            producto
-WHERE        (idctacte IN (1100001943)) --and (id = 1100004029 or codartprod = '31005499')
+WHERE        (idctacte IN (1100001943)) --and (id = 1100004034 or codartprod = '31005640')
 and volumen = 0
 
