@@ -118,6 +118,9 @@ GO
 --where id = 1100004264
 --update producto set codartprod='31006250',unibulto=16,peso=0.076,volumen=0.076,codbarra13='7798304840165'
 --where id = 1100004282
+
+--update ctacte set fechalta = '20150101' where fechalta='19000101'
+
 SELECT        TOP (200) id, numero, nombre,idtipovta, unibulto, peso, volumen, codartprod, codbarra13,costo, idctacte, codbarra14
 FROM            producto
 WHERE        (idctacte IN (1100001943)) --and (id = 1100004034 or codartprod = '31005640')
