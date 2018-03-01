@@ -1,13 +1,3 @@
-Linea nº MKDIR &goapp.rutasalidareporte
- Alias CSRIMPRIMIR registro          2
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
-13-09-2016 12:25:46 , Error nº:       1961
-Error Ya existe un subdirectorio o archivo j:\xsoftsql\proyectos\leon\&goapp.rutasalidareporte.
-Linea nº MKDIR &goapp.rutasalidareporte
- Alias CSRIMPRIMIR registro          2
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
-13-09-2016 13:46:20 , Error nº:       1734
-Error No se encuentra la propiedad INCLUYEDEVOL.
 Linea nº IF this.incluyedevol
  Alias _CSRPRODUCTO registro          1
 Control activo  MAIN
@@ -273,7 +263,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,0
 
 
 
+
 s ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Bas
+
 
 
 
@@ -513,7 +505,9 @@ eexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.0
 
 
 
+
 ion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 
+
 
 
 
@@ -753,7 +747,9 @@ as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as 
 
 
 
+
 s idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as c
+
 
 
 
@@ -1006,7 +1002,9 @@ Linea nº SELECT CsrAuxcuerpo.idmaopera,CsrAuxCuerpo.id as idcuerfac, CsrAuxCuerp
 
 
 
+
 ari.cantidad),Abs(CsrAuxCuerpo.cantidad)) as cantidad ,NVL(CsrAuxCuerpovari.idsubarti,0) as idsubarti ,NVL(CsrAuxCuerpoVari.nombre,'') as nomvariedad FROM CsrAuxCuerpo LEFT JOIN CsrAuxCuerpovari ON CsrAuxCuerpo.idcuervari = CsrAuxCuerpovari.id where (Csr
+
 
 
 
@@ -1299,12 +1297,14 @@ Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicac
 
 
 
+
 xCuerfac inner join CsrAuxCabefac on CsrCuerfac.idmaopera = CsrAuxCabefac.idmaopera WHERE pesable = 1 and kilos = 0 AND idmaopera in (&lcIdCabefac) INTO CURSOR CsrAuxKilos
  Alias CSRAUXSABOR registro          1
 Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
 06-04-2017 15:42:14 , Error nº:         13
 Error No se encuentra el alias 'CSRCUERFAC'.
 Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicacion,CsrauxCabefac.nomvdor ,CsrAuxCabefac.idvendedor,CsrAuxCabefac.cnombre,CsrAuxCuerfac.idctacte as idproveedor ,CsrAuxCabefac.idctacte,CsrAuxCabefac.ctacte ,kilos FROM CsrAu
+
 
 
 
@@ -1516,12 +1516,14 @@ Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicac
 
 
 
+
 xCuerfac inner join CsrAuxCabefac on CsrAuxCuerfac.idmaopera = CsrAuxCabefac.idmaopera WHERE pesable = 1 and kilos = 0 AND idmaopera in (&lcIdCabefac) INTO CURSOR CsrAuxKilos
  Alias CSRAUXSABOR registro          1
 Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
 06-04-2017 15:44:35 , Error nº:       1832
 Error IDMAOPERA no es único y se debe calificar.
 Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicacion,CsrauxCabefac.nomvdor ,CsrAuxCabefac.idvendedor,CsrAuxCabefac.cnombre,CsrAuxCuerfac.idctacte as idproveedor ,CsrAuxCabefac.idctacte,CsrAuxCabefac.ctacte ,kilos FROM CsrAu
+
 
 
 
@@ -1729,6 +1731,7 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo001,Campo002,origen,idvendedor,codart
 
 
 
+
 idproveedor)
  Alias CSRAUXCANTIDAD registro          1
 Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
@@ -1820,6 +1823,7 @@ Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
 11-04-2017 12:05:39 , Error nº:       1734
 Error No se encuentra la propiedad CTACTE.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo010,origen,campo008,campo001,campo002,idvendedor,idctacte ,codarti) VALUES (lcclave+cGrupo,ALLTRIM(Oscatter.codigo)+"   "+Oscatter.nombre,'9999999999',Oscatter.nomvdor ,ALLTRIM(Oscatter.ctacte) ,ALLTRIM(Oscatter
+
 
 
 
@@ -2148,7 +2152,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,0
 
 
 
+
 s ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Bas
+
 
 
 
@@ -2258,7 +2264,9 @@ eexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.0
 
 
 
+
 ion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 
+
 
 
 
@@ -2368,7 +2376,9 @@ as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as 
 
 
 
+
 s idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as c
+
 
 
 
@@ -2639,6 +2649,7 @@ Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,000000000
 
 
 
+
 )) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGNOTAPEDANDROID.LOAD
@@ -2675,6 +2686,7 @@ Control activo  REGNOTAPEDANDROID.CMDSALVAR.CLICK
 30-08-2017 20:24:15 , Error nº:       1806
 Error SQL: no se encuentra la columna 'TIPOPEDIDO'.
 Linea nº SELECT id,clientes_numero as ctacte,vendedor_codigo as codvendedor ,CTOT(DTOC(TTOD(fecha))+" "+horain ) as fecha,horain,horaout,chksum as codmotivo ,vales,bonificaciones as bonif1,observaciones ,tipopedido,fechadeentrega,loteexportacion,remito,p
+
 
 
 
@@ -2775,12 +2787,15 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idvenvase,codenvase
 
 
 
 
+
 ,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = CsrRubro.id INT
+
 
 
 
@@ -2794,11 +2809,14 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
 
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
 
 
 
@@ -2810,10 +2828,13 @@ Error SQL: no se encuentra la columna 'IDVENVASE'.
 Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,CsrCursor.idvariedad as idvariedad_stock ,CsrProductos.*,NVL(CsrUbicacion.nombre,"") as nomubicacion ,NVL(CsrRubro.nombre,"") as nomrubro,NVL(CsrRubro.numero,0) as numrubro ,C
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
 
 
 rRubro.id INTO CURSOR CsrImprimir READWRITE
@@ -2823,9 +2844,12 @@ Control activo  LISEXISTENCIA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 Error SQL: no se encuentra la columna 'NOMENVASE'.
 Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,CsrCursor.idvariedad as idvariedad_stock ,CsrProductos.*,NVL(CsrUbicacion.nombre,"") as nomubicacion ,NVL(CsrRubro.nombre,"") as nomrubro,NVL(CsrRubro.numero,0) as numrubro ,C
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idenvase,codenvase,
 
+
 nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = CsrRubro.id INTO
+
 
  CURSOR CsrImprimir READWRITE
  Alias CSRPRODUCTOS registro          1
@@ -2833,7 +2857,18 @@ Control activo  LISEXISTENCIA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-02-2018 18:22:22 , Error nº:          1
 Error El archivo 'csrncabefac.dbf' no existe.
 Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12
+
 )) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGNOTAPEDANDROID.LOAD
-28-02-2018 19:30:13 , Error nº:         11Error El valor, tipo o número de argumentos no es válido para la función.Linea nº IF VAL(OscCabeza.Ctacte) = 75 Alias CSRAUXCABEPED registro         47Control activo  MAIN
+28-02-2018 19:30:13 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº IF VAL(OscCabeza.Ctacte) = 75
+ Alias CSRAUXCABEPED registro         47
+Control activo  MAIN
+01-03-2018 20:04:59 , Error nº:       1429
+Error Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..
+Linea nº 
+ Alias  registro          0
+Control activo  MAIN
+01-03-2018 20:06:22 , Error nº:       1429Error Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..Linea nº  Alias  registro          0Control activo  MAIN

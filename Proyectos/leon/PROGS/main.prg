@@ -62,13 +62,14 @@ If lldesarrollo
    _rutaformse = lcdd + 'forms\exportar'
    _rutaformsp = lcdd + 'forms\precio'
    _rutaformsb = lcdd + 'forms\bancario'
+   _rutaformsc = lcdd + 'forms\caja'
    
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsb, &_rutareportsb, &_rutaformse, &_rutaformsp, &_rutaformsb;
-               ,&_rutaformsu
+               ,&_rutaformsu, &_rutaformsc
 Endif
 
 *-- CREACION DE OBJETO APLICACION

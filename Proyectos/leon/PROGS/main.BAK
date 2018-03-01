@@ -50,6 +50,7 @@ If lldesarrollo
    _rutabmps   =lcdd+'graphics'
    _rutaforms  =lcdd+'forms'
    _rutaformsb  =lcdd+'forms\bancario'
+   _rutaformsu  =lcdd+'forms\util'
    _rutareports=lcdd+'reports' 
    _rutareportsb=lcdd+'reports\bancario'
     _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
@@ -66,7 +67,8 @@ If lldesarrollo
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsb, &_rutareportsb, &_rutaformse, &_rutaformsp, &_rutaformsb
+               ,&_rutaformsb, &_rutareportsb, &_rutaformse, &_rutaformsp, &_rutaformsb;
+               ,&_rutaformsu
 Endif
 
 *-- CREACION DE OBJETO APLICACION
