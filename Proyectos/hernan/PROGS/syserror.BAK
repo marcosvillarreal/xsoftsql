@@ -59,7 +59,10 @@ procedure errorsys
 			       ENDIF    
 			CASE nError = 2203  && recursos insuficiente
 				Mensaje_error(nError)
-				RETURN			       
+				RETURN	
+			CASE nError=2065
+				GRABAR_SEC(MESSAGE(),"Error2065.txt","TempError")
+				RETURN 			       
 			OTHERWISE	
 				=Mensaje_error(nError)
 				CLEAR CLASSLIB onegocioslocal
