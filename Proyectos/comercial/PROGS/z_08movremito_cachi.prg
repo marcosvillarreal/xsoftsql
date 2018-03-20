@@ -89,6 +89,7 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
+ *stop()
         
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -217,7 +218,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 ENDDO 
 
 SELECT CsrMovRemito
-*vista()
+vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
