@@ -162,7 +162,9 @@ SCAN FOR !EOF() &&AND i <= lnlimite
     nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
     nredondeo	= 1 &&CsrArticulo.redondeo
 	cswitch		= "00000"
-
+	
+	dfeculpre	= CTOD('01-01-1900')
+	
 	IF NOT EMPTY(Csrarticulo.fechapre)   
 		dfecmodi = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
 	ENDIF 		

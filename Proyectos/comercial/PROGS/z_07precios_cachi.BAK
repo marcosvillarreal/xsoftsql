@@ -40,6 +40,8 @@ LOCAL lnid
 lnid = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
 lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
+lnidproveedor = 0
+
 SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo INTO CURSOR CsrPrecio READWRITE 
 
 nDecimalesP = 2
@@ -97,11 +99,16 @@ SCAN FOR !EOF()
 	   	cswitch		= "00000"
 		
 		
+		nCodCtacte = TablaProveedores(cProvPrecio)
+		
 		SELECT CsrCtacte
-		LOCATE FOR cnombre = cProvPrecio
+		LOCATE FOR VAL(cnumero) = 50000+nCodCtacte
 		IF FOUND()
 			nIdCtacte = CsrCtacte.id
 			replace ctaacreedor WITH 1 IN CsrCtaCte
+		ENDIF 
+		IF nIdCtacte=0
+			nIdCtacte = lnIdProveedor
 		ENDIF 
 		
 		IF NOT EMPTY(CsrPrecio.fecha)   
@@ -177,7 +184,7 @@ SCAN FOR !EOF()
 		lnid = lnid + 1
 		
 		&&Insertamos proveedor
-		IF nidCtacte = 0
+		IF nidCtacte = 0 AND lnidproveedor= 0
 			
 				
 			STORE 0 TO lnidlocalidad,lnidprovincia,lntipoiva,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica;
@@ -226,8 +233,9 @@ SCAN FOR !EOF()
 			
 			replace idctacte WITH lnidctacte IN CsrProdPrecio
 			
-			lnidctacte = lnidctacte + 1 			
+			*lnidctacte = lnidctacte + 1 			
 			
+			lnidproveedor = lnidctacte
     	ENDIF 
     	&&Actualizamos el precio en csrproducto
     	IF cProvPrecio = cProvArticulo

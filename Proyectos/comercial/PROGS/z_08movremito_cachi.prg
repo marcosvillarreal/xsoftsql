@@ -51,7 +51,7 @@ USE  ALLTRIM(lcpath )+"\remitos" in 0 alias FsrMovimien EXCLUSIVE
 
 Oavisar.proceso('S','Procesando '+alias()) 
 
-SELECT FsrMovimien.* FROM FsrMovimien WHERE saldocan <> 0 AND NOT DELETED() ORDER BY cliente,fecha INTO CURSOR CsrMovimien READWRITE 
+SELECT FsrMovimien.* FROM FsrMovimien WHERE saldocan > 0 AND NOT DELETED() ORDER BY cliente,fecha INTO CURSOR CsrMovimien READWRITE 
 
 LOCAL lnid,lnidmaopera
 

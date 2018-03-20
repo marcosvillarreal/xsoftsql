@@ -42,7 +42,7 @@ lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 lnidproveedor = 0
 
-SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo INTO CURSOR CsrPrecio READWRITE 
+SELECT CsrPrecios.*,VAL(numero) as codigo FROM CsrPRecios ORDER BY codigo,fecha DESC INTO CURSOR CsrPrecio READWRITE 
 
 nDecimalesP = 2
 SELECT Csrctacte
@@ -75,6 +75,7 @@ SCAN FOR !EOF()
 	*SCAN 
 	DO WHILE codigo = CsrProducto.numero AND NOT EOF()
 		cProvPrecio	 = TablaPrecios(ALLTRIM(CsrPrecio.nombre))
+		dFechaPre	 = CsrPrecio.fecha
 		&&El precio tiene que estar borrado y ser distinto al del articulo
 		IF CsrPrecio.borrado AND cProvPrecio<>cProvArticulo
 			SKIP 
@@ -238,7 +239,7 @@ SCAN FOR !EOF()
 			lnidproveedor = lnidctacte
     	ENDIF 
     	&&Actualizamos el precio en csrproducto
-    	IF cProvPrecio = cProvArticulo
+    	IF cProvPrecio = cProvArticulo AND dFechaPre > CsrProducto.fecUlPre
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
