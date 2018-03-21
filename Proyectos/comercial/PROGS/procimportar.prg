@@ -192,7 +192,7 @@ RETURN lcChar
 FUNCTION TablaProveedores
 LPARAMETERS cNomProv
 cNomProv = ALLTRIM(cNomProv)
-
+*stop()
 nCodP = 0		
 DO CASE
 CASE 'BAHIA AUTO'$cNomProv 
@@ -209,7 +209,7 @@ CASE 'AUTON'$cNomProv OR 'AUTO'$cNomProv OR 'NAU'$cNomProv
 	nCodP = 1
 CASE 'ANS'$LEFT(cNomProv,3) OR 'ANG'$LEFT(cNomProv,3) OR 'AUT0'$LEFT(cNomProv,4)
 	nCodP = 1
-CASE 'BABAGUI'$LEFT(cNomProv,3) OR 'SHELL'$LEFT(cNomProv,5)
+CASE 'BABAGUI'$LEFT(cNomProv,7) OR 'SHELL'$LEFT(cNomProv,5)
 	nCodP = 256	
 CASE 'BAHIA F'$cNomProv OR 'B.F'$cNomProv OR 'B/FIL'$cNomProv OR 'B FIL'$cNomProv
 	nCodP = 178
