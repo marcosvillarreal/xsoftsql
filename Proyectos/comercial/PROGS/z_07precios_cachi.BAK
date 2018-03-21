@@ -55,10 +55,10 @@ GO top
 
 *stop()
 SCAN FOR !EOF()
-	IF numero <> 33463
-		LOOP 
+	IF numero <> 1
+		*LOOP 
 	ENDIF 
-	stop()
+	*-stop()
 
 	SELECT CsrArticulo
 	LOCATE FOR VAL(numero )= CsrProducto.numero AND NOT borrado
