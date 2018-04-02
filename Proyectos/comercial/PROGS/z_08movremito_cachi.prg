@@ -89,7 +89,7 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
- *stop()
+* stop()
         
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -108,7 +108,6 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 	SELECT CsrCtacte
 	LOCATE FOR VAL(cnumero) = CsrMovimien.cliente
 	IF VAL(cnumero) <> CsrMovimien.cliente
-		SKIP 
 		LOOP 
 	ENDIF 
 	
@@ -131,6 +130,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 	
 	nidctacte	= CsrCtacte.id
 	
+	SELECT CsrMovimien
 	DO WHILE NOT EOF() AND VAL(Csrctacte.cnumero) = CsrMovimien.cliente
 	
 		SELECT CsrProducto

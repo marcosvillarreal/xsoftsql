@@ -89,7 +89,7 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
- *stop()
+* stop()
         
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -112,17 +112,26 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 		LOOP 
 	ENDIF 
 	
+	nidvendemov  = 	nidvendedor
+	
+	SELECT CsrVendedor
+	LOCATE FOR ALLTRIM(nombre) = ALLTRIM(CsrMovimien.quien)
+	IF 	ALLTRIM(nombre) = ALLTRIM(CsrMovimien.quien)
+		nidvendemov = CsrVendedor.id
+	ENDIF 
+
 	i = i + 1 
 	cNumComp	= "X000100000001"
 	
 	INSERT INTO Csrmaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor,iddetanrocaja,idcomproba   ;        
            ,numcomp,clasecomp,turno,puestocaja,idcotizadolar,switch,estado,detalle,fechaserver);
-    VALUES (nidmaopera,corigen,cprograma,nsucursal,nterminal,nsector,dfechasis,nidoperador,nidvendedor,niddetanrocaja,nidcomproba    ;       
+    VALUES (nidmaopera,corigen,cprograma,nsucursal,nterminal,nsector,dfechasis,nidoperador,nidvendemov,niddetanrocaja,nidcomproba    ;       
            ,cnumcomp,cclasecomp,nturno,npuestocaja,nidcotizadolar,cswitch,cestado,cdetalle,dfechaserver)
            
 	
 	nidctacte	= CsrCtacte.id
 	
+	SELECT CsrMovimien
 	DO WHILE NOT EOF() AND VAL(Csrctacte.cnumero) = CsrMovimien.cliente
 	
 		SELECT CsrProducto
