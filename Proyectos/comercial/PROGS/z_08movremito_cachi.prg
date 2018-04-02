@@ -89,7 +89,7 @@ cestado		= '0'
 cdetalle	= ""
 dfechaserver = DATETIME()
 
-* stop()
+*stop()
         
 SELECT CsrMovimien
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -129,9 +129,9 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
            
 	
 	nidctacte	= CsrCtacte.id
-	
+	dFechaMov	= CsrMovimien.fecha
 	SELECT CsrMovimien
-	DO WHILE NOT EOF() AND VAL(Csrctacte.cnumero) = CsrMovimien.cliente
+	DO WHILE NOT EOF() AND VAL(Csrctacte.cnumero) = CsrMovimien.cliente AND dFechaMov = CsrMovimien.fecha
 	
 		SELECT CsrProducto
 		LOCATE FOR CsrProducto.numero = VAL(CsrMovimien.articulo )
@@ -203,10 +203,10 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 		nDespor		= 0
 		nActivo		= 1
 		
-		SELECT CsrVendedor
-		LOCATE FOR nombre = CsrMovimien.quien
-		nidvendedor	= CsrVendedor.id
-		
+*!*			SELECT CsrVendedor
+*!*			LOCATE FOR nombre = CsrMovimien.quien
+*!*			nidvendedor	= CsrVendedor.id
+*!*			
 		INSERT INTO csrmovremito (id,idmaopera,idctacte,idarticulo,nombre,preunita,preunitasiva,fecha,cantidad;
            ,total,listaprecio,iddeposito,internos,sdocant,despor,activo,codartimp);
      	VALUES (nid,nidmaopera,nidctacte,nidarticulo,cnombre,npreunita,npreunitasiva,dfecha,ncantidad;
@@ -225,7 +225,7 @@ DO WHILE NOT EOF() &&AND i <= lnlimite
 	nidmaopera = nidmaopera + 1 
 ENDDO 
 
-SELECT CsrMovRemito
+SELECT CsrMaopera
 vista()
 
 Oavisar.proceso('N') 
