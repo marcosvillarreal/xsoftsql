@@ -52,7 +52,7 @@ nNumeroCtacte	= VAL(CsrCtacte.cnumero)
 SELECT CsrProducto
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-
+vista()
 *stop()
 SCAN FOR !EOF()
 	IF numero <> 1
@@ -244,9 +244,8 @@ SCAN FOR !EOF()
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
-    		OscPrecio.idprecio = OscPrecio.id
     		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
-    		replace fecUlPre WITH OscPrecio.fecmodi
+    		replace fecUlPre WITH OscPrecio.fecmodi,idprecio WITH CsrProdPrecio.id
     		
     		lActualizo = .t.
     	ENDIF 

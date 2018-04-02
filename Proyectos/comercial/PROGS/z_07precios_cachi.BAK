@@ -244,6 +244,7 @@ SCAN FOR !EOF()
     		SELECT CsrProdPrecio
     		SCATTER NAME OscPrecio
     		SELECT CsrProducto
+    		OscPrecio.idprecio = OscPrecio.id
     		GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,switch,codalfaprov,fecmodi
     		replace fecUlPre WITH OscPrecio.fecmodi
     		
