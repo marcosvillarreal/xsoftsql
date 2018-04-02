@@ -23,7 +23,7 @@ lccaption=_Screen.Caption
 
 lcdd=Alltrim(Curdir()) && directorio de arranque
 If lldesarrollo
-	lcdd    =l+'\xsoftSQL\proyectos\compel\'
+	lcdd    =l+'\xsoftSQL\proyectos\comercial\'
 	lcdirdes=l+'\xsoftSQL\desarrollo'
 *-- RUTA
 	_rutaclases =lcdd+'Clases' &&
@@ -216,11 +216,11 @@ If Type('goApp')='O'
 *!*			Endif
 *!*		Endif
 
-	If !ControlTerminal() && verifico si la terminal está autorizada a traves del SN del disco
-		Cancel
-		Clear All
-		Return
-	Endif
+*!*		If !ControlTerminal() && verifico si la terminal está autorizada a traves del SN del disco
+*!*			Cancel
+*!*			Clear All
+*!*			Return
+*!*		Endif
 
 	LeerEmpresa()
 
