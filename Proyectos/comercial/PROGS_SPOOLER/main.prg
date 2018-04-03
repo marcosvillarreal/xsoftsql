@@ -241,7 +241,7 @@ If Type('goApp')='O'
 		_Screen.LockScreen=.F.
 	
 	
-		DO FORM Impdiferida
+		DO FORM Impdiferida_v2
 	ELSE 
 		goapp.salir()
 	ENDIF 
