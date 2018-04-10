@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<title>Produced by GMap4Any1 v.01.05.00</title>
+<style type="text/css">
+html, body, #map-canvas {height: 100%;margin: 0px;padding: 0px}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
+<script>
+var map;
+var hostnameRegexp = new RegExp("^https?://.+?/");
+var directionsOverlays = [];
+var rendererOptions = {draggable: false};
+var directionsService = new google.maps.DirectionsService();
+var stops = [{"Coord":{"Lat":-38.8693699,"Lng":-62.0824401},"Distance":""},{"Coord":{"Lat":-38.85928681981602,"Lng":-62.085175953178805},"Distance":""},{"Coord":{"Lat":-38.85791668038926,"Lng":-62.085422716424546},"Distance":""},{"Coord":{"Lat":-38.8600586,"Lng":-62.0861679},"Distance":""},{"Coord":{"Lat":-38.8597267559,"Lng":-62.0855424627},"Distance":""},{"Coord":{"Lat":-38.8566689882,"Lng":-62.0855102762},"Distance":""},{"Coord":{"Lat":-38.857237108,"Lng":-62.085392259},"Distance":""},{"Coord":{"Lat":-38.86019744672203,"Lng":-62.084907732293686},"Distance":""}];
+function initialize() {
+	//Ruta de imagenes http://kml4earth.appspot.com/icons.html#shapes
+	
+	var iconBase = 'http://maps.google.com/mapfiles/kml/paddle/';
+	var icons = {
+		  normal: {
+            icon: iconBase + 'red-circle.png'
+          },
+          noventa: {
+            icon: iconBase + 'blu-blank.png'
+          },
+		   venta: {
+            icon: iconBase + 'red-circle.png'
+          },
+          motivo: {
+            icon: iconBase + 'ylw-stars.png'
+          },
+		}; 
+	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
+	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
+	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+	
+					{
+						var marker1 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8693699, -62.0824401)
+									,icon: icons['normal'].icon
+								});
+						 marker1.setMap(map);
+						 var infowindow1 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 12 / 25 DE MAYO 2500"
+						 			,maxWidth: 200
+						 		});
+						 marker1.addListener('click', function() {infowindow1.open(map, marker1);});
+					}
+					
+					{
+						var marker2 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.85928681981602, -62.085175953178805)
+									,icon: icons['normal'].icon
+								});
+						 marker2.setMap(map);
+						 var infowindow2 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 34 / 25 DE MAYO 2568"
+						 			,maxWidth: 200
+						 		});
+						 marker2.addListener('click', function() {infowindow2.open(map, marker2);});
+					}
+					
+					{
+						var marker3 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.85791668038926, -62.085422716424546)
+									,icon: icons['normal'].icon
+								});
+						 marker3.setMap(map);
+						 var infowindow3 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 35 / 25 DE MAYO 2650"
+						 			,maxWidth: 200
+						 		});
+						 marker3.addListener('click', function() {infowindow3.open(map, marker3);});
+					}
+					
+					{
+						var marker4 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8600586, -62.0861679)
+									,icon: icons['normal'].icon
+								});
+						 marker4.setMap(map);
+						 var infowindow4 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 36 / ROCA 2499"
+						 			,maxWidth: 200
+						 		});
+						 marker4.addListener('click', function() {infowindow4.open(map, marker4);});
+					}
+					
+					{
+						var marker5 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8597267559, -62.0855424627)
+									,icon: icons['normal'].icon
+								});
+						 marker5.setMap(map);
+						 var infowindow5 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 67 / CD. DE CARMELO 289"
+						 			,maxWidth: 200
+						 		});
+						 marker5.addListener('click', function() {infowindow5.open(map, marker5);});
+					}
+					
+					{
+						var marker6 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.8566689882, -62.0855102762)
+									,icon: icons['normal'].icon
+								});
+						 marker6.setMap(map);
+						 var infowindow6 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 97 / ALBATROS XXVII CASA 403"
+						 			,maxWidth: 200
+						 		});
+						 marker6.addListener('click', function() {infowindow6.open(map, marker6);});
+					}
+					
+					{
+						var marker7 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.857237108, -62.085392259)
+									,icon: icons['normal'].icon
+								});
+						 marker7.setMap(map);
+						 var infowindow7 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 136 / ALBATROS XXVII CASA 393"
+						 			,maxWidth: 200
+						 		});
+						 marker7.addListener('click', function() {infowindow7.open(map, marker7);});
+					}
+					
+					{
+						var marker8 = new google.maps.Marker(
+								{
+									position:new google.maps.LatLng(-38.86019744672203, -62.084907732293686)
+									,icon: icons['normal'].icon
+								});
+						 marker8.setMap(map);
+						 var infowindow8 = new google.maps.InfoWindow(
+						 		{
+						 			content:" PUNTA / 141 / 25 DE MAYO 2410"
+						 			,maxWidth: 200
+						 		});
+						 marker8.addListener('click', function() {infowindow8.open(map, marker8);});
+					}
+					
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+  calcRoute();
+}
+function calcRoute() {
+	var start;
+	var end;
+	var chunk = [];
+	start = stops.splice(0,1).shift();
+	if(stops.length <= 8){
+		if(stops.length > 1) chunk = stops.splice(0, stops.length-1);
+		else chunk = [];
+	}else{
+		chunk = stops.splice(0,8);
+	}
+	end = stops.splice(0,1).shift();
+	while(chunk.length > 0 || stops.length >= 0){
+		var subStops = [];
+		var subitemsCounter = 0;
+		for (var j = 0; j < chunk.length; j++) {
+			subitemsCounter++;
+			subStops.push({
+				location: new window.google.maps.LatLng(chunk[j].Coord.Lat, chunk[j].Coord.Lng),
+				stopover: false
+			});
+			if (subitemsCounter == 8)
+				break;
+		}
+		var request = {
+		origin: new window.google.maps.LatLng(start.Coord.Lat, start.Coord.Lng),
+		destination: new window.google.maps.LatLng(end.Coord.Lat, end.Coord.Lng),
+		provideRouteAlternatives:true,
+		avoidHighways:false,
+		avoidTolls:true,
+		avoidFerries:true,
+		unitSystem: google.maps.UnitSystem.METRIC,
+		waypoints: subStops,
+		optimizeWaypoints:true,
+		travelMode: google.maps.TravelMode.DRIVING};
+		directionsService.route(request, function(response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				var directionsDisplay = createRenderer();
+				directionsOverlays.push(directionsDisplay);
+				directionsDisplay.setDirections(response);
+		}});
+		if (stops.length == 0)	break;
+		start = end;
+		if(stops.length <= 8){
+			if(stops.length > 1) chunk = stops.splice(0, stops.length-1);
+			else chunk = [];
+		}else{
+			chunk = stops.splice(0,8);
+		}
+		end = stops.splice(0,1).shift();
+	}
+}
+function createRenderer() {
+	var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+	directionsDisplay.setMap(map);
+	directionsDisplay.setOptions( { suppressMarkers: true } );
+	directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+	google.maps.event.addListener(directionsDisplay, "directions_changed", function() {computeTotalDistance(directionsDisplay.getDirections());});
+return directionsDisplay;
+}
+function computeTotalDistance(result) {
+	var total = 0;
+	var myroute = result.routes[0];
+	for (var i = 0; i < myroute.legs.length; i++) {
+		total += myroute.legs[i].distance.value;
+	}
+	total = total / 1000.0;
+}
+google.maps.event.addDomListener(window, "load", initialize);
+</script>
+</head>
+<body>
+	<div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+	<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
+</body>
+</html>
