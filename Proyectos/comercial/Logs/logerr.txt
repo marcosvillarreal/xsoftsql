@@ -1,939 +1,17 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-cha,detalle ,SUM(importe) as importe,DATE(),SUM(pendiente) as pendiente ,SUM(total) as Total , aticulo, numcomp FROM CsrImprimir GROUP BY idctacte,ctacte,nomctacte,grupo,chrfecha,detalle ,codvendedor, nomvendedor,articulo,numcomp INTO CURSOR CsrImprimir 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         75 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD500T2.TMP;Ultimo Control activo: 
-04-04-2018 09:04:58 , Pila de llamadas
-04-04-2018 09:05:01 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-04-04-2018 09:05:01 , Objeto      : subrtopdte.imprimir_vistaprevia1.impresora.click
-04-04-2018 09:05:02 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-04-04-2018 09:05:05 , Nº de Linea :          8
-04-04-2018 09:05:05 , En el Fuente: 	llOK=thisform.CrearInforme()
-04-04-2018 09:05:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-04-04-2018 09:05:09 , Objeto      : subrtopdte.crearinforme
-04-04-2018 09:05:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-04-04-2018 09:05:09 , Nº de Linea :        126
-04-04-2018 09:05:12 , En el Fuente: 	SELECT grupo,idctacte,ctacte,nomctacte,'' as codigo,0 as idarticulo	,0 as idpase,1 as idorden,codvendedor, nomvendedor,chrfecha,detalle	,SUM(importe) as importe,DATE(),SUM(pendiente) as pendiente	,SUM(total) as Total;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-04-04-2018 10:53:29 , SUBRTOFAC.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El comando contiene una frase o palabra clave no reconocida.;Linea : SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalle DTOC(TTOD(fecharto)) as 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-chrfecharto FROM CsrCuerpo ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE;Error :         36;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD502ML.TMP;Ultimo Control activo: 
-04-04-2018 10:53:32 , Pila de llamadas
-04-04-2018 10:53:35 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-04-04-2018 10:53:35 , Objeto      : subrtofac.imprimir_vistaprevia1.impresora.click
-04-04-2018 10:53:35 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-04-04-2018 10:53:38 , Nº de Linea :          8
-04-04-2018 10:53:38 , En el Fuente: 	llOK=thisform.CrearInforme()
-04-04-2018 10:53:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtofac.sct
-04-04-2018 10:53:42 , Objeto      : subrtofac.crearinforme
-04-04-2018 10:53:42 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtofac.sct
-04-04-2018 10:53:42 , Nº de Linea :        107
-04-04-2018 10:53:45 , En el Fuente: SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalleDTOC(TTOD(fecharto)) as chrfechartoFROM CsrCuerpo ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE
-04-04-2018 10:55:08 , SUBRTOFAC.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'FECHA'.;Linea : SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalle ,DTOC(TTOD(fecharto)) as chrfecharto FROM Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rCuerpo ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD502O6.TMP;Ultimo Control activo: 
-04-04-2018 10:55:11 , Pila de llamadas
-04-04-2018 10:55:14 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-04-04-2018 10:55:14 , Objeto      : subrtofac.imprimir_vistaprevia1.impresora.click
-04-04-2018 10:55:14 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-04-04-2018 10:55:14 , Nº de Linea :          8
-04-04-2018 10:55:17 , En el Fuente: 	llOK=thisform.CrearInforme()
-04-04-2018 10:55:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtofac.sct
-04-04-2018 10:55:17 , Objeto      : subrtofac.crearinforme
-04-04-2018 10:55:18 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtofac.sct
 04-04-2018 10:55:21 , Nº de Linea :        107
 04-04-2018 10:55:21 , En el Fuente: SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalle,DTOC(TTOD(fecharto)) as chrfechartoFROM CsrCuerpo ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE
 04-04-2018 10:56:25 , SUBRTOFAC.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CHRFECHA'.;Linea : REPLACE ALL chrfecha WITH ' ' FOR chrfecha='01-01-1900' IN Csrimprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultim
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1285,6 +363,17 @@ o registro:         22 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\A
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 CTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD503UA.TMP;Ultimo Control activo: 
 04-04-2018 14:39:23 , Pila de llamadas
 04-04-2018 14:39:27 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -1308,6 +397,17 @@ CTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD503UA.TMP
 04-04-2018 14:39:40 , Nº de Linea :         55
 04-04-2018 14:39:43 , En el Fuente: 			.Column00x.BodyFormat = FormatImporte 
 04-04-2018 15:23:41 , MAIN, Error: Desbordamiento numérico (se han perdido datos).;Linea : IF VAL(this.Value)=0 AND LEN(ALLTRIM(this.Value))>0 AND !thisform.lbbuscarcodalfa;Error :         39;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1639,6 +739,17 @@ CTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD503UA.TMP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
  IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT019B.TMP;Ultimo Control activo: CODEXTEND
 04-04-2018 15:37:43 , Pila de llamadas
 04-04-2018 15:37:46 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -1652,6 +763,17 @@ CTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD503UA.TMP
 04-04-2018 15:37:52 , Nº de Linea :         19
 04-04-2018 15:37:52 , En el Fuente: IF VAL(this.Value)=0 AND LEN(ALLTRIM(this.Value))>0 AND !thisform.lbbuscarcodalfa
 04-04-2018 15:43:22 , MAIN, Error: Desbordamiento numérico (se han perdido datos).;Linea : IF VAL(this.Value)=0 AND LEN(ALLTRIM(this.Value))>0 AND !thisform.lbbuscarcodalfa;Error :         39;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1969,6 +1091,17 @@ CTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006BD503UA.TMP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 PDATA\LOCAL\TEMP\00006UBT02ZR.TMP;Ultimo Control activo: CODEXTEND
 04-04-2018 15:45:44 , Pila de llamadas
 04-04-2018 15:45:47 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -1982,6 +1115,17 @@ PDATA\LOCAL\TEMP\00006UBT02ZR.TMP;Ultimo Control activo: CODEXTEND
 04-04-2018 15:45:55 , Nº de Linea :         15
 04-04-2018 15:45:55 , En el Fuente: 		IF  strtrim(VAL(this.Value))=ALLTRIM(this.Value)
 04-04-2018 16:01:22 , MAIN, Error: Desbordamiento numérico (se han perdido datos).;Linea : IF  IIF('.E'$THIS.Value,.t.,strtrim(VAL(this.Value))=ALLTRIM(this.Value));Error :         39;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPE
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2283,6 +1427,17 @@ RA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT03T2.TMP;Ultimo Control activo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 DMIN\APPDATA\LOCAL\TEMP\00006UBT05GM.TMP;Ultimo Control activo: CODEXTEND
 04-04-2018 16:08:16 , Pila de llamadas
 04-04-2018 16:08:19 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2296,6 +1451,17 @@ DMIN\APPDATA\LOCAL\TEMP\00006UBT05GM.TMP;Ultimo Control activo: CODEXTEND
 04-04-2018 16:08:26 , Nº de Linea :         18
 04-04-2018 16:08:26 , En el Fuente: 			IF thisform.kitbuscarProd.fc_lostfocus(VAL(this.Value))		
 04-04-2018 16:16:01 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lccmd=lcfrom + " where "+ALLTRIM(lccampoindice)+"="+ALLTRIM(STR(thisvalue));Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo regist
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2588,6 +1754,17 @@ ro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT06BT.TMP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT06WT.TMP;Ultimo Control activo: 
 04-04-2018 16:21:31 , Pila de llamadas
 04-04-2018 16:21:34 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2611,6 +1788,17 @@ ro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT06WT.TMP
 04-04-2018 16:21:48 , Nº de Linea :        119
 04-04-2018 16:21:51 , En el Fuente:    			      lccmd=lcfrom + " where "+ALLTRIM(lccampoindice)+"="+ALLTRIM(STR(thisvalue))
 04-04-2018 16:24:43 , MAIN, Error: Desbordamiento numérico (se han perdido datos).;Linea : IF  IIF('.E'$THIS.Value,.t.,strtrim(VAL(this.Value))=ALLTRIM(this.Value));Error :         39;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPE
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2869,6 +2057,17 @@ RA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT07HU.TMP;Ultimo Control activo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006UBT082P.TMP;Ultimo Control activo: 
 04-04-2018 16:26:53 , Pila de llamadas
 04-04-2018 16:26:57 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -2892,6 +2091,17 @@ Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\
 04-04-2018 16:27:10 , Nº de Linea :        119
 04-04-2018 16:27:13 , En el Fuente:    			      lccmd=lcfrom + " where "+ALLTRIM(lccampoindice)+"="+ALLTRIM(IIF(TYPE(thisvalue)='C',thisValue,STR(thisvalue)))
 04-04-2018 16:30:38 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0 AND lVerificarSiesta;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006U
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3136,6 +2346,17 @@ BT08O7.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 03S3T0076.TMP;Ultimo Control activo: 
 04-04-2018 17:25:19 , Pila de llamadas
 04-04-2018 17:25:23 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3154,6 +2375,17 @@ BT08O7.TMP;Ultimo Control activo:
 04-04-2018 17:25:35 , Nº de Linea :       1593
 04-04-2018 17:25:38 , En el Fuente: 						DO FORM &lcForm
 04-04-2018 17:29:16 , MAIN, Error: No se encuentra el objeto OSCATTERCA.;Linea : OscatterCa.idmaopera	= 0;Error :       1923;Ultimo Alias Activo: CSRMOVIMIENTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003S3T00W3.TMP;Ultimo Co
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3378,6 +2610,17 @@ ntrol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 N\APPDATA\LOCAL\TEMP\00004JD509XD.TMP;Ultimo Control activo: 
 04-04-2018 20:12:56 , Pila de llamadas
 04-04-2018 20:12:59 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3411,6 +2654,17 @@ N\APPDATA\LOCAL\TEMP\00004JD509XD.TMP;Ultimo Control activo:
 04-04-2018 20:13:20 , Nº de Linea :          7
 04-04-2018 20:13:23 , En el Fuente: oObjetoPlanCue = CREATEOBJECT("custom")
 04-04-2018 20:25:06 , REGFACCPRA.OPLANCUE.INIT, Error: La sesión de datos nº 4 no se puede liberar si hay transacciones abiertas.;Linea : oObjetoPlanCue = CREATEOBJECT("custom");Error :       1549;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         23
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3589,6 +2843,17 @@ N\APPDATA\LOCAL\TEMP\00004JD509XD.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007V2H00PF.TMP;Ultimo Control activo: 
 05-04-2018 07:39:49 , Pila de llamadas
 05-04-2018 07:39:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms_spooler\impdiferida_v2.sct
@@ -3602,6 +2867,17 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007V2H00PF.TMP;Ultim
 05-04-2018 07:39:58 , Nº de Linea :          3
 05-04-2018 07:39:58 , En el Fuente: 	 .containerelector.chkautomatico.Value = OCONFIGFISCAL.automatico
 05-04-2018 07:41:27 , IMPDIFERIDA.INIT, Error: No coinciden los tipos de datos.;Linea : IF .containerelector.chkautomatico.Value;Error :          9;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3767,6 +3043,17 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007V2H00PF.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 C.TMP;Ultimo Control activo: 
 05-04-2018 07:43:34 , Pila de llamadas
 05-04-2018 07:43:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms_spooler\impdiferida_v2.sct
@@ -3785,6 +3072,17 @@ C.TMP;Ultimo Control activo:
 05-04-2018 07:43:48 , Nº de Linea :         57
 05-04-2018 07:43:51 , En el Fuente: IF RECCOUNT('CsrDMaopera') != 0
 05-04-2018 08:34:27 , MAIN, Error: LBLDETALLE es un método, evento u objeto.;Linea : this.lbldetalle = loObjValor.detalle;Error :       1737;Ultimo Alias Activo: CSRAUXVALOR;Ultimo registro:          6 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000013BD01KB
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3961,6 +3259,17 @@ C.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 rol activo: 
 05-04-2018 09:08:52 , Pila de llamadas
 05-04-2018 09:08:55 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3979,6 +3288,17 @@ rol activo:
 05-04-2018 09:09:09 , Nº de Linea :         35
 05-04-2018 09:09:09 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 05-04-2018 11:28:47 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : dfecIni		= TTOD(CsrRemFac.fecha);Error :         11;Ultimo Alias Activo: CSROPERATORIA;Ultimo registro:         16 ;DBF: C:\USERS\ADMIN\APPDATA
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4109,6 +3429,17 @@ rol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 S\ADMIN\APPDATA\LOCAL\TEMP\000088W903EY.TMP;Ultimo Control activo: 
 05-04-2018 11:32:34 , Pila de llamadas
 05-04-2018 11:32:39 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -4137,6 +3468,17 @@ S\ADMIN\APPDATA\LOCAL\TEMP\000088W903EY.TMP;Ultimo Control activo:
 05-04-2018 11:32:58 , Nº de Linea :        146
 05-04-2018 11:32:58 , En el Fuente: 		nDias	= (CsrAuxCabefac.fecha) - (CsrRemFac.fecha)
 05-04-2018 11:37:54 , MAIN, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : nDias	= (CsrAuxCabefac.fecha) - (CsrRemFac.fecha);Error :        107;Ultimo Alias Activo: CSROPERATORIA;Ultimo registro:         16 ;DBF: C:\USER
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4273,6 +3615,17 @@ S\ADMIN\APPDATA\LOCAL\TEMP\000088W904CB.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 o: 
 11-04-2018 15:42:39 , Pila de llamadas
 11-04-2018 15:42:40 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -4344,3 +3697,119 @@ o:
 11-04-2018 15:43:37 , En el Fuente: 			.ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
 11-04-2018 15:44:11 , ON..., Error: Data environment is already unloaded.;Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT );Error :       1967;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 11-04-2018 15:44:11 , Pila de llamadas
+11-04-2018 17:25:14 , REGCTACTE.CMDCONSULTA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT id as id,idmaopera as idmaopera,importe as importe,numero as nrocheque ,idctabco as idctabco,nomvalor as cnombre ,localidad as localidad,clasec
+
+
+
+
+
+
+
+
+
+
+omp,clasevalor ,fechavto as fechavto,cuit as cuit,titular as titular,recibido as recibido,entregado as entregado,fecha as fecha ,000 as numero,IIF(LEN(LTRIM(banco))=0,nomctabco,banco) as banco,CAST(0 as int) as idcuenta,SPACE(6) as ctactebco ,CAST(0 as i
+
+
+
+
+
+
+
+
+
+
+nt) as idtipobco ,CAST(0 as int) as idvalor,CAST(0 as int) as idprovincia,'  ' as tipocaja,IIF(origen='3RO','T','P') as esclase ,SPACE(15) as nrotarjeta ,SPACE(15) as cupon,00 as cuota,STR(id,12) as idcheque,SPACE(50) as detalle,idctatitular,idctarecibid
+
+
+
+
+
+
+
+
+
+
+o ,idctaentregado ,idlocalidad,nroidentificador,lccuit,idbanco FROM Csrcursor INTO CURSOR CsrPago READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000073T500PH.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+Control activo: 
+11-04-2018 17:25:14 , Pila de llamadas
+11-04-2018 17:25:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:25:15 , Objeto      : regctacte.cmdconsulta.click
+11-04-2018 17:25:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:25:15 , Nº de Linea :          1
+11-04-2018 17:25:16 , En el Fuente: thisform.key_f4()  
+11-04-2018 17:25:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:25:16 , Objeto      : regctacte.key_f4
+11-04-2018 17:25:16 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:25:16 , Nº de Linea :         63
+11-04-2018 17:25:16 , En el Fuente: 	thisform.muestracomprobante(lcidretorno)
+11-04-2018 17:25:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:25:17 , Objeto      : regctacte.muestracomprobante
+11-04-2018 17:25:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:25:17 , Nº de Linea :        299
+11-04-2018 17:25:18 , En el Fuente: SELECT id as id,idmaopera as idmaopera,importe as importe,numero as nrocheque,idctabco as idctabco,nomvalor as cnombre,localidad as localidad,clasecomp,clasevalor,fechavto as fechavto,cuit as cuit,titular as titular,re
+
+
+
+
+
+cibido as recibido,entregado as entregado,fecha as fecha,000 as numero,IIF(LEN(LTRIM(banco))=0,nomctabco,banco) as banco,CAST(0 as int) as idcuenta,SPACE(6) as ctactebco,CAST(0 as int) as idtipobco,CAST(0 as int) as idvalor,CAST(0 as int) as idprovincia,
+
+
+
+
+
+'  ' as tipocaja,IIF(origen='3RO','T','P') as esclase,SPACE(15) as nrotarjeta,SPACE(15) as cupon,00 as cuota,STR(id,12) as idcheque,SPACE(50) as detalle,idctatitular,idctarecibido,idctaentregado,idlocalidad,nroidentificador,lccuit,idbancoFROM Csrcursor I
+
+
+
+
+
+NTO CURSOR CsrPago READWRITE 
+11-04-2018 17:26:33 , REGCTACTE.CMDCONSULTA.CLICK, Error: SQL: no se encuentra la columna 'ORIGEN'.;Linea : SELECT id as id,idmaopera as idmaopera,importe as importe,numero as nrocheque ,idctabco as idctabco,nomvalor as cnombre ,localidad as localidad,cl
+
+
+
+
+asecomp,clasevalor ,fechavto as fechavto,cuit as cuit,titular as titular,recibido as recibido,entregado as entregado,fecha as fecha ,000 as numero,IIF(LEN(LTRIM(banco))=0,nomctabco,banco) as banco,CAST(0 as int) as idcuenta,SPACE(6) as ctactebco ,CAST(0 
+
+
+
+
+as int) as idtipobco ,CAST(0 as int) as idvalor,CAST(0 as int) as idprovincia,'  ' as tipocaja,IIF(origen='3RO','T','P') as esclase ,SPACE(15) as nrotarjeta ,SPACE(15) as cupon,00 as cuota,STR(id,12) as idcheque,SPACE(50) as detalle,idctatitular,idctarec
+
+
+
+
+ibido ,idctaentregado ,idlocalidad,nroidentificador,lccuit,idbanco FROM Csrcursor INTO CURSOR CsrPago READWRITE;Error :       1806;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000073T50193.TMP;Ultimo 
+
+
+
+
+Control activo: 
+11-04-2018 17:26:33 , Pila de llamadas
+11-04-2018 17:26:34 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:26:34 , Objeto      : regctacte.cmdconsulta.click
+11-04-2018 17:26:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:26:34 , Nº de Linea :          1
+11-04-2018 17:26:34 , En el Fuente: thisform.key_f4()  
+11-04-2018 17:26:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:26:35 , Objeto      : regctacte.key_f4
+11-04-2018 17:26:35 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:26:36 , Nº de Linea :         63
+11-04-2018 17:26:36 , En el Fuente: 	thisform.muestracomprobante(lcidretorno)
+11-04-2018 17:26:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:26:36 , Objeto      : regctacte.muestracomprobante
+11-04-2018 17:26:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+11-04-2018 17:26:36 , Nº de Linea :        299
+11-04-2018 17:26:37 , En el Fuente: SELECT id as id,idmaopera as idmaopera,importe as importe,numero as nrocheque,idctabco as idctabco,nomvalor as cnombre,localidad as localidad,clasecomp,clasevalor,fechavto as fechavto,cuit as cuit,titular as titular,recibido as recibido,entregado as entregado,fecha as fecha,000 as numero,IIF(LEN(LTRIM(banco))=0,nomctabco,banco) as banco,CAST(0 as int) as idcuenta,SPACE(6) as ctactebco,CAST(0 as int) as idtipobco,CAST(0 as int) as idvalor,CAST(0 as int) as idprovincia,'  ' as tipocaja,IIF(origen='3RO','T','P') as esclase,SPACE(15) as nrotarjeta,SPACE(15) as cupon,00 as cuota,STR(id,12) as idcheque,SPACE(50) as detalle,idctatitular,idctarecibido,idctaentregado,idlocalidad,nroidentificador,lccuit,idbancoFROM Csrcursor INTO CURSOR CsrPago READWRITE 
