@@ -17,7 +17,7 @@ var hostnameRegexp = new RegExp("^https?://.+?/");
 var directionsOverlays = [];
 var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
-var stops = [{"Coord":{"Lat":-38.7067889,"Lng":-62.2505524},"Distance":""},{"Coord":{"Lat":-38.7285792,"Lng":-62.2549928},"Distance":""},{"Coord":{"Lat":-38.7245942,"Lng":-62.2581713},"Distance":""},{"Coord":{"Lat":-38.7174754,"Lng":-62.2612802},"Distance":""},{"Coord":{"Lat":-38.7196940,"Lng":-62.2645391},"Distance":""},{"Coord":{"Lat":-38.7215236,"Lng":-62.2639625},"Distance":""},{"Coord":{"Lat":-38.7374441,"Lng":-62.2638022},"Distance":""},{"Coord":{"Lat":-38.6977228,"Lng":-62.2428491},"Distance":""},{"Coord":{"Lat":-38.6880923,"Lng":-62.1917147},"Distance":""},{"Coord":{"Lat":-38.6868474,"Lng":-62.2122773},"Distance":""},{"Coord":{"Lat":-38.6805892,"Lng":-62.2167348},"Distance":""},{"Coord":{"Lat":-38.6936933,"Lng":-62.2058754},"Distance":""},{"Coord":{"Lat":-38.7235743,"Lng":-62.2663309},"Distance":""},{"Coord":{"Lat":-38.7101916,"Lng":-62.2606511},"Distance":""},{"Coord":{"Lat":-38.7174433,"Lng":-62.2612423},"Distance":""},{"Coord":{"Lat":-38.7187196,"Lng":-62.2537945},"Distance":""},{"Coord":{"Lat":-38.7195283,"Lng":-62.2647553},"Distance":""}];
+var stops = [{"Coord":{"Lat":-38.8928181,"Lng":-62.0685851},"Distance":""},{"Coord":{"Lat":-38.86426437114946,"Lng":-62.06424692750852},"Distance":""},{"Coord":{"Lat":-38.8920042,"Lng":-62.0629973},"Distance":""},{"Coord":{"Lat":-38.8835896,"Lng":-62.0608155},"Distance":""},{"Coord":{"Lat":-38.8798537,"Lng":-62.0592000},"Distance":""},{"Coord":{"Lat":-38.8746605,"Lng":-62.0667704},"Distance":""},{"Coord":{"Lat":-38.8664616,"Lng":-62.0605719},"Distance":""},{"Coord":{"Lat":-38.8778625,"Lng":-62.0596662},"Distance":""},{"Coord":{"Lat":-38.8864098,"Lng":-62.0571730},"Distance":""},{"Coord":{"Lat":-38.8880356,"Lng":-62.068315},"Distance":""},{"Coord":{"Lat":-38.8677399,"Lng":-62.0547615},"Distance":""},{"Coord":{"Lat":-38.86454967996787,"Lng":-62.075271551776154},"Distance":""},{"Coord":{"Lat":-38.8934279,"Lng":-62.0677689},"Distance":""}];
 function initialize() {
 	//Ruta de imagenes http://kml4earth.appspot.com/icons.html#shapes
 	
@@ -43,13 +43,13 @@ function initialize() {
 					{
 						var marker1 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7067889, -62.2505524)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8928181, -62.0685851)
+									,icon: icons['normal'].icon
 								});
 						 marker1.setMap(map);
 						 var infowindow1 = new google.maps.InfoWindow(
 						 		{
-						 			content:" HEFFNER, ALICIA NOEMI / 3185 / ALSINA 1398"
+						 			content:" PRES X 0001-00001605 / 26 / FLORIDA 503"
 						 			,maxWidth: 200
 						 		});
 						 marker1.addListener('click', function() {infowindow1.open(map, marker1);});
@@ -58,13 +58,13 @@ function initialize() {
 					{
 						var marker2 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7285792, -62.2549928)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.86426437114946, -62.06424692750852)
+									,icon: icons['normal'].icon
 								});
 						 marker2.setMap(map);
 						 var infowindow2 = new google.maps.InfoWindow(
 						 		{
-						 			content:" AGUIAR, JORGE ALBERTO / 3108 / MISIONES 22"
+						 			content:" PRES X 0001-00001609 / 52 / BOULOGNE SUR MER 486"
 						 			,maxWidth: 200
 						 		});
 						 marker2.addListener('click', function() {infowindow2.open(map, marker2);});
@@ -73,13 +73,13 @@ function initialize() {
 					{
 						var marker3 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7245942, -62.2581713)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8920042, -62.0629973)
+									,icon: icons['normal'].icon
 								});
 						 marker3.setMap(map);
 						 var infowindow3 = new google.maps.InfoWindow(
 						 		{
-						 			content:" RAMIREZ, LORENA / 3223 / CHICLANA 734"
+						 			content:" PRES X 0001-00001606 / 104 / SAAVEDRA 718"
 						 			,maxWidth: 200
 						 		});
 						 marker3.addListener('click', function() {infowindow3.open(map, marker3);});
@@ -88,13 +88,13 @@ function initialize() {
 					{
 						var marker4 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7174754, -62.2612802)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8835896, -62.0608155)
+									,icon: icons['normal'].icon
 								});
 						 marker4.setMap(map);
 						 var infowindow4 = new google.maps.InfoWindow(
 						 		{
-						 			content:" COCIANCICH, NATALIA ROMINA / 3282 / BELGRANO 219"
+						 			content:" PRES X 0001-00001598 / 108 / AVENIDA TUCUMAN 337"
 						 			,maxWidth: 200
 						 		});
 						 marker4.addListener('click', function() {infowindow4.open(map, marker4);});
@@ -103,13 +103,13 @@ function initialize() {
 					{
 						var marker5 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7196940, -62.2645391)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8798537, -62.0592000)
+									,icon: icons['normal'].icon
 								});
 						 marker5.setMap(map);
 						 var infowindow5 = new google.maps.InfoWindow(
 						 		{
-						 			content:" PRESIADO, DARDO RAMON / 3288 / CHICLANA 176"
+						 			content:" PRES X 0001-00001607 / 109 / CORDOBA Y BELGRANO"
 						 			,maxWidth: 200
 						 		});
 						 marker5.addListener('click', function() {infowindow5.open(map, marker5);});
@@ -118,13 +118,13 @@ function initialize() {
 					{
 						var marker6 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7215236, -62.2639625)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8746605, -62.0667704)
+									,icon: icons['normal'].icon
 								});
 						 marker6.setMap(map);
 						 var infowindow6 = new google.maps.InfoWindow(
 						 		{
-						 			content:" SOSA, VERONICA INES / 3632 / FITZ ROY 44"
+						 			content:" PRES X 0001-00001601 / 114 / PELLEGRINI Y URIBURU"
 						 			,maxWidth: 200
 						 		});
 						 marker6.addListener('click', function() {infowindow6.open(map, marker6);});
@@ -133,13 +133,13 @@ function initialize() {
 					{
 						var marker7 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7374441, -62.2638022)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8664616, -62.0605719)
+									,icon: icons['normal'].icon
 								});
 						 marker7.setMap(map);
 						 var infowindow7 = new google.maps.InfoWindow(
 						 		{
-						 			content:" COOP. TRA. LA MARIA LTD (CHI Y MONTE) / 3653 / CHILE Y MONTEVIDEO"
+						 			content:" PRES X 0001-00001610 / 135 / CHACO 657"
 						 			,maxWidth: 200
 						 		});
 						 marker7.addListener('click', function() {infowindow7.open(map, marker7);});
@@ -148,13 +148,13 @@ function initialize() {
 					{
 						var marker8 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.6977228, -62.2428491)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8778625, -62.0596662)
+									,icon: icons['normal'].icon
 								});
 						 marker8.setMap(map);
 						 var infowindow8 = new google.maps.InfoWindow(
 						 		{
-						 			content:" COOP. TRA. LA MARIA LTD. (CABRERA) / 3664 / AV. CABRERA 3884"
+						 			content:" PRES X 0001-00001599 / 168 / SARGENTO CABRAL 67"
 						 			,maxWidth: 200
 						 		});
 						 marker8.addListener('click', function() {infowindow8.open(map, marker8);});
@@ -163,13 +163,13 @@ function initialize() {
 					{
 						var marker9 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.6880923, -62.1917147)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8864098, -62.0571730)
+									,icon: icons['normal'].icon
 								});
 						 marker9.setMap(map);
 						 var infowindow9 = new google.maps.InfoWindow(
 						 		{
-						 			content:" FERNANDEZ, AURELIA / 3684 / REMEDIOS DE ESCALADA 5585"
+						 			content:" PRES X 0001-00001604 / 193 / AV. TUCUMAN 679"
 						 			,maxWidth: 200
 						 		});
 						 marker9.addListener('click', function() {infowindow9.open(map, marker9);});
@@ -178,13 +178,13 @@ function initialize() {
 					{
 						var marker10 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.6868474, -62.2122773)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8880356, -62.068315)
+									,icon: icons['normal'].icon
 								});
 						 marker10.setMap(map);
 						 var infowindow10 = new google.maps.InfoWindow(
 						 		{
-						 			content:" YU FUSONG / 3685 / SALIQUELO 649"
+						 			content:" PRES X 0001-00001600 / 201 / SAAVEDRA 236"
 						 			,maxWidth: 200
 						 		});
 						 marker10.addListener('click', function() {infowindow10.open(map, marker10);});
@@ -193,13 +193,13 @@ function initialize() {
 					{
 						var marker11 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.6805892, -62.2167348)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8677399, -62.0547615)
+									,icon: icons['normal'].icon
 								});
 						 marker11.setMap(map);
 						 var infowindow11 = new google.maps.InfoWindow(
 						 		{
-						 			content:" LASICA, LILIANA / 3688 / BLEGRANO 4877"
+						 			content:" PRES X 0001-00001602 / 213 / NEUQUEN 225"
 						 			,maxWidth: 200
 						 		});
 						 marker11.addListener('click', function() {infowindow11.open(map, marker11);});
@@ -208,13 +208,13 @@ function initialize() {
 					{
 						var marker12 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.6936933, -62.2058754)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.86454967996787, -62.075271551776154)
+									,icon: icons['normal'].icon
 								});
 						 marker12.setMap(map);
 						 var infowindow12 = new google.maps.InfoWindow(
 						 		{
-						 			content:" PEPE, GRACIELA / 3701 / JORGE NEWERY 2730"
+						 			content:" PRES X 0001-00001603 / 215 / LUIGGI I CASA 12"
 						 			,maxWidth: 200
 						 		});
 						 marker12.addListener('click', function() {infowindow12.open(map, marker12);});
@@ -223,76 +223,16 @@ function initialize() {
 					{
 						var marker13 = new google.maps.Marker(
 								{
-									position:new google.maps.LatLng(-38.7235743, -62.2663309)
-									,icon: icons['venta'].icon
+									position:new google.maps.LatLng(-38.8934279, -62.0677689)
+									,icon: icons['normal'].icon
 								});
 						 marker13.setMap(map);
 						 var infowindow13 = new google.maps.InfoWindow(
 						 		{
-						 			content:" TISERA,  RUBEN JOSE / 3805 / FITZ ROY 214"
+						 			content:" PRES X 0001-00001608 / 225 / FLORIDA 577"
 						 			,maxWidth: 200
 						 		});
 						 marker13.addListener('click', function() {infowindow13.open(map, marker13);});
-					}
-					
-					{
-						var marker14 = new google.maps.Marker(
-								{
-									position:new google.maps.LatLng(-38.7101916, -62.2606511)
-									,icon: icons['venta'].icon
-								});
-						 marker14.setMap(map);
-						 var infowindow14 = new google.maps.InfoWindow(
-						 		{
-						 			content:" MUZI, SERGIO RUBEN II / 3877 / 12 DE OCTUBRE 209"
-						 			,maxWidth: 200
-						 		});
-						 marker14.addListener('click', function() {infowindow14.open(map, marker14);});
-					}
-					
-					{
-						var marker15 = new google.maps.Marker(
-								{
-									position:new google.maps.LatLng(-38.7174433, -62.2612423)
-									,icon: icons['venta'].icon
-								});
-						 marker15.setMap(map);
-						 var infowindow15 = new google.maps.InfoWindow(
-						 		{
-						 			content:" CACCIATORI, THELMA ANAHI / 3889 / BELGRANO 223"
-						 			,maxWidth: 200
-						 		});
-						 marker15.addListener('click', function() {infowindow15.open(map, marker15);});
-					}
-					
-					{
-						var marker16 = new google.maps.Marker(
-								{
-									position:new google.maps.LatLng(-38.7187196, -62.2537945)
-									,icon: icons['venta'].icon
-								});
-						 marker16.setMap(map);
-						 var infowindow16 = new google.maps.InfoWindow(
-						 		{
-						 			content:" FERNANDEZ, ALAN JAVIER / 3940 / CORRIENTES 602"
-						 			,maxWidth: 200
-						 		});
-						 marker16.addListener('click', function() {infowindow16.open(map, marker16);});
-					}
-					
-					{
-						var marker17 = new google.maps.Marker(
-								{
-									position:new google.maps.LatLng(-38.7195283, -62.2647553)
-									,icon: icons['venta'].icon
-								});
-						 marker17.setMap(map);
-						 var infowindow17 = new google.maps.InfoWindow(
-						 		{
-						 			content:" COOP. TRA. LA MARIA LTD. (CHICLANA) / 3941 / CHICLANA 150"
-						 			,maxWidth: 200
-						 		});
-						 marker17.addListener('click', function() {infowindow17.open(map, marker17);});
 					}
 					
   var trafficLayer = new google.maps.TrafficLayer();
