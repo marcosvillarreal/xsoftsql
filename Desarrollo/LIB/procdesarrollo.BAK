@@ -350,6 +350,8 @@ IF !oForm.buscarcajaactiva
 	RETURN 
 ENDIF 
 
+STOP()
+
 IF nidejercicio != CsrParaConfig.idejercicio &&o goapp.idejercicioactual &&NO goapp.idejercicio
 	oForm.usarcajaactiva = .f.
 ENDIF 

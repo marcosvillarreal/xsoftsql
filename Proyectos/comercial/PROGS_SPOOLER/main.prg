@@ -29,6 +29,8 @@ If lldesarrollo
 	_rutaclases =lcdd+'Clases' &&
 	_rutaclased =lcdirdes+'\clases'&&
 	_rutabmpd   =lcdirdes+'\graficos'&&
+	_rutaocxd   =lcdirdes+'\ocx'&&
+	
 	_rutaprogs  =lcdd+'Progs'&&
 	_rutamenu   =lcdd+'Menus'&&
 	_rutadatos  =lcdd+'Datos'
@@ -52,6 +54,7 @@ If lldesarrollo
 	Set Path To &_rutaclases,&_rutaprogs,&_rutaprogs2,&_rutamenu,&_rutadatos,&_rutabmps;
 		,&_rutaforms2,&_rutaforms,&_rutareports,&_rutaclased,&_rutalibd;
 		,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutainclude,&_rutaFoxyPreviewer;
+		,&_rutaocxd
 	*
 Endif
 
