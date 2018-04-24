@@ -3,80 +3,6 @@
 
 
 
-'  ' as tipocaja,IIF(origen='3RO','T','P') as esclase,SPACE(15) as nrotarjeta,SPACE(15) as cupon,00 as cuota,STR(id,12) as idcheque,SPACE(50) as detalle,idctatitular,idctarecibido,idctaentregado,idlocalidad,nroidentificador,lccuit,idbancoFROM Csrcursor I
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -179,6 +105,7 @@
 
 NTO CURSOR CsrPago READWRITE 
 12-04-2018 12:57:19 , MAIN, Error: LOBJETO no es un objeto.;Linea : IF VARTYPE(lObjeto.PidoRemito_Act)='L';Error :       1924;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         25 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005XQH00UT.TMP;Ultimo Contro
+
 
 
 
@@ -540,6 +467,7 @@ l activo:
 
 
 
+
 activo: 
 12-04-2018 12:58:54 , Pila de llamadas
 12-04-2018 12:58:55 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -563,6 +491,7 @@ activo:
 12-04-2018 12:58:58 , Nº de Linea :         83
 12-04-2018 12:58:58 , En el Fuente: 		.Act_Automa = lObjeto.PidoRemito_Act
 12-04-2018 13:28:49 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva 
+
 
 
 
@@ -884,7 +813,9 @@ activo:
 
 
 
+
 s subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,SPACE(5) as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DA
+
 
 
 
@@ -1206,6 +1137,7 @@ TE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuota, SPAC
 
 
 
+
 ,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia 
 
 
@@ -1367,7 +1299,9 @@ TE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuota, SPAC
 
 
 
+
 ,SPACE(30) as retiro,SPACE(30) as autorizo,SPACE(30) as ubicacion ,0 as SolicitaDNI FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control ac
+
 
 
 
@@ -1697,7 +1631,9 @@ tivo:
 
 
 
+
 00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,0000000.00 as BasedtoCiva,0000000.00 as BaseDtoSiva   	   ,SPACE(3) as sub
+
 
 
 
@@ -2013,7 +1949,9 @@ numero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc       ,SPACE(25) as sub
 
 
 
+
 TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE(
+
 
 
 
@@ -2173,6 +2111,7 @@ TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as
 
 )),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
 16-04-2018 11:26:21 , REGFACVTA.EDITADESCRIPCION1._TXTNOMBRE.LOSTFOCUS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0');Error :         11;Ultimo Alias Activo: C
+
 
 
 
@@ -2494,6 +2433,7 @@ SRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\L
 
 
 
+
 SRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008IDL0GAX.TMP;Ultimo Control activo: 
 16-04-2018 11:27:36 , Pila de llamadas
 16-04-2018 11:27:37 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2507,6 +2447,7 @@ SRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\L
 16-04-2018 11:27:38 , Nº de Linea :        707
 16-04-2018 11:27:38 , En el Fuente: lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0')
 16-04-2018 11:36:52 , REGFACVTA.KEYPRESS, Error: No se encuentra la variable 'NKEYCODE'.;Linea : IF strzero(nKeyCode,3)$"019-004";Error :         12;Ultimo Alias Activo: CSRSUBPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
 
 
 
@@ -2819,6 +2760,7 @@ SRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\L
 
 
 
+
 F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008IDL0IXD.TMP;Ultimo Control activo: 
 16-04-2018 11:37:13 , Pila de llamadas
 16-04-2018 11:37:14 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2827,6 +2769,7 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008IDL0IXD.TMP;Ultimo Control activo:
 16-04-2018 11:37:14 , Nº de Linea :          4
 16-04-2018 11:37:14 , En el Fuente: IF strzero(nKeyCode,3)$"019-004"
 17-04-2018 13:12:06 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CESTADO'.;Linea : Where CsrMaopera.estado = '0' and CsrCuerpo.sdocant <> 0 and CsrCuerpo.activo <<cEstado>>;Error :         12;Ultimo Alias Activo
+
 
 
 
@@ -2979,6 +2922,7 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008IDL0IXD.TMP;Ultimo Control activo:
 17-04-2018 13:12:08 , Nº de Linea :         82
 17-04-2018 13:12:08 , En el Fuente: Where CsrMaopera.estado = '0' and CsrCuerpo.sdocant <> 0 and CsrCuerpo.activo <<cEstado>>
 17-04-2018 15:25:51 , MAIN, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : GO TOP IN CsrCursor;Error :         13;Ultimo Alias Activo: CSRBUSPROD;Ultimo registro:      23402 NOMARTICULO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009IX500KH.TMP;Ultimo
+
 
 
 
@@ -3272,6 +3216,7 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008IDL0IXD.TMP;Ultimo Control activo:
 
 
 
+
 Ultimo Control activo: 
 19-04-2018 11:23:18 , Pila de llamadas
 19-04-2018 11:23:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
@@ -3413,7 +3358,9 @@ Ultimo Control activo:
 
 
 
+
 edor,chrfecha,detalle ,SUM(importe) as importe,DATE(),SUM(pendiente) as pendiente ,SUM(total) as Total , articulo, numcomp,diasprome FROM CsrImprimir GROUP BY idctacte,ctacte,nomctacte,grupo,chrfecha,detalle ,codvendedor, nomvendedor,articulo,numcomp INT
+
 
 
 
@@ -3658,8 +3605,10 @@ O CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRCLIENT
 
 
 
+
 otal;	
 20-04-2018 09:51:42 , SUBRTOPDTE.INIT, Error: No se encuentra la propiedad CAPRION.;Linea : .lbltituloform.Caprion = "SUBDIARIO DE SALDOS DE REMITOS";Error :       1734;Ultimo Alias Activo: _CSRCTACTE;Ultimo registro:          1 VAL(CNUMERO);DBF: C:\USER
+
 
 
 
@@ -3891,6 +3840,7 @@ S\ADMIN\APPDATA\LOCAL\TEMP\00009QTL02NT.TMP;Ultimo Control activo: IDCOMPROBA
 
 
 
+
 0009QTL0363.TMP;Ultimo Control activo: 
 20-04-2018 09:56:29 , Pila de llamadas
 20-04-2018 09:56:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
@@ -3899,6 +3849,7 @@ S\ADMIN\APPDATA\LOCAL\TEMP\00009QTL02NT.TMP;Ultimo Control activo: IDCOMPROBA
 20-04-2018 09:56:30 , Nº de Linea :         16
 20-04-2018 09:56:31 , En el Fuente: 		.ogroupestado.Visible = .f.
 20-04-2018 09:57:13 , SUBRTOPDTE.INIT, Error: _OGRUPOORDEN es un miembro desconocido.;Linea : ._ogrupoorden.Value = 2;Error :       1925;Ultimo Alias Activo: _CSRCTACTE;Ultimo registro:          1 VAL(CNUMERO);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009
+
 
 
 
@@ -4121,6 +4072,7 @@ QTL0372.TMP;Ultimo Control activo:
 
 
 
+
 LOCAL\TEMP\00009QTL03Q9.TMP;Ultimo Control activo: 
 20-04-2018 10:14:27 , Pila de llamadas
 20-04-2018 10:14:27 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4134,6 +4086,7 @@ LOCAL\TEMP\00009QTL03Q9.TMP;Ultimo Control activo:
 20-04-2018 10:14:29 , Nº de Linea :        196
 20-04-2018 10:14:29 , En el Fuente: SET ORDER TO korden
 20-04-2018 15:02:48 , REGFACVTA.CONTAINERENCABEZA._CBOOPERA.LOSTFOCUS, Error: Property PREPUNITA is not found.;Linea : Oscatter.preunita	= a_red(Oscatter.redondeo,Oscatter.prepunita * (1 + lnBonif/100));Error :       1734;Ultimo Alias Activo: CSRAUXCUERF
+
 
 
 
@@ -4350,9 +4303,11 @@ AC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEM
 
 
 
+
  ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: CODEXTEND
 20-04-2018 18:58:11 , Pila de llamadas
 24-04-2018 09:10:30 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: Alias 'CSRXCUERFAC' is not found.;Linea : USE IN CsrXcuerfac;Error :         13;Ultimo Alias Activo: IMPCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00005VD5005O.
+
 
 
 
@@ -4570,6 +4525,7 @@ TMP;Ultimo Control activo:
 
 
 
+
 \00005VD501FB.TMP;Ultimo Control activo: 
 24-04-2018 09:37:30 , Pila de llamadas
 24-04-2018 09:37:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
@@ -4598,6 +4554,7 @@ TMP;Ultimo Control activo:
 24-04-2018 09:37:35 , Nº de Linea :        157
 24-04-2018 09:37:35 , En el Fuente: 				SELECT CsrAuxCabeTransp
 24-04-2018 09:40:25 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: Variable 'HOJA' is not found.;Linea : SET ORDER TO hoja;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         15 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00005VD501NR.T
+
 
 
 
@@ -4767,7 +4724,9 @@ MP;Ultimo Control activo:
 
 
 
+
 BaseGra,BaseIva WITH lnBaseiva,BaseNocatego WITH lnTotNoCatego,Perceibto1 WITH lnPerceibto1,Perceibto2 WITH lnPerceibto2 ,SubtotSiva WITH lnBaseSubSiva,SubtotCiva WITH lnBaseSubCiva ,total WITH lnTotalFac IN CsrAuxCabefac;Error :         12;Ultimo Alias 
+
 
 
 
@@ -4918,6 +4877,7 @@ Activo: CSRAUXCUERFAC;Ultimo registro:         16 HOJAACTUAL;DBF: C:\USERS\USUAR
 
 
 
+
 ceibto1 WITH lnPerceibto1,Perceibto2 WITH lnPerceibto2	   	,SubtotSiva WITH lnBaseSubSiva,SubtotCiva WITH lnBaseSubCiva 	   	,total WITH lnTotalFac IN CsrAuxCabefac
 24-04-2018 12:56:31 , REGFACVTA.KEYPRESS, Error: Data type mismatch.;Linea : INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta ,Kilos,FecOferta,Orden,Leyenda,PrecioCdo) VALUES (STR(loObjFactura.hojaactual
 
@@ -4976,7 +4936,9 @@ ceibto1 WITH lnPerceibto1,Perceibto2 WITH lnPerceibto2	   	,SubtotSiva WITH lnBa
 
 
 
+
 ,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cPrecioUni ,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0' ,cLeyenda,nPrecioCdo);Error :          9;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPD
+
 
 
 
@@ -5125,6 +5087,7 @@ ATA\LOCAL\TEMP\0000B21502RE.TMP;Ultimo Control activo:
 
 
 
+
 tidad,cArticulo,cCodigo,cPrecioUni		    			,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0'		    			,cLeyenda,nPrecioCdo)		    			
 24-04-2018 12:58:24 , REGFACVTA.KEYPRESS, Error: Data type mismatch.;Linea : INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta ,Kilos,FecOferta,Orden,Leyenda,PrecioCdo) VALUES (STR(loObjFactura.hojaactual
 
@@ -5166,7 +5129,9 @@ tidad,cArticulo,cCodigo,cPrecioUni		    			,cBonifica,cPrecioFin,cTotal,cUniVent
 
 
 
+
 ,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cPrecioUni ,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0' ,cLeyenda,nPrecioCdo);Error :          9;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPD
+
 
 
 
@@ -5281,8 +5246,10 @@ ATA\LOCAL\TEMP\0000B21503AG.TMP;Ultimo Control activo:
 
 
 
+
 tidad,cArticulo,cCodigo,cPrecioUni		    			,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0'		    			,cLeyenda,nPrecioCdo)		    			
 24-04-2018 13:16:06 , REGFACVTA.KEYPRESS, Error: Variable 'LCIDMAOPERA' is not found.;Linea : where Csrcuerfac.idmaopera in (<<lcidmaopera>>);Error :         12;Ultimo Alias Activo: CSRAUXCURSORASTO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPD
+
 
 
 
@@ -5354,6 +5321,7 @@ ATA\LOCAL\TEMP\0000B215085Z.TMP;Ultimo Control activo:
 
 
 
+
 0B21508VR.TMP;Ultimo Control activo: 
 24-04-2018 13:17:22 , Pila de llamadas
 24-04-2018 13:17:23 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -5391,3 +5359,5 @@ ATA\LOCAL\TEMP\0000B215085Z.TMP;Ultimo Control activo:
 24-04-2018 13:17:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 24-04-2018 13:17:29 , Nº de Linea :        535
 24-04-2018 13:17:29 , En el Fuente: 			LOCATE FOR idarticulo = Oscatter.id
+24-04-2018 14:43:13 , ON..., Error: A member object with this name already exists.;Linea : ;Error :       1771;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+24-04-2018 14:43:13 , Pila de llamadas
