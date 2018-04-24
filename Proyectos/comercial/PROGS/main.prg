@@ -184,26 +184,26 @@ IF TYPE('goApp')='O'
 	
 	_screen.LockScreen=.t.
 	
-	**** aca comienza la parte de posicionamiento del escritorio
-	PUBLIC oscreen    
-	LeerXML("screen.xml",@oscreen)  && rescato la posicion de la _screen	
-	try
-		_screen.Top=ABS(oscreen.top)
-		_screen.Left=ABS(oscreen.left)
-	CATCH
-		_screen.Top=38
-		_screen.Left=1
-	ENDTRY	
-	*_screen.height=oscreen.height
-	*_screen.width=oscreen.width
+*!*		**** aca comienza la parte de posicionamiento del escritorio
+*!*		PUBLIC oscreen    
+*!*		LeerXML("screen.xml",@oscreen)  && rescato la posicion de la _screen	
+*!*		try
+*!*			_screen.Top=ABS(oscreen.top)
+*!*			_screen.Left=ABS(oscreen.left)
+*!*		CATCH
+*!*			_screen.Top=38
+*!*			_screen.Left=1
+*!*		ENDTRY	
+*!*		*_screen.height=oscreen.height
+*!*		*_screen.width=oscreen.width
 
-	_screen.LockScreen=.f.
+*!*		_screen.LockScreen=.f.
 
-	PUBLIC oHandler
-    oHandler=NEWOBJECT("myhandler")
-    BINDEVENT(_SCREEN,"Resize",oHandler,"myresize")    
-    BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
-	***** fin posicionamiento escritorio
+*!*		PUBLIC oHandler
+*!*	    oHandler=NEWOBJECT("myhandler")
+*!*	    BINDEVENT(_SCREEN,"Resize",oHandler,"myresize")    
+*!*	    BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
+*!*		***** fin posicionamiento escritorio
 	
 	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     DO Verifica_OCX WITH "Check"
