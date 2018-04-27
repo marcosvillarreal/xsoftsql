@@ -157,6 +157,9 @@ SCAN
 	ENDIF 
 ENDSCAN 
 
+&&Eliminamos los cliente del vendedor 5
+DELETE FROM CsrDeudor WHERE VAL(vendedor) = 5
+
 SET SAFETY OFF 
 SELECT CsrLista
 ZAP 
@@ -306,13 +309,13 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*vista()
+vista()
 
-*stop()
+stop()
 SCAN 
 	
 	IF VAL(codigo)=1772
-		stop()
+		*stop()
 	ENDIF 
 	
  	SELECT CsrCtacte
@@ -370,7 +373,7 @@ SCAN
 		lntipoiva = 3	&&NOCATEGORIZADO
 	ENDCASE 
 	IF lntipoiva=3
-		lcCuit=''
+		*lcCuit=''
 	ENDIF
 
 *!*	    DO CASE 

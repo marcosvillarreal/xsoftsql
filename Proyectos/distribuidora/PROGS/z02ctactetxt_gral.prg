@@ -309,13 +309,13 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*vista()
+vista()
 
-*stop()
+stop()
 SCAN 
 	
 	IF VAL(codigo)=1772
-		stop()
+		*stop()
 	ENDIF 
 	
  	SELECT CsrCtacte
@@ -343,7 +343,7 @@ SCAN
 		
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	
-	IF CsrDeudor.tipodoc$'CUIT'
+	IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
 		lcCuit			= Cuit(lcNroDoc)
 	ENDIF 
 	
@@ -365,7 +365,7 @@ SCAN
 	DO CASE 
 	CASE lcTipoiva$'INSCRIPTO'
 		lntipoiva = 1	&&RI
-	CASE lcTipoiva$'CONSUMIDOR'
+	CASE 'CONSUMIDOR'$lcTipoiva
 		lntipoiva = 3	&&CF
 	CASE lcTipoiva$'EXENTO'
 		lntipoiva = 4	&&EXENTO
@@ -373,7 +373,7 @@ SCAN
 		lntipoiva = 3	&&NOCATEGORIZADO
 	ENDCASE 
 	IF lntipoiva=3
-		lcCuit=''
+		*lcCuit=''
 	ENDIF
 
 *!*	    DO CASE 

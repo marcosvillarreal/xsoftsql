@@ -49,7 +49,7 @@ local lnidrubro, lnidmarca, lncodrubro
 store 0 to lnidrubro, lnidmarca ,lncodrubro
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(30),Proveedor c(8),Costosiva c(15),CostoCiva c(15),PreVta1 c(15),PreVtaf1 c(15);
+CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(50),Proveedor c(8),Costosiva c(15),CostoCiva c(15),PreVta1 c(15),PreVtaf1 c(15);
 		,PreVta2 c(15),PreVtaf2 c(15),PreVta3 c(15),PreVtaf3 c(15),Stock c(8),Alicuota c(8),fecModf c(15) ,Observa c(100);
 		,Util c(15),Util2 c(15), Util3 c(15), Tasa c(6))
 
@@ -258,13 +258,13 @@ SCAN FOR !EOF()
 	lnCosto		= VAL(CsrArticulo.costosiva)
 	lnCostoBon	= lnCosto
 	
-	lnUtil1		= VAL(CsrArticulo.Util)
+	lnUtil1		= INT(VAL(CsrArticulo.Util))
 	lnprevta1	= lnCosto * lnUtil1	&&VAL(Csrarticulo.prevta1)
 	lnprevtaf1	= lnprevta1 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-	lnUtil2		= VAL(CsrArticulo.Util2)
+	lnUtil2		= INT(VAL(CsrArticulo.Util2))
 	lnprevta2	= lnCosto * lnUtil2	&&VAL(Csrarticulo.prevta1)
 	lnprevtaf2	= lnprevta2 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-	lnUtil3		= VAL(CsrArticulo.Util3)
+	lnUtil3		= INT(VAL(CsrArticulo.Util3))
 	lnprevta3	= lnCosto * lnUtil3	&&VAL(Csrarticulo.prevta1)
 	lnprevtaf3	= lnprevta3 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
 	
