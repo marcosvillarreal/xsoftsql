@@ -232,7 +232,7 @@ SCAN FOR !EOF()
 		LOCATE FOR nombre=TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3)
 		IF nombre#TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3)
 			INSERT INTO CsrRuta (id,numero,nombre) ;
-			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+" "+STR(Csrvendedor.numero,3))		     		
+			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3))		     		
 			lnid = lnid + 1
 			lnNumRuta = lnNumRuta + 1 
 		ENDIF 

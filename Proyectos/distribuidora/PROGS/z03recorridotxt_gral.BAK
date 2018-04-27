@@ -263,15 +263,20 @@ SCAN FOR !EOF()
 				VALUES (lnidcabeza,Csrrutavdor.id,VAL(SUBSTR(lcdias,i,1)))
 				lnidcabeza = lnidcabeza + 1
 			ENDIF 
-			IF CsrRecorrido.orden#0
+			
+			SELECT CsrCuerruta
+			COUNT ALL FOR idcaberuta=Csrcaberuta.id TO nOrden
+			nOrden = nOrden + 1 
+		
+			&&IF CsrRecorrido.orden#0
 			      SELECT CsrCuerruta
-			      LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id AND orden=Csrrecorrido.orden
-			      IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id OR orden#CsrRecorrido.orden
+			      LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id &&AND orden=Csrrecorrido.orden
+			      IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id &&OR orden#CsrRecorrido.orden
 	   				INSERT INTO Csrcuerruta (id,idcaberuta,idctacte,orden,turno) ;
-	   				VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,CsrRecorrido.orden,1)
+	   				VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,nOrden,1)
 	   				lnidcuerruta = lnidcuerruta + 1
 				ENDIF 		   				
-			ENDIF 	   				
+			&&ENDIF 	   				
 		NEXT 
 	*ENDIF 
 	SELECT CsrRecorrido

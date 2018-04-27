@@ -157,6 +157,9 @@ SCAN
 	ENDIF 
 ENDSCAN 
 
+&&Eliminamos los cliente del vendedor 5
+DELETE FROM CsrDeudor WHERE VAL(vendedor) = 5
+
 SET SAFETY OFF 
 SELECT CsrLista
 ZAP 
