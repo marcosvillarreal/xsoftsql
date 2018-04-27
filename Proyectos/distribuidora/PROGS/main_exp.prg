@@ -265,6 +265,9 @@ IF TYPE('goApp')='O'
 	CASE VAL(nidprograma)=1
 		goapp.otherformsclose ="GENERA_SWIFT"
 		DO FORM genera_swift WITH .t.
+	CASE VAL(nidprograma)=2
+		goapp.otherformsclose ="GENERA_FRIG"
+		DO FORM genera_frig WITH .t.
 	OTHERWISE
 
 	ENDCASE
