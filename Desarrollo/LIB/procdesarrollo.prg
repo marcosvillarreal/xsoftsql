@@ -11,7 +11,6 @@ lcrutafuen = ADDBS(cOrig)
 lcArchivo = cArch 
 Wait Window "enviando "+Alltrim(lcArchivo)+" " Nowait 
 
-stop()
 cSend = "PUT "+lcrutafuen+Alltrim(lcArchivo)+" "+Alltrim(lcrutadest)+"/"+Alltrim(lcArchivo)+""
 oFTP.EXECUTE(cPaso,cSend) && Agrega el archivo 
 Do While oFTP.stillexecuting=.T. 
@@ -350,7 +349,6 @@ IF !oForm.buscarcajaactiva
 	RETURN 
 ENDIF 
 
-STOP()
 
 IF nidejercicio != CsrParaConfig.idejercicio &&o goapp.idejercicioactual &&NO goapp.idejercicio
 	oForm.usarcajaactiva = .f.
