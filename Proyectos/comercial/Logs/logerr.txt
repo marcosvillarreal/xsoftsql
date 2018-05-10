@@ -17,1020 +17,6 @@
 
 
 
-TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-)),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
-08-05-2018 11:22:47 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.* ,SPACE(13) as proximonro,CAST(0 as int) as idcomprobante ,SPACE(1) as clasecomp ,SPACE(30) as retiro,SPACE(30) as autorizo,SPACE(30) as ubicac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ion FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabeRtro READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-08-05-2018 11:22:48 , Pila de llamadas
-08-05-2018 11:22:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:22:49 , Objeto      : regfacvta.load
-08-05-2018 11:22:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:22:50 , Nº de Linea :         10
-08-05-2018 11:22:50 , En el Fuente: thisform.crearcursor()
-08-05-2018 11:22:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:22:51 , Objeto      : regfacvta.crearcursor
-08-05-2018 11:22:51 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:22:51 , Nº de Linea :         31
-08-05-2018 11:22:51 , En el Fuente: SELECT CsrCabefac.*       ,SPACE(13) as proximonro,CAST(0 as int) as idcomprobante       ,SPACE(1) as clasecomp       ,SPACE(30) as retiro,SPACE(30) as autorizo,SPACE(30) as ubicacion       FROM CsrCabefac WHERE RECNO(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-)=1 AND id=0 INTO CURSOR CsrAuxcabeRtro READWRITE 
-08-05-2018 11:22:57 , REGFACVTA.LOAD, Error: El archivo 'csrmaopera.dbf' no existe.;Linea : SELECT Csrmaopera.*,CAST(0 as int) as idvdorplan,CAST(0 as int) as iddeposito,CAST(0 as int) as idareaneg ,00000000 AS nrocaja,SPACE(6) as pefiscal,CAST(0 as int)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as idmotanula FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXCABEDOLARES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX010U.TMP;Ultimo Control acti
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-vo: 
-08-05-2018 11:22:58 , Pila de llamadas
-08-05-2018 11:22:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:22:58 , Objeto      : regfacvta.load
-08-05-2018 11:22:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:22:59 , Nº de Linea :         10
-08-05-2018 11:22:59 , En el Fuente: thisform.crearcursor()
-08-05-2018 11:22:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:23:00 , Objeto      : regfacvta.crearcursor
-08-05-2018 11:23:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:23:01 , Nº de Linea :         46
-08-05-2018 11:23:01 , En el Fuente: SELECT Csrmaopera.*,CAST(0 as int) as idvdorplan,CAST(0 as int) as iddeposito,CAST(0 as int) as idareaneg		,00000000 AS nrocaja,SPACE(6) as pefiscal,CAST(0 as int) as idmotanula	   FROM Csrmaopera WHERE RECNO()=1 AND i
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-d=0 INTO CURSOR CsrAuxMaopera READWRITE 
-08-05-2018 11:23:07 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1173,6 +159,20 @@ d=0 INTO CURSOR CsrAuxMaopera READWRITE
 
 
 ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,0000000.00 as BasedtoCiva,0000000.00 as BaseDtoSiva ,SPACE(3) a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1482,7 +482,35 @@ s subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(25) as subc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1792,7 +820,35 @@ TE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuota, SPAC
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,SPACE(30) as retiro,SPACE(30) as autorizo,SPACE(30) as ubicacion ,0 as SolicitaDNI FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control ac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2109,7 +1165,35 @@ tivo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,0000000.00 as BasedtoCiva,0000000.00 as BaseDtoSiva   	   ,SPACE(3) as sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2411,7 +1495,35 @@ numero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc       ,SPACE(25) as sub
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2713,7 +1825,35 @@ TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3013,7 +2153,35 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3313,7 +2481,35 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3618,7 +2814,35 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3904,7 +3128,35 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4190,7 +3442,35 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4483,7 +3763,35 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4759,7 +4067,35 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5035,7 +4371,35 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5319,6 +4683,20 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Control activo: 
 08-05-2018 11:28:09 , Pila de llamadas
 08-05-2018 11:28:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
@@ -5332,6 +4710,20 @@ o Control activo:
 08-05-2018 11:28:11 , Nº de Linea :         49
 08-05-2018 11:28:12 , En el Fuente: SELECT csrcuerfac
 08-05-2018 11:30:38 , REGFACVTA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0 AND lVerificarSiesta;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\US
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5599,6 +4991,20 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX043L.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ontrol activo: 
 08-05-2018 11:31:34 , Pila de llamadas
 08-05-2018 11:31:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
@@ -5612,6 +5018,20 @@ ontrol activo:
 08-05-2018 11:31:37 , Nº de Linea :          4
 08-05-2018 11:31:38 , En el Fuente: 	SELECT CsrProducto
 08-05-2018 11:42:53 , REGCARTERA.KEYPRESS, Error: No se encuentra la variable 'IDVENDEDOR'.;Linea : replace idvendedor WITH loObPidoVdor.idretorno;Error :         12;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5859,6 +5279,20 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 000BSAX072F.TMP;Ultimo Control activo: 
 08-05-2018 11:50:06 , Pila de llamadas
 08-05-2018 11:50:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -5974,6 +5408,20 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 000BSAX078T.TMP;Ultimo Control activo: 
 08-05-2018 11:50:43 , Pila de llamadas
 08-05-2018 11:50:44 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -5982,6 +5430,20 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 08-05-2018 11:50:45 , Nº de Linea :         38
 08-05-2018 11:50:45 , En el Fuente: 		.codempresa= lObjeto.CodEmpresa
 08-05-2018 12:48:04 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : dfecIni		= ctod(CsrRemFac.fecha);Error :         11;Ultimo Alias Activo: CSROPERATORIA;Ultimo registro:      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6207,6 +5669,20 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008E8900U7.TMP;Ultimo Control activo: 
 08-05-2018 12:50:09 , Pila de llamadas
 08-05-2018 12:50:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -6230,6 +5706,20 @@ o registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008E8900U7.TMP;
 08-05-2018 12:50:15 , Nº de Linea :        154
 08-05-2018 12:50:15 , En el Fuente: 		nDias	= ttod(CsrAuxCabefac.fecha) - CsrRemFac.fecha
 09-05-2018 12:05:18 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: No se encuentra la propiedad LNIDCOMPDEVOLRTO.;Linea : .lnidcompdevolrto	 = IIF(ALLTRIM(nombre)='COMPROBADEVOLRTO',CsrParavario.idorigen,0);Error :       1734;Ultimo Alias Activo: CSRPA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6430,6 +5920,20 @@ RAVARIO;Ultimo registro:         77 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
 09-05-2018 12:06:54 , Pila de llamadas
 09-05-2018 12:06:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -6458,6 +5962,20 @@ OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
 09-05-2018 12:06:59 , Nº de Linea :         13
 09-05-2018 12:07:00 , En el Fuente: 			IF !.pidovendedor()
 09-05-2018 12:07:52 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: No se encuentra la variable 'MOTIVO'.;Linea : replace motivo WITH loObPidoVdor.retiro IN CsrRemFac;Error :         12;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6602,6 +6120,20 @@ OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\000095AH0344.TMP;Ultimo Control activo: CODIGO
 09-05-2018 12:09:17 , Pila de llamadas
 09-05-2018 12:09:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -6686,7 +6218,35 @@ CAL\TEMP\000095AH0344.TMP;Ultimo Control activo: CODIGO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          7 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6775,6 +6335,20 @@ TEMP\000095AH053S.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rimir READWRITE 
 09-05-2018 12:34:04 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'CODVDORANULA'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,idpase,
 
@@ -6806,7 +6380,35 @@ rimir READWRITE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 fechaanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          7 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6880,8 +6482,36 @@ ATA\LOCAL\TEMP\000095AH055M.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mprimir READWRITE 
 09-05-2018 12:49:58 , ABMPRODUCTO._TEXTBOX1.KEYPRESS, Error: GRILLAVARIOS1 es un miembro desconocido.;Linea : .page6.grillavarios1.lblproductoactivo.Caption = .Page1._txtnombre.Value;Error :       1925;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6940,6 +6570,20 @@ mprimir READWRITE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000095AH06TR.TMP;Ultimo Control activo: 
 09-05-2018 12:50:45 , Pila de llamadas
 09-05-2018 12:50:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -6967,3 +6611,97 @@ mprimir READWRITE
 09-05-2018 12:50:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
 09-05-2018 12:50:52 , Nº de Linea :         18
 09-05-2018 12:50:52 , En el Fuente: 	.page6.lblproductoactivo.Caption = .Page1._txtnombre.Value
+10-05-2018 11:05:24 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'CANTIDAD'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,idpase,fech
+
+
+
+
+
+
+
+
+
+
+
+
+
+aanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5881 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
+
+
+
+
+
+
+
+
+
+
+LOCAL\TEMP\00009HJD0024.TMP;Ultimo Control activo: 
+10-05-2018 11:05:24 , Pila de llamadas
+10-05-2018 11:05:25 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:25 , Objeto      : subrtopdte.imprimir_vistaprevia1.excel.click
+10-05-2018 11:05:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:26 , Nº de Linea :          5
+10-05-2018 11:05:26 , En el Fuente: llOK=thisform.CrearInforme()
+10-05-2018 11:05:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:26 , Objeto      : subrtopdte.crearinforme
+10-05-2018 11:05:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:27 , Nº de Linea :        225
+10-05-2018 11:05:27 , En el Fuente: DODEFAULT()
+10-05-2018 11:05:27 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:27 , Objeto      : informe.crearinforme
+10-05-2018 11:05:28 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:28 , Nº de Linea :          1
+10-05-2018 11:05:28 , En el Fuente: thisform.crearheader()
+10-05-2018 11:05:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:28 , Objeto      : subrtopdte.crearheader
+10-05-2018 11:05:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:28 , Nº de Linea :         67
+10-05-2018 11:05:28 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo		,cantidad,importe,total,diasprome,codvendedor,nomvendedor		,idpase,fechaanula,motivo,codvdoranula,vdoranula		FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrI
+
+
+
+
+
+
+
+mprimir READWRITE 
+10-05-2018 11:05:50 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'CANTIDAD'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,idpase,fech
+
+
+
+
+
+
+aanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5881 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
+
+
+
+LOCAL\TEMP\00009HJD002D.TMP;Ultimo Control activo: 
+10-05-2018 11:05:51 , Pila de llamadas
+10-05-2018 11:05:52 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:52 , Objeto      : subrtopdte.imprimir_vistaprevia1.excel.click
+10-05-2018 11:05:52 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:52 , Nº de Linea :          5
+10-05-2018 11:05:53 , En el Fuente: llOK=thisform.CrearInforme()
+10-05-2018 11:05:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:53 , Objeto      : subrtopdte.crearinforme
+10-05-2018 11:05:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:53 , Nº de Linea :        225
+10-05-2018 11:05:53 , En el Fuente: DODEFAULT()
+10-05-2018 11:05:54 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:54 , Objeto      : informe.crearinforme
+10-05-2018 11:05:54 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+10-05-2018 11:05:54 , Nº de Linea :          1
+10-05-2018 11:05:55 , En el Fuente: thisform.crearheader()
+10-05-2018 11:05:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:55 , Objeto      : subrtopdte.crearheader
+10-05-2018 11:05:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+10-05-2018 11:05:56 , Nº de Linea :         67
+10-05-2018 11:05:56 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo		,cantidad,importe,total,diasprome,codvendedor,nomvendedor		,idpase,fechaanula,motivo,codvdoranula,vdoranula		FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE 
