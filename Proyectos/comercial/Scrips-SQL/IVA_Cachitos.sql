@@ -42,9 +42,9 @@ go
 --update tablaimp set importe=0.01,baseimp=0.08,detalle='m' where id = 110000000039
 --update tablaimp set importe=0.08,detalle='m' where id = 110000000040
 --update tablaimp set importe=0,baseimp=0,tasa=0,detalle='m' where id = 110000000041
-update tablaimp set importe=0,baseimp=0,tasa=0,detalle='m' where id = 110000000009
-update tablaimp set importe=0,baseimp=0,tasa=0,detalle='m' where id = 110000000013
-update tablaimp set importe=-67.310,baseimp=-55.620,tasa=21,detalle='m' where id = 110000000247
+--update tablaimp set importe=0,baseimp=0,tasa=0,detalle='m' where id = 110000000009
+--update tablaimp set importe=0,baseimp=0,tasa=0,detalle='m' where id = 110000000013
+--update tablaimp set importe=-67.310,baseimp=-55.620,tasa=21,detalle='m' where id = 110000000247
 
 --update tablaimp set importe=1.65,detalle='m' where id = 110000000021
 --update tablaimp set importe=0.35,baseimp=1.65,detalle='m' where id = 110000000020
