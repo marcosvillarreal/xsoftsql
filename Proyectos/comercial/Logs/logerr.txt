@@ -128,6 +128,7 @@
 
 
 
+roducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProducto.segflete ,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva ,costociva WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1 ,utilciva1v WIT
 
 
 
@@ -189,7 +190,6 @@
 
 
 
-0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
 
 
 
@@ -273,6 +273,7 @@
 
 
 
+H CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1 ,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre ,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva ,preconfsivav WITH CsrProducto.precon
 
 
 
@@ -382,7 +383,6 @@
 
 
 
-Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra, 00000000.00 as BaseInterno,  000000000.00 as Baseexe ,SPACE(15) as CodExtend ,0 as actualizaprecio ,CAST(0 as n(12,2)) as prepubarti,SPACE(10) as inf_fecha ,CAST(0 as n(12,
 
 
 
@@ -418,6 +418,7 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+fsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto.prepubciva ,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva ,preotrociva1v WITH CsrProducto.preotro1civa ,preotrofsiva1v WITH CsrProducto.pr
 
 
 
@@ -562,6 +563,7 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+eotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva1 ,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10AT6.TMP;Ultimo Con
 
 
 
@@ -575,7 +577,6 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
-2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
 
 
 
@@ -707,6 +708,18 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+trol activo: 
+15-05-2018 13:16:08 , Pila de llamadas
+15-05-2018 13:16:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:16:09 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:16:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:16:09 , Nº de Linea :          1
+15-05-2018 13:16:09 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:16:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:16:11 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:16:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:16:12 , Nº de Linea :         44
+15-05-2018 13:16:13 , En el Fuente: 	REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal		,numero WITH CsrProducto.numero,nombre WITH CsrProducto.nombre		,costocprav WITH CsrProducto.costocpra,aumentov WITH Cs
 
 
 
@@ -768,19 +781,6 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
-AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX0294.TMP;Ultimo Control activo: 
-08-05-2018 11:26:30 , Pila de llamadas
-08-05-2018 11:26:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:26:31 , Objeto      : regfacvta.load
-08-05-2018 11:26:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:26:31 , Nº de Linea :         10
-08-05-2018 11:26:32 , En el Fuente: thisform.crearcursor()
-08-05-2018 11:26:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:26:32 , Objeto      : regfacvta.crearcursor
-08-05-2018 11:26:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:26:33 , Nº de Linea :         69
-08-05-2018 11:26:33 , En el Fuente: SELECT CsrCuerfac.*,CAST(0 as n(12,0)) as idmovremito,CAST(0 as n(12,0)) as idcuerfac;	
-08-05-2018 11:27:24 , REGFACVTA.LOAD, Error: El archivo 'csrcuerfac.dbf' no existe.;Linea : SELECT CsrCuerfac.*,CAST(0 as n(12,0)) as idmovremito,CAST(0 as n(12,0)) as idcuerfac ,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol
 
 
 
@@ -858,6 +858,7 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon		,internov WITH Csrproducto.interno,internoporcev WITH Csrproducto.internoporce		,fletev WITH CsrProducto.flete,segfletev WITH
 
 
 
@@ -968,7 +969,6 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
-,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
 
 
 
@@ -997,6 +997,7 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+ CsrProducto.segflete		,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva		,costociva WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1		,utilciva1v WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1		
 
 
 
@@ -1135,6 +1136,7 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre		,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva		,preconfsivav WITH CsrProducto.preconfsiva,preconfcivav WITH CsrProducto.preconfciva		,prepubciva
 
 
 
@@ -1156,7 +1158,6 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
-itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idctacpra, CAST(0 as int) as idareaneg ,SPACE(30) as nommarca,SPACE(30) as nomrubro,SPACE(15) as codalfa, CAST( '' as m) as Descrip_memo ,0000000.00 as stock,0000000.0
 
 
 
@@ -1274,6 +1275,7 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+v WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva		,preotrociva1v WITH CsrProducto.preotro1civa		,preotrofsiva1v WITH CsrProducto.preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva
 
 
 
@@ -1344,7 +1346,6 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
-0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
 
 
 
@@ -1413,6 +1414,8 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+1		,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio
+15-05-2018 13:17:00 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'COSTROAGREV'.;Linea : REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal ,numero WITH CsrProducto.numero,nombre WITH Cs
 
 
 
@@ -1532,7 +1535,6 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
-Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra, 00000000.00 as BaseInterno,  000000000.00 as Baseexe ,SPACE(15) as CodExtend ,0 as actualizaprecio ,CAST(0 as n(12,2)) as prepubarti,SPACE(10) as inf_fecha ,CAST(0 as n(12,
 
 
 
@@ -1551,6 +1553,7 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+rProducto.nombre ,costocprav WITH CsrProducto.costocpra,aumentov WITH CsrProducto.aumento ,costov WITH Csrproducto.costo ,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon ,internov WITH Csrproducto.interno,internoporcev WITH Cs
 
 
 
@@ -1688,6 +1691,7 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+rproducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProducto.segflete ,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva ,costocivav WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1 ,utilciva1v 
 
 
 
@@ -1720,7 +1724,6 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
-2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
 
 
 
@@ -1826,6 +1829,7 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1 ,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre ,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva ,preconfsivav WITH CsrProducto.pre
 
 
 
@@ -1908,19 +1912,6 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
-AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX02PZ.TMP;Ultimo Control activo: 
-08-05-2018 11:27:25 , Pila de llamadas
-08-05-2018 11:27:25 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:27:25 , Objeto      : regfacvta.load
-08-05-2018 11:27:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:27:26 , Nº de Linea :         10
-08-05-2018 11:27:26 , En el Fuente: thisform.crearcursor()
-08-05-2018 11:27:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:27:27 , Objeto      : regfacvta.crearcursor
-08-05-2018 11:27:27 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:27:27 , Nº de Linea :         69
-08-05-2018 11:27:27 , En el Fuente: SELECT CsrCuerfac.*,CAST(0 as n(12,0)) as idmovremito,CAST(0 as n(12,0)) as idcuerfac;	
-08-05-2018 11:28:09 , REGFACVTA.LOAD, Error: No se encuentra el alias 'CSRCUERFAC'.;Linea : SELECT csrcuerfac;Error :         13;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX037F.TMP;Ultim
 
 
 
@@ -1976,6 +1967,7 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
+confsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto.prepubciva ,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva ,preotrociva1v WITH CsrProducto.preotro1civa ,preotrofsiva1v WITH CsrProducto
 
 
 
@@ -2104,19 +2096,6 @@ AS ESSUMI FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac REA
 
 
 
-o Control activo: 
-08-05-2018 11:28:09 , Pila de llamadas
-08-05-2018 11:28:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:28:10 , Objeto      : regfacvta.load
-08-05-2018 11:28:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:28:10 , Nº de Linea :         10
-08-05-2018 11:28:10 , En el Fuente: thisform.crearcursor()
-08-05-2018 11:28:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:28:10 , Objeto      : regfacvta.crearcursor
-08-05-2018 11:28:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:28:11 , Nº de Linea :         49
-08-05-2018 11:28:12 , En el Fuente: SELECT csrcuerfac
-08-05-2018 11:30:38 , REGFACVTA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0 AND lVerificarSiesta;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\US
 
 
 
@@ -2126,6 +2105,7 @@ o Control activo:
 
 
 
+.preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva1 ,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10AVA.TMP;Ultimo 
 
 
 
@@ -2263,6 +2243,18 @@ o Control activo:
 
 
 
+Control activo: 
+15-05-2018 13:17:01 , Pila de llamadas
+15-05-2018 13:17:02 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:02 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:17:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:02 , Nº de Linea :          1
+15-05-2018 13:17:02 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:17:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:03 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:17:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:03 , Nº de Linea :         44
+15-05-2018 13:17:04 , En el Fuente: 	REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal		,numero WITH CsrProducto.numero,nombre WITH CsrProducto.nombre		,costocprav WITH CsrProducto.costocpra,aumentov WITH Cs
 
 
 
@@ -2296,24 +2288,6 @@ o Control activo:
 
 
 
-ERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX043L.TMP;Ultimo Control activo: CODEXTEND
-08-05-2018 11:30:38 , Pila de llamadas
-08-05-2018 11:30:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:30:39 , Objeto      : regfacvta.grid2.column1.text1.lostfocus
-08-05-2018 11:30:40 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:30:40 , Nº de Linea :         18
-08-05-2018 11:30:40 , En el Fuente: 			IF thisform.kitbuscarProd.fc_lostfocus(VAL(this.Value)) &&VAL		
-08-05-2018 11:30:40 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-08-05-2018 11:30:40 , Objeto      : regfacvta.kitbuscarprod.fc_lostfocus
-08-05-2018 11:30:41 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-08-05-2018 11:30:42 , Nº de Linea :         28
-08-05-2018 11:30:43 , En el Fuente:    lbfound=this.traerdatos(.f.,"",thisvalue)
-08-05-2018 11:30:43 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-08-05-2018 11:30:43 , Objeto      : regfacvta.kitbuscarprod.traerdatos
-08-05-2018 11:30:44 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-08-05-2018 11:30:44 , Nº de Linea :         38
-08-05-2018 11:30:44 , En el Fuente: IF RECCOUNT(lcaliasseek)#0 AND lVerificarSiesta   
-08-05-2018 11:31:34 , REGFACVTA.INIT, Error: No se encuentra el alias 'CSRPRODUCTO'.;Linea : SELECT CsrProducto;Error :         13;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         26 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX04R8.TMP;Ultimo C
 
 
 
@@ -2414,6 +2388,7 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX043L.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon		,internov WITH Csrproducto.interno,internoporcev WITH Csrproducto.internoporce		,fletev WITH CsrProducto.flete,segfletev WITH
 
 
 
@@ -2484,19 +2459,6 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\0000BSAX043L.TMP;Ultimo Control activo: CODEXTEND
 
 
 
-ontrol activo: 
-08-05-2018 11:31:34 , Pila de llamadas
-08-05-2018 11:31:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:31:35 , Objeto      : regfacvta.init
-08-05-2018 11:31:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:31:36 , Nº de Linea :        160
-08-05-2018 11:31:37 , En el Fuente: 	thisform.iniciavariables()   
-08-05-2018 11:31:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:31:37 , Objeto      : regfacvta.iniciavariables
-08-05-2018 11:31:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-08-05-2018 11:31:37 , Nº de Linea :          4
-08-05-2018 11:31:38 , En el Fuente: 	SELECT CsrProducto
-08-05-2018 11:42:53 , REGCARTERA.KEYPRESS, Error: No se encuentra la variable 'IDVENDEDOR'.;Linea : replace idvendedor WITH loObPidoVdor.idretorno;Error :         12;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPD
 
 
 
@@ -2560,6 +2522,7 @@ ontrol activo:
 
 
 
+ CsrProducto.segflete		,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva		,costocivav WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1		,utilciva1v WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1	
 
 
 
@@ -2662,29 +2625,6 @@ ontrol activo:
 
 
 
-ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo: 
-08-05-2018 11:42:54 , Pila de llamadas
-08-05-2018 11:42:54 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:54 , Objeto      : regcartera.keypress
-08-05-2018 11:42:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:55 , Nº de Linea :         24
-08-05-2018 11:42:55 , En el Fuente: 			    thisform.key_43(2) && + Graba
-08-05-2018 11:42:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:55 , Objeto      : regcartera.key_43
-08-05-2018 11:42:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:55 , Nº de Linea :         18
-08-05-2018 11:42:56 , En el Fuente: 				.actualizar()
-08-05-2018 11:42:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:56 , Objeto      : regcartera.actualizar
-08-05-2018 11:42:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:56 , Nº de Linea :          7
-08-05-2018 11:42:57 , En el Fuente: 				IF !.pidovendedor()
-08-05-2018 11:42:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:57 , Objeto      : regcartera.pidovendedor
-08-05-2018 11:42:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\bancario\regcartera.sct
-08-05-2018 11:42:58 , Nº de Linea :         15
-08-05-2018 11:42:58 , En el Fuente: 		replace idvendedor WITH loObPidoVdor.idretorno
-08-05-2018 11:50:06 , ABMPRODUCTO.INIT, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : .codempresa= lObjeto.CodEmpresa;Error :       1940;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         26 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
 
 
 
@@ -2716,6 +2656,7 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+	,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre		,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva		,preconfsivav WITH CsrProducto.preconfsiva,preconfcivav WITH CsrProducto.preconfciva		,prepubciv
 
 
 
@@ -2844,19 +2785,12 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
-000BSAX072F.TMP;Ultimo Control activo: 
-08-05-2018 11:50:06 , Pila de llamadas
-08-05-2018 11:50:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-08-05-2018 11:50:07 , Objeto      : abmproducto.init
-08-05-2018 11:50:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-08-05-2018 11:50:08 , Nº de Linea :         38
-08-05-2018 11:50:08 , En el Fuente: 		.codempresa= lObjeto.CodEmpresa
-08-05-2018 11:50:43 , ABMPRODUCTO.INIT, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : .codempresa= lObjeto.CodEmpresa;Error :       1940;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         26 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
 
 
 
 
 
+av WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva		,preotrociva1v WITH CsrProducto.preotro1civa		,preotrofsiva1v WITH CsrProducto.preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciv
 
 
 
@@ -2990,6 +2924,8 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+a1		,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio
+15-05-2018 13:17:45 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'PREOTRO1CIVA'.;Linea : REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal ,numero WITH CsrProducto.numero,nombre WITH C
 
 
 
@@ -3009,14 +2945,6 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
-000BSAX078T.TMP;Ultimo Control activo: 
-08-05-2018 11:50:43 , Pila de llamadas
-08-05-2018 11:50:44 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-08-05-2018 11:50:44 , Objeto      : abmproducto.init
-08-05-2018 11:50:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-08-05-2018 11:50:45 , Nº de Linea :         38
-08-05-2018 11:50:45 , En el Fuente: 		.codempresa= lObjeto.CodEmpresa
-08-05-2018 12:48:04 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : dfecIni		= ctod(CsrRemFac.fecha);Error :         11;Ultimo Alias Activo: CSROPERATORIA;Ultimo registro:      
 
 
 
@@ -3130,6 +3058,7 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+srProducto.nombre ,costocprav WITH CsrProducto.costocpra,aumentov WITH CsrProducto.aumento ,costov WITH Csrproducto.costo ,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon ,internov WITH Csrproducto.interno,internoporcev WITH C
 
 
 
@@ -3172,29 +3101,6 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
-    2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008E89007T.TMP;Ultimo Control activo: CODIGO
-08-05-2018 12:48:04 , Pila de llamadas
-08-05-2018 12:48:04 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:05 , Objeto      : regfacvta.grid2.column1.text1.keypress
-08-05-2018 12:48:05 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:05 , Nº de Linea :         23
-08-05-2018 12:48:05 , En el Fuente:  	thisFORM.BotoneraCuerpo.cmdPidoRemito.Click()
-08-05-2018 12:48:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:05 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-08-05-2018 12:48:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:06 , Nº de Linea :          9
-08-05-2018 12:48:07 , En el Fuente: 	thisform.llamarpidoremito()
-08-05-2018 12:48:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:07 , Objeto      : regfacvta.llamarpidoremito
-08-05-2018 12:48:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:08 , Nº de Linea :         19
-08-05-2018 12:48:08 , En el Fuente: 	thisform.actualizacuerfac
-08-05-2018 12:48:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:08 , Objeto      : regfacvta.actualizacuerfac
-08-05-2018 12:48:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:48:09 , Nº de Linea :        149
-08-05-2018 12:48:10 , En el Fuente: 			dfecIni		= ctod(CsrRemFac.fecha)
-08-05-2018 12:50:09 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : nDias	= ttod(CsrAuxCabefac.fecha) - CsrRemFac.fecha;Error :        107;Ultimo Alias Activo: CSROPERATORIA;Ultim
 
 
 
@@ -3285,6 +3191,7 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
+srproducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProducto.segflete ,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva ,costocivav WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1 ,utilciva1v
 
 
 
@@ -3342,29 +3249,6 @@ ATA\LOCAL\TEMP\0000BSAX05I2.TMP;Ultimo Control activo:
 
 
 
-o registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008E8900U7.TMP;Ultimo Control activo: 
-08-05-2018 12:50:09 , Pila de llamadas
-08-05-2018 12:50:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:09 , Objeto      : regfacvta.grid2.column1.text1.keypress
-08-05-2018 12:50:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:10 , Nº de Linea :         23
-08-05-2018 12:50:11 , En el Fuente:  	thisFORM.BotoneraCuerpo.cmdPidoRemito.Click()
-08-05-2018 12:50:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:11 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-08-05-2018 12:50:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:12 , Nº de Linea :          9
-08-05-2018 12:50:12 , En el Fuente: 	thisform.llamarpidoremito()
-08-05-2018 12:50:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:13 , Objeto      : regfacvta.llamarpidoremito
-08-05-2018 12:50:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:14 , Nº de Linea :         19
-08-05-2018 12:50:14 , En el Fuente: 	thisform.actualizacuerfac
-08-05-2018 12:50:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:15 , Objeto      : regfacvta.actualizacuerfac
-08-05-2018 12:50:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-08-05-2018 12:50:15 , Nº de Linea :        154
-08-05-2018 12:50:15 , En el Fuente: 		nDias	= ttod(CsrAuxCabefac.fecha) - CsrRemFac.fecha
-09-05-2018 12:05:18 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: No se encuentra la propiedad LNIDCOMPDEVOLRTO.;Linea : .lnidcompdevolrto	 = IIF(ALLTRIM(nombre)='COMPROBADEVOLRTO',CsrParavario.idorigen,0);Error :       1734;Ultimo Alias Activo: CSRPA
 
 
 
@@ -3440,6 +3324,7 @@ o registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008E8900U7.TMP;
 
 
 
+ WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1 ,redondeov WITH CsrProducto.redondeo,costoagrev WITH CsrProducto.costoagre ,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva ,preconfsivav WITH CsrProducto.pre
 
 
 
@@ -3502,49 +3387,6 @@ o registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008E8900U7.TMP;
 
 
 
-RAVARIO;Ultimo registro:         77 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000095AH01ZG.TMP;Ultimo Control activo: 
-09-05-2018 12:05:18 , Pila de llamadas
-09-05-2018 12:05:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:05:18 , Objeto      : regfacvta.grid2.column1.text1.keypress
-09-05-2018 12:05:18 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:05:18 , Nº de Linea :         23
-09-05-2018 12:05:19 , En el Fuente:  	thisFORM.BotoneraCuerpo.cmdPidoRemito.Click()
-09-05-2018 12:05:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:05:20 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-09-05-2018 12:05:20 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:05:21 , Nº de Linea :          9
-09-05-2018 12:05:21 , En el Fuente: 	thisform.llamarpidoremito()
-09-05-2018 12:05:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:05:22 , Objeto      : regfacvta.llamarpidoremito
-09-05-2018 12:05:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:05:22 , Nº de Linea :         11
-09-05-2018 12:05:22 , En el Fuente: DO FORM pidoremito NAME loFormabmprecio WITH this.lniddeposito,nCotizador LINKED
-09-05-2018 12:05:22 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-09-05-2018 12:05:23 , Objeto      : pidoremito_f.container2.kitbuscaoaltaenctacte.lostfocus
-09-05-2018 12:05:23 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-09-05-2018 12:05:24 , Nº de Linea :         25
-09-05-2018 12:05:24 , En el Fuente: this.lostfocosay()
-09-05-2018 12:05:25 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:25 , Objeto      : pidoremito_f.container2.kitbuscaoaltaenctacte.lostfocosay
-09-05-2018 12:05:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:25 , Nº de Linea :          5
-09-05-2018 12:05:26 , En el Fuente: 	thisform.entercodigo()
-09-05-2018 12:05:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:26 , Objeto      : pidoremito_f.entercodigo
-09-05-2018 12:05:27 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:27 , Nº de Linea :         24
-09-05-2018 12:05:27 , En el Fuente: thisform.iniciarvariables
-09-05-2018 12:05:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:28 , Objeto      : pidoremito_f.iniciarvariables
-09-05-2018 12:05:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:29 , Nº de Linea :          6
-09-05-2018 12:05:29 , En el Fuente: 	.leerparametros()
-09-05-2018 12:05:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:29 , Objeto      : pidoremito_f.leerparametros
-09-05-2018 12:05:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:05:30 , Nº de Linea :          5
-09-05-2018 12:05:30 , En el Fuente: 	.lnidcompdevolrto	 = IIF(ALLTRIM(nombre)='COMPROBADEVOLRTO',CsrParavario.idorigen,0)
-09-05-2018 12:06:53 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF !.pidovendedor();Error :       1940;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\L
 
 
 
@@ -3615,6 +3457,7 @@ RAVARIO;Ultimo registro:         77 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
 
 
 
+confsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto.prepubciva ,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva ,preotrociva1v WITH CsrProducto.preotro1civa ,preotrofsiva1v WITH CsrProducto
 
 
 
@@ -3665,34 +3508,6 @@ RAVARIO;Ultimo registro:         77 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
 
 
 
-OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
-09-05-2018 12:06:54 , Pila de llamadas
-09-05-2018 12:06:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:06:55 , Objeto      : regfacvta.grid2.column1.text1.keypress
-09-05-2018 12:06:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:06:55 , Nº de Linea :         23
-09-05-2018 12:06:56 , En el Fuente:  	thisFORM.BotoneraCuerpo.cmdPidoRemito.Click()
-09-05-2018 12:06:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:06:56 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-09-05-2018 12:06:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:06:56 , Nº de Linea :          9
-09-05-2018 12:06:56 , En el Fuente: 	thisform.llamarpidoremito()
-09-05-2018 12:06:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:06:56 , Objeto      : regfacvta.llamarpidoremito
-09-05-2018 12:06:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:06:56 , Nº de Linea :         11
-09-05-2018 12:06:57 , En el Fuente: DO FORM pidoremito NAME loFormabmprecio WITH this.lniddeposito,nCotizador LINKED
-09-05-2018 12:06:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:06:57 , Objeto      : pidoremito_f.keypress
-09-05-2018 12:06:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:06:58 , Nº de Linea :         24
-09-05-2018 12:06:58 , En el Fuente: 			thisform.borrarlinea()
-09-05-2018 12:06:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:06:59 , Objeto      : pidoremito_f.borrarlinea
-09-05-2018 12:06:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:06:59 , Nº de Linea :         13
-09-05-2018 12:07:00 , En el Fuente: 			IF !.pidovendedor()
-09-05-2018 12:07:52 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: No se encuentra la variable 'MOTIVO'.;Linea : replace motivo WITH loObPidoVdor.retiro IN CsrRemFac;Error :         12;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:
 
 
 
@@ -3775,6 +3590,7 @@ OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
 
 
 
+.preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva1 ,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10AXE.TMP;Ultimo 
 
 
 
@@ -3805,39 +3621,6 @@ OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
 
 
 
-\USERS\ADMIN\APPDATA\LOCAL\TEMP\000095AH02WK.TMP;Ultimo Control activo: 
-09-05-2018 12:07:52 , Pila de llamadas
-09-05-2018 12:07:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:07:52 , Objeto      : regfacvta.grid2.column1.text1.keypress
-09-05-2018 12:07:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:07:53 , Nº de Linea :         23
-09-05-2018 12:07:53 , En el Fuente:  	thisFORM.BotoneraCuerpo.cmdPidoRemito.Click()
-09-05-2018 12:07:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:07:54 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-09-05-2018 12:07:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:07:55 , Nº de Linea :          9
-09-05-2018 12:07:55 , En el Fuente: 	thisform.llamarpidoremito()
-09-05-2018 12:07:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:07:55 , Objeto      : regfacvta.llamarpidoremito
-09-05-2018 12:07:55 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:07:55 , Nº de Linea :         11
-09-05-2018 12:07:56 , En el Fuente: DO FORM pidoremito NAME loFormabmprecio WITH this.lniddeposito,nCotizador LINKED
-09-05-2018 12:07:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:07:57 , Objeto      : pidoremito_f.keypress
-09-05-2018 12:07:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:07:58 , Nº de Linea :         24
-09-05-2018 12:07:58 , En el Fuente: 			thisform.borrarlinea()
-09-05-2018 12:07:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:07:58 , Objeto      : pidoremito_f.borrarlinea
-09-05-2018 12:07:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:07:59 , Nº de Linea :         13
-09-05-2018 12:07:59 , En el Fuente: 			IF !this.pidovendedor()
-09-05-2018 12:08:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:08:00 , Objeto      : pidoremito_f.pidovendedor
-09-05-2018 12:08:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:08:01 , Nº de Linea :         18
-09-05-2018 12:08:02 , En el Fuente: 		replace motivo WITH loObPidoVdor.retiro IN CsrRemFac
-09-05-2018 12:09:17 , REGFACVTA.GRID2.COLUMN1.TEXT1.KEYPRESS, Error: Debe especificar parámetros adicionales.;Linea : LPARAMETERS OscMovRemito;Error :         94;Ultimo Alias Activo: CSREXISTENC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
 
 
 
@@ -3937,57 +3720,21 @@ OCAL\TEMP\000095AH02H9.TMP;Ultimo Control activo: CODIGO
 
 
 
-CAL\TEMP\000095AH0344.TMP;Ultimo Control activo: CODIGO
-09-05-2018 12:09:17 , Pila de llamadas
-09-05-2018 12:09:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:09:18 , Objeto      : regfacvta.grid2.column1.text1.keypress
-09-05-2018 12:09:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:09:19 , Nº de Linea :         23
-09-05-2018 12:09:19 , En el Fuente:  	thisFORM.BotoneraCuerpo.cmdPidoRemito.Click()
-09-05-2018 12:09:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:09:19 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-09-05-2018 12:09:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:09:19 , Nº de Linea :          9
-09-05-2018 12:09:19 , En el Fuente: 	thisform.llamarpidoremito()
-09-05-2018 12:09:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:09:20 , Objeto      : regfacvta.llamarpidoremito
-09-05-2018 12:09:20 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
-09-05-2018 12:09:20 , Nº de Linea :         11
-09-05-2018 12:09:20 , En el Fuente: DO FORM pidoremito NAME loFormabmprecio WITH this.lniddeposito,nCotizador LINKED
-09-05-2018 12:09:20 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:21 , Objeto      : pidoremito_f.keypress
-09-05-2018 12:09:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:21 , Nº de Linea :         69
-09-05-2018 12:09:21 , En el Fuente: 			thisform.container1.Cmdaceptar.Click()
-09-05-2018 12:09:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:22 , Objeto      : pidoremito_f.container1.cmdaceptar.click
-09-05-2018 12:09:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:22 , Nº de Linea :          3
-09-05-2018 12:09:22 , En el Fuente: thisform.k_escape
-09-05-2018 12:09:22 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:22 , Objeto      : pidoremito_f.k_escape
-09-05-2018 12:09:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:23 , Nº de Linea :         21
-09-05-2018 12:09:23 , En el Fuente: 		IF thisform.actualizar()
-09-05-2018 12:09:24 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:24 , Objeto      : pidoremito_f.actualizar
-09-05-2018 12:09:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:25 , Nº de Linea :         11
-09-05-2018 12:09:25 , En el Fuente: 	llok = .grabardato()
-09-05-2018 12:09:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:26 , Objeto      : pidoremito_f.grabardato
-09-05-2018 12:09:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:26 , Nº de Linea :         93
-09-05-2018 12:09:26 , En el Fuente: 			thisform.grabarstock(OscMaopera,OscRemFac)
-09-05-2018 12:09:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:26 , Objeto      : pidoremito_f.grabarstock
-09-05-2018 12:09:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito.sct
-09-05-2018 12:09:26 , Nº de Linea :          1
-09-05-2018 12:09:27 , En el Fuente: LPARAMETERS OscMovRemito
-09-05-2018 12:33:26 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'PASE'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,pase,fechaanula
 
 
 
+Control activo: 
+15-05-2018 13:17:46 , Pila de llamadas
+15-05-2018 13:17:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:47 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:17:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:47 , Nº de Linea :          1
+15-05-2018 13:17:48 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:17:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:49 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:17:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:17:49 , Nº de Linea :         44
+15-05-2018 13:17:49 , En el Fuente: 	REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal		,numero WITH CsrProducto.numero,nombre WITH CsrProducto.nombre		,costocprav WITH CsrProducto.costocpra,aumentov WITH Cs
 
 
 
@@ -4071,7 +3818,6 @@ CAL\TEMP\000095AH0344.TMP;Ultimo Control activo: CODIGO
 
 
 
-,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          7 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
 
 
 
@@ -4116,6 +3862,7 @@ CAL\TEMP\000095AH0344.TMP;Ultimo Control activo: CODIGO
 
 
 
+rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon		,internov WITH Csrproducto.interno,internoporcev WITH Csrproducto.internoporce		,fletev WITH CsrProducto.flete,segfletev WITH
 
 
 
@@ -4158,28 +3905,6 @@ CAL\TEMP\000095AH0344.TMP;Ultimo Control activo: CODIGO
 
 
 
-TEMP\000095AH053S.TMP;Ultimo Control activo: 
-09-05-2018 12:33:26 , Pila de llamadas
-09-05-2018 12:33:26 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:33:26 , Objeto      : subrtopdte.imprimir_vistaprevia1.excel.click
-09-05-2018 12:33:26 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:33:27 , Nº de Linea :          5
-09-05-2018 12:33:27 , En el Fuente: llOK=thisform.CrearInforme()
-09-05-2018 12:33:27 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:33:27 , Objeto      : subrtopdte.crearinforme
-09-05-2018 12:33:27 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:33:28 , Nº de Linea :        225
-09-05-2018 12:33:28 , En el Fuente: DODEFAULT()
-09-05-2018 12:33:29 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:33:29 , Objeto      : informe.crearinforme
-09-05-2018 12:33:29 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:33:29 , Nº de Linea :          1
-09-05-2018 12:33:29 , En el Fuente: thisform.crearheader()
-09-05-2018 12:33:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:33:29 , Objeto      : subrtopdte.crearheader
-09-05-2018 12:33:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:33:30 , Nº de Linea :         67
-09-05-2018 12:33:30 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo		,cantidad,importe,total,diasprome,codvendedor,nomvendedor		,pase,fechaanula,motivo,codvdoranula,vdoranula		FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImp
 
 
 
@@ -4260,13 +3985,12 @@ TEMP\000095AH053S.TMP;Ultimo Control activo:
 
 
 
-rimir READWRITE 
-09-05-2018 12:34:04 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'CODVDORANULA'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,idpase,
 
 
 
 
 
+ CsrProducto.segflete		,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva		,costocivav WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1		,utilciva1v WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1	
 
 
 
@@ -4341,7 +4065,6 @@ rimir READWRITE
 
 
 
-fechaanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          7 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPD
 
 
 
@@ -4395,6 +4118,7 @@ fechaanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO C
 
 
 
+	,redondeov WITH CsrProducto.redondeo,costoagrev WITH CsrProducto.costoagre		,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva		,preconfsivav WITH CsrProducto.preconfsiva,preconfcivav WITH CsrProducto.preconfciva		,prepubciva
 
 
 
@@ -4421,28 +4145,6 @@ fechaanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO C
 
 
 
-ATA\LOCAL\TEMP\000095AH055M.TMP;Ultimo Control activo: 
-09-05-2018 12:34:05 , Pila de llamadas
-09-05-2018 12:34:05 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:34:05 , Objeto      : subrtopdte.imprimir_vistaprevia1.excel.click
-09-05-2018 12:34:05 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:34:05 , Nº de Linea :          5
-09-05-2018 12:34:05 , En el Fuente: llOK=thisform.CrearInforme()
-09-05-2018 12:34:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:34:06 , Objeto      : subrtopdte.crearinforme
-09-05-2018 12:34:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:34:07 , Nº de Linea :        225
-09-05-2018 12:34:08 , En el Fuente: DODEFAULT()
-09-05-2018 12:34:08 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:34:08 , Objeto      : informe.crearinforme
-09-05-2018 12:34:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-09-05-2018 12:34:08 , Nº de Linea :          1
-09-05-2018 12:34:08 , En el Fuente: thisform.crearheader()
-09-05-2018 12:34:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:34:09 , Objeto      : subrtopdte.crearheader
-09-05-2018 12:34:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-09-05-2018 12:34:09 , Nº de Linea :         67
-09-05-2018 12:34:09 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo		,cantidad,importe,total,diasprome,codvendedor,nomvendedor		,idpase,fechaanula,motivo,codvdoranula,vdoranula		FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrI
 
 
 
@@ -4515,8 +4217,6 @@ ATA\LOCAL\TEMP\000095AH055M.TMP;Ultimo Control activo:
 
 
 
-mprimir READWRITE 
-09-05-2018 12:49:58 , ABMPRODUCTO._TEXTBOX1.KEYPRESS, Error: GRILLAVARIOS1 es un miembro desconocido.;Linea : .page6.grillavarios1.lblproductoactivo.Caption = .Page1._txtnombre.Value;Error :       1925;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro: 
 
 
 
@@ -4546,6 +4246,7 @@ mprimir READWRITE
 
 
 
+v WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva		,preotrociva1v WITH CsrProducto.preotro1civa		,preotrofsiva1v WITH CsrProducto.preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva
 
 
 
@@ -4588,34 +4289,6 @@ mprimir READWRITE
 
 
 
-         1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000095AH06M2.TMP;Ultimo Control activo: 
-09-05-2018 12:49:59 , Pila de llamadas
-09-05-2018 12:49:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:49:59 , Objeto      : abmproducto._textbox1.keypress
-09-05-2018 12:49:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:00 , Nº de Linea :        124
-09-05-2018 12:50:00 , En el Fuente: 	    thisform.DespuesObtenerDatos()
-09-05-2018 12:50:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:01 , Objeto      : abmproducto.despuesobtenerdatos
-09-05-2018 12:50:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:01 , Nº de Linea :          2
-09-05-2018 12:50:01 , En el Fuente: thisform.contenedor1.gridabm1.AfterRowColChange
-09-05-2018 12:50:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:02 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
-09-05-2018 12:50:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:03 , Nº de Linea :          3
-09-05-2018 12:50:03 , En el Fuente: DODEFAULT(this.ActiveColumn)
-09-05-2018 12:50:04 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-09-05-2018 12:50:04 , Objeto      : baseabm.contenedor1.gridabm1.afterrowcolchange
-09-05-2018 12:50:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-09-05-2018 12:50:04 , Nº de Linea :         21
-09-05-2018 12:50:05 , En el Fuente: 	     .ProcesarAfterRow()
-09-05-2018 12:50:05 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:05 , Objeto      : abmproducto.procesarafterrow
-09-05-2018 12:50:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:06 , Nº de Linea :         18
-09-05-2018 12:50:06 , En el Fuente: 	.page6.grillavarios1.lblproductoactivo.Caption = .Page1._txtnombre.Value
-09-05-2018 12:50:44 , ABMPRODUCTO._TEXTBOX1.KEYPRESS, Error: LBLPRODUCTOACTIVO es un miembro desconocido.;Linea : .page6.lblproductoactivo.Caption = .Page1._txtnombre.Value;Error :       1925;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro:          1
 
 
 
@@ -4675,34 +4348,6 @@ mprimir READWRITE
 
 
 
- ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000095AH06TR.TMP;Ultimo Control activo: 
-09-05-2018 12:50:45 , Pila de llamadas
-09-05-2018 12:50:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:46 , Objeto      : abmproducto._textbox1.keypress
-09-05-2018 12:50:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:46 , Nº de Linea :        124
-09-05-2018 12:50:47 , En el Fuente: 	    thisform.DespuesObtenerDatos()
-09-05-2018 12:50:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:47 , Objeto      : abmproducto.despuesobtenerdatos
-09-05-2018 12:50:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:47 , Nº de Linea :          2
-09-05-2018 12:50:47 , En el Fuente: thisform.contenedor1.gridabm1.AfterRowColChange
-09-05-2018 12:50:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:48 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
-09-05-2018 12:50:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:49 , Nº de Linea :          3
-09-05-2018 12:50:50 , En el Fuente: DODEFAULT(this.ActiveColumn)
-09-05-2018 12:50:50 , Programa    : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-09-05-2018 12:50:50 , Objeto      : baseabm.contenedor1.gridabm1.afterrowcolchange
-09-05-2018 12:50:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\oformslocal.vct
-09-05-2018 12:50:50 , Nº de Linea :         21
-09-05-2018 12:50:51 , En el Fuente: 	     .ProcesarAfterRow()
-09-05-2018 12:50:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:51 , Objeto      : abmproducto.procesarafterrow
-09-05-2018 12:50:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
-09-05-2018 12:50:52 , Nº de Linea :         18
-09-05-2018 12:50:52 , En el Fuente: 	.page6.lblproductoactivo.Caption = .Page1._txtnombre.Value
-10-05-2018 11:05:24 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'CANTIDAD'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,idpase,fech
 
 
 
@@ -4729,6 +4374,8 @@ mprimir READWRITE
 
 
 
+1		,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio
+15-05-2018 13:18:24 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad COSTOCPRA.;Linea : lobjprecio.costocpra	= CsrProducto.costocpra;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN
 
 
 
@@ -4752,7 +4399,6 @@ mprimir READWRITE
 
 
 
-aanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5881 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\
 
 
 
@@ -4802,28 +4448,6 @@ aanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSO
 
 
 
-LOCAL\TEMP\00009HJD0024.TMP;Ultimo Control activo: 
-10-05-2018 11:05:24 , Pila de llamadas
-10-05-2018 11:05:25 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:25 , Objeto      : subrtopdte.imprimir_vistaprevia1.excel.click
-10-05-2018 11:05:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:26 , Nº de Linea :          5
-10-05-2018 11:05:26 , En el Fuente: llOK=thisform.CrearInforme()
-10-05-2018 11:05:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:26 , Objeto      : subrtopdte.crearinforme
-10-05-2018 11:05:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:27 , Nº de Linea :        225
-10-05-2018 11:05:27 , En el Fuente: DODEFAULT()
-10-05-2018 11:05:27 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:27 , Objeto      : informe.crearinforme
-10-05-2018 11:05:28 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:28 , Nº de Linea :          1
-10-05-2018 11:05:28 , En el Fuente: thisform.crearheader()
-10-05-2018 11:05:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:28 , Objeto      : subrtopdte.crearheader
-10-05-2018 11:05:28 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:28 , Nº de Linea :         67
-10-05-2018 11:05:28 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo		,cantidad,importe,total,diasprome,codvendedor,nomvendedor		,idpase,fechaanula,motivo,codvdoranula,vdoranula		FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrI
 
 
 
@@ -4867,8 +4491,6 @@ LOCAL\TEMP\00009HJD0024.TMP;Ultimo Control activo:
 
 
 
-mprimir READWRITE 
-10-05-2018 11:05:50 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'CANTIDAD'.;Linea : SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo ,cantidad,importe,total,diasprome,codvendedor,nomvendedor ,idpase,fech
 
 
 
@@ -4880,6 +4502,29 @@ mprimir READWRITE
 
 
 
+\APPDATA\LOCAL\TEMP\00003UA10AYS.TMP;Ultimo Control activo: 
+15-05-2018 13:18:24 , Pila de llamadas
+15-05-2018 13:18:25 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:25 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:18:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:27 , Nº de Linea :          1
+15-05-2018 13:18:27 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:18:28 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:28 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:18:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:30 , Nº de Linea :         55
+15-05-2018 13:18:30 , En el Fuente: 	    	thisform.cbioaumento()
+15-05-2018 13:18:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:31 , Objeto      : cbioprecio2.cbioaumento
+15-05-2018 13:18:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:33 , Nº de Linea :         10
+15-05-2018 13:18:33 , En el Fuente: thisform.calculaprecio()
+15-05-2018 13:18:33 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:33 , Objeto      : cbioprecio2.calculaprecio
+15-05-2018 13:18:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:18:35 , Nº de Linea :          9
+15-05-2018 13:18:35 , En el Fuente: lobjprecio.costocpra	= CsrProducto.costocpra
+15-05-2018 13:19:55 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad COSTOAGRE.;Linea : lobjprecio.costoagre	= CsrProducto.costoagre;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN
 
 
 
@@ -4911,7 +4556,6 @@ mprimir READWRITE
 
 
 
-aanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5881 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS\ADMIN\APPDATA\
 
 
 
@@ -4954,28 +4598,6 @@ aanula,motivo,codvdoranula,vdoranula FROM CsrImprimir ORDER BY ctacte INTO CURSO
 
 
 
-LOCAL\TEMP\00009HJD002D.TMP;Ultimo Control activo: 
-10-05-2018 11:05:51 , Pila de llamadas
-10-05-2018 11:05:52 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:52 , Objeto      : subrtopdte.imprimir_vistaprevia1.excel.click
-10-05-2018 11:05:52 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:52 , Nº de Linea :          5
-10-05-2018 11:05:53 , En el Fuente: llOK=thisform.CrearInforme()
-10-05-2018 11:05:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:53 , Objeto      : subrtopdte.crearinforme
-10-05-2018 11:05:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:53 , Nº de Linea :        225
-10-05-2018 11:05:53 , En el Fuente: DODEFAULT()
-10-05-2018 11:05:54 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:54 , Objeto      : informe.crearinforme
-10-05-2018 11:05:54 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-10-05-2018 11:05:54 , Nº de Linea :          1
-10-05-2018 11:05:55 , En el Fuente: thisform.crearheader()
-10-05-2018 11:05:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:55 , Objeto      : subrtopdte.crearheader
-10-05-2018 11:05:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
-10-05-2018 11:05:56 , Nº de Linea :         67
-10-05-2018 11:05:56 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,chrfecha,codigo,articulo		,cantidad,importe,total,diasprome,codvendedor,nomvendedor		,idpase,fechaanula,motivo,codvdoranula,vdoranula		FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrI
 
 
 
@@ -5011,10 +4633,31 @@ LOCAL\TEMP\00009HJD002D.TMP;Ultimo Control activo:
 
 
 
-mprimir READWRITE 
-11-05-2018 09:14:48 , EXPORTAR_CPRA_VTA.CHKPORFECHA.VALID, Error: No se encuentra la propiedad MOSTRARFECHA.;Linea : this.mostrarfecha();Error :       1734;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
 
 
+\APPDATA\LOCAL\TEMP\00003UA10B0Y.TMP;Ultimo Control activo: 
+15-05-2018 13:19:55 , Pila de llamadas
+15-05-2018 13:19:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:19:56 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:19:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:19:57 , Nº de Linea :          1
+15-05-2018 13:19:58 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:19:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:19:58 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:19:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:19:59 , Nº de Linea :         55
+15-05-2018 13:19:59 , En el Fuente: 	    	thisform.cbioaumento()
+15-05-2018 13:19:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:20:00 , Objeto      : cbioprecio2.cbioaumento
+15-05-2018 13:20:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:20:01 , Nº de Linea :         10
+15-05-2018 13:20:02 , En el Fuente: thisform.calculaprecio()
+15-05-2018 13:20:02 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:20:03 , Objeto      : cbioprecio2.calculaprecio
+15-05-2018 13:20:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:20:04 , Nº de Linea :         32
+15-05-2018 13:20:05 , En el Fuente: lobjprecio.costoagre	= CsrProducto.costoagre
+15-05-2018 13:23:28 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad COSTOBON.;Linea : replace aumento WITH lobjprecio.aumento ,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobon ,costosiva WITH lobjprecio.costosiva,costoci
 
 
 
@@ -5047,14 +4690,6 @@ mprimir READWRITE
 
 
 
-\TEMP\000038QX000K.TMP;Ultimo Control activo: 
-11-05-2018 09:14:48 , Pila de llamadas
-11-05-2018 09:14:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:14:48 , Objeto      : exportar_cpra_vta.chkporfecha.valid
-11-05-2018 09:14:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:14:49 , Nº de Linea :          2
-11-05-2018 09:14:49 , En el Fuente: 	this.mostrarfecha()
-11-05-2018 09:16:32 , EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT("CsrAuxVentas")=0;Error :         13;Ultimo Alias Activo: CSRAUXVTADTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\AP
 
 
 
@@ -5088,34 +4723,6 @@ mprimir READWRITE
 
 
 
-PDATA\LOCAL\TEMP\000038QX003T.TMP;Ultimo Control activo: 
-11-05-2018 09:16:32 , Pila de llamadas
-11-05-2018 09:16:33 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-11-05-2018 09:16:33 , Objeto      : exportar_cpra_vta.imprimir_vistaprevia1.impresora.click
-11-05-2018 09:16:33 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-11-05-2018 09:16:33 , Nº de Linea :          8
-11-05-2018 09:16:33 , En el Fuente: 	llOK=thisform.CrearInforme()
-11-05-2018 09:16:33 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:33 , Objeto      : exportar_cpra_vta.crearinforme
-11-05-2018 09:16:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:34 , Nº de Linea :         16
-11-05-2018 09:16:35 , En el Fuente: 	lTodoOK = .exportarcomprasventas(cperiodo)
-11-05-2018 09:16:35 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:35 , Objeto      : exportar_cpra_vta.exportarcomprasventas
-11-05-2018 09:16:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:36 , Nº de Linea :         12
-11-05-2018 09:16:36 , En el Fuente: 		lok = .calculaventas(cPeriodo)
-11-05-2018 09:16:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:36 , Objeto      : exportar_cpra_vta.calculaventas
-11-05-2018 09:16:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:37 , Nº de Linea :         95
-11-05-2018 09:16:38 , En el Fuente: RETURN This.GenerarVentas(cPeriodo)
-11-05-2018 09:16:38 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:38 , Objeto      : exportar_cpra_vta.generarventas
-11-05-2018 09:16:39 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_cpra_vta.sct
-11-05-2018 09:16:39 , Nº de Linea :          3
-11-05-2018 09:16:39 , En el Fuente: IF RECCOUNT("CsrAuxVentas")=0
-11-05-2018 11:46:19 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: Property PRECONTARTI is not found.;Linea : nPrecioCdo	= Oscatter.precontarti;Error :       1734;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\
 
 
 
@@ -5139,44 +4746,6 @@ PDATA\LOCAL\TEMP\000038QX003T.TMP;Ultimo Control activo:
 
 
 
-TEMP\00008G7D004W.TMP;Ultimo Control activo: 
-11-05-2018 11:46:20 , Pila de llamadas
-11-05-2018 11:46:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:21 , Objeto      : impcomprobante.aceptar1.click
-11-05-2018 11:46:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:21 , Nº de Linea :          6
-11-05-2018 11:46:21 , En el Fuente: 		.ciclaoperacion()
-11-05-2018 11:46:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:21 , Objeto      : impcomprobante.ciclaoperacion
-11-05-2018 11:46:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:22 , Nº de Linea :         15
-11-05-2018 11:46:22 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
-11-05-2018 11:46:22 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:22 , Objeto      : impcomprobante.selectoperacion_sql
-11-05-2018 11:46:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:23 , Nº de Linea :         12
-11-05-2018 11:46:23 , En el Fuente: 	this.imprimir('FACN')		
-11-05-2018 11:46:23 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:24 , Objeto      : impcomprobante.imprimir
-11-05-2018 11:46:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:46:24 , Nº de Linea :         26
-11-05-2018 11:46:24 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,.lcimpresora,Csrprefitermi.tipoimpresora,.formulario,.f.,lnDeboActualizarNro ,0)
-11-05-2018 11:46:24 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:46:25 , Objeto      : impcomprobante.objimpresor.inicioimpresora
-11-05-2018 11:46:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:46:25 , Nº de Linea :         46
-11-05-2018 11:46:25 , En el Fuente: 			lok = this.reportf(lndeboActualizarNro)
-11-05-2018 11:46:25 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:46:25 , Objeto      : impcomprobante.objimpresor.reportf
-11-05-2018 11:46:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:46:25 , Nº de Linea :        115
-11-05-2018 11:46:25 , En el Fuente: 	this.reportF_cue(loObjFactura)
-11-05-2018 11:46:26 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:46:26 , Objeto      : impcomprobante.objimpresor.reportf_cue
-11-05-2018 11:46:26 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:46:27 , Nº de Linea :         55
-11-05-2018 11:46:27 , En el Fuente: 		   nPrecioCdo	= Oscatter.precontarti
-11-05-2018 11:53:58 , MAIN, Error: Property PRECONTARTI is not found.;Linea : nPrecioCdo	= Oscatter.precontarti;Error :       1734;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00009VD500C9.TMP;Ult
 
 
 
@@ -5186,47 +4755,2232 @@ TEMP\00008G7D004W.TMP;Ultimo Control activo:
 
 
 
+va WITH lobjprecio.costociva ,utilciva1 WITH lobjprecio.utilciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10B35.TMP
 
 
-imo Control activo: 
-11-05-2018 11:53:59 , Pila de llamadas
-11-05-2018 11:54:00 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-11-05-2018 11:54:00 , Objeto      : main
-11-05-2018 11:54:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-11-05-2018 11:54:00 , Nº de Linea :        297
-11-05-2018 11:54:00 , En el Fuente: 	Read events   
-11-05-2018 11:54:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:00 , Objeto      : impcomprobante.aceptar1.click
-11-05-2018 11:54:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:00 , Nº de Linea :          6
-11-05-2018 11:54:00 , En el Fuente: 		.ciclaoperacion()
-11-05-2018 11:54:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:01 , Objeto      : impcomprobante.ciclaoperacion
-11-05-2018 11:54:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:01 , Nº de Linea :         15
-11-05-2018 11:54:01 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
-11-05-2018 11:54:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:02 , Objeto      : impcomprobante.selectoperacion_sql
-11-05-2018 11:54:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:02 , Nº de Linea :         12
-11-05-2018 11:54:03 , En el Fuente: 	this.imprimir('FACN')		
-11-05-2018 11:54:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:03 , Objeto      : impcomprobante.imprimir
-11-05-2018 11:54:03 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
-11-05-2018 11:54:03 , Nº de Linea :         26
-11-05-2018 11:54:03 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,.lcimpresora,Csrprefitermi.tipoimpresora,.formulario,.f.,lnDeboActualizarNro ,0)
-11-05-2018 11:54:03 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:54:04 , Objeto      : impcomprobante.objimpresor.inicioimpresora
-11-05-2018 11:54:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:54:04 , Nº de Linea :         46
-11-05-2018 11:54:04 , En el Fuente: 			lok = this.reportf(lndeboActualizarNro)
-11-05-2018 11:54:04 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:54:04 , Objeto      : impcomprobante.objimpresor.reportf
-11-05-2018 11:54:05 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:54:05 , Nº de Linea :        115
-11-05-2018 11:54:05 , En el Fuente: 	this.reportF_cue(loObjFactura)
-11-05-2018 11:54:06 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:54:06 , Objeto      : impcomprobante.objimpresor.reportf_cue
-11-05-2018 11:54:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
-11-05-2018 11:54:06 , Nº de Linea :         55
-11-05-2018 11:54:06 , En el Fuente: 		   nPrecioCdo	= Oscatter.precontarti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;Ultimo Control activo: 
+15-05-2018 13:23:29 , Pila de llamadas
+15-05-2018 13:23:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:23:30 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:23:31 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:23:31 , Nº de Linea :          1
+15-05-2018 13:23:31 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:23:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:23:31 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:23:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:23:33 , Nº de Linea :         60
+15-05-2018 13:23:33 , En el Fuente: 	    	replace aumento WITH lobjprecio.aumento			,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobon			,costosiva WITH lobjprecio.costosiva,costociva WITH lobjprecio.costociva			,utilciva1 WITH lobjprecio.uti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
+15-05-2018 13:24:43 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad COSTOSIVA.;Linea : replace aumento WITH lobjprecio.aumento ,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobonificado ,costosiva WITH lobjprecio.costosiva
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,costociva WITH lobjprecio.costociva ,utilciva1 WITH lobjprecio.utilciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0B5A.TMP;Ultimo Control activo: 
+15-05-2018 13:24:44 , Pila de llamadas
+15-05-2018 13:24:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:24:45 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:24:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:24:46 , Nº de Linea :          1
+15-05-2018 13:24:47 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:24:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:24:48 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:24:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:24:48 , Nº de Linea :         60
+15-05-2018 13:24:48 , En el Fuente: 	    	replace aumento WITH lobjprecio.aumento			,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobonificado			,costosiva WITH lobjprecio.costosiva,costociva WITH lobjprecio.costociva			,utilciva1 WITH lobjpre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cio.utilciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
+15-05-2018 13:27:50 , PIDOPRECIO.INIT, Error: No se encuentra el alias 'CSRRUBRO'.;Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         24 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10B85.TMP;Ultimo Control activo: 
+15-05-2018 13:27:50 , Pila de llamadas
+15-05-2018 13:27:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:27:51 , Objeto      : pidoprecio.init
+15-05-2018 13:27:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:27:53 , Nº de Linea :         31
+15-05-2018 13:27:53 , En el Fuente: 	.iniciarvariables()
+15-05-2018 13:27:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:27:53 , Objeto      : pidoprecio.iniciarvariables
+15-05-2018 13:27:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:27:54 , Nº de Linea :         10
+15-05-2018 13:27:54 , En el Fuente: 		.antesagregar()
+15-05-2018 13:27:55 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:27:55 , Objeto      : pidoprecio.antesagregar
+15-05-2018 13:27:56 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:27:57 , Nº de Linea :         16
+15-05-2018 13:27:57 , En el Fuente: replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3		,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5		,margen1 WITH CsrRubro.margen1 in CsrAuxPrecio
+15-05-2018 13:37:44 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS, Error: No se encuentra la propiedad PREVTASIVA.;Linea : lObjprecio.utilidadpesossiva = red(lObjprecio.prevtasiva - lObjprecio.costosiniva,this.decimales);Error :   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10BWK.TMP;Ultimo Control activo: COSTOCPRA
+15-05-2018 13:37:45 , Pila de llamadas
+15-05-2018 13:37:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:37:46 , Objeto      : abmproducto.contenedor1.pframe1.page1.grid1.column2.text1.keypress
+15-05-2018 13:37:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:37:47 , Nº de Linea :         17
+15-05-2018 13:37:47 , En el Fuente: 	thisform.pidoprecio(nKeyCode)
+15-05-2018 13:37:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:37:48 , Objeto      : abmproducto.pidoprecio
+15-05-2018 13:37:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:37:48 , Nº de Linea :         51
+15-05-2018 13:37:49 , En el Fuente: DO FORM pidoprecio WITH loObjeto NAME loForm LINKED TO nRespuesta
+15-05-2018 13:37:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:37:49 , Objeto      : pidoprecio.container1._txtpreciocpra.lostfocus
+15-05-2018 13:37:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:37:50 , Nº de Linea :          1
+15-05-2018 13:37:50 , En el Fuente: thisform.calculaprecio()
+15-05-2018 13:37:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:37:51 , Objeto      : pidoprecio.calculaprecio
+15-05-2018 13:37:51 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:37:51 , Nº de Linea :        115
+15-05-2018 13:37:51 , En el Fuente: 		this.precioprod1.cfpreciovta()
+15-05-2018 13:37:51 , Programa    : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
+15-05-2018 13:37:52 , Objeto      : pidoprecio.precioprod1.cfpreciovta
+15-05-2018 13:37:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
+15-05-2018 13:37:54 , Nº de Linea :         44
+15-05-2018 13:37:54 , En el Fuente: lObjprecio.utilidadpesossiva = red(lObjprecio.prevtasiva - lObjprecio.costosiniva,this.decimales)
+15-05-2018 13:39:47 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS, Error: _TXTUTILSIVA1 es un miembro desconocido.;Linea : ._txtutilsiva1.value    = lobjprecio.utilidadpesossiva;Error :       1925;Ultimo Alias Activo: CSRPARAVARIO;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10C4A.TMP;Ultimo Control activo: COSTOCPRA
+15-05-2018 13:39:48 , Pila de llamadas
+15-05-2018 13:39:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:39:48 , Objeto      : abmproducto.contenedor1.pframe1.page1.grid1.column2.text1.keypress
+15-05-2018 13:39:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:39:49 , Nº de Linea :         17
+15-05-2018 13:39:49 , En el Fuente: 	thisform.pidoprecio(nKeyCode)
+15-05-2018 13:39:50 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:39:50 , Objeto      : abmproducto.pidoprecio
+15-05-2018 13:39:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:39:50 , Nº de Linea :         51
+15-05-2018 13:39:51 , En el Fuente: DO FORM pidoprecio WITH loObjeto NAME loForm LINKED TO nRespuesta
+15-05-2018 13:39:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:39:51 , Objeto      : pidoprecio.container1._txtpreciocpra.lostfocus
+15-05-2018 13:39:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:39:52 , Nº de Linea :          1
+15-05-2018 13:39:52 , En el Fuente: thisform.calculaprecio()
+15-05-2018 13:39:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:39:52 , Objeto      : pidoprecio.calculaprecio
+15-05-2018 13:39:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:39:52 , Nº de Linea :        118
+15-05-2018 13:39:52 , En el Fuente: 		._txtutilsiva1.value    = lobjprecio.utilidadpesossiva
+15-05-2018 13:41:06 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS, Error: _TXTUTILSIVA1 es un miembro desconocido.;Linea : ._txtutilsiva1.value    = lobjprecio.utilidadpesossiva;Error :       1925;Ultimo Alias Activo: CSRPARAVARIO;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10CCT.TMP;Ultimo Control activo: COSTOCPRA
+15-05-2018 13:41:06 , Pila de llamadas
+15-05-2018 13:41:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:41:07 , Objeto      : abmproducto.contenedor1.pframe1.page1.grid1.column2.text1.keypress
+15-05-2018 13:41:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:41:07 , Nº de Linea :         17
+15-05-2018 13:41:08 , En el Fuente: 	thisform.pidoprecio(nKeyCode)
+15-05-2018 13:41:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:41:08 , Objeto      : abmproducto.pidoprecio
+15-05-2018 13:41:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
+15-05-2018 13:41:09 , Nº de Linea :         51
+15-05-2018 13:41:09 , En el Fuente: DO FORM pidoprecio WITH loObjeto NAME loForm LINKED TO nRespuesta
+15-05-2018 13:41:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:41:09 , Objeto      : pidoprecio.container1._txtpreciocpra.lostfocus
+15-05-2018 13:41:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:41:09 , Nº de Linea :          1
+15-05-2018 13:41:09 , En el Fuente: thisform.calculaprecio()
+15-05-2018 13:41:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:41:10 , Objeto      : pidoprecio.calculaprecio
+15-05-2018 13:41:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\pidoprecio.sct
+15-05-2018 13:41:10 , Nº de Linea :        118
+15-05-2018 13:41:11 , En el Fuente: 		._txtutilsiva1.value    = lobjprecio.utilidadpesossiva
+15-05-2018 13:45:56 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad UTILSIVA1.;Linea : replace aumento WITH lobjprecio.aumento ,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobonificado ,costosiva WITH lobjprecio.costosini
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+va,costociva WITH lobjprecio.costoconiva ,utilciva1 WITH lobjprecio.utilidad,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UA10CQ5.TMP;Ultimo Control activo: 
+15-05-2018 13:45:56 , Pila de llamadas
+15-05-2018 13:45:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:45:57 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:45:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:45:58 , Nº de Linea :          1
+15-05-2018 13:45:59 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:45:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:46:00 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:46:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:46:00 , Nº de Linea :         60
+15-05-2018 13:46:01 , En el Fuente: 	    	replace aumento WITH lobjprecio.aumento			,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobonificado			,costosiva WITH lobjprecio.costosiniva,costociva WITH lobjprecio.costoconiva			,utilciva1 WITH lob
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+jprecio.utilidad,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
+15-05-2018 13:47:20 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'PRECONCIVA'.;Linea : REPLACE preconciva WITH lobjprecio.preconciva ,preconfsiva WITH lobjprecio.preconfsiva,preconfciva WITH lobjprecio.preconfciva ,prepubciva WITH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CsrProducto.prepubciva ,prepubfsiva WITH CsrProducto.prepubfsiva,prepubfciva WITH CsrProducto.prepubfciva ,preotrociva WITH CsrProducto.preotrociva1 ,preotrofsiva WITH CsrProducto.preotrofsiva1,preotrofciva1 WITH CsrProducto.preotrofciva1;Error :        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10CT1.TMP;Ultimo Control activo: 
+15-05-2018 13:47:20 , Pila de llamadas
+15-05-2018 13:47:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:47:21 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:47:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:47:22 , Nº de Linea :          1
+15-05-2018 13:47:22 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:47:22 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:47:23 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:47:23 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:47:23 , Nº de Linea :         96
+15-05-2018 13:47:23 , En el Fuente: 	REPLACE preconciva WITH lobjprecio.preconciva			,preconfsiva WITH lobjprecio.preconfsiva,preconfciva WITH lobjprecio.preconfciva			,prepubciva WITH CsrProducto.prepubciva			,prepubfsiva WITH CsrProducto.prepubfsiva,pr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+epubfciva WITH CsrProducto.prepubfciva			,preotrociva WITH CsrProducto.preotrociva1			,preotrofsiva WITH CsrProducto.preotrofsiva1,preotrofciva1 WITH CsrProducto.preotrofciva1			
+15-05-2018 13:54:46 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'COSTON'.;Linea : replace coston WITH Csrproducto.costo ,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon ,internon WITH Csrproducto.intern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProduc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+to.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.utilsiva1 ,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre ,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva ,preconfsiv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+an WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,preotrof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+siva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10D6C.TMP;Ultimo Control activo: 
+15-05-2018 13:54:47 , Pila de llamadas
+15-05-2018 13:54:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:54:47 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:54:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:54:48 , Nº de Linea :          1
+15-05-2018 13:54:49 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:54:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:54:49 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:54:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:54:49 , Nº de Linea :        128
+15-05-2018 13:54:50 , En el Fuente: 	replace coston WITH Csrproducto.costo		,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon		,internon WITH Csrproducto.interno,internoporcen WITH Csrproducto.internoporce		,fleten WITH CsrProd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre		,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva		,preconfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProduct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H CsrProducto.preotrofciva1		
+15-05-2018 13:55:36 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'MARGEN1N'.;Linea : replace coston WITH Csrproducto.costo ,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon ,internon WITH Csrproducto.inte
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rno,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ucto.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.utilsiva1 ,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre ,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva ,preconfs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,preotr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1 ,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAL\TEMP\00003UA10D98.TMP;Ultimo Control activo: 
+15-05-2018 13:55:37 , Pila de llamadas
+15-05-2018 13:55:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:55:37 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:55:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:55:38 , Nº de Linea :          1
+15-05-2018 13:55:39 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:55:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:55:40 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:55:40 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:55:41 , Nº de Linea :        128
+15-05-2018 13:55:41 , En el Fuente: 	replace coston WITH Csrproducto.costo		,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon		,internon WITH Csrproducto.interno,internoporcen WITH Csrproducto.internoporce		,fleten WITH CsrProd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre		,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva		,preconfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProduct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H CsrProducto.preotrofciva1		,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio  
+15-05-2018 13:57:18 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'COSTROAGREN'.;Linea : replace coston WITH Csrproducto.costo ,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon ,internon WITH Csrproducto.i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nterno,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH CsrP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+roducto.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.utilsiva1 ,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre ,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva ,preco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,pre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+otrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1 ,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\LOCAL\TEMP\00003UA10DBC.TMP;Ultimo Control activo: 
+15-05-2018 13:57:19 , Pila de llamadas
+15-05-2018 13:57:20 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:57:20 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:57:21 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:57:21 , Nº de Linea :          1
+15-05-2018 13:57:21 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:57:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:57:22 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:57:22 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:57:22 , Nº de Linea :        128
+15-05-2018 13:57:23 , En el Fuente: 	replace coston WITH Csrproducto.costo		,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon		,internon WITH Csrproducto.interno,internoporcen WITH Csrproducto.internoporce		,fleten WITH CsrProd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre		,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva		,preconfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProduct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H CsrProducto.preotrofciva1		,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio  
+15-05-2018 13:58:04 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'PREOTROCIVAN1'.;Linea : replace coston WITH Csrproducto.costo ,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon ,internon WITH Csrproducto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.interno,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH Cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rProducto.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.utilsiva1 ,redondeon WITH CsrProducto.redondeo,costoagren WITH CsrProducto.costoagre ,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva ,prec
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+onfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,pr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+eotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1 ,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDAT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A\LOCAL\TEMP\00003UA10DDG.TMP;Ultimo Control activo: 
+15-05-2018 13:58:05 , Pila de llamadas
+15-05-2018 13:58:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:58:06 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:58:06 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:58:06 , Nº de Linea :          1
+15-05-2018 13:58:07 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:58:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:58:07 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:58:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:58:08 , Nº de Linea :        128
+15-05-2018 13:58:08 , En el Fuente: 	replace coston WITH Csrproducto.costo		,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon		,internon WITH Csrproducto.interno,internoporcen WITH Csrproducto.internoporce		,fleten WITH CsrProd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costoagren WITH CsrProducto.costoagre		,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva		,preconfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ CsrProducto.preotrofciva1		,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio  
+15-05-2018 13:59:07 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'CODALFAPROV'.;Linea : .column1.ControlSource = "CsrAuxCbioPrecio.codalfaprov";Error :         12;Ultimo Alias Activo: CSRAUXCBIOPRECIO;Ultimo registro:          1 ;D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10DFR.TMP;Ultimo Control activo: 
+15-05-2018 13:59:08 , Pila de llamadas
+15-05-2018 13:59:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:59:09 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 13:59:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:59:09 , Nº de Linea :          1
+15-05-2018 13:59:10 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 13:59:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:59:10 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 13:59:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 13:59:10 , Nº de Linea :        139
+15-05-2018 13:59:11 , En el Fuente: 	.column1.ControlSource = "CsrAuxCbioPrecio.codalfaprov"
+15-05-2018 15:20:07 , CBIOPRECIO2.CMDACEPTAR.CLICK, Error: No se encuentra la variable 'COSTOREPO'.;Linea : REPLACE costo WITH OscPrecio.coston,costorepo with OscPrecio.costorepon ,interno WITH OscPrecio.internon,internoporce WITH OscPrecio.internoporcen
+
+
+
+
+
+
+
+
+
+
+ ,prevta1 WITH OscPrecio.prevta1n,prevta2 WITH OscPrecio.prevta2n ,prevta3 WITH OscPrecio.prevta3n,prevta4 WITH OscPrecio.prevta4n ,prevtaf1 WITH OscPrecio.prevtaf1n,prevtaf2 WITH OscPrecio.prevtaf2n ,prevtaf3 WITH OscPrecio.prevtaf3n,prevtaf4 WITH OscPr
+
+
+
+
+
+
+
+
+
+
+ecio.prevtaf4n ,margen1 WITH OscPrecio.margen1n,margen2 WITH OscPrecio.margen2n ,margen3 WITH OscPrecio.margen3n,margen4 WITH OscPrecio.margen4n ,bonif1 WITH OscPrecio.bonif1n,bonif2 WITH OscPrecio.bonif2n ,bonif3 WITH OscPrecio.bonif3n,bonif4 WITH OscPr
+
+
+
+
+
+
+
+
+
+
+ecio.bonif4n ,costobon WITH OscPrecio.costobonn ,flete WITH OscPrecio.fleten,segflete WITH OscPrecio.segfleten IN CsrProducto;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA1
+
+
+
+
+
+
+
+
+
+
+0FCU.TMP;Ultimo Control activo: 
+15-05-2018 15:20:08 , Pila de llamadas
+15-05-2018 15:20:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:20:08 , Objeto      : cbioprecio2.cmdaceptar.click
+15-05-2018 15:20:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:20:09 , Nº de Linea :          6
+15-05-2018 15:20:09 , En el Fuente:    thisform.actualizar()
+15-05-2018 15:20:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:20:10 , Objeto      : cbioprecio2.actualizar
+15-05-2018 15:20:10 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:20:10 , Nº de Linea :         17
+15-05-2018 15:20:10 , En el Fuente: 	        llok = .grabardato()					    
+15-05-2018 15:20:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:20:11 , Objeto      : cbioprecio2.grabardato
+15-05-2018 15:20:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:20:11 , Nº de Linea :         90
+15-05-2018 15:20:11 , En el Fuente: 				REPLACE costo WITH OscPrecio.coston,costorepo with OscPrecio.costorepon				,interno WITH OscPrecio.internon,internoporce WITH OscPrecio.internoporcen				,prevta1 WITH OscPrecio.prevta1n,prevta2 WITH OscPrecio.prevt
+
+
+
+
+
+a2n				,prevta3 WITH OscPrecio.prevta3n,prevta4 WITH OscPrecio.prevta4n				,prevtaf1 WITH OscPrecio.prevtaf1n,prevtaf2 WITH OscPrecio.prevtaf2n				,prevtaf3 WITH OscPrecio.prevtaf3n,prevtaf4 WITH OscPrecio.prevtaf4n				,margen1 WITH OscPrecio.margen1n,ma
+
+
+
+
+
+rgen2 WITH OscPrecio.margen2n				,margen3 WITH OscPrecio.margen3n,margen4 WITH OscPrecio.margen4n				,bonif1 WITH OscPrecio.bonif1n,bonif2 WITH OscPrecio.bonif2n				,bonif3 WITH OscPrecio.bonif3n,bonif4 WITH OscPrecio.bonif4n				,costobon WITH OscPrecio.
+
+
+
+
+
+costobonn				,flete WITH OscPrecio.fleten,segflete WITH OscPrecio.segfleten IN CsrProducto
+15-05-2018 15:51:58 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'FECHA'.;Linea : replace fecha WITH TTOC(CsrProducto.feculpre) IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DB
+
+
+
+
+F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003FNT010I.TMP;Ultimo Control activo: 
+15-05-2018 15:51:58 , Pila de llamadas
+15-05-2018 15:51:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:51:59 , Objeto      : cbioprecio2.cmdprocesar.click
+15-05-2018 15:52:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:52:00 , Nº de Linea :          2
+15-05-2018 15:52:01 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+15-05-2018 15:52:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:52:01 , Objeto      : cbioprecio2.crearinforme
+15-05-2018 15:52:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
+15-05-2018 15:52:02 , Nº de Linea :         52
+15-05-2018 15:52:02 , En el Fuente: 	 replace fecha WITH TTOC(CsrProducto.feculpre) IN CsrAuxCbioPrecio
