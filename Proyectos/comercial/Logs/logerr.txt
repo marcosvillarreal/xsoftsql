@@ -1,1559 +1,19 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-roducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProducto.segflete ,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva ,costociva WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1 ,utilciva1v WIT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-H CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1 ,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre ,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva ,preconfsivav WITH CsrProducto.precon
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto.prepubciva ,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva ,preotrociva1v WITH CsrProducto.preotro1civa ,preotrofsiva1v WITH CsrProducto.pr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-eotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva1 ,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10AT6.TMP;Ultimo Con
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-trol activo: 
-15-05-2018 13:16:08 , Pila de llamadas
-15-05-2018 13:16:09 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-15-05-2018 13:16:09 , Objeto      : cbioprecio2.cmdprocesar.click
-15-05-2018 13:16:09 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-15-05-2018 13:16:09 , Nº de Linea :          1
-15-05-2018 13:16:09 , En el Fuente: thisform.estadook = thisform.CrearInforme()
-15-05-2018 13:16:10 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-15-05-2018 13:16:11 , Objeto      : cbioprecio2.crearinforme
-15-05-2018 13:16:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
-15-05-2018 13:16:12 , Nº de Linea :         44
-15-05-2018 13:16:13 , En el Fuente: 	REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal		,numero WITH CsrProducto.numero,nombre WITH CsrProducto.nombre		,costocprav WITH CsrProducto.costocpra,aumentov WITH Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon		,internov WITH Csrproducto.interno,internoporcev WITH Csrproducto.internoporce		,fletev WITH CsrProducto.flete,segfletev WITH
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- CsrProducto.segflete		,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva		,costociva WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1		,utilciva1v WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre		,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva		,preconfsivav WITH CsrProducto.preconfsiva,preconfcivav WITH CsrProducto.preconfciva		,prepubciva
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-v WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva		,preotrociva1v WITH CsrProducto.preotro1civa		,preotrofsiva1v WITH CsrProducto.preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1		,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio
-15-05-2018 13:17:00 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'COSTROAGREV'.;Linea : REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal ,numero WITH CsrProducto.numero,nombre WITH Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 rProducto.nombre ,costocprav WITH CsrProducto.costocpra,aumentov WITH CsrProducto.aumento ,costov WITH Csrproducto.costo ,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon ,internov WITH Csrproducto.interno,internoporcev WITH Cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1829,7 +289,37 @@ rproducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 WITH CsrProducto.utilciva1,utilsiva1v WITH CsrProducto.utilsiva1 ,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre ,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva ,preconfsivav WITH CsrProducto.pre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2105,7 +595,37 @@ confsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva1 ,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10AVA.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2388,7 +908,37 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon		,internov WITH Csrproducto.interno,internoporcev WITH Csrproducto.internoporce		,fletev WITH CsrProducto.flete,segfletev WITH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2656,7 +1206,37 @@ rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	,redondeov WITH CsrProducto.redondeo,costroagrev WITH CsrProducto.costoagre		,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva		,preconfsivav WITH CsrProducto.preconfsiva,preconfcivav WITH CsrProducto.preconfciva		,prepubciv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2924,8 +1504,38 @@ av WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepu
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a1		,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio
 15-05-2018 13:17:45 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'PREOTRO1CIVA'.;Linea : REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal ,numero WITH CsrProducto.numero,nombre WITH C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3191,7 +1801,37 @@ srProducto.nombre ,costocprav WITH CsrProducto.costocpra,aumentov WITH CsrProduc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 srproducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProducto.segflete ,totalfletev WITH CsrProducto.totalflete,costosivav WITH CsrProducto.costosiva ,costocivav WITH CsrProducto.costociva,margen1v WITH CsrProducto.margen1 ,utilciva1v
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3457,6 +2097,21 @@ srproducto.internoporce ,fletev WITH CsrProducto.flete,segfletev WITH CsrProduct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 confsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto.prepubciva ,prepubfsivav WITH CsrProducto.prepubfsiva,prepubfcivav WITH CsrProducto.prepubfciva ,preotrociva1v WITH CsrProducto.preotro1civa ,preotrofsiva1v WITH CsrProducto
 
 
@@ -3590,7 +2245,37 @@ confsiva,preconfcivav WITH CsrProducto.preconfciva ,prepubcivav WITH CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .preotrofsiva1,preotrofciva1v WITH CsrProducto.preotrofciva1 ,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10AXE.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3862,7 +2547,37 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto.boniftotal,costobonv WITH CsrProducto.costobon		,internov WITH Csrproducto.interno,internoporcev WITH Csrproducto.internoporce		,fletev WITH CsrProducto.flete,segfletev WITH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4118,7 +2833,37 @@ rProducto.aumento		,costov WITH Csrproducto.costo		,boniftotalv WITH CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	,redondeov WITH CsrProducto.redondeo,costoagrev WITH CsrProducto.costoagre		,fleteagrev WITH CsrProducto.fleteagre,preconcivav WITH CsrProducto.preconciva		,preconfsivav WITH CsrProducto.preconfsiva,preconfcivav WITH CsrProducto.preconfciva		,prepubciva
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4374,8 +3119,38 @@ v WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepub
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1		,tasav WITH CsrProducto.tasa IN CsrAuxCbioprecio
 15-05-2018 13:18:24 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad COSTOCPRA.;Linea : lobjprecio.costocpra	= CsrProducto.costocpra;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4635,6 +3410,21 @@ v WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepub
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \APPDATA\LOCAL\TEMP\00003UA10B0Y.TMP;Ultimo Control activo: 
 15-05-2018 13:19:55 , Pila de llamadas
 15-05-2018 13:19:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
@@ -4755,7 +3545,37 @@ v WITH CsrProducto.prepubciva		,prepubfsivav WITH CsrProducto.prepubfsiva,prepub
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 va WITH lobjprecio.costociva ,utilciva1 WITH lobjprecio.utilciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10B35.TMP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4956,6 +3776,21 @@ va WITH lobjprecio.costociva ,utilciva1 WITH lobjprecio.utilciva1,utilsiva1 WITH
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
 15-05-2018 13:24:43 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la propiedad COSTOSIVA.;Linea : replace aumento WITH lobjprecio.aumento ,costo WITH lobjprecio.costo,costobon WITH lobjprecio.costobonificado ,costosiva WITH lobjprecio.costosiva
 
@@ -5048,7 +3883,37 @@ lciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,costociva WITH lobjprecio.costociva ,utilciva1 WITH lobjprecio.utilciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5235,8 +4100,38 @@ lciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cio.utilciva1,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
 15-05-2018 13:27:50 , PIDOPRECIO.INIT, Error: No se encuentra el alias 'CSRRUBRO'.;Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5412,6 +4307,21 @@ CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10BWK.TMP;Ultimo Control activo: COSTOCPRA
 15-05-2018 13:37:45 , Pila de llamadas
 15-05-2018 13:37:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -5440,6 +4350,21 @@ CsrRubro.margen1 in CsrAuxPrecio;Error :         13;Ultimo Alias Activo: CSRSETE
 15-05-2018 13:37:54 , Nº de Linea :         44
 15-05-2018 13:37:54 , En el Fuente: lObjprecio.utilidadpesossiva = red(lObjprecio.prevtasiva - lObjprecio.costosiniva,this.decimales)
 15-05-2018 13:39:47 , ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS, Error: _TXTUTILSIVA1 es un miembro desconocido.;Linea : ._txtutilsiva1.value    = lobjprecio.utilidadpesossiva;Error :       1925;Ultimo Alias Activo: CSRPARAVARIO;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5578,6 +4503,21 @@ Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10C4A
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10CCT.TMP;Ultimo Control activo: COSTOCPRA
 15-05-2018 13:41:06 , Pila de llamadas
 15-05-2018 13:41:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\abmproducto.sct
@@ -5649,7 +4589,37 @@ Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10CCT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 va,costociva WITH lobjprecio.costoconiva ,utilciva1 WITH lobjprecio.utilidad,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto;Error :       1734;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5752,6 +4722,21 @@ UA10CQ5.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 jprecio.utilidad,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
 15-05-2018 13:47:20 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'PRECONCIVA'.;Linea : REPLACE preconciva WITH lobjprecio.preconciva ,preconfsiva WITH lobjprecio.preconfsiva,preconfciva WITH lobjprecio.preconfciva ,prepubciva WITH 
 
@@ -5795,7 +4780,37 @@ jprecio.utilidad,utilsiva1 WITH lobjprecio.utilsiva1 IN CsrProducto
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CsrProducto.prepubciva ,prepubfsiva WITH CsrProducto.prepubfsiva,prepubfciva WITH CsrProducto.prepubfciva ,preotrociva WITH CsrProducto.preotrociva1 ,preotrofsiva WITH CsrProducto.preotrofsiva1,preotrofciva1 WITH CsrProducto.preotrofciva1;Error :        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5886,8 +4901,38 @@ CsrProducto.prepubciva ,prepubfsiva WITH CsrProducto.prepubfsiva,prepubfciva WIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 epubfciva WITH CsrProducto.prepubfciva			,preotrociva WITH CsrProducto.preotrociva1			,preotrofsiva WITH CsrProducto.preotrofsiva1,preotrofciva1 WITH CsrProducto.preotrofciva1			
 15-05-2018 13:54:46 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'COSTON'.;Linea : replace coston WITH Csrproducto.costo ,boniftotaln WITH CsrProducto.boniftotal,costobonn WITH CsrProducto.costobon ,internon WITH Csrproducto.intern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5961,6 +5006,21 @@ o,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,seg
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 to.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.utilsiva1 ,redondeon WITH CsrProducto.redondeo,costroagren WITH CsrProducto.costoagre ,fleteagren WITH CsrProducto.fleteagre,preconcivan WITH CsrProducto.preconciva ,preconfsiv
 
 
@@ -5998,7 +5058,37 @@ to.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.ut
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 an WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,preotrof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6079,7 +5169,37 @@ siva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofci
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6145,7 +5265,37 @@ TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costroagren WITH 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6211,7 +5361,37 @@ H CsrProducto.preotrofciva1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rno,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6275,6 +5455,21 @@ ucto.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProducto.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,preotr
 
 
@@ -6307,7 +5502,37 @@ ivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,pre
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1 ,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6377,7 +5602,37 @@ CAL\TEMP\00003UA10D98.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6431,7 +5686,37 @@ TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costroagren WITH 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6485,7 +5770,37 @@ H CsrProducto.preotrofciva1		,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 nterno,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH CsrP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6537,6 +5852,21 @@ roducto.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProduc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 nfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,pre
 
 
@@ -6563,7 +5893,37 @@ nfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 otrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1 ,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6621,7 +5981,37 @@ otrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preot
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6663,7 +6053,37 @@ TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costroagren WITH 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o.preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6705,7 +6125,37 @@ H CsrProducto.preotrofciva1		,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .interno,internoporcen WITH Csrproducto.internoporce ,fleten WITH CsrProducto.flete,segfleten WITH CsrProducto.segflete ,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva ,costocivan WITH CsrProducto.costociva,margen1n WITH Cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6745,6 +6195,21 @@ rProducto.margen1 ,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WITH CsrProd
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 onfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva ,prepubcivan WITH CsrProducto.prepubciva ,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva ,preotrocivan1 WITH CsrProducto.preotrociva1 ,pr
 
 
@@ -6765,7 +6230,37 @@ onfsivan WITH CsrProducto.preconfsiva,preconfcivan WITH CsrProducto.preconfciva 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 eotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH CsrProducto.preotrofciva1 ,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDAT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6812,7 +6307,37 @@ A\LOCAL\TEMP\00003UA10DDG.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ucto.flete,segfleten WITH CsrProducto.segflete		,totalfleten WITH CsrProducto.totalflete,costosivan WITH CsrProducto.costosiva		,costocivan WITH CsrProducto.costociva,margen1n WITH CsrProducto.margen1		,utilciva1n WITH CsrProducto.utilciva1,utilsiva1n WI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6844,7 +6369,37 @@ TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costoagren WITH C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .preconfciva		,prepubcivan WITH CsrProducto.prepubciva		,prepubfsivan WITH CsrProducto.prepubfsiva,prepubfcivan WITH CsrProducto.prepubfciva		,preotrocivan1 WITH CsrProducto.preotrociva1		,preotrofsiva1n WITH CsrProducto.preotrofsiva1,preotrofciva1n WITH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6862,6 +6417,21 @@ TH CsrProducto.utilsiva1		,redondeon WITH CsrProducto.redondeo,costoagren WITH C
 
  CsrProducto.preotrofciva1		,endolarn WITH CsrProducto.endolar  IN CsrAuxCbioPrecio  
 15-05-2018 13:59:07 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'CODALFAPROV'.;Linea : .column1.ControlSource = "CsrAuxCbioPrecio.codalfaprov";Error :         12;Ultimo Alias Activo: CSRAUXCBIOPRECIO;Ultimo registro:          1 ;D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6899,7 +6469,37 @@ BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA10DFR.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  ,prevta1 WITH OscPrecio.prevta1n,prevta2 WITH OscPrecio.prevta2n ,prevta3 WITH OscPrecio.prevta3n,prevta4 WITH OscPrecio.prevta4n ,prevtaf1 WITH OscPrecio.prevtaf1n,prevtaf2 WITH OscPrecio.prevtaf2n ,prevtaf3 WITH OscPrecio.prevtaf3n,prevtaf4 WITH OscPr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6921,7 +6521,37 @@ ecio.prevtaf4n ,margen1 WITH OscPrecio.margen1n,margen2 WITH OscPrecio.margen2n 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ecio.bonif4n ,costobon WITH OscPrecio.costobonn ,flete WITH OscPrecio.fleten,segflete WITH OscPrecio.segfleten IN CsrProducto;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003UA1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6954,7 +6584,37 @@ ecio.bonif4n ,costobon WITH OscPrecio.costobonn ,flete WITH OscPrecio.fleten,seg
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a2n				,prevta3 WITH OscPrecio.prevta3n,prevta4 WITH OscPrecio.prevta4n				,prevtaf1 WITH OscPrecio.prevtaf1n,prevtaf2 WITH OscPrecio.prevtaf2n				,prevtaf3 WITH OscPrecio.prevtaf3n,prevtaf4 WITH OscPrecio.prevtaf4n				,margen1 WITH OscPrecio.margen1n,ma
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6966,8 +6626,38 @@ rgen2 WITH OscPrecio.margen2n				,margen3 WITH OscPrecio.margen3n,margen4 WITH O
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 costobonn				,flete WITH OscPrecio.fleten,segflete WITH OscPrecio.segfleten IN CsrProducto
 15-05-2018 15:51:58 , CBIOPRECIO2.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'FECHA'.;Linea : replace fecha WITH TTOC(CsrProducto.feculpre) IN CsrAuxCbioPrecio;Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6984,3 +6674,68 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003FNT010I.TMP;Ultimo Control activo:
 15-05-2018 15:52:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio2.sct
 15-05-2018 15:52:02 , Nº de Linea :         52
 15-05-2018 15:52:02 , En el Fuente: 	 replace fecha WITH TTOC(CsrProducto.feculpre) IN CsrAuxCbioPrecio
+16-05-2018 17:29:43 , EXPORTAR_HOLISTOR.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: Alias is not found.;Linea : IF RECCOUNT("CsrAuxCompras")=0;Error :         13;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA
+
+
+
+
+
+
+
+
+
+
+
+
+
+\LOCAL\TEMP\00009H55000K.TMP;Ultimo Control activo: 
+16-05-2018 17:29:43 , Pila de llamadas
+16-05-2018 17:29:44 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+16-05-2018 17:29:44 , Objeto      : exportar_holistor.imprimir_vistaprevia1.excel.click
+16-05-2018 17:29:44 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+16-05-2018 17:29:44 , Nº de Linea :          5
+16-05-2018 17:29:44 , En el Fuente: llOK=thisform.CrearInforme()
+16-05-2018 17:29:45 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:29:45 , Objeto      : exportar_holistor.crearinforme
+16-05-2018 17:29:45 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:29:45 , Nº de Linea :         20
+16-05-2018 17:29:46 , En el Fuente: 	lTodoOK = .calculacompras(cperiodo)
+16-05-2018 17:29:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:29:46 , Objeto      : exportar_holistor.calculacompras
+16-05-2018 17:29:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:29:46 , Nº de Linea :         74
+16-05-2018 17:29:47 , En el Fuente: RETURN This.GenerarCompras(cPeriodo)
+16-05-2018 17:29:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:29:47 , Objeto      : exportar_holistor.generarcompras
+16-05-2018 17:29:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:29:48 , Nº de Linea :          3
+16-05-2018 17:29:48 , En el Fuente: IF RECCOUNT("CsrAuxCompras")=0
+16-05-2018 17:31:46 , EXPORTAR_HOLISTOR.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: Alias is not found.;Linea : IF RECCOUNT("CsrAuxCompras")=0;Error :         13;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA
+
+
+
+
+
+
+\LOCAL\TEMP\00009H55006R.TMP;Ultimo Control activo: 
+16-05-2018 17:31:46 , Pila de llamadas
+16-05-2018 17:31:47 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+16-05-2018 17:31:47 , Objeto      : exportar_holistor.imprimir_vistaprevia1.excel.click
+16-05-2018 17:31:47 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+16-05-2018 17:31:47 , Nº de Linea :          5
+16-05-2018 17:31:47 , En el Fuente: llOK=thisform.CrearInforme()
+16-05-2018 17:31:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:31:47 , Objeto      : exportar_holistor.crearinforme
+16-05-2018 17:31:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:31:48 , Nº de Linea :         20
+16-05-2018 17:31:48 , En el Fuente: 	lTodoOK = .calculacompras(cperiodo)
+16-05-2018 17:31:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:31:48 , Objeto      : exportar_holistor.calculacompras
+16-05-2018 17:31:49 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:31:49 , Nº de Linea :         75
+16-05-2018 17:31:49 , En el Fuente: RETURN This.GenerarCompras(cPeriodo)
+16-05-2018 17:31:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:31:49 , Objeto      : exportar_holistor.generarcompras
+16-05-2018 17:31:50 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+16-05-2018 17:31:50 , Nº de Linea :          3
+16-05-2018 17:31:50 , En el Fuente: IF RECCOUNT("CsrAuxCompras")=0
