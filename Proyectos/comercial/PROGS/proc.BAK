@@ -32,7 +32,7 @@ CREATE CURSOR CsrAuxPrecio (id i,idarticulo i,idctacte i,idrubro i,idiva i;
 		,prepubfciva n(11, 3),fecmodi d ,endolar n(1, 0),costoulcpra n(11, 3) ;
 		,preotrociva1 n(11, 3),preotrofsiva1 n(11, 3),preotrofciva1 n(11, 3);
 		,cnumero c(8),cnombre c(30),registro i,codalfaprov c(10),descripcion c(20);
-		,principal n(1))
+		,principal n(1),incremarca n(6,3))
 
 *----------------------------------------------------------------------------
 * FUNCION PeloCuit(lcCuit)
