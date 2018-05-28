@@ -15,556 +15,6 @@
 
 
 
-
-
-
-o: 
-23-03-2018 , Pila de llamadas
-23-03-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-23-03-2018 , Objeto      : listadoventaspatron.imprimir_vistaprevia1.impresora.click
-23-03-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-23-03-2018 , Nº de Linea :          8
-23-03-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
-23-03-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\patron\listadoventaspatron.sct
-23-03-2018 , Objeto      : listadoventaspatron.crearinforme
-23-03-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\patron\listadoventaspatron.sct
-23-03-2018 , Nº de Linea :         12
-23-03-2018 , En el Fuente: 	.crearlistado()
-23-03-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\patron\listadoventaspatron.sct
-23-03-2018 , Objeto      : listadoventaspatron.crearlistado
-23-03-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\patron\listadoventaspatron.sct
-23-03-2018 , Nº de Linea :          8
-23-03-2018 , En el Fuente: SELECT '0' as origen ,idarticulo,codigo,articulo,IIF(INT(unidades/unibulto)=0 OR unibulto=0,1,INT(unidades/unibulto)) AS unibultos,unidades,IIF(unibulto=0,unidades,(unidades-(INT(unidades/unibulto)*UNIBULTO))) as unisueLtas,pes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-able, variedad,ROUND(importefinal,2) as importefinal,1 AS peso,IIF(pesable=1, unidades * peso, unidades) as vtakilos, unibulto as xbulto,CAST(0 as int) as codfletero,SPACE(30) as nomfleteroFROM CsrListado INTO CURSOR CsrImprimir READWRITE 
-30-03-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          0 ;DBF: ;Ultimo Control activo: 
-30-03-2018 , Pila de llamadas
-30-03-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
-30-03-2018 , Objeto      : main
-30-03-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
-30-03-2018 , Nº de Linea :        241
-30-03-2018 , En el Fuente: 	LeerEmpresa()
-30-03-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-30-03-2018 , Objeto      : leerempresa
-30-03-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-30-03-2018 , Nº de Linea :       1491
-30-03-2018 , En el Fuente: lok =CrearCursorAdapter("Csrempresa",lcCmd)
-30-03-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
-30-03-2018 , Objeto      : crearcursoradapter
-30-03-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
-30-03-2018 , Nº de Linea :       1320
-30-03-2018 , En el Fuente: 
-02-04-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 tro:          0 ;DBF: ;Ultimo Control activo: 
 02-04-2018 , Pila de llamadas
 02-04-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -583,6 +33,14 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 02-04-2018 , Nº de Linea :       1320
 02-04-2018 , En el Fuente: 
 02-04-2018 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : ;Error :       1429;Ultimo Alias Activo: ;Ultimo regis
+
+
+
+
+
+
+
+
 
 
 
@@ -923,6 +381,14 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
 o09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: CSRTIPOINGBRUTOS;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008NBD00C9.TMP;Ultimo Control activo: 
 04/11/18 , Pila de llamadas
 04/11/18 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1087,8 +553,24 @@ o09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :     
 
 
 
+
+
+
+
+
+
+
+
 rsor READWRITE
 13-04-2018 , GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: CSRIMPORTAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+
+
+
+
+
+
+
+
 
 
 
@@ -1419,6 +901,14 @@ rsor READWRITE
 
 
 
+
+
+
+
+
+
+
+
 000059U101FU.TMP;Ultimo Control activo: 
 13-04-2018 , Pila de llamadas
 13-04-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1587,6 +1077,14 @@ rsor READWRITE
 
 
 
+
+
+
+
+
+
+
+
 TEMP\000059U1023B.TMP;Ultimo Control activo: 
 13-04-2018 , Pila de llamadas
 13-04-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\generarandroid.sct
@@ -1595,6 +1093,14 @@ TEMP\000059U1023B.TMP;Ultimo Control activo:
 13-04-2018 , Nº de Linea :         25
 13-04-2018 , En el Fuente: 	this.chkSTOCKZERO.Value = IIF(.controlarstock,1,0)
 25-04-2018 , LISTADOVENTASCAMION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Desbordamiento numérico (se han perdido datos).;Linea : GATHER NAME OscImp;Error :         39;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         32 ;DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+
+
 
 
 
@@ -1918,6 +1424,14 @@ TEMP\000059U1023B.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
 ro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P027E.TMP;Ultimo Control activo: 
 27-04-2018 , Pila de llamadas
 27-04-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1926,6 +1440,14 @@ ro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P027E.TMP;Ultimo C
 27-04-2018 , Nº de Linea :          1
 27-04-2018 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 27-04-2018 , ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENBARRIO.TXTID.INIT, Error: No se encuentra el alias 'CSRCTACTE'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo regist
+
+
+
+
+
+
+
+
 
 
 
@@ -2188,6 +1710,14 @@ ro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P029L.TMP;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
 istro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P02E0.TMP;Ultimo Control activo: 
 27-04-2018 , Pila de llamadas
 27-04-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2196,6 +1726,14 @@ istro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P02E0.TMP;Ultim
 27-04-2018 , Nº de Linea :          1
 27-04-2018 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 27-04-2018 , ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENBARRIO.TXTID.INIT, Error: No se encuentra el alias 'CSRCTACTE'.;Linea : this.controlsource=this.parent.controlsourcetxtid;Error :         13;Ultimo Alias Activo: CSRLISTAPRECIO;Ultimo regist
+
+
+
+
+
+
+
+
 
 
 
@@ -2450,6 +1988,14 @@ ro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P02G0.TMP;Ultimo C
 
 
 
+
+
+
+
+
+
+
+
 istro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P02IU.TMP;Ultimo Control activo: 
 27-04-2018 , Pila de llamadas
 27-04-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2458,6 +2004,14 @@ istro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P02IU.TMP;Ultim
 27-04-2018 , Nº de Linea :          1
 27-04-2018 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 30-04-2018 , GENERAR_CEO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad CODDIST.;Linea : OscDatos.coddist = thisform._txtdistribuidor.Value;Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:
+
+
+
+
+
+
+
+
 
 
 
@@ -2715,6 +2269,14 @@ istro:          7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P02IU.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
 imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5004Q.TMP;Ultimo Control activo: 
 14-05-2018 , Pila de llamadas
 14-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regpubvario.sct
@@ -2728,6 +2290,14 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5004Q.TM
 14-05-2018 , Nº de Linea :          2
 14-05-2018 , En el Fuente: SELECT Csrmovpub.*,00000000 AS nrocaja FROM Csrmovpub WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovpub READWRITE 
 14-05-2018 , REGPUBVARIO.GRID2.KEYPRESS, Error: No se encuentra la variable 'LDFECHADELETE'.;Linea : replace fecha_del WITH ldfechadelete,terminal_del WITH goapp.terminal;Error :         12;Ultimo Alias Activo: CSRMOVPUB_TEMP;Ultimo registro:         -1 
+
+
+
+
+
+
+
+
 
 
 
@@ -2964,6 +2534,14 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5004Q.TM
 
 
 
+
+
+
+
+
+
+
+
 ;Ultimo registro:          7 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL500Q9.TMP;Ultimo Control activo: 
 14-05-2018 , Pila de llamadas
 14-05-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2977,6 +2555,14 @@ imo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5004Q.TM
 14-05-2018 , Nº de Linea :        198
 14-05-2018 , En el Fuente: 	select CsrMov.origen,<<cDetaPub>>,<<cOrdenIDPub>> as orden,<<cFecPub>> as fecha
 14-05-2018 , LISCONTROLDIARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad INGRESO.;Linea : Oscatter.ingreso	= 0;Error :       1734;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
+
+
+
+
+
+
+
 
 
 
@@ -3185,6 +2771,14 @@ L\TEMP\00009DL501QO.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
 ITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 14-05-2018 , Pila de llamadas
 14-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctacte_k.sct
@@ -3198,6 +2792,14 @@ ITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;
 14-05-2018 , Nº de Linea :          4
 14-05-2018 , En el Fuente: SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE 
 16-05-2018 , REGCTROLCTACTE.INIT, Error: _TXTNOMCAJA es un miembro desconocido.;Linea : .containerencabeza._txtnomcaja.value = lObjEjercicioActivo.cajaactual;Error :       1925;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USER
+
+
+
+
+
+
+
+
 
 
 
@@ -3388,6 +2990,14 @@ S\ADMIN\APPDATA\LOCAL\TEMP\00009DL500JC.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
 ntrol activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -3487,6 +3097,14 @@ ntrol activo:
 
 
 
+
+
+
+
+
+
+
+
 ntrol activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -3500,6 +3118,14 @@ ntrol activo:
 16-05-2018 , Nº de Linea :          3
 16-05-2018 , En el Fuente:    	.grid3.visible       = .f.    
 16-05-2018 , REGCTROLCTACTE.CONTAINERENCABEZA.KITBUSCAOALTAENFLETERO.TXTEXISTE1.LOSTFOCUS, Error: Redefinición no válida de la variable LUVALORBUSCADO.;Linea : Local lrs,oform,luvalorbuscado,i,lbfound,lccmd,uvalorbuscado,lrsource,lcbase;Error :       196
+
+
+
+
+
+
+
+
 
 
 
@@ -3669,6 +3295,14 @@ ntrol activo:
 
 
 
+
+
+
+
+
+
+
+
 o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL501FC.TMP;Ultimo Control activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -3682,6 +3316,14 @@ o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL501FC.TMP;Ultimo Co
 16-05-2018 , Nº de Linea :         20
 16-05-2018 , En el Fuente: 	lcfecha1 = "'"+DTOS(.containerencabeza.fecha_calendario1.txtfecha.Value+1)+"'"
 16-05-2018 , REGCTROLCTACTE.INIT, Error: CMDVALORES es un miembro desconocido.;Linea : .cmdvalores.Visible = .t.;Error :       1925;Ultimo Alias Activo: CSRCOMPROBANTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL50437.TMP;U
+
+
+
+
+
+
+
+
 
 
 
@@ -3841,6 +3483,14 @@ ltimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
 CAL\TEMP\00009DL504BT.TMP;Ultimo Control activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -3859,6 +3509,14 @@ CAL\TEMP\00009DL504BT.TMP;Ultimo Control activo:
 16-05-2018 , Nº de Linea :          6
 16-05-2018 , En el Fuente: 				IF thisform.containerencabeza._txtnomcaja.Value = 0
 16-05-2018 , REGCTROLCTACTE.CMDPROCESAR.CLICK, Error: TXTFACTURAS es un miembro desconocido.;Linea : thisform.containerpie.txtfacturas.Value = 0;Error :       1925;Ultimo Alias Activo: CSRAUXCABEFAC;Ultimo registro:        164 IDMAOPERA;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
 
 
 
@@ -4001,6 +3659,14 @@ IN\APPDATA\LOCAL\TEMP\00009DL504SC.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
 URSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: CSRFLETERO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5055J.TMP;Ultimo Control activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -4073,6 +3739,14 @@ URSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: CSRFLETERO
 
 
 
+
+
+
+
+
+
+
+
 URSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: CSRFLETERO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL505AO.TMP;Ultimo Control activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -4086,6 +3760,14 @@ URSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: CSRFLETERO
 16-05-2018 , Nº de Linea :          2
 16-05-2018 , En el Fuente: SELECT Csrmaopera.*,CAST(0 as int) as iddeposito,00000000 AS nrocaja,SPACE(6) as pefiscal,CAST(0 as int) as idfleteren FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE 
 16-05-2018 , REGCTROLCTACTE.INIT, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRSETEOTERMI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL505XB.TMP;Ultimo C
+
+
+
+
+
+
+
+
 
 
 
@@ -4217,6 +3899,14 @@ ontrol activo:
 
 
 
+
+
+
+
+
+
+
+
 o: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -4230,6 +3920,14 @@ o:
 16-05-2018 , Nº de Linea :         84
 16-05-2018 , En el Fuente: 	RETURN lok
 16-05-2018 , REGCTROLCTACTE.INIT, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRSETEOTERMI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5060T.TMP;Ultimo C
+
+
+
+
+
+
+
+
 
 
 
@@ -4337,6 +4035,14 @@ ontrol activo:
 
 
 
+
+
+
+
+
+
+
+
 tro:        164 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5064C.TMP;Ultimo Control activo: ESTADOTILDE
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\regctrolctacte.sct
@@ -4355,6 +4061,14 @@ tro:        164 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5064C.TM
 16-05-2018 , Nº de Linea :         14
 16-05-2018 , En el Fuente: 	SET FILTER TO idfleteplan = Csrauxiliar.idfleteplan AND grupo='F' IN CSRAUXCABEFAC
 16-05-2018 , REGCTROLCTACTE.CONTAINERENCABEZA.KITBUSCAOALTAENFLETERO.TXTEXISTE1.LOSTFOCUS, Error: Redefinición no válida de la variable LUVALORBUSCADO.;Linea : Local lrs,oform,luvalorbuscado,i,lbfound,lccmd,uvalorbuscado,lrsource,lcbase;Error :       196
+
+
+
+
+
+
+
+
 
 
 
@@ -4426,6 +4140,14 @@ tro:        164 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5064C.TM
 
 
 
+
+
+
+
+
+
+
+
 0;Ultimo Alias Activo: CSRFLETERO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5069D.TMP;Ultimo Control activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4461,6 +4183,14 @@ tro:        164 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5064C.TM
 
 
 
+
+
+
+
+
+
+
+
 o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5069D.TMP;Ultimo Control activo: 
 16-05-2018 , Pila de llamadas
 16-05-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4469,6 +4199,14 @@ o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL5069D.TMP;Ultimo Co
 16-05-2018 , Nº de Linea :          3
 16-05-2018 , En el Fuente: Local lrs,oform,luvalorbuscado,i,lbfound,lccmd,uvalorbuscado,lrsource,lcbase
 16-05-2018 , REGCTROLCTACTE.KEYPRESS, Error: GRID2 es un miembro desconocido.;Linea : .grid2.RecordSource = "";Error :       1925;Ultimo Alias Activo: CSRMOVCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009DL506T4.TMP;Ultim
+
+
+
+
+
+
+
+
 
 
 
@@ -4532,6 +4270,14 @@ o Control activo: ESTADOTILDE
 
 
 
+
+
+
+
+
+
+
+
 CAL\TEMP\0000AY2X00BT.TMP;Ultimo Control activo: 
 17-05-2018 , Pila de llamadas
 17-05-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -4555,6 +4301,14 @@ CAL\TEMP\0000AY2X00BT.TMP;Ultimo Control activo:
 17-05-2018 , Nº de Linea :         83
 17-05-2018 , En el Fuente: 					.Column016.Header = "Longitud"
 17-05-2018 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'BARRIO'.;Linea : SELECT CODIGO,NOMCLIENTE,CUIT,IVA,DIRECCION,TELEFONO,LOCALIDAD ,PROVINCIA,CANAL,codvendedor,nomvendedor,CODSECTOR,NOMSECTOR,barrio,lat,ln
+
+
+
+
+
+
+
+
 
 
 
@@ -4600,8 +4354,24 @@ g,lista FROM CsrImprimir ORDER BY CODSECTOR,RUTASECTOR INTO CURSOR CsrImprimir R
 
 
 
+
+
+
+
+
+
+
+
 ITE 
 17-05-2018 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'LISTA'.;Linea : SELECT CODIGO,NOMCLIENTE,CUIT,IVA,DIRECCION,TELEFONO,LOCALIDAD ,PROVINCIA,CANAL,codvendedor,nomvendedor,CODSECTOR,NOMSECTOR,nombarrio,lat,
+
+
+
+
+
+
+
+
 
 
 
@@ -4635,8 +4405,24 @@ lng,lista FROM CsrImprimir ORDER BY CODSECTOR,nombarrio INTO CURSOR CsrImprimir 
 
 
 
+
+
+
+
+
+
+
+
 WRITE 
 21-05-2018 , REGCTROLCTACTE.PRECIOPROD1.INIT, Error: No se encuentra el alias 'CSRSETEO'.;Linea : SELECT CsrSeteo;Error :         13;Ultimo Alias Activo: CSRAUXMOVAFECTADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000091XL00A0.T
+
+
+
+
+
+
+
+
 
 
 MP;Ultimo Control activo: 
@@ -4651,3 +4437,67 @@ MP;Ultimo Control activo:
 21-05-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
 21-05-2018 , Nº de Linea :         11
 21-05-2018 , En el Fuente: SELECT CsrSeteo
+28-05-2018 , RINDEFLETE.CMDPROCESAR.CLICK, Error: _TXTDETALLE es un miembro desconocido.;Linea : INSERT INTO CsrAuxmaopera (origen,programa,terminal,fechasis,idoperador,idvendedor ,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,nroca
+
+
+
+
+
+
+
+ja ,iddeposito,pefiscal,estado,idfleteren,detalle) VALUES ('RFL',UPPER(.name),Goapp.terminal,CsrparaConfig.fechaserver,goapp.idusuario,.lnidvendedor ,.lnidnrocaja,CsrparaConfig.turno,"00000",Goapp.sucursal,.sectorterminal,.puestocaja ,CsrparaConfig.idcot
+
+
+
+
+
+
+
+izadolar,CsrparaConfig.nrocaja,.lniddeposito,CsrparaConfig.pefiscal,'0',0 ,this.containerencabeza._txtdetalle.value);Error :       1925;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009UYX00QM.TM
+
+
+
+
+
+
+
+P;Ultimo Control activo: 
+28-05-2018 , Pila de llamadas
+28-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+28-05-2018 , Objeto      : rindeflete.cmdprocesar.click
+28-05-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+28-05-2018 , Nº de Linea :          3
+28-05-2018 , En el Fuente: thisform.leermovimientos()
+28-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+28-05-2018 , Objeto      : rindeflete.leermovimientos
+28-05-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+28-05-2018 , Nº de Linea :         11
+28-05-2018 , En el Fuente: 	this.insertarcursor()
+28-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+28-05-2018 , Objeto      : rindeflete.insertarcursor
+28-05-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\rindeflete_v1.sct
+28-05-2018 , Nº de Linea :         15
+28-05-2018 , En el Fuente: INSERT INTO CsrAuxmaopera (origen,programa,terminal,fechasis,idoperador,idvendedor    ,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,nrocaja    ,iddeposito,pefiscal,estado,idfleteren,detalle)VALUES ('RFL',
+
+
+
+UPPER(.name),Goapp.terminal,CsrparaConfig.fechaserver,goapp.idusuario,.lnidvendedor    ,.lnidnrocaja,CsrparaConfig.turno,"00000",Goapp.sucursal,.sectorterminal,.puestocaja    ,CsrparaConfig.idcotizadolar,CsrparaConfig.nrocaja,.lniddeposito,CsrparaConfig.
+
+
+
+pefiscal,'0',0    ,this.containerencabeza._txtdetalle.value)
+28-05-2018 , REGPARAMETROS.LOAD, Error: El archivo 'csrseteoparam.dbf' no existe.;Linea : SELECT CsrSeteoParam.*,0  as estado FROM CsrSeteoParam WHERE RECNO()<1 INTO CURSOR CsrAuxParametros READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo regist
+
+
+ro:          0 ;DBF: ;Ultimo Control activo: 
+28-05-2018 , Pila de llamadas
+28-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+28-05-2018 , Objeto      : regparametros.load
+28-05-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+28-05-2018 , Nº de Linea :          2
+28-05-2018 , En el Fuente: this.crearcursores()
+28-05-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+28-05-2018 , Objeto      : regparametros.crearcursores
+28-05-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regseteoparam.sct
+28-05-2018 , Nº de Linea :          1
+28-05-2018 , En el Fuente: SELECT CsrSeteoParam.*,0  as estado FROM CsrSeteoParam WHERE RECNO()<1 INTO CURSOR CsrAuxParametros READWRITE 
