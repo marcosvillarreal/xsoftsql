@@ -1,189 +1,3 @@
-18-05-2018 13:12:27 , En el Fuente: 			._txtlargo.Value	= CsrAuxCuerfac.p_largo
-18-05-2018 13:44:10 , REGFACVTA.KEYPRESS, Error: No se encuentra el alias 'CSRREMFAC'.;Linea : SELECT CsrRemFac;Error :         13;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:         77 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000074SP0HF2.TMP;Ulti
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mo Control activo: 
-18-05-2018 13:44:10 , Pila de llamadas
-18-05-2018 13:44:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-18-05-2018 13:44:11 , Objeto      : regfacvta.keypress
-18-05-2018 13:44:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-18-05-2018 13:44:12 , Nº de Linea :        156
-18-05-2018 13:44:12 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
-18-05-2018 13:44:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-18-05-2018 13:44:12 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
-18-05-2018 13:44:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
-18-05-2018 13:44:13 , Nº de Linea :          9
-18-05-2018 13:44:14 , En el Fuente: 	thisform.llamarpidoremito()
-18-05-2018 13:44:14 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
 18-05-2018 13:44:14 , Objeto      : regfacvta.llamarpidoremito
 18-05-2018 13:44:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
 18-05-2018 13:44:15 , Nº de Linea :         11
@@ -214,6 +28,10 @@ mo Control activo:
 18-05-2018 13:44:20 , Nº de Linea :         16
 18-05-2018 13:44:20 , En el Fuente: 			SELECT CsrRemFac
 18-05-2018 14:15:47 , REGFACVTA.KEYPRESS, Error: No se encuentra la variable 'PIES'.;Linea : replace pies WITH CsrRemFac.pies, p_largo WITH CsrRemFac.p_largo, p_ancho WITH CsrRemFac.p_ancho, p_espesor WITH CsrRemFac.p_espesor IN CsrAuxCuerfac;Error :    
+
+
+
+
 
 
 
@@ -543,6 +361,10 @@ mo Control activo:
 
 
 
+
+
+
+
 mo Control activo: 
 18-05-2018 14:17:50 , Pila de llamadas
 18-05-2018 14:17:51 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
@@ -586,6 +408,10 @@ mo Control activo:
 18-05-2018 14:18:02 , Nº de Linea :         16
 18-05-2018 14:18:02 , En el Fuente: 			SELECT CsrRemFac
 18-05-2018 14:19:25 , REGFACVTA.KEYPRESS, Error: No se encuentra la variable 'P_LARGO'.;Linea : replace pies WITH CsrRemFac.pies, p_largo WITH CsrRemFac.p_largo, p_ancho WITH CsrRemFac.p_ancho, p_espesor WITH CsrRemFac.p_espesor IN CsrAuxCuerfac;Error : 
+
+
+
+
 
 
 
@@ -864,7 +690,15 @@ mo Control activo:
 
 
 
+
+
+
+
 esor,haydimension WITH IIF(NVL(CsrProducto.tienedimension,0),.f.,.t.) IN CsrAuxCuerfac;Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000074SP0PUJ.TMP;Ultimo Control acti
+
+
+
+
 
 
 
@@ -1126,8 +960,16 @@ vo: CODIGO
 
 
 
+
+
+
+
 rfac
 18-05-2018 14:41:05 , REGFACVTA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'HAYDIMENSION'.;Linea : REPLACE HAYDIMENSION WITH nvl(CsrProducto.tienedimension,0);Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:    
+
+
+
+
 
 
 
@@ -1367,6 +1209,10 @@ rfac
 
 
 
+
+
+
+
       1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000074SP0R50.TMP;Ultimo Control activo: CODEXTEND
 18-05-2018 14:42:16 , Pila de llamadas
 18-05-2018 14:42:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
@@ -1380,6 +1226,10 @@ rfac
 18-05-2018 14:42:18 , Nº de Linea :         44
 18-05-2018 14:42:19 , En el Fuente: 	REPLACE HAYDIMENSION WITH nvl(CsrProducto.tienedimension,0)
 18-05-2018 14:58:17 , REGFACVTA.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.TXTNOMBRE.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : if ISALPHA(chr(nKeycode)) or ISDIGIT(chr(nKeycode)) OR nkeycode=32 OR nKeyCode=
+
+
+
+
 
 
 
@@ -1600,6 +1450,10 @@ rfac
 
 
 
+
+
+
+
 APPDATA\LOCAL\TEMP\0000845L00WT.TMP;Ultimo Control activo: 
 24-05-2018 07:59:00 , Pila de llamadas
 24-05-2018 07:59:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
@@ -1613,6 +1467,10 @@ APPDATA\LOCAL\TEMP\0000845L00WT.TMP;Ultimo Control activo:
 24-05-2018 07:59:02 , Nº de Linea :         65
 24-05-2018 07:59:02 , En el Fuente: 	IF NOT lldesarrollo
 24-05-2018 08:00:34 , REGFACVTA.GRID2.COLUMN5.TEXT1.GOTFOCUS, Error: El campo PREUNITASIVA no acepta valores NULL.;Linea : GATHER NAME Oscatter;Error :       1581;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         29 IDMAOPERA;DBF: C:\USERS\ADMI
+
+
+
+
 
 
 
@@ -1834,7 +1692,15 @@ N\APPDATA\LOCAL\TEMP\0000845L01DM.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
 ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
+
+
+
+
 
 
 
@@ -2020,7 +1886,15 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
+
 0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
+
+
+
+
 
 
 
@@ -2206,6 +2080,10 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
 2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
 
 
@@ -2299,7 +2177,15 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
 AS ESSUMI ,0 as haydimension FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000845L02LX.TMP;Ultimo Co
+
+
+
+
 
 
 
@@ -2492,7 +2378,15 @@ ntrol activo:
 
 
 
+
+
+
+
 ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
+
+
+
+
 
 
 
@@ -2668,7 +2562,15 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
+
 0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
+
+
+
+
 
 
 
@@ -2844,6 +2746,10 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
 2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
 
 
@@ -2932,7 +2838,15 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
 AS ESSUMI ,0 as haydimension FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000845L02V1.TMP;Ultimo Co
+
+
+
+
 
 
 
@@ -3115,7 +3029,15 @@ ntrol activo:
 
 
 
+
+
+
+
 ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondig
+
+
+
+
 
 
 
@@ -3281,7 +3203,15 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
+
 0 as total, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as Uni
+
+
+
+
 
 
 
@@ -3447,6 +3377,10 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
 2)) as prepubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,CAST(0 as int) as idubicacion,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 
 
 
@@ -3530,7 +3464,15 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
+
 AS ESSUMI ,0 as haydimension FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000053BD009B.TMP;Ultimo Co
+
+
+
+
 
 
 
@@ -3725,6 +3667,10 @@ ntrol activo:
 
 
 
+
+
+
+
 Control activo: 
 28-05-2018 08:31:02 , Pila de llamadas
 28-05-2018 08:31:03 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
@@ -3758,6 +3704,10 @@ Control activo:
 28-05-2018 08:31:08 , Nº de Linea :         59
 28-05-2018 08:31:09 , En el Fuente: this.SaldoPdte	= nSaldo
 28-05-2018 08:37:04 , REGFACVTA.LOAD, Error: File 'csrcabefac.dbf' does not exist.;Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva ,
+
+
+
+
 
 
 
@@ -3871,7 +3821,15 @@ Control activo:
 
 
 
+
+
+
+
  subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,SPACE(5) as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DAT
+
+
+
+
 
 
 
@@ -3985,6 +3943,10 @@ E()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuota, SPACE
 
 
 
+
+
+
+
 0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia ,
 
 
@@ -4042,7 +4004,15 @@ E()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuota, SPACE
 
 
 
+
+
+
+
 SPACE(30) as retiro,SPACE(30) as autorizo,SPACE(30) as ubicacion ,0 as SolicitaDNI FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control act
+
+
+
+
 
 
 
@@ -4163,7 +4133,15 @@ ivo:
 
 
 
+
+
+
+
 00.00 as Perceibto1   	   ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva   	   ,00000000.00 as Perceiva   	   ,0000000.00 as BasedtoCiva,0000000.00 as BaseDtoSiva   	   ,SPACE(3) as sub
+
+
+
+
 
 
 
@@ -4269,7 +4247,15 @@ numero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc       ,SPACE(25) as sub
 
 
 
+
+
+
+
 TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg       ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega       ,DATETIME(YEAR(DATE(
+
+
+
+
 
 
 
@@ -4324,6 +4310,10 @@ TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as
 
 )),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega       ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte       ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta;       
 28-05-2018 09:12:26 , MAIN, Error: Alias is not found.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000051C909JN.TMP;Ultimo Control activo: 
+
+
+
+
 
 
 
@@ -4448,6 +4438,10 @@ TE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,0 as canje, CAST(1 as
 
 
 
+
+
+
+
 UARIO\APPDATA\LOCAL\TEMP\000051C909NG.TMP;Ultimo Control activo: 
 28-05-2018 09:13:26 , Pila de llamadas
 28-05-2018 09:13:26 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4466,6 +4460,10 @@ UARIO\APPDATA\LOCAL\TEMP\000051C909NG.TMP;Ultimo Control activo:
 28-05-2018 09:13:28 , Nº de Linea :         35
 28-05-2018 09:13:28 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 28-05-2018 09:16:20 , REGCARTERA.CONTAINERENCABEZA.KITBUSCAOALTAENLOCALIDAD.TXTEXISTE1.INIT, Error: Alias 'CSRLOCALIDAD' is not found.;Linea : This.txtnombre.value = &lccamponombre;Error :         13;Ultimo Alias Activo: CSRAUXPLANCUE;Ultimo registro:   
+
+
+
+
 
 
 
@@ -4594,6 +4592,10 @@ UARIO\APPDATA\LOCAL\TEMP\000051C909NG.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
 o registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000051C90ERI.TMP;Ultimo Control activo: 
 28-05-2018 10:26:37 , Pila de llamadas
 28-05-2018 10:26:38 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4602,6 +4604,10 @@ o registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000051C90ERI.TM
 28-05-2018 10:26:39 , Nº de Linea :          1
 28-05-2018 10:26:39 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 28-05-2018 10:43:49 , ABMPRODUCTO.CMDAGREGAR.CLICK, Error: Alias 'CSRTIPIVA' is not found.;Linea : lobjPrecioactual.AddProperty('tasa',CsrTipiva.tasa);Error :         13;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         -1 ;DBF: C:\USERS\USUARIO\
+
+
+
+
 
 
 
@@ -4632,6 +4638,10 @@ APPDATA\LOCAL\TEMP\000051C90FBI.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
 ol activo: 
 28-05-2018 12:33:21 , Pila de llamadas
 28-05-2018 12:33:21 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v07.sct
@@ -4648,6 +4658,10 @@ ol activo:
 
 
 
+
+
+
+
    1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00000O3T02OI.TMP;Ultimo Control activo: CODEXTEND
 28-05-2018 12:33:37 , Pila de llamadas
 28-05-2018 12:33:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -4660,3 +4674,19 @@ ol activo:
 28-05-2018 12:33:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
 28-05-2018 12:33:38 , Nº de Linea :         87
 28-05-2018 12:33:39 , En el Fuente: 			replace prearti WITH lnpreunita,preartisiva WITH lnpreunitasiva in CsrAuxCuerfac
+28-05-2018 13:34:17 , LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: File 'csrcuerpo.dbf' does not exist.;Linea : SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal,0 as nocheques,CsrCuerpo.* FROM CsrCuerpo ORDER BY CsrCue
+
+
+
+rpo.id, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+28-05-2018 13:34:17 , Pila de llamadas
+28-05-2018 13:34:18 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+28-05-2018 13:34:18 , Objeto      : listcartera.imprimir_vistaprevia1.impresora.click
+28-05-2018 13:34:18 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+28-05-2018 13:34:18 , Nº de Linea :          8
+28-05-2018 13:34:18 , En el Fuente: 	llOK=thisform.CrearInforme()
+28-05-2018 13:34:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\listcartera.sct
+28-05-2018 13:34:19 , Objeto      : listcartera.crearinforme
+28-05-2018 13:34:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\bancario\listcartera.sct
+28-05-2018 13:34:19 , Nº de Linea :        125
+28-05-2018 13:34:19 , En el Fuente: SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal,0 as nocheques,CsrCuerpo.* FROM CsrCuerpo ORDER BY CsrCuerpo.id, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite
