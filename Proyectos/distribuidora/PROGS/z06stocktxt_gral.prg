@@ -24,7 +24,12 @@ llok = CargarTabla(lcData,'CuerOrd',.t.)
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrProducto.* FROM Producto as CsrProducto 
 ENDTEXT 
-=CrearCursorAdapter('CsrProducto',lcCmd)
+=CrearCursorAdapter('CsrArticulos',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrParaConfig.* FROM Paraconfig as CsrParaConfig
+ENDTEXT 
+=CrearCursorAdapter('CsrParaConfig',lcCmd)
 
 SET SAFETY ON
 
@@ -158,12 +163,44 @@ SCAN
 	ENDIF 
 ENDSCAN 
 
+lnidexiste	= RecuperarID('CsrExistenc',Goapp.sucursal10)
+lnidmov 	= RecuperarID('CsrMovStock',Goapp.sucursal10) 
+lnidmaopera	= RecuperarID('CsrMaopera',Goapp.sucursal10) 
+lnidcabeord	= RecuperarID('CsrCabeOrd',Goapp.sucursal10)
+lnidcuerord	= RecuperarID('CsrCuerOrd',Goapp.sucursal10)
+
+STORE 0 TO lntotal,lnlistaprecio,lnidfletero
+STORE 0 TO lnhojaactual,lnhojatotal,lnidctacte,lnidconcepto
+					
+lnidDepEntra= CsrParaConfig.iddeposito
+lnidcomproba= 9
+lcclasecomp = "L"
+lnsigno 	= 1
+
+ldfechaserver	= DATETIME()
+ldfechasis		= FechaHoraCero(ldfechaserver)
+lniDConcepto		= 3
+
+INSERT INTO CsrMaopera (id,origen,programa,sucursal,terminal,sector,fechasis;
+,idoperador,idvendedor,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja;
+,idcotizadolar,switch,estado,detalle,fechaserver);
+VALUES (lnidmaopera,"EXI","IMPORTACION STOCK",goapp.sucursal,goapp.terminal,1;
+,ldfechasis,1,1,lniddetanrocaja,lnidcomproba,"X0000"+strzero(1,8),lcclasecomp;
+,1,1,1,"0000","0","Importación Stock",ldfechaserver)
+
+INSERT INTO Csrcabeord(id,idmaopera,total,switch,listaprecio,idfletero,iddepentra;
+,iddepsale,signo,hojaactual,hojatotal,idlotemaopera,idctacte,idconcepto);
+VALUES(lnidcabeord,CsrMaopera.id,lntotal,"00000",lnlistaprecio,lnidfletero;
+,lnidDepEntra,0,lnsigno ,lnhojaactual,lnhojatotal,lnidmaopera,lnidctacte;
+,lnidconcepto)
+
+
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 *stop()
 SCAN FOR !EOF()
-	SELECT CsrProducto
+	SELECT CsrArticulos
 	
 	LOCATE FOR numero=VAL(CsrArticulo.codigo)
 	IF numero<>VAL(CsrArticulo.codigo)
@@ -174,92 +211,46 @@ SCAN FOR !EOF()
 	IF VAL(CsrArticulo.stock) <= 0
 		LOOP 
 	ENDIF 
+	STORE 0 TO lnuniventa,lnunibulto,lnkilos,lnvolumen,lnlistaprecio,lnprecosto,lnprecostosiva;
+		,lnpreunita,lnpreunitasiva,lnprearti,lnpreartisiva,lninterno,lndespor,lntasaiva,lnhojaactual;
+		,lnpesable,lnidfrio
 	
-
-
-    SELECT CsrRubro
-    LOCATE FOR nombre=Csrarticulo.rubro
-    IF NOT FOUND()
-    	GO BOTTOM
-    ENDIF 
-    lnidseccion = CsrRubro.id
-    
-    SELECT CsrMarca
-    GO TOP 
-    Lnidmarca = CsrMarca.id
-    	
-	SELECT CsrUbicacion
-	GO TOP 
-	lnidubicacion = CsrUbicacion.id
-
-	lcnombre	= NombreNi(alltrim(CsrArticulo.nombre))
-	lnCodigo	= VAL(CsrArticulo.codigo)
-	lcCodArti	= "" &&CsrArticulo.codArti
-	lnfracciona = 1 
-    lnidestado 	= 1 
-    lnTasa		= VAL(CsrArticulo.Alicuota)
-    lnidiva     = IIF(lnTasa=21,1100000002,1100000003) &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
-   	lnunibulto	= 1 
-    lnidtipovta = 1 &&UNIDADES=1 ,	BULTOS = 2.
-    lnvtakilos	= 0 &&IIF(UPPER(CsrArticulo.u_medida)$"KILOS-KG",1,0)
-   	lnidforma 	= 1100000001
-
-	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
-	ldfechaulcpr 	= ldfecha
-	ldfechamodf 	= CTOD(CsrArticulo.fecModf)
-	ldfechabonif	= CTOD('01-01-1900') &&GOMONTH(ldfecha,360*20)
+	lnidArticulo	= CsrArticulos.id
+	lcCodigo	= CsrArticulos.numero			
+	lnCantidad	= CsrArticulos.stock
+	lnuniventa	= CsrArticulos.idtipovta
+	lnunibulto 	= CsrArticulos.unibulto
+	lnPesable 	= CsrArticulos.vtakilos
+	lnKilos		= lnCantidad*IIF(lnPesable=1,CsrArticulos.peso,1)
+				
+	INSERT INTO CsrCuerord (id,idmaopera,idcabeza,idarticulo,codigo,nombre,cantidad,univenta;
+		,unibulto,kilos,volumen,listaprecio,precosto,precostosiva,preunita,preunitasiva,prearti;
+		,preartisiva,interno,despor,tasaiva,hojaactual,switch,pesable,idfrio);
+	VALUES (lnidcuerord,lnidmaopera,lnidcabeord,lnidArticulo,lcCodigo,CsrArticulos.nombre;
+		,lnCantidad,lnuniventa,lnunibulto,lnkilos,0;
+		,lnlistaprecio,lnprecosto,lnprecostosiva,lnpreunita,lnpreunitasiva,lnprearti;
+		,lnpreartisiva,lninterno,lndespor,lntasaiva,lnhojaactual,"00000",lnpesable,lnidfrio)
 	
-	lnCosto		= VAL(CsrArticulo.costosiva)
-	lnCostoBon	= lnCosto
+	INSERT INTO CsrMovStock (id,idmaopera,idorigen,idarticulo,idsubarti,codigo,fecha;
+		,iddeposito,cantidad,kilos,volumen,importe,switch,signo);
+	VALUES (lnidmov,lnidmaopera,lnidcuerord,lnidArticulo,lnidsub,lccodigo,ldfechasis;
+		,lnidDepEntra,lnCantidad,lnKilos,lnKilos,0,"0000",1)
 	
-	lnUtil1		= INT(VAL(CsrArticulo.Util))
-	lnprevta1	= lnCosto * lnUtil1	&&VAL(Csrarticulo.prevta1)
-	lnprevtaf1	= lnprevta1 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-	lnUtil2		= INT(VAL(CsrArticulo.Util2))
-	lnprevta2	= lnCosto * lnUtil2	&&VAL(Csrarticulo.prevta1)
-	lnprevtaf2	= lnprevta2 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-	lnUtil3		= INT(VAL(CsrArticulo.Util3))
-	lnprevta3	= lnCosto * lnUtil3	&&VAL(Csrarticulo.prevta1)
-	lnprevtaf3	= lnprevta3 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
+	lnidcuerord = lnidcuerord + 1
+	lnidmov		= lnidmov + 1
 	
-	lnUtil4		= 0
-	lnPeso		= 0			
-	
-	
-*!*		lnprevta1	= VAL(Csrarticulo.prevta1)
-*!*		lnprevtaf1	= VAL(CsrArticulo.prevtaf1)
-*!*		lnUtil1		= IIF(lnCosto=0,0,round(lnprevta1 * 100 / lnCosto,3) - 100)
-*!*		lnprevta2	= VAL(Csrarticulo.prevta2)
-*!*		lnprevtaf2	= VAL(CsrArticulo.prevtaf2)
-*!*		lnUtil2		= IIF(lnCosto=0,0,round(lnprevta2 * 100 / lnCosto,3) - 100)
-*!*		lnprevta3	= VAL(Csrarticulo.prevta3)
-*!*		lnprevtaf3	= VAL(CsrArticulo.prevtaf3)
-*!*		lnUtil3		= IIF(lnCosto=0,0,round(lnprevta3 * 100 / lnCosto,3) - 100)
-*!*		lnUtil4		= 0
-*!*		lnPeso		= 0					
-	
-	INSERT INTO Csrproducto (id,numero,nombre,codalfa,idiva,costo,margen1,prevta1,margen2,; 
-	prevta2,switch,idunidad,idtprod,idtamano,idcatego,idubicacio,idorigen,incluirped,idctacte,idrubro,margen3,;
-	prevta3,margen4,prevta4,interno,unibulto,peso,idtipovta,idforma,fracciona,nomodifica,nombulto,puntope,;
-	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
-	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
-	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctavta,idenvase,fleteporce); 	
-	values (lnid, lncodigo, lcnombre, lccodarti, lnidiva, lncosto,	;
-	lnutil1, lnprevta1, lnutil2, lnprevta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
-	lnprevta3, 0,0,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
-	1,1,lnflete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, lnbonif1,lnbonif2, lnbonif3,;
-	lnbonif4 ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnidfrio,;
-	lnsugerido,1,lnsireparto,"",0, 0,;
-	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
-	,lnidctacpra,lnidctavta;
-	,lnidenvase,lnfleteporce)		
-
-	lnid = lnid + 1
-
+	SELECT CsrExistenc
+	LOCATE FOR idarticulo = lnidarticulo AND iddeposito = lnidDepEntra
+	IF idarticulo = lnidarticulo AND iddeposito = lnidDepEntra
+		INSERT INTO CsrExistenc (id,idarticulo,iddeposito,idsubarti,existe,existeant,existedisp,fecvto;
+			,kilos,kilosant,kilosdisp,volumen,volumenant,volumendisp);
+		VALUES (lnidexiste,lnidArticulo,lnidDepEntra,lnidsub,lnCantidad,0;
+			,lnCantidad,ldfecha,lnKilos,0,lnKilos,0,0,0)
+	ENDIF 
+		 				
 	SELECT CsrArticulo   				
 ENDSCAN
-SELECT CsrProducto
-vista()
+SELECT CsrExistenc
 
    	
 Oavisar.proceso('N') 
