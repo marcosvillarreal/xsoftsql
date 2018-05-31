@@ -46,9 +46,7 @@ local lnidrubro, lnidmarca, lncodrubro
 store 0 to lnidrubro, lnidmarca ,lncodrubro
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8),Costosiva c(15),CostoCiva c(15),PreVta1 c(15),PreVtaf1 c(15);
-		,PreVta2 c(15),PreVtaf2 c(15),PreVta3 c(15),PreVtaf3 c(15),Stock c(8),Alicuota c(8),fecModf c(15) ,Observa c(100);
-		,Util c(15),Util2 c(15), Util3 c(15), Tasa c(6))
+CREATE CURSOR CsrArticulo (Codigo c(8),Stock c(15))
 
 
 SELECT CsrLista
@@ -152,45 +150,13 @@ SCAN
 			LOOP 
 		ENDIF 
 		
-		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Costosiva,CostoCiva,PreVta1,PreVtaf1;
-			,PreVta2,PreVtaf2,PreVta3,PreVtaf3,Stock,Alicuota,fecModf,Observa,Util,Util2,Util3);
-		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcCostosiva,lcCostoCiva,lcPreVta1,lcPreVtaf1;
-			,lcPreVta2,lcPreVtaf2,lcPreVta3,lcPreVtaf3,lcStock,lcAlicuota,lcfecModf,lcObserva;
-			,lcUtil,lcUtil2,lcUtil3)
+		INSERT INTO CsrArticulo (Codigo,Stock);
+		values (lcCodigo,lcStock)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
 	ENDIF 
 ENDSCAN 
-
-
-SELECT CsrArticulo
-*vista()
-
-lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
-lncodrubro = 1
-SELECT distinct UPPER(rubro) as nombre FROM CsrArticulo  INTO CURSOR FsrRubro
-
-SELECT FsrRubro
-GO top
-SCAN 
-	STORE 1100000001 TO lntipoprod,lntipovta 
-	lnretibruto	= 1 &&IIF(CsrSeccion.perceib="S",1,0)
-
-	lcnombre	= NombreNi(ALLTRIM(UPPER(FsrRubro.nombre)))
-	INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta) ;
-	VALUES (lnid,lncodrubro,lcnombre,lntipoprod,lntipovta,lnretibruto,lnidfuerzavta)
-	lnid = lnid +1 
-	lncodrubro = lncodrubro + 1 
-ENDSCAN 
-
-lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
-INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
-VALUES (lnid,1,"GENERAL",lnidfuerzavta)
-
-lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
-INSERT INTO CsrUbicacion (id,numero,nombre)	VALUES (lnid,'1','GENERAL')
-
 
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -200,25 +166,16 @@ SCAN FOR !EOF()
 	SELECT CsrProducto
 	
 	LOCATE FOR numero=VAL(CsrArticulo.codigo)
-	IF numero=VAL(CsrArticulo.codigo)
+	IF numero<>VAL(CsrArticulo.codigo)
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
 	
-	IF LEFT(CsrArticulo.nombre,2)='0-'
+	IF VAL(CsrArticulo.stock) <= 0
 		LOOP 
 	ENDIF 
 	
-	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnPreventa4
-	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
-	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase
-	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
-	
-	SELECT CsrCtacte
-    LOCATE FOR otro01=Csrarticulo.proveedor
-    IF FOUND()
-    	lnidctacte = Csrctacte.id
-    ENDIF
+
 
     SELECT CsrRubro
     LOCATE FOR nombre=Csrarticulo.rubro

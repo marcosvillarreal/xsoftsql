@@ -16,18 +16,15 @@ codepage = 1252
 SET CPDIALOG ON
 Oavisar.proceso('S','Abriendo archivos') 
 llok = .t.
-llok = CargarTabla(lcData,'Producto',.t.)
-llok = CargarTabla(lcData,'Variedad',.t.)
-llok = CargarTabla(lcData,'Rubro',.t.)
-llok = CargarTabla(lcData,'Marca',.t.)
-llok = CargarTabla(lcData,'SubProducto',.t.)
-llok = CargarTabla(lcData,'BloqueoProd',.t.)
-llok = CargarTabla(lcData,'GamaBase',.t.)
-llok = CargarTabla(lcData,'Deposito')
-llok = CargarTabla(lcData,'Ubicacion',.t.)
-llok = CargarTabla(lcData,'FuerzaVta')
-llok = CargarTabla(lcData,'Ctacte')
+llok = CargarTabla(lcData,'MovStock',.t.)
+llok = CargarTabla(lcData,'Maopera',.t.)
+llok = CargarTabla(lcData,'CabeOrd',.t.)
+llok = CargarTabla(lcData,'CuerOrd',.t.)
 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrProducto.* FROM Producto as CsrProducto 
+ENDTEXT 
+=CrearCursorAdapter('CsrProducto',lcCmd)
 
 SET SAFETY ON
 
