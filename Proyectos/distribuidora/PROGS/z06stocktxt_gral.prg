@@ -20,6 +20,7 @@ llok = CargarTabla(lcData,'MovStock',.t.)
 llok = CargarTabla(lcData,'Maopera',.t.)
 llok = CargarTabla(lcData,'CabeOrd',.t.)
 llok = CargarTabla(lcData,'CuerOrd',.t.)
+llok = CargarTabla(lcData,'Existenc',.t.)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrProducto.* FROM Producto as CsrProducto 
@@ -40,10 +41,6 @@ ENDIF
 IF USED('CsrLista')
 	USE IN CsrLista
 ENDIF 
-
-SELECT CsrFuerzaVta
-GO TOP 
-lnidfuerzavta = CsrFuerzavta.id
 
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -177,6 +174,7 @@ lnidcomproba= 9
 lcclasecomp = "L"
 lnsigno 	= 1
 
+lniddetanrocaja = CsrParaConfig.iddetanrocaja
 ldfechaserver	= DATETIME()
 ldfechasis		= FechaHoraCero(ldfechaserver)
 lniDConcepto		= 3
@@ -213,16 +211,19 @@ SCAN FOR !EOF()
 	ENDIF 
 	STORE 0 TO lnuniventa,lnunibulto,lnkilos,lnvolumen,lnlistaprecio,lnprecosto,lnprecostosiva;
 		,lnpreunita,lnpreunitasiva,lnprearti,lnpreartisiva,lninterno,lndespor,lntasaiva,lnhojaactual;
-		,lnpesable,lnidfrio
+		,lnpesable,lnidfrio,lnidsub
 	
 	lnidArticulo	= CsrArticulos.id
-	lcCodigo	= CsrArticulos.numero			
-	lnCantidad	= CsrArticulos.stock
+	lcCodigo	= strtrim(CsrArticulos.numero,10)
+	lnCantidad	= VAL(STRTRAN(CsrArticulo.stock,",","."))
 	lnuniventa	= CsrArticulos.idtipovta
 	lnunibulto 	= CsrArticulos.unibulto
 	lnPesable 	= CsrArticulos.vtakilos
-	lnKilos		= lnCantidad*IIF(lnPesable=1,CsrArticulos.peso,1)
-				
+	*lnKilos		= lnCantidad*IIF(lnPesable=1,CsrArticulos.peso,1)
+	IF lnPesable = 1
+		lnKilos		= lnCantidad
+		lnCantidad	= INT(lnKilos / CsrArticulos.peso)
+	ENDIF 
 	INSERT INTO CsrCuerord (id,idmaopera,idcabeza,idarticulo,codigo,nombre,cantidad,univenta;
 		,unibulto,kilos,volumen,listaprecio,precosto,precostosiva,preunita,preunitasiva,prearti;
 		,preartisiva,interno,despor,tasaiva,hojaactual,switch,pesable,idfrio);
@@ -239,14 +240,16 @@ SCAN FOR !EOF()
 	lnidcuerord = lnidcuerord + 1
 	lnidmov		= lnidmov + 1
 	
-	SELECT CsrExistenc
-	LOCATE FOR idarticulo = lnidarticulo AND iddeposito = lnidDepEntra
-	IF idarticulo = lnidarticulo AND iddeposito = lnidDepEntra
+*!*		SELECT CsrExistenc
+*!*		LOCATE FOR idarticulo = lnidarticulo AND iddeposito = lnidDepEntra
+*!*		IF NOT FOUND() &&idarticulo = lnidarticulo AND iddeposito = lnidDepEntra
 		INSERT INTO CsrExistenc (id,idarticulo,iddeposito,idsubarti,existe,existeant,existedisp,fecvto;
 			,kilos,kilosant,kilosdisp,volumen,volumenant,volumendisp);
 		VALUES (lnidexiste,lnidArticulo,lnidDepEntra,lnidsub,lnCantidad,0;
-			,lnCantidad,ldfecha,lnKilos,0,lnKilos,0,0,0)
-	ENDIF 
+			,lnCantidad,ldfechasis,lnKilos,0,lnKilos,0,0,0)
+			
+		lnidexiste = lnidexiste + 1 
+*!*		ENDIF 
 		 				
 	SELECT CsrArticulo   				
 ENDSCAN
