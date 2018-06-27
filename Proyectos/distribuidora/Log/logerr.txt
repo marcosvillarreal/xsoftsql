@@ -131,332 +131,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
-05-06-2018 , REGFACCPRA.LOAD, Error: El archivo 'csrcabecpra.dbf' no existe.;Linea : SELECT CsrCabecpra.*,00 as copiatkt,0 as idsubcta,SPACE(3) as subnumero,SPACE(40) as detalle,DATETIME() as Vencimien ,000.00 as bonif1,000.00 as bonif2 ,CAST(0 as numeri
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-c(12,0)) as idcuenta FROM CsrCabecpra WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-05-06-2018 , Pila de llamadas
-05-06-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra.sct
-05-06-2018 , Objeto      : regfaccpra.load
-05-06-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra.sct
-05-06-2018 , Nº de Linea :          2
-05-06-2018 , En el Fuente: thisform.crearcursor()
-05-06-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra.sct
-05-06-2018 , Objeto      : regfaccpra.crearcursor
-05-06-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfaccpra.sct
-05-06-2018 , Nº de Linea :          5
-05-06-2018 , En el Fuente: SELECT CsrCabecpra.*,00 as copiatkt,0 as idsubcta,SPACE(3) as subnumero,SPACE(40) as detalle,DATETIME() as Vencimien       ,000.00 as bonif1,000.00 as bonif2       ,CAST(0 as numeric(12,0)) as idcuenta       FROM CsrCabecpra WH
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
 06-06-2018 , ON..., Error: Falta ) en el nombre de la función.;Linea : GO lnRecno;Error :       1300;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 06-06-2018 , Pila de llamadas
 06-06-2018 , INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El nombre de alias ya está en uso.;Linea : SELECT CsrAux1.* FROM CsrAux1 UNION ALL SELECT CsrAux2.* FROM CsrAux2 UNION ALL SELECT CsrAux3.* FROM CsrAux3 into CURSOR CsrAux READWRITE;Erro
+
+
+
+
+
 
 
 
@@ -752,6 +435,11 @@ r :         24;Ultimo Alias Activo: CSRAUX3;Ultimo registro:          1 ;DBF: C:
 
 
 
+
+
+
+
+
 TA\LOCAL\TEMP\00007DOP01FM.TMP;Ultimo Control activo: 
 06-06-2018 , Pila de llamadas
 06-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -765,6 +453,11 @@ TA\LOCAL\TEMP\00007DOP01FM.TMP;Ultimo Control activo:
 06-06-2018 , Nº de Linea :         79
 06-06-2018 , En el Fuente: =SaveSQL(lccmdAnt,this.Name+"_ant")
 06-06-2018 , INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'LCCMDACTUAL'.;Linea : =SaveSQL(lccmdActual,this.Name+"_actual"+strzero(i,2));Error :         12;Ultimo Alias Activo: CSRAUX2;Ultimo registro:          1 ;DBF
+
+
+
+
+
 
 
 
@@ -1050,6 +743,11 @@ TA\LOCAL\TEMP\00007DOP01FM.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
  ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007DOP01VY.TMP;Ultimo Control activo: 
 06-06-2018 , Pila de llamadas
 06-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -1063,6 +761,11 @@ TA\LOCAL\TEMP\00007DOP01FM.TMP;Ultimo Control activo:
 06-06-2018 , Nº de Linea :        103
 06-06-2018 , En el Fuente: 	this.crear_anioact(oParam,lcfecdesdeanio,lcfechastaanio)
 06-06-2018 , INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'LTSANIOANT'.;Linea : SELECT DOW(Fecha) as ndia,idarticulo,idctacte,idfletero,idvariedad,idvendedor ,SUM(ngmesant) as ngmesant,SUM(ngmes) as ngmes,SUM(nga
+
+
+
+
+
 
 
 
@@ -1318,6 +1021,11 @@ nioant) as nganioant ,SUM(intmesant) as intmesant,SUM(intmes) as intmes,SUM(inta
 
 
 
+
+
+
+
+
 tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant ,SUM(bonmesant) as bonmesant,SUM(bonmes) as bonmes,SUM(bonanioant) as bonanioant ,
 
 
@@ -1446,7 +1154,17 @@ tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as 
 
 
 
+
+
+
+
+
 SUM(bonsmesant) as bonsmesant,SUM(bonsmes) as bonsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idven
+
+
+
+
+
 
 
 
@@ -1709,7 +1427,17 @@ dedor INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: 
 
 
 
+
+
+
+
+
 oant,SUM(unimesant) as unimesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant,SUM(impme
+
+
+
+
+
 
 
 
@@ -1957,8 +1685,18 @@ sant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant,SUM(bonme
 
 
 
+
+
+
+
+
 ) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanioFROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE 
 06-06-2018 , INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'LTSANIOANT'.;Linea : SELECT DOW(Fecha) as ndia,idarticulo,idctacte,idfletero,idvariedad,idvendedor ,SUM(ngmesant) as ngmesant,SUM(ngmes) as ngmes,SUM(nga
+
+
+
+
+
 
 
 
@@ -2204,6 +1942,11 @@ nioant) as nganioant ,SUM(intmesant) as intmesant,SUM(intmes) as intmes,SUM(inta
 
 
 
+
+
+
+
+
 tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant ,SUM(bonmesant) as bonmesant,SUM(bonmes) as bonmes,SUM(bonanioant) as bonanioant ,
 
 
@@ -2327,7 +2070,17 @@ tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as 
 
 
 
+
+
+
+
+
 SUM(bonsmesant) as bonsmesant,SUM(bonsmes) as bonsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idven
+
+
+
+
+
 
 
 
@@ -2581,7 +2334,17 @@ dedor INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: 
 
 
 
+
+
+
+
+
 oant,SUM(unimesant) as unimesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant,SUM(impme
+
+
+
+
+
 
 
 
@@ -2821,8 +2584,18 @@ sant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant,SUM(bonme
 
 
 
+
+
+
+
+
 ) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanioFROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE 
 06-06-2018 , INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'LTSANIOANT'.;Linea : SELECT DOW(Fecha) as ndia,idarticulo,idctacte,idfletero,idvariedad,idvendedor ,SUM(ngmesant) as ngmesant,SUM(ngmes) as ngmes,SUM(nga
+
+
+
+
+
 
 
 
@@ -3060,6 +2833,11 @@ nioant) as nganioant ,SUM(intmesant) as intmesant,SUM(intmes) as intmes,SUM(inta
 
 
 
+
+
+
+
+
 tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant ,SUM(bonmesant) as bonmesant,SUM(bonmes) as bonmes,SUM(bonanioant) as bonanioant ,
 
 
@@ -3179,7 +2957,17 @@ tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as 
 
 
 
+
+
+
+
+
 SUM(bonsmesant) as bonsmesant,SUM(bonsmes) as bonsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idven
+
+
+
+
+
 
 
 
@@ -3425,7 +3213,17 @@ dedor INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: 
 
 
 
+
+
+
+
+
 oant,SUM(unimesant) as unimesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant,SUM(impme
+
+
+
+
+
 
 
 
@@ -3657,8 +3455,18 @@ sant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant,SUM(bonme
 
 
 
+
+
+
+
+
 ) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanioFROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE 
 06-06-2018 , INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'LTSANIOANT'.;Linea : SELECT DOW(Fecha) as ndia,idarticulo,idctacte,idfletero,idvariedad,idvendedor ,SUM(ngmesant) as ngmesant,SUM(ngmes) as ngmes,SUM(nga
+
+
+
+
+
 
 
 
@@ -3888,6 +3696,11 @@ nioant) as nganioant ,SUM(intmesant) as intmesant,SUM(intmes) as intmes,SUM(inta
 
 
 
+
+
+
+
+
 tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant ,SUM(bonmesant) as bonmesant,SUM(bonmes) as bonmes,SUM(bonanioant) as bonanioant ,
 
 
@@ -4003,7 +3816,17 @@ tsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as 
 
 
 
+
+
+
+
+
 SUM(bonsmesant) as bonsmesant,SUM(bonsmes) as bonsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idven
+
+
+
+
+
 
 
 
@@ -4240,7 +4063,17 @@ dedor INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: 
 
 
 
+
+
+
+
+
 oant,SUM(unimesant) as unimesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant,SUM(impme
+
+
+
+
+
 
 
 
@@ -4462,8 +4295,18 @@ sant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant,SUM(bonme
 
 
 
+
+
+
+
+
 ) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanioFROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE 
 08-06-2018 , MAIN, Error: El archivo 'csrcomivende.dbf' no existe.;Linea : SELECT Csrcomivende.* FROM Csrcomivende WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE;Error :          1;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;
+
+
+
+
+
 
 
 
@@ -4702,6 +4545,11 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000034EH007G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001LOP028Y.TMP;Ultimo Control activo: 
 11-06-2018 , Pila de llamadas
 11-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4715,6 +4563,11 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001LOP028Y.TMP;Ultimo Control activo:
 11-06-2018 , Nº de Linea :         12
 11-06-2018 , En el Fuente: IF RECCOUNT('CsrDecimal')#0
 11-06-2018 , SUBFACREPARTO.PAGEFRAME1.PAGE1.KITGRILLATILDARFLETERO.INIT, Error: El archivo 'csrfletero.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo0
+
+
+
+
+
 
 
 
@@ -4916,8 +4769,18 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001LOP028Y.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 cursor READWRITE
 11-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrDecimal')#0;Error :         13;Ultimo Alias Activo: _CSRFLETERO;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
+
+
 
 
 
@@ -5118,6 +4981,11 @@ AL\TEMP\00001LOP02C3.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 8,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 11-06-2018 , Pila de llamadas
 11-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5125,6 +4993,11 @@ AL\TEMP\00001LOP02C3.TMP;Ultimo Control activo:
 11-06-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
 11-06-2018 , Nº de Linea :         35
 11-06-2018 , En el Fuente:       select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid         ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07         ,&lc8 as wcampo08,&lc9 as wcampo09       from &lcalias       order by &lcorden into cursor &mi
+
+
+
+
+
 
 
 
@@ -5318,6 +5191,11 @@ cursor READWRITE
 
 
 
+
+
+
+
+
 8,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 11-06-2018 , Pila de llamadas
 11-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5325,6 +5203,11 @@ cursor READWRITE
 11-06-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
 11-06-2018 , Nº de Linea :         35
 11-06-2018 , En el Fuente:       select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid         ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07         ,&lc8 as wcampo08,&lc9 as wcampo09       from &lcalias       order by &lcorden into cursor &mi
+
+
+
+
+
 
 
 
@@ -5490,6 +5373,11 @@ cursor READWRITE
 
 
 
+
+
+
+
+
 8,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 11-06-2018 , Pila de llamadas
 11-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5577,8 +5465,18 @@ cursor READWRITE
 
 
 
+
+
+
+
+
 cursor READWRITE
 12-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'GRUPO'.;Linea : INDEX on numgrupo+grupo+numgrupo02+STR(id,10) TAG pase;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;
+
+
+
+
+
 
 
 
@@ -5746,6 +5644,11 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4901D8.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 FLETERO;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4901XY.TMP;Ultimo Control activo: 
 12-06-2018 , Pila de llamadas
 12-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5759,6 +5662,11 @@ FLETERO;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
 12-06-2018 , Nº de Linea :        126
 12-06-2018 , En el Fuente: 	Csrcuerpo.clasecomp<>'K' <<lcWhereFiltro>> <<lcnumcomp>>  <<lcEstado>> AND <<lcfiltro>> 
 12-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el objeto LCSUBFILTRO.;Linea : STORE "" TO lcWhereFiltro,lcFrom,lcNPedido,lcFiltro,lcSubFiltro.lcnumcomp;Error :       1923;Ultimo Alias Activo: ;Ultimo registro:   
+
+
+
+
+
 
 
 
@@ -5908,6 +5816,11 @@ FLETERO;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
 
 
 
+
+
+
+
+
 +GRUPO+NUMGRUPO02+STR(ID,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z49022S.TMP;Ultimo Control activo: 
 12-06-2018 , Pila de llamadas
 12-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5921,6 +5834,11 @@ FLETERO;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
 12-06-2018 , Nº de Linea :        336
 12-06-2018 , En el Fuente: 	this.codpendiente_sinrendir(lcForm,lcCmdWhere)
 12-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la instrucción PARAMETER.;Linea : LOCAL lcfecha1,lcfecha2,lcfletero,lcvendedor,lccomprobante,lcestado,lcWhereFiltro,lcctacte;Error :       1238;Ultimo Alias Activo: 
+
+
+
+
+
 
 
 
@@ -6057,6 +5975,11 @@ CSRCUERPO;Ultimo registro:         27 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
 
 
 
+
+
+
+
+
 AL\TEMP\00005Z4903OO.TMP;Ultimo Control activo: 
 12-06-2018 , Pila de llamadas
 12-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -6070,6 +5993,11 @@ AL\TEMP\00005Z4903OO.TMP;Ultimo Control activo:
 12-06-2018 , Nº de Linea :        344
 12-06-2018 , En el Fuente: 			replace clase WITH 2
 12-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No coinciden los tipos de datos.;Linea : replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir;Error :          9;Ultimo Alias Activo: CSRCON
+
+
+
+
+
 
 
 
@@ -6185,6 +6113,11 @@ SOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
 
 
 
+
+
+
+
+
 LIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4903UQ.TMP;Ultimo Control activo: 
 12-06-2018 , Pila de llamadas
 12-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -6198,6 +6131,11 @@ LIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005
 12-06-2018 , Nº de Linea :        346
 12-06-2018 , En el Fuente: 			replace pago01 WITH CsrConsolidado.unidades,pago02 WITH CsrConsolidado.kilos IN CsrImprimir
 12-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'KILOS'.;Linea : replace pago01 WITH strtrim(CsrConsolidado.unidades,8),pago02 WITH strtrim(CsrConsolidado.kilos,8,3) IN CsrImprimir;Error :         12;U
+
+
+
+
+
 
 
 
@@ -6297,6 +6235,11 @@ ltimo Alias Activo: CSRCONSOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\AD
 
 
 
+
+
+
+
+
 SOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4904KV.TMP;Ultimo Control activo: 
 12-06-2018 , Pila de llamadas
 12-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -6310,6 +6253,11 @@ SOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
 12-06-2018 , Nº de Linea :        344
 12-06-2018 , En el Fuente: 			replace clase WITH 2,idplanpago WITH -1,nomplanpago WITH 'ARTICULOS' IN CsrImprimir
 12-06-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : INDEX on clase+numgrupo+grupo+numgrupo02+STR(id,10) TAG pase;Error :        107;Ultimo Alias Activo: CSRIMP
+
+
+
+
+
 
 
 
@@ -6393,6 +6341,11 @@ RIMIR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z
 
 
 
+
+
+
+
+
 registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001D6X00QU.TMP;Ultimo Control activo: 
 14-06-2018 , Pila de llamadas
 14-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -6406,6 +6359,11 @@ registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001D6X00QU
 14-06-2018 , Nº de Linea :         93
 14-06-2018 , En el Fuente: 			ObjReporter.titulo2 = ObjReporter.titulo2 + cRep + _CsrFletero.campocol2
 25-06-2018 , LISVTOCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se puede actualizar el cursor CSRIMPRIMIR, ya que es sólo de lectura.;Linea : &lcReplace;Error :        111;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS
+
+
+
+
+
 
 
 
@@ -6482,6 +6440,11 @@ registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001D6X00QU
 
 
 
+
+
+
+
+
 tro:          0 ;DBF: ;Ultimo Control activo: 
 25-06-2018 , Pila de llamadas
 25-06-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -6500,6 +6463,11 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 25-06-2018 , Nº de Linea :       1320
 25-06-2018 , En el Fuente: 
 25-06-18 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: No se encuentra el alias 'OOBJFACTURA'.;Linea : IF oObjFactura.hojaactual = loObjFactura.hojatotal AND lHayCobranza&&Ultima hoja;Error :         13;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1
+
+
+
+
+
 
 
 
@@ -6557,6 +6525,11 @@ tro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
 DEDOR;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01FS.TMP;Ultimo Control activo: 
 25-06-2018 , Pila de llamadas
 25-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -6579,6 +6552,11 @@ DEDOR;Ultimo registro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
 
 
 
+
+
+
+
+
 gistro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01GR.TMP;Ultimo Control activo: 
 25-06-2018 , Pila de llamadas
 25-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -6596,3 +6574,25 @@ gistro:          9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01GR.T
 25-06-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\listadovisitas.sct
 25-06-2018 , Nº de Linea :         11
 25-06-2018 , En el Fuente: 		lcdia	= lcdia + lcsep + DOW(ldfecdesde + i) 
+27-06-2018 , LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : lcdias	= lcdias + lcsep + lndia;Error :        107;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:     
+
+
+
+
+     9 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KSP005T.TMP;Ultimo Control activo: 
+27-06-2018 , Pila de llamadas
+27-06-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+27-06-2018 , Objeto      : listadovisitas.imprimir_vistaprevia1.impresora.click
+27-06-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+27-06-2018 , Nº de Linea :          8
+27-06-2018 , En el Fuente: 	llOK=thisform.CrearInforme()
+27-06-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listadovisitas.sct
+27-06-2018 , Objeto      : listadovisitas.crearinforme
+27-06-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\listadovisitas.sct
+27-06-2018 , Nº de Linea :         59
+27-06-2018 , En el Fuente: 	this.armarguia()
+27-06-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listadovisitas.sct
+27-06-2018 , Objeto      : listadovisitas.armarguia
+27-06-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\listadovisitas.sct
+27-06-2018 , Nº de Linea :         13
+27-06-2018 , En el Fuente: 		lcdias	= lcdias + lcsep + lndia
