@@ -29,53 +29,6 @@
 
 
 
-LOCAL\TEMP\0000A6TL007Z.TMP;Ultimo Control activo: 
-06-06-2018 14:10:56 , Pila de llamadas
-06-06-2018 14:10:57 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
-06-06-2018 14:10:57 , Objeto      : main
-06-06-2018 14:10:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
-06-06-2018 14:10:57 , Nº de Linea :        297
-06-06-2018 14:10:58 , En el Fuente: 	Read events   
-06-06-2018 14:10:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-06-06-2018 14:10:58 , Objeto      : frmmenu.treeview.dblclick
-06-06-2018 14:10:58 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\util\frmmenu.sct
-06-06-2018 14:10:58 , Nº de Linea :         14
-06-06-2018 14:10:58 , En el Fuente: 		&lcCmd
-06-06-2018 14:10:58 , Programa    : j:\xsoftsql\proyectos\comercial\progs\proc.fxp
-06-06-2018 14:10:58 , Objeto      : ejecutamenu
-06-06-2018 14:10:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\proc.prg
-06-06-2018 14:10:59 , Nº de Linea :       1595
-06-06-2018 14:10:59 , En el Fuente: 						DO FORM &lcForm WITH lcparam1
-06-06-2018 14:14:01 , REGFACVTA.BOTONERACUERPO.CMDIMPRIMIR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lcdevice  = UPPER(lcimpresora);Error :         11;Ultimo Alias Activo: CSRMAPEOIMP;Ultimo registro:      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -234,6 +187,9 @@ LOCAL\TEMP\0000A6TL007Z.TMP;Ultimo Control activo:
 06-06-2018 14:14:06 , Nº de Linea :         23
 06-06-2018 14:14:07 , En el Fuente: lcdevice  = UPPER(lcimpresora)
 06-06-2018 14:20:21 , MAIN, Error: El archivo 'j:\xsoftsql\proyectos\comercial\regfacvta_v07.scx' no existe.;Linea : DO FORM &lcForm WITH lcparam1;Error :          1;Ultimo Alias Activo: CURPERFIL;Ultimo registro:         65 ;DBF: C:\USERS\ADMIN\APPDATA\
+
+
+
 
 
 
@@ -563,7 +519,13 @@ LOCAL\TEMP\0000A6TL0177.TMP;Ultimo Control activo:
 
 
 
+
+
+
 rizo ,idpase,fechaafe,numcompafe,codvdorafe,vdorafe FROM CsrImprimir ORDER BY ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         38 GRUPO+STRID(IDCTACTE,10)+STRID(IDPASE,12);DBF: C:\USERS
+
+
+
 
 
 
@@ -887,8 +849,14 @@ rizo ,idpase,fechaafe,numcompafe,codvdorafe,vdorafe FROM CsrImprimir ORDER BY ct
 
 
 
+
+
+
 tacte INTO CURSOR CsrImprimir READWRITE 
 12-06-2018 12:08:28 , REGFACVTA.LOAD, Error: El archivo 'csrcuerfac.dbf' no existe.;Linea : SELECT CsrCuerfac.*,CAST(0 as n(12,0)) as idmovremito,CAST(0 as n(12,0)) as idcuerfac ,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol
+
+
+
 
 
 
@@ -1184,7 +1152,13 @@ tacte INTO CURSOR CsrImprimir READWRITE
 
 
 
+
+
+
 itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idctacpra, CAST(0 as int) as idareaneg ,SPACE(30) as nommarca,SPACE(30) as nomrubro,SPACE(15) as codalfa, CAST( '' as m) as Descrip_memo ,0000000.00 as stock,0000000.0
+
+
+
 
 
 
@@ -1480,7 +1454,13 @@ itada, 0 as comprome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as i
 
 
 
+
+
+
 Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra, 00000000.00 as BaseInterno,  000000000.00 as Baseexe ,SPACE(15) as CodExtend ,0 as actualizaprecio ,CAST(0 as n(12,2)) as prepubarti,SPACE(10) as inf_fecha ,CAST(0 as n(12,
+
+
+
 
 
 
@@ -1776,7 +1756,13 @@ Civa2 ,00000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra
 
 
 
+
+
+
 AS ESSUMI ,0 as haydimension FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009MO900CS.TMP;Ultimo Co
+
+
+
 
 
 
@@ -2080,6 +2066,9 @@ ntrol activo:
 
 
 
+
+
+
 ontrol activo: 
 12-06-2018 12:10:42 , Pila de llamadas
 12-06-2018 12:10:43 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -2093,6 +2082,9 @@ ontrol activo:
 12-06-2018 12:10:45 , Nº de Linea :          4
 12-06-2018 12:10:45 , En el Fuente: 	SELECT CsrProducto
 14-06-2018 16:59:57 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El índice no acepta NULL.;Linea : INDEX on STR(idctacte,10)+clases+strzero(nrocaja,8) TAG nrocaja;Error :       1886;Ultimo Alias Activo: CSRMOVIMIENTO;Ultimo registro:        
+
+
+
 
 
 
@@ -2380,6 +2372,9 @@ ontrol activo:
 
 
 
+
+
+
 808 STR(IDCTACTE,10)+DTOC(FECHA,1)+STRID(IDMAOPERA,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000042RT004Y.TMP;Ultimo Control activo: 
 14-06-2018 17:05:36 , Pila de llamadas
 14-06-2018 17:05:36 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2393,6 +2388,9 @@ ontrol activo:
 14-06-2018 17:05:38 , Nº de Linea :        101
 14-06-2018 17:05:38 , En el Fuente: INDEX on STR(idctacte,10)+clases+strzero(nrocaja,8) TAG nrocaja
 14-06-2018 20:33:42 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrDecimal')#0;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       4306 STRID(IDCTACTE,10)+CLASE+STRID(IDM
+
+
+
 
 
 
@@ -2664,6 +2662,9 @@ AOPERA,12)+CCUOTA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007GG9001P.TMP;Ultimo
 
 
 
+
+
+
 367 STR(IDCTACTE,10)+DTOC(FECHA,1)+STRID(IDMAOPERA,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007GG9003A.TMP;Ultimo Control activo: 
 14-06-2018 20:36:46 , Pila de llamadas
 14-06-2018 20:36:47 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2677,6 +2678,9 @@ AOPERA,12)+CCUOTA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007GG9001P.TMP;Ultimo
 14-06-2018 20:36:48 , Nº de Linea :        101
 14-06-2018 20:36:48 , En el Fuente: INDEX on STR(idctacte,10)+clases+strzero(nrocaja,8) TAG nrocaja
 14-06-2018 20:43:51 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF this.chkomitirauto = 1;Error :        107;Ultimo Alias Activo: CSRCURSORA;Ultimo registro:         
+
+
+
 
 
 
@@ -2938,6 +2942,9 @@ AOPERA,12)+CCUOTA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007GG9001P.TMP;Ultimo
 
 
 
+
+
+
        1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S0900AK.TMP;Ultimo Control activo: 
 22-06-2018 13:19:33 , Pila de llamadas
 22-06-2018 13:19:33 , Programa    : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
@@ -3066,9 +3073,15 @@ AOPERA,12)+CCUOTA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007GG9001P.TMP;Ultimo
 
 
 
+
+
+
 vo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 22-06-2018 13:30:08 , Pila de llamadas
 22-06-2018 13:55:17 , REGPUBGASTOS.CONTAINERPIE.OK.CLICK, Error: _TXTCOMISIONES es un miembro desconocido.;Linea : REPLACE id WITH lnid,fecha WITH .txtfecha.Value,detalle WITH ._txtdetalle.value ,gastos WITH ._txtgastos.value,impuestos WITH ._txtimpuesto
+
+
+
 
 
 
@@ -3309,6 +3322,9 @@ s.Value,sueldos WITH ._TXTsueldos.value,comisiones WITH ._txtcomisiones.value IN
 
 
 
+
+
+
 ue IN CsrAuxiliar
 22-06-2018 13:55:49 , REGPUBGASTOS.CONTAINERPIE._TXTIMPORTE.KEYPRESS, Error: _TXTCOMISIONES es un miembro desconocido.;Linea : REPLACE id WITH lnid,fecha WITH .txtfecha.Value,detalle WITH ._txtdetalle.value ,gastos WITH ._txtgastos.value,impuestos WITH .
 
@@ -3419,7 +3435,13 @@ ue IN CsrAuxiliar
 
 
 
+
+
+
 _txtimpuestos.Value,sueldos WITH ._TXTsueldos.value,comisiones WITH ._txtcomisiones.value IN CsrAuxiliar;Error :       1925;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S0900UN.TMP;Ultimo Contr
+
+
+
 
 
 
@@ -3648,8 +3670,14 @@ ol activo: IMPORTE
 
 
 
+
+
+
 ue IN CsrAuxiliar
 22-06-2018 14:01:00 , REGPUBGASTOS.CONTAINERPIE.OK.CLICK, Error: _TXTIMPORTES es un miembro desconocido.;Linea : REPLACE id WITH lnid,fecha WITH .txtfecha.Value,detalle WITH ._txtdetalle.value ,gastos WITH ._txtgastos.value,impuestos WITH ._txtimpuestos.
+
+
+
 
 
 
@@ -3866,8 +3894,14 @@ Value,sueldos WITH ._TXTsueldos.value ,neto WITH ._txtimportes.value IN CsrAuxil
 
 
 
+
+
+
  CsrAuxiliar
 22-06-2018 14:03:34 , REGPUBGASTOS.GRID2.KEYPRESS, Error: Desbordamiento numérico (se han perdido datos).;Linea : GATHER NAME Oscatter;Error :         39;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
 
 
 
@@ -4069,6 +4103,9 @@ Value,sueldos WITH ._TXTsueldos.value ,neto WITH ._txtimportes.value IN CsrAuxil
 
 
 
+
+
+
 PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S0901PR.TMP;Ultimo Control activo: 
 22-06-2018 14:07:42 , Pila de llamadas
 22-06-2018 14:07:42 , Programa    : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
@@ -4082,6 +4119,9 @@ PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S09
 22-06-2018 14:07:44 , Nº de Linea :         27
 22-06-2018 14:07:44 , En el Fuente: SELECT Csrmovpubcpra.* FROM Csrmovpubcpra INTO CURSOR Csrauxiliar READWRITE 
 22-06-2018 14:08:12 , REGPUBGASTOS.CONTAINERENCABEZA.CMDPROCESAR.CLICK, Error: El archivo 'csrmovpubcpra.dbf' no existe.;Linea : SELECT Csrmovpubcpra.* FROM Csrmovpubcpra INTO CURSOR Csrauxiliar READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMOV
+
+
+
 
 
 
@@ -4267,6 +4307,9 @@ PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S09
 
 
 
+
+
+
 0005S0901T6.TMP;Ultimo Control activo: 
 22-06-2018 14:08:48 , Pila de llamadas
 22-06-2018 14:08:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
@@ -4280,6 +4323,9 @@ PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S09
 22-06-2018 14:08:51 , Nº de Linea :         12
 22-06-2018 14:08:51 , En el Fuente: GATHER NAME Oscatter
 22-06-2018 14:11:00 , REGPUBGASTOS.GRID2.KEYPRESS, Error: Desbordamiento numérico (se han perdido datos).;Linea : GATHER NAME Oscatter;Error :         39;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
+
+
+
 
 
 
@@ -4450,6 +4496,9 @@ PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S09
 
 
 
+
+
+
          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000076DL002E.TMP;Ultimo Control activo: 
 22-06-2018 14:56:23 , Pila de llamadas
 22-06-2018 14:56:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4533,6 +4582,9 @@ PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S09
 
 
 
+
+
+
          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000076DL003E.TMP;Ultimo Control activo: 
 22-06-2018 14:56:57 , Pila de llamadas
 22-06-2018 14:56:58 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4541,6 +4593,9 @@ PUB;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005S09
 22-06-2018 14:56:58 , Nº de Linea :          1
 22-06-2018 14:56:58 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 22-06-2018 15:24:09 , REGPUBGASTOS.CONTAINERPIE.OK.CLICK, Error: No se encuentra la variable 'REGISTRO'.;Linea : LOCATE FOR registro=CsrAuxpie.registro;Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\A
+
+
+
 
 
 
@@ -4697,6 +4752,9 @@ PPDATA\LOCAL\TEMP\000076DL026T.TMP;Ultimo Control activo:
 
 
 
+
+
+
 L02UL.TMP;Ultimo Control activo: 
 22-06-2018 15:30:25 , Pila de llamadas
 22-06-2018 15:30:26 , Programa    : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
@@ -4710,6 +4768,9 @@ L02UL.TMP;Ultimo Control activo:
 22-06-2018 15:30:27 , Nº de Linea :         16
 22-06-2018 15:30:27 , En el Fuente: GATHER NAME Oscatter
 22-06-2018 15:50:25 , REGPUBGASTOS.GRID2.KEYPRESS, Error: El campo PROVEEDOR no acepta valores NULL.;Linea : GATHER NAME Oscatter;Error :       1581;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000076
+
+
+
 
 
 
@@ -4850,6 +4911,9 @@ DL04L4.TMP;Ultimo Control activo:
 
 
 
+
+
+
 \USUARIO\APPDATA\LOCAL\TEMP\00009A1500LC.TMP;Ultimo Control activo: CODEXTEND
 27-06-2018 09:22:59 , Pila de llamadas
 27-06-2018 09:22:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -4858,6 +4922,9 @@ DL04L4.TMP;Ultimo Control activo:
 27-06-2018 09:23:01 , Nº de Linea :         22
 27-06-2018 09:23:01 , En el Fuente: 	this.BotoneraCuerpo.cmdPrecio.SetFocus()
 27-06-2018 09:42:16 , PIDOREMITO_F.KEYPRESS, Error: Alias 'CSRPARAVARIO' is not found.;Linea : SELECT CsrParavario;Error :         13;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\0000AI2X02EM.TMP
+
+
+
 
 
 
@@ -4985,6 +5052,9 @@ DL04L4.TMP;Ultimo Control activo:
 
 
 
+
+
+
 \APPDATA\LOCAL\TEMP\0000AI2X02FC.TMP;Ultimo Control activo: 
 27-06-2018 09:42:43 , Pila de llamadas
 27-06-2018 09:42:44 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5013,6 +5083,9 @@ DL04L4.TMP;Ultimo Control activo:
 27-06-2018 09:42:48 , Nº de Linea :          3
 27-06-2018 09:42:48 , En el Fuente: 	SELECT CsrParavario
 27-06-2018 09:44:00 , PIDOREMITOCBIO.CONTAINER2.KITBUSCAOALTAENCTACTE.LOSTFOCUS, Error: Alias 'CSRAUXCUERFAC' is not found.;Linea : SELECT CsrAuxCuerfac;Error :         13;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\
+
+
+
 
 
 
@@ -5090,6 +5163,9 @@ APPDATA\LOCAL\TEMP\0000AI2X02HN.TMP;Ultimo Control activo:
 
 
 
+
+
+
 ntrol activo: 
 27-06-2018 11:32:39 , Pila de llamadas
 27-06-2018 11:32:39 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -5138,6 +5214,9 @@ ntrol activo:
 
 
 
+
+
+
 SUARIO\APPDATA\LOCAL\TEMP\0000AI2X08UU.TMP;Ultimo Control activo: 
 27-06-2018 11:44:41 , Pila de llamadas
 27-06-2018 11:44:42 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
@@ -5175,3 +5254,18 @@ SUARIO\APPDATA\LOCAL\TEMP\0000AI2X08UU.TMP;Ultimo Control activo:
 27-06-2018 11:44:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
 27-06-2018 11:44:47 , Nº de Linea :         13
 27-06-2018 11:44:48 , En el Fuente: 	     IF idcomproba=lnidleer  AND !STR(IDPREFIJONRO,12)$LCIDPREFIJOS
+27-06-2018 12:20:06 , REGPUBGASTOS.CONTAINERENCABEZA.CMDPROCESAR.CLICK, Error: Variable 'COMPROBA' is not found.;Linea : thisform.grid2.column9.ControlSource = "CsrAuxiliar.comproba";Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:   
+
+
+       1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\0000AGAX00KY.TMP;Ultimo Control activo: 
+27-06-2018 12:20:06 , Pila de llamadas
+27-06-2018 12:20:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
+27-06-2018 12:20:07 , Objeto      : regpubgastos.containerencabeza.cmdprocesar.click
+27-06-2018 12:20:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
+27-06-2018 12:20:07 , Nº de Linea :          1
+27-06-2018 12:20:07 , En el Fuente: thisform.cargarmovpub()
+27-06-2018 12:20:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
+27-06-2018 12:20:07 , Objeto      : regpubgastos.cargarmovpub
+27-06-2018 12:20:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\compras\regpubcpra.sct
+27-06-2018 12:20:08 , Nº de Linea :         59
+27-06-2018 12:20:08 , En el Fuente: thisform.grid2.column9.ControlSource = "CsrAuxiliar.comproba"
