@@ -1,68 +1,11 @@
- Alias CSRPROVINCIA registro         22
-Control activo  EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-14-11-16 17:16:46 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº _importe	= strzero(VAL(_importe),11,2)
- Alias CSRCUERPO registro          1
-Control activo  EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-14-11-16 17:19:46 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº _importe	= strzero(VAL(_importe),11,2)
- Alias CSRCUERPO registro          1
-Control activo  EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-14-11-16 17:21:14 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº _importe	= strzero(VAL(_importe),11,2)
- Alias CSRCUERPO registro          1
-Control activo  EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-23-11-2016 14:37:17 , Error nº:         12
-Error No se encuentra la variable 'DETALLE'.
-Linea nº replace detalle WITH STR(RECNO(),5)+'1'+'1'+_numcomp+lccuit+lcfecha+_montoimp+_tasa+_impuesto+_regimen+_codjuri
- Alias CSRPROVINCIA registro         22
-Control activo  EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-23-11-2016 14:39:11 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº replace detalle WITH STR(RECNO(),5)+'1'+'1'+_numcomp+lccuit+lcfecha+_montoimp+_tasa+_impuesto+_regimen+_codjuri	 IN CsrauxImprimir
- Alias CSRPROVINCIA registro         22
-Control activo  EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-26-12-2016 19:24:02 , Error nº:       1734
-Error No se encuentra la propiedad FE_ACTIVA.
-Linea nº this.fe_activa = .f.
- Alias CSRPARACONTA registro          1
-Control activo  MAIN
-26-12-2016 19:29:18 , Error nº:       1925
-Error LBLFE_ACTIVO es un miembro desconocido.
-Linea nº this.lblfe_activo.Caption= "Factura Electronica INACTIVO"
- Alias CSRPARACONTA registro          1
-Control activo  REGFACPEDIDO.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
-26-12-2016 19:29:37 , Error nº:       1925
-Error LBLFE_ACTIVO es un miembro desconocido.
-Linea nº this.lblfe_activo.Caption= "Factura Electronica ACTIVO - CAE ANTICIPADO"
- Alias CSRPARACONTA registro          1
-Control activo  REGFACPEDIDO.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
-11-01-2017 15:21:32 , Error nº:          1
-Error El archivo 'csrproducto.dbf' no existe.
-Linea nº select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
- Alias  registro          0
-Control activo  LISTADOCARGA.KITGRILLATILDARSTOCK.INIT
-11-01-2017 15:22:12 , Error nº:         13
-Error No se encuentra el alias 'CSRLISTADO'.
-Linea nº SELECT CsrListado
- Alias _CSRPRODUCTO registro          1
-Control activo  MAIN
-21-03-2017 14:08:27 , Error nº:         12
-Error No se encuentra la variable 'LCCTACTE'.
-Linea nº lcctacte = lcctacte + lcAnd + " csrctacte.ctaacreedor="+STR(lnctaacreedor,1)
- Alias _CSRVENDEDOR registro         25
-Control activo  MAIN
-21-03-2017 14:15:03 , Error nº:          1
-Error El archivo 'csrctacte.dbf' no existe.
-Linea nº select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
- Alias  registro          0
-Control activo  LISSDOCTACTE.KITGRILLATILDARCTACTE.INIT
-22-03-2017 16:09:28 , Error nº:          1
-Error El archivo 'csrcabefac.dbf' no existe.
-Linea nº SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 a
+
+
+
+
+
+
+
+
 
 
 
@@ -324,7 +267,25 @@ s ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,0
 
 
 
+
+
+
+
+
+
+
+
+
 eexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retenc
+
+
+
+
+
+
+
+
+
 
 
 
@@ -586,6 +547,15 @@ ion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,000000
 
 
 
+
+
+
+
+
+
+
+
+
 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 a
 
 
@@ -717,7 +687,25 @@ as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as 
 
 
 
+
+
+
+
+
+
+
+
+
 s idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as c
+
+
+
+
+
+
+
+
+
 
 
 
@@ -992,7 +980,25 @@ Linea nº SELECT CsrAuxcuerpo.idmaopera,CsrAuxCuerpo.id as idcuerfac, CsrAuxCuerp
 
 
 
+
+
+
+
+
+
+
+
+
 ari.cantidad),Abs(CsrAuxCuerpo.cantidad)) as cantidad ,NVL(CsrAuxCuerpovari.idsubarti,0) as idsubarti ,NVL(CsrAuxCuerpoVari.nombre,'') as nomvariedad FROM CsrAuxCuerpo LEFT JOIN CsrAuxCuerpovari ON CsrAuxCuerpo.idcuervari = CsrAuxCuerpovari.id where (Csr
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1307,12 +1313,30 @@ Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicac
 
 
 
+
+
+
+
+
+
+
+
+
 xCuerfac inner join CsrAuxCabefac on CsrCuerfac.idmaopera = CsrAuxCabefac.idmaopera WHERE pesable = 1 and kilos = 0 AND idmaopera in (&lcIdCabefac) INTO CURSOR CsrAuxKilos
  Alias CSRAUXSABOR registro          1
 Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
 06-04-2017 15:42:14 , Error nº:         13
 Error No se encuentra el alias 'CSRCUERFAC'.
 Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicacion,CsrauxCabefac.nomvdor ,CsrAuxCabefac.idvendedor,CsrAuxCabefac.cnombre,CsrAuxCuerfac.idctacte as idproveedor ,CsrAuxCabefac.idctacte,CsrAuxCabefac.ctacte ,kilos FROM CsrAu
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1546,12 +1570,30 @@ Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicac
 
 
 
+
+
+
+
+
+
+
+
+
 xCuerfac inner join CsrAuxCabefac on CsrAuxCuerfac.idmaopera = CsrAuxCabefac.idmaopera WHERE pesable = 1 and kilos = 0 AND idmaopera in (&lcIdCabefac) INTO CURSOR CsrAuxKilos
  Alias CSRAUXSABOR registro          1
 Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
 06-04-2017 15:44:35 , Error nº:       1832
 Error IDMAOPERA no es único y se debe calificar.
 Linea nº SELECT idmaopera,idarticulo,codigo,nombre,CsrAuxCabefac.ctacte,idubicacion,CsrauxCabefac.nomvdor ,CsrAuxCabefac.idvendedor,CsrAuxCabefac.cnombre,CsrAuxCuerfac.idctacte as idproveedor ,CsrAuxCabefac.idctacte,CsrAuxCabefac.ctacte ,kilos FROM CsrAu
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1781,6 +1823,15 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo001,Campo002,origen,idvendedor,codart
 
 
 
+
+
+
+
+
+
+
+
+
 idproveedor)
  Alias CSRAUXCANTIDAD registro          1
 Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
@@ -1872,6 +1923,15 @@ Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
 11-04-2017 12:05:39 , Error nº:       1734
 Error No se encuentra la propiedad CTACTE.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo010,origen,campo008,campo001,campo002,idvendedor,idctacte ,codarti) VALUES (lcclave+cGrupo,ALLTRIM(Oscatter.codigo)+"   "+Oscatter.nombre,'9999999999',Oscatter.nomvdor ,ALLTRIM(Oscatter.ctacte) ,ALLTRIM(Oscatter
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2222,7 +2282,25 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,0
 
 
 
+
+
+
+
+
+
+
+
+
 s ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Bas
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2354,7 +2432,25 @@ eexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.0
 
 
 
+
+
+
+
+
+
+
+
+
 ion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2486,7 +2582,25 @@ as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as 
 
 
 
+
+
+
+
+
+
+
+
+
 s idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as c
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2779,6 +2893,15 @@ Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,000000000
 
 
 
+
+
+
+
+
+
+
+
+
 )) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGNOTAPEDANDROID.LOAD
@@ -2815,6 +2938,15 @@ Control activo  REGNOTAPEDANDROID.CMDSALVAR.CLICK
 30-08-2017 20:24:15 , Error nº:       1806
 Error SQL: no se encuentra la columna 'TIPOPEDIDO'.
 Linea nº SELECT id,clientes_numero as ctacte,vendedor_codigo as codvendedor ,CTOT(DTOC(TTOD(fecha))+" "+horain ) as fecha,horain,horaout,chksum as codmotivo ,vales,bonificaciones as bonif1,observaciones ,tipopedido,fechadeentrega,loteexportacion,remito,p
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2937,6 +3069,15 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idvenvase,codenvase
 
 
@@ -2953,7 +3094,25 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
+
+
+
+
+
+
+
+
 ,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = CsrRubro.id INT
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2989,6 +3148,15 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
@@ -3004,7 +3172,25 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
+
+
+
+
+
+
+
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3038,6 +3224,15 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
@@ -3052,7 +3247,25 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
+
+
+
+
+
+
+
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3084,7 +3297,25 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idenvase,codenvase,
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3110,12 +3341,30 @@ nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON Csr
 
 
 
+
+
+
+
+
+
+
+
+
  CURSOR CsrImprimir READWRITE
  Alias CSRPRODUCTOS registro          1
 Control activo  LISEXISTENCIA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-02-2018 18:22:22 , Error nº:          1
 Error El archivo 'csrncabefac.dbf' no existe.
 Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3210,4 +3459,65 @@ Error No se encuentra el alias 'CSRCTACTECTACON'.
 Linea nº this.controlsource=this.parent.controlsourcetxtid
  Alias  registro          0
 Control activo  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENCTAVTA.TXTID.INIT
-15-06-2018 14:05:58 , Error nº:       1429Error Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..Linea nº  Alias  registro          0Control activo  MAIN
+15-06-2018 14:05:58 , Error nº:       1429
+Error Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..
+Linea nº 
+ Alias  registro          0
+Control activo  MAIN
+27-06-2018 13:30:21 , Error nº:       1925
+Error CONTAINERGUIA es un miembro desconocido.
+Linea nº ThisForm.ContainerGuia._cbodia.ListIndex=1
+ Alias _CSRRUTA registro          1
+Control activo  EST_VENTAVISITAS.INIT
+27-06-2018 13:31:22 , Error nº:       1925
+Error CONTAINERGUIA es un miembro desconocido.
+Linea nº thisform.containerGuia.Visible=.f.
+ Alias _CSRRUTA registro          1
+Control activo  EST_VENTAVISITAS.FECHA_CALENDARIO1.LOSTFOCUS
+27-06-2018 13:31:55 , Error nº:       1925
+Error CONTAINERGUIA es un miembro desconocido.
+Linea nº thisform.containerGuia.Visible=.f.
+ Alias _CSRRUTA registro          1
+Control activo  EST_VENTAVISITAS.FECHA_CALENDARIO1.LOSTFOCUS
+27-06-2018 13:57:38 , Error nº:       1925
+Error CHKCANALES es un miembro desconocido.
+Linea nº IF thisform.chkcanales.Value = 1
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 13:59:01 , Error nº:       1925
+Error TXTTITULO es un miembro desconocido.
+Linea nº INSERT INTO csrsubtitulo (subtitulo) VALUES (ALLTRIM(thisform.txttitulo.Value))
+ Alias CSRSUBTITULO registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:01:08 , Error nº:         13
+Error No se encuentra el alias 'CSRAUX2'.
+Linea nº SELECT csraux2
+ Alias CSRDIASVISITA registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:02:02 , Error nº:         13
+Error No se encuentra el alias 'CSRAUX2'.
+Linea nº SELECT csraux2
+ Alias CSRDIASVISITA registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:02:57 , Error nº:       1807
+Error SQL: la cláusula GROUP BY falta o no es válida.
+Linea nº SELECT csraux2.idvendedor,csraux2.idmaopera,csraux2.idcanal,csraux2.idctacte,CsrAux2.signo FROM csraux2 GROUP BY csraux2.idvendedor,csraux2.idmaopera,csraux2.idcanal,csraux2.idctacte INTO CURSOR csrcdadfacturas readwrite
+ Alias CSRAUX2 registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:04:16 , Error nº:       1806
+Error SQL: no se encuentra la columna 'IDCTACTE'.
+Linea nº SELECT &lccampos01,idctacte,sum(csrcdadfacturas.signo) as facventas FROM csrcdadfacturas GROUP BY &lccampos01,idctacte INTO CURSOR CsrClienteFac
+ Alias CSRCDADFACTURAS registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:05:37 , Error nº:          1
+Error El archivo 'visita.prg' no existe.
+Linea nº visita()
+ Alias CSRIMPRIMIR registro          1
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:07:11 , Error nº:       1925
+Error CHKCANALES es un miembro desconocido.
+Linea nº IF thisform.chkcanales.Value = 0
+ Alias CSRIMPRIMIR registro          7
+Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:09:24 , Error nº:       1925Error CHKCANALES es un miembro desconocido.Linea nº IF thisform.chkcanales.Value = 0 Alias CSRIMPRIMIR registro         44Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+27-06-2018 14:10:48 , Error nº:       1925Error CHKCANALES es un miembro desconocido.Linea nº IF thisform.chkcanales.Value = 0 Alias CSRIMPRIMIR registro          1Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
