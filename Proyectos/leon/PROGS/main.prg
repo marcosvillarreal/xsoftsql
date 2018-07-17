@@ -67,9 +67,9 @@ If lldesarrollo
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
-               ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
+               ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaffc,&_rutalib;
                ,&_rutaformsb, &_rutareportsb, &_rutaformse, &_rutaformsp, &_rutaformsb;
-               ,&_rutaformsu, &_rutaformsc
+               ,&_rutaformsu, &_rutaformsc,&_rutaformsDesarrollo
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -85,7 +85,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
-      
+   SET PROCEDURE TO googlemaps.prg ADDITIVE 
+       
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
