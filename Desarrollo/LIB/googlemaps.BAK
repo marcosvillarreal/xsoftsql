@@ -200,7 +200,7 @@ LPARAMETERS tcDestination,clatitud,clongitud,lcFileName
 tcDestination = IIF(PCOUNT()<1,"",tcDestination)
 lcFileName		= IIF(PCOUNT()<4,tcDestination,lcFileName)
 
-lcFileName	= STRTRAN(STRTRAN(STRTRAN(STRTRAN(lcFileName,":",""),",",""),"'",""),".","")
+lcFileName	= STRTRAN(STRTRAN(STRTRAN(STRTRAN(STRTRAN(lcFileName,":",""),",",""),"'",""),".","")," ","_")
 
 lCantParam = IIF(PCOUNT()<3,.f.,.t.)
 IF NOT lCantParam
