@@ -64,3 +64,179 @@
 11-07-2018 12:44:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmctacte.sct
 11-07-2018 12:44:19 , Nº de Linea :          6
 11-07-2018 12:44:19 , En el Fuente: 	.page3.lblclienteactivo.Caption = this.Value
+19-07-2018 10:46:19 , REGFACVTA.BOTONERACUERPO.CMDSALVARGUARDA.CLICK, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF .tipoform$"F" AND CsrComprobante.clase$'AX';Error :       1940;Ultimo Alias Activo: CSRSUBPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005TS9003R.TMP;Ultimo Control activo: 
+19-07-2018 10:46:19 , Pila de llamadas
+19-07-2018 10:46:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 10:46:19 , Objeto      : regfacvta.botoneracuerpo.cmdsalvarguarda.click
+19-07-2018 10:46:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 10:46:19 , Nº de Linea :          2
+19-07-2018 10:46:19 , En el Fuente: thisform.antesdegrabar()
+19-07-2018 10:46:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 10:46:19 , Objeto      : regfacvta.antesdegrabar
+19-07-2018 10:46:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 10:46:19 , Nº de Linea :          5
+19-07-2018 10:46:19 , En el Fuente: llok = IIF(llok,thisform.validarguarda(),.f.)
+19-07-2018 10:46:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 10:46:19 , Objeto      : regfacvta.validarguarda
+19-07-2018 10:46:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 10:46:19 , Nº de Linea :          9
+19-07-2018 10:46:19 , En el Fuente: IF .tipoform$"F" AND CsrComprobante.clase$'AX'
+19-07-2018 11:02:34 , REGFACVTA.OIMPUESTOS.INIT, Error: La sesión de datos nº 4 no se puede liberar si hay transacciones abiertas.;Linea : oObjImpFac = CREATEOBJECT('collection');Error :       1549;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         27 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005TS9026P.TMP;Ultimo Control activo: 
+19-07-2018 11:02:34 , Pila de llamadas
+19-07-2018 11:02:34 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+19-07-2018 11:02:34 , Objeto      : regfacvta.oimpuestos.init
+19-07-2018 11:02:34 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+19-07-2018 11:02:34 , Nº de Linea :          3
+19-07-2018 11:02:34 , En el Fuente: oObjImpFac = CREATEOBJECT('collection')
+19-07-2018 11:24:29 , ABMSUCURSAL.LOAD, Error: El archivo 'csrsucursal.dbf' no existe.;Linea : Select CsrSucursal.*,SPACE(6) as cnumero,SPACE(40) as cnombre,SPACE(40) as cdireccion from CsrSucursal where CsrSucursal.id < -1 INTO CURSOR CsrAuxruta READWRITE;Error :          1;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P00PH.TMP;Ultimo Control activo: 
+19-07-2018 11:24:29 , Pila de llamadas
+19-07-2018 11:24:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
+19-07-2018 11:24:29 , Objeto      : abmsucursal.load
+19-07-2018 11:24:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
+19-07-2018 11:24:29 , Nº de Linea :          4
+19-07-2018 11:24:29 , En el Fuente: thisform.crearcursor()
+19-07-2018 11:24:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
+19-07-2018 11:24:29 , Objeto      : abmsucursal.crearcursor
+19-07-2018 11:24:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
+19-07-2018 11:24:29 , Nº de Linea :          2
+19-07-2018 11:24:29 , En el Fuente: Select CsrSucursal.*,SPACE(6) as cnumero,SPACE(40) as cnombre,SPACE(40) as cdireccion from CsrSucursal where CsrSucursal.id < -1 INTO CURSOR CsrAuxruta READWRITE 
+19-07-2018 12:04:57 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la propiedad INCLUYEIVA.;Linea : .incluyeiva = loObjeto.incluyeiva;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS900YB.TMP;Ultimo Control activo: 
+19-07-2018 12:04:57 , Pila de llamadas
+19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:04:57 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
+19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:04:57 , Nº de Linea :          1
+19-07-2018 12:04:57 , En el Fuente: thisform.key_f4Guarda()  
+19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:04:57 , Objeto      : regfacvta.key_f4guarda
+19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:04:57 , Nº de Linea :         11
+19-07-2018 12:04:57 , En el Fuente: lok = thisform.RecuperarGuarda()
+19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:04:57 , Objeto      : regfacvta.recuperarguarda
+19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:04:57 , Nº de Linea :         18
+19-07-2018 12:04:57 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
+19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:04:57 , Objeto      : pidoenguarda.init
+19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:04:57 , Nº de Linea :         10
+19-07-2018 12:04:57 , En el Fuente: 	.incluyeiva = loObjeto.incluyeiva
+19-07-2018 12:05:36 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra el alias 'CSRENGUARDA'.;Linea : SELECT CsrEnGuarda;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS901C2.TMP;Ultimo Control activo: 
+19-07-2018 12:05:36 , Pila de llamadas
+19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:05:36 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
+19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:05:36 , Nº de Linea :          1
+19-07-2018 12:05:36 , En el Fuente: thisform.key_f4Guarda()  
+19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:05:36 , Objeto      : regfacvta.key_f4guarda
+19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:05:36 , Nº de Linea :         11
+19-07-2018 12:05:36 , En el Fuente: lok = thisform.RecuperarGuarda()
+19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:05:36 , Objeto      : regfacvta.recuperarguarda
+19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:05:36 , Nº de Linea :         18
+19-07-2018 12:05:36 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
+19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:05:36 , Objeto      : pidoenguarda.init
+19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:05:36 , Nº de Linea :         19
+19-07-2018 12:05:36 , En el Fuente: 	.iniciarvariables()
+19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:05:36 , Objeto      : pidoenguarda.iniciarvariables
+19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:05:36 , Nº de Linea :          6
+19-07-2018 12:05:36 , En el Fuente: 	.leermovimientos() &&Trae Rem/Fac Pendientes y vincula cursor con Grid.(CsrEnGuarda)
+19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:05:37 , Objeto      : pidoenguarda.leermovimientos
+19-07-2018 12:05:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:05:37 , Nº de Linea :         12
+19-07-2018 12:05:37 , En el Fuente: 	SELECT CsrEnGuarda
+19-07-2018 12:06:13 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la variable 'PREUNITA'.;Linea : .column9.controlsource = 'CsrEnGuarda.preunita';Error :         12;Ultimo Alias Activo: CSRENGUARDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS901YH.TMP;Ultimo Control activo: 
+19-07-2018 12:06:13 , Pila de llamadas
+19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:06:13 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
+19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:06:13 , Nº de Linea :          1
+19-07-2018 12:06:13 , En el Fuente: thisform.key_f4Guarda()  
+19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:06:13 , Objeto      : regfacvta.key_f4guarda
+19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:06:13 , Nº de Linea :         11
+19-07-2018 12:06:13 , En el Fuente: lok = thisform.RecuperarGuarda()
+19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:06:13 , Objeto      : regfacvta.recuperarguarda
+19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:06:13 , Nº de Linea :         18
+19-07-2018 12:06:13 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
+19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:06:13 , Objeto      : pidoenguarda.init
+19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:06:13 , Nº de Linea :         19
+19-07-2018 12:06:13 , En el Fuente: 	.iniciarvariables()
+19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:06:13 , Objeto      : pidoenguarda.iniciarvariables
+19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:06:13 , Nº de Linea :          6
+19-07-2018 12:06:13 , En el Fuente: 	.leermovimientos() &&Trae Rem/Fac Pendientes y vincula cursor con Grid.(CsrEnGuarda)
+19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:06:13 , Objeto      : pidoenguarda.leermovimientos
+19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:06:13 , Nº de Linea :         35
+19-07-2018 12:06:13 , En el Fuente:    .column9.controlsource = 'CsrEnGuarda.preunita'
+19-07-2018 12:09:32 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la propiedad CARGARGRID.;Linea : .cargargrid();Error :       1734;Ultimo Alias Activo: CSRENGUARDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS902IW.TMP;Ultimo Control activo: 
+19-07-2018 12:09:32 , Pila de llamadas
+19-07-2018 12:09:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:09:32 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
+19-07-2018 12:09:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:09:32 , Nº de Linea :          1
+19-07-2018 12:09:32 , En el Fuente: thisform.key_f4Guarda()  
+19-07-2018 12:09:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:09:32 , Objeto      : regfacvta.key_f4guarda
+19-07-2018 12:09:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:09:32 , Nº de Linea :         11
+19-07-2018 12:09:32 , En el Fuente: lok = thisform.RecuperarGuarda()
+19-07-2018 12:09:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:09:32 , Objeto      : regfacvta.recuperarguarda
+19-07-2018 12:09:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:09:32 , Nº de Linea :         18
+19-07-2018 12:09:32 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
+19-07-2018 12:09:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:09:32 , Objeto      : pidoenguarda.init
+19-07-2018 12:09:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:09:32 , Nº de Linea :         19
+19-07-2018 12:09:32 , En el Fuente: 	.iniciarvariables()
+19-07-2018 12:09:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:09:32 , Objeto      : pidoenguarda.iniciarvariables
+19-07-2018 12:09:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:09:32 , Nº de Linea :          7
+19-07-2018 12:09:32 , En el Fuente: 	.cargargrid()
+19-07-2018 12:14:32 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la propiedad CARGARGRID.;Linea : .cargargrid();Error :       1734;Ultimo Alias Activo: CSRENGUARDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS902WH.TMP;Ultimo Control activo: 
+19-07-2018 12:14:32 , Pila de llamadas
+19-07-2018 12:14:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:14:32 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
+19-07-2018 12:14:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:14:32 , Nº de Linea :          1
+19-07-2018 12:14:32 , En el Fuente: thisform.key_f4Guarda()  
+19-07-2018 12:14:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:14:32 , Objeto      : regfacvta.key_f4guarda
+19-07-2018 12:14:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:14:32 , Nº de Linea :         11
+19-07-2018 12:14:32 , En el Fuente: lok = thisform.RecuperarGuarda()
+19-07-2018 12:14:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:14:32 , Objeto      : regfacvta.recuperarguarda
+19-07-2018 12:14:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+19-07-2018 12:14:32 , Nº de Linea :         18
+19-07-2018 12:14:32 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
+19-07-2018 12:14:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:14:32 , Objeto      : pidoenguarda.init
+19-07-2018 12:14:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:14:32 , Nº de Linea :         19
+19-07-2018 12:14:32 , En el Fuente: 	.iniciarvariables()
+19-07-2018 12:14:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:14:32 , Objeto      : pidoenguarda.iniciarvariables
+19-07-2018 12:14:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
+19-07-2018 12:14:32 , Nº de Linea :          7
+19-07-2018 12:14:32 , En el Fuente: 	.cargargrid()
