@@ -513,6 +513,7 @@ loXML.SetRequestHeader("Content-Type", "application/xml")
 loXML.SEND("")
 lcResponse = loXML.ResponseText
 
+=SaveSQL(lcResponse,"ObtenerDire_"+tcDestination)
 LOCAL lcAddress, lcHTML
 lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
 lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")

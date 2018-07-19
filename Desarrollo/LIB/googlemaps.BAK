@@ -98,7 +98,18 @@ TEXT TO lcHTML NOSHOW TEXTMERGE
       }
     </style>    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=es"></script>
-    <script>
+    
+  </head>
+  <body>
+    <div id="outputDiv"></div>
+    <div id="latitudDiv"></div>
+    <div id="longitudDiv"></div>
+    <div id="map-canvas"> style="width: 592px; height: 523px;"></div>
+    
+    
+  </body>
+  
+  <script>
        var geocoder = null
 		function initialize() {
          geocoder = new google.maps.Geocoder();
@@ -148,13 +159,7 @@ TEXT TO lcHTML NOSHOW TEXTMERGE
         }   //Fin de funcion initialize()
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-  </head>
-  <body>
-    <div id="outputDiv"></div>
-    <div id="latitudDiv"></div>
-    <div id="longitudDiv"></div>
-    <div id="map-canvas"> style="width: 592px; height: 523px;"></div>
-  </body>
+    
 </html>
 ENDTEXT
 
