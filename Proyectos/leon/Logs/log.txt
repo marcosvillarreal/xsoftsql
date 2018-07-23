@@ -1,222 +1,3 @@
- Alias CSRAUXKILOS registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-11-04-2017 11:50:02 , Error nº:       1734
-Error No se encuentra la propiedad CODENVASE.
-Linea nº lnCodEnvase = Oscatter.codenvase
- Alias CSRAUXKILOS registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-11-04-2017 12:05:39 , Error nº:       1734
-Error No se encuentra la propiedad CTACTE.
-Linea nº INSERT INTO CsrimpCue (grupo,Campo010,origen,campo008,campo001,campo002,idvendedor,idctacte ,codarti) VALUES (lcclave+cGrupo,ALLTRIM(Oscatter.codigo)+"   "+Oscatter.nombre,'9999999999',Oscatter.nomvdor ,ALLTRIM(Oscatter.ctacte) ,ALLTRIM(Oscatter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cnombre),Oscatter.idvendedor ,Oscatter.idctacte,0)
- Alias CSRAUXKILOS registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-11-04-2017 12:06:48 , Error nº:       1734
-Error No se encuentra la propiedad CTACTE.
-Linea nº lcclave = STRZERO(0,10)+left(Oscatter.ctacte+SPACE(8),8)
- Alias CSRAUXKILOS registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-11-04-2017 12:09:14 , Error nº:       1734
-Error No se encuentra la propiedad CTACTE.
-Linea nº lcclave = STRZERO(0,10)+left(Oscatter.ctacte+SPACE(8),8)
- Alias CSRAUXKILOS registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-11-04-2017 12:14:21 , Error nº:         12
-Error No se encuentra la variable 'LNMULTI'.
-Linea nº lnkilosTot	= lnkilos * lnmulti
- Alias CSRAUXKILOS registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-11-04-2017 12:28:05 , Error nº:       1734
-Error No se encuentra la propiedad PESABLE.
-Linea nº IF Oscatter.pesable=1 AND  Oscatter.kilos=0
- Alias CSRUBICACION registro          1
-Control activo  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
-24-04-2017 11:35:07 , Error nº:         12
-Error No se encuentra la variable 'COSTROAGRE1'.
-Linea nº replace costoagre1 WITH NVL(costroagre1,0) IN CsrProducto
- Alias CSRPRODUCTO registro         53
-Control activo  MAIN
-24-04-2017 11:38:28 , Error nº:         12
-Error No se encuentra la variable 'MCOSTOAGRESIVA'.
-Linea nº lObjprecio.utilidadpesos = red(lObjprecio.prevta - lObjprecio.costosiniva - mcostoagresiva,this.decimales)
- Alias CSRPRODCTACON registro          1
-Control activo  MAIN
-24-04-2017 11:40:38 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF mcostoagreciva = 0
- Alias CSRPRODCTACON registro          1
-Control activo  MAIN
-24-04-2017 11:41:58 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF mcostoagreciva = 0
- Alias CSRPRODCTACON registro          1
-Control activo  ABMPRODUCTO._TEXTBOX1.KEYPRESS
-24-04-2017 12:34:13 , Error nº:       1738
-Error La propiedad COSTOAGREGADO no es un método o evento.
-Linea nº thisform.precioprod1.costoagregado()
- Alias CSRPRODUCTO registro         53
-Control activo MARGEN1 ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS
-24-04-2017 12:34:17 , Error nº:       1738
-Error La propiedad COSTOAGREGADO no es un método o evento.
-Linea nº thisform.precioprod1.costoagregado()
- Alias CSRPRODUCTO registro         53
-Control activo MARGEN1 ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS
-24-04-2017 12:34:27 , Error nº:       1738
-Error La propiedad COSTOAGREGADO no es un método o evento.
-Linea nº thisform.precioprod1.costoagregado()
- Alias CSRPARAVARIO registro         17
-Control activo  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS
-24-04-2017 12:34:33 , Error nº:       1738
-Error La propiedad COSTOAGREGADO no es un método o evento.
-Linea nº thisform.precioprod1.costoagregado()
- Alias CSRPARAVARIO registro         17
-Control activo MARGEN1 ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE2.CONTAINER1._TXTMARGEN1.LOSTFOCUS
-24-04-2017 13:36:49 , Error nº:         12
-Error No se encuentra la variable 'COSTOAGRE1'.
-Linea nº lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1,lobjPrecioActual.costoagre1)
- Alias CSRCBIOPRECIO registro         -1
-Control activo  CBIOPRECIO1.CMDSALVAR.CLICK
-24-04-2017 13:44:24 , Error nº:         12
-Error No se encuentra la variable 'COSTOAGRE1'.
-Linea nº lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1,lobjPrecioActual.costoagre1)
- Alias CSRCBIOPRECIO registro         -1
-Control activo  CBIOPRECIO1.CMDSALVAR.CLICK
-24-04-2017 13:46:01 , Error nº:         12
-Error No se encuentra la variable 'COSTOAGRE1V'.
-Linea nº lncostoa1v	 = IIF(LobjPrecioActual.costoagre1=CsrProducto.costoagre1,CsrCbioPrecio.costoagre1v,lobjPrecioActual.costoagre1)
  Alias CSRCBIOPRECIO registro         -1
 Control activo  CBIOPRECIO1.CMDSALVAR.CLICK
 24-04-2017 14:52:25 , Error nº:         12
@@ -438,7 +219,29 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 s ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Bas
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -650,7 +453,29 @@ eexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -862,7 +687,29 @@ as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 s idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as c
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1235,6 +1082,17 @@ Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,000000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 )) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGNOTAPEDANDROID.LOAD
@@ -1271,6 +1129,17 @@ Control activo  REGNOTAPEDANDROID.CMDSALVAR.CLICK
 30-08-2017 20:24:15 , Error nº:       1806
 Error SQL: no se encuentra la columna 'TIPOPEDIDO'.
 Linea nº SELECT id,clientes_numero as ctacte,vendedor_codigo as codvendedor ,CTOT(DTOC(TTOD(fecha))+" "+horain ) as fecha,horain,horaout,chksum as codmotivo ,vales,bonificaciones as bonif1,observaciones ,tipopedido,fechadeentrega,loteexportacion,remito,p
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1473,6 +1342,17 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idvenvase,codenvase
 
 
@@ -1529,7 +1409,29 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = CsrRubro.id INT
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1645,6 +1547,17 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
@@ -1700,7 +1613,29 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1814,6 +1749,17 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
@@ -1868,7 +1814,29 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1980,7 +1948,29 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idenvase,codenvase,
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2086,12 +2076,34 @@ nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON Csr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
  CURSOR CsrImprimir READWRITE
  Alias CSRPRODUCTOS registro          1
 Control activo  LISEXISTENCIA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-02-2018 18:22:22 , Error nº:          1
 Error El archivo 'csrncabefac.dbf' no existe.
 Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2354,6 +2366,17 @@ Linea nº SELECT CsrVisita.idctacte,CsrVisita.idvendedor FROM CsrVisita INNER JOI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
  left join CsrVisita ON CsrVentas.idctacte = CsrVisita.idctacte AND CsrVentas.idvendedor = CsrVisita.idvendedor where nvl(CsrVisita.idctacte,0) = 0 ORDER BY idctacte into cursor CsrAuxiliar readwrite
  Alias CSRCRE registro          1
 Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2392,7 +2415,29 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2442,7 +2487,29 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2490,7 +2557,29 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2536,7 +2625,29 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2580,7 +2691,29 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2622,7 +2755,29 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2710,12 +2865,34 @@ Linea nº INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, tel
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 IM(CsrAux.cdireccion),ALLTRIM(CsrAux.ctelefono) ,ALLTRIM(CsrAux.nroibbto),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia) ,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.idctacte)
  Alias CSRAUX registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 17-07-2018 12:13:23 , Error nº:          1
 Error El archivo 'csrdirecciones.dbf' no existe.
 Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.chrfecha as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDireccio
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2735,6 +2912,17 @@ Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 nes.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2746,12 +2934,34 @@ Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 nes.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 17-07-2018 12:23:40 , Error nº:       1806
 Error SQL: no se encuentra la columna 'CTACTE'.
 Linea nº SELECT CsrImprimir.idctacte as id,CsrImprimir.nomvendedor as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2779,4 +2989,80 @@ Error No se encuentra el alias 'CSRIMPRIMIR'.
 Linea nº SELECT CsrImprimir
  Alias CSRCTACTE registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
-17-07-2018 12:37:18 , Error nº:         13Error No se encuentra el alias 'CSRIMPRIMIR'.Linea nº SELECT CsrImprimir Alias CSRCTACTE registro          1Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+17-07-2018 12:37:18 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRIMIR'.
+Linea nº SELECT CsrImprimir
+ Alias CSRCTACTE registro          1
+Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+23-07-2018 11:49:15 , Error nº:         12
+Error No se encuentra la variable 'IDCTACTE'.
+Linea nº ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte)
+ Alias CSRIMPRIMIR registro          1
+Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+23-07-2018 11:51:29 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRIMIR'.
+Linea nº SELECT CsrImprimir
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MOSTRAR_MAPS_FAC.INIT
+23-07-2018 11:51:43 , Error nº:       1806
+Error SQL: no se encuentra la columna 'IDCTACTE'.
+Linea nº SELECT chrfecha,detalle,ctacte,cnombre,nomcatego,lista,nomgrupo,numvendedor,nomgrupo02,numfletero ,chrfechavto,total,pago01,pago02,pago03,pago04,nropedido,concepto,nompago,id,numgrupo,numgrupo02 ,grupo,idctacte from CsrImprimir into cursor CsrIm
+
+
+
+
+
+
+
+
+primir
+ Alias CSRIMPRIMIR registro         43
+Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+23-07-2018 12:00:00 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRIMIR'.
+Linea nº SELECT CsrImprimir
+ Alias CSRCTACTE registro          1
+Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+23-07-2018 12:03:13 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº Oca = GETCURSORADAPTER(lcalias)
+ Alias CSRREMFAC registro         36
+Control activo  MOSTRAR_MAPS_FAC.CMDSALIR.CLICK
+23-07-2018 12:05:38 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº Oca = GETCURSORADAPTER(lcalias)
+ Alias CSRREMFAC registro         36
+Control activo  MOSTRAR_MAPS_FAC.CMDSALIR.CLICK
+23-07-2018 12:05:56 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº Oca = GETCURSORADAPTER(lcalias)
+ Alias CSRREMFAC registro         36
+Control activo  MOSTRAR_MAPS_FAC.CMDSALIR.CLICK
+23-07-2018 12:15:35 , Error nº:          1
+Error El archivo 'csraux.dbf' no existe.
+Linea nº SELECT CsrAux.* FROM CsrAux WHERE RECNO()=1 AND idvendedor=0 INTO CURSOR CsrAuxCabe READWRITE
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+23-07-2018 12:33:06 , Error nº:       1925
+Error _OGROUPDECIMAL es un miembro desconocido.
+Linea nº .page1._ogroupdecimal.Value = IIF(lcDecimalesExcel=",",2,1)
+ Alias CSRCTANUTRICIA registro          1
+Control activo  PARAVARIO.INIT
+23-07-2018 13:01:05 , Error nº:         12
+Error No se encuentra la variable 'ORIGEN'.
+Linea nº cRanking	= IIF(CsrRemFac.origen='ERCT','$'+strtrim(CsrRemFac.total,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%','')
+ Alias CSRREMFAC registro          1
+Control activo  MOSTRAR_MAPS_REP.CMD_CARGAR.CLICK
+23-07-2018 13:03:16 , Error nº:         12
+Error No se encuentra la variable 'ORIGEN'.
+Linea nº cRanking	= IIF(CsrRemFac.origen='ERCT','$'+strtrim(CsrRemFac.total,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%','')
+ Alias CSRREMFAC registro          1
+Control activo  MOSTRAR_MAPS_REP.CMD_CARGAR.CLICK
+23-07-2018 13:10:23 , Error nº:       1806
+Error SQL: no se encuentra la columna 'IMPORTEFINAL'.
+Linea nº SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDire
+cciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrI
+mprimir.importe>=5,'+05','+00'))))) as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
+ Alias CSRDIRECCIONES registro          1
+Control activo  EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+23-07-2018 13:10:55 , Error nº:       1806Error SQL: no se encuentra la columna 'IMPORTEFINAL'.Linea nº SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrImprimir.importe>=5,'+05','+00'))))) as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE Alias CSRDIRECCIONES registro          1Control activo  EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK

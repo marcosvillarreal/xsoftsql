@@ -513,6 +513,7 @@ loXML.SetRequestHeader("Content-Type", "application/xml")
 loXML.SEND("")
 lcResponse = loXML.ResponseText
 
+=SaveSQL(lcResponse,"ObtenerDire_"+tcDestination)
 LOCAL lcAddress, lcHTML
 lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
 lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
@@ -745,6 +746,21 @@ function initialize() {
           },
           motivo: {
             icon: iconBase + 'ylw-stars.png'
+          },
+          r_30: {
+            icon: iconBase + 'red-blank.png'
+          },
+          r_20: {
+            icon: iconBase + 'blu-blank.png'
+          },
+          r_15: {
+            icon: iconBase + 'grn-blank.png'
+          },
+          r_10: {
+            icon: iconBase + 'purple-blank.png'
+          },
+          r_00: {
+            icon: iconBase + 'ywl-blank.png'
           },
 		}; 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);

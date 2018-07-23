@@ -747,6 +747,24 @@ function initialize() {
           motivo: {
             icon: iconBase + 'ylw-stars.png'
           },
+          r_30: {
+            icon: iconBase + 'red-blank.png'
+          },
+          r_20: {
+            icon: iconBase + 'blu-blank.png'
+          },
+          r_15: {
+            icon: iconBase + 'grn-blank.png'
+          },
+          r_10: {
+            icon: iconBase + 'purple-blank.png'
+          },
+          r_05: {
+            icon: iconBase + 'ltblu-blank.png'
+          },
+          r_00: {
+            icon: iconBase + 'ywl-blank.png'
+          }
 		}; 
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
