@@ -1,1135 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000311L01PM.TMP;Ultimo Control activo: 
-02-07-2018 16:42:58 , Pila de llamadas
-02-07-2018 16:43:01 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-02-07-2018 16:43:01 , Objeto      : est_ventavisitas.imprimir_vistaprevia1.impresora.click
-02-07-2018 16:43:01 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-02-07-2018 16:43:05 , Nº de Linea :          8
-02-07-2018 16:43:05 , En el Fuente: 	llOK=thisform.CrearInforme()
-02-07-2018 16:43:05 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-02-07-2018 16:43:08 , Objeto      : est_ventavisitas.crearinforme
-02-07-2018 16:43:08 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-02-07-2018 16:43:08 , Nº de Linea :         11
-02-07-2018 16:43:08 , En el Fuente: 		this.crearlistado2()
-02-07-2018 16:43:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-02-07-2018 16:43:12 , Objeto      : est_ventavisitas.crearlistado2
-02-07-2018 16:43:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-02-07-2018 16:43:15 , Nº de Linea :         45
-02-07-2018 16:43:15 , En el Fuente: this.c_padron()
-02-07-2018 16:43:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-02-07-2018 16:43:16 , Objeto      : est_ventavisitas.c_padron
-02-07-2018 16:43:19 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-02-07-2018 16:43:19 , Nº de Linea :         33
-02-07-2018 16:43:19 , En el Fuente: SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte,Vi.direccionctacte as domicilio,Vi.ctacte,Vi.canal,Vi.idcanalFROM CsrAuxiliar as AINNER JOIN CsrVisita as Vi ON A.idctacte = Vi.idctacte AND A.idv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-endedor = Vi.idvendedorWHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio,Ve.ctacte,Ve.canal,Ve.idcanalFROM CsrAuxiliar as AINNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tacte AND A.idvendedor = Ve.idvendedorWHERE A.clase='B' ; 
-05-07-2018 10:41:26 , EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRAUXPADRON;Ultimo registro:         87 ;DBF: C:\USERS\ADMIN\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-APPDATA\LOCAL\TEMP\000076RT002Q.TMP;Ultimo Control activo: 
-05-07-2018 10:41:29 , Pila de llamadas
-05-07-2018 10:41:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-05-07-2018 10:41:31 , Objeto      : est_ventavisitas.imprimir_vistaprevia1.impresora.click
-05-07-2018 10:41:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-05-07-2018 10:41:34 , Nº de Linea :          8
-05-07-2018 10:41:34 , En el Fuente: 	llOK=thisform.CrearInforme()
-05-07-2018 10:41:34 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:41:34 , Objeto      : est_ventavisitas.crearinforme
-05-07-2018 10:41:38 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:41:38 , Nº de Linea :         11
-05-07-2018 10:41:42 , En el Fuente: 		this.crearlistado2()
-05-07-2018 10:41:42 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:41:42 , Objeto      : est_ventavisitas.crearlistado2
-05-07-2018 10:41:42 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:41:46 , Nº de Linea :         45
-05-07-2018 10:41:46 , En el Fuente: this.c_padron()
-05-07-2018 10:41:46 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:41:46 , Objeto      : est_ventavisitas.c_padron
-05-07-2018 10:41:46 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:41:50 , Nº de Linea :         54
-05-07-2018 10:41:50 , En el Fuente: SELECT CsrImprimir
-05-07-2018 10:48:45 , EST_VENTAVISITAS.PAGEFRAME1.PAGE1.KITGRILLATILDARSTOCK.INIT, Error: El archivo 'csrproducto.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-05-07-2018 10:48:48 , Pila de llamadas
-05-07-2018 10:48:53 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-05-07-2018 10:48:53 , Objeto      : est_ventavisitas.pageframe1.page1.kitgrillatildarstock.init
-05-07-2018 10:48:53 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-05-07-2018 10:48:58 , Nº de Linea :         35
-05-07-2018 10:48:59 , En el Fuente:       select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid         ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07         ,&lc8 as wcampo08,&lc9 as wcampo09       from &lcalias       order by &lcorden into c
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ursor &micursor READWRITE
-05-07-2018 10:51:30 , EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRDIASVISITA'.;Linea : SELECT CsrDiasVisita;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IN\APPDATA\LOCAL\TEMP\000076RT00EC.TMP;Ultimo Control activo: 
-05-07-2018 10:51:35 , Pila de llamadas
-05-07-2018 10:51:38 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-05-07-2018 10:51:38 , Objeto      : est_ventavisitas.imprimir_vistaprevia1.impresora.click
-05-07-2018 10:51:38 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-05-07-2018 10:51:38 , Nº de Linea :          8
-05-07-2018 10:51:39 , En el Fuente: 	llOK=thisform.CrearInforme()
-05-07-2018 10:51:39 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:51:42 , Objeto      : est_ventavisitas.crearinforme
-05-07-2018 10:51:42 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:51:46 , Nº de Linea :         11
-05-07-2018 10:51:46 , En el Fuente: 		this.crearlistado2()
-05-07-2018 10:51:46 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
-05-07-2018 10:51:47 , Objeto      : est_ventavisitas.crearlistado2
-05-07-2018 10:51:50 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
 05-07-2018 10:51:50 , Nº de Linea :         45
 05-07-2018 10:51:50 , En el Fuente: this.c_padron()
 05-07-2018 10:51:51 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_ventaguia.sct
@@ -1138,6 +6,28 @@ IN\APPDATA\LOCAL\TEMP\000076RT00EC.TMP;Ultimo Control activo:
 05-07-2018 10:51:55 , Nº de Linea :         68
 05-07-2018 10:51:59 , En el Fuente: 	SELECT CsrDiasVisita
 05-07-2018 10:56:48 , EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRDIASVISITA'.;Linea : SELECT CsrDiasVisita;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1430,6 +320,28 @@ IN\APPDATA\LOCAL\TEMP\000076RT00N5.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 A;Ultimo registro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009A15008Q.TMP;Ultimo Control activo: 
 11-07-2018 14:39:38 , Pila de llamadas
 11-07-2018 14:39:38 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1453,6 +365,28 @@ A;Ultimo registro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009A1500
 11-07-2018 14:39:42 , Nº de Linea :          7
 11-07-2018 14:39:42 , En el Fuente: REPLACE ALL netogravado WITH netosinbonificar - bonificacion
 17-07-2018 09:59:58 , ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.CMDGOOGLE.CLICK, Error: No se encuentra la propiedad CLAT.;Linea : IF ALLTRIM(thisform.clat) = '0' AND ALLTRIM(thisform.clng) = '0';Error :       1734;Ultimo Alias Activo: CSRCTACTE;Ultimo registr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1715,6 +649,28 @@ o:          1 CNOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000085XL00PB.TMP;Ul
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 000085XL01LA.TMP;Ultimo Control activo: 
 17-07-2018 10:40:03 , Pila de llamadas
 17-07-2018 10:40:03 , Programa    : j:\xsoftsql\desarrollo\forms\mostrar_maps.sct
@@ -1729,6 +685,28 @@ o:          1 CNOMBRE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000085XL00PB.TMP;Ul
 17-07-2018 10:40:05 , En el Fuente: SELECT CsrClientes
 17-07-2018 11:25:59 , MOSTRAR_MAPS.CMD_CARGAR.CLICK, Error: Código de excepción OLE IDispatch 0 de msxml3.dll: El medio está protegido contra escritura.;
 .;Linea : loXML.OPEN("POST", lcFullURL, .F.);Error :       1429;Ultimo Alias Activo: CSRCLIENTES;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1969,6 +947,28 @@ imo registro:         18 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000085XL01YP.TM
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SERS\ADMIN\APPDATA\LOCAL\TEMP\0000603T00MB.TMP;Ultimo Control activo: 
 17-07-2018 11:53:27 , Pila de llamadas
 17-07-2018 11:53:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\util\mostrar_maps.sct
@@ -1982,6 +982,28 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\0000603T00MB.TMP;Ultimo Control activo:
 17-07-2018 11:53:29 , Nº de Linea :         10
 17-07-2018 11:53:29 , En el Fuente: 	cCtacte = cCtacte + cSep + strtrim(CsrClientes.idctacte)
 17-07-2018 12:10:03 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra la variable 'IDCTACTE'.;Linea : ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte);Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo reg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2207,7 +1229,51 @@ istro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006AKP010M.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dedor, canal,idctacte) VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre) ,ALLTRIM(CsrAux.cuit),ALLTRIM(CsrAux.iva),ALLTRIM(CsrAux.cdireccion),ALLTRIM(CsrAux.ctelefono) ,ALLTRIM(CsrAux.nroibbto),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia) ,ALLTRIM(Cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2424,8 +1490,52 @@ rAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.idctacte);Error :         12;Ulti
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ux.cuit),ALLTRIM(CsrAux.iva),ALLTRIM(CsrAux.cdireccion),ALLTRIM(CsrAux.ctelefono)			,ALLTRIM(CsrAux.nroibbto),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia)			,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.idctacte)
 17-07-2018 12:13:24 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: El archivo 'csrdirecciones.dbf' no existe.;Linea : SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.chrfecha as Fecha,1 as Tilde,CsrDirecciones.direccion 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2625,7 +1735,51 @@ as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as locali
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :          1;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006AKP019Q.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2832,7 +1986,51 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,'Z' as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3024,6 +2222,28 @@ ciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 reccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on
 
 
@@ -3119,7 +2339,51 @@ reccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Activo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006AKP01CW.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3316,7 +2580,51 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,'Z' as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3498,6 +2806,28 @@ ciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprim
 
 
@@ -3588,7 +2918,51 @@ as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as locali
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Activo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006AKP01GK.TMP;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3775,7 +3149,51 @@ timo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,'Z' as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3947,6 +3365,28 @@ ciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 reccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on
 
 
@@ -4032,7 +3472,51 @@ reccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Activo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006AKP01PS.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4208,7 +3692,51 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 es.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,'Z' as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR Csr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4290,6 +3818,28 @@ es.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte
 
 RemFac READWRITE
 17-07-2018 12:34:09 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4455,6 +4005,28 @@ CAL\TEMP\00006AKP01WZ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\00006AKP01XD.TMP;Ultimo Control activo: 
 17-07-2018 12:34:23 , Pila de llamadas
 17-07-2018 12:34:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4468,6 +4040,28 @@ CAL\TEMP\00006AKP01XD.TMP;Ultimo Control activo:
 17-07-2018 12:34:26 , Nº de Linea :          7
 17-07-2018 12:34:26 , En el Fuente: SELECT CsrImprimir
 17-07-2018 12:34:38 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4617,6 +4211,28 @@ CAL\TEMP\00006AKP01Y0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\00006AKP020K.TMP;Ultimo Control activo: 
 17-07-2018 12:35:32 , Pila de llamadas
 17-07-2018 12:35:33 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4630,6 +4246,28 @@ CAL\TEMP\00006AKP020K.TMP;Ultimo Control activo:
 17-07-2018 12:35:34 , Nº de Linea :          7
 17-07-2018 12:35:34 , En el Fuente: SELECT CsrImprimir
 17-07-2018 12:37:18 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4763,6 +4401,28 @@ CAL\TEMP\00006AKP0245.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 stro:          1 GRUPO+STR(ID,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004HS90051.TMP;Ultimo Control activo: 
 23-07-2018 11:49:16 , Pila de llamadas
 23-07-2018 11:49:16 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4776,6 +4436,28 @@ stro:          1 GRUPO+STR(ID,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004HS
 23-07-2018 11:49:18 , Nº de Linea :         21
 23-07-2018 11:49:18 , En el Fuente: ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte)
 23-07-2018 11:51:29 , MOSTRAR_MAPS_FAC.INIT, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004HS9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4889,7 +4571,51 @@ stro:          1 GRUPO+STR(ID,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004HS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,pago02,pago03,pago04,nropedido,concepto,nompago,id,numgrupo,numgrupo02 ,grupo,idctacte from CsrImprimir into cursor CsrImprimir;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         43 GRUPO+NUMGRUPO+STR(IDPLANPAGO,10);DBF: C:\USE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5002,8 +4728,52 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00004HS9008N.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mprimir into cursor CsrImprimir
 23-07-2018 12:00:01 , SUBFACTURA.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5109,6 +4879,28 @@ AL\TEMP\00004HS900H0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00L1.TMP;Ultimo Control activo: 
 23-07-2018 12:03:13 , Pila de llamadas
 23-07-2018 12:03:14 , Programa    : j:\xsoftsql\proyectos\leon\forms\util\mostrar_maps_fac.sct
@@ -5132,6 +4924,28 @@ AL\TEMP\00004HS900H0.TMP;Ultimo Control activo:
 23-07-2018 12:03:19 , Nº de Linea :         19
 23-07-2018 12:03:19 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
 23-07-2018 12:05:39 , MOSTRAR_MAPS_FAC.CMDSALIR.CLICK, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:         36 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004HS9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5218,6 +5032,28 @@ AL\TEMP\00004HS900H0.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00PI.TMP;Ultimo Control activo: 
 23-07-2018 12:05:56 , Pila de llamadas
 23-07-2018 12:05:57 , Programa    : j:\xsoftsql\proyectos\leon\forms\util\mostrar_maps_fac.sct
@@ -5241,6 +5077,28 @@ AL\TEMP\00004HS900H0.TMP;Ultimo Control activo:
 23-07-2018 12:06:01 , Nº de Linea :         19
 23-07-2018 12:06:01 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
 23-07-2018 12:15:36 , EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'csraux.dbf' no existe.;Linea : SELECT CsrAux.* FROM CsrAux WHERE RECNO()=1 AND idvendedor=0 INTO CURSOR CsrAuxCabe READWRITE;Error :          1;Ultimo Alias Ac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5296,6 +5154,28 @@ tivo: _CSRPRODUCTO;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DMIN\APPDATA\LOCAL\TEMP\00004HS901EJ.TMP;Ultimo Control activo: 
 23-07-2018 12:33:06 , Pila de llamadas
 23-07-2018 12:33:07 , Programa    : j:\xsoftsql\proyectos\leon\forms\paravario.sct
@@ -5309,6 +5189,28 @@ DMIN\APPDATA\LOCAL\TEMP\00004HS901EJ.TMP;Ultimo Control activo:
 23-07-2018 12:33:09 , Nº de Linea :         78
 23-07-2018 12:33:10 , En el Fuente: 	.page1._ogroupdecimal.Value = IIF(lcDecimalesExcel=",",2,1)
 23-07-2018 13:01:06 , MOSTRAR_MAPS_REP.CMD_CARGAR.CLICK, Error: No se encuentra la variable 'ORIGEN'.;Linea : cRanking	= IIF(CsrRemFac.origen='ERCT','$'+strtrim(CsrRemFac.total,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%','');Error :         12;Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5338,6 +5240,28 @@ o Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008ZD500E7.TMP;Ultimo Control activo: 
 23-07-2018 13:03:18 , Pila de llamadas
 23-07-2018 13:03:19 , Programa    : j:\xsoftsql\proyectos\leon\forms\util\mostrar_maps_rep.sct
@@ -5353,6 +5277,28 @@ o Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.
 
 
@@ -5361,7 +5307,51 @@ o Alias Activo: CSRREMFAC;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrImprimir.importe>=5,'+05','+00'))))) as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5384,7 +5374,51 @@ cte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :  
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 calidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo 	,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5392,10 +5426,76 @@ ir.importe>=10,'+10',IIF(CsrImprimir.importe>=5,'+05','+00'))))) as estado	FROM 
 23-07-2018 13:10:56 , EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: SQL: no se encuentra la columna 'IMPORTEFINAL'.;Linea : SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%' as Detalle,DATE() as Fecha
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrImprimir.importe>=5,'+05','+00'))))) as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 cte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Activo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008ZD500GR.TMP;Ultimo Control activo: 
@@ -5409,4 +5509,141 @@ cte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE;Error :  
 23-07-2018 13:10:59 , Objeto      : mostrar_maps_rep.init
 23-07-2018 13:10:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\util\mostrar_maps_rep.sct
 23-07-2018 13:10:59 , Nº de Linea :         78
-23-07-2018 13:10:59 , En el Fuente: 	SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion	,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo 	,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrImprimir.importe>=5,'+05','+00'))))) as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
+23-07-2018 13:10:59 , En el Fuente: 	SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFac.importe,11,2)+'%' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion	,CsrDirecciones.nombre as Nombre,CsrDirecciones.lo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+calidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo 	,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ir.importe>=10,'+10',IIF(CsrImprimir.importe>=5,'+05','+00'))))) as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte 	WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
+24-07-2018 15:09:22 , ABMCTACTE.LOAD, Error: GOAPP no es un objeto.;Linea : lcFormKey = [SOFTWARE] + [\] + AppName + [\] + .NAME;Error :       1924;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+24-07-2018 15:09:23 , Pila de llamadas
+24-07-2018 15:09:23 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmctacte.sct
+24-07-2018 15:09:23 , Objeto      : abmctacte.load
+24-07-2018 15:09:23 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\abmctacte.sct
+24-07-2018 15:09:24 , Nº de Linea :          1
+24-07-2018 15:09:24 , En el Fuente: DODEFAULT()
+24-07-2018 15:09:24 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:24 , Objeto      : baseconector.load
+24-07-2018 15:09:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:25 , Nº de Linea :          1
+24-07-2018 15:09:25 , En el Fuente: Dodefault()
+24-07-2018 15:09:25 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:25 , Objeto      : base.load
+24-07-2018 15:09:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:25 , Nº de Linea :         25
+24-07-2018 15:09:26 , En el Fuente: 		lcFormKey = [SOFTWARE] + [\] + AppName + [\] + .NAME
+24-07-2018 15:09:39 , MAIN, Error: GOAPP no es un objeto.;Linea : lcFormKey = [SOFTWARE] + [\] + AppName + [\] + .NAME;Error :       1924;Ultimo Alias Activo: _CSRCTACTE;Ultimo registro:          1 VAL(CNUMERO);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6DQH00HL.TMP;Ultimo Control activo: 
+24-07-2018 15:09:40 , Pila de llamadas
+24-07-2018 15:09:41 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+24-07-2018 15:09:41 , Objeto      : main
+24-07-2018 15:09:41 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+24-07-2018 15:09:42 , Nº de Linea :          7
+24-07-2018 15:09:42 , En el Fuente: clear all
+24-07-2018 15:09:42 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:42 , Objeto      : filtroestadistica.destroy
+24-07-2018 15:09:42 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:43 , Nº de Linea :         29
+24-07-2018 15:09:43 , En el Fuente: 		lcFormKey = [SOFTWARE] + [\] + AppName + [\] + .NAME
+24-07-2018 15:09:52 , MAIN, Error: GOAPP no es un objeto.;Linea : lcFormKey = [SOFTWARE] + [\] + AppName + [\] + .NAME;Error :       1924;Ultimo Alias Activo: _CSRCTACTE;Ultimo registro:          1 VAL(CNUMERO);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
+
+
+
+
+
+
+
+6DQH00KJ.TMP;Ultimo Control activo: 
+24-07-2018 15:09:53 , Pila de llamadas
+24-07-2018 15:09:53 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+24-07-2018 15:09:53 , Objeto      : main
+24-07-2018 15:09:53 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+24-07-2018 15:09:53 , Nº de Linea :          7
+24-07-2018 15:09:54 , En el Fuente: clear all
+24-07-2018 15:09:54 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:54 , Objeto      : filtroestadistica.destroy
+24-07-2018 15:09:55 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:09:55 , Nº de Linea :         29
+24-07-2018 15:09:56 , En el Fuente: 		lcFormKey = [SOFTWARE] + [\] + AppName + [\] + .NAME
+24-07-2018 15:10:01 , MAIN, Error: No se encuentra la variable 'LCFORMKEY'.;Linea : .oReg.SetRegKey([Top], ALLTRIM(STR(.TOP)), lcFormKey, HKEY_CURRENT_USER);Error :         12;Ultimo Alias Activo: _CSRCTACTE;Ultimo registro:          1 VAL(CNUMERO);DBF: 
+
+
+
+
+
+C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006DQH00KJ.TMP;Ultimo Control activo: 
+24-07-2018 15:10:01 , Pila de llamadas
+24-07-2018 15:10:01 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+24-07-2018 15:10:01 , Objeto      : main
+24-07-2018 15:10:02 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+24-07-2018 15:10:02 , Nº de Linea :          7
+24-07-2018 15:10:02 , En el Fuente: clear all
+24-07-2018 15:10:02 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:10:03 , Objeto      : filtroestadistica.destroy
+24-07-2018 15:10:03 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+24-07-2018 15:10:03 , Nº de Linea :         34
+24-07-2018 15:10:04 , En el Fuente: 		.oReg.SetRegKey([Top], ALLTRIM(STR(.TOP)), lcFormKey, HKEY_CURRENT_USER)
+24-07-2018 15:25:09 , EST_RANKCTACTE.KITGRILLATILDARSTOCK.INIT, Error: El archivo 'csrproducto.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 a
+
+s wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+24-07-2018 15:25:09 , Pila de llamadas
+24-07-2018 15:25:10 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+24-07-2018 15:25:10 , Objeto      : est_rankctacte.kitgrillatildarstock.init
+24-07-2018 15:25:10 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+24-07-2018 15:25:10 , Nº de Linea :         35
+24-07-2018 15:25:10 , En el Fuente:       select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid         ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07         ,&lc8 as wcampo08,&lc9 as wcampo09       from &lcalias       order by &lcorden into cursor &micursor READWRITE

@@ -747,26 +747,26 @@ function initialize() {
           motivo: {
             icon: iconBase + 'ylw-stars.png'
           },
-          r_30: {
+          r1: {
             icon: iconBase + 'red-blank.png'
           },
-          r_20: {
+          r2: {
             icon: iconBase + 'blu-blank.png'
           },
-          r_15: {
+          r3: {
             icon: iconBase + 'grn-blank.png'
           },
-          r_10: {
+          r4: {
             icon: iconBase + 'purple-blank.png'
           },
-          r_05: {
+          r5: {
             icon: iconBase + 'ltblu-blank.png'
           },
-          r_00: {
-            icon: iconBase + 'ywl-blank.png'
+          r6: {
+            icon: iconBase + 'ylw-blank.png'
           }
 		}; 
-	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
+	var centerPoint = new google.maps.LatLng(<<goapp.empresalat>>,<<goapp.empresalng>>);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 	<<cmarks>>

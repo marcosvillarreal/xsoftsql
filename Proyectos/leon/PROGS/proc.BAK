@@ -1582,7 +1582,7 @@ IF lok
 	Goapp.empresautisobreinterno	= IIF(CsrEmpresa.utisobreinterno=1,.t.,.f.)
 	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',IIF(goapp.ldesarrollo,"",SYS(5)+CURDIR()))
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
-	goApp.empresaconvenio			= DefaultVar('CsrEmpresa.esconvenio',.f.)
+	goApp.empresaconvenio			= DefaultVar('CsrEmpresa.esconvenio',0)
 ENDIF
 
 

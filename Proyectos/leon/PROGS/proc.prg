@@ -1583,6 +1583,8 @@ IF lok
 	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',IIF(goapp.ldesarrollo,"",SYS(5)+CURDIR()))
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 	goApp.empresaconvenio			= DefaultVar('CsrEmpresa.esconvenio',0)
+	goapp.empresalat				= DEFAULTVar('CsrEmpresa.lat','0')
+	goapp.empresalng				= DEFAULTVar('CsrEmpresa.lng','0')
 ENDIF
 
 
