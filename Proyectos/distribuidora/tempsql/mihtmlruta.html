@@ -17,33 +17,1335 @@ var hostnameRegexp = new RegExp("^https?://.+?/");
 var directionsOverlays = [];
 var rendererOptions = {draggable: false};
 var directionsService = new google.maps.DirectionsService();
-var stops = [{"Coord":{"Lat":-38.7114712,"Lng":-62.2309903},"Distance":""},{"Coord":{"Lat":-38.6989199,"Lng":-62.3481303},"Distance":""},{"Coord":{"Lat":-38.7411546,"Lng":-62.2925253},"Distance":""},{"Coord":{"Lat":-38.7194489,"Lng":-62.2648590},"Distance":""},{"Coord":{"Lat":-38.7229075,"Lng":-62.2475788},"Distance":""},{"Coord":{"Lat":-38.7067745,"Lng":-62.2809142},"Distance":""},{"Coord":{"Lat":-38.7126280,"Lng":-62.2958812},"Distance":""},{"Coord":{"Lat":-38.7156732,"Lng":-62.2698280},"Distance":""},{"Coord":{"Lat":-38.7294180,"Lng":-62.2426479},"Distance":""},{"Coord":{"Lat":-38.7032634,"Lng":-62.2860496},"Distance":""},{"Coord":{"Lat":-38.7146876,"Lng":-62.2609736},"Distance":""},{"Coord":{"Lat":-38.7424122,"Lng":-62.2317408},"Distance":""},{"Coord":{"Lat":-38.7244956,"Lng":-62.2998718},"Distance":""},{"Coord":{"Lat":-38.7533059,"Lng":-62.2657821},"Distance":""},{"Coord":{"Lat":-38.7088619,"Lng":-62.2789662},"Distance":""},{"Coord":{"Lat":-38.7368669,"Lng":-62.2416456},"Distance":""},{"Coord":{"Lat":-38.6990854,"Lng":-62.2075456},"Distance":""},{"Coord":{"Lat":-38.7296042,"Lng":-62.2182725},"Distance":""},{"Coord":{"Lat":-38.7282508,"Lng":-62.2292106},"Distance":""},{"Coord":{"Lat":-38.7403966,"Lng":-62.2713460},"Distance":""},{"Coord":{"Lat":-38.6923995,"Lng":-62.2800830},"Distance":""},{"Coord":{"Lat":-38.6990661,"Lng":-62.2109943},"Distance":""},{"Coord":{"Lat":-38.6888288,"Lng":-62.2313199},"Distance":""},{"Coord":{"Lat":-38.7157198,"Lng":-62.2635310},"Distance":""},{"Coord":{"Lat":-38.7181932,"Lng":-62.2632019},"Distance":""},{"Coord":{"Lat":-38.7136317,"Lng":-62.2665788},"Distance":""},{"Coord":{"Lat":-38.7057062,"Lng":-62.2518726},"Distance":""},{"Coord":{"Lat":-38.7164392,"Lng":-62.3015479},"Distance":""},{"Coord":{"Lat":-38.7222545,"Lng":-62.2699499},"Distance":""},{"Coord":{"Lat":-38.6966966,"Lng":-62.3268038},"Distance":""},{"Coord":{"Lat":-38.7049655,"Lng":-62.2490129},"Distance":""},{"Coord":{"Lat":-38.6847745,"Lng":-62.2176287},"Distance":""},{"Coord":{"Lat":-38.7096948,"Lng":-62.2694205},"Distance":""},{"Coord":{"Lat":-38.7187858,"Lng":-62.2584684},"Distance":""},{"Coord":{"Lat":-38.7220563,"Lng":-62.2552758},"Distance":""},{"Coord":{"Lat":-38.7308825,"Lng":-62.2242485},"Distance":""},{"Coord":{"Lat":-38.7023432,"Lng":-62.2790596},"Distance":""},{"Coord":{"Lat":-38.7106530,"Lng":-62.2743227},"Distance":""},{"Coord":{"Lat":-38.7062725,"Lng":-62.2707491},"Distance":""},{"Coord":{"Lat":-38.7008028,"Lng":-62.2714830},"Distance":""},{"Coord":{"Lat":-38.7070096,"Lng":-62.2680307},"Distance":""},{"Coord":{"Lat":-38.7325753,"Lng":-62.2362443},"Distance":""},{"Coord":{"Lat":-38.7100811,"Lng":-62.2911911},"Distance":""},{"Coord":{"Lat":-38.7260341,"Lng":-62.2999433},"Distance":""},{"Coord":{"Lat":-38.7208020,"Lng":-62.2587036},"Distance":""},{"Coord":{"Lat":-38.7044976,"Lng":-62.2707671},"Distance":""},{"Coord":{"Lat":-38.7054809,"Lng":-62.2195284},"Distance":""},{"Coord":{"Lat":-38.7054144,"Lng":-62.2608060},"Distance":""},{"Coord":{"Lat":-38.7324839,"Lng":-62.2883667},"Distance":""},{"Coord":{"Lat":-38.7170321,"Lng":-62.2680039},"Distance":""},{"Coord":{"Lat":-38.7425792,"Lng":-62.2740659},"Distance":""},{"Coord":{"Lat":-38.7141888,"Lng":-62.2783196},"Distance":""},{"Coord":{"Lat":-38.7165893,"Lng":-62.2885381},"Distance":""},{"Coord":{"Lat":-38.7238960,"Lng":-62.2918319},"Distance":""},{"Coord":{"Lat":-38.7218182,"Lng":-62.3072131},"Distance":""},{"Coord":{"Lat":-38.7135036,"Lng":-62.3052769},"Distance":""},{"Coord":{"Lat":-38.7260340,"Lng":-62.2872545},"Distance":""},{"Coord":{"Lat":-38.7112419,"Lng":-62.2675063},"Distance":""},{"Coord":{"Lat":-38.6849539,"Lng":-62.2271720},"Distance":""},{"Coord":{"Lat":-38.7302659,"Lng":-62.2806108},"Distance":""},{"Coord":{"Lat":-38.7053237,"Lng":-62.2618617},"Distance":""},{"Coord":{"Lat":-38.7248277,"Lng":-62.2441576},"Distance":""},{"Coord":{"Lat":-38.7138575,"Lng":-62.2663021},"Distance":""},{"Coord":{"Lat":-38.7122914,"Lng":-62.2718411},"Distance":""},{"Coord":{"Lat":-38.7050111,"Lng":-62.3061775},"Distance":""},{"Coord":{"Lat":-38.7217895,"Lng":-62.3102286},"Distance":""},{"Coord":{"Lat":-38.7183434,"Lng":-62.3094000},"Distance":""},{"Coord":{"Lat":-38.7107395,"Lng":-62.2744279},"Distance":""},{"Coord":{"Lat":-38.7852721,"Lng":-62.2676387},"Distance":""},{"Coord":{"Lat":-38.6936127,"Lng":-62.4130422},"Distance":""},{"Coord":{"Lat":-38.7219985,"Lng":-62.2678811},"Distance":""},{"Coord":{"Lat":-38.7155945,"Lng":-62.2620980},"Distance":""},{"Coord":{"Lat":-38.7343111,"Lng":-62.2299728},"Distance":""},{"Coord":{"Lat":-38.7122886,"Lng":-62.2739898},"Distance":""},{"Coord":{"Lat":-38.6966634,"Lng":-62.2966599},"Distance":""},{"Coord":{"Lat":-38.7067826,"Lng":-62.2634464},"Distance":""},{"Coord":{"Lat":-38.7154680,"Lng":-62.2666731},"Distance":""},{"Coord":{"Lat":-38.7158522,"Lng":-62.2661760},"Distance":""},{"Coord":{"Lat":-38.7168836,"Lng":-62.2708612},"Distance":""},{"Coord":{"Lat":-38.7337416,"Lng":-62.2855593},"Distance":""},{"Coord":{"Lat":-38.7486406,"Lng":-62.2042308},"Distance":""},{"Coord":{"Lat":-38.7284245,"Lng":-62.2439122},"Distance":""},{"Coord":{"Lat":-38.7353988,"Lng":-62.2523389},"Distance":""},{"Coord":{"Lat":-38.7223390,"Lng":-62.2674479},"Distance":""},{"Coord":{"Lat":-38.7143866,"Lng":-62.2613623},"Distance":""},{"Coord":{"Lat":-38.7325537,"Lng":-62.2656370},"Distance":""},{"Coord":{"Lat":-38.7138640,"Lng":-62.2426327},"Distance":""},{"Coord":{"Lat":-38.7159871,"Lng":-62.2617129},"Distance":""},{"Coord":{"Lat":-38.7390673,"Lng":-62.2120171},"Distance":""},{"Coord":{"Lat":-38.6989199,"Lng":-62.3481303},"Distance":""},{"Coord":{"Lat":-38.6978735,"Lng":-62.2102456},"Distance":""},{"Coord":{"Lat":-38.7439415,"Lng":-62.2644539},"Distance":""},{"Coord":{"Lat":-38.7668596,"Lng":-62.2729108},"Distance":""},{"Coord":{"Lat":-38.7121013,"Lng":-62.2898443},"Distance":""},{"Coord":{"Lat":-38.7084745,"Lng":-62.2098112},"Distance":""},{"Coord":{"Lat":-38.7371577,"Lng":-62.2324422},"Distance":""},{"Coord":{"Lat":-38.7158283,"Lng":-62.2618041},"Distance":""},{"Coord":{"Lat":-38.7258940,"Lng":-62.3001544},"Distance":""},{"Coord":{"Lat":-38.7164241,"Lng":-62.2730055},"Distance":""},{"Coord":{"Lat":-38.6882124,"Lng":-62.2315892},"Distance":""},{"Coord":{"Lat":-38.7138824,"Lng":-62.2920647},"Distance":""},{"Coord":{"Lat":-38.7154365,"Lng":-62.2647970},"Distance":""},{"Coord":{"Lat":-38.7155211,"Lng":-62.2633080},"Distance":""},{"Coord":{"Lat":-38.7221818,"Lng":-62.2561145},"Distance":""},{"Coord":{"Lat":-38.7034140,"Lng":-62.2695046},"Distance":""},{"Coord":{"Lat":-38.7133186,"Lng":-62.2669631},"Distance":""},{"Coord":{"Lat":-38.7256479,"Lng":-62.2453022},"Distance":""},{"Coord":{"Lat":-38.7309223,"Lng":-62.2318012},"Distance":""},{"Coord":{"Lat":-38.7323452,"Lng":-62.2305876},"Distance":""},{"Coord":{"Lat":-38.7347618,"Lng":-62.2758379},"Distance":""},{"Coord":{"Lat":-38.7105164,"Lng":-62.2765944},"Distance":""},{"Coord":{"Lat":-38.6926378,"Lng":-62.2797801},"Distance":""}];
+var stops = [{"Coord":{"Lat":-38.7233081,"Lng":-62.2797696},"Distance":""},{"Coord":{"Lat":-38.7231820,"Lng":-62.2784897},"Distance":""},{"Coord":{"Lat":-38.7246769,"Lng":-62.2779826},"Distance":""},{"Coord":{"Lat":-38.7218873,"Lng":-62.2749835},"Distance":""},{"Coord":{"Lat":-38.7210004,"Lng":-62.2757687},"Distance":""},{"Coord":{"Lat":-38.7210189,"Lng":-62.2737220},"Distance":""},{"Coord":{"Lat":-38.7212380,"Lng":-62.2739969},"Distance":""},{"Coord":{"Lat":-38.7225342,"Lng":-62.2734644},"Distance":""},{"Coord":{"Lat":-38.7209961,"Lng":-62.2715633},"Distance":""},{"Coord":{"Lat":-38.7193706,"Lng":-62.2717151},"Distance":""},{"Coord":{"Lat":-38.7193349,"Lng":-62.2716698},"Distance":""},{"Coord":{"Lat":-38.7186791,"Lng":-62.2723120},"Distance":""},{"Coord":{"Lat":-38.7186971,"Lng":-62.2709586},"Distance":""},{"Coord":{"Lat":-38.7184399,"Lng":-62.2706784},"Distance":""},{"Coord":{"Lat":-38.7186082,"Lng":-62.2701067},"Distance":""},{"Coord":{"Lat":-38.7178106,"Lng":-62.2711429},"Distance":""},{"Coord":{"Lat":-38.7173595,"Lng":-62.2717254},"Distance":""},{"Coord":{"Lat":-38.7159600,"Lng":-62.2697695},"Distance":""},{"Coord":{"Lat":-38.7151236,"Lng":-62.2704867},"Distance":""},{"Coord":{"Lat":-38.7160635,"Lng":-62.2693183},"Distance":""},{"Coord":{"Lat":-38.7166853,"Lng":-62.2684499},"Distance":""},{"Coord":{"Lat":-38.7169508,"Lng":-62.2681085},"Distance":""},{"Coord":{"Lat":-38.7180307,"Lng":-62.2680179},"Distance":""},{"Coord":{"Lat":-38.7180813,"Lng":-62.2680809},"Distance":""},{"Coord":{"Lat":-38.7180665,"Lng":-62.2689795},"Distance":""},{"Coord":{"Lat":-38.7174455,"Lng":-62.2694355},"Distance":""},{"Coord":{"Lat":-38.7186267,"Lng":-62.2687291},"Distance":""},{"Coord":{"Lat":-38.7189488,"Lng":-62.2690745},"Distance":""},{"Coord":{"Lat":-38.7191888,"Lng":-62.2693320},"Distance":""},{"Coord":{"Lat":-38.7199545,"Lng":-62.2683960},"Distance":""},{"Coord":{"Lat":-38.7259309,"Lng":-62.2734625},"Distance":""}];
+
+
 function initialize() {
-	//Ruta de imagenes http://kml4earth.appspot.com/icons.html#shapes
-	
-	var iconBase = 'http://maps.google.com/mapfiles/kml/paddle/';
-	var icons = {
-		  normal: {
-            icon: iconBase + 'red-circle.png'
-          },
-          noventa: {
-            icon: iconBase + 'blu-blank.png'
-          },
-		   venta: {
-            icon: iconBase + 'red-circle.png'
-          },
-          motivo: {
-            icon: iconBase + 'ylw-stars.png'
-          },
-		}; 
+
 	var centerPoint = new google.maps.LatLng(-38.7137069,-62.2627304);
 	var mapOptions = {zoom: 15, center: centerPoint, mapTypeId: google.maps.MapTypeId.ROADMAP, streetViewControl: true}
 	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-	var marker2=new google.maps.Marker({position:new google.maps.LatLng(-38.7114712, -62.2309903)});marker2.setMap(map);var infowindow2 = new google.maps.InfoWindow({content:"KLOSTER ROCIO MICAELA(SUC) / ROTONDA CEMENTERIO",maxWidth: 200});marker2.addListener('click', function() {infowindow2.open(map, marker2);});var marker3=new google.maps.Marker({position:new google.maps.LatLng(-38.6989199, -62.3481303)});marker3.setMap(map);var infowindow3 = new google.maps.InfoWindow({content:"AROS DEL PLATA / BORDEAU",maxWidth: 200});marker3.addListener('click', function() {infowindow3.open(map, marker3);});var marker6=new google.maps.Marker({position:new google.maps.LatLng(-38.7411546, -62.2925253)});marker6.setMap(map);var infowindow6 = new google.maps.InfoWindow({content:"FABRI OMAR PASCUAL / CORONEL VIDAL 682",maxWidth: 200});marker6.addListener('click', function() {infowindow6.open(map, marker6);});var marker9=new google.maps.Marker({position:new google.maps.LatLng(-38.7194489, -62.2648590)});marker9.setMap(map);var infowindow9 = new google.maps.InfoWindow({content:"LA ALAHAMBRA  - BAHIA MARBELLA S.A.- / CHICLANA 137",maxWidth: 200});marker9.addListener('click', function() {infowindow9.open(map, marker9);});var marker14=new google.maps.Marker({position:new google.maps.LatLng(-38.7229075, -62.2475788)});marker14.setMap(map);var infowindow14 = new google.maps.InfoWindow({content:"YAMPOLSKY LEANDRO / LINIERS 610",maxWidth: 200});marker14.addListener('click', function() {infowindow14.open(map, marker14);});var marker16=new google.maps.Marker({position:new google.maps.LatLng(-38.7067745, -62.2809142)});marker16.setMap(map);var infowindow16 = new google.maps.InfoWindow({content:"GODOY HECTOR GUSTAVO / URUGUAY 15",maxWidth: 200});marker16.addListener('click', function() {infowindow16.open(map, marker16);});var marker18=new google.maps.Marker({position:new google.maps.LatLng(-38.7126280, -62.2958812)});marker18.setMap(map);var infowindow18 = new google.maps.InfoWindow({content:"FORTUNATTI OMAR Y SUCESION DE FORTUNATTI / SIXTO LASPIUR 1686",maxWidth: 200});marker18.addListener('click', function() {infowindow18.open(map, marker18);});var marker20=new google.maps.Marker({position:new google.maps.LatLng(-38.7156732, -62.2698280)});marker20.setMap(map);var infowindow20 = new google.maps.InfoWindow({content:"COSSO ERNESTO MIGUEL / ESTOMBA 309",maxWidth: 200});marker20.addListener('click', function() {infowindow20.open(map, marker20);});var marker21=new google.maps.Marker({position:new google.maps.LatLng(-38.7294180, -62.2426479)});marker21.setMap(map);var infowindow21 = new google.maps.InfoWindow({content:"MITILLI  ALEJANDRO ANTONIO / REMEDIOS DE ESCALADA 495",maxWidth: 200});marker21.addListener('click', function() {infowindow21.open(map, marker21);});var marker23=new google.maps.Marker({position:new google.maps.LatLng(-38.7032634, -62.2860496)});marker23.setMap(map);var infowindow23 = new google.maps.InfoWindow({content:"SABATTINI SERGIO / ESTOMBA 1778",maxWidth: 200});marker23.addListener('click', function() {infowindow23.open(map, marker23);});var marker26=new google.maps.Marker({position:new google.maps.LatLng(-38.7146876, -62.2609736)});marker26.setMap(map);var infowindow26 = new google.maps.InfoWindow({content:"TORRES JULIO ALBERTO / DORREGO 56",maxWidth: 200});marker26.addListener('click', function() {infowindow26.open(map, marker26);});var marker27=new google.maps.Marker({position:new google.maps.LatLng(-38.7424122, -62.2317408)});marker27.setMap(map);var infowindow27 = new google.maps.InfoWindow({content:"ORFILA FERMANI Y HECTOR ARIEL GONET S.H. / PCIAS. UNIDAS 846 (ESCUELA DE",maxWidth: 200});marker27.addListener('click', function() {infowindow27.open(map, marker27);});var marker31=new google.maps.Marker({position:new google.maps.LatLng(-38.7244956, -62.2998718)});marker31.setMap(map);var infowindow31 = new google.maps.InfoWindow({content:"GARCIA HORACIO / PAMPA CENTRAL 1150",maxWidth: 200});marker31.addListener('click', function() {infowindow31.open(map, marker31);});var marker33=new google.maps.Marker({position:new google.maps.LatLng(-38.7533059, -62.2657821)});marker33.setMap(map);var infowindow33 = new google.maps.InfoWindow({content:"PICCIRILLO DARIO HERNAN / AV ARIAS 2030",maxWidth: 200});marker33.addListener('click', function() {infowindow33.open(map, marker33);});var marker34=new google.maps.Marker({position:new google.maps.LatLng(-38.7088619, -62.2789662)});marker34.setMap(map);var infowindow34 = new google.maps.InfoWindow({content:"ACUÑA ANGELA  NATALIA / MENDOZA 6",maxWidth: 200});marker34.addListener('click', function() {infowindow34.open(map, marker34);});var marker36=new google.maps.Marker({position:new google.maps.LatLng(-38.7368669, -62.2416456)});marker36.setMap(map);var infowindow36 = new google.maps.InfoWindow({content:"DONARI JUAN CARLOS / CAPITAN MONTERO 2196",maxWidth: 200});marker36.addListener('click', function() {infowindow36.open(map, marker36);});var marker38=new google.maps.Marker({position:new google.maps.LatLng(-38.6990854, -62.2075456)});marker38.setMap(map);var infowindow38 = new google.maps.InfoWindow({content:"MUÑIZ FERNANDO / WASHINGTON 4245",maxWidth: 200});marker38.addListener('click', function() {infowindow38.open(map, marker38);});var marker41=new google.maps.Marker({position:new google.maps.LatLng(-38.7296042, -62.2182725)});marker41.setMap(map);var infowindow41 = new google.maps.InfoWindow({content:"GUARNACCIA GLADIS ETEL / ROJAS 2880",maxWidth: 200});marker41.addListener('click', function() {infowindow41.open(map, marker41);});var marker42=new google.maps.Marker({position:new google.maps.LatLng(-38.7282508, -62.2292106)});marker42.setMap(map);var infowindow42 = new google.maps.InfoWindow({content:"MANSILLA URIEL / LAINEZ 2281",maxWidth: 200});marker42.addListener('click', function() {infowindow42.open(map, marker42);});var marker43=new google.maps.Marker({position:new google.maps.LatLng(-38.7403966, -62.2713460)});marker43.setMap(map);var infowindow43 = new google.maps.InfoWindow({content:"ELIA WALTER / PEDRO PICO Y PAUNERO",maxWidth: 200});marker43.addListener('click', function() {infowindow43.open(map, marker43);});var marker45=new google.maps.Marker({position:new google.maps.LatLng(-38.6923995, -62.2800830)});marker45.setMap(map);var infowindow45 = new google.maps.InfoWindow({content:"GAAB CARLOS / ALEM 2130",maxWidth: 200});marker45.addListener('click', function() {infowindow45.open(map, marker45);});var marker46=new google.maps.Marker({position:new google.maps.LatLng(-38.6990661, -62.2109943)});marker46.setMap(map);var infowindow46 = new google.maps.InfoWindow({content:"AGUILERA MIGUEL ANGEL / BULRICH 1446",maxWidth: 200});marker46.addListener('click', function() {infowindow46.open(map, marker46);});var marker47=new google.maps.Marker({position:new google.maps.LatLng(-38.6888288, -62.2313199)});marker47.setMap(map);var infowindow47 = new google.maps.InfoWindow({content:"RUGAMAR GROUP.S.A. / HIRIGOYEN 3825",maxWidth: 200});marker47.addListener('click', function() {infowindow47.open(map, marker47);});var marker48=new google.maps.Marker({position:new google.maps.LatLng(-38.7157198, -62.2635310)});marker48.setMap(map);var infowindow48 = new google.maps.InfoWindow({content:"ERBASTRAIN MAITE / HIRIGOYEN 223",maxWidth: 200});marker48.addListener('click', function() {infowindow48.open(map, marker48);});var marker49=new google.maps.Marker({position:new google.maps.LatLng(-38.7181932, -62.2632019)});marker49.setMap(map);var infowindow49 = new google.maps.InfoWindow({content:"USTARE MARIO FEDERICO / SAN MARTIN 146",maxWidth: 200});marker49.addListener('click', function() {infowindow49.open(map, marker49);});var marker50=new google.maps.Marker({position:new google.maps.LatLng(-38.7136317, -62.2665788)});marker50.setMap(map);var infowindow50 = new google.maps.InfoWindow({content:"PINEDA MARTA / MITRE 290",maxWidth: 200});marker50.addListener('click', function() {infowindow50.open(map, marker50);});var marker51=new google.maps.Marker({position:new google.maps.LatLng(-38.7057062, -62.2518726)});marker51.setMap(map);var infowindow51 = new google.maps.InfoWindow({content:"ECHARRI OSCAR / LA FALDA 50",maxWidth: 200});marker51.addListener('click', function() {infowindow51.open(map, marker51);});var marker54=new google.maps.Marker({position:new google.maps.LatLng(-38.7164392, -62.3015479)});marker54.setMap(map);var infowindow54 = new google.maps.InfoWindow({content:"KEVIN / DON BOSCO 1710",maxWidth: 200});marker54.addListener('click', function() {infowindow54.open(map, marker54);});var marker57=new google.maps.Marker({position:new google.maps.LatLng(-38.7222545, -62.2699499)});marker57.setMap(map);var infowindow57 = new google.maps.InfoWindow({content:"CANOSA ESTELLA / BERUTI 63",maxWidth: 200});marker57.addListener('click', function() {infowindow57.open(map, marker57);});var marker60=new google.maps.Marker({position:new google.maps.LatLng(-38.6966966, -62.3268038)});marker60.setMap(map);var infowindow60 = new google.maps.InfoWindow({content:"GARCIA ADRIAN HECTOR OMAR / RUTA 35 KM 8.3 0",maxWidth: 200});marker60.addListener('click', function() {infowindow60.open(map, marker60);});var marker62=new google.maps.Marker({position:new google.maps.LatLng(-38.7049655, -62.2490129)});marker62.setMap(map);var infowindow62 = new google.maps.InfoWindow({content:"VEROLI GERARDO / RAWSON 45",maxWidth: 200});marker62.addListener('click', function() {infowindow62.open(map, marker62);});var marker63=new google.maps.Marker({position:new google.maps.LatLng(-38.6847745, -62.2176287)});marker63.setMap(map);var infowindow63 = new google.maps.InfoWindow({content:"LA PULPERIIA(SILVINA CABEZA) / NWEBERY Y RAMON Y CAJAL",maxWidth: 200});marker63.addListener('click', function() {infowindow63.open(map, marker63);});var marker65=new google.maps.Marker({position:new google.maps.LatLng(-38.7096948, -62.2694205)});marker65.setMap(map);var infowindow65 = new google.maps.InfoWindow({content:"MOLINA JOSE / ALVARADO 658",maxWidth: 200});marker65.addListener('click', function() {infowindow65.open(map, marker65);});var marker66=new google.maps.Marker({position:new google.maps.LatLng(-38.7187858, -62.2584684)});marker66.setMap(map);var infowindow66 = new google.maps.InfoWindow({content:"MONTECINO RUBEN / LAVALLE 281",maxWidth: 200});marker66.addListener('click', function() {infowindow66.open(map, marker66);});var marker69=new google.maps.Marker({position:new google.maps.LatLng(-38.7220563, -62.2552758)});marker69.setMap(map);var infowindow69 = new google.maps.InfoWindow({content:"COMMEGNA RUBEN EDUARDO / AZARA 567 (WORK POINT)",maxWidth: 200});marker69.addListener('click', function() {infowindow69.open(map, marker69);});var marker70=new google.maps.Marker({position:new google.maps.LatLng(-38.7308825, -62.2242485)});marker70.setMap(map);var infowindow70 = new google.maps.InfoWindow({content:"GUTIERREZ MIRTA / HUMBOLT 2650",maxWidth: 200});marker70.addListener('click', function() {infowindow70.open(map, marker70);});var marker72=new google.maps.Marker({position:new google.maps.LatLng(-38.7023432, -62.2790596)});marker72.setMap(map);var infowindow72 = new google.maps.InfoWindow({content:"WERNRKR RAUL ALEJANDRO / ALVARADO 1498",maxWidth: 200});marker72.addListener('click', function() {infowindow72.open(map, marker72);});var marker73=new google.maps.Marker({position:new google.maps.LatLng(-38.7106530, -62.2743227)});marker73.setMap(map);var infowindow73 = new google.maps.InfoWindow({content:"GRUPO NORTE S.R.L. / SALTA 51",maxWidth: 200});marker73.addListener('click', function() {infowindow73.open(map, marker73);});var marker74=new google.maps.Marker({position:new google.maps.LatLng(-38.7062725, -62.2707491)});marker74.setMap(map);var infowindow74 = new google.maps.InfoWindow({content:"TOLOSA ANDREA / SARMIENTO EX LA FUSTA",maxWidth: 200});marker74.addListener('click', function() {infowindow74.open(map, marker74);});var marker75=new google.maps.Marker({position:new google.maps.LatLng(-38.7008028, -62.2714830)});marker75.setMap(map);var infowindow75 = new google.maps.InfoWindow({content:"JUSTEL MAYRA / CORDOBA 694",maxWidth: 200});marker75.addListener('click', function() {infowindow75.open(map, marker75);});var marker76=new google.maps.Marker({position:new google.maps.LatLng(-38.7070096, -62.2680307)});marker76.setMap(map);var infowindow76 = new google.maps.InfoWindow({content:"LUCIANO / PANAMA 775",maxWidth: 200});marker76.addListener('click', function() {infowindow76.open(map, marker76);});var marker77=new google.maps.Marker({position:new google.maps.LatLng(-38.7325753, -62.2362443)});marker77.setMap(map);var infowindow77 = new google.maps.InfoWindow({content:"VIVEROS MARIA DE LOS ANGELES / PUNTA ALTA Y CHACABUCO",maxWidth: 200});marker77.addListener('click', function() {infowindow77.open(map, marker77);});var marker79=new google.maps.Marker({position:new google.maps.LatLng(-38.7100811, -62.2911911)});marker79.setMap(map);var infowindow79 = new google.maps.InfoWindow({content:"APEZZATTO NELLY / MANUEL MOLINA 540",maxWidth: 200});marker79.addListener('click', function() {infowindow79.open(map, marker79);});var marker81=new google.maps.Marker({position:new google.maps.LatLng(-38.7260341, -62.2999433)});marker81.setMap(map);var infowindow81 = new google.maps.InfoWindow({content:"PRECECHE ANA / CHACO 1097",maxWidth: 200});marker81.addListener('click', function() {infowindow81.open(map, marker81);});var marker83=new google.maps.Marker({position:new google.maps.LatLng(-38.7208020, -62.2587036)});marker83.setMap(map);var infowindow83 = new google.maps.InfoWindow({content:"JAMON Y CIA. SH / GRAL PAZ 159",maxWidth: 200});marker83.addListener('click', function() {infowindow83.open(map, marker83);});var marker87=new google.maps.Marker({position:new google.maps.LatLng(-38.7044976, -62.2707671)});marker87.setMap(map);var infowindow87 = new google.maps.InfoWindow({content:"MELINSCKI  LISANDRO ARIEL / PERU 480",maxWidth: 200});marker87.addListener('click', function() {infowindow87.open(map, marker87);});var marker88=new google.maps.Marker({position:new google.maps.LatLng(-38.7054809, -62.2195284)});marker88.setMap(map);var infowindow88 = new google.maps.InfoWindow({content:"BAVIT BAHIA S.R.L. / 14 DE JULIO 3421",maxWidth: 200});marker88.addListener('click', function() {infowindow88.open(map, marker88);});var marker93=new google.maps.Marker({position:new google.maps.LatLng(-38.7054144, -62.2608060)});marker93.setMap(map);var infowindow93 = new google.maps.InfoWindow({content:"LACERENZA EZEQUIEL / FUERTE ARGENTINO 571",maxWidth: 200});marker93.addListener('click', function() {infowindow93.open(map, marker93);});var marker94=new google.maps.Marker({position:new google.maps.LatLng(-38.7324839, -62.2883667)});marker94.setMap(map);var infowindow94 = new google.maps.InfoWindow({content:"FUENTES CARINA / RONDEAU 1751",maxWidth: 200});marker94.addListener('click', function() {infowindow94.open(map, marker94);});var marker95=new google.maps.Marker({position:new google.maps.LatLng(-38.7170321, -62.2680039)});marker95.setMap(map);var infowindow95 = new google.maps.InfoWindow({content:"PERSIANI V. FRANCISCO / ESTOMBA 161",maxWidth: 200});marker95.addListener('click', function() {infowindow95.open(map, marker95);});var marker97=new google.maps.Marker({position:new google.maps.LatLng(-38.7425792, -62.2740659)});marker97.setMap(map);var infowindow97 = new google.maps.InfoWindow({content:"CABEZA SUSANA / PEDRO PICO 1654",maxWidth: 200});marker97.addListener('click', function() {infowindow97.open(map, marker97);});var marker98=new google.maps.Marker({position:new google.maps.LatLng(-38.7141888, -62.2783196)});marker98.setMap(map);var infowindow98 = new google.maps.InfoWindow({content:"BONONATO LUCIANO ENRIQUE / GUEMES 798",maxWidth: 200});marker98.addListener('click', function() {infowindow98.open(map, marker98);});var marker100=new google.maps.Marker({position:new google.maps.LatLng(-38.7165893, -62.2885381)});marker100.setMap(map);var infowindow100 = new google.maps.InfoWindow({content:"ORTIZ ALEJANDRO / ALMAFUERTE Y MENDOZA",maxWidth: 200});marker100.addListener('click', function() {infowindow100.open(map, marker100);});var marker101=new google.maps.Marker({position:new google.maps.LatLng(-38.7238960, -62.2918319)});marker101.setMap(map);var infowindow101 = new google.maps.InfoWindow({content:"BRAIDA GRACIELA Y CHAVEZ OSCAR S. H. / DON BOSCO 858",maxWidth: 200});marker101.addListener('click', function() {infowindow101.open(map, marker101);});var marker102=new google.maps.Marker({position:new google.maps.LatLng(-38.7218182, -62.3072131)});marker102.setMap(map);var infowindow102 = new google.maps.InfoWindow({content:"DEQUE CRISTINA / MANUEL MOLINA 1980",maxWidth: 200});marker102.addListener('click', function() {infowindow102.open(map, marker102);});var marker104=new google.maps.Marker({position:new google.maps.LatLng(-38.7135036, -62.3052769)});marker104.setMap(map);var infowindow104 = new google.maps.InfoWindow({content:"GOMEZ  IVANA / DON BOSCO 2144",maxWidth: 200});marker104.addListener('click', function() {infowindow104.open(map, marker104);});var marker105=new google.maps.Marker({position:new google.maps.LatLng(-38.7260340, -62.2872545)});marker105.setMap(map);var infowindow105 = new google.maps.InfoWindow({content:"SATTI LUIS / BOLIBIA 521",maxWidth: 200});marker105.addListener('click', function() {infowindow105.open(map, marker105);});var marker106=new google.maps.Marker({position:new google.maps.LatLng(-38.7112419, -62.2675063)});marker106.setMap(map);var infowindow106 = new google.maps.InfoWindow({content:"MONACO LISANDRO / ALVARADO 444",maxWidth: 200});marker106.addListener('click', function() {infowindow106.open(map, marker106);});var marker107=new google.maps.Marker({position:new google.maps.LatLng(-38.6849539, -62.2271720)});marker107.setMap(map);var infowindow107 = new google.maps.InfoWindow({content:"SOSA DANIELA ( ESC. AGROPECUARIA ) / AV. CABRERA 4000",maxWidth: 200});marker107.addListener('click', function() {infowindow107.open(map, marker107);});var marker110=new google.maps.Marker({position:new google.maps.LatLng(-38.7302659, -62.2806108)});marker110.setMap(map);var infowindow110 = new google.maps.InfoWindow({content:"MARTINEZ (CHICHE) / MADARIAGA 25",maxWidth: 200});marker110.addListener('click', function() {infowindow110.open(map, marker110);});var marker112=new google.maps.Marker({position:new google.maps.LatLng(-38.7053237, -62.2618617)});marker112.setMap(map);var infowindow112 = new google.maps.InfoWindow({content:"GRUPO PAB BAHIA SRL / CASANOVA 799",maxWidth: 200});marker112.addListener('click', function() {infowindow112.open(map, marker112);});var marker113=new google.maps.Marker({position:new google.maps.LatLng(-38.7248277, -62.2441576)});marker113.setMap(map);var infowindow113 = new google.maps.InfoWindow({content:"GRIPO LUCIANO / SOCRATES 1411",maxWidth: 200});marker113.addListener('click', function() {infowindow113.open(map, marker113);});var marker116=new google.maps.Marker({position:new google.maps.LatLng(-38.7138575, -62.2663021)});marker116.setMap(map);var infowindow116 = new google.maps.InfoWindow({content:"VILLAR SUSANA / MITRE 259",maxWidth: 200});marker116.addListener('click', function() {infowindow116.open(map, marker116);});var marker122=new google.maps.Marker({position:new google.maps.LatLng(-38.7122914, -62.2718411)});marker122.setMap(map);var infowindow122 = new google.maps.InfoWindow({content:"ROMERO PAOLA / CASANOVA 70",maxWidth: 200});marker122.addListener('click', function() {infowindow122.open(map, marker122);});var marker123=new google.maps.Marker({position:new google.maps.LatLng(-38.7050111, -62.3061775)});marker123.setMap(map);var infowindow123 = new google.maps.InfoWindow({content:"POLIRRUBRO " TU LUGAR " / SIXTO LASPIUR 2677",maxWidth: 200});marker123.addListener('click', function() {infowindow123.open(map, marker123);});var marker125=new google.maps.Marker({position:new google.maps.LatLng(-38.7217895, -62.3102286)});marker125.setMap(map);var infowindow125 = new google.maps.InfoWindow({content:"SANTANDER MARIA / INGLATERRA 2116",maxWidth: 200});marker125.addListener('click', function() {infowindow125.open(map, marker125);});var marker126=new google.maps.Marker({position:new google.maps.LatLng(-38.7183434, -62.3094000)});marker126.setMap(map);var infowindow126 = new google.maps.InfoWindow({content:"VALLEJOS ALICIA / 17 DE MAYO 1871",maxWidth: 200});marker126.addListener('click', function() {infowindow126.open(map, marker126);});var marker127=new google.maps.Marker({position:new google.maps.LatLng(-38.7107395, -62.2744279)});marker127.setMap(map);var infowindow127 = new google.maps.InfoWindow({content:"CLUB BAHIENSE DEL NORTE / SALTA 50",maxWidth: 200});marker127.addListener('click', function() {infowindow127.open(map, marker127);});var marker128=new google.maps.Marker({position:new google.maps.LatLng(-38.7852721, -62.2676387)});marker128.setMap(map);var infowindow128 = new google.maps.InfoWindow({content:"STEFANU SHIPSUPPLAIERS S.A. / BROWN 3698",maxWidth: 200});marker128.addListener('click', function() {infowindow128.open(map, marker128);});var marker129=new google.maps.Marker({position:new google.maps.LatLng(-38.6936127, -62.4130422)});marker129.setMap(map);var infowindow129 = new google.maps.InfoWindow({content:"PARRILLA "EL CHOLO" / PARADOR EL CHOLO",maxWidth: 200});marker129.addListener('click', function() {infowindow129.open(map, marker129);});var marker131=new google.maps.Marker({position:new google.maps.LatLng(-38.7219985, -62.2678811)});marker131.setMap(map);var infowindow131 = new google.maps.InfoWindow({content:"LAMBRECHT MARTA ALEJANDRA / SAAVEDRA 142",maxWidth: 200});marker131.addListener('click', function() {infowindow131.open(map, marker131);});var marker133=new google.maps.Marker({position:new google.maps.LatLng(-38.7155945, -62.2620980)});marker133.setMap(map);var infowindow133 = new google.maps.InfoWindow({content:"MENESES FACUNDO CRUZ / LAMADRID 58",maxWidth: 200});marker133.addListener('click', function() {infowindow133.open(map, marker133);});var marker136=new google.maps.Marker({position:new google.maps.LatLng(-38.7343111, -62.2299728)});marker136.setMap(map);var infowindow136 = new google.maps.InfoWindow({content:"MONTENERO NOELIA / CACIQUE VENANCIO 810",maxWidth: 200});marker136.addListener('click', function() {infowindow136.open(map, marker136);});var marker139=new google.maps.Marker({position:new google.maps.LatLng(-38.7122886, -62.2739898)});marker139.setMap(map);var infowindow139 = new google.maps.InfoWindow({content:"BENEGAS JORGE OMAR / PARAGUAY 4",maxWidth: 200});marker139.addListener('click', function() {infowindow139.open(map, marker139);});var marker140=new google.maps.Marker({position:new google.maps.LatLng(-38.6966634, -62.2966599)});marker140.setMap(map);var infowindow140 = new google.maps.InfoWindow({content:"CHIRCHIU RIAL ROCIO / ESQUIU 51",maxWidth: 200});marker140.addListener('click', function() {infowindow140.open(map, marker140);});var marker142=new google.maps.Marker({position:new google.maps.LatLng(-38.7067826, -62.2634464)});marker142.setMap(map);var infowindow142 = new google.maps.InfoWindow({content:"GUIMARAENZ VALERIA / 12 DE OCTUBRE 541",maxWidth: 200});marker142.addListener('click', function() {infowindow142.open(map, marker142);});var marker145=new google.maps.Marker({position:new google.maps.LatLng(-38.7154680, -62.2666731)});marker145.setMap(map);var infowindow145 = new google.maps.InfoWindow({content:"CABALLIN VERONICA / ZELARRAYAN 190",maxWidth: 200});marker145.addListener('click', function() {infowindow145.open(map, marker145);});var marker146=new google.maps.Marker({position:new google.maps.LatLng(-38.7158522, -62.2661760)});marker146.setMap(map);var infowindow146 = new google.maps.InfoWindow({content:"MELNICHUK YANINA BELEN / ZELARRAYAN 132",maxWidth: 200});marker146.addListener('click', function() {infowindow146.open(map, marker146);});var marker147=new google.maps.Marker({position:new google.maps.LatLng(-38.7168836, -62.2708612)});marker147.setMap(map);var infowindow147 = new google.maps.InfoWindow({content:"ASOCIACION CIVIL MARIA AUXILIADORA DE LA / GORRITI 66 PISO:1",maxWidth: 200});marker147.addListener('click', function() {infowindow147.open(map, marker147);});var marker153=new google.maps.Marker({position:new google.maps.LatLng(-38.7337416, -62.2855593)});marker153.setMap(map);var infowindow153 = new google.maps.InfoWindow({content:"COOPERATIVA DE TRABAJO ¨ LA MARIA´¨(COLO / COLON Y JUJUY",maxWidth: 200});marker153.addListener('click', function() {infowindow153.open(map, marker153);});var marker154=new google.maps.Marker({position:new google.maps.LatLng(-38.7486406, -62.2042308)});marker154.setMap(map);var infowindow154 = new google.maps.InfoWindow({content:"CORVALAN JOSE SANTIAGO / RAFAEL OBLIGADO 4330",maxWidth: 200});marker154.addListener('click', function() {infowindow154.open(map, marker154);});var marker159=new google.maps.Marker({position:new google.maps.LatLng(-38.7284245, -62.2439122)});marker159.setMap(map);var infowindow159 = new google.maps.InfoWindow({content:"MARTINEZ CESAR JAVIER / WASHINGTON 495",maxWidth: 200});marker159.addListener('click', function() {infowindow159.open(map, marker159);});var marker160=new google.maps.Marker({position:new google.maps.LatLng(-38.7353988, -62.2523389)});marker160.setMap(map);var infowindow160 = new google.maps.InfoWindow({content:"SACK CARINA SOLEDAD / PIEDRA BUENA 287",maxWidth: 200});marker160.addListener('click', function() {infowindow160.open(map, marker160);});var marker161=new google.maps.Marker({position:new google.maps.LatLng(-38.7223390, -62.2674479)});marker161.setMap(map);var infowindow161 = new google.maps.InfoWindow({content:"GAUNA MARIANA CECILIA / SAAVEDRA 181",maxWidth: 200});marker161.addListener('click', function() {infowindow161.open(map, marker161);});var marker163=new google.maps.Marker({position:new google.maps.LatLng(-38.7143866, -62.2613623)});marker163.setMap(map);var infowindow163 = new google.maps.InfoWindow({content:"VI&VA EMPRESARIAL GASTRONOMICO SOCIEDAD / DORREGO 20",maxWidth: 200});marker163.addListener('click', function() {infowindow163.open(map, marker163);});var marker164=new google.maps.Marker({position:new google.maps.LatLng(-38.7325537, -62.2656370)});marker164.setMap(map);var infowindow164 = new google.maps.InfoWindow({content:"CACCIATORE SERGIO / SANTA FE 842",maxWidth: 200});marker164.addListener('click', function() {infowindow164.open(map, marker164);});var marker165=new google.maps.Marker({position:new google.maps.LatLng(-38.7138640, -62.2426327)});marker165.setMap(map);var infowindow165 = new google.maps.InfoWindow({content:"LA MADRINA ( POLIRRUBRO ) / AZARA 1355",maxWidth: 200});marker165.addListener('click', function() {infowindow165.open(map, marker165);});var marker166=new google.maps.Marker({position:new google.maps.LatLng(-38.7159871, -62.2617129)});marker166.setMap(map);var infowindow166 = new google.maps.InfoWindow({content:"ASCOITIA MARIANO / ALSINA 294",maxWidth: 200});marker166.addListener('click', function() {infowindow166.open(map, marker166);});var marker169=new google.maps.Marker({position:new google.maps.LatLng(-38.7390673, -62.2120171)});marker169.setMap(map);var infowindow169 = new google.maps.InfoWindow({content:"PINOTTI MARTIN / BOUCHARD 3750",maxWidth: 200});marker169.addListener('click', function() {infowindow169.open(map, marker169);});var marker170=new google.maps.Marker({position:new google.maps.LatLng(-38.6989199, -62.3481303)});marker170.setMap(map);var infowindow170 = new google.maps.InfoWindow({content:"GONZALEZ MARTIN ( BORDEAU ) / BORDEAU",maxWidth: 200});marker170.addListener('click', function() {infowindow170.open(map, marker170);});var marker171=new google.maps.Marker({position:new google.maps.LatLng(-38.6978735, -62.2102456)});marker171.setMap(map);var infowindow171 = new google.maps.InfoWindow({content:"COOPERATIVA DE TRABAJO ¨¨ LA MARIA ¨¨(14 / 14 DE JULIO",maxWidth: 200});marker171.addListener('click', function() {infowindow171.open(map, marker171);});var marker172=new google.maps.Marker({position:new google.maps.LatLng(-38.7439415, -62.2644539)});marker172.setMap(map);var infowindow172 = new google.maps.InfoWindow({content:"COOPERATIVA DE TRABAJO "LA MARIA"(FARIAS / TENIENTE FARIAS 1535",maxWidth: 200});marker172.addListener('click', function() {infowindow172.open(map, marker172);});var marker174=new google.maps.Marker({position:new google.maps.LatLng(-38.7668596, -62.2729108)});marker174.setMap(map);var infowindow174 = new google.maps.InfoWindow({content:"SANTANA PAULA / MAESTRO PICCIOLI 3180",maxWidth: 200});marker174.addListener('click', function() {infowindow174.open(map, marker174);});var marker175=new google.maps.Marker({position:new google.maps.LatLng(-38.7121013, -62.2898443)});marker175.setMap(map);var infowindow175 = new google.maps.InfoWindow({content:"BASUALDO JUAN ALBERTO / BRASIL 595",maxWidth: 200});marker175.addListener('click', function() {infowindow175.open(map, marker175);});var marker176=new google.maps.Marker({position:new google.maps.LatLng(-38.7084745, -62.2098112)});marker176.setMap(map);var infowindow176 = new google.maps.InfoWindow({content:"VERDINI MONICA ANDREA / PIROVANO 2060",maxWidth: 200});marker176.addListener('click', function() {infowindow176.open(map, marker176);});var marker177=new google.maps.Marker({position:new google.maps.LatLng(-38.7371577, -62.2324422)});marker177.setMap(map);var infowindow177 = new google.maps.InfoWindow({content:"VERDINI MONICA ( SUC. CASTELAR ) / CASTELAR 2649",maxWidth: 200});marker177.addListener('click', function() {infowindow177.open(map, marker177);});var marker178=new google.maps.Marker({position:new google.maps.LatLng(-38.7158283, -62.2618041)});marker178.setMap(map);var infowindow178 = new google.maps.InfoWindow({content:"SILVA FABIAN / LAMADRID 89",maxWidth: 200});marker178.addListener('click', function() {infowindow178.open(map, marker178);});var marker179=new google.maps.Marker({position:new google.maps.LatLng(-38.7258940, -62.3001544)});marker179.setMap(map);var infowindow179 = new google.maps.InfoWindow({content:"DIAZ ARIEL ALFREDO / CHACO Y MENDOZA",maxWidth: 200});marker179.addListener('click', function() {infowindow179.open(map, marker179);});var marker183=new google.maps.Marker({position:new google.maps.LatLng(-38.7164241, -62.2730055)});marker183.setMap(map);var infowindow183 = new google.maps.InfoWindow({content:"NUÑEZ VERONICA / VIEYTES 410",maxWidth: 200});marker183.addListener('click', function() {infowindow183.open(map, marker183);});var marker184=new google.maps.Marker({position:new google.maps.LatLng(-38.6882124, -62.2315892)});marker184.setMap(map);var infowindow184 = new google.maps.InfoWindow({content:"COOPERATIVA DE TRABAJO "LA MARIA" (IRIGO / IRIGOYEN 3884",maxWidth: 200});marker184.addListener('click', function() {infowindow184.open(map, marker184);});var marker185=new google.maps.Marker({position:new google.maps.LatLng(-38.7138824, -62.2920647)});marker185.setMap(map);var infowindow185 = new google.maps.InfoWindow({content:"COOPERATIVA DE TRABAJO " LA MARIA " ( AL / ALMAFUERTE Y BRASIL",maxWidth: 200});marker185.addListener('click', function() {infowindow185.open(map, marker185);});var marker188=new google.maps.Marker({position:new google.maps.LatLng(-38.7154365, -62.2647970)});marker188.setMap(map);var infowindow188 = new google.maps.InfoWindow({content:"MEDEI MARIA AGUSTINA / SARMIENTO 183",maxWidth: 200});marker188.addListener('click', function() {infowindow188.open(map, marker188);});var marker192=new google.maps.Marker({position:new google.maps.LatLng(-38.7155211, -62.2633080)});marker192.setMap(map);var infowindow192 = new google.maps.InfoWindow({content:"DAY PABLO FERNANDO / HIRIGOYEN 243",maxWidth: 200});marker192.addListener('click', function() {infowindow192.open(map, marker192);});var marker193=new google.maps.Marker({position:new google.maps.LatLng(-38.7221818, -62.2561145)});marker193.setMap(map);var infowindow193 = new google.maps.InfoWindow({content:"SOSA NIEVE ALEJANDRA / SOLER 695",maxWidth: 200});marker193.addListener('click', function() {infowindow193.open(map, marker193);});var marker194=new google.maps.Marker({position:new google.maps.LatLng(-38.7034140, -62.2695046)});marker194.setMap(map);var infowindow194 = new google.maps.InfoWindow({content:"BURGOS ANGEL ROBERTO / ALEM 1161",maxWidth: 200});marker194.addListener('click', function() {infowindow194.open(map, marker194);});var marker196=new google.maps.Marker({position:new google.maps.LatLng(-38.7133186, -62.2669631)});marker196.setMap(map);var infowindow196 = new google.maps.InfoWindow({content:"MARTINEZ ROMINA / MITRE 314",maxWidth: 200});marker196.addListener('click', function() {infowindow196.open(map, marker196);});var marker198=new google.maps.Marker({position:new google.maps.LatLng(-38.7256479, -62.2453022)});marker198.setMap(map);var infowindow198 = new google.maps.InfoWindow({content:"LEFIÑIR PAOLA ANABEL / CHACABUCO 1401",maxWidth: 200});marker198.addListener('click', function() {infowindow198.open(map, marker198);});var marker200=new google.maps.Marker({position:new google.maps.LatLng(-38.7309223, -62.2318012)});marker200.setMap(map);var infowindow200 = new google.maps.InfoWindow({content:"ARGIROFFI NOLBERTO OMAR / LAUQUEN 575  ( HOSPITAL PENNA",maxWidth: 200});marker200.addListener('click', function() {infowindow200.open(map, marker200);});var marker202=new google.maps.Marker({position:new google.maps.LatLng(-38.7323452, -62.2305876)});marker202.setMap(map);var infowindow202 = new google.maps.InfoWindow({content:"COLUANTONO HORACIO / BALBOA 2454",maxWidth: 200});marker202.addListener('click', function() {infowindow202.open(map, marker202);});var marker203=new google.maps.Marker({position:new google.maps.LatLng(-38.7347618, -62.2758379)});marker203.setMap(map);var infowindow203 = new google.maps.InfoWindow({content:"BETTOMEO MARTIN / TTE FARIAS 515",maxWidth: 200});marker203.addListener('click', function() {infowindow203.open(map, marker203);});var marker209=new google.maps.Marker({position:new google.maps.LatLng(-38.7105164, -62.2765944)});marker209.setMap(map);var infowindow209 = new google.maps.InfoWindow({content:"CABRERA ALEJANDRA SILVINA / ESTOMBA 913",maxWidth: 200});marker209.addListener('click', function() {infowindow209.open(map, marker209);});var marker212=new google.maps.Marker({position:new google.maps.LatLng(-38.6926378, -62.2797801)});marker212.setMap(map);var infowindow212 = new google.maps.InfoWindow({content:"COMERCIAL BAHIA BLANCA S.A / AV.ALEM Y MALLEA",maxWidth: 200});marker212.addListener('click', function() {infowindow212.open(map, marker212);});
-  var trafficLayer = new google.maps.TrafficLayer();
-  trafficLayer.setMap(map);
+	var marker1=new google.maps.Marker({position:new google.maps.LatLng(-38.7233081, -62.2797696)});marker1.setMap(map);var infowindow1 = new google.maps.InfoWindow({content:"ARIAS, PAZ FAUSTO / ALMAFUERTE 336",maxWidth: 200});marker1.addListener('click', function() {infowindow1.open(map, marker1);});var marker2=new google.maps.Marker({position:new google.maps.LatLng(-38.7231820, -62.2784897)});marker2.setMap(map);var infowindow2 = new google.maps.InfoWindow({content:"BUSTAMANTE, HECTOR EDUARDO / GORRITI 733",maxWidth: 200});marker2.addListener('click', function() {infowindow2.open(map, marker2);});var marker3=new google.maps.Marker({position:new google.maps.LatLng(-38.7246769, -62.2779826)});marker3.setMap(map);var infowindow3 = new google.maps.InfoWindow({content:"OCAMPO, WALTER / ALMAFUERTE 176",maxWidth: 200});marker3.addListener('click', function() {infowindow3.open(map, marker3);});var marker4=new google.maps.Marker({position:new google.maps.LatLng(-38.7218873, -62.2749835)});marker4.setMap(map);var infowindow4 = new google.maps.InfoWindow({content:"PELLEGRINI, MARISOL / TERRADA 202",maxWidth: 200});marker4.addListener('click', function() {infowindow4.open(map, marker4);});var marker5=new google.maps.Marker({position:new google.maps.LatLng(-38.7210004, -62.2757687)});marker5.setMap(map);var infowindow5 = new google.maps.InfoWindow({content:"ESPINOZA MORENO, CLARA VERONICA / GORRITI 487",maxWidth: 200});marker5.addListener('click', function() {infowindow5.open(map, marker5);});var marker6=new google.maps.Marker({position:new google.maps.LatLng(-38.7210189, -62.2737220)});marker6.setMap(map);var infowindow6 = new google.maps.InfoWindow({content:"CROCITO, WALTER / VIAMONTE 201",maxWidth: 200});marker6.addListener('click', function() {infowindow6.open(map, marker6);});var marker7=new google.maps.Marker({position:new google.maps.LatLng(-38.7212380, -62.2739969)});marker7.setMap(map);var infowindow7 = new google.maps.InfoWindow({content:"SOSSI, PATRICIA MONICA / RONDEAU 418",maxWidth: 200});marker7.addListener('click', function() {infowindow7.open(map, marker7);});var marker8=new google.maps.Marker({position:new google.maps.LatLng(-38.7225342, -62.2734644)});marker8.setMap(map);var infowindow8 = new google.maps.InfoWindow({content:"GOLDSHMILD, DANIEL / MORENO469",maxWidth: 200});marker8.addListener('click', function() {infowindow8.open(map, marker8);});var marker9=new google.maps.Marker({position:new google.maps.LatLng(-38.7209961, -62.2715633)});marker9.setMap(map);var infowindow9 = new google.maps.InfoWindow({content:"GUTIERREZ, STELLA MARIS / MORENO 306",maxWidth: 200});marker9.addListener('click', function() {infowindow9.open(map, marker9);});var marker10=new google.maps.Marker({position:new google.maps.LatLng(-38.7193706, -62.2717151)});marker10.setMap(map);var infowindow10 = new google.maps.InfoWindow({content:"ALFONSO, PAULO / RONDEAU 212",maxWidth: 200});marker10.addListener('click', function() {infowindow10.open(map, marker10);});var marker11=new google.maps.Marker({position:new google.maps.LatLng(-38.7193349, -62.2716698)});marker11.setMap(map);var infowindow11 = new google.maps.InfoWindow({content:"VEGA, ROLANDO CARLOS / RONDEAU 204",maxWidth: 200});marker11.addListener('click', function() {infowindow11.open(map, marker11);});var marker12=new google.maps.Marker({position:new google.maps.LatLng(-38.7186791, -62.2723120)});marker12.setMap(map);var infowindow12 = new google.maps.InfoWindow({content:"DUCOURNAU, DAIANA / GUEMES 264",maxWidth: 200});marker12.addListener('click', function() {infowindow12.open(map, marker12);});var marker13=new google.maps.Marker({position:new google.maps.LatLng(-38.7186971, -62.2709586)});marker13.setMap(map);var infowindow13 = new google.maps.InfoWindow({content:"ALVAP SOC. CAP.I SECCION IV / RONDEAU 135",maxWidth: 200});marker13.addListener('click', function() {infowindow13.open(map, marker13);});var marker14=new google.maps.Marker({position:new google.maps.LatLng(-38.7184399, -62.2706784)});marker14.setMap(map);var infowindow14 = new google.maps.InfoWindow({content:"BAEZ, JORGE DANIEL / RONDEAU 115",maxWidth: 200});marker14.addListener('click', function() {infowindow14.open(map, marker14);});var marker15=new google.maps.Marker({position:new google.maps.LatLng(-38.7186082, -62.2701067)});marker15.setMap(map);var infowindow15 = new google.maps.InfoWindow({content:"SEMERANO, LUCAS MARTIN / VIEYTES 161",maxWidth: 200});marker15.addListener('click', function() {infowindow15.open(map, marker15);});var marker16=new google.maps.Marker({position:new google.maps.LatLng(-38.7178106, -62.2711429)});marker16.setMap(map);var infowindow16 = new google.maps.InfoWindow({content:"DEL ARCO, ANTONELA MARIEL / VIEYTES 280",maxWidth: 200});marker16.addListener('click', function() {infowindow16.open(map, marker16);});var marker17=new google.maps.Marker({position:new google.maps.LatLng(-38.7173595, -62.2717254)});marker17.setMap(map);var infowindow17 = new google.maps.InfoWindow({content:"ELIAS,  GLADIS NORA / VIEYTES 307",maxWidth: 200});marker17.addListener('click', function() {infowindow17.open(map, marker17);});var marker18=new google.maps.Marker({position:new google.maps.LatLng(-38.7159600, -62.2697695)});marker18.setMap(map);var infowindow18 = new google.maps.InfoWindow({content:"LANTZ, MARIA ROSA / GORRITI 4",maxWidth: 200});marker18.addListener('click', function() {infowindow18.open(map, marker18);});var marker19=new google.maps.Marker({position:new google.maps.LatLng(-38.7151236, -62.2704867)});marker19.setMap(map);var infowindow19 = new google.maps.InfoWindow({content:"NEUMANN, SORAYA VANESA / ESTOMBA 384, DPTO 1",maxWidth: 200});marker19.addListener('click', function() {infowindow19.open(map, marker19);});var marker20=new google.maps.Marker({position:new google.maps.LatLng(-38.7160635, -62.2693183)});marker20.setMap(map);var infowindow20 = new google.maps.InfoWindow({content:"BRITO, ISABEL PASTORA / ESTOMBA 276",maxWidth: 200});marker20.addListener('click', function() {infowindow20.open(map, marker20);});var marker21=new google.maps.Marker({position:new google.maps.LatLng(-38.7166853, -62.2684499)});marker21.setMap(map);var infowindow21 = new google.maps.InfoWindow({content:"MR COMBUSTIBLES S.R.L. / ESTOMBA 198",maxWidth: 200});marker21.addListener('click', function() {infowindow21.open(map, marker21);});var marker22=new google.maps.Marker({position:new google.maps.LatLng(-38.7169508, -62.2681085)});marker22.setMap(map);var infowindow22 = new google.maps.InfoWindow({content:"VIRGILI, OSCAR LUIS / ESTOMBA 158",maxWidth: 200});marker22.addListener('click', function() {infowindow22.open(map, marker22);});var marker23=new google.maps.Marker({position:new google.maps.LatLng(-38.7180307, -62.2680179)});marker23.setMap(map);var infowindow23 = new google.maps.InfoWindow({content:"TETILLA, NILDA ESTER / MORENO 31",maxWidth: 200});marker23.addListener('click', function() {infowindow23.open(map, marker23);});var marker24=new google.maps.Marker({position:new google.maps.LatLng(-38.7180813, -62.2680809)});marker24.setMap(map);var infowindow24 = new google.maps.InfoWindow({content:"JUAN / MORENO 37",maxWidth: 200});marker24.addListener('click', function() {infowindow24.open(map, marker24);});var marker25=new google.maps.Marker({position:new google.maps.LatLng(-38.7180665, -62.2689795)});marker25.setMap(map);var infowindow25 = new google.maps.InfoWindow({content:"MENA, LUIS ORLANDO / VICENTE LOPEZ 147",maxWidth: 200});marker25.addListener('click', function() {infowindow25.open(map, marker25);});var marker26=new google.maps.Marker({position:new google.maps.LatLng(-38.7174455, -62.2694355)});marker26.setMap(map);var infowindow26 = new google.maps.InfoWindow({content:"ORTIZ,  MARTIN GASTON / RONDEAU 52",maxWidth: 200});marker26.addListener('click', function() {infowindow26.open(map, marker26);});var marker27=new google.maps.Marker({position:new google.maps.LatLng(-38.7186267, -62.2687291)});marker27.setMap(map);var infowindow27 = new google.maps.InfoWindow({content:"PEÑA, CLAUDIA RENE / MORENO 64",maxWidth: 200});marker27.addListener('click', function() {infowindow27.open(map, marker27);});var marker28=new google.maps.Marker({position:new google.maps.LatLng(-38.7189488, -62.2690745)});marker28.setMap(map);var infowindow28 = new google.maps.InfoWindow({content:"BECCACECE, DANIEL ITALO / MORENO 89",maxWidth: 200});marker28.addListener('click', function() {infowindow28.open(map, marker28);});var marker29=new google.maps.Marker({position:new google.maps.LatLng(-38.7191888, -62.2693320)});marker29.setMap(map);var infowindow29 = new google.maps.InfoWindow({content:"SUPERMERCADO LA BANDERITA BAHIA S.A. / MORENO Y VIEYTES",maxWidth: 200});marker29.addListener('click', function() {infowindow29.open(map, marker29);});var marker30=new google.maps.Marker({position:new google.maps.LatLng(-38.7199545, -62.2683960)});marker30.setMap(map);var infowindow30 = new google.maps.InfoWindow({content:"BLANCO, LUIS ALBERTO / COLON 99",maxWidth: 200});marker30.addListener('click', function() {infowindow30.open(map, marker30);});var marker31=new google.maps.Marker({position:new google.maps.LatLng(-38.7259309, -62.2734625)});marker31.setMap(map);var infowindow31 = new google.maps.InfoWindow({content:"UDE, YAMIL / O`HIGGINS 680",maxWidth: 200});marker31.addListener('click', function() {infowindow31.open(map, marker31);});
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
+    
+	var myLatLng = {lat: -38.877337, lng: -62.083059};
+	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+	
+    var pinColor = "1900ff";
+		
+    //http://www.lass.it/Web/viewer.aspx?id=4 (lista de imagenes/iconos)
+	//https://medium.com/@barvysta/google-marker-api-lets-play-level-1-dynamic-label-on-marker-f9b94f2e3585 (como editar)
+	var pinImages = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png");
+	
+	var markerIcon = {
+	  url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',
+	  //scaledSize: new google.maps.Size(80, 80),
+	  origin: new google.maps.Point(0, 0),
+	  //anchor: new google.maps.Point(32,65),
+	  labelOrigin: new google.maps.Point(15,8)
+	};
+
+ 			var content1 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:22:35 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow1 = new google.maps.InfoWindow({
+		content: content1
+	  	});var markerIcon1={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta1 = new google.maps.Marker({position: {lat:-38.7272057, lng:-62.28332},map: map,label:{text: '1',fontSize: '10px',},icon: markerIcon1,title: '30 Jul 2'});markerRuta1.addListener('click', function() {infow1.open(map, markerRuta1);});		var content2 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:34:39 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow2 = new google.maps.InfoWindow({
+		content: content2
+	  	});var markerIcon2={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta2 = new google.maps.Marker({position: {lat:-38.7272691, lng:-62.2832377},map: map,label:{text: '2',fontSize: '10px',},icon: markerIcon2,title: '30 Jul 2'});markerRuta2.addListener('click', function() {infow2.open(map, markerRuta2);});		var content3 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:38:50 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow3 = new google.maps.InfoWindow({
+		content: content3
+	  	});var markerIcon3={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta3 = new google.maps.Marker({position: {lat:-38.7272093, lng:-62.2832636},map: map,label:{text: '3',fontSize: '10px',},icon: markerIcon3,title: '30 Jul 2'});markerRuta3.addListener('click', function() {infow3.open(map, markerRuta3);});		var content4 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:46:02 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow4 = new google.maps.InfoWindow({
+		content: content4
+	  	});var markerIcon4={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta4 = new google.maps.Marker({position: {lat:-38.7272128, lng:-62.2832655},map: map,label:{text: '4',fontSize: '10px',},icon: markerIcon4,title: '30 Jul 2'});markerRuta4.addListener('click', function() {infow4.open(map, markerRuta4);});		var content5 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:50:27 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow5 = new google.maps.InfoWindow({
+		content: content5
+	  	});var markerIcon5={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta5 = new google.maps.Marker({position: {lat:-38.7272125, lng:-62.2832038},map: map,label:{text: '5',fontSize: '10px',},icon: markerIcon5,title: '30 Jul 2'});markerRuta5.addListener('click', function() {infow5.open(map, markerRuta5);});		var content6 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:53:32 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow6 = new google.maps.InfoWindow({
+		content: content6
+	  	});var markerIcon6={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta6 = new google.maps.Marker({position: {lat:-38.7272072, lng:-62.2832408},map: map,label:{text: '6',fontSize: '10px',},icon: markerIcon6,title: '30 Jul 2'});markerRuta6.addListener('click', function() {infow6.open(map, markerRuta6);});		var content7 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 08:59:16 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow7 = new google.maps.InfoWindow({
+		content: content7
+	  	});var markerIcon7={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta7 = new google.maps.Marker({position: {lat:-38.7272094, lng:-62.2831144},map: map,label:{text: '7',fontSize: '10px',},icon: markerIcon7,title: '30 Jul 2'});markerRuta7.addListener('click', function() {infow7.open(map, markerRuta7);});		var content8 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:00:23 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow8 = new google.maps.InfoWindow({
+		content: content8
+	  	});var markerIcon8={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta8 = new google.maps.Marker({position: {lat:-38.7272142, lng:-62.2832587},map: map,label:{text: '8',fontSize: '10px',},icon: markerIcon8,title: '30 Jul 2'});markerRuta8.addListener('click', function() {infow8.open(map, markerRuta8);});		var content9 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:02:14 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow9 = new google.maps.InfoWindow({
+		content: content9
+	  	});var markerIcon9={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta9 = new google.maps.Marker({position: {lat:-38.7272083, lng:-62.2831352},map: map,label:{text: '9',fontSize: '10px',},icon: markerIcon9,title: '30 Jul 2'});markerRuta9.addListener('click', function() {infow9.open(map, markerRuta9);});		var content10 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:06:38 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow10 = new google.maps.InfoWindow({
+		content: content10
+	  	});var markerIcon10={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta10 = new google.maps.Marker({position: {lat:-38.7272095, lng:-62.2832979},map: map,label:{text: '10',fontSize: '10px',},icon: markerIcon10,title: '30 Jul 2'});markerRuta10.addListener('click', function() {infow10.open(map, markerRuta10);});		var content11 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:13:24 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow11 = new google.maps.InfoWindow({
+		content: content11
+	  	});var markerIcon11={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta11 = new google.maps.Marker({position: {lat:-38.7272022, lng:-62.2831554},map: map,label:{text: '11',fontSize: '10px',},icon: markerIcon11,title: '30 Jul 2'});markerRuta11.addListener('click', function() {infow11.open(map, markerRuta11);});		var content12 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:45:02 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow12 = new google.maps.InfoWindow({
+		content: content12
+	  	});var markerIcon12={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta12 = new google.maps.Marker({position: {lat:-38.7276924, lng:-62.2825615},map: map,label:{text: '12',fontSize: '10px',},icon: markerIcon12,title: '30 Jul 2'});markerRuta12.addListener('click', function() {infow12.open(map, markerRuta12);});		var content13 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:46:18 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow13 = new google.maps.InfoWindow({
+		content: content13
+	  	});var markerIcon13={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta13 = new google.maps.Marker({position: {lat:-38.7272615, lng:-62.2820757},map: map,label:{text: '13',fontSize: '10px',},icon: markerIcon13,title: '30 Jul 2'});markerRuta13.addListener('click', function() {infow13.open(map, markerRuta13);});		var content14 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:47:22 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow14 = new google.maps.InfoWindow({
+		content: content14
+	  	});var markerIcon14={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta14 = new google.maps.Marker({position: {lat:-38.7268636, lng:-62.2814407},map: map,label:{text: '14',fontSize: '10px',},icon: markerIcon14,title: '30 Jul 2'});markerRuta14.addListener('click', function() {infow14.open(map, markerRuta14);});		var content15 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:48:26 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow15 = new google.maps.InfoWindow({
+		content: content15
+	  	});var markerIcon15={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta15 = new google.maps.Marker({position: {lat:-38.7263461, lng:-62.2809351},map: map,label:{text: '15',fontSize: '10px',},icon: markerIcon15,title: '30 Jul 2'});markerRuta15.addListener('click', function() {infow15.open(map, markerRuta15);});		var content16 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:49:31 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow16 = new google.maps.InfoWindow({
+		content: content16
+	  	});var markerIcon16={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta16 = new google.maps.Marker({position: {lat:-38.7258239, lng:-62.2801442},map: map,label:{text: '16',fontSize: '10px',},icon: markerIcon16,title: '30 Jul 2'});markerRuta16.addListener('click', function() {infow16.open(map, markerRuta16);});		var content17 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:50:33 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow17 = new google.maps.InfoWindow({
+		content: content17
+	  	});var markerIcon17={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta17 = new google.maps.Marker({position: {lat:-38.725363, lng:-62.2794517},map: map,label:{text: '17',fontSize: '10px',},icon: markerIcon17,title: '30 Jul 2'});markerRuta17.addListener('click', function() {infow17.open(map, markerRuta17);});		var content18 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:51:45 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow18 = new google.maps.InfoWindow({
+		content: content18
+	  	});var markerIcon18={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta18 = new google.maps.Marker({position: {lat:-38.724835, lng:-62.2788075},map: map,label:{text: '18',fontSize: '10px',},icon: markerIcon18,title: '30 Jul 2'});markerRuta18.addListener('click', function() {infow18.open(map, markerRuta18);});		var content19 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:52:48 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow19 = new google.maps.InfoWindow({
+		content: content19
+	  	});var markerIcon19={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta19 = new google.maps.Marker({position: {lat:-38.7244117, lng:-62.2784081},map: map,label:{text: '19',fontSize: '10px',},icon: markerIcon19,title: '30 Jul 2'});markerRuta19.addListener('click', function() {infow19.open(map, markerRuta19);});		var content20 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:54:00 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow20 = new google.maps.InfoWindow({
+		content: content20
+	  	});var markerIcon20={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta20 = new google.maps.Marker({position: {lat:-38.7238443, lng:-62.2778301},map: map,label:{text: '20',fontSize: '10px',},icon: markerIcon20,title: '30 Jul 2'});markerRuta20.addListener('click', function() {infow20.open(map, markerRuta20);});		var content21 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:55:29 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow21 = new google.maps.InfoWindow({
+		content: content21
+	  	});var markerIcon21={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta21 = new google.maps.Marker({position: {lat:-38.723542, lng:-62.2774832},map: map,label:{text: '21',fontSize: '10px',},icon: markerIcon21,title: '30 Jul 2'});markerRuta21.addListener('click', function() {infow21.open(map, markerRuta21);});		var content22 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:56:42 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow22 = new google.maps.InfoWindow({
+		content: content22
+	  	});var markerIcon22={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta22 = new google.maps.Marker({position: {lat:-38.7230357, lng:-62.2765603},map: map,label:{text: '22',fontSize: '10px',},icon: markerIcon22,title: '30 Jul 2'});markerRuta22.addListener('click', function() {infow22.open(map, markerRuta22);});		var content23 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:57:45 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow23 = new google.maps.InfoWindow({
+		content: content23
+	  	});var markerIcon23={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta23 = new google.maps.Marker({position: {lat:-38.7224538, lng:-62.2758369},map: map,label:{text: '23',fontSize: '10px',},icon: markerIcon23,title: '30 Jul 2'});markerRuta23.addListener('click', function() {infow23.open(map, markerRuta23);});		var content24 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 09:58:46 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow24 = new google.maps.InfoWindow({
+		content: content24
+	  	});var markerIcon24={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta24 = new google.maps.Marker({position: {lat:-38.722453, lng:-62.275405},map: map,label:{text: '24',fontSize: '10px',},icon: markerIcon24,title: '30 Jul 2'});markerRuta24.addListener('click', function() {infow24.open(map, markerRuta24);});		var content25 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:00:01 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow25 = new google.maps.InfoWindow({
+		content: content25
+	  	});var markerIcon25={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta25 = new google.maps.Marker({position: {lat:-38.721941, lng:-62.2747373},map: map,label:{text: '25',fontSize: '10px',},icon: markerIcon25,title: '30 Jul 2'});markerRuta25.addListener('click', function() {infow25.open(map, markerRuta25);});		var content26 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:02:03 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow26 = new google.maps.InfoWindow({
+		content: content26
+	  	});var markerIcon26={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta26 = new google.maps.Marker({position: {lat:-38.7210951, lng:-62.2741933},map: map,label:{text: '26',fontSize: '10px',},icon: markerIcon26,title: '30 Jul 2'});markerRuta26.addListener('click', function() {infow26.open(map, markerRuta26);});		var content27 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:04:24 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow27 = new google.maps.InfoWindow({
+		content: content27
+	  	});var markerIcon27={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta27 = new google.maps.Marker({position: {lat:-38.7218072, lng:-62.2728623},map: map,label:{text: '27',fontSize: '10px',},icon: markerIcon27,title: '30 Jul 2'});markerRuta27.addListener('click', function() {infow27.open(map, markerRuta27);});		var content28 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:05:29 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow28 = new google.maps.InfoWindow({
+		content: content28
+	  	});var markerIcon28={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta28 = new google.maps.Marker({position: {lat:-38.7225942, lng:-62.2734},map: map,label:{text: '28',fontSize: '10px',},icon: markerIcon28,title: '30 Jul 2'});markerRuta28.addListener('click', function() {infow28.open(map, markerRuta28);});		var content29 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:07:40 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow29 = new google.maps.InfoWindow({
+		content: content29
+	  	});var markerIcon29={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta29 = new google.maps.Marker({position: {lat:-38.7225834, lng:-62.2733353},map: map,label:{text: '29',fontSize: '10px',},icon: markerIcon29,title: '30 Jul 2'});markerRuta29.addListener('click', function() {infow29.open(map, markerRuta29);});		var content30 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:08:15 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow30 = new google.maps.InfoWindow({
+		content: content30
+	  	});var markerIcon30={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta30 = new google.maps.Marker({position: {lat:-38.72255, lng:-62.2733531},map: map,label:{text: '30',fontSize: '10px',},icon: markerIcon30,title: '30 Jul 2'});markerRuta30.addListener('click', function() {infow30.open(map, markerRuta30);});		var content31 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:09:40 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow31 = new google.maps.InfoWindow({
+		content: content31
+	  	});var markerIcon31={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta31 = new google.maps.Marker({position: {lat:-38.7217938, lng:-62.272644},map: map,label:{text: '31',fontSize: '10px',},icon: markerIcon31,title: '30 Jul 2'});markerRuta31.addListener('click', function() {infow31.open(map, markerRuta31);});		var content32 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:11:36 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow32 = new google.maps.InfoWindow({
+		content: content32
+	  	});var markerIcon32={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta32 = new google.maps.Marker({position: {lat:-38.7211215, lng:-62.2715425},map: map,label:{text: '32',fontSize: '10px',},icon: markerIcon32,title: '30 Jul 2'});markerRuta32.addListener('click', function() {infow32.open(map, markerRuta32);});		var content33 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:12:46 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow33 = new google.maps.InfoWindow({
+		content: content33
+	  	});var markerIcon33={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta33 = new google.maps.Marker({position: {lat:-38.7204293, lng:-62.2723082},map: map,label:{text: '33',fontSize: '10px',},icon: markerIcon33,title: '30 Jul 2'});markerRuta33.addListener('click', function() {infow33.open(map, markerRuta33);});		var content34 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:13:49 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow34 = new google.maps.InfoWindow({
+		content: content34
+	  	});var markerIcon34={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta34 = new google.maps.Marker({position: {lat:-38.7199189, lng:-62.2723657},map: map,label:{text: '34',fontSize: '10px',},icon: markerIcon34,title: '30 Jul 2'});markerRuta34.addListener('click', function() {infow34.open(map, markerRuta34);});		var content35 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:15:26 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow35 = new google.maps.InfoWindow({
+		content: content35
+	  	});var markerIcon35={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta35 = new google.maps.Marker({position: {lat:-38.7194481, lng:-62.2716323},map: map,label:{text: '35',fontSize: '10px',},icon: markerIcon35,title: '30 Jul 2'});markerRuta35.addListener('click', function() {infow35.open(map, markerRuta35);});		var content36 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:15:55 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow36 = new google.maps.InfoWindow({
+		content: content36
+	  	});var markerIcon36={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta36 = new google.maps.Marker({position: {lat:-38.7195469, lng:-62.2716331},map: map,label:{text: '36',fontSize: '10px',},icon: markerIcon36,title: '30 Jul 2'});markerRuta36.addListener('click', function() {infow36.open(map, markerRuta36);});		var content37 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:16:37 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow37 = new google.maps.InfoWindow({
+		content: content37
+	  	});var markerIcon37={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta37 = new google.maps.Marker({position: {lat:-38.7196428, lng:-62.271355},map: map,label:{text: '37',fontSize: '10px',},icon: markerIcon37,title: '30 Jul 2'});markerRuta37.addListener('click', function() {infow37.open(map, markerRuta37);});		var content38 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:17:42 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow38 = new google.maps.InfoWindow({
+		content: content38
+	  	});var markerIcon38={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta38 = new google.maps.Marker({position: {lat:-38.7193904, lng:-62.2716514},map: map,label:{text: '38',fontSize: '10px',},icon: markerIcon38,title: '30 Jul 2'});markerRuta38.addListener('click', function() {infow38.open(map, markerRuta38);});		var content39 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:18:34 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow39 = new google.maps.InfoWindow({
+		content: content39
+	  	});var markerIcon39={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta39 = new google.maps.Marker({position: {lat:-38.7193896, lng:-62.2715976},map: map,label:{text: '39',fontSize: '10px',},icon: markerIcon39,title: '30 Jul 2'});markerRuta39.addListener('click', function() {infow39.open(map, markerRuta39);});		var content40 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:20:18 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow40 = new google.maps.InfoWindow({
+		content: content40
+	  	});var markerIcon40={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta40 = new google.maps.Marker({position: {lat:-38.7186245, lng:-62.2723397},map: map,label:{text: '40',fontSize: '10px',},icon: markerIcon40,title: '30 Jul 2'});markerRuta40.addListener('click', function() {infow40.open(map, markerRuta40);});		var content41 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:22:25 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow41 = new google.maps.InfoWindow({
+		content: content41
+	  	});var markerIcon41={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta41 = new google.maps.Marker({position: {lat:-38.7187675, lng:-62.2710709},map: map,label:{text: '41',fontSize: '10px',},icon: markerIcon41,title: '30 Jul 2'});markerRuta41.addListener('click', function() {infow41.open(map, markerRuta41);});		var content42 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:23:13 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow42 = new google.maps.InfoWindow({
+		content: content42
+	  	});var markerIcon42={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta42 = new google.maps.Marker({position: {lat:-38.7186089, lng:-62.2709349},map: map,label:{text: '42',fontSize: '10px',},icon: markerIcon42,title: '30 Jul 2'});markerRuta42.addListener('click', function() {infow42.open(map, markerRuta42);});		var content43 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:23:33 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow43 = new google.maps.InfoWindow({
+		content: content43
+	  	});var markerIcon43={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta43 = new google.maps.Marker({position: {lat:-38.71839, lng:-62.2706921},map: map,label:{text: '43',fontSize: '10px',},icon: markerIcon43,title: '30 Jul 2'});markerRuta43.addListener('click', function() {infow43.open(map, markerRuta43);});		var content44 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:26:17 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow44 = new google.maps.InfoWindow({
+		content: content44
+	  	});var markerIcon44={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta44 = new google.maps.Marker({position: {lat:-38.7173446, lng:-62.2716886},map: map,label:{text: '44',fontSize: '10px',},icon: markerIcon44,title: '30 Jul 2'});markerRuta44.addListener('click', function() {infow44.open(map, markerRuta44);});		var content45 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:28:06 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow45 = new google.maps.InfoWindow({
+		content: content45
+	  	});var markerIcon45={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta45 = new google.maps.Marker({position: {lat:-38.7173406, lng:-62.2716967},map: map,label:{text: '45',fontSize: '10px',},icon: markerIcon45,title: '30 Jul 2'});markerRuta45.addListener('click', function() {infow45.open(map, markerRuta45);});		var content46 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:28:10 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow46 = new google.maps.InfoWindow({
+		content: content46
+	  	});var markerIcon46={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta46 = new google.maps.Marker({position: {lat:-38.7173465, lng:-62.271688},map: map,label:{text: '46',fontSize: '10px',},icon: markerIcon46,title: '30 Jul 2'});markerRuta46.addListener('click', function() {infow46.open(map, markerRuta46);});		var content47 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:29:44 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow47 = new google.maps.InfoWindow({
+		content: content47
+	  	});var markerIcon47={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta47 = new google.maps.Marker({position: {lat:-38.7173354, lng:-62.271698},map: map,label:{text: '47',fontSize: '10px',},icon: markerIcon47,title: '30 Jul 2'});markerRuta47.addListener('click', function() {infow47.open(map, markerRuta47);});		var content48 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:31:55 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow48 = new google.maps.InfoWindow({
+		content: content48
+	  	});var markerIcon48={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta48 = new google.maps.Marker({position: {lat:-38.7173637, lng:-62.2716989},map: map,label:{text: '48',fontSize: '10px',},icon: markerIcon48,title: '30 Jul 2'});markerRuta48.addListener('click', function() {infow48.open(map, markerRuta48);});		var content49 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:33:07 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow49 = new google.maps.InfoWindow({
+		content: content49
+	  	});var markerIcon49={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta49 = new google.maps.Marker({position: {lat:-38.7170411, lng:-62.2710255},map: map,label:{text: '49',fontSize: '10px',},icon: markerIcon49,title: '30 Jul 2'});markerRuta49.addListener('click', function() {infow49.open(map, markerRuta49);});		var content50 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:34:18 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow50 = new google.maps.InfoWindow({
+		content: content50
+	  	});var markerIcon50={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta50 = new google.maps.Marker({position: {lat:-38.7165768, lng:-62.2703775},map: map,label:{text: '50',fontSize: '10px',},icon: markerIcon50,title: '30 Jul 2'});markerRuta50.addListener('click', function() {infow50.open(map, markerRuta50);});		var content51 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:35:30 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow51 = new google.maps.InfoWindow({
+		content: content51
+	  	});var markerIcon51={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta51 = new google.maps.Marker({position: {lat:-38.716184, lng:-62.2700583},map: map,label:{text: '51',fontSize: '10px',},icon: markerIcon51,title: '30 Jul 2'});markerRuta51.addListener('click', function() {infow51.open(map, markerRuta51);});		var content52 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:36:14 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow52 = new google.maps.InfoWindow({
+		content: content52
+	  	});var markerIcon52={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta52 = new google.maps.Marker({position: {lat:-38.7162054, lng:-62.2698164},map: map,label:{text: '52',fontSize: '10px',},icon: markerIcon52,title: '30 Jul 2'});markerRuta52.addListener('click', function() {infow52.open(map, markerRuta52);});		var content53 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:37:14 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow53 = new google.maps.InfoWindow({
+		content: content53
+	  	});var markerIcon53={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta53 = new google.maps.Marker({position: {lat:-38.7156787, lng:-62.2697945},map: map,label:{text: '53',fontSize: '10px',},icon: markerIcon53,title: '30 Jul 2'});markerRuta53.addListener('click', function() {infow53.open(map, markerRuta53);});		var content54 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:38:26 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow54 = new google.maps.InfoWindow({
+		content: content54
+	  	});var markerIcon54={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta54 = new google.maps.Marker({position: {lat:-38.7150444, lng:-62.2705467},map: map,label:{text: '54',fontSize: '10px',},icon: markerIcon54,title: '30 Jul 2'});markerRuta54.addListener('click', function() {infow54.open(map, markerRuta54);});		var content55 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:40:53 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow55 = new google.maps.InfoWindow({
+		content: content55
+	  	});var markerIcon55={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta55 = new google.maps.Marker({position: {lat:-38.7151599, lng:-62.2704811},map: map,label:{text: '55',fontSize: '10px',},icon: markerIcon55,title: '30 Jul 2'});markerRuta55.addListener('click', function() {infow55.open(map, markerRuta55);});		var content56 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:42:08 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow56 = new google.maps.InfoWindow({
+		content: content56
+	  	});var markerIcon56={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta56 = new google.maps.Marker({position: {lat:-38.7151456, lng:-62.2703844},map: map,label:{text: '56',fontSize: '10px',},icon: markerIcon56,title: '30 Jul 2'});markerRuta56.addListener('click', function() {infow56.open(map, markerRuta56);});		var content57 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:44:10 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow57 = new google.maps.InfoWindow({
+		content: content57
+	  	});var markerIcon57={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta57 = new google.maps.Marker({position: {lat:-38.7160102, lng:-62.2694195},map: map,label:{text: '57',fontSize: '10px',},icon: markerIcon57,title: '30 Jul 2'});markerRuta57.addListener('click', function() {infow57.open(map, markerRuta57);});		var content58 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:45:15 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow58 = new google.maps.InfoWindow({
+		content: content58
+	  	});var markerIcon58={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta58 = new google.maps.Marker({position: {lat:-38.7162697, lng:-62.2689007},map: map,label:{text: '58',fontSize: '10px',},icon: markerIcon58,title: '30 Jul 2'});markerRuta58.addListener('click', function() {infow58.open(map, markerRuta58);});		var content59 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:46:28 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow59 = new google.maps.InfoWindow({
+		content: content59
+	  	});var markerIcon59={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta59 = new google.maps.Marker({position: {lat:-38.7165346, lng:-62.2684286},map: map,label:{text: '59',fontSize: '10px',},icon: markerIcon59,title: '30 Jul 2'});markerRuta59.addListener('click', function() {infow59.open(map, markerRuta59);});		var content60 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:47:31 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow60 = new google.maps.InfoWindow({
+		content: content60
+	  	});var markerIcon60={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta60 = new google.maps.Marker({position: {lat:-38.7166512, lng:-62.2684557},map: map,label:{text: '60',fontSize: '10px',},icon: markerIcon60,title: '30 Jul 2'});markerRuta60.addListener('click', function() {infow60.open(map, markerRuta60);});		var content61 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:49:04 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow61 = new google.maps.InfoWindow({
+		content: content61
+	  	});var markerIcon61={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta61 = new google.maps.Marker({position: {lat:-38.7169066, lng:-62.2685147},map: map,label:{text: '61',fontSize: '10px',},icon: markerIcon61,title: '30 Jul 2'});markerRuta61.addListener('click', function() {infow61.open(map, markerRuta61);});		var content62 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b> 3297 - MR COMBUSTIBLES S.R.L. </p> '+
+      	'<p> 30-07-2018 10:50:04 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow62 = new google.maps.InfoWindow({
+		content: content62
+	  	});var markerIcon62={url: 'http://maps.google.com/mapfiles/ms/micons/green.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta62 = new google.maps.Marker({position: {lat:-38.7168574, lng:-62.2684732},map: map,label:{text: '62',fontSize: '10px',},icon: markerIcon62,title: '30 Jul 2'});markerRuta62.addListener('click', function() {infow62.open(map, markerRuta62);});		var content63 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:53:14 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow63 = new google.maps.InfoWindow({
+		content: content63
+	  	});var markerIcon63={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta63 = new google.maps.Marker({position: {lat:-38.7168353, lng:-62.2685123},map: map,label:{text: '63',fontSize: '10px',},icon: markerIcon63,title: '30 Jul 2'});markerRuta63.addListener('click', function() {infow63.open(map, markerRuta63);});		var content64 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:54:13 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow64 = new google.maps.InfoWindow({
+		content: content64
+	  	});var markerIcon64={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta64 = new google.maps.Marker({position: {lat:-38.7168913, lng:-62.2683952},map: map,label:{text: '64',fontSize: '10px',},icon: markerIcon64,title: '30 Jul 2'});markerRuta64.addListener('click', function() {infow64.open(map, markerRuta64);});		var content65 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:56:17 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow65 = new google.maps.InfoWindow({
+		content: content65
+	  	});var markerIcon65={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta65 = new google.maps.Marker({position: {lat:-38.7180647, lng:-62.2677383},map: map,label:{text: '65',fontSize: '10px',},icon: markerIcon65,title: '30 Jul 2'});markerRuta65.addListener('click', function() {infow65.open(map, markerRuta65);});		var content66 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:57:35 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow66 = new google.maps.InfoWindow({
+		content: content66
+	  	});var markerIcon66={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta66 = new google.maps.Marker({position: {lat:-38.7179881, lng:-62.2680208},map: map,label:{text: '66',fontSize: '10px',},icon: markerIcon66,title: '30 Jul 2'});markerRuta66.addListener('click', function() {infow66.open(map, markerRuta66);});		var content67 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b> 4222 - JUAN </p> '+
+      	'<p> 30-07-2018 10:58:48 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow67 = new google.maps.InfoWindow({
+		content: content67
+	  	});var markerIcon67={url: 'http://maps.google.com/mapfiles/ms/micons/green.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta67 = new google.maps.Marker({position: {lat:-38.7180059, lng:-62.2680392},map: map,label:{text: '67',fontSize: '10px',},icon: markerIcon67,title: '30 Jul 2'});markerRuta67.addListener('click', function() {infow67.open(map, markerRuta67);});		var content68 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 10:59:36 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow68 = new google.maps.InfoWindow({
+		content: content68
+	  	});var markerIcon68={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta68 = new google.maps.Marker({position: {lat:-38.7180133, lng:-62.2681562},map: map,label:{text: '68',fontSize: '10px',},icon: markerIcon68,title: '30 Jul 2'});markerRuta68.addListener('click', function() {infow68.open(map, markerRuta68);});		var content69 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:01:27 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow69 = new google.maps.InfoWindow({
+		content: content69
+	  	});var markerIcon69={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta69 = new google.maps.Marker({position: {lat:-38.7179849, lng:-62.2690497},map: map,label:{text: '69',fontSize: '10px',},icon: markerIcon69,title: '30 Jul 2'});markerRuta69.addListener('click', function() {infow69.open(map, markerRuta69);});		var content70 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:03:32 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow70 = new google.maps.InfoWindow({
+		content: content70
+	  	});var markerIcon70={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta70 = new google.maps.Marker({position: {lat:-38.7179699, lng:-62.269048},map: map,label:{text: '70',fontSize: '10px',},icon: markerIcon70,title: '30 Jul 2'});markerRuta70.addListener('click', function() {infow70.open(map, markerRuta70);});		var content71 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:03:55 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow71 = new google.maps.InfoWindow({
+		content: content71
+	  	});var markerIcon71={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta71 = new google.maps.Marker({position: {lat:-38.7181116, lng:-62.2688923},map: map,label:{text: '71',fontSize: '10px',},icon: markerIcon71,title: '30 Jul 2'});markerRuta71.addListener('click', function() {infow71.open(map, markerRuta71);});		var content72 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:05:14 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow72 = new google.maps.InfoWindow({
+		content: content72
+	  	});var markerIcon72={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta72 = new google.maps.Marker({position: {lat:-38.7184439, lng:-62.2685065},map: map,label:{text: '72',fontSize: '10px',},icon: markerIcon72,title: '30 Jul 2'});markerRuta72.addListener('click', function() {infow72.open(map, markerRuta72);});		var content73 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:06:34 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow73 = new google.maps.InfoWindow({
+		content: content73
+	  	});var markerIcon73={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta73 = new google.maps.Marker({position: {lat:-38.71854, lng:-62.2685663},map: map,label:{text: '73',fontSize: '10px',},icon: markerIcon73,title: '30 Jul 2'});markerRuta73.addListener('click', function() {infow73.open(map, markerRuta73);});		var content74 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Visita sin Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:08:00 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow74 = new google.maps.InfoWindow({
+		content: content74
+	  	});var markerIcon74={url: 'http://maps.google.com/mapfiles/ms/micons/yellow.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta74 = new google.maps.Marker({position: {lat:-38.7186781, lng:-62.2686719},map: map,label:{text: '74',fontSize: '10px',},icon: markerIcon74,title: '30 Jul 2'});markerRuta74.addListener('click', function() {infow74.open(map, markerRuta74);});		var content75 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:08:00 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow75 = new google.maps.InfoWindow({
+		content: content75
+	  	});var markerIcon75={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta75 = new google.maps.Marker({position: {lat:-38.7187474, lng:-62.2687585},map: map,label:{text: '75',fontSize: '10px',},icon: markerIcon75,title: '30 Jul 2'});markerRuta75.addListener('click', function() {infow75.open(map, markerRuta75);});		var content76 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:08:52 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow76 = new google.maps.InfoWindow({
+		content: content76
+	  	});var markerIcon76={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta76 = new google.maps.Marker({position: {lat:-38.7191063, lng:-62.2693289},map: map,label:{text: '76',fontSize: '10px',},icon: markerIcon76,title: '30 Jul 2'});markerRuta76.addListener('click', function() {infow76.open(map, markerRuta76);});		var content77 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:09:56 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow77 = new google.maps.InfoWindow({
+		content: content77
+	  	});var markerIcon77={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta77 = new google.maps.Marker({position: {lat:-38.7194269, lng:-62.2696241},map: map,label:{text: '77',fontSize: '10px',},icon: markerIcon77,title: '30 Jul 2'});markerRuta77.addListener('click', function() {infow77.open(map, markerRuta77);});		var content78 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:11:08 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow78 = new google.maps.InfoWindow({
+		content: content78
+	  	});var markerIcon78={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta78 = new google.maps.Marker({position: {lat:-38.7199602, lng:-62.2702859},map: map,label:{text: '78',fontSize: '10px',},icon: markerIcon78,title: '30 Jul 2'});markerRuta78.addListener('click', function() {infow78.open(map, markerRuta78);});		var content79 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:12:18 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow79 = new google.maps.InfoWindow({
+		content: content79
+	  	});var markerIcon79={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta79 = new google.maps.Marker({position: {lat:-38.720458, lng:-62.2708698},map: map,label:{text: '79',fontSize: '10px',},icon: markerIcon79,title: '30 Jul 2'});markerRuta79.addListener('click', function() {infow79.open(map, markerRuta79);});		var content80 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:13:24 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow80 = new google.maps.InfoWindow({
+		content: content80
+	  	});var markerIcon80={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta80 = new google.maps.Marker({position: {lat:-38.7209255, lng:-62.2716328},map: map,label:{text: '80',fontSize: '10px',},icon: markerIcon80,title: '30 Jul 2'});markerRuta80.addListener('click', function() {infow80.open(map, markerRuta80);});		var content81 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:14:56 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow81 = new google.maps.InfoWindow({
+		content: content81
+	  	});var markerIcon81={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta81 = new google.maps.Marker({position: {lat:-38.7206431, lng:-62.2719838},map: map,label:{text: '81',fontSize: '10px',},icon: markerIcon81,title: '30 Jul 2'});markerRuta81.addListener('click', function() {infow81.open(map, markerRuta81);});		var content82 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:16:09 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow82 = new google.maps.InfoWindow({
+		content: content82
+	  	});var markerIcon82={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta82 = new google.maps.Marker({position: {lat:-38.7201265, lng:-62.2723935},map: map,label:{text: '82',fontSize: '10px',},icon: markerIcon82,title: '30 Jul 2'});markerRuta82.addListener('click', function() {infow82.open(map, markerRuta82);});		var content83 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:18:04 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow83 = new google.maps.InfoWindow({
+		content: content83
+	  	});var markerIcon83={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta83 = new google.maps.Marker({position: {lat:-38.7202694, lng:-62.2726894},map: map,label:{text: '83',fontSize: '10px',},icon: markerIcon83,title: '30 Jul 2'});markerRuta83.addListener('click', function() {infow83.open(map, markerRuta83);});		var content84 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:19:16 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow84 = new google.maps.InfoWindow({
+		content: content84
+	  	});var markerIcon84={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta84 = new google.maps.Marker({position: {lat:-38.7207736, lng:-62.2733732},map: map,label:{text: '84',fontSize: '10px',},icon: markerIcon84,title: '30 Jul 2'});markerRuta84.addListener('click', function() {infow84.open(map, markerRuta84);});		var content85 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:20:18 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow85 = new google.maps.InfoWindow({
+		content: content85
+	  	});var markerIcon85={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta85 = new google.maps.Marker({position: {lat:-38.7211635, lng:-62.2737392},map: map,label:{text: '85',fontSize: '10px',},icon: markerIcon85,title: '30 Jul 2'});markerRuta85.addListener('click', function() {infow85.open(map, markerRuta85);});		var content86 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:21:32 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow86 = new google.maps.InfoWindow({
+		content: content86
+	  	});var markerIcon86={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta86 = new google.maps.Marker({position: {lat:-38.7217469, lng:-62.2742862},map: map,label:{text: '86',fontSize: '10px',},icon: markerIcon86,title: '30 Jul 2'});markerRuta86.addListener('click', function() {infow86.open(map, markerRuta86);});		var content87 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:22:41 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow87 = new google.maps.InfoWindow({
+		content: content87
+	  	});var markerIcon87={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta87 = new google.maps.Marker({position: {lat:-38.7219513, lng:-62.2750796},map: map,label:{text: '87',fontSize: '10px',},icon: markerIcon87,title: '30 Jul 2'});markerRuta87.addListener('click', function() {infow87.open(map, markerRuta87);});		var content88 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:23:53 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow88 = new google.maps.InfoWindow({
+		content: content88
+	  	});var markerIcon88={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta88 = new google.maps.Marker({position: {lat:-38.7224474, lng:-62.2758052},map: map,label:{text: '88',fontSize: '10px',},icon: markerIcon88,title: '30 Jul 2'});markerRuta88.addListener('click', function() {infow88.open(map, markerRuta88);});		var content89 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:25:09 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow89 = new google.maps.InfoWindow({
+		content: content89
+	  	});var markerIcon89={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta89 = new google.maps.Marker({position: {lat:-38.7228706, lng:-62.2761392},map: map,label:{text: '89',fontSize: '10px',},icon: markerIcon89,title: '30 Jul 2'});markerRuta89.addListener('click', function() {infow89.open(map, markerRuta89);});		var content90 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:26:20 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow90 = new google.maps.InfoWindow({
+		content: content90
+	  	});var markerIcon90={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta90 = new google.maps.Marker({position: {lat:-38.7232864, lng:-62.2767362},map: map,label:{text: '90',fontSize: '10px',},icon: markerIcon90,title: '30 Jul 2'});markerRuta90.addListener('click', function() {infow90.open(map, markerRuta90);});		var content91 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:27:22 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow91 = new google.maps.InfoWindow({
+		content: content91
+	  	});var markerIcon91={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta91 = new google.maps.Marker({position: {lat:-38.723556, lng:-62.2771042},map: map,label:{text: '91',fontSize: '10px',},icon: markerIcon91,title: '30 Jul 2'});markerRuta91.addListener('click', function() {infow91.open(map, markerRuta91);});		var content92 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:28:44 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow92 = new google.maps.InfoWindow({
+		content: content92
+	  	});var markerIcon92={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta92 = new google.maps.Marker({position: {lat:-38.7240529, lng:-62.2777756},map: map,label:{text: '92',fontSize: '10px',},icon: markerIcon92,title: '30 Jul 2'});markerRuta92.addListener('click', function() {infow92.open(map, markerRuta92);});		var content93 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:31:44 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow93 = new google.maps.InfoWindow({
+		content: content93
+	  	});var markerIcon93={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta93 = new google.maps.Marker({position: {lat:-38.7246912, lng:-62.2780552},map: map,label:{text: '93',fontSize: '10px',},icon: markerIcon93,title: '30 Jul 2'});markerRuta93.addListener('click', function() {infow93.open(map, markerRuta93);});		var content94 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:32:58 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow94 = new google.maps.InfoWindow({
+		content: content94
+	  	});var markerIcon94={url: 'http://maps.google.com/mapfiles/ms/micons/green.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta94 = new google.maps.Marker({position: {lat:-38.7246901, lng:-62.2780555},map: map,label:{text: '94',fontSize: '10px',},icon: markerIcon94,title: '30 Jul 2'});markerRuta94.addListener('click', function() {infow94.open(map, markerRuta94);});		var content95 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Pedido</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:33:09 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow95 = new google.maps.InfoWindow({
+		content: content95
+	  	});var markerIcon95={url: 'http://maps.google.com/mapfiles/ms/micons/green.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta95 = new google.maps.Marker({position: {lat:-38.7246918, lng:-62.278054},map: map,label:{text: '95',fontSize: '10px',},icon: markerIcon95,title: '30 Jul 2'});markerRuta95.addListener('click', function() {infow95.open(map, markerRuta95);});		var content96 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:33:11 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow96 = new google.maps.InfoWindow({
+		content: content96
+	  	});var markerIcon96={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta96 = new google.maps.Marker({position: {lat:-38.7246918, lng:-62.278054},map: map,label:{text: '96',fontSize: '10px',},icon: markerIcon96,title: '30 Jul 2'});markerRuta96.addListener('click', function() {infow96.open(map, markerRuta96);});		var content97 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:34:57 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow97 = new google.maps.InfoWindow({
+		content: content97
+	  	});var markerIcon97={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta97 = new google.maps.Marker({position: {lat:-38.7246912, lng:-62.2780553},map: map,label:{text: '97',fontSize: '10px',},icon: markerIcon97,title: '30 Jul 2'});markerRuta97.addListener('click', function() {infow97.open(map, markerRuta97);});		var content98 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:36:07 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow98 = new google.maps.InfoWindow({
+		content: content98
+	  	});var markerIcon98={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta98 = new google.maps.Marker({position: {lat:-38.7246403, lng:-62.2781342},map: map,label:{text: '98',fontSize: '10px',},icon: markerIcon98,title: '30 Jul 2'});markerRuta98.addListener('click', function() {infow98.open(map, markerRuta98);});		var content99 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:37:20 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow99 = new google.maps.InfoWindow({
+		content: content99
+	  	});var markerIcon99={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta99 = new google.maps.Marker({position: {lat:-38.7248891, lng:-62.2787497},map: map,label:{text: '99',fontSize: '10px',},icon: markerIcon99,title: '30 Jul 2'});markerRuta99.addListener('click', function() {infow99.open(map, markerRuta99);});		var content100 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:38:36 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow100 = new google.maps.InfoWindow({
+		content: content100
+	  	});var markerIcon100={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta100 = new google.maps.Marker({position: {lat:-38.7253184, lng:-62.279414},map: map,label:{text: '100',fontSize: '10px',},icon: markerIcon100,title: '30 Jul 2'});markerRuta100.addListener('click', function() {infow100.open(map, markerRuta100);});		var content101 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:39:38 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow101 = new google.maps.InfoWindow({
+		content: content101
+	  	});var markerIcon101={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta101 = new google.maps.Marker({position: {lat:-38.7256861, lng:-62.2797688},map: map,label:{text: '101',fontSize: '10px',},icon: markerIcon101,title: '30 Jul 2'});markerRuta101.addListener('click', function() {infow101.open(map, markerRuta101);});		var content102 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:40:42 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow102 = new google.maps.InfoWindow({
+		content: content102
+	  	});var markerIcon102={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta102 = new google.maps.Marker({position: {lat:-38.7262006, lng:-62.2804405},map: map,label:{text: '102',fontSize: '10px',},icon: markerIcon102,title: '30 Jul 2'});markerRuta102.addListener('click', function() {infow102.open(map, markerRuta102);});		var content103 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:41:55 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow103 = new google.maps.InfoWindow({
+		content: content103
+	  	});var markerIcon103={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta103 = new google.maps.Marker({position: {lat:-38.7267316, lng:-62.2810816},map: map,label:{text: '103',fontSize: '10px',},icon: markerIcon103,title: '30 Jul 2'});markerRuta103.addListener('click', function() {infow103.open(map, markerRuta103);});		var content104 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:43:05 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow104 = new google.maps.InfoWindow({
+		content: content104
+	  	});var markerIcon104={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta104 = new google.maps.Marker({position: {lat:-38.7272357, lng:-62.2818699},map: map,label:{text: '104',fontSize: '10px',},icon: markerIcon104,title: '30 Jul 2'});markerRuta104.addListener('click', function() {infow104.open(map, markerRuta104);});		var content105 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:44:09 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow105 = new google.maps.InfoWindow({
+		content: content105
+	  	});var markerIcon105={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta105 = new google.maps.Marker({position: {lat:-38.7278313, lng:-62.2823706},map: map,label:{text: '105',fontSize: '10px',},icon: markerIcon105,title: '30 Jul 2'});markerRuta105.addListener('click', function() {infow105.open(map, markerRuta105);});		var content106 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:45:13 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow106 = new google.maps.InfoWindow({
+		content: content106
+	  	});var markerIcon106={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta106 = new google.maps.Marker({position: {lat:-38.7275128, lng:-62.283099},map: map,label:{text: '106',fontSize: '10px',},icon: markerIcon106,title: '30 Jul 2'});markerRuta106.addListener('click', function() {infow106.open(map, markerRuta106);});		var content107 = '<div id="content">'+
+      	'<div id="Información">'+
+      	'</div>'+
+      	'<h1 id="firstHeading" class="firstHeading">Tracking</h1>'+
+      	'<div id="bodyContent">'+
+      	'<p><b>Cliente: </b>  -  </p> '+
+      	'<p> 30-07-2018 11:46:15 </p>'+
+      	'<p><b>Vendedor: </b> 4 - PAEZ, RODRIGO </p> '+
+      	'</div>'+
+      	'</div>';
+	  	var infow107 = new google.maps.InfoWindow({
+		content: content107
+	  	});var markerIcon107={url: 'http://maps.google.com/mapfiles/ms/micons/blue.png',origin: new google.maps.Point(0, 0),labelOrigin: new google.maps.Point(15,8)};var markerRuta107 = new google.maps.Marker({position: {lat:-38.7273353, lng:-62.2832886},map: map,label:{text: '107',fontSize: '10px',},icon: markerIcon107,title: '30 Jul 2'});markerRuta107.addListener('click', function() {infow107.open(map, markerRuta107);});
+ 	
+ 	var flightPlanCoordinates = [{lat: -38.7272057, lng: -62.28332},{lat: -38.7272691, lng: -62.2832377},{lat: -38.7272093, lng: -62.2832636},{lat: -38.7272128, lng: -62.2832655},{lat: -38.7272125, lng: -62.2832038},{lat: -38.7272072, lng: -62.2832408},{lat: -38.7272094, lng: -62.2831144},{lat: -38.7272142, lng: -62.2832587},{lat: -38.7272083, lng: -62.2831352},{lat: -38.7272095, lng: -62.2832979},{lat: -38.7272022, lng: -62.2831554},{lat: -38.7276924, lng: -62.2825615},{lat: -38.7272615, lng: -62.2820757},{lat: -38.7268636, lng: -62.2814407},{lat: -38.7263461, lng: -62.2809351},{lat: -38.7258239, lng: -62.2801442},{lat: -38.725363, lng: -62.2794517},{lat: -38.724835, lng: -62.2788075},{lat: -38.7244117, lng: -62.2784081},{lat: -38.7238443, lng: -62.2778301},{lat: -38.723542, lng: -62.2774832},{lat: -38.7230357, lng: -62.2765603},{lat: -38.7224538, lng: -62.2758369},{lat: -38.722453, lng: -62.275405},{lat: -38.721941, lng: -62.2747373},{lat: -38.7210951, lng: -62.2741933},{lat: -38.7218072, lng: -62.2728623},{lat: -38.7225942, lng: -62.2734},{lat: -38.7225834, lng: -62.2733353},{lat: -38.72255, lng: -62.2733531},{lat: -38.7217938, lng: -62.272644},{lat: -38.7211215, lng: -62.2715425},{lat: -38.7204293, lng: -62.2723082},{lat: -38.7199189, lng: -62.2723657},{lat: -38.7194481, lng: -62.2716323},{lat: -38.7195469, lng: -62.2716331},{lat: -38.7196428, lng: -62.271355},{lat: -38.7193904, lng: -62.2716514},{lat: -38.7193896, lng: -62.2715976},{lat: -38.7186245, lng: -62.2723397},{lat: -38.7187675, lng: -62.2710709},{lat: -38.7186089, lng: -62.2709349},{lat: -38.71839, lng: -62.2706921},{lat: -38.7173446, lng: -62.2716886},{lat: -38.7173406, lng: -62.2716967},{lat: -38.7173465, lng: -62.271688},{lat: -38.7173354, lng: -62.271698},{lat: -38.7173637, lng: -62.2716989},{lat: -38.7170411, lng: -62.2710255},{lat: -38.7165768, lng: -62.2703775},{lat: -38.716184, lng: -62.2700583},{lat: -38.7162054, lng: -62.2698164},{lat: -38.7156787, lng: -62.2697945},{lat: -38.7150444, lng: -62.2705467},{lat: -38.7151599, lng: -62.2704811},{lat: -38.7151456, lng: -62.2703844},{lat: -38.7160102, lng: -62.2694195},{lat: -38.7162697, lng: -62.2689007},{lat: -38.7165346, lng: -62.2684286},{lat: -38.7166512, lng: -62.2684557},{lat: -38.7169066, lng: -62.2685147},{lat: -38.7168574, lng: -62.2684732},{lat: -38.7168353, lng: -62.2685123},{lat: -38.7168913, lng: -62.2683952},{lat: -38.7180647, lng: -62.2677383},{lat: -38.7179881, lng: -62.2680208},{lat: -38.7180059, lng: -62.2680392},{lat: -38.7180133, lng: -62.2681562},{lat: -38.7179849, lng: -62.2690497},{lat: -38.7179699, lng: -62.269048},{lat: -38.7181116, lng: -62.2688923},{lat: -38.7184439, lng: -62.2685065},{lat: -38.71854, lng: -62.2685663},{lat: -38.7186781, lng: -62.2686719},{lat: -38.7187474, lng: -62.2687585},{lat: -38.7191063, lng: -62.2693289},{lat: -38.7194269, lng: -62.2696241},{lat: -38.7199602, lng: -62.2702859},{lat: -38.720458, lng: -62.2708698},{lat: -38.7209255, lng: -62.2716328},{lat: -38.7206431, lng: -62.2719838},{lat: -38.7201265, lng: -62.2723935},{lat: -38.7202694, lng: -62.2726894},{lat: -38.7207736, lng: -62.2733732},{lat: -38.7211635, lng: -62.2737392},{lat: -38.7217469, lng: -62.2742862},{lat: -38.7219513, lng: -62.2750796},{lat: -38.7224474, lng: -62.2758052},{lat: -38.7228706, lng: -62.2761392},{lat: -38.7232864, lng: -62.2767362},{lat: -38.723556, lng: -62.2771042},{lat: -38.7240529, lng: -62.2777756},{lat: -38.7246912, lng: -62.2780552},{lat: -38.7246901, lng: -62.2780555},{lat: -38.7246918, lng: -62.278054},{lat: -38.7246918, lng: -62.278054},{lat: -38.7246912, lng: -62.2780553},{lat: -38.7246403, lng: -62.2781342},{lat: -38.7248891, lng: -62.2787497},{lat: -38.7253184, lng: -62.279414},{lat: -38.7256861, lng: -62.2797688},{lat: -38.7262006, lng: -62.2804405},{lat: -38.7267316, lng: -62.2810816},{lat: -38.7272357, lng: -62.2818699},{lat: -38.7278313, lng: -62.2823706},{lat: -38.7275128, lng: -62.283099},{lat: -38.7273353, lng: -62.2832886}];
+	var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    geodesic: true,
+    strokeColor: '#9800ff',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+	});
+	flightPath.setMap(map)
+		
   calcRoute();
 }
+	
 function calcRoute() {
 	var start;
 	var end;
@@ -116,6 +1418,7 @@ google.maps.event.addDomListener(window, "load", initialize);
 </script>
 </head>
 <body>
+	<div > Vendedor: 4 - PAEZ, RODRIGO </div>
 	<div id="map-canvas" style="float:left;width:70%; height:100%"></div>
 	<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 </body>
