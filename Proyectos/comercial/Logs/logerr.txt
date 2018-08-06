@@ -1,13 +1,3 @@
-19-07-2018 10:46:19 , Objeto      : regfacvta.antesdegrabar
-19-07-2018 10:46:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 10:46:19 , Nº de Linea :          5
-19-07-2018 10:46:19 , En el Fuente: llok = IIF(llok,thisform.validarguarda(),.f.)
-19-07-2018 10:46:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 10:46:19 , Objeto      : regfacvta.validarguarda
-19-07-2018 10:46:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 10:46:19 , Nº de Linea :          9
-19-07-2018 10:46:19 , En el Fuente: IF .tipoform$"F" AND CsrComprobante.clase$'AX'
-19-07-2018 11:02:34 , REGFACVTA.OIMPUESTOS.INIT, Error: La sesión de datos nº 4 no se puede liberar si hay transacciones abiertas.;Linea : oObjImpFac = CREATEOBJECT('collection');Error :       1549;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         2
 
 
 
@@ -27,14 +17,6 @@
 
 
 
-7 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005TS9026P.TMP;Ultimo Control activo: 
-19-07-2018 11:02:34 , Pila de llamadas
-19-07-2018 11:02:34 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-19-07-2018 11:02:34 , Objeto      : regfacvta.oimpuestos.init
-19-07-2018 11:02:34 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-19-07-2018 11:02:34 , Nº de Linea :          3
-19-07-2018 11:02:34 , En el Fuente: oObjImpFac = CREATEOBJECT('collection')
-19-07-2018 11:24:29 , ABMSUCURSAL.LOAD, Error: El archivo 'csrsucursal.dbf' no existe.;Linea : Select CsrSucursal.*,SPACE(6) as cnumero,SPACE(40) as cnombre,SPACE(40) as cdireccion from CsrSucursal where CsrSucursal.id < -1 INTO CURSOR CsrAuxruta READWRI
 
 
 
@@ -42,177 +24,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-TE;Error :          1;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B18P00PH.TMP;Ultimo Control activo: 
-19-07-2018 11:24:29 , Pila de llamadas
-19-07-2018 11:24:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
-19-07-2018 11:24:29 , Objeto      : abmsucursal.load
-19-07-2018 11:24:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
-19-07-2018 11:24:29 , Nº de Linea :          4
-19-07-2018 11:24:29 , En el Fuente: thisform.crearcursor()
-19-07-2018 11:24:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
-19-07-2018 11:24:29 , Objeto      : abmsucursal.crearcursor
-19-07-2018 11:24:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\abmsucursal.sct
-19-07-2018 11:24:29 , Nº de Linea :          2
-19-07-2018 11:24:29 , En el Fuente: Select CsrSucursal.*,SPACE(6) as cnumero,SPACE(40) as cnombre,SPACE(40) as cdireccion from CsrSucursal where CsrSucursal.id < -1 INTO CURSOR CsrAuxruta READWRITE 
-19-07-2018 12:04:57 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la propiedad INCLUYEIVA.;Linea : .incluyeiva = loObjeto.incluyeiva;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS900YB.TMP;Ultimo Control activo: 
-19-07-2018 12:04:57 , Pila de llamadas
-19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:04:57 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
-19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:04:57 , Nº de Linea :          1
-19-07-2018 12:04:57 , En el Fuente: thisform.key_f4Guarda()  
-19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:04:57 , Objeto      : regfacvta.key_f4guarda
-19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:04:57 , Nº de Linea :         11
-19-07-2018 12:04:57 , En el Fuente: lok = thisform.RecuperarGuarda()
-19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:04:57 , Objeto      : regfacvta.recuperarguarda
-19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:04:57 , Nº de Linea :         18
-19-07-2018 12:04:57 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
-19-07-2018 12:04:57 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:04:57 , Objeto      : pidoenguarda.init
-19-07-2018 12:04:57 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:04:57 , Nº de Linea :         10
-19-07-2018 12:04:57 , En el Fuente: 	.incluyeiva = loObjeto.incluyeiva
-19-07-2018 12:05:36 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra el alias 'CSRENGUARDA'.;Linea : SELECT CsrEnGuarda;Error :         13;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ATA\LOCAL\TEMP\00007LS901C2.TMP;Ultimo Control activo: 
-19-07-2018 12:05:36 , Pila de llamadas
-19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:05:36 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
-19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:05:36 , Nº de Linea :          1
-19-07-2018 12:05:36 , En el Fuente: thisform.key_f4Guarda()  
-19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:05:36 , Objeto      : regfacvta.key_f4guarda
-19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:05:36 , Nº de Linea :         11
-19-07-2018 12:05:36 , En el Fuente: lok = thisform.RecuperarGuarda()
-19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:05:36 , Objeto      : regfacvta.recuperarguarda
-19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:05:36 , Nº de Linea :         18
-19-07-2018 12:05:36 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
-19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:05:36 , Objeto      : pidoenguarda.init
-19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:05:36 , Nº de Linea :         19
-19-07-2018 12:05:36 , En el Fuente: 	.iniciarvariables()
-19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:05:36 , Objeto      : pidoenguarda.iniciarvariables
-19-07-2018 12:05:36 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:05:36 , Nº de Linea :          6
-19-07-2018 12:05:36 , En el Fuente: 	.leermovimientos() &&Trae Rem/Fac Pendientes y vincula cursor con Grid.(CsrEnGuarda)
-19-07-2018 12:05:36 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:05:37 , Objeto      : pidoenguarda.leermovimientos
-19-07-2018 12:05:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:05:37 , Nº de Linea :         12
-19-07-2018 12:05:37 , En el Fuente: 	SELECT CsrEnGuarda
-19-07-2018 12:06:13 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la variable 'PREUNITA'.;Linea : .column9.controlsource = 'CsrEnGuarda.preunita';Error :         12;Ultimo Alias Activo: CSRENGUARDA;Ultimo registro:          1 ;DBF: C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007LS901YH.TMP;Ultimo Control activo: 
-19-07-2018 12:06:13 , Pila de llamadas
-19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:06:13 , Objeto      : regfacvta.botoneracabeza.cmdguarda.click
-19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:06:13 , Nº de Linea :          1
-19-07-2018 12:06:13 , En el Fuente: thisform.key_f4Guarda()  
-19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:06:13 , Objeto      : regfacvta.key_f4guarda
-19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:06:13 , Nº de Linea :         11
-19-07-2018 12:06:13 , En el Fuente: lok = thisform.RecuperarGuarda()
-19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:06:13 , Objeto      : regfacvta.recuperarguarda
-19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
-19-07-2018 12:06:13 , Nº de Linea :         18
-19-07-2018 12:06:13 , En el Fuente: DO FORM PidoEnGuarda WITH loObjeto NAME loForm LINKED
-19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:06:13 , Objeto      : pidoenguarda.init
-19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:06:13 , Nº de Linea :         19
-19-07-2018 12:06:13 , En el Fuente: 	.iniciarvariables()
-19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:06:13 , Objeto      : pidoenguarda.iniciarvariables
-19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:06:13 , Nº de Linea :          6
-19-07-2018 12:06:13 , En el Fuente: 	.leermovimientos() &&Trae Rem/Fac Pendientes y vincula cursor con Grid.(CsrEnGuarda)
-19-07-2018 12:06:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:06:13 , Objeto      : pidoenguarda.leermovimientos
-19-07-2018 12:06:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoenguarda.sct
-19-07-2018 12:06:13 , Nº de Linea :         35
-19-07-2018 12:06:13 , En el Fuente:    .column9.controlsource = 'CsrEnGuarda.preunita'
-19-07-2018 12:09:32 , REGFACVTA.BOTONERACABEZA.CMDGUARDA.CLICK, Error: No se encuentra la propiedad CARGARGRID.;Linea : .cargargrid();Error :       1734;Ultimo Alias Activo: CSRENGUARDA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
 
 
 
@@ -279,6 +90,33 @@ ATA\LOCAL\TEMP\00007LS901C2.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00007LS902WH.TMP;Ultimo Control activo: 
 19-07-2018 12:14:32 , Pila de llamadas
 19-07-2018 12:14:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
@@ -307,6 +145,33 @@ ATA\LOCAL\TEMP\00007LS901C2.TMP;Ultimo Control activo:
 19-07-2018 12:14:32 , Nº de Linea :          7
 19-07-2018 12:14:32 , En el Fuente: 	.cargargrid()
 26-07-2018 09:14:06 , MAIN, Error: No se encuentra la variable 'PRECONIVA'.;Linea : lobjprecio.prevtaciva		= CsrProducto.preconiva;Error :         12;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:          4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -373,6 +238,33 @@ ATA\LOCAL\TEMP\00007LS901C2.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo Control activo: 
 26-07-2018 14:53:42 , Pila de llamadas
 26-07-2018 14:53:42 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
@@ -381,6 +273,33 @@ Ultimo Control activo:
 26-07-2018 14:53:42 , Nº de Linea :         90
 26-07-2018 14:53:42 , En el Fuente: 	IF goapp.codempreasa = 1
 26-07-2018 14:54:42 , REGFACVTA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS, Error: No se encuentra la propiedad FUNC_ENGUARDA.;Linea : .botoneracuerpo.cmdSalvarGuarda.Visible = IIF(this.func_enguarda, .t.,.f.);Error :       1734;Ultimo Alias Activo: CSRAUXCU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -418,6 +337,33 @@ ERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
 26-07-2018 14:54:42 , Nº de Linea :         17
 26-07-2018 14:54:42 , En el Fuente: 		.botoneracuerpo.cmdSalvarGuarda.Visible = IIF(this.func_enguarda, .t.,.f.)
 26-07-2018 15:11:25 , REGFACVTA.CONTAINERINGRESO._TXTLOSTFOCUS.GOTFOCUS, Error: No se encuentra la variable 'VALORCUERPO'.;Linea : thisform.botoneraCabeza.cmdguarda.Visible	= IIF(this.func_enguarda,!valorCuerpo,.f.);Error :         12;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -476,6 +422,33 @@ ERFAC;Ultimo registro:          1 IDMAOPERA;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD00EK.TMP;Ultimo Control activo: 
 01-08-2018 10:29:31 , Pila de llamadas
 01-08-2018 10:29:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -489,6 +462,33 @@ registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD00EK.TMP;Ul
 01-08-2018 10:29:31 , Nº de Linea :          2
 01-08-2018 10:29:31 , En el Fuente: SELECT Csrmovcheque.* FROM Csrmovcheque WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMov READWRITE 
 01-08-2018 10:30:02 , ON..., Error: Error al cargar el archivo - número de registro 26. Grid2  <o uno de sus miembros>.  ControlSource : No se encuentra la variable 'USUARIO';Linea : SELECT Csrmovcheque.* FROM Csrmovcheque WHERE RECNO()=1 AND id=0 INTO C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -530,9 +530,63 @@ URSOR CsrAuxMov READWRITE;Error :       2005;Ultimo Alias Activo: ;Ultimo regist
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 URSOR CsrAuxMov READWRITE;Error :       2005;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 01-08-2018 10:31:41 , Pila de llamadas
 01-08-2018 10:34:12 , REGMOVCHEQUE.INIT, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRAUXPIE;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD00II.TMP;Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -599,6 +653,33 @@ o Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Control activo: 
 01-08-2018 10:34:56 , Pila de llamadas
 01-08-2018 10:34:56 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -627,6 +708,33 @@ o Control activo:
 01-08-2018 10:34:56 , Nº de Linea :         19
 01-08-2018 10:34:56 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
 01-08-2018 10:35:40 , REGMOVCHEQUE.INIT, Error: No se encuentra la variable 'USUARIO'.;Linea : thisform.grid2.column3.ControlSource = "CsrAuxiliar.usuario";Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -683,6 +791,33 @@ IN\APPDATA\LOCAL\TEMP\000077RD00LI.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD00UN.TMP;Ultimo Control activo: 
 01-08-2018 10:44:33 , Pila de llamadas
 01-08-2018 10:44:33 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -710,6 +845,33 @@ IN\APPDATA\LOCAL\TEMP\000077RD00LI.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD00VH.TMP;Ultimo Control activo: 
 01-08-2018 10:45:26 , Pila de llamadas
 01-08-2018 10:45:26 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -718,6 +880,33 @@ IN\APPDATA\LOCAL\TEMP\000077RD00LI.TMP;Ultimo Control activo:
 01-08-2018 10:45:26 , Nº de Linea :          1
 01-08-2018 10:45:26 , En el Fuente: this.controlsource=this.parent.controlsourcetxtid
 01-08-2018 10:49:05 , REGMOVCHEQUE.CONTAINERPIE.KITBUSCAOALTAENCTATITULAR.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -774,6 +963,33 @@ N\APPDATA\LOCAL\TEMP\000077RD019O.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\000077RD01PV.TMP;Ultimo Control activo: 
 01-08-2018 10:57:25 , Pila de llamadas
 01-08-2018 10:57:25 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -787,6 +1003,33 @@ CAL\TEMP\000077RD01PV.TMP;Ultimo Control activo:
 01-08-2018 10:57:25 , Nº de Linea :         15
 01-08-2018 10:57:25 , En el Fuente: thisform.containerpie.txtfecha.value=DATE()
 01-08-2018 11:01:55 , REGMOVCHEQUE.CONTAINERPIE.CMDACEPTARCHETERCERO.CLICK, Error: No se encuentra la propiedad PROXIMOPAGO.;Linea : thisform.proximopago;Error :       1734;Ultimo Alias Activo: CSRVALIDAR3RO;Ultimo registro:          1 ;DBF: C:\USERS\ADM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -833,6 +1076,33 @@ IN\APPDATA\LOCAL\TEMP\000077RD0224.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\000077RD02HX.TMP;Ultimo Control activo: 
 01-08-2018 11:17:49 , Pila de llamadas
 01-08-2018 11:17:49 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -860,6 +1130,33 @@ OCAL\TEMP\000077RD02HX.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD033J.TMP;Ultimo Control activo: 
 01-08-2018 11:24:13 , Pila de llamadas
 01-08-2018 11:24:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -868,6 +1165,33 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD033J.TMP;Ultimo Control activo:
 01-08-2018 11:24:13 , Nº de Linea :          1
 01-08-2018 11:24:13 , En el Fuente: thisform.grid1_borrarlinea()
 01-08-2018 11:40:53 , REGMOVCHEQUE.CONTAINERPIE.KITBUSCAOALTAENPROVINCIA.LOSTFOCUS, Error: No se encuentra la variable 'PROVINCIA'.;Linea : replace provincia WITH IIF(CsrPago.idprovincia#0,CsrProvBanco.nombre,this.txtnombre.Value) IN CsrPago;Error :     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -919,7 +1243,61 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD033J.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 WITH CsrPago.idprovincia,idlocalidad WITH CsrPago.idlocalidad ,entregado WITH CsrPago.entregado, idctaentregado WITH CsrPago.idctaentregado IN CsrAuxiliar;Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -970,8 +1348,62 @@ N\APPDATA\LOCAL\TEMP\000077RD054A.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ntregado, idctaentregado WITH CsrPago.idctaentregado IN CsrAuxiliar
 01-08-2018 11:43:27 , REGMOVCHEQUE.LOAD, Error: El archivo 'csrmovcheque.dbf' no existe.;Linea : SELECT Csrmovcheque.* FROM Csrmovcheque WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMov READWRITE;Error :          1;Ultimo Alias Activo: CSRPARACONTA;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1023,6 +1455,33 @@ registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD059L.TMP;Ul
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD05AQ.TMP;Ultimo Control activo: 
 01-08-2018 11:43:47 , Pila de llamadas
 01-08-2018 11:43:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -1055,9 +1514,63 @@ registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD05AQ.TMP;Ul
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SOR CsrAuxMov READWRITE;Error :       2005;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 01-08-2018 11:46:28 , Pila de llamadas
 01-08-2018 11:46:57 , REGMOVCHEQUE.CONTAINERENCABEZA.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'BANCO'.;Linea : thisform.grid2.column5.ControlSource = "CsrAuxiliar.banco";Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1109,6 +1622,33 @@ SOR CsrAuxMov READWRITE;Error :       2005;Ultimo Alias Activo: ;Ultimo registro
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\000077RD05XB.TMP;Ultimo Control activo: 
 01-08-2018 11:53:37 , Pila de llamadas
 01-08-2018 11:53:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -1117,6 +1657,33 @@ OCAL\TEMP\000077RD05XB.TMP;Ultimo Control activo:
 01-08-2018 11:53:37 , Nº de Linea :         52
 01-08-2018 11:53:37 , En el Fuente: 	IF RECCOUNT('CsrValidar3ro')#0
 01-08-2018 11:55:38 , REGMOVCHEQUE.CONTAINERPIE.CMDACEPTARCHETERCERO.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrValidar3ro')#0;Error :         13;Ultimo Alias Activo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1163,6 +1730,33 @@ OCAL\TEMP\000077RD062H.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\000077RD06D1.TMP;Ultimo Control activo: 
 01-08-2018 11:56:59 , Pila de llamadas
 01-08-2018 11:56:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -1171,6 +1765,33 @@ OCAL\TEMP\000077RD06D1.TMP;Ultimo Control activo:
 01-08-2018 11:56:59 , Nº de Linea :         53
 01-08-2018 11:56:59 , En el Fuente: 	IF RECCOUNT('CsrValidar3ro')#0
 01-08-2018 11:57:45 , REGMOVCHEQUE.CONTAINERPIE.CMDACEPTARCHETERCERO.CLICK, Error: No se encuentra el alias 'CSRAUXPIE'.;Linea : IF EOF() OR id#CsrAuxpie.id OR id=0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1222,7 +1843,61 @@ USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD06KK.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ia WITH CsrPago.idprovincia,idlocalidad WITH CsrPago.idlocalidad ,entregado WITH CsrPago.entregado, idctaentregado WITH CsrPago.idctaentregado IN CsrAuxiliar;Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1273,8 +1948,62 @@ DMIN\APPDATA\LOCAL\TEMP\000077RD06PH.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ntregado, idctaentregado WITH CsrPago.idctaentregado IN CsrAuxiliar
 01-08-2018 12:24:00 , REGMOVCHEQUE.CMDINSERT.CLICK, Error: No se encuentra la variable 'EDITADO'.;Linea : replace numero WITH numero + 1,idlocalidad WITH CsrLocaBanco.id,idprovincia WITH CsrProvBanco.id,editado WITH 1;Error :         12;Ultimo Alias Acti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1326,6 +2055,33 @@ vo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 vo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD098K.TMP;Ultimo Control activo: 
 01-08-2018 12:24:58 , Pila de llamadas
 01-08-2018 12:24:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -1339,6 +2095,33 @@ vo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
 01-08-2018 12:24:58 , Nº de Linea :          5
 01-08-2018 12:24:58 , En el Fuente: replace numero WITH numero + 1,idlocalidad WITH CsrLocaBanco.id,idprovincia WITH CsrProvBanco.id,editado WITH 1
 01-08-2018 12:26:00 , REGMOVCHEQUE.CONTAINERPIE.CMDACEPTARCHETERCERO.CLICK, Error: No se encuentra la variable 'EDITADO'.;Linea : replace editado WITH 1 IN CsrAuxiliar;Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          3 ;DBF: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1390,6 +2173,33 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD09DT.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo Control activo: 
 01-08-2018 12:31:37 , Pila de llamadas
 01-08-2018 12:31:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -1403,6 +2213,33 @@ imo Control activo:
 01-08-2018 12:31:37 , Nº de Linea :         12
 01-08-2018 12:31:37 , En el Fuente: GATHER NAME Oscatter
 01-08-2018 13:02:07 , REGMOVCHEQUE.GRID2.KEYPRESS, Error: Desbordamiento numérico (se han perdido datos).;Linea : GATHER NAME Oscatter FIELDS EXCEPT id;Error :         39;Ultimo Alias Activo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1450,6 +2287,33 @@ TA\LOCAL\TEMP\000077RD0CFW.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AR;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD0CHH.TMP;Ultimo Control activo: 
 01-08-2018 13:02:11 , Pila de llamadas
 01-08-2018 13:02:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\bancario\regmovcheque.sct
@@ -1463,6 +2327,33 @@ AR;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000077RD0
 01-08-2018 13:02:13 , Nº de Linea :         14
 01-08-2018 13:02:13 , En el Fuente: replace idmaopera WITH Oscatter.registro,lccuit WITH Oscatter.cuit,nrocheque WITH Oscatter.numero
 01-08-2018 13:04:28 , REGMOVCHEQUE.GRID2.KEYPRESS, Error: Desbordamiento numérico (se han perdido datos).;Linea : GATHER NAME Oscatter FIELDS EXCEPT id;Error :         39;Ultimo Alias Activo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1497,6 +2388,33 @@ TA\LOCAL\TEMP\000077RD0CSB.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009GJT04WE.TMP;Ultimo Control activo: 
 06-08-2018 09:37:15 , Pila de llamadas
 06-08-2018 09:37:15 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
@@ -1505,6 +2423,33 @@ TA\LOCAL\TEMP\000077RD0CSB.TMP;Ultimo Control activo:
 06-08-2018 09:37:16 , Nº de Linea :          3
 06-08-2018 09:37:16 , En el Fuente: oObjImpFac = CREATEOBJECT('collection')
 06-08-2018 09:40:30 , REGFACVTA.CONTAINERENCABEZA._CBOPTOVTA.LOSTFOCUS, Error: No se encuentra la variable 'CTALONARIO'.;Linea : IF this.accion='R' AND this.talonario<>VAL(cTalonario);Error :         12;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1526,3 +2471,148 @@ TA\LOCAL\TEMP\000077RD0CSB.TMP;Ultimo Control activo:
 06-08-2018 09:40:33 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_09.sct
 06-08-2018 09:40:33 , Nº de Linea :         43
 06-08-2018 09:40:34 , En el Fuente: 	IF this.accion='R' AND this.talonario<>VAL(cTalonario)
+06-08-2018 12:03:12 , REGFACVTA.KEYPRESS, Error: No se encuentra el alias 'CSRREMFAC'.;Linea : SELECT CsrRemFac;Error :         13;Ultimo Alias Activo: CSRPARAVARIO;Ultimo registro:         76 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004T1L01Y4.TMP;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mo Control activo: 
+06-08-2018 12:03:12 , Pila de llamadas
+06-08-2018 12:03:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 12:03:12 , Objeto      : regfacvta.keypress
+06-08-2018 12:03:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 12:03:13 , Nº de Linea :        143
+06-08-2018 12:03:13 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+06-08-2018 12:03:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 12:03:13 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+06-08-2018 12:03:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 12:03:14 , Nº de Linea :          9
+06-08-2018 12:03:14 , En el Fuente: 	thisform.llamarpidoremito()
+06-08-2018 12:03:14 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 12:03:14 , Objeto      : regfacvta.llamarpidoremito
+06-08-2018 12:03:14 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 12:03:14 , Nº de Linea :         11
+06-08-2018 12:03:14 , En el Fuente: DO FORM pidoremito_1 NAME loFormabmprecio WITH this.lniddeposito,nCotizador,this.lnidcompremito LINKED
+06-08-2018 12:03:15 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+06-08-2018 12:03:15 , Objeto      : pidoremito.container2.kitbuscaoaltaenctacte.lostfocus
+06-08-2018 12:03:16 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+06-08-2018 12:03:16 , Nº de Linea :         25
+06-08-2018 12:03:16 , En el Fuente: this.lostfocosay()
+06-08-2018 12:03:16 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:16 , Objeto      : pidoremito.container2.kitbuscaoaltaenctacte.lostfocosay
+06-08-2018 12:03:16 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:16 , Nº de Linea :          5
+06-08-2018 12:03:16 , En el Fuente: 	thisform.entercodigo()
+06-08-2018 12:03:17 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:17 , Objeto      : pidoremito.entercodigo
+06-08-2018 12:03:17 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:18 , Nº de Linea :         24
+06-08-2018 12:03:18 , En el Fuente: thisform.iniciarvariables
+06-08-2018 12:03:18 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:18 , Objeto      : pidoremito.iniciarvariables
+06-08-2018 12:03:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:19 , Nº de Linea :          7
+06-08-2018 12:03:19 , En el Fuente: 	.leermovimientos() &&Trae Rem/Fac Pendientes y vincula cursor con Grid.(CsrRemFac)
+06-08-2018 12:03:19 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:19 , Objeto      : pidoremito.leermovimientos
+06-08-2018 12:03:19 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 12:03:19 , Nº de Linea :         36
+06-08-2018 12:03:20 , En el Fuente: 		SELECT CsrRemFac
+06-08-2018 14:31:11 , REGFACVTA.KEYPRESS, Error: No se encuentra la variable 'CANTIDAD'.;Linea : nCantidad	= CsrRemFac.cantidad;Error :         12;Ultimo Alias Activo: CSRREMFAC;Ultimo registro:         16 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008XZD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+062D.TMP;Ultimo Control activo: SDOCANT
+06-08-2018 14:31:11 , Pila de llamadas
+06-08-2018 14:31:11 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 14:31:11 , Objeto      : regfacvta.keypress
+06-08-2018 14:31:11 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 14:31:11 , Nº de Linea :        143
+06-08-2018 14:31:12 , En el Fuente: 	   			    		this.BotoneraCuerpo.cmdPidoRemito.Click()
+06-08-2018 14:31:12 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 14:31:12 , Objeto      : regfacvta.botoneracuerpo.cmdpidoremito.click
+06-08-2018 14:31:12 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 14:31:12 , Nº de Linea :          9
+06-08-2018 14:31:12 , En el Fuente: 	thisform.llamarpidoremito()
+06-08-2018 14:31:13 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 14:31:13 , Objeto      : regfacvta.llamarpidoremito
+06-08-2018 14:31:13 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_08.sct
+06-08-2018 14:31:13 , Nº de Linea :         11
+06-08-2018 14:31:14 , En el Fuente: DO FORM pidoremito_1 NAME loFormabmprecio WITH this.lniddeposito,nCotizador,this.lnidcompremito LINKED
+06-08-2018 14:31:14 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:31:14 , Objeto      : pidoremito.keypress
+06-08-2018 14:31:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:31:15 , Nº de Linea :         75
+06-08-2018 14:31:15 , En el Fuente: 				thisform.actualizatotal
+06-08-2018 14:31:15 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:31:15 , Objeto      : pidoremito.actualizatotal
+06-08-2018 14:31:15 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:31:15 , Nº de Linea :         11
+06-08-2018 14:31:16 , En el Fuente: nCantidad	= CsrRemFac.cantidad
+06-08-2018 14:31:59 , PIDOREMITO.CONTAINER2.KITBUSCAOALTAENCTACTE.LOSTFOCUS, Error: No se encuentra el alias 'CSRPARAVARIO'.;Linea : SELECT CsrParavario;Error :         13;Ultimo Alias Activo: CSRAUXCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN
+
+
+
+
+
+
+\APPDATA\LOCAL\TEMP\00008XZD063I.TMP;Ultimo Control activo: 
+06-08-2018 14:31:59 , Pila de llamadas
+06-08-2018 14:31:59 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+06-08-2018 14:31:59 , Objeto      : pidoremito.container2.kitbuscaoaltaenctacte.lostfocus
+06-08-2018 14:31:59 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+06-08-2018 14:31:59 , Nº de Linea :         25
+06-08-2018 14:32:00 , En el Fuente: this.lostfocosay()
+06-08-2018 14:32:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:00 , Objeto      : pidoremito.container2.kitbuscaoaltaenctacte.lostfocosay
+06-08-2018 14:32:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:01 , Nº de Linea :          5
+06-08-2018 14:32:01 , En el Fuente: 	thisform.entercodigo()
+06-08-2018 14:32:01 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:02 , Objeto      : pidoremito.entercodigo
+06-08-2018 14:32:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:02 , Nº de Linea :         24
+06-08-2018 14:32:02 , En el Fuente: thisform.iniciarvariables
+06-08-2018 14:32:02 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:02 , Objeto      : pidoremito.iniciarvariables
+06-08-2018 14:32:02 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:03 , Nº de Linea :          6
+06-08-2018 14:32:03 , En el Fuente: 	.leerparametros()
+06-08-2018 14:32:03 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:03 , Objeto      : pidoremito.leerparametros
+06-08-2018 14:32:04 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoremito_1.sct
+06-08-2018 14:32:04 , Nº de Linea :          3
+06-08-2018 14:32:04 , En el Fuente: 	SELECT CsrParavario
