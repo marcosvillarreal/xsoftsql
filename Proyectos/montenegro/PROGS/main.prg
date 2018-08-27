@@ -49,7 +49,7 @@ cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\distribuidora\'
+   lcdd=L+'\xsoftsql\proyectos\montenegro\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
