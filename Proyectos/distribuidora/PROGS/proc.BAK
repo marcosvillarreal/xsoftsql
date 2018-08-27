@@ -1513,6 +1513,7 @@ IF lok
    Goapp.empresautisobreflete	= IIF(CsrEmpresa.utisobreflete=1,.t.,.f.)
    Goapp.empresautisobreinterno = IIF(CsrEmpresa.utisobreinterno=1,.t.,.f.)
 	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
+	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 ENDIF
    
 IF USED("Csrseteotermi")
