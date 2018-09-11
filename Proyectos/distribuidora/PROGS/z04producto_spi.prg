@@ -38,17 +38,17 @@ ENDIF
 SET SAFETY ON
 Oavisar.proceso('S','Abriendo archivos') 
 
+*stop()
 
-*USE ALLTRIM(lcpath )+"\seccion" IN 0 ALIAS CsrSeccion EXCLUSIVE 
+USE ALLTRIM(lcpath )+"\seccion" IN 0 ALIAS CsrSeccion EXCLUSIVE 
 
-*USE  ALLTRIM(lcpath )+"\gestion\proveed" in 0 alias CsrAcreedor EXCLUSIVE
+USE  ALLTRIM(lcpath )+"\proveed" in 0 alias CsrAcreedor EXCLUSIVE
 
 USE  ALLTRIM(lcpath )+"\articulo" in 0 alias CsrArticulo EXCLUSIVE	
 
-*USE ALLTRIM(lcpath )+"\marca" in 0 alias CsrmarcaVie EXCLUSIVE
+USE ALLTRIM(lcpath )+"\marcas" in 0 alias CsrmarcaVie EXCLUSIVE
 
 USE ALLTRIM(lcpath )+"\deposito" IN 0 ALIAS CsrdepositoVie EXCLUSIVE
-
 
 USE ALLTRIM(lcpath )+"\codbarra" IN 0 ALIAS CsrCodBarra EXCLUSIVE
 
@@ -60,50 +60,50 @@ SELECT CsrFuerzaVta
 GO TOP 
 lnidfuerzavta = CsrFuerzavta.id
 
-*!*	lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
+lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
 
-*!*	SELECT CsrSeccion
-*!*	Oavisar.proceso('S','Procesando '+alias()) 
-*!*	GO top
-*!*	SCAN FOR !EOF()
-*!*	      
-*!*	        lntipoprod = 1100000001 && IIF(Csrseccion.pideauto="S",2,1)
-*!*	        lntipovta   = 1100000001 &&IIF(Csrseccion.clase="L",2,1)
-*!*	        lnretibruto = 1 &&IIF(CsrSeccion.perceib="S",1,0)
-*!*	        lnolista = 0 &&IIF(CsrSeccion.estado='I',1,0)
-*!*	        lnporcecomi = 0&&IIF(!EMPTY(STR(CsrSeccion.comision)),CsrSeccion.comision,0)
-*!*	        lnporcedev = 0&&IIF(!EMPTY(STR(CsrSeccion.porcedev)),CsrSeccion.porcedev,0)
-*!*	        lnporcesuge = 0&&IIF(!EMPTY(STR(CsrSeccion.porsuge)),CsrSeccion.porsuge,0) 
-*!*	        lntasavied = 0&&IIF(!EMPTY(STR(CsrSeccion.tasa)),CsrSeccion.tasa,0)
-*!*	        lntasapata = 0&&IIF(!EMPTY(STR(CsrSeccion.tasapata)),CsrSeccion.tasapata,0)
-*!*		   	lcnombre=NombreNi(ALLTRIM(UPPER(CsrSeccion.nombre)))
-*!*	                             
-*!*	       	INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta,nolista;
-*!*	       					,porcecomi,porcesuge,porcedev,tasavied,tasapata) ;
-*!*	       	VALUES (lnid,CsrSeccion.numero,lcnombre,lntipoprod,lntipovta,lnretibruto,lnidfuerzavta,lnolista;
-*!*	       					,lnporcecomi,lnporcesuge,lnporcedev,lntasavied,lntasapata)
-*!*	       	lnid = lnid + 1
+SELECT CsrSeccion
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+      
+        lntipoprod = 1100000001 && IIF(Csrseccion.pideauto="S",2,1)
+        lntipovta   = 1100000001 &&IIF(Csrseccion.clase="L",2,1)
+        lnretibruto = 1 &&IIF(CsrSeccion.perceib="S",1,0)
+        lnolista = 0 &&IIF(CsrSeccion.estado='I',1,0)
+        lnporcecomi = 0&&IIF(!EMPTY(STR(CsrSeccion.comision)),CsrSeccion.comision,0)
+        lnporcedev = 0&&IIF(!EMPTY(STR(CsrSeccion.porcedev)),CsrSeccion.porcedev,0)
+        lnporcesuge = 0&&IIF(!EMPTY(STR(CsrSeccion.porsuge)),CsrSeccion.porsuge,0) 
+        lntasavied = 0&&IIF(!EMPTY(STR(CsrSeccion.tasa)),CsrSeccion.tasa,0)
+        lntasapata = 0&&IIF(!EMPTY(STR(CsrSeccion.tasapata)),CsrSeccion.tasapata,0)
+	   	lcnombre=NombreNi(ALLTRIM(UPPER(CsrSeccion.nombre)))
+                             
+       	INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta,nolista;
+       					,porcecomi,porcesuge,porcedev,tasavied,tasapata) ;
+       	VALUES (lnid,CsrSeccion.numero,lcnombre,lntipoprod,lntipovta,lnretibruto,lnidfuerzavta,lnolista;
+       					,lnporcecomi,lnporcesuge,lnporcedev,lntasavied,lntasapata)
+       	lnid = lnid + 1
 
-*!*	ENDSCAN
+ENDSCAN
 
 
-*!*	lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
+lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
 
-*!*	SELECT CsrMarcaVie
-*!*	Oavisar.proceso('S','Procesando '+alias()) 
-*!*	GO top
-*!*	SCAN FOR !EOF()
-*!*	*!*	    IF delogico
-*!*	*!*	       LOOP 
-*!*	*!*	    ENDIF 
-*!*	 	lnporceflete = 0
-*!*	 	lnporceflete2 = 0
-*!*	  	lcnombre=NombreNi(ALLTRIM(UPPER(CsrMarcaVie.nombre)))
-*!*	   
-*!*	   	INSERT INTO Csrmarca (id,numero,nombre,flete,flete2,idfuerzavta);
-*!*	   	VALUES (lnid,CsrMarcaVie.numero,lcnombre,lnporceflete,lnporceflete2,lnidfuerzavta)
-*!*	   	lnid = lnid + 1
-*!*	ENDSCAN
+SELECT CsrMarcaVie
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+*!*	    IF delogico
+*!*	       LOOP 
+*!*	    ENDIF 
+ 	lnporceflete = 0
+ 	lnporceflete2 = 0
+  	lcnombre=NombreNi(ALLTRIM(UPPER(CsrMarcaVie.nombre)))
+   
+   	INSERT INTO Csrmarca (id,numero,nombre,flete,flete2,idfuerzavta);
+   	VALUES (lnid,CsrMarcaVie.numero,lcnombre,lnporceflete,lnporceflete2,lnidfuerzavta)
+   	lnid = lnid + 1
+ENDSCAN
 
 
 &&&&UBICACIONES
@@ -138,7 +138,7 @@ SCAN FOR !EOF()
 	lcCodBarra = ""
 	
     SELECT CsrCtacte
-    LOCATE FOR cnumero=LTRIM(STR(10000+Csrarticulo.proveedor))
+    LOCATE FOR cnumero=LTRIM(STR(1000+Csrarticulo.proveedor))
     IF FOUND()
     	lnidctacte = Csrctacte.id
     ENDIF
@@ -161,11 +161,11 @@ SCAN FOR !EOF()
        lnidmarca = CsrMarca.id
     ENDIF
 	
-	SELECT CsrCodBarra
-	LOCATE FOR numero = CsrArticulo.numero
-	IF FOUND()
-		lcCodBarra = strtrim(CsrCodBarra.codbarra,13)
-	ENDIF 
+*!*		SELECT CsrCodBarra
+*!*		LOCATE FOR numero = CsrArticulo.numero
+*!*		IF FOUND()
+*!*			lcCodBarra = strtrim(CsrCodBarra.codbarra,13)
+*!*		ENDIF 
 	
 	SELECT CsrUbicacion
 	GO TOP 
@@ -314,39 +314,83 @@ SCAN FOR !EOF()
 
 ENDSCAN
 
-*!*	LOCAL lnidsub,lnidblo
-*!*	lnidsub = RecuperarID('CsrSubProducto',Goapp.sucursal10)
-*!*	lnidblo = RecuperarID('CsrBloqueoProd',Goapp.sucursal10)
+LOCAL lnidsub,lnidblo
+lnidsub = RecuperarID('CsrSubProducto',Goapp.sucursal10)
+lnidvari = RecuperarID('CsrVariedad',Goapp.sucursal10)
+nCodVari = 1
+*lnidblo = RecuperarID('CsrBloqueoProd',Goapp.sucursal10)
 
-*!*			
-*!*	SELECT distinct numero,sabor FROM CsrSubArticulo WHERE sabor<>0 INTO CURSOR 'CsrAux2' ORDER BY numero, sabor
-*!*	SELECT CsrSubproducto
-*!*	Oavisar.proceso('S','Procesando '+alias())
-*!*	SELECT CsrAux2
-*!*	SCAN
-*!*		SELECT CsrProducto
-*!*		LOCATE FOR numero = CsrAux2.numero
-*!*		IF FOUND() AND numero = CsrAux2.numero
-*!*			lnidart=CsrProducto.id
-*!*			lnnum=CsrProducto.numero
-*!*			SELECT CsrVariedad
-*!*			LOCATE FOR numero = CsrAux2.sabor
-*!*			IF FOUND()
-*!*				lnidvari=CsrVariedad.id
-*!*				lnsubnum=CsrVariedad.numero
-*!*				lcnom=CsrVariedad.nombre
-*!*				
-*!*				INSERT INTO SubProducto (id,idarticulo,numero,subnumero,idvariedad,nombre,codigo,troquel,nofactura,estado);
-*!*				VALUES (lnidsub,lnidart,lnnum,lnsubnum,lnidvari,lcnom,"0","00000000",0,0)
-*!*				
-*!*				lnidsub=lnidsub+1
-*!*				*lnidsubs = VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STR(lnidsub)))
-*!*			ENDIF
-*!*			
-*!*		ENDIF
-*!*		SELECT Csraux2
-*!*		
-*!*	ENDSCAN
+		
+SELECT distinct numero,codbarra FROM CsrCodBarra INTO CURSOR 'CsrAux2' ORDER BY numero
+Oavisar.proceso('S','Procesando '+alias())
+
+*stop()
+
+SELECT CsrProducto
+GO TOP 
+SCAN 
+	lnidart = CsrProducto.id
+	
+	SELECT CsrAux2
+	COUNT ALL FOR numero = CsrProducto.numero TO nSabores
+	LOCATE FOR numero = CsrProducto.numero 
+	
+	cCodBarra = strtrim(CsrAux2.codbarra,13)
+	
+	IF nSabores = 1
+		replace codbarra13 WITH cCodBarra IN CsrProducto
+	
+	ELSE 
+		
+		DO WHILE NOT EOF() AND numero = CsrProducto.numero
+		
+			cCodBarra = strtrim(CsrAux2.codbarra,13)
+			
+			SELECT CsrVariedad
+			GO TOP 
+			lEncontrado = .f.
+			lnidvariedad = 0
+			DO WHILE NOT EOF() AND NOT lEncontrado
+				lnidvariedad = CsrVariedad.id
+				SELECT CsrSubProducto
+				LOCATE FOR idvariedad = lnidvariedad AND idarticulo = lnidart
+				IF NOT FOUND()
+					lEncontrado = .t.
+				ENDIF 
+				SELECT CsrVariedad
+				SKIP				
+			ENDDO
+			&&Si idvariedad = 0, debemos insertar una nueva 
+			IF NOT lEncontrado
+				lcnombre	= "SABOR "+STR(nCodVari,3)
+
+				INSERT INTO CsrVariedad (id,numero,nombre,tag);
+				VALUES (lnidvari,nCodVari,lcnombre,"00000000")
+				lnidvariedad = lnidvari
+				
+				lnidvari = lnidvari + 1
+				nCodVari = nCodVari + 1
+			ENDIF 
+			SELECT CsrVariedad
+			LOCATE FOR id = lnidvariedad
+			
+			lnsubnum	= CsrVariedad.numero
+			lcnom		= CsrVariedad.nombre
+			
+			INSERT INTO SubProducto (id,idarticulo,numero,subnumero,idvariedad,nombre,codigo,nofactura,estado);
+			VALUES (lnidsub,lnidart,CsrProducto.numero,lnsubnum,lnidvariedad,lcnom,cCodbarra,0,0)
+			
+			lnidsub=lnidsub+1
+			
+			SELECT CsrAux2
+			SKIP 
+			
+		ENDDO 
+		
+	ENDIF
+	SELECT CsrProducto
+	
+ENDSCAN
 *!*	SELECT CsrNoventa
 *!*	Oavisar.proceso('S','Procesando '+alias())
 *!*	SCAN

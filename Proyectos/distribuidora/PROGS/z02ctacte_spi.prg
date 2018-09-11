@@ -31,7 +31,7 @@ Oavisar.proceso('S','Abriendo archivos')
 
 USE  ALLTRIM(lcpath)+"\clientes" in 0 alias CsrDeudorViej EXCLUSIVE
 
-*!*	USE  ALLTRIM(lcpath)+"\proveed" in 0 alias CsrAcreedor EXCLUSIVE
+USE  ALLTRIM(lcpath)+"\proveed" in 0 alias CsrAcreedor EXCLUSIVE
 
 *!*	USE ALLTRIM(lcpath)+"\gestion\localida" in 0 alias CsrLocalidadViejo EXCLUSIVE
 
@@ -260,106 +260,106 @@ IF LEN(LTRIM(cCadeCtacte)) != 0
 	=oavisar.usuario("No se grabaron algunas clientes, porque estan duplicados"+CHR(13)+cCadeCtacte,0)
 ENDIF 
 
-*!*	SELECT CsrAcreedor
-*!*	cCadeCtacte = "" 
-*!*	Oavisar.proceso('S','Procesando '+alias()) 
-*!*	GO  TOP 
-*!*	SCAN 
+SELECT CsrAcreedor
+cCadeCtacte = "" 
+Oavisar.proceso('S','Procesando '+alias()) 
+GO  TOP 
+SCAN 
 
-*!*	 	
-*!*			SELECT CsrCtacte
-*!*			LOCATE FOR cnumero=LTRIM(STR(10000+CsrAcreedor.numero))
-*!*			IF FOUND()
-*!*				cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + STRtrim(CsrAcreedor.numero,10) 
-*!*				SELECT  CsrAcreedor
-*!*				LOOP
-*!*			ENDIF
-*!*			SELECT CsrAcreedor
-*!*			lcLocalidadBuscada = CsrAcreedor.Localidad
-*!*			lcLocalidadBuscada = Ciudades(lcLocalidadBuscada )
-*!*			
-*!*			lnidlocalidad =	 VAL(str(11,2)+strzero(6,lntamloc))
-*!*			lnidprovincia =	 VAL(str(11,2)+strzero(2,lntamprov))
-*!*			lccp			 = ""
-*!*			SELECT CsrLocalidad
-*!*			LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
-*!*			IF FOUND()
-*!*				lnidlocalidad = CsrLocalidad.id
-*!*				lnidprovincia = CsrLocalidad.idprovincia
-*!*				lccp = CsrLocalidad.cpostal
-*!*			ENDIF
-*!*			
-*!*			SELECT CsrAcreedor
-*!*			lntipoiva = tipocuit
-*!*			IF lntipoiva=7
-*!*				lntipoiva = 5
+ 	
+		SELECT CsrCtacte
+		LOCATE FOR cnumero=LTRIM(STR(1000+CsrAcreedor.numero))
+		IF FOUND()
+			cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + STRtrim(CsrAcreedor.numero,10) 
+			SELECT  CsrAcreedor
+			LOOP
+		ENDIF
+		SELECT CsrAcreedor
+		lcLocalidadBuscada = CsrAcreedor.Localidad
+		lcLocalidadBuscada = Ciudades(lcLocalidadBuscada )
+		
+		lnidlocalidad =	 VAL(str(11,2)+strzero(6,lntamloc))
+		lnidprovincia =	 VAL(str(11,2)+strzero(2,lntamprov))
+		lccp			 = ""
+		SELECT CsrLocalidad
+		LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
+		IF FOUND()
+			lnidlocalidad = CsrLocalidad.id
+			lnidprovincia = CsrLocalidad.idprovincia
+			lccp = CsrLocalidad.cpostal
+		ENDIF
+		
+		SELECT CsrAcreedor
+		lntipoiva = tipocuit
+		IF lntipoiva=7
+			lntipoiva = 5
+		ENDIF 
+		IF lntipoiva=3
+			lncuit=''
+		ENDIF
+		lnidcateibrng =0
+		
+		lnidcategoria = 2
+		SELECT CsrCateCtacte
+		LOCATE FOR numero=lnidcategoria
+		lnidcategoria = CsrCateCtacte.id
+		
+		lnidestado = 0
+    	lnctadeudor = 0
+    	lnctaacreedor=1
+    	lnctabanco = 0
+    	lnctaotro  = 0
+    	lnctalogistica = 0
+		lcfefin       = DATETIME(1900,01,01,0,0,0)
+		lnlista = 0
+		ldfechac = CsrAcreedor.Fechaulcpr
+		ldfeculcompra = lcfefin
+		IF !EMPTY(ldfechac)
+			ldfecultcompra = DATETIME(YEAR(ldfechac),MONTH(ldfechac),DAY(ldfechac),0,0,0)
+		ENDIF 
+		ldfechap = CsrAcreedor.Fechaulpag
+		ldfeculTpago = lcfefin
+		IF !EMPTY(ldfechap)
+			ldfecultpago = DATETIME(YEAR(ldfechap),MONTH(ldfechap),DAY(ldfechap),0,0,0)
+		ENDIF 
+		lcingbrutosBA = CsrAcreedor.ibrutos
+		lcingbrutos = ""
+		IF CsrAcreedor.provincia = "R"
+			lcingbrutos = CsrAcreedor.ibrutos
+			lcingbrutosBA = " "
+		ENDIF 
+		
+		lnSaldoAnt = 0
+		lncomision = 0
+		lntotalizabonif = 0
+    	lnesrecodevol = 0
+		*lnidcateibrng =VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STR(4)))
+		lcnombre = NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre))) 
+  
+        INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
+        ,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+        ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+        ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
+        ,totalizabonif);
+		VALUES (lnid,LTRIM(STR(1000+CsrAcreedor.numero)),lcnombre,CsrAcreedor.direccion,LTRIM(lccp);
+		,lnidlocalidad,lnidprovincia,CsrAcreedor.telefono,lntipoiva,CsrAcreedor.cuit,lnidcategoria,0,lnSaldoAnt;
+		,1100000002,1100000006,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
+		,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,0;
+		,lnctalogistica,lnesrecodevol,lntotalizabonif)
+		          
+*!*		SELECT CsrCateibrn
+*!*		LOCATE FOR  idctacte = lnid
+*!*		IF !FOUND() AND lnidcateibrng <> 0
+*!*			lccuit =STRTRAN(CsrAcreedor.cuit,"-","")
+*!*			IF VAL(lccuit)<>0
+*!*				lccuit=STRTRAN(lccuit,"-","")
+*!*				INSERT INTO CsrCateibrn (cuit,idctacte,numero,porperce,porrete);
+*!*				VALUES (lccuit,lnid,lnidcateibrng,CsrCateIbRNg.porperce,CsrCateIbRNg.porrete)
 *!*			ENDIF 
-*!*			IF lntipoiva=3
-*!*				lncuit=''
-*!*			ENDIF
-*!*			lnidcateibrng =0
-*!*			
-*!*			lnidcategoria = 2
-*!*			SELECT CsrCateCtacte
-*!*			LOCATE FOR numero=lnidcategoria
-*!*			lnidcategoria = CsrCateCtacte.id
-*!*			
-*!*			lnidestado = 0
-*!*	    	lnctadeudor = 0
-*!*	    	lnctaacreedor=1
-*!*	    	lnctabanco = 0
-*!*	    	lnctaotro  = 0
-*!*	    	lnctalogistica = 0
-*!*			lcfefin       = DATETIME(1900,01,01,0,0,0)
-*!*			lnlista = 0
-*!*			ldfechac = CsrAcreedor.Fechaulcpr
-*!*			ldfeculcompra = lcfefin
-*!*			IF !EMPTY(ldfechac)
-*!*				ldfecultcompra = DATETIME(YEAR(ldfechac),MONTH(ldfechac),DAY(ldfechac),0,0,0)
-*!*			ENDIF 
-*!*			ldfechap = CsrAcreedor.Fechaulpag
-*!*			ldfeculTpago = lcfefin
-*!*			IF !EMPTY(ldfechap)
-*!*				ldfecultpago = DATETIME(YEAR(ldfechap),MONTH(ldfechap),DAY(ldfechap),0,0,0)
-*!*			ENDIF 
-*!*			lcingbrutosBA = CsrAcreedor.ibrutos
-*!*			lcingbrutos = ""
-*!*			IF CsrAcreedor.provincia = "R"
-*!*				lcingbrutos = CsrAcreedor.ibrutos
-*!*				lcingbrutosBA = " "
-*!*			ENDIF 
-*!*			
-*!*			lnSaldoAnt = 0
-*!*			lncomision = 0
-*!*			lntotalizabonif = 0
-*!*	    	lnesrecodevol = 0
-*!*			*lnidcateibrng =VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STR(4)))
-*!*			lcnombre = NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre))) 
-*!*	  
-*!*	        INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
-*!*	        ,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
-*!*	        ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
-*!*	        ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
-*!*	        ,totalizabonif);
-*!*			VALUES (lnid,LTRIM(STR(10000+CsrAcreedor.numero)),lcnombre,CsrAcreedor.direccion,LTRIM(lccp);
-*!*			,lnidlocalidad,lnidprovincia,CsrAcreedor.telefono,lntipoiva,CsrAcreedor.cuit,lnidcategoria,0,lnSaldoAnt;
-*!*			,1100000002,1100000006,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
-*!*			,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,0;
-*!*			,lnctalogistica,lnesrecodevol,lntotalizabonif)
-*!*			          
-*!*	*!*		SELECT CsrCateibrn
-*!*	*!*		LOCATE FOR  idctacte = lnid
-*!*	*!*		IF !FOUND() AND lnidcateibrng <> 0
-*!*	*!*			lccuit =STRTRAN(CsrAcreedor.cuit,"-","")
-*!*	*!*			IF VAL(lccuit)<>0
-*!*	*!*				lccuit=STRTRAN(lccuit,"-","")
-*!*	*!*				INSERT INTO CsrCateibrn (cuit,idctacte,numero,porperce,porrete);
-*!*	*!*				VALUES (lccuit,lnid,lnidcateibrng,CsrCateIbRNg.porperce,CsrCateIbRNg.porrete)
-*!*	*!*			ENDIF 
-*!*	*!*		ENDIF 
-*!*	         
-*!*			lnid = lnid + 1
-*!*	ENDSCAN
+*!*		ENDIF 
+         
+		lnid = lnid + 1
+ENDSCAN
 
 IF LEN(LTRIM(cCadeCtacte)) != 0
 	=oavisar.usuario("No se grabaron algunas proveedores, porque estan duplicados"+CHR(13)+cCadeCtacte,0)
