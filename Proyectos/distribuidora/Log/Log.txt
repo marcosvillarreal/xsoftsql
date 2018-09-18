@@ -24,174 +24,6 @@
 
 
 
-s) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant ,SUM(bonmesant) as bonmesant,SUM(bonmes) as bonmes,SUM(bonanioant) as bonanioant ,SUM(bonsmesant) as bonsmesant,SUM(bonsmes) as bo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE Error : 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -310,6 +142,8 @@ nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as 
 
       1806 Ultimo Alias Activo: CSRAUX Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001SLL00GB.TMP Ultimo Control activo:  INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 06-06-2018 , Error: SQL: no se encuentra la columna 'LTSANIOANT'. Linea : SELECT DOW(Fecha) as ndia,idarticulo,idctacte,idfletero,idvariedad,idvendedor ,SUM(ngmesant) as ngmesant,SUM(ngmes) as ngmes,SUM(nganioant) as nganioant ,SUM(intmesant) as intmesan
+
+
 
 
 
@@ -591,6 +425,8 @@ t,SUM(intmes) as intmes,SUM(intanioant) as intanioant ,SUM(unimesant) as unimesa
 
 
 
+
+
 s) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impmes) as impmes,SUM(impanioant) as impanioant ,SUM(bonmesant) as bonmesant,SUM(bonmes) as bonmes,SUM(bonanioant) as bonanioant ,SUM(bonsmesant) as bonsmesant,SUM(bonsmes) as bo
 
 
@@ -732,7 +568,11 @@ s) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impm
 
 
 
+
+
 nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE Error : 
+
+
 
 
 
@@ -1014,7 +854,11 @@ nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as 
 
 
 
+
+
 t,SUM(intmes) as intmes,SUM(intanioant) as intanioant ,SUM(unimesant) as unimesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsme
+
+
 
 
 
@@ -1294,7 +1138,11 @@ s) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM(impm
 
 
 
+
+
 nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM CsrAux GROUP BY Fecha,idarticulo,idctacte,idfletero,idvariedad,idvendedor INTO CURSOR CsrImprimir READWRITE Error : 
+
+
 
 
 
@@ -1575,6 +1423,8 @@ nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as 
 
 
 
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\000034EH007G.TMP Ultimo Control activo:  MAIN
 08-06-2018 , Acceso al sistema, antes de autenticar
 08-06-2018 , Acceso al sistema, antes de autenticar
@@ -1582,6 +1432,8 @@ nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as 
 11-06-2018 , Acceso al sistema, antes de autenticar
 11-06-2018 , Acceso al sistema, antes de autenticar
 11-06-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrDecimal')#0 Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        152 NUMGRUPO+GRUPO+NUMGRUPO02+STR(ID,10) DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001LOP028Y.TMP
+
+
 
 
 
@@ -1850,6 +1702,8 @@ nsmes,SUM(bonsanioant) as bonsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as 
 
 
 
+
+
 or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  SUBFACREPARTO.PAGEFRAME1.PAGE1.KITGRILLATILDARFLETERO.INIT
 11-06-2018 , Acceso al sistema, antes de autenticar
 11-06-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrDecimal')#0 Error :         13 Ultimo Alias Activo: _CSRFLETERO Ultimo registro:          9 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001LOP02C3.TMP Ultimo Control activo:  SUBF
@@ -1983,9 +1837,13 @@ or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:
 
 
 
+
+
 ACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 11-06-2018 , Acceso al sistema, antes de autenticar
 11-06-2018 , Error: El archivo 'csrfletero.dbf' no existe. Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into curs
+
+
 
 
 
@@ -2245,9 +2103,13 @@ or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:
 
 
 
+
+
 or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  SUBFACREPARTO.PAGEFRAME1.PAGE1.KITGRILLATILDARFLETERO.INIT
 11-06-2018 , Acceso al sistema, antes de autenticar
 11-06-2018 , Error: El archivo 'csrfletero.dbf' no existe. Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into curs
+
+
 
 
 
@@ -2504,8 +2366,12 @@ or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:
 
 
 
+
+
 MP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 12-06-2018 , Error: No se encuentra la variable 'LCNUMCOMP'. Linea : Csrcuerpo.clasecomp<>'K' <<lcWhereFiltro>> <<lcnumcomp>>  <<lcEstado>> AND <<lcfiltro>> Error :         12 Ultimo Alias Activo: _CSRFLETERO Ultimo registro:          9 CNUMERO DBF: C:\U
+
+
 
 
 
@@ -2745,8 +2611,12 @@ SERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4901XY.TMP Ultimo Control activo:  SUBFACREP
 
 
 
+
+
 .IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 12-06-2018 , Error: No se encuentra la variable 'LCFORM'. Linea : this.codpendiente_sinrendir(lcForm,lcCmdWhere) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:         29 NUMGRUPO+GRUPO+NUMGRUPO02+STR(ID,10) DBF: C:\USERS\ADMIN\APPD
+
+
 
 
 
@@ -2982,8 +2852,12 @@ ATA\LOCAL\TEMP\00005Z49022S.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_V
 
 
 
+
+
 S\ADMIN\APPDATA\LOCAL\TEMP\00005Z49024E.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 12-06-2018 , Error: No se encuentra la variable 'CLASE'. Linea : replace clase WITH 2 Error :         12 Ultimo Alias Activo: CSRCONSOLIDADO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4903OO.TMP Ultimo Control activo:  SUBF
+
+
 
 
 
@@ -3215,8 +3089,12 @@ ACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 DMIN\APPDATA\LOCAL\TEMP\00005Z4903S1.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 12-06-2018 , Error: No coinciden los tipos de datos. Linea : replace pago01 WITH CsrConsolidado.unidades,pago02 WITH CsrConsolidado.kilos IN CsrImprimir Error :          9 Ultimo Alias Activo: CSRCONSOLIDADO Ultimo registro:          1  DBF: C:\USERS\ADM
+
+
 
 
 
@@ -3444,8 +3322,12 @@ IN\APPDATA\LOCAL\TEMP\00005Z4903UQ.TMP Ultimo Control activo:  SUBFACREPARTO.IMP
 
 
 
+
+
         1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Z4903WJ.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 12-06-2018 , Error: No se encuentra la variable 'NOMPLANPAGO'. Linea : replace clase WITH 2,idplanpago WITH -1,nomplanpago WITH 'ARTICULOS' IN CsrImprimir Error :         12 Ultimo Alias Activo: CSRCONSOLIDADO Ultimo registro:          1  DBF: C:\USERS\A
+
+
 
 
 
@@ -3669,9 +3551,13 @@ DMIN\APPDATA\LOCAL\TEMP\00005Z4904KV.TMP Ultimo Control activo:  SUBFACREPARTO.I
 
 
 
+
+
 N\APPDATA\LOCAL\TEMP\00005Z4904X0.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 14-06-2018 , Acceso al sistema, antes de autenticar
 14-06-2018 , Error: No se encuentra la variable 'CAMPOCOL2'. Linea : ObjReporter.titulo2 = ObjReporter.titulo2 + cRep + _CsrFletero.campocol2 Error :         12 Ultimo Alias Activo: _CSRFLETERO Ultimo registro:          1 CNUMERO DBF: C:\USERS\ADMIN\APPD
+
+
 
 
 
@@ -3892,9 +3778,13 @@ ATA\LOCAL\TEMP\00001D6X00QU.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_V
 
 
 
+
+
 o Control activo:  LISVTOCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 25-06-2018 , Acceso al sistema, antes de autenticar
 25-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
+
+
 
 
 
@@ -4106,9 +3996,13 @@ o Control activo:  LISVTOCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
 \LOCAL\TEMP\0000A1VT00EQ.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
 25-06-2018 , Acceso al sistema, antes de autenticar
 25-06-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : ldfecdesde	= TTOD(this.fecha_calendario1.txtfecha.Value) Error :         11 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:          9 CNUMERO DBF: C:\USER
+
+
 
 
 
@@ -4314,11 +4208,15 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01FS.TMP Ultimo Control activo:  LISTADOVISIT
 
 
 
+
+
 \LOCAL\TEMP\0000A1VT01GR.TMP Ultimo Control activo:  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 25-06-2018 , Acceso al sistema, antes de autenticar
 25-06-2018 , Acceso al sistema, antes de autenticar
 27-06-2018 , Acceso al sistema, antes de autenticar
 27-06-2018 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : lcdias	= lcdias + lcsep + lndia Error :        107 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:          9 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+
+
 
 
 
@@ -4520,6 +4418,211 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01FS.TMP Ultimo Control activo:  LISTADOVISIT
 
 
 
+
+
+        0  DBF:  Ultimo Control activo:  MAIN
+29-06-2018 , Acceso al sistema, antes de autenticar
+29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        0  DBF:  Ultimo Control activo:  MAIN
+29-06-2018 , Acceso al sistema, antes de autenticar
+29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         0  DBF:  Ultimo Control activo:  MAIN
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
@@ -4718,108 +4821,10 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01FS.TMP Ultimo Control activo:  LISTADOVISIT
 
 
 
-
         0  DBF:  Ultimo Control activo:  MAIN
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        0  DBF:  Ultimo Control activo:  MAIN
-29-06-2018 , Acceso al sistema, antes de autenticar
-29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
 
 
 
@@ -4918,99 +4923,6 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01FS.TMP Ultimo Control activo:  LISTADOVISIT
 29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        0  DBF:  Ultimo Control activo:  MAIN
-29-06-2018 , Acceso al sistema, antes de autenticar
-29-06-2018 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:  
 
 
 
@@ -5194,12 +5106,16 @@ S\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01FS.TMP Ultimo Control activo:  LISTADOVISIT
 
 
 
+
+
   Ultimo Control activo:  REGPARAMETROS.LOAD
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT(lcaliasseek)#0 Error :         13 Ultimo Alias Activo: _CSRPRODUCTO Ultimo registro:          1 CNUMERO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008KQX001G.TMP Ultimo Control activo:  COMP
+
+
 
 
 
@@ -5375,9 +5291,13 @@ ARATIVO.CONTAINERGUIA.KITBUSCAOALTAENFZAVTA.TXTEXISTE1.INIT
 
 
 
+
+
 ARATIVO.CONTAINERGUIA.KITBUSCAOALTAENFZAVTA.TXTEXISTE1.INIT
 29-06-2018 , Acceso al sistema, antes de autenticar
 29-06-2018 , Error: No coinciden los tipos de datos. Linea : SELECT CsrCtacte.idctacte,CsrCtacte.nomcliente,CsrCtacte.ctacte,CsrCtacte.idvendedor,CsrCtacte.nomvendedor,CsrCtacte.codvendedor ,nvl(idfletero,-1) as idfletero,nvl(nomfletero,'SIN FLETERO') AS
+
+
 
 
 
@@ -5545,7 +5465,11 @@ ARATIVO.CONTAINERGUIA.KITBUSCAOALTAENFZAVTA.TXTEXISTE1.INIT
 
 
 
+
+
 -1) as idvariedad,NVL(codvariedad,0) as codvariedad,NVL(nomvariedad,'SIN VARIEDAD') as nomvariedad ,NVL(unidades1,0) as unidades1,NVL(vtakilos1,0) as vtakilos1,NVL(importes1,0) as importes1 ,NVL(unidades2,0) as unidades2,NVL(vtakilos2,0) as vtakilos2,NVL
+
+
 
 
 
@@ -5713,7 +5637,11 @@ ARATIVO.CONTAINERGUIA.KITBUSCAOALTAENFZAVTA.TXTEXISTE1.INIT
 
 
 
+
+
 0) as vtakilos5,NVL(importes5,0) as importes5 FROM CsrCtacte LEFT JOIN CsrImprimir ON CsrCtacte.idctacte = CsrImprimir.idctacte into CURSOR CsrImprimir READWRITE Error :          9 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control a
+
+
 
 
 
@@ -5881,7 +5809,11 @@ ctivo:  COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
  nomfletero,NVL(codfletero,0) as codfletero ,NVL(idrubro,-1) as idrubro,NVL(nomrubro,'SIN RUBRO') as nomrubro ,NVL(codrubro,0) AS codrubro ,NVL(idarticulo,-1) AS idarticulo,NVL(codigo,0) as codigo,NVL(articulo,'SIN ARTICULO') as articulo ,NVL(idvariedad,
+
+
 
 
 
@@ -6047,6 +5979,8 @@ ctivo:  COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
 (importes2,0) as importes2 ,NVL(unidades3,0) as unidades3,NVL(vtakilos3,0) as vtakilos3,NVL(importes3,0) as importes3 ,NVL(unidades4,0) as unidades4,NVL(vtakilos4,0) as vtakilos4,NVL(importes4,0) as importes4 ,NVL(unidades5,0) as unidades5,NVL(vtakilos5,
 
 
@@ -6130,7 +6064,11 @@ ctivo:  COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
 0) as vtakilos5,NVL(importes5,0) as importes5 FROM CsrCtacte LEFT JOIN CsrImprimir ON CsrCtacte.idctacte = CsrImprimir.idctacte into CURSOR CsrImprimir READWRITE Error :          9 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control a
+
+
 
 
 
@@ -6296,7 +6234,11 @@ ctivo:  COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
 ,importes2 ,unidades3,vtakilos3,importes3 ,unidades4,vtakilos4,importes4 ,unidadest,vtakilost,importest ,unidades5,vtakilos5,importes5 FROM CsrImprimir ORDER BY idfletero,idvendedor,idctacte,idrubro,idarticulo,idvariedad INTO CURSOR CsrImprimir READWRITE
+
+
 
 
 
@@ -6466,8 +6408,12 @@ ctivo:  COMPARATIVO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
 N
 16-07-2018 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : lcFullURL = "http://maps.googleapis.com/maps/api/geocode/xml?latlng="+clatitud+","+clongitud+"&sensor=false&v=3.22" Error :        107 Ultimo Alias Activo:  Ult
+
+
 
 
 
@@ -6629,9 +6575,13 @@ imo registro:          0  DBF:  Ultimo Control activo:  MAIN
 
 
 
+
+
         0  DBF:  Ultimo Control activo:  MAIN
 25-07-2018 , Acceso al sistema, antes de autenticar
 25-07-2018 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : lccadena=lccadena+lcsep+lccid && Muestra el elemento. Error :        107 Ultimo Alias Activo: _CSRLOCALIDAD Ultimo registro:          1 VAL(CNUMERO) DBF: C:\USE
+
+
 
 
 
@@ -6774,6 +6724,8 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00007VUX00AN.TMP Ultimo Control activo:  MAIN
 
 
 
+
+
 RS\ADMIN\APPDATA\LOCAL\TEMP\00007VUX00DH.TMP Ultimo Control activo:  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-07-2018 , Acceso al sistema, antes de autenticar
 31-07-2018 , Acceso al sistema, antes de autenticar
@@ -6782,6 +6734,8 @@ RS\ADMIN\APPDATA\LOCAL\TEMP\00007VUX00DH.TMP Ultimo Control activo:  SUBFACTURA.
 01-08-2018 , Acceso al sistema, antes de autenticar
 01-08-2018 , Acceso al sistema, antes de autenticar
 01-08-2018 , Error: El archivo 'csrcursor.dbf' no existe. Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor ORDER BY idvendedor,idmaopera,fecha
+
+
 
 
 
@@ -6913,9 +6867,13 @@ cbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias Activo: _
 
 
 
+
+
 ICK
 01-08-2018 , Acceso al sistema, antes de autenticar
 01-08-2018 , Error: La cláusula TO sólo se puede usar con formularios y conjuntos de formularios modales. Linea : DO FORM regfacvta WITH 'F',1 TO kk Error :       1982 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\AP
+
+
 
 
 
@@ -7043,7 +7001,11 @@ PDATA\LOCAL\TEMP\00009B7T036P.TMP Ultimo Control activo:  REGCTACTE.CMDCREDITOS.
 
 
 
+
+
 ) as fechacobro, SUM(neto) as neto ,0 as porce,SUM(basecomi) as basecomi,comision ,SUM(totcomi) as totcomi,nomvdorguia,ctacte FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ,comision ,nomvdorguia ORDER BY idvendedor  INTO CURSOR CsrImprimir
+
+
 
 
 
@@ -7169,9 +7131,13 @@ PDATA\LOCAL\TEMP\00009B7T036P.TMP Ultimo Control activo:  REGCTACTE.CMDCREDITOS.
 
 
 
+
+
 LIZARPEDANDROIDSQL_V2.INIT
 10-08-2018 , Acceso al sistema, antes de autenticar
 10-08-2018 , Error: El nombre de campo está duplicado o no es válido. Linea : CREATE CURSOR CsrOpcion (tipo c(15),codigo i,detalle c(40),actualiza c(5) ,origen c(2),estadoactu n(1),idpedido i,archivo c(125) ,motivo n(2),vale c(1),bonif c(1),observa c(100
+
+
 
 
 
@@ -7287,8 +7253,12 @@ LIZARPEDANDROIDSQL_V2.INIT
 
 
 
+
+
 ntrol activo:  ACTUALIZARPEDANDROIDSQL_V2.LOAD
 10-08-2018 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : INDEX on archivo+fechahora TAG karchi Error :        107 Ultimo Alias Activo: CSROPCION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000
+
+
 
 
 
@@ -7404,8 +7374,12 @@ ntrol activo:  ACTUALIZARPEDANDROIDSQL_V2.LOAD
 
 
 
+
+
 O.CMDACEPTAR.CLICK
 27-08-2018 , Error: No se encuentra la variable 'NIDDEPOSITO'. Linea : BROWSE Error :         12 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          3  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000094AX0415.TMP Ultimo Control activo:  UTIL_STOCKZER
+
+
 
 
 
@@ -7521,11 +7495,15 @@ O.CMDACEPTAR.CLICK
 
 
 
+
+
         251  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009NGP04XA.TMP Ultimo Control activo:  MAIN
 27-08-2018 , Acceso al sistema, antes de autenticar
 27-08-2018 , Acceso al sistema, antes de autenticar
 27-08-2018 , Acceso al sistema, antes de autenticar
 27-08-2018 , Error: El archivo 'csrctacte.dbf' no existe. Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into curso
+
+
 
 
 
@@ -7627,9 +7605,13 @@ r &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro: 
 
 
 
+
+
 or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  SUBFACREPARTO.PAGEFRAME1.PAGE1.KITGRILLATILDARFLETERO.INIT
 28-08-2018 , Acceso al sistema, antes de autenticar
 28-08-2018 , Error: No se encuentra el alias 'GOAAP'. Linea : IF goaap.codempresa = 7 Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STR(CLASE,1)+NUMGRUPO+GRUPO+NUMGRUPO02+STR(ID,10) DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+
+
 
 
 
@@ -7720,6 +7702,8 @@ or &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:
 
 
 
+
+
 ivo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 31-08-2018 , Acceso al sistema, antes de autenticar
 31-08-2018 , Acceso al sistema, antes de autenticar
@@ -7727,6 +7711,8 @@ ivo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 31-08-2018 , Acceso al sistema, antes de autenticar
 03-09-2018 , Acceso al sistema, antes de autenticar
 03-09-2018 , Error: El archivo 'csrmovcheque.dbf' no existe. Linea : SELECT Csrmovcheque.* FROM Csrmovcheque WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMov READWRITE Error :          1 Ultimo Alias Activo: CSRPARACONTA Ultimo registro:          1  DBF: C
+
+
 
 
 
@@ -7803,10 +7789,14 @@ ivo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 IDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT
 07-09-2018 , Acceso al sistema, antes de autenticar
 07-09-2018 , Acceso al sistema, antes de autenticar
 07-09-2018 , Error: El campo CHRFECHA no acepta valores NULL. Linea : replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir Error :       1581 Ultimo Alias Activo: CSRCONSOLIDADO Ultimo registro:          1  DBF: C
+
+
 
 
 
@@ -7881,8 +7871,12 @@ IDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT
 
 
 
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD00RY.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 07-09-2018 , Error: El campo CHRFECHA no acepta valores NULL. Linea : replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir Error :       1581 Ultimo Alias Activo: CSRCONSOLIDADO Ultimo registro:          1  DBF: C
+
+
 
 
 
@@ -7950,6 +7944,8 @@ IDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT
 
 
 
+
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD00YI.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 07-09-2018 , Acceso al sistema, antes de autenticar
 07-09-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT(lcaliasseek)#0 Error :         13 Ultimo Alias Activo: CSRSECTOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CW090024.TMP Ultimo Control activo:  PATRONCARGAPED
@@ -7983,9 +7979,13 @@ IDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT
 
 
 
+
+
 IDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT
 07-09-2018 , Acceso al sistema, antes de autenticar
 07-09-2018 , Error: No se encuentra el alias. Linea : IF RECCOUNT(lcaliasseek)#0 Error :         13 Ultimo Alias Activo: CSRSECTOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CW090065.TMP Ultimo Control activo:  PATRONCARGAPED
+
+
 
 
 
@@ -8050,6 +8050,8 @@ IDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT
 
 
 
+
+
 tivo: CODEXTEND REGFACPUB.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS
 11-09-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF ABS(This.Value)>0 AND this.Value < 0 Error :         11 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\ADMIN\APPDATA\LO
 
@@ -8076,8 +8078,12 @@ tivo: CODEXTEND REGFACPUB.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS
 
 
 
+
+
 CAL\TEMP\0000F0UH012P.TMP Ultimo Control activo:  REGFACPUB.GRID2.COLUMN1.TEXT1.VALID
 11-09-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF ABS(This.Value)>0 AND this.Value < 0 Error :         11 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
 
 
 
@@ -8126,6 +8132,8 @@ CAL\TEMP\0000F0UH012P.TMP Ultimo Control activo:  REGFACPUB.GRID2.COLUMN1.TEXT1.
 
 
 
+
+
 CAL\TEMP\00004AH500Q6.TMP Ultimo Control activo: CODEXTEND REGFACPUB.GRID2.COLUMN1.TEXT1.VALID
 11-09-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF ABS(This.Value)>0 AND this.Value < 0 Error :         11 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\ADMIN\APPDATA\LO
 
@@ -8149,8 +8157,12 @@ CAL\TEMP\00004AH500Q6.TMP Ultimo Control activo: CODEXTEND REGFACPUB.GRID2.COLUM
 
 
 
+
+
 CAL\TEMP\00004AH500Q6.TMP Ultimo Control activo:  REGFACPUB.GRID2.COLUMN1.TEXT1.VALID
 11-09-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF ABS(This.Value)>0 AND this.Value < 0 Error :         11 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
 
 
 
@@ -8192,8 +8204,12 @@ CAL\TEMP\00004AH500Q6.TMP Ultimo Control activo:  REGFACPUB.GRID2.COLUMN1.TEXT1.
 
 
 
+
+
 TMP Ultimo Control activo: CODEXTEND REGFACPUB.GRID2.COLUMN1.TEXT1.VALID
 11-09-2018 , Error: _TXTBONIF1 es un miembro desconocido. Linea : IF (.containerencabeza._txtbonif1.Value#0 OR .containerencabeza._txtbonif2.Value#0) AND lnbonifica#0 Error :       1925 Ultimo Alias Activo: CSRPRODFZAVTA Ultimo registro:        414 ID DB
+
+
 
 
 
@@ -8247,6 +8263,8 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004AH5038G.TMP Ultimo Control activo: COD
 
 
 
+
+
  Ultimo registro:         32  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009EDL02YY.TMP Ultimo Control activo:  REGCBIOPEDPUESTO.TIMER1.TIMER
 13-09-2018 , Acceso al sistema, antes de autenticar
 13-09-2018 , Acceso al sistema, antes de autenticar
@@ -8263,8 +8281,12 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004AH5038G.TMP Ultimo Control activo: COD
 
 
 
+
+
 :          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CA2X00BB.TMP Ultimo Control activo:  GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 14-09-2018 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRIMPORTAR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+
 
 
 
@@ -8287,9 +8309,13 @@ MP\0000CA2X00D8.TMP Ultimo Control activo:  GENERARCELU.IMPRIMIR_VISTAPREVIA1.IM
 
 
 
+
+
 CGEH00DQ.TMP Ultimo Control activo:  GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 14-09-2018 , Acceso al sistema, antes de autenticar
 14-09-2018 , Error: No se encuentra el alias 'CSRCONEXIONCENTRAL'. Linea : thisform.lbltituloform.Caption = CsrConexionCentral.aliasconexion Error :         13 Ultimo Alias Activo: CSRPARACONFIG Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LO
+
+
 
 
 
@@ -8301,8 +8327,12 @@ CAL\TEMP\000037K9019O.TMP Ultimo Control activo:  ACTUALIZARPEDANDROIDSQL_V2.INI
 
 
 
+
+
 timo Control activo: PARADA ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS
 14-09-2018 , Error: No se encuentra el alias 'CSRAUXAFECTADO'. Linea : .column1.ControlSource = "CsrAuxAfectado.fecha" Error :         13 Ultimo Alias Activo: CUEPEDIDOVARI Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K902JH.
+
+
 
 
 
@@ -8310,10 +8340,20 @@ TMP Ultimo Control activo: PARADA ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS
 14-09-2018 , Error: No se encuentra el alias 'CSRAUXAFECTADO'. Linea : .column1.ControlSource = "CsrAuxAfectado.fecha" Error :         13 Ultimo Alias Activo: CUEPEDIDOVARI Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K902LB.
 
 
+
+
 TMP Ultimo Control activo: PARADA ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS
 14-09-2018 , Error: No se encuentra el alias 'CSRAUXMOVAFECTADO'. Linea : .column1.ControlSource = "CsrAuxMovAfectado.fecha" Error :         13 Ultimo Alias Activo: CUEPEDIDOVARI Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K
 
+
+
 902LU.TMP Ultimo Control activo:  ACTUALIZARREC_AFECTADOS.INIT
 14-09-2018 , Error: No se encuentra el alias 'CSRAUXMOVAFECTADO'. Linea : .column1.ControlSource = "CsrAuxMovAfectado.fecha" Error :         13 Ultimo Alias Activo: CUEPEDIDOVARI Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K
+
+
 902LZ.TMP Ultimo Control activo:  ACTUALIZARREC_AFECTADOS.INIT
-14-09-2018 , Error: No se encuentra la variable 'SALDOORI'. Linea : .column6.ControlSource = "CsrAuxMovAfectado.saldoori" Error :         12 Ultimo Alias Activo: CSRAUXMOVAFECTADO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K904U7.TMP Ultimo Control activo: PARADA ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS
+14-09-2018 , Error: No se encuentra la variable 'SALDOORI'. Linea : .column6.ControlSource = "CsrAuxMovAfectado.saldoori" Error :         12 Ultimo Alias Activo: CSRAUXMOVAFECTADO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037
+
+K904U7.TMP Ultimo Control activo: PARADA ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS
+17-09-2018 , Acceso al sistema, antes de autenticar
+17-09-2018 , Acceso al sistema, antes de autenticar
