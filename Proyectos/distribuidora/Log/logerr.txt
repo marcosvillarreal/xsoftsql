@@ -1,570 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TMP;Ultimo Control activo: 
-10-08-2018 , Pila de llamadas
-10-08-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
-10-08-2018 , Objeto      : actualizarpedandroidsql_v2.init
-10-08-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
-10-08-2018 , Nº de Linea :          6
-10-08-2018 , En el Fuente: thisform.iniciarvariables()
-10-08-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
-10-08-2018 , Objeto      : actualizarpedandroidsql_v2.iniciarvariables
-10-08-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
-10-08-2018 , Nº de Linea :          8
-10-08-2018 , En el Fuente: IF NOT this.Obtenerdatos('CsrConexionCentral',lcCmd)
-10-08-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-10-08-2018 , Objeto      : actualizarpedandroidsql_v2.obtenerdatos
-10-08-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-10-08-2018 , Nº de Linea :          9
-10-08-2018 , En el Fuente: oCa = thisform.obtenercursor(lcalias)
-10-08-2018 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-10-08-2018 , Objeto      : actualizarpedandroidsql_v2.obtenercursor
-10-08-2018 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-10-08-2018 , Nº de Linea :         19
-10-08-2018 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
-10-08-2018 , ACTUALIZARPEDANDROIDSQL_V2.LOAD, Error: El nombre de campo está duplicado o no es válido.;Linea : CREATE CURSOR CsrOpcion (tipo c(15),codigo i,detalle c(40),actualiza c(5) ,origen c(2),estadoactu n(1),idpedido i,archivo c(125) ,motivo n(2),v
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ale c(1),bonif c(1),observa c(100),editado L,estado n(1) ,idctacte i,idvendedor i,fechahora c(20),nomctacte c(30) ,nrorecibo c(15),idctacte i);Error :       1712;Ultimo Alias Activo: CSRVISITA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-L\TEMP\00009QMH02PM.TMP;Ultimo Control activo: 
-10-08-2018 , Pila de llamadas
-10-08-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
-10-08-2018 , Objeto      : actualizarpedandroidsql_v2.load
 10-08-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
 10-08-2018 , Nº de Linea :          2
 10-08-2018 , En el Fuente: thisform.CrearCursores()
@@ -573,6 +6,16 @@ L\TEMP\00009QMH02PM.TMP;Ultimo Control activo:
 10-08-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
 10-08-2018 , Nº de Linea :          6
 10-08-2018 , En el Fuente: CREATE CURSOR CsrOpcion (tipo c(15),codigo i,detalle c(40),actualiza c(5)                        ,origen c(2),estadoactu n(1),idpedido i,archivo c(125)                        ,motivo n(2),vale c(1),bonif c(1),observa c(100),edi
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -922,6 +365,16 @@ tado L,estado n(1)                        ,idctacte i,idvendedor i,fechahora c(2
 
 
 
+
+
+
+
+
+
+
+
+
+
 ERS\ADMIN\APPDATA\LOCAL\TEMP\00009QMH02R7.TMP;Ultimo Control activo: 
 10-08-2018 , Pila de llamadas
 10-08-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
@@ -935,6 +388,16 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\00009QMH02R7.TMP;Ultimo Control activo:
 10-08-2018 , Nº de Linea :          9
 10-08-2018 , En el Fuente: INDEX on archivo+fechahora TAG karchi 
 27-08-2018 , UTIL_STOCKZERO.CMDACEPTAR.CLICK, Error: No se encuentra la variable 'NIDDEPOSITO'.;Linea : BROWSE;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000094AX03RQ.TMP;Ulti
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1291,6 +754,16 @@ mo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
 mo Control activo: 
 27-08-2018 , Pila de llamadas
 27-08-2018 , Programa    : j:\xsoftsql\desarrollo\forms\util_stockzero.sct
@@ -1314,6 +787,16 @@ mo Control activo:
 27-08-2018 , Nº de Linea :        660
 27-08-2018 , En el Fuente: 		BROWSE 
 27-08-2018 , MAIN, Error: El tipo de datos no es válido para esta propiedad.;Linea : thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3);Error :       1732;Ultimo Alias Activo: CURPERFIL;Ultimo reg
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1639,6 +1122,16 @@ istro:        251 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009NGP04XA.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
 9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 27-08-2018 , Pila de llamadas
 27-08-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1798,8 +1291,28 @@ istro:        251 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009NGP04XA.TMP;Ultim
 
 
 
+
+
+
+
+
+
+
+
+
+
 cursor READWRITE
 28-08-2018 , SUBFACREPARTO.PAGEFRAME1.PAGE1.KITGRILLATILDARFLETERO.INIT, Error: El archivo 'csrfletero.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo0
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2109,8 +1622,28 @@ cursor READWRITE
 
 
 
+
+
+
+
+
+
+
+
+
+
 cursor READWRITE
 28-08-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'GOAAP'.;Linea : IF goaap.codempresa = 7;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STR(CLASE,1)+NUMGRUPO+GRUPO+NUMGRUP
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2273,6 +1806,16 @@ O02+STR(ID,10);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000972H00M4.TMP;Ultimo Co
 28-08-2018 , Nº de Linea :        291
 28-08-2018 , En el Fuente: IF goaap.codempresa = 7
 28-08-2018 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : IF VARTYPE(CsrCursor.saldo)="N";Error :         13;Ultimo Alias Activo: CSRPARACONTA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\AP
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2590,6 +2133,16 @@ PDATA\LOCAL\TEMP\000041S90038.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
           1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000084QX002L.TMP;Ultimo Control activo: 
 03-09-2018 , Pila de llamadas
 03-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\bancario\regmovcheque.sct
@@ -2603,6 +2156,16 @@ PDATA\LOCAL\TEMP\000041S90038.TMP;Ultimo Control activo:
 03-09-2018 , Nº de Linea :          2
 03-09-2018 , En el Fuente: SELECT Csrmovcheque.* FROM Csrmovcheque WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMov READWRITE 
 07-09-2018 , PATRONCARGAPEDIDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRSECTOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMI
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2879,6 +2442,16 @@ N\APPDATA\LOCAL\TEMP\0000A51L005O.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
 DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD00FU.TMP;Ultimo Control activo: 
 07-09-2018 , Pila de llamadas
 07-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
@@ -2907,6 +2480,16 @@ DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD00FU.TMP;Ultimo Control activo:
 07-09-2018 , Nº de Linea :        366
 07-09-2018 , En el Fuente: 			replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir
 07-09-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El campo CHRFECHA no acepta valores NULL.;Linea : replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir;Error :       1581;Ultimo Alias Activ
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3154,6 +2737,16 @@ o: CSRCONSOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
 
 
 
+
+
+
+
+
+
+
+
+
+
 o: CSRCONSOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004LJD00TO.TMP;Ultimo Control activo: 
 07-09-2018 , Pila de llamadas
 07-09-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3167,6 +2760,16 @@ o: CSRCONSOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
 07-09-2018 , Nº de Linea :        366
 07-09-2018 , En el Fuente: 			replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir
 07-09-2018 , SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El campo CHRFECHA no acepta valores NULL.;Linea : replace chrfecha with CsrConsolidado.numero,detalle with CsrConsolidado.nombre IN CsrImprimir;Error :       1581;Ultimo Alias Activ
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3399,6 +3002,16 @@ o: CSRCONSOLIDADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL
 
 
 
+
+
+
+
+
+
+
+
+
+
 N\APPDATA\LOCAL\TEMP\0000CW090024.TMP;Ultimo Control activo: 
 07-09-2018 , Pila de llamadas
 07-09-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3417,6 +3030,16 @@ N\APPDATA\LOCAL\TEMP\0000CW090024.TMP;Ultimo Control activo:
 07-09-2018 , Nº de Linea :         35
 07-09-2018 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 07-09-2018 , PATRONCARGAPEDIDOS.CONTAINERENCABEZA.KITBUSCAOALTAENPUESTO.TXTEXISTE1.INIT, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRSECTOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMI
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3642,6 +3265,16 @@ N\APPDATA\LOCAL\TEMP\0000CW090065.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
 DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 11-09-2018 , Pila de llamadas
 11-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
@@ -3746,6 +3379,16 @@ DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
  ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: 
 11-09-2018 , Pila de llamadas
 11-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
@@ -3837,6 +3480,16 @@ DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
  ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: 
 11-09-2018 , Pila de llamadas
 11-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
@@ -3845,6 +3498,16 @@ DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 11-09-2018 , Nº de Linea :         17
 11-09-2018 , En el Fuente: IF ABS(This.Value)>0 AND this.Value < 0
 11-09-2018 , REGFACPUB.GRID2.COLUMN1.TEXT1.VALID, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF ABS(This.Value)>0 AND this.Value < 0;Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4011,6 +3674,16 @@ DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
  ORDEN;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004AH500Q6.TMP;Ultimo Control activo: 
 11-09-2018 , Pila de llamadas
 11-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
@@ -4019,6 +3692,16 @@ DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 11-09-2018 , Nº de Linea :         17
 11-09-2018 , En el Fuente: IF ABS(This.Value)>0 AND this.Value < 0
 11-09-2018 , REGFACPUB.GRID2.COLUMN1.TEXT1.VALID, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF ABS(This.Value)>0 AND this.Value < 0;Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4174,6 +3857,16 @@ DATA\LOCAL\TEMP\0000F0UH012P.TMP;Ultimo Control activo: CODEXTEND
 
 
 
+
+
+
+
+
+
+
+
+
+
 DMIN\APPDATA\LOCAL\TEMP\00004AH5018B.TMP;Ultimo Control activo: CODEXTEND
 11-09-2018 , Pila de llamadas
 11-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
@@ -4182,6 +3875,16 @@ DMIN\APPDATA\LOCAL\TEMP\00004AH5018B.TMP;Ultimo Control activo: CODEXTEND
 11-09-2018 , Nº de Linea :         18
 11-09-2018 , En el Fuente: 	this.nCantDigitada = ABS(VAL(this.Value))
 11-09-2018 , REGFACPUB.KEYPRESS, Error: _TXTBONIF1 es un miembro desconocido.;Linea : IF (.containerencabeza._txtbonif1.Value#0 OR .containerencabeza._txtbonif2.Value#0) AND lnbonifica#0;Error :       1925;Ultimo Alias Activo: CSRPRODFZAVTA;Ultimo regist
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4331,6 +4034,16 @@ ro:        414 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004AH5038G.TMP;Ultimo
 
 
 
+
+
+
+
+
+
+
+
+
+
 7;Ultimo Alias Activo: CSRSETEO;Ultimo registro:         32 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009EDL02YY.TMP;Ultimo Control activo: 
 12-09-2018 , Pila de llamadas
 12-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\regcbiopedpuesto.sct
@@ -4344,6 +4057,16 @@ ro:        414 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004AH5038G.TMP;Ultimo
 12-09-2018 , Nº de Linea :          8
 12-09-2018 , En el Fuente: 	lcnrocarga ="CsrCuerpo.numero " + IIF(._txtnropatron.value=0," > 0 ", " = "+ALLTRIM(STR(._txtnropatron.value)))
 14-09-2018 , GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad PASSPREVENTAMOVIL.;Linea : lcPass	= IIF(LENtrim(NVL(ObjDatos.passpreventamovil,''))=0,STR(Objdatos.numero,10),ObjDatos.passpreventamovil);Error :       17
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4484,6 +4207,16 @@ ro:        414 ID;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004AH5038G.TMP;Ultimo
 
 
 
+
+
+
+
+
+
+
+
+
+
 o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CA2X00D8.TMP;Ultimo Control activo: 
 14-09-2018 , Pila de llamadas
 14-09-2018 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4512,6 +4245,16 @@ o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CA2X00D8.TMP;Ultimo Co
 14-09-2018 , Nº de Linea :        592
 14-09-2018 , En el Fuente: RETURN ALLTRIM(STR(lnValor,lnTam,lnDec))
 14-09-2018 , GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Hay demasiados argumentos.;Linea : INSERT INTO CsrImportar VALUES (0,DATE(),'','','0',0,0,0,0,DATE(),0,'',0,'');Error :       1230;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:     
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4624,6 +4367,16 @@ o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CA2X00D8.TMP;Ultimo Co
 
 
 
+
+
+
+
+
+
+
+
+
+
 1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K9019O.TMP;Ultimo Control activo: 
 14-09-2018 , Pila de llamadas
 14-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\actualizarpedandroidsql_v2.sct
@@ -4632,6 +4385,16 @@ o:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000CA2X00D8.TMP;Ultimo Co
 14-09-2018 , Nº de Linea :         13
 14-09-2018 , En el Fuente: thisform.lbltituloform.Caption = CsrConexionCentral.aliasconexion
 14-09-2018 , ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS, Error: COLUMN3 es un miembro desconocido.;Linea : this.Column3.Enabled = .f.;Error :       1925;Ultimo Alias Activo: CSRBONIF;Ultimo registro:          1 STR(CODIGO,8)+STR(CODVARI,8);DBF: C:\US
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4723,6 +4486,16 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\000037K902AL.TMP;Ultimo Control activo: PARADA
 
 
 
+
+
+
+
+
+
+
+
+
+
  C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K902JH.TMP;Ultimo Control activo: PARADA
 14-09-2018 , Pila de llamadas
 14-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
@@ -4751,6 +4524,16 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\000037K902AL.TMP;Ultimo Control activo: PARADA
 14-09-2018 , Nº de Linea :         37
 14-09-2018 , En el Fuente: 	.column1.ControlSource = "CsrAuxAfectado.fecha"
 14-09-2018 , ACTUALIZARRECIBOS.GRID1.COLUMN7.TEXT1.KEYPRESS, Error: No se encuentra el alias 'CSRAUXAFECTADO'.;Linea : .column1.ControlSource = "CsrAuxAfectado.fecha";Error :         13;Ultimo Alias Activo: CUEPEDIDOVARI;Ultimo registro:          1 ;DBF:
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4821,6 +4604,16 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\000037K902AL.TMP;Ultimo Control activo: PARADA
 
 
 
+
+
+
+
+
+
+
+
+
+
 MIN\APPDATA\LOCAL\TEMP\000037K902LU.TMP;Ultimo Control activo: 
 14-09-2018 , Pila de llamadas
 14-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrec_afectados.sct
@@ -4839,6 +4632,16 @@ MIN\APPDATA\LOCAL\TEMP\000037K902LU.TMP;Ultimo Control activo:
 14-09-2018 , Nº de Linea :         37
 14-09-2018 , En el Fuente: 	.column1.ControlSource = "CsrAuxMovAfectado.fecha"
 14-09-2018 , ACTUALIZARREC_AFECTADOS.INIT, Error: No se encuentra el alias 'CSRAUXMOVAFECTADO'.;Linea : .column1.ControlSource = "CsrAuxMovAfectado.fecha";Error :         13;Ultimo Alias Activo: CUEPEDIDOVARI;Ultimo registro:          1 ;DBF: C:\USERS\AD
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4874,6 +4677,16 @@ MIN\APPDATA\LOCAL\TEMP\000037K902LZ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
 1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000037K904U7.TMP;Ultimo Control activo: PARADA
 14-09-2018 , Pila de llamadas
 14-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrecibos.sct
@@ -4901,3 +4714,47 @@ MIN\APPDATA\LOCAL\TEMP\000037K902LZ.TMP;Ultimo Control activo:
 14-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ctacte\actualizarrec_afectados.sct
 14-09-2018 , Nº de Linea :         45
 14-09-2018 , En el Fuente: 	.column6.ControlSource = "CsrAuxMovAfectado.saldoori"
+21-09-2018 , REGFACPUB.KEYPRESS, Error: No se puede llamar a SetFocus desde un evento When, Valid, RangeHigh o RangeLow.;Linea : .grid2.column1.text1.SetFocus;Error :       2012;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 ORDEN;DBF: C:
+
+
+
+
+
+
+
+
+
+\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000591L01AZ.TMP;Ultimo Control activo: PREUNITASIVA
+21-09-2018 , Pila de llamadas
+21-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Objeto      : regfacpub.keypress
+21-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Nº de Linea :        109
+21-09-2018 , En el Fuente: 	    	    .key_grid1(.lnkeycode, nShiftAltCtrl)  
+21-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Objeto      : regfacpub.key_grid1
+21-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Nº de Linea :         72
+21-09-2018 , En el Fuente:  		.grid2.column5.text1.Lostfocus()
+21-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Objeto      : regfacpub.grid2.column5.text1.lostfocus
+21-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Nº de Linea :         10
+21-09-2018 , En el Fuente: 		.grid2.column4.text1.SetFocus()	
+21-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Objeto      : regfacpub.grid2.column4.text1.when
+21-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Nº de Linea :          2
+21-09-2018 , En el Fuente: 	thisform.grid2_procesolinea(1)
+21-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Objeto      : regfacpub.grid2_procesolinea
+21-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Nº de Linea :         63
+21-09-2018 , En el Fuente: 		thisform.generarlinea()   
+21-09-2018 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Objeto      : regfacpub.generarlinea
+21-09-2018 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacpub.sct
+21-09-2018 , Nº de Linea :         47
+21-09-2018 , En el Fuente: 	.grid2.column1.text1.SetFocus 
+21-09-2018 , ON..., Error: Ya existe un objeto miembro con este nombre.;Linea : SKIP;Error :       1771;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+21-09-2018 , Pila de llamadas
