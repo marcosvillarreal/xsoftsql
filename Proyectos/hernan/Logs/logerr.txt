@@ -277,3 +277,39 @@
 19-09-2018 10:34:41 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\lisresopera.sct
 19-09-2018 10:34:41 , Nº de Linea :        238
 19-09-2018 10:34:41 , En el Fuente: SELECT * FROM Csrcursor2 INTO CURSOR csrcursor readwrite
+21-09-2018 16:30:08 , LIBRODIARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'DEBEHABER'.;Linea : replace debe WITH debe + iif(Csrcursor.debehaber='D',CsrCursor.importe,0), haber WITH haber + iif(Csrcursor.debehaber='D',0,CsrCursor.importe) IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 NUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001N2H007C.TMP;Ultimo Control activo: 
+21-09-2018 16:30:08 , Pila de llamadas
+21-09-2018 16:30:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-09-2018 16:30:09 , Objeto      : librodiario.imprimir_vistaprevia1.impresora.click
+21-09-2018 16:30:09 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-09-2018 16:30:09 , Nº de Linea :          6
+21-09-2018 16:30:09 , En el Fuente: 	llOK=thisform.CrearInforme()
+21-09-2018 16:30:09 , Programa    : j:\xsoftsql\proyectos\hernan\forms\contabilidad\lisdiario.sct
+21-09-2018 16:30:09 , Objeto      : librodiario.crearinforme
+21-09-2018 16:30:09 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\contabilidad\lisdiario.sct
+21-09-2018 16:30:09 , Nº de Linea :        169
+21-09-2018 16:30:09 , En el Fuente: 	replace debe WITH debe + iif(Csrcursor.debehaber='D',CsrCursor.importe,0),			haber WITH haber + iif(Csrcursor.debehaber='D',0,CsrCursor.importe) IN CsrImprimir
+21-09-2018 16:30:44 , LIBRODIARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'IMPORTE'.;Linea : replace debe WITH debe + iif(Csrcursor.debehaber='D',CsrCursor.importe,0), haber WITH haber + iif(Csrcursor.debehaber='D',0,CsrCursor.importe) IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 NUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001N2H009I.TMP;Ultimo Control activo: 
+21-09-2018 16:30:44 , Pila de llamadas
+21-09-2018 16:30:44 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-09-2018 16:30:44 , Objeto      : librodiario.imprimir_vistaprevia1.impresora.click
+21-09-2018 16:30:44 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-09-2018 16:30:44 , Nº de Linea :          6
+21-09-2018 16:30:44 , En el Fuente: 	llOK=thisform.CrearInforme()
+21-09-2018 16:30:44 , Programa    : j:\xsoftsql\proyectos\hernan\forms\contabilidad\lisdiario.sct
+21-09-2018 16:30:44 , Objeto      : librodiario.crearinforme
+21-09-2018 16:30:44 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\contabilidad\lisdiario.sct
+21-09-2018 16:30:44 , Nº de Linea :        169
+21-09-2018 16:30:44 , En el Fuente: 	replace debe WITH debe + iif(Csrcursor.debehaber='D',CsrCursor.importe,0),			haber WITH haber + iif(Csrcursor.debehaber='D',0,CsrCursor.importe) IN CsrImprimir
+21-09-2018 16:35:39 , LIBRODIARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No coinciden los tipos de datos.;Linea : INSERT INTO CsrImprimir(idcuenta,cuenta , nombre , FECHA , debe , haber ,TITULO , detalle ,numero) VALUES (CsrCursor.idcuenta,CsrCursor.CtaContable,CsrCursor.NomContable,CsrCursor.fecha,0,0,CsrCursor.titulo, Csrcursor.detalle, CsrCursor.numero);Error :          9;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 NUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001N2H00G6.TMP;Ultimo Control activo: 
+21-09-2018 16:35:39 , Pila de llamadas
+21-09-2018 16:35:39 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-09-2018 16:35:39 , Objeto      : librodiario.imprimir_vistaprevia1.impresora.click
+21-09-2018 16:35:39 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-09-2018 16:35:39 , Nº de Linea :          6
+21-09-2018 16:35:39 , En el Fuente: 	llOK=thisform.CrearInforme()
+21-09-2018 16:35:39 , Programa    : j:\xsoftsql\proyectos\hernan\forms\contabilidad\lisdiario.sct
+21-09-2018 16:35:39 , Objeto      : librodiario.crearinforme
+21-09-2018 16:35:39 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\contabilidad\lisdiario.sct
+21-09-2018 16:35:39 , Nº de Linea :        168
+21-09-2018 16:35:39 , En el Fuente: 	INSERT INTO CsrImprimir(idcuenta,cuenta , nombre , FECHA , debe , haber ,TITULO , detalle ,numero)	VALUES (CsrCursor.idcuenta,CsrCursor.CtaContable,CsrCursor.NomContable,CsrCursor.fecha,0,0,CsrCursor.titulo, Csrcursor.detalle, CsrCursor.numero)
