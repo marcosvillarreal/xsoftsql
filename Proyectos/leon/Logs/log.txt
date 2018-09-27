@@ -1,10 +1,3 @@
-Error Error de sintaxis.
-Linea nº COPY TO &cFileName FIELDS EXCEPT registro WITH CHARACTER ';'
- Alias CSRIMPRIMIR registro         36
-Control activo  GENSERENISIMA.CMDGENERAR.CLICK
-26-07-2017 11:48:50 , Error nº:         10
-Error Error de sintaxis.
-Linea nº COPY TO &cFileName FIELDS EXCEPT registro WITH CHARACTER ';'
  Alias CSRIMPRIMIR registro         27
 Control activo  GENSERENISIMA.CMDGENERAR.CLICK
 26-07-2017 12:21:55 , Error nº:          9
@@ -170,6 +163,7 @@ Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,000000000
 
 
 
+
 )) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE
  Alias  registro          0
 Control activo  REGNOTAPEDANDROID.LOAD
@@ -206,6 +200,7 @@ Control activo  REGNOTAPEDANDROID.CMDSALVAR.CLICK
 30-08-2017 20:24:15 , Error nº:       1806
 Error SQL: no se encuentra la columna 'TIPOPEDIDO'.
 Linea nº SELECT id,clientes_numero as ctacte,vendedor_codigo as codvendedor ,CTOT(DTOC(TTOD(fecha))+" "+horain ) as fecha,horain,horaout,chksum as codmotivo ,vales,bonificaciones as bonif1,observaciones ,tipopedido,fechadeentrega,loteexportacion,remito,p
+
 
 
 
@@ -496,6 +491,7 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idvenvase,codenvase
 
 
@@ -596,7 +592,9 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
 ,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = CsrRubro.id INT
+
 
 
 
@@ -800,6 +798,7 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
@@ -899,7 +898,9 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
 
 
 
@@ -1101,6 +1102,7 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,CsrProductos.idvenv
 
 
@@ -1199,7 +1201,9 @@ srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST
 
 
 
+
 ase,codenvase,nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON CsrProductos.idarticulo = CsrCursor.idarticulo left JOIN CsrUbicacion ON CsrProductos.idubicacion = CsrUbicacion.id left JOIN CsrRubro ON CsrProductos.idrubro = Cs
+
 
 
 
@@ -1399,7 +1403,9 @@ Linea nº SELECT distinct 'A' as grupo,CsrCursor.idarticulo as idarticulo_stock,C
 
 
 
+
 srCursor.deposito as depstock ,NVL(existe,CAST(0 as int) )-NVL(sumacantidad,CAST(0 as int) ) as unidades,CAST(0 as int) as bultos,CAST(0 as int) as unisuel ,NVL(exi_kilos,CAST(0 as n(11,2)))-NVL(sumakilos,CAST(0 as n(11,2))) as kilos ,idenvase,codenvase,
+
 
 
 
@@ -1593,12 +1599,14 @@ nomenvase,CAST(0 as int) as bandeja FROM CsrProductos left JOIN CsrCursor ON Csr
 
 
 
+
  CURSOR CsrImprimir READWRITE
  Alias CSRPRODUCTOS registro          1
 Control activo  LISEXISTENCIA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-02-2018 18:22:22 , Error nº:          1
 Error El archivo 'csrncabefac.dbf' no existe.
 Linea nº SELECT CsrNCabefac.* ,00 as copiatkt ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12
+
 
 
 
@@ -1949,6 +1957,7 @@ Linea nº SELECT CsrVisita.idctacte,CsrVisita.idvendedor FROM CsrVisita INNER JOI
 
 
 
+
  left join CsrVisita ON CsrVentas.idctacte = CsrVisita.idctacte AND CsrVentas.idvendedor = CsrVisita.idvendedor where nvl(CsrVisita.idctacte,0) = 0 ORDER BY idctacte into cursor CsrAuxiliar readwrite
  Alias CSRCRE registro          1
 Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2031,7 +2040,9 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
 
 
 
@@ -2169,7 +2180,9 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
 
 
 
@@ -2305,7 +2318,9 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
 
 
 
@@ -2439,7 +2454,9 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
 
 
 
@@ -2571,7 +2588,9 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
 
 
 
@@ -2701,7 +2720,9 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
 
 
 
@@ -2877,12 +2898,14 @@ Linea nº INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, tel
 
 
 
+
 IM(CsrAux.cdireccion),ALLTRIM(CsrAux.ctelefono) ,ALLTRIM(CsrAux.nroibbto),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia) ,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.idctacte)
  Alias CSRAUX registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 17-07-2018 12:13:23 , Error nº:          1
 Error El archivo 'csrdirecciones.dbf' no existe.
 Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.chrfecha as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDireccio
+
 
 
 
@@ -2990,6 +3013,7 @@ Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.
 
 
 
+
 nes.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -3045,12 +3069,14 @@ Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.
 
 
 
+
 nes.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 17-07-2018 12:23:40 , Error nº:       1806
 Error SQL: no se encuentra la columna 'CTACTE'.
 Linea nº SELECT CsrImprimir.idctacte as id,CsrImprimir.nomvendedor as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.
+
 
 
 
@@ -3181,6 +3207,7 @@ Linea nº SELECT chrfecha,detalle,ctacte,cnombre,nomcatego,lista,nomgrupo,numvend
 
 
 
+
 primir
  Alias CSRIMPRIMIR registro         43
 Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -3260,7 +3287,9 @@ Linea nº SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFa
 
 
 
+
 cciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrI
+
 
 
 
@@ -3332,7 +3361,9 @@ Linea nº SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFa
 
 
 
+
 cciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrI
+
 
 
 
@@ -3440,7 +3471,9 @@ Linea nº SELECT idarticulo,idctacte,idfletero,idvariedad,idvendedor,sucursal ,SU
 
 
 
+
 imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM
+
 
 
 
@@ -3490,7 +3523,9 @@ imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as l
 
 
 
+
 devolmes) as devolmes,SUM(devolanioant) as devolanioant ,SUM(devolsmesant) as devolsmesant,SUM(devolsmes) as devolsmes,SUM(devolsanioant) as devolsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM
+
 
 
 
@@ -3544,7 +3579,9 @@ Linea nº SELECT idarticulo,idctacte,idfletero,idvariedad,idvendedor,sucursal ,SU
 
 
 
+
 imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM
+
 
 
 
@@ -3592,7 +3629,9 @@ imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as l
 
 
 
+
 devolmes) as devolmes,SUM(devolanioant) as devolanioant ,SUM(devolsmesant) as devolsmesant,SUM(devolsmes) as devolsmes,SUM(devolsanioant) as devolsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM
+
 
 
 
@@ -3657,6 +3696,7 @@ Control activo  INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 03-08-2018 14:26:21 , Error nº:         12
 Error No se encuentra la variable 'DEVOLSMESANIOANT'.
 Linea nº replace ALL totalmes WITH impmes - bonmes - devolmes, totalant WITH impmesant-bonmesant-devolmes,totalanio WITH impanioant-bonanioant-devolmes ,ngmes WITH ngmes-bonsmes-devolsmes,ngmesant WITH ngmesant-bonsmesant-devolsmesant,nganioant WITH ngan
+
 
 
 
@@ -3783,4 +3823,9 @@ Error No se encuentra la propiedad BONPFECHA.
 Linea nº thisform.loObjBonifica.bonpfecha	= CsrboniVdor.fecha
  Alias CSRBONIVDOR registro          1
 Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-26-09-2018 14:06:52 , Error nº:       1734Error No se encuentra la propiedad BONPFECHA.Linea nº thisform.loObjBonifica.bonpfecha	= CsrboniVdor.fecha Alias CSRBONIVDOR registro          1Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
+26-09-2018 14:06:52 , Error nº:       1734
+Error No se encuentra la propiedad BONPFECHA.
+Linea nº thisform.loObjBonifica.bonpfecha	= CsrboniVdor.fecha
+ Alias CSRBONIVDOR registro          1
+Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
+27-09-2018 10:35:53 , Error nº:          1Error File 'csrcabefac.dbf' does not exist.Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Alias  registro          0Control activo  REGFACVTA.LOAD
