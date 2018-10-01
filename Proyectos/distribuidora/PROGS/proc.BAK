@@ -1717,6 +1717,8 @@ IF lok
 		RETURN .f.
 	ENDIF 
 	
+	=LeerVtoCertificado(OscParametros)		
+	
 	IF ((LEFT(Csrparametros.switchCaja,1)="1" AND  lnopcion=2) OR (lnopcion=1 AND  LEFT(Csrparametros.switchCajaFac,1)="1"))&& caja cerrada
    				
 		TEXT TO lccmd TEXTMERGE NOSHOW
@@ -1766,7 +1768,8 @@ IF lok
 				+"caja desde   "+TRANSFORM(lObjEjercicioActivo.Nrocaja1,"99999999")+"    caja hasta   "+TRANSFORM(lObjEjercicioActivo.nrocaja2,"99999999"),0)
 			lreturn = .f.
 		ENDIF 
-	ENDIF 			
+	ENDIF 	
+	
 ENDIF 
 
 IF USED("CsrParametros")

@@ -29,7 +29,7 @@ IF !CrearCursorAdapter("CsrCursor",lcCmd)
 ENDIF 
 
 IF RECCOUNT('CsrCursor') = 0
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)'Contacte a un usuario con permiso para determinar la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso para determinar la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
@@ -800,7 +800,10 @@ If File(Lcfilelog)                && ¿Existe el archivo?
 && y devuelve el tamaño
 Else
 	pnFich = Fcreate(Lcfilelog)   && Si no, crearlo
-Endif
+ENDIF
+&&Para devolver la ruta
+tcArchivo = lcFileLog
+
 If pnFich < 0                                       && Comprobar el error
 && abriendo el archivo
 	plRet = .F.

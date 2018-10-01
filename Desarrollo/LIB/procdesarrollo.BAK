@@ -29,50 +29,50 @@ IF !CrearCursorAdapter("CsrCursor",lcCmd)
 ENDIF 
 
 IF RECCOUNT('CsrCursor') = 0
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)'Contacte con el programador y determine la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)'Contacte a un usuario con permiso para determinar la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 dFechaFac	= stod(OscParametros.nrocajafac)
 dFechaCert	= TTOD(CsrCursor.fecha)
 IF dFechaFac >= dFechaCert
-	oavisar.usuario('ADVERTENCIA'+CHR(13)+CHR(13)+'Contacte con el programador los certificados electronicos estan VENCIDOS'+CHR(13)+CHR(13)+'')
+	oavisar.usuario('ADVERTENCIA'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos estan VENCIDOS'+CHR(13)+CHR(13)+'')
 	RETURN .f.
 ENDIF 
 
 IF dFechaFac + 1  >= dFechaCert
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en MAÑANA '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en MAÑANA '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 IF dFechaFac + 2  >= dFechaCert
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en menos de 2 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 2 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 IF dFechaFac + 3  >= dFechaCert
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en menos de 3 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 3 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 IF dFechaFac + 7  >= dFechaCert
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en menos de 7 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 7 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 IF dFechaFac + 15  >= dFechaCert
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en menos de 15 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 15 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 IF GOMONTH(dFechaFac,1) >= dFechaCert AND DAY(dFechaFac) < 4
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en menos de 1 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 1 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
 
 IF GOMONTH(dFechaFac,2) >= dFechaCert AND DAY(dFechaFac) < 4
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte con el programador y los certificados electronicos venceran en menos de 2 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 2 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 
@@ -800,7 +800,10 @@ If File(Lcfilelog)                && ¿Existe el archivo?
 && y devuelve el tamaño
 Else
 	pnFich = Fcreate(Lcfilelog)   && Si no, crearlo
-Endif
+ENDIF
+&&Para devolver la ruta
+tcArchivo = lcFileLog
+
 If pnFich < 0                                       && Comprobar el error
 && abriendo el archivo
 	plRet = .F.
