@@ -1,3 +1,89 @@
+FUNCTION STOD
+PARAMETERS oFecha
+
+sFecha = oFecha
+IF VARTYPE(oFecha)$'N'
+	sFecha = STR(oFecha,8)
+ENDIF 
+sFecha = RIGHT(sFecha,2)+'-'+LEFT(RIGHT(sFecha,4),2)+'-'+LEFT(sFecha,4)
+
+RETURN CTOD(sFecha)
+
+
+*----------------------------------------------------------------------------
+* FUNCION LeerVtoCertificado(OscParametros)
+*----------------------------------------------------------------------------
+* Funcion que valida la fecha de certificados electronicos
+*----------------------------------------------------------------------------
+FUNCTION LeerVtoCertificado
+PARAMETERS OscParametros
+LOCAL lcCmd,lok
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrParaVario.* FROM ParaVario as CsrParaVario
+where nombre='CAE_VTO'
+ENDTEXT 
+
+IF !CrearCursorAdapter("CsrCursor",lcCmd)
+	Oavisar.usuario('Error al obtener datos')
+ENDIF 
+
+IF RECCOUNT('CsrCursor') = 0
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)'Contacte a un usuario con permiso para determinar la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+dFechaFac	= stod(OscParametros.nrocajafac)
+dFechaCert	= TTOD(CsrCursor.fecha)
+IF dFechaFac >= dFechaCert
+	oavisar.usuario('ADVERTENCIA'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos estan VENCIDOS'+CHR(13)+CHR(13)+'')
+	RETURN .f.
+ENDIF 
+
+IF dFechaFac + 1  >= dFechaCert
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en MAÑANA '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+IF dFechaFac + 2  >= dFechaCert
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 2 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+IF dFechaFac + 3  >= dFechaCert
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 3 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+IF dFechaFac + 7  >= dFechaCert
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 7 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+IF dFechaFac + 15  >= dFechaCert
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 15 DIAS '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+IF GOMONTH(dFechaFac,1) >= dFechaCert AND DAY(dFechaFac) < 4
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 1 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+
+IF GOMONTH(dFechaFac,2) >= dFechaCert AND DAY(dFechaFac) < 4
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 2 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	RETURN .T.
+ENDIF 
+
+
+
+IF USED("CsrCursor")
+	USE IN CsrCursor
+ENDIF
+
+RETURN .t.
+
 *----------------------------------------------------
 *---Pasaje a FTP
 *----------------------------------------------------
