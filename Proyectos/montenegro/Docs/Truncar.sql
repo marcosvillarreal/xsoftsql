@@ -1,3 +1,0 @@
-use gestion
-go
-BACKUP LOG gestion WITH TRUNCATE_ONLY DBCC SHRINKDATABASE ( gestion , TRUNCATEONLY ) 
