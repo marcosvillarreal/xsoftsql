@@ -584,6 +584,8 @@ IF LEN(_cuit)<>11
 	sale=.F.
 ELSE
 	_digito=VAL(RIGHT(_cuit,1))
+	stop()
+	_factor = '5432765432' 
 	j=2
 	suma=0
 	dv=0
@@ -599,6 +601,7 @@ ELSE
 		dv=11 - RESTO
 		dv=IIF(dv=10,9,dv)
 	ENDIF
+	
 	sale= IIF(_digito=dv,.T.,.F.)
 ENDIF
 if not sale .and. _sicartel

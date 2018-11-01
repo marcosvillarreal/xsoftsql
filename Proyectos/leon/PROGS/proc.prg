@@ -361,6 +361,7 @@ IF LEN(_cuit)<>11
 ELSE
 	_digito=VAL(RIGHT(_cuit,1))
 	j=2
+	stop()
 	suma=0
 	dv=0
 	FOR i=10 TO 1 STEP -1
@@ -373,7 +374,7 @@ ELSE
 		dv=0
 	ELSE
 		dv=11 - RESTO
-		dv=IIF(dv=10,9,dv)
+		*dv=IIF(dv=10,9,dv)
 	ENDIF
 	sale= IIF(_digito=dv,.T.,.F.)
 ENDIF
