@@ -599,7 +599,7 @@ ELSE
 		dv=0
 	ELSE
 		dv=11 - RESTO
-		dv=IIF(dv=10,9,dv)
+		*dv=IIF(dv=10,9,dv)
 	ENDIF
 	
 	sale= IIF(_digito=dv,.T.,.F.)
