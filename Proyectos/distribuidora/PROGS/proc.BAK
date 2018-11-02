@@ -2456,75 +2456,75 @@ ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora)
 
 RETURN ldfechahoracero
  
-**********************************************************
-Function GRABAR_LOG
+*!*	**********************************************************
+*!*	Function GRABAR_LOG
 
-Parameters tcTexto,tcArchivo,tcCarpeta
+*!*	Parameters tcTexto,tcArchivo,tcCarpeta
 
-Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
-Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
+*!*	Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
+*!*	Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
 
-tcArchivo=IIF(PCOUNT()<2,'Log.txt',tcArchivo)
-tcCarpeta=IIF(PCOUNT()<2,'Log',tcCarpeta)
+*!*	tcArchivo=IIF(PCOUNT()<2,'Log.txt',tcArchivo)
+*!*	tcCarpeta=IIF(PCOUNT()<2,'Log',tcCarpeta)
 
-IF VARTYPE(tcCarpeta)$"L"
-	tcCarpeta = 'Log'
-ENDIF 
+*!*	IF VARTYPE(tcCarpeta)$"L"
+*!*		tcCarpeta = 'Log'
+*!*	ENDIF 
 
-Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta
-Lcfilelog=Lcdirlog+'\'+tcArchivo
-LcNewlog=Lcdirlog+'\'+'New'+ALLTRIM(tcArchivo)
+*!*	Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta
+*!*	Lcfilelog=Lcdirlog+'\'+tcArchivo
+*!*	LcNewlog=Lcdirlog+'\'+'New'+ALLTRIM(tcArchivo)
 
-If !Directory(Lcdirlog)
-	Md (Lcdirlog)
-Endif
+*!*	If !Directory(Lcdirlog)
+*!*		Md (Lcdirlog)
+*!*	Endif
 
-plRet    = .T.
-pnLongAc = 0
-pnTammax = 60000
-pnFtama = 0
+*!*	plRet    = .T.
+*!*	pnLongAc = 0
+*!*	pnTammax = 60000
+*!*	pnFtama = 0
 
-tcTexto=Dtoc(Datetime())+' , '+tcTexto
+*!*	tcTexto=Dtoc(Datetime())+' , '+tcTexto
 
-If File(Lcfilelog)                && ¿Existe el archivo?
-	pnFich = Fopen(Lcfilelog,12)  && Sí: abrir lect./escrit.
-	pnFtama=Fseek(pnFich, 0, 2)                     && Mueve el puntero a EOF
-&& y devuelve el tamaño
-Else
-	pnFich = Fcreate(Lcfilelog)   && Si no, crearlo
-Endif
-If pnFich < 0                                       && Comprobar el error
-&& abriendo el archivo
-	plRet = .F.
-	Wait 'No puedo abrir o crear el archivo de salida (fich)' Window Nowait
-Else                                                && Si no hay error,
-&& escribir en el archivo
-	If pnFtama > pnTammax                           && Si el tamaño es mayor que el max
-		pnFichn = Fcreate(Lcnewlog)    && Crear nuevo log
-		If pnFichn < 0
-			Wait 'No puedo abrir o crear el archivo de salida (fichn)' Window Nowait
-		Else
-			pnPos = Fseek(pnFich, -(pnTammax - 256), 1)
-			pcChar = Fread(pnFich, 1)
-			Do While pcChar <> Chr(10)
-				pcChar = Fread(pnFich, 1)
-			Enddo
-			pnPos = Fseek(pnFich, 0, 1)
-			Do While Not(Feof(pnFich))
-				= Fputs(pnFichn,Fgets(pnFich))
-			ENDDO
-			
-			=Fclose(pnFich)
-			=Fclose(pnFichn)
-			
-			Delete File &Lcfilelog
-			Rename &Lcnewlog To &Lcfilelog
-			pnFich = Fopen(Lcfilelog,12)
-			pnFtama=Fseek(pnFich, 0, 2)
-		Endif
-	Endif
-	=Fputs(pnFich, tcTexto)
-Endif
-=Fclose(pnFich)                                    && Cerrar archivo
+*!*	If File(Lcfilelog)                && ¿Existe el archivo?
+*!*		pnFich = Fopen(Lcfilelog,12)  && Sí: abrir lect./escrit.
+*!*		pnFtama=Fseek(pnFich, 0, 2)                     && Mueve el puntero a EOF
+*!*	&& y devuelve el tamaño
+*!*	Else
+*!*		pnFich = Fcreate(Lcfilelog)   && Si no, crearlo
+*!*	Endif
+*!*	If pnFich < 0                                       && Comprobar el error
+*!*	&& abriendo el archivo
+*!*		plRet = .F.
+*!*		Wait 'No puedo abrir o crear el archivo de salida (fich)' Window Nowait
+*!*	Else                                                && Si no hay error,
+*!*	&& escribir en el archivo
+*!*		If pnFtama > pnTammax                           && Si el tamaño es mayor que el max
+*!*			pnFichn = Fcreate(Lcnewlog)    && Crear nuevo log
+*!*			If pnFichn < 0
+*!*				Wait 'No puedo abrir o crear el archivo de salida (fichn)' Window Nowait
+*!*			Else
+*!*				pnPos = Fseek(pnFich, -(pnTammax - 256), 1)
+*!*				pcChar = Fread(pnFich, 1)
+*!*				Do While pcChar <> Chr(10)
+*!*					pcChar = Fread(pnFich, 1)
+*!*				Enddo
+*!*				pnPos = Fseek(pnFich, 0, 1)
+*!*				Do While Not(Feof(pnFich))
+*!*					= Fputs(pnFichn,Fgets(pnFich))
+*!*				ENDDO
+*!*				
+*!*				=Fclose(pnFich)
+*!*				=Fclose(pnFichn)
+*!*				
+*!*				Delete File &Lcfilelog
+*!*				Rename &Lcnewlog To &Lcfilelog
+*!*				pnFich = Fopen(Lcfilelog,12)
+*!*				pnFtama=Fseek(pnFich, 0, 2)
+*!*			Endif
+*!*		Endif
+*!*		=Fputs(pnFich, tcTexto)
+*!*	Endif
+*!*	=Fclose(pnFich)                                    && Cerrar archivo
 
-Return plRet
+*!*	Return plRet
