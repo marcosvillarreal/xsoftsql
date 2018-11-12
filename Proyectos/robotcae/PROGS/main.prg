@@ -187,9 +187,9 @@ IF TYPE('goApp')='O'
 
 	*LeerXMLClassID("objetodll.xml")
 
-	*If lldesarrollo 
+	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
-	*ENDIF 
+	ENDIF 
 	
 	   * en proc.prg   
 	IF ExisteDSN()  			
