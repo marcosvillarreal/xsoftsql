@@ -18,6 +18,7 @@ SET SYSMENU off
 set classlib to
 l='j:'
 set talk off
+public lldesarrollo
 lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
@@ -109,6 +110,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
    SET CLASSLIB  TO  controleslocal ADDITIVE 
+   SET CLASSLIB  TO  controlesmenu ADDITIVE 
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
