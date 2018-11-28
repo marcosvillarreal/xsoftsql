@@ -1,11 +1,20 @@
 FUNCTION TrazaQuery
-PARAMETERS lcNameQueary,nTipo
-ntipo = IIF(PCOUNT()<2,0,ntipo)
+PARAMETERS lcNameQueary,nTipo,tInicio
+ntipo 	= IIF(PCOUNT()<2,0,ntipo)
+tInicio	= IIF(PCOUNT()<3,DATETIME(),tInicio)
 
 IF TYPE('Ocmd')='O'	
-	TEXT TO cCmdQuery TEXTMERGE NOSHOW 
-	INSERT INTO logQuery (TERMINAL,PROGRAMA,NAMEQUERY,TIPO) VALUES (<<goapp.terminal>>,'<<goapp.programa>>','<<lcNameQueary>>',<<nTipo>>)
-	ENDTEXT 
+	cTiempo = strtrim((DATETIME() - tInicio ),11)
+	
+	IF nTipo = 0
+		TEXT TO cCmdQuery TEXTMERGE NOSHOW 
+		INSERT INTO logQuery (TERMINAL,PROGRAMA,NAMEQUERY,TIPO) VALUES (<<goapp.terminal>>,'<<goapp.programa>>','<<lcNameQueary>>',0)
+		ENDTEXT 
+	ELSE
+		TEXT TO cCmdQuery TEXTMERGE NOSHOW 
+		INSERT INTO logQuery (TERMINAL,PROGRAMA,NAMEQUERY,TIPO,RETARDO) VALUES (<<goapp.terminal>>,'<<goapp.programa>>','<<lcNameQueary>>',1,'<<cTiempo>>')
+		ENDTEXT 
+	ENDIF 
 	=SaveSQL(cCmdQuery,'TrazaQuery')
   
 	Oca = Ocmd

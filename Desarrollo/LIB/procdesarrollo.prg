@@ -3,6 +3,10 @@ PARAMETERS lcNameQueary,nTipo,tInicio
 ntipo 	= IIF(PCOUNT()<2,0,ntipo)
 tInicio	= IIF(PCOUNT()<3,DATETIME(),tInicio)
 
+cTiempo = strtrim((DATETIME() - tInicio ),11)
+IF VAL(ctiempo)=0
+	RETURN 
+ENDIF 
 IF TYPE('Ocmd')='O'	
 	cTiempo = strtrim((DATETIME() - tInicio ),11)
 	
