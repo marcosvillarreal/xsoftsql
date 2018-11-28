@@ -1,3 +1,42 @@
+FUNCTION TrazaQuery
+PARAMETERS lcNameQueary,nTipo,tInicio
+ntipo 	= IIF(PCOUNT()<2,0,ntipo)
+tInicio	= IIF(PCOUNT()<3,DATETIME(),tInicio)
+
+IF TYPE('Ocmd')='O'	
+	cTiempo = strtrim((DATETIME() - tInicio ),11)
+	
+	IF nTipo = 0
+		TEXT TO cCmdQuery TEXTMERGE NOSHOW 
+		INSERT INTO logQuery (TERMINAL,PROGRAMA,NAMEQUERY,TIPO) VALUES (<<goapp.terminal>>,'<<goapp.programa>>','<<lcNameQueary>>',0)
+		ENDTEXT 
+	ELSE
+		TEXT TO cCmdQuery TEXTMERGE NOSHOW 
+		INSERT INTO logQuery (TERMINAL,PROGRAMA,NAMEQUERY,TIPO,RETARDO) VALUES (<<goapp.terminal>>,'<<goapp.programa>>','<<lcNameQueary>>',1,'<<cTiempo>>')
+		ENDTEXT 
+	ENDIF 
+	=SaveSQL(cCmdQuery,'TrazaQuery')
+  
+	Oca = Ocmd
+	Oca.commandtext = cCmdQuery
+	Oca.commandtype = 1
+	nintento = 0
+	LOCAL loCatchErr As Exception
+	ldebociclar = .t.
+	DO WHILE ldebociclar AND nintento < 5
+	   ldebociclar = .f.
+		TRY 
+		  Oca.execute()
+		CATCH TO loCatchErr
+	 	  ldebociclar = .t.
+	 	  nintento = nintento + 1 
+		ENDTRY   
+	ENDDO 
+	IF ldebociclar
+		oavisar.usuario(loCatchErr.Message)
+	ENDIF 
+ENDIF 		
+
 FUNCTION STOD
 PARAMETERS oFecha
 

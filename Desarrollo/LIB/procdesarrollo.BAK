@@ -1,3 +1,33 @@
+FUNCTION TrazaQuery
+PARAMETERS lcNameQueary,nTipo
+ntipo = IIF(PCOUNT()<2,0,ntipo)
+
+IF TYPE('Ocmd')='O'	
+	TEXT TO cCmdQuery TEXTMERGE NOSHOW 
+	INSERT INTO logQuery (TERMINAL,PROGRAMA,NAMEQUERY,TIPO) VALUES (<<goapp.terminal>>,'<<goapp.programa>>','<<lcNameQueary>>',<<nTipo>>)
+	ENDTEXT 
+	=SaveSQL(cCmdQuery,'TrazaQuery')
+  
+	Oca = Ocmd
+	Oca.commandtext = cCmdQuery
+	Oca.commandtype = 1
+	nintento = 0
+	LOCAL loCatchErr As Exception
+	ldebociclar = .t.
+	DO WHILE ldebociclar AND nintento < 5
+	   ldebociclar = .f.
+		TRY 
+		  Oca.execute()
+		CATCH TO loCatchErr
+	 	  ldebociclar = .t.
+	 	  nintento = nintento + 1 
+		ENDTRY   
+	ENDDO 
+	IF ldebociclar
+		oavisar.usuario(loCatchErr.Message)
+	ENDIF 
+ENDIF 		
+
 FUNCTION STOD
 PARAMETERS oFecha
 
@@ -29,7 +59,7 @@ IF !CrearCursorAdapter("CsrCursor",lcCmd)
 ENDIF 
 
 IF RECCOUNT('CsrCursor') = 0
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)'Contacte a un usuario con permiso para determinar la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso para determinar la fecha de vencimiento de los certificados electronicos'+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
 	RETURN .T.
 ENDIF 
 

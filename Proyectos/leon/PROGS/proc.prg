@@ -1340,6 +1340,11 @@ lbcartel				=  IIF(PCOUNT()<4,.t.,lbCartel)
 lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(13)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(10)," ")
+LOCAL tInicio
+
+tInicio =  DATETIME()
+
+*=TrazaQuery(lcaliasCursor)
 
 Orslista = null 
 Ocalista = null
@@ -1371,7 +1376,8 @@ IF !OCAlista.CursorFill()
 	ENDIF
 ELSE
 	OCAlista.CursorDetach()
-	lreturn = .t.   
+	lreturn = .t. 
+	=TrazaQuery(lcaliasCursor,1,tInicio)  
 ENDIF
     
 RETURN lreturn
@@ -2100,19 +2106,19 @@ WHERE Csrdetaconta.nrocaja1 <= <<lpnrocaja>>
 and <<lpnrocaja>> <= CsrDetaconta.nrocaja2
 ENDTEXT 
 
-IF !CrearCursorAdapter("CsrCursor",lcCmd)
+IF !CrearCursorAdapter("CsrEjerCaja",lcCmd)
 	Oavisar.usuario('Error al obtener datos del detaconta')
 ENDIF 
 
-IF RECCOUNT('CsrCursor')#0
-	goapp.idejercicioCaja = CsrCursor.id
-	**goapp.ejercicioCaja = CsrCursor.ejercicio
+IF RECCOUNT('CsrEjerCaja')#0
+	goapp.idejercicioCaja = CsrEjerCaja.id
+	**goapp.ejercicioCaja = CsrEjerCaja.ejercicio
 ELSE
 	=Oavisar.usuario("No se pudo leer el ejercicio de la caja "+ALLTRIM(STR(lpnrocaja)))
 ENDIF
 
-IF USED("CsrCursor")
-	USE IN CsrCursor
+IF USED("CsrEjerCaja")
+	USE IN CsrEjerCaja
 ENDIF
 RETURN .t.
 *======================================================================
