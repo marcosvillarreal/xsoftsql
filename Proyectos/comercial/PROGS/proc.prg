@@ -1576,11 +1576,11 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 		TEXT TO lcCmd TEXTMERGE NOSHOW 
 		SELECT Csrseteotermi.* FROM seteotermi as Csrseteotermi WHERE sucursal = <<Goapp.sucursal>> and numero=<<Goapp.terminal>> 
 		ENDTEXT 
-		IF USED("CsrSeteotermi")
-			USE IN CsrSeteotermi
+		IF USED("CsrTermiMenu")
+			USE IN CsrTermiMenu
 		ENDIF
-		lok =CrearCursorAdapter("CsrSeteotermi",lcCmd)
-		_siactiva=Csrseteotermi.termiactiva=1
+		lok =CrearCursorAdapter("CsrTermiMenu",lcCmd)
+		_siactiva=CsrTermiMenu.termiactiva=1
 	ELSE
 		lok= .t. 
 		_siactiva=1
@@ -1624,8 +1624,8 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 		RELEASE OrsTerminal
 		RELEASE OCaterminal
 	ENDIF 
-	IF USED("CsrSeteotermi")
-		USE IN CsrSeteotermi
+	IF USED("CsrTermiMenu")
+		USE IN CsrTermiMenu
 	ENDIF
 RETURN .t.
 
