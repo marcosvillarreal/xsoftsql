@@ -1,0 +1,13 @@
+27-12-2018 13:41:34 , SUBRTOPDTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: ORDER BY clause is invalid.;Linea : SELECT grupo,0 as idctacte,ctacte,nomctacte,'' as codigo,0 as idarticulo ,0 as idpase,1 as idorden,codvendedor, nomvendedor,chrfecha,detalle ,SUM(importe) as importe,DATE(),SUM(pendiente) as pendiente ,SUM(totales) as Total , articulo, numcomp,diasprome,'' as retiro,'' as autorizo FROM CsrImprimir GROUP BY idctacte,ctacte,nomctacte,grupo,chrfecha,detalle ,codvendedor, nomvendedor,articulo,numcomp,diasprome ORDER BY grupo,total INTO CURSOR CsrImprimir READWRITE;Error :       1808;Ultimo Alias Activo: CSRCLIENTES;Ultimo registro:        285 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00009L3D03M7.TMP;Ultimo Control activo: 
+27-12-2018 13:41:34 , Pila de llamadas
+27-12-2018 13:41:34 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+27-12-2018 13:41:34 , Objeto      : subrtopdte.imprimir_vistaprevia1.impresora.click
+27-12-2018 13:41:34 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+27-12-2018 13:41:34 , Nº de Linea :          6
+27-12-2018 13:41:34 , En el Fuente: 	llOK=thisform.CrearInforme()
+27-12-2018 13:41:34 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+27-12-2018 13:41:34 , Objeto      : subrtopdte.crearinforme
+27-12-2018 13:41:34 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subrtopdte.sct
+27-12-2018 13:41:34 , Nº de Linea :        220
+27-12-2018 13:41:34 , En el Fuente: 	SELECT grupo,0 as idctacte,ctacte,nomctacte,'' as codigo,0 as idarticulo	,0 as idpase,1 as idorden,codvendedor, nomvendedor,chrfecha,detalle	,SUM(importe) as importe,DATE(),SUM(pendiente) as pendiente	,SUM(totales) as Total;	
+27-12-2018 13:41:34 , Fin
