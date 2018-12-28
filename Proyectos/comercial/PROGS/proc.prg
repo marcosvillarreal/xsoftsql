@@ -584,7 +584,7 @@ IF LEN(_cuit)<>11
 	sale=.F.
 ELSE
 	_digito=VAL(RIGHT(_cuit,1))
-	stop()
+	
 	_factor = '5432765432' 
 	j=2
 	suma=0
