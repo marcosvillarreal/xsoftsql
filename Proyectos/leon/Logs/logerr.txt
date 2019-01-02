@@ -1,736 +1,24 @@
-07-11-2018 18:15:23 , Pila de llamadas
-07-11-2018 18:15:24 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-07-11-2018 18:15:24 , Objeto      : main
-07-11-2018 18:15:24 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-07-11-2018 18:15:24 , Nº de Linea :        220
-07-11-2018 18:15:24 , En el Fuente: 	LeerEmpresa()
-07-11-2018 18:15:24 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-07-11-2018 18:15:24 , Objeto      : leerempresa
-07-11-2018 18:15:24 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-07-11-2018 18:15:24 , Nº de Linea :       1517
-07-11-2018 18:15:24 , En el Fuente: lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
-07-11-2018 18:15:24 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-07-11-2018 18:15:25 , Objeto      : crearcursoradapter
-07-11-2018 18:15:25 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-07-11-2018 18:15:25 , Nº de Linea :       1350
-07-11-2018 18:15:26 , En el Fuente: 
-07-11-2018 18:36:02 , REGCAJA.CMDCONSULTA.CLICK, Error: El archivo 'csrcursor.dbf' no existe.;Linea : SELECT idmaopera as idmaopera,importe as importe,numero as nrocheque ,000 as numero,NomValor as cnombre,CAST(0 as int) as idvalor,'T' as esclase,SPACE(1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5) as lcnumero ,SPACE(15) as cupon,00 as cuota,STR(id,12) as idcheque,SPACE(50) as detalle ,fechavto,banco ,titular ,idctabco,localidad,cuit,recibido,entregado ,idbanco,idctaentrega,idctarecibido,idctatitular,idlocalidad,codbarra as nroidentificador ,lcc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-uit FROM Csrcursor INTO CURSOR CsrAuxBco READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-07-11-2018 18:36:02 , Pila de llamadas
-07-11-2018 18:36:03 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-07-11-2018 18:36:03 , Objeto      : regcaja.cmdconsulta.click
-07-11-2018 18:36:03 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-07-11-2018 18:36:04 , Nº de Linea :          2
-07-11-2018 18:36:04 , En el Fuente: thisform.key_f4()  
-07-11-2018 18:36:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-07-11-2018 18:36:04 , Objeto      : regcaja.key_f4
-07-11-2018 18:36:05 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-07-11-2018 18:36:05 , Nº de Linea :         51
-07-11-2018 18:36:05 , En el Fuente: 	thisform.muestracomprobante(lcidretorno)
-07-11-2018 18:36:05 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-07-11-2018 18:36:05 , Objeto      : regcaja.muestracomprobante
-07-11-2018 18:36:05 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-07-11-2018 18:36:05 , Nº de Linea :        143
-07-11-2018 18:36:06 , En el Fuente: SELECT idmaopera as idmaopera,importe as importe,numero as nrocheque,000 as numero,NomValor as cnombre,CAST(0 as int) as idvalor,'T' as esclase,SPACE(15) as lcnumero,SPACE(15) as cupon,00 as cuota,STR(id,12) as idchequ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-e,SPACE(50) as detalle,fechavto,banco ,titular ,idctabco,localidad,cuit,recibido,entregado,idbanco,idctaentrega,idctarecibido,idctatitular,idlocalidad,codbarra as nroidentificador,lccuitFROM Csrcursor INTO CURSOR CsrAuxBco READWRITE
-26-11-2018 14:03:39 , PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'TINICIO'.;Linea : This.EditEstado.Value = This.EditEstado.Value + IIF(LEN(This.EditEstado.Value)=0,'',CHR(13)) + cCartel + strtrim((DATETIME() -
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- tInicio ),11) + " SEG.";Error :         12;Ultimo Alias Activo: CSRPARACONTA;Ultimo registro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000063NT00OW.TMP;Ultimo Control activo: 
-26-11-2018 14:03:42 , Pila de llamadas
-26-11-2018 14:03:45 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-26-11-2018 14:03:46 , Objeto      : planillacaja.imprimir_vistaprevia1.impresora.click
-26-11-2018 14:03:46 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-26-11-2018 14:03:46 , Nº de Linea :          6
-26-11-2018 14:03:46 , En el Fuente: 	llOK=thisform.CrearInforme()
-26-11-2018 14:03:49 , Programa    : j:\xsoftsql\proyectos\leon\forms\caja\planillacaja_v1.sct
-26-11-2018 14:03:49 , Objeto      : planillacaja.crearinforme
-26-11-2018 14:03:49 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\caja\planillacaja_v1.sct
-26-11-2018 14:03:54 , Nº de Linea :        110
-26-11-2018 14:03:55 , En el Fuente: 	=.WriteState('Empezando el proceso....')
-26-11-2018 14:03:55 , Programa    : j:\xsoftsql\proyectos\leon\forms\caja\planillacaja_v1.sct
-26-11-2018 14:03:59 , Objeto      : planillacaja.writestate
-26-11-2018 14:03:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\caja\planillacaja_v1.sct
-26-11-2018 14:03:59 , Nº de Linea :          3
-26-11-2018 14:04:04 , En el Fuente: This.EditEstado.Value = This.EditEstado.Value + IIF(LEN(This.EditEstado.Value)=0,'',CHR(13)) + cCartel + strtrim((DATETIME() - tInicio ),11) + " SEG."
-28-11-2018 11:28:57 , MAIN, Error: El archivo 'logqueary.prg' no existe.;Linea : =LogQueary(lcaliasCursor);Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-28-11-2018 11:28:59 , Pila de llamadas
-28-11-2018 11:28:59 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-28-11-2018 11:28:59 , Objeto      : main
-28-11-2018 11:28:59 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-28-11-2018 11:28:59 , Nº de Linea :        220
-28-11-2018 11:29:02 , En el Fuente: 	LeerEmpresa()
-28-11-2018 11:29:02 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-28-11-2018 11:29:02 , Objeto      : leerempresa
-28-11-2018 11:29:05 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-28-11-2018 11:29:05 , Nº de Linea :       1520
-28-11-2018 11:29:05 , En el Fuente: lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
-28-11-2018 11:29:05 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-28-11-2018 11:29:09 , Objeto      : crearcursoradapter
-28-11-2018 11:29:09 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
 28-11-2018 11:29:09 , Nº de Linea :       1344
 28-11-2018 11:29:12 , En el Fuente: =LogQueary(lcaliasCursor)
 28-11-2018 11:31:22 , MAIN, Error: No se encuentra la propiedad PROGRAMA.;Linea : INSERT INTO logQueary (TERMINAL,PROGRAMA,NAMEQUEARY,TIPO) VALUES (<<goapp.terminal>>,<<goapp.programa>>,<<lcNameQueary>>,<<nTipo>>);Error :       1734;Ultimo Alias Activo: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1084,6 +372,24 @@ e,SPACE(50) as detalle,fechavto,banco ,titular ,idctabco,localidad,cuit,recibido
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 PPDATA\LOCAL\TEMP\00007UVD00LN.TMP;Ultimo Control activo: 
 28-11-2018 13:13:00 , Pila de llamadas
 28-11-2018 13:13:03 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1097,6 +403,24 @@ PPDATA\LOCAL\TEMP\00007UVD00LN.TMP;Ultimo Control activo:
 28-11-2018 13:13:10 , Nº de Linea :        135
 28-11-2018 13:13:14 , En el Fuente: SELECT CsrPlanilla
 28-11-2018 16:09:59 , PLANILLACAJA_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad TABLAORI.;Linea : lctacted = IIF(OscCursor.tablaori$"BPAG-BECA",OscCursor.movbcoimporte,OscCursor.importe) * IIF(OscCursor.debehaber="D",1,0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1366,6 +690,24 @@ PPDATA\LOCAL\TEMP\00007UVD00LN.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Error :       1734;Ultimo Alias Activo: CSRPLANILLA;Ultimo registro:         16 STR(IDMAOPERA,12)+STR(ID,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007UVD00RE.TMP;Ultimo Control activo: 
 28-11-2018 16:11:11 , Pila de llamadas
 28-11-2018 16:11:14 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1379,6 +721,24 @@ Error :       1734;Ultimo Alias Activo: CSRPLANILLA;Ultimo registro:         16 
 28-11-2018 16:11:21 , Nº de Linea :        291
 28-11-2018 16:11:21 , En el Fuente: 	lctacted = IIF(OscCursor.tablaori$"BPAG-BECA",OscCursor.movbcoimporte,OscCursor.importe) * IIF(OscCursor.debehaber="D",1,0)
 28-11-2018 16:12:39 , PLANILLACAJA_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad MOVBCOIMPORTE.;Linea : lcajai   = IIF(OscCursor.tablaori$"BPAG-BECA",OscCursor.movbcoimporte,OscCursor.importe) *  IIF(OscCursor.debehaber="H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1632,7 +992,43 @@ Error :       1734;Ultimo Alias Activo: CSRPLANILLA;Ultimo registro:         16 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L(M.numcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimporte,0) as movbcoimporte FROM CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE;Error :       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1877,6 +1273,24 @@ L(M.numcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimporte,0) a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE 
 29-11-2018 09:26:09 , PLANILLACAJA_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'MOVBCOCARSIGNO'.;Linea : SELECT CsrAuxPlanilla.*,NVL(M.movbcocarsigno,0) as movbcocarsigno,NVL(M.cnombre,CsrAuxPlanilla.cnombre) as cnomb
 
@@ -1992,7 +1406,43 @@ CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorig
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 re ,NVL(M.numcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimporte,0) as movbcoimporte FROM CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE;Error : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2228,8 +1678,44 @@ re ,NVL(M.numcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimport
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE 
 29-11-2018 09:27:02 , PLANILLACAJA_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad CNOMBRE.;Linea : lcnombre  = "CPRA "+OscCursor.cnombre;Error :       1734;Ultimo Alias Activo: CSRPLANILLA;Ultimo registro:          1 STR(ID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2457,6 +1943,24 @@ MAOPERA,12)+STR(ID,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009ZBD00UC.TMP;U
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 NILLA;Ultimo registro:         12 STR(IDMAOPERA,12)+STR(ID,12);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009ZBD00VR.TMP;Ultimo Control activo: 
 29-11-2018 09:28:16 , Pila de llamadas
 29-11-2018 09:28:17 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2571,7 +2075,43 @@ NILLA;Ultimo registro:         12 STR(IDMAOPERA,12)+STR(ID,12);DBF: C:\USERS\ADM
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimporte,0) as movbcoimporte ,NVL(A.detalle,'') as detalle FROM CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen LEFT JOIN CsrAstoDeta as A ON CsrAuxPlanilla.i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2782,8 +2322,44 @@ d = A.id ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE;Error :       1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L(A.detalle,'') as detalle FROM CsrAuxPlanilla LEFT JOIN CsrAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen LEFT JOIN CsrAstoDeta as A ON CsrAuxPlanilla.id = A.id ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE 
 04-12-2018 12:22:03 , INF_CAEA.INIT, Error: No se encuentra la propiedad RECUPERAXML.;Linea : .recuperaxml = .t.;Error :       1734;Ultimo Alias Activo: CSRTALONARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007UVD01E6.TMP;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2989,6 +2565,24 @@ imo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \USERS\ADMIN\APPDATA\LOCAL\TEMP\00007UVD01EU.TMP;Ultimo Control activo: 
 04-12-2018 12:22:40 , Pila de llamadas
 04-12-2018 12:22:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\inf_caea.sct
@@ -3007,6 +2601,24 @@ imo Control activo:
 04-12-2018 12:22:43 , Nº de Linea :         21
 04-12-2018 12:22:44 , En el Fuente: 			INSERT INTO CsrPrefijo VALUES ('FACTURA','A',CsrTalonario.prefijo,VAL(cNumero))
 04-12-2018 12:23:10 , INF_CAEA.INIT, Error: LBLFACA es un miembro desconocido.;Linea : this.lblfaca.Caption = "FAC A: " + cNumero;Error :       1925;Ultimo Alias Activo: CSRTALONARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3192,6 +2804,24 @@ imo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ADXL00BC.TMP;Ultimo Control activo: 
 04-12-2018 12:50:46 , Pila de llamadas
 04-12-2018 12:50:46 , Programa    : j:\xsoftsql\proyectos\leon\forms\inf_caea.sct
@@ -3210,6 +2840,24 @@ o registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ADXL00BC.TMP;
 04-12-2018 12:50:49 , Nº de Linea :         20
 04-12-2018 12:50:49 , En el Fuente: 			INSERT INTO CsrPrefijo VALUES ('FACTURA',CsrTalonario.Letra,CsrTalonario.prefijo,VAL(cNumero),.FechaFac)
 04-12-2018 12:52:27 , INF_CAEA.INIT, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : INSERT INTO CsrPrefijo VALUES ('FACTURA',CsrTalonario.Letra,CsrTalonario.prefijo,VAL(cNumero),DTOC(NVL(.FechaFac,'')));Error :        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3375,6 +3023,24 @@ o registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ADXL00BC.TMP;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rol activo: CODIGO
 27-12-2018 17:37:04 , Pila de llamadas
 27-12-2018 17:37:05 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -3398,6 +3064,24 @@ rol activo: CODIGO
 27-12-2018 17:37:08 , Nº de Linea :        136
 27-12-2018 17:37:08 , En el Fuente: SELECT CsrBoniVdor
 28-12-2018 13:51:05 , REGCTACTEIMP.LOAD, Error: El archivo 'csrmovctacte.dbf' no existe.;Linea : SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3539,6 +3223,24 @@ tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:       
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 APPDATA\LOCAL\TEMP\000015AH00Y2.TMP;Ultimo Control activo: 
 28-12-2018 13:54:43 , Pila de llamadas
 28-12-2018 13:54:43 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacteimp.sct
@@ -3552,6 +3254,24 @@ APPDATA\LOCAL\TEMP\000015AH00Y2.TMP;Ultimo Control activo:
 28-12-2018 13:54:54 , Nº de Linea :         25
 28-12-2018 13:54:54 , En el Fuente: 	.containertotales.lblcancelado.Caption = "Cancelado"	
 28-12-2018 13:56:11 , REGCTACTEIMP.CONTAINERENCABEZA._CBOCOMPROBANTE.LOSTFOCUS, Error: No se encuentra el alias 'CSRVALOR'.;Linea : SELECT CsrValor;Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: IDCOMPR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3678,11 +3398,47 @@ OBA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OBA
 28-12-2018 13:56:40 , Pila de llamadas
 28-12-2018 13:56:44 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
 28-12-2018 13:56:44 , Objeto      : regctacteimp.containerencabeza._cbocomprobante.lostfocus
 28-12-2018 14:04:52 , REGCTACTEIMP.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.LOSTFOCUS, Error: ORETEGANANCIA es un miembro desconocido.;Linea : IF this.oReteGanancia.hayrete;Error :       1925;Ultimo Alias Activo: CSRAUXMOVCTACTE;Ultimo registro:          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3805,6 +3561,24 @@ OBA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as Activo: CSRPROVINCIA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND00JC.TMP;Ultimo Control activo: 
 28-12-2018 14:09:34 , Pila de llamadas
 28-12-2018 14:09:38 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3823,6 +3597,24 @@ as Activo: CSRPROVINCIA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA
 28-12-2018 14:09:52 , Nº de Linea :         16
 28-12-2018 14:09:52 , En el Fuente: lcfecha = "'"+DTOS(gomonth(DATE(),thisform.objseteoparam.def_regctacte_meses))+"'"
 28-12-2018 14:14:05 , REGCTACTEIMP.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.LOSTFOCUS, Error: _TXTTOTALGASTOS es un miembro desconocido.;Linea : .containertotales._txttotalgastos.Value = 0;Error :       1925;Ultimo Alias Activo: CSRPREFIJONRO;Ultimo regis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3914,6 +3706,24 @@ tro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND00VU.TMP;Ultimo 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND012B.TMP;Ultimo Control activo: DETALLE
 28-12-2018 14:15:12 , Pila de llamadas
 28-12-2018 14:15:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacteimp.sct
@@ -3922,6 +3732,24 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND012B.TMP;Ultimo Control activo: DETALLE
 28-12-2018 14:15:16 , Nº de Linea :          2
 28-12-2018 14:15:16 , En el Fuente: ThisForm.Grid2.Column6.Text1.Click()
 28-12-2018 14:16:34 , REGCTACTEIMP.CONTAINERENCABEZA._TXTDETALLE.LOSTFOCUS, Error: GRID2 es un miembro desconocido.;Linea : ThisForm.Grid2.Column6.Text1.Click();Error :       1925;Ultimo Alias Activo: CSRPREFIJONRO;Ultimo registro:          1 ;DBF: C:\US
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3999,6 +3827,24 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND012B.TMP;Ultimo Control activo: DETALLE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND019J.TMP;Ultimo Control activo: DETALLE
 28-12-2018 14:17:41 , Pila de llamadas
 28-12-2018 14:17:45 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacteimp.sct
@@ -4007,6 +3853,24 @@ ERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND019J.TMP;Ultimo Control activo: DETALLE
 28-12-2018 14:17:49 , Nº de Linea :          2
 28-12-2018 14:17:49 , En el Fuente: ThisForm.Grid2.Column6.Text1.Click()
 28-12-2018 14:38:38 , REGCTACTEIMP.KEYPRESS, Error: No se encuentra el alias 'CSRVALOR'.;Linea : SELECT CsrValor;Error :         13;Ultimo Alias Activo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND02OA.TMP;Ultimo C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4085,6 +3949,24 @@ ontrol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 28-12-2018 14:48:05 , Pila de llamadas
 28-12-2018 14:48:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacteimp.sct
@@ -4098,6 +3980,24 @@ tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:       
 28-12-2018 14:48:16 , Nº de Linea :          4
 28-12-2018 14:48:16 , En el Fuente: SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE 
 28-12-2018 14:49:00 , REGCTACTEIMP.LOAD, Error: El archivo 'csrmovctacte.dbf' no existe.;Linea : SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4147,6 +4047,24 @@ tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:       
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 28-12-2018 14:51:19 , Pila de llamadas
 28-12-2018 14:51:23 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacteimp.sct
@@ -4160,6 +4078,24 @@ tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:       
 28-12-2018 14:51:30 , Nº de Linea :          4
 28-12-2018 14:51:30 , En el Fuente: SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE 
 28-12-2018 14:55:45 , REGCTACTEIMP.KEYPRESS, Error: _TXTTOTALCANCELADO es un miembro desconocido.;Linea : lnImporte 	= IIF(!lbEsCaja,thisform.containertotales._txttotalcancelado.Value,thisform.containertotales._txttotalcaja.Value);Error :       1925;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4200,6 +4136,24 @@ mo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000064ND036O.TMP;Ultimo Control activo: 
 28-12-2018 14:59:24 , Pila de llamadas
 28-12-2018 14:59:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacteimp.sct
@@ -4222,3 +4176,98 @@ mo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\
 28-12-2018 14:59:46 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
 28-12-2018 14:59:46 , Nº de Linea :         33
 28-12-2018 14:59:50 , En el Fuente: 		lnImporte 	= IIF(!lbEsCaja,thisform.containertotales._txttotalcancelado.Value,thisform.containertotales._txttotalcaja.Value)
+02-01-2019 12:26:38 , LISINVENTARIO.PRECIOPROD1.INIT, Error: No se encuentra el alias 'CSRSETEO'.;Linea : SELECT CsrSeteo;Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+02-01-2019 12:26:38 , Pila de llamadas
+02-01-2019 12:26:38 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+02-01-2019 12:26:39 , Objeto      : lisinventario.precioprod1.init
+02-01-2019 12:26:39 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+02-01-2019 12:26:39 , Nº de Linea :          3
+02-01-2019 12:26:40 , En el Fuente: loObjAgregar.objseteoparam(@lObjeto)
+02-01-2019 12:26:40 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+02-01-2019 12:26:40 , Objeto      : agregaobjeto.objseteoparam
+02-01-2019 12:26:40 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+02-01-2019 12:26:41 , Nº de Linea :         11
+02-01-2019 12:26:41 , En el Fuente: SELECT CsrSeteo
+02-01-2019 12:27:27 , LISINVENTARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ");Error :         11;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+: _CSRPRODUCTO;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009X5500V6.TMP;Ultimo Control activo: 
+02-01-2019 12:27:28 , Pila de llamadas
+02-01-2019 12:27:29 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+02-01-2019 12:27:29 , Objeto      : lisinventario.imprimir_vistaprevia1.impresora.click
+02-01-2019 12:27:29 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+02-01-2019 12:27:29 , Nº de Linea :          6
+02-01-2019 12:27:29 , En el Fuente: 	llOK=thisform.CrearInforme()
+02-01-2019 12:27:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\lisinventario.sct
+02-01-2019 12:27:29 , Objeto      : lisinventario.crearinforme
+02-01-2019 12:27:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lisinventario.sct
+02-01-2019 12:27:30 , Nº de Linea :         63
+02-01-2019 12:27:30 , En el Fuente: IF NOT CrearCursorAdapter('CsrCursor')
+02-01-2019 12:27:30 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
+02-01-2019 12:27:31 , Objeto      : crearcursoradapter
+02-01-2019 12:27:31 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
+02-01-2019 12:27:31 , Nº de Linea :       1340
+02-01-2019 12:27:32 , En el Fuente: lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
+02-01-2019 12:29:18 , LISINVENTARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'ID'.;Linea : SELECT CsrCursor.*,CsrArticulo.*,existe-sumacantidad as unidades,CAST(0 as int) as totalkilos,CAST(0 as int) as bultos,CAST(0 
+
+
+
+
+
+
+
+as int) as unisuel,CAST(0 as numeric(12,3)) as precio ,exi_kilos-sumakilos as kilos FROM CsrCursor INNER JOIN CsrArticulo ON CsrCursor.id = CsrArticulo.id WHERE existe-sumacantidad>0 OR exi_kilos - sumakilos > 0 INTO CURSOR CsrImprimir READWRITE;Error : 
+
+
+
+
+
+
+
+      1806;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009X5500X3.TMP;Ultimo Control activo: 
+02-01-2019 12:29:18 , Pila de llamadas
+02-01-2019 12:29:18 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+02-01-2019 12:29:18 , Objeto      : lisinventario.imprimir_vistaprevia1.impresora.click
+02-01-2019 12:29:18 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+02-01-2019 12:29:18 , Nº de Linea :          6
+02-01-2019 12:29:18 , En el Fuente: 	llOK=thisform.CrearInforme()
+02-01-2019 12:29:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\lisinventario.sct
+02-01-2019 12:29:19 , Objeto      : lisinventario.crearinforme
+02-01-2019 12:29:19 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lisinventario.sct
+02-01-2019 12:29:19 , Nº de Linea :         74
+02-01-2019 12:29:20 , En el Fuente: SELECT CsrCursor.*,CsrArticulo.*,existe-sumacantidad as unidades,CAST(0 as int) as totalkilos,CAST(0 as int) as bultos,CAST(0 as int) as unisuel,CAST(0 as numeric(12,3)) as precio,exi_kilos-sumakilos as kilos FROM CsrC
+
+
+
+
+ursor  INNER JOIN CsrArticulo ON CsrCursor.id = CsrArticulo.id WHERE existe-sumacantidad>0 OR exi_kilos - sumakilos > 0 INTO CURSOR CsrImprimir READWRITE 
+02-01-2019 12:45:11 , LISINVENTARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'CODIGO'.;Linea : SELECT CsrCursor.*,CsrArticulo.*,existe-sumacantidad as unidades,CAST(0 as int) as totalkilos,CAST(0 as int) as bultos,CAS
+
+
+
+T(0 as int) as unisuel,CAST(0 as numeric(12,3)) as precio ,exi_kilos-sumakilos as kilos FROM CsrCursor INNER JOIN CsrArticulo ON CsrCursor.idarticulo = CsrArticulo.id AND CsrCursor.idvariedad = CsrArticulo.idvariedad WHERE existe-sumacantidad>0 OR exi_ki
+
+
+
+los - sumakilos > 0 ORDER BY codigo,subnumero,deposito INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009X5501BL.TMP;Ultimo Control activo: 
+02-01-2019 12:45:12 , Pila de llamadas
+02-01-2019 12:45:12 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+02-01-2019 12:45:12 , Objeto      : lisinventario.imprimir_vistaprevia1.impresora.click
+02-01-2019 12:45:12 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+02-01-2019 12:45:13 , Nº de Linea :          6
+02-01-2019 12:45:13 , En el Fuente: 	llOK=thisform.CrearInforme()
+02-01-2019 12:45:13 , Programa    : j:\xsoftsql\proyectos\leon\forms\lisinventario.sct
+02-01-2019 12:45:14 , Objeto      : lisinventario.crearinforme
+02-01-2019 12:45:14 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\lisinventario.sct
+02-01-2019 12:45:14 , Nº de Linea :         74
+02-01-2019 12:45:15 , En el Fuente: SELECT CsrCursor.*,CsrArticulo.*,existe-sumacantidad as unidades,CAST(0 as int) as totalkilos,CAST(0 as int) as bultos,CAST(0 as int) as unisuel,CAST(0 as numeric(12,3)) as precio,exi_kilos-sumakilos as kilos FROM CsrCursor  INNER JOIN CsrArticulo ON CsrCursor.idarticulo = CsrArticulo.id AND CsrCursor.idvariedad = CsrArticulo.idvariedad WHERE existe-sumacantidad>0 OR exi_kilos - sumakilos > 0 ORDER BY codigo,subnumero,deposito INTO CURSOR CsrImprimir READWRITE 

@@ -1,34 +1,3 @@
-Control activo  EST_VENTAVISITAS.FECHA_CALENDARIO1.LOSTFOCUS
-27-06-2018 13:31:55 , Error nº:       1925
-Error CONTAINERGUIA es un miembro desconocido.
-Linea nº thisform.containerGuia.Visible=.f.
- Alias _CSRRUTA registro          1
-Control activo  EST_VENTAVISITAS.FECHA_CALENDARIO1.LOSTFOCUS
-27-06-2018 13:57:38 , Error nº:       1925
-Error CHKCANALES es un miembro desconocido.
-Linea nº IF thisform.chkcanales.Value = 1
- Alias _CSRPRODUCTO registro          1
-Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-27-06-2018 13:59:01 , Error nº:       1925
-Error TXTTITULO es un miembro desconocido.
-Linea nº INSERT INTO csrsubtitulo (subtitulo) VALUES (ALLTRIM(thisform.txttitulo.Value))
- Alias CSRSUBTITULO registro          1
-Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-27-06-2018 14:01:08 , Error nº:         13
-Error No se encuentra el alias 'CSRAUX2'.
-Linea nº SELECT csraux2
- Alias CSRDIASVISITA registro          1
-Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-27-06-2018 14:02:02 , Error nº:         13
-Error No se encuentra el alias 'CSRAUX2'.
-Linea nº SELECT csraux2
- Alias CSRDIASVISITA registro          1
-Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-27-06-2018 14:02:57 , Error nº:       1807
-Error SQL: la cláusula GROUP BY falta o no es válida.
-Linea nº SELECT csraux2.idvendedor,csraux2.idmaopera,csraux2.idcanal,csraux2.idctacte,CsrAux2.signo FROM csraux2 GROUP BY csraux2.idvendedor,csraux2.idmaopera,csraux2.idcanal,csraux2.idctacte INTO CURSOR csrcdadfacturas readwrite
- Alias CSRAUX2 registro          1
-Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 27-06-2018 14:04:16 , Error nº:       1806
 Error SQL: no se encuentra la columna 'IDCTACTE'.
 Linea nº SELECT &lccampos01,idctacte,sum(csrcdadfacturas.signo) as facventas FROM csrcdadfacturas GROUP BY &lccampos01,idctacte INTO CURSOR CsrClienteFac
@@ -87,6 +56,10 @@ Control activo  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 02-07-2018 15:32:31 , Error nº:       1832
 Error IDCTACTE no es único y se debe calificar.
 Linea nº SELECT CsrVisita.idctacte,CsrVisita.idvendedor FROM CsrVisita INNER JOIN CsrVentas ON CsrVisita.idctacte = CsrVentas.idctacte AND CsrVisita.idvendedor = CsrVentas.idvendedor union ALL SELECT CsrVentas.idctacte,CsrVentas.idvendedor FROM CsrVentas
+
+
+
+
 
 
 
@@ -328,7 +301,15 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
+
+
+
 
 
 
@@ -556,7 +537,15 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
+
+
+
 
 
 
@@ -782,7 +771,15 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVenta as Ve ON A.idctacte = Ve.idctacte AND A.idvendedo
+
+
+
+
 
 
 
@@ -1006,7 +1003,15 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
+
+
+
 
 
 
@@ -1228,7 +1233,15 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
+
+
+
 
 
 
@@ -1448,7 +1461,15 @@ Linea nº SELECT Vi.idvendedor,Vi.codvendedor,Vi.nomvdor,Vi.idctacte,Vi.nomctacte
 
 
 
+
+
+
+
 WHERE A.clase='A' union all SELECT Ve.idvendedor,Ve.codvendedor,Ve.nomvdor,Ve.idctacte,Ve.nomctacte,Ve.direccionctacte as domicilio ,Ve.ctacte,Ve.canal,Ve.idcanal FROM CsrAuxiliar as A INNER JOIN CsrVentas as Ve ON A.idctacte = Ve.idctacte AND A.idvended
+
+
+
+
 
 
 
@@ -1714,12 +1735,20 @@ Linea nº INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, tel
 
 
 
+
+
+
+
 IM(CsrAux.cdireccion),ALLTRIM(CsrAux.ctelefono) ,ALLTRIM(CsrAux.nroibbto),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia) ,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.idctacte)
  Alias CSRAUX registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 17-07-2018 12:13:23 , Error nº:          1
 Error El archivo 'csrdirecciones.dbf' no existe.
 Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.chrfecha as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDireccio
+
+
+
+
 
 
 
@@ -1917,6 +1946,10 @@ Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.
 
 
 
+
+
+
+
 nes.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2017,12 +2050,20 @@ Linea nº SELECT CsrImprimir.id as id,CsrImprimir.detalle as Detalle,CsrImprimir.
 
 
 
+
+
+
+
 nes.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'Z' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 17-07-2018 12:23:40 , Error nº:       1806
 Error SQL: no se encuentra la columna 'CTACTE'.
 Linea nº SELECT CsrImprimir.idctacte as id,CsrImprimir.nomvendedor as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.
+
+
+
+
 
 
 
@@ -2243,6 +2284,10 @@ Linea nº SELECT chrfecha,detalle,ctacte,cnombre,nomcatego,lista,nomgrupo,numvend
 
 
 
+
+
+
+
 primir
  Alias CSRIMPRIMIR registro         43
 Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2367,7 +2412,15 @@ Linea nº SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFa
 
 
 
+
+
+
+
 cciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrI
+
+
+
+
 
 
 
@@ -2529,7 +2582,15 @@ Linea nº SELECT '$'+strtrim(CsrRemFac.importefinal,11,2)+' -- '+strtrim(CsrRemFa
 
 
 
+
+
+
+
 cciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(CsrImprimir.importe>=30,'+30',IIF(CsrImprimir.importe>=20,'+20',IIF(CsrImprimir.importe>=15,'+15',IIF(CsrImprimir.importe>=10,'+10',IIF(CsrI
+
+
+
+
 
 
 
@@ -2727,7 +2788,15 @@ Linea nº SELECT idarticulo,idctacte,idfletero,idvariedad,idvendedor,sucursal ,SU
 
 
 
+
+
+
+
 imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM
+
+
+
+
 
 
 
@@ -2867,7 +2936,15 @@ imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as l
 
 
 
+
+
+
+
 devolmes) as devolmes,SUM(devolanioant) as devolanioant ,SUM(devolsmesant) as devolsmesant,SUM(devolsmes) as devolsmes,SUM(devolsanioant) as devolsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM
+
+
+
+
 
 
 
@@ -3011,7 +3088,15 @@ Linea nº SELECT idarticulo,idctacte,idfletero,idvariedad,idvendedor,sucursal ,SU
 
 
 
+
+
+
+
 imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as ltsmesant,SUM(ltsmes) as ltsmes,SUM(ltsanioant) as ltsanioant ,SUM(kgsmesant) as kgsmesant,SUM(kgsmes) as kgsmes,SUM(kgsanioant) as kgsanioant ,SUM(impmesant) as impmesant,SUM
+
+
+
+
 
 
 
@@ -3149,7 +3234,15 @@ imesant,SUM(unimes) as unimes,SUM(unianioant) as unianioant ,SUM(ltsmesant) as l
 
 
 
+
+
+
+
 devolmes) as devolmes,SUM(devolanioant) as devolanioant ,SUM(devolsmesant) as devolsmesant,SUM(devolsmes) as devolsmes,SUM(devolsanioant) as devolsanioant ,CAST(0 as n(11,2)) as totalant,CAST(0 as n(11,2)) as totalmes,CAST(0 as n(11,2)) as totalanio FROM
+
+
+
+
 
 
 
@@ -3259,6 +3352,10 @@ Control activo  INF_DINAMICA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 03-08-2018 14:26:21 , Error nº:         12
 Error No se encuentra la variable 'DEVOLSMESANIOANT'.
 Linea nº replace ALL totalmes WITH impmes - bonmes - devolmes, totalant WITH impmesant-bonmesant-devolmes,totalanio WITH impanioant-bonanioant-devolmes ,ngmes WITH ngmes-bonsmes-devolsmes,ngmesant WITH ngmesant-bonsmesant-devolsmesant,nganioant WITH ngan
+
+
+
+
 
 
 
@@ -3481,7 +3578,15 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -3569,7 +3674,15 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -3657,7 +3770,15 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -3806,6 +3927,10 @@ Linea nº SELECT idmaopera as idmaopera,importe as importe,numero as nrocheque ,0
 
 
 
+
+
+
+
 echavto,banco ,titular ,idctabco,localidad,cuit,recibido,entregado ,idbanco,idctaentrega,idctarecibido,idctatitular,idlocalidad,codbarra as nroidentificador ,lccuit FROM Csrcursor INTO CURSOR CsrAuxBco READWRITE
  Alias  registro          0
 Control activo  REGCAJA.CMDCONSULTA.CLICK
@@ -3878,12 +4003,20 @@ Linea nº SELECT CsrAuxPlanilla.*,NVL(M.movbcocarsigno,0) as movbcocarsigno,NVL(M
 
 
 
+
+
+
+
 srAuxMovBco as M ON CsrAuxPlanilla.idorigen = M.idorigen ORDER BY idmaopera,id INTO CURSOR CsrPlanilla READWRITE
  Alias CSRAUXMOVBCO registro          1
 Control activo  PLANILLACAJA_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-11-2018 09:26:08 , Error nº:       1806
 Error SQL: no se encuentra la columna 'MOVBCOCARSIGNO'.
 Linea nº SELECT CsrAuxPlanilla.*,NVL(M.movbcocarsigno,0) as movbcocarsigno,NVL(M.cnombre,CsrAuxPlanilla.cnombre) as cnombre ,NVL(M.numcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimporte,0) as movbcoimporte FROM CsrAuxPlanilla LEFT JOIN C
+
+
+
+
 
 
 
@@ -3920,6 +4053,10 @@ Control activo  PLANILLACAJA_V2.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-11-2018 10:49:48 , Error nº:       1832
 Error ID no es único y se debe calificar.
 Linea nº SELECT CsrAuxPlanilla.*,NVL(M.movbcocarsigno,0) as movbcocarsigno,NVL(M.cnombre,CsrAuxPlanilla.nomctacte) as cnombre ,NVL(M.numcheque,0) as numcheque,NVL(M.CtaBco,'0') as ctabco,NVL(movbcoimporte,0) as movbcoimporte ,NVL(A.detalle,'') as detalle
+
+
+
+
 
 
 
@@ -4046,4 +4183,25 @@ Error _TXTTOTALCANCELADO es un miembro desconocido.
 Linea nº lnImporte 	= IIF(!lbEsCaja,thisform.containertotales._txttotalcancelado.Value,thisform.containertotales._txttotalcaja.Value)
  Alias CSRAUXMAOPERA registro          1
 Control activo  REGCTACTEIMP.KEYPRESS
-28-12-2018 14:59:18 , Error nº:       1925Error _TXTTOTALCANCELADO es un miembro desconocido.Linea nº lnImporte 	= IIF(!lbEsCaja,thisform.containertotales._txttotalcancelado.Value,thisform.containertotales._txttotalcaja.Value) Alias CSRAUXMAOPERA registro          1Control activo  REGCTACTEIMP.KEYPRESS
+28-12-2018 14:59:18 , Error nº:       1925
+Error _TXTTOTALCANCELADO es un miembro desconocido.
+Linea nº lnImporte 	= IIF(!lbEsCaja,thisform.containertotales._txttotalcancelado.Value,thisform.containertotales._txttotalcaja.Value)
+ Alias CSRAUXMAOPERA registro          1
+Control activo  REGCTACTEIMP.KEYPRESS
+02-01-2019 12:26:37 , Error nº:         13
+Error No se encuentra el alias 'CSRSETEO'.
+Linea nº SELECT CsrSeteo
+ Alias  registro          0
+Control activo  LISINVENTARIO.PRECIOPROD1.INIT
+02-01-2019 12:27:26 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
+ Alias _CSRPRODUCTO registro          1
+Control activo  LISINVENTARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+02-01-2019 12:29:17 , Error nº:       1806
+Error SQL: no se encuentra la columna 'ID'.
+Linea nº SELECT CsrCursor.*,CsrArticulo.*,existe-sumacantidad as unidades,CAST(0 as int) as totalkilos,CAST(0 as int) as bultos,CAST(0 as int) as unisuel,CAST(0 as numeric(12,3)) as precio ,exi_kilos-sumakilos as kilos FROM CsrCursor INNER JOIN CsrArticu
+lo ON CsrCursor.id = CsrArticulo.id WHERE existe-sumacantidad>0 OR exi_kilos - sumakilos > 0 INTO CURSOR CsrImprimir READWRITE
+ Alias CSRCURSOR registro          1
+Control activo  LISINVENTARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+02-01-2019 12:45:10 , Error nº:       1806Error SQL: no se encuentra la columna 'CODIGO'.Linea nº SELECT CsrCursor.*,CsrArticulo.*,existe-sumacantidad as unidades,CAST(0 as int) as totalkilos,CAST(0 as int) as bultos,CAST(0 as int) as unisuel,CAST(0 as numeric(12,3)) as precio ,exi_kilos-sumakilos as kilos FROM CsrCursor INNER JOIN CsrArticulo ON CsrCursor.idarticulo = CsrArticulo.id AND CsrCursor.idvariedad = CsrArticulo.idvariedad WHERE existe-sumacantidad>0 OR exi_kilos - sumakilos > 0 ORDER BY codigo,subnumero,deposito INTO CURSOR CsrImprimir READWRITE Alias CSRCURSOR registro          1Control activo  LISINVENTARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
