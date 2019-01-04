@@ -1827,91 +1827,98 @@ lnopcion = IIF(PCOUNT()<1,2,lnopcion)
 
 LOCAL lcCmd,lok,ldfechaserver,lreturn
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT Csrparaconfig.*,ISNULL(csrdetanrocaja.nrocaja,0) as nrocaja,csrdetanrocaja.fecdesde as fecdesde
-,csrdetanrocaja.fechasta as fechasta,Csrdetanrocaja.switch as switchCaja,csrdetaconta.ejercicio as ejercicio
-,ISNULL(CsrDetaNrocajaFac.nrocaja,0) as nrocajafac
-,ISNULL(Csrdetanrocajafac.switch,'00000') as switchCajaFac
-FROM paraconfig as Csrparaconfig
-left join detanrocaja as csrdetanrocaja on Csrparaconfig.iddetanrocaja = csrdetanrocaja.id
-left join detaconta as csrdetaconta on CsrParaConfig.idejercicio = CsrDetaConta.id
-left join detanrocaja as csrdetanrocajafac on Csrparaconfig.iddetafac = csrdetanrocajafac.id
-ENDTEXT 
-
-lok =CrearCursorAdapter("CsrParametros",lcCmd)
+lok = .t.
 lreturn = .t.
 
-IF lok
+*IF lok
 
 	LOCAL lObjEjercicioActivo as Object 
 
 	LeerEjercicioActivo(@lObjEjercicioActivo)
-	SELECT CsrParametros
-  	DO case 
-		CASE lnopcion=1
-    			lcmensaje = "fecha activa actual de facturación "+DTOC(TTOD(Csrparametros.fechafac))+CHR(13);
-						+"estado de la caja "+IIF(LEFT(Csrparametros.switchCajaFac,1)="1","CERRADA","ACTIVA")
-		CASE lnopcion=2
-    			lcmensaje = "caja activa actual "+STR(Csrparametros.nrocaja,8)+CHR(13);
-    			+"estado de la caja "+IIF(LEFT(Csrparametros.switchCaja,1)="1","CERRADA","ACTIVA")
-  	ENDCASE 
-	SCATTER NAME OscParametros
-	&&Recuperamos el ejercicio a la cual pertenece la fecha de facturacion. Para registrar el asiento contable
-	IF !LeerEjercicioActivoFac(OscParametros)
-		RETURN .f.
-	ENDIF 
 	
-	IF ((LEFT(Csrparametros.switchCaja,1)="1" AND  lnopcion=2) OR (lnopcion=1 AND  LEFT(Csrparametros.switchCajaFac,1)="1"))&& caja cerrada 		
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT Csrparaconfig.*,ISNULL(csrdetanrocaja.nrocaja,0) as nrocaja,csrdetanrocaja.fecdesde as fecdesde
+	,csrdetanrocaja.fechasta as fechasta,Csrdetanrocaja.switch as switchCaja,csrdetaconta.ejercicio as ejercicio
+	,ISNULL(CsrDetaNrocajaFac.nrocaja,0) as nrocajafac
+	,ISNULL(Csrdetanrocajafac.switch,'00000') as switchCajaFac
+	FROM paraconfig as Csrparaconfig
+	left join detanrocaja as csrdetanrocaja on Csrparaconfig.iddetanrocaja = csrdetanrocaja.id
+	left join detaconta as csrdetaconta on CsrParaConfig.idejercicio = CsrDetaConta.id
+	left join detanrocaja as csrdetanrocajafac on Csrparaconfig.iddetafac = csrdetanrocajafac.id
+	where CsrParaconfig.idejercicio = <<Goapp.idejercicio>>
+	ENDTEXT 
+
+	lok =CrearCursorAdapter("CsrParametros",lcCmd)
 	
-		TEXT TO lccmd TEXTMERGE NOSHOW
-		SELECT CsrDataMenu.* FROM Datamenu as csrdatamenu
-		ENDTEXT 
-							
-		lok =CrearCursorAdapter("Csrdatamenu",lcCmd) 
-
-		IF lok
-			SELECT CsrDataMenu
-			LOCATE FOR "PARADIARIO"$UPPER(sec_doacce)
-			IF !EOF() AND "PARADIARIO"$UPPER(sec_doacce)
-				TEXT TO lccmd TEXTMERGE NOSHOW
-				SELECT Csrseguridad.* FROM seguridad as csrseguridad WHERE idmenu=<<Csrdatamenu.id>>				
-				ENDTEXT 
-										
-				lok =CrearCursorAdapter("Csrseguridad",lcCmd) 
-
-				IF goapp.perfilusuario=CsrSeguridad.idperfil
-					=Oavisar.usuario("Contacte a un usuario con permiso para cambiar parametros diarios;"+CHR(13)+ lcmensaje +CHR(13)+CHR(13);
-							+"UTILES \\ PARAMETROS \\ PARAMETROS DIARIOS")
-				ELSE					
-					=Oavisar.usuario("Debe cambiar parametros diarios;"+CHR(13)+ lcmensaje +CHR(13)+CHR(13);
-							+"UTILES \\ PARAMETROS \\ PARAMETROS DIARIOS")
-				ENDIF
-				lreturn = .f.
+	IF lok
+	
+		SELECT CsrParametros
+	  	DO case 
+			CASE lnopcion=1
+	    			lcmensaje = "fecha activa actual de facturación "+DTOC(TTOD(Csrparametros.fechafac))+CHR(13);
+							+"estado de la caja "+IIF(LEFT(Csrparametros.switchCajaFac,1)="1","CERRADA","ACTIVA")
+			CASE lnopcion=2
+	    			lcmensaje = "caja activa actual "+STR(Csrparametros.nrocaja,8)+CHR(13);
+	    			+"estado de la caja "+IIF(LEFT(Csrparametros.switchCaja,1)="1","CERRADA","ACTIVA")
+	  	ENDCASE 
+		SCATTER NAME OscParametros
+		&&Recuperamos el ejercicio a la cual pertenece la fecha de facturacion. Para registrar el asiento contable
+		IF !LeerEjercicioActivoFac(OscParametros)
+			RETURN .f.
+		ENDIF 
+		
+		IF ((LEFT(Csrparametros.switchCaja,1)="1" AND  lnopcion=2) OR (lnopcion=1 AND  LEFT(Csrparametros.switchCajaFac,1)="1"))&& caja cerrada 		
+		
+			TEXT TO lccmd TEXTMERGE NOSHOW
+			SELECT CsrDataMenu.* FROM Datamenu as csrdatamenu
+			ENDTEXT 
 								
-				IF USED("Csrseguridad")
-					USE IN Csrseguridad				
-				ENDIF 			
-			ENDIF 		
-		ELSE 			
-			=Oavisar.usuario("Debe cambiar parametros diarios;"+CHR(13)+ lcmensaje +CHR(13)+CHR(13);
-							  +"UTILES \\ PARAMETROS \\ PARAMETROS DIARIOS")							    
-				lreturn = .f.							
-		ENDIF
-				
-		IF USED("CsrDatamenu")
-			USE IN Csrdatamenu
-		ENDIF		
-	ELSE
-		IF CsrParametros.nrocaja < lObjEjercicioActivo.nrocaja1 OR CsrParametros.nrocaja > lObjEjercicioActivo.nrocaja2
-			=Oavisar.usuario("Contacte a un usuario con permiso para cambiar parametros diarios;"+CHR(13)+lcmensaje+CHR(13)+CHR(13);
-				+"Caja "+TRANSFORM(CsrParametros.nrocaja,"99999999")+" no pertenece al ejercicio activo / seleccionado"+CHR(13)+CHR(13);
-				+"Ejercicio activo / seleccionado "+STR(lObjEjercicioActivo.ejercicio,3)+CHR(13);
-				+"fecha desde "+DTOC(TTOD(lObjEjercicioActivo.fecdesde))+" fecha hasta "+DTOC(TTOD(lObjEjercicioActivo.fechasta))+CHR(13);
-				+"caja desde   "+TRANSFORM(lObjEjercicioActivo.Nrocaja1,"99999999")+"    caja hasta   "+TRANSFORM(lObjEjercicioActivo.nrocaja2,"99999999"),0)
-			lreturn = .f.
+			lok =CrearCursorAdapter("Csrdatamenu",lcCmd) 
+
+			IF lok
+				SELECT CsrDataMenu
+				LOCATE FOR "PARADIARIO"$UPPER(sec_doacce)
+				IF !EOF() AND "PARADIARIO"$UPPER(sec_doacce)
+					TEXT TO lccmd TEXTMERGE NOSHOW
+					SELECT Csrseguridad.* FROM seguridad as csrseguridad WHERE idmenu=<<Csrdatamenu.id>>				
+					ENDTEXT 
+											
+					lok =CrearCursorAdapter("Csrseguridad",lcCmd) 
+
+					IF goapp.perfilusuario=CsrSeguridad.idperfil
+						=Oavisar.usuario("Contacte a un usuario con permiso para cambiar parametros diarios;"+CHR(13)+ lcmensaje +CHR(13)+CHR(13);
+								+"UTILES \\ PARAMETROS \\ PARAMETROS DIARIOS")
+					ELSE					
+						=Oavisar.usuario("Debe cambiar parametros diarios;"+CHR(13)+ lcmensaje +CHR(13)+CHR(13);
+								+"UTILES \\ PARAMETROS \\ PARAMETROS DIARIOS")
+					ENDIF
+					lreturn = .f.
+									
+					IF USED("Csrseguridad")
+						USE IN Csrseguridad				
+					ENDIF 			
+				ENDIF 		
+			ELSE 			
+				=Oavisar.usuario("Debe cambiar parametros diarios;"+CHR(13)+ lcmensaje +CHR(13)+CHR(13);
+								  +"UTILES \\ PARAMETROS \\ PARAMETROS DIARIOS")							    
+					lreturn = .f.							
+			ENDIF
+					
+			IF USED("CsrDatamenu")
+				USE IN Csrdatamenu
+			ENDIF		
+		ELSE
+			IF CsrParametros.nrocaja < lObjEjercicioActivo.nrocaja1 OR CsrParametros.nrocaja > lObjEjercicioActivo.nrocaja2
+				=Oavisar.usuario("Contacte a un usuario con permiso para cambiar parametros diarios;"+CHR(13)+lcmensaje+CHR(13)+CHR(13);
+					+"Caja "+TRANSFORM(CsrParametros.nrocaja,"99999999")+" no pertenece al ejercicio activo / seleccionado"+CHR(13)+CHR(13);
+					+"Ejercicio activo / seleccionado "+STR(lObjEjercicioActivo.ejercicio,3)+CHR(13);
+					+"fecha desde "+DTOC(TTOD(lObjEjercicioActivo.fecdesde))+" fecha hasta "+DTOC(TTOD(lObjEjercicioActivo.fechasta))+CHR(13);
+					+"caja desde   "+TRANSFORM(lObjEjercicioActivo.Nrocaja1,"99999999")+"    caja hasta   "+TRANSFORM(lObjEjercicioActivo.nrocaja2,"99999999"),0)
+				lreturn = .f.
+			ENDIF 
 		ENDIF 
 	ENDIF 			
-ENDIF 
+*ENDIF 
 
 IF USED("CsrParametros")
 	USE IN CsrParametros
@@ -2130,7 +2137,7 @@ ENDIF
 lok =CrearCursorAdapter("CsrCursor",lcCmd)
 
 IF lok
-	IF lnhaycierre=1
+	IF lnhaycierre>=1
 		* busco la primer caja que este sin cerrar
 		SELECT CsrCursor
 		GO top
