@@ -153,3 +153,5 @@
 *!*							2  0=NORMAL
 *!*							   1=REMITO DE CAJA
 
+*!*	FLETERO.switch			1  1=SOLO CONTADO/CTACTE EN VENTAS
+
