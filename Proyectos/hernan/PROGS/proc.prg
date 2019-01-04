@@ -1831,8 +1831,7 @@ lok = .t.
 lreturn = .t.
 
 *IF lok
-	stop()
-	
+		
 	LOCAL lObjEjercicioActivo as Object 
 
 	LeerEjercicioActivo(@lObjEjercicioActivo)
