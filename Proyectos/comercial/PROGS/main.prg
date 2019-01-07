@@ -54,6 +54,7 @@ If lldesarrollo
 	_rutabmps   =lcdd+'graphics'
 	_rutaforms  =lcdd+'forms'
 	_rutareports=lcdd+'reports' 
+	
 	_rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
 	_rutaffc  =L+'\xsoftsql\desarrollo\clases\ffc'
 	_rutalib = L +'\xsoftsql\desarrollo\lib' 
@@ -78,6 +79,10 @@ If lldesarrollo
    
    _rutareportsban	= _rutareports + '\bancario' 
    
+   _rutaempresa		= lcdd+'empresas' 
+   _rutaempresa01	= _rutaempresa + '\fortin'
+   _rutaempresa02	= _rutaempresa + '\cachitos'
+   
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
      
@@ -88,7 +93,7 @@ If lldesarrollo
                ,&_fcontab,&_fctacte,&_festad,&_ffaccae,&_fotros,&_fparame,&_fprovee;
                ,&_fstock,&_ftarjeta,&_futil,&_fventa;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsban,&_rutareportsban,&fhelp
+               ,&_rutaformsban,&_rutareportsban,&fhelp,&_rutaempresa01,&_rutaempresa02
 Endif
 
 *-- CREACION DE OBJETO APLICACION
