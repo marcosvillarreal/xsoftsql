@@ -1581,6 +1581,7 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 		ENDIF
 		lok =CrearCursorAdapter("CsrTermiMenu",lcCmd)
 		_siactiva=CsrTermiMenu.termiactiva=1
+		
 	ELSE
 		lok= .t. 
 		_siactiva=1
@@ -1688,6 +1689,7 @@ lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
 IF lok
    Goapp.terminal               = Csrseteotermi.numero
    Goapp.nombreterminal = Csrseteotermi.nombre
+   goapp.termifacopen = CsrSeteoTermi.grapmod
 ENDIF
 
 IF USED("Csrseteotermi")

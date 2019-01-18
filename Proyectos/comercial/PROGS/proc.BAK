@@ -584,7 +584,7 @@ IF LEN(_cuit)<>11
 	sale=.F.
 ELSE
 	_digito=VAL(RIGHT(_cuit,1))
-	stop()
+	
 	_factor = '5432765432' 
 	j=2
 	suma=0
@@ -1581,6 +1581,7 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 		ENDIF
 		lok =CrearCursorAdapter("CsrTermiMenu",lcCmd)
 		_siactiva=CsrTermiMenu.termiactiva=1
+		goapp.termifacopen = CsrTermiMenu.grapmod
 	ELSE
 		lok= .t. 
 		_siactiva=1

@@ -79,7 +79,7 @@ If lldesarrollo
    
    _rutareportsban	= _rutareports + '\bancario' 
    
-   _rutaempresa		= lcdd+'empresa' 
+   _rutaempresa		= lcdd+'empresas' 
    _rutaempresa01	= _rutaempresa + '\fortin'
    _rutaempresa02	= _rutaempresa + '\cachitos'
    
@@ -294,8 +294,9 @@ IF TYPE('goApp')='O'
 	LeerEjercicioPerfil()
 	
 	DO FORM frmmenu
-	DO FORM regfacvta
-	
+	IF goapp.usuariofacopen = 1
+		DO FORM regfacvta
+	ENDIF 
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	

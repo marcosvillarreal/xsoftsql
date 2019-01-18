@@ -294,8 +294,9 @@ IF TYPE('goApp')='O'
 	LeerEjercicioPerfil()
 	
 	DO FORM frmmenu
-	DO FORM regfacvta
-	
+	IF goapp.termifacopen = 1
+		DO FORM regfacvta
+	ENDIF 
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
