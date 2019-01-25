@@ -155,3 +155,5 @@
 
 *!*	FLETERO.switch			1  1=SOLO CONTADO/CTACTE EN VENTAS
 
+*!*	CUERFAC.switch			1  
+*!*							5  1=BONIFICACION DIGITADA
