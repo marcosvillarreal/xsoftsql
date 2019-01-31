@@ -1,0 +1,13 @@
+31-01-2019 12:01:53 , SUBRETIRO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Falta una coma (,).;Linea : SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalle ,IIF(enanotado=1 then retiro_a else retiro_g end) as retiro ,IIF(enguarda=1 then autorizo_a else autorizo_g end) as autorizo FROM CsrCuerpo WHERE &cOrigen ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE;Error :       1306;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008NIH018Z.TMP;Ultimo Control activo: 
+31-01-2019 12:01:53 , Pila de llamadas
+31-01-2019 12:01:53 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2019 12:01:53 , Objeto      : subretiro.imprimir_vistaprevia1.impresora.click
+31-01-2019 12:01:53 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+31-01-2019 12:01:53 , Nº de Linea :          6
+31-01-2019 12:01:53 , En el Fuente: 	llOK=thisform.CrearInforme()
+31-01-2019 12:01:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subretiro.sct
+31-01-2019 12:01:53 , Objeto      : subretiro.crearinforme
+31-01-2019 12:01:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subretiro.sct
+31-01-2019 12:01:53 , Nº de Linea :         96
+31-01-2019 12:01:53 , En el Fuente: SELECT 'A' as grupo,Csrcuerpo.*,DTOC(TTOD(fecha)) as chrfecha,SPACE(30) as detalle,IIF(enanotado=1 then retiro_a else retiro_g end) as retiro,IIF(enguarda=1 then autorizo_a else autorizo_g end) as autorizoFROM CsrCuerpo WHERE &cOrigen ORDER BY &cOrder  INTO CURSOR csrimprimir READWRITE
+31-01-2019 12:01:53 , Fin
