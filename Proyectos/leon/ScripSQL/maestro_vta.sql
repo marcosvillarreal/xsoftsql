@@ -13,7 +13,8 @@ left join cuervari as cv on cu.id = cv.idcuerfac
 left join ctacte on ca.idctacte = ctacte.id
 left join canalvta as cn on ctacte.idcanalvta = cn.id
 left join localidad as lo on ctacte.idlocalidad = lo.id
-left join producto as p on cu.idarticulo = p.id
+inner join producto as p on cu.idarticulo = p.id
 left join subproducto as sp on cv.idsubarti = sp.id
-where m.estado=0 and ca.fecha between '20180801' and '20180831'
+where m.estado=0 and ca.fecha between '20190101' and '20190131' and p.idctacte = 1100002234
+and m.clasecomp in ('A')
 group by ca.ctacte,ca.cnombre,ca.cdireccion,lo.nombre,cn.nombre ,cu.codigo,cu.nombre,sp.subnumero,cv.idsubarti,sp.nombre

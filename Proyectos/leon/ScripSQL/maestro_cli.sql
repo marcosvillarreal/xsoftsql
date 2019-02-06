@@ -24,5 +24,5 @@ inner join cabefac as ca on m.id = ca.idmaopera
 left join ctacte on ca.idctacte = ctacte.id
 left join canalvta as cn on ctacte.idcanalvta = cn.id
 left join localidad as lo on ctacte.idlocalidad = lo.id
-where m.estado=0 and ca.fecha between '20180801' and '20180831'
+where m.estado=0 and ca.fecha between '20190101' and '20190131'
 order by ca.ctacte
