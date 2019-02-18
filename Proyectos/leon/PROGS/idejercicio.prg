@@ -1,7 +1,7 @@
-GOAPP.IDEJERCICIO = 1100000014
+GOAPP.IDEJERCICIO = 1100000016
 GOAPP.IDUSUARIO =1
 goapp.terminal = 12 &&6
-goapp.ejercicio = 8
+goapp.ejercicio = 9
 goapp.sucursal = 1
 goapp.idsucursal = 1100000001
 OAVISAR.USUARIO('GOAPP.IDEJERCICIO = '+STR(GOAPP.IDEJERCICIO)+CHR(13);
