@@ -456,7 +456,7 @@ oform = IIF(PCOUNT()<1,null,oForm)
 nidejercicio = IIF(PCOUNT()<2,goapp.idejercicio,nidejercicioaleer)
 nUltima = IIF(PCOUNT()<3,0,nUltima)
 
-stop()
+
 IF ISNULL(oForm)
 	RETURN 
 ENDIF 
