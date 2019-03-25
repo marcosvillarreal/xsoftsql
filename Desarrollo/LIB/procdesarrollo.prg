@@ -1,3 +1,15 @@
+
+*-------------------------------------------------------------
+
+FUNCTION LimpiarCadena
+PARAMETERS lcCadena
+
+lcCadena = STRTRAN(lcCadena,'"','')
+lcCadena = STRTRAN(lcCadena,"'",'')
+lcCadena = STRTRAN(lcCadena,'.','')
+RETURN lcCadena
+*----------------------------------------------------------------
+
 FUNCTION TrazaQuery
 PARAMETERS lcNameQueary,nTipo,tInicio
 ntipo 	= IIF(PCOUNT()<2,0,ntipo)

@@ -430,6 +430,7 @@ PARAMETERS tcdatobuscado,tbtipobusqueda,tbtabla,tbclave
 tbtabla 	= IIF(PCOUNT()<3,"",tbtabla)
 tbclave	= IIF(PCOUNT()<4,"",tbclave)
 llok = .t.
+
 IF tbtipobusqueda
 	SET NEAR ON
 ELSE
