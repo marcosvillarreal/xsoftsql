@@ -21,7 +21,7 @@ PROCEDURE errhand1
 	cMensaje	= cMensaje + 'Line number of error: ' + LTRIM(STR(LINENO())) + CHR(13)
 	cMensaje	= cMensaje + 'Program with error: ' + PROGRAM() + CHR(13)
 	
-	=Grabar_SEC(cMensaje,"Log_ErrorFAC.txt","Aplicaciones\TempError")
+	=Grabar_SEC(cMensaje,"Log_ErrorFAC.txt","TempError")
 	
 	*-- Preguntar: Aceptar o cancelar?
 	ch = MESSAGEBOX(WSAA.Excepcion, 5 + 48, "Error: " + cMensaje)
@@ -51,7 +51,7 @@ PROCEDURE errhand2
 	cMensaje	= cMensaje + 'Line number of error: ' + LTRIM(STR(LINENO())) + CHR(13)
 	cMensaje	= cMensaje + 'Program with error: ' + PROGRAM() + CHR(13)
 	
-	=Grabar_SEC(cMensaje,"Log_ErrorFAC.txt","Aplicaciones\TempError")
+	=Grabar_SEC(cMensaje,"Log_ErrorFAC.txt","TempError")
 	
 	*-- Preguntar: Aceptar o cancelar?
 	ch = MESSAGEBOX(WSFE.Excepcion, 5 + 48, "Error: " + cMensaje)
@@ -80,7 +80,7 @@ PROCEDURE errhand3
 	cMensaje	= cMensaje + 'Line number of error: ' + LTRIM(STR(LINENO())) + CHR(13)
 	cMensaje	= cMensaje + 'Program with error: ' + PROGRAM() + CHR(13)
 	
-	=Grabar_SEC(cMensaje,"Log_ErrorPADRON.txt","Aplicaciones\TempError")
+	=Grabar_SEC(cMensaje,"Log_ErrorPADRON.txt","TempError")
 	
 	*-- Preguntar: Aceptar o cancelar?
 	ch = MESSAGEBOX(PADRON.Excepcion, 5 + 48, "Error: " + cMensaje)

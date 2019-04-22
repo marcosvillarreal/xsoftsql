@@ -83,7 +83,7 @@ PROCEDURE errhand3
 	=Grabar_SEC(cMensaje,"Log_ErrorPADRON.txt","TempError")
 	
 	*-- Preguntar: Aceptar o cancelar?
-	ch = MESSAGEBOX(PADRON.Excepcion, 5 + 48, "Error: " + cMensaje)
+	ch = MESSAGEBOX("Error: " + cMensaje, 5 + 48,PADRON.Excepcion )
 	IF ch = 2 && Cancelar
 		ON ERROR 
 		CLEAR EVENTS
