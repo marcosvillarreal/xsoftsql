@@ -198,8 +198,8 @@ IF TYPE('goApp')='O'
 	   	 
 	*IF !lldesarrollo	
 		SET SYSMENU TO
-		*DO FORM guardaexe_idprograma
-		DO FORM guardaexe
+		DO FORM guardaexe_idprograma
+		*DO FORM guardaexe
 	*ENDIF 
 		   
 	_screen.visible=.t.	   
