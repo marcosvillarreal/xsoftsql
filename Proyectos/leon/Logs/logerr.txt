@@ -478,3 +478,54 @@
 01-04-2019 12:08:52 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
 01-04-2019 12:08:52 , Nº de Linea :         19
 01-04-2019 12:08:52 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
+25-04-2019 14:21:27 , MAIN, Error: El archivo 'csrvendedor.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+25-04-2019 14:21:27 , Pila de llamadas
+25-04-2019 14:21:27 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+25-04-2019 14:21:27 , Objeto      : main
+25-04-2019 14:21:27 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+25-04-2019 14:21:27 , Nº de Linea :        254
+25-04-2019 14:21:27 , En el Fuente: 	Read events   
+25-04-2019 14:21:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+25-04-2019 14:21:27 , Objeto      : frmmenu1.treeview.dblclick
+25-04-2019 14:21:28 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+25-04-2019 14:21:28 , Nº de Linea :         12
+25-04-2019 14:21:28 , En el Fuente: 	   &lcCmd
+25-04-2019 14:21:28 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
+25-04-2019 14:21:28 , Objeto      : ejecutamenu
+25-04-2019 14:21:28 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
+25-04-2019 14:21:28 , Nº de Linea :       1477
+25-04-2019 14:21:28 , En el Fuente: 						DO FORM &lcForm
+25-04-2019 14:21:28 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+25-04-2019 14:21:28 , Objeto      : listadovisitas.pageframe1.page1.kitgrillatildarvdor.init
+25-04-2019 14:21:28 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+25-04-2019 14:21:28 , Nº de Linea :         35
+25-04-2019 14:21:28 , En el Fuente:       select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid         ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07         ,&lc8 as wcampo08,&lc9 as wcampo09       from &lcalias       order by &lcorden into cursor &micursor READWRITE
+25-04-2019 14:21:36 , MAIN, Error: No se encuentra el alias '_CSRVENDEDOR'.;Linea : SELECT(micursor);Error :         13;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+25-04-2019 14:21:36 , Pila de llamadas
+25-04-2019 14:21:36 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+25-04-2019 14:21:36 , Objeto      : main
+25-04-2019 14:21:36 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+25-04-2019 14:21:36 , Nº de Linea :        254
+25-04-2019 14:21:36 , En el Fuente: 	Read events   
+25-04-2019 14:21:36 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+25-04-2019 14:21:36 , Objeto      : frmmenu1.treeview.dblclick
+25-04-2019 14:21:36 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+25-04-2019 14:21:36 , Nº de Linea :         12
+25-04-2019 14:21:36 , En el Fuente: 	   &lcCmd
+25-04-2019 14:21:36 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
+25-04-2019 14:21:36 , Objeto      : ejecutamenu
+25-04-2019 14:21:36 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
+25-04-2019 14:21:36 , Nº de Linea :       1477
+25-04-2019 14:21:36 , En el Fuente: 						DO FORM &lcForm
+25-04-2019 14:21:36 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+25-04-2019 14:21:37 , Objeto      : listadovisitas.pageframe1.page1.kitgrillatildarvdor.init
+25-04-2019 14:21:37 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+25-04-2019 14:21:37 , Nº de Linea :         65
+25-04-2019 14:21:37 , En el Fuente: SELECT(micursor)
+25-04-2019 14:21:45 , MAIN, Error: El entorno de datos ya está descargado.;Linea : clear all;Error :       1967;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003IFD007U.TMP;Ultimo Control activo: 
+25-04-2019 14:21:45 , Pila de llamadas
+25-04-2019 14:21:45 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+25-04-2019 14:21:45 , Objeto      : main
+25-04-2019 14:21:45 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+25-04-2019 14:21:45 , Nº de Linea :          7
+25-04-2019 14:21:45 , En el Fuente: clear all
