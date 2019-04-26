@@ -529,3 +529,73 @@
 25-04-2019 14:21:45 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
 25-04-2019 14:21:45 , Nº de Linea :          7
 25-04-2019 14:21:45 , En el Fuente: clear all
+26-04-2019 09:43:20 , INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El archivo 'j:\xsoftsql\proyectos\leon\miscomprobantes.csv' no existe.;Linea : COPY FILE (cArchivo) TO "MisComprobantes.csv";Error :          1;Ultimo Alias Activo: CSRAFIPCOMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003C3T000X.TMP;Ultimo Control activo: 
+26-04-2019 09:43:21 , Pila de llamadas
+26-04-2019 09:43:21 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 09:43:21 , Objeto      : informe1.imprimir_vistaprevia1.excel.click
+26-04-2019 09:43:21 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 09:43:21 , Nº de Linea :          5
+26-04-2019 09:43:21 , En el Fuente: llOK=thisform.CrearInforme()
+26-04-2019 09:43:21 , Programa    : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 09:43:21 , Objeto      : informe1.crearinforme
+26-04-2019 09:43:21 , Base Objeto : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 09:43:21 , Nº de Linea :          2
+26-04-2019 09:43:21 , En el Fuente: IF thisform.leerarchivo()
+26-04-2019 09:43:21 , Programa    : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 09:43:21 , Objeto      : informe1.leerarchivo
+26-04-2019 09:43:21 , Base Objeto : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 09:43:21 , Nº de Linea :         12
+26-04-2019 09:43:21 , En el Fuente: COPY FILE (cArchivo) TO "MisComprobantes.csv"
+26-04-2019 10:12:44 , INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF tcdato<0;Error :        107;Ultimo Alias Activo: CSRAFIPCOMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003C3T029A.TMP;Ultimo Control activo: 
+26-04-2019 10:12:44 , Pila de llamadas
+26-04-2019 10:12:44 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:12:44 , Objeto      : informe1.imprimir_vistaprevia1.excel.click
+26-04-2019 10:12:44 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:12:45 , Nº de Linea :          5
+26-04-2019 10:12:45 , En el Fuente: llOK=thisform.CrearInforme()
+26-04-2019 10:12:45 , Programa    : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:12:45 , Objeto      : informe1.crearinforme
+26-04-2019 10:12:45 , Base Objeto : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:12:45 , Nº de Linea :          4
+26-04-2019 10:12:45 , En el Fuente: 	lcperiodo1	= strzero(lnAnioDesde,4)+strzero(lnMesDesde,2)
+26-04-2019 10:12:45 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
+26-04-2019 10:12:45 , Objeto      : strzero
+26-04-2019 10:12:45 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
+26-04-2019 10:12:45 , Nº de Linea :        474
+26-04-2019 10:12:45 , En el Fuente: IF tcdato<0
+26-04-2019 10:14:13 , INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrComproba')=0;Error :         13;Ultimo Alias Activo: CSRAFIPCOMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003C3T029U.TMP;Ultimo Control activo: 
+26-04-2019 10:14:13 , Pila de llamadas
+26-04-2019 10:14:13 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:14:13 , Objeto      : informe1.imprimir_vistaprevia1.excel.click
+26-04-2019 10:14:13 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:14:13 , Nº de Linea :          5
+26-04-2019 10:14:14 , En el Fuente: llOK=thisform.CrearInforme()
+26-04-2019 10:14:14 , Programa    : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:14:14 , Objeto      : informe1.crearinforme
+26-04-2019 10:14:14 , Base Objeto : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:14:14 , Nº de Linea :         18
+26-04-2019 10:14:14 , En el Fuente: 	IF RECCOUNT('CsrComproba')=0
+26-04-2019 10:14:46 , INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrComproba')=0;Error :         13;Ultimo Alias Activo: CSRAFIPCOMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003C3T02A2.TMP;Ultimo Control activo: 
+26-04-2019 10:14:46 , Pila de llamadas
+26-04-2019 10:14:46 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:14:46 , Objeto      : informe1.imprimir_vistaprevia1.excel.click
+26-04-2019 10:14:46 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:14:46 , Nº de Linea :          5
+26-04-2019 10:14:46 , En el Fuente: llOK=thisform.CrearInforme()
+26-04-2019 10:14:46 , Programa    : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:14:46 , Objeto      : informe1.crearinforme
+26-04-2019 10:14:46 , Base Objeto : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:14:46 , Nº de Linea :         18
+26-04-2019 10:14:46 , En el Fuente: 	IF RECCOUNT('CsrComproba')=0
+26-04-2019 10:15:16 , INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'NUMCOMP'.;Linea : LOCATE FOR numcomp = CsrImprimir.numcomp;Error :         12;Ultimo Alias Activo: CSRCOMPROBA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00003C3T02AD.TMP;Ultimo Control activo: 
+26-04-2019 10:15:16 , Pila de llamadas
+26-04-2019 10:15:16 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:15:16 , Objeto      : informe1.imprimir_vistaprevia1.excel.click
+26-04-2019 10:15:16 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+26-04-2019 10:15:16 , Nº de Linea :          5
+26-04-2019 10:15:16 , En el Fuente: llOK=thisform.CrearInforme()
+26-04-2019 10:15:16 , Programa    : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:15:17 , Objeto      : informe1.crearinforme
+26-04-2019 10:15:17 , Base Objeto : j:\xsoftsql\desarrollo\forms\comprecibidosafip.sct
+26-04-2019 10:15:17 , Nº de Linea :         43
+26-04-2019 10:15:17 , En el Fuente: 		LOCATE FOR numcomp = CsrImprimir.numcomp
