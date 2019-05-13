@@ -1108,8 +1108,16 @@ Function LeerXML(tcArchivo,oscreen)
 	   CURSORTOXML('Temp',  tcArchivo, 1, 512)
 	   SET SAFETY ON
 	   Use In Temp
-   Else
-      XmlToCursor( tcArchivo, 'Cur_Temporal',512 )
+   ELSE
+   	  TRY 
+      	XmlToCursor( tcArchivo, 'Cur_Temporal',512 )
+      CATCH 
+      	CREATE CURSOR cur_temporal (top n(12,0),left n(12,0),height n(12,0),width n(12,0))
+	   	INSERT into cur_temporal VALUES (38,1,_screen.Height,_screen.Width)
+	   	SET SAFETY off
+	   	CURSORTOXML('cur_temporal',  tcArchivo, 1, 512)
+	   	SET SAFETY ON
+      ENDTRY 
       SELECT cur_temporal
       SCATTER NAME oscreen
       Use In Cur_Temporal

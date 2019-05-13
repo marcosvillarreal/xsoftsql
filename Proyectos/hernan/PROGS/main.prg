@@ -51,15 +51,16 @@ If lldesarrollo
    _rutaforms  =lcdd+'forms'
    _rutareports=lcdd+'reports' 
    _rutafutil  =lcdd+'forms\util'
-    _rutafcont  =lcdd+'forms\contabilidad'
-    _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
+   _rutafcont  =lcdd+'forms\contabilidad'
+   _rutafctacte  =lcdd+'forms\CTACTE'
+   _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
    _rutaffc  =L+'\xsoftsql\desarrollo\clases\ffc'
    _rutalib  =L+'\xsoftsql\desarrollo\lib'   
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutafutil,&_rutafcont
+               ,&_rutafutil,&_rutafcont,&_rutafctacte
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
