@@ -417,3 +417,17 @@ SoapFault: ns1:coe.notAuthorized: Computador no autorizado a acceder al servicio
 SoapFault: ns1:coe.notAuthorized: Computador no autorizado a acceder al servicio
 .Exepción: ns1:coe.notAuthorized: Computador no autorizado a acceder al servicioTraceback: 
 05-04-2019 , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\APLICA~1\PyAfipWsTA recuperadoWSFE Version 1.22a WSFE InstallDir C:\APLICA~1\PyAfipWsEnviando TAConectando al servicio WSFEConexxion Existosaappserver status OKdbserver status OKauthserver status OK
+06-06-2019 , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\APLICA~1\PyAfipWsError sw_iniciar pero continua Ya posee un TA activoWSFE Version 1.18a WSFE InstallDir C:\APLICA~1\PyAfipWsEnviando TACodigo error afip:*****Numero de Error: 1429Linea de codigo de error: wsfe.SetTicketAcceso(ta)Procedimiento: sw_wsfe_conectarError VFP: OLE IDispatch exception code 0 from Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invoke_
+  File "win32com\server\policy.pyc", line 585, in _invokeex_
+  File "utils.pyc", line 158, in capturar_errores_wrapper
+  File "utils.pyc", line 391, in SetTicketAcceso
+RuntimeError: Ticket de Acceso vacio!
+..Exepción: RuntimeError: Ticket de Acceso vacio!
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 158, in capturar_errores_wrapper
+  File "utils.pyc", line 391, in SetTicketAcceso
+RuntimeError: Ticket de Acceso vacio!
+
+06-06-2019 , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\APLICA~1\PyAfipWsCertificados ProduccionSolicitando TATA Almacenado wsfeWSFE Version 1.18a WSFE InstallDir C:\APLICA~1\PyAfipWsEnviando TAConectando al servicio WSFEConexxion Existosaappserver status OKdbserver status OKauthserver status OK
