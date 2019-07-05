@@ -1,0 +1,28 @@
+05-07-2019 13:35:40 , MAIN, Error: El archivo 'csrcuerfac.dbf' no existe.;Linea : SELECT CsrCuerfac.*,0000000.00 as stock,0000000.00 as total,CAST(0 as n(12,0)) as idcuerfac,0000000.000 as desctoCiva ,0000000.000 as DesctoSiva,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica,CAST(0 as int) as idprodpromo ,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,00000000.000 as InternoFin ,CAST(0 as int) as idctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni ,00000000.000 as UniCiva2,00000000.000 as UniSiva2,00000000.000 as IvaUni2,CAST(0 as int) as idenvase ,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos , 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden ,SPACE(10+6) as clavepedido,0 as omitirlistas,SPACE(14) as codextend ,CAST(0 as numeric(12)) as idmovlicita,CAST(0 as numeric(12)) as idmaopelicita FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006YVD0324.TMP;Ultimo Control activo: 
+05-07-2019 13:35:40 , Pila de llamadas
+05-07-2019 13:35:40 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+05-07-2019 13:35:40 , Objeto      : main
+05-07-2019 13:35:40 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+05-07-2019 13:35:40 , Nº de Linea :        284
+05-07-2019 13:35:40 , En el Fuente: 	Read events   
+05-07-2019 13:35:40 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+05-07-2019 13:35:40 , Objeto      : frmmenu1.treeview.dblclick
+05-07-2019 13:35:40 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+05-07-2019 13:35:40 , Nº de Linea :         11
+05-07-2019 13:35:40 , En el Fuente: 	   &lcCmd
+05-07-2019 13:35:40 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+05-07-2019 13:35:40 , Objeto      : ejecutamenu
+05-07-2019 13:35:40 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+05-07-2019 13:35:40 , Nº de Linea :       1449
+05-07-2019 13:35:40 , En el Fuente: 						DO FORM &lcForm WITH lcparam1
+05-07-2019 13:35:40 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-07-2019 13:35:40 , Objeto      : regfacvta.load
+05-07-2019 13:35:40 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-07-2019 13:35:40 , Nº de Linea :          2
+05-07-2019 13:35:40 , En el Fuente: thisform.crearcursor()
+05-07-2019 13:35:40 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-07-2019 13:35:40 , Objeto      : regfacvta.crearcursor
+05-07-2019 13:35:40 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+05-07-2019 13:35:40 , Nº de Linea :         46
+05-07-2019 13:35:40 , En el Fuente: SELECT CsrCuerfac.*,0000000.00 as stock,0000000.00 as total,CAST(0 as n(12,0)) as idcuerfac,0000000.000 as desctoCiva		,0000000.000 as DesctoSiva,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol		,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica,CAST(0 as int) as idprodpromo		,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,00000000.000 as InternoFin	   	,CAST(0 as int) as idctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni	   	,00000000.000 as UniCiva2,00000000.000 as UniSiva2,00000000.000 as IvaUni2,CAST(0 as int) as idenvase	   	,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos	   	, 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden	   	,SPACE(10+6) as clavepedido,0 as omitirlistas,SPACE(14) as codextend	   	,CAST(0 as numeric(12)) as idmovlicita,CAST(0 as numeric(12)) as idmaopelicita     FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE 
+05-07-2019 13:35:40 , Fin
