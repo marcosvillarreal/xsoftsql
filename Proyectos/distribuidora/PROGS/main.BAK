@@ -79,6 +79,7 @@ If lldesarrollo
    _rutaformv  =lcdd+'forms\ventas'
    _rutaformcpr  =lcdd+'forms\compra'
    _rutaformart  =lcdd+'forms\articulos'
+   _rutaformpre  =lcdd+'forms\precio'
     
    Set default to (lcdd) &&;(lcddc)
 
@@ -86,7 +87,7 @@ If lldesarrollo
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
-               ,&_rutaformart
+               ,&_rutaformart,&_rutaformpre
                
       
 Endif
