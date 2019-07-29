@@ -1592,6 +1592,7 @@ IF lok
 	goApp.empresaconvenio			= DefaultVar('CsrEmpresa.esconvenio',0)
 	goapp.empresalat				= DEFAULTVar('CsrEmpresa.lat','0')
 	goapp.empresalng				= DEFAULTVar('CsrEmpresa.lng','0')
+	Goapp.empresaemail				= ALLTRIM(CsrEmpresa.email)
 ENDIF
 
 
