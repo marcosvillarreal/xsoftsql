@@ -37,6 +37,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+cFirma	= SYS(5)+CURDIR()+"firma.jpg"
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\leon\'
@@ -58,7 +59,8 @@ If lldesarrollo
    _rutalib =    L+'\xsoftsql\desarrollo\lib'
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
-   
+   cFirma	= _rutabmps+"\firma.jpg"
+
    _rutaformse = lcdd + 'forms\exportar'
    _rutaformsp = lcdd + 'forms\precio'
    _rutaformsb = lcdd + 'forms\bancario'
@@ -134,6 +136,7 @@ ObjReporter.AddProperty('titulo4',"")
 ObjReporter.AddProperty('titsucursal',"")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('firma',cFirma)
 
 PUBLIC ObjInfNeg
 ObjInfNeg=CREATEOBJECT("custom")
