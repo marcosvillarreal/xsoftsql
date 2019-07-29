@@ -1,1414 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-31-05-2019 12:21:27 , Pila de llamadas
-31-05-2019 12:21:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
-31-05-2019 12:21:27 , Objeto      : regstock.load
-31-05-2019 12:21:27 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regstock.sct
-31-05-2019 12:21:27 , Nº de Linea :          3
-31-05-2019 12:21:28 , En el Fuente: thisform.crearcursor()
-31-05-2019 12:21:28 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
-31-05-2019 12:21:28 , Objeto      : regstock.crearcursor
-31-05-2019 12:21:28 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regstock.sct
-31-05-2019 12:21:29 , Nº de Linea :          3
-31-05-2019 12:21:29 , En el Fuente: SELECT Csrmaopera.*,CAST(0 as int) as iddeposito,00000000 AS nrocaja,SPACE(6) as pefiscal	   FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE 
-13-06-2019 16:16:10 , RESTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIED
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AD,10)+CLAVE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EZ2H003J.TMP;Ultimo Control activo: 
-13-06-2019 16:16:11 , Pila de llamadas
-13-06-2019 16:16:11 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-13-06-2019 16:16:11 , Objeto      : restock.imprimir_vistaprevia1.impresora.click
-13-06-2019 16:16:11 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-13-06-2019 16:16:12 , Nº de Linea :          6
-13-06-2019 16:16:12 , En el Fuente: 	llOK=thisform.CrearInforme()
-13-06-2019 16:16:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-13-06-2019 16:16:12 , Objeto      : restock.crearinforme
-13-06-2019 16:16:13 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-13-06-2019 16:16:13 , Nº de Linea :        254
-13-06-2019 16:16:13 , En el Fuente: 	SELECT CsrCursor
-13-06-2019 16:19:50 , RESTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIED
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AD,10)+CLAVE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EZ2H008N.TMP;Ultimo Control activo: 
-13-06-2019 16:19:50 , Pila de llamadas
-13-06-2019 16:19:51 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-13-06-2019 16:19:51 , Objeto      : restock.imprimir_vistaprevia1.impresora.click
-13-06-2019 16:19:51 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-13-06-2019 16:19:52 , Nº de Linea :          6
-13-06-2019 16:19:52 , En el Fuente: 	llOK=thisform.CrearInforme()
-13-06-2019 16:19:52 , Programa    : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-13-06-2019 16:19:52 , Objeto      : restock.crearinforme
-13-06-2019 16:19:53 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-13-06-2019 16:19:53 , Nº de Linea :        254
-13-06-2019 16:19:53 , En el Fuente: 	SELECT CsrCursor
-13-06-2019 16:23:57 , RESTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRCURSOR'.;Linea : SELECT CsrCursor;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIED
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AD,10)+CLAVE;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EZ2H00AW.TMP;Ultimo Control activo: 
-13-06-2019 16:23:57 , Pila de llamadas
-13-06-2019 16:23:58 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-13-06-2019 16:23:58 , Objeto      : restock.imprimir_vistaprevia1.impresora.click
-13-06-2019 16:23:58 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-13-06-2019 16:23:58 , Nº de Linea :          6
-13-06-2019 16:23:58 , En el Fuente: 	llOK=thisform.CrearInforme()
-13-06-2019 16:23:58 , Programa    : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-13-06-2019 16:23:59 , Objeto      : restock.crearinforme
-13-06-2019 16:23:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-13-06-2019 16:23:59 , Nº de Linea :        256
-13-06-2019 16:24:00 , En el Fuente: 	SELECT CsrCursor
-14-06-2019 14:47:01 , EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: IDVENDEDOR no es único y se debe calificar.;Linea : SELECT 0 as grupo,CsrAux3.* ,ROUND((Csraux3.importefinal/CsrVendedores.importefinal)*100,3) as porce_venta FROM csra
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ux3 left JOIN csrvendedores ON Csraux3.idvendedor=Csrvendedores.idvendedor ORDER BY idvendedor,idrubro,porce_venta INTO CURSOR csraux2 readwrite;Error :       1832;Ultimo Alias Activo: CSRVENDEDORES;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDAT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-A\LOCAL\TEMP\00007TVT00NK.TMP;Ultimo Control activo: 
-14-06-2019 14:47:01 , Pila de llamadas
-14-06-2019 14:47:02 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-14-06-2019 14:47:02 , Objeto      : est_rankproductos.imprimir_vistaprevia1.impresora.click
-14-06-2019 14:47:02 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-14-06-2019 14:47:02 , Nº de Linea :          6
-14-06-2019 14:47:02 , En el Fuente: 	llOK=thisform.CrearInforme()
-14-06-2019 14:47:02 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankproductos.sct
-14-06-2019 14:47:03 , Objeto      : est_rankproductos.crearinforme
-14-06-2019 14:47:03 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankproductos.sct
-14-06-2019 14:47:03 , Nº de Linea :         29
-14-06-2019 14:47:04 , En el Fuente: 	.crearlistado()
-14-06-2019 14:47:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankproductos.sct
-14-06-2019 14:47:04 , Objeto      : est_rankproductos.crearlistado
-14-06-2019 14:47:05 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankproductos.sct
-14-06-2019 14:47:05 , Nº de Linea :         31
-14-06-2019 14:47:05 , En el Fuente: SELECT 0 as grupo,CsrAux3.*,ROUND((Csraux3.importefinal/CsrVendedores.importefinal)*100,3) as porce_venta FROM csraux3left JOIN csrvendedores ON Csraux3.idvendedor=Csrvendedores.idvendedor ORDER BY idvendedor,idrubro,p
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-orce_ventaINTO CURSOR csraux2 readwrite
-26-06-2019 10:20:46 , REGCTACTE_V2.LOAD, Error: El archivo 'csrmovctacte.dbf' no existe.;Linea : SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-26-06-2019 10:20:47 , Pila de llamadas
-26-06-2019 10:20:47 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-26-06-2019 10:20:47 , Objeto      : regctacte_v2.load
-26-06-2019 10:20:47 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-26-06-2019 10:20:48 , Nº de Linea :          2
-26-06-2019 10:20:48 , En el Fuente: thisform.crearcursor()
-26-06-2019 10:20:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-26-06-2019 10:20:48 , Objeto      : regctacte_v2.crearcursor
-26-06-2019 10:20:49 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-26-06-2019 10:20:49 , Nº de Linea :          4
-26-06-2019 10:20:49 , En el Fuente: SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE 
-26-06-2019 10:23:29 , REGCTACTE_V2.LOAD, Error: El archivo 'csrmovctacte.dbf' no existe.;Linea : SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-26-06-2019 10:23:29 , Pila de llamadas
-26-06-2019 10:23:30 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
 26-06-2019 10:23:30 , Objeto      : regctacte_v2.load
 26-06-2019 10:23:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
 26-06-2019 10:23:30 , Nº de Linea :          2
@@ -1419,6 +8,35 @@ tacte READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:       
 26-06-2019 10:23:32 , Nº de Linea :          4
 26-06-2019 10:23:32 , En el Fuente: SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE 
 27-06-2019 10:49:18 , RINDEFLETE.LOAD, Error: El archivo 'csrrenflete.dbf' no existe.;Linea : SELECT CsrRenflete.* FROM Csrrenflete WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxRendi READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo r
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1579,6 +197,35 @@ egistro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DQMH006G.TMP;Ult
 27-06-2019 10:49:21 , Nº de Linea :         37
 27-06-2019 10:49:21 , En el Fuente: SELECT CsrRenflete.* FROM Csrrenflete WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxRendi READWRITE
 27-06-2019 10:49:59 , MAIN, Error: El archivo 'csrrenflete.dbf' no existe.;Linea : SELECT CsrRenflete.* FROM Csrrenflete WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxRendi READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXCUERVARI;Ultimo registro:   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1888,6 +535,35 @@ egistro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DQMH006G.TMP;Ult
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 NTO CURSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 27-06-2019 10:55:31 , Pila de llamadas
 27-06-2019 10:55:32 , Programa    : j:\xsoftsql\proyectos\leon\forms\rindeflete.sct
@@ -2050,6 +726,35 @@ NTO CURSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: ;Ulti
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Control activo: 
 16-07-2019 14:54:50 , Pila de llamadas
 16-07-2019 14:54:50 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -2063,6 +768,35 @@ o Control activo:
 16-07-2019 14:54:52 , Nº de Linea :          3
 16-07-2019 14:54:52 , En el Fuente: IF NOT thisform.notificacion
 16-07-2019 15:01:20 , MAIN, Error: No se encuentra la variable 'NOTIFY_AVISO1'.;Linea : oObjeto = &cNameAviso;Error :         12;Ultimo Alias Activo: CSRATERMI;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007S3T03ZG.TMP;Ultimo Co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2328,6 +1062,35 @@ ntrol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Control activo: 
 16-07-2019 15:02:13 , Pila de llamadas
 16-07-2019 15:02:13 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -2356,6 +1119,35 @@ o Control activo:
 16-07-2019 15:02:18 , Nº de Linea :          5
 16-07-2019 15:02:18 , En el Fuente: this.cmdleer = OscAviso.detalle
 18-07-2019 14:56:39 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrATermi')<0;Error :         13;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DIIX03K1.TMP;Ultimo Control activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2590,6 +1382,35 @@ o Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rol activo: 
 18-07-2019 15:10:47 , Pila de llamadas
 18-07-2019 15:10:48 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -2608,6 +1429,35 @@ rol activo:
 18-07-2019 15:10:49 , Nº de Linea :         26
 18-07-2019 15:10:50 , En el Fuente: 	this.LimpiarAviso(@i)
 18-07-2019 15:12:19 , MAIN, Error: No se encuentra la propiedad LIMPIARAVISO.;Linea : this.LimpiarAviso(@j);Error :       1734;Ultimo Alias Activo: CSRATERMI;Ultimo registro:          9 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DIIX04WE.TMP;Ultimo Cont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2826,6 +1676,35 @@ rol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo Control activo: 
 24-07-2019 12:59:51 , Pila de llamadas
 24-07-2019 12:59:51 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -2839,6 +1718,35 @@ Ultimo Control activo:
 24-07-2019 12:59:53 , Nº de Linea :          1
 24-07-2019 12:59:53 , En el Fuente: This.Parent.Parent.Ocultar(this.Name)
 24-07-2019 13:00:39 , MAIN, Error: No se encuentra la propiedad NOTIFY_AVISO0.;Linea : oObjeto = &cNameAviso;Error :       1734;Ultimo Alias Activo: CURPERFIL;Ultimo registro:        272 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008WZT048K.TMP;Ultimo Con
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3041,6 +1949,35 @@ trol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  registro:          0 ;DBF: ;Ultimo Control activo: 
 24-07-2019 15:15:49 , Pila de llamadas
 24-07-2019 15:15:50 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -3054,6 +1991,35 @@ trol activo:
 24-07-2019 15:15:51 , Nº de Linea :          2
 24-07-2019 15:15:51 , En el Fuente: SELECT Csrmovpub.*,00000000 AS nrocaja FROM Csrmovpub WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovpub READWRITE 
 25-07-2019 11:18:01 , REGPUBVARIO.CONTAINERENCABEZA.KITBUSCAOALTAENUSUARIOS.TXTEXISTE1.INIT, Error: No se encuentra la variable 'CNOMBRE'.;Linea : This.txtnombre.value = &lccamponombre;Error :         12;Ultimo Alias Activo: CSRUSUARIOS;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3236,6 +2202,35 @@ trol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TEMP\00009OG9005E.TMP;Ultimo Control activo: 
 25-07-2019 11:19:14 , Pila de llamadas
 25-07-2019 11:19:15 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -3254,6 +2249,35 @@ TEMP\00009OG9005E.TMP;Ultimo Control activo:
 25-07-2019 11:19:17 , Nº de Linea :          3
 25-07-2019 11:19:18 , En el Fuente: 	.lnidnrocaja	 = Csrparaconfig.iddetanrocaja
 25-07-2019 11:24:06 , REGPUBVARIO.INIT, Error: No se encuentra la propiedad IUSUARIO.;Linea : INSERT INTO CsrAuxmov (idusuario,fechacorte,diasaviso,activo,detalle) VALUES (goapp.iusuario,DATE(),0,1,'');Error :       1734;Ultimo Alias Activo: CSRAUXMOV;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3419,6 +2443,35 @@ timo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG9006A.T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG90087.TMP;Ultimo Control activo: 
 25-07-2019 11:25:29 , Pila de llamadas
 25-07-2019 11:25:29 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -3432,6 +2485,35 @@ timo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG9006A.T
 25-07-2019 11:25:30 , Nº de Linea :          1
 25-07-2019 11:25:30 , En el Fuente: lnmes  = thisform.containerencabeza._cbomesfiscal.Value 
 25-07-2019 11:33:41 , REGPUBVARIO.CONTAINERENCABEZA.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'FECHA'.;Linea : thisform.grid2.column1.ControlSource = "CsrAuxiliar.fecha";Error :         12;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3586,6 +2668,35 @@ timo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG9006A.T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG900EH.TMP;Ultimo Control activo: 
 25-07-2019 11:36:39 , Pila de llamadas
 25-07-2019 11:36:40 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -3604,6 +2715,35 @@ BF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG900EH.TMP;Ultimo Control activo:
 25-07-2019 11:36:42 , Nº de Linea :          7
 25-07-2019 11:36:42 , En el Fuente: lok = IIF(lnKeyCode = 27,.f.,.t.)
 25-07-2019 11:43:27 , REGPUBVARIO.ACEPTAR1.CLICK, Error: LOOBJAVISOUSER no es un objeto.;Linea : loObjavisouser.agregar;Error :       1924;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG900JH.T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3749,6 +2889,35 @@ MP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\00009OG900KN.TMP;Ultimo Control activo: 
 25-07-2019 11:44:50 , Pila de llamadas
 25-07-2019 11:44:50 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -3777,6 +2946,35 @@ L\TEMP\00009OG900KN.TMP;Ultimo Control activo:
 25-07-2019 11:44:54 , Nº de Linea :          7
 25-07-2019 11:44:55 , En el Fuente: 	ObjInfNeg.NameTable = lcnombretabla
 25-07-2019 11:45:59 , REGPUBVARIO.ACEPTAR1.CLICK, Error: No se encuentra la propiedad NAMETABLE.;Linea : ObjInfNeg.NameTable = lcnombretabla;Error :       1734;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3900,6 +3098,35 @@ L\TEMP\00009OG900LW.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\00009OG900NE.TMP;Ultimo Control activo: 
 25-07-2019 11:48:34 , Pila de llamadas
 25-07-2019 11:48:35 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -3928,6 +3155,35 @@ L\TEMP\00009OG900NE.TMP;Ultimo Control activo:
 25-07-2019 11:48:39 , Nº de Linea :          7
 25-07-2019 11:48:39 , En el Fuente: 	ObjInfNeg.NameTable = lcnombretabla
 25-07-2019 11:50:42 , REGPUBVARIO.ACEPTAR1.CLICK, Error: No se encuentra la propiedad NAMETABLE.;Linea : ObjInfNeg.NameTable = lcnombretabla;Error :       1734;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4023,6 +3279,35 @@ L\TEMP\00009OG900OB.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ctivo WITH Csrauxiliar.activo IN Csrmovpub;Error :         13;Ultimo Alias Activo: CSRAVISOUSER;Ultimo registro:         -1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG900PV.TMP;Ultimo Control activo: 
 25-07-2019 11:54:56 , Pila de llamadas
 25-07-2019 11:54:56 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -4046,6 +3331,35 @@ ctivo WITH Csrauxiliar.activo IN Csrmovpub;Error :         13;Ultimo Alias Activ
 25-07-2019 11:55:00 , Nº de Linea :         39
 25-07-2019 11:55:00 , En el Fuente:      REPLACE idusuario WITH goapp.idusuario     	,fechacorte with CsrAuxiliar.fechacorte,detalle WITH CsrAuxiliar.detalle     	,diasaviso WITH Csrauxiliar.diasaviso,activo WITH Csrauxiliar.activo IN Csrmovpub
 25-07-2019 11:55:05 , REGPUBVARIO.CANCELAR1.CLICK, Error: _CMDPROCESAR es un miembro desconocido.;Linea : .containerencabeza._cmdprocesar.SetFocus;Error :       1925;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDAT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4104,6 +3418,35 @@ A\LOCAL\TEMP\00009OG900PQ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \LOCAL\TEMP\00009OG900QV.TMP;Ultimo Control activo: 
 25-07-2019 11:56:21 , Pila de llamadas
 25-07-2019 11:56:22 , Programa    : j:\xsoftsql\desarrollo\forms\regavisosuser.sct
@@ -4122,6 +3465,35 @@ A\LOCAL\TEMP\00009OG900PQ.TMP;Ultimo Control activo:
 25-07-2019 11:56:25 , Nº de Linea :         29
 25-07-2019 11:56:25 , En el Fuente: 	   .containerencabeza._cmdprocesar.SetFocus
 25-07-2019 12:09:20 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : this.cmdleer.Tag = CTOD(TTOD(OscAviso.fechacorte)) + CHR(13) + ALLTRIM(OscAviso.detalle);Error :         11;Ultimo Alias Activo: CSRATERMI;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4169,6 +3541,35 @@ mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009OG901S6.TMP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KSP008H.TMP;Ultimo Control activo: 
 25-07-2019 12:13:02 , Pila de llamadas
 25-07-2019 12:13:03 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4196,3 +3597,199 @@ mo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007KSP008H.TMP
 25-07-2019 12:13:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
 25-07-2019 12:13:07 , Nº de Linea :          6
 25-07-2019 12:13:07 , En el Fuente: this.cmdleer.Tag = CTOD(TTOD(OscAviso.fechacorte)) + CHR(13) + ALLTRIM(OscAviso.detalle)
+29-07-2019 14:06:51 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrSubProducto')>0;Error :         13;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004KCP00X6.TMP;Ultimo Control act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: 
+29-07-2019 14:06:51 , Pila de llamadas
+29-07-2019 14:06:53 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+29-07-2019 14:06:53 , Objeto      : main
+29-07-2019 14:06:53 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+29-07-2019 14:06:53 , Nº de Linea :        254
+29-07-2019 14:06:56 , En el Fuente: 	Read events   
+29-07-2019 14:06:56 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+29-07-2019 14:06:56 , Objeto      : frmmenu1.treeview.dblclick
+29-07-2019 14:06:57 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+29-07-2019 14:07:00 , Nº de Linea :         12
+29-07-2019 14:07:00 , En el Fuente: 	   &lcCmd
+29-07-2019 14:07:00 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
+29-07-2019 14:07:00 , Objeto      : ejecutamenu
+29-07-2019 14:07:00 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
+29-07-2019 14:07:00 , Nº de Linea :       1477
+29-07-2019 14:07:03 , En el Fuente: 						DO FORM &lcForm
+29-07-2019 14:07:03 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:07:03 , Objeto      : listaprecio.imprimir_vistaprevia1.pdf.click
+29-07-2019 14:07:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:07:07 , Nº de Linea :          9
+29-07-2019 14:07:07 , En el Fuente: 	llOK=thisform.CrearInforme()
+29-07-2019 14:07:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\listaprecio.sct
+29-07-2019 14:07:11 , Objeto      : listaprecio.crearinforme
+29-07-2019 14:07:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\listaprecio.sct
+29-07-2019 14:07:13 , Nº de Linea :         82
+29-07-2019 14:07:13 , En el Fuente:      	IF RECCOUNT('CsrSubProducto')>0 
+29-07-2019 14:08:41 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrSubProducto')>0;Error :         13;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004KCP017O.TMP;Ultimo Control act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ivo: 
+29-07-2019 14:08:41 , Pila de llamadas
+29-07-2019 14:08:44 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+29-07-2019 14:08:44 , Objeto      : main
+29-07-2019 14:08:44 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+29-07-2019 14:08:44 , Nº de Linea :        254
+29-07-2019 14:08:47 , En el Fuente: 	Read events   
+29-07-2019 14:08:47 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+29-07-2019 14:08:47 , Objeto      : frmmenu1.treeview.dblclick
+29-07-2019 14:08:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
+29-07-2019 14:08:51 , Nº de Linea :         12
+29-07-2019 14:08:51 , En el Fuente: 	   &lcCmd
+29-07-2019 14:08:51 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
+29-07-2019 14:08:51 , Objeto      : ejecutamenu
+29-07-2019 14:08:54 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
+29-07-2019 14:08:54 , Nº de Linea :       1477
+29-07-2019 14:08:54 , En el Fuente: 						DO FORM &lcForm
+29-07-2019 14:08:54 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:08:54 , Objeto      : listaprecio.imprimir_vistaprevia1.impresora.click
+29-07-2019 14:08:54 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:08:54 , Nº de Linea :          6
+29-07-2019 14:08:58 , En el Fuente: 	llOK=thisform.CrearInforme()
+29-07-2019 14:08:58 , Programa    : j:\xsoftsql\proyectos\leon\forms\listaprecio.sct
+29-07-2019 14:08:58 , Objeto      : listaprecio.crearinforme
+29-07-2019 14:09:01 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\listaprecio.sct
+29-07-2019 14:09:01 , Nº de Linea :         82
+29-07-2019 14:09:01 , En el Fuente:      	IF RECCOUNT('CsrSubProducto')>0 
+29-07-2019 14:10:32 , LISTAPRECIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrSubProducto')>0;Error :         13;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OCAL\TEMP\00004KCP01A3.TMP;Ultimo Control activo: 
+29-07-2019 14:10:35 , Pila de llamadas
+29-07-2019 14:10:38 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:10:38 , Objeto      : listaprecio.imprimir_vistaprevia1.impresora.click
+29-07-2019 14:10:38 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:10:38 , Nº de Linea :          6
+29-07-2019 14:10:38 , En el Fuente: 	llOK=thisform.CrearInforme()
+29-07-2019 14:10:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\precios\listaprecio_v1.sct
+29-07-2019 14:10:41 , Objeto      : listaprecio.crearinforme
+29-07-2019 14:10:42 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\precios\listaprecio_v1.sct
+29-07-2019 14:10:45 , Nº de Linea :        115
+29-07-2019 14:10:45 , En el Fuente: 			IF RECCOUNT('CsrSubProducto')>0 
+29-07-2019 14:12:26 , LISTAPRECIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrSubProducto')>0;Error :         13;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+OCAL\TEMP\00004KCP01BO.TMP;Ultimo Control activo: 
+29-07-2019 14:12:26 , Pila de llamadas
+29-07-2019 14:12:29 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:12:29 , Objeto      : listaprecio.imprimir_vistaprevia1.impresora.click
+29-07-2019 14:12:29 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+29-07-2019 14:12:29 , Nº de Linea :          6
+29-07-2019 14:12:32 , En el Fuente: 	llOK=thisform.CrearInforme()
+29-07-2019 14:12:32 , Programa    : j:\xsoftsql\proyectos\leon\forms\precios\listaprecio_v1.sct
+29-07-2019 14:12:32 , Objeto      : listaprecio.crearinforme
+29-07-2019 14:12:32 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\precios\listaprecio_v1.sct
+29-07-2019 14:12:35 , Nº de Linea :        115
+29-07-2019 14:12:35 , En el Fuente: 			IF RECCOUNT('CsrSubProducto')>0 
+29-07-2019 14:24:44 , REGSTOCK.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF Oscatter.idarticulo#0 AND (UPPER("ThisForm.Grid2.Column5")$UPPER(lcGotFocus) OR UPPER("ThisForm.Grid2.Column10")$UPPER(lcGotFoc
+
+
+
+
+
+
+
+us));Error :         11;Ultimo Alias Activo: CSRCTROLEXIS;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004KCP02SS.TMP;Ultimo Control activo: CANTIDAD
+29-07-2019 14:24:48 , Pila de llamadas
+29-07-2019 14:24:51 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
+29-07-2019 14:24:51 , Objeto      : regstock.keypress
+29-07-2019 14:24:51 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regstock.sct
+29-07-2019 14:24:51 , Nº de Linea :         37
+29-07-2019 14:24:55 , En el Fuente:     	   	 thisform.key_grid3(nKeyCode, nShiftAltCtrl)
+29-07-2019 14:24:55 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
+29-07-2019 14:24:55 , Objeto      : regstock.key_grid3
+29-07-2019 14:24:58 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regstock.sct
+29-07-2019 14:24:58 , Nº de Linea :         50
+29-07-2019 14:24:58 , En el Fuente:     		IF thisform.grid2_control()
+29-07-2019 14:24:58 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
+29-07-2019 14:25:01 , Objeto      : regstock.grid2_control
+29-07-2019 14:25:02 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regstock.sct
+29-07-2019 14:25:02 , Nº de Linea :         45
+29-07-2019 14:25:02 , En el Fuente: 	IF Oscatter.idarticulo#0 AND (UPPER("ThisForm.Grid2.Column5")$UPPER(lcGotFocus) OR UPPER("ThisForm.Grid2.Column10")$UPPER(lcGotFocus))
+29-07-2019 14:57:07 , IMPUCTACTE.CONTAINERENCABEZA.ACEPTAR1.CLICK, Error: Microsoft Cursor Engine : El proveedor de datos u otro servicio devolvió un estado E_FAIL.;Linea : INDEX on iddebe TO iddebe;Error :       1435;Ultimo Alias Activo: CSRCURSORAFE;Ul
+
+
+timo registro:        100 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00001S09006T.TMP;Ultimo Control activo: 
+29-07-2019 14:57:07 , Pila de llamadas
+29-07-2019 14:57:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\impuctacte.sct
+29-07-2019 14:57:11 , Objeto      : impuctacte.containerencabeza.aceptar1.click
+29-07-2019 14:57:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\impuctacte.sct
+29-07-2019 14:57:11 , Nº de Linea :          4
+29-07-2019 14:57:17 , En el Fuente: 	.cargarcursor(lnidctacte)
+29-07-2019 14:57:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\impuctacte.sct
+29-07-2019 14:57:17 , Objeto      : impuctacte.cargarcursor
+29-07-2019 14:57:20 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\impuctacte.sct
+29-07-2019 14:57:20 , Nº de Linea :         69
+29-07-2019 14:57:20 , En el Fuente: INDEX on iddebe TO iddebe
