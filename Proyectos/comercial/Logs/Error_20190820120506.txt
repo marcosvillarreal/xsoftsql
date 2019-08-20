@@ -1,0 +1,38 @@
+20-08-2019 12:05:06 , IMPCOMPVTACAE.ACEPTAR1.CLICK, Error: Variable 'TIPOCONCE' is not found.;Linea : SUM ALL baseimp FOR tipoconce$'DC' AND orden = OscCabefac.orden TO nTotalNG_DC;Error :         12;Ultimo Alias Activo: CSRULTCOMPROBA;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00005OG901O7.TMP;Ultimo Control activo: 
+20-08-2019 12:05:06 , Pila de llamadas
+20-08-2019 12:05:06 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:06 , Objeto      : impcompvtacae.aceptar1.click
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Nº de Linea :         10
+20-08-2019 12:05:07 , En el Fuente: 		.ciclaoperacion()
+20-08-2019 12:05:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Objeto      : impcompvtacae.ciclaoperacion
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Nº de Linea :         16
+20-08-2019 12:05:07 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(CsrOperacion.orden)
+20-08-2019 12:05:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Objeto      : impcompvtacae.selectoperacion_sql
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Nº de Linea :         59
+20-08-2019 12:05:07 , En el Fuente: 			IF NOT this.SolicitarCAE()
+20-08-2019 12:05:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Objeto      : impcompvtacae.solicitarcae
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\facelectronica\impcompvtacae.sct
+20-08-2019 12:05:07 , Nº de Linea :         28
+20-08-2019 12:05:07 , En el Fuente: 	lok = This.oFACCAE.Lote_cae()
+20-08-2019 12:05:07 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+20-08-2019 12:05:07 , Objeto      : impcompvtacae.ofaccae.lote_cae
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+20-08-2019 12:05:07 , Nº de Linea :          5
+20-08-2019 12:05:07 , En el Fuente: this.lote_proceso()
+20-08-2019 12:05:07 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+20-08-2019 12:05:07 , Objeto      : impcompvtacae.ofaccae.lote_proceso
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+20-08-2019 12:05:07 , Nº de Linea :        110
+20-08-2019 12:05:07 , En el Fuente: 		this.lote_totalizar(@nTotalNG,@nTotalIG)
+20-08-2019 12:05:07 , Programa    : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
+20-08-2019 12:05:07 , Objeto      : impcompvtacae.ofaccae.lote_totalizar
+20-08-2019 12:05:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\onegocioslocal.vct
+20-08-2019 12:05:07 , Nº de Linea :         39
+20-08-2019 12:05:07 , En el Fuente: SUM ALL baseimp FOR tipoconce$'DC' AND orden = OscCabefac.orden TO nTotalNG_DC
+20-08-2019 12:05:07 , Fin
