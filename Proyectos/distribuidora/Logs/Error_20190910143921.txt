@@ -1,0 +1,33 @@
+10-09-2019 14:39:21 , MAIN, Error: SQL: no se encuentra la columna 'RUB_UNITASA'.;Linea : SELECT '0' as origen ,idarticulo,codigo,articulo,IIF(INT(unidades/unibulto)=0 OR unibulto=0,001,INT(unidades/unibulto)) AS unibultos ,unidades,IIF(unibulto=0,unidades,(unidades-(INT(unidades/unibulto)*UNIBULTO))) as unisueLtas,pesable, variedad ,ROUND(importefinal,2) as importefinal ,IIF(rub_unitasa=1,peso,0) AS peso ,IIF(lctasa=1,tasaVied,tasaPata) as tasa ,IIF(rub_unitasa=1, vtakilos, unidades*peso) as vtakilos, unibulto as xbulto ,CAST(0 as int) as codfletero,SPACE(30) as nomfletero,round(importefinal - internos,2) as importe ,rub_unitasa FROM CsrListado INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRLISTADO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD00K4.TMP;Ultimo Control activo: 
+10-09-2019 14:39:21 , Pila de llamadas
+10-09-2019 14:39:21 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+10-09-2019 14:39:21 , Objeto      : main
+10-09-2019 14:39:21 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+10-09-2019 14:39:21 , Nº de Linea :        285
+10-09-2019 14:39:21 , En el Fuente: 	Read events   
+10-09-2019 14:39:21 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+10-09-2019 14:39:21 , Objeto      : frmmenu1.treeview.dblclick
+10-09-2019 14:39:21 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\frmmenu.sct
+10-09-2019 14:39:21 , Nº de Linea :         11
+10-09-2019 14:39:21 , En el Fuente: 	   &lcCmd
+10-09-2019 14:39:21 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+10-09-2019 14:39:21 , Objeto      : ejecutamenu
+10-09-2019 14:39:21 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+10-09-2019 14:39:21 , Nº de Linea :       1447
+10-09-2019 14:39:21 , En el Fuente: 						DO FORM &lcForm
+10-09-2019 14:39:21 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+10-09-2019 14:39:21 , Objeto      : listadoventascamion.imprimir_vistaprevia1.impresora.click
+10-09-2019 14:39:21 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+10-09-2019 14:39:21 , Nº de Linea :          6
+10-09-2019 14:39:21 , En el Fuente: 	llOK=thisform.CrearInforme()
+10-09-2019 14:39:21 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listadoventascamion_v1.sct
+10-09-2019 14:39:21 , Objeto      : listadoventascamion.crearinforme
+10-09-2019 14:39:21 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\listadoventascamion_v1.sct
+10-09-2019 14:39:21 , Nº de Linea :         23
+10-09-2019 14:39:21 , En el Fuente: 	thisform.crearlistado()
+10-09-2019 14:39:21 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listadoventascamion_v1.sct
+10-09-2019 14:39:21 , Objeto      : listadoventascamion.crearlistado
+10-09-2019 14:39:21 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\listadoventascamion_v1.sct
+10-09-2019 14:39:21 , Nº de Linea :         12
+10-09-2019 14:39:21 , En el Fuente: SELECT '0' as origen ,idarticulo,codigo,articulo,IIF(INT(unidades/unibulto)=0 OR unibulto=0,001,INT(unidades/unibulto)) AS unibultos,unidades,IIF(unibulto=0,unidades,(unidades-(INT(unidades/unibulto)*UNIBULTO))) as unisueLtas,pesable, variedad,ROUND(importefinal,2) as importefinal,IIF(rub_unitasa=1,peso,0) AS peso,IIF(lctasa=1,tasaVied,tasaPata) as tasa,IIF(rub_unitasa=1, vtakilos, unidades*peso) as vtakilos, unibulto as xbulto,CAST(0 as int) as codfletero,SPACE(30) as nomfletero,round(importefinal - internos,2) as importe,rub_unitasaFROM CsrListado INTO CURSOR CsrImprimir READWRITE 
+10-09-2019 14:39:21 , Fin
