@@ -1,6 +1,6 @@
 GOAPP.IDEJERCICIO = 1100000016
 GOAPP.IDUSUARIO =1
-goapp.terminal = 12 &&6
+goapp.terminal = 6
 goapp.ejercicio = 9
 goapp.sucursal = 1
 goapp.idsucursal = 1100000001
