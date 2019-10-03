@@ -1,6 +1,7 @@
 PROCEDURE directivasfiscal
 
 PUBLIC   EpsonTm300 , EpsonTm2000, HASAR614, HASAR615, HASARPR4, HASAR320F, HASAR715F, SAMSUNG250
+PUBLIC	 EpsonTmT900FA
 
 EpsonTm300     = 2
 EpsonTm2000    = 3
@@ -10,8 +11,9 @@ HASARPR4       = 6
 HASAR320F      = 7
 HASAR715F      = 8 
 SAMSUNG250     = 9
+EpsonTmT900FA  = 10
 
-PUBLIC AmodeloFiscal[9],ACierresZ[9]
+PUBLIC AmodeloFiscal[10],ACierresZ[10]
 
 AmodeloFiscal[01]='no fiscal'
 AmodeloFiscal[02]='EPSON TM300'
@@ -22,6 +24,7 @@ AmodeloFiscal[06]='HASAR PR4'
 AmodeloFiscal[07]='HASAR 320F'
 AmodeloFiscal[08]='HASAR 715F'
 AmodeloFiscal[09]='SAMSUNG 250'
+AmodeloFiscal[10]='EPSON TMT900FA'
 
 ACierresZ[01] = 0
 ACierresZ[02] = 3800
@@ -32,6 +35,7 @@ ACierresZ[06] = 1850
 ACierresZ[07] = 1850
 ACierresZ[08] = 3800
 ACierresZ[09] = 3800
+ACierresZ[10] = 3800
 
 ENDPROC
 
