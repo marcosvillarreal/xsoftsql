@@ -936,7 +936,7 @@ If Parameters() = 0
 	Return
 Endif
 *stop()
-Dimension lstOCX(9,2)
+Dimension lstOCX(10,2)
 lstOCX(1,1) = "SSubTimer6.Gsubclass"
 lstOCX(1,2) = "SSubTmr6.dll"
 lstOCX(2,1) ="vbalLbar6.cListBarItem"
@@ -955,6 +955,9 @@ lstOCX(8,1) ="MSMAPI.MAPIMessages.1"
 lstOCX(8,2) ="MSMAPI32.ocx"
 lstOCX(9,1) ="HASAR.fiscal.1"
 lstOCX(9,2) ="Fiscal051122.ocx"
+lstOCX(10,1) ="EpsonFiscalInterface.dll"
+lstOCX(10,2) ="EpsonFiscalInterface.dll"
+
 * Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
 * No calculamos porque nosotros le damos la cantidad
 For i = 1 To Alen('lstocx',1)

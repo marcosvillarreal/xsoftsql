@@ -164,7 +164,7 @@ If Type('goApp')='O'
 	
 	Do directivasfiscal    && en procfiscal.prg
 	Do directivasHasar
-	
+	DO directivasEpson
 	
 *	DO directivasvarias		&& en procvarios.prg
 

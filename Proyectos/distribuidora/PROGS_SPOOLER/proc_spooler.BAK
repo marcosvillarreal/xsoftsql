@@ -1341,8 +1341,6 @@ Function ControlTerminal  && verifica si la terminal esta autorizada, si no exis
 Local lcCmd,lok,lcpc
 Local lok,lcCursorSchema,lcUpdatablefieldlist,lcUpdateNamelist
 
-
-stop()
 lcpc    = Upper(Trim(Left(Sys(0),(At('#',Sys(0))-1))))
 
 If Used("Csrseteotermi")
@@ -1519,3 +1517,13 @@ Endif
 =Fclose(pnFich)                                    && Cerrar archivo
 
 Return plRet
+
+* Funcion para pasar de decimal a hexadecimal
+FUNCTION Dec2Hex
+PARAMETERS tnDec
+
+IF PCOUNT()<1
+	RETURN ''
+ENDIF 
+    
+RETURN SUBSTR(TRANSFORM(tnDec,";@0"),3)

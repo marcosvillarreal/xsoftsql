@@ -3,6 +3,7 @@ PROCEDURE directivasfiscal
 PUBLIC   EpsonTm300 , EpsonTm2000, HASAR614, HASAR615, HASARPR4, HASAR320F, HASAR715F, SAMSUNG250
 PUBLIC	 EpsonTmT900FA
 
+
 EpsonTm300     = 2
 EpsonTm2000    = 3
 HASAR614       = 4
@@ -352,6 +353,35 @@ ABaudios[6] = 38400
 
 ENDPROC
 
+PROCEDURE directivasEpson
+
+DECLARE INTEGER ConsultarVersionDll IN "EpsonFiscalInterface.dll" STRING @descripcion, INTEGER descripcion_largo_maximo, INTEGER @mayor, INTEGER @menor
+
+DECLARE INTEGER ConfigurarVelocidad IN "EpsonFiscalInterface.dll" INTEGER velocidad
+        
+DECLARE INTEGER ConfigurarPuerto IN "EpsonFiscalInterface.dll" STRING puerto
+        
+DECLARE INTEGER Conectar IN "EpsonFiscalInterface.dll"
+
+DECLARE INTEGER ImprimirCierreX IN "EpsonFiscalInterface.dll"
+
+DECLARE INTEGER ImprimirCierreZ IN "EpsonFiscalInterface.dll"
+
+DECLARE INTEGER Desconectar IN "EpsonFiscalInterface.dll"
+        
+DECLARE INTEGER ObtenerEstadoFiscal IN "EpsonFiscalInterface.dll"
+        
+DECLARE INTEGER ObtenerEstadoImpresora IN "EpsonFiscalInterface.dll"        
+        
+DECLARE INTEGER ObtenerCodigoRetorno IN "EpsonFiscalInterface.dll"        
+        
+DECLARE INTEGER EnviarComando IN "EpsonFiscalInterface.dll" STRING puerto        
+        
+DECLARE INTEGER ObtenerRespuestaExtendida IN "EpsonFiscalInterface.dll" INTEGER numero_campo, STRING @buffer_salida, INTEGER largo_buffer_salida, INTEGER @largo_final_buffer_salida
+
+DECLARE integer EstablecerEncabezado IN "EpsonFiscalInterface.dll" integer numero_encabezado, string descripcion
+
+DECLARE	Integer CargarDatosCliente IN "EpsonFiscalInterface.dll" String nombre_o_razon_social1, String nombre_o_razon_social2, String domicilio1, String domicilio2, String domicilio3, Integer id_tipo_documento, String numero_documento, Integer id_responsabilidad_iva 
 
 FUNCTION GetErrorFiscal
 PARAMETERS FiscalStatus,PrinterStatus

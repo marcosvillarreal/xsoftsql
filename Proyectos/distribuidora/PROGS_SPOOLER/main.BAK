@@ -11,7 +11,7 @@ lnIdprograma = Iif(Pcount()<1,"1",lnIdprograma)
 
 *clear all
 Set Classlib To
-l='C:'
+l='j:'
 Set Talk Off
 lldesarrollo=(_vfp.StartMode()#4)
 
@@ -216,11 +216,11 @@ If Type('goApp')='O'
 *!*			Endif
 *!*		Endif
 	
-	If !ControlTerminal() && verifico si la terminal está autorizada a traves del SN del disco
-		Cancel
-		Clear All
-		Return
-	Endif
+	*If !ControlTerminal() && verifico si la terminal está autorizada a traves del SN del disco
+	*	Cancel
+	*	Clear All
+	*	Return
+	*Endif
 
 	LeerEmpresa()
 

@@ -1221,121 +1221,121 @@ RETURN IIF(lnftpPut=1,.t.,.f.)
 
 ENDFUNC 
 
-Procedure Verifica_OCX
-* CHECKOCX.PRG
-* Programa para checar si estan registrados los controles OCX necesarios
-* Junio, 22, 2004.
-*
-*
-* Necesitamos tener una variable en alguna parte para saber si ya esta registrado o no…
-* MOD: 14,Mayo,2008… Agregamos una funcion para detectar primero si el OCX esta registrado.
-*       En caso de no estarlo debemos hacerlo.
-*
-* Checando si los controles ActiveX necesarios para el sistema estan registrados
-*
-* Listado con todos los con todos los controles OCX necesarios.
-* Poner en el array tantos OCX como necesite el sistema. Este numero debera ser pasado
-* mas adelante para el proceso.
-*
-* El array necesita 2 dimensiones o columnas, ya que la segunda correspondera al
-* archivo fisico OCX y en donde se encuentra si es que esta en una subcarpeta.
-* Ejs.
-*  lstOCX(1,1) = "ctdropdate.ctdropdatectrl.2"
-*  lstOCX(1,2) = "ctdropdate.ocx"
-*   o
-*  lstOCX(1,2) = "OCX\ctdropdate.ocx"
-*
-* Tambien usaremos una variable de parametro para hacer 1 de 3 cosas:
-* 1) Check = Checar si el control esta registrado o no y registrarlo en su caso
-* 2) RegALL = Registrar el control aunque ya estuviera registrado
-* 3) UnRegALL = Desregistrar el control.
-*
-* La razon de estas opciones es que para aplicaciones portables necesitaremos desregistrar el control
-* para que no quede huella en el sistema Host.
-*
-Parameters cOpcion
-If Parameters() = 0
-	Return
-Endif
+*!*	Procedure Verifica_OCX
+*!*	* CHECKOCX.PRG
+*!*	* Programa para checar si estan registrados los controles OCX necesarios
+*!*	* Junio, 22, 2004.
+*!*	*
+*!*	*
+*!*	* Necesitamos tener una variable en alguna parte para saber si ya esta registrado o no…
+*!*	* MOD: 14,Mayo,2008… Agregamos una funcion para detectar primero si el OCX esta registrado.
+*!*	*       En caso de no estarlo debemos hacerlo.
+*!*	*
+*!*	* Checando si los controles ActiveX necesarios para el sistema estan registrados
+*!*	*
+*!*	* Listado con todos los con todos los controles OCX necesarios.
+*!*	* Poner en el array tantos OCX como necesite el sistema. Este numero debera ser pasado
+*!*	* mas adelante para el proceso.
+*!*	*
+*!*	* El array necesita 2 dimensiones o columnas, ya que la segunda correspondera al
+*!*	* archivo fisico OCX y en donde se encuentra si es que esta en una subcarpeta.
+*!*	* Ejs.
+*!*	*  lstOCX(1,1) = "ctdropdate.ctdropdatectrl.2"
+*!*	*  lstOCX(1,2) = "ctdropdate.ocx"
+*!*	*   o
+*!*	*  lstOCX(1,2) = "OCX\ctdropdate.ocx"
+*!*	*
+*!*	* Tambien usaremos una variable de parametro para hacer 1 de 3 cosas:
+*!*	* 1) Check = Checar si el control esta registrado o no y registrarlo en su caso
+*!*	* 2) RegALL = Registrar el control aunque ya estuviera registrado
+*!*	* 3) UnRegALL = Desregistrar el control.
+*!*	*
+*!*	* La razon de estas opciones es que para aplicaciones portables necesitaremos desregistrar el control
+*!*	* para que no quede huella en el sistema Host.
+*!*	*
+*!*	Parameters cOpcion
+*!*	If Parameters() = 0
+*!*		Return
+*!*	Endif
 
-Dimension lstOCX(5,3)
-lstOCX(1,1) = "SSubTimer6.Gsubclass"
-lstOCX(1,2) = "SSubTmr6.dll"
-lstOCX(2,1) ="vbalLbar6.cListBarItem"
-lstOCX(2,2) ="vbalLbar6.ocx"
-lstOCX(3,1) ="MSComctlLib.TreeCtrl.2"
-lstOCX(3,2) ="mscomctl.ocx"
-*mARCOS
-lstOCX(4,1) ="HASAR.Fiscal.1"
-lstOCX(4,2) ="Fiscal051122.ocx"
-lstOCX(5,1) ="EpsonFPHostControlX.EpsonFPHostControl"
-lstOCX(5,2) ="IFEpson.ocx"
+*!*	Dimension lstOCX(5,3)
+*!*	lstOCX(1,1) = "SSubTimer6.Gsubclass"
+*!*	lstOCX(1,2) = "SSubTmr6.dll"
+*!*	lstOCX(2,1) ="vbalLbar6.cListBarItem"
+*!*	lstOCX(2,2) ="vbalLbar6.ocx"
+*!*	lstOCX(3,1) ="MSComctlLib.TreeCtrl.2"
+*!*	lstOCX(3,2) ="mscomctl.ocx"
+*!*	*mARCOS
+*!*	lstOCX(4,1) ="HASAR.Fiscal.1"
+*!*	lstOCX(4,2) ="Fiscal051122.ocx"
+*!*	lstOCX(5,1) ="EpsonFPHostControlX.EpsonFPHostControl"
+*!*	lstOCX(5,2) ="IFEpson.ocx"
 
 
-* Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
-* No calculamos porque nosotros le damos la cantidad
-For i = 1 TO ALEN('lstocx',1)
-   Do Case
-	Case cOpcion = "Check"
+*!*	* Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
+*!*	* No calculamos porque nosotros le damos la cantidad
+*!*	For i = 1 TO ALEN('lstocx',1)
+*!*	   Do Case
+*!*		Case cOpcion = "Check"
 
-		lCheck = OcxRegistrado( lstOCX( i, 1 ) ) && Llamamos la funcion que checa si esta registrado o no: (.T./.F.)
-		If lCheck = .F.
-* Si el control necesario no esta registrado en la PC, registremoslo
-* Debemos pasarle a esta funcion el archivo OCX a registrar
-			lRegistrado = OCXCmdReg( lstOCX( i, 2) )
-*  ? "Archivo " + lstOCX( i,2) +" Ya NO ESTABA registrado. Pero ahora si lo esta"
-		Else
-*  ? "Archivo " + lstOCX( i,2)+ " Ya estaba registrado"
-		Endif
-	Case cOpcion = "RegALL"
-		lRegistrado = OCXCmdReg( lstOCX( i, 2) )
-	Case cOpcion = "UnRegALL"
-		lRegistrado = OCXCmdUnReg( lstOCX( i, 2) )
-	Endcase
-Next
-Return
+*!*			lCheck = OcxRegistrado( lstOCX( i, 1 ) ) && Llamamos la funcion que checa si esta registrado o no: (.T./.F.)
+*!*			If lCheck = .F.
+*!*	* Si el control necesario no esta registrado en la PC, registremoslo
+*!*	* Debemos pasarle a esta funcion el archivo OCX a registrar
+*!*				lRegistrado = OCXCmdReg( lstOCX( i, 2) )
+*!*	*  ? "Archivo " + lstOCX( i,2) +" Ya NO ESTABA registrado. Pero ahora si lo esta"
+*!*			Else
+*!*	*  ? "Archivo " + lstOCX( i,2)+ " Ya estaba registrado"
+*!*			Endif
+*!*		Case cOpcion = "RegALL"
+*!*			lRegistrado = OCXCmdReg( lstOCX( i, 2) )
+*!*		Case cOpcion = "UnRegALL"
+*!*			lRegistrado = OCXCmdUnReg( lstOCX( i, 2) )
+*!*		Endcase
+*!*	Next
+*!*	Return
 
-Function OcxRegistrado(cClase)
-Declare Integer RegOpenKey In Win32API ;
-	Integer nHKey, String @cSubKey, Integer @nResult
-Declare Integer RegCloseKey In Win32API ;
-	Integer nHKey
-nPos = 0
-lEsta = RegOpenKey(-2147483648, cClase, @nPos) = 0
+*!*	Function OcxRegistrado(cClase)
+*!*	Declare Integer RegOpenKey In Win32API ;
+*!*		Integer nHKey, String @cSubKey, Integer @nResult
+*!*	Declare Integer RegCloseKey In Win32API ;
+*!*		Integer nHKey
+*!*	nPos = 0
+*!*	lEsta = RegOpenKey(-2147483648, cClase, @nPos) = 0
 
-If lEsta
-	RegCloseKey(nPos)
-Endif
+*!*	If lEsta
+*!*		RegCloseKey(nPos)
+*!*	Endif
 
-Return lEsta
-Endfunc
+*!*	Return lEsta
+*!*	Endfunc
 
-Function OCXRegistrar(cActiveX)
-Declare Integer DLLSelfRegister In "vb6stkit.DLL" STRING lpDllName
-* Debemos de poner una lista de los controles
-lcFileOCX = Sys(5) + Curdir() + cActiveX
-*lcFileOCX = "C:\DBITECH\Toolbox6\DBITech\Component Toolbox 6.0\Components\ctlist.ocx”
-liRet = DLLSelfRegister( lcFileOCX )
-If liRet = 0
-	SelfRegisterDLL = .T.
-* MESSAGEBOX( "Registrado OCX” )
-Else
-	SelfRegisterDLL = .F.
-	Messagebox( 'Error - No registrado OCX' )
-Endif
-Endfunc
+*!*	Function OCXRegistrar(cActiveX)
+*!*	Declare Integer DLLSelfRegister In "vb6stkit.DLL" STRING lpDllName
+*!*	* Debemos de poner una lista de los controles
+*!*	lcFileOCX = Sys(5) + Curdir() + cActiveX
+*!*	*lcFileOCX = "C:\DBITECH\Toolbox6\DBITech\Component Toolbox 6.0\Components\ctlist.ocx”
+*!*	liRet = DLLSelfRegister( lcFileOCX )
+*!*	If liRet = 0
+*!*		SelfRegisterDLL = .T.
+*!*	* MESSAGEBOX( "Registrado OCX” )
+*!*	Else
+*!*		SelfRegisterDLL = .F.
+*!*		Messagebox( 'Error - No registrado OCX' )
+*!*	Endif
+*!*	Endfunc
 
-Function OCXCmdReg(cActiveX)
-On Error
-cRun='REGSVR32 /s ' +Sys(5) + Curdir()+ cActiveX
-Run /N &cRun
-*=MESSAGEBOX('Se ha registrado la siguiente librería : '+Sys(5) + Curdir()+ cActiveX)
-Endfunc
+*!*	Function OCXCmdReg(cActiveX)
+*!*	On Error
+*!*	cRun='REGSVR32 /s ' +Sys(5) + Curdir()+ cActiveX
+*!*	Run /N &cRun
+*!*	*=MESSAGEBOX('Se ha registrado la siguiente librería : '+Sys(5) + Curdir()+ cActiveX)
+*!*	Endfunc
 
-Function OCXCmdUnReg(cActiveX)
-cRun='REGSVR32 /u /s ' + cActiveX
-Run /N &cRun
-Endfunc
+*!*	Function OCXCmdUnReg(cActiveX)
+*!*	cRun='REGSVR32 /u /s ' + cActiveX
+*!*	Run /N &cRun
+*!*	Endfunc
 
 Function ControlTerminal  && verifica si la terminal esta autorizada, si no existe, si el rigido existe, etc
 Local lcCmd,lok,lcpc
@@ -1517,3 +1517,13 @@ Endif
 =Fclose(pnFich)                                    && Cerrar archivo
 
 Return plRet
+
+* Funcion para pasar de decimal a hexadecimal
+FUNCTION Dec2Hex
+PARAMETERS tnDec
+
+IF PCOUNT()<1
+	RETURN ''
+ENDIF 
+    
+RETURN SUBSTR(TRANSFORM(tnDec,";@0"),3)
