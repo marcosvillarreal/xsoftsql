@@ -389,6 +389,9 @@ DECLARE	Integer CargarDatosCliente IN "EpsonFiscalInterface.dll" String nombre_o
 
 DECLARE Integer AbrirComprobante IN "EpsonFiscalInterface.dll" integer id_tipo_documento
 
+DECLARE Integer ConsultarDescripcionDeError IN "EpsonFiscalInterface.dll" integer numero_de_error, String respuesta_descripcion, Integer respuesta_descripcion_largo_maximo
+
+DECLARE INTEGER ConsultarUltimoError IN "EpsonFiscalInterface.dll"
 
 FUNCTION GetErrorFiscal
 PARAMETERS FiscalStatus,PrinterStatus
