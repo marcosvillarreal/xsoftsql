@@ -225,6 +225,7 @@ TIPO_CUIL						= 76
 * Responsabilidad de Clientes
 PUBLIC RESPONSABLE_INSCRIPTO,RESPONSABLE_NO_INSCRIPTO,RESPONSABLE_EXENTO,NO_RESPONSABLE
 PUBLIC  CONSUMIDOR_FINAL,BIENES_DE_USO,MONOTRIBUTO,NO_CATEGORIZADO,MONOTRIBUTO_SOCIAL,EVENTUAL,EVENTUAL_SOCIAL
+PUBLIC PROMOVIDO
 
 RESPONSABLE_INSCRIPTO				= 73
 RESPONSABLE_NO_INSCRIPTO			= 78
@@ -237,6 +238,7 @@ NO_CATEGORIZADO						= 84
 MONOTRIBUTO_SOCIAL					= 83
 EVENTUAL							= 86
 EVENTUAL_SOCIAL						= 87
+PROMOVIDO							= 99
 
 * Lineas de Display
 PUBLIC LINEA_SUPERIOR,LINEA_INFERIOR,SECCION_DE_REPETICION
@@ -363,6 +365,8 @@ DECLARE INTEGER ConfigurarPuerto IN "EpsonFiscalInterface.dll" STRING puerto
         
 DECLARE INTEGER Conectar IN "EpsonFiscalInterface.dll"
 
+DECLARE INTEGER Cancelar IN "EpsonFiscalInterface.dll"
+
 DECLARE INTEGER ImprimirCierreX IN "EpsonFiscalInterface.dll"
 
 DECLARE INTEGER ImprimirCierreZ IN "EpsonFiscalInterface.dll"
@@ -382,6 +386,10 @@ DECLARE INTEGER ObtenerRespuestaExtendida IN "EpsonFiscalInterface.dll" INTEGER 
 DECLARE integer EstablecerEncabezado IN "EpsonFiscalInterface.dll" integer numero_encabezado, string descripcion
 
 DECLARE	Integer CargarDatosCliente IN "EpsonFiscalInterface.dll" String nombre_o_razon_social1, String nombre_o_razon_social2, String domicilio1, String domicilio2, String domicilio3, Integer id_tipo_documento, String numero_documento, Integer id_responsabilidad_iva 
+
+DECLARE Integer AbrirComprobante IN "EpsonFiscalInterface.dll" integer id_tipo_documento
+
+DECLARE Integer ConsultarDescripcionDeError IN "EpsonFiscalInterface.dll" integer numero_de_error, String respuesta_descripcion, Integer respuesta_descripcion_largo_maximo
 
 FUNCTION GetErrorFiscal
 PARAMETERS FiscalStatus,PrinterStatus
