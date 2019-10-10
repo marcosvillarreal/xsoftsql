@@ -105,7 +105,7 @@ NOTA_DEBITO_A							= 68
 NOTA_DEBITO_B							= 69
 TICKET_NOTA_DEBITO_A					= 50
 TICKET_NOTA_DEBITO_B					= 51
-
+TICKET_NOTA_DEBITO_C					= 10 &&Marcos no se cual es para hasar
 
 * Tipos de Documentos No Fiscales
 PUBLIC NOTA_CREDITO_A,NOTA_CREDITO_B,REMITO,ORDEN_SALIDA,RESUMEN_CUENTA,CARGO_HABITACION,COTIZACION,RECIBO_X
@@ -389,11 +389,33 @@ DECLARE	Integer CargarDatosCliente IN "EpsonFiscalInterface.dll" String nombre_o
 
 DECLARE Integer AbrirComprobante IN "EpsonFiscalInterface.dll" integer id_tipo_documento
 
-DECLARE Integer ConsultarDescripcionDeError IN "EpsonFiscalInterface.dll" integer numero_de_error, String @respuesta_descripcion, Integer respuesta_descripcion_largo_maximo
+*DECLARE Integer ConsultarDescripcionDeError IN "EpsonFiscalInterface.dll" integer numero_de_error, String @respuesta_descripcion, Integer respuesta_descripcion_largo_maximo
 
 DECLARE INTEGER ConsultarUltimoError IN "EpsonFiscalInterface.dll"
 
 DECLARE integer ConsultarNumeroComprobanteUltimo IN "EpsonFiscalInterface.dll" String tipo_de_comprobante , String @respuesta, Integer respuesta_largo_maximo
+
+DECLARE INTEGER ComenzarLog IN "EpsonFiscalInterface.dll"
+
+DECLARE INTEGER PausarLog IN "EpsonFiscalInterface.dll"
+
+DECLARE INTEGER DetenerLog IN "EpsonFiscalInterface.dll"
+
+DECLARE INTEGER ReanudarLog IN "EpsonFiscalInterface.dll"
+
+DECLARE Integer ImprimirItem IN "EpsonFiscalInterface.dll"  Integer id_modificador, String descripcion,String cantidad, String precio, Integer id_tasa_iva,;
+															Integer ii_id, String ii_valor, Integer id_codigo,;
+															String codigo, String codigo_unidad_matrix,Integer código_unidad_medida 
+
+DECLARE INTEGER ImprimirTextoLibre IN "EpsonFiscalInterface.dll" String descripcion
+
+DECLARE INTEGER ImprimirSubtotal IN "EpsonFiscalInterface.dll"
+
+DECLARE Integer CargarPago IN "EpsonFiscalInterface.dll"  Integer id_modificador, Integer codigo_forma_pago,;
+							Integer cantidad_cuotas, String monto,String descripción_cupones,;
+							String descripcion, String descripcion_extra1,String descripcion_extra2 
+
+DECLARE INTEGER CerrarComprobante IN "EpsonFiscalInterface.dll" 
 
 FUNCTION GetErrorFiscal
 PARAMETERS FiscalStatus,PrinterStatus
