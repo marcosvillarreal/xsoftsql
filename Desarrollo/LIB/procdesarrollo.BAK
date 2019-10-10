@@ -543,6 +543,8 @@ Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta
 Lcfilelog=Lcdirlog+'\'+tcArchivo
 LcNewlog=Lcdirlog+'\'+'New'+ALLTRIM(tcArchivo)
 
+stop()
+
 If !Directory(Lcdirlog)
 	Md (Lcdirlog)
 Endif
@@ -958,7 +960,6 @@ lstOCX(9,2) ="Fiscal051122.ocx"
 lstOCX(10,1) ="EpsonFiscalInterface.dll"
 lstOCX(10,2) ="EpsonFiscalInterface.dll"
 
-stop()
 * Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
 * No calculamos porque nosotros le damos la cantidad
 For i = 1 To Alen('lstocx',1)

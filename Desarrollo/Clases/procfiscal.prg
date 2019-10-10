@@ -385,6 +385,8 @@ DECLARE INTEGER ObtenerRespuestaExtendida IN "EpsonFiscalInterface.dll" INTEGER 
 
 DECLARE integer EstablecerEncabezado IN "EpsonFiscalInterface.dll" integer numero_encabezado, string descripcion
 
+DECLARE Integer ConsultarEncabezado IN "EpsonFiscalInterface.dll"  Integer numero_encabezado, String @respuesta, Integer respuesta_largo_maximo 
+
 DECLARE	Integer CargarDatosCliente IN "EpsonFiscalInterface.dll" String nombre_o_razon_social1, String nombre_o_razon_social2, String domicilio1, String domicilio2, String domicilio3, Integer id_tipo_documento, String numero_documento, Integer id_responsabilidad_iva 
 
 DECLARE Integer AbrirComprobante IN "EpsonFiscalInterface.dll" integer id_tipo_documento
