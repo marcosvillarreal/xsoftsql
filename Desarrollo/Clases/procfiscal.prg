@@ -419,6 +419,10 @@ DECLARE Integer CargarPago IN "EpsonFiscalInterface.dll"  Integer id_modificador
 
 DECLARE INTEGER CerrarComprobante IN "EpsonFiscalInterface.dll" 
 
+DECLARE Integer CargarOtrosTributos IN "EpsonFiscalInterface.dll"  Integer codigo_otros_tributos, String descripcion,;
+													String monto, Integer id_tasa_iva 
+
+
 FUNCTION GetErrorFiscal
 PARAMETERS FiscalStatus,PrinterStatus
 
