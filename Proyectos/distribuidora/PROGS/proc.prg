@@ -5,7 +5,7 @@
 *----------------------------------------------------------------------------
 FUNCTION DevolverEjercicioContable
 PARAMETERS lcpefiscal,lnidejercicio,lnejercicio
-
+ 
 	lnidejercicio = 0
 	lnejercicio = 0
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -1972,8 +1972,8 @@ IF lok
 	lObjEjercicioActivo.peFiscalCajaFac = ""
 ENDIF
 
-
-IF lnhaycierre=0
+DO CASE 
+CASE lnhaycierre=0
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT csrdetanrocaja.id as id,csrdetanrocaja.nrocaja as nrocaja,csrdetanrocaja.fecdesde as fecdesde,csrdetanrocaja.fechasta as fechasta
 	,Csrdetanrocaja.switch as switch,CsrDetanrocaja.pefiscal
@@ -1983,7 +1983,16 @@ IF lnhaycierre=0
 	ENDTEXT 
 	&&Buscamos la caja que pertenezca al rango del ejercicio
 	&&Where CsrPAraConfig.idejercicio = <<goapp.idejercicio>>
-ELSE
+CASE lnhaycierre=2
+	&&Buscamos la ultima caja
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT csrdetanrocaja.id as id,csrdetanrocaja.nrocaja as nrocaja,csrdetanrocaja.fecdesde as fecdesde,csrdetanrocaja.fechasta as fechasta
+	,Csrdetanrocaja.switch as switch,CsrDetanrocaja.pefiscal
+	FROM detanrocaja as csrdetanrocaja 
+	Where Csrdetanrocaja.nrocaja >= <<lObjEjercicioActivo.Nrocaja1>> and Csrdetanrocaja.nrocaja <= <<lObjEjercicioActivo.Nrocaja2>>
+	order by Csrdetanrocaja.nrocaja desc
+	ENDTEXT 
+OTHERWISE 
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT csrdetanrocaja.id as id,csrdetanrocaja.nrocaja as nrocaja,csrdetanrocaja.fecdesde as fecdesde,csrdetanrocaja.fechasta as fechasta
 	,Csrdetanrocaja.switch as switch,CsrDetanrocaja.pefiscal
@@ -1991,15 +2000,16 @@ ELSE
 	where  Csrdetanrocaja.nrocaja >= <<lObjEjercicioActivo.Nrocaja1>> and Csrdetanrocaja.nrocaja <= <<lObjEjercicioActivo.Nrocaja2>>
 	order by Csrdetanrocaja.nrocaja
 	ENDTEXT 
-ENDIF
+ENDCASE 
 
 lok =CrearCursorAdapter("CsrCursor",lcCmd)
 
 IF lok
-	IF lnhaycierre=1
+	IF lnhaycierre>=1
 		* busco la primer caja que este sin cerrar
 		SELECT CsrCursor
 		GO top
+		*vista()
 		SCAN 
 			IF LEFT(switch,1)#"1"
 				EXIT 
