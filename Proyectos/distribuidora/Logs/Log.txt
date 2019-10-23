@@ -1,22 +1,35 @@
-04-09-2019 14:33:51 , Acceso al sistema, antes de autenticar
-09-09-2019 11:24:53 , Acceso al sistema, antes de autenticar
-09-09-2019 11:25:39 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : SELECT CsrCursor Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
 09-09-2019 11:25:47 , Acceso al sistema, antes de autenticar
 09-09-2019 11:29:01 , Acceso al sistema, antes de autenticar
-09-09-2019 11:44:19 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro, 0 as esremito ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota ,SPACE(40) as detaref,SPACE(30) as datosfactura,SPACE(30) as detacobranza ,SPACE(30) as detapiecuota01, SPACE(30) as detapiecuota02, SPACE(30) as detapiecuota03,SPACE(30) as detacuotapie04 ,0 as nominimofac, 0 as nosaldoauto,SPACE(15) as numcomp ,0 as eslicitacion, 0 as catesinpres, 0 as noexento567 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACPEDIDO.LOAD
+09-09-2019 11:44:19 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as 
+Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baseret
+e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as Sub
+totSiva ,SPACE(3) as subnumero,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva ,SPACE(40) as detalle,0 as parada,SPACE(13) as proximonro, 0 as esremito ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,0000000
+0.00 as BaseDesctoSiva ,CAST(0 as int) as idvendedor, CAST(0 as numeric(1,0)) as ctalogistica,CAST(0 as int) as Cuota ,SPACE(40) as detaref,SPACE(30) as datosfactura,SPACE(30) as detacobranza ,SPACE(30) as detapiecuota01, SPACE(30) as detapiecuota02, SPA
+CE(30) as detapiecuota03,SPACE(30) as detacuotapie04 ,0 as nominimofac, 0 as nosaldoauto,SPACE(15) as numcomp ,0 as eslicitacion, 0 as catesinpres, 0 as noexento567 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :     
+     1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACPEDIDO.LOAD
 09-09-2019 11:44:24 , Acceso al sistema, antes de autenticar
 10-09-2019 12:09:52 , Acceso al sistema, antes de autenticar
-10-09-2019 12:10:03 , Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\abmctacte_vrg.scx' no existe. Linea : DO FORM &lcForm Error :          1 Ultimo Alias Activo: CURPERFIL Ultimo registro:         60  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AT550083.TMP Ultimo Control activo:  MAIN
+10-09-2019 12:10:03 , Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\abmctacte_vrg.scx' no existe. Linea : DO FORM &lcForm Error :          1 Ultimo Alias Activo: CURPERFIL Ultimo registro:         60  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A
+T550083.TMP Ultimo Control activo:  MAIN
 10-09-2019 12:10:09 , Acceso al sistema, antes de autenticar
-10-09-2019 12:10:24 , Error: No se encuentra el alias 'CSRCTACTE'. Linea : this.controlsource=this.parent.controlsourcetxtid Error :         13 Ultimo Alias Activo: CSRLISTAPRECIO Ultimo registro:          8  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AT5500AD.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENBARRIO.TXTID.INIT
+10-09-2019 12:10:24 , Error: No se encuentra el alias 'CSRCTACTE'. Linea : this.controlsource=this.parent.controlsourcetxtid Error :         13 Ultimo Alias Activo: CSRLISTAPRECIO Ultimo registro:          8  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AT
+5500AD.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENBARRIO.TXTID.INIT
 10-09-2019 12:12:23 , Acceso al sistema, antes de autenticar
 10-09-2019 12:14:47 , Acceso al sistema, antes de autenticar
 10-09-2019 14:38:55 , Acceso al sistema, antes de autenticar
-10-09-2019 14:39:21 , Error: SQL: no se encuentra la columna 'RUB_UNITASA'. Linea : SELECT '0' as origen ,idarticulo,codigo,articulo,IIF(INT(unidades/unibulto)=0 OR unibulto=0,001,INT(unidades/unibulto)) AS unibultos ,unidades,IIF(unibulto=0,unidades,(unidades-(INT(unidades/unibulto)*UNIBULTO))) as unisueLtas,pesable, variedad ,ROUND(importefinal,2) as importefinal ,IIF(rub_unitasa=1,peso,0) AS peso ,IIF(lctasa=1,tasaVied,tasaPata) as tasa ,IIF(rub_unitasa=1, vtakilos, unidades*peso) as vtakilos, unibulto as xbulto ,CAST(0 as int) as codfletero,SPACE(30) as nomfletero,round(importefinal - internos,2) as importe ,rub_unitasa FROM CsrListado INTO CURSOR CsrImprimir READWRITE Error :       1806 Ultimo Alias Activo: CSRLISTADO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD00K4.TMP Ultimo Control activo:  MAIN
+10-09-2019 14:39:21 , Error: SQL: no se encuentra la columna 'RUB_UNITASA'. Linea : SELECT '0' as origen ,idarticulo,codigo,articulo,IIF(INT(unidades/unibulto)=0 OR unibulto=0,001,INT(unidades/unibulto)) AS unibultos ,unidades,IIF(unibulto=0,unidades,(un
+idades-(INT(unidades/unibulto)*UNIBULTO))) as unisueLtas,pesable, variedad ,ROUND(importefinal,2) as importefinal ,IIF(rub_unitasa=1,peso,0) AS peso ,IIF(lctasa=1,tasaVied,tasaPata) as tasa ,IIF(rub_unitasa=1, vtakilos, unidades*peso) as vtakilos, unibul
+to as xbulto ,CAST(0 as int) as codfletero,SPACE(30) as nomfletero,round(importefinal - internos,2) as importe ,rub_unitasa FROM CsrListado INTO CURSOR CsrImprimir READWRITE Error :       1806 Ultimo Alias Activo: CSRLISTADO Ultimo registro:          1  
+DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD00K4.TMP Ultimo Control activo:  MAIN
 10-09-2019 14:39:34 , Acceso al sistema, antes de autenticar
-10-09-2019 15:16:57 , Error: No se encuentra la propiedad LIMPIARDATOS. Linea : thisform.limpiardatos() Error :       1734 Ultimo Alias Activo: CSRRUBRO Ultimo registro:          1 NOMBRE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD014T.TMP Ultimo Control activo:  ABMRUBROS.CONTENEDOR1.PFRAME1.PAGE1._CBOPRECIO.LOSTFOCUS
-10-09-2019 15:17:00 , Error: No se encuentra la propiedad LIMPIARDATOS. Linea : thisform.limpiardatos() Error :       1734 Ultimo Alias Activo: CSRRUBRO Ultimo registro:          1 NOMBRE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD014T.TMP Ultimo Control activo:  ABMRUBROS.CONTENEDOR1.PFRAME1.PAGE1._CBOPRECIO.LOSTFOCUS
-10-09-2019 15:17:02 , Error: No se encuentra la propiedad LIMPIARDATOS. Linea : thisform.limpiardatos() Error :       1734 Ultimo Alias Activo: CSRRUBRO Ultimo registro:          1 NOMBRE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD014T.TMP Ultimo Control activo:  ABMRUBROS.CONTENEDOR1.PFRAME1.PAGE1._CBOPRECIO.INTERACTIVECHANGE
+10-09-2019 15:16:57 , Error: No se encuentra la propiedad LIMPIARDATOS. Linea : thisform.limpiardatos() Error :       1734 Ultimo Alias Activo: CSRRUBRO Ultimo registro:          1 NOMBRE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD014T.TMP Ultimo Con
+trol activo:  ABMRUBROS.CONTENEDOR1.PFRAME1.PAGE1._CBOPRECIO.LOSTFOCUS
+10-09-2019 15:17:00 , Error: No se encuentra la propiedad LIMPIARDATOS. Linea : thisform.limpiardatos() Error :       1734 Ultimo Alias Activo: CSRRUBRO Ultimo registro:          1 NOMBRE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD014T.TMP Ultimo Con
+trol activo:  ABMRUBROS.CONTENEDOR1.PFRAME1.PAGE1._CBOPRECIO.LOSTFOCUS
+10-09-2019 15:17:02 , Error: No se encuentra la propiedad LIMPIARDATOS. Linea : thisform.limpiardatos() Error :       1734 Ultimo Alias Activo: CSRRUBRO Ultimo registro:          1 NOMBRE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008EFD014T.TMP Ultimo Con
+trol activo:  ABMRUBROS.CONTENEDOR1.PFRAME1.PAGE1._CBOPRECIO.INTERACTIVECHANGE
 10-09-2019 15:17:18 , Acceso al sistema, antes de autenticar
 10-09-2019 17:02:28 , Acceso al sistema, antes de autenticar
 10-09-2019 17:14:06 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrParametroCAE')<>0 Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PARACAE.OFACCAE.INIT
@@ -28,18 +41,22 @@
 11-09-2019 13:13:54 , Acceso al sistema, antes de autenticar
 11-09-2019 13:15:12 , Acceso al sistema, antes de autenticar
 11-09-2019 14:01:31 , Acceso al sistema, antes de autenticar
-11-09-2019 14:02:06 , Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\abmctacte_vrg.scx' no existe. Linea : DO FORM &lcForm Error :          1 Ultimo Alias Activo: CURPERFIL Ultimo registro:         53  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL0097.TMP Ultimo Control activo:  MAIN
+11-09-2019 14:02:06 , Error: El archivo 'j:\xsoftsql\proyectos\distribuidora\abmctacte_vrg.scx' no existe. Linea : DO FORM &lcForm Error :          1 Ultimo Alias Activo: CURPERFIL Ultimo registro:         53  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009
+LHL0097.TMP Ultimo Control activo:  MAIN
 11-09-2019 14:02:41 , Acceso al sistema, antes de autenticar
 11-09-2019 14:05:22 , Acceso al sistema, antes de autenticar
 11-09-2019 14:08:35 , Acceso al sistema, antes de autenticar
 11-09-2019 14:08:59 , Acceso al sistema, antes de autenticar
 11-09-2019 14:11:57 , Acceso al sistema, antes de autenticar
 11-09-2019 16:10:57 , Acceso al sistema, antes de autenticar
-11-09-2019 16:20:29 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+11-09-2019 16:20:29 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 12-09-2019 13:09:06 , Acceso al sistema, antes de autenticar
-12-09-2019 13:11:41 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+12-09-2019 13:11:41 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 17-09-2019 13:39:36 , Acceso al sistema, antes de autenticar
-17-09-2019 13:52:08 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+17-09-2019 13:52:08 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 18-09-2019 14:28:08 , Acceso al sistema, antes de autenticar
 23-09-2019 15:16:26 , Acceso al sistema, antes de autenticar
 23-09-2019 15:18:59 , Acceso al sistema, antes de autenticar
@@ -64,60 +81,95 @@
 23-09-2019 16:26:50 , Acceso al sistema, antes de autenticar
 23-09-2019 16:29:54 , Acceso al sistema, antes de autenticar
 23-09-2019 16:32:33 , Acceso al sistema, antes de autenticar
-23-09-2019 16:33:33 , Error: No se encuentra la propiedad ACTIVECOLUMN. Linea : CASE this.ActiveColumn = 8 Error :       1734 Ultimo Alias Activo: CSRVENDEDOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Q8903XB.TMP Ultimo Control activo:  MAIN
+23-09-2019 16:33:33 , Error: No se encuentra la propiedad ACTIVECOLUMN. Linea : CASE this.ActiveColumn = 8 Error :       1734 Ultimo Alias Activo: CSRVENDEDOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005Q8903XB.TMP Ultimo Con
+trol activo:  MAIN
 23-09-2019 16:35:50 , Acceso al sistema, antes de autenticar
 23-09-2019 16:40:48 , Acceso al sistema, antes de autenticar
 30-09-2019 16:46:20 , Acceso al sistema, antes de autenticar
-30-09-2019 16:51:23 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+30-09-2019 16:51:23 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 30-09-2019 16:52:15 , Acceso al sistema, antes de autenticar
-30-09-2019 16:58:04 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+30-09-2019 16:58:04 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 30-09-2019 17:08:55 , Acceso al sistema, antes de autenticar
-30-09-2019 17:12:05 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+30-09-2019 17:12:05 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 30-09-2019 17:12:19 , Acceso al sistema, antes de autenticar
-30-09-2019 17:17:51 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+30-09-2019 17:17:51 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 01-10-2019 14:14:24 , Acceso al sistema, antes de autenticar
 01-10-2019 14:26:37 , Acceso al sistema, antes de autenticar
 01-10-2019 14:29:18 , Acceso al sistema, antes de autenticar
-01-10-2019 15:57:33 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : this.controlsource=this.parent.controlsourcetxtid Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABM1.TXTID.INIT
+01-10-2019 15:57:33 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : this.controlsource=this.parent.controlsourcetxtid Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFR
+AME1.PAGE1.KITBUSCAOALTAENABM1.TXTID.INIT
 01-10-2019 16:16:01 , Acceso al sistema, antes de autenticar
-01-10-2019 17:48:27 , Error: No se encuentra la variable 'LCCMD'. Linea : IF !thisform.obtenerdatos('Csrcomprobante',lccmd) Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004BGP02YR.TMP Ultimo Control activo:  REGFACPUB.CMDRECIBOS.CLICK
-01-10-2019 19:55:02 , Error: No se encuentra la variable 'LCCMD'. Linea : IF !thisform.obtenerdatos('Csrcomprobante',lccmd) Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004BGP03KI.TMP Ultimo Control activo:  REGFACPUB.CMDRECIBOS.CLICK
-01-10-2019 19:55:47 , Error: No se encuentra la variable 'LCCMD'. Linea : IF !thisform.obtenerdatos('Csrcomprobante',lccmd) Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004BGP048D.TMP Ultimo Control activo:  REGFACPUB.CMDRECIBOS.CLICK
+01-10-2019 17:48:27 , Error: No se encuentra la variable 'LCCMD'. Linea : IF !thisform.obtenerdatos('Csrcomprobante',lccmd) Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004BGP
+02YR.TMP Ultimo Control activo:  REGFACPUB.CMDRECIBOS.CLICK
+01-10-2019 19:55:02 , Error: No se encuentra la variable 'LCCMD'. Linea : IF !thisform.obtenerdatos('Csrcomprobante',lccmd) Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004BGP
+03KI.TMP Ultimo Control activo:  REGFACPUB.CMDRECIBOS.CLICK
+01-10-2019 19:55:47 , Error: No se encuentra la variable 'LCCMD'. Linea : IF !thisform.obtenerdatos('Csrcomprobante',lccmd) Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         49  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004BGP
+048D.TMP Ultimo Control activo:  REGFACPUB.CMDRECIBOS.CLICK
 03-10-2019 11:14:25 , Acceso al sistema, antes de autenticar
 03-10-2019 11:23:01 , Acceso al sistema, antes de autenticar
 03-10-2019 12:29:54 , Acceso al sistema, antes de autenticar
 03-10-2019 12:31:50 , Acceso al sistema, antes de autenticar
-03-10-2019 13:34:24 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
-03-10-2019 13:34:57 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
-03-10-2019 13:35:09 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
-03-10-2019 13:36:05 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
-03-10-2019 13:37:31 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BFGP004E.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-03-10-2019 13:38:10 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BFGP008N.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-03-10-2019 13:38:23 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BFGP00CC.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-03-10-2019 13:42:27 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009WQX004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-03-10-2019 13:43:49 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009WQX008C.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-03-10-2019 13:44:56 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009WQX00IM.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-03-10-2019 13:45:25 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009WQX00JA.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 13:34:24 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  M
+AIN
+03-10-2019 13:34:57 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  M
+AIN
+03-10-2019 13:35:09 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  M
+AIN
+03-10-2019 13:36:05 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  M
+AIN
+03-10-2019 13:37:31 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+L\TEMP\0000BFGP004E.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+03-10-2019 13:38:10 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+L\TEMP\0000BFGP008N.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+03-10-2019 13:38:23 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+L\TEMP\0000BFGP00CC.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+03-10-2019 13:42:27 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+L\TEMP\00009WQX004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+03-10-2019 13:43:49 , Error: El subíndice está fuera del intervalo definido. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :       1234 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+L\TEMP\00009WQX008C.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+03-10-2019 13:44:56 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009WQX00IM.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 13:45:25 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009WQX00JA.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
 03-10-2019 13:49:54 , Acceso al sistema, antes de autenticar
-03-10-2019 13:57:12 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AWP500E8.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-03-10-2019 13:57:46 , Error: No se encuentra la variable 'TICKET_B'. Linea : lcComp = &lcComp Error :         12 Ultimo Alias Activo: CSRPREFIJONRO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DGQX005H.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERELECTOR.CMDPROCESAR.CLICK
-03-10-2019 14:57:07 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp. Linea : Set Procedure To procdesarrollo Additive Error :        102 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DSZT008H.TMP Ultimo Control activo:  MAIN
-03-10-2019 15:00:10 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000088I10070.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-03-10-2019 15:00:40 , Error: No se encuentra la propiedad EMPRESAID. Linea : GOapp.empresaid 				= Csrempresa.id Error :       1734 Ultimo Alias Activo: CSREMPRESA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000088I10077.TMP Ultimo Control activo:  MAIN
-03-10-2019 16:54:50 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BFGP05BB.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-03-10-2019 17:01:26 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF this.nEstadoimpresor = 5 &&Abrio el comprobante Error :        107 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AEIX00KH.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-03-10-2019 17:16:06 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EFBD00AI.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-03-10-2019 17:16:17 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EFBD00B8.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-03-10-2019 17:17:44 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF this.nEstadoimpresor = 5 &&Abrio el comprobante Error :        107 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000F0ND0068.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+03-10-2019 13:57:12 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AWP500E8.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 13:57:46 , Error: No se encuentra la variable 'TICKET_B'. Linea : lcComp = &lcComp Error :         12 Ultimo Alias Activo: CSRPREFIJONRO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000DGQX005H.TMP Ultimo Control activo
+:  IMPDIFERIDA.CONTAINERELECTOR.CMDPROCESAR.CLICK
+03-10-2019 14:57:07 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp. Linea : Set Procedure To procdesarrollo Additive Error :        102 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\A
+PPDATA\LOCAL\TEMP\0000DSZT008H.TMP Ultimo Control activo:  MAIN
+03-10-2019 15:00:10 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000088I10070.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 15:00:40 , Error: No se encuentra la propiedad EMPRESAID. Linea : GOapp.empresaid 				= Csrempresa.id Error :       1734 Ultimo Alias Activo: CSREMPRESA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000088I10077.TMP Ultim
+o Control activo:  MAIN
+03-10-2019 16:54:50 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BFGP05BB.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 17:01:26 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF this.nEstadoimpresor = 5 &&Abrio el comprobante Error :        107 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\
+APPDATA\LOCAL\TEMP\0000AEIX00KH.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+03-10-2019 17:16:06 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EFBD00AI.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 17:16:17 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000EFBD00B8.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+03-10-2019 17:17:44 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF this.nEstadoimpresor = 5 &&Abrio el comprobante Error :        107 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\
+APPDATA\LOCAL\TEMP\0000F0ND0068.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
 07-10-2019 10:57:47 , Acceso al sistema, antes de autenticar
 07-10-2019 13:23:36 , Acceso al sistema, antes de autenticar
 07-10-2019 14:32:35 , Acceso al sistema, antes de autenticar
 07-10-2019 16:23:32 , Acceso al sistema, antes de autenticar
-07-10-2019 16:24:14 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRTIPOCBTE Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002M8900P7.TMP Ultimo Control activo:  MAIN
-07-10-2019 16:24:21 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOPTOVTA.LOSTFOCUS
-07-10-2019 16:24:24 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
-07-10-2019 16:24:28 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
-07-10-2019 16:24:32 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOPTOVTA.LOSTFOCUS
+07-10-2019 16:24:14 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRTIPOCBTE Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+MP\00002M8900P7.TMP Ultimo Control activo:  MAIN
+07-10-2019 16:24:21 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOPTOVTA.LOSTFOCUS
+07-10-2019 16:24:24 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
+07-10-2019 16:24:28 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
+07-10-2019 16:24:32 , Error: No se encuentra la variable 'TIPOCLASE'. Linea : cClaseComp	= CsrComprobante.clase+CsrComprobante.tipoclase Error :         12 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\
+TEMP\00002M8900IP.TMP Ultimo Control activo:  REGFACVTA.CONTAINERENCABEZA._CBOPTOVTA.LOSTFOCUS
 07-10-2019 16:24:55 , Acceso al sistema, antes de autenticar
 07-10-2019 16:25:50 , Acceso al sistema, antes de autenticar
 07-10-2019 16:36:54 , Acceso al sistema, antes de autenticar
@@ -128,88 +180,146 @@
 08-10-2019 18:03:50 , Acceso al sistema, antes de autenticar
 08-10-2019 18:12:38 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrAuxVentas")=0 Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 08-10-2019 18:12:44 , Acceso al sistema, antes de autenticar
-08-10-2019 18:13:01 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrAuxVentas")=0 Error :         13 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101LK.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-08-10-2019 18:33:25 , Error: No se encuentra el alias 'OSVENTAS'. Linea : .tipocomp	= This.DGICPRAVTA.TablaAfip("COMPROBANTE",OscVentas.clasecomp,OsVentas.letra,"VTA") Error :         13 Ultimo Alias Activo: CSRAUXVENTAS Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101O4.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-08-10-2019 18:34:00 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0') Error :         11 Ultimo Alias Activo: CSRAFIPCOMPROBA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101P2.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-08-10-2019 18:35:58 , Error: No se encuentra la variable 'TOTALEX'. Linea : nOtrosImpuestos = nTotal - (TotalEX+totalPI+TotalPN+TotalPB+TotalII+TotalIG+TotalNG+TotalPG) Error :         12 Ultimo Alias Activo: CSRAFIPCOMPROBA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101Q4.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-08-10-2019 19:17:44 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000019FT01BX.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-08-10-2019 19:18:16 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000019FT01FM.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 18:13:01 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrAuxVentas")=0 Error :         13 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101LK.TMP Ultimo Control act
+ivo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+08-10-2019 18:33:25 , Error: No se encuentra el alias 'OSVENTAS'. Linea : .tipocomp	= This.DGICPRAVTA.TablaAfip("COMPROBANTE",OscVentas.clasecomp,OsVentas.letra,"VTA") Error :         13 Ultimo Alias Activo: CSRAUXVENTAS Ultimo registro:          1  DBF:
+ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101O4.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+08-10-2019 18:34:00 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0') Error :         11 Ultimo Alias Activo: CSRAFIPCOMPROBA Ultimo registro:          1  DBF: C
+:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101P2.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+08-10-2019 18:35:58 , Error: No se encuentra la variable 'TOTALEX'. Linea : nOtrosImpuestos = nTotal - (TotalEX+totalPI+TotalPN+TotalPB+TotalII+TotalIG+TotalNG+TotalPG) Error :         12 Ultimo Alias Activo: CSRAFIPCOMPROBA Ultimo registro:          1  
+DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A42101Q4.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+08-10-2019 19:17:44 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+000019FT01BX.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 19:18:16 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+000019FT01FM.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
 08-10-2019 19:37:21 , Acceso al sistema, antes de autenticar
-08-10-2019 20:04:29 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
-08-10-2019 20:04:36 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+08-10-2019 20:04:29 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  M
+AIN
+08-10-2019 20:04:36 , Error: No se puede crear el archivo j:\xsoftsql\desarrollo\clases\procfiscal.fxp. Linea : Set Procedure To procfiscal.prg Additive Error :        102 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  M
+AIN
 08-10-2019 20:23:59 , Acceso al sistema, antes de autenticar
-08-10-2019 20:40:11 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD0192.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-08-10-2019 20:40:19 , Error: No se encuentra la propiedad EMPRESAID. Linea : GOapp.empresaid 				= Csrempresa.id Error :       1734 Ultimo Alias Activo: CSREMPRESA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD0198.TMP Ultimo Control activo:  MAIN
-08-10-2019 20:47:30 , Error: No se encuentra la variable 'NMENSAJEERROR'. Linea : err =ConsultarDescripcionDeError(nError,@cMensaje,@nMensajeError) Error :         12 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD0204.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-08-10-2019 20:48:38 , Error: No coinciden los tipos de datos. Linea : err =ConsultarDescripcionDeError(nError,@cMensaje,@nMensajeError) Error :          9 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD0244.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-08-10-2019 20:51:19 , Error: No coinciden los tipos de datos. Linea : err =ConsultarDescripcionDeError(nError,@cMensaje,@nMensajeError) Error :          9 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD02EP.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-08-10-2019 20:55:21 , Error: El archivo 'csrcomprobante.dbf' no existe. Linea : SELECT Csrcomprobante.* FROM Csrcomprobante INTO CURSOR CsrCompAux readwrite Error :          1 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD02M4.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-08-10-2019 21:32:47 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err =ConsultarDescripcionDeError(nErrorEp,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRPROVCTACON Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000044CP005M.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-08-10-2019 21:38:04 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000044CP0071.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-08-10-2019 21:40:44 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err =ConsultarDescripcionDeError(nErrorEp,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRPROVCTACON Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008GZT005L.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-08-10-2019 22:51:56 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000034SP00D4.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+08-10-2019 20:40:11 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD0192.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+08-10-2019 20:40:19 , Error: No se encuentra la propiedad EMPRESAID. Linea : GOapp.empresaid 				= Csrempresa.id Error :       1734 Ultimo Alias Activo: CSREMPRESA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002TJD0198.TMP Ultim
+o Control activo:  MAIN
+08-10-2019 20:47:30 , Error: No se encuentra la variable 'NMENSAJEERROR'. Linea : err =ConsultarDescripcionDeError(nError,@cMensaje,@nMensajeError) Error :         12 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPD
+ATA\LOCAL\TEMP\00002TJD0204.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 20:48:38 , Error: No coinciden los tipos de datos. Linea : err =ConsultarDescripcionDeError(nError,@cMensaje,@nMensajeError) Error :          9 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+MP\00002TJD0244.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 20:51:19 , Error: No coinciden los tipos de datos. Linea : err =ConsultarDescripcionDeError(nError,@cMensaje,@nMensajeError) Error :          9 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+MP\00002TJD02EP.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 20:55:21 , Error: El archivo 'csrcomprobante.dbf' no existe. Linea : SELECT Csrcomprobante.* FROM Csrcomprobante INTO CURSOR CsrCompAux readwrite Error :          1 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\A
+DMIN\APPDATA\LOCAL\TEMP\00002TJD02M4.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 21:32:47 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err =ConsultarDescripcionDeError(nErrorEp,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRPROVCTACON Ultimo registro:          1  DBF: C:\US
+ERS\ADMIN\APPDATA\LOCAL\TEMP\000044CP005M.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+08-10-2019 21:38:04 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000044CP0071.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+08-10-2019 21:40:44 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err =ConsultarDescripcionDeError(nErrorEp,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRPROVCTACON Ultimo registro:          1  DBF: C:\US
+ERS\ADMIN\APPDATA\LOCAL\TEMP\00008GZT005L.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+08-10-2019 22:51:56 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000034SP00D4.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
 08-10-2019 22:53:40 , Acceso al sistema, antes de autenticar
-08-10-2019 22:55:05 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err = ConsultarDescripcionDeError(nError,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002ZNT00AP.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+08-10-2019 22:55:05 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err = ConsultarDescripcionDeError(nError,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USER
+S\ADMIN\APPDATA\LOCAL\TEMP\00002ZNT00AP.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
 09-10-2019 15:04:02 , Acceso al sistema, antes de autenticar
-09-10-2019 15:16:01 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF tcdato<0 Error :        107 Ultimo Alias Activo: CSRPROVCTACON Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP011V.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-09-10-2019 15:24:47 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP01LM.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-09-10-2019 15:24:55 , Error: No se encuentra la propiedad EMPRESAID. Linea : GOapp.empresaid 				= Csrempresa.id Error :       1734 Ultimo Alias Activo: CSREMPRESA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP01LQ.TMP Ultimo Control activo:  MAIN
-09-10-2019 15:28:51 , Error: FISCAL1 es un miembro desconocido. Linea : .fiscal1.armacmdtextocrudo(loCmd) Error :       1925 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:         29  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP01WH.TMP Ultimo Control activo:  IMPDIFERIDA.UNLOAD
-09-10-2019 17:23:22 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err = ConsultarDescripcionDeError(nError,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRAUXPAGO Ultimo registro:          2  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000D0Y1006E.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-09-10-2019 17:25:48 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err = ConsultarDescripcionDeError(nError,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004T1L008N.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+09-10-2019 15:16:01 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF tcdato<0 Error :        107 Ultimo Alias Activo: CSRPROVCTACON Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP011V.TMP 
+Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+09-10-2019 15:24:47 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP01LM.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+09-10-2019 15:24:55 , Error: No se encuentra la propiedad EMPRESAID. Linea : GOapp.empresaid 				= Csrempresa.id Error :       1734 Ultimo Alias Activo: CSREMPRESA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP01LQ.TMP Ultim
+o Control activo:  MAIN
+09-10-2019 15:28:51 , Error: FISCAL1 es un miembro desconocido. Linea : .fiscal1.armacmdtextocrudo(loCmd) Error :       1925 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:         29  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005UKP01WH.TMP Ultimo C
+ontrol activo:  IMPDIFERIDA.UNLOAD
+09-10-2019 17:23:22 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err = ConsultarDescripcionDeError(nError,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRAUXPAGO Ultimo registro:          2  DBF: C:\USERS\
+ADMIN\APPDATA\LOCAL\TEMP\0000D0Y1006E.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+09-10-2019 17:25:48 , Error: Una llamada Declare a DLL ha producido una excepción. Linea : err = ConsultarDescripcionDeError(nError,@cMensaje,nLenMensajeError) Error :       2027 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USER
+S\ADMIN\APPDATA\LOCAL\TEMP\00004T1L008N.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
 09-10-2019 21:06:28 , Acceso al sistema, antes de autenticar
 09-10-2019 21:52:15 , Error: No se encuentra el alias. Linea : Oca = GETCURSORADAPTER(lcalias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REPORTES.INIT
-09-10-2019 22:39:11 , Error: No se encuentra el alias. Linea : Oca = GETCURSORADAPTER(lcalias) Error :         13 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005LVT028R.TMP Ultimo Control activo:  REPORTES.INIT
+09-10-2019 22:39:11 , Error: No se encuentra el alias. Linea : Oca = GETCURSORADAPTER(lcalias) Error :         13 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005LVT028R.TMP Ultimo Control activo
+:  REPORTES.INIT
 10-10-2019 09:05:36 , Acceso al sistema, antes de autenticar
 10-10-2019 09:06:23 , Acceso al sistema, antes de autenticar
 10-10-2019 09:06:46 , Acceso al sistema, antes de autenticar
-10-10-2019 09:07:38 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : This.Grid2.Visible = IIF(This.objseteoparam.PatronFrio=0,.t.,.f.) Error :        107 Ultimo Alias Activo: CSRSETEO Ultimo registro:         30  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL00BZ.TMP Ultimo Control activo:  PATRONCARGAPEDIDOS.INIT
-10-10-2019 09:08:42 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : This.Grid2.Visible = IIF(This.objseteoparam.PatronFrio=0,.t.,.f.) Error :        107 Ultimo Alias Activo: CSRSETEO Ultimo registro:         30  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL00FP.TMP Ultimo Control activo:  PATRONCARGAPEDIDOS.INIT
-10-10-2019 09:40:48 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NYH00CJ.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 09:41:05 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00007NYH00GQ.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 09:41:46 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000085C9004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+10-10-2019 09:07:38 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : This.Grid2.Visible = IIF(This.objseteoparam.PatronFrio=0,.t.,.f.) Error :        107 Ultimo Alias Activo: CSRSETEO Ultimo registro:         30  DBF: C:
+\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL00BZ.TMP Ultimo Control activo:  PATRONCARGAPEDIDOS.INIT
+10-10-2019 09:08:42 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : This.Grid2.Visible = IIF(This.objseteoparam.PatronFrio=0,.t.,.f.) Error :        107 Ultimo Alias Activo: CSRSETEO Ultimo registro:         30  DBF: C:
+\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009LHL00FP.TMP Ultimo Control activo:  PATRONCARGAPEDIDOS.INIT
+10-10-2019 09:40:48 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+00007NYH00CJ.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+10-10-2019 09:41:05 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+00007NYH00GQ.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+10-10-2019 09:41:46 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+000085C9004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
 10-10-2019 09:42:51 , Acceso al sistema, antes de autenticar
-10/10/19 09:50:12 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AOSP00DV.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-10/10/19 09:50:30 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AOSP00EJ.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-10-10-2019 10:01:47 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002P6X019L.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 10:03:14 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002P6X01BD.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
-10-10-2019 10:05:00 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AIH5004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 10:12:03 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF tcdato<0 Error :        107 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD500RV.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 10:15:32 , Error: _TXT09 es un miembro desconocido. Linea : &lctexto = loCmd.texto Error :       1925 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD5016O.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 10:25:49 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501G0.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 10:26:37 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501KB.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 10:30:18 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501P9.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 10:31:51 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501UB.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 11:03:31 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRPREFIJONRO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD502OZ.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-10/10/19 11:40:47 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000018ND0035.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+10/10/19 09:50:12 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          
+1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AOSP00DV.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+10/10/19 09:50:30 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          
+1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AOSP00EJ.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+10-10-2019 10:01:47 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002P6X019L.TMP Ultimo Control activ
+o:  IMPDIFERIDA.INIT
+10-10-2019 10:03:14 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:        
+  1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002P6X01BD.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
+10-10-2019 10:05:00 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AIH5004B.TMP Ultimo Control activ
+o:  IMPDIFERIDA.INIT
+10-10-2019 10:12:03 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF tcdato<0 Error :        107 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD500RV.TMP U
+ltimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 10:15:32 , Error: _TXT09 es un miembro desconocido. Linea : &lctexto = loCmd.texto Error :       1925 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD5016O.TMP Ultimo Control activo:
+  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 10:25:49 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501G0.TMP Ultimo Control activ
+o:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 10:26:37 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501KB.TMP Ultimo Control activ
+o:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 10:30:18 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501P9.TMP Ultimo Control activ
+o:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 10:31:51 , Error: No se reconoce el verbo de comando. Linea : &lctexto = loCmd.texto Error :         16 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD501UB.TMP Ultimo Control activ
+o:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 11:03:31 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRPREFIJONRO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004JD502OZ.TMP Ultimo Control acti
+vo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+10/10/19 11:40:47 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:          
+1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000018ND0035.TMP Ultimo Control activo:  IMPDIFERIDA.LOAD
 10-10-2019 11:48:18 , Acceso al sistema, antes de autenticar
-10-10-2019 12:31:43 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ASQX018O.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-10-10-2019 12:34:37 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ASQX01I4.TMP Ultimo Control activo:  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
-10-10-2019 12:44:35 , Error: No se encuentra la variable 'CIDVENTA'. Linea : this.generarlog(1,'LlamarSubFiscal()..'+loCmd.TipoCmd+" - "+loCmd.textocrudo,'TRA_'+cIDVenta,cCarpetaLog,'') Error :         12 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT00RH.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 12:53:02 , Error: La expresión no es válida fuera de WITH/ENDWITH. Linea : lok = .llamarsubfiscal(loCmd) Error :       1940 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01I0.TMP Ultimo Control activo:  REPORTES.CMDGROUP1.CMDSALIR.CLICK
-10-10-2019 12:58:36 , Error: FISCAL1 es un miembro desconocido. Linea : thisform.fiscal1.armacmdtextocrudo(loCmd) Error :       1925 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009KAX00GW.TMP Ultimo Control activo:  REPORTES.UNLOAD
-10-10-2019 13:14:44 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF LEN(loCmd.texto)=0 Error :         11 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B6DL0072.TMP Ultimo Control activo:  REPORTES.CONTAINERENCABEZADO.CMDACEPTAR.CLICK
+10-10-2019 12:31:43 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ASQX018O.TMP Ultimo Control activo:
+  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+10-10-2019 12:34:37 , Error: La ruta o el nombre de archivo no es válido. Linea : Md (Lcdirlog) Error :        202 Ultimo Alias Activo: CSRCONTROL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000ASQX01I4.TMP Ultimo Control activo:
+  IMPDIFERIDA.CONTAINERGRID.GRID1.KEYPRESS
+10-10-2019 12:44:35 , Error: No se encuentra la variable 'CIDVENTA'. Linea : this.generarlog(1,'LlamarSubFiscal()..'+loCmd.TipoCmd+" - "+loCmd.textocrudo,'TRA_'+cIDVenta,cCarpetaLog,'') Error :         12 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro
+:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT00RH.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+10-10-2019 12:53:02 , Error: La expresión no es válida fuera de WITH/ENDWITH. Linea : lok = .llamarsubfiscal(loCmd) Error :       1940 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000A1VT01I0.TMP 
+Ultimo Control activo:  REPORTES.CMDGROUP1.CMDSALIR.CLICK
+10-10-2019 12:58:36 , Error: FISCAL1 es un miembro desconocido. Linea : thisform.fiscal1.armacmdtextocrudo(loCmd) Error :       1925 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009KAX00GW.TMP Ul
+timo Control activo:  REPORTES.UNLOAD
+10-10-2019 13:14:44 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF LEN(loCmd.texto)=0 Error :         11 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000B6
+DL0072.TMP Ultimo Control activo:  REPORTES.CONTAINERENCABEZADO.CMDACEPTAR.CLICK
 10-10-2019 13:50:02 , Error: Ya existe un objeto miembro con este nombre. Linea : thisform.dataenvironment.opentables() Error :       1771 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ON... 
-10-10-2019 13:54:35 , Error: Falta ) en el nombre de la función. Linea : &lcTexto3 = LEN(ALLTRIM(loCmd.texto) Error :       1300 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000021HL024H.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 13:55:21 , Error: _LEN01 es un miembro desconocido. Linea : &lcTexto3 = LEN(ALLTRIM(loCmd.texto)) Error :       1925 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000021HL029F.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
-10-10-2019 13:56:06 , Error: El tipo de datos no es válido para esta propiedad. Linea : &lcTexto3 = LEN(ALLTRIM(loCmd.texto)) Error :       1732 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000021HL02FA.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 13:54:35 , Error: Falta ) en el nombre de la función. Linea : &lcTexto3 = LEN(ALLTRIM(loCmd.texto) Error :       1300 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000021HL024H.TMP Ultimo
+ Control activo:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 13:55:21 , Error: _LEN01 es un miembro desconocido. Linea : &lcTexto3 = LEN(ALLTRIM(loCmd.texto)) Error :       1925 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000021HL029F.TMP Ultimo 
+Control activo:  REPORTES.CMDENCABEZADO.CLICK
+10-10-2019 13:56:06 , Error: El tipo de datos no es válido para esta propiedad. Linea : &lcTexto3 = LEN(ALLTRIM(loCmd.texto)) Error :       1732 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000021H
+L02FA.TMP Ultimo Control activo:  REPORTES.CMDENCABEZADO.CLICK
 10-10-2019 14:19:40 , Acceso al sistema, antes de autenticar
 10-10-2019 14:45:40 , Acceso al sistema, antes de autenticar
-10-10-2019 14:47:46 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+10-10-2019 14:47:46 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+gistro:          0  DBF:  Ultimo Control activo:  MAIN
 10-10-2019 14:47:53 , Acceso al sistema, antes de autenticar
 10-10-2019 14:49:03 , Acceso al sistema, antes de autenticar
 10-10-2019 14:51:09 , Acceso al sistema, antes de autenticar
 10-10-2019 15:06:47 , Error: No se encuentra el alias 'CSRCTACTE'. Linea : loObjcol.controlsource = lCaliasNavega+'.'+lccadena Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.FITRARCMD.CLICK
 10-10-2019 15:06:50 , Error: No se encuentra el alias 'CSRCTACTE'. Linea : return (&lcAlias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.CMDSELECCIONAR.CLICK
 10-10-2019 15:12:40 , Error: No se encuentra el alias 'CSRCTACTE'. Linea : loObjcol.controlsource = lCaliasNavega+'.'+lccadena Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.FITRARCMD.CLICK
-10-10-2019 16:06:19 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00000N490076.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 16:07:02 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008ETL004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
-10-10-2019 16:20:55 , Error: No se encuentra la instrucción PARAMETER. Linea : thisform.inicializarcmd() Error :       1238 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008ETL010A.TMP Ultimo Control activo:  REPORTES.CONTAINEREMPRESA.CMDACEPTAR.CLICK
+10-10-2019 16:06:19 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+00000N490076.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+10-10-2019 16:07:02 , Error: La referencia al subíndice no es válida. Linea : loCmd.nombremodelofis = AmodeloFiscal[lOCmd.modelofis] Error :         31 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\
+00008ETL004B.TMP Ultimo Control activo:  IMPDIFERIDA.INIT
+10-10-2019 16:20:55 , Error: No se encuentra la instrucción PARAMETER. Linea : thisform.inicializarcmd() Error :       1238 Ultimo Alias Activo: CSRIMPRESORA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008ETL010A.TMP Ultimo Cont
+rol activo:  REPORTES.CONTAINEREMPRESA.CMDACEPTAR.CLICK
 11-10-2019 09:40:09 , Acceso al sistema, antes de autenticar
 15-10-2019 11:08:38 , Acceso al sistema, antes de autenticar
 15-10-2019 11:44:40 , Acceso al sistema, antes de autenticar
 16-10-2019 10:33:37 , Acceso al sistema, antes de autenticar
-16-10-2019 10:34:53 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrAuxVentas")=0 Error :         13 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008NBD001B.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+16-10-2019 10:34:53 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrAuxVentas")=0 Error :         13 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008NBD001B.TMP Ultimo Control act
+ivo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 16-10-2019 11:03:27 , Acceso al sistema, antes de autenticar
 17-10-2019 10:24:52 , Acceso al sistema, antes de autenticar
 17-10-2019 11:47:24 , Acceso al sistema, antes de autenticar
@@ -217,56 +327,95 @@
 17-10-2019 12:06:08 , Error: No se encuentra el alias 'CSRDETACONTA'. Linea : CASE VARTYPE(&lcclaB)='C' Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMEJERCICIO.INIT
 17-10-2019 12:06:17 , Acceso al sistema, antes de autenticar
 17-10-2019 12:42:34 , Acceso al sistema, antes de autenticar
-17-10-2019 12:53:19 , Error: No se encuentra el alias 'CSRPARACONFIG'. Linea : lntipocaja 		  = Csrparaconfig.tipocaja Error :         13 Ultimo Alias Activo: CSRDETACONTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P013F.TMP Ultimo Control activo:  ABMEJERCICIO.INIT
-17-10-2019 12:54:31 , Error: No se encuentra el alias 'CSRPARACONFIG'. Linea : lntipocaja = Csrparaconfig.tipocaja Error :         13 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P0145.TMP Ultimo Control activo:  ABMEJERCICIO.CMDAGREGAR.CLICK
+17-10-2019 12:53:19 , Error: No se encuentra el alias 'CSRPARACONFIG'. Linea : lntipocaja 		  = Csrparaconfig.tipocaja Error :         13 Ultimo Alias Activo: CSRDETACONTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P013F.T
+MP Ultimo Control activo:  ABMEJERCICIO.INIT
+17-10-2019 12:54:31 , Error: No se encuentra el alias 'CSRPARACONFIG'. Linea : lntipocaja = Csrparaconfig.tipocaja Error :         13 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P0145.TMP U
+ltimo Control activo:  ABMEJERCICIO.CMDAGREGAR.CLICK
 17-10-2019 12:54:43 , Acceso al sistema, antes de autenticar
-17-10-2019 12:55:49 , Error: No se encuentra el alias 'CSRINFCONTA'. Linea : REPLACE ejercicio WITH thisform.ultimoejercicio IN  CsrInfconta Error :         13 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P019B.TMP Ultimo Control activo:  ABMEJERCICIO.CMDAGREGAR.CLICK
+17-10-2019 12:55:49 , Error: No se encuentra el alias 'CSRINFCONTA'. Linea : REPLACE ejercicio WITH thisform.ultimoejercicio IN  CsrInfconta Error :         13 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOC
+AL\TEMP\0000598P019B.TMP Ultimo Control activo:  ABMEJERCICIO.CMDAGREGAR.CLICK
 17-10-2019 12:55:59 , Acceso al sistema, antes de autenticar
-17-10-2019 13:14:54 , Error: _TXTFECHAA es un miembro desconocido. Linea : thisform.contenedor1.pframe1.page1._txtfechaa.TabIndex = 1 Error :       1925 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P01FN.TMP Ultimo Control activo: EJERCICIO ABMEJERCICIO.KEYPRESS
-17-10-2019 13:15:39 , Error: _TXTFECHAA es un miembro desconocido. Linea : thisform.contenedor1.pframe1.page1._txtfechaa.TabIndex = 1 Error :       1925 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P01G1.TMP Ultimo Control activo: EJERCICIO ABMEJERCICIO.KEYPRESS
-17-10-2019 13:21:40 , Error: No se encuentra la variable 'CSRINFCONTAB'. Linea : GATHER NAME CsrInfContab Error :         12 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P01OX.TMP Ultimo Control activo:  ABMEJERCICIO.CMDAGREGAR.CLICK
+17-10-2019 13:14:54 , Error: _TXTFECHAA es un miembro desconocido. Linea : thisform.contenedor1.pframe1.page1._txtfechaa.TabIndex = 1 Error :       1925 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+\0000598P01FN.TMP Ultimo Control activo: EJERCICIO ABMEJERCICIO.KEYPRESS
+17-10-2019 13:15:39 , Error: _TXTFECHAA es un miembro desconocido. Linea : thisform.contenedor1.pframe1.page1._txtfechaa.TabIndex = 1 Error :       1925 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+\0000598P01G1.TMP Ultimo Control activo: EJERCICIO ABMEJERCICIO.KEYPRESS
+17-10-2019 13:21:40 , Error: No se encuentra la variable 'CSRINFCONTAB'. Linea : GATHER NAME CsrInfContab Error :         12 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P01OX.TMP Ultimo Con
+trol activo:  ABMEJERCICIO.CMDAGREGAR.CLICK
 17-10-2019 13:21:56 , Acceso al sistema, antes de autenticar
-17-10-2019 13:26:43 , Error: _TXTCAJAI es un miembro desconocido. Linea : .ve_condicion(EMPTY(this.contenedor1.pframe1.page1._txtcajai.Value),'Caja apertura no puede ser nulo ...') Error :       1925 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P01SP.TMP Ultimo Control activo:  ABMEJERCICIO.CMDSALVAR.CLICK
-17-10-2019 14:42:21 , Error: No se encuentra la variable 'NSALDOINF'. Linea : this.calculoinfacion(nrocaja,lnsdocaja,@nsaldoinf) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P046U.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 14:43:32 , Error: No se encuentra la propiedad CALCULOINFACION. Linea : this.calculoinfacion(nrocaja,lnsdocaja,@nsaldoinf) Error :       1734 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P049M.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 14:44:20 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lnPeriodo = VAL(INT(LEFT(STR(lnNroCaja,8),6))) Error :         11 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04AY.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 14:45:34 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lnPeriodo = VAL(INT(LEFT(STR(lnNroCaja,8),6))) Error :         11 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04CH.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 14:47:38 , Error: No se encuentra la variable 'LNSALDOINF'. Linea : REPLACE sdocaja WITH lnsdocaja,saldoinf WITH lnSaldoInf,ajusteinf WITH lnSaldoInf-lnSdoCaja Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04FA.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 14:48:26 , Error: No se encuentra la variable 'LNSALDOINF'. Linea : REPLACE sdocaja WITH lnsdocaja,saldoinf WITH nSaldoInf,ajusteinf WITH lnSaldoInf-lnSdoCaja Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04GN.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 15:01:28 , Error: No se encuentra la variable 'GRUPO'. Linea : lcclave = grupo+STRID(idcuenta,10) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04Y6.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-17-10-2019 15:17:57 , Error: Debe especificar parámetros adicionales. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombre,OscCursor.idcuenta) Error :         94 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P05E8.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 13:26:43 , Error: _TXTCAJAI es un miembro desconocido. Linea : .ve_condicion(EMPTY(this.contenedor1.pframe1.page1._txtcajai.Value),'Caja apertura no puede ser nulo ...') Error :       1925 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:    
+      1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P01SP.TMP Ultimo Control activo:  ABMEJERCICIO.CMDSALVAR.CLICK
+17-10-2019 14:42:21 , Error: No se encuentra la variable 'NSALDOINF'. Linea : this.calculoinfacion(nrocaja,lnsdocaja,@nsaldoinf) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL
+\TEMP\0000598P046U.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 14:43:32 , Error: No se encuentra la propiedad CALCULOINFACION. Linea : this.calculoinfacion(nrocaja,lnsdocaja,@nsaldoinf) Error :       1734 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\
+LOCAL\TEMP\0000598P049M.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 14:44:20 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lnPeriodo = VAL(INT(LEFT(STR(lnNroCaja,8),6))) Error :         11 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\US
+ERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04AY.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 14:45:34 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lnPeriodo = VAL(INT(LEFT(STR(lnNroCaja,8),6))) Error :         11 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUPO+CLAVE DBF: C:\US
+ERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04CH.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 14:47:38 , Error: No se encuentra la variable 'LNSALDOINF'. Linea : REPLACE sdocaja WITH lnsdocaja,saldoinf WITH lnSaldoInf,ajusteinf WITH lnSaldoInf-lnSdoCaja Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRU
+PO+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04FA.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 14:48:26 , Error: No se encuentra la variable 'LNSALDOINF'. Linea : REPLACE sdocaja WITH lnsdocaja,saldoinf WITH nSaldoInf,ajusteinf WITH lnSaldoInf-lnSdoCaja Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        228 GRUP
+O+CLAVE DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04GN.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 15:01:28 , Error: No se encuentra la variable 'GRUPO'. Linea : lcclave = grupo+STRID(idcuenta,10) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P04Y6.TMP Ultimo C
+ontrol activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+17-10-2019 15:17:57 , Error: Debe especificar parámetros adicionales. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombre,OscCu
+rsor.idcuenta) Error :         94 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P05E8.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 17-10-2019 15:52:39 , Acceso al sistema, antes de autenticar
 17-10-2019 15:54:36 , Acceso al sistema, antes de autenticar
-17-10-2019 16:42:12 , Error: No se encuentra la variable 'LCNOMBRE'. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja,tipoasi) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombre,OscCursor.idcuenta,lnNroCaja,'A') Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P079Q.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 16:43:08 , Error: No se encuentra la variable 'LNNROCAJA'. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja,tipoasi) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,'ASIENTO DE APERTURA',OscCursor.idcuenta,lnNroCaja,'A') Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07CT.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 16:43:50 , Error: Hay demasiados argumentos. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombre,OscCursor.idcuenta,lnNroCaja,'C') Error :       1230 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07E2.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 16:58:52 , Error: Desbordamiento numérico (se han perdido datos). Linea : GATHER NAME OscAgregar Error :         39 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07RQ.TMP Ultimo Control activo:  ABMINFCONTAB.CMDAGREGAR.CLICK
+17-10-2019 16:42:12 , Error: No se encuentra la variable 'LCNOMBRE'. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja,tipoasi) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombr
+e,OscCursor.idcuenta,lnNroCaja,'A') Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P079Q.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 16:43:08 , Error: No se encuentra la variable 'LNNROCAJA'. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja,tipoasi) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,'ASIEN
+TO DE APERTURA',OscCursor.idcuenta,lnNroCaja,'A') Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07CT.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLIC
+K
+17-10-2019 16:43:50 , Error: Hay demasiados argumentos. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombre,OscCursor.idcuenta,
+lnNroCaja,'C') Error :       1230 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07E2.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 16:58:52 , Error: Desbordamiento numérico (se han perdido datos). Linea : GATHER NAME OscAgregar Error :         39 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07RQ.TMP Ultimo C
+ontrol activo:  ABMINFCONTAB.CMDAGREGAR.CLICK
 17-10-2019 16:59:06 , Acceso al sistema, antes de autenticar
-17-10-2019 16:59:51 , Error: Desbordamiento numérico (se han perdido datos). Linea : GATHER NAME OscAgregar Error :         39 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07SN.TMP Ultimo Control activo:  ABMINFCONTAB.CMDAGREGAR.CLICK
+17-10-2019 16:59:51 , Error: Desbordamiento numérico (se han perdido datos). Linea : GATHER NAME OscAgregar Error :         39 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07SN.TMP Ultimo C
+ontrol activo:  ABMINFCONTAB.CMDAGREGAR.CLICK
 17-10-2019 17:00:02 , Acceso al sistema, antes de autenticar
-17-10-2019 17:00:47 , Error: Desbordamiento numérico (se han perdido datos). Linea : GATHER NAME OscAgregar Error :         39 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07TK.TMP Ultimo Control activo:  ABMINFCONTAB.CMDAGREGAR.CLICK
+17-10-2019 17:00:47 , Error: Desbordamiento numérico (se han perdido datos). Linea : GATHER NAME OscAgregar Error :         39 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:         -1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P07TK.TMP Ultimo C
+ontrol activo:  ABMINFCONTAB.CMDAGREGAR.CLICK
 17-10-2019 17:00:55 , Acceso al sistema, antes de autenticar
-17-10-2019 17:09:00 , Error: No se encuentra la variable 'NSALDOINF'. Linea : this.calculoinflacion(Csrimprimir.nrocaja,Csrimprimir.saldoinf,@nsaldoinf,@nCoefi) Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P0819.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 17:09:40 , Error: No se encuentra la variable 'NCOEFI'. Linea : this.calculoinflacion(Csrimprimir.nrocaja,Csrimprimir.saldoinf,@nsaldoinf,@nCoefi) Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P085F.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 17:10:22 , Error: No se encuentra la variable 'SALDOINF'. Linea : replace saldoinf WITH nSaldoInf,ajusteinf WITH nSaldoInf-Csrimprimir.saldoinf Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000598P086P.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 17:09:00 , Error: No se encuentra la variable 'NSALDOINF'. Linea : this.calculoinflacion(Csrimprimir.nrocaja,Csrimprimir.saldoinf,@nsaldoinf,@nCoefi) Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\
+ADMIN\APPDATA\LOCAL\TEMP\0000598P0819.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 17:09:40 , Error: No se encuentra la variable 'NCOEFI'. Linea : this.calculoinflacion(Csrimprimir.nrocaja,Csrimprimir.saldoinf,@nsaldoinf,@nCoefi) Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADM
+IN\APPDATA\LOCAL\TEMP\0000598P085F.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 17:10:22 , Error: No se encuentra la variable 'SALDOINF'. Linea : replace saldoinf WITH nSaldoInf,ajusteinf WITH nSaldoInf-Csrimprimir.saldoinf Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\
+APPDATA\LOCAL\TEMP\0000598P086P.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 17-10-2019 17:27:04 , Acceso al sistema, antes de autenticar
-17-10-2019 17:28:41 , Error: No se encuentra la variable 'LSALDOI'. Linea : REPLACE detalle WITH lcdetalle,impd WITH impd+limpd,imph WITH imph+limph,saldoinf WITH saldoinf + lSaldoI IN Csrimprimir Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005URT00J4.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-17-10-2019 17:46:48 , Error: No se encuentra la propiedad COLUMN011. Linea : oObjeto = &cName Error :       1734 Ultimo Alias Activo: CSRNIVELARBOL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005URT02O2.TMP Ultimo Control activo:  LISBALGENERAL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+17-10-2019 17:28:41 , Error: No se encuentra la variable 'LSALDOI'. Linea : REPLACE detalle WITH lcdetalle,impd WITH impd+limpd,imph WITH imph+limph,saldoinf WITH saldoinf + lSaldoI IN Csrimprimir Error :         12 Ultimo Alias Activo: CSRCURSOR Ultimo 
+registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005URT00J4.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+17-10-2019 17:46:48 , Error: No se encuentra la propiedad COLUMN011. Linea : oObjeto = &cName Error :       1734 Ultimo Alias Activo: CSRNIVELARBOL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005URT02O2.TMP Ultimo Control activo
+:  LISBALGENERAL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 18-10-2019 09:08:06 , Acceso al sistema, antes de autenticar
-18-10-2019 09:15:56 , Error: No se encuentra la propiedad CALCULOINFLACION. Linea : this.calculoinflacion(CsrCursor.nrocaja,CsrCursor.importe,@nSaldoAjustado) Error :       1734 Ultimo Alias Activo: CSRARBOL Ultimo registro:          4  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004ZD500F4.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-18-10-2019 09:24:01 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lnPeriodo = INT(VAL(LEFT(STR(lnNroCaja,8),6))) Error :         11 Ultimo Alias Activo: CSRARBOL Ultimo registro:          4  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004ZD500VZ.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-18-10-2019 09:29:33 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF cTipoAsi='A' Error :        107 Ultimo Alias Activo: CSRARBOL Ultimo registro:          6  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004ZD501L9.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-18-10-2019 09:30:33 , Error: El archivo 'ajustadoarbol.dbf' no existe. Linea : SELECT cuenta,SPACE(5*(nivelArbol-1))+nombre &cCadena FROM CsrArbol ,AjustadoArbol,AjusteArbol WHERE &lcTipoSaldo INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias Activo: CSRNIVELARBOL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004ZD502I9.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+18-10-2019 09:15:56 , Error: No se encuentra la propiedad CALCULOINFLACION. Linea : this.calculoinflacion(CsrCursor.nrocaja,CsrCursor.importe,@nSaldoAjustado) Error :       1734 Ultimo Alias Activo: CSRARBOL Ultimo registro:          4  DBF: C:\USERS\ADM
+IN\APPDATA\LOCAL\TEMP\00004ZD500F4.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+18-10-2019 09:24:01 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lnPeriodo = INT(VAL(LEFT(STR(lnNroCaja,8),6))) Error :         11 Ultimo Alias Activo: CSRARBOL Ultimo registro:          4  DBF: C:\USERS\ADMIN\APPD
+ATA\LOCAL\TEMP\00004ZD500VZ.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+18-10-2019 09:29:33 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF cTipoAsi='A' Error :        107 Ultimo Alias Activo: CSRARBOL Ultimo registro:          6  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004ZD501L9.TMP U
+ltimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+18-10-2019 09:30:33 , Error: El archivo 'ajustadoarbol.dbf' no existe. Linea : SELECT cuenta,SPACE(5*(nivelArbol-1))+nombre &cCadena FROM CsrArbol ,AjustadoArbol,AjusteArbol WHERE &lcTipoSaldo INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo A
+lias Activo: CSRNIVELARBOL Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00004ZD502I9.TMP Ultimo Control activo:  LISBALGENERAL_INF.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 18-10-2019 09:41:26 , Acceso al sistema, antes de autenticar
 18-10-2019 09:45:51 , Acceso al sistema, antes de autenticar
 18-10-2019 09:50:21 , Acceso al sistema, antes de autenticar
 18-10-2019 09:52:19 , Acceso al sistema, antes de autenticar
-18-10-2019 11:04:04 , Error: No se encuentra la variable 'LCDETALLE'. Linea : SELECT CsrPlanCue.cuenta, CsrPlancue.nombre,<<lcdetalle>> Error :         12 Ultimo Alias Activo: CSRPLANCUE Ultimo registro:        227  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD04GC.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
-18-10-2019 11:10:02 , Error: No se encuentra la variable 'LCDETALLE'. Linea : SELECT CsrPlanCue.cuenta, CsrPlancue.nombre,<<lcdetalle>> Error :         12 Ultimo Alias Activo: CSRPLANCUE Ultimo registro:        227  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD04K2.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
-18-10-2019 11:10:56 , Error: No se encuentra el alias 'CSRINFCONTAB'. Linea : SELECT CsrInfContab Error :         13 Ultimo Alias Activo: CSRCURSORI Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD04PV.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
-18-10-2019 11:12:24 , Error: El archivo 'csrcursor.dbf' no existe. Linea : SELECT *,RECNO() as registro FROM CsrCursor WHERE RECNO()<0 INTO CURSOR CsrAuxPlanCue READWRITE Error :          1 Ultimo Alias Activo: CSRCURSORI Ultimo registro:       4402  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD04U0.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
-18-10-2019 11:20:52 , Error: El nombre de alias ya está en uso. Linea : SELECT cuenta,nombre,detalle,SUM(debe) as debe, SUM(haber) as haber ,idcuenta,tipoconce,id,nombreobjeto,color FROM CsrCursorI GROUP BY cuenta,nombre,detalle ,idcuenta,tipoconce,id,nombreobjeto,color INTO CURSOR CsrCursor READWRITE Error :         24 Ultimo Alias Activo: CSRCURSORI Ultimo registro:       4402  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD05HK.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
-18-10-2019 13:08:03 , Error: No se encuentra la variable 'IDMAOPERA'. Linea : INSERT INTO CsrAuxPlancue (id,cuenta,nombre,detalle,debe,haber,idcuenta,tipoconce,nombreobjeto,registro,idmaopera) VALUES (CsrCursor.id,Csrcursor.cuenta,Csrcursor.nomcta,Csrcursor.detalle,lndebe,lnhaber ,Csrcursor.idcuenta,CsrCursor.tipoconce,CsrCursor.tipoconce,RECNO(),CsrCursor.idmaopera) Error :         12 Ultimo Alias Activo: CSRAUXPLANCUE Ultimo registro:          1 IDCUENTA DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD084M.TMP Ultimo Control activo:  REGASIECIERRE.CMDCONSULTA.CLICK
+18-10-2019 11:04:04 , Error: No se encuentra la variable 'LCDETALLE'. Linea : SELECT CsrPlanCue.cuenta, CsrPlancue.nombre,<<lcdetalle>> Error :         12 Ultimo Alias Activo: CSRPLANCUE Ultimo registro:        227  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+\00002BRD04GC.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
+18-10-2019 11:10:02 , Error: No se encuentra la variable 'LCDETALLE'. Linea : SELECT CsrPlanCue.cuenta, CsrPlancue.nombre,<<lcdetalle>> Error :         12 Ultimo Alias Activo: CSRPLANCUE Ultimo registro:        227  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
+\00002BRD04K2.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
+18-10-2019 11:10:56 , Error: No se encuentra el alias 'CSRINFCONTAB'. Linea : SELECT CsrInfContab Error :         13 Ultimo Alias Activo: CSRCURSORI Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD04PV.TMP Ultimo Control activ
+o:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
+18-10-2019 11:12:24 , Error: El archivo 'csrcursor.dbf' no existe. Linea : SELECT *,RECNO() as registro FROM CsrCursor WHERE RECNO()<0 INTO CURSOR CsrAuxPlanCue READWRITE Error :          1 Ultimo Alias Activo: CSRCURSORI Ultimo registro:       4402  DBF
+: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD04U0.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CLICK
+18-10-2019 11:20:52 , Error: El nombre de alias ya está en uso. Linea : SELECT cuenta,nombre,detalle,SUM(debe) as debe, SUM(haber) as haber ,idcuenta,tipoconce,id,nombreobjeto,color FROM CsrCursorI GROUP BY cuenta,nombre,detalle ,idcuenta,tipoconce,id,no
+mbreobjeto,color INTO CURSOR CsrCursor READWRITE Error :         24 Ultimo Alias Activo: CSRCURSORI Ultimo registro:       4402  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD05HK.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINERENCABEZA.CMDACEPTAR.CL
+ICK
+18-10-2019 13:08:03 , Error: No se encuentra la variable 'IDMAOPERA'. Linea : INSERT INTO CsrAuxPlancue (id,cuenta,nombre,detalle,debe,haber,idcuenta,tipoconce,nombreobjeto,registro,idmaopera) VALUES (CsrCursor.id,Csrcursor.cuenta,Csrcursor.nomcta,Csrcur
+sor.detalle,lndebe,lnhaber ,Csrcursor.idcuenta,CsrCursor.tipoconce,CsrCursor.tipoconce,RECNO(),CsrCursor.idmaopera) Error :         12 Ultimo Alias Activo: CSRAUXPLANCUE Ultimo registro:          1 IDCUENTA DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00002BRD
+084M.TMP Ultimo Control activo:  REGASIECIERRE.CMDCONSULTA.CLICK
 18-10-2019 13:17:21 , Acceso al sistema, antes de autenticar
 18-10-2019 13:21:29 , Acceso al sistema, antes de autenticar
 18-10-2019 13:22:26 , Acceso al sistema, antes de autenticar
@@ -277,3 +426,11 @@
 18-10-2019 14:22:17 , Error: No se encuentra el alias 'CSRCLASECTA'. Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT ) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMPLANCUE.INIT
 18-10-2019 14:22:22 , Acceso al sistema, antes de autenticar
 18-10-2019 14:49:16 , Acceso al sistema, antes de autenticar
+22-10-2019 11:08:50 , Acceso al sistema, antes de autenticar
+23-10-2019 11:38:25 , Acceso al sistema, antes de autenticar
+23-10-2019 13:46:45 , Acceso al sistema, antes de autenticar
+23-10-2019 13:52:46 , Acceso al sistema, antes de autenticar
+23-10-2019 14:37:13 , Acceso al sistema, antes de autenticar
+23-10-2019 14:37:35 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrAuxVentas")=0 Error :         13 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008D8P02RD.TMP Ultimo Control act
+ivo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+23-10-2019 15:04:06 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : SELECT csrcursor Error :         13 Ultimo Alias Activo: CSREJERCICIO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00008D8P02XN.TMP Ultimo Control activo:  LISDIARIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
