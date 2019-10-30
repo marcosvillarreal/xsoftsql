@@ -1,0 +1,33 @@
+30-10-2019 15:07:47 , MAIN, Error: No se encuentra la variable 'NFRIO'.;Linea : INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta ,Kilos,FecOferta,Orden,Leyenda,esFrio) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cPrecioUni ,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0' ,cLeyenda,nFrio);Error :         12;Ultimo Alias Activo: IMPCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000BDVT04B6.TMP;Ultimo Control activo: 
+30-10-2019 15:07:47 , Pila de llamadas
+30-10-2019 15:07:47 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\main.fxp
+30-10-2019 15:07:47 , Objeto      : main
+30-10-2019 15:07:47 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\main.prg
+30-10-2019 15:07:47 , Nº de Linea :        286
+30-10-2019 15:07:47 , En el Fuente: 	Read events   
+30-10-2019 15:07:47 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+30-10-2019 15:07:47 , Objeto      : regfacvta.cmdimprimir.click
+30-10-2019 15:07:47 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+30-10-2019 15:07:47 , Nº de Linea :         23
+30-10-2019 15:07:47 , En el Fuente: 				.imprimir(thisform.lcimpresora,loimpresoraelegida.tipo,2)
+30-10-2019 15:07:47 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+30-10-2019 15:07:47 , Objeto      : regfacvta.imprimir
+30-10-2019 15:07:47 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\regfacvta.sct
+30-10-2019 15:07:47 , Nº de Linea :         87
+30-10-2019 15:07:47 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
+30-10-2019 15:07:47 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+30-10-2019 15:07:47 , Objeto      : regfacvta.objimpresor.inicioimpresora
+30-10-2019 15:07:47 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+30-10-2019 15:07:47 , Nº de Linea :         75
+30-10-2019 15:07:47 , En el Fuente: 	lok = this.reportfcae(lndeboActualizarNro)
+30-10-2019 15:07:47 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+30-10-2019 15:07:47 , Objeto      : regfacvta.objimpresor.reportfcae
+30-10-2019 15:07:47 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+30-10-2019 15:07:47 , Nº de Linea :        118
+30-10-2019 15:07:47 , En el Fuente: 	this.reportFcae_cue(loObjFactura)
+30-10-2019 15:07:47 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+30-10-2019 15:07:47 , Objeto      : regfacvta.objimpresor.reportfcae_cue
+30-10-2019 15:07:47 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+30-10-2019 15:07:47 , Nº de Linea :        128
+30-10-2019 15:07:47 , En el Fuente: 		    INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta		    			,Kilos,FecOferta,Orden,Leyenda,esFrio)		    VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cPrecioUni		    			,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0'		    			,cLeyenda,nFrio)		    			
+30-10-2019 15:07:47 , Fin
