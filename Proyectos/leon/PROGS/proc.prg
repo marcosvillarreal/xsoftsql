@@ -361,7 +361,7 @@ IF LEN(_cuit)<>11
 ELSE
 	_digito=VAL(RIGHT(_cuit,1))
 	j=2
-	stop()
+	
 	suma=0
 	dv=0
 	FOR i=10 TO 1 STEP -1
