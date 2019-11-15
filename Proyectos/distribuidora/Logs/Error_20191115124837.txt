@@ -1,0 +1,33 @@
+15-11-2019 12:48:37 , EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrBackup')#0;Error :         13;Ultimo Alias Activo: CSREXPORTAR;Ultimo registro:        217 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000056H5005V.TMP;Ultimo Control activo: 
+15-11-2019 12:48:37 , Pila de llamadas
+15-11-2019 12:48:37 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-11-2019 12:48:37 , Objeto      : exportar_cpra_vta.imprimir_vistaprevia1.impresora.click
+15-11-2019 12:48:37 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-11-2019 12:48:37 , Nº de Linea :          6
+15-11-2019 12:48:37 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-11-2019 12:48:38 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Objeto      : exportar_cpra_vta.crearinforme
+15-11-2019 12:48:38 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Nº de Linea :         22
+15-11-2019 12:48:38 , En el Fuente: 	lTodoOK = .exportarcomprasventas(cperiodo)
+15-11-2019 12:48:38 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Objeto      : exportar_cpra_vta.exportarcomprasventas
+15-11-2019 12:48:38 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Nº de Linea :          9
+15-11-2019 12:48:38 , En el Fuente: 		lok = .calculacompras(cPeriodo)
+15-11-2019 12:48:38 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Objeto      : exportar_cpra_vta.calculacompras
+15-11-2019 12:48:38 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Nº de Linea :         65
+15-11-2019 12:48:38 , En el Fuente: RETURN This.GenerarCompras(cPeriodo)
+15-11-2019 12:48:38 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Objeto      : exportar_cpra_vta.generarcompras
+15-11-2019 12:48:38 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\exportar_cpra_vta.sct
+15-11-2019 12:48:38 , Nº de Linea :        129
+15-11-2019 12:48:38 , En el Fuente: This.DGICPRAVTA.Exportararchivo(2,"REGINFO_CV_COMPRAS_ALICUOTAS_"+cPeriodo,this._txtDestinoExportar.Value)
+15-11-2019 12:48:38 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+15-11-2019 12:48:38 , Objeto      : exportar_cpra_vta.dgicpravta.exportararchivo
+15-11-2019 12:48:38 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+15-11-2019 12:48:38 , Nº de Linea :         17
+15-11-2019 12:48:38 , En el Fuente: IF RECCOUNT('CsrBackup')#0
+15-11-2019 12:48:38 , Fin
