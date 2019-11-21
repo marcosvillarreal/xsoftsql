@@ -353,6 +353,8 @@ ABaudios[4] = 9600
 ABaudios[5] = 19200
 ABaudios[6] = 38400
 
+
+
 ENDPROC
 
 PROCEDURE directivasEpson

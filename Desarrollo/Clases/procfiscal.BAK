@@ -353,6 +353,8 @@ ABaudios[4] = 9600
 ABaudios[5] = 19200
 ABaudios[6] = 38400
 
+PUBLIC oHasar2G IN  "HasarLibreriaFiscal3561.dll"
+
 ENDPROC
 
 PROCEDURE directivasEpson
@@ -418,6 +420,10 @@ DECLARE Integer CargarPago IN "EpsonFiscalInterface.dll"  Integer id_modificador
 							String descripcion, String descripcion_extra1,String descripcion_extra2 
 
 DECLARE INTEGER CerrarComprobante IN "EpsonFiscalInterface.dll" 
+
+DECLARE Integer CargarOtrosTributos IN "EpsonFiscalInterface.dll"  Integer codigo_otros_tributos, String descripcion,;
+													String monto, Integer id_tasa_iva 
+
 
 FUNCTION GetErrorFiscal
 PARAMETERS FiscalStatus,PrinterStatus

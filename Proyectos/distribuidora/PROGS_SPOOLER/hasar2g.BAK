@@ -1,0 +1,11 @@
+stop()
+oHasar2G = CREATEOBJECT("HasarArgentina.ImpresoraFiscalRG3561")
+
+WITH oHasar2G
+	TRY 
+		.ArchivoRegistro("J:\HASAR\OCX2G.log")
+		.Conectar("192.0.0.135")
+	CATCH TO Err
+		Err.Description
+	ENDTRY 
+ENDWITH 

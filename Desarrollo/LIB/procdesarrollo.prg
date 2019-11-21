@@ -936,7 +936,7 @@ If Parameters() = 0
 	Return
 Endif
 *stop()
-Dimension lstOCX(10,2)
+Dimension lstOCX(11,2)
 lstOCX(1,1) = "SSubTimer6.Gsubclass"
 lstOCX(1,2) = "SSubTmr6.dll"
 lstOCX(2,1) ="vbalLbar6.cListBarItem"
@@ -957,6 +957,8 @@ lstOCX(9,1) ="HASAR.fiscal.1"
 lstOCX(9,2) ="Fiscal051122.ocx"
 lstOCX(10,1) ="EpsonFiscalInterface.dll"
 lstOCX(10,2) ="EpsonFiscalInterface.dll"
+lstOCX(11,1) ="HasarArgentina.ocx"
+lstOCX(11,2) ="HasarArgentina.ocx"
 
 * Hacer un ciclo con el ultimo numero que corresponde a la cantidad de OCX necesarios
 * No calculamos porque nosotros le damos la cantidad
