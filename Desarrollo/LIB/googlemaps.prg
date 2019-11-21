@@ -221,11 +221,12 @@ LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
 LOCAL lcFullURL, lcResponse, lcRouteParameters
 tcDestination          = EVL(tcDestination, "")
 
-lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
-    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
+*stop()
 
-lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
-    "&units=metrics&sensor=false&v=3.22"
+*lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
+*lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + "&units=metrics&sensor=false&v=3.22"
+lcRouteParameters = "q=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + "&z9"
+lcFullURL = "https://maps.google.com/?"+lcRouteParameters
 
 TRY 
 	loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0

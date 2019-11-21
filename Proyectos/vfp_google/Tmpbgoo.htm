@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Busqueda en Google Maps</title>
+    <script src="http://maps.google.es/maps?file=api&v=2.x&key=ABQIAAAAtOjLpIVcO8im8KJFR8pcMhQjskl1-YgiA_BGX2yRrf7htVrbmBTWZt39_v1rJ4xxwZZCEomegYBo1w"
+    type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    var map = null
+    var geocoder = null
+    var address = "Av Profesor López Pinero, 7, 46013 Valencia"
+	var tagg = "Ciudad de las artes y las ciencias"
+	
+    function load()
+    { if (GBrowserIsCompatible())
+      { map = new GMap2(document.getElementById("map"),'G_SATELLITE_MAP');
+        map.addControl(new GLargeMapControl());
+        map.addControl (new GMapTypeControl());
+        map.addControl(new GOverviewMapControl());
+
+        geocoder = new GClientGeocoder();
+        if (geocoder) {
+            geocoder.getLatLng(address,
+          function(point)
+          { if (!point)
+            { alert("Longitud y latitud no determinada con estos datos");
+             }
+          else
+            { map.setCenter(point, 17);
+            map.setMapType(G_NORMAL_MAP);
+            var marker = new GMarker(point);
+            map.addOverlay(marker);
+            marker.openInfoWindowHtml(tagg);
+            }
+          }
+         );
+       }
+      }
+    }
+    //]]>
+    </script>
+  </head>
+  <body  scroll="no" bgcolor="#CCCCCC" topmargin="0" leftmargin="0" onload="load()" onunload="GUnload()">
+  <div id="map" style="width: 100%; height: 100%"></div>
+  </body>
+</html>

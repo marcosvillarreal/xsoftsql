@@ -721,6 +721,40 @@ SET SAFETY ON
 
 RETURN 
 *----------------------------------------------------------------------------
+* FUNCION SaveFile(lcCmd,lcArchivo,llgenera)
+*----------------------------------------------------------------------------
+* Guarda la consulta al motor
+*----------------------------------------------------------------------------
+FUNCTION SaveFile
+PARAMETERS lcCmd,lcArchivo,lcExten,llgenera
+llgenera = IIF(PCOUNT()<4,.f.,llgenera)
+lcExten = IIF(PCOUNT()<3,'txt',lcExten)
+
+IF LEN(LTRIM(lcCmd))=0
+	RETURN 
+ENDIF 
+IF LEN(LTRIM(lcArchivo))=0
+	RETURN 
+ENDIF 
+lldesarrollo=(_vfp.startmode()#4)
+lcRuta = SYS(5)+ "\tempsql\"+ALLTRIM(goapp.initcatalo)
+IF VARTYPE(goapp.rutaaplicacion)$'C' AND NOT lldesarrollo
+	lcRutaApli = IIF(LEN(ALLTRIM(goapp.rutaaplicacion))#0,goapp.rutaaplicacion,"")
+	lcRutaApli = RTRIM(lcRutaApli) + IIF(RIGHT(lcRutaApli,1)="\" or LEN(LTRIM(lcRutaApli))=0,"","\") &&Si es vacio o tiene \. Mantiene lo mismo.
+	lcRuta = IIF(LEN(LTRIM(lcRutaApli))#0,lcRutaApli+ "tempsql",lcRuta)	
+ENDIF 
+IF llgenera &&Determinamos que queres que siempre se guarde
+	IF !DIRECTORY(lcRuta)
+		MKDIR &lcRuta
+	ENDIF 
+ENDIF 
+SET SAFETY OFF 
+= STRTOFILE(lccmd,lcRuta+"\"+lcArchivo+"."+lcExten)
+SET SAFETY ON 
+
+RETURN 
+
+*----------------------------------------------------------------------------
 * FUNCION StrTrim(lnValor,lnTam,lcDec)
 *----------------------------------------------------------------------------
 * Funcion que devuelve la trasformacion de str sin espaciones vacios.
