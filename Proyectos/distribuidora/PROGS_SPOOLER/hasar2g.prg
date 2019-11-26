@@ -19,20 +19,20 @@ WITH oHasar2G
 	IF FILE(cFileLog)
 		DELETE FILE &cFileLog
 	ENDIF 
-	TRY 
+	*TRY 
 		.ArchivoRegistro(cFileLog)
 		=ConectarHasar()
 		
 		stop()
 		*=CerrarZ()
 		*
-		=ConsultarEstadoFiscal()
-		.Cancelar()
-		=ImprimirTique()
-		
-	CATCH TO Err
-		=DeterminarError()
-	ENDTRY 
+		*=ConsultarEstadoFiscal()
+		=CancelarTodo()
+		*=ImprimirTique()
+	*CATCH TO oErr
+	*	?oErr.message 
+	*ENDTRY 	
+
 ENDWITH 
 
 
@@ -51,9 +51,9 @@ FUNCTION ImprimirTique()
 	WITH oHasar2G
 		=ConsultarEstadoFiscal(83)
 		TRY 
-		*=.AbrirDocumento(83)
+			.AbrirDocumento(83)
 		CATCH TO Err
-			? Err.Message
+			=DeterminarError()
 			*=.Cancelar()
 		ENDTRY 
 		
@@ -62,7 +62,11 @@ ENDFUNC
 
 FUNCTION CerrarZ()
 	WITH oHasar2G	
-		=.CerrarJornadaFiscal(90)	
+		TRY 
+			.CerrarJornadaFiscal(90)	
+		CATCH TO Err
+			=DeterminarError()
+		ENDTRY 
 	ENDWITH 
 ENDFUNC 
 FUNCTION ConsultarEstadoFiscal(nTipoComp)
@@ -88,20 +92,33 @@ FUNCTION ConsultarEstadoFiscal(nTipoComp)
 	ENDWITH 
 ENDFUNC 
 FUNCTION DeterminarError()
-	TRY 
-		.ConsultarUltimoError()
-		oErrorHasar.UltimoError	= .ObtenerCampoRespuesta('UltimoError')
-		oErrorHasar.NumeroParametro	= VAL(.ObtenerCampoRespuesta('NumeroParametro'))
-		oErrorHasar.Descripcion	= .ObtenerCampoRespuesta('Descripcion')
-		oErrorHasar.Contexto	= .ObtenerCampoRespuesta('Contexto')
-		oErrorHasar.NombreParametro	= .ObtenerCampoRespuesta('NombreParametro')
-		oavisar.usuario("Ultimo Error:"+oErrorHasar.UltimoError+CHR(13)+;
-			"Numero Parametro:"+strtrim(oErrorHasar.NumeroParametro)+CHR(13)+;
-			"Descripcion:"+oErrorHasar.Descripcion+CHR(13)+;
-			"Contexto:"+oErrorHasar.Contexto+CHR(13)+;
-			"NombreParametro:"+oErrorHasar.NombreParametro)
-	CATCH TO Err
-		?Err.Message
+	WITH oHasar2G
+		TRY 
+			.ConsultarUltimoError()
+			oErrorHasar.UltimoError	= .ObtenerCampoRespuesta('UltimoError')
+			oErrorHasar.NumeroParametro	= VAL(.ObtenerCampoRespuesta('NumeroParametro'))
+			oErrorHasar.Descripcion	= .ObtenerCampoRespuesta('Descripcion')
+			oErrorHasar.Contexto	= .ObtenerCampoRespuesta('Contexto')
+			oErrorHasar.NombreParametro	= .ObtenerCampoRespuesta('NombreParametro')
+			oavisar.usuario("Ultimo Error:"+oErrorHasar.UltimoError+CHR(13)+;
+				"Numero Parametro:"+strtrim(oErrorHasar.NumeroParametro)+CHR(13)+;
+				"Descripcion:"+oErrorHasar.Descripcion+CHR(13)+;
+				"Contexto:"+oErrorHasar.Contexto+CHR(13)+;
+				"NombreParametro:"+oErrorHasar.NombreParametro)
+		CATCH TO Err
+			?Err.Message
+		ENDTRY
+	ENDWITH 		
+ENDFUNC 
+
+FUNCTION CancelarTodo()
+	TRY
+		oHasar2G.Cancelar()
+	CATCH TO 
+		=DeterminarError()
 	ENDTRY 
-		
+	IF oErrorHasar.UltimoError = "CMD_INVALID_STATE"
+	
+	ENDIF 
+	
 ENDFUNC 
