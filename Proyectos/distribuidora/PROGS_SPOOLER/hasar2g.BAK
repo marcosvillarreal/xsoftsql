@@ -1,29 +1,37 @@
 PUBLIC oHasar2G,estilo
 
 oHasar2G	= CREATEOBJECT("HasarArgentina.ImpresoraFiscalRG3561")
-estilo	 	= CREATEOBJECT('custom')
-estilo.AddProperty('Centrado',.t.)
-estilo.AddProperty('DobleAncho',.f.)
-estilo.AddProperty('Negrita',.f.)
-estilo.AddProperty('Borrado',.f.)
+*!*	estilo	 	= CREATEOBJECT('custom')
+*!*	estilo.AddProperty('Centrado',.t.)
+*!*	estilo.AddProperty('DobleAncho',.f.)
+*!*	estilo.AddProperty('Negrita',.f.)
+*!*	estilo.AddProperty('Borrado',.f.)
+oErrorHasar		= createobject("custom")
+oErrorHasar.AddProperty("UltimoError","")
+oErrorHasar.AddProperty("NumeroParametro",0)
+oErrorHasar.AddProperty("Descripcion","")
+oErrorHasar.AddProperty("Contexto","")
+oErrorHasar.AddProperty("NombreParametro","")
 
 WITH oHasar2G
+	
+	cFileLog = SYS(5)+CURDIR()+"\OCX2G_"+STRtrim( MINUTE(DATETIME()) )+".log"
+	IF FILE(cFileLog)
+		DELETE FILE &cFileLog
+	ENDIF 
 	TRY 
-		
-		IF FILE(SYS(5)+CURDIR()+"\OCX2G.log")
-			DELETE FILE (SYS(5)+CURDIR()+"\OCX2G.log")
-		ENDIF 
-		.ArchivoRegistro(SYS(5)+CURDIR()+"\OCX2G.log")
+		.ArchivoRegistro(cFileLog)
 		=ConectarHasar()
 		
 		stop()
 		*=CerrarZ()
 		*
+		=ConsultarEstadoFiscal()
 		.Cancelar()
 		=ImprimirTique()
 		
 	CATCH TO Err
-		? Err.Message
+		=DeterminarError()
 	ENDTRY 
 ENDWITH 
 
@@ -58,9 +66,15 @@ FUNCTION CerrarZ()
 	ENDWITH 
 ENDFUNC 
 FUNCTION ConsultarEstadoFiscal(nTipoComp)
-	WITH oHasar2G	
-		=.ConsultarEstado(nTipoComp)
-		*cResp = .ObtenerCampoRespuesta("")
+	WITH oHasar2G
+		TRY 
+			.ConsultarEstado(83)
+		CATCH TO Err
+			=DeterminarError()
+		ENDTRY 
+		
+		
+*!*			*cResp = .ObtenerCampoRespuesta("")
 		?"Tipo Comprobante = [" + .ObtenerCampoRespuesta("CodigoComprobante")+ "]"
 		?"Ultimo Nro. = [" + .ObtenerCampoRespuesta("NumeroUltimoComprobante")+ "]"
 		?"Cancelados = [" + .ObtenerCampoRespuesta("CantidadCancelados")+ "]"
@@ -72,4 +86,22 @@ FUNCTION ConsultarEstadoFiscal(nTipoComp)
 		*?"Modo entrenamiento = [" & respest.EstadoAuxiliar.ModoEntrenamiento & "]"
 		*?"Ult. comprob. cancel. = [" & respest.EstadoAuxiliar.UltimoComprobanteFueCancelado & "]"
 	ENDWITH 
+ENDFUNC 
+FUNCTION DeterminarError()
+	TRY 
+		.ConsultarUltimoError()
+		oErrorHasar.UltimoError	= .ObtenerCampoRespuesta('UltimoError')
+		oErrorHasar.NumeroParametro	= .ObtenerCampoRespuesta('NumeroParametro')
+		oErrorHasar.Descripcion	= .ObtenerCampoRespuesta('Descripcion')
+		oErrorHasar.Contexto	= .ObtenerCampoRespuesta('Contexto')
+		oErrorHasar.NombreParametro	= .ObtenerCampoRespuesta('NombreParametro')
+		oavisar.usuario("Ultimo Error:"+oErrorHasar.UltimoError+CHR(13)+;
+			"Numero Parametro:"+strtrim(oErrorHasar.NumeroParametro)+CHR(13)+;
+			"Descripcion:"+oErrorHasar.Descripcion+CHR(13)+;
+			"Contexto:"+oErrorHasar.Contexto+CHR(13)+;
+			"NombreParametro:"+oErrorHasar.NombreParametro)
+	CATCH TO Err
+		?Err.Message
+	ENDTRY 
+		
 ENDFUNC 
