@@ -144,6 +144,7 @@ ObjReporter.AddProperty('firma',cFirma)
 PUBLIC ObjInfNeg
 ObjInfNeg=CREATEOBJECT("custom")
 ObjInfNeg.AddProperty('odata','')
+ObjInfNeg.AddProperty('nametable','')
 
 *!*	PUBLIC oFacCAE
 *!*	oFACCAE = CREATEOBJECT('oFacElectronica')
