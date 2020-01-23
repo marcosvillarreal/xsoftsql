@@ -50,6 +50,12 @@
 *!*								4   
 *!*								5	
 
+*!*	 NCABEFAC.switch			1	'N' = normal
+*!*								2	'1' = puesto preparado
+*!*								3
+*!*								4   
+*!*								5
+
 *!*	 FLETEPLANILLA.switch		1 1 = borrado	
 *!*								2
 *!*								3 1 = por notas de pedido
