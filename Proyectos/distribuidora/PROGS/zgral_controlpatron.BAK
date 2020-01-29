@@ -1,3 +1,18 @@
+LOCAL lcCmdConfig
+LOCAL nIdDeposito 
+
+TEXT TO lcCmdConfig TEXTMERGE NOSHOW 
+select praconfig.iddeposito from centrorecep
+inner join paraconfig on centrorecep.id = paraconfig.idcentrorecep
+where centrorecep.numero = <<goapp.sucursal>>
+ENDTEXT 
+IF NOT CrearCursorAdapter('FsrConfig',lcCmdConfig)
+	RETURN 
+ENDIF 
+SELECT FsrConfig
+GO TOP 
+nIdDeposito = FsrConfig.iddeposito
+
 LOCAL lcCmdPatron
 TEXT TO lcCmdPatron TEXTMERGE NOSHOW 
 select CsrNCuerfac.codigo, CsrProducto.nombre,isnull(CsrVariedad.numero,cast(0 as int)) as variedad
@@ -13,13 +28,13 @@ left join NCuerVari as CsrNCuervari on CsrNCuerfac.id = CsrNCuervari.idcuerfac a
 left join Producto as CsrProducto on CsrNcuerfac.idarticulo = CsrProducto.id
 left join Variedad as CsrVariedad on isnull(CsrNCuervari.idvariedad,0) = CsrVariedad.id
 left join Existenc as CsrExistenc on CsrNCuerfac.idarticulo = CsrExistenc.idarticulo and isnull(CsrNCuervari.idsubarti,0) = CsrExistenc.idsubarti
-where right(CsrFletePlanilla.switch,1)='1' and left(CsrNMaopera.switch,1)='0' and CsrExistenc.iddeposito = 1100000001
+where right(CsrFletePlanilla.switch,1)='1' and left(CsrNMaopera.switch,1)='0' and CsrExistenc.iddeposito = <<nIdDeposito>>
 and left(CsrFletePlanilla.switch,1)='0' and LEFT(CsrNMaopera.estado,1)='0' and LEFT(CsrFleteCarga.switch,1)<>'2'
 group by CsrNCuerfac.codigo, CsrProducto.nombre, CsrVariedad.numero, CsrNCuerVari.idvariedad
 ,CsrExistenc.existe ,CsrExistenc.existedisp,CsrNCuerfac.idarticulo
 order by convert(int,CsrNCuerfac.codigo)
 ENDTEXT 
-=SaveSQL(lcCmd,'ControlPatron')
+=SaveSQL(lcCmdPatron,'ControlPatron')
 IF !CrearCursorAdapter("FsrPatron",lcCmdPatron)
 	RETURN 
 ENDIF 
