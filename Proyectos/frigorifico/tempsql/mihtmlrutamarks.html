@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mapa de Rutas</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	<style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      
+      }
+     </style>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+  function initialize() {
+         geocoder = new google.maps.Geocoder();
+         var fenway = new google.maps.LatLng(-38.7281256,-62.2995369);
+		  var mapOptions = {scaleControl: true,panControl:true,rotateControl:true,zoom: 16,mapTypeId: google.maps.MapTypeId.ROADMAP,center: fenway};
+  var map=new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+  var marker1=new google.maps.Marker({position:new google.maps.LatLng(-38.7219689, -62.2328685)});marker1.setMap(map);var infowindow1 = new google.maps.InfoWindow({content:"DIAZ, CLARIZA CONSUELO / D ORBIGNY 1723",maxWidth: 200});marker1.addListener('click', function() {infowindow1.open(map, marker1);});var marker2=new google.maps.Marker({position:new google.maps.LatLng(-38.7021922, -62.3093437)});marker2.setMap(map);var infowindow2 = new google.maps.InfoWindow({content:"BERTH, ROSANA / BIGGIO 870",maxWidth: 200});marker2.addListener('click', function() {infowindow2.open(map, marker2);});var marker3=new google.maps.Marker({position:new google.maps.LatLng(-38.7390195, -62.2747232)});marker3.setMap(map);var infowindow3 = new google.maps.InfoWindow({content:"MANELLA, FERNANDO / 25 DE MAYO Y GRANADA",maxWidth: 200});marker3.addListener('click', function() {infowindow3.open(map, marker3);});var marker4=new google.maps.Marker({position:new google.maps.LatLng(-38.7298250, -62.3001781)});marker4.setMap(map);var infowindow4 = new google.maps.InfoWindow({content:"MENDOZA, JOEL / BRAVARD 2131",maxWidth: 200});marker4.addListener('click', function() {infowindow4.open(map, marker4);});var marker5=new google.maps.Marker({position:new google.maps.LatLng(-38.6867466, -62.3337421)});marker5.setMap(map);var infowindow5 = new google.maps.InfoWindow({content:"GUAN,  SHANSHAN / FRANCISCA HERNÁNDEZ 389",maxWidth: 200});marker5.addListener('click', function() {infowindow5.open(map, marker5);});var marker6=new google.maps.Marker({position:new google.maps.LatLng(-38.7281256, -62.2995369)});marker6.setMap(map);var infowindow6 = new google.maps.InfoWindow({content:"LIN,  YUJIE / SANTA CRUZ 952",maxWidth: 200});marker6.addListener('click', function() {infowindow6.open(map, marker6);});
+  }
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+<div id="map-canvas" style="float:left;width:100%; height:100%"></div>
+</body>
+
+</html>
