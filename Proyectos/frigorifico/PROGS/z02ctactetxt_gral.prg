@@ -29,151 +29,17 @@ ENDTEXT
 
 SET SAFETY ON
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(30),Direccion c(100),Localidad c(50),CodPostal c(10),Provincia c(50);
+CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),Localidad c(50),CodPostal c(10),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15),TipoDoc c(50),Documento c(20);
 		,TipoIVA c(50),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
-		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),Estado c(1))
+		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
+		,CodCateIVA n(2),CodGan n(3),cPlanPago n(1),cDiasVto n(3))
 
 		
 Oavisar.proceso('S','Abriendo archivos') 
 
-SELECT CsrLista
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
-APPEND FROM  &cArchivo SDF
-
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
-
-Oavisar.proceso('S','Procesando '+alias()) 
-
-cCadeCtacte = "" 
-
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-ldebug = .t.
-
-SKIP 
-DO WHILE NOT EOF()
-	lnCantCampo = 22 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		LOOP 
-	ENDIF 
-	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
-		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
-		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
-		STORE "" TO lcEstado
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			LOOP 
-		ENDIF 
-	ENDIF 
-	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDocumento)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
-			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDirePiso)))
-			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcTelefono)))
-			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcTipoIVA)))
-			*lcCategoria	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCategoria)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTelefono2)))
-			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcEstado)))
-			lcLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcLista)))
-			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCodVendedor)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcVendedor)))
-			
-			*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
-			*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
-			*lcCelular		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCelular)))
-			*lcEmail			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEmail)))
-			*lcfecAlta		= IIF(j + i=19,lcCadena,lcFecAlta)
-			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-			*lcZona			= UPPER(LimpiarCadena(IIF(j + i=29,lcCadena,lcZona)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-			
-			IF VAL(lcCodigo)=1772 and ldebug
-				*stop()
-				ldebug = .f.
-			ENDIF 
-		
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		
-		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
-			LOOP 
-		ENDIF 
-		
-		
-		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
-		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
-		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado) ;
-		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
-		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
-		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado)
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
-	ENDIF 
-	SKIP IN CsrLista
-ENDDO 
-
-&&Eliminamos los cliente del vendedor 5
-*DELETE FROM CsrDeudor WHERE VAL(vendedor) = 5
-
-*!*	SET SAFETY OFF 
 *!*	SELECT CsrLista
-*!*	ZAP 
-*!*	SET SAFETY ON 
-*!*	cArchivo = ALLTRIM(lcpath )+"\proveedores.txt"
+*!*	cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
 *!*	APPEND FROM  &cArchivo SDF
 
 *!*	lcDelimitador = ";"
@@ -181,15 +47,21 @@ ENDDO
 *!*	replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
 *!*	replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
+*!*	Oavisar.proceso('S','Procesando '+alias()) 
+
+*!*	cCadeCtacte = "" 
+
 
 *!*	SELECT CsrLista
 *!*	GO TOP 
 *!*	*vista()
 *!*	lnPrimeraOcurrencia = 1
 *!*	leiunarticulo = .f.
-*!*	*STOP()
 
-*!*	SCAN 
+*!*	ldebug = .t.
+
+*!*	SKIP 
+*!*	DO WHILE NOT EOF()
 *!*		lnCantCampo = 22 &&Hay un campo vacio
 *!*		lnSiguienteOcurrencia = 1
 *!*		lnCamposLeidos = 1 &&Campos de CsrLista
@@ -204,7 +76,8 @@ ENDDO
 *!*			STORE "" TO lcAcarreo
 *!*			STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
 *!*			STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
-*!*			STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcobservacion,lcIngBrutos
+*!*			STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
+*!*			STORE "" TO lcEstado,lcCodLista,lcCodCateIVA
 *!*			
 *!*			j = 0
 *!*		ELSE
@@ -225,26 +98,41 @@ ENDDO
 *!*					EXIT 
 *!*				ENDIF
 *!*				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-*!*				*lcCategoria		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCategoria)))
-*!*				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-*!*				lcobservacion	= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcobservacion)))
-*!*				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireccion)))
-*!*				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcLocalidad)))
-*!*				lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcCodPostal)))
-*!*				*lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcProvincia)))
-*!*				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))
-*!*				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcTelefono2)))
-*!*				lcFax			= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcFax)))
-*!*				lcCelular		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCelular)))
-*!*				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcEmail)))
+*!*				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
+*!*				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDocumento)))
+*!*				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
+*!*				lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
+*!*				lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDirePiso)))
+*!*				lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireDpto)))
+*!*				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcLocalidad)))
+*!*				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcProvincia)))
+*!*				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcTelefono)))
+*!*				lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCodCateIVA)))
+*!*				lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcTipoIVA)))
+*!*				*lcCategoria	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCategoria)))
+*!*				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTelefono2)))
+*!*				lcEstado		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcEstado)))
+*!*				lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcCodLista)))
+*!*				lcLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcLista)))
+*!*				lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCodVendedor)))
+*!*				lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcVendedor)))
+*!*				
+*!*				*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
+*!*				*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
+*!*				*lcCelular		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCelular)))
+*!*				*lcEmail			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEmail)))
 *!*				*lcfecAlta		= IIF(j + i=19,lcCadena,lcFecAlta)
-*!*				lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTipoDoc)))
-*!*				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcDocumento)))
-*!*				lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcTipoIVA)))
-*!*				lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcIngBrutos)))
+*!*				lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
+*!*				*lcZona			= UPPER(LimpiarCadena(IIF(j + i=29,lcCadena,lcZona)))
 *!*								
 *!*				lnSiguienteOcurrencia = lnPos + 1
 *!*				i = i + 1
+*!*				
+*!*				IF VAL(lcCodigo)=1772 and ldebug
+*!*					*stop()
+*!*					ldebug = .f.
+*!*				ENDIF 
+*!*			
 *!*			ENDDO 
 *!*			lnSiguienteOcurrencia = 1
 *!*			lnCamposLeidos = lnCamposLeidos + 1
@@ -270,15 +158,140 @@ ENDDO
 *!*			
 *!*			INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 *!*			,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
-*!*			,TipoIVA,Vendedor,Zona,ctadeudor,obsercli,ingbrutos) ;
+*!*			,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
+*!*			,CodCateIVA) ;
 *!*			values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 *!*			,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
-*!*			,lcTipoIVA,lcVendedor,lcZona,0,lcObservacion,lcIngBrutos)
+*!*			,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado;
+*!*			,VAL(lcCodLista))
 *!*					
 *!*			*replace descripcion WITH lmDescripcion IN FsrArticulo
 *!*			leiunarticulo = .f.
 *!*		ENDIF 
-*!*	ENDSCAN 
+*!*		SKIP IN CsrLista
+*!*	ENDDO 
+
+&&Eliminamos los cliente del vendedor 5
+*DELETE FROM CsrDeudor WHERE VAL(vendedor) = 5
+
+SET SAFETY OFF 
+SELECT CsrLista
+ZAP 
+SET SAFETY ON 
+cArchivo = ALLTRIM(lcpath )+"\proveedores.csv"
+APPEND FROM  &cArchivo SDF
+
+lcDelimitador = ";"
+replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
+replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+
+
+SELECT CsrLista
+GO TOP 
+*vista()
+lnPrimeraOcurrencia = 1
+leiunarticulo = .f.
+*STOP()
+SKIP 
+
+DO WHILE NOT EOF() 
+	lnCantCampo = 27 &&Hay un campo vacio
+	lnSiguienteOcurrencia = 1
+	lnCamposLeidos = 1 &&Campos de CsrLista
+	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+
+	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		LOOP 
+	ENDIF 
+	
+	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+		leiunarticulo = .t.
+		STORE "" TO lcAcarreo
+		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
+		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
+		STORE "" TO lcobservacion,lcIngBrutos
+		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
+		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodGan,lcPlanPago,lcDiasVto
+		
+		j = 0
+	ELSE
+		IF !leiunarticulo
+			LOOP 
+		ENDIF 
+	ENDIF 
+	
+	DO WHILE lnCamposLeidos<4
+		i = 1
+		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+			lnpos = AT(lcDelimitador,&lcNomCampo,i)
+			IF lnPos#0 &&No es fin de linea
+				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+				lcAcarreo = ""
+			ELSE 
+				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+				EXIT 
+			ENDIF
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
+			
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDireccion)))
+			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
+			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDirePiso)))
+			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireDpto)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcLocalidad)))
+			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcProvincia)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono)))			
+			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCodCateIVA)))
+			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcTipoIVA)))
+			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcIngBrutos)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcDocumento)))
+			
+			lcCBU			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcCBU)))
+			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcTelefono2)))
+			lcCodGan		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcCodGan)))
+			lcPlanPago		= UPPER(LimpiarCadena(IIF(j + i=26,lcCadena,lcPlanPago)))
+			lcDiasVto		= UPPER(LimpiarCadena(IIF(j + i=27,lcCadena,lcDiasVto)))
+										
+			lnSiguienteOcurrencia = lnPos + 1
+			i = i + 1
+		ENDDO 
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = lnCamposLeidos + 1
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+			 j = j + (i - 1)
+		ENDIF 
+		IF lnpos#0 AND i+j >= lnCantCampo
+			EXIT 
+		ENDIF 
+	ENDDO 
+
+	IF lnpos#0 AND i+j >= lnCantCampo
+		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+		&&Que se grabaran en csrarti.
+		&&Esta diseñado para leer hasta los precios.
+		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+		
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			LOOP 
+		ENDIF 
+		
+		
+		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
+		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
+		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
+		,CodCateIVA,CodGan,PlanPago,DiasVto) ;
+		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
+		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
+		,lcTipoIVA,"","",0,lcDireNro,lcDirePiso,lcDireDpto,"",lcEstado;
+		,0,VAL(lcCodCateIVA),VAL(lcCodGan),VAL(lcPlanPago),VAL(lcDiasVto))
+				
+		*replace descripcion WITH lmDescripcion IN FsrArticulo
+		leiunarticulo = .f.
+	ENDIF 
+	SKIP 
+ENDDO 
 
 
 SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
@@ -293,7 +306,7 @@ SCAN
 	ENDIF 
 	SELECT CsrCiudad
 ENDSCAN
-vista()
+*vista()
 
 *!*	lnid = RecuperarID('CsrCatectacte',Goapp.sucursal10)
 *!*	lnnumero = 1
@@ -313,7 +326,7 @@ vista()
 *!*	lnnumero = lnnumero + 1 
 *!*	INSERT INTO CsrCateCtacte (id,numero,nombre,tasa1,tasa2,tasa3,switch) VALUES (lnid,lnnumero,'SERVICIO',0,0,0,'00000')
 
-*!*	lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 SELECT distinct UPPER(lista) as nombre FROM CsrDeudor INTO CURSOR CsrListaPrecio
 SELECT CsrListaPrecio
@@ -322,7 +335,7 @@ SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
 
-stop()
+*stop()
 SCAN 
 	
 	IF VAL(codigo)=1772
@@ -378,7 +391,7 @@ SCAN
 	ENDIF
 	
 	&&TresPImp	
-	nTipoiva	= CsrDeudor.Codtipoiva
+	nTipoiva	= CsrDeudor.Codcateiva
 	DO CASE 
 	CASE nTipoiva = 6 &&CF
 		lntipoiva = 3	
@@ -387,7 +400,7 @@ SCAN
 	CASE nTipoiva = 11 &&EX sin impuestos?
 		lntipoiva = 4	
 	OTHERWISE 
-		lntipoiva = CsrDeudor.Codtipoiva
+		lntipoiva = CsrDeudor.Codcateiva
 	ENDCASE 
 	IF lntipoiva=3
 		*lcCuit=''
@@ -406,8 +419,12 @@ SCAN
 	ENDIF 
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))  	
-  	lcDireccion	= UPPER(CsrDeudor.direccion)
-  	lcCP		= LTRIM(lcCp)
+  	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
+  	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
+  	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
+  	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
+  	lcDireccion = lcDire_Calle + " " + lcDire_Nro + " P:"+ lcDire_Piso + " D:"+lcDire_Dpto
+  	*lcCP		= LTRIM(lcCp)
   	
   	lcTelefono	= LTRIM(CsrDeudor.telefono)
   	IF LEN(ALLTRIM(lcTelefono)) = 0
@@ -420,6 +437,9 @@ SCAN
   	IF LEN(ALLTRIM(CsrDeudor.CELULAR)) <> 0
   		lcObserva	= lcObserva + CHR(13) + "CELULAR: " +LTRIM(CsrDeudor.celular)
   	ENDIF 
+  	IF LEN(ALLTRIM(CsrDeudor.fax)) <> 0
+  		lcObserva	= lcObserva + CHR(13) + "FAX: " +LTRIM(CsrDeudor.fax)
+  	ENDIF 
   
   	lcFax		= LTRIM(CsrDeudor.fax)
   	&&Tenemos que agregar el otro telefono a observaciones
@@ -430,14 +450,15 @@ SCAN
   		
 	INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
 	,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
-	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
-	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
-	,totalizabonif,bonif1,fax,email,observa,cdatosfac,dni,otro01);
+	,ctabanco,ctaotro,inscriiibb,fecinsiibb,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
+	,bonif1,email,observa,cdatosfac,dni,cdirecalle,cdirenro,cdirepiso,cdiredpto);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
-	,lnconvenio,lndctalogistica,0,0,lnBonif1,lcFax,lcEmail,lcObserva,lcDatosFac,lcDNI,lcOtro01)
+	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI;
+	,lcDire_Calle,lcDire_Nro,lcDire_Piso,lcDire_Dpto)
 
 	lnid = lnid + 1
 	
