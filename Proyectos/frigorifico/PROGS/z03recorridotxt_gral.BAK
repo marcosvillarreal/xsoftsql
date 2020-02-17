@@ -202,8 +202,8 @@ SCAN FOR !EOF()
 		
 *	IF CsrRecorrido.carpeta#0
 		SELECT CsrVendedor
-		LOCATE FOR numero=VAL(CsrRecorrido.vendedor)
-		IF numero#VAL(CsrRecorrido.vendedor)
+		LOCATE FOR numero=VAL(CsrRecorrido.codvendedor)
+		IF numero#VAL(CsrRecorrido.codvendedor)
 			SELECT CsrRecorrido
 			LOOP
 		ENDIF 	
