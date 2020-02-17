@@ -130,7 +130,7 @@ DO WHILE NOT EOF()
 ENDDO 
 
 SELECT CsrRecorrido
-vista()
+*vista()
 
 LOCAL lnid
 

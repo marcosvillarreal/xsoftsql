@@ -14,8 +14,9 @@ codepage = 1252
 SET CPDIALOG ON
 
 Oavisar.proceso('S','Abriendo archivos') 
+
 llok = .t.
-llok = CargarTabla(lcData,'Ctacte',.t.)
+llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'TipoIva')
 *llok = CargarTabla(lcData,'CateCtacte',.t.)
 llok = CargarTabla(lcData,'Barrio',.t.)
@@ -94,6 +95,7 @@ DO WHILE NOT EOF()
 		j = 0
 	ELSE
 		IF !leiunarticulo
+			SKIP 
 			LOOP 
 		ENDIF 
 	ENDIF 
@@ -216,6 +218,7 @@ SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
 *VISTA()
+cCadeCtacte = ''
 
 *stop()
 SCAN 
@@ -224,7 +227,7 @@ SCAN
 		*stop()
 	ENDIF 
 	
-	lnCodigo = 20000 + VAL(CsrDeudor.codigo)
+	lnCodigo = 90000 + VAL(CsrDeudor.codigo)
 
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo

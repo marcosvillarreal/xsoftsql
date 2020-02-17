@@ -77,6 +77,7 @@ DO WHILE NOT EOF()
 		j = 0
 	ELSE
 		IF !leiunarticulo
+			SKIP 
 			LOOP 
 		ENDIF 
 	ENDIF 
@@ -186,7 +187,7 @@ SELECT CsrFuerzaVta
 GO TOP 
 lnidfuerzavta  = CsrFuerzaVta.id
 
-stop()
+*stop()
 SELECT CsrRecorrido
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
