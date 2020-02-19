@@ -38,11 +38,12 @@ RETURN
 *----------------------------------------
 FUNCTION pelocuit
 PARAMETERS lccuit
-lccuit=ALLTRIM(STRTRAN(lccuit,'-',''))
-lccuit=ALLTRIM(STRTRAN(lccuit,'/',''))
-lccuit=ALLTRIM(STRTRAN(lccuit,'.',''))
-lccuit=LEFT(lccuit+space(11),11)
-RETURN lccuit
+LOCAL cCuit
+cCuit=ALLTRIM(STRTRAN(lccuit,'-',''))
+cCuit=ALLTRIM(STRTRAN(cCuit,'/',''))
+cCuit=ALLTRIM(STRTRAN(cCuit,'.',''))
+cCuit=LEFT(cCuit+space(11),11)
+RETURN cCuit
 		
 function NNUEVOID(TCALIAS,tcnombreids)
 tcnombreids=iif(pcount()<2,'IDS',tcnombreids)
