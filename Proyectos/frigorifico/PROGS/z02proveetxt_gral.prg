@@ -202,97 +202,101 @@ ENDDO
 cCadeCtacte = "" 
 
 SELECT CsrLista
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_clientes.csv"
-APPEND FROM  &cArchivo SDF
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_proveedores.csv"
+IF FILE(cArchivo)
+	APPEND FROM  &cArchivo SDF
 
-lcDelimitador = ";"
-replace ALL deta01 WITH ALLTRIM(STRTRAN(deta01,"	",lcDelimitador))
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+	lcDelimitador = ";"
+	replace ALL deta01 WITH ALLTRIM(STRTRAN(deta01,"	",lcDelimitador))
+	replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+	replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
-Oavisar.proceso('S','Procesando '+alias()) 
+	Oavisar.proceso('S','Procesando '+alias()) 
 
-cCadeCtacte = "" 
+	cCadeCtacte = "" 
 
 
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
+	SELECT CsrLista
+	GO TOP 
+	*vista()
+	lnPrimeraOcurrencia = 1
+	leiunarticulo = .f.
 
-ldebug = .t.
+	ldebug = .t.
 
-*SKIP 
-*stop()
-DO WHILE NOT EOF()
-	lnCantCampo = 3 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+	*SKIP 
+	*stop()
+	DO WHILE NOT EOF()
+		lnCantCampo = 3 &&Hay un campo vacio
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = 1 &&Campos de CsrLista
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
 
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		SKIP 
-		LOOP 
-	ENDIF 
-	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcSaldo
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
+		IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
 			SKIP 
 			LOOP 
 		ENDIF 
-	ENDIF 
-	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+		
+		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+			leiunarticulo = .t.
+			STORE "" TO lcAcarreo
+			STORE "" TO lcCodigo,lcSaldo
+			
+			j = 0
+		ELSE
+			IF !leiunarticulo
+				SKIP 
+				LOOP 
+			ENDIF 
+		ENDIF 
+		
+		DO WHILE lnCamposLeidos<4
+			i = 1
+			DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+				lnpos = AT(lcDelimitador,&lcNomCampo,i)
+				IF lnPos#0 &&No es fin de linea
+					lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+					lcAcarreo = ""
+				ELSE 
+					lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+					EXIT 
+				ENDIF
+				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+				*lcSaldo		= UPPER(LimpiarCadena(IIF(j + i=3,STRTRAN(STRTRAN(lcCadena,'.',''),',','.'),lcSaldo)))
+				lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=3,strtran(lcCadena,'.',''),lcSaldo)))
+								
+				lnSiguienteOcurrencia = lnPos + 1
+				i = i + 1
+						
+			ENDDO 
+			lnSiguienteOcurrencia = 1
+			lnCamposLeidos = lnCamposLeidos + 1
+			lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+			IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+				 j = j + (i - 1)
+			ENDIF 
+			IF lnpos#0 AND i+j >= lnCantCampo
 				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			*lcSaldo		= UPPER(LimpiarCadena(IIF(j + i=3,STRTRAN(STRTRAN(lcCadena,'.',''),',','.'),lcSaldo)))
-			lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=3,strtran(lcCadena,'.',''),lcSaldo)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-					
+			ENDIF 
 		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
 
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		lcSaldo = STRTRAN(lcSaldo,',','.')
-		INSERT INTO CsrSaldos (Codigo,Saldo) ;
-		values (lcCodigo,lcSaldo)
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
-	ENDIF 
-	SKIP IN CsrLista
-ENDDO 
+		IF lnpos#0 AND i+j >= lnCantCampo
+			&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+			&&Que se grabaran en csrarti.
+			&&Esta diseñado para leer hasta los precios.
+			&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+			lcSaldo = STRTRAN(lcSaldo,',','.')
+			INSERT INTO CsrSaldos (Codigo,Saldo) ;
+			values (lcCodigo,lcSaldo)
+					
+			*replace descripcion WITH lmDescripcion IN FsrArticulo
+			leiunarticulo = .f.
+		ENDIF 
+		SKIP IN CsrLista
+	ENDDO 
+ELSE
+	oavisar.usuario('El saldo no se importara, no existe el archivo')
+ENDIF 
 
 SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
 
@@ -344,10 +348,10 @@ SELECT CsrListaPrecio
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
+VISTA()
 cCadeCtacte = ''
 
-*stop()
+stop()
 SCAN 
 	
 	IF VAL(codigo)=1
