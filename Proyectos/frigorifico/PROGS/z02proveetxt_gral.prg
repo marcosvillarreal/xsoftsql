@@ -89,6 +89,11 @@ replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
 replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
 replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
+cRutaTemp  =SYS(5)+CURDIR()+'Temporal'
+IF !DIRECTORY(cRutaTemp)
+	MKDIR SYS(5)+CURDIR()+'Temporal'
+ENDIF 
+
 
 SELECT CsrLista
 GO TOP 
@@ -195,6 +200,14 @@ DO WHILE NOT EOF()
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
+		
+		
+		cRuta = ADDBS(cRutaTemp)+"Temporal.XML"
+
+		SET SAFETY OFF 
+		CursorAdapterToXML('CsrDeudor',cRuta)
+		SET SAFETY ON 
+
 	ENDIF 
 	SKIP 
 ENDDO 
