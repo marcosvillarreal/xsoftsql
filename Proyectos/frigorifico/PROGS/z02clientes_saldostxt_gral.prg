@@ -116,7 +116,7 @@ DO WHILE NOT EOF()
 			ENDIF
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
 			*lcSaldo		= UPPER(LimpiarCadena(IIF(j + i=3,STRTRAN(STRTRAN(lcCadena,'.',''),',','.'),lcSaldo)))
-			lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=3,strtran(lcCadena,'.',''),lcSaldo)))
+			lcSaldo			= UPPER((IIF(j + i=3,strtran(lcCadena,'.',''),lcSaldo)))
 							
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1

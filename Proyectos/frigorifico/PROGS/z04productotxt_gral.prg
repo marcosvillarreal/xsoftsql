@@ -112,7 +112,8 @@ SCAN
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
 			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcProveedor)))
 			lcAlicuota		= IIF(j + i=9,lcCadena,lcalicuota)
-							
+			lcIdJaque		= IIF(j + i=2,lcCadena,lcIdJaque)				
+			
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 		ENDDO 
@@ -145,8 +146,10 @@ SCAN
 	ENDIF 
 ENDSCAN 
 
-
+SET SAFETY OFF 
 SELECT CsrLista
+ZAP 
+SET SAFETY ON 
 cArchivo = ALLTRIM(lcpath )+"\precios.csv"
 APPEND FROM  &cArchivo SDF
 
@@ -165,7 +168,6 @@ GO TOP
 *vista()
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
-
 *STOP()
 SCAN 
 	lnCantCampo = 6 &&Hay un campo vacio
@@ -201,7 +203,7 @@ SCAN
 			ENDIF
 			lcCodigo	= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
 			lcLista		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLista)))
-			lcCosto		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcCosto)))
+			lcCosto		= UPPER((IIF(j + i=6,lcCadena,lcCosto)))
 							
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -223,8 +225,8 @@ SCAN
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		
-		INSERT INTO CsrArticulo (Codigo,Lista,Costo);
+		lcCosto = STRTRAN(lcCosto,',','.')
+		INSERT INTO CsrPRecio (Codigo,Lista,Costo);
 		values (lcCodigo,lcLista,lcCosto)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
@@ -232,8 +234,8 @@ SCAN
 	ENDIF 
 ENDSCAN
 
-SELECT CsrArticulo
-vista()
+SELECT CsrPrecio
+*vista()
 
 lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
 lncodrubro = 1
@@ -327,10 +329,11 @@ SCAN FOR !EOF()
 *!*		lnprevtaf3	= VAL(CsrArticulo.prevtaf3)
 *!*		lnUtil3		= IIF(lnCosto=0,0,round(lnprevta3 * 100 / lnCosto,3) - 100)
 *!*		lnUtil4		= 0
-*!*		lnPeso		= 0					
+*!*		lnPeso		= 0
+					
 	SELECT CsrPrecio
-	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.idjaque)
-	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.idjaque)
+	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=1
+	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=1
 		lnCosto		= VAL(CsrPrecio.costo)
 		lnCostoBon	= lnCosto
 		
@@ -346,7 +349,7 @@ SCAN FOR !EOF()
 	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
 	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctavta;
-	,idenvase,fleteporce,refotro); 	
+	,idenvase,fleteporce); 	
 	values (lnid, lncodigo, lcnombre, lccodarti, lnidiva, lncosto,	;
 	lnutil1, lnprevta1, lnutil2, lnprevta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
 	lnprevta3, 0,0,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
@@ -355,13 +358,15 @@ SCAN FOR !EOF()
 	lnsugerido,1,lnsireparto,"",0, 0,;
 	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
 	,lnidctacpra,lnidctavta;
-	,lnidenvase,lnfleteporce,CsrArticulo.idjaque)		
+	,lnidenvase,lnfleteporce)		
 
 	lnid = lnid + 1
 
 	SELECT CsrArticulo   				
 ENDSCAN
+
 SELECT CsrProducto
+GO TOP 
 vista()
 
    	
