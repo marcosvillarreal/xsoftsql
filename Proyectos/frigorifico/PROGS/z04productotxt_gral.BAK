@@ -50,7 +50,7 @@ store 0 to lnidrubro, lnidmarca ,lncodrubro
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
-		,Alicuota c(8),IdJAque n(10))
+		,Alicuota c(8),IdJAque c(10))
 
 
 SELECT CsrLista
@@ -69,11 +69,11 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 
-STOP()
+*STOP()
 SCAN 
 	lnCantCampo = 9 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -190,9 +190,10 @@ SCAN FOR !EOF()
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
 	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
+	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso
 	
 	SELECT CsrCtacte
-    LOCATE FOR VAL(otro01)=VAL(Csrarticulo.proveedor)
+    LOCATE FOR VAL(refotro)=VAL(Csrarticulo.proveedor)
     IF FOUND()
     	lnidctacte = Csrctacte.id
     ENDIF

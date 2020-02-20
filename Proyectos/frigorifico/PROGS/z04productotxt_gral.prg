@@ -50,7 +50,8 @@ store 0 to lnidrubro, lnidmarca ,lncodrubro
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
-		,Alicuota c(8),IdJAque n(10))
+		,Alicuota c(8),IdJAque c(10))
+CREATE CURSOR CsrPrecio (Codigo c(8),Lista c(8), Costo c(15))
 
 
 SELECT CsrLista
@@ -69,11 +70,11 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 
-STOP()
+*STOP()
 SCAN 
 	lnCantCampo = 9 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -145,6 +146,92 @@ SCAN
 ENDSCAN 
 
 
+SELECT CsrLista
+cArchivo = ALLTRIM(lcpath )+"\precios.csv"
+APPEND FROM  &cArchivo SDF
+
+lcDelimitador = ";"
+replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
+replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+
+Oavisar.proceso('S','Procesando '+alias()) 
+
+cCadeCtacte = "" 
+
+
+SELECT CsrLista
+GO TOP 
+*vista()
+lnPrimeraOcurrencia = 1
+leiunarticulo = .f.
+
+*STOP()
+SCAN 
+	lnCantCampo = 6 &&Hay un campo vacio
+	lnSiguienteOcurrencia = 1
+	lnCamposLeidos = 1 &&Campos de CsrLista
+	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+
+	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		LOOP 
+	ENDIF 
+	
+	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+		leiunarticulo = .t.
+		STORE "" TO lcAcarreo
+		STORE "" TO lcCodigo,lcLista,lcCosto
+		j = 0
+	ELSE
+		IF !leiunarticulo
+			LOOP 
+		ENDIF 
+	ENDIF 
+	
+	DO WHILE lnCamposLeidos<4
+		i = 1
+		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+			lnpos = AT(lcDelimitador,&lcNomCampo,i)
+			IF lnPos#0 &&No es fin de linea
+				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+				lcAcarreo = ""
+			ELSE 
+				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+				EXIT 
+			ENDIF
+			lcCodigo	= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcLista		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLista)))
+			lcCosto		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcCosto)))
+							
+			lnSiguienteOcurrencia = lnPos + 1
+			i = i + 1
+		ENDDO 
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = lnCamposLeidos + 1
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+			 j = j + (i - 1)
+		ENDIF 
+		IF lnpos#0 AND i+j >= lnCantCampo
+			EXIT 
+		ENDIF 
+	ENDDO 
+
+	IF lnpos#0 AND i+j >= lnCantCampo
+		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+		&&Que se grabaran en csrarti.
+		&&Esta diseñado para leer hasta los precios.
+		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+		
+		
+		INSERT INTO CsrArticulo (Codigo,Lista,Costo);
+		values (lcCodigo,lcLista,lcCosto)
+				
+		*replace descripcion WITH lmDescripcion IN FsrArticulo
+		leiunarticulo = .f.
+	ENDIF 
+ENDSCAN
+
 SELECT CsrArticulo
 vista()
 
@@ -190,6 +277,7 @@ SCAN FOR !EOF()
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
 	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
+	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso
 	
 	SELECT CsrCtacte
     LOCATE FOR VAL(refotro)=VAL(Csrarticulo.proveedor)
@@ -228,24 +316,7 @@ SCAN FOR !EOF()
 	ldfechaulcpr 	= ldfecha
 	ldfechamodf 	= CTOD('01-01-1900') &&CTOD(CsrArticulo.fecModf)
 	ldfechabonif	= CTOD('01-01-1900') &&GOMONTH(ldfecha,360*20)
-	
-*!*		lnCosto		= VAL(CsrArticulo.costosiva)
-*!*		lnCostoBon	= lnCosto
-*!*		
-*!*		lnUtil1		= INT(VAL(CsrArticulo.Util))
-*!*		lnprevta1	= lnCosto * lnUtil1	&&VAL(Csrarticulo.prevta1)
-*!*		lnprevtaf1	= lnprevta1 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-*!*		lnUtil2		= INT(VAL(CsrArticulo.Util2))
-*!*		lnprevta2	= lnCosto * lnUtil2	&&VAL(Csrarticulo.prevta1)
-*!*		lnprevtaf2	= lnprevta2 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-*!*		lnUtil3		= INT(VAL(CsrArticulo.Util3))
-*!*		lnprevta3	= lnCosto * lnUtil3	&&VAL(Csrarticulo.prevta1)
-*!*		lnprevtaf3	= lnprevta3 * (1+lnTasa/100) &&VAL(CsrArticulo.prevtaf1)
-	
-	lnUtil4		= 0
-	lnPeso		= 0			
-	
-	
+			
 *!*		lnprevta1	= VAL(Csrarticulo.prevta1)
 *!*		lnprevtaf1	= VAL(CsrArticulo.prevtaf1)
 *!*		lnUtil1		= IIF(lnCosto=0,0,round(lnprevta1 * 100 / lnCosto,3) - 100)
@@ -257,6 +328,17 @@ SCAN FOR !EOF()
 *!*		lnUtil3		= IIF(lnCosto=0,0,round(lnprevta3 * 100 / lnCosto,3) - 100)
 *!*		lnUtil4		= 0
 *!*		lnPeso		= 0					
+	SELECT CsrPrecio
+	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.idjaque)
+	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.idjaque)
+		lnCosto		= VAL(CsrPrecio.costo)
+		lnCostoBon	= lnCosto
+		
+		lnUtil1		= 0
+		lnprevta1	= lnCostoBon
+		lnprevtaf1	= lnprevta1*IIF(lnTasa=0,21,10.5)
+		
+	ENDIF 
 	
 	INSERT INTO Csrproducto (id,numero,nombre,codalfa,idiva,costo,margen1,prevta1,margen2,; 
 	prevta2,switch,idunidad,idtprod,idtamano,idcatego,idubicacio,idorigen,incluirped,idctacte,idrubro,margen3,;
