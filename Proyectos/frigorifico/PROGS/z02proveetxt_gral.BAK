@@ -1,5 +1,5 @@
-PARAMETERS ldvacio,lcpath,lcBase
-ldvacio = IIF(PCOUNT()<1,"",ldvacio)
+PARAMETERS ldfecha,lcpath,lcBase
+ldfecha = IIF(PCOUNT()<1,"",ldfecha)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase
 
@@ -137,28 +137,27 @@ DO WHILE NOT EOF()
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
-			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDirePiso)))
-			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono)))			
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCodCateIVA)))
-			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcTipoIVA)))
-			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcIngBrutos)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcDocumento)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))	
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
+			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
+			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDirePiso)))
+			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireDpto)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcLocalidad)))
+			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcProvincia)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcTelefono)))			
+			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCodCateIVA)))
+			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcTipoIVA)))
+			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcIngBrutos)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcDocumento)))
 			lcTipoDoc		= 'CUIT'
 			
-			lcCBU			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcCBU)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcTelefono2)))
-			lcGanancia		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcGanancia)))
-			lcCodGan		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcCodGan)))
-			lcPlanPago		= UPPER(LimpiarCadena(IIF(j + i=24,lcCadena,lcPlanPago)))
-			lcDiasVto		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcDiasVto)))
+			lcCBU			= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCBU)))
+			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTelefono2)))
+			lcGanancia		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcGanancia)))
+			lcCodGan		= UPPER(LimpiarCadena(IIF(j + i=24,lcCadena,lcCodGan)))
+			lcPlanPago		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcPlanPago)))
+			lcDiasVto		= UPPER(LimpiarCadena(IIF(j + i=26,lcCadena,lcDiasVto)))
 										
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -188,11 +187,11 @@ DO WHILE NOT EOF()
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
-		,CodCateIVA,CodGan,PlanPago,DiasVto,Ganancia) ;
+		,CodCateIVA,CodGan,PlanPago,DiasVto,Ganancia,Otro01) ;
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,"","",0,lcDireNro,lcDirePiso,lcDireDpto,"",lcEstado;
-		,0,VAL(lcCodCateIVA),VAL(lcCodGan),VAL(lcPlanPago),VAL(lcDiasVto),VAL(lcGanancia))
+		,0,VAL(lcCodCateIVA),VAL(lcCodGan),VAL(lcPlanPago),VAL(lcDiasVto),VAL(lcGanancia),CsrDeudor.Codigo)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
