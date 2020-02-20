@@ -353,26 +353,59 @@ ldfechas	=DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
 
 lnidpadron = RecuperarID('CsrPadronAfip',Goapp.sucursal10)
 
+SET SAFETY OFF 
+&&Limpiamos los antiguos proveedores
+DELETE FROM CsrCtacte WHERE ctaacreedor = 1
+SELECT CsrCtacte
+PACK 
+SET SAFETY ON 
+
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 SELECT distinct UPPER(lista) as nombre FROM CsrDeudor INTO CURSOR CsrListaPrecio
 SELECT CsrListaPrecio
 
+
+
+SELECT CsrCtacte
+GO TOP 
+lnNroCta = VAL(CsrCtacte.cnumero)
+lnUltNroCta = lnNroCta
+
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-VISTA()
+*VISTA()
 cCadeCtacte = ''
 
-*stop()
+stop()
 SCAN 
 	
 	IF VAL(codigo)=1
 		*stop()
 	ENDIF 
 	
-	lnCodigo = 90000 + VAL(CsrDeudor.codigo)
-
+	SELECT CsrCtacte
+	LOCATE FOR VAL(cnumero) = lnUltNroCta
+	IF lnNroCta+1>= lnUltNroCta
+		lnNroCta = lnUltNroCta
+		lHueco = .f.
+		SKIP 
+		DO WHILE NOT EOF() AND NOT lHueco
+			
+			lnNroCta = lnNroCta + 1 
+			IF lnNroCta <>VAL(CsrCtacte.cnumero)
+				lHueco = .t.
+				lnUltNroCta = VAL(CsrCtacte.cnumero)
+			ENDIF 
+			SKIP 
+		ENDDO 
+	ELSE
+		lnNroCta = lnNroCta + 1 
+	ENDIF 
+	*lnCodigo = 90000 + VAL(CsrDeudor.codigo)
+	lnCodigo = lnNroCta
+	
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
  	IF VAL(cnumero) = lnCodigo
