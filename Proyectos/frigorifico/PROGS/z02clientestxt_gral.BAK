@@ -1,5 +1,5 @@
-PARAMETERS ldfecha,lcpath,lcBase
-ldFECHA = IIF(PCOUNT()<1,"",ldFECHA)
+PARAMETERS ldvacio,lcpath,lcBase
+ldvacio = IIF(PCOUNT()<1,"",ldvacio)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase
 
@@ -22,46 +22,13 @@ llok = CargarTabla(lcData,'Barrio',.t.)
 llok = CargarTabla(lcData,'PlanCue')
 llok = CargarTabla(lcData,'Sucursal',.t.)
 *!*	llok = CargarTabla(lcData,'PadronAfip',.t.)
-llok = CargarTabla(lcData,'MovCtacte')
-llok = CargarTabla(lcData,'Maopera')
+
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 
-TEXT TO lccmd TEXTMERGE NOSHOW 
-SELECT CsrParaConta.* FROM ParaConta as CsrParaConta
-where idejercicio = <<goapp.idejercicio>>
-ENDTEXT 
-IF !CrearCursorAdapter('CsrParaConta',lccmd)
-	MESSAGEBOX('Nose puede importar, pq no cargado el CsrParaConta')
-	RETURN .f.
-ENDIF 
-&&Tomamos la primera caja
-TEXT TO lccmd TEXTMERGE NOSHOW 
-SELECT TOP 1 CsrDetaNroCaja.* FROM DetaNroCaja as CsrDetaNroCaja
-order by nrocaja
-ENDTEXT 
-IF !CrearCursorAdapter('CsrDetaNroCaja',lccmd) 
-	MESSAGEBOX('Nose puede importar, pq no puede cargar el CsrDetaNroCaja')
-	RETURN .f.
-ENDIF 
-IF RECCOUNT('CsrDetaNroCaja')=0
-	MESSAGEBOX('Nose puede importar, pq no hay datos en CsrDetaNroCaja')
-	RETURN .f.
-ENDIF	
-lniddetanrocaja = CsrDetaNroCaja.id
-
-*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
-*!*	SELECT CsrConceptoGan.* FROM ConceptoGan as CsrConceptoGan
-*!*	ENDTEXT
-*!*	=CrearCursorAdapter('CsrConceptoGan',lcCmd)
-
-*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
-*!*	SELECT CsrCateGan.* FROM CateGan as CsrCateGan
-*!*	ENDTEXT
-*!*	=CrearCursorAdapter('CsrCateGan',lcCmd)
 
 SET SAFETY ON
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
@@ -71,7 +38,6 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1))
 
-CREATE CURSOR CsrSaldos (Codigo c(8),Saldo c(20))
 
 
 		
@@ -102,7 +68,7 @@ ldebug = .t.
 *SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 22 &&Hay un campo vacio
+	lnCantCampo = 23 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -139,25 +105,25 @@ DO WHILE NOT EOF()
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDocumento)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
-			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDirePiso)))
-			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcTelefono)))
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCodCateIVA)))
-			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcTipoIVA)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDocumento)))
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireccion)))
+			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireNro)))
+			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDirePiso)))
+			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcDireDpto)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcLocalidad)))
+			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcProvincia)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcTelefono)))
+			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCodCateIVA)))
+			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTipoIVA)))
 			*lcCategoria	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCategoria)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTelefono2)))
-			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcEstado)))
-			lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcCodLista)))
-			lcLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcLista)))
-			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCodVendedor)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcVendedor)))
+			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcTelefono2)))
+			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcEstado)))
+			lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcCodLista)))
+			lcLista			= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcLista)))
+			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcCodVendedor)))
+			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcVendedor)))
 			
 			*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
 			*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
@@ -213,114 +179,6 @@ DO WHILE NOT EOF()
 	SKIP IN CsrLista
 ENDDO 
 
-SELECT CsrLista
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_clientes.csv"
-APPEND FROM  &cArchivo SDF
-
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
-
-Oavisar.proceso('S','Procesando '+alias()) 
-
-cCadeCtacte = "" 
-
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-ldebug = .t.
-
-*SKIP 
-*stop()
-DO WHILE NOT EOF()
-	lnCantCampo = 22 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 3 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		SKIP 
-		LOOP 
-	ENDIF 
-	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcSaldo
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			SKIP 
-			LOOP 
-		ENDIF 
-	ENDIF 
-	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-					
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-
-		INSERT INTO CsrSaldos (Codigo,Saldo) ;
-		values (lcCodigo,VAL(lcSaldo))
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
-	ENDIF 
-	SKIP IN CsrLista
-ENDDO 
-
-*fecha de importacion
-*ldfecha		=CTOD(lcfecha)
-lcfiscal	=ALLTRIM(STR(YEAR(ldfecha)))+ALLTRIM(STRzero(MONTH(ldfecha),2,0))+ALLTRIM(STRzero(DAY(ldfecha),2,0))
-
-lnidmaopera		= RecuperarID('CsrMaopera',Goapp.sucursal10)
-lnidrenCtacte	= RecuperarID('CsrRenCtacte',Goapp.sucursal10)
-lnidmovctacte	= RecuperarID('CsrMovCtacte',Goapp.sucursal10)
-lnidcabefac		= RecuperarID('CsrCabefac',Goapp.sucursal10)
-lindtablaimp	= RecuperarID('CsrTablaImp',Goapp.sucursal10)
-lnidmovcaja		= RecuperarID('CsrMovCaja',Goapp.sucursal10)
-lnidmovbcocar	= RecuperarID('CsrMovBcocar',Goapp.sucursal10)
-
-ldfechasis	=DATETIME(YEAR(ldfecha),MONTH(ldfecha),DAY(ldfecha),0,0,0)
-ldfechas	=DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
-
-
 SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
 
 SELECT CsrCiudad
@@ -352,9 +210,6 @@ SCAN
 	ENDIF 
 	
 	lnCodigo = VAL(CsrDeudor.codigo)
-	IF CsrDeudor.ctadeudor = 0
-		lnCodigo = 20000+lnCodigo
-	ENDIF 
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
  	IF VAL(cnumero) = lnCodigo
@@ -466,49 +321,6 @@ SCAN
 	
 	lnid = lnid + 1
 	
-	SELECT CsrSaldos
-	LOCATE FOR VAL(Codigo)=VAL(lcNumero)
-	IF VAL(Codigo)=VAL(lcNumero)
-		lnSaldo = CsrSaldos.saldo
-	
-		&&Debemos insertar un movimiento de interno para generar saldos
-		lnsigno=1
-		replace saldoant WITH 0, saldo WITH lnSaldo IN CsrCtacte
-		ldfechas=ldfechasis
-		lnidcomproba=36
-		lcclasecomp="F"
-		IF lnSaldo<0
-			lnsigno=-1
-			lnidcomproba=37
-			lcclasecomp="G"
-		ENDIF
-		lnimporte		= lnSaldo*lnsigno
-		lcletra			= "X"
-		lcnum			= strtran(str(VAL(CsrCtacte.cnumero),8,0),' ','0')
-		lcnumero		= lcletra+"0000"+lcnum
-		lcswitch		= "00000"
-		lnSaldo			= ABS(lnSaldo)
-		lcctacte		= CsrCtacte.cnumero
-		lnidctacte		= CsrCtacte.id
-		ldfechaserver	= DATETIME()
-		ldfechasis		= FechaHoraCero(ldfechaserver)
-		
-		INSERT INTO CsrMaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor;
-		,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja,idcotizadolar,switch,estado,detalle;
-		,fechaserver);
-		VALUES (lnidmaopera,"MOV","IMPORTACIÓN MOVIMIENTOS",goapp.sucursal,goapp.terminal,1,ldfechasis;
-		,1,0,lniddetanrocaja,lnidcomproba,lcnumero,lcclasecomp,1,1,1,lcswitch,"0";
-		,"Importación. Compactación Mov Cliente.",ldfechaserver)
-		
-		lcswitch		= "00100"
-		INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
-		,entrega,vencimien,total,detalle,pefiscal,switch,signo);
-		VALUES (lnidmovctacte,lnidmaopera,ldfecha-1,lcctacte,lnidctacte," ",0,1,ABS(lnimporte);
-		,lnSaldo,0,ldfecha-1,ABS(lnimporte),"Saldo de Importación",SUBSTR(lcfiscal,1,6),lcswitch,lnsigno)
-		
-		lnidmovctacte=lnidmovctacte+1
-		lnidmaopera=lnidmaopera+1
-	ENDIF
 	
 	SELECT CsrDeudor           
 ENDSCAN

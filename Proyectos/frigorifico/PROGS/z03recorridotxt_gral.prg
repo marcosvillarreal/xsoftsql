@@ -72,7 +72,7 @@ DO WHILE NOT EOF()
 	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
 		leiunarticulo = .t.
 		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcCodVendedor,lcVendedor,lcLocalidad
+		STORE "" TO lcCodigo,lcCodVendedor,lcVendedor,lcLocalidad,lcZona
 		
 		j = 0
 	ELSE
@@ -93,10 +93,11 @@ DO WHILE NOT EOF()
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcLocalidad)))
-			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCodVendedor)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcVendedor)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodigo)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcLocalidad)))
+			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcCodVendedor)))
+			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcVendedor)))
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcZona)))
 			
 			
 			lnSiguienteOcurrencia = lnPos + 1
