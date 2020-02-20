@@ -72,7 +72,7 @@ leiunarticulo = .f.
 ldebug = .t.
 
 *SKIP 
-stop()
+*stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 22 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -353,7 +353,7 @@ SELECT CsrListaPrecio
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-VISTA()
+*VISTA()
 
 *stop()
 SCAN 
