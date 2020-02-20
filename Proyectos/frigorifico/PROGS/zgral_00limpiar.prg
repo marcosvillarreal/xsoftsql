@@ -38,7 +38,7 @@ llok = CargarTabla(lcData,'MovBcocar',.t.)
 llok = CargarTabla(lcData,'FuerzaVta',.t.)
 llok = CargarTabla(lcData,'CabeAsi',.t.)
 llok = CargarTabla(lcData,'AfeBcocar',.t.)
-llok = CargarTabla(lcData,'DetaNroCaja',.t.)
+*llok = CargarTabla(lcData,'DetaNroCaja',.t.)
 llok = CargarTabla(lcData,'AfeCtacte',.t.)
 llok = CargarTabla(lcData,'CabeOrd',.t.)
 llok = CargarTabla(lcData,'CuerOrd',.t.)
@@ -51,37 +51,37 @@ ENDIF
 
 LOCAL lnid
 lnid 			= RecuperarID('CsrFuerzaVta',Goapp.sucursal10)
-lniddetanrocaja = RecuperarID('CsrDetanroCaja',Goapp.sucursal10)
+*lniddetanrocaja = RecuperarID('CsrDetanroCaja',Goapp.sucursal10)
 
 INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,1,"FUERZA VTA 1")
 lnid = lnid + 1 
 INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,2,"FUERZA VTA 2")
 
-STORE 0 TO lnidejercicio,lndebe,lnhaber,lnsaldo,lnnrocaja
-STORE "" TO lcpefiscal,lcswitch
-STORE CTOD('01-01-1900') TO ldfecdesde,ldfechasta
+*!*	STORE 0 TO lnidejercicio,lndebe,lnhaber,lnsaldo,lnnrocaja
+*!*	STORE "" TO lcpefiscal,lcswitch
+*!*	STORE CTOD('01-01-1900') TO ldfecdesde,ldfechasta
 
-lniddetanrocaja = RecuperarID('CsrDetanroCaja',Goapp.sucursal10)
-lnidejercicio	= CsrParaConta.idejercicio
-lnnrocaja		= VAL(DTOS(CTOD(lcfecha)))
-lcpefiscal		= LEFT(STR(lnnrocaja,8),6)
-ldfecdesde		= CTOD('01-01-'+RIGHT(lcfecha,4))
-ldfechasta		= CTOD(lcfecha)
-lndebe			= 0
-lnhaber			= 0
-lnsaldo			= 0
-lcswitch		= "1000000000"
+*!*	lniddetanrocaja = RecuperarID('CsrDetanroCaja',Goapp.sucursal10)
+*!*	lnidejercicio	= CsrParaConta.idejercicio
+*!*	lnnrocaja		= VAL(DTOS(CTOD(lcfecha)))
+*!*	lcpefiscal		= LEFT(STR(lnnrocaja,8),6)
+*!*	ldfecdesde		= CTOD('01-01-'+RIGHT(lcfecha,4))
+*!*	ldfechasta		= CTOD(lcfecha)
+*!*	lndebe			= 0
+*!*	lnhaber			= 0
+*!*	lnsaldo			= 0
+*!*	lcswitch		= "1000000000"
 
-lnSaldo			= 0&&CsrCajas.saldo
+*!*	lnSaldo			= 0&&CsrCajas.saldo
 
 
-INSERT INTO Csrdetanrocaja(id,idejercicio,nrocaja,pefiscal,fecdesde,fechasta,debe,haber,saldo,switch);
-VALUES(lniddetanrocaja,lnidejercicio,lnnrocaja,lcpefiscal,ldfecdesde,ldfechasta,lndebe,lnhaber;
-,lnsaldo,lcswitch)
+*!*	INSERT INTO Csrdetanrocaja(id,idejercicio,nrocaja,pefiscal,fecdesde,fechasta,debe,haber,saldo,switch);
+*!*	VALUES(lniddetanrocaja,lnidejercicio,lnnrocaja,lcpefiscal,ldfecdesde,ldfechasta,lndebe,lnhaber;
+*!*	,lnsaldo,lcswitch)
 
-oavisar.usuario('En enviar datos la opcion 1, asi los movimientos seran grabados en la caja numero '+ STR(lnnrocaja,8);
-+"."+CHR(13)+"Si desea importar los movimientos a otra caja. Abra una nueva caja en el sistema.";
-+CHR(13)+"Recuerde que la caja se captura del sistema nuevo.")
+*!*	oavisar.usuario('En enviar datos la opcion 1, asi los movimientos seran grabados en la caja numero '+ STR(lnnrocaja,8);
+*!*	+"."+CHR(13)+"Si desea importar los movimientos a otra caja. Abra una nueva caja en el sistema.";
+*!*	+CHR(13)+"Recuerde que la caja se captura del sistema nuevo.")
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

@@ -44,8 +44,6 @@ llok = CargarTabla(lcData,'CabeOrd',.t.)
 llok = CargarTabla(lcData,'CuerOrd',.t.)
 llok = CargarTabla(lcData,'CuerVariOrd',.t.)
 
-USE ALLTRIM(lcpath)+"\gestion\cajas" IN 0 ALIAS CsrCajas EXCLUSIVE 
-
 SET SAFETY ON
 IF !llok
 	RETURN .f.
@@ -74,11 +72,8 @@ lnhaber			= 0
 lnsaldo			= 0
 lcswitch		= "1000000000"
 
-SELECT CsrCajas
-GO BOTTOM 
-
 lnSaldo			= 0&&CsrCajas.saldo
-USE IN CsrCajas
+
 
 INSERT INTO Csrdetanrocaja(id,idejercicio,nrocaja,pefiscal,fecdesde,fechasta,debe,haber,saldo,switch);
 VALUES(lniddetanrocaja,lnidejercicio,lnnrocaja,lcpefiscal,ldfecdesde,ldfechasta,lndebe,lnhaber;

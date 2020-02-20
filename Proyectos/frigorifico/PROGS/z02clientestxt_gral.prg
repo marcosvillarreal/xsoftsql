@@ -1,5 +1,5 @@
 PARAMETERS ldfecha,lcpath,lcBase
-ldvacio = IIF(PCOUNT()<1,"",ldvacio)
+ldFECHA = IIF(PCOUNT()<1,"",ldFECHA)
 lcpath = IIF(PCOUNT()<2,"",lcpath)
 lcData = lcBase
 
@@ -306,16 +306,11 @@ DO WHILE NOT EOF()
 ENDDO 
 
 *fecha de importacion
-ldfecha		=CTOD(lcfecha)
+*ldfecha		=CTOD(lcfecha)
 lcfiscal	=ALLTRIM(STR(YEAR(ldfecha)))+ALLTRIM(STRzero(MONTH(ldfecha),2,0))+ALLTRIM(STRzero(DAY(ldfecha),2,0))
 
 lnidmaopera		= RecuperarID('CsrMaopera',Goapp.sucursal10)
-lnidrenCtacte	= RecuperarID('CsrRenCtacte',Goapp.sucursal10)
 lnidmovctacte	= RecuperarID('CsrMovCtacte',Goapp.sucursal10)
-lnidcabefac		= RecuperarID('CsrCabefac',Goapp.sucursal10)
-lindtablaimp	= RecuperarID('CsrTablaImp',Goapp.sucursal10)
-lnidmovcaja		= RecuperarID('CsrMovCaja',Goapp.sucursal10)
-lnidmovbcocar	= RecuperarID('CsrMovBcocar',Goapp.sucursal10)
 
 ldfechasis	=DATETIME(YEAR(ldfecha),MONTH(ldfecha),DAY(ldfecha),0,0,0)
 ldfechas	=DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
