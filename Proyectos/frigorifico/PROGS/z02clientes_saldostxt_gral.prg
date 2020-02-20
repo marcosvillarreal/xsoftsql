@@ -161,7 +161,7 @@ lnidmovctacte	= RecuperarID('CsrMovCtacte',Goapp.sucursal10)
 ldfechasis	=DATETIME(YEAR(ldfecha),MONTH(ldfecha),DAY(ldfecha),0,0,0)
 ldfechas	=DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
 
-stop()
+*stop()
 SELECT CsrSaldos
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP

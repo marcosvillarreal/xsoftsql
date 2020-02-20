@@ -175,11 +175,10 @@ SCAN
 
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
- 	IF VAL(cnumero) = lnCodigo
+ 	IF VAL(cnumero) <> lnCodigo
  		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrSaldos.codigo)
  		SELECT CsrSaldos
- 		LOOP 
- 		
+ 		LOOP  		
  	ENDIF 
 
 	lnSaldo = VAL(CsrSaldos.saldo)

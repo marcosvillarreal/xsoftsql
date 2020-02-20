@@ -142,27 +142,27 @@ DO WHILE NOT EOF()
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))	
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
-			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDirePiso)))
-			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcTelefono)))			
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCodCateIVA)))
-			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcTipoIVA)))
-			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcIngBrutos)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcDocumento)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))	
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDireccion)))
+			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
+			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDirePiso)))
+			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireDpto)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=09,lcCadena,lcLocalidad)))
+			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcProvincia)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono)))			
+			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCodCateIVA)))
+			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcTipoIVA)))
+			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcIngBrutos)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcDocumento)))
 			lcTipoDoc		= 'CUIT'
 			
-			lcCBU			= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCBU)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTelefono2)))
-			lcGanancia		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcGanancia)))
-			lcCodGan		= UPPER(LimpiarCadena(IIF(j + i=24,lcCadena,lcCodGan)))
-			lcPlanPago		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcPlanPago)))
-			lcDiasVto		= UPPER(LimpiarCadena(IIF(j + i=26,lcCadena,lcDiasVto)))
+			lcCBU			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcCBU)))
+			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcTelefono2)))
+			lcGanancia		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcGanancia)))
+			lcCodGan		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcCodGan)))
+			lcPlanPago		= UPPER(LimpiarCadena(IIF(j + i=24,lcCadena,lcPlanPago)))
+			lcDiasVto		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcDiasVto)))
 										
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -202,11 +202,11 @@ DO WHILE NOT EOF()
 		leiunarticulo = .f.
 		
 		
-		cRuta = ADDBS(cRutaTemp)+"Temporal.XML"
+*!*			cRuta = ADDBS(cRutaTemp)+"Temporal.XML"
 
-		SET SAFETY OFF 
-		CursorAdapterToXML('CsrDeudor',cRuta)
-		SET SAFETY ON 
+*!*			SET SAFETY OFF 
+*!*			CursorAdapterToXML('CsrDeudor',cRuta)
+*!*			SET SAFETY ON 
 
 	ENDIF 
 	SKIP 
@@ -361,7 +361,7 @@ SELECT CsrListaPrecio
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-VISTA()
+*VISTA()
 cCadeCtacte = ''
 
 stop()
@@ -371,8 +371,21 @@ SCAN
 		*stop()
 	ENDIF 
 	
-	lnCodigo = 90000 + VAL(CsrDeudor.codigo)
-
+	SELECT CsrCtacte
+	GO TOP 
+	lHueco = .f.
+	lnNumero = VAL(CsrCtacte.cnumero)
+	DO WHILE NOT EOF() AND lHueco
+		lnNumero = lnNumero + 1 
+		IF lnNumero <>VAL(CsrCtacte.cnumero)
+			lHueco = .t.
+		ENDIF 
+		SKIP 
+	ENDDO 
+	
+	*lnCodigo = 90000 + VAL(CsrDeudor.codigo)
+	lnCodigo = lnNumero
+	
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
  	IF VAL(cnumero) = lnCodigo
@@ -504,7 +517,7 @@ SCAN
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscriiibb,fecinsiibb,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-	,bonif1,email,observa,cdatosfac,dni,cdirecalle,cdirenro,cdirepiso,cdiredpto,otro01);
+	,bonif1,email,observa,cdatosfac,dni,cdirecalle,cdirenro,cdirepiso,cdiredpto,refotro);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
@@ -512,7 +525,12 @@ SCAN
 	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI;
 	,lcDire_Calle,lcDire_Nro,lcDire_Piso,lcDire_Dpto,CsrDeudor.Codigo)
 	
-	IF 
+
+	SELECT CsrSaldos
+	LOCATE FOR VAL(CsrSaldos.Codigo)=VAL(CsrDeudor.codigo)
+	IF VAL(CsrSaldos.Codigo)=VAL(CsrDeudor.codigo)
+		stop()
+		
 		lnSaldo = VAL(CsrSaldos.saldo)
 
 		&&Debemos insertar un movimiento de interno para generar saldos
