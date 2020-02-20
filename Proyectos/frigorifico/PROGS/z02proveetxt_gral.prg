@@ -421,7 +421,7 @@ SCAN
 			,lnbonif1
 	
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
- 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva
+ 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
  	lnidplanpago	= 1100000001 &&Por el momento todos de cuenta corriente	

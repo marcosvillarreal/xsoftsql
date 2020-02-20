@@ -69,11 +69,11 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-*vista()
+vista()
 lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 
-*STOP()
+STOP()
 SCAN 
 	lnCantCampo = 9 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1

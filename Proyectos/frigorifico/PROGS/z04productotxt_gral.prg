@@ -192,7 +192,7 @@ SCAN FOR !EOF()
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
 	
 	SELECT CsrCtacte
-    LOCATE FOR VAL(otro01)=VAL(Csrarticulo.proveedor)
+    LOCATE FOR VAL(refotro)=VAL(Csrarticulo.proveedor)
     IF FOUND()
     	lnidctacte = Csrctacte.id
     ENDIF
