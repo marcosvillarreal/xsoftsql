@@ -332,8 +332,8 @@ SCAN FOR !EOF()
 *!*		lnPeso		= 0
 					
 	SELECT CsrPrecio
-	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo)
-	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo)
+	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=1
+	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=1
 		lnCosto		= VAL(CsrPrecio.costo)
 		lnCostoBon	= lnCosto
 		

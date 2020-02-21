@@ -367,7 +367,7 @@ ENDSCAN
 
 SELECT CsrProducto
 GO TOP 
-vista()
+*vista()
 
    	
 Oavisar.proceso('N') 

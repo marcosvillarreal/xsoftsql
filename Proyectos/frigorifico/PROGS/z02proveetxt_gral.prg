@@ -382,7 +382,7 @@ cCadeCtacte = ''
 SCAN 
 	
 	IF VAL(codigo)=44
-		stop()
+		*stop()
 	ENDIF 
 	
 	SELECT CsrCtacte
