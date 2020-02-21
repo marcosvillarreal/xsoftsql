@@ -536,12 +536,17 @@ Parameters tcTexto,tcArchivo,tcCarpeta
 Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
 Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
 
+*stop()
 tcArchivo=IIF(PCOUNT()<2,'Secuencia'+DTOS(DATE())+'.txt',tcArchivo)
 tcCarpeta=IIF(PCOUNT()<2,'Sec',tcCarpeta)
 
-Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta
-Lcfilelog=Lcdirlog+'\'+tcArchivo
-LcNewlog=Lcdirlog+'\'+'New'+ALLTRIM(tcArchivo)
+IF AT(":",tcCarpeta)=0
+	Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta
+ELSE
+	Lcdirlog = tcCarpeta
+ENDIF 
+Lcfilelog=ADDBS(Lcdirlog)+tcArchivo
+LcNewlog= ADDBS(Lcdirlog)+'New'+ALLTRIM(tcArchivo)
 
 If !Directory(Lcdirlog)
 	Md (Lcdirlog)
