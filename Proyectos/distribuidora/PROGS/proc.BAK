@@ -2135,7 +2135,7 @@ ENDIF
 SET SAFETY  OFF 
 
 DO CASE 
-	CASE UPPER(lcCursor)="CSRPAGO"
+CASE UPPER(lcCursor)="CSRPAGO"
 	Create Cursor Csrpago (id i AUTOINC,numero n(3),cnombre c(25),fecha d,importe n(10,2),idcuenta n(10);
 	              ,ctactebco c(6),titular c(30),banco c(30),localidad c(30),nrocheque n(12),idtipobco n(10);
 	              ,fechavto d,entregado c(30),idvalor n(10),idprovincia n(10),tipocaja c(2),esclase c(1);
@@ -2143,6 +2143,10 @@ DO CASE
 	              ,idmaopera n(12),idcheque M,detalle c(50),idctatitular i,idctaentregado i,idctarecibido i;
 	              ,idlocalidad i,idbanco i,nroidentificador c(50),lccuit c(13))
 	Sele Csrpago
+CASE UPPER(lcCursor)="CSRFINANCIA"
+	Create Cursor CsrFinancia (registro i AUTOINC,numero n(3),nombre c(25),fecha d,afecta n(10,2),idvalor i;
+	              ,esclase c(3),detalle c(50),tasa n(6,3),importe n(10,2),cuota n(2))
+	Sele Csrfinancia
 ENDCASE 
 
 SET  SAFETY  ON 
