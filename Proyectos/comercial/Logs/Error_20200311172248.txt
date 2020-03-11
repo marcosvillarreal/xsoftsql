@@ -1,0 +1,33 @@
+11-03-2020 17:22:48 , MAIN, Error: Variable 'COBERVA' is not found.;Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002,BodyTot003 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007,HeadTot001,HeadTot002,HeadTot003 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,DetaReparto,EmpresaCuit,Cuit_Caption ,Retiro,Autorizo,Ubicacion,Terminal,Observa ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002,cBodyTot003 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001,cHeadTot002,cHeadTot003 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit ,cCuit_Caption,cRetiro,cAutorizo,cUbicacion,cTerminal ,cOberva);Error :         12;Ultimo Alias Activo: CSRCABECARTEL;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00005Z4900KF.TMP;Ultimo Control activo: 
+11-03-2020 17:22:48 , Pila de llamadas
+11-03-2020 17:22:48 , Programa    : j:\xsoftsql\proyectos\comercial\progs\main.fxp
+11-03-2020 17:22:48 , Objeto      : main
+11-03-2020 17:22:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\progs\main.prg
+11-03-2020 17:22:48 , Nº de Linea :        304
+11-03-2020 17:22:48 , En el Fuente: 	Read events   
+11-03-2020 17:22:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-03-2020 17:22:48 , Objeto      : regfacvta.botoneracuerpo.cmdimprimir.click
+11-03-2020 17:22:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-03-2020 17:22:48 , Nº de Linea :         95
+11-03-2020 17:22:48 , En el Fuente: 					.imprimir(.lcimpresora,loimpresoraelegida.tipo,2)	
+11-03-2020 17:22:48 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-03-2020 17:22:48 , Objeto      : regfacvta.imprimir
+11-03-2020 17:22:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+11-03-2020 17:22:48 , Nº de Linea :         85
+11-03-2020 17:22:48 , En el Fuente: llok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro ,0)
+11-03-2020 17:22:48 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+11-03-2020 17:22:48 , Objeto      : regfacvta.objimpresor.inicioimpresora
+11-03-2020 17:22:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+11-03-2020 17:22:48 , Nº de Linea :         50
+11-03-2020 17:22:48 , En el Fuente: 			lok = this.reportf(lndeboActualizarNro)
+11-03-2020 17:22:48 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+11-03-2020 17:22:48 , Objeto      : regfacvta.objimpresor.reportf
+11-03-2020 17:22:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+11-03-2020 17:22:48 , Nº de Linea :        132
+11-03-2020 17:22:48 , En el Fuente:     this.reportF_cab(loobjfactura)
+11-03-2020 17:22:48 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+11-03-2020 17:22:48 , Objeto      : regfacvta.objimpresor.reportf_cab
+11-03-2020 17:22:48 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+11-03-2020 17:22:48 , Nº de Linea :        300
+11-03-2020 17:22:48 , En el Fuente: 	INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp			,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono			,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06			,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTot001,BodyTot002,BodyTot003			,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005			,HeadImp006,HeadImp007,HeadTot001,HeadTot002,HeadTot003			,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca			,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck			,DetaHoja,DetaReparto,EmpresaCuit,Cuit_Caption			,Retiro,Autorizo,Ubicacion,Terminal,Observa )	VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1)			,cComprobante,cFecComproba,cNumComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva			,cCUIT,cTelefono,cPlanPago,cDetaVdor			,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06			,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005			,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002,cBodyTot003			,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005			,cHeadImp006,cHeadImp007,cHeadTot001,cHeadTot002,cHeadTot003			,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA			,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra			,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit			,cCuit_Caption,cRetiro,cAutorizo,cUbicacion,cTerminal			,cOberva)
+11-03-2020 17:22:48 , Fin
