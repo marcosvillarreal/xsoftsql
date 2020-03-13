@@ -25,6 +25,11 @@ llok = CargarTabla(lcData,'Sucursal',.t.)
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrListaPrecio.* FROM ListaPrecio as CsrListaPrecio
+ENDTEXT 
+=CrearCursorAdapter('CsrListaP',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
@@ -122,6 +127,7 @@ DO WHILE NOT EOF()
 			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcEstado)))
 			lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcCodLista)))
 			lcLista			= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcLista)))
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcZona)))
 			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcCodVendedor)))
 			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcVendedor)))
 			
@@ -205,8 +211,8 @@ GO TOP
 *stop()
 SCAN 
 	
-	IF VAL(codigo)=1
-		*stop()
+	IF VAL(codigo)=9007
+		stop()
 	ENDIF 
 	
 	lnCodigo = VAL(CsrDeudor.codigo)
@@ -233,13 +239,20 @@ SCAN
  	lnidplanpago	= 1100000001 &&Por el momento todos de cuenta corriente	
  	lnidplanpago	= IIF(CsrDeudor.PlanPago=2,1100000002,1100000001)	
 	lnidcanalvta	= 1
+	lnidlista		= 0
 	lnlista			= CsrDeudor.CodLista
 	DO CASE
-	CASE lnLista = 0
+	CASE lnLista <= 1
 		lnLista = 1
 	OTHERWISE
 		&&Falta el resto de listas que nose cuales seran las por defecto
+		lnLista = lnLista + 3
 	ENDCASE
+	SELECT CsrListaP
+	LOCATE FOR numero = lnLista
+	IF numero <> lnLista
+		lnlista = 0
+	ENDIF 
 		
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	

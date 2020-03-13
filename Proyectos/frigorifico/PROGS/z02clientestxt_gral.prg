@@ -25,6 +25,11 @@ llok = CargarTabla(lcData,'Sucursal',.t.)
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrListaPrecio.* FROM ListaPrecio as CsrListaPrecio
+ENDTEXT 
+=CrearCursorAdapter('CsrListaP',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
@@ -206,7 +211,7 @@ GO TOP
 *stop()
 SCAN 
 	
-	IF VAL(codigo)=1
+	IF VAL(codigo)=9007
 		*stop()
 	ENDIF 
 	
@@ -234,13 +239,20 @@ SCAN
  	lnidplanpago	= 1100000001 &&Por el momento todos de cuenta corriente	
  	lnidplanpago	= IIF(CsrDeudor.PlanPago=2,1100000002,1100000001)	
 	lnidcanalvta	= 1
+	lnidlista		= 0
 	lnlista			= CsrDeudor.CodLista
 	DO CASE
-	CASE lnLista = 0
+	CASE lnLista <= 1
 		lnLista = 1
 	OTHERWISE
 		&&Falta el resto de listas que nose cuales seran las por defecto
+		lnLista = lnLista + 3
 	ENDCASE
+	SELECT CsrListaP
+	LOCATE FOR numero = lnLista
+	IF numero <> lnLista
+		lnlista = 0
+	ENDIF 
 		
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	
@@ -284,7 +296,11 @@ SCAN
   	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
   	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
   	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
-  	lcDireccion = lcDire_Calle + " " + lcDire_Nro + " P:"+ lcDire_Piso + " D:"+lcDire_Dpto
+  	
+  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+cDirePiso)
+	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+cDireDpto)
+	
+  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + lcDire_Nro + " "+ cDire_Piso + " "+cDire_Dpto)
   	*lcCP		= LTRIM(lcCp)
   	
   	lcTelefono	= LTRIM(CsrDeudor.telefono)

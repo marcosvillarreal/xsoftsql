@@ -27,7 +27,12 @@ llok = CargarTabla(lcData,'Deposito')
 llok = CargarTabla(lcData,'Ubicacion',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
 llok = CargarTabla(lcData,'Ctacte')
+llok = CargarTabla(lcData,'MapeoCarnico')
 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrTipoCarnico.* FROM Carnico_TipoCarne as CsrTipoCarnico
+ENDTEXT 
+=CrearCursorAdapter('CsrTipoCarnico',lcCmd)
 
 SET SAFETY ON
 
@@ -279,7 +284,7 @@ SCAN FOR !EOF()
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
 	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
-	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso
+	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso,lnidtipocarnico
 	
 	SELECT CsrCtacte
     LOCATE FOR VAL(refotro)=VAL(Csrarticulo.proveedor)
@@ -294,6 +299,17 @@ SCAN FOR !EOF()
     ENDIF 
     lnidseccion = CsrRubro.id
     
+    SELECT CsrMapeoCarnico
+    LOCATE FOR codigo = VAL(CsrArticulo.codigo)
+    IF codigo = VAL(CsrArticulo.codigo)
+    	lcClase = ALLTRIM(CsrMapeoCarnico.clase)
+    	SELECT CsrTipoCarnico
+    	LOCATE FOR ALLTRIM(clase) = lcClase
+    	IF ALLTRIM(clase)=lcClase
+    		lnidtipocarnico = CsrTipoCarnico.id
+    	ENDIF 
+    ENDIF 
+    	
     SELECT CsrMarca
     GO TOP 
     Lnidmarca = CsrMarca.id
@@ -349,7 +365,7 @@ SCAN FOR !EOF()
 	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
 	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctavta;
-	,idenvase,fleteporce); 	
+	,idenvase,fleteporce,idtipocarnico); 	
 	values (lnid, lncodigo, lcnombre, lccodarti, lnidiva, lncosto,	;
 	lnutil1, lnprevta1, lnutil2, lnprevta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
 	lnprevta3, 0,0,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
@@ -358,7 +374,7 @@ SCAN FOR !EOF()
 	lnsugerido,1,lnsireparto,"",0, 0,;
 	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
 	,lnidctacpra,lnidctavta;
-	,lnidenvase,lnfleteporce)		
+	,lnidenvase,lnfleteporce,lnidtipocarnico)		
 
 	lnid = lnid + 1
 
