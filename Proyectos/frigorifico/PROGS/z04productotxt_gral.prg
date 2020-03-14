@@ -329,7 +329,8 @@ SCAN FOR !EOF()
     lnidtipovta = 1 &&UNIDADES=1 ,	BULTOS = 2.
     lnvtakilos	= 1 &&IIF(UPPER(CsrArticulo.u_medida)$"KILOS-KG",1,0)
    	lnidforma 	= 1100000001
-
+	lnpeso		= 1
+	
 	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
 	ldfechaulcpr 	= ldfecha
 	ldfechamodf 	= CTOD('01-01-1900') &&CTOD(CsrArticulo.fecModf)

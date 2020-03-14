@@ -32,7 +32,7 @@ llok = CargarTabla(lcData,'MapeoCarnico')
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrTipoCarnico.* FROM Carnico_TipoCarne as CsrTipoCarnico
 ENDTEXT 
-=CrearCursorAdapter('CsrTipoCarnico',lcCdm)
+=CrearCursorAdapter('CsrTipoCarnico',lcCmd)
 
 SET SAFETY ON
 
