@@ -443,6 +443,7 @@ SCAN
 	
 	&&Localidad
 	lnidlocalidad	= 1100000345  &&Bahia Blanca
+	lnidprovincia	= 1100000002
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
 	SELECT CsrLocalidad
 	LOCATE FOR nombre = lcLocalidadBuscada

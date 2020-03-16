@@ -236,8 +236,8 @@ SCAN
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
  	lnctadeudor		= 1
- 	lnidplanpago	= 1100000001 &&Por el momento todos de cuenta corriente	
- 	lnidplanpago	= IIF(CsrDeudor.PlanPago=2,1100000002,1100000001)	
+ 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
+ 	lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1
 	lnidlista		= 0
 	lnlista			= CsrDeudor.CodLista
