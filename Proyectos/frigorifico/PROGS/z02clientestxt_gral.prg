@@ -297,10 +297,10 @@ SCAN
   	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
   	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
   	
-  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+cDirePiso)
-	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+cDireDpto)
+  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
+	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
 	
-  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + lcDire_Nro + " "+ cDire_Piso + " "+cDire_Dpto)
+  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + lcDire_Nro + " "+ cDirePiso + " "+cDireDpto)
   	*lcCP		= LTRIM(lcCp)
   	
   	lcTelefono	= LTRIM(CsrDeudor.telefono)

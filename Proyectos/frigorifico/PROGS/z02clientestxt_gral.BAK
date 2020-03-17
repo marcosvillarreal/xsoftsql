@@ -236,8 +236,8 @@ SCAN
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
  	lnctadeudor		= 1
- 	lnidplanpago	= 1100000001 &&Por el momento todos de cuenta corriente	
- 	lnidplanpago	= IIF(CsrDeudor.PlanPago=2,1100000002,1100000001)	
+ 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
+ 	lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1
 	lnidlista		= 0
 	lnlista			= CsrDeudor.CodLista
@@ -297,10 +297,10 @@ SCAN
   	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
   	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
   	
-  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+cDirePiso)
-	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+cDireDpto)
+  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lccDire_Piso)
+	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
 	
-  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + lcDire_Nro + " "+ cDire_Piso + " "+cDire_Dpto)
+  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + lcDire_Nro + " "+ cDirePiso + " "+cDireDpto)
   	*lcCP		= LTRIM(lcCp)
   	
   	lcTelefono	= LTRIM(CsrDeudor.telefono)
