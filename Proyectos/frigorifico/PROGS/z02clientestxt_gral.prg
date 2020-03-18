@@ -173,11 +173,11 @@ DO WHILE NOT EOF()
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
-		,CodCateIVA,PlanPago) ;
+		,CodCateIVA) ;
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado;
-		,VAL(lcCodLista),VAL(lcCodCateIVA),1)
+		,VAL(lcCodLista),VAL(lcCodCateIVA))
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
@@ -237,7 +237,7 @@ SCAN
  		
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
- 	lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
+ 	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1
 	lnidlista		= 0
 	lnlista			= CsrDeudor.CodLista
