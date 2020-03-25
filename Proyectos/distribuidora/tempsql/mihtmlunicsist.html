@@ -38,7 +38,8 @@
       }
     </style>    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=es"></script>
-    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to&callback=initMap"
+ 	 type="text/javascript"></script>
   </head>
   <body>
     <div id="outputDiv"></div>
@@ -53,7 +54,7 @@
        var geocoder = null
 		function initialize() {
          geocoder = new google.maps.Geocoder();
-         var fenway = new google.maps.LatLng(   0.0000000000,    0.0000000000);
+         var fenway = new google.maps.LatLng( -38.8766081000,  -62.0707813000);
 		  var mapOptions = {
              scaleControl: true,
              panControl:true,
@@ -62,8 +63,8 @@
              mapTypeId: google.maps.MapTypeId.ROADMAP,
     	      center: fenway
   		  };
-  		  latitudDiv.innerHTML =    0.0000000000
-          longitudDiv.innerHTML =    0.0000000000
+  		  latitudDiv.innerHTML =  -38.8766081000
+          longitudDiv.innerHTML =  -62.0707813000
           var map = new google.maps.Map(document.getElementById('map-canvas'),
               mapOptions);
 

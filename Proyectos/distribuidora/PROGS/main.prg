@@ -108,6 +108,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
+   SET PROCEDURE TO mapsApiKey.prg ADDITIVE 
 	SET PROCEDURE TO formposition.prg ADDITIVE 
    SET PROCEDURE TO ftp.prg ADDITIVE
        
@@ -139,10 +140,12 @@ _Screen.closable=.f.
 _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
-PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
