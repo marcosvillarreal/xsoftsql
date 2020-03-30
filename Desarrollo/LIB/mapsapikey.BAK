@@ -549,44 +549,44 @@ ENDFUNC
 ***********************************
 ***********************************
 
-FUNCTION SoloMarks
+FUNCTION SoloMarksAPI
 LPARAMETERS tcDestination,cmarks,cenLat,cenLng
 
-LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
-LOCAL lcFullURL, lcResponse, lcRouteParameters
-tcDestination          = EVL(tcDestination, "")
+*!*	LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
+*!*	LOCAL lcFullURL, lcResponse, lcRouteParameters
+*!*	tcDestination          = EVL(tcDestination, "")
 
-lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
-    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
+*!*	lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
+*!*	    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
 
-lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
-    "&units=metrics&sensor=false&v=3.22"
+*!*	lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
+*!*	    "&units=metrics&sensor=false&v=3.22"
 
-TRY
-	loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0
-CATCH
-	TRY 
-		loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.3.0") && Could use version 3.0, 4.0, 5.0, 6.0
-	CATCH 
-		TRY
-			loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.5.0") && Could use version 3.0, 4.0, 5.0, 6.0
-		CATCH
-			TRY 
-				loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.6.0") && Could use version 3.0, 4.0, 5.0, 6.0
-			CATCH 
-			ENDTRY 
-		ENDTRY 
-	ENDTRY 
-ENDTRY 
+*!*	TRY
+*!*		loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*	CATCH
+*!*		TRY 
+*!*			loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.3.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*		CATCH 
+*!*			TRY
+*!*				loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.5.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*			CATCH
+*!*				TRY 
+*!*					loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.6.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*				CATCH 
+*!*				ENDTRY 
+*!*			ENDTRY 
+*!*		ENDTRY 
+*!*	ENDTRY 
 
-loXML.OPEN("POST", lcFullURL, .F.)
-loXML.SetRequestHeader("Content-Type", "application/xml")
-loXML.SEND("")
-lcResponse = loXML.ResponseText
+*!*	loXML.OPEN("POST", lcFullURL, .F.)
+*!*	loXML.SetRequestHeader("Content-Type", "application/xml")
+*!*	loXML.SEND("")
+*!*	lcResponse = loXML.ResponseText
 
-LOCAL lcAddress, lcHTML
-lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
-lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
+*!*	LOCAL lcAddress, lcHTML
+*!*	lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
+*!*	lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
 
 TEXT TO lcHTML NOSHOW TEXTMERGE
 <!DOCTYPE html>
@@ -605,6 +605,9 @@ TEXT TO lcHTML NOSHOW TEXTMERGE
       }
      </style>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<<GoogleMapsKeyAPI>>&callback=initMap"
+ 	 type="text/javascript"></script>
+ 	 
 <script>
   function initialize() {
          geocoder = new google.maps.Geocoder();
@@ -674,44 +677,44 @@ ENDFUNC
 FUNCTION GoogleCoords2
 LPARAMETERS tcDestination,coords,cmarks
 
-LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
-LOCAL lcFullURL, lcResponse, lcRouteParameters
-tcDestination          = EVL(tcDestination, "")
+*!*	LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
+*!*	LOCAL lcFullURL, lcResponse, lcRouteParameters
+*!*	tcDestination          = EVL(tcDestination, "")
 
-lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
-    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
-
-
-lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
-    "&units=metrics&sensor=false&v=3.22"
+*!*	lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
+*!*	    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
 
 
-TRY 
-	loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0
-CATCH
-	TRY 
-		loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.3.0") && Could use version 3.0, 4.0, 5.0, 6.0
-	CATCH 
-		TRY
-			loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.5.0") && Could use version 3.0, 4.0, 5.0, 6.0
-		CATCH
-			TRY 
-				loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.6.0") && Could use version 3.0, 4.0, 5.0, 6.0
-			CATCH 
-			ENDTRY 
-		ENDTRY 
-	ENDTRY 
-ENDTRY 
+*!*	lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
+*!*	    "&units=metrics&sensor=false&v=3.22"
 
 
-loXML.OPEN("POST", lcFullURL, .F.)
-loXML.SetRequestHeader("Content-Type", "application/xml")
-loXML.SEND("")
-lcResponse = loXML.ResponseText
+*!*	TRY 
+*!*		loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*	CATCH
+*!*		TRY 
+*!*			loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.3.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*		CATCH 
+*!*			TRY
+*!*				loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.5.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*			CATCH
+*!*				TRY 
+*!*					loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.6.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*				CATCH 
+*!*				ENDTRY 
+*!*			ENDTRY 
+*!*		ENDTRY 
+*!*	ENDTRY 
 
-LOCAL lcAddress, lcHTML
-lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
-lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
+
+*!*	loXML.OPEN("POST", lcFullURL, .F.)
+*!*	loXML.SetRequestHeader("Content-Type", "application/xml")
+*!*	loXML.SEND("")
+*!*	lcResponse = loXML.ResponseText
+
+*!*	LOCAL lcAddress, lcHTML
+*!*	lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
+*!*	lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
 
 TEXT TO lcHTML NOSHOW TEXTMERGE
 <!DOCTYPE html>
@@ -727,6 +730,9 @@ html, body, #map-canvas {height: 100%;margin: 0px;padding: 0px}
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<<GoogleMapsKeyAPI>>&callback=initMap"
+ 	 type="text/javascript"></script>
+ 	 
 <script>
 var map;
 var hostnameRegexp = new RegExp("^https?://.+?/");
@@ -884,15 +890,6 @@ ENDFUNC
 
 
 
-
-
-
-
-
-
-
-
-
 *-----------------------------------
 *-----------------------------------
 *-----------------------------------
@@ -906,51 +903,47 @@ ENDFUNC
 *-----------------------------------
 
 
-
-
-
-
-FUNCTION GoogleCoords3
+FUNCTION GoogleCoords3API
 LPARAMETERS tcDestination,coords,cmarks,cRuta,cParadas,cVendedor
 
-LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
-LOCAL lcFullURL, lcResponse, lcRouteParameters
-tcDestination          = EVL(tcDestination, "")
+*!*	LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
+*!*	LOCAL lcFullURL, lcResponse, lcRouteParameters
+*!*	tcDestination          = EVL(tcDestination, "")
 
-lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
-    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
-
-
-lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
-    "&units=metrics&sensor=false&v=3.22"
+*!*	lcRouteParameters = "origin=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20") + ;
+*!*	    "&destination=" + STRTRAN(UPPER(ALLTRIM(tcDestination)), " ", "%20")
 
 
-TRY 
-	loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0
-CATCH
-	TRY 
-		loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.3.0") && Could use version 3.0, 4.0, 5.0, 6.0
-	CATCH 
-		TRY
-			loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.5.0") && Could use version 3.0, 4.0, 5.0, 6.0
-		CATCH
-			TRY 
-				loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.6.0") && Could use version 3.0, 4.0, 5.0, 6.0
-			CATCH 
-			ENDTRY 
-		ENDTRY 
-	ENDTRY 
-ENDTRY 
+*!*	lcFullURL = "http://maps.googleapis.com/maps/api/directions/xml?" + lcRouteParameters + ;
+*!*	    "&units=metrics&sensor=false&v=3.22"
 
 
-loXML.OPEN("POST", lcFullURL, .F.)
-loXML.SetRequestHeader("Content-Type", "application/xml")
-loXML.SEND("")
-lcResponse = loXML.ResponseText
+*!*	TRY 
+*!*		loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.4.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*	CATCH
+*!*		TRY 
+*!*			loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.3.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*		CATCH 
+*!*			TRY
+*!*				loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.5.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*			CATCH
+*!*				TRY 
+*!*					loXML = CREATEOBJECT("MSXML2.ServerXMLHTTP.6.0") && Could use version 3.0, 4.0, 5.0, 6.0
+*!*				CATCH 
+*!*				ENDTRY 
+*!*			ENDTRY 
+*!*		ENDTRY 
+*!*	ENDTRY 
 
-LOCAL lcAddress, lcHTML
-lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
-lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
+
+*!*	loXML.OPEN("POST", lcFullURL, .F.)
+*!*	loXML.SetRequestHeader("Content-Type", "application/xml")
+*!*	loXML.SEND("")
+*!*	lcResponse = loXML.ResponseText
+
+*!*	LOCAL lcAddress, lcHTML
+*!*	lcAddress = STREXTRACT(lcResponse, "<end_address>", "</end_address>")
+*!*	lcLocation = STREXTRACT(lcResponse, "<start_location>", "</start_location>")
 
 TEXT TO lcHTML NOSHOW TEXTMERGE
 <!DOCTYPE html>
@@ -966,6 +959,9 @@ html, body, #map-canvas {height: 100%;margin: 0px;padding: 0px}
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<<GoogleMapsKeyAPI>>&callback=initMap"
+ 	 type="text/javascript"></script>
+ 	 
 <script>
 var map;
 var hostnameRegexp = new RegExp("^https?://.+?/");

@@ -674,7 +674,7 @@ ENDFUNC
 
 
 
-FUNCTION GoogleCoords2
+FUNCTION GoogleCoords2API
 LPARAMETERS tcDestination,coords,cmarks
 
 *!*	LOCAL loXML AS "MSXML2.ServerXMLHTTP.4.0"
@@ -868,19 +868,19 @@ LOCAL lcFile
 *lcFile = ADDBS(GETENV("TEMP")) + SYS(2015) + ".htm"
 SET SAFETY OFF
 
-lcRuta = SYS(5)+ "\tempsql\"+ALLTRIM(goapp.initcatalo)
-IF VARTYPE(goapp.rutaaplicacion)$'C'
-	lcRutaApli = IIF(LEN(ALLTRIM(goapp.rutaaplicacion))#0,goapp.rutaaplicacion,"")
-	lcRutaApli = RTRIM(lcRutaApli) + IIF(RIGHT(lcRutaApli,1)="\" or LEN(LTRIM(lcRutaApli))=0,"","\") &&Si es vacio o tiene \. Mantiene lo mismo.
-	lcRuta = IIF(LEN(LTRIM(lcRutaApli))#0,lcRutaApli+ "tempsql",lcRuta)	
-ENDIF 
-IF !DIRECTORY(lcRuta)
-	MKDIR &lcRuta
-ENDIF 
-lcFile = ADDBS(lcRuta)+"mihtmlruta.html"
+*!*	lcRuta = SYS(5)+ "\tempsql\"+ALLTRIM(goapp.initcatalo)
+*!*	IF VARTYPE(goapp.rutaaplicacion)$'C'
+*!*		lcRutaApli = IIF(LEN(ALLTRIM(goapp.rutaaplicacion))#0,goapp.rutaaplicacion,"")
+*!*		lcRutaApli = RTRIM(lcRutaApli) + IIF(RIGHT(lcRutaApli,1)="\" or LEN(LTRIM(lcRutaApli))=0,"","\") &&Si es vacio o tiene \. Mantiene lo mismo.
+*!*		lcRuta = IIF(LEN(LTRIM(lcRutaApli))#0,lcRutaApli+ "tempsql",lcRuta)	
+*!*	ENDIF 
+*!*	IF !DIRECTORY(lcRuta)
+*!*		MKDIR &lcRuta
+*!*	ENDIF 
+*!*	lcFile = ADDBS(lcRuta)+"mihtmlruta.html"
 
-STRTOFILE(lcHTML, lcFile)
-
+*!*	STRTOFILE(lcHTML, lcFile)
+=SaveSQL(lcHTML,'mihtmlruta')
 SET SAFETY ON 
 
 * Show the StreetView
