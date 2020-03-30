@@ -5,7 +5,6 @@
 *----------------------------------------------------------------------------
 FUNCTION DevolverEjercicioContable
 PARAMETERS lcpefiscal,lnidejercicio,lnejercicio
-
 	lnidejercicio = 0
 	lnejercicio = 0
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -25,17 +24,7 @@ PARAMETERS lcpefiscal,lnidejercicio,lnejercicio
 	USE IN CsrControlEje
 	RETURN llok
 ENDFUNC 
-*----------------------------------------------------------------------------
-* FUNCION GuardaPagina(lnRecno)
-*----------------------------------------------------------------------------
-* Funcion que se utiliza en reportes, para guardar la ultima pagina generada
-* en un Cursor, para luego almacenarla en otro sitio
-*----------------------------------------------------------------------------
-FUNCTION GuardaPagina
-PARAMETERS lnRecno
-replace ultpagina with nropagina + lnrecno in CsrEncabezado
-RETURN 
-*----------------------------------------
+
 FUNCTION pelocuit
 PARAMETERS lccuit
 lccuit=ALLTRIM(STRTRAN(lccuit,'-',''))
@@ -397,11 +386,10 @@ FUNCTION cuit
 PARAMETERS tCuit
 local lcCuit
 lcCuit=''
-
 if type('tCuit')='N'
 	lcCuit=alltrim(str(tCuit))
 else
-	lcCuit=tCuit
+	lcCuit=ALLTRIM(tCuit)
 endif
 if len(lcCuit)#11
 	return ''
@@ -476,24 +464,6 @@ PARAMETERS amatriz, ntam
 IF ntam>0 then
 	DIMENSION amatriz(ntam)
 ENDIF
-
-FUNCTION seek_dato
-PARAMETERS tcdatobuscado,tbtipobusqueda,tbtabla,tbclave
-tbtabla 	= IIF(PCOUNT()<3,"",tbtabla)
-tbclave	= IIF(PCOUNT()<4,"",tbclave)
-llok = .t.
-IF tbtipobusqueda
-	SET NEAR ON
-ELSE
-	SET NEAR OFF
-ENDIF
-IF LEN(LTRIM(tbtabla))=0 AND LEN(LTRIM(tbclave))=0
-	SEEK(tcdatobuscado)
-ELSE 
-	llok = SEEK(tcdatobuscado,tbtabla,tbclave)
-ENDIF 
-SET NEAR OFF
-RETURN llok
 
 FUNCTION strzero
 PARAMETERS tcdato,tntamfinal,tndecimal
@@ -1076,22 +1046,22 @@ Goapp.sucursal		= Pnsucursal
 Goapp.terminal		= 0 &&Pnterminal
    
 IF lcSourceType="NATIVE"
-
-	lcSvrCf =lcInitCatalo
-	ELSE 
-		IF LEN(TRIM(lcServidor))#0 AND LEN(TRIM(lcUser))#0 AND LEN(TRIM(lcPwd))#0
-			lcSvrCf = "Provider=SQLOLEDB.1;Persist Security Info=False"
-			lcSvrCf = lcSvrCf + ";Initial Catalog="+lcInitCatalo
-			lcSvrCf = lcSvrCf + ";Data Source=" + lcServidor
-			lcSvrCf = lcSvrCf + ";User ID="+lcUser
-			lcSvrCf = lcSvrCf + ";pwd="+lcPwd + ";"
-			
-			lcSvrcfODBC = "Driver={SQL Server}"
-			lcSvrcfODBC = lcSvrcfODBC + ";Server="+lcServidor
-			lcSvrcfODBC = lcSvrcfODBC + ";Database="+lcInitCatalo
-			lcSvrcfODBC = lcSvrcfODBC + ";Uid="+lcUser
-			lcSvrcfODBC = lcSvrcfODBC + ";Pwd="+lcPwd + ";"
-		ENDIF 		   
+	lcSvrCf =LCServidor+"\"+lcInitCatalo
+	*goapp.cpath =  lObjConfig.pathdatabase
+ELSE 
+	IF LEN(TRIM(lcServidor))#0 AND LEN(TRIM(lcUser))#0 AND LEN(TRIM(lcPwd))#0
+		lcSvrCf = "Provider=SQLOLEDB.1;Persist Security Info=False"
+		lcSvrCf = lcSvrCf + ";Initial Catalog="+lcInitCatalo
+		lcSvrCf = lcSvrCf + ";Data Source=" + lcServidor
+		lcSvrCf = lcSvrCf + ";User ID="+lcUser
+		lcSvrCf = lcSvrCf + ";pwd="+lcPwd + ";"
+		
+		lcSvrcfODBC = "Driver={SQL Server}"
+		lcSvrcfODBC = lcSvrcfODBC + ";Server="+lcServidor
+		lcSvrcfODBC = lcSvrcfODBC + ";Database="+lcInitCatalo
+		lcSvrcfODBC = lcSvrcfODBC + ";Uid="+lcUser
+		lcSvrcfODBC = lcSvrcfODBC + ";Pwd="+lcPwd + ";"
+	ENDIF 		   
 ENDIF 
    
  LcConectionString	= lcSvrCf
@@ -1100,7 +1070,7 @@ ENDIF
  LcWebService		= ''
 
 lcConectionODBC	= lcSvrcfODBC
-  
+ *oavisar.usuario( LcConectionString)
  lsalgo = IIF(LEN(TRIM(lcInitCatalo))#0,.t.,.f.)
 
 RETURN  lsalgo
@@ -1112,10 +1082,70 @@ ENDFUNC
 
 * Desencripta(lc, "MiLlave")
 
-FUNCTION Encripta(tcCadena, tcLlave)
+*!*	*!*	FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
+
+*!*	*!*		LOCAL lc, ln, lcRet
+*!*	*!*		LOCAL lnClaveMul, lnClaveXor
+
+*!*	*!*		IF EMPTY(tcLlave)
+*!*	*!*			tcLlave = ""
+*!*	*!*		ENDIF
+
+*!*	*!*		=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
+
+*!*	*!*		lcRet = ""
+*!*	*!*		lc = tcCadena
+
+*!*	*!*		DO WHILE LEN(lc) > 0
+*!*	*!*			ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
+*!*	*!*			
+*!*	*!*			IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
+*!*	*!*				ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
+*!*	*!*			ENDIF
+
+*!*	*!*			lcRet = lcRet+BINTOC(ln-32768,2)
+*!*	*!*			lnClaveMul = BITAND(lnClaveMul+59,0xFF)
+*!*	*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
+*!*	*!*			lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
+
+*!*	*!*		ENDDO
+
+*!*	*!*		RETURN lcRet
+
+*!*	*!*	ENDFUNC
+
+
+*!*	*!*	FUNCTION Desencripta(tcCadena, tcLlave)
+
+*!*	*!*		LOCAL lc, ln, lcRet, lnByte
+*!*	*!*		LOCAL lnClaveMul, lnClaveXor
+
+*!*	*!*		IF EMPTY(tcLlave)
+*!*	*!*			tcLlave = ""
+*!*	*!*		ENDIF
+
+*!*	*!*		=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
+
+*!*	*!*		lcRet = ""
+
+*!*	*!*		FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
+
+*!*	*!*			lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
+
+*!*	*!*			lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
+*!*	*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
+*!*	*!*			lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
+
+*!*	*!*		ENDFOR
+
+*!*	*!*		RETURN lcRet
+
+*!*	*!*	ENDFUNC
+
+
+FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
 	lcRet = ""
 	lc = ALLTRIM(tcCadena)
-	
 	for i=1 to LEN(lc)
     		lcRet=lcRet+chr(asc(substr(lc,i,1))+25+i)
 	NEXT
@@ -1313,9 +1343,24 @@ lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(10)," ")
 
 Orslista = null 
 Ocalista = null
-Orslista= createobject('ADODB.RecordSet')
-Orslista.CursorLocation   = 3  && adUseClient
-Orslista.LockType         = 3  && adLockOptimistic
+
+
+*!*	Orslista= createobject('ADODB.RecordSet')
+*!*	Orslista.CursorLocation   = 3  && adUseClient
+*!*	Orslista.LockType         = 3  && adLockOptimistic
+
+IF LcDataSourceType="ADO"
+	Orslista= createobject('ADODB.RecordSet')
+	Orslista.CursorLocation   = 3  && adUseClient
+	Orslista.LockType         = 3  && adLockOptimistic
+	IF TYPE('loConnDataSource')='O' 
+	   Orslista.ActiveConnection = loConnDataSource
+	ENDIF 
+ENDIF
+IF LcDataSourceType="ODBC"
+   Orslista = lnconectorODBC
+ENDIF 
+
 IF TYPE('loConnDataSource')='O'
    Orslista.ActiveConnection = loConnDataSource
 ENDIF 
@@ -1337,7 +1382,6 @@ lreturn = .f.
 IF !OCAlista.CursorFill()
 	IF AERROR(laError) > 0 AND lbCartel 
 		=Oavisar.Usuario("Error al obtener datos:"+laError[2]+" alias "+lcaliasCursor+CHR(13)+lccmdSelectCursor,0)
-		oavisar.proceso('N')
 	ENDIF
 ELSE
 	OCAlista.CursorDetach()
@@ -1418,14 +1462,19 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 	lcparam10 = IIF(PCOUNT()<11,"",lcparam10)
 	LOCAL lcCmd,lok,_siactiva
 	IF UPPER(lcForm) = "FRMMENU"
-		TEXT TO lcCmd TEXTMERGE NOSHOW 
-		SELECT Csrseteotermi.* FROM seteotermi as Csrseteotermi WHERE sucursal = <<Goapp.sucursal>> and numero=<<Goapp.terminal>> 
-		ENDTEXT 
-		IF USED("CsrSeteotermi")
-			USE IN CsrSeteotermi
-		ENDIF
-		lok =CrearCursorAdapter("CsrSeteotermi",lcCmd)
-		_siactiva=Csrseteotermi.termiactiva=1
+		llok = CargarTabla(lcConectionString,'SeteoTermi')
+*!*			TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*			SELECT Csrseteotermi.* FROM seteotermi as Csrseteotermi WHERE sucursal = <<Goapp.sucursal>> and numero=<<Goapp.terminal>> 
+*!*			ENDTEXT 
+*!*			IF USED("CsrSeteotermi")
+*!*				USE IN CsrSeteotermi
+*!*			ENDIF
+*!*			lok =CrearCursorAdapter("CsrSeteotermi",lcCmd)
+		SELECT CsrSeteoTermi
+		LOCATE FOR sucursal = Goapp.sucursal and numero=Goapp.terminal
+		IF sucursal = Goapp.sucursal and numero=Goapp.terminal
+			_siactiva=Csrseteotermi.termiactiva=1
+		ENDIF 
 	ELSE
 		lok= .t. 
 		_siactiva=1
@@ -1481,90 +1530,65 @@ LOCAL lcCmd,lok,lcpc
 lcpc    = UPPER(TRIM(LEFT(SYS(0),(AT('#',SYS(0))-1))))
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT Csrempresa.* FROM empresa as Csrempresa
-ENDTEXT 
-
-IF USED("Csrempresa")
-	USE IN Csrempresa 
-ENDIF
-
-lok =CrearCursorAdapter("Csrempresa",lcCmd)
-
-IF lok
-    GOapp.empresaid 				= Csrempresa.id
-   GOapp.empresanombre		= Csrempresa.nombre
-   GOapp.empresaramo			= Csrempresa.ramo
-   GOapp.empresadireccion		= Csrempresa.direccion
-   GOapp.empresacpostal		= Csrempresa.cpostal
-   GOapp.empresalocalidad		= Csrempresa.localidad
-   GOapp.empresaprovincia		= Csrempresa.provincia
-   GOapp.empresatelefono		= Csrempresa.telefono
-   GOapp.empresatipoiva			= Csrempresa.tipoiva
-   GOapp.empresacuit			= Csrempresa.cuit
-   GOapp.empresaibruto 			= Csrempresa.ibruto
-   GOapp.empresacajapre		= Csrempresa.cajapre
-   GOapp.empresaimpint			= Csrempresa.impint
-   Goapp.empresaagenteibb        = Csrempresa.agenteibb
-   GOapp.empresatag				= Csrempresa.tag
-*!*	   goapp.empresarete			=Csrempresa.retenedora
-*!*	   goapp.empresareteiva			= CsrEmpresa.reteiva
-*!*	   Goapp.empresaincluyeiva		= IIF(CsrEmpresa.incluyeiva=1,.t.,.f.)
-*!*	   Goapp.empresautilidad		= IIF(CsrEmpresa.utilidad=1,.t.,.f.)
-*!*	   Goapp.empresautisobreflete	= IIF(CsrEmpresa.utisobreflete=1,.t.,.f.)
-*!*	   Goapp.empresautisobreinterno = IIF(CsrEmpresa.utisobreinterno=1,.t.,.f.)
-	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
-ENDIF
-   
-IF USED("Csrseteotermi")
-	USE IN Csrseteotermi 
-ENDIF
-
-TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT Csrseteotermi.* FROM seteotermi as Csrseteotermi WHERE sucursal = <<Goapp.sucursal>> and nombre='<<lcpc>>'
 ENDTEXT 
 
 lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
 IF lok
-   Goapp.terminal               = Csrseteotermi.numero
+   Goapp.terminal       = Csrseteotermi.numero
    Goapp.nombreterminal = Csrseteotermi.nombre
+   Goapp.sucuterminal	= CsrSeteoTermi.sucursal
 ENDIF
-
-IF USED('CsrPAraVario')
-	USE IN CsrPAraVario
-ENDIF 
-
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrParaVario.* FROM paravario as CsrParavario WHERE idorigen = <<Goapp.terminal>> and nombre='REPORTE<<strzero(goapp.terminal,4)>>'
-ENDTEXT 
-IF CrearCursorAdapter("Csrparavario",lcCmd)
-	IF RECCOUNT('csrparavario')#0
-		goapp.rutasalidareporte = CsrParaVario.detalle
-	ENDIF 
-ENDIF
-
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrSucursal.* FROM CentroRecep as CsrSucursal WHERE numero = <<goapp.sucursal>>
-ENDTEXT 
-IF CrearCursorAdapter('CsrSucursal',lcCmd)
-	IF RECCOUNT('CsrSucursal')#0
-		goapp.idsucursal = CsrSucursal.id
-	ENDIF 
-ENDIF 
-
-IF USED('CsrSucursal')
-	USE IN CsrSucursal
-ENDIF 
-
-IF USED('CsrPAraVario')
-	USE IN CsrPAraVario
-ENDIF 
 
 IF USED("Csrseteotermi")
 	USE IN Csrseteotermi 
 ENDIF
 
+=LeerDatosEmpresa()
+
 RETURN .t.
 
+
+FUNCTION LeerDatosEmpresa
+
+LOCAL lcCmd,lok
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT Csrempresa.* FROM CentroRecep as CsrSucursal
+left join empresa as Csrempresa  on  CsrSucursal.id = CsrEmpresa.idsucursal 
+WHERE CsrSucursal.numero = <<goapp.sucursal>>
+ENDTEXT 
+
+lok =CrearCursorAdapter("Csrempresa",lcCmd)
+
+IF lok
+    GOapp.empresaid 				= Csrempresa.id
+	GOapp.empresanombre		= Csrempresa.nombre
+	GOapp.empresaramo			= Csrempresa.ramo
+	GOapp.empresadireccion		= Csrempresa.direccion
+	GOapp.empresacpostal		= Csrempresa.cpostal
+	GOapp.empresalocalidad		= Csrempresa.localidad
+	GOapp.empresaprovincia		= Csrempresa.provincia
+	GOapp.empresatelefono		= Csrempresa.telefono
+	GOapp.empresatipoiva			= Csrempresa.tipoiva
+	GOapp.empresacuit			= Csrempresa.cuit
+	GOapp.empresaibruto 			= Csrempresa.ibruto
+	GOapp.empresacajapre		= Csrempresa.cajapre
+	GOapp.empresaimpint			= Csrempresa.impint
+	Goapp.empresaagenteibb        = Csrempresa.agenteibb
+	GOapp.empresatag				= Csrempresa.tag
+	goapp.empresarete			=Csrempresa.retenedora
+	goapp.empresareteiva			= CsrEmpresa.reteiva
+	Goapp.empresaincluyeiva		= IIF(CsrEmpresa.incluyeiva=1,.t.,.f.)
+	Goapp.empresautilidad		= IIF(CsrEmpresa.utilidad=1,.t.,.f.)
+	Goapp.empresautisobreflete	= IIF(CsrEmpresa.utisobreflete=1,.t.,.f.)
+	Goapp.empresautisobreinterno	= IIF(CsrEmpresa.utisobreinterno=1,.t.,.f.)
+	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',IIF(goapp.ldesarrollo,"",SYS(5)+CURDIR()))
+	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
+ENDIF
+
+
+RETURN .t.
 
 FUNCTION LeerVersionExe
 PARAMETERS lnopcion,lcExe
@@ -1679,7 +1703,7 @@ LOCAL lcCmd,lok,ldfechaserver,lreturn
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT Csrparaconfig.*,ISNULL(csrdetanrocaja.nrocaja,0) as nrocaja,csrdetanrocaja.fecdesde as fecdesde
 ,csrdetanrocaja.fechasta as fechasta,Csrdetanrocaja.switch as switchCaja,csrdetaconta.ejercicio as ejercicio
-,ISNULL(CsrDetaNrocajaFac.nrocaja,0) as nrocajafac
+,ISNULL(CsrDetaNrocajaFac.nrocaja,0) as nrocajafac,ISNULL(CsrDetaNrocajaFac.pefiscal,0) as pefiscalcajafac
 ,ISNULL(Csrdetanrocajafac.switch,'00000') as switchCajaFac
 FROM paraconfig as Csrparaconfig
 left join detanrocaja as csrdetanrocaja on Csrparaconfig.iddetanrocaja = csrdetanrocaja.id
@@ -1696,6 +1720,7 @@ IF lok
 	LeerEjercicioActivo(@lObjEjercicioActivo)
 
 	SELECT CsrParametros
+	LOCATE FOR idcentrorecep = goapp.idsucursal
   	DO case 
 		CASE lnopcion=1
     			lcmensaje = "fecha activa actual de facturación "+DTOC(TTOD(Csrparametros.fechafac))+CHR(13);
@@ -1706,6 +1731,7 @@ IF lok
   	ENDCASE 
 	SCATTER NAME OscParametros
 	&&Recuperamos el ejercicio a la cual pertenece la fecha de facturacion. Para registrar el asiento contable
+	*lObjEjercicioActivo.peFiscalCajaFac = OscParametros.peFiscalCajaFac &&Nunca implementado
 	IF !LeerEjercicioActivoFac(OscParametros)
 		RETURN .f.
 	ENDIF 
@@ -1773,40 +1799,35 @@ FUNCTION ConeccionADO
 
 Local  loCatchErr As Exception
 
-DO case
-	CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
-		loConnDataSource = createobject('ADODB.Connection')
-		loConnDataSource.ConnectionString = LcConectionString
-		loConnDataSource.CommandTimeout = 0    && indefinidamente
-		loConnDataSource.ConnectionTimeout = 60
-		
-		TRY 
-			Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
-		CATCH 
-			MESSAGEBOX('Falta definir objeto ocx para oavisar',0)
-			RETURN .f.
-		ENDTRY 
-		
-		TRY 				                              			    
+TRY 
+	DO case
+		CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
+			loConnDataSource = createobject('ADODB.Connection')
+			loConnDataSource.ConnectionString = LcConectionString
+			loConnDataSource.CommandTimeout = 0    && indefinidamente
+			loConnDataSource.ConnectionTimeout = 60
+
+			*Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
+							                              			    
 			loConnDataSource.Open()
 							                        			    
 			Oavisar.proceso('N')
-		Catch To loCatchErr
-			=Oavisar.proceso('N')	
-			=Oavisar.usuario('La conexión a la Base de Datos a fallado'+CHR(13);
-					+CHR(13)+lcConectionString,0)
-			RETURN .f.
-		ENDTRY 
 		                       			                           	  	
-	CASE LcDataSourceType='NATIVE'
-		IF !DBUSED('&LcConectionString')        
-			OPEN DATABASE (LcConectionString) SHARED
-		ENDIF  
-		SET DATABASE TO (LcConectionString)
-	OTHERWISE 
-		ERROR 1429
-ENDCASE
-
+		CASE LcDataSourceType='NATIVE'
+			IF !DBUSED('&LcConectionString')        
+				OPEN DATABASE (LcConectionString) SHARED
+			ENDIF  
+			SET DATABASE TO (LcConectionString)
+		OTHERWISE 
+			ERROR 1429
+		ENDCASE
+Catch To loCatchErr
+	=Oavisar.proceso('N')	
+	=Oavisar.usuario('La conexión a la Base de Datos a fallado'+CHR(13);
+					+CHR(13)+lcConectionString,0)
+	RETURN .f.
+ENDTRY 
+*oavisar.usuario( LcConectionString+"   Conexionado")
 RETURN .t.
 
 
@@ -1881,11 +1902,12 @@ FUNCTION LeerEjercicioPerfil
 LOCAL lcCmd,lok,lnidejercicio
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT TOP 1 Csrdetaconta.id as idejercicio,csrdetaconta.ejercicio as ejercicio
+SELECT Csrdetaconta.id as idejercicio,csrdetaconta.ejercicio as ejercicio
 FROM paraconfig as Csrparaconfig
 left join detanrocaja as csrdetanrocaja on CsrParaConfig.iddetanrocaja = CsrDetanrocaja.id
 left join detaconta as csrdetaconta 
 	on Csrdetanrocaja.nrocaja >= CsrDetaconta.nrocaja1 and CsrDetanrocaja.nrocaja <= csrdetaconta.nrocaja2
+Where CsrPAraConfig.idcentrorecep = <<goapp.idsucursal>>
 order by ejercicio desc 
 ENDTEXT 
 
@@ -1942,6 +1964,8 @@ lObjEjercicioActivo.cajaactual  = 0
 lObjEjercicioActivo.idcajaactual  = 0
 lObjEjercicioActivo.fecCajadesde = {}
 lObjEjercicioActivo.fecCajahasta  = {}
+lObjEjercicioActivo.peFiscalCaja = ""
+lObjEjercicioActivo.peFiscalCajaFac = ""
 
 LOCAL lcCmd,lok
 
@@ -1957,11 +1981,10 @@ IF lok
 	lObjEjercicioActivo.fechasta  = CsrCursor.fechasta
 	lObjEjercicioActivo.Nrocaja1  = CsrCursor.nrocaja1
 	lObjEjercicioActivo.nrocaja2  = CsrCursor.nrocaja2
-	lObjEjercicioActivo.peFiscalCaja = ""
-	lObjEjercicioActivo.peFiscalCajaFac = ""
 ENDIF
 
-
+&&MArcos 30/10/2013
+&&Recuperamos la caja correspondiente a la sucursal
 IF lnhaycierre=0
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT csrdetanrocaja.id as id,csrdetanrocaja.nrocaja as nrocaja,csrdetanrocaja.fecdesde as fecdesde,csrdetanrocaja.fechasta as fechasta
@@ -1969,6 +1992,7 @@ IF lnhaycierre=0
 	FROM paraconfig as Csrparaconfig
 	left join detanrocaja as csrdetanrocaja on Csrparaconfig.iddetanrocaja = csrdetanrocaja.id
 	Where Csrdetanrocaja.nrocaja >= <<lObjEjercicioActivo.Nrocaja1>> and Csrdetanrocaja.nrocaja <= <<lObjEjercicioActivo.Nrocaja2>>
+	and CsrParaConfig.idcentrorecep = <<goapp.idsucursal>>
 	ENDTEXT 
 	&&Buscamos la caja que pertenezca al rango del ejercicio
 	&&Where CsrPAraConfig.idejercicio = <<goapp.idejercicio>>
@@ -1978,6 +2002,7 @@ ELSE
 	,Csrdetanrocaja.switch as switch,CsrDetanrocaja.pefiscal
 	FROM detanrocaja as csrdetanrocaja
 	where  Csrdetanrocaja.nrocaja >= <<lObjEjercicioActivo.Nrocaja1>> and Csrdetanrocaja.nrocaja <= <<lObjEjercicioActivo.Nrocaja2>>
+	and CsrDetaNroCaja.idsucursal = <<goapp.idsucursal>>
 	order by Csrdetanrocaja.nrocaja
 	ENDTEXT 
 ENDIF
@@ -2043,7 +2068,7 @@ IF RECCOUNT('CsrCursor')#0
 	goapp.ejerciciofac = CsrCursor.ejercicio
 ELSE
 	=Oavisar.usuario("Contacte a un usuario con permiso para agregar un nuevo ejercicio contable"+CHR(13)+CHR(13);
-				+"Caja "+TRANSFORM(CsrParametros.nrocajafac,"99999999")+chr(13);
+				+"Caja "+TRANSFORM(OscParametros.nrocajafac,"99999999")+chr(13);
 				+"     pertenece aun ejercicio inexistente"+CHR(13)+CHR(13);
 				+"caja  facturación "+TRANSFORM(OscParametros.nrocajafac,"99999999"),0)
 ENDIF
@@ -2363,29 +2388,35 @@ ENDFUNC
 * lbZap = si es true, limpiamos la tabla antes.
 *------------------------------------------
 FUNCTION CargarTabla
-PARAMETERS lcBdd,lcAlias,lbZap
+PARAMETERS lcBdd,lcTabla,lcAlias,lbZap,lbExclu
 LOCAL llok
 llok = IIF(PCOUNT()<1,.f.,.t.)
 llok = IIF(PCOUNT()<2,.f.,llok)
 llok = IIF(EMPTY(lcbdd),.f.,llok)
-llok = IIF(EMPTY(lcAlias),.f.,llok)
+llok = IIF(EMPTY(lcTabla),.f.,llok)
 
-lbZap = IIF(PCOUNT()<3,.f.,lbZap)
+lcAlias = IIF(PCOUNT()<3,"",lcAlias)
+lbZap = IIF(PCOUNT()<4,.f.,lbZap)
+lbExclu = IIF(PCOUNT()<5,.f.,lbExclu)
+lcAlias	= IIF(EMPTY(lcAlias),"Csr"+LTRIM(lcTabla),lcAlias)
 
 IF !llok
 	Oavisar.usuario('No especifico el base de datos/alias para crear el cursor')
 	RETURN .f.
 ENDIF 
-lcCsrAlias = 'Csr'+LTRIM(lcAlias)
-lcArchivo = LTRIM(lcbdd)+'!'+LTRIM(lcAlias)
+lcArchivo = LTRIM(lcbdd)+'!'+LTRIM(lcTabla)
 llok = .t.
 TRY 
-	IF USED(lcAlias)
-		USE IN lcAlias
+	IF USED(lcTabla)
+		USE IN lcTabla
 	ENDIF 
-	USE &lcArchivo IN 0 ALIAS &lcCsrAlias EXCLUSIVE
+	IF lbExclu
+		USE &lcArchivo IN 0 ALIAS &lcAlias EXCLUSIVE
+	ELSE
+		USE &lcArchivo IN 0 ALIAS &lcAlias
+	ENDIF 
 	IF lbZap
-		ZAP IN &lcCsrAlias
+		ZAP IN &lcAlias
 	ENDIF 
 CATCH TO oError
 	oavisar.usuario(oError.Details+CHR(13)+oError.LineContents+CHR(13);
@@ -2394,30 +2425,6 @@ CATCH TO oError
 	llok = .f.
 ENDTRY
 RETURN  llok
-*------------------------------------------
-* FUNCION RecuperarID(lcAlias,lnSucursal)
-*------------------------------------------
-* Funcion para generar el id = sucursal + id.
-* lcAlias = Nombre de la tabla
-* lnSucursal = numero d ela sucursal.
-*------------------------------------------
-FUNCTION RecuperarID
-PARAMETERS lcAlias, lnsucursal
-lnsucursal = lnsucursal + 10 
-lnid = 1
-SELECT(lcAlias)
-IF FSIZE('id')>4
-	lntam = 10
-ELSE 
-   	lntam = 8
-ENDIF 
-IF RECCOUNT(lcAlias)>0
-	GO BOTTOM 
-	lnid = VAL(SUBSTR(STR(id,lntam+2),3)) +1
-ENDIF 
-
-lccadena = strzero(lnid,lntam)
-RETURN INT(VAL(str(lnsucursal,2)+lccadena))
 
 FUNCTION createStruct( toReflection, tcTypeName )
   LOCAL loPropertyValue, loTemp
@@ -2446,75 +2453,3 @@ ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora)
 
 RETURN ldfechahoracero
  
-**********************************************************
-Function GRABAR_LOG
-
-Parameters tcTexto,tcArchivo,tcCarpeta
-
-Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
-Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
-
-tcArchivo=IIF(PCOUNT()<2,'Log.txt',tcArchivo)
-tcCarpeta=IIF(PCOUNT()<2,'Log',tcCarpeta)
-
-IF VARTYPE(tcCarpeta)$"L"
-	tcCarpeta = 'Log'
-ENDIF 
-
-Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta
-Lcfilelog=Lcdirlog+'\'+tcArchivo
-LcNewlog=Lcdirlog+'\'+'New'+ALLTRIM(tcArchivo)
-
-If !Directory(Lcdirlog)
-	Md (Lcdirlog)
-Endif
-
-plRet    = .T.
-pnLongAc = 0
-pnTammax = 60000
-pnFtama = 0
-
-tcTexto=Dtoc(Datetime())+' , '+tcTexto
-
-If File(Lcfilelog)                && ¿Existe el archivo?
-	pnFich = Fopen(Lcfilelog,12)  && Sí: abrir lect./escrit.
-	pnFtama=Fseek(pnFich, 0, 2)                     && Mueve el puntero a EOF
-&& y devuelve el tamaño
-Else
-	pnFich = Fcreate(Lcfilelog)   && Si no, crearlo
-Endif
-If pnFich < 0                                       && Comprobar el error
-&& abriendo el archivo
-	plRet = .F.
-	Wait 'No puedo abrir o crear el archivo de salida (fich)' Window Nowait
-Else                                                && Si no hay error,
-&& escribir en el archivo
-	If pnFtama > pnTammax                           && Si el tamaño es mayor que el max
-		pnFichn = Fcreate(Lcnewlog)    && Crear nuevo log
-		If pnFichn < 0
-			Wait 'No puedo abrir o crear el archivo de salida (fichn)' Window Nowait
-		Else
-			pnPos = Fseek(pnFich, -(pnTammax - 256), 1)
-			pcChar = Fread(pnFich, 1)
-			Do While pcChar <> Chr(10)
-				pcChar = Fread(pnFich, 1)
-			Enddo
-			pnPos = Fseek(pnFich, 0, 1)
-			Do While Not(Feof(pnFich))
-				= Fputs(pnFichn,Fgets(pnFich))
-			ENDDO
-			
-			=Fclose(pnFich)
-			=Fclose(pnFichn)
-			
-			Delete File &Lcfilelog
-			Rename &Lcnewlog To &Lcfilelog
-			pnFich = Fopen(Lcfilelog,12)
-			pnFtama=Fseek(pnFich, 0, 2)
-		Endif
-	Endif
-	=Fputs(pnFich, tcTexto)
-Endif
-=Fclose(pnFich)                                    && Cerrar archivo
-
-Return plRet
