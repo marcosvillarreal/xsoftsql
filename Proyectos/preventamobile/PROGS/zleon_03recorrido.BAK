@@ -224,10 +224,11 @@ SCAN
 		LOOP 
 	ENDIF 
 	
+
 	&&Si esta en Ctacte pero no en el recorrido lo marcamos como bloqueado
 	SELECT Csrctacte
 	LOCATE FOR VAL(cnumero)=CsrCliente.numero
-    IF VAL(cnumero) = CsrCliente.numero
+    	IF VAL(cnumero) = CsrCliente.numero AND CsrCtacte.ctalogistica=0
 	    replace estadocta WITH 1 IN CsrCtacte
 	    SELECT CsrCliente
 	    LOOP 

@@ -50,17 +50,6 @@ Oavisar.proceso('S','Procesando '+alias())
 LOCAL lnid
 lnid = RecuperarID('CsrCateIbRNg',Goapp.sucursal10)
 
-SELECT CsrProvinciaViejo
-GO top
-SCAN FOR !EOF()
-	lcnombre=NombreNi(ALLTRIM(UPPER(CsrProvinciaViejo.nombre)))          
-	SELECT CsrProvincia
-	LOCATE FOR nombre$lcnombre
-	IF nombre$lcnombre
-		replace alicuota2 WITH ibrutosa,alicuota4 WITH ibrutosb,jurisdiccion WITH codjuri IN CsrProvincia
-	ENDIF 
-	SELECT CsrProvinciaViejo
-ENDSCAN 
 SELECT CsrCaterionegro
 GO top
 SCAN FOR !EOF() 
@@ -225,11 +214,11 @@ SCAN
 		ENDIF
 		
 		lnidestado = 0
-        	lnctadeudor = 1
-        	lnctaacreedor = 0
-        	lnctabanco = 0
-        	lnctaotro  = 0
-        	lndctalogistica = 0
+        lnctadeudor = 1
+        lnctaacreedor = 0
+        lnctabanco = 0
+        lnctaotro  = 0
+        lndctalogistica = 0
         
 		lnidcategoria = VAL(str(Goapp.sucursal10+10,2)+strzero(1,lntamcate))
 		SELECT CsrCateCtacte
@@ -293,11 +282,7 @@ SCAN
 		ENDIF 
 
 		lcnombre = NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))
-      	
-      	IF CsrDeudor.debaja AND CsrDeudor.numero= 1646
-      		LOOP 
-      	ENDIF 
-      		
+      
           INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
           ,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
           ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
@@ -532,7 +517,7 @@ SCAN
     	lnesrecodevol = 0
 		*lnidcateibrng =VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STR(4)))
 		lcnombre = NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre))) 
-    		IF "MASTEL"$lcnombre OR "DANON"$lcnombre OR "NUTRIC"$lcnombre
+    		IF lcnombre$"MASTEL" OR lcnombre$"DANON" OR lcnombre$"NUTRIC"
     			lntotalizabonif = 1
     			lnesrecodevol = 1
     		ENDIF    

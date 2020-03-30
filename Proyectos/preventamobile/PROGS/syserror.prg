@@ -1,6 +1,6 @@
 
 procedure errorsys
-	
+
 	lldesarrollo=(_vfp.startmode()#4)
 	LOCAL aFoxErr,nTotErr
 	DIMENSION aFoxErr[1]
@@ -62,7 +62,7 @@ procedure errorsys
 				RETURN	
 			CASE nError=2065
 				GRABAR_SEC(MESSAGE(),"Error2065.txt","TempError")
-				RETURN 		  		       
+				RETURN 		       
 			OTHERWISE	
 				=Mensaje_error(nError)
 				CLEAR CLASSLIB onegocioslocal
@@ -72,50 +72,51 @@ RETURN
 
 function Mensaje_error(nError)
 	LOCAL lclocalprogram,lcmensaje,gnx
-	
-*!*		lcmensaje = 'Error '+MESSAGE()+chr(13)+'Linea nº '+MESSAGE(1) +CHR(13)+"Error nº: "+STR(nError)+CHR(13);
-*!*		+' Alias '+alias()+' registro '+str(recno())+chr(13);
-*!*		+'Control activo '+sys(18) 
-	oform=Null
-	
-	lcmensaje = 'Error: '+Message()+' '+'Linea : '+Message(1)+' '+"Error : "+Str(nError)+' ';
-		+'Ultimo Alias Activo: '+Alias()+' '+'Ultimo registro: '+Str(Recno())+" "+Sys(14,1)+' ';
-		+'DBF: '+Dbf()+' '+'Ultimo Control activo: '+Sys(18)
-	
-	lclocalprogram = PROGRAM(1) &&""	
+
+	lcmensaje ="Error nº: "+STR(nError)+CHR(13);
+	+'Error '+MESSAGE()+ CHR(13)+'Linea nº '+MESSAGE(1) +chr(13)+' Alias '+alias()+' registro '+str(recno())+chr(13);
+	+'Control activo '+sys(18) 
+
+	lclocalprogram = PROGRAM(1) &&""
 	lcmensaje = lcmensaje +" "+ lclocalprogram
-    
-    *=Oavisar.usuario(lcmensaje,0)
+	*=Oavisar.usuario(lcmensaje,0)
     Grabar_log(lcmensaje)
     
     Do Form frmerror Name oform Linked With nError,lcmensaje,lclocalprogram To luvalorbuscado
 
 	uvalorbuscado=luvalorbuscado
 	Release oform
-	
-	If Txnlevel()>0
-		If !'NATIVE'$LcDataSourceType 
-			If LcDataSourceType="ADO" 
-				DO CASE 
-				CASE Vartype(Oca)="O"
-					Oca.Datasource.ActiveConnection.rollbacktrans()
-				CASE VARTYPE(oCadapter)="O"
-					 oCadapter.Datasource.ActiveConnection.rollbacktrans()
-				ENDCASE 
-			Else
-				lnOkSql =Sqlrollback(lnConectorODBC)
+
+	If uvalorbuscado=1 && Aceptar
+	   return
+		*Return To Master
+	Else && cancelar	  
+	    && me fijo si hay una transaccion abierta
+	    
+		If Txnlevel()>0
+			If !'NATIVE'$LcDataSourceType 
+				If LcDataSourceType="ADO" 
+					DO CASE 
+					CASE Vartype(Oca)="O"
+						Oca.Datasource.ActiveConnection.rollbacktrans()
+					CASE VARTYPE(oCadapter)="O"
+						 oCadapter.Datasource.ActiveConnection.rollbacktrans()
+					ENDCASE 
+				Else
+					lnOkSql =Sqlrollback(lnConectorODBC)
+				Endif
 			Endif
+			Rollback
 		Endif
-		Rollback
-	Endif
-	
-	local llFormActivo
-	llFormActivo=type('application.activeform')='O'
-	if llFormActivo
-		application.ActiveForm.Unload()
 		
+		local llFormActivo
+		llFormActivo=type('application.activeform')='O'
+		if llFormActivo
+			application.ActiveForm.Unload()
+			
+		ENDIF
+		Do Form frmlogout 
 	ENDIF
-	Do Form frmlogout 
-		
+
 RETURN
 

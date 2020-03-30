@@ -54,7 +54,7 @@ USE ALLTRIM(lcpath )+"\gestion\deposito" IN 0 ALIAS CsrdepositoVie EXCLUSIVE
 
 USE ALLTRIM(lcpath )+"\gestion\sabor" IN 0 ALIAS CsrSabores EXCLUSIVE
 
-*!*	USE  ALLTRIM(lcpath )+"\gestion\gamabase" in 0 alias CsrGama EXCLUSIVE
+USE  ALLTRIM(lcpath )+"\gestion\gamabase" in 0 alias CsrGama EXCLUSIVE
 
 USE ALLTRIM(lcpath )+"\gestion\codbarra" in 0 alias CsrSubArticulo EXCLUSIVE
 
@@ -278,14 +278,14 @@ SCAN FOR !EOF()
 	PREVTA3,margen4,prevta4,interno,unibulto,peso,idtipovta,idforma,fracciona,nomodifica,nombulto,puntope,;
 	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
-	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctaVTA,idenvase); 	
+	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,fecoferta,internoporce,idctacpra,idctaVTA,idenvase); 	
 	VALUES (lnid, Csrarticulo.NUMERO, lcnombre, LTRIM(STR(Csrarticulo.numero)), lnidiva, lnCosto,	;
 	Csrarticulo.utilidad, lnPREVta1, Csrarticulo.util2, lnPREVta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, Csrarticulo.util3, ;
 	lnPREVta3, 0,0,lninterno, Csrarticulo.unibulto,Csrarticulo.peso, lnidtipovta,lnidforma,lnfracciona,0,'',Csrarticulo.puntope,;
 	1,1,lnflete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, lnBonif1,lnbonif2, lnbonif3,;
 	lnbonif4 ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnfrio,;
 	lnsugerido,1,lnsireparto	,IIF(EMPTY(CsrArticulo.codigo_prv),' ',CsrArticulo.codigo_prv),CsrArticulo.bonies, CsrArticulo.minimo,;
-	CsrArticulo.bonies2, CsrArticulo.minimo2, CsrArticulo.bonies3, CsrArticulo.minimo3,LNVTAKILOS,LNVTAKILOS,ldfechabonif,0,lnidctacpra,lnidctavta,lnidenvase)		
+	CsrArticulo.bonies2, CsrArticulo.minimo2, CsrArticulo.bonies3, CsrArticulo.minimo3,LNVTAKILOS,ldfechabonif,0,lnidctacpra,lnidctavta,lnidenvase)		
 
 	lnid = lnid + 1
 
@@ -395,38 +395,38 @@ ENDSCAN
 
 SELECT CsrCateCtacte
 
-*!*	lnid = RecuperarID('CsrGamaBase',Goapp.sucursal10)
+lnid = RecuperarID('CsrGamaBase',Goapp.sucursal10)
 
-*!*	SELECT CsrGama
-*!*	SCAN 
-*!*		 SELECT CsrProducto
-*!*		 LOCATE FOR numero = CsrGama.articulo
-*!*		 IF !(numero = CsrGama.articulo)
-*!*		 	LOOP 
-*!*		 ENDIF 
-*!*		 SELECT CsrCatectacte
-*!*		 LOCATE FOR numero = CsrGama.categoria
-*!*		 IF !(numero = CsrGama.categoria)
-*!*		 	LOOP 
-*!*		 ENDIF 
-*!*		 SELECT CsrVariedad
-*!*		 lnidsub = 0
-*!*		 LOCATE FOR numero = CsrGama.sabor
-*!*		 IF !(numero = CsrGama.sabor) AND CsrGama.sabor<>0
-*!*		 	LOOP 
-*!*		 ELSE
-*!*		 	SELECT CsrSubproducto
-*!*		 	LOCATE FOR idarticulo=CsrProducto.id  AND idvariedad = CsrVariedad.id
-*!*		 	IF idarticulo=CsrProducto.id  AND idvariedad = CsrVariedad.id 
-*!*		 		lnidsub = CsrSubproducto.id
-*!*		 	ELSE
-*!*		 		LOOP 
-*!*		 	ENDIF 
-*!*		 ENDIF    
-*!*		 INSERT INTO CsrGamabase(id,idcatectacte,idproducto,idsubproducto);
-*!*		 VALUES (lnid,CsrCatectacte.id,CsrProducto.id,lnidsub)
-*!*		 lnid = lnid + 1	                                          
-*!*	ENDSCAN 
+SELECT CsrGama
+SCAN 
+	 SELECT CsrProducto
+	 LOCATE FOR numero = CsrGama.articulo
+	 IF !(numero = CsrGama.articulo)
+	 	LOOP 
+	 ENDIF 
+	 SELECT CsrCatectacte
+	 LOCATE FOR numero = CsrGama.categoria
+	 IF !(numero = CsrGama.categoria)
+	 	LOOP 
+	 ENDIF 
+	 SELECT CsrVariedad
+	 lnidsub = 0
+	 LOCATE FOR numero = CsrGama.sabor
+	 IF !(numero = CsrGama.sabor) AND CsrGama.sabor<>0
+	 	LOOP 
+	 ELSE
+	 	SELECT CsrSubproducto
+	 	LOCATE FOR idarticulo=CsrProducto.id  AND idvariedad = CsrVariedad.id
+	 	IF idarticulo=CsrProducto.id  AND idvariedad = CsrVariedad.id 
+	 		lnidsub = CsrSubproducto.id
+	 	ELSE
+	 		LOOP 
+	 	ENDIF 
+	 ENDIF    
+	 INSERT INTO CsrGamabase(id,idcatectacte,idproducto,idsubproducto);
+	 VALUES (lnid,CsrCatectacte.id,CsrProducto.id,lnidsub)
+	 lnid = lnid + 1	                                          
+ENDSCAN 
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')

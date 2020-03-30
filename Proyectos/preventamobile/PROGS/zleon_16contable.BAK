@@ -32,10 +32,10 @@ IF !CrearCursorAdapter('CsrParaVario',lccmd)
 	MESSAGEBOX('Nose puede importar, las tablas varias nose cargaron')
 	RETURN .f.
 ENDIF
-&&Tomamos la primera caja
+&&Tomamos la ultima caja
 TEXT TO lccmd TEXTMERGE NOSHOW 
 SELECT TOP 1 CsrDetaNroCaja.* FROM DetaNroCaja as CsrDetaNroCaja
-order by nrocaja
+order by id desc
 ENDTEXT 
 IF !CrearCursorAdapter('CsrDetaNroCaja',lccmd) 
 	MESSAGEBOX('Nose puede importar, pq no puede cargar el CsrDetaNroCaja')

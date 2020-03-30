@@ -119,14 +119,14 @@ LOCAL lnid,lnidcabeza,lnidmovcte,lnidcuerpo,lnidmstk,lnidtablaasi,lnidtablaimp,l
 LOCAL lnidanmaiopera,lnidsub,lnidproducto
 
 
-lnid 		= 110000073010 +1 &&RecuperarID('CsrMaopera',Goapp.sucursal10)
-lnidcabeza 	= 110000037501 +1 &&RecuperarID('CsrCabefac',Goapp.sucursal10)
-lnidcuerpo	= 110000452545 +1 &&RecuperarID('CsrCuerfac',Goapp.sucursal10)
+lnid 		= 110000064427 +1 &&RecuperarID('CsrMaopera',Goapp.sucursal10)
+lnidcabeza 	= 110000028334 +1 &&RecuperarID('CsrCabefac',Goapp.sucursal10)
+lnidcuerpo	= 110000462492 +1 &&RecuperarID('CsrCuerfac',Goapp.sucursal10)
 lnidmstk	= RecuperarID('CsrMovStock',Goapp.sucursal10)
 lnidtablaasi= RecuperarID('CsrTablaAsi',Goapp.sucursal10)
-lnidtablaimp= 110000116155 +1 &&RecuperarID('CsrTablaImp',Goapp.sucursal10)
+lnidtablaimp= 110000108429 +1 &&RecuperarID('CsrTablaImp',Goapp.sucursal10)
 lnidcabeasi = RecuperarID('CsrCabeAsi',Goapp.sucursal10)
-lnidcuervari= 110000268908+1 &&RecuperarID('CsrCuerVari',Goapp.sucursal10)
+lnidcuervari= 110000275742 +1 &&RecuperarID('CsrCuerVari',Goapp.sucursal10)
 lnidanmaiopera = RecuperarID('CsrAnMaopera',Goapp.sucursal10)
 lnidsub 	= RecuperarID('CsrSubProducto',Goapp.sucursal10)
 lnidproducto= RecuperarID('CsrProducto',Goapp.sucursal10)
@@ -209,8 +209,7 @@ SCAN FOR !EOF()
 	lnidnotacredito = CsrCabeza.tiponc
 	lnrendida 		= IIF(CsrCabeza.rendida='S',1,0)
 	lccuit			= CsrCabeza.cuit
-	ldfechaserver 	= DATETIME()
-	ldfechasis 		= FechaHoraCero(ldfechaserver)
+	
 	
 	lntipovta	= CsrCabeza.plan
 	lnimporte	= CsrCabeza.importe
@@ -222,6 +221,7 @@ SCAN FOR !EOF()
 	ldfecha     = DATETIME(YEAR(Csrcabeza.fecha),MONTH(Csrcabeza.fecha),DAY(Csrcabeza.fecha),0,0,0)
 	ldfecha_vto = DATETIME(YEAR(Csrcabeza.fecha_vto),MONTH(Csrcabeza.fecha_vto),DAY(Csrcabeza.fecha_vto),0,0,0)
 	lcestado 	= '0'
+	
 	
 	******Chequeamos que si el comprobante es anulado, recupero la cabeza en anulados.
 	IF "ANULA"$UPPER(CsrCabeza.nombre)
@@ -253,6 +253,9 @@ SCAN FOR !EOF()
 		ldfecha_vto = DATETIME(YEAR(CsrAnulados.fecha_vto),MONTH(CsrAnulados.fecha_vto),DAY(CsrAnulados.fecha_vto),0,0,0)
 		lcestado	= '1'
 	ENDIF 
+	
+	ldfechaserver 	= ldfecha &&DATETIME()
+	ldfechasis 		= FechaHoraCero(ldfechaserver)
 	
 	lntipoiva =lntipocuit
 	IF lntipoiva=7

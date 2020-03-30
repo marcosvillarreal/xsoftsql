@@ -1,11 +1,14 @@
+LPARAMETERS cModulo
+
+cModulo = IIF(PCOUNT()<1,'0',cModulo)
+
 *===================
 *= ARCHIVO PRINCIPAL
 *===================
 *
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
-clear all
-SET SYSMENU off
+
 set classlib to
 l='j:'
 set talk off
@@ -13,7 +16,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestión de Ventas"
+lctituloGestion = "Administrador PM"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -53,20 +56,19 @@ If lldesarrollo
    _rutareports=lcdd+'reports' 
     _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
    _rutaffc  =L+'\xsoftsql\desarrollo\clases\ffc'
-   _rutalib = L +'\xsoftsql\desarrollo\lib'   
-   cRutaCAE	= _rutabmps + '\caevacio.jpg'
-   cLogoFAC	= _rutabmps + '\logofac.jpg'
-   
-   _rutaformsp  =lcdd+'forms\pedidos'
-
+   _rutalib =    L+'\xsoftsql\desarrollo\lib'
    
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
-               ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsp
-               
-      
+               ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib
+ELSE
+*-- RUTA
+   _rutadatos  =lcdd+'Datos'
+   
+   Set default to (lcdd) &&;(lcddc)
+
+   Set path to &_rutadatos
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -76,29 +78,26 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 *-- APERTURA DE CLASES Y ARCHIVOS DE PROCEDIMIENTOS
 
    SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
-   SET PROCEDURE  TO  procdesarrollo.prg ADDITIVE  && Procedimientos generales
-   SET PROCEDURE  TO  procimportar.prg ADDITIVE  && Procedimientos generales
    SET PROCEDURE  TO  syserror.prg ADDITIVE  
    SET PROCEDURE  TO  syerrhand.prg ADDITIVE  
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE 
-       
+   SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
+   SET PROCEDURE TO proc_importar.prg ADDITIVE 
+      
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
-   SET CLASSLIB  TO  controleslocal ADDITIVE 
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
    SET CLASSLIB TO onegocioslocal ADDITIVE 
+   SET CLASSLIB TO controleslocal ADDITIVE 
    SET CLASSLIB TO rcscalendar ADDITIVE 
    SET CLASSLIB TO _reportlistener.vcx ADDITIVE 
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
-   SET CLASSLIB  TO  ZIP ADDITIVE 
-
-   PUBLIC FOXHELPFILE 
-   FOXHELPFILE  =  "PM.CHM" 
+   SET CLASSLIB  TO  ZIP ADDITIVE
 *clear all
 
 _screen.lockscreen=.t.
@@ -115,11 +114,13 @@ PUBLIC lcConectionODBC,lnconectorODBC
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
+PUBLIC ModuloRobot
+ModuloRobot = cModulo
+
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
 
-Public goapp,ObjReporter
-
+ Public goapp,ObjReporter
 
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
 
@@ -128,13 +129,16 @@ ObjReporter.AddProperty('titulo1',"")
 ObjReporter.AddProperty('titulo2',"")
 ObjReporter.AddProperty('titulo3',"")
 ObjReporter.AddProperty('titulo4',"")
-ObjReporter.AddProperty('logo',"logogestion.jpg")
+ObjReporter.AddProperty('titsucursal',"")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
 ENDIF 
-ObjReporter.AddProperty('cartel',"")
+
+*!*	PUBLIC oFacCAE
+*!*	oFACCAE = CREATEOBJECT('oFacElectronica')
+*!*	oFacCAE.sw_conexion()
 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
@@ -147,7 +151,7 @@ IF TYPE('goApp')='O'
 			Set path to (goapp.cpath)
 		ENDIF          
 	ENDIF 
-	
+
 	goapp.version = "01.00.00"
 	
 	PUBLIC  gcicono
@@ -163,12 +167,15 @@ IF TYPE('goApp')='O'
 	do setup
 	_screen.LockScreen=.f.
 	 
-	Grabar_Log('Acceso al sistema, antes de autenticar') 
-	    
-	=Fwin32()    && funciones api win32
+	DO directivasfiscal    && en procfiscal.prg
+	DO directivasHasar
 	
-
-	=ObtenerServidor()
+   * =MESSAGEBOX(amodelofiscal[1])	  
+   
+	= Fwin32()    && funciones api win32
+	
+	*stop()
+	 =ObtenerServidor()
 	  
 	IF LEN(TRIM(LcConectionString))=0
 		DO FORM configbd
@@ -176,11 +183,14 @@ IF TYPE('goApp')='O'
 	ENDIF    
 
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
-	
+
+	*LeerXMLClassID("objetodll.xml")
+
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
 	
+	   * en proc.prg   
 	IF ExisteDSN()  			
 		IF !ConeccionADO()
 			CANCEL 
@@ -196,7 +206,15 @@ IF TYPE('goApp')='O'
 	WAIT CLEAR 
 
 * en proc.prg
-	
+
+	IF !lldesarrollo 
+*!*			IF !LeerVersionExe(1)
+*!*				CANCEL
+*!*				CLEAR ALL
+*!*				RETURN 	
+*!*		      ENDIF 
+	ENDIF 
+
 	LeerEmpresa()
 	    
 	Goapp.idusuario           = 0
@@ -204,28 +222,32 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
-	*--------------Codigo para que abra el form
     _screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	_screen.Show() 
-	
-	
+
 	DO FORM frmlogin
 	
+	&&La empresa pudo cambiar si se accedio a otra sucursal
+	LeerDatosEmpresa()
 	_screen.lockscreen=.t.		 
-	*--------------------------   
 	
+	IF goapp.sucursal = 2
+		_screen.picture= 'fondo512.jpg'
+	ENDIF 
+
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
 	oMenu.createMenu()   
 	oMenu = null
 
-	LeerEjercicioPerfil()
+	*LeerEjercicioPerfil()
 	
 	DO FORM frmmenu
-	                     
-	 _screen.visible=.t.	   
+	DO FORM regproceso
+	   
+	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 
 	Read events   
@@ -238,7 +260,7 @@ clear all
  
 Return
 
-*-----------------------------
+*-----------------------------
 FUNCTION F_ActivaWin(cCaption)
 *-----------------------------
 

@@ -1,3 +1,4 @@
+
 *!*	 datos tablas
  
 *!*	 MAOPERA.switch			1	0 = fac s/patron carga factura 1=fac c/patron carga factura 
@@ -5,9 +6,13 @@
 *!*								3	0 = fac s/patron carga n. pedido 1=fac c/patron carga n. pedido
 *!*								4	1 = asiento modificado (regasicierre)
 *!*								5	0 =(origen ='CPR')crpa mercaderia 
-*!*									1 =(origen ='CPR')cpraregistracion (origen = 'FAC') cambio de plan pago
-*!*									2 =asto importado sao
+*!*									1 =(origen ='CPR')cpraregistracion
+*!*									2 = importado sao
+*!*									8 = MODIFICADO POR ASMINISTRADOR
 *!*									9 =(origen ='CPR/FAC')importacion facturas
+*!*									6 = (origen ='CPR')crpa mercaderia desde sao
+*!*									7 =(origen ='CPR')cpraregistracion desde sao
+
 *!*	 MAOPERA.estado		= 1 anulado
 *!*	 MAOPERA.origen				FAC  = facturacion
 *!*								FPE  = facturacion notas de pedido
@@ -22,33 +27,28 @@
 *!*								CPR  = FACTURACION COMPRA
 *!*								MOV  = Movimientos importados
 *!*								AST  = Asientos manuales/Cierre/Reversa/etc
+*!*								CBN  = Conciliacionj bancaria
+*!*								PCA  = Pasaje de cartera entre sucursales
 
 *!*	 MOVCTACTE.switch			1	1= movimiento por cheque rechazado
 *!*								2	1= factura con retencion pagada
 *!*								3	1= movimiento compactado
 *!*								5	1= movimiento modificado manualmente por porgramador
 						    
-*!*	NMAOPERA.switch				1	0 = sin facturar 1 = facturado
-*!*								2
+*!*	NMAOPERA.switch			1	0 = sin facturar 1 = facturado
+*!*								2    
 *!*								3 	0 = sin cargar	1 = cargada
 *!*								4 	
 *!*								5
 *!*	NMAOPERA.estado 			1 anulado
 
 *en LEON NO se rinden planillas o cargas, sino facturas						   																													
-*!*	 CABEFAC.switch				1	F= factura normal N=nota pedido P=premio
+*!*	 CABEFAC.switch				1	F= factura normal N=nota pedido P=premio 
 *!*								2	N= comprobante originado por facturacion nota pedido (form facpedido)
-*!*								3
-*!*								4   tipofactura
+*!*								3	1=Vale 0=Sin Vale
+*!*								4	(N=Normal,M=Manual,D=Diferida)
 *!*								5	
-
 *!*	cabefac.rendida			0 = no rendida, 1=rendida
-
-*!*	 CABEORD.switch				1	A= ajuste automatico
-*!*								2	
-*!*								3
-*!*								4   
-*!*								5	
 
 *!*	 FLETEPLANILLA.switch		1 1 = borrado	
 *!*								2
@@ -70,7 +70,7 @@
  							   						 
 
 *!*	 MOVSTOCK.switch			1	1= es envase
-*!*								2   0=stock real   1=stock disponible
+*!*								2   0=stock real   1=stock disponible (solo en caso de n.pedido toque stock)
 *!*								3	0=normal  1=nota de pedido(solo real)
 *!*								4
 *!*								5	
@@ -144,12 +144,4 @@
 *!*								2  0=actualiza lista3, 1= no actualiza lista3
 
 *!*	DETACONTA.switch			1  1=ejercicio activo
-
-*!*	CABEDETA.switch			1  0=NRO REMITO
-*!*							   1=REFERENCIA DE PEDIDO
-
-*!*	FLETEREN.switch			1  0=REMITO GRABADO
-*!*							   1=REMITO ANULADO
-*!*							2  0=NORMAL
-*!*							   1=REMITO DE CAJA
 

@@ -88,7 +88,7 @@ SCAN
 	SELECT MAX(VAL(cnumero)) as codigo FROM CsrCtacte INTO CURSOR CsrCodigo READWRITE 
     lccnumero	= ALLTRIM(STR(CsrCodigo.codigo + 1,6))
     
-	lccnombre		= 'BANCO '+ALLTRIM(IIF(EMPTY(FsrBanco.banco),FsrBanco.nombre,FsrBanco.banco))+ALLTRIM(FsrBanco.numero)
+	lccnombre		= ALLTRIM(IIF(EMPTY(FsrBanco.banco),FsrBanco.nombre,FsrBanco.banco))+ALLTRIM(FsrBanco.numero)
 	lccdireccion	= ""
 	lccpostal		= ""
 	lcctelefono		= ""
