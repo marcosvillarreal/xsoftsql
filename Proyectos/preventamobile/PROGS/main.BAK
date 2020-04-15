@@ -16,10 +16,8 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Solicitar FE"
-IF cModulo$"1"
-	lctituloGestion = "Impresion FE"
-ENDIF 
+lctituloGestion = "Administrador PM"
+
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
@@ -45,7 +43,7 @@ cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\robotcae\'
+   lcdd=L+'\xsoftsql\proyectos\preventamobile\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
@@ -176,7 +174,7 @@ IF TYPE('goApp')='O'
    
 	= Fwin32()    && funciones api win32
 	
-	stop()
+	*stop()
 	 =ObtenerServidor()
 	  
 	IF LEN(TRIM(LcConectionString))=0
