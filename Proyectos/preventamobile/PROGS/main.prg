@@ -68,7 +68,7 @@ ELSE
 	l=SYS(5)
    _rutadatos  =l+lcdd+'Datos'
    
-   Set default to (lcdd) &&;(lcddc)
+   Set default to (l+lcdd) &&;(lcddc)
 
    Set path to &_rutadatos
   
