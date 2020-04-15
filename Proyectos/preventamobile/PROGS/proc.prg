@@ -1,3 +1,4 @@
+
 *----------------------------------------------------------------------------
 * FUNCION DevolverEjercicioContable(lcpefiscal,lnidejercicio,lnejercicio)
 *----------------------------------------------------------------------------
@@ -1082,65 +1083,67 @@ ENDFUNC
 
 * Desencripta(lc, "MiLlave")
 
-*!*	*!*	FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
+FUNCTION EncriptaPM(tcCadena, tcLlave, tlSinDesencripta)
+	
+	stop()
+	
+	LOCAL lc, ln, lcRet
+	LOCAL lnClaveMul, lnClaveXor
 
-*!*	*!*		LOCAL lc, ln, lcRet
-*!*	*!*		LOCAL lnClaveMul, lnClaveXor
+	IF EMPTY(tcLlave)
+		tcLlave = ""
+	ENDIF
 
-*!*	*!*		IF EMPTY(tcLlave)
-*!*	*!*			tcLlave = ""
-*!*	*!*		ENDIF
+	=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
 
-*!*	*!*		=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
+	lcRet = ""
+	lc = tcCadena
 
-*!*	*!*		lcRet = ""
-*!*	*!*		lc = tcCadena
+	DO WHILE LEN(lc) > 0
+		ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
+		
+		IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
+			ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
+		ENDIF
 
-*!*	*!*		DO WHILE LEN(lc) > 0
-*!*	*!*			ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
-*!*	*!*			
-*!*	*!*			IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
-*!*	*!*				ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
-*!*	*!*			ENDIF
+		lcRet = lcRet+BINTOC(ln-32768,2)
+		lnClaveMul = BITAND(lnClaveMul+59,0xFF)
+		lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
+		lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
 
-*!*	*!*			lcRet = lcRet+BINTOC(ln-32768,2)
-*!*	*!*			lnClaveMul = BITAND(lnClaveMul+59,0xFF)
-*!*	*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
-*!*	*!*			lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
+	ENDDO
 
-*!*	*!*		ENDDO
+	RETURN lcRet
 
-*!*	*!*		RETURN lcRet
-
-*!*	*!*	ENDFUNC
+ENDFUNC
 
 
-*!*	*!*	FUNCTION Desencripta(tcCadena, tcLlave)
+FUNCTION DesencriptaPM(tcCadena, tcLlave)
 
-*!*	*!*		LOCAL lc, ln, lcRet, lnByte
-*!*	*!*		LOCAL lnClaveMul, lnClaveXor
+	LOCAL lc, ln, lcRet, lnByte
+	LOCAL lnClaveMul, lnClaveXor
 
-*!*	*!*		IF EMPTY(tcLlave)
-*!*	*!*			tcLlave = ""
-*!*	*!*		ENDIF
+	IF EMPTY(tcLlave)
+		tcLlave = ""
+	ENDIF
 
-*!*	*!*		=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
+	=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
 
-*!*	*!*		lcRet = ""
+	lcRet = ""
 
-*!*	*!*		FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
+	FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
 
-*!*	*!*			lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
+		lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
 
-*!*	*!*			lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
-*!*	*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
-*!*	*!*			lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
+		lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
+		lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
+		lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
 
-*!*	*!*		ENDFOR
+	ENDFOR
 
-*!*	*!*		RETURN lcRet
+	RETURN lcRet
 
-*!*	*!*	ENDFUNC
+ENDFUNC
 
 
 FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
@@ -1534,6 +1537,7 @@ SELECT Csrseteotermi.* FROM seteotermi as Csrseteotermi WHERE sucursal = <<Goapp
 ENDTEXT 
 
 lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
+
 IF lok
    Goapp.terminal       = Csrseteotermi.numero
    Goapp.nombreterminal = Csrseteotermi.nombre
@@ -2425,6 +2429,55 @@ CATCH TO oError
 	llok = .f.
 ENDTRY
 RETURN  llok
+
+
+FUNCTION CargarXML
+PARAMETERS lcPath,lcFile,lcAlias
+
+IF LEN(LTRIM(lcPath)) = 0
+	lcPath = SYS(5)+CURDIR()
+ENDIF 
+IF LEN(LTRIM(lcFile)) = 0
+	oavisar.programador('No se especifico el nombre del archivo xml a abrir.')
+	RETURN .f.
+ENDIF 
+
+lcFile = ADDBS(lcPath) + lcFile
+IF NOT FILE(lcFile)
+	oavisar.programador('No se encontro el archivo')
+	RETURN .f.
+ELSE
+	SET SAFETY OFF 
+*!*		IF USED(lcAlias)
+*!*			USE IN (lcAlias)
+*!*		ENDIF 
+	SELECT(lcAlias)
+	*vista()
+	XMLTOCURSOR(lcFile,'',512+8192)
+	SET SAFETY ON 	
+	*SELECT * FROM cTempCursor INTO CURSOR &lcAlias READWRITE 
+ENDIF 
+RETURN .t.
+
+FUNCTION GuardarXML
+PARAMETERS lcPath,lcFile,lcAlias
+
+IF LEN(LTRIM(lcPath)) = 0
+	lcPath = SYS(5)+CURDIR()
+ENDIF 
+IF LEN(LTRIM(lcFile))=0
+	oavisar.programador('No se especifico el nombre del archivo xml a guardar.')
+	RETURN 
+ENDIF 
+
+lcFile = ADDBS(lcPath) + lcFile
+
+SET SAFETY OFF 
+CursorAdapterToXML(lcAlias,lcFile)
+SET SAFETY ON
+	
+RETURN 
+	
 
 FUNCTION createStruct( toReflection, tcTypeName )
   LOCAL loPropertyValue, loTemp

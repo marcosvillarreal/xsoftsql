@@ -143,7 +143,7 @@ ENDIF
 *!*	oFACCAE = CREATEOBJECT('oFacElectronica')
 *!*	oFacCAE.sw_conexion()
 
-oavisar.usuario(_rutadatos)
+*!*	oavisar.usuario(_rutadatos)
  
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION

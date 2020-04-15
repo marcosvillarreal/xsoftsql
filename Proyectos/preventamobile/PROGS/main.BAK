@@ -68,7 +68,7 @@ ELSE
 	l=SYS(5)
    _rutadatos  =l+lcdd+'Datos'
    
-   Set default to (lcdd) &&;(lcddc)
+   Set default to (l+lcdd) &&;(lcddc)
 
    Set path to &_rutadatos
   
@@ -143,7 +143,7 @@ ENDIF
 *!*	oFACCAE = CREATEOBJECT('oFacElectronica')
 *!*	oFacCAE.sw_conexion()
 
-oavisar.usuario(_rutadatos)
+*!*	oavisar.usuario(_rutadatos)
  
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
@@ -195,18 +195,18 @@ IF TYPE('goApp')='O'
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
 	
-	   * en proc.prg   
-	IF ExisteDSN()  			
-		IF !ConeccionADO()
-			CANCEL 
-			CLEAR ALL
-			RETURN 
-		ENDIF 
-	ELSE
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		   * en proc.prg   
+*!*		IF ExisteDSN()  			
+*!*			IF !ConeccionADO()
+*!*				CANCEL 
+*!*				CLEAR ALL
+*!*				RETURN 
+*!*			ENDIF 
+*!*		ELSE
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	WAIT CLEAR 
 
