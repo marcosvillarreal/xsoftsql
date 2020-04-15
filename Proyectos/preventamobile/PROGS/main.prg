@@ -41,6 +41,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+_rutadatos  = ''
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\preventamobile\'
@@ -69,7 +70,7 @@ ELSE
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutadatos
-   oavisar.usuario(_rutadatos)
+  
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -141,6 +142,8 @@ ENDIF
 *!*	oFACCAE = CREATEOBJECT('oFacElectronica')
 *!*	oFacCAE.sw_conexion()
 
+oavisar.usuario(_rutadatos)
+ 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo

@@ -69,6 +69,7 @@ ELSE
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutadatos
+   oavisar.usuario(_rutadatos)
 Endif
 
 *-- CREACION DE OBJETO APLICACION
