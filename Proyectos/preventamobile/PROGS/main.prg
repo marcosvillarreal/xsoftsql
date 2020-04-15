@@ -65,7 +65,7 @@ If lldesarrollo
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib
 ELSE
 *-- RUTA
-   _rutadatos  =lcdd+'Datos'
+   _rutadatos  =l+lcdd+'Datos'
    
    Set default to (lcdd) &&;(lcddc)
 
