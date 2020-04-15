@@ -65,6 +65,7 @@ If lldesarrollo
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib
 ELSE
 *-- RUTA
+	l=SYS(5)
    _rutadatos  =l+lcdd+'Datos'
    
    Set default to (lcdd) &&;(lcddc)
