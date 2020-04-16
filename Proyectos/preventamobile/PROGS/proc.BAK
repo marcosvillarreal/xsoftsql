@@ -2473,13 +2473,19 @@ RETURN  llok
 
 
 FUNCTION CargarXML
-PARAMETERS lcPath,lcFile,lcAlias
+PARAMETERS lcFile,lcAlias
 
+lcPath = ''
 IF LEN(LTRIM(lcPath)) = 0
-	lcPath = SYS(5)+CURDIR()
+	lcPath = ADDBS(SYS(5)+CURDIR())+'Config'
 ENDIF 
 IF LEN(LTRIM(lcFile)) = 0
 	oavisar.programador('No se especifico el nombre del archivo xml a abrir.')
+	RETURN .f.
+ENDIF 
+
+IF NOT DataCursor(lcAlias)
+	oavisar.usuario('Estructura de tabla '+lcAlias+ ' no definida')
 	RETURN .f.
 ENDIF 
 
