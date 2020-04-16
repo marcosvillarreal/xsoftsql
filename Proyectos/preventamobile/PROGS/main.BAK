@@ -197,17 +197,17 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	   * en proc.prg   
-	IF ExisteDSN()  			
-		IF !ConeccionADO()
-			CANCEL 
-			CLEAR ALL
-			RETURN 
-		ENDIF 
-	ELSE
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		IF ExisteDSN()  			
+*!*			IF !ConeccionADO()
+*!*				CANCEL 
+*!*				CLEAR ALL
+*!*				RETURN 
+*!*			ENDIF 
+*!*		ELSE
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	WAIT CLEAR 
 
@@ -232,7 +232,7 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 
-	DO FORM frmlogin
+	*DO FORM frmlogin
 	
 	&&La empresa pudo cambiar si se accedio a otra sucursal
 	*LeerDatosEmpresa()

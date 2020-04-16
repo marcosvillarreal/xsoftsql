@@ -197,17 +197,17 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	   * en proc.prg   
-	IF ExisteDSN()  			
-		IF !ConeccionADO()
-			CANCEL 
-			CLEAR ALL
-			RETURN 
-		ENDIF 
-	ELSE
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		IF ExisteDSN()  			
+*!*			IF !ConeccionADO()
+*!*				CANCEL 
+*!*				CLEAR ALL
+*!*				RETURN 
+*!*			ENDIF 
+*!*		ELSE
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	WAIT CLEAR 
 
@@ -241,7 +241,7 @@ IF TYPE('goApp')='O'
 	
 	LOCAL oMenu
 	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","","XML")
 	oMenu.createMenu()   
 	oMenu = null
 
