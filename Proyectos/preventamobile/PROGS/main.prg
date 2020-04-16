@@ -87,7 +87,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
-      
+   SET PROCEDURE TO Tablas.prg ADDITIVE 
+       
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
@@ -220,7 +221,7 @@ IF TYPE('goApp')='O'
 *!*		      ENDIF 
 	ENDIF 
 
-	LeerEmpresa()
+	*LeerEmpresa()
 	    
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
@@ -231,16 +232,13 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 
-	DO FORM frmlogin
+	*DO FORM frmlogin
 	
 	&&La empresa pudo cambiar si se accedio a otra sucursal
-	LeerDatosEmpresa()
+	*LeerDatosEmpresa()
 	_screen.lockscreen=.t.		 
 	
-	IF goapp.sucursal = 2
-		_screen.picture= 'fondo512.jpg'
-	ENDIF 
-
+	
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")

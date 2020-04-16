@@ -2483,6 +2483,11 @@ IF LEN(LTRIM(lcFile)) = 0
 	RETURN .f.
 ENDIF 
 
+IF NOT DataCursor(lcAlias)
+	oavisar.usuario('Estructura de tabla '+lcAlias+ ' no definida')
+	RETURN .f.
+ENDIF 
+
 lcFile = ADDBS(lcPath) + lcFile
 IF NOT FILE(lcFile)
 	oavisar.programador('No se encontro el archivo')

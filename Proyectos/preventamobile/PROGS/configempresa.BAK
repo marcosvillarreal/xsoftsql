@@ -23,7 +23,7 @@ SCAN
 		nLen	= LEN(cResult)
 		replace username WITH cResult,userlen WITH nLen
 		
-		cResult = EncriptarPM(nIdEmpresa)
+		cResult = EncriptarPM(ALLTRIM(str(nIdEmpresa)))
 		nLen	= LEN(cResult)
 		replace idservpedido WITH cResult
 		

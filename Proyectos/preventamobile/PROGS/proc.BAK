@@ -1082,68 +1082,109 @@ ENDFUNC
 *lc = Encripta("MiClave", "MiLlave")
 
 * Desencripta(lc, "MiLlave")
+FUNCTION EncriptarPM
+*Encripta
+Parameters string_x
 
-FUNCTION EncriptaPM(tcCadena, tcLlave, tlSinDesencripta)
-	
-	stop()
-	
-	LOCAL lc, ln, lcRet
-	LOCAL lnClaveMul, lnClaveXor
+  entrega_x = ""
+  DIMENSION CRIP(LEN(string_x))
+  FOR i = 1 TO LEN(string_x)
+      crip(i) = ASC(SUBSTR(string_x,i,1))  && entrega numero
+  ENDFOR
+  *
+  FOR i = 1 TO LEN(string_x)
+      crip(i) = crip(i) + 2 && al ASC le suma dos
+  ENDFOR
+  *
+  j = LEN(string_x)
+  FOR i = 1 TO LEN(string_x)
+      entrega_x = entrega_x + CHR(crip(j))
+      j=j-1
+  ENDFOR
+  Return entrega_x
+****************************
+FUNCTION DesencriptarPM
+ *desencripta
+ Parameters string_x
+ DIMENSION CRIP(LEN(string_x))
+ entrega_x = ""
+ string_x  = ALLTRIM(string_x)
+ FOR i = 1 TO len(string_x)
+     crip(i) = ASC(SUBSTR(string_x,i,1))  && entrega numero
+ NEXT
+ *
+ FOR i = 1 TO len(string_x)
+     crip(i) = crip(i) - 2
+ NEXT
+ *
+ j = len(string_x)
+ FOR i = 1 TO len(string_x)
+     entrega_x = entrega_x + CHR(crip(j))
+     j=j-1
+ NEXT
+Return entrega_x
 
-	IF EMPTY(tcLlave)
-		tcLlave = ""
-	ENDIF
+*!*	FUNCTION EncriptaPM(tcCadena, tcLlave, tlSinDesencripta)
+*!*		
+*!*		stop()
+*!*		
+*!*		LOCAL lc, ln, lcRet
+*!*		LOCAL lnClaveMul, lnClaveXor
 
-	=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
+*!*		IF EMPTY(tcLlave)
+*!*			tcLlave = ""
+*!*		ENDIF
 
-	lcRet = ""
-	lc = tcCadena
+*!*		=GetClaves(tcLlave,@lnClaveMul,@lnClaveXor)
 
-	DO WHILE LEN(lc) > 0
-		ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
-		
-		IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
-			ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
-		ENDIF
+*!*		lcRet = ""
+*!*		lc = tcCadena
 
-		lcRet = lcRet+BINTOC(ln-32768,2)
-		lnClaveMul = BITAND(lnClaveMul+59,0xFF)
-		lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
-		lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
+*!*		DO WHILE LEN(lc) > 0
+*!*			ln = BITXOR(ASC(lc)*(lnClaveMul+1),lnClaveXor)
+*!*			
+*!*			IF tlSinDesencripta			&&-- Encripta de modo que no se puede desencriptar
+*!*				ln = BITAND(ln+(ln%256)*17+INT(ln/256)*135+ iNT(ln/256)*(ln%256),65535)
+*!*			ENDIF
 
-	ENDDO
+*!*			lcRet = lcRet+BINTOC(ln-32768,2)
+*!*			lnClaveMul = BITAND(lnClaveMul+59,0xFF)
+*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor),0xFFFF)
+*!*			lc = IIF(LEN(lc) > 1,SUBS(lc,2),"")
 
-	RETURN lcRet
+*!*		ENDDO
 
-ENDFUNC
+*!*		RETURN lcRet
+
+*!*	ENDFUNC
 
 
-FUNCTION DesencriptaPM(tcCadena, tcLlave)
+*!*	FUNCTION DesencriptaPM(tcCadena, tcLlave)
 
-	LOCAL lc, ln, lcRet, lnByte
-	LOCAL lnClaveMul, lnClaveXor
+*!*		LOCAL lc, ln, lcRet, lnByte
+*!*		LOCAL lnClaveMul, lnClaveXor
 
-	IF EMPTY(tcLlave)
-		tcLlave = ""
-	ENDIF
+*!*		IF EMPTY(tcLlave)
+*!*			tcLlave = ""
+*!*		ENDIF
 
-	=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
+*!*		=GetClaves(tcLlave, @lnClaveMul, @lnClaveXor)
 
-	lcRet = ""
+*!*		lcRet = ""
 
-	FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
+*!*		FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
 
-		lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
+*!*			lnByte = BITXOR(CTOBIN(SUBS(tcCadena, ln,2))+ 32768,lnClaveXor)/(lnClaveMul+1)
 
-		lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
-		lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
-		lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
+*!*			lnClaveMul = BITAND(lnClaveMul+59, 0xFF)
+*!*			lnClaveXor = BITAND(BITNOT(lnClaveXor), 0xFFFF)
+*!*			lcRet = lcRet+CHR(IIF(BETWEEN(lnByte,0,255),lnByte,0))
 
-	ENDFOR
+*!*		ENDFOR
 
-	RETURN lcRet
+*!*		RETURN lcRet
 
-ENDFUNC
+*!*	ENDFUNC
 
 
 FUNCTION Encripta(tcCadena, tcLlave, tlSinDesencripta)
