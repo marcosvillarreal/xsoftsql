@@ -241,7 +241,7 @@ IF TYPE('goApp')='O'
 	
 	LOCAL oMenu
 	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","","XML")
 	oMenu.createMenu()   
 	oMenu = null
 
