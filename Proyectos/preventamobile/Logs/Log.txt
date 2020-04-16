@@ -1,29 +1,4 @@
 Control activo  MAIN
-13-07-2015 10:05:48 , Error nº:       1981
-Error Error de compilación en el archivo c:\aplicaciones\gestioncae\gestioncae.app.
-Linea nº thisform.dataenvironment.opentables()
- Alias CSRPOPS registro          1
-Control activo  ON... 
-13-07-2015 13:02:18 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-13-07-2015 13:06:56 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-13-07-2015 13:11:37 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-13-07-2015 13:17:13 , Error nº:          1
-Error El archivo '                                                                            ...' no existe.
-Linea nº RENAME this.Pathorigen+cName+".CA1" TO this.Pathorigen+cName+".CA2"
- Alias  registro          0
-Control activo  MAIN
 13-07-2015 13:19:30 , Error nº:          1
 Error El archivo '                                                                            ...' no existe.
 Linea nº RENAME this.Pathorigen+cName+".CA1" TO this.Pathorigen+cName+".CA2"
@@ -97,6 +72,9 @@ Control activo  FRMMENU1.TREEVIEW.DBLCLICK
 19-02-2016 13:44:42 , Error nº:       1713
 Error El ancho o el número de decimales del campo no es válido.
 Linea nº CREATE CURSOR CsrCabeDeta (orden n(12),comprobante c(15),direccion c(30),localidad c(20),provincia c(20) ,cuit c(13),categoiva c(30),codcliente c(8),fechavto d,nomcliente c(30),planpago c(30) ,vendedor c(15),caecheck c(30),proximonro c(15), merc
+
+
+
 
 
 
@@ -395,6 +373,9 @@ Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4
 
 
 
+
+
+
  WITH OscCabefac.cuit,nomcliente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -426,6 +407,9 @@ Control activo  MAIN
 19-02-2016 15:50:10 , Error nº:       1734
 Error No se encuentra la propiedad PLANPAGO.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,nomc
+
+
+
 
 
 
@@ -651,6 +635,9 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
+
 
 
 
@@ -1165,7 +1152,13 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
 
 
 
@@ -1315,7 +1308,13 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
 
 
 
@@ -1516,12 +1515,18 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
 
 
 
@@ -2198,5 +2203,34 @@ Error No se encuentra el alias 'PARACONFIG'.
 Linea nº USE IN ParaConfig
  Alias PARAVARIO registro          5
 Control activo  PARACONFIG.CANCELAR1.CLICK
-16-04-2020 12:03:00 , Error nº:       1925Error CMDACEPTAR es un miembro desconocido.Linea nº This.Cmdaceptar.Enabled = .F. Alias PARAVARIO registro          1Control activo  MAIN
-16-04-2020 14:36:19 , Error nº:         94Error Debe especificar parámetros adicionales.Linea nº PARAMETERS lcFile,lcAlias Alias  registro          0Control activo  MAIN
+16-04-2020 12:03:00 , Error nº:       1925
+Error CMDACEPTAR es un miembro desconocido.
+Linea nº This.Cmdaceptar.Enabled = .F.
+ Alias PARAVARIO registro          1
+Control activo  MAIN
+16-04-2020 14:36:19 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº PARAMETERS lcFile,lcAlias
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:38:12 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT (thisform.lcalias)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:38:24 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT (thisform.lcalias)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:38:43 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT (thisform.lcalias)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:39:07 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT(lcAlias)
+ Alias PARAVARIO registro          1
+Control activo  MAIN
+16-04-2020 14:40:10 , Error nº:         13Error No se encuentra el alias 'DATAMENU'.Linea nº SELECT(lcAlias) Alias PARAVARIO registro          1Control activo  MAIN
