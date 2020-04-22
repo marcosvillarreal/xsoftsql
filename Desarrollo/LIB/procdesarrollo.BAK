@@ -536,7 +536,7 @@ Parameters tcTexto,tcArchivo,tcCarpeta
 Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
 Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
 
-stop()
+*stop()
 tcArchivo=IIF(PCOUNT()<2,'Secuencia'+DTOS(DATE())+'.txt',tcArchivo)
 tcCarpeta=IIF(PCOUNT()<2,'Sec',tcCarpeta)
 

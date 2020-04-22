@@ -2507,10 +2507,11 @@ ENDIF
 RETURN .t.
 
 FUNCTION GuardarXML
-PARAMETERS lcPath,lcFile,lcAlias
+PARAMETERS lcFile,lcAlias
 
+lcPath = ''
 IF LEN(LTRIM(lcPath)) = 0
-	lcPath = SYS(5)+CURDIR()
+	lcPath = ADDBS(SYS(5)+CURDIR())+'Config'
 ENDIF 
 IF LEN(LTRIM(lcFile))=0
 	oavisar.programador('No se especifico el nombre del archivo xml a guardar.')

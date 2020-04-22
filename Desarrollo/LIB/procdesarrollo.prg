@@ -1,3 +1,58 @@
+*---------------------------------------------------------------------------------
+FUNCTION CargarXML
+PARAMETERS lcFile,lcAlias
+
+lcPath = ''
+IF LEN(LTRIM(lcPath)) = 0
+	lcPath = ADDBS(SYS(5)+CURDIR())+'Config'
+ENDIF 
+IF LEN(LTRIM(lcFile)) = 0
+	oavisar.programador('No se especifico el nombre del archivo xml a abrir.')
+	RETURN .f.
+ENDIF 
+
+IF NOT DataCursor(lcAlias)
+	oavisar.usuario('Estructura de tabla '+lcAlias+ ' no definida')
+	RETURN .f.
+ENDIF 
+
+lcFile = ADDBS(lcPath) + lcFile
+IF NOT FILE(lcFile)
+	oavisar.programador('No se encontro el archivo')
+	RETURN .f.
+ELSE
+	SET SAFETY OFF 
+*!*		IF USED(lcAlias)
+*!*			USE IN (lcAlias)
+*!*		ENDIF 
+	SELECT(lcAlias)
+	*vista()
+	XMLTOCURSOR(lcFile,'',512+8192)
+	SET SAFETY ON 	
+	*SELECT * FROM cTempCursor INTO CURSOR &lcAlias READWRITE 
+ENDIF 
+RETURN .t.
+
+*------------------------------------------------------------------------------------
+FUNCTION GuardarXML
+PARAMETERS lcFile,lcAlias
+
+lcPath = ''
+IF LEN(LTRIM(lcPath)) = 0
+	lcPath = ADDBS(SYS(5)+CURDIR())+'Config'
+ENDIF 
+IF LEN(LTRIM(lcFile))=0
+	oavisar.programador('No se especifico el nombre del archivo xml a guardar.')
+	RETURN 
+ENDIF 
+
+lcFile = ADDBS(lcPath) + lcFile
+
+SET SAFETY OFF 
+CursorAdapterToXML(lcAlias,lcFile)
+SET SAFETY ON
+	
+RETURN 
 
 *-------------------------------------------------------------
 
