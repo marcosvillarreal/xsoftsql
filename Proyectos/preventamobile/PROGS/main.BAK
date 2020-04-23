@@ -181,12 +181,12 @@ IF TYPE('goApp')='O'
 	= Fwin32()    && funciones api win32
 	
 	*stop()
-	 =ObtenerServidor()
-	  
-	IF LEN(TRIM(LcConectionString))=0
-		DO FORM configbd
-		=ObtenerServidor()
-	ENDIF    
+*!*		 =ObtenerServidor()
+*!*		  
+*!*		IF LEN(TRIM(LcConectionString))=0
+*!*			DO FORM configbd
+*!*			=ObtenerServidor()
+*!*		ENDIF    
 
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
 

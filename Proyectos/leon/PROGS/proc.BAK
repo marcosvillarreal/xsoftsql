@@ -1498,7 +1498,9 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9
 						CASE LEN(TRIM(lcparam10))#0
 							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9,lcparm10
-					ENDCASE 
+					ENDCASE
+				ELSE
+				 =Oavisar.usuario('LA TERMINAL SE ENCUENTRA BLOQUEADA CON CLAVE'+CHR(13)+'CONSULTE CON EL ADMINISTRADOR',0)
 				ENDIF 
 			ELSE
 				=Oavisar.usuario("OPCION NO DISPONIBLE")
