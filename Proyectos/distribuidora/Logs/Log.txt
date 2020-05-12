@@ -178,3 +178,15 @@
 29-04-2020 12:44:40 , Acceso al sistema, antes de autenticar
 29-04-2020 13:40:40 , Acceso al sistema, antes de autenticar
 29-04-2020 13:41:51 , Error: No se encuentra la propiedad ANOTARREMITO. Linea :  Error :       1734 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          2  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FJM101ZI.TMP Ultimo Control activo:  REGFACPUB_MONTE.CMDVENTA.CLICK
+11-05-2020 13:45:08 , Acceso al sistema, antes de autenticar
+11-05-2020 15:21:23 , Acceso al sistema, antes de autenticar
+11-05-2020 15:26:33 , Acceso al sistema, antes de autenticar
+11-05-2020 15:31:41 , Acceso al sistema, antes de autenticar
+11-05-2020 15:32:09 , Error: IDCTACTE no es único y se debe calificar. Linea : SELECT idctacte,codigo,nombre,unibulto,SUM(cantidad) as cantidad FROM CsrAuxCabefac INNER JOIN CsrAuxCuerfac ON CsrAuxCabefac.idmaopera = CsrAuxCuerfac.idmaopera WHERE CsrAuxCuerfac.escambio = 1 GROUP BY idctacte,codigo,nombre,unibulto INTO CURSOR CsrAuxCambios READWRITE Error :       1832 Ultimo Alias Activo: CSRAUXCTACTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000S0EH01ON.TMP Ultimo Control activo:  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
+11-05-2020 15:45:01 , Error: No se encuentra el alias 'CSRUXMAOPERA'. Linea : SELECT csruxmaopera.idctacte,codigo,nombre,unibulto,SUM(cantidad) as cantidad FROM CsrAuxCabefac INNER JOIN CsrAuxCuerfac  ON CsrAuxCabefac.idmaopera = CsrAuxCuerfac.idmaopera WHERE CsrAuxCuerfac.escambio = 1 GROUP BY csrauxmaopera.idctacte,codigo,nombre,unibulto INTO CURSOR CsrAuxCambios READWRITE Error :         13 Ultimo Alias Activo: CSRAUXCTACTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000S0EH02EQ.TMP Ultimo Control activo:  LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK
+12-05-2020 10:11:53 , Acceso al sistema, antes de autenticar
+12-05-2020 10:22:01 , Acceso al sistema, antes de autenticar
+12-05-2020 10:22:51 , Acceso al sistema, antes de autenticar
+12-05-2020 10:25:13 , Error: No coinciden los tipos de datos. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,idcuenta,nrocaja,fecha,numasto,tipoasi) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable,OscCursor.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9 Ultimo Alias Activo: CSRCURSORANT Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000TSSP00HI.TMP Ultimo Control activo:  MAIN
+12-05-2020 10:27:05 , Acceso al sistema, antes de autenticar
+12-05-2020 10:29:59 , Acceso al sistema, antes de autenticar
