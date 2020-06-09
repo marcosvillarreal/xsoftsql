@@ -1,0 +1,28 @@
+09-06-2020 14:24:40 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: No se encuentra la variable 'CAMPO001'.;Linea : INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo005 ,Campo006,Campo007,Campo008,Campo009,Campo010 ,Campo011,Campo012,Campo013,Campo014,Campo015 ,Campo016,Campo017,Campo018,Campo019,Campo020 ,Campo021,Campo022,Campo023,Campo024,Campo025 ,Campo026,Campo027,Campo028,Campo029,Campo030 ,Campo031,Campo032,Campo033,Campo034,Campo035,Campo036) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),CsrComprobante.cnombre,loObjfactura.fecha,lccontrol,loObjfactura.fecha,CsrAuxCabefac.ctacte ,CsrAuxCabefac.cnombre,CsrAuxCabefac.cdireccion,Csrlocalidad.nombre,CsrCategoiva.nombre,CsrAuxCabefac.cuit ,Csrplanpago.nombre,CsrVendedor.nombre,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,CsrAuxCabefac.nomrete1,CsrAuxCabefac.nomrete2,CsrAuxCabefac.nomrete3,lccampo028 ,lccampo029,lccampo030,lccampo031,lccampo032,lccampo033,lccampo034,lccampo035,lccampo036);Error :         12;Ultimo Alias Activo: CSRPREFIJONRO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JRIH01SD.TMP;Ultimo Control activo: 
+09-06-2020 14:24:40 , Pila de llamadas
+09-06-2020 14:24:40 , Programa    : j:\xsoftsql\proyectos\hernan\forms\regfacvta.sct
+09-06-2020 14:24:40 , Objeto      : regfacvta.cmdimprimir.click
+09-06-2020 14:24:40 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\regfacvta.sct
+09-06-2020 14:24:40 , Nº de Linea :         10
+09-06-2020 14:24:40 , En el Fuente: 	.imprimir(thisform.lcimpresora,loimpresoraelegida.tipo,2)	
+09-06-2020 14:24:40 , Programa    : j:\xsoftsql\proyectos\hernan\forms\regfacvta.sct
+09-06-2020 14:24:40 , Objeto      : regfacvta.imprimir
+09-06-2020 14:24:40 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\regfacvta.sct
+09-06-2020 14:24:40 , Nº de Linea :         51
+09-06-2020 14:24:40 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
+09-06-2020 14:24:40 , Programa    : j:\xsoftsql\proyectos\hernan\clases\localproyeto.vct
+09-06-2020 14:24:40 , Objeto      : regfacvta.objimpresor.inicioimpresora
+09-06-2020 14:24:40 , Base Objeto : j:\xsoftsql\proyectos\hernan\clases\localproyeto.vct
+09-06-2020 14:24:40 , Nº de Linea :         42
+09-06-2020 14:24:40 , En el Fuente: 			lok = this.reportf(lndeboActualizarNro)
+09-06-2020 14:24:40 , Programa    : j:\xsoftsql\proyectos\hernan\clases\localproyeto.vct
+09-06-2020 14:24:40 , Objeto      : regfacvta.objimpresor.reportf
+09-06-2020 14:24:40 , Base Objeto : j:\xsoftsql\proyectos\hernan\clases\localproyeto.vct
+09-06-2020 14:24:40 , Nº de Linea :         37
+09-06-2020 14:24:40 , En el Fuente:     this.reportF_cab(loobjfactura)
+09-06-2020 14:24:40 , Programa    : j:\xsoftsql\proyectos\hernan\clases\localproyeto.vct
+09-06-2020 14:24:40 , Objeto      : regfacvta.objimpresor.reportf_cab
+09-06-2020 14:24:40 , Base Objeto : j:\xsoftsql\proyectos\hernan\clases\localproyeto.vct
+09-06-2020 14:24:40 , Nº de Linea :         40
+09-06-2020 14:24:40 , En el Fuente: 		INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo005		 	  				  ,Campo006,Campo007,Campo008,Campo009,Campo010							  ,Campo011,Campo012,Campo013,Campo014,Campo015						  	  ,Campo016,Campo017,Campo018,Campo019,Campo020							  ,Campo021,Campo022,Campo023,Campo024,Campo025							  ,Campo026,Campo027,Campo028,Campo029,Campo030							  ,Campo031,Campo032,Campo033,Campo034,Campo035,Campo036)				VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),CsrComprobante.cnombre,loObjfactura.fecha,lccontrol,loObjfactura.fecha,CsrAuxCabefac.ctacte						,CsrAuxCabefac.cnombre,CsrAuxCabefac.cdireccion,Csrlocalidad.nombre,CsrCategoiva.nombre,CsrAuxCabefac.cuit						,Csrplanpago.nombre,CsrVendedor.nombre,lccampo013,lccampo014,lccampo015						,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022						,lccampo023,lccampo024,CsrAuxCabefac.nomrete1,CsrAuxCabefac.nomrete2,CsrAuxCabefac.nomrete3,lccampo028						,lccampo029,lccampo030,lccampo031,lccampo032,lccampo033,lccampo034,lccampo035,lccampo036)
+09-06-2020 14:24:40 , Fin
