@@ -1,59 +1,3 @@
-Control activo  RINDEFLETE.LOAD
-27-06-2019 11:37:26 , Error nº:         13
-Error No se encuentra el alias 'DATAMENU'.
-Linea nº SELECT (thisform.lcalias)
- Alias  registro          0
-Control activo  FRMMENU1.INIT
-16-07-2019 14:54:49 , Error nº:       1734
-Error No se encuentra la propiedad NOTIFICACION.
-Linea nº IF NOT thisform.notificacion
- Alias DATAMENU registro          1
-Control activo  MAIN
-16-07-2019 15:01:20 , Error nº:         12
-Error No se encuentra la variable 'NOTIFY_AVISO1'.
-Linea nº oObjeto = &cNameAviso
- Alias CSRATERMI registro          1
-Control activo  MAIN
-16-07-2019 15:02:13 , Error nº:       1737
-Error CMDLEER es un método, evento u objeto.
-Linea nº this.cmdleer = OscAviso.detalle
- Alias CSRATERMI registro          1
-Control activo  MAIN
-18-07-2019 14:56:39 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT('CsrATermi')<0
- Alias CSRAUXILIAR registro          1
-Control activo  MAIN
-18-07-2019 15:10:47 , Error nº:       1734
-Error No se encuentra la propiedad LIMPIARAVISO.
-Linea nº this.LimpiarAviso(@i)
- Alias CSRATERMI registro          9
-Control activo  MAIN
-18-07-2019 15:12:19 , Error nº:       1734
-Error No se encuentra la propiedad LIMPIARAVISO.
-Linea nº this.LimpiarAviso(@j)
- Alias CSRATERMI registro          9
-Control activo  MAIN
-24-07-2019 12:59:51 , Error nº:       1734
-Error No se encuentra la propiedad OCULTAR.
-Linea nº This.Parent.Parent.Ocultar(this.Name)
- Alias CURPERFIL registro        272
-Control activo  MAIN
-24-07-2019 13:00:39 , Error nº:       1734
-Error No se encuentra la propiedad NOTIFY_AVISO0.
-Linea nº oObjeto = &cNameAviso
- Alias CURPERFIL registro        272
-Control activo  MAIN
-24-07-2019 15:15:49 , Error nº:          1
-Error El archivo 'csrmovpub.dbf' no existe.
-Linea nº SELECT Csrmovpub.*,00000000 AS nrocaja FROM Csrmovpub WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovpub READWRITE
- Alias  registro          0
-Control activo  REGPUBVARIO.LOAD
-25-07-2019 11:18:01 , Error nº:         12
-Error No se encuentra la variable 'CNOMBRE'.
-Linea nº This.txtnombre.value = &lccamponombre
- Alias CSRUSUARIOS registro          1
-Control activo  REGPUBVARIO.CONTAINERENCABEZA.KITBUSCAOALTAENUSUARIOS.TXTEXISTE1.INIT
 25-07-2019 11:19:14 , Error nº:         13
 Error No se encuentra el alias 'CSRPARACONFIG'.
 Linea nº .lnidnrocaja	 = Csrparaconfig.iddetanrocaja
@@ -277,6 +221,13 @@ Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 16-09-2019 15:33:34 , Error nº:       1581
 Error El campo IVA no acepta valores NULL.
 Linea nº INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, telefono,nroibbto ,localidad, provincia, nomvendedor, codvendedor, canal,idctacte) VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre) ,ALLTRIM(CsrAux.cuit),ALLTRIM(CsrAux.iva),ALLTR
+
+
+
+
+
+
+
 
 
 
@@ -551,6 +502,13 @@ Linea nº REPLACE idarticulo WITH Csrproducto.id,numero WITH Csrproducto.numero,n
 
 
 
+
+
+
+
+
+
+
 in3 ,desc3 WITH OscPie.porce3 IN CsrAuxiliar
  Alias CSRAUXILIAR registro          1
 Control activo PORCE3 GREGDESCUENTOS.CONTAINERPIE._TXTPORCE3.KEYPRESS
@@ -722,12 +680,26 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo0
 
 
 
+
+
+
+
+
+
+
 odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
  Alias IMPCUERVARI registro          4
 Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
 08-11-2019 13:40:24 , Error nº:         12
 Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
+
+
+
+
+
+
 
 
 
@@ -932,6 +904,13 @@ Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidade
 
 
 
+
+
+
+
+
+
+
 estadotilde=1 INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -943,6 +922,13 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
+
+
+
+
+
+
 
 
 
@@ -1037,7 +1023,21 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
 
 
 
@@ -1097,7 +1097,21 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
 
 
 
@@ -1157,7 +1171,21 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
 
 
 
@@ -1315,12 +1343,26 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
+
+
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
+
+
+
+
+
+
 
 
 
@@ -1392,7 +1434,21 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
 
 
 
@@ -1412,7 +1468,21 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
 
 
 
@@ -1432,7 +1502,21 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
 
 
 
@@ -1482,6 +1566,13 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
+
+
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1493,6 +1584,13 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
+
+
+
+
+
+
 
 
 r.desc1,lnprevtaori,CsrCursor.min1,dfecha )
@@ -1513,5 +1611,44 @@ Error No se encuentra la variable 'LCCMDDATOINICIAL'.
 Linea nº DO FORM buscompro WITH lcOrigen,oca,lcCmdCampos,lcTypeData,"T",loObjeto,lcCmdMuestra,lcCmdOperador,lcCmdDatoInicial TO lcIdretorno
  Alias CSRMAOPERA registro          1
 Control activo  REGSTOCK.CMDCONSULTA.CLICK
-29-04-2020 11:01:29 , Error nº:       1771Error Ya existe un objeto miembro con este nombre.Linea nº ... Alias  registro          0Control activo  ON... 
-03-06-2020 15:38:50 , Error nº:        202Error La ruta o el nombre de archivo no es válido.Linea nº SET DEFAULT TO this.Parent._txtDestinoFile.Value Alias CSRCONCEPTO registro          1Control activo  REGCTACTE_V2.CMDADJUNTAR.CLICK
+29-04-2020 11:01:29 , Error nº:       1771
+Error Ya existe un objeto miembro con este nombre.
+Linea nº ...
+ Alias  registro          0
+Control activo  ON... 
+03-06-2020 15:38:50 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO this.Parent._txtDestinoFile.Value
+ Alias CSRCONCEPTO registro          1
+Control activo  REGCTACTE_V2.CMDADJUNTAR.CLICK
+06-07-2020 19:51:19 , Error nº:         13
+Error No se encuentra el alias 'CSRPASAJE'.
+Linea nº This.txtnombre.value = &lccamponombre
+ Alias CSRAUXPIE registro          1
+Control activo  BONICTACTE.CONTAINERPASAJE.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT
+06-07-2020 19:52:49 , Error nº:         13
+Error No se encuentra el alias 'CSRPASAJE'.
+Linea nº This.txtnombre.value = &lccamponombre
+ Alias CSRAUXPIE registro          1
+Control activo  BONICTACTE.CONTAINERPASAJE.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT
+06-07-2020 19:54:57 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº this.controlsource=this.parent.controlsourcetxtid
+ Alias CSRAUXPIE registro          1
+Control activo  BONICTACTE.CONTAINERPASAJE.KITBUSCAOALTAENCTACTE.TXTID.INIT
+06-07-2020 19:56:49 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº this.controlsource=this.parent.controlsourcetxtid
+ Alias CSRAUXPIE registro          1
+Control activo  BONICTACTE.CONTAINERPASAJE.KITBUSCAOALTAENCTACTE.TXTID.INIT
+06-07-2020 20:03:35 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº this.controlsource=this.parent.controlsourcetxtid
+ Alias CSRAUXPIE registro          1
+Control activo  BONICTACTE.CONTAINERPASAJE.KITBUSCAOALTAENCTACTE.TXTID.INIT
+06-07-2020 20:15:51 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXPASAJE'.
+Linea nº this.controlsource=this.parent.controlsourcetxtid
+ Alias CSRAUXPIE registro          1
+Control activo  BONICTACTE.CONTAINERPASAJE.KITBUSCAOALTAENCTACTE.TXTID.INIT
+06-07-2020 20:37:08 , Error nº:       1734Error No se encuentra la propiedad ACCION.Linea nº thisform.accion = 'P' Alias CSRAUXCABEZA registro          1Control activo  BONICTACTE.CONTAINERPASAJE.CMDPASAJE.CLICK
