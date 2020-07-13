@@ -196,7 +196,9 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.f.
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
-
+	
+	Grabar_Log('Verificando OCX') 
+	
     WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     DO Verifica_OCX WITH "Check"
     
@@ -208,10 +210,12 @@ IF TYPE('goApp')='O'
    * =MESSAGEBOX(amodelofiscal[1])	  
    
 	= Fwin32()    && funciones api win32
-
+	
+	Grabar_Log('Obteniendo conexion a servidor') 
 	 =ObtenerServidor()
 	  
 	IF LEN(TRIM(LcConectionString))=0
+		Grabar_Log('Solicitando nueva conexion a servidor') 
 		DO FORM configbd
 		=ObtenerServidor()
 	ENDIF    
@@ -225,6 +229,7 @@ IF TYPE('goApp')='O'
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
 	
+	Grabar_Log('Conectado..'+goapp.servidor) 
 	   * en proc.prg   
 	IF ExisteDSN()  			
 		IF !ConeccionADO()
@@ -250,6 +255,7 @@ IF TYPE('goApp')='O'
 *!*		      ENDIF 
 *!*		ENDIF 
 
+	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
 	    
 	Goapp.idusuario           = 0
@@ -275,12 +281,14 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
+	Grabar_Log('Verificando Licencia') 
 	IF NOT Licencia()
 		CANCEL 
 		CLEAR ALL
 		RETURN 
 	ENDIF 
 	
+	Grabar_Log('Acceso exitoso') 
 	 DO FORM frmmenu
 	                     
 	 _screen.visible=.t.	   
