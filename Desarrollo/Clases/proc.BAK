@@ -1558,8 +1558,11 @@ IF lok
 				        lcnombreprimero=lcdd
 				        lbprimero=.t.
 				    endif
- 				   	*Oavisar.proceso('S','Bajando '+UPPER(lcdd),.f.,0)				
+ 				   	*Oavisar.proceso('S','Bajando '+UPPER(lcdd),.f.,0)
+ 				   	SET SAFETY OFF 				
 					STRTOFILE(Csrgestion.programa,lcdd)					
+					SET SAFETY ON 
+					
 					STORE .t. TO lbdescargado								
    	            ENDSCAN
 				
@@ -1574,7 +1577,9 @@ IF lok
 					ENDIF 
 					lcGestCopia = ADDBS(lcCopia)+STRTRAN(TRIM(CsrSistema.programa),'.EXE','')+DTOS(DATE())+strzero(HOUR(DATETIME()),2)+strzero(MINUTE(DATETIME()),2)+'.EXE'
 					*OAVISAR.usuario(lcGestCopia)
-					COPY FILE &lcExe TO &lcGestCopia
+					IF FILE(TRIM(lcExe))
+						COPY FILE &lcExe TO &lcGestCopia
+					ENDIF 
 					
 					oShell = createobject("WScript.Shell")					 
 					lcdd = lcnombreprimero
