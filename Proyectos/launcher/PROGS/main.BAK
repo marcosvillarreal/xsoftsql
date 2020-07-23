@@ -82,11 +82,11 @@ SET SYSMENU off
 * _Screen.windowstate=2
 _Screen.caption=lctituloGestion
 _Screen.icon='help.ico'
-_screen.picture= 'fondoabm.bmp'    &&'logoempresa.bmp'
+_screen.picture= 'fondo.jpg'    &&'logoempresa.bmp'
 _Screen.closable=.f.
 IF !lldesarrollo
-	_Screen.Height=421
-	_Screen.Width=651
+	_Screen.Height=441
+	_Screen.Width=815
 endif
 
 _screen.AutoCenter= .T.
