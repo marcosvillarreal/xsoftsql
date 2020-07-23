@@ -1,10 +1,3 @@
-
-LPARAMETERS oIdPrograma
-
-oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
-
-nidprograma=IIF(VARTYPE(oIdprograma)="C",oIdprograma,LTRIM(STR(oIdprograma)))
-
 *===================
 *= ARCHIVO PRINCIPAL
 *===================
@@ -16,7 +9,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Almacenar Gestión de Ventas"
+lctituloGestion = "Launcher G&M"
  
 If !lldesarrollo
    If f_activawin(lctituloGestion)
@@ -71,6 +64,7 @@ Set classlib to aplicacion.vcx additive && Objeto Aplicacion
 
    SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos 
    SET PROCEDURE  TO  procdesarrollo.prg ADDITIVE  && Procedimientos generales
+   SET PROCEDURE TO proclocal.prg ADDITIVE 
    SET PROCEDURE  TO  syserror.prg ADDITIVE  
    SET PROCEDURE  TO procfiscal.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE 
@@ -197,8 +191,8 @@ IF TYPE('goApp')='O'
 	_screen.visible=.f.	
 	   	 
 	*IF !lldesarrollo	
-		SET SYSMENU TO
-		DO FORM guardaexe_idprograma
+		*SET SYSMENU TO
+		DO FORM frmlauncher
 		*DO FORM guardaexe
 	*ENDIF 
 		   
