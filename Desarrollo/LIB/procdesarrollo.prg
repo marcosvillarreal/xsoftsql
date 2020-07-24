@@ -18,7 +18,7 @@ ENDIF
 
 lcFile = ADDBS(lcPath) + lcFile
 IF NOT FILE(lcFile)
-	oavisar.programador('No se encontro el archivo')
+	oavisar.programador('No se encontro el archivo'+CHR(13)+lcFile )
 	RETURN .f.
 ELSE
 	SET SAFETY OFF 
