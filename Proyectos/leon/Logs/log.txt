@@ -1,9 +1,3 @@
-Error No se encuentra el alias 'CSRMOVPUB'.
-Linea nº REPLACE idusuario WITH goapp.idusuario ,fechacorte with CsrAuxiliar.fechacorte,detalle WITH CsrAuxiliar.detalle ,diasaviso WITH Csrauxiliar.diasaviso,activo WITH Csrauxiliar.activo IN Csrmovpub
- Alias CSRAVISOUSER registro         -1
-Control activo  REGPUBVARIO.ACEPTAR1.CLICK
-25-07-2019 11:55:05 , Error nº:       1925
-Error _CMDPROCESAR es un miembro desconocido.
 Linea nº .containerencabeza._cmdprocesar.SetFocus
  Alias CSRAUXILIAR registro          1
 Control activo  REGPUBVARIO.CANCELAR1.CLICK
@@ -170,6 +164,7 @@ Control activo  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 16-09-2019 15:33:34 , Error nº:       1581
 Error El campo IVA no acepta valores NULL.
 Linea nº INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, telefono,nroibbto ,localidad, provincia, nomvendedor, codvendedor, canal,idctacte) VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre) ,ALLTRIM(CsrAux.cuit),ALLTRIM(CsrAux.iva),ALLTR
+
 
 
 
@@ -470,6 +465,7 @@ Linea nº REPLACE idarticulo WITH Csrproducto.id,numero WITH Csrproducto.numero,n
 
 
 
+
 in3 ,desc3 WITH OscPie.porce3 IN CsrAuxiliar
  Alias CSRAUXILIAR registro          1
 Control activo PORCE3 GREGDESCUENTOS.CONTAINERPIE._TXTPORCE3.KEYPRESS
@@ -654,12 +650,14 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo0
 
 
 
+
 odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
  Alias IMPCUERVARI registro          4
 Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
 08-11-2019 13:40:24 , Error nº:         12
 Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
 
 
 
@@ -890,6 +888,7 @@ Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidade
 
 
 
+
 estadotilde=1 INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -901,6 +900,7 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
 
 
 
@@ -1021,7 +1021,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -1107,7 +1109,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -1193,7 +1197,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1377,12 +1383,14 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
 
 
 
@@ -1480,7 +1488,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -1526,7 +1536,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -1572,7 +1584,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1648,6 +1662,7 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1659,6 +1674,7 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
 
 
 
@@ -1762,4 +1778,9 @@ Error El campo COMPROBANTE no acepta valores NULL.
 Linea nº INSERT INTO FsrRecibidos (  fecha ,clasecomp ,numcomp,tipodoc ,nrodoc ,nomctacte ,total, comprobante ) VALUES ( dfecha ,cclasecomp ,cnumcomp ,ctipodoc ,cnumdoc ,cnomctacte ,ntotal, ccomprobante)
  Alias CSRAFIPCOMP registro          1
 Control activo  INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-08-07-2020 13:35:20 , Error nº:       1581Error El campo COMPROBANTE no acepta valores NULL.Linea nº INSERT INTO FsrRecibidos (  fecha ,clasecomp ,numcomp,tipodoc ,nrodoc ,nomctacte ,total, comprobante ) VALUES ( dfecha ,cclasecomp ,cnumcomp ,ctipodoc ,cnumdoc ,cnomctacte ,ntotal, ccomprobante) Alias CSRAFIPCOMP registro          1Control activo  INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+08-07-2020 13:35:20 , Error nº:       1581
+Error El campo COMPROBANTE no acepta valores NULL.
+Linea nº INSERT INTO FsrRecibidos (  fecha ,clasecomp ,numcomp,tipodoc ,nrodoc ,nomctacte ,total, comprobante ) VALUES ( dfecha ,cclasecomp ,cnumcomp ,ctipodoc ,cnumdoc ,cnomctacte ,ntotal, ccomprobante)
+ Alias CSRAFIPCOMP registro          1
+Control activo  INFORME1.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+30-07-2020 13:10:42 , Error nº:       1734Error No se encuentra la propiedad PEDIR_CAE_ANTICIPADO.Linea nº cCAEA = Thisform.oFacCAE.Pedir_CAE_Anticipado(thisform.fecfactura) Alias  registro          0Control activo  PIDOCAEA.TIMER1.TIMER
