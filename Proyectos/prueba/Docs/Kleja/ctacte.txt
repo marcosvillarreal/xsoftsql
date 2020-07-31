@@ -1,0 +1,46 @@
+Clientes.DBF				Proveedo.dbf				Ctacte
+Postal c(8)					*							cpostal
+Provincia c(2) [01]			*							idprovincia
+Codigo c(6) [000000]		*							cnumero
+Nombre c(50)				*							cnombre
+Domicilio c(50)				*							cdireccion
+Telefono c(30)				*							ctelefono
+Tipo c(2) [00]				*							idtipoiva
+nrodoc c(13)				cuit c(13)					cuit / nrodocumento
+tipodoc c(2) [00]										
+Vendedor c(3) [000]										
+Fax c(30)					*							
+Email c(40)					*
+fechaini d												fechalta
+-fechaulop d
+condvta c(5) [00000]		(cuenta corriente?)			idplanpago
+-zona c(3) [000]
+contacli c(30)				contacto c(30)
+-ordencli c(50)
+codtop c(4) [0000]
+limcrcli n(12,2)			credito n(10,2)				saldoautorizado
+bonifcli n(8,2)											bonif1
+-exportar c(1) 				*
+-ok b						*
+-oks b						*
+-fborrado d					*
+obsercli c(250)				observaci c(250)			observa
+-transporte c(2) [00]
+-dtocli n(6,2)
+ingbrutos c(15)				ing_brutos c(50)			inscri01
+?codconven c(2) [00]
+codcatego c(2) 
+web c(70)					*
+?cobrador c(6) [000000]
+lista	c(4)
+codcomp c(4)
+activo l
+							-condicion c(5)
+							-fecha_inha d
+							-orden_pago c(50)
+							iva c(4)
+							concepto c(4) [0000]		idplancue
+							cuenta n(1)
+							codtop c(4) [0000]
+							inscgan n(10)
+							codregimen n(10)

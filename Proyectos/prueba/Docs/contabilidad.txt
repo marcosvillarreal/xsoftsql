@@ -1,0 +1,41 @@
+Contabilidad
+Cambiando con respecto a la versión anterior. Usaremos otra logica completamente "distinta" para el plan de cuentas.
+El Problema radica en el plan de cuentas. Ya que si podemos mantener un identificador por "cuenta" se puede implementar no usar la cuenta 5 caja con diferentes id por cada ejercicio. De esta manera el Ejercicio lo mantiene el Encabezado.
+
+Las cuentas se ingresarian de forma unica y tendria un Nro, Descripcion y Clase (por defecto). Estado activo o inactivo.
+
+El Plan de Cuentas seria por ejercicio. (Misma idea que el Datamenu). Donde solo identificaria la posicion (Para balance o Impresion del plan) en el Plan de Cuentas.
+
+En el plan se podrian agregar Nro de Plan siendo este unico en este plan.
+Se podria agregar carpetas que tienen un Nro de Plan.
+Y dentro de estas Cuentas Contables que tendrian su Nro de Plan e un numero de Cuenta propio, podriamos permitir cambiar la clase o sugerir la de por defecto. Tambien se podrian Bloquear (Tiene saldo y no quiere que se toque) o eliminar del Plan.
+
+(En el caso de empresas donde nose modifica el plan de cuentas de forma radical, cuando se arme las cuentas contables pueden tener el mismo nro de plan de cuentas)
+(Tambien sino esta usado el nro, podemos sugerir el mismo que tiene la cuenta contable, Si deciden cambiar todo el plan, deben conocer los nuevos numeros)
+
+De esta manera si una cuenta no esta en el Plan de Cuentas (Tomaria la idea de concepto como sino estuviera parametrizada) no se podria usar.
+
+De esta manera al dar de alta un nuevo ejercicio, se copiaria el plan de cuentas con un nuevo idejercicio, pero las cuentas contables se mantendrian sin modificacion.
+
+Cuentas contables asociadas a otras tablas?
+Con respecto a las cuentas contables asociada a la ctacte, producto, rubro etc. Se mantendrian la misma idea, teniendo la cuenta que le pertenecia por cada ejercicio. (Es en caso que en algun momento sea "VENTA DE MOLINO HACIENDA" y al otro sea 0, es por si se quiere registrar algo en otro ejercicio, dificil pero posible)
+Normalmente no sufriran cambios.
+
+Validaciones.
+Desde Cuentas Contables
+No se puede bloquear si existe una asociacion en alguna tabla extra para el ejercicio (ProdCtaCon, PlanCue etc)
+
+Desde Plan Cuentas
+No se puede eliminar o bloquear si existe una asociacion en alguna tabla extra para el ejercicio (ProdCtaCon, TablaAsi etc)
+No se puede modificar la posicion si tiene saldo la cuenta (Consultar con contador posible validaciones con respecto a moverla sobre el mismo Plan Cue)
+
+En que casos una nueva cuenta creada se traslada al Ejercicio siguiente?¿
+Deberiamos crear una marca si el plan de cuentas siguiente esta modificado desde su creacion. Si ese es el caso, no deberiamos trasladar el cambio a los ejercicio mas nuevos.
+
+Contras
+Modificacion de logica si se quiere implementar.
+
+Ventajas
+Independecia entre Cuentas Contables y Ejercicios. Informando todo lo que se necesite de un ejercicio solo los movimientos del mismo sin importar que cuenta sea, ya que no alamecenamos el orden del plan de cuentas, sino el idcuenta.
+
+

@@ -1,0 +1,23 @@
+11-05-2020 15:32:09 , LISPATRONCARGAPEDIDOS.ACEPTAR1.CLICK, Error: IDCTACTE no es único y se debe calificar.;Linea : SELECT idctacte,codigo,nombre,unibulto,SUM(cantidad) as cantidad FROM CsrAuxCabefac INNER JOIN CsrAuxCuerfac ON CsrAuxCabefac.idmaopera = CsrAuxCuerfac.idmaopera WHERE CsrAuxCuerfac.escambio = 1 GROUP BY idctacte,codigo,nombre,unibulto INTO CURSOR CsrAuxCambios READWRITE;Error :       1832;Ultimo Alias Activo: CSRAUXCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000S0EH01ON.TMP;Ultimo Control activo: 
+11-05-2020 15:32:09 , Pila de llamadas
+11-05-2020 15:32:09 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Objeto      : lispatroncargapedidos.aceptar1.click
+11-05-2020 15:32:09 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Nº de Linea :          4
+11-05-2020 15:32:09 , En el Fuente: 	.actualizar()
+11-05-2020 15:32:09 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Objeto      : lispatroncargapedidos.actualizar
+11-05-2020 15:32:09 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Nº de Linea :          4
+11-05-2020 15:32:09 , En el Fuente: 		IF NOT .imprimir()
+11-05-2020 15:32:09 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Objeto      : lispatroncargapedidos.imprimir
+11-05-2020 15:32:09 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Nº de Linea :          4
+11-05-2020 15:32:09 , En el Fuente: 	lok = this.imprimir_lote()
+11-05-2020 15:32:09 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Objeto      : lispatroncargapedidos.imprimir_lote
+11-05-2020 15:32:09 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\pedidos\lispatroncargapedidos_v2.sct
+11-05-2020 15:32:09 , Nº de Linea :        400
+11-05-2020 15:32:09 , En el Fuente: 		SELECT idctacte,codigo,nombre,unibulto,SUM(cantidad) as cantidad FROM CsrAuxCabefac INNER JOIN CsrAuxCuerfac ON CsrAuxCabefac.idmaopera = CsrAuxCuerfac.idmaopera 		WHERE CsrAuxCuerfac.escambio = 1 GROUP BY idctacte,codigo,nombre,unibulto INTO CURSOR CsrAuxCambios READWRITE 
+11-05-2020 15:32:09 , Fin

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VFPSTEAM BI - VFPsMAPAS : Business Intelligence</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      
+      }
+      #outputDiv {
+        position: absolute;
+        bottom: 5px;
+        left: 38%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        opacity: 0.70;
+      }
+      #latitudDiv {
+       position: absolute;
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      }
+      #longitudDiv {
+       position: absolute;
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>    
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=es"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to&callback=initMap"
+ 	 type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="outputDiv"></div>
+    <div id="latitudDiv"></div>
+    <div id="longitudDiv"></div>
+    <div id="map-canvas"> style="width: 592px; height: 523px;"></div>
+    
+    
+  </body>
+  
+  <script>
+       var geocoder = null
+		function initialize() {
+         geocoder = new google.maps.Geocoder();
+         var fenway = new google.maps.LatLng( -38.8766081000,  -62.0707813000);
+		  var mapOptions = {
+             scaleControl: true,
+             panControl:true,
+             rotateControl:true,
+    	      zoom: 16,
+             mapTypeId: google.maps.MapTypeId.ROADMAP,
+    	      center: fenway
+  		  };
+  		  latitudDiv.innerHTML =  -38.8766081000
+          longitudDiv.innerHTML =  -62.0707813000
+          var map = new google.maps.Map(document.getElementById('map-canvas'),
+              mapOptions);
+
+           geocoder.geocode( { 'latLng': fenway}, function(results, status) {
+
+	        if (status == google.maps.GeocoderStatus.OK) {
+			    map.setCenter(results[0].geometry.location);
+               var image = 'http://www.vfpstylemenuframework.com/images/Marker_Outside_Chartreuse.png'; 
+		        var marker = new google.maps.Marker({
+			    map: map, icon: image, title: 'Mover para ver coordenadas',
+			   	position: fenway
+			  //position: results[0].geometry.location
+               , draggable: true
+			   });
+			    var coord1  = results[0].geometry.location
+			    var infoWin = new google.maps.InfoWindow({
+               maxWidth: 350,
+				content: '<span style="font-weight: bold; color: rgb(255, 102, 0);">Informaci&oacute;n</span>' + '<br>' + results[0].formatted_address + '<br>' + '<br>' + 'Coord. ' + coord1	
+			   });
+               google.maps.event.addListener(marker, 'drag' , function(event) {
+               outputDiv.innerHTML = '<div style="text-align: center;"><small><span style="color: rgb(255, 102, 0); font-weight: bold; font-family: Courier New,Courier,monospace;">' + 'Latitud:' + event.latLng.lat() + '[x] Longitud:' + event.latLng.lng() + '[y]</span></small></div>';
+               var cadena = '<span style="font-weight: bold; color: rgb(255, 102, 0);">Informaci&oacute;n</span>' + '<br><br>' + 'Latitud: ' + event.latLng.lat() + '<br> Longitud: ' + event.latLng.lng();
+               infoWin.setContent (cadena);
+               infoWin.open(map, marker);
+               latitudDiv.innerHTML = event.latLng.lat();
+        	   longitudDiv.innerHTML = event.latLng.lng();
+        	   var yourLocation = new google.maps.LatLng(event.latLng.lat, event.latLng.lng);
+              });
+	        } else {
+				alert("Se ha producido un fallo por: " + status);
+			   }
+		     });
+        }   //Fin de funcion initialize()
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    
+</html>
