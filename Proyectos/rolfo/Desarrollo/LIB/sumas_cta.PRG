@@ -1,1 +1,0 @@
-* sumas_cta para que no de error al compilar infocontabilidad
