@@ -29,6 +29,8 @@ DECLARE INTEGER ShellExecute IN shell32.dll ;
      ShowWindow (lhwnd, 1)
      ox = CREATEOBJECT ( "Wscript.Shell" )
      ox.sendKeys ( '{ENTER}' )
+     RETURN .t.
  ELSE 
      MESSAGEBOX ( "Whatsapp no activada!" )
+     RETURN .f.
  ENDIF
