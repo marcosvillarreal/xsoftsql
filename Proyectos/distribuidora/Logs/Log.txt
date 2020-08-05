@@ -53,930 +53,6 @@
 
 
 
-o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0) as detapiecuota09 ,00 as ProvReba,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,CAST(0 as numeric(1,0)) as ctalogistica,SPACE(20) as proximonro_rto ,SPACE(15) as nrocomplic,SPACE(30) as canalvta FROM CsrCabefac WHERE RECNO()=1 AND id=0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.LOAD
-14-05-2020 12:20:18 , Acceso al sistema, antes de autenticar
-14-05-2020 12:21:26 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: The connection cannot be used to perform this operation. It is either closed or invalid in this context.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo regist
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ro:          0  DBF:  Ultimo Control activo:  MAIN
-14-05-2020 12:21:30 , Acceso al sistema, antes de autenticar
-14-05-2020 12:22:38 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: The connection cannot be used to perform this operation. It is either closed or invalid in this context.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo regist
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ro:          0  DBF:  Ultimo Control activo:  MAIN
-14-05-2020 12:39:22 , Acceso al sistema, antes de autenticar
-19-05-2020 10:35:57 , Acceso al sistema, antes de autenticar
-19-05-2020 10:37:38 , Acceso al sistema, antes de autenticar
-19-05-2020 10:49:34 , Acceso al sistema, antes de autenticar
-19-05-2020 10:51:15 , Error: No se encuentra el alias. Linea : IF RECCOUNT("CsrSeguridad")<1 Error :         13 Ultimo Alias Activo: CSRMENU Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00008YKP01CO.TMP Ultimo Control activo:  MAIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19-05-2020 10:51:20 , Acceso al sistema, antes de autenticar
-19-05-2020 10:53:00 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: The connection cannot be used to perform this operation. It is either closed or invalid in this context.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo regist
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ro:          0  DBF:  Ultimo Control activo:  MAIN
-19-05-2020 10:53:05 , Acceso al sistema, antes de autenticar
-19-05-2020 11:30:31 , Error: El archivo 'csrcabecpra.dbf' no existe. Linea : SELECT CsrCabecpra.*,00 as copiatkt,0 as idsubcta,SPACE(3) as subnumero,SPACE(40) as detalle,DATETIME() as Vencimien ,000.00 as bonif1,000.00 as bonif2 ,CAST(0 as numeric(12,0))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as idcuenta FROM CsrCabecpra WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACCPRA.LOAD
-19-05-2020 11:31:19 , Error: El archivo 'csrcabecpra.dbf' no existe. Linea : SELECT CsrCabecpra.*,00 as copiatkt,0 as idsubcta,SPACE(3) as subnumero,SPACE(40) as detalle,DATETIME() as Vencimien ,000.00 as bonif1,000.00 as bonif2 ,CAST(0 as numeric(12,0))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as idcuenta FROM CsrCabecpra WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACCPRA.LOAD
-19-05-2020 11:33:01 , Acceso al sistema, antes de autenticar
-19-05-2020 11:40:39 , Error: El archivo 'csrcabecpra.dbf' no existe. Linea : SELECT CsrCabecpra.*,00 as copiatkt,0 as idsubcta,SPACE(3) as subnumero,SPACE(40) as detalle,DATETIME() as Vencimien ,000.00 as bonif1,000.00 as bonif2 ,CAST(0 as numeric(12,0))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as idcuenta FROM CsrCabecpra WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACCPRA.LOAD
-19-05-2020 11:41:10 , Acceso al sistema, antes de autenticar
-28-05-2020 13:40:09 , Acceso al sistema, antes de autenticar
-29-05-2020 13:42:18 , Acceso al sistema, antes de autenticar
-29-05-2020 13:43:14 , Error: No se encuentra la propiedad TRAECAMBIOS. Linea : .estadistica.traecambios 	= 0 Error :       1734 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDZONA,10)+STRID(IDVENDEDOR,10)+STRID(IDCTACTE,10)+STRID(ID
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SECCION,10)+STRID(IDARTICULO)+STRID(IDVARIEDAD,10) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FEO900AK.TMP Ultimo Control activo:  INF_DEVOLUCIONES.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-29-05-2020 13:47:06 , Error: No se encuentra la propiedad INTERNO. Linea : Oscatter.totalng	= OscDevol.totalng + OscDevol.interno Error :       1734 Ultimo Alias Activo: CSRVENTAS Ultimo registro:        336  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-O900DO.TMP Ultimo Control activo:  INF_DEVOLUCIONES.IMPRIMIR_VISTAPREVIA1.PDF.CLICK
-29-05-2020 13:58:45 , Error: No se encuentra la propiedad KILOS. Linea : OscDevol.kilos			= ABS(OscDevol.kilos) Error :       1734 Ultimo Alias Activo: CSRVENTAS Ultimo registro:        336  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FEO900RU.TMP Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Control activo:  INF_DEVOLUCIONES.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-02-06-2020 13:07:46 , Error: OLE IDispatch exception code 0 from ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto... Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo regi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-stro:          0  DBF:  Ultimo Control activo:  MAIN
-03-06-2020 11:19:09 , Acceso al sistema, antes de autenticar
-03-06-2020 11:31:52 , Acceso al sistema, antes de autenticar
-03-06-2020 12:08:14 , Error: El archivo 'csrncabefac.dbf' no existe. Linea : SELECT CsrNCabefac.*,SPACE(13) as numcomp,DATETIME() as fechareba,SPACE(15) as numreba, 00 as ProvReba ,00 as copiatkt ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm ,SPACE(255) as observa FROM CsrNCabefac WHERE RECNO()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGNOTAPEDANDROID.LOAD
-03-06-2020 12:08:21 , Acceso al sistema, antes de autenticar
-04-06-2020 11:05:09 , Acceso al sistema, antes de autenticar
-26-06-2020 11:25:50 , Acceso al sistema, antes de autenticar
-29-06-2020 10:58:52 , Acceso al sistema, antes de autenticar
-29-06-2020 11:07:06 , Acceso al sistema, antes de autenticar
-29-06-2020 20:06:04 , Acceso al sistema, antes de autenticar
-29-06-2020 20:13:30 , Acceso al sistema, antes de autenticar
-29-06-2020 22:26:56 , Acceso al sistema, antes de autenticar
-30-06-2020 12:01:44 , Acceso al sistema, antes de autenticar
-30-06-2020 12:09:31 , Acceso al sistema, antes de autenticar
-30-06-2020 12:10:24 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1003,6 +79,31 @@ stro:          0  DBF:  Ultimo Control activo:  MAIN
 
 
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1116,7 +217,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1230,7 +381,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1344,7 +545,57 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1458,7 +709,57 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rtoDesde, SPACE(15) as numrtoHasta FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo: CSRMOVBCOCAR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EART000O.TMP Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1518,6 +819,31 @@ rtoDesde, SPACE(15) as numrtoHasta FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO
 mo Control activo:  REGFACPUB.LOAD
 01-07-2020 07:11:08 , Acceso al sistema, antes de autenticar
 01-07-2020 07:14:37 , Error: No se encuentra el alias 'OSCCTACTEMOD'. Linea : LOCATE FOR id = OscCtacteMod.idmodelo AND idejercicio = CsrDetaconta.id Error :         13 Ultimo Alias Activo: CSRCABEMOD Ultimo registro:         -1  DBF: C:\USERS\MARCO\APPD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1639,8 +965,58 @@ ATA\LOCAL\TEMP\00005FD5008S.TMP Ultimo Control activo:  MAIN
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Control activo:  FRMEJERCICIO.INIT
 03-07-2020 11:39:44 , Error: Falta alguna expresión. Linea : pIdEjercicio = IIF(PCOUNT()<1,0,&pIdEjercicio) Error :        152 Ultimo Alias Activo: CSRAUXEJERCICIO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000IHAH00O2.TMP Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1758,7 +1134,57 @@ o Control activo:  FRMEJERCICIO.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1872,7 +1298,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1986,7 +1462,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2100,7 +1626,57 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2214,8 +1790,58 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.LOAD
 03-07-2020 16:00:09 , Error: El archivo 'csrdetaconta.dbf' no existe. Linea : SELECT TTOD(Csrdetaconta.fecdesde) as fecdesde,TTOD(Csrdetaconta.fechasta) as fechasta,Csrdetaconta.ejercicio,Csrdetaconta.id FROM Csrdetaconta WHERE LEFT(switch,1)<>'1' INTO C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2332,9 +1958,59 @@ URSOR CsrAuxEjercicio Error :          1 Ultimo Alias Activo:  Ultimo registro: 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\0000OHE104US.TMP Ultimo Control activo: PARADA REGFACPUB_MONTE.KEYPRESS
 10-07-2020 16:19:01 , Acceso al sistema, antes de autenticar
 10-07-2020 16:30:25 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2448,7 +2124,57 @@ OCAL\TEMP\0000OHE104US.TMP Ultimo Control activo: PARADA REGFACPUB_MONTE.KEYPRES
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2562,7 +2288,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2676,7 +2452,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as detaref, 0 as ComprometeMerc, 0 as rendicaja, 0 as esremito,CAST(0 as n(11,2)) as saldocta ,SPACE(30) as datosfactura,SPACE(30) as detacobranza ,00 as PlanCuota, 00 as PlanRang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2790,6 +2616,31 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0) as detapiecuota09 ,00 as ProvReba,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,CAST(0 as numeric(1,0)) as ctalogistica,SPACE(13) as proximonro_rto ,SPACE(15) as nrocomplic,SPACE(30) as canalvta,SPACE(50) as filePrint ,SPACE(15) as num
 
 
@@ -2847,7 +2698,57 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rtoDesde, SPACE(15) as numrtoHasta FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo: CSRMOVBCOCAR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OHE109QU.TMP Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2963,7 +2864,57 @@ mo Control activo:  REGFACPUB.LOAD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3077,7 +3028,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3191,7 +3192,57 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3305,7 +3356,57 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3419,7 +3520,57 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rtoDesde, SPACE(15) as numrtoHasta FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo: CSRMOVBCOCAR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OHE109YN.TMP Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3534,6 +3685,31 @@ mo Control activo:  REGFACPUB.LOAD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Control activo:  REGANUCOMPVTACAE.ACEPTAR1.CLICK
 14-07-2020 12:45:17 , Error: OLE IDispatch exception code 0 from ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto... Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo regi
 
@@ -3592,8 +3768,58 @@ mo Control activo:  REGFACPUB.LOAD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 stro:          0  DBF:  Ultimo Control activo:  MAIN
 14-07-2020 12:45:26 , Error: File 'csrexistenc.dbf' does not exist. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo: CSROPERACION Ultimo registro:         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3720,6 +3946,31 @@ stro:          0  DBF:  Ultimo Control activo:  MAIN
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ntrol activo:  MAIN
 31-07-2020 11:00:37 , Verificando OCX
 31-07-2020 11:00:38 , Acceso al sistema, antes de autenticar
@@ -3734,6 +3985,31 @@ ntrol activo:  MAIN
 31-07-2020 11:02:37 , Verificando Licencia
 31-07-2020 11:02:37 , Acceso exitoso
 31-07-2020 11:14:26 , Error: El archivo 'j:\xsoftsql\proyectos\desarrollo\graficos\systemlogout_103399.png' no existe. Linea : RETURN .f.   &&Es solo para que entre al catch Error :          1 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3809,6 +4085,31 @@ BF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000069E1013Z.TMP Ultimo Control activo:  O
 31-07-2020 11:27:29 , Verificando Licencia
 31-07-2020 11:27:29 , Acceso exitoso
 31-07-2020 11:27:30 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF SUBSTR(goapp.switchUsuario,3,1)='1' Error :         11 Ultimo Alias Activo: CSRALERTAS Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3945,6 +4246,31 @@ CAL\TEMP\00002TC9007J.TMP Ultimo Control activo:  MAIN
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  BASECONECTOR.DATAENVIRONMENT.BEFOREOPENTABLES
 31-07-2020 14:18:59 , Verificando OCX
 31-07-2020 14:18:59 , Acceso al sistema, antes de autenticar
@@ -3952,6 +4278,31 @@ imo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  BA
 31-07-2020 14:19:00 , Conectado..miguel\sql2014
 31-07-2020 14:20:10 , Datos de la empresa
 31-07-2020 14:20:10 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea :  Error :       1429 Ultimo Alias Activo:  Ultimo re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4076,8 +4427,58 @@ gistro:          0  DBF:  Ultimo Control activo:  MAIN
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 VIARMJS.INIT
 01-08-2020 12:49:04 , Error: OOBJETO no es un objeto. Linea : FOR i = 1 TO oObjeto.items Error :       1924 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BRIH01GH.TMP Ultimo Control activo:  W_EN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4192,8 +4593,58 @@ VIARMJS.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 VIARMJS.INIT
 01-08-2020 12:50:17 , Error: OOBJETO no es un objeto. Linea : FOR i = 1 TO oObjeto.items Error :       1924 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BRIH01HT.TMP Ultimo Control activo:  W_EN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4308,8 +4759,58 @@ VIARMJS.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 P Ultimo Control activo:  W_ENVIARMJS.INIT
 01-08-2020 12:51:04 , Error: No se encuentra la variable 'NOMBRE'. Linea : replace codigo WITH oObjeto.arrayList[i,2],telefono WITH oObjeto.arrayList[i,1], nombre WITH oObjeto.arrayList[i,3] IN CsrClientes Error :         12 Ultimo Alias Activo: CSRCLIEN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4424,8 +4925,58 @@ TES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BRIH
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ltimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BRIH01KO.TMP Ultimo Control activo:  W_ENVIARMJS.INIT
 01-08-2020 13:00:13 , Error: El archivo 'enviarwhatsapp.prg' no existe. Linea : EnviarWhatsapp(CsrClientes.telefono,cMensaje) Error :          1 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BRIH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4575,8 +5126,58 @@ ltimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BRIH01KO.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MP\0000F4ZT004I.TMP Ultimo Control activo:  W_EXPO_CONTACTS.INIT
 03-08-2020 14:03:09 , Error: Ya existe un subdirectorio o archivo j:\aplicaciones\contactos. Linea : MKDIR SYS(5)+'\aplicaciones\contactos' Error :       1961 Ultimo Alias Activo: CSRSETEO Ultimo registro:         32  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4690,8 +5291,58 @@ MP\0000F4ZT0066.TMP Ultimo Control activo:  W_EXPO_CONTACTS.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00F4ZT009S.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 14:06:16 , Error: No se encuentra la variable 'LCACARREO'. Linea : lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia)) Error :         12 Ultimo Alias Activo: CSRLISTA Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4801,8 +5452,58 @@ MP\0000F4ZT0066.TMP Ultimo Control activo:  W_EXPO_CONTACTS.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 14:10:25 , Error: No se encuentra la variable 'CNOMBRE'. Linea : INSERT INTO FsrContactos (  nombre ,telefono ) VALUES ( cNombre , cTelefono) Error :         12 Ultimo Alias Activo: CSRLISTA Ultimo registro:          2  DBF: C:\USERS\MARCO\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4908,8 +5609,58 @@ DATA\LOCAL\TEMP\0000F4ZT00FX.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROC
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 14:29:46 , Error: No se encuentra la variable 'LCCAMPO002'. Linea : lcCampo002			= UPPER(LimpiarCadena(IIF(j + i = 2,lcCadena,lcCampo002))) Error :         12 Ultimo Alias Activo: CSRLISTA Ultimo registro:          2  DBF: C:\USERS\MARCO\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5011,8 +5762,58 @@ TA\LOCAL\TEMP\0000F4ZT00NK.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROCES
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 14:49:39 , Error: No se encuentra la variable 'LCCAMPO0061'. Linea : lcTelefono  = lcCampo0061 Error :         12 Ultimo Alias Activo: CSRLISTA Ultimo registro:          9  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000F4ZT01QD.TMP Ultimo Control
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5110,8 +5911,58 @@ o:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 15:07:57 , Error: No se encuentra el alias 'CSRCONTACTOS'. Linea : SELECT CsrContactos Error :         13 Ultimo Alias Activo: FSRCONTACTOS Ultimo registro:        195  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000F4ZT02QT.TMP Ultimo Control act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5205,7 +6056,57 @@ ivo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  n(11,2)) as margen1 ,CAST(0 as n(11,2)) as prevtaf2v,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3v,CAST(0 as n(11,2)) as margen3 ,CAST(0 as n(11,2)) as prevtaf4v,CAST(0 as n(11,2)) as margen4 ,CAST(0 as n(11,2)) as prevtaf1n ,CAST(0 as 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5297,6 +6198,31 @@ n(11,2)) as prevtaf2n ,CAST(0 as n(11,2)) as prevtaf3n ,CAST(0 as n(11,2)) as pr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  W_EXPO_CONTACTS.LOAD
 03-08-2020 16:06:21 , Verificando OCX
 03-08-2020 16:06:22 , Acceso al sistema, antes de autenticar
@@ -5304,6 +6230,31 @@ DWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF
 03-08-2020 16:06:24 , Conectado..distribuidorakleja.ddns.net\sql2014,1170
 03-08-2020 16:06:25 , Datos de la empresa
 03-08-2020 16:06:48 , Error: No se encuentra la variable 'CAMPO001'. Linea : INSERT INTO FsrContactos (nombre , telefono ,campo001  ,campo002  ,campo003  ,campo004  ,campo005  ,campo006  ,campo007  ,campo008  ,campo009  ,campo010 ,campo011  ,campo012  ,c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5383,7 +6334,57 @@ ampo013  ,campo014  ,campo015  ,campo016  ,campo017  ,campo018  ,campo019  ,camp
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o036  ,campo037  ,campo038  ,campo039  ,campo040 ,campo041  ,campo042  ,campo043  ,campo044  ,campo045  ,campo046  ,campo047  ,campo048  ,campo049  ,campo050 ,campo051  ,campo052  ,campo053  ,campo054  ,campo055  ,campo056  ,campo057  ,campo058  ,campo05
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5463,7 +6464,57 @@ o036  ,campo037  ,campo038  ,campo039  ,campo040 ,campo041  ,campo042  ,campo043
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 campo008  , lccampo009  , lccampo010 , lccampo011  , lccampo012  , lccampo013  , lccampo014  , lccampo015  , lccampo016  , lccampo017  , lccampo018  , lccampo019  , lccampo020 , lccampo021  , lccampo022  , lccampo023  , lccampo024  , lccampo025  , lccamp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5543,7 +6594,57 @@ o026  , lccampo027  , lccampo028  , lccampo029  , lccampo030 , lccampo031  , lcc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   , lccampo045  , lccampo046  , lccampo047  , lccampo048  , lccampo049  , lccampo050 , lccampo051  , lccampo052  , lccampo053  , lccampo054  , lccampo055  , lccampo056  , lccampo057  , lccampo058  , lccampo059  , lccampo060 , lccampo061  , lccampo062  , 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5623,8 +6724,58 @@ lccampo063  , lccampo064  , lccampo065  , lccampo066  , lccampo067  , lccampo068
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ntrol activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 16:08:28 , Error: No se encuentra la variable 'ESTADOTILDE'. Linea : replace ALL estadotilde WITH 1 Error :         12 Ultimo Alias Activo: CSRCONTACTOS Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000F4ZT0351.TMP Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5702,8 +6853,58 @@ o Control activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\0000F4ZT036D.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 16:12:28 , Error: Debe especificar parámetros adicionales. Linea : INSERT INTO FsrContactos (estadotilde, nombre , telefono, apellido, email ,campo001  ,campo002  ,campo003  ,campo004  ,campo005  ,campo006  ,campo007  ,campo008  ,campo009  ,ca
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5777,7 +6978,57 @@ mpo010 ,campo011  ,campo012  ,campo013  ,campo014  ,campo015  ,campo016  ,campo0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 33  ,campo034  ,campo035  ,campo036  ,campo037  ,campo038  ,campo039  ,campo040 ,campo041  ,campo042  ,campo043  ,campo044  ,campo045  ,campo046  ,campo047  ,campo048  ,campo049  ,campo050 ,campo051  ,campo052  ,campo053  ,campo054  ,campo055  ,campo056 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5851,7 +7102,57 @@ mpo010 ,campo011  ,campo012  ,campo013  ,campo014  ,campo015  ,campo016  ,campo0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o004  , lccampo005  , lccampo006  , lccampo007  , lccampo008  , lccampo009  , lccampo010 , lccampo011  , lccampo012  , lccampo013  , lccampo014  , lccampo015  , lccampo016  , lccampo017  , lccampo018  , lccampo019  , lccampo020 , lccampo021  , lccampo022
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5925,7 +7226,57 @@ o004  , lccampo005  , lccampo006  , lccampo007  , lccampo008  , lccampo009  , lc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lccampo041  , lccampo042  , lccampo043  , lccampo044  , lccampo045  , lccampo046  , lccampo047  , lccampo048  , lccampo049  , lccampo050 , lccampo051  , lccampo052  , lccampo053  , lccampo054  , lccampo055  , lccampo056  , lccampo057  , lccampo058  , lcc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5999,6 +7350,31 @@ ampo059  , lccampo060 , lccampo061  , lccampo062  , lccampo063  , lccampo064  , 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000F4ZT03JN.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 16:26:24 , Error: No se encuentra el alias 'CSRCONTACTOS'. Linea : DELETE IN CsrContactos Error :         13 Ultimo Alias Activo: CSRAGENDA Ultimo registro:        196  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000F4ZT04LP.TMP Ultimo Control act
 
@@ -6036,8 +7412,58 @@ ampo059  , lccampo060 , lccampo061  , lccampo062  , lccampo063  , lccampo064  , 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ivo:  W_EXPO_CONTACTS.CMDACEPTAR.CLICK
 03-08-2020 16:27:46 , Error: La sesión de datos nº 3 no se puede liberar si hay transacciones abiertas. Linea : lobjprecio = CREATEOBJECT('custom') Error :       1549 Ultimo Alias Activo: CSRSETEO Ultimo registro:         32  DBF: C:\USERS\MARCO\APPDATA\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6112,8 +7538,58 @@ LOCAL\TEMP\0000F4ZT04M3.TMP Ultimo Control activo:  W_EXPO_CONTACTS.PRECIOPROD1.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as Activo: CSRCONTACTOS Ultimo registro:         -1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000GT1L002G.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDACEPTAR.CLICK
 03-08-2020 16:31:15 , Error: La sesión de datos nº 3 no se puede liberar si hay transacciones abiertas. Linea : lobjprecio = CREATEOBJECT('custom') Error :       1549 Ultimo Alias Activo: CSRSETEO Ultimo registro:         35  DBF: C:\USERS\MARCO\APPDATA\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6170,6 +7646,31 @@ LOCAL\TEMP\0000GT1L0035.TMP Ultimo Control activo:  W_EXPO_CONTACTS.PRECIOPROD1.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as Activo: CSRCONTACTOS Ultimo registro:         -1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HO21000W.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDACEPTAR.CLICK
 03-08-2020 16:32:47 , Verificando OCX
 03-08-2020 16:32:48 , Acceso al sistema, antes de autenticar
@@ -6197,8 +7698,58 @@ as Activo: CSRCONTACTOS Ultimo registro:         -1  DBF: C:\USERS\MARCO\APPDATA
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
 03-08-2020 17:00:02 , Error: No se encuentra el alias 'CSRAGENDA'. Linea : SELECT CsrAgenda Error :         13 Ultimo Alias Activo: CSRSETEO Ultimo registro:         35  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000IJ2H00F5.TMP Ultimo Control activo:  W_EX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6245,8 +7796,58 @@ PO_CONTACTS.CMDACEPTAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0004V7T00B9.TMP Ultimo Control activo:  W_ENVIARMJS.BOTONDESING1.BTN.MOUSELEAVE
 03-08-2020 19:50:54 , Error: No se encuentra la propiedad FONTBOLDDEFAULT. Linea : this.Parent.label.FontBold = this.fontbolddefault Error :       1734 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6276,6 +7877,31 @@ PO_CONTACTS.CMDACEPTAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0004V7T00B9.TMP Ultimo Control activo:  W_ENVIARMJS.BOTONDESING1.BTN.MOUSELEAVE
 03-08-2020 19:51:03 , Error: No se encuentra la propiedad FONTBOLDDEFAULT. Linea : this.Parent.label.FontBold = this.fontbolddefault Error :       1734 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
 
@@ -6290,8 +7916,58 @@ PO_CONTACTS.CMDACEPTAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0004V7T00B9.TMP Ultimo Control activo:  W_ENVIARMJS.BOTONDESING1.BTN.MOUSELEAVE
 03-08-2020 19:51:04 , Error: No se encuentra la propiedad FONTBOLDDEFAULT. Linea : this.Parent.label.FontBold = this.fontbolddefault Error :       1734 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6318,8 +7994,58 @@ PO_CONTACTS.CMDACEPTAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BOTONDESING1.BTN.CLICK
 03-08-2020 20:44:57 , Error: El archivo 'enviarwhatsapp.prg' no existe. Linea :  Error :          1 Ultimo Alias Activo: CSRCLIENTES Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000IWI101BL.TMP Ultimo Control activo:  W_ENVIARMJS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6346,3 +8072,81 @@ BOTONDESING1.BTN.CLICK
 04-08-2020 21:07:50 , Datos de la empresa
 04-08-2020 21:07:59 , Verificando Licencia
 04-08-2020 21:07:59 , Acceso exitoso
+05-08-2020 11:37:32 , Verificando OCX
+05-08-2020 11:37:33 , Acceso al sistema, antes de autenticar
+05-08-2020 11:37:33 , Obteniendo conexion a servidor
+05-08-2020 11:37:34 , Conectado..201.159.8.140\sql2014,1170
+05-08-2020 11:37:35 , Datos de la empresa
+05-08-2020 11:38:15 , Verificando OCX
+05-08-2020 11:38:15 , Acceso al sistema, antes de autenticar
+05-08-2020 11:38:15 , Obteniendo conexion a servidor
+05-08-2020 11:38:17 , Conectado..miguel\sql2014
+05-08-2020 11:38:22 , Datos de la empresa
+05-08-2020 12:16:59 , Verificando OCX
+05-08-2020 12:16:59 , Acceso al sistema, antes de autenticar
+05-08-2020 12:16:59 , Obteniendo conexion a servidor
+05-08-2020 12:17:01 , Conectado..miguel\sql2014
+05-08-2020 12:17:07 , Datos de la empresa
+05-08-2020 12:25:12 , Verificando OCX
+05-08-2020 12:25:12 , Acceso al sistema, antes de autenticar
+05-08-2020 12:25:12 , Obteniendo conexion a servidor
+05-08-2020 12:26:01 , Conectado..miguel\sql2014
+05-08-2020 12:26:06 , Datos de la empresa
+05-08-2020 12:30:57 , Error: El comando contiene una frase o palabra clave no reconocida. Linea : APPEND FROM  &cArchivo SDF Error :         36 Ultimo Alias Activo: CSRLISTA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00001YBT001A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.TMP Ultimo Control activo:  W_EXPO_CONTACTS.CMDPROCESAR.CLICK
+05-08-2020 12:40:57 , Verificando OCX
+05-08-2020 12:40:58 , Acceso al sistema, antes de autenticar
+05-08-2020 12:40:58 , Obteniendo conexion a servidor
+05-08-2020 12:41:00 , Conectado..miguel\sql2014
+05-08-2020 12:41:05 , Datos de la empresa
+05-08-2020 12:42:21 , Verificando OCX
+05-08-2020 12:42:22 , Acceso al sistema, antes de autenticar
+05-08-2020 12:42:22 , Obteniendo conexion a servidor
+05-08-2020 12:42:24 , Conectado..miguel\sql2014
+05-08-2020 12:42:29 , Datos de la empresa
+05-08-2020 12:43:31 , Verificando OCX
+05-08-2020 12:43:31 , Acceso al sistema, antes de autenticar
+05-08-2020 12:43:31 , Obteniendo conexion a servidor
+05-08-2020 12:43:32 , Conectado..miguel\sql2014
+05-08-2020 12:43:38 , Datos de la empresa
+05-08-2020 12:44:01 , Verificando OCX
+05-08-2020 12:44:02 , Acceso al sistema, antes de autenticar
+05-08-2020 12:44:02 , Obteniendo conexion a servidor
+05-08-2020 12:44:03 , Conectado..miguel\sql2014
+05-08-2020 12:44:10 , Datos de la empresa
+05-08-2020 12:56:52 , Verificando OCX
+05-08-2020 12:56:53 , Acceso al sistema, antes de autenticar
+05-08-2020 12:56:53 , Obteniendo conexion a servidor
+05-08-2020 12:56:54 , Conectado..miguel\sql2014
+05-08-2020 12:57:00 , Datos de la empresa
+05-08-2020 12:57:04 , Verificando Licencia
+05-08-2020 12:57:04 , Acceso exitoso
+05-08-2020 13:04:34 , Verificando OCX
+05-08-2020 13:04:35 , Acceso al sistema, antes de autenticar
+05-08-2020 13:04:35 , Obteniendo conexion a servidor
+05-08-2020 13:04:36 , Conectado..miguel\sql2014
+05-08-2020 13:04:42 , Datos de la empresa
+05-08-2020 13:05:37 , Verificando Licencia
+05-08-2020 13:05:37 , Acceso exitoso
+05-08-2020 13:33:08 , Error: No se encuentra el alias 'CSRSETEO'. Linea : SELECT CsrSeteo Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  W_EXPO_CONTACTS.PRECIOPROD1.INIT
+05-08-2020 13:33:13 , Verificando OCX
+05-08-2020 13:33:14 , Acceso al sistema, antes de autenticar
+05-08-2020 13:33:14 , Obteniendo conexion a servidor
+05-08-2020 13:33:15 , Conectado..miguel\sql2014
+05-08-2020 13:33:22 , Datos de la empresa
