@@ -85,8 +85,8 @@ _Screen.icon='help.ico'
 _screen.picture= 'fondo.jpg'    &&'logoempresa.bmp'
 _Screen.closable=.f.
 IF !lldesarrollo
-	_Screen.Height=441
-	_Screen.Width=815
+	_Screen.Height=430
+	_Screen.Width=825
 endif
 
 _screen.AutoCenter= .T.
