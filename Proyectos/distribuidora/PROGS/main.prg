@@ -274,11 +274,17 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	LOCAL oMenu
-	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
-	oMenu = null
+	lnuevomenu = .t.
+	IF NOT lnuevomenu
+		LOCAL oMenu
+		oDesktop = ''
+		oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+		oMenu.createMenu()   
+		oMenu = null
+	ELSE
+		_screen.AddObject('oMenuNative','base_menu')
+		_screen.oMenuNative.Inicializar('Csrdatamenu',.f.)
+	ENDIF 
 
 	LeerEjercicioPerfil()
 	
@@ -290,7 +296,9 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
-	 DO FORM frmmenu
+	IF NOT lnuevomenu 
+		DO FORM frmmenu
+	ENDIF 
 	                     
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
