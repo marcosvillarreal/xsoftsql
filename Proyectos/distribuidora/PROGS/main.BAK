@@ -274,7 +274,7 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	lnuevomenu = .f.
+	lnuevomenu = .t.
 	IF NOT lnuevomenu
 		LOCAL oMenu
 		oDesktop = ''
@@ -296,7 +296,9 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
-	*DO FORM frmmenu
+	IF NOT lnuevomenu 
+		DO FORM frmmenu
+	ENDIF 
 	                     
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
