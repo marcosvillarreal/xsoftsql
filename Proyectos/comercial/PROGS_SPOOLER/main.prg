@@ -167,7 +167,7 @@ If Type('goApp')='O'
 	
 	Do directivasfiscal    && en procfiscal.prg
 	Do directivasHasar
-	
+	DO directivasEpson
 	
 *	DO directivasvarias		&& en procvarios.prg
 
@@ -244,7 +244,7 @@ If Type('goApp')='O'
 		_Screen.LockScreen=.F.
 	
 	
-		DO FORM Impdiferida_v2
+		DO FORM Impdiferida_v3
 	ELSE 
 		goapp.salir()
 	ENDIF 
