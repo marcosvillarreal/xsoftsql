@@ -1,4 +1,4 @@
-USE [Kleja]
+USE ferretti
 GO
 
 /****** Object:  Table [dbo].[PadronAfip]    Script Date: 30/3/2020 16:00:43 ******/

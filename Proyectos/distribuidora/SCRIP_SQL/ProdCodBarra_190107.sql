@@ -1,4 +1,4 @@
-USE [gestion]
+USE ferretti
 GO
 /****** Object:  Table [dbo].[prodcodbarra]    Script Date: 01/07/2019 11:38:16 ******/
 SET ANSI_NULLS ON

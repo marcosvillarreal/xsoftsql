@@ -1,4 +1,4 @@
-USE [distribuidora]
+USE ferretti
 GO
 /****** Objeto:  Table [dbo].[ancabeasi]    Fecha de la secuencia de comandos: 04/28/2017 13:33:25 ******/
 SET ANSI_NULLS ON
