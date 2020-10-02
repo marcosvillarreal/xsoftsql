@@ -62,7 +62,7 @@ If lldesarrollo
    cFirma	= _rutabmps+"\firma.jpg"
 
    _rutaformse = lcdd + 'forms\exportar'
-   _rutaformsp = lcdd + 'forms\precio'
+   _rutaformsp = lcdd + 'forms\precios'
    _rutaformsb = lcdd + 'forms\bancario'
    _rutaformsc = lcdd + 'forms\caja'
    _rutaformsd = lcdd + 'forms\dinamica'
