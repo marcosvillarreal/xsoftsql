@@ -110,6 +110,76 @@ go
 --	ordenrep	int	Checked
 --	autodec567	numeric(1, 0)	Checked
 
+--AfipComproba
+--	clasecomp c(2) update
+--update afipcomproba set clasecomp=rtrim(ltrim(clasecomp))+'0'
+
+--Clasecomp
+--	tipo c(2)
+--update clasecomp set tipo='00'
+
+--Comprobante
+--	clasetipo c(2)
+--update comprobante set clasetipo='00'
+
+--Rubro
+--	saltopag	numeric(1, 0)	Checked
+--	esexhibidor	numeric(1, 0)	Checked
+--	bonif1	numeric(9, 2)	Checked
+--	fechabonif	datetime	Checked
+--	omitirlistas	numeric(1, 0)	Checked
+--	switch	char(5)	Checked
+--	codarba	char(6)	Checked
+--	cfexentoiva	numeric(1, 0)	Checked
+--	unitasa	numeric(1, 0)	Checked
+
+--Plancue
+--	switch	char(5)	Checked
+--	ajusteinflacion	numeric(1, 0)	Checked
+
+--InfoContab.sql
+
+--ExtMaopera
+--	Renombrar emaopera a extmaopera
+--	oblealp delete
+--	idactividad delete
+
+--MovPub
+--	idmovpub_old n(12)
+--movpub_temp.sql
+
+--Localidad
+--	codarba n(8)
+--	orden n(1)
+--update localidad set codarba=0,orden=1
+
+--Cbioprecio
+	--bonif1v	numeric(5, 3)	Checked
+	--bonif1n	numeric(5, 3)	Checked
+	--bonif2v	numeric(5, 3)	Checked
+	--bonif2n	numeric(5, 3)	Checked
+	--bonif3v	numeric(5, 3)	Checked
+	--bonif3n	numeric(5, 3)	Checked
+	--bonif4v	numeric(5, 3)	Checked
+	--bonif4n	numeric(5, 3)	Checked
+	--costobonv	numeric(10, 3)	Checked
+	--costobonn	numeric(10, 3)	Checked
+	--fletev	numeric(10, 3)	Checked
+	--fleten	numeric(10, 3)	Checked
+	--segfletev	numeric(10, 3)	Checked
+	--segfleten	numeric(10, 3)	Checked
+	--internoporcev	numeric(10, 3)	Checked
+	--internoporcen	numeric(10, 3)	Checked
+	--tasav	numeric(4, 2)	Checked
+	--tasan	numeric(4, 2)	Checked
+	--endolarv	numeric(1, 0)	Checked
+	--endolarn	numeric(1, 0)	Checked
+	--cotidolar	numeric(11, 3)	Checked
+	--idctacte	int	Checked
+	--programa	nchar(30)	Checked
+	--fleteporcev	numeric(11, 3)	Checked
+	--fleteporcen	numeric(11, 3)	Checked
+
 
 /****** Object:  Table [dbo].[bonirubro]    Script Date: 23/9/2020 19:54:54 ******/
 SET ANSI_NULLS ON
@@ -168,19 +238,19 @@ GO
 
 --GO
 
-CREATE TABLE [dbo].[afecabecpra](
-	[id] [numeric](12, 0) NOT NULL,
-	[idorigen] [numeric](12, 0) NOT NULL,
-	[idmaoperao] [numeric](12, 0) NOT NULL,
-	[idafecta] [numeric](12, 0) NOT NULL,
-	[idmaoperaa] [numeric](12, 0) NOT NULL,
-	[switch] [char](5) NOT NULL,
-	[nrolote] [numeric](12, 0) NULL,
- CONSTRAINT [PK_afecabecpra] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+--CREATE TABLE [dbo].[afecabecpra](
+--	[id] [numeric](12, 0) NOT NULL,
+--	[idorigen] [numeric](12, 0) NOT NULL,
+--	[idmaoperao] [numeric](12, 0) NOT NULL,
+--	[idafecta] [numeric](12, 0) NOT NULL,
+--	[idmaoperaa] [numeric](12, 0) NOT NULL,
+--	[switch] [char](5) NOT NULL,
+--	[nrolote] [numeric](12, 0) NULL,
+-- CONSTRAINT [PK_afecabecpra] PRIMARY KEY CLUSTERED 
+--(
+--	[id] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+--) ON [PRIMARY]
 
 
 SET ANSI_PADDING OFF
