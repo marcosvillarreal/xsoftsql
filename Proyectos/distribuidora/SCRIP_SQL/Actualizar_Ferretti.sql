@@ -180,6 +180,25 @@ go
 	--fleteporcev	numeric(11, 3)	Checked
 	--fleteporcen	numeric(11, 3)	Checked
 
+--Producto
+--	IDINGBRUTOS int
+--  codalfa  char(15) Update
+--	codartprod char(10) Update
+
+--SubProducto
+--	stockbase	int	Checked 
+--	codartprovee	char(8)	Checked
+
+--ParaConfig
+	--idfletero	int	Checked
+	--idcentrorecep	int	Checked
+	--idcomproba9	int	Checked
+--CabePromo
+--	stockregalo	numeric(1, 0)	Checked
+
+--MovBcoDeta
+--	idvalor	int	Checked
+
 
 /****** Object:  Table [dbo].[bonirubro]    Script Date: 23/9/2020 19:54:54 ******/
 SET ANSI_NULLS ON
@@ -252,8 +271,57 @@ GO
 --)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 --) ON [PRIMARY]
 
+--CREATE TABLE [dbo].[CentroRecep](
+--	[id] [int] NOT NULL,
+--	[numero] [int] NOT NULL,
+--	[nombre] [char](30) NOT NULL,
+--	[idprovincia] [int] NOT NULL,
+--	[abrevia] [char](3) NOT NULL,
+--	[addejercicio] [char](1) NULL,
+-- CONSTRAINT [PK_CentroRecep] PRIMARY KEY CLUSTERED 
+--(
+--	[id] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+--) ON [PRIMARY]
 
-SET ANSI_PADDING OFF
-GO
+--GO
+
+--CREATE TABLE [dbo].[listaprecio](
+--	[id] [int] NOT NULL,
+--	[numero] [int] NOT NULL,
+--	[nombre] [char](20) NOT NULL,
+--	[bonif] [numeric](4, 2) NOT NULL,
+--	[switch] [char](5) NOT NULL,
+--	[idlistaaso] [int] NULL,
+-- CONSTRAINT [PK_listaprecio] PRIMARY KEY CLUSTERED 
+--(
+--	[id] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+--) ON [PRIMARY]
+
+
+--1100000003	1	LISTA PRECIO A      	0,00	10000	0
+--1100000004	2	LISTA PRECIO B      	0,00	10000	0
+--1100000005	3	LISTA PRECIO C      	0,00	10000	0
+--1100000006	4	LISTA PRECIO D.     	0,00	10000	0
+
+
+
+--CREATE TABLE [dbo].[ctacte_2](
+--	[id] [int] NOT NULL,
+--	[idctacte] [int] NOT NULL,
+--	[lat] [char](20) NOT NULL,
+--	[lng] [char](20) NOT NULL,
+-- CONSTRAINT [PK_ctacte_2] PRIMARY KEY CLUSTERED 
+--(
+--	[id] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+--) ON [PRIMARY]
+
+
+
+
+
+
 
 
