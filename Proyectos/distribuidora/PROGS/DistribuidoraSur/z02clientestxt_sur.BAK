@@ -114,7 +114,7 @@ DO WHILE NOT EOF()
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
 			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDocumento)))
 			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
-			lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodPostal)))
+			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
 			*lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDirePiso)))
 			*lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcDireDpto)))
 			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcLocalidad)))
@@ -128,8 +128,8 @@ DO WHILE NOT EOF()
 			*lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcCodLista)))
 			*lcLista			= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcLista)))
 			lcZona			= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcZona)))
-			*lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodVendedor)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))
+			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodVendedor)))
+			*lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcVendedor)))
 			
 			*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
 			*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
@@ -234,7 +234,7 @@ SCAN
 			,lnbonif1
 	
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
- 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp 
+ 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
  	lnctadeudor		= 1

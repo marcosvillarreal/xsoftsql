@@ -82,14 +82,17 @@ If lldesarrollo
    _rutaformpre  =lcdd+'forms\precio'
    _rutaformpat  =lcdd+'forms\patron'
    _rutaformconta = lcdd+'forms\contabilidad'
-    
+    _rutaformimp = lcdd+'forms\importadores'
+   
+    _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
-               ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta
+               ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
+               ,&_rutaformimp
                
       
 Endif

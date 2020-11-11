@@ -274,7 +274,7 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	lnuevomenu = .t.
+	lnuevomenu = .f.
 	IF NOT lnuevomenu
 		LOCAL oMenu
 		oDesktop = ''
