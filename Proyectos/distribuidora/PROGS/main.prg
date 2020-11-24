@@ -301,6 +301,9 @@ IF TYPE('goApp')='O'
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
 		DO FORM frmmenu
+		IF goapp.openfac = 1
+			DO FORM regfacpub
+		ENDIF 
 	ENDIF 
 	                     
 	 _screen.visible=.t.	   
