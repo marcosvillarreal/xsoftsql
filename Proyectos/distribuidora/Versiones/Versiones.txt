@@ -36,4 +36,11 @@ Actualizacion 1.0.1 24/11/2020
 24/11/2020 Update Petrolanda
 25/11/2020 Update Kleja
 	
+update ctacte set referencia='',nroiibblp=''
+update producto set porcemerma = 0
+update prodcodbarra set esean13 = 1 where len(ltrim(rtrim(codbarra)))=13
+update prodcodbarra set esean13 = 2 where len(ltrim(rtrim(codbarra)))=14
+update seteotermi set openfac=0, seekprodfac = 0
+
+2/12/2020 Update Fiori
 
