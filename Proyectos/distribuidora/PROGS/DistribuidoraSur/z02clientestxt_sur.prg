@@ -168,7 +168,7 @@ DO WHILE NOT EOF()
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
-		lcCodigo = SUBSTR(lcCodigo,4)
+		*lcCodigo = SUBSTR(lcCodigo,4)
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
@@ -210,6 +210,9 @@ Oavisar.proceso('S','Procesando '+alias())
 GO TOP
 VISTA()
 
+LOCAL nCodigo
+
+nCodigo = 1
 *stop()
 SCAN 
 	
@@ -217,15 +220,15 @@ SCAN
 		*stop()
 	ENDIF 
 	
-	lnCodigo = VAL(CsrDeudor.codigo)
- 	SELECT CsrCtacte
- 	LOCATE FOR VAL(cnumero) = lnCodigo
- 	IF VAL(cnumero) = lnCodigo
- 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
- 		SELECT CsrDeudor
- 		LOOP 
- 		
- 	ENDIF 
+*!*		lnCodigo = VAL(CsrDeudor.codigo)
+*!*	 	SELECT CsrCtacte
+*!*	 	LOCATE FOR VAL(cnumero) = lnCodigo
+*!*	 	IF VAL(cnumero) = lnCodigo
+*!*	 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
+*!*	 		SELECT CsrDeudor
+*!*	 		LOOP 
+*!*	 		
+*!*	 	ENDIF 
  	
  	SELECT CsrDeudor 
  	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
@@ -234,9 +237,10 @@ SCAN
 			,lnbonif1
 	
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
- 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp 
+ 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
+ 	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
@@ -293,7 +297,7 @@ SCAN
 		*ENDIF 
 	ENDIF
 	
-	lcnumero	= strtrim(lnCodigo,8)
+	lcnumero	= strtrim(nCodigo,8)
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))  	
   	lcDireccion = RTRIM(UPPER(CsrDeudor.direccion))
@@ -323,16 +327,16 @@ SCAN
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-	,bonif1,email,observa,cdatosfac,dni);
+	,bonif1,email,observa,cdatosfac,dni,referencia);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
-	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI;
+	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
 	)
 	
 	lnid = lnid + 1
-	
+	nCodigo = nCodigo + 1 
 	
 	SELECT CsrDeudor           
 ENDSCAN
