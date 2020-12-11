@@ -96,9 +96,9 @@ SCAN
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 *!*				lcCategoria		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCategoria)))
-*!*				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
 *!*				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
 *!*				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcLocalidad)))
 *!*				lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
@@ -112,13 +112,13 @@ SCAN
 *!*				lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
 *!*				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcDocumento)))
 *!*				lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcTipoIVA)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcVendedor)))
-			lcZona			= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcZona)))
+			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcZona)))
 							
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 		ENDDO 
-		lnSiguienteOcurrencia = 1
+		lnSiguienteOcurrencia = 13
 		lnCamposLeidos = lnCamposLeidos + 1
 		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
 		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
@@ -182,13 +182,16 @@ lniddepo = lniddepo + 1
 
 lnnumero = lnnumero + 1 
 
+*stop()
 
 SELECT FsrVendedor
+*vista()
+
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()
     IF VAL(numero)=0
-       loop
+       *loop
    ENDIF
    lnprevta = 1
    lnestado = 1
@@ -219,15 +222,16 @@ lniddepo = lniddepo + 1
 
 
 lnid = RecuperarID('CsrZona',Goapp.sucursal10)
+lnnumero = 1
 SELECT FsrZona
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()  
    lcnombre= 'ZONA '+ NombreNi(alltrim(UPPER(fsrzona.numero)))
-   lnnumero	= VAL(fsrzona.numero)    
+   
    INSERT INTO CsrZona (id,numero,nombre,porflete,abrevia);
    			 VALUES (lnid,lnNUMERO,lcnombre,0,fsrzona.numero)
-   
+   lnnumero = lnnumero + 1 
    lnid = lnid + 1
 ENDSCAN
 
@@ -247,7 +251,7 @@ SELECT CsrFuerzaVta
 GO TOP 
 lnidfuerzavta  = CsrFuerzaVta.id
 
-stop()
+*stop()
 SELECT CsrRecorrido
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
@@ -255,16 +259,16 @@ lnNumRuta = 1
 SCAN FOR !EOF()
 
 	SELECT Csrctacte
-	LOCATE FOR VAL(cnumero)=VAL(CsrRecorrido.codigo)
-       IF VAL(cnumero) # VAL(CsrRecorrido.codigo)
+	LOCATE FOR ALLTRIM(referencia)=alltrim(CsrRecorrido.codigo) AND ctadeudor = 1
+       IF not(ALLTRIM(referencia)=alltrim(CsrRecorrido.codigo) AND ctadeudor = 1)
            SELECT CsrRecorrido
            LOOP 
        ENDIF 
 		
 *	IF CsrRecorrido.carpeta#0
 		SELECT CsrVendedor
-		LOCATE FOR numero=VAL(CsrRecorrido.vendedor)
-		IF numero#VAL(CsrRecorrido.vendedor)
+		LOCATE FOR RIGHT(RTRIM(nombre),1)=ALLTRIM(CsrRecorrido.vendedor)
+		IF RIGHT(RTRIM(nombre),1)#(CsrRecorrido.vendedor)
 			SELECT CsrRecorrido
 			LOOP
 		ENDIF 	
@@ -277,10 +281,10 @@ SCAN FOR !EOF()
 	      ENDIF 
 				
 		SELECT CsrRuta
-		LOCATE FOR nombre=TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3)
-		IF nombre#TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3)
+		LOCATE FOR nombre=TRIM(Csrzona.nombre)+"-"+RIGHT(RTRIM(CsrVendedor.nombre),1)
+		IF nombre#TRIM(Csrzona.nombre)+"-"+RIGHT(RTRIM(CsrVendedor.nombre),1)
 			INSERT INTO CsrRuta (id,numero,nombre) ;
-			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3))		     		
+			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+"-"+RIGHT(RTRIM(CsrVendedor.nombre),1))		     		
 			lnid = lnid + 1
 			lnNumRuta = lnNumRuta + 1 
 		ENDIF 
