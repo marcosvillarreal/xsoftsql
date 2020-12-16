@@ -246,13 +246,13 @@ SCAN
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1
 	lnidlista		= 0
-	lnlista			= CsrDeudor.CodLista
-	DO CASE
-	CASE lnLista <= 1
-		lnLista = 1
-	OTHERWISE
-		&&Falta el resto de listas que nose cuales seran las por defecto
-		lnLista = lnLista + 3
+	lnlista			= IIF(LEFT(lcReferencia,1)='L',2,1)
+*!*		DO CASE
+*!*		CASE lnLista <= 1
+*!*			lnLista = 1
+*!*		OTHERWISE
+*!*			&&Falta el resto de listas que nose cuales seran las por defecto
+*!*			lnLista = lnLista + 3
 	ENDCASE
 	SELECT CsrListaP
 	LOCATE FOR numero = lnLista
