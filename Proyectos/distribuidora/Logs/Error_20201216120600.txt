@@ -1,0 +1,28 @@
+16-12-2020 12:06:00 , EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cLinea = lcFechaEmi + cSep + lctipocomp + lcletra + cSep +lctalonario+"-"+lcnumcomproba + cSep + lcdocumento + cSep + lccliente + cSep + STR(lnimpneto,14,2) + cSep + STR(nIva21,14,2) + cSep + "21" + cSep + STR(nIva10,14,2) + cSep + "10.5" + cSep + "0" + cSep + STR(lnTotalEX,14,2) + cSep + STR(nOtrosImpuestos ,14,2) + cSep + STR(nTotal,14,2) + cSep + OscVentas.abrevia;Error :         11;Ultimo Alias Activo: CSRAUXVTAALICUOTA;Ultimo registro:          2 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000LIX500YB.TMP;Ultimo Control activo: 
+16-12-2020 12:06:00 , Pila de llamadas
+16-12-2020 12:06:00 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-12-2020 12:06:00 , Objeto      : exportar_cpra_vta.imprimir_vistaprevia1.impresora.click
+16-12-2020 12:06:00 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-12-2020 12:06:00 , Nº de Linea :          6
+16-12-2020 12:06:00 , En el Fuente: 	llOK=thisform.CrearInforme()
+16-12-2020 12:06:00 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Objeto      : exportar_cpra_vta.crearinforme
+16-12-2020 12:06:00 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Nº de Linea :         22
+16-12-2020 12:06:00 , En el Fuente: 	lTodoOK = .exportarcomprasventas(cperiodo)
+16-12-2020 12:06:00 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Objeto      : exportar_cpra_vta.exportarcomprasventas
+16-12-2020 12:06:00 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Nº de Linea :         12
+16-12-2020 12:06:00 , En el Fuente: 		lok = .calculaventas(cPeriodo)
+16-12-2020 12:06:00 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Objeto      : exportar_cpra_vta.calculaventas
+16-12-2020 12:06:00 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Nº de Linea :        102
+16-12-2020 12:06:00 , En el Fuente: RETURN This.GenerarVentas(cPeriodo)
+16-12-2020 12:06:00 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Objeto      : exportar_cpra_vta.generarventas
+16-12-2020 12:06:00 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\contabilidad\exportar_vta_jaque.sct
+16-12-2020 12:06:00 , Nº de Linea :        200
+16-12-2020 12:06:00 , En el Fuente: 		cLinea = lcFechaEmi + cSep + lctipocomp + lcletra + cSep +lctalonario+"-"+lcnumcomproba				+ cSep + lcdocumento + cSep + lccliente				+ cSep + STR(lnimpneto,14,2) + cSep + STR(nIva21,14,2)				+ cSep + "21" + cSep + STR(nIva10,14,2) + cSep + "10.5"				+ cSep + "0" + cSep + STR(lnTotalEX,14,2) + cSep + STR(nOtrosImpuestos ,14,2)				+ cSep + STR(nTotal,14,2) + cSep + OscVentas.abrevia
+16-12-2020 12:06:00 , Fin
