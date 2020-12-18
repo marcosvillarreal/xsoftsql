@@ -64,7 +64,7 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 13
 leiunarticulo = .f.
 
@@ -188,7 +188,7 @@ ENDDO
 SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
 
 SELECT CsrCiudad
-vista()
+*vista()
 
 SCAN 
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(nombre)))
@@ -208,7 +208,7 @@ SELECT CsrListaPrecio
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-VISTA()
+*VISTA()
 
 LOCAL nCodigo
 
@@ -240,11 +240,11 @@ SCAN
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
- 	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
+ 	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
-	lnidcanalvta	= 1
+	lnidcanalvta	= 1100000001
 	lnidlista		= 0
 	lnlista			= IIF(LEFT(lcReferencia,1)='L',2,1)
 *!*		DO CASE
@@ -253,7 +253,7 @@ SCAN
 *!*		OTHERWISE
 *!*			&&Falta el resto de listas que nose cuales seran las por defecto
 *!*			lnLista = lnLista + 3
-	ENDCASE
+*!*		ENDCASE
 	SELECT CsrListaP
 	LOCATE FOR numero = lnLista
 	IF numero <> lnLista
@@ -273,6 +273,9 @@ SCAN
 		lnidlocalidad	= CsrLocalidad.id
 	ELSE
 		lnidestado = 1
+		IF LEN(LTRIM(CsrDeudor.codpostal))<>0
+			lcReferencia = lcReferencia + "["+lcLocalidadBuscada+"]{"+CsrDeudor.codpostal+"}"
+		ENDIF 
 	ENDIF
 	
 	&&TresPImp	
@@ -280,7 +283,7 @@ SCAN
 	DO CASE 
 	CASE nTipoiva = 1 &&CF
 		lntipoiva = 3	
-	CASE nTipoiva = 2 &&RNI
+	CASE nTipoiva = 3 &&RNI
 		lntipoiva = 7	
 	CASE nTipoiva = 4 &&EX sin impuestos?
 		lntipoiva = 4	
@@ -340,6 +343,19 @@ SCAN
 	
 	SELECT CsrDeudor           
 ENDSCAN
+
+INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
+	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
+	,bonif1,email,observa,cdatosfac,dni,referencia);
+	VALUES (lnid, strtrim(nCodigo,8),'DISTRIBUIDORA SUR','','';
+	,0,0,'',1,'',0,0,0;
+	,0,1100000003,0,0,1,0,0,"",lcfefin,'';
+	,"",0,ldfechac,0,0,0,'',0,ldfecultcompra,ldfecultpago;
+	,0,0,0,'','','','','';
+	)
+	
 
 IF LEN(LTRIM(cCadeCtacte)) != 0
 	=oavisar.usuario("No se grabaron algunas clientes, porque estan duplicados"+CHR(13)+cCadeCtacte,0)

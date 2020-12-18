@@ -115,9 +115,9 @@ SCAN
 			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
 			lcAlicuota		= IIF(j + i=12,lcCadena,lcalicuota)
 			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcUniVenta)))
-			lcCosto			= IIF(j + i=16,lcCadena,lcCosto)
-			lcLista1		= IIF(j + i=17,lcCadena,lcLista1)
-			lcLista2		= IIF(j + i=18,lcCadena,lcLista2)
+			lcCosto			= IIF(j + i=17,lcCadena,lcCosto)
+			lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
+			lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
 			
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -353,10 +353,10 @@ SCAN FOR !EOF()
 		lnprevta1	= VAL(CsrArticulo.lista1)
 		lnprevta2	= VAL(CsrArticulo.lista2)
 		
-		lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2)
+		lnUtil1		= 100 - red((lnprevta1 * 100) /  lnCosto,2)
 		lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
 		
-		lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2)
+		lnUtil2		= 100 - red((lnprevta2 * 100) /  lnCosto,2)
 		lnprevtaf2	= red(lnprevta2 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
 		
 *!*		ENDIF 
@@ -364,7 +364,7 @@ SCAN FOR !EOF()
 	INSERT INTO Csrproducto (id,numero,nombre,codalfa,idiva,costo,margen1,prevta1,margen2,; 
 	prevta2,switch,idunidad,idtprod,idtamano,idcatego,idubicacio,idorigen,incluirped,idctacte,idrubro,margen3,;
 	prevta3,margen4,prevta4,interno,unibulto,peso,idtipovta,idforma,fracciona,nomodifica,nombulto,puntope,;
-	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
+	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,costobon,idmarca,segflete,idestado,;
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
 	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctavta;
 	,idenvase,fleteporce); 	
@@ -372,7 +372,7 @@ SCAN FOR !EOF()
 	lnutil1, lnprevta1, lnutil2, lnprevta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
 	lnprevta3, 0,0,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
 	1,1,lnflete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, lnbonif1,lnbonif2, lnbonif3,;
-	lnbonif4 ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnidfrio,;
+	lnbonif4,lnCostoBon ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnidfrio,;
 	lnsugerido,1,lnsireparto,"",0, 0,;
 	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
 	,lnidctacpra,lnidctavta;

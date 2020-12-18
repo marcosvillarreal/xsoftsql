@@ -281,10 +281,10 @@ SCAN FOR !EOF()
 	      ENDIF 
 				
 		SELECT CsrRuta
-		LOCATE FOR nombre=TRIM(Csrzona.nombre)+" "+RIGHT(RTRIM(CsrVendedor.nombre),1)
-		IF nombre#TRIM(Csrzona.nombre)+" "+RIGHT(RTRIM(CsrVendedor.nombre),1)
+		LOCATE FOR nombre=TRIM(Csrzona.nombre)+"-"+RIGHT(RTRIM(CsrVendedor.nombre),1)
+		IF nombre#TRIM(Csrzona.nombre)+"-"+RIGHT(RTRIM(CsrVendedor.nombre),1)
 			INSERT INTO CsrRuta (id,numero,nombre) ;
-			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+" "+RIGHT(RTRIM(CsrVendedor.nombre),1))		     		
+			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+"-"+RIGHT(RTRIM(CsrVendedor.nombre),1))		     		
 			lnid = lnid + 1
 			lnNumRuta = lnNumRuta + 1 
 		ENDIF 

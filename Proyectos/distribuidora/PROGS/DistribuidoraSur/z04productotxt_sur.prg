@@ -115,9 +115,9 @@ SCAN
 			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
 			lcAlicuota		= IIF(j + i=12,lcCadena,lcalicuota)
 			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcUniVenta)))
-			lcCosto			= IIF(j + i=16,lcCadena,lcCosto)
-			lcLista1		= IIF(j + i=17,lcCadena,lcLista1)
-			lcLista2		= IIF(j + i=18,lcCadena,lcLista2)
+			lcCosto			= IIF(j + i=17,lcCadena,lcCosto)
+			lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
+			lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
 			
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -353,10 +353,10 @@ SCAN FOR !EOF()
 		lnprevta1	= VAL(CsrArticulo.lista1)
 		lnprevta2	= VAL(CsrArticulo.lista2)
 		
-		lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2)
+		lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2) - 100
 		lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
 		
-		lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2)
+		lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2) - 100
 		lnprevtaf2	= red(lnprevta2 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
 		
 *!*		ENDIF 
