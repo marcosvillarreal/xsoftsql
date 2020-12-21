@@ -33,7 +33,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
-
+SELECT CsrLocalidad
+*vista()
 
 SET SAFETY ON
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
@@ -261,19 +262,24 @@ SCAN
 	ENDIF 
 		
 	
-	
+	IF ALLTRIM(UPPER(CsrDeudor.cODpOSTAL)) = '6301' AND nCodigo = 17
+		*stop()
+	ENDIF 
 	&&Localidad
 	lnidlocalidad	= 1100000345  &&Bahia Blanca
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
 	SELECT CsrLocalidad
-	LOCATE FOR nombre = lcLocalidadBuscada
-	IF nombre = lcLocalidadBuscada
+	*GO TOP 
+	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada
+	IF ALLTRIM(nombre) = lcLocalidadBuscada
 		lnidprovincia	= CsrLocalidad.idprovincia
 		lccp 			= CsrLocalidad.cpostal
 		lnidlocalidad	= CsrLocalidad.id
 	ELSE
 		lnidestado = 1
-		lcReferencia = lcReferencia + "["+lcLocalidadBuscada+"]{"+CsrDeudor.codpostal+"}"
+		IF LEN(LTRIM(CsrDeudor.codpostal))<>0
+			lcReferencia = lcReferencia + "{"+CsrDeudor.codpostal+"} ["+lcLocalidadBuscada+"]"
+		ENDIF 
 	ENDIF
 	
 	&&TresPImp	

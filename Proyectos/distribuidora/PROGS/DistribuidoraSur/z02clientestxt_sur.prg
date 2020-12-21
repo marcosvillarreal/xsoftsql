@@ -33,7 +33,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
-
+SELECT CsrLocalidad
+*vista()
 
 SET SAFETY ON
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
@@ -240,7 +241,7 @@ SCAN
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
- 	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
+ 	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
@@ -261,20 +262,23 @@ SCAN
 	ENDIF 
 		
 	
-	
+	IF ALLTRIM(UPPER(CsrDeudor.cODpOSTAL)) = '6301' AND nCodigo = 17
+		*stop()
+	ENDIF 
 	&&Localidad
 	lnidlocalidad	= 1100000345  &&Bahia Blanca
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
 	SELECT CsrLocalidad
-	LOCATE FOR nombre = lcLocalidadBuscada
-	IF nombre = lcLocalidadBuscada
+	*GO TOP 
+	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada
+	IF ALLTRIM(nombre) = lcLocalidadBuscada
 		lnidprovincia	= CsrLocalidad.idprovincia
 		lccp 			= CsrLocalidad.cpostal
 		lnidlocalidad	= CsrLocalidad.id
 	ELSE
 		lnidestado = 1
 		IF LEN(LTRIM(CsrDeudor.codpostal))<>0
-			lcReferencia = lcReferencia + "["+lcLocalidadBuscada+"]{"+CsrDeudor.codpostal+"}"
+			lcReferencia = lcReferencia + "  {"+CsrDeudor.codpostal+"} ["+lcLocalidadBuscada+"]"
 		ENDIF 
 	ENDIF
 	

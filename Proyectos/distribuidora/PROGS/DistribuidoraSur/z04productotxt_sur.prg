@@ -26,6 +26,8 @@ llok = CargarTabla(lcData,'GamaBase',.t.)
 llok = CargarTabla(lcData,'Deposito')
 llok = CargarTabla(lcData,'Ubicacion',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
+llok = CargarTabla(lcData,'CanalVtaNeg',.t.)
+
 *llok = CargarTabla(lcData,'Ctacte')
 *llok = CargarTabla(lcData,'MapeoCarnico')
 
@@ -44,6 +46,11 @@ GO TOP
 lnidfuerzavta = CsrFuerzavta.id
 
 Oavisar.proceso('S','Abriendo archivos') 
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrCanalVta.* FROM CanalVta as CsrCanalVta 
+ENDTEXT 
+=CrearCursorAdapter('CsrCanalVta',lcCmd)
 
 local lnidrubro, lnidmarca, lncodrubro
 store 0 to lnidrubro, lnidmarca ,lncodrubro
@@ -267,6 +274,9 @@ lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
 INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
 VALUES (lnid,1,"GENERAL",lnidfuerzavta)
 
+lnidcanalvtaneg = RecuperarID('CsrCanalVtaNeg',Goapp.sucursal10)
+
+
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
 INSERT INTO CsrUbicacion (id,numero,nombre)	VALUES (lnid,'1','GENERAL')
 
@@ -330,7 +340,7 @@ SCAN FOR !EOF()
 	
 	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
 	ldfechaulcpr 	= ldfecha
-	ldfechamodf 	= CTOD('01-01-1900') &&CTOD(CsrArticulo.fecModf)
+	ldfechamodf 	= DATE() &&CTOD(CsrArticulo.fecModf)
 	ldfechabonif	= CTOD('01-01-1900') &&GOMONTH(ldfecha,360*20)
 			
 *!*		lnprevta1	= VAL(Csrarticulo.prevta1)
@@ -351,13 +361,13 @@ SCAN FOR !EOF()
 		lnCosto		= VAL(CsrArticulo.costo)
 		lnCostoBon	= lnCosto
 		lnprevta1	= VAL(CsrArticulo.lista1)
-		lnprevta2	= VAL(CsrArticulo.lista2)
+		lnprevtaX	= VAL(CsrArticulo.lista2)
 		
 		lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2) - 100
 		lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
 		
-		lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2) - 100
-		lnprevtaf2	= red(lnprevta2 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+		lnUtilX		= red((lnprevtaX * 100) /  lnCosto,2) - 100
+		lnprevtafX	= red(lnprevtaX * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
 		
 *!*		ENDIF 
 	
@@ -377,9 +387,13 @@ SCAN FOR !EOF()
 	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
 	,lnidctacpra,lnidctavta;
 	,lnidenvase,lnfleteporce)		
-
+	
+	INSERT INTO CsrCanalVtaNeg (id, idcanalvta, idproducto, feccostobon, costobon, margen1, prevta1, prevtaf1;
+	,feccorte);
+	values(lnidcanalvtaneg,lnidcanalvta,lnid,ldfechamodf,lnCostoBon,lnUtilX,lnPrevtaX,lnPrevtafX,DATE()+15)
+	
 	lnid = lnid + 1
-
+	lnidcanalvtaneg = lnidcanalvtaneg + 1 
 	SELECT CsrArticulo   				
 ENDSCAN
 
