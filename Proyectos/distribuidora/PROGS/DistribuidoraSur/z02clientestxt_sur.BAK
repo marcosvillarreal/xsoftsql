@@ -241,7 +241,7 @@ SCAN
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  		
- 	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
+ 	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
@@ -278,7 +278,7 @@ SCAN
 	ELSE
 		lnidestado = 1
 		IF LEN(LTRIM(CsrDeudor.codpostal))<>0
-			lcReferencia = lcReferencia + "{"+CsrDeudor.codpostal+"} ["+lcLocalidadBuscada+"]"
+			lcReferencia = lcReferencia + "  {"+CsrDeudor.codpostal+"} ["+lcLocalidadBuscada+"]"
 		ENDIF 
 	ENDIF
 	

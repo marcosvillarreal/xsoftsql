@@ -47,11 +47,6 @@ lnidfuerzavta = CsrFuerzavta.id
 
 Oavisar.proceso('S','Abriendo archivos') 
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrCanalVta.* FROM CanalVta as CsrCanalVta 
-ENDTEXT 
-=CrearCursorAdapter('CsrCanalVta',lcCmd)
-
 local lnidrubro, lnidmarca, lncodrubro
 store 0 to lnidrubro, lnidmarca ,lncodrubro
 
@@ -160,7 +155,7 @@ SCAN
 ENDSCAN 
 
 SELECT CsrArticulo
-vista()
+*vista()
 
 *!*	SET SAFETY OFF 
 *!*	SELECT CsrLista
@@ -276,6 +271,7 @@ VALUES (lnid,1,"GENERAL",lnidfuerzavta)
 
 lnidcanalvtaneg = RecuperarID('CsrCanalVtaNeg',Goapp.sucursal10)
 
+lnidcanalvta = 1100000003
 
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
 INSERT INTO CsrUbicacion (id,numero,nombre)	VALUES (lnid,'1','GENERAL')
