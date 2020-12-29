@@ -112,7 +112,7 @@ SCAN
 *!*				lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
 *!*				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcDocumento)))
 *!*				lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcTipoIVA)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))
+			*lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))
 			lcZona			= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcZona)))
 							
 			lnSiguienteOcurrencia = lnPos + 1
@@ -140,7 +140,7 @@ SCAN
 		ENDIF 
 		
 		INSERT INTO CsrRecorrido (Codigo,Vendedor,Zona) ;
-		values (lcCodigo,lcVendedor,lcZona)
+		values (lcCodigo,LEFT(lcCodigo,1),lcZona)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

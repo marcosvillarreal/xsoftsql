@@ -155,7 +155,7 @@ SCAN
 ENDSCAN 
 
 SELECT CsrArticulo
-*vista()
+vista()
 
 *!*	SET SAFETY OFF 
 *!*	SELECT CsrLista
@@ -284,7 +284,7 @@ ENDTEXT
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-*stop()
+stop()
 SCAN FOR !EOF()
 	SELECT CsrProducto
 	
@@ -307,7 +307,7 @@ SCAN FOR !EOF()
     ENDIF
 
     SELECT CsrRubro
-    LOCATE FOR RIGHT(RTRIM(nombre),1)=ALLTRIM(Csrarticulo.rubro)
+    LOCATE FOR RIGHT('00'+RIGHT(RTRIM(nombre),2),2)=RIGHT('00'+ALLTRIM(Csrarticulo.rubro),2)
     IF NOT FOUND()
     	GO BOTTOM
     ENDIF 

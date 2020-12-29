@@ -165,8 +165,8 @@ lniddepo = RecuperarID('CsrDeposito',Goapp.sucursal10)
 lnnumero	= 1
 
 lcnombre	= "VDOR GENERAL"
-INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale);
-   			 VALUES (lnidvdor,lnnumero,lcnombre,0,1,1,1,1,0,0)
+INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale,passpreventamobile,activopm);
+   			 VALUES (lnidvdor,lnnumero,lcnombre,0,1,1,1,1,0,0,'',0)
 lnidvdor = lnidvdor + 1
 
 lcnombre	= "REPARTIDOR GRAL"
@@ -197,8 +197,8 @@ SCAN FOR !EOF()
    lnestado = 1
    
    lcnombre	= "VENDEDOR " + NombreNi(alltrim(UPPER(FsrVendedor.numero)))
-   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale);
-   			 VALUES (lnidvdor,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0)
+   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale,passpreventamobile,activopm);
+   			 VALUES (lnidvdor,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0,'',1)
    lnidvdor = lnidvdor + 1
 	
 	lcnombre	= "REPARTIDOR " + NombreNi(alltrim(UPPER(FsrVendedor.numero)))
