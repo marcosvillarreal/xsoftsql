@@ -1,35 +1,3 @@
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias CSRCLASECOMP registro          1
-Control activo  ABMCOMPROBANTE.INIT
-24-10-2019 20:42:54 , Error nº:         13
-Error No se encuentra el alias 'CSRCOMPROBANTE'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias CSRCLASECOMP registro          1
-Control activo  ABMCOMPROBANTE.INIT
-24-10-2019 20:44:19 , Error nº:         13
-Error No se encuentra el alias 'CSRCOMPROBANTE'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias CSRCLASECOMP registro          1
-Control activo  ABMCOMPROBANTE.INIT
-24-10-2019 21:01:58 , Error nº:          1
-Error El archivo 'csrsucursal.dbf' no existe.
-Linea nº select 0 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
- Alias  registro          0
-Control activo  SUBIVAVTA.PAGEFRAME1.PAGE2.KITGRILLATILDARSUCURSAL.INIT
-30-10-2019 19:41:36 , Error nº:          1
-Error El archivo 'csrcabecombo.dbf' no existe.
-Linea nº SELECT CsrCabeCombo.* FROM CsrCabeCombo WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
- Alias CSRPROMOCION registro          1
-Control activo  ABMPRODCOMBO.LOAD
-31-10-2019 12:24:50 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias CSRAUXPIE registro          1
-Control activo  GREGDESCUENTOS.CONTAINERCTACTE.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT
-31-10-2019 12:29:45 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias CSRAUXPIE registro          1
 Control activo  GREGDESCUENTOS.CONTAINERCTACTE.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT
 31-10-2019 12:30:48 , Error nº:         12
 Error No se encuentra la variable 'IDGRUPO'.
@@ -129,6 +97,10 @@ Control activo PORCE3 GREGDESCUENTOS.CONTAINERPIE._TXTPORCE3.KEYPRESS
 31-10-2019 13:02:47 , Error nº:         12
 Error No se encuentra la variable 'IDARTICULO'.
 Linea nº REPLACE idarticulo WITH Csrproducto.id,numero WITH Csrproducto.numero,nombre WITH Csrproducto.nombre ,fecoferta WITH OscPie.fecha,min1 WITH OscPie.min1, desc1 WITH OscPie.porce1 ,min2 WITH OscPie.min2, desc2 WITH OscPie.porce2,min3 WITH OscPie.m
+
+
+
+
 
 
 
@@ -417,12 +389,20 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo0
 
 
 
+
+
+
+
 odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
  Alias IMPCUERVARI registro          4
 Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
 08-11-2019 13:40:24 , Error nº:         12
 Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
+
+
+
 
 
 
@@ -715,6 +695,10 @@ Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidade
 
 
 
+
+
+
+
 estadotilde=1 INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -726,6 +710,10 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
+
+
+
 
 
 
@@ -908,7 +896,15 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -1056,7 +1052,15 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -1204,7 +1208,15 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -1450,12 +1462,20 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
+
+
+
 
 
 
@@ -1615,7 +1635,15 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -1723,7 +1751,15 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -1831,7 +1867,15 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -1969,6 +2013,10 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1980,6 +2028,10 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
+
+
+
 
 
 
@@ -2231,6 +2283,10 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
+
+
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2279,7 +2335,15 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -2295,7 +2359,15 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -2311,7 +2383,15 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
 
 
 
@@ -2372,4 +2452,40 @@ Error LOBJPRECIOACTUAL no es un objeto.
 Linea nº IF lObjPrecioactual.interno#0
  Alias CSRPRODCTACON registro          1
 Control activo  ABMPRODUCTO._TEXTBOX1.KEYPRESS
-16-12-2020 13:41:56 , Error nº:       1734Error No se encuentra la propiedad COSTO.Linea nº IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno Alias CSRPRODCTACON registro          1Control activo  MAIN
+16-12-2020 13:41:56 , Error nº:       1734
+Error No se encuentra la propiedad COSTO.
+Linea nº IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
+ Alias CSRPRODCTACON registro          1
+Control activo  MAIN
+31-12-2020 11:56:04 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO &cRuta
+ Alias CSRCONCEPTO registro          1
+Control activo  MAIN
+31-12-2020 11:58:54 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO &cRuta
+ Alias CSRCONCEPTO registro          1
+Control activo  REGCTACTE_V2.CMDADJUNTAR.CLICK
+31-12-2020 12:25:45 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO &cRuta
+ Alias CSRCONCEPTO registro          1
+Control activo  REGCTACTE_V2.CMDADJUNTAR.CLICK
+31-12-2020 12:26:56 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO &cRuta
+ Alias  registro          0
+Control activo  ON... 
+31-12-2020 12:27:06 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO &cRuta
+ Alias  registro          0
+Control activo  ON... 
+31-12-2020 12:27:21 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº SET DEFAULT TO &cRuta
+ Alias  registro          0
+Control activo  ON... 
+31-12-2020 12:27:33 , Error nº:        202Error La ruta o el nombre de archivo no es válido.Linea nº SET DEFAULT TO &cRuta Alias  registro          0Control activo  ON... 
+31-12-2020 12:28:40 , Error nº:        202Error La ruta o el nombre de archivo no es válido.Linea nº SET DEFAULT TO &cRuta Alias  registro          0Control activo  ON... 
