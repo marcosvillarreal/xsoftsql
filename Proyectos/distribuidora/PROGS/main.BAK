@@ -199,6 +199,10 @@ IF TYPE('goApp')='O'
 	do setup
 	_screen.LockScreen=.f.
 	
+	LOCAL oConfigTermi
+	
+	LeerConfigTermi(@oConfigTermi)
+	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
 	Grabar_Log('Verificando OCX') 
@@ -301,6 +305,9 @@ IF TYPE('goApp')='O'
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
 		DO FORM frmmenu
+		IF goapp.openfac = 1
+			DO FORM regfacpub
+		ENDIF 
 	ENDIF 
 	                     
 	 _screen.visible=.t.	   

@@ -1,3 +1,59 @@
+FUNCTION LeerConfigTermi
+
+oConfigTermi = CREATEOBJECT("Custom")
+oConfigTermi.AddProperty('FoxyPreviewer',"FALSE")
+
+LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
+i = 1
+
+cFile = ADDBS(SYS(5)+CURDIR())+'SETUP.INI'
+
+IF FILE(cFile)
+	stop()
+	Adir(lCarray,cFile)
+	lntamano = lCarray[1,2]
+    
+	Arc = FOPEN(cFile)
+	LenRegistro = lntamano
+	DO WHILE !FEOF(Arc)
+		*lcActDato			=FREAD(Arc,LenRegistro)
+		lcActDato = FGETS(Arc)
+		i = AT(']',lcActDato) + 1
+		IF i#1 &&No existe label. Por lo tanto es parte de el dato anterior
+	   	    	lclabel = CHRTRAN(UPPER(LEFT(lcActDato,i-1)),']','')
+	   	    	lclabel = CHRTRAN(lclabel,'[','')
+	   	ELSE
+	   		lcActDato = CHR(13)+lcActDato
+	   	ENDIF 
+	   	&&Solo lo haremos para los campos encriptados
+		DO case
+			CASE lclabel="FOXYPREVIEWER"
+				oConfigTermi.FoxyPreviewer =  ALLTRIM(SUBSTR(lcActDato,i))
+		ENDCASE		 
+	ENDDO 
+                    
+	FCLOSE(Arc)
+ENDIF 
+IF NOT FILE(cFile)
+	Arc = FCREATE(cFile)
+	LenRegistro = 100
+	IF arc#0
+		lclabel="[FoxyPreviewer]" + oConfigTermi.FoxyPreviewer 
+		XX= FPUTS(Arc,lclabel,lenregistro)
+	ENDIF 	
+	FCLOSE(Arc)
+ENDIF 
+
+IF oConfigTermi.FoxyPreviewer = 'TRUE'
+
+	SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE 
+
+
+ENDIF 
+
+ENDFUNC 
+
+
 *---------------------------------------------------------------------------------
 FUNCTION CargarXML
 PARAMETERS lcFile,lcAlias

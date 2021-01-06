@@ -1,0 +1,1 @@
+SELECT * FROM ptovta.antsuel01;
