@@ -118,7 +118,8 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
-   
+PUBLIC oConfigTermi
+
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
@@ -176,6 +177,8 @@ IF TYPE('goApp')='O'
 	           		                          
 	do setup
 	_screen.LockScreen=.f.
+	
+	LeerConfigTermi()
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
