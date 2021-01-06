@@ -1,20 +1,3 @@
-30-07-2020 19:40:28 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-30-07-2020 19:40:28 , Objeto      : main
-30-07-2020 19:40:28 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-30-07-2020 19:40:28 , Nº de Linea :        261
-30-07-2020 19:40:28 , En el Fuente: 	Read events   
-30-07-2020 19:40:28 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
-30-07-2020 19:40:28 , Objeto      : frmmenu1.treeview.keypress
-30-07-2020 19:40:28 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmmenu.sct
-30-07-2020 19:40:29 , Nº de Linea :          6
-30-07-2020 19:40:29 , En el Fuente:    EjecutaMenu('frmlogout')
-30-07-2020 19:40:29 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-30-07-2020 19:40:29 , Objeto      : ejecutamenu
-30-07-2020 19:40:29 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-30-07-2020 19:40:29 , Nº de Linea :       1487
-30-07-2020 19:40:29 , En el Fuente: 							DO FORM &lcForm
-30-07-2020 19:40:29 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-30-07-2020 19:40:29 , Objeto      : frmlogout.cmdok.btn.click
 30-07-2020 19:40:30 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
 30-07-2020 19:40:30 , Nº de Linea :          1
 30-07-2020 19:40:30 , En el Fuente: this.Parent.Click()
@@ -24,6 +7,9 @@
 30-07-2020 19:40:30 , Nº de Linea :          1
 30-07-2020 19:40:30 , En el Fuente: thisform.salir = .f.
 30-07-2020 19:41:01 , MAIN, Error: SALIR es un método, evento u objeto.;Linea : thisform.salir = .t.;Error :       1737;Ultimo Alias Activo: CSRKEY;Ultimo registro:         15 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000J0G902B2.TMP;Ultimo Control activo
+
+
+
 
 
 
@@ -373,6 +359,9 @@
 
 
 
+
+
+
 registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000000EH0055.TMP;Ultimo Control activo: 
 01-09-2020 16:15:39 , Pila de llamadas
 01-09-2020 16:15:40 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -386,6 +375,9 @@ registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000000EH0055.TMP;Ul
 01-09-2020 16:15:40 , Nº de Linea :         21
 01-09-2020 16:15:40 , En el Fuente: ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte)
 01-09-2020 16:32:08 , LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra la variable 'IDCTACTE'.;Linea : ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte);Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo 
+
+
+
 
 
 
@@ -701,6 +693,9 @@ registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000000EH00A0.TMP;Ul
 
 
 
+
+
+
 registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OAA100EV.TMP;Ultimo Control activo: 
 01-09-2020 19:59:41 , Pila de llamadas
 01-09-2020 19:59:41 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -714,6 +709,9 @@ registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OAA100EV.TMP;Ul
 01-09-2020 19:59:42 , Nº de Linea :         21
 01-09-2020 19:59:42 , En el Fuente: ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte)
 01-09-2020 20:00:52 , LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK, Error: No se encuentra la variable 'IDCTACTE'.;Linea : ccadenactas = ccadenactas + separador + STR(CsrImprimir.idctacte);Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo 
+
+
+
 
 
 
@@ -1013,6 +1011,9 @@ registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OAA100GI.TMP;Ul
 
 
 
+
+
+
 on ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDi
 
 
@@ -1155,7 +1156,13 @@ on ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDir
 
 
 
+
+
+
 recciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE;Error :       1806;Ultimo Alias Activo: CSRDIRECCIONES;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OAA100HX.TMP;Ultimo Control 
+
+
+
 
 
 
@@ -1446,7 +1453,13 @@ activo:
 
 
 
+
+
+
 ia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirecciones.codigo ,'' as estado	FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente 	WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWR
+
+
+
 
 
 
@@ -1586,6 +1599,9 @@ ia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte	,CsrDirec
 
 ITE
 10-11-2020 15:19:07 , RINDEFLETE.LOAD, Error: El archivo 'csrmaopera.dbf' no existe.;Linea : SELECT Csrmaopera.*,CAST(0 as int) as iddeposito,00000000 AS nrocaja,SPACE(6) as pefiscal,CAST(0 as int) as idfleteren FROM Csrmaopera WHERE RECNO()=1 AND id=0 I
+
+
+
 
 
 
@@ -1867,6 +1883,9 @@ NTO CURSOR CsrAuxMaopera READWRITE;Error :          1;Ultimo Alias Activo: ;Ulti
 
 
 
+
+
+
 X00MN.TMP;Ultimo Control activo: 
 02-12-2020 10:54:17 , Pila de llamadas
 02-12-2020 10:54:17 , Programa    : j:\xsoftsql\proyectos\leon\clases\oformslocal.vct
@@ -1880,6 +1899,9 @@ X00MN.TMP;Ultimo Control activo:
 02-12-2020 10:54:19 , Nº de Linea :          6
 02-12-2020 10:54:19 , En el Fuente:     SELECT (lCaliasNavega)
 02-12-2020 10:54:25 , ABMPARACON.CMDSELECCIONAR.CLICK, Error: No se encuentra el alias 'CSRPARACONTA'.;Linea : return (&lcAlias);Error :         13;Ultimo Alias Activo: CSRKEY;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HM2X00
+
+
+
 
 
 
@@ -2149,6 +2171,9 @@ MN.TMP;Ultimo Control activo:
 
 
 
+
+
+
 : CSRPRODCTACON;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000972H01YP.TMP;Ultimo Control activo: NUMERO
 02-12-2020 12:10:33 , Pila de llamadas
 02-12-2020 12:10:34 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -2162,6 +2187,9 @@ MN.TMP;Ultimo Control activo:
 02-12-2020 12:10:35 , Nº de Linea :         15
 02-12-2020 12:10:35 , En el Fuente: 	IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
 02-12-2020 12:10:37 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: LOBJPRECIOACTUAL no es un objeto.;Linea : IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno;Error :       1924;Ultimo Alias Activo
+
+
+
 
 
 
@@ -2409,6 +2437,9 @@ MN.TMP;Ultimo Control activo:
 
 
 
+
+
+
 : CSRPRODCTACON;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000972H01ZS.TMP;Ultimo Control activo: NUMERO
 02-12-2020 12:10:41 , Pila de llamadas
 02-12-2020 12:10:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -2422,6 +2453,9 @@ MN.TMP;Ultimo Control activo:
 02-12-2020 12:10:42 , Nº de Linea :         15
 02-12-2020 12:10:42 , En el Fuente: 	IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
 02-12-2020 12:10:51 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: LOBJPRECIOACTUAL no es un objeto.;Linea : IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno;Error :       1924;Ultimo Alias Activo
+
+
+
 
 
 
@@ -2654,7 +2688,13 @@ MN.TMP;Ultimo Control activo:
 
 
 
+
+
+
 ri2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctav
+
+
+
 
 
 
@@ -2872,7 +2912,13 @@ ta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as
 
 
 
+
+
+
 e2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00
+
+
+
 
 
 
@@ -3090,6 +3136,9 @@ e2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,00
 
 
 
+
+
+
 0 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(
 
 
@@ -3199,7 +3248,13 @@ e2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,00
 
 
 
+
+
+
 DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activ
+
+
+
 
 
 
@@ -3426,7 +3481,13 @@ o: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
 (0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3	   ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4	   ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Ba
+
+
+
 
 
 
@@ -3640,7 +3701,13 @@ segra5,000.00 as tasa5	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,00000
 
 
 
+
+
+
 00.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3   	   ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4   	   ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00
+
+
+
 
 
 
@@ -3854,7 +3921,13 @@ segra5,000.00 as tasa5	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,00000
 
 
 
+
+
+
 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero       ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada       ,SPACE(13) as proximonro,DATE
+
+
+
 
 
 
@@ -3975,6 +4048,9 @@ TIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,CAST(0 as
 02-12-2020 19:47:30 , Nº de Linea :         11
 02-12-2020 19:47:30 , En el Fuente: SELECT CsrSeteo
 02-12-2020 20:03:10 , ABMPRODUCTO.CMDSALVAR.CLICK, Error: No se encuentra la variable 'LNCOSTOBONV'.;Linea : replace costobonv WITH lncostobonv, costobonn WITH CsrProducto.costobon IN CsrCbioPrecio;Error :         12;Ultimo Alias Activo: CSRCBIOPRECIO;Ul
+
+
+
 
 
 
@@ -4200,6 +4276,9 @@ timo registro:         -1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000AJ2H01MQ.T
 
 
 
+
+
+
 MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: 
 10-12-2020 10:31:53 , Pila de llamadas
 10-12-2020 10:31:53 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -4233,6 +4312,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo:
 10-12-2020 10:31:56 , Nº de Linea :         15
 10-12-2020 10:31:56 , En el Fuente: 	IF lObjPrecioactual.interno#0
 10-12-2020 10:32:03 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: LOBJPRECIOACTUAL no es un objeto.;Linea : IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno;Error :       1924;Ultimo Alias Activo
+
+
+
 
 
 
@@ -4423,6 +4505,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo:
 
 
 
+
+
+
 MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: 
 10-12-2020 10:32:10 , Pila de llamadas
 10-12-2020 10:32:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -4456,6 +4541,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo:
 10-12-2020 10:32:13 , Nº de Linea :         15
 10-12-2020 10:32:13 , En el Fuente: 	IF lObjPrecioactual.interno#0
 10-12-2020 10:32:14 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: LOBJPRECIOACTUAL no es un objeto.;Linea : IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno;Error :       1924;Ultimo Alias Activo
+
+
+
 
 
 
@@ -4609,6 +4697,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo:
 
 
 
+
+
+
 MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: COSTO
 10-12-2020 10:32:32 , Pila de llamadas
 10-12-2020 10:32:32 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -4642,6 +4733,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: COSTO
 10-12-2020 10:32:35 , Nº de Linea :         15
 10-12-2020 10:32:35 , En el Fuente: 	IF lObjPrecioactual.interno#0
 10-12-2020 10:32:39 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: LOBJPRECIOACTUAL no es un objeto.;Linea : IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno;Error :       1924;Ultimo Alias Activo
+
+
+
 
 
 
@@ -4755,6 +4849,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: COSTO
 
 
 
+
+
+
 \0000EUQ10097.TMP;Ultimo Control activo: 
 16-12-2020 09:43:35 , Pila de llamadas
 16-12-2020 09:43:35 , Programa    : j:\xsoftsql\proyectos\leon\forms\abmproducto.sct
@@ -4783,6 +4880,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: COSTO
 16-12-2020 09:43:39 , Nº de Linea :         15
 16-12-2020 09:43:39 , En el Fuente: 	IF lObjPrecioactual.interno#0
 16-12-2020 13:41:57 , MAIN, Error: No se encuentra la propiedad COSTO.;Linea : IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno;Error :       1734;Ultimo Alias Activo: CSRPRODCTACON;Ultimo registro:          1 
+
+
+
 
 
 
@@ -4859,6 +4959,9 @@ MARCO\APPDATA\LOCAL\TEMP\0000MXHL01NY.TMP;Ultimo Control activo: COSTO
 
 
 
+
+
+
 Control activo: 
 31-12-2020 11:56:05 , Pila de llamadas
 31-12-2020 11:56:05 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4877,6 +4980,9 @@ Control activo:
 31-12-2020 11:56:06 , Nº de Linea :          6
 31-12-2020 11:56:07 , En el Fuente: SET DEFAULT TO &cRuta
 31-12-2020 11:58:54 , REGCTACTE_V2.CMDADJUNTAR.CLICK, Error: La ruta o el nombre de archivo no es válido.;Linea : SET DEFAULT TO &cRuta;Error :        202;Ultimo Alias Activo: CSRCONCEPTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEM
+
+
+
 
 
 
@@ -4910,6 +5016,9 @@ P\0000OLQH0152.TMP;Ultimo Control activo:
 
 
 
+
+
+
 P\0000MN0P00GX.TMP;Ultimo Control activo: 
 31-12-2020 12:25:45 , Pila de llamadas
 31-12-2020 12:25:46 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4932,3 +5041,15 @@ P\0000MN0P00GX.TMP;Ultimo Control activo:
 31-12-2020 12:27:34 , Pila de llamadas
 31-12-2020 12:28:40 , ON..., Error: La ruta o el nombre de archivo no es válido.;Linea : SET DEFAULT TO &cRuta;Error :        202;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 31-12-2020 12:28:40 , Pila de llamadas
+06-01-2021 16:31:37 , MAIN, Error: El archivo no existe.;Linea : SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+06-01-2021 16:31:38 , Pila de llamadas
+06-01-2021 16:31:38 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
+06-01-2021 16:31:38 , Objeto      : main
+06-01-2021 16:31:38 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
+06-01-2021 16:31:38 , Nº de Linea :        182
+06-01-2021 16:31:38 , En el Fuente: 	LeerConfigTermi()
+06-01-2021 16:31:39 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+06-01-2021 16:31:39 , Objeto      : leerconfigtermi
+06-01-2021 16:31:39 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+06-01-2021 16:31:39 , Nº de Linea :         49
+06-01-2021 16:31:40 , En el Fuente: 	SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE 
