@@ -46,7 +46,7 @@ ENDIF
 
 IF oConfigTermi.FoxyPreviewer = 'TRUE'
 
-	SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE 
+	*SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE 
 
 
 ENDIF 

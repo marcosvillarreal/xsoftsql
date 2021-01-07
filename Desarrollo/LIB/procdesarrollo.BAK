@@ -9,7 +9,7 @@ i = 1
 cFile = ADDBS(SYS(5)+CURDIR())+'SETUP.INI'
 
 IF FILE(cFile)
-	stop()
+	*stop()
 	Adir(lCarray,cFile)
 	lntamano = lCarray[1,2]
     
