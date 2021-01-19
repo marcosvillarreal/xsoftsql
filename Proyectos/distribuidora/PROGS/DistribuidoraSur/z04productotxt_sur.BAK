@@ -284,7 +284,7 @@ ENDTEXT
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-stop()
+*stop()
 SCAN FOR !EOF()
 	SELECT CsrProducto
 	
@@ -294,6 +294,11 @@ SCAN FOR !EOF()
 		LOOP 
 	ENDIF
 	
+	IF VAL(CsrArticulo.codigo) = 11016
+		stop()
+	ENDIF 
+	
+		
 	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnPreventa4
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
 	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase
@@ -307,7 +312,7 @@ SCAN FOR !EOF()
     ENDIF
 
     SELECT CsrRubro
-    LOCATE FOR RIGHT(RTRIM(nombre),1)=ALLTRIM(Csrarticulo.rubro)
+    LOCATE FOR RIGHT('00'+RIGHT(RTRIM(nombre),2),2)=RIGHT('00'+ALLTRIM(Csrarticulo.rubro),2)
     IF NOT FOUND()
     	GO BOTTOM
     ENDIF 

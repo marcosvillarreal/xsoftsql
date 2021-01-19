@@ -148,7 +148,7 @@ SCAN
 ENDSCAN 
 
 SELECT CsrRecorrido
-vista()
+*vista()
 
 LOCAL lnidvdor,lniddepo,lnidflet
 
@@ -196,17 +196,17 @@ SCAN FOR !EOF()
    lnprevta = 1
    lnestado = 1
    
-   lcnombre	= "VENDEDOR " + NombreNi(alltrim(UPPER(FsrVendedor.numero)))
+   lcnombre	= NombreNi(alltrim(UPPER(FsrVendedor.numero)))
    INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale,passpreventamobile,activopm);
    			 VALUES (lnidvdor,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0,'',1)
    lnidvdor = lnidvdor + 1
 	
-	lcnombre	= "REPARTIDOR " + NombreNi(alltrim(UPPER(FsrVendedor.numero)))
+	lcnombre	= NombreNi(alltrim(UPPER(FsrVendedor.numero)))
 	INSERT INTO CsrFletero (id,numero,nombre,direccion,telefono,tipoflete,idctacte,switch);
    			 VALUES (lnidflet,lnnumero,lcnombre,'','',0,0,'00000')
    lnidflet = lnidflet + 1
    
-   lcnombre	= "CAMION " + NombreNi(alltrim(UPPER(FsrVendedor.numero)))
+   lcnombre	= NombreNi(alltrim(UPPER(FsrVendedor.numero)))
    INSERT INTO CsrDeposito (id,numero,nombre,llevastock);
    			 VALUES (lniddepo,lnnumero,lcnombre,1)
    lniddepo = lniddepo + 1
@@ -227,7 +227,7 @@ SELECT FsrZona
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()  
-   lcnombre= 'ZONA '+ NombreNi(alltrim(UPPER(fsrzona.numero)))
+   lcnombre= NombreNi(alltrim(UPPER(fsrzona.numero)))
    
    INSERT INTO CsrZona (id,numero,nombre,porflete,abrevia);
    			 VALUES (lnid,lnNUMERO,lcnombre,0,fsrzona.numero)
@@ -257,7 +257,11 @@ Oavisar.proceso('S','Procesando '+alias())
 GO top
 lnNumRuta = 1
 SCAN FOR !EOF()
-
+	
+	IF alltrim(CsrRecorrido.codigo)='LMM50'
+		stop()
+	ENDIF 
+	
 	SELECT Csrctacte
 	LOCATE FOR ALLTRIM(referencia)=alltrim(CsrRecorrido.codigo) AND ctadeudor = 1
        IF not(ALLTRIM(referencia)=alltrim(CsrRecorrido.codigo) AND ctadeudor = 1)
@@ -267,7 +271,7 @@ SCAN FOR !EOF()
 		
 *	IF CsrRecorrido.carpeta#0
 		SELECT CsrVendedor
-		LOCATE FOR RIGHT(RTRIM(nombre),1)=ALLTRIM(CsrRecorrido.vendedor)
+		LOCATE FOR left(lTRIM(nombre),1)=ALLTRIM(CsrRecorrido.vendedor)
 		IF RIGHT(RTRIM(nombre),1)#(CsrRecorrido.vendedor)
 			SELECT CsrRecorrido
 			LOOP

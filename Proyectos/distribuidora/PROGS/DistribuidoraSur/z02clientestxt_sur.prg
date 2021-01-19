@@ -169,6 +169,9 @@ DO WHILE NOT EOF()
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
+		IF '*'$lcTelefono
+			LOOP
+		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;

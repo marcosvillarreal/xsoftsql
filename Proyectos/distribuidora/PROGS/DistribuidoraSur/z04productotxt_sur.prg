@@ -259,10 +259,14 @@ SCAN
 	lnretibruto	= 1 &&IIF(CsrSeccion.perceib="S",1,0)
 
 	lcnombre	= "RUBRO " + NombreNi(ALLTRIM(UPPER(FsrRubro.nombre)))
+	lncodrubro = VAL(NombreNi(ALLTRIM(UPPER(FsrRubro.nombre))))
+	IF lncodrubro = 0
+		lncodrubro =  6
+	ENDIF 
 	INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta) ;
 	VALUES (lnid,lncodrubro,lcnombre,lntipoprod,lntipovta,lnretibruto,lnidfuerzavta)
 	lnid = lnid +1 
-	lncodrubro = lncodrubro + 1 
+	*lncodrubro = lncodrubro + 1 
 ENDSCAN 
 
 lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
@@ -284,7 +288,7 @@ ENDTEXT
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-stop()
+*stop()
 SCAN FOR !EOF()
 	SELECT CsrProducto
 	
@@ -294,6 +298,11 @@ SCAN FOR !EOF()
 		LOOP 
 	ENDIF
 	
+	IF VAL(CsrArticulo.codigo) = 11016
+		stop()
+	ENDIF 
+	
+		
 	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnPreventa4
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnPrevetaf4, lninterno
 	STORE 0 TO lnidctacte, lnidseccion,	lnidmarca,	lnidubicacion,lnidenvase

@@ -245,9 +245,9 @@ SCAN
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
-	lnidcanalvta	= 1100000001
+	lnidcanalvta	= IIF(LEFT(lcReferencia,1)='L',1100000003,1100000001)
 	lnidlista		= 0
-	lnlista			= IIF(LEFT(lcReferencia,1)='L',2,1)
+	lnlista			= 1 &&IIF(LEFT(lcReferencia,1)='L',2,1)
 *!*		DO CASE
 *!*		CASE lnLista <= 1
 *!*			lnLista = 1
