@@ -115,6 +115,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 	SET PROCEDURE TO formposition.prg ADDITIVE 
    SET PROCEDURE TO ftp.prg ADDITIVE
    SET PROCEDURE TO whatsapp_ej ADDITIVE 
+   SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
