@@ -3,11 +3,11 @@ FUNCTION LeerClientes(cArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
-CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),Localidad c(50);
-		,CodPostal c(10),Provincia c(50);
+CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),CodLocalidad c(6),Localidad c(50);
+		,CodPostal c(10),CodProvincia c(6),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
 		,TipoDoc c(50),Documento c(20);
-		,TipoIVA c(50),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
+		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1))
 	
@@ -34,10 +34,10 @@ leiunarticulo = .f.
 
 ldebug = .t.
 
-*SKIP 
+SKIP 
 stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 12 &&Hay un campo vacio
+	lnCantCampo = 22 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -47,21 +47,21 @@ DO WHILE NOT EOF()
 		LOOP 
 	ENDIF 
 	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+*!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
 		leiunarticulo = .t.
 		STORE "" TO lcAcarreo
 		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
 		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
 		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
-		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA
+		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodProvincia	,lcCodLocalidad,lcLista
 		
 		j = 0
-	ELSE
-		IF !leiunarticulo
-			SKIP 
-			LOOP 
-		ENDIF 
-	ENDIF 
+*!*		ELSE
+*!*			IF !leiunarticulo
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+*!*		ENDIF 
 	
 	DO WHILE lnCamposLeidos<4
 		i = 1
@@ -75,34 +75,33 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcDocumento)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDireNro)))
-			*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodPostal)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDocumento)))
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
+			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
 			*lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDirePiso)))
 			*lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcLocalidad)))
-			*lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcTelefono)))
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodCateIVA)))
-			*lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTipoIVA)))
-			*lcCategoria	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCategoria)))
-			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcEstado)))
-			lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=27,lcCadena,lcCodLista)))
-			*lcLista			= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcLista)))
-			*lcZona			= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcZona)))
-			*lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodVendedor)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=29,lcCadena,lcVendedor)))
+			LcCodLocalidad	= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodLocalidad)))
+			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcLocalidad)))
+			lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodPostal)))
+			lcCodProvincia	= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcCodProvincia)))
+			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcProvincia)))
+			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCodCateIVA)))
+			lcCategoria		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCategoria)))
+			lcCodLista		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCodLista))) 
+			lcLista			= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcLista))) 
+			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcCodVendedor)))
+			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcVendedor)))			
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcTelefono)))			
+			lcCelular		= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcCelular)))
+			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcEstado)))
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcZona)))
+			lcEmail			= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcEmail)))
 			
-			*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
-			*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
-			lcCelular		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCelular)))
-			*lcEmail			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEmail)))
+			*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))			
 			*lcfecAlta		= IIF(j + i=19,lcCadena,lcFecAlta)
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-			*lcZona			= UPPER(LimpiarCadena(IIF(j + i=29,lcCadena,lcZona)))
 							
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -113,7 +112,7 @@ DO WHILE NOT EOF()
 			ENDIF 
 		
 		ENDDO 
-		lnSiguienteOcurrencia = 13
+		lnSiguienteOcurrencia = 1
 		lnCamposLeidos = lnCamposLeidos + 1
 		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
 		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
@@ -141,43 +140,17 @@ DO WHILE NOT EOF()
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
-		,CodCateIVA) ;
+		,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor) ;
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
-		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado;
-		,VAL(lcCodLista),VAL(lcCodCateIVA))
+		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
+		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,CodVendedor)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
 	ENDIF 
 	SKIP IN CsrLista
 ENDDO 
-
-
-
-ENDFUNC 
-
-&&Fuentes de importacion de archivos de texto para elsureño (Jaque Acces)
-FUNCTION LeerClientesXML(cArchivo)
-
-CREATE CURSOR CsrLista (id c(20),r00 c(20), r01 c(20),r02 c(20),r03 c(20),r04 c(20),r05 c(20),r06 c(20);
-			,r07 c(20),r08 c(20),r09 c(20),r10 c(20),r11 c(20),r12 c(20),r13 c(20),r14 c(20),r15 c(20);
-			,r16 c(20),r17 c(20),r18 c(20),r19 c(20),r20 c(20),r21 c(20),r22 c(20),r23 c(20),r24 c(20);
-			,r25 c(20),r26 c(20),r27 c(20),r28 c(20),r29 c(20),r30 c(20),r31 c(20),r32 c(20),r33 c(20);
-			,r34 c(20),r35 c(20),r36 c(20),r37 c(20),r38 c(20),r39 c(20),r40 c(20),r41 c(20),r42 c(20);
-			,r43 c(20),r44 c(20),r45 c(20) )
-
-CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),Localidad c(50);
-		,CodPostal c(10),Provincia c(50);
-		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
-		,TipoDoc c(50),Documento c(20);
-		,TipoIVA c(50),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
-		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
-		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1))
-	
-Oavisar.proceso('S','Abriendo archivos') 
-
-XMLTOCURSOR(cArchivo ,"CsrLista",512+8192)
 
 
 

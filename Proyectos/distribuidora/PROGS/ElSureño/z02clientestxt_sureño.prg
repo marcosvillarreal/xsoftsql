@@ -51,12 +51,13 @@ SELECT CsrLocalidad
 *!*	Oavisar.proceso('S','Abriendo archivos') 
 
 *!*	SELECT CsrLista
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"vta01.txt"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
 =LeerClientes(cArchivo)
 SELECT CsrDeudor
 vista()
 
 RETURN .f.
+
 *!*	APPEND FROM  &cArchivo SDF
 
 *!*	lcDelimitador = ";"
