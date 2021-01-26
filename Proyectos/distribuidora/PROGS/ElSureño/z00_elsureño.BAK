@@ -3,11 +3,11 @@ FUNCTION LeerClientes(cArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
-CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),CodLocalidad i,Localidad c(50);
-		,CodPostal c(10),CodProvincia i,Provincia c(50);
+CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),CodLocalidad c(6),Localidad c(50);
+		,CodPostal c(10),CodProvincia c(6),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
 		,TipoDoc c(50),Documento c(20);
-		,TipoIVA c(50),CodVendedor i,Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
+		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1))
 	
@@ -144,7 +144,7 @@ DO WHILE NOT EOF()
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
-		,VAL(lcCodCateIVA),VAL(lcCodLocalidad),VAL(lcCodProvincia),VAL(CodVendedor))
+		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,CodVendedor)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

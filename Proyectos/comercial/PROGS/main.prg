@@ -125,6 +125,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
+    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+    
 *clear all
 
 
@@ -138,6 +140,7 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -186,6 +189,8 @@ IF TYPE('goApp')='O'
 	on error do errorsys
 	           		                          
 	do setup
+	
+	LeerConfigTermi()
 	
 	_screen.LockScreen=.t.
 	

@@ -208,7 +208,7 @@ CASE lcLocalidad = "CIUDAD ATLANTIDA"
 	lcnombre = "BARRIO CIUDAD ATLANTIDA"
 CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","") $ "PALTA-PUNTAALTA-PATA-"
 	lcnombre = "PUNTA ALTA"
-CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","")$"BAHIABLANCA-BAHjABLANCA-BBLANCA-BAHÍABLANCA"
+CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","")$"BAHIABLANCA-BAHjABLANCA-BBLANCA-BAHÍABLANCA-BAHIABCA"
 	lcnombre = "BAHIA BLANCA"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"BUENOSAIRES-CABA-CADEBSAIRES-CAPFEDERAL-CAPITAL-CIUDADBUE-CAPITALFEDERAL-CDAUTONOMABSAIRES-BS"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
@@ -352,8 +352,8 @@ CASE "SERRAGRAN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SIERRA GRANDE"
 CASE "VALCHETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VALCHETA"
-CASE "VILLALONGA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "VILLA LONGA"
+*!*	CASE "VILLALONGA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+*!*		lcnombre = "VILLA LONGA"
 CASE "IDEVI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") OR "ELJUNCAL" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN JAVIER"
 
@@ -382,11 +382,11 @@ CASE "ANGUIL" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 CASE "ANGOSTURA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VILLA LA ANGOSTURA" 
 CASE "TMANCHORENA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "TOMAS M DE ANCHOERANA" 			
+	lcnombre = "TOMAS M DE ANCHORENA" 			
 CASE "TMDEANCHOR" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "TOMAS M DE ANCHOERANA" 			
+	lcnombre = "TOMAS M DE ANCHORENA" 			
 CASE "TOMASMDEANO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "TOMAS M DE ANCHOERANA" 	
+	lcnombre = "TOMAS M DE ANCHORENA" 	
 CASE "ANCHORENA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "ANCHORENA" 
 CASE "SANTONIOOESTE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -435,26 +435,42 @@ CASE "LAREFORMAVIEJ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","
 	lcnombre = "LA REFORMA VIEJA" 
 CASE "GRALSANMARTIN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL SAN MARTIN" 
-
 CASE "PAZAHUIN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "PLAZA HUINCUL"
-
 CASE "GRALFERNANDEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL FERNANDEZ ORO"
-
 CASE "BARILOCHE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN CARLOS DE BARILOCHE"
 CASE "SANCARLOSDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "SAN CARLOS DE BARILOCHE"
-	
+	lcnombre = "SAN CARLOS DE BARILOCHE"	
 CASE "LASGRUTAS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "LAS GRUTAS"
-
 CASE "SIERAGRANDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "SIERRA GRANDE"			
-
+	lcnombre = "SIERRA GRANDE"		
 CASE "PATAGONES" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "CARMEN DE PATAGONES"  	 
+	lcnombre = "CARMEN DE PATAGONES" 
+CASE "GONZALEZCHAVEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "GONZALES CHAVES" 
+CASE "CLAROMECO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CLAROMECO" 
+CASE "RETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "RETA" 	
+CASE "CIPOLLETI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CIPOLlETTI" 	
+CASE "CUTRAL-CO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CUTRAL CO" 	
+CASE "GRALROCA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "GENERAL ROCA" 	
+CASE "GUAYMALLEN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN JOSE DE GUAYMALLEN" 	
+CASE "BALNEARIOSAUCEGRANDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAUCE GRANDE" 
+CASE "CHACICO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CHASICO" 
+CASE "ORENSESUR" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "ORENSE" 
+CASE "GENERALCAMPOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "GENERAL MANUEL CAMPOS" 	 	 
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161
