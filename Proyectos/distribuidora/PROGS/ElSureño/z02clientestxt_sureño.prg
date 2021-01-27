@@ -45,17 +45,18 @@ SELECT CsrDeudor
 DELETE FROM CsrDeudor WHERE VAL(estado) = 0 &&No importamos los inactivos
 
 
-SELECT distinct idlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,provincia ,SPACE(30) AS Localidad, SPACE(6) as CPostal;
+SELECT distinct codlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,provincia ,SPACE(30) AS Localidad, SPACE(6) as CPostal;
+,CAST(0 as numeric(10)) as idlocalidad;
  FROM CsrDeudor  ORDER BY PROVINCIA, NOMBRE INTO CURSOR CsrCiudad READWRITE 
 
 
 SELECT CsrCiudad
 DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
-vista()
+*vista()
 
 SCAN 
-	IF VAL(CsrCiudad.codpostal)=8512
-		stop()
+	IF VAL(CsrCiudad.codpostal)=8138
+		*stop()
 	ENDIF 
 	
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)))
@@ -63,10 +64,17 @@ SCAN
 	lnCodProvincia = VAL(CsrCiudad.codprovincia)
 	
 	lnCodProvincia = IIF(lnCodProvincia =0 ,2,IIF(lnCodProvincia = 2,0,lnCodProvincia ))
+	lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=19 ,21,lnCodProvincia ) &&la pampa
+	lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=21 ,20,lnCodProvincia ) &&neruquen
+	lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=13 ,12,lnCodProvincia ) &&santa fe
+
 	*lnCodProvincia = IIF(lnCodProvincia = 0 ,1,lnCodProvincia )
 	SELECT CsrLocalidad
 	
-	LOCATE FOR nombre = lcLocalidadBuscada AND VAL(codsicore) = lnCodProvincia
+	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada AND VAL(codsicore) = lnCodProvincia
+	IF VAL(CsrCiudad.codpostal)=8138
+		*vista()
+	ENDIF 
 	
 	IF id#0
 		replace localidad WITH lcLocalidadBuscada,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
@@ -76,6 +84,7 @@ SCAN
 			
 			replace cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
 		ENDIF 
+		replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
 	ELSE
 		LOCATE FOR VAL(cpostal) = VAL(CsrCiudad.codpostal)
 		IF id#0
@@ -88,7 +97,7 @@ ENDSCAN
 
 SELECT CsrCiudad
 DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
-vista()
+*vista()
 
 CURSORAdapterTOXML('CsrCiudad',ADDBS(SYS(5)+CURDIR())+'Ciudades.XML')
 
@@ -96,23 +105,24 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 SELECT distinct UPPER(lista) as nombre FROM CsrDeudor INTO CURSOR CsrListaPrecio
 SELECT CsrListaPrecio
+vista()
 
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
 *VISTA()
 
-LOCAL nCodigo
-
-nCodigo = 1
+LOCAL nCodigo,cCadeCtacte 
+cCadeCtacte = ''
+*nCodigo = 1
 *stop()
 SCAN 
 	
-	IF VAL(codigo)=9007
+	IF VAL(codigo)=47
 		*stop()
 	ENDIF 
 	
-	lnCodigo = VAL(CsrDeudor.codigo)
+	lnCodigo = CsrDeudor.idorigen
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
  	IF VAL(cnumero) = lnCodigo
@@ -131,7 +141,8 @@ SCAN
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
- 		
+ 	
+ 	nCodigo			= lnCodigo	
  	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
@@ -157,20 +168,19 @@ SCAN
 		*stop()
 	ENDIF 
 	&&Localidad
-	lnidlocalidad	= 1100000345  &&Bahia Blanca
-	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
+	SELECT CsrCiudad
+	LOCATE FOR VAL(CodLocalidad) = VAL(CsrDeudor.codlocalidad)
+	
+	lnidlocalidad	= CsrCiudad.idlocalidad
+	
+	*lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
 	SELECT CsrLocalidad
 	*GO TOP 
-	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada
-	IF ALLTRIM(nombre) = lcLocalidadBuscada
+	LOCATE FOR id = lnidlocalidad
+	IF id = lnidlocalidad
 		lnidprovincia	= CsrLocalidad.idprovincia
 		lccp 			= CsrLocalidad.cpostal
 		lnidlocalidad	= CsrLocalidad.id
-	ELSE
-		lnidestado = 1
-		IF LEN(LTRIM(CsrDeudor.codpostal))<>0
-			lcReferencia = lcReferencia + "  {"+CsrDeudor.codpostal+"} ["+lcLocalidadBuscada+"]"
-		ENDIF 
 	ENDIF
 	
 	&&TresPImp	
@@ -234,17 +244,19 @@ SCAN
 	)
 	
 	lnid = lnid + 1
-	nCodigo = nCodigo + 1 
+	*nCodigo = nCodigo + 1 
 	
 	SELECT CsrDeudor           
 ENDSCAN
+
+SELECT MAX(CAST(cnumero as i)) as codigo FROM CsrCtacte INTO CURSOR CsrMaxNumero READWRITE 
 
 INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
 	,bonif1,email,observa,cdatosfac,dni,referencia);
-	VALUES (lnid, strtrim(nCodigo,8),'EL SUREÑO','','';
+	VALUES (lnid, strtrim(CsrMaxNumero.codigo+1,8),'EL SUREÑO','','';
 	,0,0,'',1,'',0,0,0;
 	,0,1100000003,0,0,1,0,0,"",lcfefin,'';
 	,"",0,ldfechac,0,0,0,'',0,ldfecultcompra,ldfecultpago;
@@ -261,7 +273,7 @@ Oavisar.proceso('N')
 =MESSAGEBOX('Proceso terminado! ')
 
 SELECT CsrCtacte
-*vista()
+vista()
 
 CLOSE tables
 CLOSE INDEXES

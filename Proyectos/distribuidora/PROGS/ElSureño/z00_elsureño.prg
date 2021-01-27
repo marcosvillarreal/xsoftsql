@@ -9,7 +9,7 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,TipoDoc c(50),Documento c(20);
 		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
-		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1))
+		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i)
 	
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -49,7 +49,7 @@ DO WHILE NOT EOF()
 	
 *!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
 		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
+		STORE "" TO lcAcarreo,lcIdJ
 		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
 		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
 		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
@@ -140,11 +140,11 @@ DO WHILE NOT EOF()
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
-		,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor) ;
+		,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor,idorigen) ;
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
-		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,CodVendedor)
+		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,CodVendedor,VAL(lcIdJ))
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

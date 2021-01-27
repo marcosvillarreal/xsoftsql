@@ -457,7 +457,7 @@ CASE "RETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "RETA" 	
 CASE "CIPOLLETI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CIPOLlETTI" 	
-CASE "CUTRAL-CO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+CASE "CUTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CUTRAL CO" 	
 CASE "GRALROCA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL ROCA" 	
@@ -473,7 +473,8 @@ CASE "GENERALCAMPOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","
 	lcnombre = "GENERAL MANUEL CAMPOS" 
 CASE "VILLADOMINICO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VILLA DOMINICO" 
-		 	 
+CASE "LAADELA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "LA ADELA" 		 	 
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161
