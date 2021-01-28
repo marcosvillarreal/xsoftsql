@@ -26,6 +26,11 @@ llok = CargarTabla(lcData,'Sucursal',.t.)
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrCanalVta.* FROM CanalVta as CsrCanalVta
+ENDTEXT 
+=CrearCursorAdapter('CsrCanalVta',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrListaPrecio.* FROM ListaPrecio as CsrListaPrecio
 ENDTEXT 
 =CrearCursorAdapter('CsrListaP',lcCmd)
@@ -95,17 +100,12 @@ SCAN
 ENDSCAN
 
 
-SELECT CsrCiudad
-DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
-*vista()
-
-CURSORAdapterTOXML('CsrCiudad',ADDBS(SYS(5)+CURDIR())+'Ciudades.XML')
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
-SELECT distinct UPPER(lista) as nombre FROM CsrDeudor INTO CURSOR CsrListaPrecio
+SELECT distinct UPPER(lista) as nombre,codlista FROM CsrDeudor INTO CURSOR CsrListaPrecio
 SELECT CsrListaPrecio
-vista()
+*vista()
 
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -117,11 +117,7 @@ cCadeCtacte = ''
 *nCodigo = 1
 *stop()
 SCAN 
-	
-	IF VAL(codigo)=47
-		*stop()
-	ENDIF 
-	
+
 	lnCodigo = CsrDeudor.idorigen
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
@@ -147,30 +143,27 @@ SCAN
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
-	lnidcanalvta	= IIF(LEFT(lcReferencia,1)='L',1100000003,1100000001)
-	lnidlista		= 0
-	lnlista			= 1 &&IIF(LEFT(lcReferencia,1)='L',2,1)
-*!*		DO CASE
-*!*		CASE lnLista <= 1
-*!*			lnLista = 1
-*!*		OTHERWISE
-*!*			&&Falta el resto de listas que nose cuales seran las por defecto
-*!*			lnLista = lnLista + 3
-*!*		ENDCASE
+	lnidcanalvta	= 1100000001
+	lnlista			= CsrDeudor.codlista
+	
+	IF lnLista > 2
+		SELECT CsrCanalVta
+		LOCATE FOR numero = lnLista
+		
+		lnidcanalvta = CsrCanalVta.id
+		lnLista = 1
+	ENDIF 
+	&&Si el cliente tiene otra lista de precio mayor a 2. Entonces le cambiamos el canal de vta
 	SELECT CsrListaP
 	LOCATE FOR numero = lnLista
 	IF numero <> lnLista
-		lnlista = 0
+		GO TOP 
+		lnLista = CsrListaP.id
 	ENDIF 
 		
-	
-	IF ALLTRIM(UPPER(CsrDeudor.cODpOSTAL)) = '6301' AND nCodigo = 17
-		*stop()
-	ENDIF 
 	&&Localidad
 	SELECT CsrCiudad
 	LOCATE FOR VAL(CodLocalidad) = VAL(CsrDeudor.codlocalidad)
-	
 	lnidlocalidad	= CsrCiudad.idlocalidad
 	
 	*lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
@@ -184,19 +177,20 @@ SCAN
 	ENDIF
 	
 	&&TresPImp	
-	nTipoiva	= CsrDeudor.Codcateiva
+	nTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
 	DO CASE 
-	CASE nTipoiva = 1 &&CF
+	CASE nTipoiva = 6 &&CF
 		lntipoiva = 3	
-	CASE nTipoiva = 3 &&RNI
+	CASE nTipoiva = 1 &&RNI
 		lntipoiva = 7	
-	CASE nTipoiva = 4 &&EX sin impuestos?
+	CASE nTipoiva = 11 &&EX sin impuestos?
 		lntipoiva = 4	
-	CASE nTipoIva = 2 &&RI
+	CASE nTipoIva = 1 &&RI
 		lnTipoiva = 1
 	OTHERWISE 
 		lntipoiva = CsrDeudor.Codcateiva
 	ENDCASE 
+	
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	IF lntipoiva<>3
 		*IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
