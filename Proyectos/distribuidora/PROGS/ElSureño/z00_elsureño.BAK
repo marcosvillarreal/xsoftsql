@@ -144,7 +144,7 @@ DO WHILE NOT EOF()
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
-		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,CodVendedor,VAL(lcIdJ))
+		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ))
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
@@ -152,6 +152,206 @@ DO WHILE NOT EOF()
 	SKIP IN CsrLista
 ENDDO 
 
+USE IN CsrLista
+
+ENDFUNC 
+
+FUNCTION LeerArticulos(lcArchivo)
+
+CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
+CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
+		,Alicuota c(8),UniBulto c(10),UniVenta c(1),Costo c(15),CodRubro c(6),IDJ c(8))
+
+SELECT CsrLista
+APPEND FROM  &cArchivo SDF
+
+lcDelimitador = ";"
+replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
+replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+
+Oavisar.proceso('S','Procesando '+alias()) 
+
+cCadeCtacte = "" 
 
 
+SELECT CsrLista
+GO TOP 
+*vista()
+lnPrimeraOcurrencia = 13
+leiunarticulo = .f.
+
+*STOP()
+SCAN 
+	lnCantCampo = 8 &&Hay un campo vacio
+	lnSiguienteOcurrencia = 1
+	lnCamposLeidos = 1 &&Campos de CsrLista
+	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+
+	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		LOOP 
+	ENDIF 
+	
+*!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+		leiunarticulo = .t.
+		STORE "" TO lcAcarreo
+		STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta
+		STORE "" TO lcCosto, lcLista1, lcLista2,lcIDJ ,lcUniBulto,lcCodRubro
+		j = 0
+*!*		ELSE
+*!*			IF !leiunarticulo
+*!*				LOOP 
+*!*			ENDIF 
+*!*		ENDIF 
+	
+	DO WHILE lnCamposLeidos<4
+		i = 1
+		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+			lnpos = AT(lcDelimitador,&lcNomCampo,i)
+			IF lnPos#0 &&No es fin de linea
+				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+				lcAcarreo = ""
+			ELSE 
+				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+				EXIT 
+			ENDIF
+			lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
+			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodRubro)))
+			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcRubro)))
+			lcUniBulto		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcUniBulto)))
+			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcUniVenta)))
+			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
+			lcAlicuota		= "21"
+			lcCosto			= "0"
+			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
+			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
+			
+			lnSiguienteOcurrencia = lnPos + 1
+			i = i + 1
+		ENDDO 
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = lnCamposLeidos + 1
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+			 j = j + (i - 1)
+		ENDIF 
+		*IF lnpos#0 AND i+j >= lnCantCampo
+		IF lnCamposLeidos<4 AND i+j >= lnCantCampo
+			EXIT 
+		ENDIF 
+	ENDDO 
+
+	IF lnCamposLeidos>=1 AND i+j >= lnCantCampo
+		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+		&&Que se grabaran en csrarti.
+		&&Esta diseñado para leer hasta los precios.
+		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+		
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			LOOP 
+		ENDIF 
+		lcCodigo = ALLTRIM(lcCodigo)
+		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,Lista1,Lista2,CodRubro,IDJ,UniBulto);
+		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta,lcCosto,lcLista1,lcLista2,lcCodRubro,lcIDJ,lcUniBulto)
+				
+		*replace descripcion WITH lmDescripcion IN FsrArticulo
+		leiunarticulo = .f.
+	ENDIF 
+ENDSCAN 
+
+USE IN CsrLista
+
+ENDFUNC 
+
+FUNCTION LeerPrecios(cArchivo)
+
+CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
+		
+CREATE CURSOR CsrPrecio (Codigo c(8),Lista c(8), Prevta c(15) , Fecha c(10))
+
+SELECT CsrLista
+APPEND FROM  &cArchivo SDF
+
+lcDelimitador = ";"
+replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
+replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+
+Oavisar.proceso('S','Procesando '+alias()) 
+
+cCadeCtacte = "" 
+
+
+SELECT CsrLista
+GO TOP 
+*vista()
+lnPrimeraOcurrencia = 1
+leiunarticulo = .f.
+*STOP()
+SCAN 
+	lnCantCampo = 6 &&Hay un campo vacio
+	lnSiguienteOcurrencia = 1
+	lnCamposLeidos = 1 &&Campos de CsrLista
+	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+
+	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		LOOP 
+	ENDIF 
+	
+*!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+		leiunarticulo = .t.
+		STORE "" TO lcAcarreo
+		STORE "" TO lcCodigo,lcLista,lcCosto,lcFecha
+		j = 0
+*!*		ELSE
+*!*			IF !leiunarticulo
+*!*				LOOP 
+*!*			ENDIF 
+*!*		ENDIF 
+	
+	DO WHILE lnCamposLeidos<4
+		i = 1
+		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+			lnpos = AT(lcDelimitador,&lcNomCampo,i)
+			IF lnPos#0 &&No es fin de linea
+				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+				lcAcarreo = ""
+			ELSE 
+				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+				EXIT 
+			ENDIF
+			lcCodigo	= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
+			lcLista		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcLista)))
+			lcCosto		= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
+			lcFecha		= UPPER((IIF(j + i=6,lcCadena,lcCosto)))				
+			lnSiguienteOcurrencia = lnPos + 1
+			i = i + 1
+		ENDDO 
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = lnCamposLeidos + 1
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+			 j = j + (i - 1)
+		ENDIF 
+		IF lnpos#0 AND i+j >= lnCantCampo
+			EXIT 
+		ENDIF 
+	ENDDO 
+
+	IF lnpos#0 AND i+j >= lnCantCampo
+		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+		&&Que se grabaran en csrarti.
+		&&Esta diseñado para leer hasta los precios.
+		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+		
+		lcCosto = STRTRAN(lcCosto,',','.')
+		INSERT INTO CsrPRecio (Codigo,Lista,Prevta,Fecha);
+		values (lcCodigo,lcLista,lcCosto,lcFecha)
+				
+		*replace descripcion WITH lmDescripcion IN FsrArticulo
+		leiunarticulo = .f.
+	ENDIF 
+ENDSCAN
 ENDFUNC 

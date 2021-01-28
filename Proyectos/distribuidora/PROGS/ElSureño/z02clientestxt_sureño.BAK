@@ -177,15 +177,15 @@ SCAN
 	ENDIF
 	
 	&&TresPImp	
-	nTipoiva	= CsrDeudor.Codcateiva
+	nTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
 	DO CASE 
-	CASE nTipoiva = 1 &&CF
+	CASE nTipoiva = 6 &&CF
 		lntipoiva = 3	
-	CASE nTipoiva = 3 &&RNI
+	CASE nTipoiva = 1 &&RNI
 		lntipoiva = 7	
-	CASE nTipoiva = 4 &&EX sin impuestos?
+	CASE nTipoiva = 11 &&EX sin impuestos?
 		lntipoiva = 4	
-	CASE nTipoIva = 2 &&RI
+	CASE nTipoIva = 1 &&RI
 		lnTipoiva = 1
 	OTHERWISE 
 		lntipoiva = CsrDeudor.Codcateiva

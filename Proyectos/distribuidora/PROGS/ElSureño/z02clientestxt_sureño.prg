@@ -180,9 +180,7 @@ SCAN
 	nTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
 	DO CASE 
 	CASE nTipoiva = 6 &&CF
-		lntipoiva = 3	
-	CASE nTipoiva = 1 &&RNI
-		lntipoiva = 7	
+		lntipoiva = 3		
 	CASE nTipoiva = 11 &&EX sin impuestos?
 		lntipoiva = 4	
 	CASE nTipoIva = 1 &&RI
