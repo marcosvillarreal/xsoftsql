@@ -157,7 +157,7 @@ SCAN FOR !EOF()
     lnidestado 	= 1 
     lnTasa		= VAL(CsrArticulo.Alicuota)
     lnidiva     = IIF(lnTasa=0,1100000002,1100000003) &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
-   	lnunibulto	= 1 
+   	lnunibulto	= VAL(CsrArticulo.unibulto)
     lnidtipovta = IIF(UPPER(CsrArticulo.univenta)$"B",2,1) &&UNIDADES=1 ,	BULTOS = 2.
     lnvtakilos	= IIF(UPPER(CsrArticulo.univenta)$"KILOS-KG",1,0)
    	lnidforma 	= 1100000001
