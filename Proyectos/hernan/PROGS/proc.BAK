@@ -1113,7 +1113,7 @@ Function LeerXML(tcArchivo,oscreen)
       	XmlToCursor( tcArchivo, 'Cur_Temporal',512 )
       CATCH 
       	CREATE CURSOR cur_temporal (top n(12,0),left n(12,0),height n(12,0),width n(12,0))
-	   	INSERT into cur_temporal VALUES (_screen.Top,_screen.Left,_screen.Height,_screen.Width)
+	   	INSERT into cur_temporal VALUES (38,1,_screen.Height,_screen.Width)
 	   	SET SAFETY off
 	   	CURSORTOXML('cur_temporal',  tcArchivo, 1, 512)
 	   	SET SAFETY ON

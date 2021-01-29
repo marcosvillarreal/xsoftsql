@@ -1,3 +1,9 @@
+*------------------------------------------------------------------------------
+FUNCTION DataCursor
+PARAMETERS cName
+
+RETURN .f.
+ENDFUNC 
 *----------------------------------------
 FUNCTION pelocuit
 PARAMETERS lccuit

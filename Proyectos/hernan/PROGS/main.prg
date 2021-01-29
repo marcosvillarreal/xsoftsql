@@ -80,6 +80,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE       
    SET PROCEDURE TO balanzasystel.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
+   SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
    
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -106,6 +107,7 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -150,6 +152,8 @@ IF TYPE('goApp')='O'
 	           		                          
 	do setup	
 	_screen.LockScreen=.t.
+	
+	LeerConfigTermi()
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 
