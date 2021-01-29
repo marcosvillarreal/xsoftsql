@@ -1,4 +1,4 @@
-use kleja
+use gestion
 go
 delete from cuerfac
 delete from movstock
@@ -77,14 +77,23 @@ delete from cuervariord
 delete from vendedor
 delete from cuerunifica
 DELETE FROM ctactemod
-DELETE FROM BANCO	
+--DELETE FROM BANCO	
 DELETE FROM BONIVDOR
 DELETE FROM MARCA
 DELETE FROM cabeunifica
 delete from cabepromo
 delete from gruposcomi
 
-
+delete from cuervariord
+delete from movbcodeta
+delete from afebcocar
+delete from ctacte_2
+delete from prodcodbarra
+delete from renctacte
+delete from movpub
+delete from idasociado
+delete from cuercombo
+delete from cabecombo
 
 execute actualizarid 1
 select * from keysid order by nextid desc
