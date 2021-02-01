@@ -181,6 +181,7 @@ GO TOP
 lnPrimeraOcurrencia = 13
 leiunarticulo = .f.
 
+SKIP 
 *STOP()
 SCAN 
 	lnCantCampo = 8 &&Hay un campo vacio
@@ -269,7 +270,7 @@ FUNCTION LeerPrecios(cArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 		
-CREATE CURSOR CsrPrecio (Codigo c(8),Lista c(8), Prevta c(15) , Fecha c(10))
+CREATE CURSOR CsrPrecio (Codigo c(8),Costo c(10),Lista1 c(10),Lista2 c(10),Lista3 c(10),Lista4 c(10))
 
 SELECT CsrLista
 APPEND FROM  &cArchivo SDF
@@ -291,7 +292,7 @@ lnPrimeraOcurrencia = 1
 leiunarticulo = .f.
 *STOP()
 SCAN 
-	lnCantCampo = 6 &&Hay un campo vacio
+	lnCantCampo = 7 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -303,7 +304,7 @@ SCAN
 *!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
 		leiunarticulo = .t.
 		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcLista,lcCosto,lcFecha
+		STORE "" TO lcCodigo,lcLista1,lcCosto,lcFecha,lcLista2,lcLista3,lcLista4
 		j = 0
 *!*		ELSE
 *!*			IF !leiunarticulo
@@ -323,9 +324,11 @@ SCAN
 				EXIT 
 			ENDIF
 			lcCodigo	= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcLista		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcLista)))
-			lcCosto		= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
-			lcFecha		= UPPER((IIF(j + i=6,lcCadena,lcCosto)))				
+			lcCosto		= UPPER((IIF(j + i=3,lcCadena,lcCosto)))
+			lcLista1	= UPPER((IIF(j + i=4,lcCadena,lcLista1)))
+			lcLista2	= UPPER((IIF(j + i=5,lcCadena,lcLista2)))
+			lcLista3	= UPPER((IIF(j + i=6,lcCadena,lcLista3)))
+			lcLista4	= UPPER((IIF(j + i=7,lcCadena,lcLista4)))
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 		ENDDO 
@@ -347,8 +350,14 @@ SCAN
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
 		lcCosto = STRTRAN(lcCosto,',','.')
-		INSERT INTO CsrPRecio (Codigo,Lista,Prevta,Fecha);
-		values (lcCodigo,lcLista,lcCosto,lcFecha)
+		lcCodigo = STRTRAN(STRTRAN(lcCodigo,'.',''),',','')
+		lcLista1 = STRTRAN(lcLista1,'$','')
+		lcLista2 = STRTRAN(lcLista2,'$','')
+		lcLista3 = STRTRAN(lcLista3,'$','')
+		lcLista4 = STRTRAN(lcLista4,'$','')
+		
+		INSERT INTO CsrPRecio (Codigo,Costo,Lista1,Lista2,Lista3,Lista4);
+		values (lcCodigo,lcCosto,lcLista1,lcLista2,lcLista3,lcLista4)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

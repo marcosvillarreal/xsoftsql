@@ -54,9 +54,13 @@ store 0 to lnidrubro, lnidmarca ,lncodrubro
 
 cArchivo = ALLTRIM(lcpath )+"\articulos.csv"
 =LeerArticulos()
+SELECT CsrArticulo
+*vista()
 
-cArchivo = ALLTRIM(lcpath )+"\listas.csv"
+cArchivo = ALLTRIM(lcpath )+"\precio.csv"
 =LeerPrecios(cArchivo)
+SELECT CsrPrecio
+*vista()
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrCanalVta.* FROM CanalVta as CsrCanalVta
@@ -68,17 +72,16 @@ lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
 lncodrubro = 1
 SELECT distinct UPPER(rubro) as nombre,VAL(codrubro) as codigo FROM CsrArticulo  WHERE VAL(codrubro)> 0 INTO CURSOR FsrRubro2 READWRITE 
 
-SELECT nombre,codigo as codrubro FROM CsrArticulo ORDER BY codigo INTO CURSOR FsrRubro READWRITE 
+SELECT nombre,codigo as codrubro FROM FsrRubro2 ORDER BY codigo INTO CURSOR FsrRubro READWRITE 
 USE IN FsrRubro2
 
-SELECT FsrRubro
 GO top
 SCAN 
 	STORE 1100000001 TO lntipoprod,lntipovta 
 	lnretibruto	= 0 &&IIF(CsrSeccion.perceib="S",1,0)
 
 	lcnombre	= NombreNi(ALLTRIM(UPPER(FsrRubro.nombre)))
-	lncodrubro = VAL(FsrRubro.codrubro)
+	lncodrubro = (FsrRubro.codrubro)
 	INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta) ;
 	VALUES (lnid,lncodrubro,lcnombre,lntipoprod,lntipovta,lnretibruto,lnidfuerzavta)
 	lnid = lnid +1 
@@ -119,7 +122,7 @@ SCAN FOR !EOF()
 	ENDIF
 	
 	IF VAL(CsrArticulo.codigo) = 11016
-		stop()
+		*stop()
 	ENDIF 
 	
 		
@@ -155,13 +158,14 @@ SCAN FOR !EOF()
 	lcCodArti	= "" &&CsrArticulo.codArti
 	lnfracciona = 1 
     lnidestado 	= 1 
-    lnTasa		= VAL(CsrArticulo.Alicuota)
-    lnidiva     = IIF(lnTasa=0,1100000002,1100000003) &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
-   	lnunibulto	= VAL(CsrArticulo.unibulto)
+    lnTasa		= 21
+    lnidiva     = 1100000002 &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
+   	lnunibulto	= IIF(VAL(CsrArticulo.unibulto)=0,1,VAL(CsrArticulo.unibulto))
     lnidtipovta = IIF(UPPER(CsrArticulo.univenta)$"B",2,1) &&UNIDADES=1 ,	BULTOS = 2.
     lnvtakilos	= IIF(UPPER(CsrArticulo.univenta)$"KILOS-KG",1,0)
    	lnidforma 	= 1100000001
 	lnpeso		= 1
+	lnidfrio	= 1100000001
 	
 	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
 	ldfechaulcpr 	= ldfecha
@@ -181,22 +185,35 @@ SCAN FOR !EOF()
 *!*		lnPeso		= 0
 					
 	SELECT CsrPrecio
-	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=1
-	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=1
-		lnCosto		= VAL(CsrPrecio.prevta)
-		lnCostoBon	= lnCosto
-		lnprevta1	= VAL(CsrPrecio.prevta)		
-		lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2) - 100
-		lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
-		
+	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) 
+	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) 
+		lnCosto		= VAL(CsrPrecio.costo)
+		IF lnCosto > 0
+			lnCostoBon	= lnCosto
+			lnprevta1	= VAL(CsrPrecio.lista1)		
+			lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2) - 100
+			lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+			
+			lnprevta2	= VAL(CsrPrecio.lista2)		
+			lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2) - 100
+			lnprevtaf2	= red(lnprevta2 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+			
+			lnprevta3	= VAL(CsrPrecio.lista3)		
+			lnUtil3		= red((lnprevta3 * 100) /  lnCosto,2) - 100
+			lnprevtaf3	= red(lnprevta3 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+			
+			lnprevta4	= VAL(CsrPrecio.lista4)		
+			lnUtil4		= red((lnprevta4 * 100) /  lnCosto,2) - 100
+			lnprevtaf4	= red(lnprevta4 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+		ENDIF 
+	ELSE
+		lnidestado = 2
+		lnnolista = 1	
 	ENDIF 
-	SELECT CsrPrecio
-	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=2
-	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND VAL(CsrPrecio.lista)=2
-		lnprevta2	= VAL(CsrPrecio.prevta)		
-		lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2) - 100
-		lnprevtaf2	= red(lnprevta2 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
-		
+
+	IF lnPrevtaf1 = 0
+		lnnofactu= 1
+		lnnolista = 1
 	ENDIF 
 	
 	INSERT INTO Csrproducto (id,numero,nombre,codalfa,idiva,costo,margen1,prevta1,margen2,; 
@@ -208,55 +225,55 @@ SCAN FOR !EOF()
 	,idenvase,fleteporce); 	
 	values (lnid, lncodigo, lcnombre, lccodarti, lnidiva, lncosto,	;
 	lnutil1, lnprevta1, lnutil2, lnprevta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
-	lnprevta3, 0,0,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
+	lnprevta3,lnutil4 ,lnprevta4,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
 	1,1,lnflete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, lnbonif1,lnbonif2, lnbonif3,;
-	lnbonif4,lnCostoBon ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnidfrio,;
+	lnbonif4,lnCostoBon ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,lnprevtaf4,lnidfrio,;
 	lnsugerido,1,lnsireparto,"",0, 0,;
 	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
 	,lnidctacpra,lnidctavta;
 	,lnidenvase,lnfleteporce)		
 	
-	SELECT CsrPrecio
-	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo)
-	DO WHILE VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND NOT EOF()
-		IF VAL(CsrPrecio.lista)<=2
-			SKIP 
-			LOOP 
-		ENDIF 
-				
-		lnprevtaX	= VAL(CsrPrecio.prevta)
-		
-		IF lnprevtaX = 0
-			SKIP 
-			LOOP 
-		ENDIF 
-			
-		lnUtilX		= red((lnprevtaX * 100) /  lnCosto,2) - 100
-		lnprevtafX	= red(lnprevtaX * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
-		ldfechamodf	= CTOD(CsrPrecio.fecha)
-		
-		IF ABS(lnUtilX)>900
-			SKIP 
-			LOOP 
-		ENDIF 
-		
-		SELECT CsrCanalVta
-		LOCATE FOR numero = VAL(CsrPrecio.lista)
-		IF numero <> VAL(CsrPrecio.lista)
-			SELECT CsrPrecio
-			SKIP 
-			LOOP 
-		ENDIF 
-		lnidcanalvta = CsrCanalVta.id
-		
-		INSERT INTO CsrCanalVtaNeg (id, idcanalvta, idproducto, feccostobon, costobon, margen1, prevta1, prevtaf1;
-		,feccorte);
-		values(lnidcanalvtaneg,lnidcanalvta,lnid,ldfechamodf,lnCostoBon,lnUtilX,lnPrevtaX,lnPrevtafX,DATE()+365)
-		lnidcanalvtaneg = lnidcanalvtaneg + 1 
-		
-		SELECT CsrPrecio
-		SKIP 
-	ENDDO 
+*!*		SELECT CsrPrecio
+*!*		LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo)
+*!*		DO WHILE VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) AND NOT EOF()
+*!*			IF VAL(CsrPrecio.lista)<=2
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+*!*					
+*!*			lnprevtaX	= VAL(CsrPrecio.prevta)
+*!*			
+*!*			IF lnprevtaX = 0
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+*!*				
+*!*			lnUtilX		= red((lnprevtaX * 100) /  lnCosto,2) - 100
+*!*			lnprevtafX	= red(lnprevtaX * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+*!*			ldfechamodf	= CTOD(CsrPrecio.fecha)
+*!*			
+*!*			IF ABS(lnUtilX)>900
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+*!*			
+*!*			SELECT CsrCanalVta
+*!*			LOCATE FOR numero = VAL(CsrPrecio.lista)
+*!*			IF numero <> VAL(CsrPrecio.lista)
+*!*				SELECT CsrPrecio
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+*!*			lnidcanalvta = CsrCanalVta.id
+*!*			
+*!*			INSERT INTO CsrCanalVtaNeg (id, idcanalvta, idproducto, feccostobon, costobon, margen1, prevta1, prevtaf1;
+*!*			,feccorte);
+*!*			values(lnidcanalvtaneg,lnidcanalvta,lnid,ldfechamodf,lnCostoBon,lnUtilX,lnPrevtaX,lnPrevtafX,DATE()+365)
+*!*			lnidcanalvtaneg = lnidcanalvtaneg + 1 
+*!*			
+*!*			SELECT CsrPrecio
+*!*			SKIP 
+*!*		ENDDO 
 	lnid = lnid + 1
 	
 	SELECT CsrArticulo   				

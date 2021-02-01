@@ -23,6 +23,12 @@ llok = CargarTabla(lcData,'Barrio',.t.)
 llok = CargarTabla(lcData,'PlanCue')
 llok = CargarTabla(lcData,'Sucursal',.t.)
 *!*	llok = CargarTabla(lcData,'PadronAfip',.t.)
+llok = CargarTabla(lcData,'CateIBRN',.t.)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrCateIbrng.* FROM CateIbrng as CsrCateIbrng
+ENDTEXT 
+=CrearCursorAdapter('CsrCateIbrng',lcCmd)
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -61,7 +67,7 @@ DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
 
 SCAN 
 	IF VAL(CsrCiudad.codpostal)=8138
-		*stop()
+	*	stop()
 	ENDIF 
 	
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)))
@@ -99,7 +105,8 @@ SCAN
 	SELECT CsrCiudad
 ENDSCAN
 
-
+SELECT CsrCateIBRng
+LOCATE FOR numero = 2
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
@@ -151,7 +158,7 @@ SCAN
 		LOCATE FOR numero = lnLista
 		
 		lnidcanalvta = CsrCanalVta.id
-		lnLista = 1
+		lnLista = 0
 	ENDIF 
 	&&Si el cliente tiene otra lista de precio mayor a 2. Entonces le cambiamos el canal de vta
 	SELECT CsrListaP
@@ -176,13 +183,12 @@ SCAN
 		lnidlocalidad	= CsrLocalidad.id
 	ENDIF
 	
+	
 	&&TresPImp	
 	nTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
 	DO CASE 
 	CASE nTipoiva = 6 &&CF
-		lntipoiva = 3	
-	CASE nTipoiva = 1 &&RNI
-		lntipoiva = 7	
+		lntipoiva = 3		
 	CASE nTipoiva = 11 &&EX sin impuestos?
 		lntipoiva = 4	
 	CASE nTipoIva = 1 &&RI
@@ -199,6 +205,7 @@ SCAN
 		*ENDIF 
 	ENDIF
 	
+
 	lcnumero	= strtrim(nCodigo,8)
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))  	
@@ -224,7 +231,14 @@ SCAN
   	ldfechac	= ctod(CsrDeudor.fecAlta)
   	lcEmail		= LTRIM(CsrDeudor.email)
   	
-  		
+  	IF lnTipoIva <> 3 &&Sin no es CF y de RN le adjuntamos la percepcion
+		IF lnidprovincia = 1100000022
+			lnidcateibrng = CsrCateIBRNg.id		
+			lnporperce = CsrCateIbRNg.porperce
+			lnporrete = CsrCateIbRNg.porrete
+		ENDIF 
+	ENDIF 
+	
 	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
@@ -236,6 +250,12 @@ SCAN
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
 	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
 	)
+	
+	IF lnidcateibrng#0
+		INSERT INTO CsrCateIbrn(idctacte, cuit, porperce,porrete);
+		VALUES (lnid, lccuit,lnporperce,lnporrete)
+	ENDIF 
+	
 	
 	lnid = lnid + 1
 	*nCodigo = nCodigo + 1 
