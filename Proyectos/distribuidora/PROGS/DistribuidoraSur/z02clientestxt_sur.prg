@@ -65,7 +65,7 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-*vista()
+vista()
 lnPrimeraOcurrencia = 13
 leiunarticulo = .f.
 
@@ -167,9 +167,11 @@ DO WHILE NOT EOF()
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			SKIP IN CsrLista
 			LOOP 
 		ENDIF 
 		IF '*'$lcTelefono
+			SKIP IN CsrLista
 			LOOP
 		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
@@ -212,7 +214,7 @@ SELECT CsrListaPrecio
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
+VISTA()
 
 LOCAL nCodigo
 
@@ -373,7 +375,7 @@ Oavisar.proceso('N')
 =MESSAGEBOX('Proceso terminado! ')
 
 SELECT CsrCtacte
-*vista()
+vista()
 
 CLOSE tables
 CLOSE INDEXES
