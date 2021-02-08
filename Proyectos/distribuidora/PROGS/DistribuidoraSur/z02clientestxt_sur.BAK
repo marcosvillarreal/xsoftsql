@@ -65,7 +65,7 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-*vista()
+vista()
 lnPrimeraOcurrencia = 13
 leiunarticulo = .f.
 
@@ -169,6 +169,9 @@ DO WHILE NOT EOF()
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
+		IF '*'$lcTelefono
+			LOOP
+		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
 		
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
@@ -209,7 +212,7 @@ SELECT CsrListaPrecio
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
+VISTA()
 
 LOCAL nCodigo
 
@@ -370,7 +373,7 @@ Oavisar.proceso('N')
 =MESSAGEBOX('Proceso terminado! ')
 
 SELECT CsrCtacte
-*vista()
+vista()
 
 CLOSE tables
 CLOSE INDEXES
