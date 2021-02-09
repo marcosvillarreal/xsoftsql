@@ -46,9 +46,9 @@ Set cursor on
 
 lcdd=alltrim(curdir()) && directorio de arranque
 
-cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
+cRutaCAE 	= sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
-
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\distribuidora\'
 *-- RUTA
@@ -66,7 +66,8 @@ If lldesarrollo
    _rutalib = L +'\xsoftsql\desarrollo\lib'   
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
-   
+   cRutaQR	= _rutabmps + '\qr.jpg'
+    
    _rutaformsd  =lcdd+'forms\dinamico'
    _rutaformsb  =lcdd+'forms\bancario'
    _rutaformsp  =lcdd+'forms\pedidos'
@@ -117,6 +118,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO ftp.prg ADDITIVE
    SET PROCEDURE TO whatsapp_ej ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -170,6 +172,7 @@ ObjReporter.AddProperty('titulo4',"")
 ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('fileqr',cRutaQR)
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 ENDIF 
