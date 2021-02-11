@@ -170,23 +170,20 @@ DO WHILE NOT EOF()
 			SKIP IN CsrLista
 			LOOP 
 		ENDIF 
-		IF '*'$lcTelefono
-			SKIP IN CsrLista
-			LOOP
-		ENDIF 
-		*lcCodigo = SUBSTR(lcCodigo,4)
+		IF '*'$lcTelefono			
 		
-		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
-		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
-		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
-		,CodCateIVA) ;
-		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
-		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
-		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado;
-		,VAL(lcCodLista),VAL(lcCodCateIVA))
+			INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
+			,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
+			,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
+			,CodCateIVA) ;
+			values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
+			,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
+			,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado;
+			,VAL(lcCodLista),VAL(lcCodCateIVA))
 				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
+			*replace descripcion WITH lmDescripcion IN FsrArticulo
+			leiunarticulo = .f.
+		ENDIF 
 	ENDIF 
 	SKIP IN CsrLista
 ENDDO 
