@@ -208,8 +208,24 @@ SCAN
 
 	lcnumero	= strtrim(nCodigo,8)
 	
-	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))  	
-  	lcDireccion = RTRIM(UPPER(CsrDeudor.direccion))
+	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
+	
+	IF nCodigo = 19
+		stop()
+	ENDIF 
+	
+	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
+  	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
+  	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
+  	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
+  	
+  	cDireNro	= IIF(ALLTRIM(lcDire_Nro)='0' or LEN(lcDire_Nro)=0,'',lcDire_Nro)
+  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
+	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
+	
+  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + cDireNro + " "+ cDirePiso + " "+cDireDpto)
+ 	
+  	*lcDireccion = RTRIM(UPPER(CsrDeudor.direccion)) + ' ' + ALLTRIM(CsrDeudor.direnro) + ' ' + ALLTRIM(CsrDeudor.direpiso) + ' ' + ALLTRIM(CsrDeudor.diredpto)
   	lcTelefono	= LTRIM(CsrDeudor.telefono)
 
   	IF LEN(ALLTRIM(lcTelefono)) = 0
