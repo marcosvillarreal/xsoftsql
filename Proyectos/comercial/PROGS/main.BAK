@@ -38,6 +38,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 PUBLIC FOXHELPFILE 
 FOXHELPFILE  =  "ayuda.CHM"
@@ -85,7 +86,8 @@ If lldesarrollo
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
-     
+    cRutaQR	= _rutabmps + '\qr.jpg'
+      
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
@@ -126,6 +128,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  ZIP ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
     SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+     SET PROCEDURE TO FoxBarcodeQR ADDITIVE
     
 *clear all
 
@@ -144,6 +147,7 @@ PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+PUBLIC oConfigTermi
 
 PUBLIC OAvisar
 Oavisar=NewOBJECT('avisar','controles.vcx')
@@ -160,6 +164,8 @@ ObjReporter.AddProperty('titulo4',"")
 ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('fileqr',cRutaQR)
+
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
