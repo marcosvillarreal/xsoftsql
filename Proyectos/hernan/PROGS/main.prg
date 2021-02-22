@@ -37,6 +37,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\hernan\'
@@ -64,6 +65,7 @@ If lldesarrollo
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
+   cRutaQR	= _rutabmps + '\qr.jpg'
    
 Endif
 
@@ -81,6 +83,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO balanzasystel.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
    
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -126,6 +129,8 @@ ObjReporter.AddProperty('titulo3',"")
 ObjReporter.AddProperty('titulo4',"")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('fileqr',cRutaQR)
+
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo
