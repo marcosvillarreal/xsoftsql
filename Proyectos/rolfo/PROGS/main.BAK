@@ -98,6 +98,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO  procfuncword.prg ADDITIVE
     SET PROCEDURE  TO  procdesarrollo.prg ADDITIVE
     SET PROCEDURE  TO  syerrhand.prg ADDITIVE  
+    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
     
    SET PROCEDURE  TO  syserror.prg ADDITIVE  
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
@@ -128,6 +129,7 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -179,6 +181,7 @@ IF TYPE('goApp')='O'
 	
 	_screen.LockScreen=.t.
 	
+	LeerConfigTermi()
 	**** aca comienza la parte de posicionamiento del escritorio
 	PUBLIC oscreen    
 	LeerXML("screen.xml",@oscreen)  && rescato la posicion de la _screen	

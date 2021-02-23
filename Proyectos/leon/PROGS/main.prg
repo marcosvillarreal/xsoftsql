@@ -38,6 +38,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 cFirma	= SYS(5)+CURDIR()+"firma.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\leon\'
@@ -60,7 +61,8 @@ If lldesarrollo
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
    cFirma	= _rutabmps+"\firma.jpg"
-
+	cRutaQR	= _rutabmps + '\qr.jpg'
+	
    _rutaformse = lcdd + 'forms\exportar'
    _rutaformsp = lcdd + 'forms\precios'
    _rutaformsb = lcdd + 'forms\bancario'
@@ -93,6 +95,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
    SET PROCEDURE TO foxypreviewercaller.prg additive
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
    
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -142,6 +145,7 @@ ObjReporter.AddProperty('titsucursal',"")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('firma',cFirma)
+ObjReporter.AddProperty('fileqr',cRutaQR)
 
 PUBLIC ObjInfNeg
 ObjInfNeg=CREATEOBJECT("custom")

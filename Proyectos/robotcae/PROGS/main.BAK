@@ -10,7 +10,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 *
 
 set classlib to
-l='c:'
+l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 
@@ -187,9 +187,9 @@ IF TYPE('goApp')='O'
 
 	*LeerXMLClassID("objetodll.xml")
 
-	*If lldesarrollo 
+	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
-	*ENDIF 
+	ENDIF 
 	
 	   * en proc.prg   
 	IF ExisteDSN()  			
