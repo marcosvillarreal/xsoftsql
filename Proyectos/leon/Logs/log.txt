@@ -2,31 +2,6 @@ Error CBOTIPOCOMI es un miembro desconocido.
 Linea nº .cbotipocomi.visible= .f.
  Alias CSRAUXCABEZA registro          1
 Control activo  GREGDESCUENTOS.CONTAINERENCABEZA.GOTFOCUS
-31-10-2019 12:33:35 , Error nº:       1925
-Error CBOTIPOCOMI es un miembro desconocido.
-Linea nº .cbotipocomi.visible= .f.
- Alias CSRAUXCABEZA registro          1
-Control activo  GREGDESCUENTOS.CONTAINERENCABEZA.GOTFOCUS
-31-10-2019 12:37:04 , Error nº:       1925
-Error CBOTIPOCOMI es un miembro desconocido.
-Linea nº .cbotipocomi.visible= .f.
- Alias CSRAUXCABEZA registro          1
-Control activo  GREGDESCUENTOS.CONTAINERENCABEZA.GOTFOCUS
-31-10-2019 12:37:11 , Error nº:       1925
-Error CBOTIPOCOMI es un miembro desconocido.
-Linea nº .cbotipocomi.visible= .f.
- Alias CSRAUXCABEZA registro          1
-Control activo  GREGDESCUENTOS.CONTAINERENCABEZA.GOTFOCUS
-31-10-2019 12:37:14 , Error nº:       1925
-Error CBOTIPOCOMI es un miembro desconocido.
-Linea nº .cbotipocomi.visible= .f.
- Alias CSRAUXCABEZA registro          1
-Control activo  GREGDESCUENTOS.CONTAINERENCABEZA.GOTFOCUS
-31-10-2019 12:37:18 , Error nº:       1925
-Error CBOTIPOCOMI es un miembro desconocido.
-Linea nº .cbotipocomi.visible= .f.
- Alias CSRAUXCABEZA registro          1
-Control activo  GREGDESCUENTOS.CONTAINERENCABEZA.GOTFOCUS
 31-10-2019 12:37:22 , Error nº:       1925
 Error CBOTIPOCOMI es un miembro desconocido.
 Linea nº .cbotipocomi.visible= .f.
@@ -70,6 +45,9 @@ Control activo PORCE3 GREGDESCUENTOS.CONTAINERPIE._TXTPORCE3.KEYPRESS
 31-10-2019 13:02:47 , Error nº:         12
 Error No se encuentra la variable 'IDARTICULO'.
 Linea nº REPLACE idarticulo WITH Csrproducto.id,numero WITH Csrproducto.numero,nombre WITH Csrproducto.nombre ,fecoferta WITH OscPie.fecha,min1 WITH OscPie.min1, desc1 WITH OscPie.porce1 ,min2 WITH OscPie.min2, desc2 WITH OscPie.porce2,min3 WITH OscPie.m
+
+
+
 
 
 
@@ -374,12 +352,18 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo0
 
 
 
+
+
+
 odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
  Alias IMPCUERVARI registro          4
 Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
 08-11-2019 13:40:24 , Error nº:         12
 Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
+
+
 
 
 
@@ -688,6 +672,9 @@ Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidade
 
 
 
+
+
+
 estadotilde=1 INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -699,6 +686,9 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
+
+
 
 
 
@@ -897,7 +887,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
 
 
 
@@ -1061,7 +1057,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
 
 
 
@@ -1225,7 +1227,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
 
 
 
@@ -1487,12 +1495,18 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
+
+
 
 
 
@@ -1668,7 +1682,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
 
 
 
@@ -1792,7 +1812,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
 
 
 
@@ -1916,7 +1942,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
 
 
 
@@ -2070,6 +2102,9 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2081,6 +2116,9 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
+
+
 
 
 
@@ -2348,6 +2386,9 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
+
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2404,7 +2445,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
 
 
 
@@ -2436,7 +2483,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
 
 
 
@@ -2468,7 +2521,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
 
 
 
@@ -2604,3 +2663,20 @@ Control activo  MAIN
 22-01-2021 15:19:30 , Verificando OCX
 25-01-2021 15:38:28 , Verificando OCX
 01-02-2021 13:20:40 , Verificando OCX
+24-02-2021 15:59:53 , Verificando OCX
+24-02-2021 16:14:38 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº IF tcdato<0
+ Alias W12 registro          1
+Control activo  PLANILLAPARAPEDIDOS.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+24-02-2021 16:14:54 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº tcdato=ABS(tcdato)
+ Alias W12 registro          1
+Control activo  PLANILLAPARAPEDIDOS.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+24-02-2021 16:15:54 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº IF tcdato<0
+ Alias W15 registro          1
+Control activo  PLANILLAPARAPEDIDOS.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+24-02-2021 16:16:02 , Error nº:         11Error El valor, tipo o número de argumentos no es válido para la función.Linea nº SELECT SPACE(10),SPACE(10),SPACE(10),SPACE(10),ALLTRIM((codigo))+'-'+strzero(STR(subnumero,10),3),articulo ,INT(pediruni),DATE() FROM CsrImprimir ORDER BY codigo INTO CURSOR CsrImprimir READWRITE Alias  registro          0Control activo  PLANILLAPARAPEDIDOS.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
