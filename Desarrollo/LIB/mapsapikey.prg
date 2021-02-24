@@ -203,6 +203,7 @@ FUNCTION ObtenerXYAPI
 *RUN /N6 Explorer.EXE &lcFile.FUNCTION GoogleStreetViewMulti
 LPARAMETERS tcDestination,clatitud,clongitud,lcFileName
 
+
 tcDestination = IIF(PCOUNT()<1,"",tcDestination)
 lcFileName		= IIF(PCOUNT()<4,tcDestination,lcFileName)
 
@@ -210,7 +211,7 @@ lcFileName	= STRTRAN(STRTRAN(STRTRAN(STRTRAN(STRTRAN(lcFileName,":",""),",",""),
 
 lCantParam = IIF(PCOUNT()<3,.f.,.t.)
 IF NOT lCantParam
-	oavisar.usuario('Faltan Parametros en la función ObtenerXY (cDireccion,@cLat,@cLong)')
+	oavisar.usuario('Faltan Parametros en la función ObtenerXYAPI (cDireccion,@cLat,@cLong)')
 	RETURN 
 ENDIF 
 
@@ -868,19 +869,14 @@ LOCAL lcFile
 *lcFile = ADDBS(GETENV("TEMP")) + SYS(2015) + ".htm"
 SET SAFETY OFF
 
-*!*	lcRuta = SYS(5)+ "\tempsql\"+ALLTRIM(goapp.initcatalo)
-*!*	IF VARTYPE(goapp.rutaaplicacion)$'C'
-*!*		lcRutaApli = IIF(LEN(ALLTRIM(goapp.rutaaplicacion))#0,goapp.rutaaplicacion,"")
-*!*		lcRutaApli = RTRIM(lcRutaApli) + IIF(RIGHT(lcRutaApli,1)="\" or LEN(LTRIM(lcRutaApli))=0,"","\") &&Si es vacio o tiene \. Mantiene lo mismo.
-*!*		lcRuta = IIF(LEN(LTRIM(lcRutaApli))#0,lcRutaApli+ "tempsql",lcRuta)	
-*!*	ENDIF 
-*!*	IF !DIRECTORY(lcRuta)
-*!*		MKDIR &lcRuta
-*!*	ENDIF 
-*!*	lcFile = ADDBS(lcRuta)+"mihtmlruta.html"
+lcRuta = ADDBS(SYS(5)+ CURDIR()) + "tempsql"
+IF !DIRECTORY(lcRuta)
+	MKDIR &lcRuta
+ENDIF 
+lcFile = ADDBS(lcRuta)+"mihtmlruta.html"
 
-*!*	STRTOFILE(lcHTML, lcFile)
-=SaveSQL(lcHTML,'mihtmlruta')
+STRTOFILE(lcHTML, lcFile)
+*=SaveSQL(lcHTML,'mihtmlruta')
 SET SAFETY ON 
 
 * Show the StreetView
