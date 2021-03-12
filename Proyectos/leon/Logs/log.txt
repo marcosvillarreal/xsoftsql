@@ -1,20 +1,3 @@
-Error No se encuentra el alias.
-Linea nº Oca = GETCURSORADAPTER(lcalias)
- Alias CSRAUXILIAR registro          1
-Control activo  GREGDESCUENTOS.ACEPTAR1.CLICK
-31-10-2019 13:04:31 , Error nº:       1924
-Error LOOBJNEG no es un objeto.
-Linea nº llok = loObjNeg.Salvar('CsrProducto')
- Alias CSRAUXILIAR registro        101
-Control activo PORCE3 GREGDESCUENTOS.GRID2.KEYPRESS
-31-10-2019 13:05:47 , Error nº:         12
-Error No se encuentra la variable 'DESC1'.
-Linea nº REPLACE fecha WITH GOMONTH(DATE(),1),min1 WITH 0,desc1 WITH 0,min2 WITH 0 ,desc2 WITH 0,min3 WITH 0,desc3 WITH 0 IN CsrAuxpie
- Alias CSRAUXPIE registro          1
-Control activo  GREGDESCUENTOS.CMDINSERT.CLICK
-31-10-2019 13:06:42 , Error nº:         12
-Error No se encuentra la variable 'DESC1'.
-Linea nº REPLACE fecha WITH GOMONTH(DATE(),1),min1 WITH 0,desc1 WITH 0,min2 WITH 0 ,desc2 WITH 0,min3 WITH 0,desc3 WITH 0 IN CsrAuxpie
  Alias CSRAUXPIE registro          1
 Control activo  GREGDESCUENTOS.CMDINSERT.CLICK
 31-10-2019 13:40:34 , Error nº:       1925
@@ -227,12 +210,16 @@ Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo0
 
 
 
+
+
 odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
  Alias IMPCUERVARI registro          4
 Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
 08-11-2019 13:40:24 , Error nº:         12
 Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
+
 
 
 
@@ -561,6 +548,8 @@ Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidade
 
 
 
+
+
 estadotilde=1 INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -572,6 +561,8 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
+
 
 
 
@@ -790,7 +781,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
 
 
 
@@ -974,7 +969,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
 
 
 
@@ -1158,7 +1157,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
 
 
 
@@ -1440,12 +1443,16 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
+
 
 
 
@@ -1641,7 +1648,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
 
 
 
@@ -1785,7 +1796,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
 
 
 
@@ -1929,7 +1944,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
 
 
 
@@ -2103,6 +2122,8 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2114,6 +2135,8 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
+
 
 
 
@@ -2401,6 +2424,8 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2467,7 +2492,11 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
 
 
 
@@ -2519,7 +2548,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
 
 
 
@@ -2571,7 +2604,11 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
 
 
 
@@ -2775,5 +2812,17 @@ Error SQL: no se encuentra la columna 'ID'.
 Linea nº SELECT &cCampoLeyenda as leyenda,&cCampoOrden as dato,0 as delete FROM CsrImprimir WHERE &lcFiltroGrafico ORDER BY &cCampoOrden DESC INTO CURSOR CsrAuxGrafico READWRITE
  Alias CURSOR_GRAFICO1 registro          1
 Control activo  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.GRAFICO.CLICK
-09-03-2021 12:15:42 , Error nº:          1Error El archivo 'system.app' no existe.Linea nº DO SYSTEM.APP Alias CSRAUXGRAFICO registro        201Control activo  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.GRAFICO.CLICK
+09-03-2021 12:15:42 , Error nº:          1
+Error El archivo 'system.app' no existe.
+Linea nº DO SYSTEM.APP
+ Alias CSRAUXGRAFICO registro        201
+Control activo  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.GRAFICO.CLICK
 09-03-2021 13:08:07 , Verificando OCX
+11-03-2021 18:03:34 , Verificando OCX
+11-03-2021 18:39:03 , Error nº:          1
+Error El archivo 'csrconexion.dbf' no existe.
+Linea nº select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE
+ Alias  registro          0
+Control activo  SUBIVACPRA.PAGEFRAME1.PAGE1.KITGRILLATILDARCONEXION.INIT
+11-03-2021 18:39:08 , Error nº:         13Error No se encuentra el alias '_CSRCONEXION'.Linea nº SELECT(micursor) Alias  registro          0Control activo  SUBIVACPRA.PAGEFRAME1.PAGE1.KITGRILLATILDARCONEXION.INIT
+11-03-2021 18:39:13 , Verificando OCX
