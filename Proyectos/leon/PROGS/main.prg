@@ -70,6 +70,7 @@ If lldesarrollo
    _rutaformsd = lcdd + 'forms\dinamica'
    _rutaformar  =lcdd + 'forms\articulos'
    _rutaformpe  =lcdd + 'forms\pedidos'
+   _rutaformct  =lcdd + 'forms\ctacte'
    
    Set default to (lcdd) &&;(lcddc)
 
@@ -77,7 +78,7 @@ If lldesarrollo
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaffc,&_rutalib;
                ,&_rutaformsb, &_rutareportsb, &_rutaformse, &_rutaformsp, &_rutaformsb;
                ,&_rutaformsu, &_rutaformsc, &_rutaformsd ,&_rutaformsDesarrollo;
-               ,&_rutaformar, &_rutaformpe
+               ,&_rutaformar, &_rutaformpe, &_rutaformct
 Endif
 
 *-- CREACION DE OBJETO APLICACION

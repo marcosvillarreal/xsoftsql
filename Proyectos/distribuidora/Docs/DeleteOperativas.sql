@@ -1,4 +1,4 @@
-use gestion
+use GRUTAMAT
 go
 delete from maopera
 delete from cabefac
@@ -24,8 +24,7 @@ delete from nmaopera
 delete from ncabefac
 delete from ncuerfac
 delete from ncuervari
-delete from pedipda
-delete from visita
+delete from visitaS
 delete from tablaasi
 delete from afenpedido
 delete from renflete
@@ -39,4 +38,40 @@ delete from caberuta
 delete from afeasto
 delete from rutavdor
 delete from cateibba
+delete from antablaimp
+delete from anmovstock
+delete from ancabefac
+delete from movremito
+delete from afemovrto
+delete from productodeta
+delete from cabedeta
+delete from prodctacon
+delete from emaopera
+delete from movretiro
+delete from afecompvta
+delete from cbioprecio
+delete from cuerdeta
+delete from producto
+delete from gestion
+delete from ancabeasi
+delete from prodprecio
+delete from anmovctacte
+delete from anmovcaja
+delete from ctactectacon
+delete from ctacte where ctaacreedor <> 1
+delete from movbcodeta
+delete from productoimg
+delete from areanegctacte
+delete from movsuministro
+delete from movguarda
+delete from afeguarda
+delete from alertas
+delete from opefac
+delete from vendedor
+delete from prodelaborado
+delete from idasociado
+delete from mapeoimpresora
+delete from subproducto
 execute actualizarid 1
+
+SELECT * FROM KEYSID ORDER BY NEXTID DESC
