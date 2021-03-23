@@ -149,10 +149,12 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
-PUBLIC oConfigTermi
+PUBLIC oConfigTermi,pidsistema
 
- STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
- STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
+STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+pidsistema = 1
 
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
 
@@ -291,8 +293,8 @@ IF TYPE('goApp')='O'
 	IF NOT lnuevomenu
 		LOCAL oMenu
 		oDesktop = ''
-		oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-		oMenu.createMenu()   
+		oMenu = NEWOBJECT("createmenu","menu.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+		oMenu.createMenu('datamenu','seguridad','favoritos',pidsistema)   
 		oMenu = null
 	ELSE
 		_screen.AddObject('oMenuNative','base_menu')
