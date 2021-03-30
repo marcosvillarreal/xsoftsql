@@ -92,6 +92,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
     SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+   SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 

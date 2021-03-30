@@ -43,6 +43,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\robotcae\'
@@ -59,6 +60,10 @@ If lldesarrollo
     _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
    _rutaffc  =L+'\xsoftsql\desarrollo\clases\ffc'
    _rutalib =    L+'\xsoftsql\desarrollo\lib'
+   
+   cRutaCAE	= _rutabmps + '\caevacio.jpg'
+   cLogoFAC	= _rutabmps + '\logofac.jpg'
+   cRutaQR	= _rutabmps + '\qr.jpg'
    
    Set default to (lcdd) &&;(lcddc)
 
@@ -86,7 +91,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
-      
+    SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+       
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
@@ -134,6 +140,8 @@ ObjReporter.AddProperty('titulo4',"")
 ObjReporter.AddProperty('titsucursal',"")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('fileqr',cRutaQR)
+
 IF lldesarrollo
 	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
 ENDIF 

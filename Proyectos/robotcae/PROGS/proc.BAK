@@ -2395,9 +2395,10 @@ llok = IIF(PCOUNT()<2,.f.,llok)
 llok = IIF(EMPTY(lcbdd),.f.,llok)
 llok = IIF(EMPTY(lcTabla),.f.,llok)
 
-lcAlias = IIF(PCOUNT()<3,"Csr"+LTRIM(lcTabla),lcAlias)
+lcAlias = IIF(PCOUNT()<3,"",lcAlias)
 lbZap = IIF(PCOUNT()<4,.f.,lbZap)
 lbExclu = IIF(PCOUNT()<5,.f.,lbExclu)
+lcAlias	= IIF(EMPTY(lcAlias),"Csr"+LTRIM(lcTabla),lcAlias)
 
 IF !llok
 	Oavisar.usuario('No especifico el base de datos/alias para crear el cursor')
