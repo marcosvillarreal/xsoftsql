@@ -1,0 +1,43 @@
+31-03-2021 09:42:43 , REGFACPUB.CONTENEDORDNI.CMDSALVAR.CLICK, Error: No coinciden los tipos de datos.;Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FechaVto ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007,HeadTot001 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,ListaPrecio ,DetaReparto, Canal ,Pase,Talonario,NumComprobante ,dias) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto ,cCanal,cPase,cTalonario,cNumComprobante ,cDias);Error :          9;Ultimo Alias Activo: IMPCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EN7T00EM.TMP;Ultimo Control activo: 
+31-03-2021 09:42:43 , Pila de llamadas
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Objeto      : regfacpub.contenedordni.cmdsalvar.click
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Nº de Linea :          1
+31-03-2021 09:42:43 , En el Fuente: thisform.contenedorDNI_pierdofoco()
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Objeto      : regfacpub.contenedordni_pierdofoco
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Nº de Linea :         42
+31-03-2021 09:42:43 , En el Fuente: thisform.key_43()
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Objeto      : regfacpub.key_43
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Nº de Linea :          7
+31-03-2021 09:42:43 , En el Fuente: 	thisform.actualizar()
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Objeto      : regfacpub.actualizar
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Nº de Linea :        141
+31-03-2021 09:42:43 , En el Fuente: 								llok = .imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,1)
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Objeto      : regfacpub.imprimir
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\forms\ventas\regfacpub.sct
+31-03-2021 09:42:43 , Nº de Linea :         86
+31-03-2021 09:42:43 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\clases\localproyeto.vct
+31-03-2021 09:42:43 , Objeto      : regfacpub.objimpresor.inicioimpresora
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\clases\localproyeto.vct
+31-03-2021 09:42:43 , Nº de Linea :         67
+31-03-2021 09:42:43 , En el Fuente: 			lok = this.reportfa(lndeboActualizarNro)
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\clases\localproyeto.vct
+31-03-2021 09:42:43 , Objeto      : regfacpub.objimpresor.reportfa
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\clases\localproyeto.vct
+31-03-2021 09:42:43 , Nº de Linea :        114
+31-03-2021 09:42:43 , En el Fuente:     this.reportFa_cab(loobjfactura)
+31-03-2021 09:42:43 , Programa    : j:\xsoftsql\proyectos\alquilainez\clases\localproyeto.vct
+31-03-2021 09:42:43 , Objeto      : regfacpub.objimpresor.reportfa_cab
+31-03-2021 09:42:43 , Base Objeto : j:\xsoftsql\proyectos\alquilainez\clases\localproyeto.vct
+31-03-2021 09:42:43 , Nº de Linea :        263
+31-03-2021 09:42:43 , En el Fuente: 	INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FechaVto			,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono			,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06			,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTot001,BodyTot002			,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005			,HeadImp006,HeadImp007,HeadTot001			,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca			,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck			,DetaHoja,ListaPrecio ,DetaReparto, Canal ,Pase,Talonario,NumComprobante			,dias)	VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1)			,cComprobante,cFecComproba,cNumComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva			,cCUIT,cTelefono,cPlanPago,cDetaVdor			,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06			,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005			,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002			,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005			,cHeadImp006,cHeadImp007,cHeadTot001			,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA			,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra			,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto			,cCanal,cPase,cTalonario,cNumComprobante			,cDias)
+31-03-2021 09:42:43 , Fin
