@@ -1,3 +1,59 @@
+FUNCTION HayVersionExe
+PARAMETERS lcExe
+
+LOCAL lcCmd,lok,lcfechaSis,lchoraSis,lchoraExe,lcfechaExe,lcCurdir
+
+DIMENSION lcMenPrioridad[3]
+lcMenPrioridad[1] = "ALTA HUBO MODIFICACION DE TABLAS"
+lcMenPrioridad[2] = "ALTA HUBO CAMBIO EN REGISTRACIONES"
+lcMenPrioridad[3] = "MEDIA HUBO CAMBIO EN LISTADOS"
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT Csrsistema.* FROM sistema as Csrsistema
+ENDTEXT 
+
+IF USED("Csrsistema")
+	USE IN Csrsistema
+ENDIF
+
+lcCurdir = TRIM(SYS(5))+TRIM(CURDIR())
+
+lok =CrearCursorAdapter("Csrsistema",lcCmd)
+
+STORE "" TO lcfechasis,lchorasis,lchoraExe,lcfechaexe,lcExe,lcRespuesta 
+
+IF lok
+	lcfechasis = CsrSistema.fecha
+	lchorasis   = CsrSistema.hora	    
+	lcExe          = lcCurdir+TRIM(CsrSistema.programa)     && guardo el nombre del ejecutable
+	
+	lnprioridad = IIF(CsrSistema.prioridad=0 or 	CsrSistema.prioridad > ALEN(lcMenPrioridad),1,CsrSistema.prioridad)
+	lcMensaje = lcMenPrioridad[lnprioridad]	
+	
+    x = Adir(lCarray, lcExe,"H")
+       
+	IF x=1
+		lcfechaexe = DTOS(lcArray[1,3])
+		lchoraexe   = lcarray[1,4]
+	ENDIF
+	
+	IF lcfechaExe # lcfechasis OR lchoraExe # lchorasis
+		lcRespuesta = "EXISTE UNA NUEVA VERSION DEL SISTEMA "+CHR(13)+CHR(13)+UPPER(lcExe)+CHR(13);
+							+"Fecha :  "+RIGHT(lcfechasis,2)+"-"+SUBSTR(lcfechasis,5,2)+"-"+LEFT(lcfechasis,4)+"    hora :  "+lchorasis+CHR(13)+CHR(13);
+							+"Prioridad : "+lcMensaje,0)
+		
+	
+	ENDIF	       	
+ENDIF
+   
+IF USED("Csrsistema")
+	USE IN Csrsistema 
+ENDIF
+
+RETURN lcRespuesta 
+
+
+*-----------------------------------------------------------------------------
 FUNCTION LeerConfigTermi
 
 oConfigTermi = CREATEOBJECT("Custom")
@@ -46,7 +102,7 @@ ENDIF
 
 IF oConfigTermi.FoxyPreviewer = 'TRUE'
 
-	SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE 
+	*SET PROCEDURE TO LOCFILE("FoxyPreviewer.App") ADDITIVE 
 
 
 ENDIF 
