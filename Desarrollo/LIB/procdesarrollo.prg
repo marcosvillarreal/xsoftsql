@@ -30,14 +30,23 @@ IF lok
 	lnprioridad = IIF(CsrSistema.prioridad=0 or 	CsrSistema.prioridad > ALEN(lcMenPrioridad),1,CsrSistema.prioridad)
 	lcMensaje = lcMenPrioridad[lnprioridad]	
 	
+	*stop()
     x = Adir(lCarray, lcExe,"H")
-       
+    
+    lcfechaexe = '19000101'
+	lchoraexe   = ''
 	IF x=1
 		lcfechaexe = DTOS(lcArray[1,3])
 		lchoraexe   = lcarray[1,4]
 	ENDIF
 	
-	IF lcfechaExe # lcfechasis OR lchoraExe # lchorasis
+	lcfecsis = RIGHT(lcfechasis,2)+"/"+LEFT(RIGHT(lcfechasis,4),2)+"/"+LEFT(lcfechasis,4) + " "+lchorasis
+	ltfecsis = CTOT(lcfecsis)
+	lcfecexe = RIGHT(lcfechaexe,2)+"/"+LEFT(RIGHT(lcfechaexe,4),2)+"/"+LEFT(lcfechaexe,4) + " "+lchoraexe
+	ltfecexe = CTOT(lcfecexe)
+	
+	IF ltfecexe < ltfecsis
+	*IF lcfechaExe # lcfechasis OR lchoraExe # lchorasis
 		lcRespuesta = "EXISTE UNA NUEVA VERSION DEL SISTEMA "+CHR(13)+CHR(13)+UPPER(lcExe)+CHR(13);
 							+"Fecha :  "+RIGHT(lcfechasis,2)+"-"+SUBSTR(lcfechasis,5,2)+"-"+LEFT(lcfechasis,4)+"    hora :  "+lchorasis+CHR(13)+CHR(13);
 							+"Prioridad : "+lcMensaje

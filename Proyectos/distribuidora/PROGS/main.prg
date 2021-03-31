@@ -329,12 +329,7 @@ IF TYPE('goApp')='O'
 	  
 	  DO DECLARAR_FUNCIONES_API
   
-	TEXT TO pcTextoBalloon NOSHOW
-	  Tu texto puede tener un máximo de 120 caracteres y ocupar
-	  como máximo 4 líneas. Si es más largo, el resto no será
-	  mostrado.
-	ENDTEXT
-	 
+		 
 	poSysTray = CreateObject("WALTER_SYSTRAY")
   
   	poTimer   = CreateObject("WALTER_TIMER")
@@ -459,8 +454,13 @@ DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   *
   PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
     
-    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
-    
+    *=MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
+    LOCAL cRuta
+	cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
+	IF FILE(cRuta)
+		RUN &cRuta
+	ENDIF 
+
   ENDPROC
   *
   *
@@ -500,9 +500,9 @@ DEFINE CLASS WALTER_TIMER AS TIMER
     IF LEN(cVersion)> 0
 	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
 	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
-	    m.Interval = m.Interval * 60
+	    This.Interval = 10000 * 60
 	ENDIF 
   ENDPROC
   *
