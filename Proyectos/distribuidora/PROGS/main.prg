@@ -446,7 +446,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "MI_ICONO_TAREAS_1.ICO"
+  IconFile      = "pyro_16x16.ICO"
   MenuText      = "1;Bloc de Notas;2;Calculadora;3;Paint;4;Balloon;5;Procedure;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
@@ -454,12 +454,13 @@ DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   *
   PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
     
-    *=MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
-    LOCAL cRuta
-	cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
-	IF FILE(cRuta)
-		RUN &cRuta
-	ENDIF 
+   * stop()
+    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
+*!*	    LOCAL cRuta
+*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
+*!*		IF FILE(cRuta)
+*!*			RUN &cRuta
+*!*		ENDIF 
 
   ENDPROC
   *
@@ -499,10 +500,10 @@ DEFINE CLASS WALTER_TIMER AS TIMER
     cVersion = HayVersionExe("gestion.exe")
     IF LEN(cVersion)> 0
 	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,300)
 	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
-	    This.Interval = 10000 * 60
+	    This.Interval = This.Interval * 60
 	ENDIF 
   ENDPROC
   *
