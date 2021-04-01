@@ -1,3 +1,10 @@
+*------------------------------------------------------------------------------
+FUNCTION DataCursor
+PARAMETERS cName
+
+RETURN .f.
+ENDFUNC 
+
 *------------------------------------------------------------
 *-Mensaje de Error para operadores del sistema
 *------------------------------------------------------------
@@ -29,7 +36,7 @@ CREATE CURSOR CsrAuxPrecio (id i,idarticulo i,idctacte i,idrubro i,idiva i;
 		,costociva n(11, 3) ,margen1 n(9, 3) ,utilciva1 n(11, 3),utilsiva1 n(11, 3) ;
 		,redondeo n(11, 3) ,costoagre n(11, 3),fleteagre n(11, 3),preconciva n(11, 3) ;
 		,preconfsiva n(11, 3),preconfciva n(11, 3),prepubciva n(11, 3) ,prepubfsiva n(11, 3);
-		,prepubfciva n(11, 3),fecmodi d ,endolar n(1, 0),costoulcpra n(11, 3) ;
+		,prepubfciva n(11, 3),fecmodi t ,endolar n(1, 0),costoulcpra n(11, 3) ;
 		,preotrociva1 n(11, 3),preotrofsiva1 n(11, 3),preotrofciva1 n(11, 3);
 		,cnumero c(8),cnombre c(30),registro i,codalfaprov c(10),descripcion c(50);
 		,principal n(1),incremarca n(6,3))
