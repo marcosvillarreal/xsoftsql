@@ -67,7 +67,7 @@ FUNCTION LeerConfigTermi
 
 oConfigTermi = CREATEOBJECT("Custom")
 oConfigTermi.AddProperty('FoxyPreviewer',"FALSE")
-oConfigTermi.AddProperty('ShowBalloonTipo',"FALSE")
+oConfigTermi.AddProperty('ShowBalloonTip',"FALSE")
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -96,7 +96,7 @@ IF FILE(cFile)
 			CASE lclabel="FOXYPREVIEWER"
 				oConfigTermi.FoxyPreviewer =  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="SHOWBALLOONTIP"
-				oConfigTermi.ShowBalloonTipo =  ALLTRIM(SUBSTR(lcActDato,i))
+				oConfigTermi.ShowBalloonTip =  ALLTRIM(SUBSTR(lcActDato,i))
 		ENDCASE		 
 	ENDDO 
                     

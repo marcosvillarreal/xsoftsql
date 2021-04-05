@@ -210,7 +210,7 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.f.
 	
 	
-	
+
 	LeerConfigTermi()
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
@@ -332,9 +332,10 @@ IF TYPE('goApp')='O'
 		 
 	poSysTray = CreateObject("WALTER_SYSTRAY")
   
-  	poTimer   = CreateObject("WALTER_TIMER")
   
 	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
+	  	poTimer   = CreateObject("WALTER_TIMER")
+	  		
 	    #DEFINE ICONO_NADA  0
 	    #DEFINE ICONO_INFO  1
 	    #DEFINE ICONO_AVISO 2
@@ -342,6 +343,10 @@ IF TYPE('goApp')='O'
 	    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
 	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
+	    
+	    IF oConfigTermi.ShowBalloonTip = 'FALSE'
+	    	poTimer.Enabled = .f.
+	    ENDIF 
 	  ENDIF
 
 	Read events   
@@ -447,7 +452,7 @@ ENDPROC
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
   IconFile      = "pyro_16x16.ICO"
-  MenuText      = "1;Bloc de Notas;2;Calculadora;3;Paint;4;Balloon;5;Procedure;6;Salir"
+  MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
   *
@@ -499,13 +504,14 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   PROCEDURE TIMER
     cVersion = HayVersionExe("gestion.exe")
     IF LEN(cVersion)> 0
-    	IF oConfigTermi.ShowBalloonTipo = 'TRUE'
-		    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-		    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-		    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-		    &&Subimos el intervalo porque el usuario ya vio el mensaje
-		    This.Interval =  60 * 10000 * 2 && 2 Minuto se repite
-		ENDIF 
+    	
+    	
+	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    &&Subimos el intervalo porque el usuario ya vio el mensaje
+	    This.Interval =  60 * 10000 * 2 && 2 Minuto se repite
+		
 	ENDIF 
   ENDPROC
   *
