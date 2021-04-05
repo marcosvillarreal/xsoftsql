@@ -499,11 +499,13 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   PROCEDURE TIMER
     cVersion = HayVersionExe("gestion.exe")
     IF LEN(cVersion)> 0
-	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,300)
-	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    &&Subimos el intervalo porque el usuario ya vio el mensaje
-	    This.Interval =  60 * 10000 * 2 && 2 Minuto se repite
+    	IF oConfigTermi.ShowBalloonTipo = 'TRUE'
+		    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+		    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+		    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+		    &&Subimos el intervalo porque el usuario ya vio el mensaje
+		    This.Interval =  60 * 10000 * 2 && 2 Minuto se repite
+		ENDIF 
 	ENDIF 
   ENDPROC
   *
