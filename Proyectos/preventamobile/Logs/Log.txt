@@ -1,13 +1,3 @@
- Alias CURPERFIL registro         17
-Control activo  FRMMENU1.TREEVIEW.DBLCLICK
-19-02-2016 12:14:48 , Error nº:         12
-Error No se encuentra la variable 'LLDESARROLLO'.
-Linea nº If lldesarrollo
- Alias CURPERFIL registro          3
-Control activo  FRMMENU1.TREEVIEW.DBLCLICK
-19-02-2016 13:44:42 , Error nº:       1713
-Error El ancho o el número de decimales del campo no es válido.
-Linea nº CREATE CURSOR CsrCabeDeta (orden n(12),comprobante c(15),direccion c(30),localidad c(20),provincia c(20) ,cuit c(13),categoiva c(30),codcliente c(8),fechavto d,nomcliente c(30),planpago c(30) ,vendedor c(15),caecheck c(30),proximonro c(15), merc
 
 
 
@@ -326,6 +316,7 @@ Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4
 
 
 
+
  WITH OscCabefac.cuit,nomcliente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -357,6 +348,7 @@ Control activo  MAIN
 19-02-2016 15:50:10 , Error nº:       1734
 Error No se encuentra la propiedad PLANPAGO.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,nomc
+
 
 
 
@@ -592,6 +584,7 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
 
 
 
@@ -1126,7 +1119,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -1296,7 +1291,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -1517,12 +1514,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -2304,5 +2303,15 @@ Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
 Linea nº =tablerevert(.t.,this.calias)
  Alias CONEXION registro          2
 Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
-06-08-2020 13:32:28 , Error nº:       1586Error La función requiere el modo de almacenamiento en búfer de filas o tablas.Linea nº =tablerevert(.t.,this.calias) Alias CONEXION registro          2Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
-21-10-2020 12:44:18 , Error nº:         11Error El valor, tipo o número de argumentos no es válido para la función.Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord) Alias CSRVARIEDAD registro          3Control activo  MAIN
+06-08-2020 13:32:28 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
+21-10-2020 12:44:18 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
+ Alias CSRVARIEDAD registro          3
+Control activo  MAIN
+04/07/21 18:02:00 , Error nº:       1732Error El tipo de datos no es válido para esta propiedad.Linea nº .TOP = .nTop Alias PERFILES registro          1Control activo  MAIN
+04/07/21 18:02:17 , Error nº:       1732Error El tipo de datos no es válido para esta propiedad.Linea nº .TOP = .nTop Alias PERFILES registro          1Control activo  MAIN
