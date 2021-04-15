@@ -1,0 +1,13 @@
+15-04-2021 18:51:54 , REGFACPM.CMDSALVAR.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT CsrAuxMaopera.idvendedor,SUM(CsrAuxCabefac.total) as importe,COUNT(CsrAuxCabefac.total) as cantidad ,CsrVendedor.nombre,0 as estadotilde FROM CsrAuxMaopera INNER JOIN CsrAuxCabefac ON CsrAuxMaopera.idope = CsrAuxCabefac.idope LEFT JOIN CsrVendedor ON CsrAuxMAopera.idvendedor = CsrVendedor.id GROUP BY CsrAuxCabefac.idvendedor,CsrVendedor.nombre INTO CURSOR CsrAuxiliar READWRITE;Error :       1807;Ultimo Alias Activo: CSRVENDEDOR;Ultimo registro:          2 NUMERO;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005AMH0240.TMP;Ultimo Control activo: 
+15-04-2021 18:51:54 , Pila de llamadas
+15-04-2021 18:51:54 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpm.sct
+15-04-2021 18:51:54 , Objeto      : regfacpm.cmdsalvar.click
+15-04-2021 18:51:54 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpm.sct
+15-04-2021 18:51:54 , Nº de Linea :          7
+15-04-2021 18:51:54 , En el Fuente: 		thisform.cargarpedido()
+15-04-2021 18:51:54 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpm.sct
+15-04-2021 18:51:54 , Objeto      : regfacpm.cargarpedido
+15-04-2021 18:51:54 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpm.sct
+15-04-2021 18:51:54 , Nº de Linea :        307
+15-04-2021 18:51:54 , En el Fuente: 		SELECT CsrAuxMaopera.idvendedor,SUM(CsrAuxCabefac.total) as importe,COUNT(CsrAuxCabefac.total) as cantidad		,CsrVendedor.nombre,0 as estadotilde		FROM CsrAuxMaopera INNER JOIN CsrAuxCabefac ON CsrAuxMaopera.idope = CsrAuxCabefac.idope LEFT JOIN CsrVendedor ON CsrAuxMAopera.idvendedor = CsrVendedor.id		GROUP BY CsrAuxCabefac.idvendedor,CsrVendedor.nombre		INTO CURSOR CsrAuxiliar READWRITE 
+15-04-2021 18:51:54 , Fin
