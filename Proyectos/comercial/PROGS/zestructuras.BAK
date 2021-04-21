@@ -1,6 +1,6 @@
 *!*	 datos tablas
  
-*!*	 MAOPERA.switch				1	0 = fac s/patron carga 1=fac c/patron carga
+*!*	 MAOPERA.switch				1	0 = rtro normal G=rto en guarda
 *!*								2
 *!*								3 	0 = sin interes 1= por interes
 *!*								4	1 = asiento modificado (regasicierre)

@@ -169,3 +169,5 @@
 *!*	DCABEFAC.switch			6= Estado del comprobante (0=normal,2=impreso/grabado,1=anulado)
 *!*							   	CTA = Cierre de Lotes
 *!*							      vacio o null =  tarjeta
+
+*!*	CABEORD.switch				1 = 'Afectado'
