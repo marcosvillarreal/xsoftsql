@@ -273,7 +273,28 @@ IF TYPE('goApp')='O'
 	   
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
-
+	
+	public pcTextoBalloon, poSysTray, poTimer
+  
+	  DO SETS_INICIALES
+	  
+	  DO DECLARAR_FUNCIONES_API
+  
+		 
+	poSysTray = CreateObject("WALTER_SYSTRAY")
+  
+  	poTimer   = CreateObject("WALTER_TIMER")
+  
+	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
+	    #DEFINE ICONO_NADA  0
+	    #DEFINE ICONO_INFO  1
+	    #DEFINE ICONO_AVISO 2
+	    #DEFINE ICONO_ERROR 3
+	    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
+	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
+	  ENDIF
+	  
 	Read events   
 ENDIF
 
@@ -338,3 +359,98 @@ DEFINE CLASS MiImagen AS IMAGE
 ENDDEFINE
 
 
+PROCEDURE DECLARAR_FUNCIONES_API
+  
+  DECLARE INTEGER ShellExecute IN SHELL32.Dll ;
+          INTEGER nWinHandle , ;
+          STRING  cOperation , ;
+          STRING  cFileName  , ;
+          STRING  cParameters, ;
+          STRING  cDirectory , ;
+          INTEGER nShowWindow
+  
+ENDPROC
+*
+*
+PROCEDURE MI_PROCEDURE_SALUDA
+  
+  =Messagebox("Hola, ¿cómo estás hoy?")
+  
+ENDPROC
+*
+*
+PROCEDURE SETS_INICIALES
+  
+  SET CENTURY ON
+  SET DATE    DMY
+  SET SAFETY  OFF
+  SET TALK    OFF
+  
+ENDPROC
+*
+*
+DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
+  
+  IconFile      = "pyro_16x16.ICO"
+  MenuText      = "1;Balloon;2;Salir"
+  MenuTextIsMPR = .F.
+  TipText       = "Avisos de Pyro - GM Solutions"
+  *
+  *
+  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
+    
+   * stop()
+    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
+*!*	    LOCAL cRuta
+*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
+*!*		IF FILE(cRuta)
+*!*			RUN &cRuta
+*!*		ENDIF 
+
+  ENDPROC
+  *
+  *
+  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
+  LPARAMETERS tnMenuItemID
+    
+    DO CASE
+      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
+      CASE tnMenuItemID = 1     && Eligió la primera opción
+        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
+      CASE tnMenuItemID = 2     && Eligió la segunda opción
+        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
+      CASE tnMenuItemID = 3     && Eligió la tercera opción
+        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
+      CASE tnMenuItemID = 4     && Eligió la cuarta opción
+        =MessageBox("Un mensaje de bienvenida")
+      CASE tnMenuItemID = 5     && Eligió la quinta opción
+        DO MI_PROCEDURE_SALUDA
+      CASE tnMenuItemID = 6     && Eligió la sexta opción
+        This.RemoveIconFromSystray()
+        CLEAR EVENTS
+    ENDCASE
+  
+  ENDPROC
+  *
+  *1
+ENDDEFINE
+*
+*
+DEFINE CLASS WALTER_TIMER AS TIMER
+  
+  Enabled  = .T.
+  Interval = 10000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+  
+  PROCEDURE TIMER
+    cVersion = HayVersionExe("gestion.exe")
+    IF LEN(cVersion)> 0
+	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,300)
+	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    &&Subimos el intervalo porque el usuario ya vio el mensaje
+	    This.Interval = This.Interval * 60
+	ENDIF 
+  ENDPROC
+  *
+  *
+ENDDEFINE
