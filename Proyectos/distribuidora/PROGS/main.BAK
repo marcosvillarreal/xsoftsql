@@ -499,7 +499,7 @@ ENDDEFINE
 DEFINE CLASS WALTER_TIMER AS TIMER
   
   Enabled  = .T.
-  Interval = 10000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
     cVersion = HayVersionExe("gestion.exe")
