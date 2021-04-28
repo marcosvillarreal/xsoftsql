@@ -9,6 +9,9 @@ SET SYSMENU off
 set classlib to
 l='j:'
 set talk off
+
+PUBLIC lldesarrollo
+
 lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
@@ -182,7 +185,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 
-	goapp.version = "01.00.00"
+	goapp.version = "02.00.00"
 	
 	PUBLIC  gcicono
 	     
