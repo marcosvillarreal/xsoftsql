@@ -152,8 +152,9 @@ _Screen.visible=.t.
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
+PUBLIC cFileNameLog
 
-STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
+STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
 pidsistema = 1
