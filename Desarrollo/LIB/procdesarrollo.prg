@@ -68,6 +68,10 @@ FUNCTION LeerConfigTermi
 oConfigTermi = CREATEOBJECT("Custom")
 oConfigTermi.AddProperty('FoxyPreviewer',"FALSE")
 oConfigTermi.AddProperty('ShowBalloonTip',"FALSE")
+oConfigTermi.AddProperty('FontName_TextBox',"Verdana")
+oConfigTermi.AddProperty('FontName_Header',"Verdana")
+oConfigTermi.AddProperty('FontName_Label',"Verdana")
+oConfigTermi.AddProperty('FontName_Column',"Verdana")
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -97,6 +101,14 @@ IF FILE(cFile)
 				oConfigTermi.FoxyPreviewer =  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="SHOWBALLOONTIP"
 				oConfigTermi.ShowBalloonTip =  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="FONTNAME_TEXTBOX"
+				oConfigTermi.FontName_TextBox=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="FONTNAME_HEADER"
+				oConfigTermi.FontName_Header=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="FONTNAME_LABEL"
+				oConfigTermi.FontName_Label=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="FONTNAME_COLUMN"
+				oConfigTermi.FontName_Column=  ALLTRIM(SUBSTR(lcActDato,i))
 		ENDCASE		 
 	ENDDO 
                     
