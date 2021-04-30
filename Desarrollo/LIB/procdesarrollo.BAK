@@ -69,7 +69,7 @@ oConfigTermi = CREATEOBJECT("Custom")
 oConfigTermi.AddProperty('FoxyPreviewer',"FALSE")
 oConfigTermi.AddProperty('ShowBalloonTip',"FALSE")
 oConfigTermi.AddProperty('FontName_TextBox',"Verdana")
-oConfigTermi.AddProperty('FontName_Grid',"Verdana")
+oConfigTermi.AddProperty('FontName_Header',"Verdana")
 oConfigTermi.AddProperty('FontName_Label',"Verdana")
 oConfigTermi.AddProperty('FontName_Column',"Verdana")
 
@@ -103,8 +103,8 @@ IF FILE(cFile)
 				oConfigTermi.ShowBalloonTip =  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="FONTNAME_TEXTBOX"
 				oConfigTermi.FontName_TextBox=  ALLTRIM(SUBSTR(lcActDato,i))
-			CASE lclabel="FONTNAME_GRID"
-				oConfigTermi.FontName_Grid=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="FONTNAME_HEADER"
+				oConfigTermi.FontName_Header=  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="FONTNAME_LABEL"
 				oConfigTermi.FontName_Label=  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="FONTNAME_COLUMN"
