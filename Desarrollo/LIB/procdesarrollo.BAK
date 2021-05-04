@@ -68,10 +68,10 @@ FUNCTION LeerConfigTermi
 oConfigTermi = CREATEOBJECT("Custom")
 oConfigTermi.AddProperty('FoxyPreviewer',"FALSE")
 oConfigTermi.AddProperty('ShowBalloonTip',"FALSE")
-oConfigTermi.AddProperty('FontName_TextBox',"Verdana")
-oConfigTermi.AddProperty('FontName_Header',"Verdana")
-oConfigTermi.AddProperty('FontName_Label',"Verdana")
-oConfigTermi.AddProperty('FontName_Column',"Verdana")
+oConfigTermi.AddProperty('FontName_TextBox',"Tahoma")
+oConfigTermi.AddProperty('FontName_Header',"Tahoma")
+oConfigTermi.AddProperty('FontName_Label',"Tahoma")
+oConfigTermi.AddProperty('FontName_Column',"Tahoma")
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1

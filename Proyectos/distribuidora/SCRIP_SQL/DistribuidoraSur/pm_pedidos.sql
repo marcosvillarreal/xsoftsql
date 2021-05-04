@@ -4,7 +4,7 @@ go
 
 select clientes.nombre,cabpedido.* from cabpedido 
 left join clientes on cabpedido.idcliente = clientes.numero and cabpedido.idempresa =clientes.idempresa
-where cabpedido.idempresa = 5 and vendedor = 9 and idcliente = 1007--and total= '0' --and loteexportacion='-20210427'
+where cabpedido.idempresa = 5 and vendedor = 9 --and idcliente = 1007--and total= '0' --and loteexportacion='-20210427'
 order by fecha desc, horain desc
 --update cuepedido set cantidad = 0 where id = 21013254
 select * from cuepedido where idcabpedido in (925429)

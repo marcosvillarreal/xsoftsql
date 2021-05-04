@@ -292,7 +292,7 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	lnuevomenu = .f.
+	lnuevomenu = IIF(oConfigTermi.MenuRibbon="TRUE",.t.,.f.)
 	IF NOT lnuevomenu
 		LOCAL oMenu
 		oDesktop = ''
