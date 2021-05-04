@@ -2552,3 +2552,16 @@ RETURN ldfechahoracero
 *!*	=Fclose(pnFich)                                    && Cerrar archivo
 
 *!*	Return plRet
+
+
+*----------------------------------------------------------------
+*------Funcion para un numero random-----------------------------
+*----------------------------------------------------------------
+
+FUNCTION NumeroRandom
+PARAMETERS primero, segundo
+
+RAND(-1)
+RETURN INT((segundo - primero + 1) * RAND() + primero)
+
+ENDFUNC
