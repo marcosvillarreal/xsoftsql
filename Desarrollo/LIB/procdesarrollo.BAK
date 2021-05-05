@@ -72,6 +72,7 @@ oConfigTermi.AddProperty('FontName_TextBox',"Tahoma")
 oConfigTermi.AddProperty('FontName_Header',"Tahoma")
 oConfigTermi.AddProperty('FontName_Label',"Tahoma")
 oConfigTermi.AddProperty('FontName_Column',"Tahoma")
+oConfigTermi.AddProperty('MenuRibbon',"FALSE")
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -109,6 +110,8 @@ IF FILE(cFile)
 				oConfigTermi.FontName_Label=  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="FONTNAME_COLUMN"
 				oConfigTermi.FontName_Column=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="MENURIBBON"
+				oConfigTermi.MenuRibbon=  ALLTRIM(SUBSTR(lcActDato,i))
 		ENDCASE		 
 	ENDDO 
                     

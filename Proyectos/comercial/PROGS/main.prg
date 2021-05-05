@@ -317,7 +317,7 @@ IF TYPE('goApp')='O'
 	
 	public pcTextoBalloon, poSysTray, poTimer
   
-	  DO SETS_INICIALES
+	 * DO SETS_INICIALES
 	  
 	  DO DECLARAR_FUNCIONES_API
   
@@ -429,6 +429,7 @@ DEFINE CLASS myhandler AS Session
       *   _obrowser.left = _SCREEN.Width - _obrowser.width
       ENDIF
    RETURN
+ENDDEFINE
 
 PROCEDURE DECLARAR_FUNCIONES_API
   
@@ -446,16 +447,6 @@ ENDPROC
 PROCEDURE MI_PROCEDURE_SALUDA
   
   =Messagebox("Hola, ¿cómo estás hoy?")
-  
-ENDPROC
-*
-*
-PROCEDURE SETS_INICIALES
-  
-  SET CENTURY ON
-  SET DATE    DMY
-  SET SAFETY  OFF
-  SET TALK    OFF
   
 ENDPROC
 *
@@ -526,4 +517,4 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	ENDIF 
   ENDPROC
     
-ENDDEFINE
+
