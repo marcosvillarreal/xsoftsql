@@ -30,7 +30,7 @@ IF lok
 	lnprioridad = IIF(CsrSistema.prioridad=0 or 	CsrSistema.prioridad > ALEN(lcMenPrioridad),1,CsrSistema.prioridad)
 	lcMensaje = lcMenPrioridad[lnprioridad]	
 	
-	*stop()
+	stop()
     x = Adir(lCarray, lcExe,"H")
     
     lcfechaexe = '19000101'
