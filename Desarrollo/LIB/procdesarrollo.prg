@@ -1,3 +1,28 @@
+*----------------------------------------------------------------------------
+*----------------------------------------------------------------------------
+
+*----------------------------------------------------------------------------
+FUNCTION CargarDashMenu
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrDatamenu.* FROM DataMenu as CsrDataMenu WHERE LEFT(LTRIM(switch)+'0',1)='0'
+and sec_tipoacce <> 9
+ORDER BY sec_codacce
+ENDTEXT 
+=CrearCursorAdapter('CsrDataMenu',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrPerfil.* FROM Perfiles as CsrPerfil WHERE CsrPerfil.id = <<goapp.perfilusuario>>
+ENDTEXT 
+=CrearCursorAdapter('CsrPerfil',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrSeguridad.* FROM Seguridad as CsrSeguridad WHERE CsrSeguridad.idperfil = <<goapp.perfilusuario>>
+ENDTEXT 
+=CrearCursorAdapter('CsrSeguridad',lcCmd)
+
+RETURN 
+*------------------------------------------------------------------------------
 FUNCTION HayVersionExe
 PARAMETERS lcExe
 
