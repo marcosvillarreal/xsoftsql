@@ -125,6 +125,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  controles ADDITIVE 
    SET CLASSLIB  TO  controleslocal ADDITIVE 
    SET CLASSLIB  TO  controlesmenu ADDITIVE 
+   SET CLASSLIB  TO  controlesdashboard ADDITIVE
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
@@ -315,7 +316,11 @@ IF TYPE('goApp')='O'
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
-		DO FORM frmmenu
+		IF oConfigTermi.MenuDashBoard='FALSE'
+			DO FORM frmmenu
+		ELSE 
+			DO FORM frmmenuDashBoard
+		ENDIF 
 		IF goapp.openfac = 1
 			DO FORM regfacpub
 		ENDIF 

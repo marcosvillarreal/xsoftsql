@@ -98,6 +98,7 @@ oConfigTermi.AddProperty('FontName_Header',"Tahoma")
 oConfigTermi.AddProperty('FontName_Label',"Tahoma")
 oConfigTermi.AddProperty('FontName_Column',"Tahoma")
 oConfigTermi.AddProperty('MenuRibbon',"FALSE")
+oConfigTermi.AddProperty('MenuDashBoard',"FALSE")
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -137,6 +138,8 @@ IF FILE(cFile)
 				oConfigTermi.FontName_Column=  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="MENURIBBON"
 				oConfigTermi.MenuRibbon=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="MENUDASHBOARD"
+				oConfigTermi.MenuDashBoard=  ALLTRIM(SUBSTR(lcActDato,i))
 		ENDCASE		 
 	ENDDO 
                     
@@ -148,6 +151,21 @@ IF NOT FILE(cFile)
 	IF arc#0
 		lclabel="[FoxyPreviewer]" + oConfigTermi.FoxyPreviewer 
 		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[ShowBalloonTip]" + oConfigTermi.ShowBalloonTip
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[MenuRibbon]" + oConfigTermi.MenuRibbon
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[MenuDashBoard]" + oConfigTermi.MenuDashBoard
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[FontName_TextBox]" + oConfigTermi.FontName_TextBox
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[FontName_Header]" + oConfigTermi.FontName_Header
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[FontName_Label]" + oConfigTermi.FontName_Label
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[FontName_Column]" + oConfigTermi.FontName_Column
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		
 	ENDIF 	
 	FCLOSE(Arc)
 ENDIF 

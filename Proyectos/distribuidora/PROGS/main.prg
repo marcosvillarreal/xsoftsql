@@ -316,7 +316,11 @@ IF TYPE('goApp')='O'
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
-		DO FORM frmmenu
+		IF oConfigTermi.MenuDashBoard='FALSE'
+			DO FORM frmmenu
+		ELSE 
+			DO FORM frmmenu_DashBoard
+		ENDIF 
 		IF goapp.openfac = 1
 			DO FORM regfacpub
 		ENDIF 
