@@ -147,16 +147,14 @@ PROCEDURE AddReport(tcReport, tcClauses, tcAlias)
 	lcTempDir = ADDBS(GETENV("TEMP"))
 
 	* Retrieve the FRX and FRT files from the EXE
-	*stop()	
+	stop()	
 	lcExtension=RTRIM(UPPER(JUSTEXT(tcReport)))
 	IF EMPTY(lcExtension)
 		lcExtension=[FRX]
 		lcExtension2=[FRT]
 	ELSE
 		* LBX, LBT, ??X, ??T files...
-		*lcExtension2=STUFF(lcExtension, LEN(lcExtension), 1, [T])
-		* extensiones de archivos son de 3
-		lcExtension2=STUFF(lcExtension, 3, 1, [T])
+		lcExtension2=STUFF(lcExtension, LEN(lcExtension), 1, [T])
 	ENDIF
 	lcFile = lcTempDir + "TMP_FP_" + SYS(2015) + "."
 
