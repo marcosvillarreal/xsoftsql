@@ -1532,7 +1532,7 @@ IF lok
 	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 	Goapp.empresaemail			= DefaultVar('CsrEmpresa.email','')
-	Goapp.empresaautoservicio		= DefaultVar('CsrEmpresa.autoservicio',.F.)
+	Goapp.empresaautoservicio		= DefaultVar('CsrEmpresa.autoservicio',0)
 ENDIF
    
 IF USED("Csrseteotermi")
