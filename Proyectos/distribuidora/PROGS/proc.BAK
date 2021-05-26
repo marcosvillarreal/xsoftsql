@@ -1449,6 +1449,8 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 		IF _siactiva=1 OR UPPER(lcForm) = "FRMLOGOUT" OR Goapp.perfilusuario=1
 			RELEASE OrsTerminal
 			RELEASE OCaterminal
+			_Screen.LockScreen = .t.
+			
 			IF LEN(TRIM(lcform))#0 
 				DO CASE 
 					CASE LEN(TRIM(lcparam1))=0
@@ -1477,6 +1479,7 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 			ELSE
 				=Oavisar.usuario("OPCION NO DISPONIBLE")
 			ENDIF 
+			_Screen.LockScreen = .f.
 		ELSE
 			=Oavisar.usuario('LA TERMINAL SE ENCUENTRA BLOQUEADA'+CHR(13)+'CONSULTE CON EL ADMINISTRADOR',0) 
 		ENDIF 
