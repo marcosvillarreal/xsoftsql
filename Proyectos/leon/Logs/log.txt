@@ -1,11 +1,5 @@
-08-11-2019 13:33:43 , Error nº:         12
-Error No se encuentra la variable 'LNPREUNITA'.
-Linea nº Oscatter.preunita = lnpreunita
- Alias CSRAUXCUERFAC registro          3
-Control activo  REGFACPEDIDO.ACEPTAR1.CLICK
-08-11-2019 13:39:30 , Error nº:         12
-Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
 
 
 
@@ -122,6 +116,7 @@ Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
 08-11-2019 13:40:24 , Error nº:         12
 Error No se encuentra la variable 'ESCOMBO'.
 Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
+
 
 
 
@@ -488,6 +483,7 @@ Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidade
 
 
 
+
 estadotilde=1 INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -499,6 +495,7 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
 
 
 
@@ -755,7 +752,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -977,7 +976,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -1199,7 +1200,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1519,12 +1522,14 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
 
 
 
@@ -1758,7 +1763,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -1940,7 +1947,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -2122,7 +2131,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -2334,6 +2345,7 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2345,6 +2357,7 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
 
 
 
@@ -2670,6 +2683,7 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2711,6 +2725,7 @@ Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
 02-12-2020 16:28:00 , Error nº:          1
 Error El archivo 'csrcabefac.dbf' no existe.
 Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
+
 
 
 
@@ -2800,7 +2815,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
 
 
 
@@ -2890,6 +2907,7 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -2935,7 +2953,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -3289,6 +3309,11 @@ Error No se encuentra el alias 'CSRPRODUCTO'.
 Linea nº this.controlsource=this.parent.controlsourcetxtid
  Alias  registro          0
 Control activo  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABM1.TXTID.INIT
-13-05-2021 08:11:40 , Error nº:         13Error No se encuentra el alias 'CSRPARAVARIO'.Linea nº SELECT CsrParaVario Alias  registro          0Control activo  MAIN
+13-05-2021 08:11:40 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº SELECT CsrParaVario
+ Alias  registro          0
+Control activo  MAIN
 13-05-2021 08:11:52 , Verificando OCX
 13-05-2021 15:10:54 , Verificando OCX
+26-05-2021 13:42:05 , Verificando OCX
