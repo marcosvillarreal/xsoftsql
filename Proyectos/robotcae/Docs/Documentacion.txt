@@ -1,0 +1,66 @@
+
+			Documentacion Software de Autorización e Impresion de FAE
+
+						Fecha de Actualizacion 27/05/2021
+
+			 1 - Funcionamiento
+			 2 - Formato de archivo de Encabezado
+			 3 - Formato de archivo de Cuerpo
+						 
+						 
+			 1 - Funcionamiento
+					 
+				El nombre del archivo debe ser representativo para el administrador, para el
+			aplicativo de toma de archivos y autorización con AFIP, no es primordial. 
+			Por Ejemplo puede ser el identificador interno del comprobante 0000123456.CA0
+				El aplicativo espera leer un archivo con extension CA0 para autorizar el comprobante,
+			y luego para imprimir necesita del archivo CU0 donde se almacena el cuerpo (articulos, conceptos).
+				Este sistema tiene dos proceso incorporados internamente, pero que pueden 
+			funcionar separados dependiendo el parametro. Ya que la idea es que este funcionando 
+			durante el proceso de facturación ya sea en lote o manual, dependiendo del sistema
+			del cliente. Por eso los proceso son AUTORIZACION e IMPRESION. Cada vez que el aplicativo
+			detecte un archivo CA0, intentara autorizarlo, si es aceptado, reemplazara los datos devueltos
+			por AFIP y copiara la informacion a la carpeta de impresion. Luego el proceso de impresion 
+			hara la misma accion, pero buscara archivos CA1 para comenzar a imprimir. El cambio de extension
+			corresponde a una confirmacion visual de que el archivo original ya esta autorizado. Luego
+			de la impresion el proceso cambia la extension a CA2, para mostrar visualmente que el archivo
+			fue impreso y no volver a tomarlo.
+				Si fuera el caso de una reimpresion, el desarrollador puede alojar en la carpeta de impresion
+			el archivo CA1 (Que es el mismo formato de CA0, pero con los campos devueltos por 
+			afip completos: Nro CAE,Vto de CAE etc) y al activar el proceso de impresion, este se encargaria
+			de reimprimir el comprobante. Con esta funcion clave aclarar que el desarrollador debe tomar el 
+			archivo CA1 y almacenar en su sistema de datos los valores devueltos por AFIP para poder
+			realizar una reimpresion, porque si estos no se tienen, saldra informacion incompelta.
+			
+			
+			2 - Formato dfe archivo de Encabezado
+				Los archivos son nativos DBF que se renomarban con la extension CA0.
+				
+				Orden : Numerico 12
+				TipoCbte: Numerico 2
+				Talonario: Numerico 4
+				NumComp: Numerico 8
+				Letra: Caracter (1)
+				CUIT: Caracter (13) Formato XX-XXXXXXXX-X
+				CategoIva: Caracter (2) 
+				Total: Numerico 12,3
+				Fecha: Date
+				CAETipo: Caracter (4) "CAE / CAEA"
+				NroDNI: Caracter (8) Formato XXXXXXXX
+				TipoComp: Numerico 1
+				TipoCuit: Numerico 1
+				CAE : Caracter (14)
+				UltNum: Numerico 8 
+				Accion: Caracter (1)
+				NameFile: Caracter (100)
+				Informado: Numerico 1
+				FecVtoCAE: Date
+				HojaActual: Numerico 2
+				Cliente: Entero
+				Nombre: Caracter (40)
+				ProximoNro: Caracter (13)
+				Direccion: Caracter c(30)
+				Localidad: Caracter c(20)
+				Provincia: Caracter c(20)
+				Fecha_Vto: Date
+				Vendedor: Caracter c(8)
