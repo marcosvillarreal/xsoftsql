@@ -21,12 +21,15 @@
 			del cliente. Por eso los proceso son AUTORIZACION e IMPRESION. Cada vez que el aplicativo
 			detecte un archivo CA0, intentara autorizarlo, si es aceptado, reemplazara los datos devueltos
 			por AFIP y copiara la informacion a la carpeta de impresion. Luego el proceso de impresion 
-			hara la misma accion, pero buscara archivos CA1 para comenzar a imprimir. El cambio de extension
+			hara la misma accion, pero buscara archivos CA2 para comenzar a imprimir. El cambio de extension
 			corresponde a una confirmacion visual de que el archivo original ya esta autorizado. Luego
-			de la impresion el proceso cambia la extension a CA2, para mostrar visualmente que el archivo
+			de la impresion el proceso cambia la extension a CA3, para mostrar visualmente que el archivo
 			fue impreso y no volver a tomarlo.
+				Cabe aclarar que si el comprobante no es autorizado se convierte a CA1, el sistema leera 
+			primero los CA1, sino encuenta ninguna buscara CA0. Eso es para prevenir errores de desconexion
+			antes de poder hacer el pasaje a CA2 (Si es que fue autorizado)
 				Si fuera el caso de una reimpresion, el desarrollador puede alojar en la carpeta de impresion
-			el archivo CA1 (Que es el mismo formato de CA0, pero con los campos devueltos por 
+			el archivo CA2 (Que es el mismo formato de CA0, pero con los campos devueltos por 
 			afip completos: Nro CAE,Vto de CAE etc) y al activar el proceso de impresion, este se encargaria
 			de reimprimir el comprobante. Con esta funcion clave aclarar que el desarrollador debe tomar el 
 			archivo CA1 y almacenar en su sistema de datos los valores devueltos por AFIP para poder
@@ -51,7 +54,7 @@
 				TipoCuit: Numerico 1
 				CAE : Caracter (14)
 				UltNum: Numerico 8 
-				Accion: Caracter (1)
+				Accion: Caracter (1) {Si es R, copia el archivo en el destino para el proceso de impresion}
 				NameFile: Caracter (100)
 				Informado: Numerico 1
 				FecVtoCAE: Date
@@ -64,3 +67,40 @@
 				Provincia: Caracter c(20)
 				Fecha_Vto: Date
 				Vendedor: Caracter c(8)
+				*----------Para las N.Credito es obligatorio
+				Aso_Numcomp:Numerico (13)
+				*Aso_Letra: Caracter (1)
+				*Aso_Talonario: Numerico (5)
+				Aso_TipoComp: Numerico 1
+				Aso_Fecha:  char(8) 20210531
+				
+			3 - Formato de archivo Cuerpo
+				Kilos: Numerico (13,4)
+				Articulo: Entero {Codigo}
+				UniVenta: Numerico 1
+				UniBulto: Numerico 2
+				Fecha_Ofer: Caracter (10)
+				Bonif: Numerico 8,3
+				Iva_Ri: Numeric(6,2) {Alicuota de iva 21}
+				Cantidad: Numerico 13,4
+				Internos: Numerico 13,4
+				PrecioArt: Numeric(12,2) {Sin iva}
+				Nombre: Caracter (30)
+				
+				
+				
+			TipoCbte
+				1 : Factura A
+				2 : Nota Debito A
+				3 : Nota Credito A
+				6 : Factura B
+				7 : Nota Debito B
+				8 : Nota Credito B
+				
+			CategoIva
+				1 : RI
+				3 : CF
+				4 : EX
+				5 : RM
+				
+				
