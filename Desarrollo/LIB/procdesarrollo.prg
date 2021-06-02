@@ -4,6 +4,8 @@
 *----------------------------------------------------------------------------
 FUNCTION CargarDashMenu
 
+LOCAL lcCmd
+
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrDatamenu.* FROM DataMenu as CsrDataMenu WHERE LEFT(LTRIM(switch)+'0',1)='0'
 and sec_tipoacce <> 9
