@@ -83,15 +83,14 @@ If lldesarrollo
    _rutaformpat  =lcdd+'forms\patron'
    _rutaformconta = lcdd+'forms\contabilidad'
     _rutaformimp = lcdd+'forms\importadores'
-   
-    _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
+
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
-               ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
+               ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta;
                ,&_rutaformimp
                
       
@@ -139,7 +138,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='pyro_16x16.ico'
+_Screen.icon='pyro.ico'
 _screen.picture= 'fondo51.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.

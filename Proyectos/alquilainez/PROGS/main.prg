@@ -121,6 +121,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  controles ADDITIVE 
    SET CLASSLIB  TO  controleslocal ADDITIVE 
    SET CLASSLIB  TO  controlesmenu ADDITIVE 
+   SET CLASSLIB  TO  controlesdashboard ADDITIVE 
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
@@ -130,7 +131,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE 
-
+    set classlib to systray ADDITIVE 
+    
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
 *clear all
@@ -145,10 +147,12 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
-PUBLIC oConfigTermi
+PUBLIC oConfigTermi,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+pidsistema = 1
 
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
 
@@ -280,12 +284,14 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.t.		 
 	*--------------------------   
 	
-	lnuevomenu = .f.
+	lnuevomenu = IIF(oConfigTermi.MenuRibbon="TRUE",.t.,.f.)
 	IF NOT lnuevomenu
 		LOCAL oMenu
 		oDesktop = ''
-		oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-		oMenu.createMenu()   
+		*oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+		*oMenu.createMenu()   
+		oMenu = NEWOBJECT("createmenu","menu.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+		oMenu.createMenu('datamenu','seguridad','favoritos',pidsistema)  
 		oMenu = null
 	ELSE
 		_screen.AddObject('oMenuNative','base_menu')
@@ -303,7 +309,11 @@ IF TYPE('goApp')='O'
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
-		DO FORM frmmenu
+		IF oConfigTermi.MenuDashBoard='FALSE'
+			DO FORM frmmenu
+		ELSE 
+			DO FORM frmmenu_DashBoard
+		ENDIF 
 		IF goapp.openfac = 1
 			DO FORM regfacpub
 		ENDIF 
@@ -311,7 +321,33 @@ IF TYPE('goApp')='O'
 	                     
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
-
+	
+	public pcTextoBalloon, poSysTray, poTimer
+  
+	  DO SETS_INICIALES
+	  
+	  DO DECLARAR_FUNCIONES_API
+  
+		 
+	poSysTray = CreateObject("WALTER_SYSTRAY")
+  
+  
+	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
+	  	poTimer   = CreateObject("WALTER_TIMER")
+	  		
+	    #DEFINE ICONO_NADA  0
+	    #DEFINE ICONO_INFO  1
+	    #DEFINE ICONO_AVISO 2
+	    #DEFINE ICONO_ERROR 3
+	    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
+	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
+	    
+	    IF oConfigTermi.ShowBalloonTip = 'FALSE'
+	    	poTimer.Enabled = .f.
+	    ENDIF 
+	  ENDIF
+	  
 	Read events   
 ENDIF
 
@@ -375,4 +411,101 @@ DEFINE CLASS MiImagen AS IMAGE
 	ENDPROC
 ENDDEFINE
 
+PROCEDURE DECLARAR_FUNCIONES_API
+  
+  DECLARE INTEGER ShellExecute IN SHELL32.Dll ;
+          INTEGER nWinHandle , ;
+          STRING  cOperation , ;
+          STRING  cFileName  , ;
+          STRING  cParameters, ;
+          STRING  cDirectory , ;
+          INTEGER nShowWindow
+  
+ENDPROC
+*
+*
+PROCEDURE MI_PROCEDURE_SALUDA
+  
+  =Messagebox("Hola, ¿cómo estás hoy?")
+  
+ENDPROC
+*
+*
+PROCEDURE SETS_INICIALES
+  
+  SET CENTURY ON
+  SET DATE    DMY
+  SET SAFETY  OFF
+  SET TALK    OFF
+  
+ENDPROC
+*
+*
+DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
+  
+  IconFile      = "pyro.ICO"
+  MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
+  MenuTextIsMPR = .F.
+  TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
+  *
+  *
+  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
+    
+   * stop()
+    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
+*!*	    LOCAL cRuta
+*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
+*!*		IF FILE(cRuta)
+*!*			RUN &cRuta
+*!*		ENDIF 
 
+  ENDPROC
+  *
+  *
+  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
+  LPARAMETERS tnMenuItemID
+    
+    DO CASE
+      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
+      CASE tnMenuItemID = 1     && Eligió la primera opción
+        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
+      CASE tnMenuItemID = 2     && Eligió la segunda opción
+        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
+      CASE tnMenuItemID = 3     && Eligió la tercera opción
+        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
+      CASE tnMenuItemID = 4     && Eligió la cuarta opción
+        =MessageBox("Un mensaje de bienvenida")
+      CASE tnMenuItemID = 5     && Eligió la quinta opción
+        DO MI_PROCEDURE_SALUDA
+      CASE tnMenuItemID = 6     && Eligió la sexta opción
+        This.RemoveIconFromSystray()
+        CLEAR EVENTS
+    ENDCASE
+  
+  ENDPROC
+  *
+  *1
+ENDDEFINE
+*
+*
+DEFINE CLASS WALTER_TIMER AS TIMER
+  
+  Enabled  = .T.
+  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+  
+  PROCEDURE TIMER
+    cVersion = HayVersionExe("gestion.exe")
+    IF LEN(cVersion)> 0
+    	
+    	
+	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    &&Subimos el intervalo porque el usuario ya vio el mensaje
+	    This.Interval =   30000 
+		
+	ENDIF 
+  ENDPROC
+  *
+  *
+ENDDEFINE
