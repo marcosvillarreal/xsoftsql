@@ -111,6 +111,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE
+   set classlib to systray ADDITIVE 
 *clear all
 
 _screen.lockscreen=.t.
@@ -294,7 +295,10 @@ IF TYPE('goApp')='O'
 	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
 	  ENDIF
-	  
+	  IF oConfigTermi.ShowBalloonTip = 'FALSE'
+	    	poTimer.Enabled = .f.
+	    ENDIF 
+	    
 	Read events   
 ENDIF
 
