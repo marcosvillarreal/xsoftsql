@@ -31,11 +31,9 @@ WHERE favoritos.idperfil= <<goapp.perfilusuario>>  And sec_tipoacce=1
 and LEFT(LTRIM(datamenu.switch)+'0',1)='0'
 ORDER By orden 
 ENDTEXT 
-=SaveSql(lcCmd,'menu_favoritos')
 =CrearCursorAdapter('CsrFavoritos',lcCmd)
 
-SELECT CsrFavoritos
-vista()
+
 
 RETURN 
 *------------------------------------------------------------------------------
