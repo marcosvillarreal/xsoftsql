@@ -278,6 +278,7 @@ IF TYPE('goApp')='O'
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu
 		ELSE 
+			SET CONSOLE OFF 
 			DO FORM frmmenu_DashBoard
 		ENDIF 
 	ENDIF 

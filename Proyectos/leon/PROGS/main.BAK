@@ -264,7 +264,8 @@ IF TYPE('goApp')='O'
 	IF goapp.sucursal = 2
 		_screen.picture= 'fondo512.jpg'
 	ENDIF 
-
+	
+	lnuevomenu = .f.
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
@@ -273,7 +274,13 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	DO FORM frmmenu
+	IF NOT lnuevomenu 
+		IF oConfigTermi.MenuDashBoard='FALSE'
+			DO FORM frmmenu
+		ELSE 
+			DO FORM frmmenu_DashBoard
+		ENDIF 
+	ENDIF 
 	   
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
