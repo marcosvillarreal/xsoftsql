@@ -5,6 +5,8 @@ select top 1 fecupdate,idempresa from vendedor where idempresa = 6
 order by fecupdate desc
 select top 1 fecupdate,idempresa from articulos where idempresa = 6 
 order by fecupdate desc
+select top 1 fecupdate,idempresa from secciones where idempresa = 6 
+order by fecupdate desc
 select top 1 fecupdate,idempresa from codbarras where idempresa = 6 
 order by fecupdate desc
 select top 1 fecupdate,idempresa from clientes where idempresa = 6 
