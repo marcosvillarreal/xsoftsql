@@ -23,17 +23,6 @@ SELECT CsrSeguridad.* FROM Seguridad as CsrSeguridad WHERE CsrSeguridad.idperfil
 ENDTEXT 
 =CrearCursorAdapter('CsrSeguridad',lcCmd)
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-Select sec_promptacc,sec_doacce,datamenu.Id As idmenu 
-FROM datamenu 
-INNER Join favoritos On datamenu.Id=favoritos.idmenu 
-WHERE favoritos.idperfil= <<goapp.perfilusuario>>  And sec_tipoacce=1 
-and LEFT(LTRIM(datamenu.switch)+'0',1)='0'
-ORDER By orden 
-ENDTEXT 
-=CrearCursorAdapter('CsrFavoritos',lcCmd)
-
-
 
 RETURN 
 *------------------------------------------------------------------------------

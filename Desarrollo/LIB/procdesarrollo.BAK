@@ -113,6 +113,7 @@ oConfigTermi.AddProperty('FontName_Label',"Tahoma")
 oConfigTermi.AddProperty('FontName_Column',"Tahoma")
 oConfigTermi.AddProperty('MenuRibbon',"FALSE")
 oConfigTermi.AddProperty('MenuDashBoard',"FALSE")
+oConfigTermi.AddProperty('NetDriveFileCtacte','C:\Documentos')
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -154,6 +155,9 @@ IF FILE(cFile)
 				oConfigTermi.MenuRibbon=  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="MENUDASHBOARD"
 				oConfigTermi.MenuDashBoard=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="NETDRIVEFILECTACTE"
+				oConfigTermi.NetDriveFileCtacte=  ALLTRIM(SUBSTR(lcActDato,i))	
+				
 		ENDCASE		 
 	ENDDO 
                     
@@ -178,6 +182,8 @@ IF NOT FILE(cFile)
 		lclabel="[FontName_Label]" + oConfigTermi.FontName_Label
 		XX= FPUTS(Arc,lclabel,lenregistro)
 		lclabel="[FontName_Column]" + oConfigTermi.FontName_Column
+		XX= FPUTS(Arc,lclabel,lenregistro)
+		lclabel="[NetDriveFileCtacte]" + oConfigTermi.NetDriveFileCtacte
 		XX= FPUTS(Arc,lclabel,lenregistro)
 		
 	ENDIF 	

@@ -1,359 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
- Alias IMPCUERVARI registro          4
-Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
-08-11-2019 13:40:24 , Error nº:         12
-Error No se encuentra la variable 'ESCOMBO'.
-Linea nº INSERT INTO CsrimpCue (grupo,Campo002,Campo003,Campo004,Campo005,Campo006,Campo007,Campo008,Campo009 ,Campo010,Campo011,esdevol,escombo) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),TRANSFORM(lncantidad,'9999999.99'),cArticulo,Oscatter.c
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-odigo,LTRIM(STR(lnprecio5,13,3)) ,cDespor,LTRIM(STR(lnprecio7,13,3)),LTRIM(STR(lntotal,13,2)),"" ,cKilos,cOferFecha,cEsDevol,cEsCombo)
- Alias IMPCUERVARI registro          4
-Control activo  REGFACVTA.CMDIMPRIMIR.CLICK
-11-11-2019 13:42:03 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF TTOD(CsrProdFzaVta.feccorte) >= thisform.loObjBonifica.idproducto
- Alias CSRPRODFZAVTA registro        680
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 13:42:24 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº IF TTOD(CsrProdFzaVta.feccorte) >= thisform.loObjBonifica.idproducto
- Alias CSRPRODFZAVTA registro        680
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 14:50:13 , Error nº:       1734
-Error No se encuentra la propiedad CANTIDAD.
-Linea nº Oscatter.cantidad     = lObjProducto.cantidad * lnCantCombo
- Alias CSRPRODCOMBO registro          1
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 14:50:33 , Error nº:       1734
-Error No se encuentra la propiedad CANTIDAD.
-Linea nº Oscatter.cantidad     = lObjProducto.cantidad * lnCantCombo
- Alias CSRPRODCOMBO registro          1
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 14:50:40 , Error nº:       1734
-Error No se encuentra la propiedad CANTIDAD.
-Linea nº Oscatter.cantidad     = lObjProducto.cantidad * lnCantCombo
- Alias CSRPRODCOMBO registro          1
-Control activo  REGFACVTA.KEYPRESS
-11-11-2019 14:50:52 , Error nº:       1734
-Error No se encuentra la propiedad CANTIDAD.
-Linea nº Oscatter.cantidad     = lObjProducto.cantidad * lnCantCombo
- Alias CSRPRODCOMBO registro          1
-Control activo  REGFACVTA.KEYPRESS
-11-11-2019 14:51:03 , Error nº:       1734
-Error No se encuentra la propiedad BONIFICA.
-Linea nº Oscatter.despor       = lObjProducto.bonifica
- Alias CSRPRODCOMBO registro          1
-Control activo  REGFACVTA.KEYPRESS
-11-11-2019 14:51:44 , Error nº:       1734
-Error No se encuentra la propiedad CANTIDAD.
-Linea nº Oscatter.cantidad     = lObjProducto.cantidad * lnCantCombo
- Alias CSRPRODCOMBO registro          1
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 14:55:51 , Error nº:       1734
-Error No se encuentra la propiedad CANTIDAD.
-Linea nº Oscatter.cantidad     = lObjProducto.cantidad * lnCantCombo
- Alias CSRPRODCOMBO registro          1
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 14:57:45 , Error nº:         12
-Error No se encuentra la variable 'OSCATTERCAB'.
-Linea nº thisform.unitariofac.Calculaimpuesto(Oscatter,OscatterCab,lnCantidad,lnunibulto)
- Alias CSRPRODCOMBO registro          1
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 14:59:06 , Error nº:       1734
-Error No se encuentra la propiedad IDSUBPROD.
-Linea nº IF Oscatter.idsubprod#0
- Alias CSRAUXCUERPROMO registro          1
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 15:35:05 , Error nº:       1734
-Error No se encuentra la propiedad IDSUBPROD.
-Linea nº IF lObjProducto.idsubprod#0
- Alias CSRAUXCUERPROMO registro          1
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 15:36:26 , Error nº:       1734
-Error No se encuentra la propiedad IDSUBPROD.
-Linea nº IF lObjProducto.idsubprod#0
- Alias CSRAUXCUERPROMO registro          1
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 15:39:32 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
- Alias CSRAUXCABEFAC registro          1
-Control activo  REGFACVTA.INIT
-11-11-2019 15:40:01 , Error nº:         12
-Error No se encuentra la variable 'IDPROMOCION'.
-Linea nº DO while NOT EOF() AND idarticulo = OScatter.idarticulo AND idpromocion = lObjProducto.idpromocion
- Alias CSRPRODCOMBO registro          2
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-11-11-2019 17:39:04 , Error nº:         12
-Error No se encuentra la variable 'IDSUBPROD'.
-Linea nº replace idarticulo WITH CsrAuxCuerVariPromo.idarticulo,idsubarti WITH CsrAuxCuerVariPromo.idsubprod idvariedad WITH CsrAuxCuerVariPromo.idvariedad,registro WITH Oscatter.registro
- Alias CSRAUXCUERVARI registro          1
-Control activo DESPOR REGFACVTA.GRID2.COLUMN6.TEXT1.GOTFOCUS
-12-11-2019 10:30:17 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
- Alias CSRAUXCABEFAC registro          1
-Control activo  REGFACVTA.INIT
-12-11-2019 15:28:14 , Error nº:       1549
-Error La sesión de datos nº 3 no se puede liberar si hay transacciones abiertas.
-Linea nº clear all
- Alias CSRCURSOR registro          1
-Control activo  MAIN
-13-11-2019 21:29:32 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\regfacpedido_combo.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CURPERFIL registro        121
-Control activo  MAIN
-21-11-2019 10:18:51 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT('CsrParametroCAE')<>0
- Alias CSRPREFIJO registro          1
-Control activo  INF_CAEA.OFACCAE.INIT
-26-11-2019 08:45:12 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº this._ogruporden.Visible = IIF(nTipo=1,.t.,.f.)
- Alias _CSRUBICACION registro          1
-Control activo  PLANILLAPROD.INIT
-26-11-2019 09:06:24 , Error nº:         13
-Error No se encuentra el alias 'CSRIMPRIMIR'.
-Linea nº SELECT CsrImprimir
- Alias CSRAUXCARGA registro          1
-Control activo  PLANILLAPROD.CMDCARGA.CLICK
-26-11-2019 09:17:20 , Error nº:       1737
-Error IMPRESORA es un método, evento u objeto.
-Linea nº this.imprimir_vistaprevia1.impresora = IIF(nTipo=1,.t.,.f.)
- Alias _CSRUBICACION registro          1
-Control activo  PLANILLAPROD.INIT
-26-11-2019 10:45:22 , Error nº:         12
-Error No se encuentra la variable 'UNIBULTO'.
-Linea nº replace unibulto WITH CsrImprimir.unibulto IN CsrAuxCarga
- Alias CSRIMPRIMIR registro          1
-Control activo  PLANILLAPROD.CMDCARGA.CLICK
-26-11-2019 10:46:02 , Error nº:         12
-Error No se encuentra la variable 'UNIBULTO'.
-Linea nº replace unibulto WITH CsrImprimir.unibulto IN CsrAuxCarga
- Alias CSRIMPRIMIR registro          1
-Control activo  PLANILLAPROD.CMDCARGA.CLICK
-26-11-2019 11:33:22 , Error nº:       1734
-Error No se encuentra la propiedad NAMETABLE.
-Linea nº ObjInfNeg.NameTable = lcnombretabla
- Alias CSRSUBPRODUCTO registro          2
-Control activo  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE3.GRILLAVARIOS1.BOTONERA_VARIOS1.CMDAGREGAR.CLICK
-26-11-2019 11:33:43 , Error nº:       1734
-Error No se encuentra la propiedad NAMETABLE.
-Linea nº ObjInfNeg.NameTable = lcnombretabla
- Alias CSRPRODUCTO registro          1
 Control activo  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE3.GRILLAVARIOS1.BOTONERA_VARIOS1.CMDAGREGAR.CLICK
 26-11-2019 11:47:21 , Error nº:       1734
 Error No se encuentra la propiedad NAMETABLE.
@@ -363,6 +7,28 @@ Control activo  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE3.GRILLAVARIOS1.BOTONERA_VAR
 26-11-2019 17:26:04 , Error nº:       1307
 Error Cannot divide by 0.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,int(eunidades/bultos),MOD(eunidades,bultos),eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,kilos ,ekilos-kilos FROM CsrAuxCarga WHERE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -486,6 +152,28 @@ Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 26-11-2019 17:27:51 , Error nº:       1806
 Error SQL: Column 'UNIBULTOS' is not found.
 Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -746,7 +434,51 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -972,7 +704,51 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1198,7 +974,51 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1522,12 +1342,56 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1765,7 +1629,51 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1951,7 +1859,51 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2137,7 +2089,51 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2353,6 +2349,28 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2364,6 +2382,28 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2693,6 +2733,28 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2734,6 +2796,28 @@ Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
 02-12-2020 16:28:00 , Error nº:          1
 Error El archivo 'csrcabefac.dbf' no existe.
 Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2827,7 +2911,51 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2921,6 +3049,28 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -2968,7 +3118,51 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3343,3 +3537,150 @@ Control activo  MAIN
 08-06-2021 11:28:00 , Verificando OCX
 08-06-2021 11:30:09 , Verificando OCX
 10-06-2021 09:18:04 , Verificando OCX
+14-06-2021 12:35:59 , Verificando OCX
+06/14/21 12:36:12 , Error nº:       1733
+Error No se encuentra la definición de clase BOTONDESINGMENU.
+Linea nº this.AddObject('btndm'+LTRIM(STR(this.itembuttons)),'botondesingmenu')
+ Alias TMENU registro          2
+Control activo  FRMMENU_DASHBOARD1.OMENU1.INIT
+14-06-2021 12:45:27 , Verificando OCX
+06/14/21 12:46:23 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias TMENU registro        279
+Control activo  FRMMENU_DASHBOARD1.INIT
+06/14/21 12:47:19 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .LEFT =.nLeft
+ Alias TMENU registro        279
+Control activo  FRMMENU_DASHBOARD1.INIT
+06/14/21 12:47:35 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .WIDTH = .nWidth
+ Alias TMENU registro        279
+Control activo  FRMMENU_DASHBOARD1.INIT
+06/14/21 12:47:45 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .HEIGHT = .nHeight
+ Alias TMENU registro        279
+Control activo  FRMMENU_DASHBOARD1.INIT
+06/14/21 12:48:32 , Error nº:       1925
+Error _TMPNOTIFYVTO es un miembro desconocido.
+Linea nº this.template0._tmpnotifyVto.Leer()
+ Alias TMENU registro        279
+Control activo  FRMMENU_DASHBOARD1.INIT
+14-06-2021 12:50:32 , Error nº:       1925
+Error LBLTIMER es un miembro desconocido.
+Linea nº thisform.lbltimer.Caption = cFaltan+" para Solicitar CAEA - " + cCadFechaFac
+ Alias CSRTEMPFECHACAEA registro          1
+Control activo  FRMMENU_DASHBOARD1.INIT
+14-06-2021 12:51:41 , Verificando OCX
+14-06-2021 12:59:57 , Verificando OCX
+14-06-2021 13:00:47 , Error nº:         13
+Error No se encuentra el alias 'CSRDATAMENU'.
+Linea nº SELECT (this.aliasmenu)
+ Alias  registro          0
+Control activo  FRMMENU_DASHBOARD1.OMENU1.INIT
+14-06-2021 13:00:56 , Verificando OCX
+14-06-2021 13:04:52 , Error nº:       1925
+Error LBLTIMER es un miembro desconocido.
+Linea nº thisform.lbltimer.Caption = cCadFechaFac+" CAEA Solicitado:"+ALLTRIM(CsrTempCAEA.caea)+ " - " + cCadFechaVto
+ Alias CSRTEMPCAEA registro          1
+Control activo  FRMMENU_DASHBOARD1.INIT
+14-06-2021 13:09:18 , Verificando OCX
+14-06-2021 13:16:46 , Verificando OCX
+14-06-2021 13:24:42 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CSRTEMPFECHACAEA registro          1
+Control activo  FRMMENU_DASHBOARD1.OMENU1.CONT_OPC.ARBOL1.GROUPHOJAS.BTNDM229.BTN.CLICK
+14-06-2021 13:25:14 , Verificando OCX
+14-06-2021 13:30:17 , Error nº:         16
+Error No se reconoce el verbo de comando.
+Linea nº &cTag
+ Alias CSRTEMPFECHACAEA registro          1
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0._TMPNOTIFYVTOCAE.LBLACCESO.CLICK
+14-06-2021 13:31:45 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\leon\regpedidocae.scx' no existe.
+Linea nº DO FORM &lcForm
+ Alias CSRKEY registro         15
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0._TMPNOTIFYVTOCAE.LBLACCESO.CLICK
+14-06-2021 13:32:46 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\leon\regpidocae.scx' no existe.
+Linea nº DO FORM &lcForm
+ Alias CSRKEY registro         15
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0._TMPNOTIFYVTOCAE.LBLACCESO.CLICK
+14-06-2021 14:27:01 , Error nº:       1925
+Error CONT_HEADER1 es un miembro desconocido.
+Linea nº this.Top = this.Parent.cont_header1.Height + 10
+ Alias CSRSEGURIDAD registro          1
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.INIT
+14-06-2021 14:27:29 , Verificando OCX
+14-06-2021 14:28:05 , Error nº:       1881
+Error Error en Label - Caption : Cadena demasiado larga.
+Linea nº .Label.Caption	= lcDetalle
+ Alias CSRATERMI registro          1
+Control activo  FRMMENU_DASHBOARD1.INIT
+14-06-2021 14:29:21 , Error nº:       1881
+Error Error en Label - Caption : Cadena demasiado larga.
+Linea nº .Label.Caption	= lcDetalle
+ Alias CSRATERMI registro          1
+Control activo  FRMMENU_DASHBOARD1.INIT
+14-06-2021 14:29:27 , Error nº:       1881
+Error Error en Label - Caption : Cadena demasiado larga.
+Linea nº .Label.Caption	= cCaption
+ Alias CSRATERMI registro          2
+Control activo  FRMMENU_DASHBOARD1.INIT
+14-06-2021 14:32:18 , Error nº:         16
+Error No se reconoce el verbo de comando.
+Linea nº &cEjecuta
+ Alias CSRATERMI registro          6
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM1.BTN.CLICK
+14-06-2021 14:35:32 , Error nº:         16
+Error No se reconoce el verbo de comando.
+Linea nº &cEjecuta
+ Alias CSRATERMI registro          6
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM1.BTN.CLICK
+14-06-2021 14:35:43 , Error nº:         16
+Error No se reconoce el verbo de comando.
+Linea nº &cEjecuta
+ Alias CSRATERMI registro          6
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM1.BTN.CLICK
+14-06-2021 14:37:50 , Error nº:         16
+Error No se reconoce el verbo de comando.
+Linea nº &cEjecuta
+ Alias CSRATERMI registro          3
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM2.BTN.CLICK
+14-06-2021 14:38:05 , Error nº:         16
+Error No se reconoce el verbo de comando.
+Linea nº &cEjecuta
+ Alias CSRATERMI registro          3
+Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM2.BTN.CLICK
+14-06-2021 14:44:28 , Error nº:       1925
+Error _CMDPROCESAR es un miembro desconocido.
+Linea nº .containerencabeza._cmdprocesar.SetFocus
+ Alias CSRAUXILIAR registro          1
+Control activo  REGPUBVARIO.CANCELAR1.CLICK
+14-06-2021 14:51:51 , Verificando OCX
+14-06-2021 15:14:04 , Error nº:       1806
+Error SQL: no se encuentra la columna 'SEC_IDPROGRAMA'.
+Linea nº SELECT * FROM datamenu WHERE sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'00000'),1)='0' ORDER BY sec_codacce INTO CURSOR curPerfil
+ Alias PERFILES registro          1
+Control activo  FRMFAVORITOS.COMBO1.VALID
+14-06-2021 15:17:35 , Error nº:       1806
+Error SQL: no se encuentra la columna 'SEC_IDPROGRAMA'.
+Linea nº SELECT * FROM datamenu WHERE sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'00000'),1)='0' ORDER BY sec_codacce INTO CURSOR curPerfil
+ Alias PERFILES registro          1
+Control activo  FRMFAVORITOS.INIT
+14-06-2021 15:27:53 , Error nº:         12
+Error No se encuentra la variable 'PIDSISTEMA'.
+Linea nº oMenu.createMenu('datamenu','seguridad','favoritos',Pidsistema)
+ Alias FAVORITOS registro          4
+Control activo  FRMFAVORITOS.CMSAVE.CLICK
+14-06-2021 15:44:18 , Verificando OCX
+14-06-2021 15:46:13 , Verificando OCX
+14-06-2021 15:47:03 , Verificando OCX
+14-06-2021 15:48:43 , Verificando OCX
+14-06-2021 15:49:15 , Verificando OCX
+14-06-2021 15:50:23 , Verificando OCX
+14-06-2021 15:51:15 , Verificando OCX

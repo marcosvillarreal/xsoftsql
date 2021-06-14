@@ -8,6 +8,8 @@ clear all
 set classlib to
 l='j:'
 set talk off
+PUBLIC lldesarrollo
+
 lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
@@ -112,6 +114,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE
    set classlib to systray ADDITIVE 
+   SET CLASSLIB  TO  controlesdashboard ADDITIVE
 *clear all
 
 _screen.lockscreen=.t.
@@ -261,7 +264,8 @@ IF TYPE('goApp')='O'
 	IF goapp.sucursal = 2
 		_screen.picture= 'fondo512.jpg'
 	ENDIF 
-
+	
+	lnuevomenu = .f.
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
@@ -270,7 +274,13 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	DO FORM frmmenu
+	IF NOT lnuevomenu 
+		IF oConfigTermi.MenuDashBoard='FALSE'
+			DO FORM frmmenu
+		ELSE 
+			DO FORM frmmenu_DashBoard
+		ENDIF 
+	ENDIF 
 	   
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
