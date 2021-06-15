@@ -11,6 +11,9 @@ set talk off
 PUBLIC lldesarrollo
 
 lldesarrollo=(_vfp.startmode()#4)
+PUBLIC pidsistema
+
+pidsistema = 1
 
 _vfp.AutoYield = .f.
 
@@ -268,8 +271,10 @@ IF TYPE('goApp')='O'
 	lnuevomenu = .f.
 	LOCAL oMenu
 	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
+	*oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+	*oMenu.createMenu()   
+	oMenu = NEWOBJECT("createmenu","menu.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+	oMenu.createMenu('datamenu','seguridad','favoritos',pidsistema)   
 	oMenu = null
 
 	LeerEjercicioPerfil()
