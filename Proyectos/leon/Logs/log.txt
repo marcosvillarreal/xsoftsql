@@ -129,330 +129,13 @@
 
 
 
-
-
-
-
-estadotilde=1 INTO CURSOR CsrImprimir READWRITE
- Alias  registro          0
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-26-11-2019 17:26:32 , Error nº:         13
-Error Alias '' is not found.
-Linea nº SELECT (lcAlias)
- Alias  registro          0
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-26-11-2019 17:27:51 , Error nº:       1806
-Error SQL: Column 'UNIBULTOS' is not found.
-Linea nº SELECT numubicacion,nomubicacion,codigo,nombre,nomsubprod ,IIF(unibultos<>0,int(eunidades/bultos),0) ,IIF(unibultos<>0,MOD(eunidades,bultos),0) ,eunidades ,bultos,unidades,(unidades+bultos*unibulto) ,eunidades-(unidades+bultos*unibulto),ekilos,k
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ilos ,ekilos-kilos FROM CsrAuxCarga WHERE estadotilde=1 INTO CURSOR CsrImprimir READWRITE
- Alias CSRAUXIMPRIMIR registro        257
-Control activo  PLANILLAPROD.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-03-12-2019 20:34:15 , Error nº:          1
-Error El archivo 'csrnmaopera.dbf' no existe.
-Linea nº SELECT CsrNMaopera.* FROM CsrNMaopera WHERE RECNO()<0 INTO CURSOR CsrAuxMaopera READWRITE
- Alias CSRAUXILIAR registro          1
-Control activo  LISPATRONCARGAPEDIDOS.LOAD
-31-12-2019 11:41:21 , Error nº:         12
-Error No se encuentra la variable 'LCIDSFLETEREN'.
-Linea nº BROWSE
- Alias CSRCUERPO registro          1
-Control activo  RINDEFLETE.CMDIMPRIMIR.CLICK
-06-01-2020 15:20:07 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\regdescuentos.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CURPERFIL registro         23
-Control activo  MAIN
-06-01-2020 15:28:50 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\regdescuentos.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CURPERFIL registro         23
-Control activo  MAIN
-06-01-2020 15:29:38 , Error nº:       1737
-Error SOLICITARCLAVE es un método, evento u objeto.
-Linea nº IF NOT this.solicitarclave
- Alias CSRAUXPIE registro          1
-Control activo  GREGDESCUENTOS.INIT
-06-01-2020 15:31:11 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\regdescuentos.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CURPERFIL registro         23
-Control activo  MAIN
-29-01-2020 17:09:19 , Error nº:          1
-Error El archivo 'csrcabefac.dbf' no existe.
-Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
 
 
 
@@ -726,7 +409,19 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
 
 
 
@@ -1000,7 +695,19 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
 
 
 
@@ -1372,12 +1079,24 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
+
+
 l,CsrCursor.nomrubro,lcclave,Csrcursor.bonifica,STR(Csrcursor.nrovendedor,6),Csrcursor.nomvendedor,lnprevtaori )
  Alias CSRCURSOR registro          1
 Control activo  LISTAPROMOCION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-01-2020 18:55:45 , Error nº:         12
 Error Variable 'NROVENDEDOR' is not found.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,pretotal,nomrubro,clave,bonifica,nroctacte,nomctacte,prvtaori) VALUES (CsrCursor.grupodato,CsrCursor.idrubro,Csrcursor.numero,CsrCursor.nombre1,lnunibulto ,lnprevta,lnpretota
+
+
+
+
+
+
 
 
 
@@ -1663,7 +1382,19 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
 
 
 
@@ -1897,7 +1628,19 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
 
 
 
@@ -2131,7 +1874,19 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
 
 
 
@@ -2395,6 +2150,12 @@ Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,numero,nombre,unibulto,pvta,
 
 
 
+
+
+
+
+
+
 bro,lcclave,0,'','',0,ldfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2406,6 +2167,12 @@ Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-03-2020 15:30:43 , Error nº:         12
 Error No se encuentra la variable 'DFECHA'.
 Linea nº INSERT INTO CsrImprimir (Grupodato,idrubro,nombre,numero,unibulto,prevta1,pretotal,clave,desc1,prvtaori ,min1,fecha) VALUES (LOWER(CsrCursor.grupodato),CsrCursor.idrubro,lCnombre1,Csrcursor.codigo,lnunibulto ,lnprevta,lnpretotal,lcclave,Csrcurso
+
+
+
+
+
+
 
 
 
@@ -2783,6 +2550,12 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
+
+
+
+
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -2824,6 +2597,12 @@ Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
 02-12-2020 16:28:00 , Error nº:          1
 Error El archivo 'csrcabefac.dbf' no existe.
 Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
+
+
+
+
+
+
 
 
 
@@ -2965,7 +2744,19 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
+
+
+
+
+
 
 
 
@@ -3107,6 +2898,12 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -3178,7 +2975,19 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
 
 
 
@@ -3734,5 +3543,55 @@ Linea nº oMenu.createMenu('datamenu','seguridad','favoritos',pidsistema)
 Control activo  MAIN
 15-06-2021 10:16:24 , Verificando OCX
 15-06-2021 10:27:49 , Verificando OCX
-15-06-2021 10:27:53 , Error nº:          1Error El archivo 'amenupops.prg' no existe.Linea nº CASE aMenuPops[ nCont, 11 ] = 0 Alias CSRPOPS registro          1Control activo  MAIN
+15-06-2021 10:27:53 , Error nº:          1
+Error El archivo 'amenupops.prg' no existe.
+Linea nº CASE aMenuPops[ nCont, 11 ] = 0
+ Alias CSRPOPS registro          1
+Control activo  MAIN
 15-06-2021 10:28:30 , Verificando OCX
+15-06-2021 10:36:11 , Verificando OCX
+15-06-2021 10:39:21 , Verificando OCX
+15-06-2021 10:39:46 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT("CsrMenu")<1
+ Alias CSREMPRESA registro          1
+Control activo  MAIN
+15-06-2021 10:40:14 , Verificando OCX
+15-06-2021 10:47:29 , Verificando OCX
+15-06-2021 10:47:41 , Error nº:       1806
+Error SQL: no se encuentra la columna 'IDUSUARIOFAVORITO'.
+Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+
+
+u WHERE idusuariofavorito=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
+ Alias CSRPOPS registro          1
+Control activo  MAIN
+15-06-2021 10:48:25 , Verificando OCX
+15-06-2021 10:48:35 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+
+u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
+ Alias  registro          0
+Control activo  MAIN
+15-06-2021 10:50:00 , Verificando OCX
+15-06-2021 10:50:11 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
+ Alias  registro          0
+Control activo  MAIN
+15-06-2021 10:51:27 , Verificando OCX
+15-06-2021 10:51:52 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
+ Alias  registro          0
+Control activo  MAIN
+15-06-2021 10:52:40 , Verificando OCX
+15-06-2021 11:08:37 , Verificando OCX
+15-06-2021 11:13:17 , Verificando OCX
+15-06-2021 11:14:35 , Verificando OCX
