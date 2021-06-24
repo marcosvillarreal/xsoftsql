@@ -12,7 +12,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestión de Ventas"
+lctituloGestion = "Sync Punto Venta"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -242,7 +242,7 @@ IF TYPE('goApp')='O'
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
+	oMenu.createMenu('')   
 	oMenu = null
 
 	LeerEjercicioPerfil()
@@ -251,6 +251,9 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	
 	DO FORM frmmenu
+	
+	DO FORM regsync_exp
+	
 	Read events   
 ENDIF
 
