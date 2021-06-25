@@ -85,6 +85,8 @@ If lldesarrollo
    _rutaformconta = lcdd+'forms\contabilidad'
     _rutaformimp = lcdd+'forms\importadores'
    
+    _rutaformprueba = lcdd+'forms\pruebas'
+    
     _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
     _rutaprogs_sureño  =lcdd+'Progs\elsureño'
    Set default to (lcdd) &&;(lcddc)
@@ -94,7 +96,7 @@ If lldesarrollo
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
-               ,&_rutaformimp,&_rutaprogs_sureño
+               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba
                
  ELSE
  	SET CONSOLE OFF     

@@ -96,7 +96,8 @@ If lldesarrollo
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
                ,&_rutaformimp,&_rutaprogs_sureño
                
-      
+ ELSE
+ 	SET CONSOLE OFF     
 Endif
 
 *-- CREACION DE OBJETO APLICACION
