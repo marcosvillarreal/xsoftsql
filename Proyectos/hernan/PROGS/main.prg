@@ -218,6 +218,10 @@ IF TYPE('goApp')='O'
 		RETURN 
 	ENDIF 
 	
+	If lldesarrollo 
+		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
+	ENDIF 
+	
 	WAIT CLEAR 
 
 * en proc.prg
@@ -252,7 +256,7 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu
 	
-	DO FORM regsync_exp
+	DO FORM pasaje_ptovta_imp
 	
 	Read events   
 ENDIF
