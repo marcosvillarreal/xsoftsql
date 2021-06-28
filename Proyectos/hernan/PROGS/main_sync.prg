@@ -12,7 +12,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestión de Ventas"
+lctituloGestion = "Sync Punto Venta"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -37,7 +37,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
-cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"								   
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\hernan\'
@@ -65,7 +65,7 @@ If lldesarrollo
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
-   cRutaQR	= _rutabmps + '\qr.jpg'							  
+   cRutaQR	= _rutabmps + '\qr.jpg'
    
 Endif
 
@@ -83,7 +83,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO balanzasystel.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
-   SET PROCEDURE TO FoxBarcodeQR ADDITIVE												  
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
    
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -110,7 +110,7 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
-PUBLIC oConfigTermi				   
+PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -159,6 +159,7 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.t.
 	
 	LeerConfigTermi()
+	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 
     WAIT WINDOW "Verificando ActiveX instalados ..." nowait
@@ -220,6 +221,7 @@ IF TYPE('goApp')='O'
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
+	
 	WAIT CLEAR 
 
 * en proc.prg
@@ -244,7 +246,7 @@ IF TYPE('goApp')='O'
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
+	oMenu.createMenu('')   
 	oMenu = null
 
 	LeerEjercicioPerfil()
@@ -253,6 +255,9 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	
 	DO FORM frmmenu
+	
+	DO FORM pasaje_ptovta_imp
+	
 	Read events   
 ENDIF
 
