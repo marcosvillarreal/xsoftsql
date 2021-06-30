@@ -1,14 +1,3 @@
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0')
- Alias CSRIMPUESTO registro          1
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-25-06-2015 16:28:51 , Error nº:         12
-Error No se encuentra la variable 'NIMPUESTO001'.
-Linea nº oValor	= &cValor
- Alias CSRIMPUESTO registro          1
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-25-06-2015 16:30:32 , Error nº:         12
-Error No se encuentra la variable 'NIDEN'.
 Linea nº nIden	= nIden + 1
  Alias CSRIMPUESTO registro          1
 Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
@@ -35,6 +24,7 @@ Control activo  ON...
 25-06-2015 16:39:30 , Error nº:         12
 Error No se encuentra la variable 'EXTRA01'.
 Linea nº INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte ,NomCtacte,Direccion,Localidad,Categoiva,CUIT ,PlanPago,DetaVdor,Extra01,Extra02,Extra03 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyI
+
 
 
 
@@ -334,6 +324,7 @@ mp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp
 
 
 
+
 poCbte,Letra,NroCAE,VtoCAE,CAECheck ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03 ,cBo
 
 
@@ -484,7 +475,9 @@ poCbte,Letra,NroCAE,VtoCAE,CAECheck ) VALUES (STR(loObjFactura.hojaactual,4)+STR
 
 
 
+
 dyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,
+
 
 
 
@@ -788,7 +781,9 @@ Linea nº INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp
 
 
 
+
 mp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,Ti
+
 
 
 
@@ -1086,7 +1081,9 @@ poCbte,Letra,NroCAE,VtoCAE,CAECheck ) VALUES (STR(loObjFactura.hojaactual,4)+STR
 
 
 
+
 dyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,
+
 
 
 
@@ -1256,6 +1253,7 @@ Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
 25-06-2015 16:51:27 , Error nº:          9
 Error No coinciden los tipos de datos.
 Linea nº INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta ,Kilos,FecOferta,Orden) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,nCodigo,cPrecioUni ,cBonifica,cPrecioFin,cTotal,
+
 
 
 
@@ -1828,6 +1826,7 @@ Linea nº CREATE CURSOR CsrCabeDeta (orden n(12),comprobante c(15),direccion c(30
 
 
 
+
 aderia c(20),corredor c(25),detalle c(255) )
  Alias CSRIMPUESTO registro          1
 Control activo  MAIN
@@ -1859,6 +1858,7 @@ Control activo  MAIN
 19-02-2016 14:00:32 , Error nº:         12
 Error No se encuentra la variable 'CUIT'.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,cuit
+
 
 
 
@@ -2065,6 +2065,7 @@ Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4
 
 
 
+
 liente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -2161,6 +2162,7 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
 
 
 
@@ -2589,7 +2591,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -2653,7 +2657,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -2768,12 +2774,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -2961,5 +2969,15 @@ Error El archivo 'j:\robotcae\pasaje\afip_fe\fa000001.cu0' no existe.
 Linea nº USE &cArchivoCue IN 0 ALIAS FsrCuerpo EXCLUSIVE
  Alias CSRCUERPO registro          1
 Control activo  MAIN
-18-10-2018 12:30:04 , Error nº:       1734Error No se encuentra la propiedad ARCHIVO.Linea nº IF ".CA0"$oCabeCAE.archivo Alias CSRIMPUESTO registro          3Control activo  MAIN
-18-10-2018 12:42:11 , Error nº:       1734Error No se encuentra la propiedad MERCADERIA.Linea nº replace mercaderia WITH OscCabefac.mercaderia, nomvendedor WITH OscCabefac.corredor ,detalle WITH OscCabefac.detalle IN CsrCabeDeta Alias CSRCABEDETA registro          1Control activo  MAIN
+18-10-2018 12:30:04 , Error nº:       1734
+Error No se encuentra la propiedad ARCHIVO.
+Linea nº IF ".CA0"$oCabeCAE.archivo
+ Alias CSRIMPUESTO registro          3
+Control activo  MAIN
+18-10-2018 12:42:11 , Error nº:       1734
+Error No se encuentra la propiedad MERCADERIA.
+Linea nº replace mercaderia WITH OscCabefac.mercaderia, nomvendedor WITH OscCabefac.corredor ,detalle WITH OscCabefac.detalle IN CsrCabeDeta
+ Alias CSRCABEDETA registro          1
+Control activo  MAIN
+30-06-2021 11:54:20 , Error nº:       1734Error No se encuentra la propiedad IMPORTE.Linea nº OscCabefac.total	= OscCabefac.importe Alias CSRCABEZA registro          1Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+30-06-2021 11:57:50 , Error nº:       1734Error No se encuentra la propiedad GRAVADO.Linea nº IF OscCabefac.gravado<> 0 Alias CSRIMPUESTO registro          1Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
