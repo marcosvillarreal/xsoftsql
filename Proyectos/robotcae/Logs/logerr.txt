@@ -1,1966 +1,3 @@
-06-05-2016 16:49:52 , Base Objeto : c:\xsoftsql\desarrollo\clases\onegocio.vct
-06-05-2016 16:49:52 , Nº de Linea :         29
-06-05-2016 16:49:52 , En el Fuente: 	SELECT FsrCabeza
-02-08-2016 11:30:22 , MAIN, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : lntipocaja = VAL(Csrparaconfig.tipocaja);Error :         13;Ultimo Alias Activo: CSRPARADIARIO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000AC
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-QX004R.TMP;Ultimo Control activo: 
-02-08-2016 11:30:23 , Pila de llamadas
-02-08-2016 11:30:23 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-02-08-2016 11:30:23 , Objeto      : main
-02-08-2016 11:30:23 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-02-08-2016 11:30:23 , Nº de Linea :        254
-02-08-2016 11:30:24 , En el Fuente: 	Read events   
-02-08-2016 11:30:24 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-02-08-2016 11:30:24 , Objeto      : frmmenu1.treeview.dblclick
-02-08-2016 11:30:24 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-02-08-2016 11:30:24 , Nº de Linea :         10
-02-08-2016 11:30:24 , En el Fuente: 	   &lcCmd
-02-08-2016 11:30:24 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
-02-08-2016 11:30:25 , Objeto      : ejecutamenu
-02-08-2016 11:30:25 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\proc.prg
-02-08-2016 11:30:25 , Nº de Linea :       1490
-02-08-2016 11:30:25 , En el Fuente: 						DO FORM &lcForm
-02-08-2016 11:30:25 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-02-08-2016 11:30:25 , Objeto      : paradiario.init
-02-08-2016 11:30:26 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-02-08-2016 11:30:26 , Nº de Linea :          4
-02-08-2016 11:30:26 , En el Fuente:      .iniciavariables()   
-02-08-2016 11:30:26 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-02-08-2016 11:30:26 , Objeto      : paradiario.iniciavariables
-02-08-2016 11:30:26 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-02-08-2016 11:30:26 , Nº de Linea :          8
-02-08-2016 11:30:27 , En el Fuente: lntipocaja = VAL(Csrparaconfig.tipocaja)
-02-08-2016 11:32:18 , MAIN, Error: No se encuentra el alias 'CSRCATEGOIVA'.;Linea : SELECT CsrCategoiva;Error :         13;Ultimo Alias Activo: FSRTIPOCBTE;Ultimo registro:          6 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000ACQX007X.TMP;Ultimo Contro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-l activo: 
-02-08-2016 11:32:19 , Pila de llamadas
-02-08-2016 11:32:19 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-02-08-2016 11:32:19 , Objeto      : main
-02-08-2016 11:32:19 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-02-08-2016 11:32:19 , Nº de Linea :        254
-02-08-2016 11:32:20 , En el Fuente: 	Read events   
-02-08-2016 11:32:20 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
-02-08-2016 11:32:20 , Objeto      : regproceso.orobot.otimer.timer
-02-08-2016 11:32:20 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
-02-08-2016 11:32:21 , Nº de Linea :          3
-02-08-2016 11:32:21 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
-02-08-2016 11:32:21 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:32:21 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
-02-08-2016 11:32:21 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:32:21 , Nº de Linea :          4
-02-08-2016 11:32:22 , En el Fuente: 	lok = this.Buscarfile('.CA1')
-02-08-2016 11:32:22 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:32:22 , Objeto      : regproceso.orobot.orobot.buscarfile
-02-08-2016 11:32:22 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:32:23 , Nº de Linea :         12
-02-08-2016 11:32:23 , En el Fuente: 	lok = This.BuscarFileDBF(cExtension)
-02-08-2016 11:32:23 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:32:23 , Objeto      : regproceso.orobot.orobot.buscarfiledbf
-02-08-2016 11:32:23 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:32:23 , Nº de Linea :        270
-02-08-2016 11:32:23 , En el Fuente: SELECT CsrCategoiva
-02-08-2016 11:52:24 , MAIN, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF LEN(str(cDocumento,15))=0 &&No vienen nada en el campo, chequeamos el campo cuit;Error :         11;Ultimo Alias Activo: CSRIMPUESTO;Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-registro:          2 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005I4P002P.TMP;Ultimo Control activo: 
-02-08-2016 11:52:24 , Pila de llamadas
-02-08-2016 11:52:24 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-02-08-2016 11:52:24 , Objeto      : main
-02-08-2016 11:52:24 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-02-08-2016 11:52:24 , Nº de Linea :        254
-02-08-2016 11:52:25 , En el Fuente: 	Read events   
-02-08-2016 11:52:25 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
-02-08-2016 11:52:25 , Objeto      : regproceso.orobot.otimer.timer
-02-08-2016 11:52:25 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
-02-08-2016 11:52:25 , Nº de Linea :          3
-02-08-2016 11:52:26 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
-02-08-2016 11:52:26 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:26 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
-02-08-2016 11:52:26 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:26 , Nº de Linea :          4
-02-08-2016 11:52:26 , En el Fuente: 	lok = this.Buscarfile('.CA1')
-02-08-2016 11:52:27 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:27 , Objeto      : regproceso.orobot.orobot.buscarfile
-02-08-2016 11:52:27 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:27 , Nº de Linea :         31
-02-08-2016 11:52:28 , En el Fuente: 		IF This.SolicitarCAE()
-02-08-2016 11:52:28 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:28 , Objeto      : regproceso.orobot.orobot.solicitarcae
-02-08-2016 11:52:28 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:28 , Nº de Linea :         31
-02-08-2016 11:52:29 , En el Fuente: 	lok = oFaCCAE.Robot_CAE()
-02-08-2016 11:52:29 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:29 , Objeto      : ofacelectronica.robot_cae
-02-08-2016 11:52:29 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:29 , Nº de Linea :          5
-02-08-2016 11:52:29 , En el Fuente: this.robot_proceso()
-02-08-2016 11:52:29 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:30 , Objeto      : ofacelectronica.robot_proceso
-02-08-2016 11:52:30 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:52:30 , Nº de Linea :         56
-02-08-2016 11:52:30 , En el Fuente: 		IF LEN(str(cDocumento,15))=0 &&No vienen nada en el campo, chequeamos el campo cuit
-02-08-2016 11:54:37 , MAIN, Error: No se encuentra la variable 'DOCUMENTO'.;Linea : IF len(Documento)<11;Error :         12;Ultimo Alias Activo: CSRIMPUESTO;Ultimo registro:          2 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BNYH0043.TMP;Ultimo Contr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ol activo: 
-02-08-2016 11:54:38 , Pila de llamadas
-02-08-2016 11:54:38 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-02-08-2016 11:54:38 , Objeto      : main
-02-08-2016 11:54:38 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-02-08-2016 11:54:39 , Nº de Linea :        254
-02-08-2016 11:54:39 , En el Fuente: 	Read events   
-02-08-2016 11:54:39 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
-02-08-2016 11:54:39 , Objeto      : regproceso.orobot.otimer.timer
-02-08-2016 11:54:39 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
-02-08-2016 11:54:39 , Nº de Linea :          3
-02-08-2016 11:54:40 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
-02-08-2016 11:54:40 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:40 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
-02-08-2016 11:54:41 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:41 , Nº de Linea :          4
-02-08-2016 11:54:41 , En el Fuente: 	lok = this.Buscarfile('.CA1')
-02-08-2016 11:54:41 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:41 , Objeto      : regproceso.orobot.orobot.buscarfile
-02-08-2016 11:54:41 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:41 , Nº de Linea :         31
-02-08-2016 11:54:42 , En el Fuente: 		IF This.SolicitarCAE()
-02-08-2016 11:54:42 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:42 , Objeto      : regproceso.orobot.orobot.solicitarcae
-02-08-2016 11:54:43 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:43 , Nº de Linea :         31
-02-08-2016 11:54:43 , En el Fuente: 	lok = oFaCCAE.Robot_CAE()
-02-08-2016 11:54:43 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:43 , Objeto      : ofacelectronica.robot_cae
-02-08-2016 11:54:43 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:44 , Nº de Linea :          5
-02-08-2016 11:54:44 , En el Fuente: this.robot_proceso()
-02-08-2016 11:54:44 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:44 , Objeto      : ofacelectronica.robot_proceso
-02-08-2016 11:54:44 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-02-08-2016 11:54:45 , Nº de Linea :         59
-02-08-2016 11:54:45 , En el Fuente: 			IF len(Documento)<11
-18-10-2018 09:57:35 , MAIN, Error: No se encuentra el alias 'CSRPARACONFIG'.;Linea : lntipocaja = VAL(Csrparaconfig.tipocaja);Error :         13;Ultimo Alias Activo: CSRPARADIARIO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009L
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-HL003Q.TMP;Ultimo Control activo: 
-18-10-2018 09:57:36 , Pila de llamadas
-18-10-2018 09:57:37 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-18-10-2018 09:57:37 , Objeto      : main
-18-10-2018 09:57:37 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-18-10-2018 09:57:37 , Nº de Linea :        254
-18-10-2018 09:57:38 , En el Fuente: 	Read events   
-18-10-2018 09:57:38 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 09:57:38 , Objeto      : frmmenu1.treeview.dblclick
-18-10-2018 09:57:38 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 09:57:39 , Nº de Linea :         10
-18-10-2018 09:57:39 , En el Fuente: 	   &lcCmd
-18-10-2018 09:57:39 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
-18-10-2018 09:57:39 , Objeto      : ejecutamenu
-18-10-2018 09:57:39 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\proc.prg
-18-10-2018 09:57:39 , Nº de Linea :       1490
-18-10-2018 09:57:39 , En el Fuente: 						DO FORM &lcForm
-18-10-2018 09:57:39 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-18-10-2018 09:57:40 , Objeto      : paradiario.init
-18-10-2018 09:57:40 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-18-10-2018 09:57:40 , Nº de Linea :          4
-18-10-2018 09:57:41 , En el Fuente:      .iniciavariables()   
-18-10-2018 09:57:41 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-18-10-2018 09:57:41 , Objeto      : paradiario.iniciavariables
-18-10-2018 09:57:42 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\paradiario.sct
-18-10-2018 09:57:42 , Nº de Linea :          8
-18-10-2018 09:57:42 , En el Fuente: lntipocaja = VAL(Csrparaconfig.tipocaja)
-18-10-2018 10:11:22 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCabeImp')=0;Error :         13;Ultimo Alias Activo: CSRCENTRORECEP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L003V.TMP;Ultimo Control ac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tivo: 
-18-10-2018 10:11:22 , Pila de llamadas
-18-10-2018 10:11:22 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-18-10-2018 10:11:22 , Objeto      : main
-18-10-2018 10:11:22 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-18-10-2018 10:11:22 , Nº de Linea :        254
-18-10-2018 10:11:22 , En el Fuente: 	Read events   
-18-10-2018 10:11:22 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:11:23 , Objeto      : frmmenu1.treeview.dblclick
-18-10-2018 10:11:23 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:11:23 , Nº de Linea :         10
-18-10-2018 10:11:24 , En el Fuente: 	   &lcCmd
-18-10-2018 10:11:24 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
-18-10-2018 10:11:24 , Objeto      : ejecutamenu
-18-10-2018 10:11:24 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\proc.prg
-18-10-2018 10:11:25 , Nº de Linea :       1490
-18-10-2018 10:11:25 , En el Fuente: 						DO FORM &lcForm
-18-10-2018 10:11:25 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:11:25 , Objeto      : abmcabeimp.init
-18-10-2018 10:11:25 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:11:25 , Nº de Linea :          2
-18-10-2018 10:11:25 , En el Fuente: This.IniciarVariables()
-18-10-2018 10:11:25 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:11:26 , Objeto      : abmcabeimp.iniciarvariables
-18-10-2018 10:11:26 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:11:26 , Nº de Linea :         19
-18-10-2018 10:11:27 , En el Fuente: IF RECCOUNT('CsrCabeImp')=0
-18-10-2018 10:11:29 , MAIN, Error: El entorno de datos ya está descargado.;Linea : DO FORM &lcForm;Error :       1967;Ultimo Alias Activo: CURPERFIL;Ultimo registro:         10 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L0035.TMP;Ultimo Control activ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o: 
-18-10-2018 10:11:29 , Pila de llamadas
-18-10-2018 10:11:30 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-18-10-2018 10:11:30 , Objeto      : main
-18-10-2018 10:11:30 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-18-10-2018 10:11:30 , Nº de Linea :        254
-18-10-2018 10:11:31 , En el Fuente: 	Read events   
-18-10-2018 10:11:31 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:11:31 , Objeto      : frmmenu1.treeview.dblclick
-18-10-2018 10:11:31 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:11:31 , Nº de Linea :         10
-18-10-2018 10:11:31 , En el Fuente: 	   &lcCmd
-18-10-2018 10:11:31 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
-18-10-2018 10:11:31 , Objeto      : ejecutamenu
-18-10-2018 10:11:32 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\proc.prg
-18-10-2018 10:11:32 , Nº de Linea :       1490
-18-10-2018 10:11:32 , En el Fuente: 						DO FORM &lcForm
-18-10-2018 10:19:00 , MAIN, Error: No se encuentra el alias.;Linea : IF RECCOUNT('CsrCabeImp')=0;Error :         13;Ultimo Alias Activo: CSRCENTRORECEP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L00J3.TMP;Ultimo Control ac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tivo: 
-18-10-2018 10:19:01 , Pila de llamadas
-18-10-2018 10:19:01 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-18-10-2018 10:19:01 , Objeto      : main
-18-10-2018 10:19:01 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-18-10-2018 10:19:01 , Nº de Linea :        254
-18-10-2018 10:19:02 , En el Fuente: 	Read events   
-18-10-2018 10:19:02 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:19:02 , Objeto      : frmmenu1.treeview.dblclick
-18-10-2018 10:19:02 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:19:03 , Nº de Linea :         10
-18-10-2018 10:19:03 , En el Fuente: 	   &lcCmd
-18-10-2018 10:19:03 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
-18-10-2018 10:19:03 , Objeto      : ejecutamenu
-18-10-2018 10:19:04 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\proc.prg
-18-10-2018 10:19:04 , Nº de Linea :       1490
-18-10-2018 10:19:04 , En el Fuente: 						DO FORM &lcForm
-18-10-2018 10:19:04 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:19:04 , Objeto      : abmcabeimp.init
-18-10-2018 10:19:04 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:19:04 , Nº de Linea :          2
-18-10-2018 10:19:05 , En el Fuente: This.IniciarVariables()
-18-10-2018 10:19:05 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:19:05 , Objeto      : abmcabeimp.iniciarvariables
-18-10-2018 10:19:05 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-18-10-2018 10:19:06 , Nº de Linea :         19
-18-10-2018 10:19:06 , En el Fuente: IF RECCOUNT('CsrCabeImp')=0
-18-10-2018 10:19:08 , MAIN, Error: El entorno de datos ya está descargado.;Linea : DO FORM &lcForm;Error :       1967;Ultimo Alias Activo: CURPERFIL;Ultimo registro:         10 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L00HY.TMP;Ultimo Control activ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o: 
-18-10-2018 10:19:08 , Pila de llamadas
-18-10-2018 10:19:08 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-18-10-2018 10:19:08 , Objeto      : main
-18-10-2018 10:19:08 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-18-10-2018 10:19:08 , Nº de Linea :        254
-18-10-2018 10:19:09 , En el Fuente: 	Read events   
-18-10-2018 10:19:09 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:19:09 , Objeto      : frmmenu1.treeview.dblclick
-18-10-2018 10:19:09 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-18-10-2018 10:19:09 , Nº de Linea :         10
-18-10-2018 10:19:10 , En el Fuente: 	   &lcCmd
-18-10-2018 10:19:10 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
-18-10-2018 10:19:10 , Objeto      : ejecutamenu
-18-10-2018 10:19:10 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\proc.prg
-18-10-2018 10:19:11 , Nº de Linea :       1490
-18-10-2018 10:19:11 , En el Fuente: 						DO FORM &lcForm
-10/18/18 10:30:24 , ABMCABEIMP.DATAENVIRONMENT.CABEIMP.INIT, Error: El archivo 'c:\xsoftsql\proyectos\robotcae\datos\datos.dbc' no existe.;Linea : open database (lcDBC);Error :          1;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 ;DBF: 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L01SH.TMP;Ultimo Control activo: 
-10/18/18 10:30:24 , Pila de llamadas
-10/18/18 10:30:25 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-10/18/18 10:30:25 , Objeto      : abmcabeimp.dataenvironment.cabeimp.init
-10/18/18 10:30:26 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\abmcabeimp.sct
-10/18/18 10:30:27 , Nº de Linea :         22
-10/18/18 10:30:27 , En el Fuente: 	open database (lcDBC)
-10/18/18 10:31:53 , MAIN, Error: El archivo 'c:\xsoftsql\proyectos\robotcae\datos\datos.dbc' no existe.;Linea : open database (lcDBC);Error :          1;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0009P1L01ZS.TMP;Ultimo Control activo: 
-10/18/18 10:31:54 , Pila de llamadas
-10/18/18 10:31:55 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
-10/18/18 10:31:55 , Objeto      : main
-10/18/18 10:31:55 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
-10/18/18 10:31:55 , Nº de Linea :        254
-10/18/18 10:31:56 , En el Fuente: 	Read events   
-10/18/18 10:31:56 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
-10/18/18 10:31:56 , Objeto      : frmmenu1.treeview.dblclick
-10/18/18 10:31:56 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
 10/18/18 10:31:56 , Nº de Linea :         10
 10/18/18 10:31:57 , En el Fuente: 	   &lcCmd
 10/18/18 10:31:57 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\proc.fxp
@@ -1974,6 +11,68 @@ C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L01SH.TMP;Ultimo Control activo:
 10/18/18 10:31:59 , Nº de Linea :         22
 10/18/18 10:31:59 , En el Fuente: 	open database (lcDBC)
 10/18/18 10:32:37 , MAIN, Error: El tipo de datos no es válido para esta propiedad.;Linea : .TOP = .nTop;Error :       1732;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L024A.TMP;Ultimo Contro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2239,6 +338,68 @@ l activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: CURPERFIL;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009P1L02WD.TMP;Ultimo Control activo: 
 18-10-2018 11:03:26 , Pila de llamadas
 18-10-2018 11:03:26 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
@@ -2252,6 +413,68 @@ o: CURPERFIL;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP
 18-10-2018 11:03:27 , Nº de Linea :          3
 18-10-2018 11:03:27 , En el Fuente:    thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
 18-10-2018 11:08:25 , MAIN, Error: No se encuentra el alias 'IMPRESORA'.;Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT );Error :         13;Ultimo Alias Activo: _SETEOTERMI;Ultimo registro:          1 VAL(CNUMERO);DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2517,6 +740,68 @@ MP\00009P1L0339.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo: 
 18-10-2018 11:14:47 , Pila de llamadas
 18-10-2018 11:14:48 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
@@ -2540,6 +825,68 @@ COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 18-10-2018 11:14:51 , Nº de Linea :          4
 18-10-2018 11:14:51 , En el Fuente:    =tablerevert(.t.,this.calias)
 18-10-2018 11:14:57 , ABMPREFIJOS.CMDCANCELAR.CLICK, Error: La función requiere el modo de almacenamiento en búfer de filas o tablas.;Linea : =tablerevert(.t.,this.calias);Error :       1586;Ultimo Alias Activo: PREFIJONRO;Ultimo registro:         17 NOM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2715,6 +1062,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Control activo: 
 18-10-2018 11:43:59 , Pila de llamadas
 18-10-2018 11:44:00 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
@@ -2743,6 +1152,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 18-10-2018 11:44:04 , Nº de Linea :        220
 18-10-2018 11:44:05 , En el Fuente: 		OscCuerpo.detanombre	= OscCuerpo.consigna
 18-10-2018 11:48:00 , MAIN, Error: No se encuentra la propiedad CONSIGNA.;Linea : OscCuerpo.detanombre	= OscCuerpo.consigna;Error :       1734;Ultimo Alias Activo: FSRCUERPO;Ultimo registro:          1 ;DBF: J:\ROBOTCAE\PASAJE\AFIP_FE\F0000001.CU1;Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2899,6 +1370,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Control activo: 
 18-10-2018 11:48:34 , Pila de llamadas
 18-10-2018 11:48:34 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
@@ -2927,6 +1460,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 18-10-2018 11:48:39 , Nº de Linea :        221
 18-10-2018 11:48:39 , En el Fuente: 			OscCuerpo.detanombre	= OscCuerpo.consigna
 18-10-2018 11:48:46 , FRMMENU1.TREEVIEW.DBLCLICK, Error: No se encuentra la variable 'LLDESARROLLO'.;Linea : If lldesarrollo;Error :         12;Ultimo Alias Activo: CURPERFIL;Ultimo registro:         16 ;DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AZGP00R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3039,6 +1634,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 6.TMP;Ultimo Control activo: 
 18-10-2018 11:48:51 , Pila de llamadas
 18-10-2018 11:48:51 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
@@ -3096,6 +1753,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 6.TMP;Ultimo Control activo: 
 18-10-2018 11:48:53 , Pila de llamadas
 18-10-2018 11:48:54 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
@@ -3104,6 +1823,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 18-10-2018 11:48:54 , Nº de Linea :          6
 18-10-2018 11:48:55 , En el Fuente: 	If lldesarrollo
 18-10-2018 11:50:08 , MAIN, Error: No se encuentra la propiedad CONSIGNA.;Linea : OscCuerpo.detanombre	= OscCuerpo.consigna;Error :       1734;Ultimo Alias Activo: FSRCUERPO;Ultimo registro:          1 ;DBF: J:\ROBOTCAE\PASAJE\AFIP_FE\F0000001.CU1;Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3219,6 +2000,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4.TMP;Ultimo Control activo: 
 18-10-2018 11:50:25 , Pila de llamadas
 18-10-2018 11:50:26 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
@@ -3227,6 +2070,68 @@ BRE;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\PREFIJONRO.DBF;Ultimo Control activo:
 18-10-2018 11:50:26 , Nº de Linea :          6
 18-10-2018 11:50:26 , En el Fuente: 	If lldesarrollo
 18-10-2018 12:19:28 , MAIN, Error: El archivo 'j:\robotcae\pasaje\afip_fe\fa000001.cu0' no existe.;Linea : USE &cArchivoCue IN 0 ALIAS FsrCuerpo EXCLUSIVE;Error :          1;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\ADMIN\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3323,6 +2228,68 @@ APPDATA\LOCAL\TEMP\0000651L004G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ntrol activo: 
 18-10-2018 12:30:04 , Pila de llamadas
 18-10-2018 12:30:05 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
@@ -3351,6 +2318,68 @@ ntrol activo:
 18-10-2018 12:30:09 , Nº de Linea :         28
 18-10-2018 12:30:10 , En el Fuente: IF ".CA0"$oCabeCAE.archivo
 18-10-2018 12:42:11 , MAIN, Error: No se encuentra la propiedad MERCADERIA.;Linea : replace mercaderia WITH OscCabefac.mercaderia, nomvendedor WITH OscCabefac.corredor ,detalle WITH OscCabefac.detalle IN CsrCabeDeta;Error :       1734;Ultimo Alias Activo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3417,6 +2446,68 @@ ntrol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\0000FX1L00AX.TMP;Ultimo Control activo: 
 30-06-2021 11:54:21 , Pila de llamadas
 30-06-2021 11:54:22 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
@@ -3440,6 +2531,68 @@ CAL\TEMP\0000FX1L00AX.TMP;Ultimo Control activo:
 30-06-2021 11:54:24 , Nº de Linea :        174
 30-06-2021 11:54:24 , En el Fuente: 	OscCabefac.total	= OscCabefac.importe
 30-06-2021 11:57:50 , REGPROCESO.OROBOT.OTIMER.TIMER, Error: No se encuentra la propiedad GRAVADO.;Linea : IF OscCabefac.gravado<> 0;Error :       1734;Ultimo Alias Activo: CSRIMPUESTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3478,6 +2631,68 @@ CAL\TEMP\0000FX1L00AX.TMP;Ultimo Control activo:
 30-06-2021 11:57:53 , En el Fuente: IF OscCabefac.gravado<> 0
 01-07-2021 09:23:40 , FRMMENU1.TREEVIEW.DBLCLICK, Error: No se encuentra la variable 'LLDESARROLLO'.;Linea : If lldesarrollo;Error :         12;Ultimo Alias Activo: CURPERFIL;Ultimo registro:          3 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BVNT002
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4.TMP;Ultimo Control activo: 
 01-07-2021 09:23:41 , Pila de llamadas
 01-07-2021 09:23:41 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
@@ -3485,3 +2700,632 @@ CAL\TEMP\0000FX1L00AX.TMP;Ultimo Control activo:
 01-07-2021 09:23:41 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
 01-07-2021 09:23:41 , Nº de Linea :          6
 01-07-2021 09:23:42 , En el Fuente: 	If lldesarrollo
+05-07-2021 12:26:37 , MAIN, Error: El archivo 'c:\aplicaciones\lamagdalena\datos\datos.dbc' no existe.;Linea : OPEN DATABASE (LcConectionString) SHARED;Error :          1;Ultimo Alias Activo: CSREMPRESA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\AP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PDATA\LOCAL\TEMP\0000CCG9000N.TMP;Ultimo Control activo: 
+05-07-2021 12:26:37 , Pila de llamadas
+05-07-2021 12:26:38 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
+05-07-2021 12:26:38 , Objeto      : main
+05-07-2021 12:26:38 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
+05-07-2021 12:26:38 , Nº de Linea :        255
+05-07-2021 12:26:38 , En el Fuente: 	oMenu.createMenu()   
+05-07-2021 12:26:38 , Programa    : j:\xsoftsql\desarrollo\clases\symde.vct
+05-07-2021 12:26:38 , Objeto      : createmenu.createmenu
+05-07-2021 12:26:38 , Base Objeto : j:\xsoftsql\desarrollo\clases\symde.vct
+05-07-2021 12:26:39 , Nº de Linea :         21
+05-07-2021 12:26:39 , En el Fuente:       OPEN DATABASE (LcConectionString) SHARED
+05-07-2021 15:56:29 , MAIN, Error: No se encuentra la variable 'HOJATOTAL'.;Linea : loObjFactura.hojatotal= ImpCabeza.hojatotal;Error :         12;Ultimo Alias Activo: IMPCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BBIH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+003U.TMP;Ultimo Control activo: 
+05-07-2021 15:56:29 , Pila de llamadas
+05-07-2021 15:56:29 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
+05-07-2021 15:56:29 , Objeto      : main
+05-07-2021 15:56:29 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
+05-07-2021 15:56:29 , Nº de Linea :        266
+05-07-2021 15:56:29 , En el Fuente: 	Read events   
+05-07-2021 15:56:30 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 15:56:30 , Objeto      : regproceso.orobot.otimer.timer
+05-07-2021 15:56:30 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 15:56:30 , Nº de Linea :          3
+05-07-2021 15:56:30 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
+05-07-2021 15:56:30 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:56:30 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
+05-07-2021 15:56:30 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:56:31 , Nº de Linea :          6
+05-07-2021 15:56:31 , En el Fuente: 	lok = this.Buscarfile('.CA2')
+05-07-2021 15:56:31 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:56:31 , Objeto      : regproceso.orobot.orobot.buscarfile
+05-07-2021 15:56:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:56:31 , Nº de Linea :         40
+05-07-2021 15:56:31 , En el Fuente: 	IF This.ImprimirCAE()
+05-07-2021 15:56:31 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:56:31 , Objeto      : regproceso.orobot.orobot.imprimircae
+05-07-2021 15:56:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:56:32 , Nº de Linea :         28
+05-07-2021 15:56:32 , En el Fuente: 	lok = oImpresora.inicioimpresora("F",this.imp_impresora,this.imp_tipoimp,this.imp_formulario,_debogenerar,lndeboActualizarNro,lnvistapreliminar)
+05-07-2021 15:56:32 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:56:32 , Objeto      : regproceso.orobot.oimpresor.inicioimpresora
+05-07-2021 15:56:32 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:56:32 , Nº de Linea :         28
+05-07-2021 15:56:33 , En el Fuente: 		lok = this.reportf(lndeboActualizarNro)
+05-07-2021 15:56:33 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:56:33 , Objeto      : regproceso.orobot.oimpresor.reportf
+05-07-2021 15:56:33 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:56:33 , Nº de Linea :         50
+05-07-2021 15:56:33 , En el Fuente: loObjFactura.hojatotal= ImpCabeza.hojatotal
+05-07-2021 15:56:48 , FRMMENU1.TREEVIEW.DBLCLICK, Error: No se encuentra la variable 'LLDESARROLLO'.;Linea : If lldesarrollo;Error :         12;Ultimo Alias Activo: CURPERFIL;Ultimo registro:          3 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000BBIH002
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.TMP;Ultimo Control activo: 
+05-07-2021 15:56:48 , Pila de llamadas
+05-07-2021 15:56:48 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
+05-07-2021 15:56:48 , Objeto      : frmmenu1.treeview.dblclick
+05-07-2021 15:56:48 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
+05-07-2021 15:56:48 , Nº de Linea :          6
+05-07-2021 15:56:48 , En el Fuente: 	If lldesarrollo
+05-07-2021 15:59:26 , MAIN, Error: No se encuentra la variable 'HOJATOTAL'.;Linea : loObjFactura.hojatotal= ImpCabeza.hojatotal;Error :         12;Ultimo Alias Activo: IMPCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JH1L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+003U.TMP;Ultimo Control activo: 
+05-07-2021 15:59:26 , Pila de llamadas
+05-07-2021 15:59:26 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
+05-07-2021 15:59:26 , Objeto      : main
+05-07-2021 15:59:26 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
+05-07-2021 15:59:26 , Nº de Linea :        266
+05-07-2021 15:59:26 , En el Fuente: 	Read events   
+05-07-2021 15:59:26 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 15:59:26 , Objeto      : regproceso.orobot.otimer.timer
+05-07-2021 15:59:26 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 15:59:26 , Nº de Linea :          3
+05-07-2021 15:59:27 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
+05-07-2021 15:59:27 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:59:27 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
+05-07-2021 15:59:27 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:59:27 , Nº de Linea :          6
+05-07-2021 15:59:27 , En el Fuente: 	lok = this.Buscarfile('.CA2')
+05-07-2021 15:59:27 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:59:27 , Objeto      : regproceso.orobot.orobot.buscarfile
+05-07-2021 15:59:28 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:59:28 , Nº de Linea :         40
+05-07-2021 15:59:28 , En el Fuente: 	IF This.ImprimirCAE()
+05-07-2021 15:59:28 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:59:28 , Objeto      : regproceso.orobot.orobot.imprimircae
+05-07-2021 15:59:28 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 15:59:28 , Nº de Linea :         28
+05-07-2021 15:59:28 , En el Fuente: 	lok = oImpresora.inicioimpresora("F",this.imp_impresora,this.imp_tipoimp,this.imp_formulario,_debogenerar,lndeboActualizarNro,lnvistapreliminar)
+05-07-2021 15:59:29 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:59:29 , Objeto      : regproceso.orobot.oimpresor.inicioimpresora
+05-07-2021 15:59:29 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:59:29 , Nº de Linea :         28
+05-07-2021 15:59:29 , En el Fuente: 		lok = this.reportf(lndeboActualizarNro)
+05-07-2021 15:59:29 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:59:29 , Objeto      : regproceso.orobot.oimpresor.reportf
+05-07-2021 15:59:29 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 15:59:29 , Nº de Linea :         51
+05-07-2021 15:59:30 , En el Fuente: loObjFactura.hojatotal= ImpCabeza.hojatotal
+05-07-2021 16:13:56 , MAIN, Error: No se encuentra la variable 'FISCAL'.;Linea : cExtra02 = IIF(loObjfactura.letra="A" AND CsrCategoiva.fiscal="M",'RG 5300 - El crédito fiscal discriminado en el presente comprobante solo podrá ser computado a efectos del
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Procedimiento permanente de transición al Régimen General.',cExtra02);Error :         12;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 SUCURSAL;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\CABEIMP.DBF;Ultimo Control activo: 
+05-07-2021 16:13:56 , Pila de llamadas
+05-07-2021 16:13:56 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
+05-07-2021 16:13:56 , Objeto      : main
+05-07-2021 16:13:56 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
+05-07-2021 16:13:56 , Nº de Linea :        266
+05-07-2021 16:13:56 , En el Fuente: 	Read events   
+05-07-2021 16:13:57 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 16:13:57 , Objeto      : regproceso.orobot.otimer.timer
+05-07-2021 16:13:57 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 16:13:57 , Nº de Linea :          3
+05-07-2021 16:13:57 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
+05-07-2021 16:13:57 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:13:57 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
+05-07-2021 16:13:57 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:13:58 , Nº de Linea :          6
+05-07-2021 16:13:58 , En el Fuente: 	lok = this.Buscarfile('.CA2')
+05-07-2021 16:13:58 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:13:58 , Objeto      : regproceso.orobot.orobot.buscarfile
+05-07-2021 16:13:58 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:13:58 , Nº de Linea :         40
+05-07-2021 16:13:58 , En el Fuente: 	IF This.ImprimirCAE()
+05-07-2021 16:13:58 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:13:59 , Objeto      : regproceso.orobot.orobot.imprimircae
+05-07-2021 16:13:59 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:13:59 , Nº de Linea :         28
+05-07-2021 16:13:59 , En el Fuente: 	lok = oImpresora.inicioimpresora("F",this.imp_impresora,this.imp_tipoimp,this.imp_formulario,_debogenerar,lndeboActualizarNro,lnvistapreliminar)
+05-07-2021 16:13:59 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:13:59 , Objeto      : regproceso.orobot.oimpresor.inicioimpresora
+05-07-2021 16:13:59 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:13:59 , Nº de Linea :         28
+05-07-2021 16:14:00 , En el Fuente: 		lok = this.reportf(lndeboActualizarNro)
+05-07-2021 16:14:00 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:14:00 , Objeto      : regproceso.orobot.oimpresor.reportf
+05-07-2021 16:14:00 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:14:00 , Nº de Linea :         66
+05-07-2021 16:14:00 , En el Fuente:     	this.reportF_cab(loobjfactura)
+05-07-2021 16:14:00 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:14:01 , Objeto      : regproceso.orobot.oimpresor.reportf_cab
+05-07-2021 16:14:01 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:14:01 , Nº de Linea :         77
+05-07-2021 16:14:01 , En el Fuente: cExtra02 = IIF(loObjfactura.letra="A" AND CsrCategoiva.fiscal="M",'RG 5300 - El crédito fiscal discriminado en el presente comprobante solo podrá ser computado a efectos del Procedimiento permanente de transición al Ré
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gimen General.',cExtra02)
+05-07-2021 16:21:22 , FRMMENU1.TREEVIEW.DBLCLICK, Error: No se encuentra la variable 'LLDESARROLLO'.;Linea : If lldesarrollo;Error :         12;Ultimo Alias Activo: CURPERFIL;Ultimo registro:          8 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JZ7T002
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.TMP;Ultimo Control activo: 
+05-07-2021 16:21:22 , Pila de llamadas
+05-07-2021 16:21:23 , Programa    : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
+05-07-2021 16:21:23 , Objeto      : frmmenu1.treeview.dblclick
+05-07-2021 16:21:23 , Base Objeto : j:\xsoftsql\proyectos\robotcae\forms\frmmenu.sct
+05-07-2021 16:21:23 , Nº de Linea :          6
+05-07-2021 16:21:24 , En el Fuente: 	If lldesarrollo
+05-07-2021 16:22:12 , MAIN, Error: No se encuentra la variable 'ABRAVIA'.;Linea : cExtra02 = IIF(loObjfactura.letra="A" AND CsrCategoiva.abravia="RM",'RG 5300 - El crédito fiscal discriminado en el presente comprobante solo podrá ser computado a efectos 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+del Procedimiento permanente de transición al Régimen General.',cExtra02);Error :         12;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 SUCURSAL;DBF: C:\APLICACIONES\COOPELECCAE\DATOS\CABEIMP.DBF;Ultimo Control activo: 
+05-07-2021 16:22:12 , Pila de llamadas
+05-07-2021 16:22:12 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
+05-07-2021 16:22:12 , Objeto      : main
+05-07-2021 16:22:12 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
+05-07-2021 16:22:12 , Nº de Linea :        266
+05-07-2021 16:22:12 , En el Fuente: 	Read events   
+05-07-2021 16:22:12 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 16:22:12 , Objeto      : regproceso.orobot.otimer.timer
+05-07-2021 16:22:12 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 16:22:13 , Nº de Linea :          3
+05-07-2021 16:22:13 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
+05-07-2021 16:22:13 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:22:13 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
+05-07-2021 16:22:13 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:22:13 , Nº de Linea :          6
+05-07-2021 16:22:13 , En el Fuente: 	lok = this.Buscarfile('.CA2')
+05-07-2021 16:22:13 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:22:14 , Objeto      : regproceso.orobot.orobot.buscarfile
+05-07-2021 16:22:14 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:22:14 , Nº de Linea :         40
+05-07-2021 16:22:14 , En el Fuente: 	IF This.ImprimirCAE()
+05-07-2021 16:22:14 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:22:14 , Objeto      : regproceso.orobot.orobot.imprimircae
+05-07-2021 16:22:14 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:22:15 , Nº de Linea :         28
+05-07-2021 16:22:15 , En el Fuente: 	lok = oImpresora.inicioimpresora("F",this.imp_impresora,this.imp_tipoimp,this.imp_formulario,_debogenerar,lndeboActualizarNro,lnvistapreliminar)
+05-07-2021 16:22:15 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:22:16 , Objeto      : regproceso.orobot.oimpresor.inicioimpresora
+05-07-2021 16:22:16 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:22:16 , Nº de Linea :         28
+05-07-2021 16:22:16 , En el Fuente: 		lok = this.reportf(lndeboActualizarNro)
+05-07-2021 16:22:16 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:22:16 , Objeto      : regproceso.orobot.oimpresor.reportf
+05-07-2021 16:22:17 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:22:17 , Nº de Linea :         66
+05-07-2021 16:22:17 , En el Fuente:     	this.reportF_cab(loobjfactura)
+05-07-2021 16:22:17 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:22:17 , Objeto      : regproceso.orobot.oimpresor.reportf_cab
+05-07-2021 16:22:18 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:22:18 , Nº de Linea :         77
+05-07-2021 16:22:18 , En el Fuente: cExtra02 = IIF(loObjfactura.letra="A" AND CsrCategoiva.abravia="RM",'RG 5300 - El crédito fiscal discriminado en el presente comprobante solo podrá ser computado a efectos del Procedimiento permanente de transición al 
+
+
+
+
+
+
+
+
+
+
+
+Régimen General.',cExtra02)
+05-07-2021 16:26:15 , MAIN, Error: No se encuentra la variable 'CEXTRA04'.;Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte ,NomCtacte,Direccion,Localidad,Categoiva,CUIT ,PlanPago,DetaVdor,Extra01,Extra02,Extra03
+
+
+
+
+
+
+
+
+
+
+,Extra04,Extra05 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLo
+
+
+
+
+
+
+
+
+
+
+ca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE ,CAECheck,CodVdor,Mercaderia,TipoDoc ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNroComp,cFecVtoCo
+
+
+
+
+
+
+
+
+
+
+mp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001
+
+
+
+
+
+
+
+
+
+
+,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cCodVdor,cMercaderia,cTipoDoc);Error :    
+
+
+
+
+
+
+
+
+
+
+     12;Ultimo Alias Activo: CSRIMPUESTO;Ultimo registro:          3 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HDL5002U.TMP;Ultimo Control activo: 
+05-07-2021 16:26:15 , Pila de llamadas
+05-07-2021 16:26:16 , Programa    : j:\xsoftsql\proyectos\robotcae\progs\main.fxp
+05-07-2021 16:26:16 , Objeto      : main
+05-07-2021 16:26:16 , Base Objeto : j:\xsoftsql\proyectos\robotcae\progs\main.prg
+05-07-2021 16:26:16 , Nº de Linea :        266
+05-07-2021 16:26:16 , En el Fuente: 	Read events   
+05-07-2021 16:26:16 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 16:26:16 , Objeto      : regproceso.orobot.otimer.timer
+05-07-2021 16:26:16 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\onegocioslocal.vct
+05-07-2021 16:26:17 , Nº de Linea :          3
+05-07-2021 16:26:17 , En el Fuente: IF This.Parent.oRobot.CicloBusqueda()
+05-07-2021 16:26:17 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:26:17 , Objeto      : regproceso.orobot.orobot.ciclobusqueda
+05-07-2021 16:26:17 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:26:17 , Nº de Linea :          6
+05-07-2021 16:26:17 , En el Fuente: 	lok = this.Buscarfile('.CA2')
+05-07-2021 16:26:18 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:26:18 , Objeto      : regproceso.orobot.orobot.buscarfile
+05-07-2021 16:26:18 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:26:18 , Nº de Linea :         40
+05-07-2021 16:26:18 , En el Fuente: 	IF This.ImprimirCAE()
+05-07-2021 16:26:18 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:26:18 , Objeto      : regproceso.orobot.orobot.imprimircae
+05-07-2021 16:26:18 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+05-07-2021 16:26:18 , Nº de Linea :         28
+05-07-2021 16:26:18 , En el Fuente: 	lok = oImpresora.inicioimpresora("F",this.imp_impresora,this.imp_tipoimp,this.imp_formulario,_debogenerar,lndeboActualizarNro,lnvistapreliminar)
+05-07-2021 16:26:19 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:26:19 , Objeto      : regproceso.orobot.oimpresor.inicioimpresora
+05-07-2021 16:26:20 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:26:21 , Nº de Linea :         28
+05-07-2021 16:26:21 , En el Fuente: 		lok = this.reportf(lndeboActualizarNro)
+05-07-2021 16:26:21 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:26:21 , Objeto      : regproceso.orobot.oimpresor.reportf
+05-07-2021 16:26:21 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:26:21 , Nº de Linea :         66
+05-07-2021 16:26:21 , En el Fuente:     	this.reportF_cab(loobjfactura)
+05-07-2021 16:26:22 , Programa    : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:26:22 , Objeto      : regproceso.orobot.oimpresor.reportf_cab
+05-07-2021 16:26:22 , Base Objeto : j:\xsoftsql\proyectos\robotcae\clases\localproyeto.vct
+05-07-2021 16:26:22 , Nº de Linea :        215
+05-07-2021 16:26:22 , En el Fuente: 	INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp			,CodCtacte			,NomCtacte,Direccion,Localidad,Categoiva,CUIT			,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05			,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTot001,BodyTot002			,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005			,HeadImp006,HeadImp007			,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca			,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE			,CAECheck,CodVdor,Mercaderia,TipoDoc )	VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1)			,cComprobante,cFecComproba,cNroComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva			,cCUIT,cPlanPago,cDetaVdor			,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05			,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005			,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002			,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005			,cHeadImp006,cHeadImp007			,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA			,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra			,cNroCAE,cVtoCAE,cCAECheck,cCodVdor,cMercaderia,cTipoDoc)
