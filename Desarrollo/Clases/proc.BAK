@@ -1575,9 +1575,10 @@ IF lok
 					IF NOT DIRECTORY( lcCopia )
 						MKDIR &lcCopia
 					ENDIF 
-					lcGestCopia = ADDBS(lcCopia)+STRTRAN(TRIM(CsrSistema.programa),'.EXE','')+DTOS(DATE())+strzero(HOUR(DATETIME()),2)+strzero(MINUTE(DATETIME()),2)+'.EXE'
-					*OAVISAR.usuario(lcGestCopia)
 					IF FILE(TRIM(lcExe))
+						lcGestCopia = ADDBS(lcCopia)+STRTRAN(TRIM(CsrSistema.programa),'.EXE','')+DTOS(DATE())+strzero(HOUR(DATETIME()),2)+strzero(MINUTE(DATETIME()),2)+'.EXE'
+						*OAVISAR.usuario(lcGestCopia)
+					
 						COPY FILE &lcExe TO &lcGestCopia
 					ENDIF 
 					
