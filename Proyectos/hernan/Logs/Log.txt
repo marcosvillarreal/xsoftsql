@@ -37,223 +37,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-LOAD
-03-02-2021 11:37:01 , Error: OFACCAE es un miembro desconocido. Linea : this.oFacCAE.fac_solicitacae() Error :       1925 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005TS9012C.TMP Ultimo Contr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ol activo:  REGFACVTA.CMDWEBSERVICE.CLICK
-03-02-2021 11:41:32 , Error: OFACCAE es un miembro desconocido. Linea : IF This.oFacCAE.sw_estado Error :       1925 Ultimo Alias Activo: CSRAFIPIMPUES Ultimo registro:          3  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005TS901P7.TMP Ultimo Control ac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tivo:  REGFACVTA.CMDWEBSERVICE.CLICK
-03-02-2021 12:09:21 , Error: La expresión no es válida fuera de WITH/ENDWITH. Linea : oCadapter = .obtenercursor('CsrMaopera') Error :       1940 Ultimo Alias Activo: CSRAUXMAOPERA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 TS904QH.TMP Ultimo Control activo:  REGFACVTA.CMDWEBSERVICE.CLICK
 09-02-2021 10:29:06 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as 
+
+
 
 
 
@@ -383,7 +170,11 @@ Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,0000
 
 
 
+
+
 vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baseret
+
+
 
 
 
@@ -513,7 +304,11 @@ e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,00000000
 
 
 
+
+
 encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,00000000.00 as percepcion1,000000000.00 as Baseperc1,000.00 as tasaperc1 ,SPACE(10) as nomperc2,00000000.00 as percepcion2,000000000.00 as Baseperc2,000.00 as tasaperc2 ,0000000
+
+
 
 
 
@@ -643,6 +438,8 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as Obl
 
 
@@ -708,7 +505,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.
+
+
 
 
 
@@ -839,7 +640,11 @@ LOAD
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -969,7 +774,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -1099,7 +908,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -1229,7 +1042,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.
+
+
 
 
 
@@ -1360,8 +1177,12 @@ LOAD
 
 
 
+
+
 1WK.TMP Ultimo Control activo:  REGFACVTA.CMDWEBSERVICE.CLICK
 12-04-2021 12:21:18 , Error: No se encuentra la propiedad NROASOCIADO. Linea : nPrefijo = RIGHT(LEFT(OscCabefac.nroasociado,5),4) Error :       1734 Ultimo Alias Activo: CSRAFIPIMPUES Ultimo registro:          3  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
+
 
 
 
@@ -1492,8 +1313,12 @@ LOAD
 
 
 
+
+
   0  DBF:  Ultimo Control activo:  REGPARAMETROS.LOAD
 28-04-2021 14:27:48 , Error: No hay ninguna tabla abierta en el área de trabajo actual. Linea : CURSORSETPROP("Buffering",3,'Csrprodfzavta') Error :         52 Ultimo Alias Activo: CSRDEPOSITO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCA
+
+
 
 
 
@@ -1623,8 +1448,12 @@ L\TEMP\0000GG0900EX.TMP Ultimo Control activo:  REGFACVTA.CONTAINERINGRESO._TXTL
 
 
 
+
+
 origen WITH 'FAC',programa WITH this.Name in CsrAuxMaopera Error :       1734 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000GG0900R8.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
 28-04-2021 14:31:36 , Error: No se encuentra la propiedad COPIANDOCOMPROBANTE. Linea : .copiandocomprobante=.t. Error :       1734 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000GG09016X.TMP Ul
+
+
 
 
 
@@ -1750,8 +1579,12 @@ timo Control activo:  REGFACVTA.KEYPRESS
 
 
 
+
+
 timo Control activo:  REGFACVTA.KEYPRESS
 30-04-2021 15:00:51 , Error: No se encuentra la propiedad COMPASO. Linea : nTipo = VAL(OscCabefac.compaso) Error :       1734 Ultimo Alias Activo: CSRAFIPIMPUES Ultimo registro:          3  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000N8QX00F9.TMP Ultimo C
+
+
 
 
 
@@ -1873,7 +1706,11 @@ ontrol activo:  REGFACVTA.CMDWEBSERVICE.CLICK
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -1993,7 +1830,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -2113,7 +1954,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -2233,7 +2078,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -2353,8 +2202,12 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
   1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000N8QX030Z.TMP Ultimo Control activo:  MAIN
 30-04-2021 15:16:15 , Error: No coinciden los tipos de datos. Linea : replace nroasociado WITH nroasociado2,fechaaso WITH fechaaso2,compaso WITH compaso2 IN CsrAfipCabeza Error :          9 Ultimo Alias Activo: CSRAFIPCABEZA Ultimo registro:          1  
+
+
 
 
 
@@ -2470,8 +2323,12 @@ DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000N8QX03M2.TMP Ultimo Control activo:  
 
 
 
+
+
 activo: IDCOMPROBA MAIN
 30-04-2021 15:23:41 , Error: PARENT no es un objeto. Linea : lnIdFuerzaVta = This.parent.KitbuscaoaltaenFuerzaVta.txtid.Value Error :       1924 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000N
+
+
 
 
 
@@ -2583,7 +2440,11 @@ activo: IDCOMPROBA MAIN
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -2693,7 +2554,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -2803,7 +2668,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -2913,7 +2782,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -3023,8 +2896,12 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 rol activo:  MAIN
 03-05-2021 09:16:20 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as 
+
+
 
 
 
@@ -3130,7 +3007,11 @@ Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,0000
 
 
 
+
+
 vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baseret
+
+
 
 
 
@@ -3236,7 +3117,11 @@ e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,00000000
 
 
 
+
+
 encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,00000000.00 as percepcion1,000000000.00 as Baseperc1,000.00 as tasaperc1 ,SPACE(10) as nomperc2,00000000.00 as percepcion2,000000000.00 as Baseperc2,000.00 as tasaperc2 ,0000000
+
+
 
 
 
@@ -3342,6 +3227,8 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as Obl
 
 
@@ -3395,7 +3282,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -3501,7 +3392,11 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -3605,7 +3500,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -3709,7 +3608,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -3813,7 +3716,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -3917,8 +3824,12 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
 03-05-2021 09:22:27 , Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto.. Linea : Orslista.ActiveConnection = loConnDataSource Error 
+
+
 
 
 
@@ -4018,8 +3929,12 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 005OUH00DC.TMP Ultimo Control activo:  MAIN
 03-05-2021 12:38:47 , Error: No coinciden los tipos de datos. Linea : replace compaso WITH lObjForm.compaso IN CsrAuxCabefac Error :          9 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005OU
+
+
 
 
 
@@ -4115,8 +4030,12 @@ H03S8.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
 
 
 
+
+
 H045O.TMP Ultimo Control activo:  REGFACVTA.CMDSALVAR.CLICK
 03-05-2021 12:42:55 , Error: No coinciden los tipos de datos. Linea : replace compaso WITH lObjForm.compaso IN CsrAuxCabefac Error :          9 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005OU
+
+
 
 
 
@@ -4208,7 +4127,11 @@ H04OE.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -4298,7 +4221,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -4388,7 +4315,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -4478,7 +4409,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -4568,7 +4503,11 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -4656,7 +4595,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -4744,7 +4687,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -4832,7 +4779,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -4920,7 +4871,11 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -5006,7 +4961,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -5092,7 +5051,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -5178,7 +5141,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -5264,7 +5231,11 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -5348,7 +5319,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -5432,7 +5407,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -5516,7 +5495,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -5600,8 +5583,12 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 :       1429 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
 06/18/21 16:18:32 , Error: OREG es un miembro desconocido. Linea : .oReg.SetRegKey([Top], ALLTRIM(STR(.TOP)), lcFormKey, HKEY_CURRENT_USER) Error :       1925 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:         14 NOMBRE DBF: C:\USERS\MARCO\APPDATA
+
+
 
 
 
@@ -5681,7 +5668,11 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -5759,7 +5750,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -5837,6 +5832,8 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
 
 
@@ -5876,7 +5873,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as Obl
+
+
 
 
 
@@ -5954,8 +5955,12 @@ eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck FROM CsrCabef
 
 
 
+
+
 OCAL\TEMP\0000IO7D0132.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.LOAD
 28-06-2021 08:53:16 , Error: No se encuentra el alias. Linea : Oca = GETCURSORADAPTER(lcalias) Error :         13 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000IO7D014X.TMP Ultimo Control activ
+
+
 
 
 
@@ -6031,8 +6036,12 @@ o:  PTOVTA_IMPGESTION.INIT
 
 
 
+
+
 o:  PTOVTA_IMPGESTION.INIT
 28-06-2021 09:17:59 , Error: No se encuentra la propiedad SOBREESCRIBIR. Linea : .Sobreescribir = .t. Error :       1734 Ultimo Alias Activo: CSRAUXIMPORTAR Ultimo registro:          1 (DTOS(FECHA)+HORA) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CCUH003
+
+
 
 
 
@@ -6104,8 +6113,12 @@ H.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.
 
 
 
+
+
 G.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 09:32:20 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : addUNZIP_Overwrite(ICASE(.Sobrescribir>12,12,.Sobrescribir<10,10,.Sobrescribir)) Error :        107 Ultimo Alias Activo: CSRAUXIMPORTAR Ultimo registro
+
+
 
 
 
@@ -6173,8 +6186,12 @@ G.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.
 
 
 
+
+
 MP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 14:59:54 , Error: No se encuentra la variable '_DIR'. Linea : IF NOT This.DescargarXML(_Dir) Error :         12 Ultimo Alias Activo: CSRAUXIMPORTAR Ultimo registro:          1 (DTOS(FECHA)+HORA) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JN610
+
+
 
 
 
@@ -6238,8 +6255,12 @@ MP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLI
 
 
 
+
+
 l activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 15:02:53 , Error: 'LAAUX' no es una matriz. Linea : tam = ADIR(laAux,ALLTRIM(lcRutaBaja)+'\*.XML','H') Error :        232 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JN610057.TMP 
+
+
 
 
 
@@ -6299,8 +6320,12 @@ Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 15:06:42 , Error: 'LAAUX' no es una matriz. Linea : tam = ADIR(laAux,ALLTRIM(lcRutaBaja)+'\*.XML','H') Error :        232 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JN61007I.TMP 
+
+
 
 
 
@@ -6356,8 +6381,12 @@ Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 trol activo:  PTOVTA_IMPGESTION.ACEPTAR1.CLICK
 28-06-2021 15:09:07 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : cFileName= UPPER(DTOS((laAux[i,1]))) Error :         11 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\
+
+
 
 
 
@@ -6409,8 +6438,12 @@ LOCAL\TEMP\0000JN6100BC.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_V
 
 
 
+
+
 o:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 15:36:24 , Error: No se encuentra el alias 'CSRAUXCABEFAC'. Linea : SELECT CsrAuxCabefac Error :         13 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JN610242.TMP Ultimo Control
+
+
 
 
 
@@ -6458,8 +6491,12 @@ o:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 tivo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 15:49:56 , Error: No se encuentra la variable 'LCARCHIVOC'. Linea : llok = IIF(.generarzip(lcArchivoc),.t.,.f.) Error :         12 Ultimo Alias Activo: CSRCATECTACTE Ultimo registro:         11  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CJD50
+
+
 
 
 
@@ -6504,9 +6541,13 @@ tivo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 A_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 16:20:58 , Error: Error de análisis de XML: El sistema no puede encontrar el objeto especificado.
  línea 0, posición 0.   (null) Linea : XMLTOCURSOR(cFileName,"CsrAuxMarca",512+8192) Error :       1435 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CAO9001Y.TMP Ultimo Control activo:  PTOVT
+
+
 
 
 
@@ -6547,9 +6588,13 @@ A_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 A_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-06-2021 16:27:51 , Error: Error de análisis de XML: El sistema no puede encontrar el objeto especificado.
  línea 0, posición 0.   (null) Linea : XMLTOCURSOR(cFileName,"CsrAuxProducto",512+8192) Error :       1435 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CAO90043.TMP Ultimo Control activo:  PT
+
+
 
 
 
@@ -6585,8 +6630,12 @@ OVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 OAD
 28-06-2021 16:41:02 , Error: El nombre de alias ya está en uso. Linea :  Error :         24 Ultimo Alias Activo: CSRAUXCTACTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CAO900VZ.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.L
+
+
 
 
 
@@ -6618,8 +6667,12 @@ OAD
 
 
 
+
+
 TAR Ultimo registro:          1 (DTOS(FECHA)+HORA) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00007JM100EW.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-07-2021 17:05:58 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.*,CAST(0 as int) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as 
+
+
 
 
 
@@ -6647,7 +6700,11 @@ Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,0000
 
 
 
+
+
 vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as copiatkt ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baseret
+
+
 
 
 
@@ -6675,7 +6732,11 @@ e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,00000000
 
 
 
+
+
 encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,00000000.00 as percepcion1,000000000.00 as Baseperc1,000.00 as tasaperc1 ,SPACE(10) as nomperc2,00000000.00 as percepcion2,000000000.00 as Baseperc2,000.00 as tasaperc2 ,0000000
+
+
 
 
 
@@ -6703,6 +6764,8 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada,SPACE(13) as proximonro ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien,00000000.00 as BaseDesctoSiva ,0 as canje, CAST(1 as int) as cuota, SPACE(14) as Obl
 
 
@@ -6717,7 +6780,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -6745,7 +6812,11 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as i
+
+
 
 
 
@@ -6771,7 +6842,11 @@ vari5,000000000.00 as Basegra5,000.00 as tasa5 ,000000000.00 as Baseexe,00 as co
 
 
 
+
+
 e2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as ret
+
+
 
 
 
@@ -6797,7 +6872,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 0.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000
+
+
 
 
 
@@ -6823,7 +6902,11 @@ encion5,000000000.00 as Baserete5,000.00 as tasarete5 ,SPACE(10) as nomperc1,000
 
 
 
+
+
 eaLP ,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ulti
+
+
 
 
 
@@ -6849,8 +6932,12 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 :          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000NDHL00DX.TMP Ultimo Control activo:  MAIN_SYNC_S
 08-07-2021 08:21:22 , Error: SQL: no se encuentra la columna 'SWITCH'. Linea : SELECT * FROM datamenu  WHERE LEFT(LTRIM(nvl(switch,'00000'))+'00000',1)='0' INTO CURSOR CsrMenu READWRITE Error :       1806 Ultimo Alias Activo: CSRSEGURIDAD Ultimo registro
+
+
 
 
 
@@ -6862,11 +6949,20 @@ mo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REG
 
 
 
+
+
 :          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MHVT001M.TMP Ultimo Control activo:  MAIN_SYNC_S
 08-07-2021 08:31:19 , Error: No se encuentra el alias 'CSRPARAVARIO'. Linea : SELECT CsrParaVario Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGPROCESO.INIT
 08-07-2021 08:34:17 , Error: No se encuentra el alias 'CSRPARAVARIO'. Linea : SELECT CsrParaVario Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGPROCESO.INIT
 08-07-2021 08:35:58 , Error: No se encuentra el alias 'CSRPARAVARIO'. Linea : SELECT CsrParaVario Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGPROCESO.INIT
 08-07-2021 08:55:45 , Error: No se encuentra el alias 'CSRCURSORXML'. Linea : SELECT CsrCursorXML Error :         13 Ultimo Alias Activo: CSRPARAVARIO Ultimo registro:         34  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000087WP00E2.TMP Ultimo Control act
+
+
 ivo:  REGPROCESO.OTIMER.TIMER
 08-07-2021 10:58:56 , Error: Error de análisis de XML: El sistema no puede encontrar el objeto especificado.
- línea 0, posición 0.   (null) Linea : XMLTOCURSOR(cRuta,"CsrCursorXML",512+8192) Error :       1435 Ultimo Alias Activo: CSRCURSORXML Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000087WP00K7.TMP Ultimo Control activo:  REGPROCESO.OTIMER.TIMER
+ línea 0, posición 0.   (null) Linea : XMLTOCURSOR(cRuta,"CsrCursorXML",512+8192) Error :       1435 Ultimo Alias Activo: CSRCURSORXML Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000087WP00K7.TMP Ultimo Control activo:  REGPROCESO
+
+.OTIMER.TIMER
+14-07-2021 10:55:17 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT * FROM &cCursor WHERE RECNO()<1 INTO CURSOR CsrCursorXML READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGP
+ROCESO.OTIMER.TIMER
+14-07-2021 11:13:02 , Error: El archivo 'csrmovstock.dbf' no existe. Linea : SELECT * FROM &cCursor WHERE RECNO()<1 INTO CURSOR CsrCursorXML READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGPROCESO.OTIMER.TIMER
