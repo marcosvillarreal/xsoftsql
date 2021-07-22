@@ -1560,13 +1560,15 @@ FUNCTION LeerDatosEmpresa
 
 LOCAL lcCmd,lok
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT Csrempresa.* FROM CentroRecep as CsrSucursal
-left join empresa as Csrempresa  on  CsrSucursal.id = CsrEmpresa.idsucursal 
-WHERE CsrSucursal.numero = <<goapp.sucursal>>
-ENDTEXT 
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT Csrempresa.* FROM CentroRecep as CsrSucursal
+*!*	left join empresa as Csrempresa  on  CsrSucursal.id = CsrEmpresa.idsucursal 
+*!*	WHERE CsrSucursal.numero = <<goapp.sucursal>>
+*!*	ENDTEXT 
 
-lok =CrearCursorAdapter("Csrempresa",lcCmd)
+*!*	lok =CrearCursorAdapter("Csrempresa",lcCmd)
+
+llok = .t. && CargarTabla(lcConectionString,'Empresa')
 
 IF lok
     GOapp.empresaid 				= Csrempresa.id
@@ -1594,6 +1596,7 @@ IF lok
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 ENDIF
 
+*USE IN CsrEmpresa
 
 RETURN .t.
 
