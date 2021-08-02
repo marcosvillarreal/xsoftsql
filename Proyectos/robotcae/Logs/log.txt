@@ -1,56 +1,3 @@
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-26-06-2015 10:31:29 , Error nº:         13
-Error No se encuentra el alias 'CSRAUXCABEFAC'.
-Linea nº SELECT CsrAuxCabefac
- Alias CSRIMPCUE registro         36
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-26-06-2015 10:58:01 , Error nº:         12
-Error No se encuentra la variable.
-Linea nº aImpuesto[nHead + nIde,1] = "GRAVADO"
- Alias CSRIMPUESTO registro          1
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-26-06-2015 10:59:11 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº cBodyImp004 = IIF(aImpuesto[4,2]<>0,TRANSFORM(aImpuesto[4,2],"9999999999.99"),"")
- Alias CSRIMPUESTO registro          2
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-26-06-2015 11:20:30 , Error nº:         12
-Error No se encuentra la variable 'CMODULO'.
-Linea nº ModuloRobot = cModulo
- Alias  registro          0
-Control activo  MAIN
-26-06-2015 11:23:39 , Error nº:         12
-Error No se encuentra la variable 'SWITCH'.
-Linea nº Goapp.switchPerfil = CsrUsr.switch
- Alias CSRUSR registro          1
-Control activo  MAIN
-26-06-2015 11:23:44 , Error nº:         12
-Error No se encuentra la variable 'SWITCH'.
-Linea nº Goapp.switchPerfil = CsrUsr.switch
- Alias CSRUSR registro          1
-Control activo  FRMLOGIN.CMDOK.CLICK
-26-06-2015 11:25:04 , Error nº:         13
-Error No se encuentra el alias 'CSRCURSOR'.
-Linea nº Goapp.ejercicioactual   = CsrCursor.ejercicio
- Alias CSRPOPS registro          1
-Control activo  MAIN
-26-06-2015 11:33:26 , Error nº:          1
-Error El archivo 'csrmaopera.dbf' no existe.
-Linea nº SELECT Csrmaopera.*,SPACE(20) as NomOpera FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE
- Alias  registro          0
-Control activo  MAIN
-26-06-2015 12:42:39 , Error nº:       2005
-Error Error al cargar el archivo - número de registro 5. PARACONFIG  <o uno de sus miembros>.  Cargando el formulario o el entorno de datos. : Error al cargar el entorno de datos. La tabla está en uso
-Linea nº SELECT Csrmaopera.*,SPACE(20) as NomOpera FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE
- Alias CENTRORECEP registro          1
-Control activo  ON... 
-26-06-2015 12:43:25 , Error nº:       2005
-Error Error al cargar el archivo - número de registro 5. PARACONFIG  <o uno de sus miembros>.  Cargando el formulario o el entorno de datos. : Error al cargar el entorno de datos. La tabla está en uso
-Linea nº SELECT Csrmaopera.*,SPACE(20) as NomOpera FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE
- Alias CSREMPRESA registro          1
-Control activo  ON... 
-26-06-2015 12:44:23 , Error nº:       2005
-Error Error al cargar el archivo - número de registro 5. PARACONFIG  <o uno de sus miembros>.  Cargando el formulario o el entorno de datos. : Error al cargar el entorno de datos. La tabla está en uso
 Linea nº SELECT Csrmaopera.*,SPACE(20) as NomOpera FROM Csrmaopera WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMaopera READWRITE
  Alias CSREMPRESA registro          1
 Control activo  ON... 
@@ -430,6 +377,12 @@ Linea nº CREATE CURSOR CsrCabeDeta (orden n(12),comprobante c(15),direccion c(30
 
 
 
+
+
+
+
+
+
 aderia c(20),corredor c(25),detalle c(255) )
  Alias CSRIMPUESTO registro          1
 Control activo  MAIN
@@ -461,6 +414,12 @@ Control activo  MAIN
 19-02-2016 14:00:32 , Error nº:         12
 Error No se encuentra la variable 'CUIT'.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,cuit
+
+
+
+
+
+
 
 
 
@@ -699,6 +658,12 @@ Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4
 
 
 
+
+
+
+
+
+
 liente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -795,6 +760,12 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
+
+
+
+
 
 
 
@@ -1255,7 +1226,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -1351,7 +1334,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -1498,12 +1493,24 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
+
+
+
 
 
 
@@ -1776,11 +1783,23 @@ Linea nº cExtra02 = IIF(loObjfactura.letra="A" AND CsrCategoiva.abravia="RM",'RG
 
 
 
+
+
+
+
+
+
  Alias CSRCABEIMP registro          1
 Control activo  MAIN
 05-07-2021 16:26:14 , Error nº:         12
 Error No se encuentra la variable 'CEXTRA04'.
 Linea nº INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte ,NomCtacte,Direccion,Localidad,Categoiva,CUIT ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,
+
+
+
+
+
+
 
 
 
@@ -1800,6 +1819,12 @@ BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,He
 
 
 
+
+
+
+
+
+
 EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE ,CAECheck,CodVdor,Mercaderia,TipoDoc ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNroComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cPlanPag
 
 
@@ -1810,7 +1835,19 @@ EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE ,CAECheck,CodVdor,Mercaderia,TipoDoc 
 
 
 
+
+
+
+
+
+
 o,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 
+
+
+
+
+
+
 
 
 
@@ -1913,5 +1950,66 @@ Error No se encuentra la variable 'LLDESARROLLO'.
 Linea nº If lldesarrollo
  Alias CURPERFIL registro         13
 Control activo  FRMMENU1.TREEVIEW.DBLCLICK
-21-07-2021 18:23:50 , Error nº:         12Error No se encuentra la variable 'LETRA'.Linea nº replace letra WITH FsrTipoCbte.letra IN CsrCabeDeta Alias FSRTIPOCBTE registro          1Control activo  MAIN
-21-07-2021 18:35:27 , Error nº:         12Error No se encuentra la variable 'LLDESARROLLO'.Linea nº If lldesarrollo Alias CURPERFIL registro          3Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+21-07-2021 18:23:50 , Error nº:         12
+Error No se encuentra la variable 'LETRA'.
+Linea nº replace letra WITH FsrTipoCbte.letra IN CsrCabeDeta
+ Alias FSRTIPOCBTE registro          1
+Control activo  MAIN
+21-07-2021 18:35:27 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro          3
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+02-08-2021 10:33:09 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº IF this.imp_salidapdf
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+02-08-2021 10:37:38 , Error nº:       1923
+Error No se encuentra el objeto LOOBJVARIABLES.
+Linea nº loObjVariables.lcfilename = RTRIM(CsrCabeza.comprobante) + ' ' + CsrCabeza.proximonro
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+02-08-2021 10:44:20 , Error nº:       1923
+Error No se encuentra el objeto LOOBJVARIABLES.
+Linea nº loObjVariables.lcfilename = RTRIM(ImpCabeDeta.comprobante) + ' ' + loObjFactura.proximonro
+ Alias IMPCABEZA registro          1
+Control activo  MAIN
+02-08-2021 10:46:17 , Error nº:       1734
+Error No se encuentra la propiedad P_ORDEN.
+Linea nº oFACCAE.p_orden = CsrCabeza.orden
+ Alias FSRPREFITERMI registro          1
+Control activo  MAIN
+02-08-2021 10:56:20 , Error nº:       1925
+Error LBLEJERCICIO es un miembro desconocido.
+Linea nº thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3)
+ Alias CURPERFIL registro         19
+Control activo  MAIN
+02-08-2021 10:56:42 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro          8
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+02-08-2021 10:57:37 , Error nº:       1429
+Error Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invok
+
+e_
+  Fi
+Linea nº lok = PyI25.GenerarImagen(cCodBarra,cNameArchivo,9,0,90,"JPEG")
+ Alias FSRPREFITERMI registro          1
+Control activo  MAIN
+02-08-2021 11:03:08 , Error nº:       1429
+Error Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invok
+e_
+  Fi
+Linea nº lok = PyI25.GenerarImagen(cCodBarra,cNameArchivo,9,0,90,"JPEG")
+ Alias FSRPREFITERMI registro          1
+Control activo  MAIN
+02-08-2021 11:05:28 , Error nº:       1429Error Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invoke_
+  FiLinea nº lok = PyI25.GenerarImagen(cCodBarra,cNameArchivo,9,0,90,"JPEG") Alias FSRPREFITERMI registro          1Control activo  MAIN
