@@ -1,0 +1,43 @@
+02-08-2021 16:20:08 , REGFACVTA.BOTONERACABEZA.CMDRESUMEN.CLICK, Error: SQL: no se encuentra la columna 'RETIRO'.;Linea : SELECT ctacte,nomctacte,numcomp,fecha,nomvendedor,retiro,autorizo,nomcomporigen,numcomporigen, codigo,articulo,cantidad,IIF(enanotado=1,"SI",""),retiro_a,autorizo_a,IIF(enguarda=1,"SI",""),retiro_g,autorizo_g from CsrImprimir ORDER BY ctacte,fecha,numcomp INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         49 GRUPO+STRID(IDPASE,12)+STRID(IDCTACTE,10);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000GEFD011Q.TMP;Ultimo Control activo: 
+02-08-2021 16:20:08 , Pila de llamadas
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+02-08-2021 16:20:08 , Objeto      : regfacvta.botoneracabeza.cmdresumen.click
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+02-08-2021 16:20:08 , Nº de Linea :          1
+02-08-2021 16:20:08 , En el Fuente: thisform.key_f5_resctacte()  
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+02-08-2021 16:20:08 , Objeto      : regfacvta.key_f5_resctacte
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+02-08-2021 16:20:08 , Nº de Linea :         48
+02-08-2021 16:20:08 , En el Fuente: DO FORM pidolistctacte WITH oParametros
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+02-08-2021 16:20:08 , Objeto      : pidolistctacte.optiongroup1.bttnnoenter6.click
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+02-08-2021 16:20:08 , Nº de Linea :          4
+02-08-2021 16:20:08 , En el Fuente: 	This.Parent.ClickButton()
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidolistctacte.sct
+02-08-2021 16:20:08 , Objeto      : pidolistctacte.optiongroup1.clickbutton
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidolistctacte.sct
+02-08-2021 16:20:08 , Nº de Linea :          8
+02-08-2021 16:20:08 , En el Fuente: 		DO FORM &cForm oButton.Param
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+02-08-2021 16:20:08 , Objeto      : subguarda.imprimir_vistaprevia1.excel.click
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+02-08-2021 16:20:08 , Nº de Linea :          5
+02-08-2021 16:20:08 , En el Fuente: llOK=thisform.CrearInforme()
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subguarda.sct
+02-08-2021 16:20:08 , Objeto      : subguarda.crearinforme
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subguarda.sct
+02-08-2021 16:20:08 , Nº de Linea :        130
+02-08-2021 16:20:08 , En el Fuente: DODEFAULT()
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+02-08-2021 16:20:08 , Objeto      : informe.crearinforme
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+02-08-2021 16:20:08 , Nº de Linea :          2
+02-08-2021 16:20:08 , En el Fuente: thisform.crearheader()
+02-08-2021 16:20:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\subguarda.sct
+02-08-2021 16:20:08 , Objeto      : subguarda.crearheader
+02-08-2021 16:20:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\subguarda.sct
+02-08-2021 16:20:08 , Nº de Linea :         63
+02-08-2021 16:20:08 , En el Fuente: 		SELECT ctacte,nomctacte,numcomp,fecha,nomvendedor,retiro,autorizo,nomcomporigen,numcomporigen, ;		
+02-08-2021 16:20:08 , Fin
