@@ -321,7 +321,7 @@ IF TYPE('goApp')='O'
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
-			DO FORM frmmenu
+			DO FORM frmmenu3
 		ELSE 
 			DO FORM frmmenu_DashBoard
 		ENDIF 
