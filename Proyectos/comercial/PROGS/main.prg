@@ -120,6 +120,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controleslocal ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
+   SET CLASSLIB  TO  controlesdashboard ADDITIVE
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
@@ -308,7 +309,7 @@ IF TYPE('goApp')='O'
 	
 	LeerEjercicioPerfil()
 	
-	DO FORM frmmenu
+	DO FORM frmmenu3
 	IF goapp.termifacopen = 1
 		DO FORM regfacvta
 	ENDIF 
