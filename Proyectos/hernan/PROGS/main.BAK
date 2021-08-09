@@ -249,6 +249,24 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
+	ENDTEXT 
+	=CrearCursorAdapter('CsrParaVario',lcCmd)
+	
+	****destino archivos xml
+	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
+	IF nombre="XML"+strzero(goapp.terminal,4)
+		lcDestinoXML = CsrParaVario.detalle
+
+		goapp.rutasync = lcDestinoXML
+		IF LEN(LTRIM(lcDestinoXML))#0
+			IF !DIRECTORY(lcDestinoXML)
+				MKDIR &lcDestinoXML
+			ENDIF 
+		ENDIF 
+	ENDIF 
+	
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
