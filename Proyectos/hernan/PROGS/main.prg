@@ -242,14 +242,6 @@ IF TYPE('goApp')='O'
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
 	DO FORM frmlogin
-		 
-	LOCAL oMenu
-	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu()   
-	oMenu = null
-
-	LeerEjercicioPerfil()
 	
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
@@ -257,6 +249,7 @@ IF TYPE('goApp')='O'
 	=CrearCursorAdapter('CsrParaVario',lcCmd)
 	
 	****destino archivos xml
+	stop()
 	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
 	IF nombre="XML"+strzero(goapp.terminal,4)
 		lcDestinoXML = CsrParaVario.detalle
@@ -268,6 +261,15 @@ IF TYPE('goApp')='O'
 			ENDIF 
 		ENDIF 
 	ENDIF 
+		 
+	LOCAL oMenu
+	oDesktop = ''
+	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
+	oMenu.createMenu()   
+	oMenu = null
+
+	LeerEjercicioPerfil()
+	
 	
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
