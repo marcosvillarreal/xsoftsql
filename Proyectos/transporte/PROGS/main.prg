@@ -50,7 +50,7 @@ cRutaCAE 	= sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\distribuidora\'
+   lcdd=L+'\xsoftsql\proyectos\transporte\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
@@ -87,16 +87,15 @@ If lldesarrollo
    
     _rutaformprueba = lcdd+'forms\pruebas'
     
-    _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
-    _rutaprogs_sureño  =lcdd+'Progs\elsureño'
+
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
-               ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
-               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba
+               ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta;
+               ,&_rutaformimp,&_rutaformprueba
                
  ELSE
  	SET CONSOLE OFF     
@@ -117,7 +116,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
    SET PROCEDURE TO mapsApiKey.prg ADDITIVE 
-	SET PROCEDURE TO formposition.prg ADDITIVE 
+   SET PROCEDURE TO formposition.prg ADDITIVE 
    SET PROCEDURE TO ftp.prg ADDITIVE
    SET PROCEDURE TO whatsapp_ej ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
@@ -325,9 +324,9 @@ IF TYPE('goApp')='O'
 		ELSE 
 			DO FORM frmmenu_DashBoard
 		ENDIF 
-		IF goapp.openfac = 1
-			DO FORM regfacpub
-		ENDIF 
+*!*			IF goapp.openfac = 1
+*!*				DO FORM regfacpub
+*!*			ENDIF 
 	ENDIF 
 	                     
 	 _screen.visible=.t.	   
