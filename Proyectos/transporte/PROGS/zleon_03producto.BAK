@@ -1,0 +1,532 @@
+
+DO setup
+SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
+SET PROCEDURE  TO  syserror.prg ADDITIVE  
+
+CLOSE DATABASES
+CLOSE TABLES
+OPEN DATABASE ? EXCLUSIVE
+
+SET SAFETY OFF
+
+Oavisar.proceso('S','Vaciando archivos') 
+
+SET CPCOMPILE TO 1252
+codepage = 1252
+SET CPDIALOG ON
+
+SET DATABASE TO LEON
+USE leon!producto IN 0 ALIAS Csrproducto EXCLUSIVE
+ZAP IN Csrproducto
+
+USE leon!Variedad IN 0 ALIAS CsrVariedad EXCLUSIVE
+ZAP IN CsrVariedad
+
+USE leon!TipoFrio IN 0 ALIAS CsrTablaFrio EXCLUSIVE
+ZAP IN CsrTablaFrio
+
+USE leon!rubro IN 0 ALIAS Csrrubro EXCLUSIVE 
+ZAP IN Csrrubro
+
+USE leon!marca IN 0 ALIAS Csrmarca EXCLUSIVE
+ZAP IN Csrmarca
+
+USE leon!subproducto IN 0 ALIAS Csrsubproducto EXCLUSIVE
+ZAP IN Csrsubproducto
+
+USE leon!BLOQUEOPROD IN 0 ALIAS CsrBloqueProd EXCLUSIVE 
+ZAP IN CsrBloqueProd
+
+USE leon!deposito IN 0 ALIAS Csrdeposito EXCLUSIVE
+ZAP IN Csrdeposito
+
+USE leon!FuerzaVta IN 0 ALIAS CsrFuerzaVta EXCLUSIVE
+ZAP IN  CsrFuerzaVta
+
+USE leon!Ctacte IN 0 ALIAS CsrCtacte EXCLUSIVE
+
+USE leon!Plancue IN 0 ALIAS CsrPlanCue EXCLUSIVE
+SET SAFETY ON
+Oavisar.proceso('S','Abriendo archivos') 
+USE "\soft\leon\gestion\seccion" IN 0 ALIAS CsrSeccion EXCLUSIVE 
+
+USE  "\soft\leon\gestion\proveed" in 0 alias CsrAcreedor EXCLUSIVE
+
+USE  "\soft\leon\gestion\articulo" in 0 alias CsrArticulo EXCLUSIVE	
+
+USE "\soft\leon\gestion\marcas" in 0 alias CsrmarcaVie EXCLUSIVE
+
+USE "\soft\leon\gestion\frios" in 0 alias CsrFrio EXCLUSIVE
+
+USE "\soft\leon\gestion\noventa" IN 0 ALIAS CsrNoventa EXCLUSIVE
+
+USE "\soft\leon\gestion\deposito" IN 0 ALIAS CsrdepositoVie EXCLUSIVE
+
+USE "\soft\leon\gestion\sabor" IN 0 ALIAS CsrSabores EXCLUSIVE
+
+
+Oavisar.proceso('S','Procesando '+alias()) 
+
+lnid = 1
+SELECT CsrFuerzaVta
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+
+INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,1,"FUERZA VTA 1")
+lnid = lnid + 1 
+INSERT INTO Csrfuerzavta (id,numero,nombre) VALUES (lnid,2,"FUERZA VTA 2")
+*****
+
+lnid = 1
+SELECT CsrVariedad
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+SELECT CsrSabores
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+	&&&&&&&&&&&&& agregado 19/08 nombres con Ñ
+   	lcnombre=alltrim(UPPER(CsrSabores.nombre))
+	IF '¤'$lcnombre OR '¥'$lcnombre
+	 	FOR lni=1 to LEN(lcnombre)
+	 		lc=SUBSTR(lcnombre,lni,1)
+	 		IF '¤'=lc OR '¥'$lc
+	 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+	 		ENDIF 
+	 	ENDFOR  
+	ENDIF   
+	
+	&&&&&&&&&&&&&&&&&&&&  l    
+           INSERT INTO CsrVariedad (id,numero,nombre,tag);
+           			 VALUES (lnid,CsrSabores.numero,lcnombre,"00000000")
+           lnid = lnid + 1
+
+ENDSCAN
+
+lnid = 1
+SELECT CsrTablafrio
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+
+SELECT CsrFrio
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+            IF delogico
+               LOOP 
+            ENDIF 
+	&&&&&&&&&&&&& agregado 19/08 nombres con Ñ
+   	lcnombre=alltrim(UPPER(CsrFrio.nombre))
+	IF '¤'$lcnombre OR '¥'$lcnombre
+	 	FOR lni=1 to LEN(lcnombre)
+	 		lc=SUBSTR(lcnombre,lni,1)
+	 		IF '¤'=lc OR '¥'$lc
+	 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+	 		ENDIF 
+	 	ENDFOR  
+	ENDIF   
+	&&&&&&&&&&&&&&&&&&&&  l                                         
+           INSERT INTO CsrTablaFrio (id,numero,nombre)  VALUES (lnid,CsrFrio.numero,lcnombre)
+           lnid = lnid + 1
+          
+ENDSCAN
+
+lnid = 1
+SELECT CsrRubro
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+
+SELECT CsrSeccion
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+          
+            lntipoprod = 1100000001 && IIF(Csrseccion.pideauto="S",2,1)
+            lntipovta   = 1100000002 &&IIF(Csrseccion.clase="L",2,1)
+            lnretibruto = 1 &&IIF(CsrSeccion.perceib="S",1,0)
+            lncanal     = 1100000001 &&CsrSeccion.canal
+            lnolista = IIF(CsrSeccion.estado='I',1,0)
+            lnporcecomi = IIF(!EMPTY(STR(CsrSeccion.comision)),CsrSeccion.comision,0)
+            lnporcedev = IIF(!EMPTY(STR(CsrSeccion.porcedev)),CsrSeccion.porcedev,0)
+            lnporcesuge = IIF(!EMPTY(STR(CsrSeccion.porsuge)),CsrSeccion.porsuge,0) 
+            lntasavied = IIF(!EMPTY(STR(CsrSeccion.tasa)),CsrSeccion.tasa,0)
+            lntasapata = IIF(!EMPTY(STR(CsrSeccion.tasapata)),CsrSeccion.tasapata,0)
+      &&&&&&&&&&&&& agregado 19/08 nombres con Ñ
+		   	lcnombre=alltrim(UPPER(CsrSeccion.nombre))
+			IF '¤'$lcnombre OR '¥'$lcnombre
+			 	FOR lni=1 to LEN(lcnombre)
+			 		lc=SUBSTR(lcnombre,lni,1)
+			 		IF '¤'=lc OR '¥'$lc
+			 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+			 		ENDIF 
+			 	ENDFOR  
+			ENDIF   
+	&&&&&&&&&&&&&&&&&&&&  l                                  
+           INSERT INTO CsrRubro (id,numero,nombre,idtipoprod,idtipovta,perceibruto,idfuerzavta,nolista;
+           					,porcecomi,porcesuge,porcedev,tasavied,tasapata) ;
+           VALUES (lnid,CsrSeccion.numero,lcnombre,lntipoprod,lntipovta,lnretibruto,lncanal,lnolista;
+           					,lnporcecomi,lnporcesuge,lnporcedev,lntasavied,lntasapata)
+           lnid = lnid + 1
+
+ENDSCAN
+
+
+lnid = 1
+SELECT CsrMarca
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+SELECT CsrMarcaVie
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+            IF delogico
+               LOOP 
+            ENDIF 
+	 	lnporceflete = 0
+	 	lnporceflete2 = 0
+	 	lncanal=111
+	&&&&&&&&&&&&& agregado 19/08 nombres con Ñ
+   	lcnombre=alltrim(UPPER(CsrMarcaVie.nombre))
+	IF '¤'$lcnombre OR '¥'$lcnombre
+	 	FOR lni=1 to LEN(lcnombre)
+	 		lc=SUBSTR(lcnombre,lni,1)
+	 		IF '¤'=lc OR '¥'$lc
+	 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+	 		ENDIF 
+	 	ENDFOR  
+	ENDIF   
+	&&&&&&&&&&&&&&&&&&&&  l    
+           INSERT INTO Csrmarca (id,numero,nombre,flete,flete2,idfuerzavta);
+           VALUES (lnid,CsrMarcaVie.numero,lcnombre,lnporceflete,lnporceflete2,lncanal)
+           lnid = lnid + 1
+          
+ENDSCAN
+
+lnid = 1
+SELECT CsrProducto
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+
+SELECT CsrArticulo
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+	SELECT CsrProducto
+	LOCATE FOR numero=CsrArticulo.numero 
+	IF numero=CsrArticulo.numero
+		SELECT CsrArticulo
+		LOOP 
+	ENDIF
+	&&&comprobar Ñ
+	lcnombre=alltrim(CsrArticulo.nombre)
+*!*		IF '¤'$lcnombre OR '¥'$lcnombre
+*!*		 	FOR lni=1 to LEN(lcnombre)
+*!*		 		lc=SUBSTR(lcnombre,lni,1)
+*!*		 		IF '¤'=lc OR '¥'$lc
+*!*		 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+*!*		 		ENDIF 
+*!*		 	ENDFOR  
+*!*		ENDIF 
+	lcnombre = NombreNi(lcnombre)
+	&&&&&&
+    SELECT Csrctacte
+    LOCATE FOR cnumero=LTRIM(STR(10000+Csrarticulo.proveedor))
+    lnidctacte = 0
+    IF FOUND()
+    	lnidctacte = Csrctacte.id
+    ENDIF
+
+    SELECT CsrRubro
+    LOCATE FOR numero=Csrarticulo.seccion
+    lnidseccion = 0
+    IF FOUND()
+        lnidseccion = CsrRubro.id
+    ENDIF
+    
+    SELECT CsrTablaFrio
+    LOCATE FOR numero=Csrarticulo.frio
+    lnfrio = 0
+    IF FOUND()
+        lnfrio = CsrTablaFrio.id
+    ENDIF
+
+    SELECT CsrMarca
+    LOCATE FOR numero=Csrarticulo.marca
+    lnidmarca = 0
+    IF FOUND()
+       lnidmarca = CsrMarca.id
+    ENDIF
+
+    lnfracciona = IIF(Csrarticulo.fraccion='S',1,0)
+    lnidestado = IIF(empty(Csrarticulo.debaja),1,2)
+    lnidiva        = IIF(Csrarticulo.tablaiva=1,2,1)
+    lnnolista    = 0 && IIF(Csrarticulo.figlista="N",1,0)
+    lnnofactu   = 0 &&IIF(Csrarticulo.nofactu,1,0)
+    lnespromo = 0 &&IF(csrarticulo.escodboni="S",1,0)
+    lnidtipovta = 1 &&IIF(Csrarticulo.quefactura="B",2,1)
+       lnvtakilos= IIF(CsrArticulo.kilos="K",1,0)
+       lnsireparto=IIF(EMPTY(CsrArticulo.sireparto),0,1)
+   	 lnidforma = 1      
+	lninterno= IIF(ISNULL(CsrArticulo.interno),0.00,CsrArticulo.interno)
+
+	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
+	IF EMPTY(Csrarticulo.fechaulcpr)
+		ldfechaulcpr 	= ldfecha
+	ELSE       
+		ldfechaulcpr = DATETIME(YEAR(Csrarticulo.fechaulcpr),MONTH(Csrarticulo.fechaulcpr),DAY(Csrarticulo.fechaulcpr),0,0,0)
+	ENDIF 		
+	IF EMPTY(Csrarticulo.fechapre)
+		ldfechamodf 	= ldfecha
+	ELSE       
+		ldfechamodf = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
+	ENDIF 		
+	IF EMPTY(Csrarticulo.fechabon)
+		ldfechabonif	= ldfecha
+	ELSE       
+		ldfechabonif = DATETIME(YEAR(Csrarticulo.fechabon),MONTH(Csrarticulo.fechabon),DAY(Csrarticulo.fechabon),0,0,0)
+	ENDIF 		
+	lnprevta1 = Csrarticulo.PREVenta1
+	lnprevta2 = Csrarticulo.PREVe2
+	lnprevta3 = Csrarticulo.PREVe3
+	lnsugerido= Csrarticulo.PREVe4
+
+	lnprevtaf1 = Csrarticulo.PREVENTA1 * 1.21
+	lnprevtaf2 = Csrarticulo.PREVE2 * 1.21
+	lnprevtaf3 = Csrarticulo.PREVE3 * 1.21
+	
+	lnidctacpra = 0
+	lnidctavta = 0
+	SELECT CsrPlanCue
+	LOCATE FOR nombre = "COMPRA DE MERCADERIA VARIA"
+	IF FOUND()
+		lnidctacpra = CsrPlanCue.id
+	ENDIF
+	SELECT CsrPlanCue
+	LOCATE FOR nombre = "VENTA DE MERCADERIA VARIA"
+	IF FOUND()
+		lnidctavta = CsrPlanCue.id
+	ENDIF 
+	*Guardamos el numero de CsrArticulo.envase que es una referencia a CsrAticulo.numero del envase
+	*Una vez caragdo todos los productos, recorremos los que idenvase#0 y buscamos el articulo = envase.
+*!*		IF !EMPTY(CsrArticulo.envase)
+*!*			DEBUG
+*!*			SUSPEND 
+*!*		ENDIF 
+	lnidenvase = VAL(CsrArticulo.envase)
+						
+	INSERT INTO Csrproducto (id,NUMERO,NOMBRE,CODALFA,IDIVA,COSTO,MARGEN1,PREVTA1,MARGEN2,; 
+	PREVTA2,SWITCH,idunidad,idtprod,idtamano,idcatego,idubicacio,idorigen,incluirped,idctacte,idrubro,MARGEN3,;
+	PREVTA3,margen4,prevta4,interno,unibulto,peso,idtipovta,idforma,fracciona,nomodifica,nombulto,puntope,;
+	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,idmarca,segflete,idestado,;
+	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
+	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,fecoferta,internoporce,idctacpra,idctaVTA,idenvase); 	
+	 VALUES (lnid, Csrarticulo.NUMERO, lcnombre, LTRIM(STR(Csrarticulo.numero)), lnidiva, Csrarticulo.costo,	;
+	 Csrarticulo.utilidad, lnPREVta1, Csrarticulo.util2, lnPREVta2, '00000', 1,1,1,1,1,1,1,lnidctacte, lnidseccion, Csrarticulo.util3, ;
+	 lnPREVta3, 0,0,lninterno, Csrarticulo.unibulto,Csrarticulo.peso, lnidtipovta,lnidforma,lnfracciona,0,'',Csrarticulo.puntope,;
+	1,1,Csrarticulo.flete,	ldfechaulcpr, ldfecha, ldfechamodf, ldfecha, Csrarticulo.bonifica,Csrarticulo.bonif2, Csrarticulo.bonif3,;
+	Csrarticulo.bonif4 ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,0,lnfrio,;
+	lnsugerido,1,lnsireparto	,IIF(EMPTY(CsrArticulo.codigo_prv),' ',CsrArticulo.codigo_prv),CsrArticulo.bonies, CsrArticulo.minimo,;
+	CsrArticulo.bonies2, CsrArticulo.minimo2, CsrArticulo.bonies3, CsrArticulo.minimo3,LNVTAKILOS,ldfechabonif,0,lnidctacpra,lnidctavta,lnidenvase)		
+*!*		SELECT CsrProducto
+*!*		APPEND BLANK
+*!*		SCATTER NAME objProducto
+*!*			objProducto.id = lnid
+*!*			objProducto.NUMERO = Csrarticulo.NUMERO
+*!*			objProducto.NOMBRE = Csrarticulo.NOMBRE
+*!*			objProducto.CODALFA =  LTRIM(STR(Csrarticulo.numero))
+*!*			objProducto.IDIVA = lnidiva
+*!*			objProducto.COSTO = Csrarticulo.costo
+*!*			objProducto.MARGEN1 = Csrarticulo.utilidad
+*!*			objProducto.PREVTA1= lnPREVta1
+*!*			objProducto.MARGEN2  =Csrarticulo.util2
+*!*			objProducto.PREVTA2=lnPREVta2
+*!*			objProducto.SWITCH = '00000'
+*!*			objProducto.idunidad = 1
+*!*			objProducto.idtprod = 1
+*!*			objProducto.idtamano = 1
+*!*			objProducto.idcatego = 1
+*!*			objProducto.idubicacio = 1
+*!*			objProducto.idorigen = 1
+*!*			objProducto.incluirped = 1
+*!*			objProducto.idctacte = lnidctacte
+*!*			objProducto.idrubro = lnidseccion
+*!*			objProducto.MARGEN3 = Csrarticulo.util3
+*!*			objProducto.PREVTA3 = lnPREVta3
+*!*			objProducto.margen4 = 0
+*!*			objProducto.prevta4 = 0
+*!*			objProducto.interno = lninterno
+*!*			objProducto.unibulto = Csrarticulo.unibulto
+*!*			objProducto.peso = Csrarticulo.peso
+*!*			objProducto.idtipovta =  lnidtipovta
+*!*			objProducto.idforma = lnidforma
+*!*			objProducto.fracciona = lnfracciona
+*!*			objProducto.nomodifica = 0
+*!*			objProducto.nombulto = ''
+*!*			objProducto.puntope = Csrarticulo.puntope
+*!*			objProducto.idmoneda = 1
+*!*			objProducto.incluirped = 1
+*!*			objProducto.flete = Csrarticulo.flete
+*!*			objProducto.feculcpra = ldfechaulcpr
+*!*			objProducto.fecalta = ldfecha
+*!*			objProducto.fecmodi = ldfechamodf
+*!*			objProducto.feculvta = ldfecha
+*!*			objProducto.bonif1 = Csrarticulo.bonif1
+*!*			objProducto.bonif2 = Csrarticulo.bonif2
+*!*			objProducto.bonif3 = Csrarticulo.bonif3
+*!*			objProducto.bonif4 = Csrarticulo.bonif4
+*!*			objProducto.idmarca = lnidmarca
+*!*			objProducto.segflete = 0
+*!*			objProducto.idestado = lnidestado
+*!*			objProducto.nolista = lnnolista
+*!*			objProducto.nofactura = lnnofactu
+*!*			objProducto.minimofac = 0
+*!*			objProducto.espromocion = lnespromo
+*!*			objProducto.prevtaf1 = lnprevtaf1
+*!*			objProducto.prevtaf2 = lnprevtaf2
+*!*			objProducto.prevtaf3 = lnprevtaf3
+*!*			objProducto.prevtaf4 = 0
+*!*			objProducto.idfrio = lnfrio
+*!*			objProducto.sugerido = lnsugerido
+*!*			objProducto.idingbrutos = 1
+*!*			objProducto.divisible = lnsireparto
+*!*			objProducto.codartprod = IIF(EMPTY(CsrArticulo.codigo_prv),' ',CsrArticulo.codigo_prv)
+*!*			objProducto.desc1 = CsrArticulo.bonies
+*!*			objProducto.min1 = CsrArticulo.minimo
+*!*			objProducto.desc2 = CsrArticulo.bonies2
+*!*			objProducto.min2 = CsrArticulo.minimo2
+*!*			objProducto.desc3 = CsrArticulo.bonies3
+*!*			objProducto.min3 = CsrArticulo.minimo3
+*!*			objProducto.vtakilos = LNVTAKILOS
+*!*			objProducto.fecoferta = ldfechabonif
+*!*		GATHER NAME ObjProducto
+*!*		SELECT CsrProducto
+	lnid = lnid + 1
+
+	 SELECT CsrArticulo   				
+ENDSCAN
+
+***Buscamos los productos que son envases
+SELECT CsrEnvase.* FROM CsrProducto as CsrEnvase WHERE CsrEnvase.numero in (SELECT CsrProducto.idenvase FROM CsrProducto WHERE idenvase#0 );
+INTO CURSOR CsrEnvase READWRITE 
+
+SELECT CsrProducto
+GO TOP 
+SCAN 
+	IF idenvase=0
+		LOOP 
+	ENDIF 
+	SELECT CsrEnvase
+	LOCATE FOR numero = CsrProducto.idenvase
+	lnidenvase = 0
+	IF numero = CsrProducto.idenvase
+		lnidenvase = CsrEnvase.id
+	ENDIF 
+	replace idenvase WITH lnidenvase IN CsrProducto
+ENDSCAN  
+
+lnid = 1
+SELECT CsrFletero
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+
+SELECT CsrFleteroVie
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+           SELECT Csrctacte
+		LOCATE FOR cnumero=ALLTRIM(STR(CsrFleteroVie.cliente))
+		lnidctacte = 0
+		IF cnumero=ALLTRIM(STR(CsrFleterovie.cliente))
+			lnidctacte=CsrCtacte.id
+		ENDIF 
+	&&&&&&&&&&&&& agregado 19/08 nombres con Ñ
+   	lcnombre=alltrim(UPPER(CsrFleteroVie.nombre))
+	IF '¤'$lcnombre OR '¥'$lcnombre
+	 	FOR lni=1 to LEN(lcnombre)
+	 		lc=SUBSTR(lcnombre,lni,1)
+	 		IF '¤'=lc OR '¥'$lc
+	 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+	 		ENDIF 
+	 	ENDFOR  
+	ENDIF   
+	&&&&&&&&&&&&&&&&&&&&  l    
+           INSERT INTO CsrFletero (id,numero,nombre,direccion,telefono,tipoflete,switch,idctacte);
+           			 VALUES (lnid,CsrFleteroVie.numero,lcnombre,"","",1,"00000",lnidctacte)
+           lnid = lnid + 1
+
+ENDSCAN
+
+lnid = 1
+SELECT CsrDeposito
+IF FSIZE('id')>4
+   lntam = 10
+ELSE 
+   lntam = 8
+ENDIF 
+lccadena = strzero(lnid,lntam)
+lnid = VAL(str(Goapp.sucursal10+10,2)+lccadena)
+SELECT CsrDepositoVie
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+	&&&&&&&&&&&&& agregado 19/08 nombres con Ñ
+   	lcnombre=alltrim(UPPER(CsrDepositovie.nombre))
+	IF '¤'$lcnombre OR '¥'$lcnombre
+	 	FOR lni=1 to LEN(lcnombre)
+	 		lc=SUBSTR(lcnombre,lni,1)
+	 		IF '¤'=lc OR '¥'$lc
+	 			lcnombre = ALLTRIM(SUBSTR(lcnombre,1,lni-1))+ALLTRIM('Ñ')+ALLTRIM(SUBSTR(lcnombre,lni+1,LEN(lcnombre)))
+	 		ENDIF 
+	 	ENDFOR  
+	ENDIF   
+	&&&&&&&&&&&&&&&&&&&&  l    
+	INSERT INTO Csrdeposito (id,numero,nombre,llevastock);
+			VALUES (lnid,Csrdepositovie.numero,lcnombre,1)
+			lnid = lnid + 1
+
+ENDSCAN
+
+
+
+
+Oavisar.proceso('N') 
+=MESSAGEBOX('Proceso terminado! ')
+CLOSE tables
+CLOSE INDEXES
+CLOSE DATABASES
+	
