@@ -1,0 +1,13 @@
+19-08-2021 14:09:56 , RESCTACTEINDV.CMDPROCESAR.CLICK, Error: El campo NOMOPERADOR no acepta valores NULL.;Linea : INSERT INTO CsrAuxCursor (idctacte,ctacte,cnombre,orden,clase,fecha,vencimien,ccomprobante,cnumcomproba,impdebe,imphaber,Saldores ,detalle,ccuota,nrocaja,nomoperador,idmaopera,registro) VALUES (Oscatter.idctacte,Oscatter.ctacte,Oscatter.cnombre,RIGHT(STR(Oscatter.idmaopera,12),10),"B",TTOD(Oscatter.fecha) ,TTOD(Oscatter.vencimien),Oscatter.cabrevia,lcnumcomproba,0,0,0,Oscatter.detalle,strzero(Oscatter.cuota,2),Oscatter.nrocaja ,OScatter.nomoperador,Oscatter.idmaopera,lnRegistro);Error :       1581;Ultimo Alias Activo: CSRMOVIMIENTO;Ultimo registro:          1 STR(IDCTACTE,10)+DTOC(FECHA,1)+STRID(IDMAOPERA,12);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CZYH00RM.TMP;Ultimo Control activo: 
+19-08-2021 14:09:56 , Pila de llamadas
+19-08-2021 14:09:56 , Programa    : j:\xsoftsql\proyectos\hernan\forms\ctacte\resctacteindv.sct
+19-08-2021 14:09:56 , Objeto      : resctacteindv.cmdprocesar.click
+19-08-2021 14:09:56 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\ctacte\resctacteindv.sct
+19-08-2021 14:09:56 , Nº de Linea :          2
+19-08-2021 14:09:56 , En el Fuente: thisform.crearinforme()
+19-08-2021 14:09:56 , Programa    : j:\xsoftsql\proyectos\hernan\forms\ctacte\resctacteindv.sct
+19-08-2021 14:09:56 , Objeto      : resctacteindv.crearinforme
+19-08-2021 14:09:56 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\ctacte\resctacteindv.sct
+19-08-2021 14:09:56 , Nº de Linea :        279
+19-08-2021 14:09:56 , En el Fuente:   		INSERT INTO CsrAuxCursor (idctacte,ctacte,cnombre,orden,clase,fecha,vencimien,ccomprobante,cnumcomproba,impdebe,imphaber,Saldores  		,detalle,ccuota,nrocaja,nomoperador,idmaopera,registro)  		VALUES (Oscatter.idctacte,Oscatter.ctacte,Oscatter.cnombre,RIGHT(STR(Oscatter.idmaopera,12),10),"B",TTOD(Oscatter.fecha)  		,TTOD(Oscatter.vencimien),Oscatter.cabrevia,lcnumcomproba,0,0,0,Oscatter.detalle,strzero(Oscatter.cuota,2),Oscatter.nrocaja  		,OScatter.nomoperador,Oscatter.idmaopera,lnRegistro)
+19-08-2021 14:09:56 , Fin
