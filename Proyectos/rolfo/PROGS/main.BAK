@@ -38,6 +38,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
 	lcdd=L+'\xsoftsql\proyectos\rolfo\'
@@ -76,6 +77,7 @@ If lldesarrollo
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
+   cRutaQR	= _rutabmps + '\qr.jpg'
      
    Set default to (lcdd) &&;(lcddc)
 
@@ -99,6 +101,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
     SET PROCEDURE  TO  procdesarrollo.prg ADDITIVE
     SET PROCEDURE  TO  syerrhand.prg ADDITIVE  
     SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+    SET PROCEDURE TO FoxBarcodeQR ADDITIVE
     
    SET PROCEDURE  TO  syserror.prg ADDITIVE  
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
@@ -149,6 +152,8 @@ ObjReporter.AddProperty('titulo4',"")
 ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('fileqr',cRutaQR)
+
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
