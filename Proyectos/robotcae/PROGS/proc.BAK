@@ -1560,6 +1560,8 @@ FUNCTION LeerDatosEmpresa
 
 LOCAL lcCmd,lok
 
+*llok = CargarTabla(lcConectionString,'Empresa',"Empresa")
+
 *!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
 *!*	SELECT Csrempresa.* FROM CentroRecep as CsrSucursal
 *!*	left join empresa as Csrempresa  on  CsrSucursal.id = CsrEmpresa.idsucursal 
@@ -1570,7 +1572,7 @@ LOCAL lcCmd,lok
 
 llok = CargarTabla(lcConectionString,'Empresa')
 
-IF lok
+IF llok
     GOapp.empresaid 				= Csrempresa.id
 	GOapp.empresanombre		= Csrempresa.nombre
 	GOapp.empresaramo			= Csrempresa.ramo
@@ -1596,7 +1598,7 @@ IF lok
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 ENDIF
 
-USE IN CsrEmpresa
+*USE IN CsrEmpresa
 
 RETURN .t.
 

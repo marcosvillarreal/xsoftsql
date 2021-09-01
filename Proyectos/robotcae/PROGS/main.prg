@@ -119,10 +119,12 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
-PUBLIC oConfigTermi
-  
+PUBLIC oConfigTermi,pidsistema
+
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+pidsistema= 1
 
 PUBLIC ModuloRobot
 ModuloRobot = cModulo
@@ -227,7 +229,8 @@ IF TYPE('goApp')='O'
 *!*				RETURN 	
 *!*		      ENDIF 
 	ENDIF 
-
+	
+	*stop()
 	LeerEmpresa()
 	    
 	Goapp.idusuario           = 0

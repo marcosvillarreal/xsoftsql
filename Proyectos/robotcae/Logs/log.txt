@@ -1,20 +1,3 @@
-Control activo  PARACONFIG.CONTAINERENCABEZA.KITBUSCAOALTAENCENTRO.TXTEXISTE1.INIT
-26-06-2015 12:45:32 , Error nº:         12
-Error No se encuentra la variable 'CMODULO'.
-Linea nº ModuloRobot = cModulo
- Alias  registro          0
-Control activo  MAIN
-26-06-2015 12:46:35 , Error nº:       1734
-Error No se encuentra la propiedad TABLES.
-Linea nº IF LEN(TRIM(oca.tables))=0
- Alias PARACONFIG registro          1
-Control activo  PARACONFIG.CONTAINERENCABEZA.KITBUSCAOALTAENCENTRO.TXTEXISTE1.INIT
-26-06-2015 12:48:03 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONFIG'.
-Linea nº lnidejercicio     = Csrparaconfig.idejercicio
- Alias PARACONFIG registro          1
-Control activo  PARACONFIG.INIT
-26-06-2015 12:48:18 , Error nº:         13
 Error No se encuentra el alias 'CSRPARACONFIG'.
 Linea nº lnidejercicio     = Csrparaconfig.idejercicio
  Alias PARACONFIG registro          1
@@ -377,6 +360,8 @@ Linea nº CREATE CURSOR CsrCabeDeta (orden n(12),comprobante c(15),direccion c(30
 
 
 
+
+
 aderia c(20),corredor c(25),detalle c(255) )
  Alias CSRIMPUESTO registro          1
 Control activo  MAIN
@@ -408,6 +393,8 @@ Control activo  MAIN
 19-02-2016 14:00:32 , Error nº:         12
 Error No se encuentra la variable 'CUIT'.
 Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,cuit
+
+
 
 
 
@@ -660,6 +647,8 @@ Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4
 
 
 
+
+
 liente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -756,6 +745,8 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
 
 
 
@@ -1230,7 +1221,11 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
 
 
 
@@ -1340,7 +1335,11 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
 
 
 
@@ -1501,12 +1500,16 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
 
 
 
@@ -1793,11 +1796,15 @@ Linea nº cExtra02 = IIF(loObjfactura.letra="A" AND CsrCategoiva.abravia="RM",'RG
 
 
 
+
+
  Alias CSRCABEIMP registro          1
 Control activo  MAIN
 05-07-2021 16:26:14 , Error nº:         12
 Error No se encuentra la variable 'CEXTRA04'.
 Linea nº INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte ,NomCtacte,Direccion,Localidad,Categoiva,CUIT ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,
+
+
 
 
 
@@ -1831,6 +1838,8 @@ BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,He
 
 
 
+
+
 EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE ,CAECheck,CodVdor,Mercaderia,TipoDoc ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNroComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cPlanPag
 
 
@@ -1848,7 +1857,11 @@ EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE ,CAECheck,CodVdor,Mercaderia,TipoDoc 
 
 
 
+
+
 o,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007 
+
+
 
 
 
@@ -2004,6 +2017,8 @@ Error Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: U
   File "win32com\server\policy.pyc", line 282, in _invok
 
 
+
+
 e_
   Fi
 Linea nº lok = PyI25.GenerarImagen(cCodBarra,cNameArchivo,9,0,90,"JPEG")
@@ -2014,6 +2029,8 @@ Error Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: U
   File "win32com\server\policy.pyc", line 277, in _Invoke_
   File "win32com\server\policy.pyc", line 282, in _invok
 
+
+
 e_
   Fi
 Linea nº lok = PyI25.GenerarImagen(cCodBarra,cNameArchivo,9,0,90,"JPEG")
@@ -2023,9 +2040,26 @@ Control activo  MAIN
 Error Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
   File "win32com\server\policy.pyc", line 277, in _Invoke_
   File "win32com\server\policy.pyc", line 282, in _invok
+
+
 e_
   Fi
 Linea nº lok = PyI25.GenerarImagen(cCodBarra,cNameArchivo,9,0,90,"JPEG")
  Alias FSRPREFITERMI registro          1
 Control activo  MAIN
-02-08-2021 12:30:16 , Error nº:       1923Error No se encuentra el objeto OSCABEFAC.Linea nº OsCabefac.planpago = IIF(LEN(LTRIM(OscCabefac.planpago))=0,'CONTADO',OscCabefac.planpago) Alias CSRCABEZA registro          1Control activo  MAIN
+02-08-2021 12:30:16 , Error nº:       1923
+Error No se encuentra el objeto OSCABEFAC.
+Linea nº OsCabefac.planpago = IIF(LEN(LTRIM(OscCabefac.planpago))=0,'CONTADO',OscCabefac.planpago)
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+01-09-2021 11:33:39 , Error nº:         12
+Error No se encuentra la variable 'PIDSISTEMA'.
+Linea nº lnidprograma = pidsistema
+ Alias  registro          0
+Control activo  REGPROCESO.BOTON_FAVORITO1.INIT
+01-09-2021 11:34:22 , Error nº:         12
+Error No se encuentra la variable 'PIDSISTEMA'.
+Linea nº lnidprograma = pidsistema
+ Alias  registro          0
+Control activo  REGPROCESO.BOTON_FAVORITO1.INIT
+01-09-2021 12:17:18 , Error nº:         13Error No se encuentra el alias 'CSREMPRESA'.Linea nº GOapp.empresaid 				= Csrempresa.id Alias  registro          0Control activo  MAIN
