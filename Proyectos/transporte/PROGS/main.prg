@@ -235,6 +235,7 @@ IF TYPE('goApp')='O'
 	= Fwin32()    && funciones api win32
 	
 	Grabar_Log('Obteniendo conexion a servidor') 
+	*stop()
 	 =ObtenerServidor()
 	  
 	IF LEN(TRIM(LcConectionString))=0
