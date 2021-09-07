@@ -1696,7 +1696,7 @@ lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
 IF lok
    Goapp.terminal               = Csrseteotermi.numero
    Goapp.nombreterminal = Csrseteotermi.nombre
-   goapp.termifacopen = CsrSeteoTermi.grapmod
+   goapp.termifacopen = NVL(CsrSeteoTermi.openfac,0)
 ENDIF
 
 IF USED("Csrseteotermi")
