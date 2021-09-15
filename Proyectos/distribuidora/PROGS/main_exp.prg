@@ -123,9 +123,12 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+pidsistema = nidprograma
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -176,7 +179,9 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.f.
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
-
+	
+	LeerConfigTermi()
+	
     WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     DO Verifica_OCX WITH "Check"
     
@@ -195,7 +200,7 @@ IF TYPE('goApp')='O'
 		DO FORM configbd
 		=ObtenerServidor()
 	ENDIF    
-
+	
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
 	
 	*Marcos 19/12/14 No tiene utilidad esto.
