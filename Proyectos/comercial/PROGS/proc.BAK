@@ -2273,7 +2273,7 @@ DO CASE
 	              ,ctactebco c(6),titular c(30),banco c(30),localidad c(30),nrocheque n(12),idtipobco i;
 	              ,fechavto d,entregado c(30),idvalor i,idprovincia i,tipocaja c(2),esclase c(1);
 	              ,recibido c(30),nrotarjeta c(16),cupon c(15),cuota n(2),cuit c(13),idctabco i;
-	              ,idmaopera n(12),idcheque M,detalle c(50),idctatitular i,idctaentregado i,idctarecibido i;
+	              ,idmaopera n(12),idcheque M,detalle c(250),idctatitular i,idctaentregado i,idctarecibido i;
 	              ,idlocalidad i,idbanco i,nroidentificador c(50),lccuit c(13))
 	Sele Csrpago
 ENDCASE 
