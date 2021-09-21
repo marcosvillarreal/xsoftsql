@@ -512,6 +512,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
 	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
 	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =   30000 
 		
