@@ -189,7 +189,7 @@ PARAMETERS lcChar
 RETURN lcChar
 
 FUNCTION Ciudades
-PARAMETERS lcLocalidad
+PARAMETERS lcLocalidad,lcProvincia
 LOCAL lcnombre
 lcNombre = lclocalidad
 
@@ -212,8 +212,16 @@ CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","")$"BAHIABLANCA-BAHjABLANCA-BBLANC
 	lcnombre = "BAHIA BLANCA"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"BUENOSAIRES-CABA-CADEBSAIRES-CAPFEDERAL-CAPITAL-CIUDADBUE-CAPITALFEDERAL-CDAUTONOMABSAIRES-BS"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CAPITAL FEDERAL"
+CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"CIUDADAUTONOMABUENOSAIRES"
+	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CAPITAL FEDERAL"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"FLORES-"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CAPITAL FEDERAL"
+CASE ALLTRIM(UPPER(lcLocalidad))  = "CAP" .or. ALLTRIM(UPPER(lcLocalidad)) = "CIUDAD BS"  .or. ALLTRIM(UPPER(lcLocalidad)) = "CABA"
+	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CAPITAL FEDERAL"
 CASE "CAPILLADELSE"$STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CAPILLA DEL SEÑOR"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $ "CASEROS"
@@ -288,8 +296,6 @@ CASE  ALLTRIM(UPPER(lcLocalidad))  = "CNEL. DORREGO"
 	lcnombre = "CORONEL DORREGO"
 CASE  ALLTRIM(UPPER(lcLocalidad))  = "CATRILLO"
 	lcnombre = "CATRILO"
-CASE ALLTRIM(UPPER(lcLocalidad))  = "CAP" .or. ALLTRIM(UPPER(lcLocalidad)) = "CIUDAD BS"
-	lcnombre = "CIUDAD DE BUENOS AIRES"
 CASE  ALLTRIM(UPPER(lcLocalidad))  = "BERNAL OESTE"
 	lcnombre = "BERNAL"
 CASE  ALLTRIM(UPPER(lcLocalidad))  = "BAL. LAS GRUTAS"
@@ -308,6 +314,7 @@ CASE  ALLTRIM(UPPER(lcLocalidad))  ="B.EL CONDOR"  .OR. ALLTRIM(UPPER(lcLocalida
 	lcnombre = "BALNEARIO EL CONDOR"
 CASE  ALLTRIM(UPPER(lcLocalidad)) ="BUENOS AIRES" .OR.ALLTRIM(UPPER(lcLocalidad))  ="BS"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CAPITAL FEDERAL"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="C. PATAGONES" .OR. ALLTRIM(UPPER(lcLocalidad))  ="C.PATAGONES"
 	lcnombre = "CARMEN DE PATAGONES"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="CAPITAL FEDERALPATAGONES"
