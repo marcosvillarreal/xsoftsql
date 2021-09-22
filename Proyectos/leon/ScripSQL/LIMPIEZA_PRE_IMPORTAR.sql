@@ -1,0 +1,41 @@
+use leon
+go
+----CONTABILIDAD
+--select count(*) from cabeasi
+--delete from cabeasi where idmaopera in 
+--(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cabeasi
+----1.26 m
+--select count(*) from tablaimp
+--delete from tablaimp where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from tablaimp
+----2.15 mi
+--select count(*) from tablaasi
+--delete from tablaasi where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from tablaasi
+----5.55 m
+----FACTURACION
+--select count(*) from cuervari
+--delete from cuervari where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cuervari
+----5.0 m
+--select count(*) from cuerfac
+--delete from cuerfac where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cuerfac
+----21.0 m
+--select count(*) from cabefac
+--delete from cabefac where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cabefac
+----4.0 m
+--PEDIDOS
