@@ -39,3 +39,67 @@ go
 --select count(*) from cabefac
 ----4.0 m
 --PEDIDOS
+--select count(*) from ncuervari
+--delete from ncuervari where idmaopera in 
+--	(select nmaopera.id from nmaopera inner join detanrocaja on nmaopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000017)
+--select count(*) from ncuervari
+----1.25 m
+----select count(*) from ncuerfac
+----delete from ncuerfac where idmaopera in 
+----	(select nmaopera.id from nmaopera inner join detanrocaja on nmaopera.iddetanrocaja = detanrocaja.id
+----	where detanrocaja.idejercicio < 1100000017)
+----select count(*) from ncuerfac
+------1.4 m
+--select count(*) from ncabefac
+--delete from ncabefac where idmaopera in 
+--	(select nmaopera.id from nmaopera inner join detanrocaja on nmaopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000017)
+--select count(*) from ncabefac
+--0.16 m
+--Cuenta Corriente  - Borramos todo los inteferior pero cancelado
+--select count(*) from movctacte
+--delete from movctacte where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014) and movctacte.saldo = 0
+--select count(*) from movctacte
+----0.8 m
+----FACTURACION
+--select count(*) from cuervaricpra
+--delete from cuervaricpra where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cuervaricpra
+--select count(*) from cuercpra
+--delete from cuercpra where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cuercpra
+--select count(*) from cabecpra
+--delete from cabecpra where idmaopera in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from cabecpra
+----0.20 m
+--MAOPERA
+--select count(*) from maopera
+--delete from maopera where id in 
+--	(select maopera.id from maopera inner join detanrocaja on maopera.iddetanrocaja = detanrocaja.id
+--	where detanrocaja.idejercicio < 1100000014)
+--select count(*) from maopera
+----3.5 m
+--select count(*) from renmaope
+--delete from renmaope where not idmaopera in 
+--	(select maopera.id from maopera )
+--select count(*) from renmaope
+--select count(*) from fletecarga
+--delete from fletecarga where not idmaopera in 
+--	(select nmaopera.id from nmaopera )
+--select count(*) from fletecarga
+--select count(*) from fleteplanilla
+--delete from fleteplanilla where not id in 
+--	(select idfleteplan from fletecarga)
+--select count(*) from fleteplanilla
+
+--select count(*) from renmaope
+--select * from keysid order by nextid desc
