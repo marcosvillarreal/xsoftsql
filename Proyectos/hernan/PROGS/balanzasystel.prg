@@ -29,6 +29,7 @@ IF cFile=-1
 ENDIF 
 
 *stop()
+cLinea = ""
 DO WHILE NOT FEOF(cFile) AND  nLectura < nLineaHeader
 	cLinea = FGETS(cFile)
 	nLectura = nLectura + 1 
