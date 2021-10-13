@@ -139,7 +139,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  ZIP ADDITIVE 
    *set classlib to deskalert ADDITIVE 
    set classlib to systray ADDITIVE 
-   SET CLASSLIB TO _ssclasses ADDITIVE 
+
 	
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
@@ -199,7 +199,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "02.01.00"
+	goapp.version = "01.00.01"
 	
 	PUBLIC  gcicono
 	     

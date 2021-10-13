@@ -38,7 +38,7 @@ ldebug = .t.
 SKIP 
 stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 13 &&Hay un campo vacio
+	lnCantCampo = 14 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -88,6 +88,7 @@ DO WHILE NOT EOF()
 			lcDireDespacho= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcDireDespacho)))
 			lcFacEmail	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFacEmail)))
 			lcEmail		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcEmail)))
+			lcCodPostal	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCodPostal)))
 			
 			*lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
 			*lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDirePiso)))

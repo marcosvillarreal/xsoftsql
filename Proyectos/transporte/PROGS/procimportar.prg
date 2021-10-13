@@ -397,6 +397,8 @@ CASE "TOMASMDEANO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 CASE "ANCHORENA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "ANCHORENA" 
 CASE "SANTONIOOESTE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN ANTONIO OESTE"  	
+CASE "SANAOESTE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN ANTONIO OESTE"  		
 CASE "VIILAMAZA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VILLA MAZA"  	
@@ -463,8 +465,10 @@ CASE "CLAROMECO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 CASE "RETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "RETA" 	
 CASE "CIPOLLETI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "CIPOLlETTI" 	
+	lcnombre = "CIPOLLETTI" 	
 CASE "CUTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CUTRAL CO" 	
+CASE "CULTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CUTRAL CO" 	
 CASE "GRALROCA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL ROCA" 	
@@ -481,7 +485,18 @@ CASE "GENERALCAMPOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","
 CASE "VILLADOMINICO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VILLA DOMINICO" 
 CASE "LAADELA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "LA ADELA" 		 	 
+	lcnombre = "LA ADELA" 		 	
+CASE "BERISSO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "BERISSO" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "CA¥ADONSECO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CAÑADON SECO" 		 
+CASE "TIERRADELFUEGO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "USHUAIA" 		
+CASE "CHOLE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CHOELE CHOEL" 	
+CASE "NEUQUEN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcProvincia = 'NEUQUEN'
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161

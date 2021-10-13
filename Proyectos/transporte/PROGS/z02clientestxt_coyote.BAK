@@ -48,7 +48,7 @@ ENDTEXT
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 SELECT CsrLocalidad
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISCLI01.CSV"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISCLI02.CSV"
 =LeerClientes(cArchivo)
 
 SELECT CsrDeudor
@@ -66,10 +66,14 @@ SELECT CsrCiudad
 *vista()
 *stop()
 SCAN 
-	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="CUIDAD AUTONOMA BUENOS AIRES"
+	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="CULTRALCO"
 		stop()
 	ENDIF 
 	lcProvincia = ALLTRIM(UPPER(CsrCiudad.provincia))
+	*IF ALLTRIM(UPPER(CsrCiudad.provincia))='CAPITAL FEDERAL'
+	*	lcProvincia = 'CIUDAD AUTONOMA DE BUENOS AIRES'
+	*ENDIF 
+	
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)),@lcProvincia)
 	
 *!*		lnCodProvincia = VAL(CsrCiudad.codprovincia)
@@ -87,7 +91,7 @@ SCAN
 		*vista()
 	ENDIF 
 	
-	IF id#0
+	IF CsrLocalidad.id#0
 		replace localidad WITH lcLocalidadBuscada,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
 		IF "CAPITAL FEDERAL"$RTRIM(lcLocalidadBuscada)
 			SELECT CsrLocalidad
