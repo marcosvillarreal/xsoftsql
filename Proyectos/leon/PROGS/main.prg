@@ -281,7 +281,7 @@ IF TYPE('goApp')='O'
 	
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
-			DO FORM frmmenu
+			DO FORM frmmenu3
 		ELSE 
 			SET CONSOLE OFF 
 			DO FORM frmmenu_DashBoard
