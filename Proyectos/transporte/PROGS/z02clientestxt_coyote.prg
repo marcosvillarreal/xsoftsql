@@ -65,7 +65,7 @@ SELECT CsrCiudad
 
 SCAN 
 	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="CULTRALCO"
-		stop()
+		*stop()
 	ENDIF 
 	lcProvincia = ALLTRIM(UPPER(CsrCiudad.provincia))
 
@@ -93,7 +93,7 @@ ENDSCAN
 
 SELECT CsrCiudad
 SET FILTER TO estado = 1
-vista()
+*vista()
 SET FILTER TO
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
@@ -102,15 +102,15 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
+VISTA()
 
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
 *nCodigo = 1
-*stop()
+stop()
 SCAN 
 
-	lnCodigo = CsrDeudor.idorigen
+	lnCodigo = VAL(CsrDeudor.codigo)
  	SELECT CsrCtacte
  	LOCATE FOR VAL(cnumero) = lnCodigo
  	IF VAL(cnumero) = lnCodigo
@@ -131,9 +131,9 @@ SCAN
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  	
  	nCodigo			= lnCodigo	
- 	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
+ 	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
- 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
+ 	lnidplanpago	= 1100000001 &&Por el momento todos de efectivo	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1100000001
 	lnlista			= CsrDeudor.codlista
@@ -154,20 +154,19 @@ SCAN
 	ENDIF 
 		
 	&&Localidad
+	
+	lcProvincia = ALLTRIM(UPPER(CsrDeudor.provincia))	
+	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)),@lcProvincia)
+	
 	SELECT CsrCiudad
-	LOCATE FOR VAL(CodLocalidad) = VAL(CsrDeudor.codlocalidad)
-	lnidlocalidad	= CsrCiudad.idlocalidad
-	
-	*lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
-	SELECT CsrLocalidad
-	*GO TOP 
-	LOCATE FOR id = lnidlocalidad
-	IF id = lnidlocalidad
-		lnidprovincia	= CsrLocalidad.idprovincia
-		lccp 			= CsrLocalidad.cpostal
-		lnidlocalidad	= CsrLocalidad.id
+	LOCATE FOR ALLTRIM(nombre) = alltrim(CsrDeudor.localidad) AND ALLTRIM(provincia) = ALLTRIM(CsrDeudor.provincia)
+	IF CsrCiudad.idlocalidad # 0 
+		lnidlocalidad	= CsrCiudad.idlocalidad
 	ENDIF
-	
+	SELECT CsrLocalidad
+	LOCATE FOR id = lnidlocalidad
+	lnidprovincia	= CsrLocalidad.idprovincia
+	lccp 			= CsrLocalidad.cpostal
 	
 	&&TresPImp	
 	nTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
@@ -231,32 +230,21 @@ SCAN
   	&&Tenemos que agregar el otro telefono a observaciones
   	ldfechac	= ctod(CsrDeudor.fecAlta)
   	lcEmail		= LTRIM(CsrDeudor.email)
-  	
-  	IF lnTipoIva <> 3 &&Sin no es CF y de RN le adjuntamos la percepcion
-		IF lnidprovincia = 1100000022
-			lnidcateibrng = CsrCateIBRNg.id		
-			lnporperce = CsrCateIbRNg.porperce
-			lnporrete = CsrCateIbRNg.porrete
-		ENDIF 
-	ENDIF 
+  	lcDireDespacho = ALLTRIM(CsrDeudor.DireDespacho)
+  	lnFacEmail = VAL(CsrDeudor.FacEmail)
 	
 	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1);
+	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
 	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
-	,lnbonif1)
-	
-	IF lnidcateibrng#0
-		INSERT INTO CsrCateIbrn(idctacte, cuit, porperce,porrete);
-		VALUES (lnid, lccuit,lnporperce,lnporrete)
-	ENDIF 
-	
+	,lnbonif1,lnFacEmail,lcDireDespacho)
+		
 	
 	lnid = lnid + 1
 	*nCodigo = nCodigo + 1 
