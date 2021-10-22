@@ -1,0 +1,18 @@
+21-10-2021 15:03:02 , REGFACRTO.CONTAINERENCABEZA.KITBUSCAOALTAENCTARTE.LOSTFOCUS, Error: No se encuentra el alias 'CSRPROVINCIA'.;Linea : REPLACE idctacte_rte WITH OscCtacte.id,cnombre_rte WITH OscCtacte.cnombre,cdireccion_rte WITH OscCtacte.cdireccion ,idtipoiva_rte WITH lnidtipoiva,cuit_rte WITH lccuit,cpostal_rte WITH OscCtacte.cpostal ,idlocalidad_rte WITH lnidlocalidad,idprovincia_rte WITH lnidprovincia,ctacte_rte WITH OscCtacte.cnumero ,copiatkt WITH IIF(OscCtacte.copiatkt#0,OscCtacte.copiatkt,1),listaprecio WITH lnidlista1 ,vencimien WITH TTOD(fecha)+IIF(ISNULL(OscCtacte.diasvto),0,OscCtacte.diasvto) ,ctelefono_rte WITH OscCtacte.ctelefono ,documento_rte WITH NVL(OscCtacte.dni,"") ,categoiva_rte WITH CsrCategoiva.abrevia,Provincia_Rte WITH CsrProvincia.nombre ,localidad_rte WITH CsrLocalidad.nombre IN CsrAuxCabefac;Error :         13;Ultimo Alias Activo: CSRCATEGOIVA;Ultimo registro:          6 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005CLL082H.TMP;Ultimo Control activo: 
+21-10-2021 15:03:02 , Pila de llamadas
+21-10-2021 15:03:02 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+21-10-2021 15:03:02 , Objeto      : regfacrto.containerencabeza.kitbuscaoaltaenctarte.lostfocus
+21-10-2021 15:03:02 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+21-10-2021 15:03:02 , Nº de Linea :         25
+21-10-2021 15:03:02 , En el Fuente: this.lostfocosay()
+21-10-2021 15:03:02 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ventas\regfacrto.sct
+21-10-2021 15:03:02 , Objeto      : regfacrto.containerencabeza.kitbuscaoaltaenctarte.lostfocosay
+21-10-2021 15:03:02 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ventas\regfacrto.sct
+21-10-2021 15:03:02 , Nº de Linea :          7
+21-10-2021 15:03:02 , En el Fuente: 		lok = .cargarcabefac('RTE')
+21-10-2021 15:03:02 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ventas\regfacrto.sct
+21-10-2021 15:03:02 , Objeto      : regfacrto.cargarcabefac
+21-10-2021 15:03:02 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ventas\regfacrto.sct
+21-10-2021 15:03:02 , Nº de Linea :         46
+21-10-2021 15:03:02 , En el Fuente: 			   	REPLACE idctacte_rte WITH OscCtacte.id,cnombre_rte WITH OscCtacte.cnombre,cdireccion_rte WITH OscCtacte.cdireccion				         ,idtipoiva_rte WITH lnidtipoiva,cuit_rte WITH lccuit,cpostal_rte WITH OscCtacte.cpostal				         ,idlocalidad_rte WITH lnidlocalidad,idprovincia_rte WITH lnidprovincia,ctacte_rte WITH OscCtacte.cnumero				         ,copiatkt WITH IIF(OscCtacte.copiatkt#0,OscCtacte.copiatkt,1),listaprecio WITH lnidlista1					,vencimien WITH TTOD(fecha)+IIF(ISNULL(OscCtacte.diasvto),0,OscCtacte.diasvto)				        ,ctelefono_rte WITH OscCtacte.ctelefono					,documento_rte WITH NVL(OscCtacte.dni,"") 					,categoiva_rte WITH CsrCategoiva.abrevia,Provincia_Rte WITH CsrProvincia.nombre 					,localidad_rte WITH CsrLocalidad.nombre IN CsrAuxCabefac
+21-10-2021 15:03:02 , Fin

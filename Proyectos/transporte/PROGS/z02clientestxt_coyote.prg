@@ -64,7 +64,7 @@ SELECT distinct codlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,
 SELECT CsrCiudad
 
 SCAN 
-	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="CULTRALCO"
+	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="COMODORO RIVADAVIA"
 		*stop()
 	ENDIF 
 	lcProvincia = ALLTRIM(UPPER(CsrCiudad.provincia))
@@ -93,7 +93,10 @@ ENDSCAN
 
 SELECT CsrCiudad
 SET FILTER TO estado = 1
-*vista()
+IF RECCOUNT('CsrCiudad')#0
+	vista()
+ENDIF 
+
 SET FILTER TO
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
@@ -102,12 +105,12 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-VISTA()
+*VISTA()
 
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
 *nCodigo = 1
-stop()
+*stop()
 SCAN 
 
 	lnCodigo = VAL(CsrDeudor.codigo)
@@ -129,7 +132,9 @@ SCAN
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
- 	
+ 	IF lnCodigo = 128
+ 		stop()
+ 	ENDIF 	
  	nCodigo			= lnCodigo	
  	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
@@ -169,34 +174,28 @@ SCAN
 	lccp 			= CsrLocalidad.cpostal
 	
 	&&TresPImp	
-	nTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
+	cTipoiva	= ALLTRIM(CsrDeudor.Codcateiva) &&5 Monotributo
 	DO CASE 
-	CASE nTipoiva = 6 &&CF
+	CASE cTipoiva = 'C.F' OR cTipoIVA$'CF'
 		lntipoiva = 3		
-	CASE nTipoiva = 11 &&EX sin impuestos?
+	CASE cTipoiva = 'EXE'
 		lntipoiva = 4	
-	CASE nTipoIva = 1 &&RI
+	CASE cTipoIva = 'RI'
 		lnTipoiva = 1
 	OTHERWISE 
-		lntipoiva = CsrDeudor.Codcateiva
+		lntipoiva = 5
 	ENDCASE 
 	
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	IF lntipoiva<>3
-		*IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
-			lcCuit			= Cuit(lcNroDoc)
-			lcNroDoc		= ''
-		*ENDIF 
+		lcCuit			= Cuit(lcNroDoc)
+		lcNroDoc		= ''
 	ENDIF
 	
 
 	lcnumero	= strtrim(nCodigo,8)
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
-	
-	IF nCodigo = 19
-		stop()
-	ENDIF 
 	
 	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
   	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))

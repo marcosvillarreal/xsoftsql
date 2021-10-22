@@ -9,7 +9,7 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,TipoDoc c(50),Documento c(20);
 		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
-		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i;
+		,CodCateIVA c(5),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i;
 		,DireDespacho c(100),FacEmail c(1))
 	
 Oavisar.proceso('S','Abriendo archivos') 
@@ -84,7 +84,7 @@ DO WHILE NOT EOF()
 			lcProvincia	= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcProvincia)))
 			lcTelefono	= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcTelefono)))
 			lcDocumento	= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDocumento)))
-			lcCategoria 		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCategoria )))
+			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodCateIVA)))
 			lcDireDespacho= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcDireDespacho)))
 			lcFacEmail	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFacEmail)))
 			lcEmail		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcEmail)))
@@ -151,7 +151,7 @@ DO WHILE NOT EOF()
 			values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 			,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 			,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
-			,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ);
+			,lcCodCateIVA,lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ);
 			,lcDireDespacho,lcFacEmail)
 		ENDIF 			
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
