@@ -1711,6 +1711,7 @@ ENDTEXT
 lok =CrearCursorAdapter("CsrParametros",lcCmd)
 lreturn = .t.
 
+
 IF lok
 
 	LOCAL lObjEjercicioActivo as Object 
