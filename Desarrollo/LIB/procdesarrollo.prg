@@ -104,6 +104,7 @@ oConfigTermi.AddProperty('MenuRibbon',"FALSE")
 oConfigTermi.AddProperty('MenuDashBoard',"FALSE")
 oConfigTermi.AddProperty('NetDriveFileCtacte','C:\Documentos')
 oConfigTermi.AddProperty('NetDriveGS1','C:\GS1')
+oConfigTermi.AddProperty('ActivarSyncSucursal','FALSE')
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -149,6 +150,9 @@ IF FILE(cFile)
 				oConfigTermi.NetDriveFileCtacte=  ALLTRIM(SUBSTR(lcActDato,i))	
 			CASE lclabel="NETDRIVEGS1"
 				oConfigTermi.NetDriveGS1=  ALLTRIM(SUBSTR(lcActDato,i))	
+			CASE lclabel="ACTIVARSYNCSUCURSAL"
+				oConfigTermi.ActivarSyncSucursal=  ALLTRIM(SUBSTR(lcActDato,i))		
+				
 		ENDCASE		 
 	ENDDO 
                     
@@ -176,7 +180,8 @@ IF NOT FILE(cFile)
 		XX= FPUTS(Arc,lclabel,lenregistro)
 		lclabel="[NetDriveFileCtacte]" + oConfigTermi.NetDriveFileCtacte
 		XX= FPUTS(Arc,lclabel,lenregistro)
-		
+		lclabel="[ActivarSyncSucursal]" + oConfigTermi.ActivarSyncSucursal
+		XX= FPUTS(Arc,lclabel,lenregistro)		
 	ENDIF 	
 	FCLOSE(Arc)
 ENDIF 
