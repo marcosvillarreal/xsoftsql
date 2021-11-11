@@ -103,8 +103,9 @@ oConfigTermi.AddProperty('FontName_Column',"Tahoma")
 oConfigTermi.AddProperty('MenuRibbon',"FALSE")
 oConfigTermi.AddProperty('MenuDashBoard',"FALSE")
 oConfigTermi.AddProperty('NetDriveFileCtacte','C:\Documentos')
-oConfigTermi.AddProperty('NetDriveGS1','C:\GS1')
-oConfigTermi.AddProperty('ActivarSyncSucursal','FALSE')
+oConfigTermi.AddProperty('NetDriveGS1','C:\GS1') &&Ruta de la carpeta donde se almacena gs1
+oConfigTermi.AddProperty('ActivarSyncSucursal','FALSE')   &&se abre el regprocesosync al iniciar
+oConfigTermi.AddProperty('NetDriveDevoluciones','J:\Devoluciones')  &&Ruta de la carpeta devoluciones en cobranzas
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -152,6 +153,9 @@ IF FILE(cFile)
 				oConfigTermi.NetDriveGS1=  ALLTRIM(SUBSTR(lcActDato,i))	
 			CASE lclabel="ACTIVARSYNCSUCURSAL"
 				oConfigTermi.ActivarSyncSucursal=  ALLTRIM(SUBSTR(lcActDato,i))		
+			CASE lclabel="NETDRIVEDEVOLUCIONES"
+				oConfigTermi.NetDriveDevoluciones=  ALLTRIM(SUBSTR(lcActDato,i))		
+			
 				
 		ENDCASE		 
 	ENDDO 
@@ -181,7 +185,10 @@ IF NOT FILE(cFile)
 		lclabel="[NetDriveFileCtacte]" + oConfigTermi.NetDriveFileCtacte
 		XX= FPUTS(Arc,lclabel,lenregistro)
 		lclabel="[ActivarSyncSucursal]" + oConfigTermi.ActivarSyncSucursal
-		XX= FPUTS(Arc,lclabel,lenregistro)		
+		XX= FPUTS(Arc,lclabel,lenregistro)	
+		lclabel="[NetDriveDevoluciones]" + oConfigTermi.NetDriveDevoluciones
+		XX= FPUTS(Arc,lclabel,lenregistro)	
+			
 	ENDIF 	
 	FCLOSE(Arc)
 ENDIF 
