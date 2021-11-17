@@ -8,12 +8,12 @@ clear all
 set classlib to
 l='j:'
 set talk off
+PUBLIC lldesarrollo 
 lldesarrollo=(_vfp.startmode()#4)
-
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Sync Servidor"
+lctituloGestion = "Gestión de Ventas"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -38,7 +38,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
-cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"								   
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\hernan\'
@@ -55,7 +55,6 @@ If lldesarrollo
    _rutafutil  =lcdd+'forms\util'
    _rutafcont  =lcdd+'forms\contabilidad'
    _rutafctacte  =lcdd+'forms\CTACTE'
-   _rutasync  =lcdd+'forms\sync'
    _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
    _rutaffc  =L+'\xsoftsql\desarrollo\clases\ffc'
    _rutalib  =L+'\xsoftsql\desarrollo\lib'   
@@ -63,19 +62,12 @@ If lldesarrollo
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutafutil,&_rutafcont,&_rutafctacte,&_rutasync
+               ,&_rutafutil,&_rutafcont,&_rutafctacte
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
-   cRutaQR	= _rutabmps + '\qr.jpg'
-ELSE
-	*-- RUTA
-	l=SYS(5)
-   	_rutadatos  =l+lcdd+'Datos'
+   cRutaQR	= _rutabmps + '\qr.jpg'							  
    
-   	Set default to (l+lcdd) &&;(lcddc)
-
-   	Set path to &_rutadatos   
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -92,7 +84,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO balanzasystel.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
-   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE												  
    
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -119,10 +111,12 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
-PUBLIC oConfigTermi
+PUBLIC oConfigTermi,pidsistema			   
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
- STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC,pidsistema
+ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+pidsistema = 1
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -168,7 +162,6 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.t.
 	
 	LeerConfigTermi()
-	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 
     WAIT WINDOW "Verificando ActiveX instalados ..." nowait
@@ -190,15 +183,15 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.f.
 
 	PUBLIC oHandler
-    	oHandler=NEWOBJECT("myhandler")
-    	BINDEVENT(_SCREEN,"Resize",oHandler,"myresize")    
-    	BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
+    oHandler=NEWOBJECT("myhandler")
+    BINDEVENT(_SCREEN,"Resize",oHandler,"myresize")    
+    BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
 	***** fin posicionamiento escritorio
 	
 	DO directivasfiscal    && en procfiscal.prg
 	DO directivasHasar
 	
-   	* =MESSAGEBOX(amodelofiscal[1])	  
+   * =MESSAGEBOX(amodelofiscal[1])	  
    
 	= Fwin32()    && funciones api win32
 
@@ -230,7 +223,6 @@ IF TYPE('goApp')='O'
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
-	
 	WAIT CLEAR 
 
 * en proc.prg
@@ -250,24 +242,44 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
-	DO FORM frmlogin1 WITH .t.
+	DO FORM frmlogin
+	
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
+	ENDTEXT 
+	=CrearCursorAdapter('CsrParaVario',lcCmd)
+	
+	****destino archivos xml
+	*stop()
+	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
+	IF nombre="XML"+strzero(goapp.terminal,4)
+		lcDestinoXML = CsrParaVario.detalle
+
+		goapp.rutasync = lcDestinoXML
+		IF LEN(LTRIM(lcDestinoXML))#0
+			IF !DIRECTORY(lcDestinoXML)
+				MKDIR &lcDestinoXML
+			ENDIF 
+		ENDIF 
+	ENDIF 
 		 
 	LOCAL oMenu
 	oDesktop = ''
-	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","","XML")
-	*stop()
+	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
 	oMenu.createMenu()   
 	oMenu = null
 
 	LeerEjercicioPerfil()
 	
+	
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	DO FORM frmmenu_xml
+	DO FORM frmmenu
 	
-	DO FORM regproceso_sync
-	
+	IF oConfigTermi.ActivarSyncSucursal='TRUE'
+		EjecutaMenu('regproceso_sync')
+	ENDIF 
 	Read events   
 ENDIF
 

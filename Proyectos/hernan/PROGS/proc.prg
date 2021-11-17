@@ -2,8 +2,29 @@
 FUNCTION DataCursor
 PARAMETERS cName
 
-RETURN .f.
-ENDFUNC 
+DO CASE
+
+CASE UPPER(RTRIM(cName)) = "CONEXION"
+	CREATE CURSOR Conexion (id i, codigo i, aliasconexion c(30), servername c(60), initcatalogo c(60),origendata c(10);
+		,sourcetype c(10), username c(20), pwdname c(20), webservice c(60), pathdatabase c(60);
+		,pwdlen n(2), userlen n(2), idservpedido c(10), passpedido c(50), pmabrevia c(5),switch c(5);
+		,emprename c(20), emprepass c(20), euserlen n(2), epwdlen n(2))
+case upper(rtrim(cName)) = "PARAVARIO"
+	CREATE CURSOR ParaVario (id i, idorigen i, nombre c(30), importe n(14), porce n(8), detalle c(30);
+		,fecha d, estado n(1))
+case upper(rtrim(cName)) = "PERFILES"
+	CREATE CURSOR Perfiles  (id i, nombre c(20), switch c(10))
+case upper(rtrim(cName)) = "SEGURIDAD"
+	CREATE CURSOR Seguridad (id i, idperfil i, idmenu i)
+case upper(rtrim(cName)) = "DATAMENU"
+	CREATE CURSOR Datamenu (id i, sec_codacce c(12), sec_descacce c(20), sec_nivelacce n(1), sec_promptacc c(50);
+		, sec_tipoacce n(1), sec_doacce c(100), sec_keyacce c(10), sec_condacce c(30), sec_fontstyle c(30);
+		,fecha d, sec_picture c(50), switch c(5))
+OTHERWISE
+	RETURN .f.
+ENDCASE
+
+RETURN .t.
 *----------------------------------------
 FUNCTION pelocuit
 PARAMETERS lccuit
@@ -178,6 +199,45 @@ CATCH TO oError
 	llok = .f.
 ENDTRY
 RETURN  llok
+*---------------------------------------------------------------------
+*---------------------------------------------------------------------
+
+FUNCTION DevolverEjercicioContable
+PARAMETERS lcpefiscal,lnidejercicio,lnejercicio
+
+	lnidejercicio = 0
+	lnejercicio = 0
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrControlEje.id,CsrControlEje.ejercicio FROM DetaConta as CsrControlEje 
+	WHERE CsrControlEje.fecdesde <= '<<lcpefiscal+'01'>>' and 
+	'<<lcpefiscal+'01'>>' <=CsrControlEje.fechasta
+	ENDTEXT 
+	IF !CrearCursorAdapter('CsrControlEje',lcCmd)
+		RETURN .f.
+	ENDIF 
+	llok = .f.
+	IF RECCOUNT('CsrControlEje')#0
+		lnidejercicio = CsrControlEje.id
+		llok = .t.
+		lnejercicio = CsrControlEje.ejercicio
+	ENDIF 
+	USE IN CsrControlEje
+	RETURN llok
+ENDFUNC 
+
+*-----------------------------------------
+* FUNCTION FechaHoraCero(ldfecha)
+*-----------------------------------------
+* Pone en cero la hora
+*-----------------------------------------
+FUNCTION FechaHoraCero
+PARAMETERS ldfechahora
+
+ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
+
+RETURN ldfechahoracero
+
+
 *------------------------------------------
 * FUNCION RecuperarID(lcAlias,lnSucursal)
 *------------------------------------------
@@ -203,7 +263,17 @@ ENDIF
 lccadena = strzero(lnidentificador,lntam)
 RETURN VAL(str(lnsucursal,2)+lccadena)
  
+*==============================================================
+*===Redifinimos el tamaño de id cuando se convierte en string
+*==============================================================
+FUNCTION strid
+PARAMETER tnconv,tntam
+lntam = IIF(PCOUNT()<2,12,tntam)
+LOCAL lcconv
+lcconv=STR(tnconv,lntam)
+RETURN lcconv
 
+*----------------------------------------------------------------------------------------
 function NNUEVOID(TCALIAS,tcnombreids)
 tcnombreids=iif(pcount()<2,'IDS',tcnombreids)
 	local LCALIAS, ;

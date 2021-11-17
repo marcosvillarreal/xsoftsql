@@ -10,6 +10,7 @@ l='j:'
 set talk off
 lldesarrollo=(_vfp.startmode()#4)
 
+
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Sync Servidor"
@@ -121,7 +122,7 @@ PUBLIC lcConectionODBC,lnconectorODBC
 PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
- STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC,pidsistema
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -249,12 +250,11 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
-	DO FORM frmlogin
+	DO FORM frmlogin1 WITH .t.
 		 
 	LOCAL oMenu
 	oDesktop = ''
 	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","","XML")
-	stop()
 	oMenu.createMenu()   
 	oMenu = null
 
@@ -263,7 +263,7 @@ IF TYPE('goApp')='O'
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	DO FORM frmmenu
+	DO FORM frmmenu_xml
 	
 	DO FORM regproceso_sync
 	
