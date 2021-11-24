@@ -10,7 +10,7 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA c(5),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i;
-		,DireDespacho c(100),FacEmail c(1))
+		,DireDespacho c(100),FacEmail c(1),TipoFac c(8),Flete n(12,2))
 	
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -38,7 +38,7 @@ ldebug = .t.
 SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 14 &&Hay un campo vacio
+	lnCantCampo = 16 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -55,7 +55,7 @@ DO WHILE NOT EOF()
 		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
 		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
 		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodProvincia	,lcCodLocalidad,lcLista
-		STORE "" TO lcDireDespacho,lcFacEmail
+		STORE "" TO lcDireDespacho,lcFacEmail,lcTipoFac,lcFlete
 		
 		j = 0
 *!*		ELSE
@@ -89,6 +89,8 @@ DO WHILE NOT EOF()
 			lcFacEmail	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFacEmail)))
 			lcEmail		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcEmail)))
 			lcCodPostal	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCodPostal)))
+			lcTipoFac		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTipoFac)))
+			lcFlete		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcFlete)))
 			
 			*lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireNro)))
 			*lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDirePiso)))
@@ -147,12 +149,12 @@ DO WHILE NOT EOF()
 			,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 			,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
 			,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor,idorigen;
-			,DireDespacho,FacEmail) ;
+			,DireDespacho,FacEmail,TipoFac,Flete) ;
 			values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 			,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 			,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
 			,lcCodCateIVA,lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ);
-			,lcDireDespacho,lcFacEmail)
+			,lcDireDespacho,lcFacEmail,lcTipoFac,VAL(lcFlete))
 		ENDIF 			
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

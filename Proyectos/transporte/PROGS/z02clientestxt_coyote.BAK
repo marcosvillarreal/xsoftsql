@@ -37,6 +37,11 @@ ENDTEXT
 =CrearCursorAdapter('CsrCanalVta',lcCmd)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrCateCtacte.* FROM CateCtacte as CsrCateCtacte
+ENDTEXT 
+=CrearCursorAdapter('CsrCateCtacte',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrListaPrecio.* FROM ListaPrecio as CsrListaPrecio
 ENDTEXT 
 =CrearCursorAdapter('CsrListaP',lcCmd)
@@ -174,9 +179,9 @@ SCAN
 	lccp 			= CsrLocalidad.cpostal
 	
 	&&TresPImp	
-	cTipoiva	= CsrDeudor.Codcateiva &&5 Monotributo
+	cTipoiva	= ALLTRIM(CsrDeudor.Codcateiva) &&5 Monotributo
 	DO CASE 
-	CASE cTipoiva = 'C.F'
+	CASE cTipoiva = 'C.F' OR cTipoIVA$'CF'
 		lntipoiva = 3		
 	CASE cTipoiva = 'EXE'
 		lntipoiva = 4	
@@ -188,13 +193,20 @@ SCAN
 	
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	IF lntipoiva<>3
-		*IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
-			lcCuit			= Cuit(lcNroDoc)
-			lcNroDoc		= ''
-		*ENDIF 
+		lcCuit			= Cuit(lcNroDoc)
+		lcNroDoc		= ''
 	ENDIF
 	
-
+	SELECT CsrCateCtacte
+	GO TOP 
+	IF ALLTRIM(UPPER(CsrDeudor.tipofac))$'S/F'
+		LOCATE FOR LEFT(switch,1)='1'		
+	ENDIF
+	IF  lntipoiva = 3 &&CF
+		LOCATE FOR LEFT(switch,1)='1'		
+	ENDIF 
+	lnidcategoria = CsrCateCtacte.id
+	
 	lcnumero	= strtrim(nCodigo,8)
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
@@ -233,18 +245,19 @@ SCAN
   	lcEmail		= LTRIM(CsrDeudor.email)
   	lcDireDespacho = ALLTRIM(CsrDeudor.DireDespacho)
   	lnFacEmail = VAL(CsrDeudor.FacEmail)
+	nFleteImporte = CsrDeudor.flete
 	
 	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho);
+	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho,fleteimporte);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
 	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
-	,lnbonif1,lnFacEmail,lcDireDespacho)
+	,lnbonif1,lnFacEmail,lcDireDespacho,nFleteImporte)
 		
 	
 	lnid = lnid + 1
