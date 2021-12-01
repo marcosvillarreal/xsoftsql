@@ -171,7 +171,10 @@ Oavisar=CREATEOBJECT('avisar')
 
 Public goapp,ObjReporter
 
-
+_REPORTOUTPUT  = FULLPATH("REPORTOUTPUT.APP")
+  
+DO SYSTEM.APP
+  
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
 
 ObjReporter= CREATEOBJECT("Custom")

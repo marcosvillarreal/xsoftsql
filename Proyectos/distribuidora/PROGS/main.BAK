@@ -140,7 +140,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  ZIP ADDITIVE 
    *set classlib to deskalert ADDITIVE 
    set classlib to systray ADDITIVE 
-   SET CLASSLIB TO _ssclasses ADDITIVE 
+   *SET CLASSLIB TO _ssclasses ADDITIVE 
 	
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
