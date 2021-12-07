@@ -24,6 +24,7 @@ llok = CargarTabla(lcData,'PlanCue')
 llok = CargarTabla(lcData,'Sucursal',.t.)
 *!*	llok = CargarTabla(lcData,'PadronAfip',.t.)
 llok = CargarTabla(lcData,'CateIBRN',.t.)
+llok = CargarTabla(lcData,'FleteCtacte',.t.)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrCateIbrng.* FROM CateIbrng as CsrCateIbrng
@@ -47,6 +48,17 @@ ENDTEXT
 =CrearCursorAdapter('CsrListaP',lcCmd)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrZona.* FROM Zona as CsrZona
+ENDTEXT 
+=CrearCursorAdapter('CsrZona',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrZonaRuta.* ,CsrLocalidad.cpostal FROM ZonaRuta as CsrZonaRuta
+inner join Localidad as CsrLocalidad on CsrZonaRuta.idruta = CsrLocalidad.id
+ENDTEXT 
+=CrearCursorAdapter('CsrZonaRuta',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrLocalidad.*,Provincia.codsicore,Provincia.nombre as provincia FROM Localidad as CsrLocalidad
 inner join Provincia on CsrLocalidad.idprovincia = Provincia.id
 ENDTEXT 
@@ -56,21 +68,26 @@ SELECT CsrLocalidad
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISCLI02.CSV"
 =LeerClientes(cArchivo)
 
-SELECT CsrDeudor
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISPCL.CSV"
+=LeerFletes(cArchivo)
+
+SELECT CsrFlete
+replace ALL CodPostal WITH '8503' FOR VAL(CodPostal)=7101
 *vista()
 *DELETE FROM CsrDeudor WHERE VAL(estado) = 0 &&No importamos los inactivos
 
 
 SELECT distinct codlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,provincia ,SPACE(30) AS Localidad, SPACE(6) as CPostal;
 ,CAST(0 as numeric(10)) as idlocalidad, 0 as estado;
- FROM CsrDeudor  ORDER BY PROVINCIA, NOMBRE INTO CURSOR CsrCiudad READWRITE 
+ FROM CsrDeudor  ;
+ ORDER BY PROVINCIA, NOMBRE INTO CURSOR CsrCiudad READWRITE 
 
 
 SELECT CsrCiudad
-
+vista()
 SCAN 
-	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="COMODORO RIVADAVIA"
-		*stop()
+	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="GRAL CONESA"
+		stop()
 	ENDIF 
 	lcProvincia = ALLTRIM(UPPER(CsrCiudad.provincia))
 
@@ -107,15 +124,18 @@ SET FILTER TO
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 
+CREATE CURSOR CsrFleteError (detalle c(250))
+
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
 *VISTA()
 
+
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
 *nCodigo = 1
-*stop()
+stop()
 SCAN 
 
 	lnCodigo = VAL(CsrDeudor.codigo)
@@ -138,7 +158,7 @@ SCAN
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  	IF lnCodigo = 128
- 		stop()
+ 	*	stop()
  	ENDIF 	
  	nCodigo			= lnCodigo	
  	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
@@ -251,15 +271,39 @@ SCAN
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho,fleteimporte);
+	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho,flete);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
 	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
 	,lnbonif1,lnFacEmail,lcDireDespacho,nFleteImporte)
-		
 	
+	
+	&&Agregamos el flete por zona del cliente
+	SELECT CsrFlete
+	LOCATE FOR VAL(codigo) = VAL(CsrDeudor.codigo)
+	DO WHILE NOT EOF() AND VAL(codigo) = VAL(CsrDeudor.codigo)
+*!*			SELECT CsrLocalidad
+*!*			LOCATE FOR VAL(cpostal) = VAL(CsrFlete.CodPostal )
+*!*			lnidruta = CsrLocalidad.id
+		SELECT CsrZonaRuta
+		LOCATE FOR VAL(cpostal) = VAL(CsrFlete.CodPostal )
+		IF CsrZonaRuta.idzona # 0 
+			SELECT CsrFletectacte
+			APPEND BLANK
+			replace idzona WITH CsrZonaRuta.idzona, idctacte WITH lnid, feccorte WITH GOMONTH(DATE(),12*20),;
+					flete WITH CsrFlete.flete
+		ELSE
+			cMensaje = ('Cliente ' + ALLTRIM(CsrDeudor.codigo) + ' Localidad ' + ALLTRIM(CsrFlete.CodPostal) + ' Flete ' + strtrim(CsrFlete.flete,12,2))
+
+			APPEND BLANK IN  CsrFleteError 
+			replace detalle WITH cMensaje IN  CsrFleteError 
+		ENDIF 
+	
+		SELECT CsrFlete
+		SKIP 
+	ENDDO 
 	lnid = lnid + 1
 	*nCodigo = nCodigo + 1 
 	
@@ -289,7 +333,9 @@ ENDSCAN
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
 
-SELECT CsrCtacte
+SELECT CsrFleteError 
+vista()
+SELECT CsrFleteCtacte
 vista()
 
 CLOSE tables
