@@ -23,138 +23,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 r.desc1,lnprevtaori,CsrCursor.min1,dfecha )
  Alias CSRCURSOR registro          5
 Control activo  LISTADESCUENTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -472,6 +340,7 @@ Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fe
 
 
 
+
 ecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,'' as estado FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idcliente WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE
  Alias CSRDIRECCIONES registro          1
 Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
@@ -513,6 +382,7 @@ Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
 02-12-2020 16:28:00 , Error nº:          1
 Error El archivo 'csrcabefac.dbf' no existe.
 Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
+
 
 
 
@@ -752,7 +622,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
 
 
 
@@ -992,6 +864,7 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -1112,7 +985,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1781,6 +1656,7 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
 u WHERE idusuariofavorito=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias CSRPOPS registro          1
 Control activo  MAIN
@@ -1788,6 +1664,7 @@ Control activo  MAIN
 15-06-2021 10:48:35 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
 
 
 
@@ -1884,6 +1761,7 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
 u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias  registro          0
 Control activo  MAIN
@@ -1891,6 +1769,7 @@ Control activo  MAIN
 15-06-2021 10:51:52 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
 
 
 
@@ -2113,6 +1992,7 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  MAIN
@@ -2120,6 +2000,7 @@ Control activo  MAIN
 15-10-2021 15:08:01 , Error nº:          1
 Error El archivo 'csrvendedor.dbf' no existe.
 Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from CsrVendedor order by cnumero into cursor _Csr
+
 
 
 
@@ -2173,6 +2054,7 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  SUBFACTURA.INIT
@@ -2199,6 +2081,7 @@ Control activo  FRMMENU3.INIT
 15-10-2021 18:17:25 , Error nº:          1
 Error El archivo 'favoritos.dbf' no existe.
 Linea nº SELECT sec_codacce, sec_tipoacce ,datamenu.id as idmenu FROM datamenu INNER Join favoritos On datamenu.Id=favoritos.idmenu WHERE favoritos.idperfil=lsPerfilUser AND datamenu.sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'0
+
 
 
 
@@ -2384,14 +2267,25 @@ Control activo  IMPCOMPVTA.INIT
 29-11-2021 14:13:19 , Error nº:       1581
 Error El campo NROCAE no acepta valores NULL.
 Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo005 ,Campo006,Campo007,Campo008,Campo009,Campo010 ,Campo011,Campo012,Campo013,Campo014,Campo015 ,Campo016,Campo017,Campo018,Campo019,Campo020 ,Campo021,Campo022,Campo023,Campo
+
 024,Campo025 ,Campo026,Campo027,Campo028,Campo029,Campo030 ,Campo031,Campo032,Campo033,Campo034,Campo035 ,Campo036,Campo037 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04
+
 ,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck,DetaHoja ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),CsrComprobante.cnombre,loObjfactura.fecha,cNumComp,loObjfactura.fecha,ImpCabeza.ctacte ,ImpCabeza.cnombre,ImpCabeza.cdireccion,Csrlocalid
+
 ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
+
 29,lccampo030,lccampo031,lccampo032,lccampo033,lccampo034 ,lccampo035,lccampo036,lcCampo037 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra,cNroCAE,cVtoCAE,cVerificador ,cDetaHoja )
  Alias IMPCUERPO registro          2
 Control activo  REGFACVTA.CMDSALVAR.CLICK
 01-12-2021 15:31:26 , Verificando OCX
 02-12-2021 15:49:59 , Verificando OCX
-02-12-2021 15:50:27 , Error nº:         12Error No se encuentra la variable 'LCCMD'.Linea nº =SaveSQL(lccmd,this.Name+"_leercomproba.txt") Alias CSRPREFITERMI registro         30Control activo  MAIN
+02-12-2021 15:50:27 , Error nº:         12
+Error No se encuentra la variable 'LCCMD'.
+Linea nº =SaveSQL(lccmd,this.Name+"_leercomproba.txt")
+ Alias CSRPREFITERMI registro         30
+Control activo  MAIN
 07-12-2021 09:03:12 , Verificando OCX
 07-12-2021 09:03:46 , Verificando OCX
+08-12-2021 13:42:48 , Verificando OCX
+08-12-2021 13:43:56 , Verificando OCX
+08-12-2021 14:31:47 , Verificando OCX
