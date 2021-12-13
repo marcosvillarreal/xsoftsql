@@ -277,9 +277,9 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu
 	
-	IF oConfigTermi.ActivarSyncSucursal='TRUE'
-		EjecutaMenu('regproceso_sync')
-	ENDIF 
+	*IF oConfigTermi.ActivarSyncSucursal='TRUE'
+	*	EjecutaMenu('regproceso_sync')
+	*ENDIF 
 	Read events   
 ENDIF
 

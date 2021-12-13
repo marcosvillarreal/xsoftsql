@@ -276,6 +276,10 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	
 	DO FORM frmmenu
+	
+	IF oConfigTermi.ActivarSyncSucursal='TRUE'
+		EjecutaMenu('regproceso_sync')
+	ENDIF 
 	Read events   
 ENDIF
 
