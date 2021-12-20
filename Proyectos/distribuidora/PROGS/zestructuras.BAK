@@ -42,6 +42,9 @@
 *!*								4   Mercaderia previamente comprometida
 *!*								5	Estado de la rendicion A (anular) V (cobra vendedor) R (cobra repartidor)
 
+*!*	 CABEFAC.status				1	TipoForm (Estado del Form al hacer el comprobante)
+
+
 *!*	cabefac.rendida			0 = no rendida, 1=rendida
 
 *!*	 CABEORD.switch				1	A= ajuste automatico
