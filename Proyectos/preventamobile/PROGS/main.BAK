@@ -87,7 +87,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
-   SET PROCEDURE TO Tablas.prg ADDITIVE 
+   *SET PROCEDURE TO Tablas.prg ADDITIVE 
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -114,6 +114,7 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC

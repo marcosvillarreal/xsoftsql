@@ -114,6 +114,7 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -172,6 +173,8 @@ IF TYPE('goApp')='O'
 	           		                          
 	do setup
 	_screen.LockScreen=.f.
+	 
+	 LeerConfigTermi()
 	 
 	DO directivasfiscal    && en procfiscal.prg
 	DO directivasHasar
