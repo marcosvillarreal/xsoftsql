@@ -23,7 +23,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestion de Ventas"
+lctituloGestion = "Gestion de Reservas"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -50,7 +50,7 @@ cRutaCAE 	= sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\transporte\'
+   lcdd=L+'\xsoftsql\proyectos\hotel\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
@@ -128,6 +128,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  controleslocal ADDITIVE 
    SET CLASSLIB  TO  controlesmenu ADDITIVE 
    SET CLASSLIB  TO  controlesdashboard ADDITIVE
+    SET CLASSLIB  TO  controlesgrid ADDITIVE
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
@@ -142,7 +143,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 
 	
    PUBLIC FOXHELPFILE 
-   FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
+   FOXHELPFILE  =  "HOTEL.CHM" 
 *clear all
 
 _screen.lockscreen=.t.
