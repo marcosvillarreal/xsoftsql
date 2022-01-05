@@ -5,20 +5,17 @@
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
 clear all
-SET SYSMENU off
 set classlib to
 l='j:'
 set talk off
-
-PUBLIC lldesarrollo
-
 lldesarrollo=(_vfp.startmode()#4)
+
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Gestión Comercial"
+lctituloGestion = "Sync Servidor"
 
-If !lldesarrollo
+*!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
 *!*	      =messagebox('Ya Estaba activo !!!!',48,'Información al Usuario')
@@ -29,7 +26,7 @@ If !lldesarrollo
 *!*				 * El programa ya estaba activo:
 *!*	      Return && Termina el programa
 *!*	   Endif
-ENDIF
+*!*	ENDIF
 
 Set cursor off
 
@@ -43,11 +40,8 @@ cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
-PUBLIC FOXHELPFILE 
-FOXHELPFILE  =  "ayuda.CHM"
-
 If lldesarrollo
-	lcdd=L+'\xsoftsql\proyectos\comercial\'
+   lcdd=L+'\xsoftsql\proyectos\comercial\'
 	*-- RUTA
 	_rutaclases =lcdd+'Clases'
 	_rutaclased =L+'\xsoftsql\desarrollo\clases'
@@ -79,14 +73,16 @@ If lldesarrollo
 	_ftarjeta	= _rutaforms + '\tarjeta'
 	_futil		= _rutaforms + '\util'
 	_fventa		= _rutaforms + '\ventas'
-    _fhelp		= _rutaforms + '\help'
-   
+    	_fhelp		= _rutaforms + '\help'
+   	_fsync		= _rutaforms + '\sync'
+   	
    _rutareportsban	= _rutareports + '\bancario' 
    
    _rutaempresa		= lcdd+'empresas' 
    _rutaempresa01	= _rutaempresa + '\fortin'
    _rutaempresa02	= _rutaempresa + '\cachitos'
-   
+    _rutaempresa03	= _rutaempresa + '\grutamat'
+    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
     cRutaQR	= _rutabmps + '\qr.jpg'
@@ -96,10 +92,19 @@ If lldesarrollo
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
    				,&_fbanco,&_fafip,&_fcaja,&_fcliente,&_fcpra;
                ,&_fcontab,&_fctacte,&_festad,&_ffaccae,&_fotros,&_fparame,&_fprovee;
-               ,&_fstock,&_ftarjeta,&_futil,&_fventa;
+               ,&_fstock,&_ftarjeta,&_futil,&_fventa,&_fsync;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsban,&_rutareportsban,&fhelp,&_rutaempresa01,&_rutaempresa02;
-            	  ,&_rutaempresa03
+               ,&_rutaempresa03
+ 
+ELSE
+	*-- RUTA
+	l=SYS(5)
+   	_rutadatos  =l+lcdd+'Datos'
+   
+   	Set default to (l+lcdd) &&;(lcddc)
+
+   	Set path to &_rutadatos   
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -109,14 +114,14 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 *-- APERTURA DE CLASES Y ARCHIVOS DE PROCEDIMIENTOS
 
    SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
-   SET PROCEDURE  TO  procimportar.prg ADDITIVE
-   SET PROCEDURE  TO  procfuncword.prg ADDITIVE
-    SET PROCEDURE  TO  procdesarrollo.prg ADDITIVE
-    SET PROCEDURE  TO  syerrhand.prg ADDITIVE  
-    
    SET PROCEDURE  TO  syserror.prg ADDITIVE  
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
+   SET PROCEDURE TO procdesarrollo.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE       
+   SET PROCEDURE TO googlemaps.prg ADDITIVE 
+   SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+   
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controleslocal ADDITIVE 
@@ -131,32 +136,26 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE 
-   SET PROCEDURE TO googlemaps.prg ADDITIVE 
-    SET PROCEDURE TO  foxypreviewercaller.prg ADDITIVE 
-     SET PROCEDURE TO FoxBarcodeQR ADDITIVE
-   set classlib to systray ADDITIVE 
-    
+   set classlib to systray ADDITIVE
 *clear all
-
 
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='pyro.ico'
+_Screen.icon='help.ico'
 _screen.picture= 'fondoscreen.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
-PUBLIC oConfigTermi,pIdSistema
+PUBLIC oConfigTermi
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
- STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
-pIdSistema  = 1
+ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC,pidsistema
 
 PUBLIC OAvisar
-Oavisar=NewOBJECT('avisar','controles.vcx')
+Oavisar=CREATEOBJECT('avisar')
 
 Public goapp,ObjReporter
 
@@ -167,15 +166,10 @@ ObjReporter.AddProperty('titulo1',"")
 ObjReporter.AddProperty('titulo2',"")
 ObjReporter.AddProperty('titulo3',"")
 ObjReporter.AddProperty('titulo4',"")
-ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
 
-IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
-ENDIF 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo
@@ -187,8 +181,8 @@ IF TYPE('goApp')='O'
 			Set path to (goapp.cpath)
 		ENDIF          
 	ENDIF 
-
-	goapp.version = "02.00.00"
+	
+	goapp.version = "01.00.00"
 	
 	PUBLIC  gcicono
 	     
@@ -200,40 +194,41 @@ IF TYPE('goApp')='O'
 	      
 	on error do errorsys
 	           		                          
-	do setup
+	do setup	
+	_screen.LockScreen=.t.
 	
 	LeerConfigTermi()
 	
-	_screen.LockScreen=.t.
+	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
+
+    WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+    DO Verifica_OCX WITH "Check"
 	
 *!*		**** aca comienza la parte de posicionamiento del escritorio
-*!*		PUBLIC oscreen    
-*!*		LeerXML("screen.xml",@oscreen)  && rescato la posicion de la _screen	
-*!*		try
-*!*			_screen.Top=ABS(oscreen.top)
-*!*			_screen.Left=ABS(oscreen.left)
-*!*		CATCH
-*!*			_screen.Top=38
-*!*			_screen.Left=1
-*!*		ENDTRY	
-*!*		*_screen.height=oscreen.height
-*!*		*_screen.width=oscreen.width
+	PUBLIC oscreen    
+	LeerXML("screen.xml",@oscreen)  && rescato la posicion de la _screen	
+	try
+		_screen.Top=ABS(oscreen.top)
+		_screen.Left=ABS(oscreen.left)
+	CATCH
+		_screen.Top=38
+		_screen.Left=1
+	ENDTRY	
+	_screen.height=oscreen.height
+	_screen.width=oscreen.width
+	_screen.AutoCenter = .T.
+	_screen.LockScreen=.f.
 
-*!*		_screen.LockScreen=.f.
-
-*!*		PUBLIC oHandler
-*!*	    oHandler=NEWOBJECT("myhandler")
-*!*	    BINDEVENT(_SCREEN,"Resize",oHandler,"myresize")    
-*!*	    BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
-*!*		***** fin posicionamiento escritorio
+	PUBLIC oHandler
+    	oHandler=NEWOBJECT("myhandler")
+    	BINDEVENT(_SCREEN,"Resize",oHandler,"myresize")    
+    	BINDEVENT(_SCREEN,"Moved",oHandler,"mymoved")
+	***** fin posicionamiento escritorio
 	
-	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
-    DO Verifica_OCX WITH "Check"
-    
 	DO directivasfiscal    && en procfiscal.prg
 	DO directivasHasar
 	
-   * =MESSAGEBOX(amodelofiscal[1])	  
+   	* =MESSAGEBOX(amodelofiscal[1])	  
    
 	= Fwin32()    && funciones api win32
 
@@ -241,6 +236,7 @@ IF TYPE('goApp')='O'
 	  
 	IF LEN(TRIM(LcConectionString))=0
 		DO FORM configbd
+		
 		=ObtenerServidor()
 	ENDIF    
 
@@ -248,10 +244,6 @@ IF TYPE('goApp')='O'
 
 	LeerXMLClassID("objetodll.xml")
 
-	 If lldesarrollo 
-		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
-	ENDIF 
-	
 	   * en proc.prg   
 	IF ExisteDSN()  			
 		IF !ConeccionADO()
@@ -265,19 +257,22 @@ IF TYPE('goApp')='O'
 		RETURN 
 	ENDIF 
 	
+	If lldesarrollo 
+		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
+	ENDIF 
+	
 	WAIT CLEAR 
 
 * en proc.prg
 
-*!*		IF !lldesarrollo 
+	IF !lldesarrollo 
 *!*			IF !LeerVersionExe(1)
 *!*				CANCEL
 *!*				CLEAR ALL
 *!*				RETURN 	
 *!*		      ENDIF 
-*!*		ENDIF 
-	
-	
+	ENDIF 
+
 	LeerEmpresa()
 	    
 	Goapp.idusuario           = 0
@@ -285,83 +280,23 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
-	TEXT TO lcCmd TEXTMERGE NOSHOW 
-	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
-	ENDTEXT 
-	=CrearCursorAdapter('CsrParaVario',lcCmd)
-	
-	****destino archivos xml
-	*stop()
-	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
-	IF nombre="XML"+strzero(goapp.terminal,4)
-		lcDestinoXML = CsrParaVario.detalle
-
-		goapp.rutasync = lcDestinoXML
-		IF LEN(LTRIM(lcDestinoXML))#0
-			IF !DIRECTORY(lcDestinoXML)
-				MKDIR &lcDestinoXML
-			ENDIF 
-		ENDIF 
-	ENDIF 
-	
-	*--------------Codigo para que abra el form
-	_screen.visible=.t.	   
-	_screen.lockscreen=.f.
-	_screen.Show() 
-	
-	DO FORM frmlogin
-	
-	_screen.lockscreen=.t.	
-	*--------------------------   
-	
+	DO FORM frmlogin WITH .t.
+		 
 	LOCAL oMenu
-	PUBLIC Pidsistema
-	Pidsistema=1
 	oDesktop = ''
-	*oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
-	*oMenu.createMenu() 
-	oMenu = Newobject("createmenu","menu.vcx",.Null.,.T.,oDesktop,goapp.perfilusuario,"'verdana',9","")
-	oMenu.createMenu('datamenu','seguridad','favoritos',Pidsistema)
-	  
+	oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","","XML")
+	oMenu.createMenu()   
 	oMenu = null
-	
 
-	
 	LeerEjercicioPerfil()
 	
-	DO FORM frmmenu3
-	IF goapp.termifacopen = 1
-		DO FORM regfacvta
-	ENDIF 
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	public pcTextoBalloon, poSysTray, poTimer
-  
-	 * DO SETS_INICIALES
-	  
-	  DO DECLARAR_FUNCIONES_API
-  
-		 
-	poSysTray = CreateObject("WALTER_SYSTRAY")
-  
-  
-	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-	  	poTimer   = CreateObject("WALTER_TIMER")
-	  		
-	    #DEFINE ICONO_NADA  0
-	    #DEFINE ICONO_INFO  1
-	    #DEFINE ICONO_AVISO 2
-	    #DEFINE ICONO_ERROR 3
-	    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
-	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
-	    
-	    IF oConfigTermi.ShowBalloonTip = 'FALSE'
-	    	poTimer.Enabled = .f.
-	    ENDIF 
-	  ENDIF
-
+	DO FORM frmmenu_xml
+	
+	DO FORM regproceso_sync
+	
 	Read events   
 ENDIF
 
@@ -450,93 +385,5 @@ DEFINE CLASS myhandler AS Session
       *   _obrowser.left = _SCREEN.Width - _obrowser.width
       ENDIF
    RETURN
+   
 ENDDEFINE
-
-PROCEDURE DECLARAR_FUNCIONES_API
-  
-  DECLARE INTEGER ShellExecute IN SHELL32.Dll ;
-          INTEGER nWinHandle , ;
-          STRING  cOperation , ;
-          STRING  cFileName  , ;
-          STRING  cParameters, ;
-          STRING  cDirectory , ;
-          INTEGER nShowWindow
-  
-ENDPROC
-*
-*
-PROCEDURE MI_PROCEDURE_SALUDA
-  
-  =Messagebox("Hola, ¿cómo estás hoy?")
-  
-ENDPROC
-*
-*
-DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
-  
-  IconFile      = "pyro.ICO"
-  MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
-  MenuTextIsMPR = .F.
-  TipText       = "Notificaciones Sistema PYRO"
-  *
-  *
-  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
-    
-   * stop()
-    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
-*!*	    LOCAL cRuta
-*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
-*!*		IF FILE(cRuta)
-*!*			RUN &cRuta
-*!*		ENDIF 
-
-  ENDPROC
-  *
-  *
-  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
-  LPARAMETERS tnMenuItemID
-    
-    DO CASE
-      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
-      CASE tnMenuItemID = 1     && Eligió la primera opción
-        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
-      CASE tnMenuItemID = 2     && Eligió la segunda opción
-        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
-      CASE tnMenuItemID = 3     && Eligió la tercera opción
-        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
-      CASE tnMenuItemID = 4     && Eligió la cuarta opción
-        =MessageBox("Un mensaje de bienvenida")
-      CASE tnMenuItemID = 5     && Eligió la quinta opción
-        DO MI_PROCEDURE_SALUDA
-      CASE tnMenuItemID = 6     && Eligió la sexta opción
-        This.RemoveIconFromSystray()
-        CLEAR EVENTS
-    ENDCASE
-  
-  ENDPROC
-  *
-  *1
-ENDDEFINE
-*
-*
-DEFINE CLASS WALTER_TIMER AS TIMER
-  
-  Enabled  = .T.
-  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
-  
-  PROCEDURE TIMER
-    cVersion = HayVersionExe("gestion.exe")
-    IF LEN(cVersion)> 0
-    	
-    	
-	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
-	    &&Subimos el intervalo porque el usuario ya vio el mensaje
-	    This.Interval =   30000 
-		
-	ENDIF 
-  ENDPROC
-    
-ENDDEFINE 
