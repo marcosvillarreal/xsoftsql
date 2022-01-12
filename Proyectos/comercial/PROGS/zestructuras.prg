@@ -20,6 +20,12 @@
 *!*								CAR = registra cartera
 *!*								TAR = tarjetas
 
+*!*	 EMAOPERA.switch				1	0 = no sync; 1=sync
+*!*								2
+*!*								3 	
+*!*								4	
+*!*								5	
+*!*																
 
 *!*	 MOVCTACTE.switch		1	1= factura pasada a ctacte en rend.fletero
 *!*							2	1= factura con retencion pagada

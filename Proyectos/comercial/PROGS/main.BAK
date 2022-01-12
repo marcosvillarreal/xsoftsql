@@ -4,7 +4,11 @@
 *
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
-clear all
+
+LPARAMETERS nOrigen
+
+nOrigen = IIF(PCOUNT()<1,1,nOrigen)
+
 SET SYSMENU off
 set classlib to
 l='j:'
@@ -98,7 +102,8 @@ If lldesarrollo
                ,&_fcontab,&_fctacte,&_festad,&_ffaccae,&_fotros,&_fparame,&_fprovee;
                ,&_fstock,&_ftarjeta,&_futil,&_fventa;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsban,&_rutareportsban,&fhelp,&_rutaempresa01,&_rutaempresa02
+               ,&_rutaformsban,&_rutareportsban,&fhelp,&_rutaempresa01,&_rutaempresa02;
+            	  ,&_rutaempresa03
 Endif
 
 *-- CREACION DE OBJETO APLICACION
@@ -152,7 +157,7 @@ PUBLIC oConfigTermi,pIdSistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
-pIdSistema  = 1
+pIdSistema  = nOrigen 
 
 PUBLIC OAvisar
 Oavisar=NewOBJECT('avisar','controles.vcx')
@@ -315,7 +320,7 @@ IF TYPE('goApp')='O'
 	
 	LOCAL oMenu
 	PUBLIC Pidsistema
-	Pidsistema=1
+
 	oDesktop = ''
 	*oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
 	*oMenu.createMenu() 
@@ -329,9 +334,17 @@ IF TYPE('goApp')='O'
 	LeerEjercicioPerfil()
 	
 	DO FORM frmmenu3
-	IF goapp.termifacopen = 1
-		DO FORM regfacvta
-	ENDIF 
+	DO CASE 
+	CASE pIdSistema  = 1
+		IF goapp.termifacopen = 1
+			DO FORM regfacvta
+		ENDIF 
+	CASE pIdSistema  = 3
+		DO FORM regproceso_sync_exp WITH .t.
+	CASE pIdSistema  = 4
+		DO FORM regproceso_sync WITH .t.
+	ENDCASE 
+	
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	

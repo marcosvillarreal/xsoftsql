@@ -4,7 +4,12 @@
 *
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
-clear all
+
+LPARAMETERS nOrigen
+
+CLEAR ALL 
+nOrigen = IIF(PCOUNT()<1,1,nOrigen)
+
 SET SYSMENU off
 set classlib to
 l='j:'
@@ -153,7 +158,7 @@ PUBLIC oConfigTermi,pIdSistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
-pIdSistema  = 1
+pIdSistema  = nOrigen 
 
 PUBLIC OAvisar
 Oavisar=NewOBJECT('avisar','controles.vcx')
@@ -316,7 +321,7 @@ IF TYPE('goApp')='O'
 	
 	LOCAL oMenu
 	PUBLIC Pidsistema
-	Pidsistema=1
+
 	oDesktop = ''
 	*oMenu = NEWOBJECT("createmenu","symde.vcx",.NULL.,.T.,odesktop,Goapp.perfilusuario,"'verdana',9","")
 	*oMenu.createMenu() 
@@ -330,9 +335,17 @@ IF TYPE('goApp')='O'
 	LeerEjercicioPerfil()
 	
 	DO FORM frmmenu3
-	IF goapp.termifacopen = 1
-		DO FORM regfacvta
-	ENDIF 
+	DO CASE 
+	CASE pIdSistema  = 1
+		IF goapp.termifacopen = 1
+			DO FORM regfacvta
+		ENDIF 
+	CASE pIdSistema  = 3
+		DO FORM regproceso_sync_exp WITH .t.
+	CASE pIdSistema  = 4
+		DO FORM regproceso_sync WITH .t.
+	ENDCASE 
+	
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
