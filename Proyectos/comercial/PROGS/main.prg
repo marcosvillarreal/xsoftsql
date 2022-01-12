@@ -5,9 +5,12 @@
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
 
-LPARAMETERS nOrigen
+LPARAMETERS oOrigen
 
-nOrigen = IIF(PCOUNT()<1,1,nOrigen)
+oOrigen = IIF(PCOUNT()<1,1,oOrigen)
+
+nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
+
 
 SET SYSMENU off
 set classlib to
@@ -83,8 +86,8 @@ If lldesarrollo
 	_ftarjeta	= _rutaforms + '\tarjeta'
 	_futil		= _rutaforms + '\util'
 	_fventa		= _rutaforms + '\ventas'
-    _fhelp		= _rutaforms + '\help'
-   
+   	 _fhelp		= _rutaforms + '\help'
+   	 _fsync		= _rutaforms + '\sync'
    _rutareportsban	= _rutareports + '\bancario' 
    
    _rutaempresa		= lcdd+'empresas' 
@@ -100,7 +103,7 @@ If lldesarrollo
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
    				,&_fbanco,&_fafip,&_fcaja,&_fcliente,&_fcpra;
                ,&_fcontab,&_fctacte,&_festad,&_ffaccae,&_fotros,&_fparame,&_fprovee;
-               ,&_fstock,&_ftarjeta,&_futil,&_fventa;
+               ,&_fstock,&_ftarjeta,&_futil,&_fventa,&_fsync;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsban,&_rutareportsban,&fhelp,&_rutaempresa01,&_rutaempresa02;
             	  ,&_rutaempresa03
@@ -334,6 +337,9 @@ IF TYPE('goApp')='O'
 	LeerEjercicioPerfil()
 	
 	DO FORM frmmenu3
+	
+	*stop()
+	
 	DO CASE 
 	CASE pIdSistema  = 1
 		IF goapp.termifacopen = 1
