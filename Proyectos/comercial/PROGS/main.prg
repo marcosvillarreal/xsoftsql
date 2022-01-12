@@ -7,7 +7,6 @@
 
 LPARAMETERS nOrigen
 
-CLEAR ALL 
 nOrigen = IIF(PCOUNT()<1,1,nOrigen)
 
 SET SYSMENU off
