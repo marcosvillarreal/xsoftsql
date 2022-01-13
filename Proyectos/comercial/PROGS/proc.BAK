@@ -1599,30 +1599,34 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 			RELEASE OrsTerminal
 			RELEASE OCaterminal
 			IF LEN(TRIM(lcform))#0 
-				DO CASE 
-					CASE LEN(TRIM(lcparam1))=0
-						DO FORM &lcForm
-					CASE LEN(TRIM(lcparam2))=0
-						DO FORM &lcForm WITH lcparam1
-					CASE LEN(TRIM(lcparam3))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2
-					CASE LEN(TRIM(lcparam4))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3
-					CASE LEN(TRIM(lcparam5))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4
-					CASE LEN(TRIM(lcparam6))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5
-					CASE LEN(TRIM(lcparam7))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6
-					CASE LEN(TRIM(lcparam8))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
-					CASE LEN(TRIM(lcparam9))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8
-					CASE LEN(TRIM(lcparam10))=0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9
-					CASE LEN(TRIM(lcparam10))#0
-						DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9,lcparm10
-				ENDCASE 
+				IF VeriClaveForm(lcform)	
+					DO CASE 
+						CASE LEN(TRIM(lcparam1))=0
+							DO FORM &lcForm
+						CASE LEN(TRIM(lcparam2))=0
+							DO FORM &lcForm WITH lcparam1
+						CASE LEN(TRIM(lcparam3))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2
+						CASE LEN(TRIM(lcparam4))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3
+						CASE LEN(TRIM(lcparam5))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4
+						CASE LEN(TRIM(lcparam6))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5
+						CASE LEN(TRIM(lcparam7))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6
+						CASE LEN(TRIM(lcparam8))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
+						CASE LEN(TRIM(lcparam9))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8
+						CASE LEN(TRIM(lcparam10))=0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9
+						CASE LEN(TRIM(lcparam10))#0
+							DO FORM &lcForm WITH lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7,lcparam8,lcparam9,lcparm10
+					ENDCASE 
+				ELSE
+				 =Oavisar.usuario('LA TERMINAL SE ENCUENTRA BLOQUEADA CON CLAVE'+CHR(13)+'CONSULTE CON EL ADMINISTRADOR',0)
+				ENDIF 
 			ELSE
 				=Oavisar.usuario("OPCION NO DISPONIBLE")
 			ENDIF 
@@ -1637,6 +1641,24 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 	ENDIF
 RETURN .t.
 
+FUNCTION VeriClaveForm
+LPARAMETERS lcForm
+
+&&Si ingresa la clave de acceso correcto.
+LOCAL loObjeto,lok
+
+lok =.t.
+
+DO FORM frmCLAVE name LobjForm LINKED WITH UPPER(lcform)
+
+IF TYPE('lobjform')$'O'
+	lok = lobjform.encontrokey
+
+	RELEASE lobjform
+ENDIF 
+
+RETURN lok
+ENDFUNC 
 
 FUNCTION LeerEmpresa
 

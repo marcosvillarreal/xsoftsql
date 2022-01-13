@@ -288,7 +288,7 @@ IF TYPE('goApp')='O'
 	
 	
 	LeerEmpresa()
-	    
+	
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
 	Goapp.nombreusuario= ""

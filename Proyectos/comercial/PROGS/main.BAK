@@ -292,6 +292,7 @@ IF TYPE('goApp')='O'
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
 	Goapp.nombreusuario= ""
+	Goapp.switchperfil = '00000'
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
