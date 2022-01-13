@@ -36,6 +36,8 @@ If !lldesarrollo
 *!*				 * El programa ya estaba activo:
 *!*	      Return && Termina el programa
 *!*	   Endif
+ELSE
+
 ENDIF
 
 Set cursor off

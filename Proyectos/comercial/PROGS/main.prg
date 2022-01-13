@@ -318,7 +318,10 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 	
-	DO FORM frmlogin
+	IF pIdSistema = 3 OR pIdSistema=4
+	ELSE 
+		DO FORM frmlogin
+	ENDIF 
 	
 	_screen.lockscreen=.t.	
 	*--------------------------   
