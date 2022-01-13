@@ -11,7 +11,6 @@ oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
-nOrigen = 3
 
 SET SYSMENU off
 set classlib to
@@ -339,7 +338,7 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu3
 	
-	stop()
+	*stop()
 	
 	DO CASE 
 	CASE pIdSistema  = 1
