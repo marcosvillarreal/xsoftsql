@@ -342,7 +342,10 @@ IF TYPE('goApp')='O'
 	
 	LeerEjercicioPerfil()
 	
-	DO FORM frmmenu3
+	IF pIdSistema = 3 OR pIdSistema=4
+	ELSE 
+		DO FORM frmmenu3
+	ENDIF 
 	
 	*stop()
 	
