@@ -106,6 +106,7 @@ oConfigTermi.AddProperty('NetDriveFileCtacte','C:\Documentos')
 oConfigTermi.AddProperty('NetDriveGS1','C:\GS1') &&Ruta de la carpeta donde se almacena gs1
 oConfigTermi.AddProperty('ActivarSyncSucursal','FALSE')   &&se abre el regprocesosync al iniciar
 oConfigTermi.AddProperty('NetDriveDevoluciones','J:\Devoluciones')  &&Ruta de la carpeta devoluciones en cobranzas
+oConfigTermi.AddProperty('LogPrinter','FALSE')  &&Ruta de la carpeta devoluciones en cobranzas
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -155,7 +156,8 @@ IF FILE(cFile)
 				oConfigTermi.ActivarSyncSucursal=  ALLTRIM(SUBSTR(lcActDato,i))		
 			CASE lclabel="NETDRIVEDEVOLUCIONES"
 				oConfigTermi.NetDriveDevoluciones=  ALLTRIM(SUBSTR(lcActDato,i))		
-			
+			CASE lclabel="LOGPRINTER"
+				oConfigTermi.LogPrinter=  ALLTRIM(SUBSTR(lcActDato,i))
 				
 		ENDCASE		 
 	ENDDO 
@@ -188,7 +190,8 @@ IF NOT FILE(cFile)
 		XX= FPUTS(Arc,lclabel,lenregistro)	
 		lclabel="[NetDriveDevoluciones]" + oConfigTermi.NetDriveDevoluciones
 		XX= FPUTS(Arc,lclabel,lenregistro)	
-			
+		lclabel="[LogPrinter]" + oConfigTermi.LogPrinter
+		XX= FPUTS(Arc,lclabel,lenregistro)		
 	ENDIF 	
 	FCLOSE(Arc)
 ENDIF 
@@ -817,7 +820,7 @@ pnLongAc = 0
 pnTammax = 600000
 pnFtama = 0
 
-tcTexto=Dtoc(Datetime())+' , '+tcTexto
+tcTexto=Ttoc(Datetime())+' , '+tcTexto
 
 If File(Lcfilelog)                && ¿Existe el archivo?
 	pnFich = Fopen(Lcfilelog,12)  && Sí: abrir lect./escrit.
