@@ -3,7 +3,6 @@ FUNCTION DataCursor
 PARAMETERS cName
 
 DO CASE
-
 CASE UPPER(RTRIM(cName)) = "CONEXION"
 	CREATE CURSOR Conexion (id i, codigo i, aliasconexion c(30), servername c(60), initcatalogo c(60),origendata c(10);
 		,sourcetype c(10), username c(20), pwdname c(20), webservice c(60), pathdatabase c(60);
