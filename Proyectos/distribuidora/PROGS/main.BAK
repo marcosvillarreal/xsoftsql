@@ -171,7 +171,10 @@ Oavisar=CREATEOBJECT('avisar')
 
 Public goapp,ObjReporter
 
-
+_REPORTOUTPUT  = FULLPATH("REPORTOUTPUT.APP")
+  
+DO SYSTEM.APP
+  
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
 
 ObjReporter= CREATEOBJECT("Custom")
@@ -524,6 +527,8 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    This.Interval =   30000 
 		
 	ENDIF 
+	IF lldesarrollo
+		This.Enabled = .f.
   ENDPROC
   *
   *
