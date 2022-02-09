@@ -301,7 +301,7 @@ IF TYPE('goApp')='O'
 	=CrearCursorAdapter('CsrParaVario',lcCmd)
 	
 	****destino archivos xml
-	stop()
+	*stop()
 	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
 	IF nombre="XML"+strzero(goapp.terminal,4)
 		lcDestinoXML = CsrParaVario.detalle
