@@ -84,7 +84,8 @@ If lldesarrollo
    _rutaformpat  =lcdd+'forms\patron'
    _rutaformconta = lcdd+'forms\contabilidad'
     _rutaformimp = lcdd+'forms\importadores'
-   
+    _rutaformreserva = lcdd+'forms\reservas'
+    
     _rutaformprueba = lcdd+'forms\pruebas'
     
 
@@ -95,7 +96,7 @@ If lldesarrollo
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta;
-               ,&_rutaformimp,&_rutaformprueba
+               ,&_rutaformimp,&_rutaformprueba,& _rutaformreserva
                
  ELSE
  	SET CONSOLE OFF     
@@ -121,6 +122,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO whatsapp_ej ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
    SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+  SET PROCEDURE TO qdfoxJSON ADDITIVE 
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -128,7 +130,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  controleslocal ADDITIVE 
    SET CLASSLIB  TO  controlesmenu ADDITIVE 
    SET CLASSLIB  TO  controlesdashboard ADDITIVE
-    SET CLASSLIB  TO  controlesgrid ADDITIVE
+   SET CLASSLIB  TO  controlesgrid ADDITIVE
+   SET CLASSLIB  TO  controlesreserva ADDITIVE
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
@@ -171,7 +174,7 @@ GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
 
-Public goapp,ObjReporter
+Public goapp,ObjReporter,ObjReserva
 
 
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
@@ -189,6 +192,12 @@ IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 ENDIF 
 ObjReporter.AddProperty('cartel',"")
+
+ObjReserva = CREATEOBJECT("Custom")
+ObjReserva.AddProperty("idhabit",0)
+ObjReserva.AddProperty("idreserva",0)
+ObjReserva.AddProperty("fecha_in",DATE())
+ObjReserva.AddProperty("fecha_out",DATE())
 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
