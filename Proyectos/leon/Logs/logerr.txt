@@ -1,923 +1,28 @@
-15-10-2021 18:17:26 , En el Fuente: 		.CargaPerfilUser(VAL(Thisform.combo1.Value),This.Value )
-15-10-2021 18:17:26 , Programa    : j:\xsoftsql\desarrollo\forms\frmfavoritos.sct
-15-10-2021 18:17:26 , Objeto      : frmfavoritos.cargaperfiluser
-15-10-2021 18:17:27 , Base Objeto : j:\xsoftsql\desarrollo\forms\frmfavoritos.sct
-15-10-2021 18:17:27 , Nº de Linea :         36
-15-10-2021 18:17:27 , En el Fuente: SELECT sec_codacce, sec_tipoacce ,datamenu.id as idmenu	FROM datamenu 	INNER Join favoritos On datamenu.Id=favoritos.idmenu 	WHERE favoritos.idperfil=lsPerfilUser AND datamenu.sec_idprograma=thisform.idsistema AND LEFT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(LTRIM(NVL(switch,'00000')+'00000'),1)='0'	ORDER BY sec_codacce 	INTO ARRAY laFound
-15-10-2021 18:25:41 , MAIN, Error: El archivo 'j:\xsoftsql\proyectos\leon\frmavisos.scx' no existe.;Linea : DO FORM &lcForm WITH lcparam1;Error :          1;Ultimo Alias Activo: CSRKEY;Ultimo registro:         15 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0006G3T00TN.TMP;Ultimo Control activo: 
-15-10-2021 18:25:41 , Pila de llamadas
-15-10-2021 18:25:41 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-15-10-2021 18:25:41 , Objeto      : main
-15-10-2021 18:25:41 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-15-10-2021 18:25:41 , Nº de Linea :        318
-15-10-2021 18:25:41 , En el Fuente: 	Read events   
-15-10-2021 18:25:42 , Programa    : j:\xsoftsql\desarrollo\clases\controlesdashboard.vct
-15-10-2021 18:25:42 , Objeto      : frmmenu3.templeate2._tmpnotifycheque.lblacceso.click
-15-10-2021 18:25:42 , Base Objeto : j:\xsoftsql\desarrollo\clases\controlesdashboard.vct
-15-10-2021 18:25:42 , Nº de Linea :          5
-15-10-2021 18:25:42 , En el Fuente: &cTag
-15-10-2021 18:25:42 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-15-10-2021 18:25:42 , Objeto      : ejecutamenu
-15-10-2021 18:25:43 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-15-10-2021 18:25:43 , Nº de Linea :       1489
-15-10-2021 18:25:43 , En el Fuente: 							DO FORM &lcForm WITH lcparam1
-18-10-2021 17:38:29 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : Orslista.ActiveConnection = loConnDataSource;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-18-10-2021 17:38:29 , Pila de llamadas
-18-10-2021 17:38:30 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-18-10-2021 17:38:30 , Objeto      : main
-18-10-2021 17:38:30 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-18-10-2021 17:38:30 , Nº de Linea :        250
-18-10-2021 17:38:30 , En el Fuente: 	LeerEmpresa()
-18-10-2021 17:38:30 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-18-10-2021 17:38:30 , Objeto      : leerempresa
-18-10-2021 17:38:30 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-18-10-2021 17:38:31 , Nº de Linea :       1555
-18-10-2021 17:38:31 , En el Fuente: lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
-18-10-2021 17:38:31 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-18-10-2021 17:38:31 , Objeto      : crearcursoradapter
-18-10-2021 17:38:31 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-18-10-2021 17:38:31 , Nº de Linea :       1362
-18-10-2021 17:38:31 , En el Fuente:    Orslista.ActiveConnection = loConnDataSource
-20-10-2021 15:52:07 , MAIN, Error: No se encuentra la variable 'TEMPLEATE'.;Linea : goapp.usuariotempleate = NVL(CsrUsr.templeate,1);Error :         12;Ultimo Alias Activo: CSRUSR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000YA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-KP000W.TMP;Ultimo Control activo: 
-20-10-2021 15:52:08 , Pila de llamadas
-20-10-2021 15:52:08 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-20-10-2021 15:52:08 , Objeto      : main
-20-10-2021 15:52:08 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-20-10-2021 15:52:08 , Nº de Linea :        261
-20-10-2021 15:52:08 , En el Fuente: 	DO FORM frmlogin
-20-10-2021 15:52:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-20-10-2021 15:52:08 , Objeto      : frmlogin.cmdok.btn.click
-20-10-2021 15:52:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-20-10-2021 15:52:09 , Nº de Linea :          7
-20-10-2021 15:52:09 , En el Fuente: 	this.Parent.Click()
-20-10-2021 15:52:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:09 , Objeto      : frmlogin.cmdok.click
-20-10-2021 15:52:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:09 , Nº de Linea :          1
-20-10-2021 15:52:09 , En el Fuente: thisform.iniciar()
-20-10-2021 15:52:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:09 , Objeto      : frmlogin.iniciar
-20-10-2021 15:52:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:10 , Nº de Linea :         40
-20-10-2021 15:52:10 , En el Fuente: 	   goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
-20-10-2021 15:52:22 , MAIN, Error: No se encuentra la variable 'TEMPLEATE'.;Linea : goapp.usuariotempleate = NVL(CsrUsr.templeate,1);Error :         12;Ultimo Alias Activo: CSRUSR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000YA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-KP001F.TMP;Ultimo Control activo: 
-20-10-2021 15:52:22 , Pila de llamadas
-20-10-2021 15:52:23 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-20-10-2021 15:52:23 , Objeto      : main
-20-10-2021 15:52:23 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-20-10-2021 15:52:23 , Nº de Linea :        261
-20-10-2021 15:52:24 , En el Fuente: 	DO FORM frmlogin
-20-10-2021 15:52:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-20-10-2021 15:52:24 , Objeto      : frmlogin.cmdok.btn.click
-20-10-2021 15:52:24 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-20-10-2021 15:52:24 , Nº de Linea :          7
-20-10-2021 15:52:25 , En el Fuente: 	this.Parent.Click()
-20-10-2021 15:52:25 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:25 , Objeto      : frmlogin.cmdok.click
-20-10-2021 15:52:26 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:26 , Nº de Linea :          1
-20-10-2021 15:52:26 , En el Fuente: thisform.iniciar()
-20-10-2021 15:52:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
-20-10-2021 15:52:27 , Objeto      : frmlogin.iniciar
-20-10-2021 15:52:27 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\frmlogin.sct
 20-10-2021 15:52:27 , Nº de Linea :         40
 20-10-2021 15:52:28 , En el Fuente: 	   goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
 20-10-2021 16:23:07 , MAIN, Error: No se encuentra la variable 'TEMPLEATE'.;Linea : goapp.usuariotempleate = NVL(CsrUsr.templeate,1);Error :         12;Ultimo Alias Activo: CSRUSR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00010K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1235,6 +340,28 @@ Y100AY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Y100BH.TMP;Ultimo Control activo: 
 20-10-2021 16:24:55 , Pila de llamadas
 20-10-2021 16:24:55 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -1397,6 +524,28 @@ Y100BH.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 07FNT000S.TMP;Ultimo Control activo: 
 25-10-2021 15:51:49 , Pila de llamadas
 25-10-2021 15:51:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\frmejercicio.sct
@@ -1405,6 +554,28 @@ Y100BH.TMP;Ultimo Control activo:
 25-10-2021 15:51:50 , Nº de Linea :          3
 25-10-2021 15:51:50 , En el Fuente: pIdEjercicio = IIF(PCOUNT()<1,0,&pIdEjercicio)
 02-11-2021 14:15:51 , MAIN, Error: Código de excepción OLE IDispatch 0 de ADODB.Recordset: No se puede utilizar la conexión para realizar esta operación. Está cerrada o no es válida en este contexto..;Linea : Orslista.ActiveConnection = loConnDataSource;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1693,6 +864,28 @@ Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ulti
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 04-11-2021 09:44:18 , Pila de llamadas
 04-11-2021 09:44:18 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -1839,6 +1032,28 @@ Error :       1429;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ulti
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 activo: 
 04-11-2021 09:47:28 , Pila de llamadas
 04-11-2021 09:47:28 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -1857,6 +1072,28 @@ activo:
 04-11-2021 09:47:29 , Nº de Linea :         18
 04-11-2021 09:47:29 , En el Fuente: 	SELECT CsrInfCabefac
 26-11-2021 16:10:41 , IMPCOMPVTA.ACEPTAR1.CLICK, Error: No se encuentra la variable 'TIPOCBTE'.;Linea : cTipoCbte	= NVL(ImpCabeza.TipoCbte,'');Error :         12;Ultimo Alias Activo: IMPCABEZA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2137,6 +1374,28 @@ L\TEMP\0000WE8907UY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\0000WE89080B.TMP;Ultimo Control activo: 
 26-11-2021 16:12:40 , Pila de llamadas
 26-11-2021 16:12:40 , Programa    : j:\xsoftsql\proyectos\leon\forms\impcompvta.sct
@@ -2180,6 +1439,28 @@ L\TEMP\0000WE89080B.TMP;Ultimo Control activo:
 26-11-2021 16:12:44 , Nº de Linea :         32
 26-11-2021 16:12:44 , En el Fuente: cTipoCbte	= NVL(ImpCabeza.TipoCbte,'')
 26-11-2021 16:13:37 , IMPCOMPVTA.ACEPTAR1.CLICK, Error: OFACCAE es un miembro desconocido.;Linea : thisform.oFACCAE.fac_qr(OscCabefac);Error :       1925;Ultimo Alias Activo: CSRAUXCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2412,6 +1693,28 @@ MP\0000WE89084O.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo: 
 26-11-2021 16:17:51 , Pila de llamadas
 26-11-2021 16:17:52 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2430,6 +1733,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 26-11-2021 16:17:53 , Nº de Linea :         35
 26-11-2021 16:17:53 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 26-11-2021 16:18:43 , IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS, Error: No se encuentra el alias 'CSRFLETERO'.;Linea : SELECT(this.calias);Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2608,6 +1933,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo: 
 26-11-2021 16:18:48 , Pila de llamadas
 26-11-2021 16:18:49 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2616,6 +1963,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 26-11-2021 16:18:49 , Nº de Linea :         21
 26-11-2021 16:18:49 , En el Fuente: SELECT(this.calias)
 26-11-2021 16:18:51 , IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS, Error: No se encuentra el alias 'CSRFLETERO'.;Linea : SELECT(this.calias);Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2786,6 +2155,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo: 
 26-11-2021 16:18:56 , Pila de llamadas
 26-11-2021 16:18:56 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2794,6 +2185,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 26-11-2021 16:18:56 , Nº de Linea :         21
 26-11-2021 16:18:56 , En el Fuente: SELECT(this.calias)
 26-11-2021 16:18:59 , IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS, Error: No se encuentra el alias 'CSRFLETERO'.;Linea : SELECT(this.calias);Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2956,6 +2369,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo: 
 26-11-2021 16:19:00 , Pila de llamadas
 26-11-2021 16:19:01 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2964,6 +2399,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 26-11-2021 16:19:01 , Nº de Linea :         21
 26-11-2021 16:19:01 , En el Fuente: SELECT(this.calias)
 26-11-2021 16:19:02 , IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS, Error: No se encuentra el alias 'CSRFLETERO'.;Linea : SELECT(this.calias);Error :         13;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO;DBF: C:\USERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3118,6 +2575,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo: 
 26-11-2021 16:19:03 , Pila de llamadas
 26-11-2021 16:19:03 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3196,6 +2675,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo: 
 26-11-2021 16:19:04 , Pila de llamadas
 26-11-2021 16:19:04 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3204,6 +2705,28 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000WE8908ED.TMP;Ultimo Control activo:
 26-11-2021 16:19:05 , Nº de Linea :         21
 26-11-2021 16:19:05 , En el Fuente: SELECT(this.calias)
 26-11-2021 16:27:40 , IMPCOMPVTA.INIT, Error: No se encuentra el alias 'CSRPLANPAGO'.;Linea : SELECT Csrplanpago;Error :         13;Ultimo Alias Activo: CSRVALOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000R215007V.TMP;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3353,6 +2876,28 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  activo: 
 26-11-2021 16:28:27 , Pila de llamadas
 26-11-2021 16:28:28 , Programa    : j:\xsoftsql\proyectos\leon\forms\impcompvta.sct
@@ -3371,6 +2916,28 @@ Control activo:
 26-11-2021 16:28:29 , Nº de Linea :         16
 26-11-2021 16:28:29 , En el Fuente: oca.SelectCmd=lccmdSelect       
 29-11-2021 14:13:20 , REGFACVTA.CMDSALVAR.CLICK, Error: El campo NROCAE no acepta valores NULL.;Linea : INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo005 ,Campo006,Campo007,Campo008,Campo009,Campo010 ,Campo011,Campo012,Campo013,Ca
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3462,7 +3029,51 @@ mpo014,Campo015 ,Campo016,Campo017,Campo018,Campo019,Campo020 ,Campo021,Campo022
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck,DetaHoja ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),CsrComprobante.cnombre,loObjfactura.fecha,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3554,7 +3165,51 @@ cNumComp,loObjfactura.fecha,ImpCabeza.ctacte ,ImpCabeza.cnombre,ImpCabeza.cdirec
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo029,lccampo030,lccampo031,lccampo032,lccampo033,lccampo034 ,lccampo035,lccampo036,lcCampo037 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3691,7 +3346,51 @@ ampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccam
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			,Campo021,Campo022,Campo023,Campo024,Campo025			,Campo026,Campo027,Campo028,Campo029,Campo030			,Campo031,Campo032,Campo033,Campo034,Campo035			,Campo036,Campo037			,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca			,EmpresaTribu,EmpresaOtr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3781,7 +3480,51 @@ o01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,Nr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,ImpCabeza.cnombre,ImpCabeza.cdireccion,Csrlocalidad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit			,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015			,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022			,lccampo023,lccampo0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3871,8 +3614,52 @@ o01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,Nr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 oCbte,cLetra,cNroCAE,cVtoCAE,cVerificador			,cDetaHoja )
 02-12-2021 15:50:27 , MAIN, Error: No se encuentra la variable 'LCCMD'.;Linea : =SaveSQL(lccmd,this.Name+"_leercomproba.txt");Error :         12;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:         30 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000035
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3979,6 +3766,28 @@ ZD00GQ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IH000O.TMP;Ultimo Control activo: 
 23-12-2021 12:47:19 , Pila de llamadas
 23-12-2021 12:47:19 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4002,6 +3811,28 @@ IH000O.TMP;Ultimo Control activo:
 23-12-2021 12:47:21 , Nº de Linea :         40
 23-12-2021 12:47:21 , En el Fuente: 	   goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
 23-12-2021 12:48:11 , FRMLOGIN.CMDOK.BTN.CLICK, Error: No se encuentra la variable 'TEMPLEATE'.;Linea : goapp.usuariotempleate = NVL(CsrUsr.templeate,1);Error :         12;Ultimo Alias Activo: CSRUSR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4071,6 +3902,28 @@ TA\LOCAL\TEMP\00024NIH000R.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DOR;Ultimo registro:          3 STR(IDVENDEDOR,10)+STR(IDPRODUCTO,10);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0001E6MH00EL.TMP;Ultimo Control activo: 
 25-01-2022 11:58:19 , Pila de llamadas
 25-01-2022 11:58:19 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regfacpedido_v2.sct
@@ -4116,6 +3969,28 @@ DOR;Ultimo registro:          3 STR(IDVENDEDOR,10)+STR(IDPRODUCTO,10);DBF: C:\US
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )),2) + STRzero(SEC(DATETIME()),2);Error :          1;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000014P50049.TMP;Ultimo Control activo: 
 03-02-2022 18:26:42 , Pila de llamadas
 03-02-2022 18:26:42 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4144,6 +4019,28 @@ DOR;Ultimo registro:          3 STR(IDVENDEDOR,10)+STR(IDPRODUCTO,10);DBF: C:\US
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\MARCO\APPDATA\LOCAL\TEMP\000014P50049.TMP;Ultimo Control activo: 
 03-02-2022 18:26:49 , Pila de llamadas
 03-02-2022 18:26:50 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4166,3 +4063,121 @@ DOR;Ultimo registro:          3 STR(IDVENDEDOR,10)+STR(IDPRODUCTO,10);DBF: C:\US
 03-02-2022 18:26:51 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
 03-02-2022 18:26:51 , Nº de Linea :         24
 03-02-2022 18:26:51 , En el Fuente: cFileName	= cRuta + cFileName +".CSV"
+15-03-2022 11:15:35 , _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec));Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000E1AH016D.TMP;Ultimo Control activo: 
+15-03-2022 11:15:35 , Pila de llamadas
+15-03-2022 11:15:36 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-03-2022 11:15:36 , Objeto      : _util_campari.imprimir_vistaprevia1.impresora.click
+15-03-2022 11:15:37 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-03-2022 11:15:37 , Nº de Linea :          6
+15-03-2022 11:15:38 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-03-2022 11:15:38 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:15:38 , Objeto      : _util_campari.crearinforme
+15-03-2022 11:15:38 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:15:38 , Nº de Linea :          6
+15-03-2022 11:15:38 , En el Fuente: 	.generar('ctacte','Clientes')
+15-03-2022 11:15:38 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:15:38 , Objeto      : _util_campari.generar
+15-03-2022 11:15:39 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:15:39 , Nº de Linea :         16
+15-03-2022 11:15:39 , En el Fuente: 			_existe = .leerctacte()
+15-03-2022 11:15:40 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:15:40 , Objeto      : _util_campari.leerctacte
+15-03-2022 11:15:40 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:15:41 , Nº de Linea :         76
+15-03-2022 11:15:41 , En el Fuente: 	cLinea = cLinea 	+ cSep + strtrim(Oscatter.lista)+ cSep + strtrim(Oscatter.cpostal) + cSep + RTRIM(Oscatter.localidad) + cSep + RTRIM(Oscatter.provincia)
+15-03-2022 11:15:41 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+15-03-2022 11:15:42 , Objeto      : strtrim
+15-03-2022 11:15:42 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+15-03-2022 11:15:42 , Nº de Linea :       1036
+15-03-2022 11:15:42 , En el Fuente: RETURN ALLTRIM(STR(lnValor,lnTam,lnDec))
+15-03-2022 11:18:08 , _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec));Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+o registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000E1AH017C.TMP;Ultimo Control activo: 
+15-03-2022 11:18:08 , Pila de llamadas
+15-03-2022 11:18:09 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-03-2022 11:18:09 , Objeto      : _util_campari.imprimir_vistaprevia1.impresora.click
+15-03-2022 11:18:09 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-03-2022 11:18:09 , Nº de Linea :          6
+15-03-2022 11:18:09 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-03-2022 11:18:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:18:09 , Objeto      : _util_campari.crearinforme
+15-03-2022 11:18:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:18:10 , Nº de Linea :          6
+15-03-2022 11:18:10 , En el Fuente: 	.generar('ctacte','Clientes')
+15-03-2022 11:18:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:18:11 , Objeto      : _util_campari.generar
+15-03-2022 11:18:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:18:11 , Nº de Linea :         16
+15-03-2022 11:18:11 , En el Fuente: 			_existe = .leerctacte()
+15-03-2022 11:18:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:18:12 , Objeto      : _util_campari.leerctacte
+15-03-2022 11:18:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:18:12 , Nº de Linea :         76
+15-03-2022 11:18:12 , En el Fuente: 	cLinea = cLinea 	+ cSep + strtrim(Oscatter.lista,2)+ cSep + strtrim(Oscatter.cpostal,4) + cSep + RTRIM(Oscatter.localidad) + cSep + RTRIM(Oscatter.provincia)
+15-03-2022 11:18:12 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+15-03-2022 11:18:14 , Objeto      : strtrim
+15-03-2022 11:18:14 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+15-03-2022 11:18:14 , Nº de Linea :       1036
+15-03-2022 11:18:15 , En el Fuente: RETURN ALLTRIM(STR(lnValor,lnTam,lnDec))
+15-03-2022 11:20:10 , _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cLinea = cLinea 	+ cSep + strtrim(Oscatter.lista,2)+ cSep + rtrim(Oscatter.cpostal,4) + cSep + R
+
+
+
+
+
+TRIM(Oscatter.localidad) + cSep + RTRIM(Oscatter.provincia);Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000E1AH018D.TMP;Ultimo Control activo: 
+15-03-2022 11:20:10 , Pila de llamadas
+15-03-2022 11:20:10 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+15-03-2022 11:20:10 , Objeto      : _util_campari.imprimir_vistaprevia1.impresora.click
+15-03-2022 11:20:10 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+15-03-2022 11:20:10 , Nº de Linea :          6
+15-03-2022 11:20:11 , En el Fuente: 	llOK=thisform.CrearInforme()
+15-03-2022 11:20:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:20:11 , Objeto      : _util_campari.crearinforme
+15-03-2022 11:20:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:20:12 , Nº de Linea :          6
+15-03-2022 11:20:12 , En el Fuente: 	.generar('ctacte','Clientes')
+15-03-2022 11:20:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:20:12 , Objeto      : _util_campari.generar
+15-03-2022 11:20:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:20:12 , Nº de Linea :         16
+15-03-2022 11:20:13 , En el Fuente: 			_existe = .leerctacte()
+15-03-2022 11:20:13 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:20:13 , Objeto      : _util_campari.leerctacte
+15-03-2022 11:20:14 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar\genera_danone.sct
+15-03-2022 11:20:14 , Nº de Linea :         76
+15-03-2022 11:20:14 , En el Fuente: 	cLinea = cLinea 	+ cSep + strtrim(Oscatter.lista,2)+ cSep + rtrim(Oscatter.cpostal,4) + cSep + RTRIM(Oscatter.localidad) + cSep + RTRIM(Oscatter.provincia)
