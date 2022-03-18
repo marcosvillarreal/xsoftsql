@@ -527,8 +527,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    This.Interval =   30000 
 		
 	ENDIF 
-	IF lldesarrollo
-		This.Enabled = .f.
+	This.Enabled = IIF(lldesarrollo,.f.,This.Enabled)
   ENDPROC
   *
   *
