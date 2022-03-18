@@ -86,6 +86,7 @@ If lldesarrollo
     _rutaformimp = lcdd+'forms\importadores'
    _rutaformpm  =lcdd+'forms\pm'
     _rutaformprueba = lcdd+'forms\pruebas'
+    _rutaformpasaje = lcdd+'forms\pasaje'
     
     _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
     _rutaprogs_sureño  =lcdd+'Progs\elsureño'
@@ -96,7 +97,7 @@ If lldesarrollo
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
-               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba, &_rutaformpm
+               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba, &_rutaformpm,&_rutaformpasaje
                
  ELSE
  	SET CONSOLE OFF     

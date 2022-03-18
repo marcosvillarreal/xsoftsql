@@ -84,7 +84,7 @@ If lldesarrollo
    _rutaformpat  =lcdd+'forms\patron'
    _rutaformconta = lcdd+'forms\contabilidad'
     _rutaformimp = lcdd+'forms\importadores'
-   
+   _rutaformpm  =lcdd+'forms\pm'
     _rutaformprueba = lcdd+'forms\pruebas'
     
     _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
@@ -96,7 +96,7 @@ If lldesarrollo
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
-               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba
+               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba, &_rutaformpm
                
  ELSE
  	SET CONSOLE OFF     
