@@ -1,3 +1,7 @@
+PUBLIC llchekform
+
+llchekform = .f.
+
 *-- Seteos de VFP --
 set century on
 set date ital

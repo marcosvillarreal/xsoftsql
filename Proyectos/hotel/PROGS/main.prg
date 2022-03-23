@@ -224,6 +224,7 @@ IF TYPE('goApp')='O'
 	on error do errorsys
 	           		                          
 	do setup
+		
 	_screen.LockScreen=.f.
 	
 	
@@ -334,6 +335,7 @@ IF TYPE('goApp')='O'
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
+			DO FORM frmreserva
 		ELSE 
 			DO FORM frmmenu_DashBoard
 		ENDIF 

@@ -96,7 +96,7 @@ If lldesarrollo
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta;
-               ,&_rutaformimp,&_rutaformprueba,& _rutaformreserva
+               ,&_rutaformimp,&_rutaformprueba,&_rutaformreserva
                
  ELSE
  	SET CONSOLE OFF     
@@ -334,6 +334,7 @@ IF TYPE('goApp')='O'
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
+			DO FORM frmreserva
 		ELSE 
 			DO FORM frmmenu_DashBoard
 		ENDIF 
