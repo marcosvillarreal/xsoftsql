@@ -1,10 +1,5 @@
  Alias CSRAFIPCOMP registro          1
 Control activo  MAIN
-08-07-2020 13:27:45 , Error nº:       1581
-Error El campo COMPROBANTE no acepta valores NULL.
-Linea nº INSERT INTO FsrRecibidos (  fecha ,clasecomp ,numcomp,tipodoc ,nrodoc ,nomctacte ,total, comprobante ) VALUES ( dfecha ,cclasecomp ,cnumcomp ,ctipodoc ,cnumdoc ,cnomctacte ,ntotal, ccomprobante)
- Alias CSRAFIPCOMP registro          1
-Control activo  MAIN
 08-07-2020 13:34:19 , Error nº:       1581
 Error El campo COMPROBANTE no acepta valores NULL.
 Linea nº INSERT INTO FsrRecibidos (  fecha ,clasecomp ,numcomp,tipodoc ,nrodoc ,nomctacte ,total, comprobante ) VALUES ( dfecha ,cclasecomp ,cnumcomp ,ctipodoc ,cnumdoc ,cnomctacte ,ntotal, ccomprobante)
@@ -118,6 +113,7 @@ Control activo  LISTADOVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 01-09-2020 20:01:40 , Error nº:       1806
 Error SQL: no se encuentra la columna 'IDCTACTE'.
 Linea nº SELECT TTOC(CsrImprimir.fecha) as Detalle,TTOD(CsrImprimir.fecha) as fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.provincia,CsrDirecciones.lat,CsrDir
+
 
 
 
@@ -426,7 +422,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -688,7 +686,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -950,7 +950,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1641,6 +1643,7 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
 u WHERE idusuariofavorito=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias CSRPOPS registro          1
 Control activo  MAIN
@@ -1648,6 +1651,7 @@ Control activo  MAIN
 15-06-2021 10:48:35 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
 
 
 
@@ -1766,6 +1770,7 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
 u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias  registro          0
 Control activo  MAIN
@@ -1773,6 +1778,7 @@ Control activo  MAIN
 15-06-2021 10:51:52 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
 
 
 
@@ -2017,6 +2023,7 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  MAIN
@@ -2024,6 +2031,7 @@ Control activo  MAIN
 15-10-2021 15:08:01 , Error nº:          1
 Error El archivo 'csrvendedor.dbf' no existe.
 Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from CsrVendedor order by cnumero into cursor _Csr
+
 
 
 
@@ -2099,6 +2107,7 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  SUBFACTURA.INIT
@@ -2125,6 +2134,7 @@ Control activo  FRMMENU3.INIT
 15-10-2021 18:17:25 , Error nº:          1
 Error El archivo 'favoritos.dbf' no existe.
 Linea nº SELECT sec_codacce, sec_tipoacce ,datamenu.id as idmenu FROM datamenu INNER Join favoritos On datamenu.Id=favoritos.idmenu WHERE favoritos.idperfil=lsPerfilUser AND datamenu.sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'0
+
 
 
 
@@ -2332,7 +2342,9 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
 024,Campo025 ,Campo026,Campo027,Campo028,Campo029,Campo030 ,Campo031,Campo032,Campo033,Campo034,Campo035 ,Campo036,Campo037 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04
+
 
 
 
@@ -2356,7 +2368,9 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
 ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
+
 
 
 
@@ -2454,4 +2468,10 @@ Control activo  _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2022 19:18:25 , Verificando OCX
 29-03-2022 19:51:12 , Verificando OCX
 29-03-2022 21:44:29 , Verificando OCX
-29-03-2022 22:31:01 , Error nº:       1575Error El nombre del objeto no es válido.Linea nº IF lldesarrollo AND llchekform Alias  registro          0Control activo  ON... 
+29-03-2022 22:31:01 , Error nº:       1575
+Error El nombre del objeto no es válido.
+Linea nº IF lldesarrollo AND llchekform
+ Alias  registro          0
+Control activo  ON... 
+05-04-2022 09:50:44 , Verificando OCX
+05-04-2022 09:52:20 , Verificando OCX
