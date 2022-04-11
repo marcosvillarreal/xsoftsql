@@ -1,190 +1,8 @@
- Alias CSRXCUERVARI registro          1
-Control activo  MAIN
-19-02-2016 13:54:21 , Error nº:         12
-Error No se encuentra la variable 'FECHA'.
-Linea nº lcfecha1			= DTOS(ImpCabeza.fecha)
- Alias IMPCABEZA registro          1
-Control activo  MAIN
-19-02-2016 14:00:32 , Error nº:         12
-Error No se encuentra la variable 'CUIT'.
-Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,cuit
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- WITH OscCabefac.cuit,nomcliente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
- Alias CSRCABEDETA registro          1
-Control activo  MAIN
-19-02-2016 14:01:20 , Error nº:       1734
-Error No se encuentra la propiedad HOJAACTUAL.
-Linea nº OscCabefac.hojaactual = 1
- Alias CSRCABEZA registro          1
-Control activo  MAIN
-19-02-2016 14:03:28 , Error nº:         12
-Error No se encuentra la variable 'PROXIMONRO'.
-Linea nº loObjFactura.proximonro= ImpCabeza.proximonro
- Alias IMPCABEZA registro          1
-Control activo  MAIN
-19-02-2016 14:27:13 , Error nº:         12
-Error No se encuentra la variable 'PROXIMONRO'.
-Linea nº loObjFactura.proximonro= ImpCabeza.proximonro
- Alias IMPCABEZA registro          1
-Control activo  MAIN
-19-02-2016 14:41:13 , Error nº:         12
-Error No se encuentra la variable 'FECHA'.
-Linea nº lcfecha1			= DTOS(ImpCabeDeta.fecha)
- Alias IMPCABEZA registro          1
-Control activo  MAIN
-19-02-2016 14:42:09 , Error nº:          1
-Error El archivo 'j:\afip\aut\0027\00000000.ca2' no existe.
-Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
- Alias CSRCABEZA registro          2
-Control activo  MAIN
-19-02-2016 15:50:10 , Error nº:       1734
-Error No se encuentra la propiedad PLANPAGO.
-Linea nº replace proximonro WITH OscCabefac.letra+strzero(OscCabefac.talonario,4)+strzero(OscCabefac.numcomp,8) ,orden WITH OscCabefac.orden,direccion WITH OscCabefac.direccion,localidad WITH OscCabefac.localidad ,provincia WITH OscCabefac.provincia,nomc
 
 
 
@@ -424,6 +242,12 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
+
+
+
+
 
 
 
@@ -966,7 +790,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -1144,7 +980,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -1373,12 +1221,24 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
+
+
+
 
 
 
@@ -2204,4 +2064,57 @@ Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
 Linea nº =tablerevert(.t.,this.calias)
  Alias CONEXION registro          2
 Control activo  MAIN
-31-03-2022 11:46:27 , Error nº:       1586Error La función requiere el modo de almacenamiento en búfer de filas o tablas.Linea nº =tablerevert(.t.,this.calias) Alias CONEXION registro          2Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
+31-03-2022 11:46:27 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
+09-04-2022 11:58:29 , Error nº:          1
+Error El archivo 'j:\desarrollo\graficos\fondo.png' no existe.
+Linea nº thisform.dataenvironment.opentables()
+ Alias CSRPOPS registro          1
+Control activo  ON... 
+09-04-2022 12:07:14 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrSeteo')> 0
+ Alias CSRPOPS registro          1
+Control activo  MAIN
+09-04-2022 12:10:21 , Error nº:         13
+Error No se encuentra el alias 'USUARIOS'.
+Linea nº SELECT(lcAlias)
+ Alias PERFILES registro          1
+Control activo  MAIN
+09-04-2022 12:11:10 , Error nº:         13
+Error No se encuentra el alias 'USUARIOS'.
+Linea nº SELECT(lcAlias)
+ Alias PERFILES registro          1
+Control activo  FRMLOGIN.LOAD
+09-04-2022 12:13:37 , Error nº:       1435
+Error Error de análisis de XML: La etiqueta de fin 'ifdperfil' no coincide con la etiqueta de inicio 'idpefil'.
+ línea 5, posición 15.   		<idpefil>1</ifdperfil>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:15:41 , Error nº:       1435
+Error Error de análisis de XML: La etiqueta de fin 'idperfil' no coincide con la etiqueta de inicio 'idpefil'.
+ línea 5, posición 15.   		<idpefil>1</idperfil>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:16:16 , Error nº:       1435
+Error Error de análisis de XML: La etiqueta de fin 'idperfil' no coincide con la etiqueta de inicio 'idpefil'.
+ línea 5, posición 15.   		<idpefil>1</idperfil>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:16:53 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrSeteo')> 0
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:17:36 , Error nº:         12
+Error No se encuentra la variable 'USUARIO'.
+Linea nº LOCATE FOR UPPER(ALLTRIM(usuario))=lcusuario AND  ALLTRIM(LTRIM(password)) = lcpass
+ Alias USUARIOS registro          1
+Control activo  MAIN
+11-04-2022 10:32:01 , Error nº:         13Error No se encuentra el alias.Linea nº IF RECCOUNT('CsrConexionCentral')=0 Alias CSROPCION registro          1Control activo  ACTUALIZARPEDANDROIDSQL.INIT

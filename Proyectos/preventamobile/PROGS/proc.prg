@@ -19,6 +19,8 @@ case upper(rtrim(cName)) = "DATAMENU"
 	CREATE CURSOR Datamenu (id i, sec_codacce c(12), sec_descacce c(20), sec_nivelacce n(1), sec_promptacc c(50);
 		, sec_tipoacce n(1), sec_doacce c(100), sec_keyacce c(10), sec_condacce c(30), sec_fontstyle c(30);
 		,fecha d, sec_picture c(50), switch c(5))
+case upper(rtrim(cName)) = "USUARIOS"
+	CREATE CURSOR Usuarios  (id i, idperfil i, switch c(5),nombre c(10),password c(10))
 OTHERWISE
 	RETURN .f.
 ENDCASE

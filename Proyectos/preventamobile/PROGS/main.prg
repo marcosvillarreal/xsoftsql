@@ -235,7 +235,7 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 
-	*DO FORM frmlogin
+	DO FORM frmlogin
 	
 	&&La empresa pudo cambiar si se accedio a otra sucursal
 	*LeerDatosEmpresa()
