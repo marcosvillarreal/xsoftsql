@@ -14,138 +14,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 liente WITH OscCabefac.nombre ,codcliente WITH strtrim(OscCabefac.cliente,8),fechavto WITH OscCabefac.fecha_vto ,vendedor WITH strtrim(OscCabefac.vendedor),planpago WITH OscCabefac.planpago IN CsrCabeDeta
  Alias CSRCABEDETA registro          1
 Control activo  MAIN
@@ -242,6 +110,7 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
 
 
 
@@ -796,7 +665,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -986,7 +857,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -1227,12 +1100,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -2117,5 +1992,14 @@ Error No se encuentra la variable 'USUARIO'.
 Linea nº LOCATE FOR UPPER(ALLTRIM(usuario))=lcusuario AND  ALLTRIM(LTRIM(password)) = lcpass
  Alias USUARIOS registro          1
 Control activo  MAIN
-11-04-2022 10:32:01 , Error nº:         13Error No se encuentra el alias.Linea nº IF RECCOUNT('CsrConexionCentral')=0 Alias CSROPCION registro          1Control activo  ACTUALIZARPEDANDROIDSQL.INIT
-12-04-2022 09:40:56 , Error nº:         13Error No se encuentra el alias 'CSRSETEOTERMI'.Linea nº i        = AT('\',Csrseteotermi.nombre) Alias  registro          0Control activo  MAIN
+11-04-2022 10:32:01 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrConexionCentral')=0
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+12-04-2022 09:40:56 , Error nº:         13
+Error No se encuentra el alias 'CSRSETEOTERMI'.
+Linea nº i        = AT('\',Csrseteotermi.nombre)
+ Alias  registro          0
+Control activo  MAIN
+04/13/22 17:19:28 , Error nº:       1732Error El tipo de datos no es válido para esta propiedad.Linea nº .TOP = .nTop Alias PERFILES registro          1Control activo  MAIN
