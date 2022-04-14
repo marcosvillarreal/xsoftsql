@@ -131,7 +131,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB  TO  controlesmenu ADDITIVE 
    SET CLASSLIB  TO  controlesdashboard ADDITIVE
    SET CLASSLIB  TO  controlesgrid ADDITIVE
-   SET CLASSLIB  TO  controlesreserva ADDITIVE
+  * SET CLASSLIB  TO  controlesreserva ADDITIVE
    SET CLASSLIB  TO  iabm.vcx ADDITIVE 
    SET CLASSLIB  TO  calc.vcx ADDITIVE  && Calculadora   
    SET CLASSLIB  TO  icontrolespersonalizados ADDITIVE 
