@@ -29,6 +29,27 @@ DECLARE INTEGER ShellExecute IN shell32.dll ;
      ShowWindow (lhwnd, 1)
      ox = CREATEOBJECT ( "Wscript.Shell" )
      ox.sendKeys ( '{ENTER}' )
+     
+     _cliptext = "c:\sqlmenu.txt"
+     
+     =INKEY(5)
+	FOR i=1 to 10
+		ox.sendkeys ("{TAB}")
+		WAIT WINDOW ("TAB" + STR(i)) nowait
+		=INKEY(.2)
+	ENDFOR
+	ox.sendkeys ("{ENTER}")
+	=INKEY(1)
+	ox.sendkeys ("{UP}")
+	ox.sendkeys ("{UP}")
+	ox.sendkeys ("{UP}")
+	ox.sendkeys ("{UP}")
+	ox.sendkeys ("{ENTER}")
+	=INKEY(1)
+	ox.sendkeys ("^{v}")
+	ox.sendkeys ("{ENTER}")
+	=INKEY(1)
+	ox.sendkeys ("{ENTER}")
      RETURN .t.
  ELSE 
      MESSAGEBOX ( "Whatsapp no activada!" )
