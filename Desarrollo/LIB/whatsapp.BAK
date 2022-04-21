@@ -1,15 +1,6 @@
 FUNCTION EnviarWhatsapp
-PARAMETERS cNroWhatsapp, cMensaje
-DECLARE  INTEGER FindWindow IN WIN32API STRING , STRING  
-DECLARE  INTEGER SetForegroundWindow IN WIN32API INTEGER  
-DECLARE  INTEGER  ShowWindow  IN WIN32API INTEGER , INTEGER 
-DECLARE INTEGER ShellExecute IN shell32.dll ; 
-  INTEGER hndWin, ; 
-  STRING cAction, ; 
-  STRING cFileName, ; 
-  STRING cParams, ;  
-  STRING cDir, ; 
-  INTEGER nShowWin
+PARAMETERS cNroWhatsapp, cMensaje,cFilePath
+
   
   LOCAL lt, lhwnd
   **************************
@@ -30,7 +21,7 @@ DECLARE INTEGER ShellExecute IN shell32.dll ;
      ox = CREATEOBJECT ( "Wscript.Shell" )
      ox.sendKeys ( '{ENTER}' )
      
-     _cliptext = "c:\sqlmenu.txt"
+     _cliptext = cFilePath
      
      =INKEY(5)
 	FOR i=1 to 10

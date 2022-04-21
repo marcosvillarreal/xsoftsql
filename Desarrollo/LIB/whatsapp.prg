@@ -1,5 +1,5 @@
 FUNCTION EnviarWhatsapp
-PARAMETERS cNroWhatsapp, cMensaje
+PARAMETERS cNroWhatsapp, cMensaje,cFilePath
 
   
   LOCAL lt, lhwnd
@@ -21,7 +21,7 @@ PARAMETERS cNroWhatsapp, cMensaje
      ox = CREATEOBJECT ( "Wscript.Shell" )
      ox.sendKeys ( '{ENTER}' )
      
-     _cliptext = "c:\sqlmenu.txt"
+     _cliptext = cFilePath
      
      =INKEY(5)
 	FOR i=1 to 10
@@ -39,7 +39,7 @@ PARAMETERS cNroWhatsapp, cMensaje
 	=INKEY(1)
 	ox.sendkeys ("^{v}")
 	ox.sendkeys ("{ENTER}")
-	=INKEY(1)
+	=INKEY(2)
 	ox.sendkeys ("{ENTER}")
      RETURN .t.
  ELSE 

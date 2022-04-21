@@ -1,59 +1,3 @@
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-19-02-2016 15:54:29 , Error nº:       1734
-Error No se encuentra la propiedad PRECIOART.
-Linea nº nUniSiva	= ROUND(OscCuerpo.precioart,this.ndecimaltot)
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-19-02-2016 15:57:47 , Error nº:         12
-Error No se encuentra la variable 'NUNICIVAB'.
-Linea nº OscCuerpo.unicivab		= ROUND(nUniCivaB,this.ndecimaltot)
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-19-02-2016 15:58:33 , Error nº:         12
-Error No se encuentra la variable 'NUNICIVA'.
-Linea nº OscCuerpo.uniciva		= ROUND(nUniCiva,this.ndecimaltot)
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-19-02-2016 16:00:39 , Error nº:         12
-Error No se encuentra la variable 'TOTAL'.
-Linea nº SELECT tasa,SUM(impiva) as iva,SUM(total) as total FROM CsrCuerpo WHERE tasa<>0 GROUP BY tasa INTO CURSOR CsrImpIVA READWRITE
- Alias  registro          0
-Control activo  MAIN
-19-02-2016 16:03:14 , Error nº:       1806
-Error SQL: no se encuentra la columna 'TOTAL'.
-Linea nº SELECT tasa,SUM(impiva) as iva,SUM(total) as total FROM CsrCuerpo WHERE tasa<>0 GROUP BY tasa INTO CURSOR CsrImpIVA READWRITE
- Alias CSRCUERPO registro         11
-Control activo  MAIN
-19-02-2016 16:06:01 , Error nº:         12
-Error No se encuentra la variable 'NUNICIVAFIN'.
-Linea nº OscCuerpo.unicivab		= ROUND(nUniCivaFin,this.ndecimaltot)
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-19-02-2016 16:07:34 , Error nº:       1923
-Error No se encuentra el objeto TIPOESTRUCTURA.
-Linea nº TipoEstructura.tipoimp = This.TipoEstructura
- Alias CSRCABEZA registro          1
-Control activo  MAIN
-19-02-2016 16:25:57 , Error nº:         12
-Error No se encuentra la variable 'CANTLINEA'.
-Linea nº this.imp_cantlinea  = CsrPrefiTermi.cantlinea
- Alias CSRPREFITERMI registro          1
-Control activo  MAIN
-19-02-2016 16:26:41 , Error nº:         13
-Error No se encuentra el alias 'CSRPREFINRO'.
-Linea nº this.imp_cantlinea  = CsrPrefiNro.cantlinea
- Alias CSRPREFITERMI registro          1
-Control activo  MAIN
-09-03-2016 16:20:25 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-09-03-2016 16:24:20 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
 Control activo  MAIN
 09-03-2016 16:27:23 , Error nº:          3
 Error El archivo ya está en uso.
@@ -88,6 +32,12 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
+
+
+
+
 
 
 
@@ -646,7 +596,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -840,7 +802,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -1085,12 +1059,24 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
+
+
+
 
 
 
@@ -1997,5 +1983,55 @@ Error No se encuentra el objeto OW.
 Linea nº oW.AbrirWhatsappWeb()
  Alias PARAVARIO registro          1
 Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
-21-04-2022 09:58:40 , Error nº:          1Error El archivo 'shellexecute.prg' no existe.Linea nº =ShellExecute(0, 'open', Comando,'', '', 1) Alias PARAVARIO registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
-21-04-2022 10:30:15 , Error nº:         12Error No se encuentra la variable 'N'.Linea nº DO WHILE n<10 AND lhwnd =0 Alias PARAVARIO registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 09:58:40 , Error nº:          1
+Error El archivo 'shellexecute.prg' no existe.
+Linea nº =ShellExecute(0, 'open', Comando,'', '', 1)
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 10:30:15 , Error nº:         12
+Error No se encuentra la variable 'N'.
+Linea nº DO WHILE n<10 AND lhwnd =0
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 18:40:24 , Error nº:       1925
+Error BTTNARTICULOS es un miembro desconocido.
+Linea nº this.bttnArticulos.Visible = .t.
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 18:59:50 , Error nº:       1925
+Error OW es un miembro desconocido.
+Linea nº IF This.oW.AbrirWhatsappWeb()
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 19:00:22 , Error nº:       1435
+Error Error de análisis de XML: El sistema no puede encontrar el objeto especificado.
+ línea 0, posición 0.   (null)
+Linea nº XMLTOCURSOR(CsrArchivos.archivo,"CsrMensaje",512+8192)
+ Alias CSRARCHIVOS registro          1
+Control activo  REGPROCESO.CMDPROCESAR.BTN.CLICK
+21-04-2022 19:06:03 , Error nº:         12
+Error No se encuentra la variable 'TELEFONO'.
+Linea nº IF EnviarWhatsapp(CsrMensaje.telefono,CsrMensaje.detalle,CsrMensaje.File)
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.CMDPROCESAR.BTN.CLICK
+21-04-2022 19:16:31 , Error nº:         36
+Error El comando contiene una frase o palabra clave no reconocida.
+Linea nº COPY TO &cFile  TO &cPathCopy
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.CMDPROCESAR.BTN.CLICK
+21-04-2022 19:18:53 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº COPY FILE  (cFile)  TO cPathCopy
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER1.TIMER
+21-04-2022 19:19:52 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº COPY FILE  (cFile)  TO cPathCopy
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER1.TIMER
+21-04-2022 19:20:54 , Error nº:       1102
+Error No se puede crear el archivo j:\whatsapp\enviados\5492915128797_20220421155238.xml.
+Linea nº COPY FILE  (cFile)  TO (cPathCopy)
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER1.TIMER
+21-04-2022 19:22:11 , Error nº:        202Error La ruta o el nombre de archivo no es válido.Linea nº COPY FILE  (cFile)  TO (cPathCopy) Alias CSRMENSAJE registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
