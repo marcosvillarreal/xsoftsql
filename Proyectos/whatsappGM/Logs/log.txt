@@ -1,0 +1,2001 @@
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+19-02-2016 15:54:29 , Error nº:       1734
+Error No se encuentra la propiedad PRECIOART.
+Linea nº nUniSiva	= ROUND(OscCuerpo.precioart,this.ndecimaltot)
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+19-02-2016 15:57:47 , Error nº:         12
+Error No se encuentra la variable 'NUNICIVAB'.
+Linea nº OscCuerpo.unicivab		= ROUND(nUniCivaB,this.ndecimaltot)
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+19-02-2016 15:58:33 , Error nº:         12
+Error No se encuentra la variable 'NUNICIVA'.
+Linea nº OscCuerpo.uniciva		= ROUND(nUniCiva,this.ndecimaltot)
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+19-02-2016 16:00:39 , Error nº:         12
+Error No se encuentra la variable 'TOTAL'.
+Linea nº SELECT tasa,SUM(impiva) as iva,SUM(total) as total FROM CsrCuerpo WHERE tasa<>0 GROUP BY tasa INTO CURSOR CsrImpIVA READWRITE
+ Alias  registro          0
+Control activo  MAIN
+19-02-2016 16:03:14 , Error nº:       1806
+Error SQL: no se encuentra la columna 'TOTAL'.
+Linea nº SELECT tasa,SUM(impiva) as iva,SUM(total) as total FROM CsrCuerpo WHERE tasa<>0 GROUP BY tasa INTO CURSOR CsrImpIVA READWRITE
+ Alias CSRCUERPO registro         11
+Control activo  MAIN
+19-02-2016 16:06:01 , Error nº:         12
+Error No se encuentra la variable 'NUNICIVAFIN'.
+Linea nº OscCuerpo.unicivab		= ROUND(nUniCivaFin,this.ndecimaltot)
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+19-02-2016 16:07:34 , Error nº:       1923
+Error No se encuentra el objeto TIPOESTRUCTURA.
+Linea nº TipoEstructura.tipoimp = This.TipoEstructura
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+19-02-2016 16:25:57 , Error nº:         12
+Error No se encuentra la variable 'CANTLINEA'.
+Linea nº this.imp_cantlinea  = CsrPrefiTermi.cantlinea
+ Alias CSRPREFITERMI registro          1
+Control activo  MAIN
+19-02-2016 16:26:41 , Error nº:         13
+Error No se encuentra el alias 'CSRPREFINRO'.
+Linea nº this.imp_cantlinea  = CsrPrefiNro.cantlinea
+ Alias CSRPREFITERMI registro          1
+Control activo  MAIN
+09-03-2016 16:20:25 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  MAIN
+09-03-2016 16:24:20 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  MAIN
+09-03-2016 16:27:23 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  MAIN
+09-03-2016 16:31:56 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  MAIN
+09-03-2016 16:38:42 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  MAIN
+09-03-2016 16:43:11 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT(lcaliasseek)#0
+ Alias CSRPARAVARIO registro          1
+Control activo  MAIN
+09-03-2016 16:43:39 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  MAIN
+18-03-2016 10:36:59 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº SELECT CsrParavario
+ Alias  registro          0
+Control activo  PARACAE.INIT
+18-03-2016 10:45:31 , Error nº:       1230
+Error Hay demasiados argumentos.
+Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ CsrCabeImp
+ Alias PARAVARIO registro          5
+Control activo  PARACAE.INIT
+18-03-2016 10:47:00 , Error nº:       1231
+Error Falta algún operando.
+Linea nº select CsrCentroRecep.nombre as nomsucursal From areaneg as CsrCentroRecep where CsrCentroRecep.numero = &goapp.sucursal into cursor csrCentroRecep
+ Alias PARAVARIO registro          5
+Control activo  PARACAE.INIT
+18-03-2016 10:48:02 , Error nº:       1231
+Error Falta algún operando.
+Linea nº select nombre as nomsucursal From centrorecep where numero = &goapp.sucursal into cursor csrCentroRecep READWRITE
+ Alias PARAVARIO registro          5
+Control activo  PARACAE.INIT
+18-03-2016 10:55:23 , Error nº:         12
+Error No se encuentra la variable 'TELEFFAX'.
+Linea nº .page1._txtteleffax.Value	 = CsrCabeImp.teleffax
+ Alias CSRCABEIMP registro          1
+Control activo  PARACAE.INIT
+18-03-2016 10:55:45 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº select CabeImp.*,nvl(CentroRecep.nombre,space(20)) as nomsucursal From cabeimp left join centrorecep  on CabeImp.sucursal = CentroRecep.numero where CabeImp.sucursal  = goapp.sucursal into cursor CsrCabeImp READWRITE
+ Alias CSRCENTRORECEP registro          1
+Control activo  PARACAE.INIT
+18-03-2016 10:56:02 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº select CabeImp.*,nvl(CentroRecep.nombre,space(20)) as nomsucursal From cabeimp left join centrorecep  on CabeImp.sucursal = CentroRecep.numero where CabeImp.sucursal  = goapp.sucursal into cursor CsrCabeImp READWRITE
+ Alias CABEIMP registro          1
+Control activo  ON... 
+18-03-2016 10:58:27 , Error nº:       1925
+Error _SPINNERTALONPC1 es un miembro desconocido.
+Linea nº ._spinnertalonpc1.Value		= paraconfig.talonpc1
+ Alias PARAVARIO registro          5
+Control activo  PARACONFIG.INIT
+18-03-2016 11:06:02 , Error nº:        110
+Error Debe abrir el archivo en modo exclusivo.
+Linea nº llok = .grabardato()
+ Alias KEYSID registro        134
+Control activo  ON... 
+18-03-2016 11:44:34 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT(lcaliasseek)#0
+ Alias CSRPARAVARIO registro          1
+Control activo  PARAVARIO.CONTAINERENCABEZA.PFRAME1.PAGE1.KITBUSCAOALTAENBA.TXTEXISTE1.INIT
+18-03-2016 12:16:12 , Error nº:        110
+Error Debe abrir el archivo en modo exclusivo.
+Linea nº llok = .grabardato()
+ Alias SISTEMA registro          2
+Control activo  ON... 
+18-03-2016 12:20:43 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
+18-03-2016 12:25:14 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
+ Alias CSRIMPUESTO registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 12:38:09 , Error nº:         13
+Error No se encuentra el alias 'CSRTIPOIVA'.
+Linea nº USE IN CsrTipoiva
+ Alias CSRPARAVARIO registro          3
+Control activo  REGPROCESO.OROBOT.OROBOT.DESTROY
+18-03-2016 12:39:22 , Error nº:         13
+Error No se encuentra el alias 'CSRTIPOIVA'.
+Linea nº USE IN CsrTipoiva
+ Alias CSRPARAVARIO registro          3
+Control activo  REGPROCESO.OROBOT.OROBOT.DESTROY
+03/18/16 12:56:29 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias  registro          0
+Control activo  REGPROCESO.INIT
+03/18/16 12:56:46 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias  registro          0
+Control activo  REGPROCESO.INIT
+18-03-2016 13:02:03 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 13:07:34 , Error nº:          1
+Error El archivo 'c:\afip\aut\00012651.ca1' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA1" TO this.Pathorigen+cName+".CA2"
+ Alias  registro          0
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 13:17:23 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 13:43:32 , Error nº:          1
+Error El archivo 'c:\afip\aut\00012651.ca1' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA1" TO this.Pathorigen+cName+".CA2"
+ Alias  registro          0
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 13:53:31 , Error nº:          1
+Error El archivo 'c:\afip\aut\f0012651                       .ca1' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA1" TO this.Pathorigen+cName+".CA2"
+ Alias  registro          0
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 14:41:31 , Error nº:         13
+Error No se encuentra el alias 'CSRPREFIJONRO'.
+Linea nº SELECT(lcAlias)
+ Alias IMPRESORA registro          3
+Control activo  ABMPREFIJOS._TEXTBOX1.KEYPRESS
+18-03-2016 14:42:02 , Error nº:       1734
+Error No se encuentra la propiedad SELECTCMD.
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias PREFIJONRO registro          2
+Control activo  ABMPREFIJOS._TEXTBOX1.KEYPRESS
+18-03-2016 14:42:33 , Error nº:       1734
+Error No se encuentra la propiedad SELECTCMD.
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias PREFIJONRO registro          2
+Control activo  ABMPREFIJOS._TEXTBOX1.KEYPRESS
+18-03-2016 14:43:00 , Error nº:         13
+Error No se encuentra el alias 'CSRFORMULARIO'.
+Linea nº IF VAL(csrformulario.diseno)=8   && sin formulario
+ Alias PREFIJONRO registro         15
+Control activo FORMULARIO ABMPREFIJOS.CONTENEDOR1.PFRAME1.PAGE1._CBOFORMULARIO.LOSTFOCUS
+18-03-2016 14:43:07 , Error nº:         13
+Error No se encuentra el alias 'CSRFORMULARIO'.
+Linea nº IF VAL(csrformulario.diseno)=8   && sin formulario
+ Alias PREFIJONRO registro         15
+Control activo  ABMPREFIJOS.CONTENEDOR1.PFRAME1.PAGE1._CBOFORMULARIO.LOSTFOCUS
+18-03-2016 14:43:11 , Error nº:         13
+Error No se encuentra el alias 'CSRFORMULARIO'.
+Linea nº IF VAL(csrformulario.diseno)=8   && sin formulario
+ Alias PREFIJONRO registro         15
+Control activo FORMULARIO ABMPREFIJOS.CONTENEDOR1.PFRAME1.PAGE1._CBOFORMULARIO.LOSTFOCUS
+18-03-2016 14:43:18 , Error nº:         13
+Error No se encuentra el alias 'CSRFORMULARIO'.
+Linea nº IF VAL(csrformulario.diseno)=8   && sin formulario
+ Alias PREFIJONRO registro         15
+Control activo  ABMPREFIJOS.CONTENEDOR1.PFRAME1.PAGE1._CBOFORMULARIO.LOSTFOCUS
+18-03-2016 14:43:21 , Error nº:         13
+Error No se encuentra el alias 'CSRFORMULARIO'.
+Linea nº IF VAL(csrformulario.diseno)=8   && sin formulario
+ Alias PREFIJONRO registro         15
+Control activo FORMULARIO ABMPREFIJOS.CONTENEDOR1.PFRAME1.PAGE1._CBOFORMULARIO.LOSTFOCUS
+18-03-2016 14:45:00 , Error nº:       1734
+Error No se encuentra la propiedad SELECTCMD.
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias PREFIJONRO registro         15
+Control activo  ABMPREFIJOS._TEXTBOX1.KEYPRESS
+18-03-2016 15:19:04 , Error nº:       1734
+Error No se encuentra la propiedad MERCADERIA.
+Linea nº replace mercaderia WITH OscCabefac.mercaderia, nomvendedor WITH OscCabefac.corredor ,detalle WITH OscCabefac.detalle IN CsrCabeDeta
+ Alias CSRCABEDETA registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 15:20:41 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº USE IN FsrCabeza
+ Alias CSRCATEGOIVA registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 15:22:16 , Error nº:         12
+Error No se encuentra la variable 'TELEFAX'.
+Linea nº cEmpTelf	= CsrCabeImp.TeleFax
+ Alias CSRCABEIMP registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 15:22:50 , Error nº:         13
+Error No se encuentra el alias 'CSRCOMPROBANTE'.
+Linea nº IF NOT CsrComprobante.clase$"A" &&Factura
+ Alias CSRIMPCUE registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 15:31:26 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
+ Alias CSRCABEZA registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+18-03-2016 15:42:21 , Error nº:       1734
+Error No se encuentra la propiedad LOGO.
+Linea nº ObjReporter.logo = lcdd+'graphics\logofac.jpg'
+ Alias COMPROBANTE registro          1
+Control activo  MAIN
+18-03-2016 15:42:25 , Error nº:       1734
+Error No se encuentra la propiedad LOGO.
+Linea nº ObjReporter.logo = lcdd+'graphics\logofac.jpg'
+ Alias COMPROBANTE registro          1
+Control activo  MAIN
+18-03-2016 16:21:56 , Error nº:         12
+Error No se encuentra la variable 'CAMPO1'.
+Linea nº loObjCampos.AddProperty(campo1,"")
+ Alias CSRIMPUESTO registro          3
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+20-03-2016 21:43:57 , Error nº:       1734
+Error No se encuentra la propiedad TIPOESTRUCTURA.
+Linea nº IF thisform.tipoestructura = 3
+ Alias CSRIMPUESTO registro          3
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+20-03-2016 21:45:05 , Error nº:       1925
+Error OROBOTFACCAE es un miembro desconocido.
+Linea nº IF thisform.oRobotFacCAE.tipoestructura = 3
+ Alias CSRIMPUESTO registro          3
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+21-03-2016 11:14:39 , Error nº:          1
+Error El archivo 'c:\xsoftsql\proyectos\robotcae\paracae.scx' no existe.
+Linea nº DO FORM &lcForm
+ Alias CURPERFIL registro         18
+Control activo  MAIN
+21-03-2016 12:30:43 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro         18
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+21-03-2016 12:33:27 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro          8
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+21-03-2016 12:46:20 , Error nº:         13
+Error No se encuentra el alias 'CENTRORECEP'.
+Linea nº .lblSucursal.Caption	= "Sucursal "+CentroRecep.nombre
+ Alias PARAVARIO registro         12
+Control activo  PARACONFIG.INIT
+21-03-2016 12:47:04 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRESORA'.
+Linea nº i        = AT('\',Csrimpresora.nombre)
+ Alias CSRAUXPORTNAME registro          1
+Control activo  ABMIMPRESORA.CONTENEDOR1.GRIDABM1.INIT
+21-03-2016 12:48:54 , Error nº:         13
+Error No se encuentra el alias 'CSRSETEOTERMI'.
+Linea nº .ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
+ Alias CSRAUXPORTNAME registro          1
+Control activo  ABMIMPRESORA.INIT
+21-03-2016 12:50:40 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRESORA'.
+Linea nº SELECT(lcAlias)
+ Alias IMPRESORA registro          1
+Control activo  ABMIMPRESORA._TEXTBOX1.KEYPRESS
+21-03-2016 12:51:04 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRESORA'.
+Linea nº SELECT(lcAlias)
+ Alias IMPRESORA registro          1
+Control activo  ABMIMPRESORA._TEXTBOX1.KEYPRESS
+21-03-2016 12:51:28 , Error nº:       1734
+Error No se encuentra la propiedad SELECTCMD.
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias IMPRESORA registro          1
+Control activo  ABMIMPRESORA._TEXTBOX1.KEYPRESS
+21-03-2016 12:52:09 , Error nº:       2005
+Error Error al cargar el archivo - número de registro 5. abmimpresora  <o uno de sus miembros>.  ControlSource : No se encuentra el alias 'IMPRESORA'
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias CSREMPRESA registro          1
+Control activo  ON... 
+21-03-2016 13:03:29 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONFIG'.
+Linea nº lntipocaja = VAL(Csrparaconfig.tipocaja)
+ Alias CSRPARADIARIO registro          1
+Control activo  MAIN
+21-03-2016 13:12:56 , Error nº:       1734
+Error No se encuentra la propiedad PATHORIGEN.
+Linea nº This.LblRuta.Caption =  This.oRobot.PathOrigen
+ Alias CSRCABEIMP registro          1
+Control activo  MAIN
+21-03-2016 13:13:38 , Error nº:       1925
+Error OROBOT es un miembro desconocido.
+Linea nº This.LblRuta.Caption =  This.oRobot.oRobot.Pathorigen
+ Alias CSRCABEIMP registro          1
+Control activo  REGPROCESO.INIT
+21-03-2016 13:15:16 , Error nº:       1925
+Error OROBOT es un miembro desconocido.
+Linea nº This.LblRuta.Caption =  This.oRobot.oRobot.Pathorigen
+ Alias CSRCABEIMP registro          1
+Control activo  REGPROCESO.INIT
+03/21/16 14:03:38 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias  registro          0
+Control activo  REGPROCESO.INIT
+21-03-2016 14:09:56 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONFIG'.
+Linea nº this.TipodeArchivo	= CsrParaConfig.tipoarchivo
+ Alias CSRPREFIJONRO registro          1
+Control activo  REGPROCESO.INIT
+21-03-2016 14:44:29 , Error nº:          1
+Error El archivo 'csrtipocbte.dbf' no existe.
+Linea nº SELECT CsrTipoCbte.*,CsrComprobante.cnombre,CsrComprobante.clase FROM CsrTipoCbte left join Csrcomprobante on CsrTipoCbte.tipocomp = CsrComprobante.id into cursor FsrTipoCbte READWRITE
+ Alias CSRVARIEDAD registro          1
+Control activo  MAIN
+21-03-2016 14:44:59 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrParaVario')<>0
+ Alias CSRCAEPARAM registro         10
+Control activo  REGPROCESO.INIT
+21-03-2016 14:57:41 , Error nº:          1
+Error El archivo 'csrtipocbte.dbf' no existe.
+Linea nº SELECT CsrTipoCbte.*,CsrComprobante.cnombre,CsrComprobante.clase FROM CsrTipoCbte left join Csrcomprobante on CsrTipoCbte.tipocomp = CsrComprobante.id into cursor FsrTipoCbte READWRITE
+ Alias CSRVARIEDAD registro          1
+Control activo  REGPROCESO.INIT
+21-03-2016 15:01:26 , Error nº:         52
+Error No hay ninguna tabla abierta en el área de trabajo actual.
+Linea nº LOCATE FOR "VISTAP"$nombre
+ Alias  registro          0
+Control activo  MAIN
+21-03-2016 15:02:02 , Error nº:         52
+Error No hay ninguna tabla abierta en el área de trabajo actual.
+Linea nº LOCATE FOR "VISTAP"$nombre
+ Alias  registro          0
+Control activo  REGPROCESO.INIT
+21-03-2016 15:02:28 , Error nº:         52
+Error No hay ninguna tabla abierta en el área de trabajo actual.
+Linea nº LOCATE FOR "VISTAP"$nombre
+ Alias  registro          0
+Control activo  REGPROCESO.INIT
+21-03-2016 15:03:22 , Error nº:         52
+Error No hay ninguna tabla abierta en el área de trabajo actual.
+Linea nº LOCATE FOR "VISTAP"$nombre
+ Alias  registro          0
+Control activo  MAIN
+21-03-2016 15:04:27 , Error nº:          3
+Error El archivo ya está en uso.
+Linea nº LOCATE FOR "VISTAP"$nombre
+ Alias  registro          0
+Control activo  REGPROCESO.INIT
+21-03-2016 15:04:58 , Error nº:       1925
+Error OROBOT es un miembro desconocido.
+Linea nº Thisform.oROBOT.Detener()
+ Alias CSRPARAVARIO registro          1
+Control activo  REGPROCESO.OROBOT.OROBOT.DESTROY
+21-03-2016 15:26:39 , Error nº:          1
+Error El archivo 'csrprefijo.dbf' no existe.
+Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrprefijo.letra,' ') as letra,NVL(Csrprefijo.idimpresora,0) as idimpresora ,NVL(Csrimpresora.nombre,SPACE(40)) as nomimpresora ,NVL(Csrimpresora.tipo,0) as tipoimpresora,NVL(Csri
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rprefijo.id left join Csrimpresora on NVL(Csrprefijo.idimpresora,0) = Csrimpresora.id where Csrprefitermi.idterminal = CsrSeteoTermi.id INTO CURSOR FsrPrefitermi READWRITE
+ Alias CSRSETEOTERMI registro          1
+Control activo  MAIN
+21-03-2016 15:30:08 , Error nº:          1
+Error El archivo 'csrprefijo.dbf' no existe.
+Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrprefijo.letra,' ') as letra,NVL(Csrprefijo.idimpresora,0) as idimpresora ,NVL(Csrimpresora.nombre,SPACE(40)) as nomimpresora ,NVL(Csrimpresora.tipo,0) as tipoimpresora,NVL(Csri
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rprefijo.id left join Csrimpresora on NVL(Csrprefijo.idimpresora,0) = Csrimpresora.id where Csrprefitermi.idterminal = CsrSeteoTermi.id INTO CURSOR FsrPrefitermi READWRITE
+ Alias CSRSETEOTERMI registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+21-03-2016 15:31:20 , Error nº:         12
+Error No se encuentra la variable 'DISENO'.
+Linea nº this.imp_formulario	= VAL(Csrprefijonro.diseno)
+ Alias CSRPREFITERMI registro         16
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+21-03-2016 15:32:33 , Error nº:         12
+Error No se encuentra la variable 'NOMPUERTO'.
+Linea nº this.imp_impresora	= IIF(LEN(TRIM(Csrprefitermi.nompuerto))#0,Csrprefitermi.nompuerto,Csrprefitermi.nomimpresora)
+ Alias CSRPREFITERMI registro         16
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+21-03-2016 15:34:49 , Error nº:         12
+Error No se encuentra la variable 'CLASE'.
+Linea nº IF NOT CsrTipoCbte.clase$"A" &&Factura
+ Alias CSRIMPCUE registro          1
+Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
+03/24/16 10:59:22 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias CSRPARACONFIG registro          1
+Control activo  PARACONFIG.INIT
+24-03-2016 10:59:56 , Error nº:         13
+Error No se encuentra el alias 'PARAVARIO'.
+Linea nº SELECT Paravario
+ Alias CSRPARACONFIG registro          1
+Control activo  PARACONFIG.INIT
+24-03-2016 11:00:29 , Error nº:         13
+Error No se encuentra el alias 'CENTRORECEP'.
+Linea nº .lblSucursal.Caption	= "Sucursal "+CentroRecep.nombre
+ Alias PARAVARIO registro         12
+Control activo  PARACONFIG.INIT
+06-04-2016 11:18:42 , Error nº:       1925
+Error LBLRUTA es un miembro desconocido.
+Linea nº This.LblRuta.Caption =  This.oRobot.Ruta
+ Alias CSRPARAVARIO registro          4
+Control activo  MAIN
+06-04-2016 11:28:40 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº USE IN FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-04-2016 11:30:44 , Error nº:          1
+Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\0003\0008150.ca2' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-04-2016 11:32:25 , Error nº:          1
+Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\0003\0008150.ca2' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-04-2016 11:39:20 , Error nº:          1
+Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\0003\0008150.ca2' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-04-2016 12:10:23 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro         18
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+18-04-2016 15:45:27 , Error nº:       1806
+Error SQL: no se encuentra la columna 'CODAFIP'.
+Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobante on csrpr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
+ Alias CSRCABEIMP registro          1
+Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
+18-04-2016 15:46:14 , Error nº:       1806
+Error SQL: no se encuentra la columna 'ACTIVOCAE'.
+Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e on csrprefitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
+ Alias CSRCABEIMP registro          1
+Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
+18-04-2016 15:46:53 , Error nº:       1924
+Error OCA no es un objeto.
+Linea nº Oca.commandtext = cCmdText
+ Alias CSRPREFIJOS registro          1
+Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
+18-04-2016 15:48:57 , Error nº:         13
+Error No se encuentra el alias 'CSRAFIPCOMPROBA'.
+Linea nº USE IN CsrAfipComproba
+ Alias  registro          0
+Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
+06-05-2016 16:04:53 , Error nº:          1
+Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\00081500.cu1.ca0' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA0" TO this.Pathorigen+cName+".CA2"
+ Alias  registro          0
+Control activo  MAIN
+06-05-2016 16:37:40 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-05-2016 16:41:39 , Error nº:          1
+Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\00081500.cu1.ca0' no existe.
+Linea nº RENAME this.Pathorigen+cName+".CA0" TO this.Pathorigen+cName+".CA2"
+ Alias  registro          0
+Control activo  MAIN
+06-05-2016 16:44:00 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-05-2016 16:47:20 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+06-05-2016 16:49:50 , Error nº:         13
+Error No se encuentra el alias 'FSRCABEZA'.
+Linea nº SELECT FsrCabeza
+ Alias CSRCABEZA registro          1
+Control activo  MAIN
+02-08-2016 11:30:22 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONFIG'.
+Linea nº lntipocaja = VAL(Csrparaconfig.tipocaja)
+ Alias CSRPARADIARIO registro          1
+Control activo  MAIN
+02-08-2016 11:32:17 , Error nº:         13
+Error No se encuentra el alias 'CSRCATEGOIVA'.
+Linea nº SELECT CsrCategoiva
+ Alias FSRTIPOCBTE registro          6
+Control activo  MAIN
+02-08-2016 11:52:23 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº IF LEN(str(cDocumento,15))=0 &&No vienen nada en el campo, chequeamos el campo cuit
+ Alias CSRIMPUESTO registro          2
+Control activo  MAIN
+02-08-2016 11:54:36 , Error nº:         12
+Error No se encuentra la variable 'DOCUMENTO'.
+Linea nº IF len(Documento)<11
+ Alias CSRIMPUESTO registro          2
+Control activo  MAIN
+18-10-2018 09:57:35 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONFIG'.
+Linea nº lntipocaja = VAL(Csrparaconfig.tipocaja)
+ Alias CSRPARADIARIO registro          1
+Control activo  MAIN
+18-10-2018 10:11:21 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrCabeImp')=0
+ Alias CSRCENTRORECEP registro          1
+Control activo  MAIN
+18-10-2018 10:11:29 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº DO FORM &lcForm
+ Alias CURPERFIL registro         10
+Control activo  MAIN
+18-10-2018 10:18:59 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrCabeImp')=0
+ Alias CSRCENTRORECEP registro          1
+Control activo  MAIN
+18-10-2018 10:19:08 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº DO FORM &lcForm
+ Alias CURPERFIL registro         10
+Control activo  MAIN
+10/18/18 10:30:22 , Error nº:          1
+Error El archivo 'c:\xsoftsql\proyectos\robotcae\datos\datos.dbc' no existe.
+Linea nº open database (lcDBC)
+ Alias CSRCABEIMP registro          1
+Control activo  ABMCABEIMP.DATAENVIRONMENT.CABEIMP.INIT
+10/18/18 10:31:53 , Error nº:          1
+Error El archivo 'c:\xsoftsql\proyectos\robotcae\datos\datos.dbc' no existe.
+Linea nº open database (lcDBC)
+ Alias CSRCABEIMP registro          1
+Control activo  MAIN
+10/18/18 10:32:36 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias CSRCABEIMP registro          1
+Control activo  MAIN
+18-10-2018 11:03:25 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
+ Alias CURPERFIL registro          1
+Control activo  MAIN
+18-10-2018 11:08:24 , Error nº:         13
+Error No se encuentra el alias 'IMPRESORA'.
+Linea nº .ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
+ Alias _SETEOTERMI registro          1
+Control activo  MAIN
+18-10-2018 11:14:47 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias PREFIJONRO registro         17
+Control activo  MAIN
+18-10-2018 11:14:56 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias PREFIJONRO registro         17
+Control activo  ABMPREFIJOS.CMDCANCELAR.CLICK
+18-10-2018 11:43:58 , Error nº:       1734
+Error No se encuentra la propiedad CONSIGNA.
+Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+18-10-2018 11:48:00 , Error nº:       1734
+Error No se encuentra la propiedad CONSIGNA.
+Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+18-10-2018 11:48:33 , Error nº:       1734
+Error No se encuentra la propiedad CONSIGNA.
+Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+18-10-2018 11:48:46 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro         16
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+18-10-2018 11:48:50 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro         17
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+18-10-2018 11:48:53 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro         17
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+18-10-2018 11:50:07 , Error nº:       1734
+Error No se encuentra la propiedad CONSIGNA.
+Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
+ Alias FSRCUERPO registro          1
+Control activo  MAIN
+18-10-2018 11:50:25 , Error nº:         12
+Error No se encuentra la variable 'LLDESARROLLO'.
+Linea nº If lldesarrollo
+ Alias CURPERFIL registro         17
+Control activo  FRMMENU1.TREEVIEW.DBLCLICK
+18-10-2018 12:19:27 , Error nº:          1
+Error El archivo 'j:\robotcae\pasaje\afip_fe\fa000001.cu0' no existe.
+Linea nº USE &cArchivoCue IN 0 ALIAS FsrCuerpo EXCLUSIVE
+ Alias CSRCUERPO registro          1
+Control activo  MAIN
+18-10-2018 12:30:04 , Error nº:       1734
+Error No se encuentra la propiedad ARCHIVO.
+Linea nº IF ".CA0"$oCabeCAE.archivo
+ Alias CSRIMPUESTO registro          3
+Control activo  MAIN
+18-10-2018 12:42:11 , Error nº:       1734
+Error No se encuentra la propiedad MERCADERIA.
+Linea nº replace mercaderia WITH OscCabefac.mercaderia, nomvendedor WITH OscCabefac.corredor ,detalle WITH OscCabefac.detalle IN CsrCabeDeta
+ Alias CSRCABEDETA registro          1
+Control activo  MAIN
+30-03-2020 17:31:18 , Error nº:       1734
+Error No se encuentra la propiedad PRODUCCION.
+Linea nº this.produccion = .f.
+ Alias CSRPARAMETROCAE registro          3
+Control activo  MAIN
+30-03-2020 18:08:41 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº SELECT CsrParaVario
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.INIT
+30-03-2020 18:10:11 , Error nº:       1923
+Error No se encuentra el objeto OVISAR.
+Linea nº ovisar.usuario('Click_Imagen')
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.CONTAINER1.IMAGE2.CLICK
+04/03/20 19:59:08 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 19:59:23 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 20:00:10 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 20:00:17 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .LEFT =.nLeft
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 20:01:27 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 20:02:20 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 20:02:45 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+04/03/20 20:03:45 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.INIT
+03-04-2020 20:05:22 , Error nº:       1940
+Error La expresión no es válida fuera de WITH/ENDWITH.
+Linea nº This.nTOP = .Top
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+03-04-2020 20:50:14 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+03-04-2020 20:50:31 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+03-04-2020 20:50:37 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CONEXION registro          1
+Control activo  ON... 
+03-04-2020 20:55:29 , Error nº:         10
+Error Error de sintaxis.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+03-04-2020 20:55:44 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CONEXION registro          1
+Control activo  ON... 
+03-04-2020 20:56:11 , Error nº:         10
+Error Error de sintaxis.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+03-04-2020 20:56:15 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CONEXION registro          1
+Control activo  ON... 
+03-04-2020 20:56:46 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+03-04-2020 20:56:58 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CONEXION registro          1
+Control activo  ON... 
+03-04-2020 20:58:04 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº ENDTRY
+ Alias CONEXION registro          1
+Control activo  ON... 
+03-04-2020 20:59:31 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+03-04-2020 21:04:00 , Error nº:         12
+Error No se encuentra la variable 'SWITCH'.
+Linea nº replace switch WITH '00000' IN Conexion
+ Alias CFCONFIG registro          1
+Control activo  ABMCFCONFIG.CMDAGREGAR.CLICK
+03-04-2020 21:32:59 , Error nº:       1924
+Error LOCONNDATASOURCE no es un objeto.
+Linea nº loConnDataSource.Close()
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.BTTNNOENTER1.CLICK
+03-04-2020 21:45:11 , Error nº:       1924
+Error LOCONNDATASOURCE no es un objeto.
+Linea nº loConnDataSource.Close()
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.BTTNNOENTER1.CLICK
+03-04-2020 22:12:49 , Error nº:       1951
+Error No se puede borrar el objeto REGPROCESO  porque está en uso.
+Linea nº thisform.dataenvironment.opentables()
+ Alias CSRCONEXION registro          1
+Control activo  REGPROCESO.BTTNCLIENTES.INIT
+03-04-2020 22:25:52 , Error nº:         12
+Error No se encuentra la variable 'LOK'.
+Linea nº IF lok
+ Alias ESTADOTRAN registro          1
+Control activo  REGPROCESO.BTTNVENDEDOR.LABEL.CLICK
+03-04-2020 22:36:04 , Error nº:       1734
+Error No se encuentra la propiedad INICARCONEXION.
+Linea nº this.inicarconexion()
+ Alias ESTADOTRAN registro          1
+Control activo  REGPROCESO.BTTNVENDEDOR.LABEL.CLICK
+04/03/20 22:41:51 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias CSRCONEXION registro          1
+Control activo  REGPROCESO.INIT
+06-04-2020 12:49:40 , Error nº:         13
+Error No se encuentra el alias 'CABEPEDIDO'.
+Linea nº SELECT cabepedido
+ Alias CSRVENDEDOR registro          1
+Control activo  REGPROCESO.BTTNVENDEDOR.LABEL.CLICK
+06-04-2020 16:41:27 , Error nº:         96
+Error Error de anidamiento.
+Linea nº ENDSCAN
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
+06-04-2020 16:43:34 , Error nº:         96
+Error Error de anidamiento.
+Linea nº ENDSCAN
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
+06-04-2020 16:48:42 , Error nº:         96
+Error Error de anidamiento.
+Linea nº ENDSCAN
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
+06-04-2020 16:55:24 , Error nº:         96
+Error Error de anidamiento.
+Linea nº ENDSCAN
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
+06-04-2020 17:00:49 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+06-04-2020 17:00:54 , Error nº:       1967
+Error El entorno de datos ya está descargado.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CONEXION registro          2
+Control activo  ON... 
+06-04-2020 17:27:58 , Error nº:         12
+Error No se encuentra la variable 'FECHAHORA'.
+Linea nº replace fechahora WITH DATETIME(), detalle WITH sTraza
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.BTTNNOENTER1.CLICK
+06-04-2020 17:28:41 , Error nº:         12
+Error No se encuentra la variable 'FECHAHORA'.
+Linea nº replace fechahora WITH TTOC(DATETIME()) , detalle WITH sTraza
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.BTTNNOENTER1.CLICK
+06-04-2020 17:53:45 , Error nº:         12
+Error No se encuentra la variable 'NRETARDO'.
+Linea nº IF nRetardo > 0
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.BTTNNOENTER1.CLICK
+06-04-2020 17:57:02 , Error nº:       1924
+Error OAVISAR no es un objeto.
+Linea nº oavisar.usuario(sTraza,0,1)
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.BTTNNOENTER1.CLICK
+06-04-2020 17:57:20 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias  registro          0
+Control activo  MAIN
+06-04-2020 17:57:32 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias  registro          0
+Control activo  MAIN
+04/09/20 11:06:49 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PARAVARIO registro          7
+Control activo  REGPROCESO.INIT
+09-04-2020 11:07:47 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CSREMPRESA registro          1
+Control activo  MAIN
+09-04-2020 11:09:00 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrParametroCAE')<>0
+ Alias CABEIMP registro          1
+Control activo  MAIN
+09-04-2020 11:11:55 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias  registro          0
+Control activo  MAIN
+09-04-2020 11:12:35 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\preventamobile\abmconfig.scx' no existe.
+Linea nº DO FORM &lcForm
+ Alias CURPERFIL registro          8
+Control activo  MAIN
+09-04-2020 11:14:07 , Error nº:       1238
+Error No se encuentra la instrucción PARAMETER.
+Linea nº DODEFAULT()
+ Alias PARAVARIO registro          7
+Control activo  MAIN
+15-04-2020 10:15:51 , Error nº:          1
+Error El archivo 'c:\aplicaciones\pm\forms\conexion.dbf' no existe.
+Linea nº SELECT * FROM conexion WHERE LEFT(switch,1)='1' INTO CURSOR CsrConexion READWRITE
+ Alias PARAVARIO registro          3
+Control activo  MAIN
+15-04-2020 10:16:38 , Error nº:          1
+Error El archivo 'c:\aplicaciones\pm\forms\conexion.dbf' no existe.
+Linea nº SELECT * FROM conexion WHERE LEFT(switch,1)='1' INTO CURSOR CsrConexion READWRITE
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 10:19:01 , Error nº:          1
+Error El archivo 'c:\aplicaciones\pm\forms\conexion.dbf' no existe.
+Linea nº SELECT * FROM conexion WHERE LEFT(switch,1)='1' INTO CURSOR CsrConexion READWRITE
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 10:53:46 , Error nº:          1
+Error El archivo 'c:\aplicaciones\pm\forms\conexion.dbf' no existe.
+Linea nº SELECT * FROM conexion WHERE LEFT(switch,1)='1' INTO CURSOR CsrConexion READWRITE
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 11:40:01 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº IF LEN(LTRIM(lcFile))
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 11:40:56 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº IF LEN(LTRIM(lcFile))
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 11:42:09 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº IF LEN(LTRIM(lcFile))
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 11:43:31 , Error nº:          1
+Error El archivo 'cargartabla.prg' no existe.
+Linea nº llok = CargarTabla(lcConectionString,'ParaVario',"ParaVario",.f.)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:15:36 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº IF LEN(LTRIM(lcFile))
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:18:03 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXCUERFAC'.
+Linea nº SELECT CsrAuxCuerfac
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:18:59 , Error nº:          1
+Error El archivo 'cargartabla.prg' no existe.
+Linea nº llok = CargarTabla(lcConectionString,'ParaVario',"ParaVario",.f.)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:19:11 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº XMLTOCURSOR(lcFile,lcAlias,512+8192)
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:27:12 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº XMLTOCURSOR(lcFile,lcAlias,512+8192)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:28:06 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº XMLTOCURSOR(lcFile,lcAlias,512+8192)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:28:51 , Error nº:         12
+Error No se encuentra la variable 'CONEXION'.
+Linea nº XMLTOCURSOR(lcFile,&lcAlias,512+8192)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:31:02 , Error nº:         12
+Error No se encuentra la variable 'CTEMPCURSOR'.
+Linea nº XMLTOCURSOR(lcFile,cTempCursor,512+8192)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:39:22 , Error nº:         12
+Error No se encuentra la variable 'CONEXION'.
+Linea nº XMLTOCURSOR(lcFile,&lcAlias,512)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:41:41 , Error nº:         12
+Error No se encuentra la variable 'CONEXION'.
+Linea nº XMLTOCURSOR(lcFile,&lcAlias,512+8192)
+ Alias CONEXION registro          1
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:42:23 , Error nº:          1
+Error El archivo 'cargartabla.prg' no existe.
+Linea nº llok = CargarTabla(lcConectionString,'ParaVario',"ParaVario",.f.)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:42:37 , Error nº:         12
+Error No se encuentra la variable 'CONEXION'.
+Linea nº XMLTOCURSOR(lcFile,&lcAlias,512+8192)
+ Alias CONEXION registro          1
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:44:45 , Error nº:          1
+Error El archivo 'cargartabla.prg' no existe.
+Linea nº llok = CargarTabla(lcConectionString,'ParaVario',"ParaVario",.f.)
+ Alias  registro          0
+Control activo  REGPROCESO.LOAD
+15-04-2020 12:50:48 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº SELECT Conexion
+ Alias PARAVARIO registro          3
+Control activo  REGPROCESO.LOAD
+15-04-2020 15:14:18 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CONEXION registro          2
+Control activo  MAIN
+15-04-2020 15:14:29 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CONEXION registro          2
+Control activo  MAIN
+15-04-2020 15:15:17 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CONEXION registro          2
+Control activo  MAIN
+15-04-2020 15:16:30 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CONEXION registro          2
+Control activo  MAIN
+15-04-2020 15:17:11 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CONEXION registro          2
+Control activo  MAIN
+15-04-2020 15:19:59 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CSREMPRESA registro          1
+Control activo  MAIN
+15-04-2020 15:20:25 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CSREMPRESA registro          1
+Control activo  MAIN
+15-04-2020 15:20:34 , Error nº:          1
+Error El archivo 'encriptarpm.prg' no existe.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CSREMPRESA registro          1
+Control activo  ON... 
+15-04-2020 15:22:49 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº FOR ln = 1 TO LEN(tcCadena)-1 STEP 2
+ Alias CSREMPRESA registro          1
+Control activo  DESENCRIPTAPM
+15-04-2020 15:27:43 , Error nº:       1435
+Error Error de análisis de XML: An invalid character was found in text content.
+ línea 35, posición 19.   		<pwdname>}?¤ÅO¡?.?K?ËÅ"«?ù</pwdname>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias CONEXION registro          3
+Control activo  REGPROCESO.LOAD
+16-04-2020 11:16:38 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº DIMENSION CRIP(LEN(string_x))
+ Alias CONEXION registro          2
+Control activo  CONFIGEMPRESA
+16-04-2020 11:47:27 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias CSREMPRESA registro          1
+Control activo  MAIN
+16-04-2020 11:57:41 , Error nº:       1924
+Error ORSLISTA no es un objeto.
+Linea nº Orslista.ActiveConnection = loConnDataSource
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 11:59:13 , Error nº:         12
+Error No se encuentra la variable 'PARAVARIO'.
+Linea nº =CargarXML(lcConectionString,'ParaVario.xml',ParaVario)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 12:00:49 , Error nº:         13
+Error No se encuentra el alias 'PARACONFIG'.
+Linea nº USE IN ParaConfig
+ Alias PARAVARIO registro          5
+Control activo  MAIN
+16-04-2020 12:00:58 , Error nº:         13
+Error No se encuentra el alias 'PARACONFIG'.
+Linea nº USE IN ParaConfig
+ Alias PARAVARIO registro          5
+Control activo  PARACONFIG.CANCELAR1.CLICK
+16-04-2020 12:03:00 , Error nº:       1925
+Error CMDACEPTAR es un miembro desconocido.
+Linea nº This.Cmdaceptar.Enabled = .F.
+ Alias PARAVARIO registro          1
+Control activo  MAIN
+16-04-2020 14:36:19 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº PARAMETERS lcFile,lcAlias
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:38:12 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT (thisform.lcalias)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:38:24 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT (thisform.lcalias)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:38:43 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT (thisform.lcalias)
+ Alias  registro          0
+Control activo  MAIN
+16-04-2020 14:39:07 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT(lcAlias)
+ Alias PARAVARIO registro          1
+Control activo  MAIN
+16-04-2020 14:40:10 , Error nº:         13
+Error No se encuentra el alias 'DATAMENU'.
+Linea nº SELECT(lcAlias)
+ Alias PARAVARIO registro          1
+Control activo  MAIN
+16-04-2020 15:04:18 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\preventamobile\datos\datos.dbc' no existe.
+Linea nº OPEN DATABASE (LcConectionString) SHARED
+ Alias  registro          0
+Control activo  MAIN
+30-07-2020 15:08:24 , Error nº:       1738
+Error La propiedad LEFT no es un método o evento.
+Linea nº this.Left
+ Alias PARAVARIO registro          2
+Control activo  MAIN
+30-07-2020 15:09:18 , Error nº:       1738
+Error La propiedad LEFT no es un método o evento.
+Linea nº this.Left
+ Alias PARAVARIO registro          2
+Control activo  MAIN
+30-07-2020 16:45:15 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº this.Picture = this.picdefault
+ Alias PARAVARIO registro          2
+Control activo  REGPROCESO.BTTNMOVIMIENTOS.INIT
+30-07-2020 16:47:56 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº this.Picture = this.picdefault
+ Alias PARAVARIO registro          2
+Control activo  REGPROCESO.BTTNMOVIMIENTOS.INIT
+30-07-2020 16:51:38 , Error nº:       1734
+Error No se encuentra la propiedad BACKSTYLE.
+Linea nº THIS.Parent.BackStyle= 0
+ Alias PARAVARIO registro          2
+Control activo  REGPROCESO.BTTNMOVIMIENTOS.INIT
+06-08-2020 12:59:38 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  MAIN
+06-08-2020 13:01:14 , Error nº:         13
+Error No se encuentra el alias 'CONEXION'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias CFCONFIG2 registro          1
+Control activo  ABMCFCONFIG.INIT
+08/06/20 13:19:10 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PERFILES registro          1
+Control activo  MAIN
+08/06/20 13:19:23 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PERFILES registro          1
+Control activo  MAIN
+06-08-2020 13:32:17 , Error nº:          1
+Error El archivo 'encriptapm.prg' no existe.
+Linea nº OscatterConect.username	 = EncriptaPM(lmcUser)
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
+06-08-2020 13:32:23 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
+06-08-2020 13:32:28 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
+21-10-2020 12:44:18 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
+ Alias CSRVARIEDAD registro          3
+Control activo  MAIN
+04/07/21 18:02:00 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PERFILES registro          1
+Control activo  MAIN
+04/07/21 18:02:17 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PERFILES registro          1
+Control activo  MAIN
+23-12-2021 13:02:31 , Error nº:         12
+Error No se encuentra la variable 'PIDSISTEMA'.
+Linea nº lnidprograma = pidsistema
+ Alias PERFILES registro          1
+Control activo  MAIN
+26-01-2022 12:26:33 , Error nº:          1
+Error El archivo 'datacursor.prg' no existe.
+Linea nº llok = IIF(EMPTY(lcTabla),.f.,llok)
+ Alias  registro          0
+Control activo  MAIN
+26-01-2022 12:26:43 , Error nº:          1
+Error El archivo 'datacursor.prg' no existe.
+Linea nº llok = IIF(EMPTY(lcTabla),.f.,llok)
+ Alias  registro          0
+Control activo  MAIN
+31-03-2022 11:46:01 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias CONEXION registro          2
+Control activo  MAIN
+31-03-2022 11:46:27 , Error nº:       1586
+Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
+Linea nº =tablerevert(.t.,this.calias)
+ Alias CONEXION registro          2
+Control activo  ABMCFCONFIG.CMDCANCELAR.CLICK
+09-04-2022 11:58:29 , Error nº:          1
+Error El archivo 'j:\desarrollo\graficos\fondo.png' no existe.
+Linea nº thisform.dataenvironment.opentables()
+ Alias CSRPOPS registro          1
+Control activo  ON... 
+09-04-2022 12:07:14 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrSeteo')> 0
+ Alias CSRPOPS registro          1
+Control activo  MAIN
+09-04-2022 12:10:21 , Error nº:         13
+Error No se encuentra el alias 'USUARIOS'.
+Linea nº SELECT(lcAlias)
+ Alias PERFILES registro          1
+Control activo  MAIN
+09-04-2022 12:11:10 , Error nº:         13
+Error No se encuentra el alias 'USUARIOS'.
+Linea nº SELECT(lcAlias)
+ Alias PERFILES registro          1
+Control activo  FRMLOGIN.LOAD
+09-04-2022 12:13:37 , Error nº:       1435
+Error Error de análisis de XML: La etiqueta de fin 'ifdperfil' no coincide con la etiqueta de inicio 'idpefil'.
+ línea 5, posición 15.   		<idpefil>1</ifdperfil>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:15:41 , Error nº:       1435
+Error Error de análisis de XML: La etiqueta de fin 'idperfil' no coincide con la etiqueta de inicio 'idpefil'.
+ línea 5, posición 15.   		<idpefil>1</idperfil>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:16:16 , Error nº:       1435
+Error Error de análisis de XML: La etiqueta de fin 'idperfil' no coincide con la etiqueta de inicio 'idpefil'.
+ línea 5, posición 15.   		<idpefil>1</idperfil>
+Linea nº XMLTOCURSOR(lcFile,'',512+8192)
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:16:53 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrSeteo')> 0
+ Alias USUARIOS registro          1
+Control activo  MAIN
+09-04-2022 12:17:36 , Error nº:         12
+Error No se encuentra la variable 'USUARIO'.
+Linea nº LOCATE FOR UPPER(ALLTRIM(usuario))=lcusuario AND  ALLTRIM(LTRIM(password)) = lcpass
+ Alias USUARIOS registro          1
+Control activo  MAIN
+11-04-2022 10:32:01 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrConexionCentral')=0
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+12-04-2022 09:40:56 , Error nº:         13
+Error No se encuentra el alias 'CSRSETEOTERMI'.
+Linea nº i        = AT('\',Csrseteotermi.nombre)
+ Alias  registro          0
+Control activo  MAIN
+04/13/22 17:19:28 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PERFILES registro          1
+Control activo  MAIN
+21-04-2022 09:58:14 , Error nº:       1923
+Error No se encuentra el objeto OW.
+Linea nº oW.AbrirWhatsappWeb()
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 09:58:40 , Error nº:          1Error El archivo 'shellexecute.prg' no existe.Linea nº =ShellExecute(0, 'open', Comando,'', '', 1) Alias PARAVARIO registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 10:30:15 , Error nº:         12Error No se encuentra la variable 'N'.Linea nº DO WHILE n<10 AND lhwnd =0 Alias PARAVARIO registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
