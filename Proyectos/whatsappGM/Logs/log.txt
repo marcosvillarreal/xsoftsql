@@ -1,27 +1,3 @@
-Control activo  MAIN
-09-03-2016 16:27:23 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-09-03-2016 16:31:56 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-09-03-2016 16:38:42 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  MAIN
-09-03-2016 16:43:11 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias CSRPARAVARIO registro          1
-Control activo  MAIN
-09-03-2016 16:43:39 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
  Alias CSRIMPUESTO registro          1
 Control activo  MAIN
 18-03-2016 10:36:59 , Error nº:         13
@@ -32,6 +8,8 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
+
 
 
 
@@ -602,7 +580,11 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
 
 
 
@@ -808,7 +790,11 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
 
 
 
@@ -1065,12 +1051,16 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
 
 
 
@@ -2034,4 +2024,24 @@ Error No se puede crear el archivo j:\whatsapp\enviados\5492915128797_2022042115
 Linea nº COPY FILE  (cFile)  TO (cPathCopy)
  Alias CSRMENSAJE registro          1
 Control activo  REGPROCESO.TIMER1.TIMER
-21-04-2022 19:22:11 , Error nº:        202Error La ruta o el nombre de archivo no es válido.Linea nº COPY FILE  (cFile)  TO (cPathCopy) Alias CSRMENSAJE registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+21-04-2022 19:22:11 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº COPY FILE  (cFile)  TO (cPathCopy)
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+22-04-2022 11:41:59 , Error nº:       1925
+Error OWAPP es un miembro desconocido.
+Linea nº this.RutaArchivos = This.oWapp.Pathfile
+ Alias CSRARCHIVOS registro          1
+Control activo  MAIN
+22-04-2022 11:42:58 , Error nº:       1925
+Error OWAPP es un miembro desconocido.
+Linea nº this.RutaArchivos = This.oWapp.Pathfile && This.oWapp.Pathfile
+ Alias CSRARCHIVOS registro          1
+Control activo  REGPROCESO.LOAD
+22-04-2022 11:43:40 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\whatsappgm\onegocios.vcx' no existe.
+Linea nº SET CLASSLIB TO onegocios ADDITIVE
+ Alias CSRPOPS registro          1
+Control activo  MAIN
+22-04-2022 11:44:16 , Error nº:       1925Error OWAPP es un miembro desconocido.Linea nº this.RutaArchivos = This.oWapp.Pathfile && This.oWapp.Pathfile Alias CSRARCHIVOS registro          1Control activo  MAIN
