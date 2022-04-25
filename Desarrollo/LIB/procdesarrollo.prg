@@ -451,7 +451,20 @@ if _Aredondeo<>0
 endif
 return _Aimporte
 
+Function ProximoRedondeo
+	Lparameters nValue, nNearest
+	Local nRemainder, nReturn
 
+	nRemainder = Mod(m.nValue, m.nNearest)
+	If m.nRemainder >= m.nNearest/2
+		nReturn = m.nValue + (m.nNearest - m.nRemainder)
+	Else
+		nReturn = m.nValue - m.nRemainder
+	Endif
+
+	Return m.nReturn
+
+Endfunc
 *----------------------------------------------------
 *-Retardo
 *----------------------------------------------------

@@ -547,7 +547,7 @@ RETURN (nId*1000)+nEjercicio
 
 *--------------------------------------------------------------
 *--------------------------------------------------------------
-RETURN cRuta
+
 FUNCTION ExisteCarpeta
 PARAMETERS cRuta,lCrear
 lCrear = IIF(PCOUNT()<2,.t.,lCrear)
