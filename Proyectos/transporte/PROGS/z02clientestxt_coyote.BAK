@@ -65,7 +65,7 @@ ENDTEXT
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 SELECT CsrLocalidad
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISCLI02.CSV"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISCLI01.CSV"
 =LeerClientes(cArchivo)
 
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISPCL.CSV"

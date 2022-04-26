@@ -1,6 +1,7 @@
 &&Fuentes de importacion de archivos de texto para elcoyote
 FUNCTION LeerClientes(cArchivo)
 
+SET SAFETY OFF 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
 CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),CodLocalidad c(6),Localidad c(50);
@@ -11,6 +12,9 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA c(5),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i;
 		,DireDespacho c(100),FacEmail c(1),TipoFac c(8),Flete n(12,2))
+
+INDEX on codigo TAG korden
+SET SAFETY ON 
 	
 Oavisar.proceso('S','Abriendo archivos') 
 

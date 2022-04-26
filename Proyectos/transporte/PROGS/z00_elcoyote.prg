@@ -33,14 +33,14 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-*vista()
+vista()
 lnPrimeraOcurrencia = 14
 leiunarticulo = .f.
 
 ldebug = .t.
 
 SKIP 
-*stop()
+stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 16 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
