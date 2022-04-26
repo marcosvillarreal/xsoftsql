@@ -84,7 +84,7 @@ SELECT distinct codlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,
 
 
 SELECT CsrCiudad
-vista()
+*vista()
 SCAN 
 	IF ALLTRIM(UPPER(CsrCiudad.nombre)) ="GRAL CONESA"
 		stop()
@@ -123,6 +123,7 @@ SET FILTER TO
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
+lnidflete = RecuperarID('CsrFleteCtacte',Goapp.sucursal10)
 
 CREATE CURSOR CsrFleteError (detalle c(250))
 
@@ -292,8 +293,9 @@ SCAN
 		IF CsrZonaRuta.idzona # 0 
 			SELECT CsrFletectacte
 			APPEND BLANK
-			replace idzona WITH CsrZonaRuta.idzona, idctacte WITH lnid, feccorte WITH GOMONTH(DATE(),12*20),;
+			replace id WITH lnidflete ,idzona WITH CsrZonaRuta.idzona, idctacte WITH lnid, feccorte WITH GOMONTH(DATE(),12*20),;
 					flete WITH CsrFlete.flete
+			lnidflete = lnidflete + 1 
 		ELSE
 			cMensaje = ('Cliente ' + ALLTRIM(CsrDeudor.codigo) + ' Localidad ' + ALLTRIM(CsrFlete.CodPostal) + ' Flete ' + strtrim(CsrFlete.flete,12,2))
 
