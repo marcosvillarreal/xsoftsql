@@ -1,3 +1,31 @@
+FUNCTION KitGrillaTildar_Refrescar
+PARAMETERS toContenedor
+
+IF UPPER(toContenedor.BaseClass) $ "CONTROL"
+	RETURN 
+ENDIF 
+
+TRY 
+	IF PEMSTATUS(toContenedor,'Objects',5)		
+		FOR EACH loControl IN toContenedor.Objects
+			IF UPPER(loControl.Class) = 'KITGRILLATILDAR'
+				loControl.Refrescar()
+			ENDIF 
+			IF PEMSTATUS(loControl,'Objects',5)
+				=KitGrillaTildar_Refrescar(loControl)
+			ENDIF 
+		ENDFOR 
+	ENDIF 	
+CATCH TO oError
+	stop()
+	*si capta error es porque la propiedad no existe o no es contenedor
+	oavisar.usuario('error' + CHR(13)+toContenedor.Name+CHR(13)+loControl_Name+CHR(13)+ 'Error: '+ALLTRIM(oError.Details)+' Metodo: '+oError.Procedure+CHR(13)+;
+						'Mensaje: '+ALLTRIM(oError.Message)+' Nro Error ['+ALLTRIM(STR(oError.ErrorNo))+']'+CHR(13)+;
+						'Linea: '+ALLTRIM(oError.LineContents))
+	
+ENDTRY 
+RETURN 
+
 *----------------------------------------------------------------------------
 *----------------------------------------------------------------------------
 

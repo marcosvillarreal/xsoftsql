@@ -1,3 +1,31 @@
+FUNCTION KitGrillaTildar_Refrescar
+PARAMETERS toContenedor
+
+IF UPPER(toContenedor.BaseClass) $ "CONTROL"
+	RETURN 
+ENDIF 
+
+TRY 
+	IF PEMSTATUS(toContenedor,'Objects',5)		
+		FOR EACH loControl IN toContenedor.Objects
+			IF loControl.Class = 'KITGRILLATILDAR'
+				loControl.Refrescar()
+			ENDIF 
+			IF PEMSTATUS(loControl,'Objects',5)
+				=KitGrillaTildar_Refrescar(loControl)
+			ENDIF 
+		ENDFOR 
+	ENDIF 	
+CATCH TO oError
+	stop()
+	*si capta error es porque la propiedad no existe o no es contenedor
+	oavisar.usuario('error' + CHR(13)+toContenedor.Name+CHR(13)+loControl_Name+CHR(13)+ 'Error: '+ALLTRIM(oError.Details)+' Metodo: '+oError.Procedure+CHR(13)+;
+						'Mensaje: '+ALLTRIM(oError.Message)+' Nro Error ['+ALLTRIM(STR(oError.ErrorNo))+']'+CHR(13)+;
+						'Linea: '+ALLTRIM(oError.LineContents))
+	
+ENDTRY 
+RETURN 
+
 *----------------------------------------------------------------------------
 *----------------------------------------------------------------------------
 
@@ -451,7 +479,20 @@ if _Aredondeo<>0
 endif
 return _Aimporte
 
+Function ProximoRedondeo
+	Lparameters nValue, nNearest
+	Local nRemainder, nReturn
 
+	nRemainder = Mod(m.nValue, m.nNearest)
+	If m.nRemainder >= m.nNearest/2
+		nReturn = m.nValue + (m.nNearest - m.nRemainder)
+	Else
+		nReturn = m.nValue - m.nRemainder
+	Endif
+
+	Return m.nReturn
+
+Endfunc
 *----------------------------------------------------
 *-Retardo
 *----------------------------------------------------
