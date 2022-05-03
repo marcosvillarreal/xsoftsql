@@ -106,11 +106,11 @@
 *!*								MCAR = movbcocar (REG.CARTERA)
 *!*								MOCT = movctacte 
 
-*!*	 RENMAOPE.switch	       1	0= cobranza cta cte anterior   1= rendicion de valores 2=operaciones afectadas en la rendicion (fac / rem)
-*!*								2	0 = facturas 1 = recibos cobro
-*!*								3
-*!*								4
-*!*								5
+*!*	 RENMAOPE.switch	         1	0= cobranza cta cte anterior   1= rendicion de valores 2=operaciones afectadas en la rendicion (fac / rem)
+*!*						2	0 = facturas 1 = recibos cobro
+*!*						3       1 = entregadas
+*!*						4 	1 = felte cobrado
+*!*						5	1 = reembolso cobrado
 
 *!*	 PARACONFIG.switch	       1	0= no permite cambiar plan pago   1= permite cambiar plan pago   en facturacion venta
 *!*								2
