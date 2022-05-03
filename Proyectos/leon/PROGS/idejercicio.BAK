@@ -1,5 +1,5 @@
 GOAPP.IDEJERCICIO = 1100000018
-GOAPP.IDUSUARIO =1
+GOAPP.IDUSUARIO =1100000008 &&1
 goapp.terminal = 6
 goapp.ejercicio = 11
 goapp.sucursal = 1

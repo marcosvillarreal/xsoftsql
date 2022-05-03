@@ -1,4 +1,42 @@
 *------------------------------------------------------------------------------
+FUNCTION OrigenDatos
+PARAMETERS cOrigen
+LOCAL cOrigenDeta
+DO CASE 
+CASE cOrigen = 'FAC'  
+	cOrigenDeta= 'facturacion'
+CASE cOrigen = 'FPE' 
+	cOrigenDeta= 'facturacion notas de pedido'
+CASE cOrigen = 'PAG'  
+	cOrigenDeta= 'registracion pagos'
+CASE cOrigen = 'COB'  
+	cOrigenDeta= 'registracion cobros'
+CASE cOrigen = 'RFL'  
+	cOrigenDeta= 'rendicion fletero'
+CASE cOrigen = 'MPU'  
+	cOrigenDeta= 'movimiento publico'
+CASE cOrigen = 'ICA'
+	cOrigenDeta= 'ingreso caja'
+CASE cOrigen = 'ECA'  
+	cOrigenDeta= 'egreso caja'
+CASE cOrigen = 'BCO'  
+	cOrigenDeta= 'registra bancos'
+CASE cOrigen = 'CAR'  
+	cOrigenDeta= 'registra cartera'
+CASE cOrigen = 'CPR'
+	cOrigenDeta= 'FACTURACION COMPRA'
+CASE cOrigen = 'MOV'  
+	cOrigenDeta= 'Movimientos importados'
+CASE cOrigen ='AST'  
+	cOrigenDeta= 'Asientos manuales/Cierre/Reversa/etc'
+CASE cOrigen = 'CBN'
+	cOrigenDeta= 'Conciliacionj bancaria'
+CASE cOrigen = 'PCA'  
+	cOrigenDeta= 'Pasaje de cartera entre sucursales'
+ENDCASE 
+RETURN cOrigenDeta
+ENDFUNC 
+*------------------------------------------------------------------------------
 FUNCTION DataCursor
 PARAMETERS cName
 

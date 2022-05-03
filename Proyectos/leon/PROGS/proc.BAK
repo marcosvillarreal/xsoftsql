@@ -1,3 +1,48 @@
+*------------------------------------------------------------------------------
+FUNCTION OrigenDatos
+PARAMETERS cOrigen
+
+DO CASE 
+CASE cOrigen = 'FAC'  
+	cOrigen = 'facturacion'
+CASE cOrigen = 'FPE' 
+	cOrigen= 'facturacion notas de pedido'
+CASE cOrigen = 'PAG'  
+	cOrigen = 'registracion pagos'
+CASE cOrigen = 'COB'  
+	cOrigen = 'registracion cobros'
+CASE cOrigen = 'RFL'  
+	cOrigen = 'rendicion fletero'
+CASE cOrigen = 'MPU'  
+	cOrigen = 'movimiento publico'
+CASE cOrigen = 'ICA'
+	cOrigen  = 'ingreso caja'
+CASE cOrigen = 'ECA'  
+	cOrigen = 'egreso caja'
+CASE cOrigen = 'BCO'  
+	cOrigen = 'registra bancos'
+CASE cOrigen = 'CAR'  
+	cOrigen = 'registra cartera'
+CASE cOrigen = 'CPR'
+	cOrigen  = 'FACTURACION COMPRA'
+CASE cOrigen = 'MOV'  
+	cOrigen = 'Movimientos importados'
+CASE cOrigen ='AST'  
+	cOrigen = 'Asientos manuales/Cierre/Reversa/etc'
+CASE cOrigen = 'CBN'
+	cOrigen  = 'Conciliacionj bancaria'
+CASE cOrigen = 'PCA'  
+	cOrigen = 'Pasaje de cartera entre sucursales'
+ENDCASE 
+RETURN cOrigen
+ENDFUNC 
+*------------------------------------------------------------------------------
+FUNCTION DataCursor
+PARAMETERS cName
+
+RETURN .f.
+ENDFUNC 
+
 *----------------------------------------------------------------------------
 * FUNCION DevolverEjercicioContable(lcpefiscal,lnidejercicio,lnejercicio)
 *----------------------------------------------------------------------------
