@@ -146,7 +146,9 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 *clear all
 
 _screen.lockscreen=.t.
-_Screen.windowstate=2
+IF NOT lldesarrollo
+	_Screen.windowstate=2
+ENDIF 
 _Screen.caption=lctituloGestion
 _Screen.icon='pyro.ico'
 _screen.picture= 'fondo51.jpg'
