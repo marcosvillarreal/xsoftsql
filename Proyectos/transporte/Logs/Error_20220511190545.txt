@@ -1,0 +1,18 @@
+11-05-2022 19:05:45 , RINDEFLETE.CMDPROCESAR.KEYPRESS, Error: El campo ORIGEN no acepta valores NULL.;Linea : INSERT INTO CsrAuxCabefac (idmaopera,total,flete,creembolso,idcomproba,numcomp,estadotilde ,nomzona,grupo	,sfecha,signo,detaEntregado,detaFlete,detaReembolso,Saldo,Afecta,PlanPago,Origen ,entregado_ok, flete_ok,creembolso_ok,rend_flete,rend_entregado,rend_creembolso, ajuste, hayajuste) VALUES (Csrcuerpo.idmaopera,lntotal,CsrCuerpo.flete,CsrCuerpo.creembolso,CsrCuerpo.idcomproba ,Csrcuerpo.numcomp,0,Csrcuerpo.nomzona,'F',CsrCuerpo.fecha,Csrcuerpo.signo ,cdetaEntregado,cdetaFlete,cdetaReembolso,nSaldo, 0,CsrCuerpo.planpago,CsrCuerpo.origen ,CsrCuerpo.rend_entregado,CsrCuerpo.rend_flete ,CsrCuerpo.rend_creembolso ,CsrCuerpo.rend_flete,CsrCuerpo.rend_entregado,CsrCuerpo.rend_creembolso,CsrCuerpo.ajuste,IIF(CsrCuerpo.ajuste#0,.t.,.f.));Error :       1581;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000V2MH018L.TMP;Ultimo Control activo: 
+11-05-2022 19:05:45 , Pila de llamadas
+11-05-2022 19:05:45 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-05-2022 19:05:45 , Objeto      : rindeflete.cmdprocesar.keypress
+11-05-2022 19:05:45 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-05-2022 19:05:45 , Nº de Linea :          6
+11-05-2022 19:05:45 , En el Fuente: 	DODEFAULT()
+11-05-2022 19:05:45 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v2.sct
+11-05-2022 19:05:45 , Objeto      : rindeflete.cmdprocesar.click
+11-05-2022 19:05:45 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v2.sct
+11-05-2022 19:05:45 , Nº de Linea :          4
+11-05-2022 19:05:45 , En el Fuente: thisform.leermovimientos()
+11-05-2022 19:05:45 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v2.sct
+11-05-2022 19:05:45 , Objeto      : rindeflete.leermovimientos
+11-05-2022 19:05:45 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v2.sct
+11-05-2022 19:05:45 , Nº de Linea :        118
+11-05-2022 19:05:45 , En el Fuente: 			INSERT INTO CsrAuxCabefac (idmaopera,total,flete,creembolso,idcomproba,numcomp,estadotilde			,nomzona,grupo	,sfecha,signo,detaEntregado,detaFlete,detaReembolso,Saldo,Afecta,PlanPago,Origen			,entregado_ok, flete_ok,creembolso_ok,rend_flete,rend_entregado,rend_creembolso, ajuste, hayajuste)			VALUES (Csrcuerpo.idmaopera,lntotal,CsrCuerpo.flete,CsrCuerpo.creembolso,CsrCuerpo.idcomproba			,Csrcuerpo.numcomp,0,Csrcuerpo.nomzona,'F',CsrCuerpo.fecha,Csrcuerpo.signo			,cdetaEntregado,cdetaFlete,cdetaReembolso,nSaldo, 0,CsrCuerpo.planpago,CsrCuerpo.origen			,CsrCuerpo.rend_entregado,CsrCuerpo.rend_flete			,CsrCuerpo.rend_creembolso			,CsrCuerpo.rend_flete,CsrCuerpo.rend_entregado,CsrCuerpo.rend_creembolso,CsrCuerpo.ajuste,IIF(CsrCuerpo.ajuste#0,.t.,.f.))
+11-05-2022 19:05:45 , Fin
