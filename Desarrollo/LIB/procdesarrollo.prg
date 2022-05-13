@@ -1,3 +1,19 @@
+FUNCTION LeerSucursal
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrSucursal.* FROM CentroRecep as CsrSucursal WHERE numero = <<goapp.sucursal>>
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrSucursal',lcCmd)
+	RETURN 
+ENDIF 
+IF RECCOUNT('CsrSucursal')#0
+	goapp.sucursalidlocalidad = CsrSucursal.idlocalidad
+ENDIF 
+USE IN CsrSucursal
+
+ENDFUNC 
+
+*------------------------------------------------
 FUNCTION KitGrillaTildar_Refrescar
 PARAMETERS toContenedor
 

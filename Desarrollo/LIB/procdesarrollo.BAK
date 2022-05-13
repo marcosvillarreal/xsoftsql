@@ -8,7 +8,7 @@ ENDIF
 TRY 
 	IF PEMSTATUS(toContenedor,'Objects',5)		
 		FOR EACH loControl IN toContenedor.Objects
-			IF loControl.Class = 'KITGRILLATILDAR'
+			IF UPPER(loControl.Class) = 'KITGRILLATILDAR'
 				loControl.Refrescar()
 			ENDIF 
 			IF PEMSTATUS(loControl,'Objects',5)
