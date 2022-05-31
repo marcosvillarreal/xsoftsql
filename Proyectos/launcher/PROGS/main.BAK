@@ -9,8 +9,9 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Launcher G&M"
+lctituloGestion = "Launcher GM"
  
+
 If !lldesarrollo
    If f_activawin(lctituloGestion)
   
@@ -96,10 +97,12 @@ _Screen.visible= .f.  &&.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService
 PUBLIC LcLlaveCf,Pnterminal,pnsucursal,lcClaveTerminal
-
+PUBLIC oConfigTermi,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService
  STORE 0 TO Pnterminal,Pnsucursal
+
+pidsistema = 1
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -127,13 +130,16 @@ IF TYPE('goApp')='O'
 	PcmsgIU  = 'Información al Usuario'
 	PcmsgIP  = 'Información al Programador'
 	   
-	gcicono=lcdd+'help.ico'
+	gcicono=lcdd+'LogoGM_16.ico'
 	LcLlaveCf = SPACE(8)
 	      
 	on error do errorsys
 	           		                          
 	do setup
 	_screen.LockScreen= .t.   &&.f.
+	 
+	 
+	 LeerConfigTermi()
 	 
 	DO directivasfiscal    && en procfiscal.prg
 	DO directivasHasar
@@ -149,6 +155,7 @@ IF TYPE('goApp')='O'
 
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
 
+	stop()
 	*LeerXMLClassID("objetodll.xml")
 
 	   * en proc.prg   
@@ -188,7 +195,7 @@ IF TYPE('goApp')='O'
 *!*		ENDIF 	
 
 	_screen.lockscreen=.t.	
-	_screen.visible=.f.	
+	_screen.visible=.t.	
 	   	 
 	*IF !lldesarrollo	
 		*SET SYSMENU TO
@@ -196,8 +203,8 @@ IF TYPE('goApp')='O'
 		*DO FORM guardaexe
 	*ENDIF 
 		   
-	_screen.visible=.t.	   
-	_screen.lockscreen=.f.
+	*_screen.visible=.t.	   
+	*_screen.lockscreen=.f.
 
 	Read events   	
 ENDIF
