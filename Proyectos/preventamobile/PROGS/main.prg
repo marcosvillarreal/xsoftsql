@@ -161,7 +161,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 
 	goapp.version = "01.00.00"
-	
+	goapp.initcatalo = "pm"
 	PUBLIC  gcicono
 	     
 	PcmsgIU  = 'Información al Usuario'
@@ -251,7 +251,7 @@ IF TYPE('goApp')='O'
 
 	*LeerEjercicioPerfil()
 	
-	DO FORM frmmenu
+	DO FORM frmmenupm
 	DO FORM regproceso
 	   
 	_screen.visible=.t.	   
