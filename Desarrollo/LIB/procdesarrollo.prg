@@ -427,16 +427,16 @@ IF dFechaFac + 15  >= dFechaCert
 	RETURN .T.
 ENDIF 
 
-IF GOMONTH(dFechaFac,1) >= dFechaCert AND DAY(dFechaFac) < 4
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 1 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
-	RETURN .T.
-ENDIF 
+*!*	IF GOMONTH(dFechaFac,1) >= dFechaCert AND DAY(dFechaFac) < 4
+*!*		oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 1 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+*!*		RETURN .T.
+*!*	ENDIF 
 
 
-IF GOMONTH(dFechaFac,2) >= dFechaCert AND DAY(dFechaFac) < 4
-	oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 2 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
-	RETURN .T.
-ENDIF 
+*!*	IF GOMONTH(dFechaFac,2) >= dFechaCert AND DAY(dFechaFac) < 4
+*!*		oavisar.usuario('OBSERVACION'+CHR(13)+CHR(13)+'Contacte a un usuario con permiso, los certificados electronicos venceran en menos de 2 MESES '+CHR(13)+CHR(13)+'PUEDE CONTINUAR')
+*!*		RETURN .T.
+*!*	ENDIF 
 
 
 
