@@ -82,7 +82,7 @@ _screen.lockscreen=.t.
 SET SYSMENU off	
 * _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='help.ico'
+_Screen.icon='laun.ico'
 _screen.picture= 'fondo.jpg'    &&'logoempresa.bmp'
 _Screen.closable=.f.
 IF !lldesarrollo
