@@ -3,147 +3,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  CsrCabeImp
  Alias PARAVARIO registro          5
 Control activo  PARACAE.INIT
@@ -573,7 +432,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -785,7 +646,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -1048,12 +911,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -2050,5 +1915,14 @@ Error La ruta o el nombre de archivo no es válido.
 Linea nº COPY FILE  (cFile)  TO (cPathCopy)
  Alias CSRMENSAJE registro          1
 Control activo  MAIN
-04-07-2022 16:09:25 , Error nº:         13Error No se encuentra el alias 'CSRPARAVARIO'.Linea nº IF nombre='TIMERRETARDO' AND CsrParaVario.importe#0 Alias PARAVARIO registro          4Control activo  REGPROCESO.INIT
-04-07-2022 16:11:58 , Error nº:         13Error No se encuentra el alias 'CSRPARAVARIO'.Linea nº IF nombre='TIMERRETARDO' AND CsrParaVario.importe#0 Alias PARAVARIO registro          4Control activo  REGPROCESO.INIT
+04-07-2022 16:09:25 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº IF nombre='TIMERRETARDO' AND CsrParaVario.importe#0
+ Alias PARAVARIO registro          4
+Control activo  REGPROCESO.INIT
+04-07-2022 16:11:58 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº IF nombre='TIMERRETARDO' AND CsrParaVario.importe#0
+ Alias PARAVARIO registro          4
+Control activo  REGPROCESO.INIT
+04-07-2022 19:01:00 , Error nº:         12Error No se encuentra la variable 'NTABADJUNTO'.Linea nº nTabAdjunto		= IIF(TRIM(nombre)="TABADJUNTO",estado,nTabAdjunto) Alias PARAVARIO registro          1Control activo  MAIN
