@@ -24,7 +24,7 @@ PARAMETERS cNroWhatsapp, cMensaje,cFilePath
      _cliptext = cFilePath
      
      =INKEY(5)
-	FOR i=1 to 10
+	FOR i=1 to 12
 		ox.sendkeys ("{TAB}")
 		WAIT WINDOW ("TAB" + STR(i)) nowait
 		=INKEY(.2)

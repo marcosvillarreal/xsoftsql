@@ -162,7 +162,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 
 	goapp.version = "01.00.00"
-	
+	goapp.nameapp = "gmwapp"
 	PUBLIC  gcicono
 	     
 	PcmsgIU  = 'Información al Usuario'
