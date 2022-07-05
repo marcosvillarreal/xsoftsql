@@ -1,18 +1,3 @@
-
-
-
-
-
- CsrCabeImp
- Alias PARAVARIO registro          5
-Control activo  PARACAE.INIT
-18-03-2016 10:47:00 , Error nº:       1231
-Error Falta algún operando.
-Linea nº select CsrCentroRecep.nombre as nomsucursal From areaneg as CsrCentroRecep where CsrCentroRecep.numero = &goapp.sucursal into cursor csrCentroRecep
- Alias PARAVARIO registro          5
-Control activo  PARACAE.INIT
-18-03-2016 10:48:02 , Error nº:       1231
-Error Falta algún operando.
 Linea nº select nombre as nomsucursal From centrorecep where numero = &goapp.sucursal into cursor csrCentroRecep READWRITE
  Alias PARAVARIO registro          5
 Control activo  PARACAE.INIT
@@ -433,7 +418,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -647,7 +634,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -912,12 +901,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -1925,4 +1916,14 @@ Error No se encuentra el alias 'CSRPARAVARIO'.
 Linea nº IF nombre='TIMERRETARDO' AND CsrParaVario.importe#0
  Alias PARAVARIO registro          4
 Control activo  REGPROCESO.INIT
-04-07-2022 19:01:00 , Error nº:         12Error No se encuentra la variable 'NTABADJUNTO'.Linea nº nTabAdjunto		= IIF(TRIM(nombre)="TABADJUNTO",estado,nTabAdjunto) Alias PARAVARIO registro          1Control activo  MAIN
+04-07-2022 19:01:00 , Error nº:         12
+Error No se encuentra la variable 'NTABADJUNTO'.
+Linea nº nTabAdjunto		= IIF(TRIM(nombre)="TABADJUNTO",estado,nTabAdjunto)
+ Alias PARAVARIO registro          1
+Control activo  MAIN
+05-07-2022 18:45:48 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº COPY FILE  (cFile)  TO (cPathCopy)
+ Alias CSRMENSAJE registro          1
+Control activo  MAIN
+05-07-2022 18:48:20 , Error nº:        202Error La ruta o el nombre de archivo no es válido.Linea nº COPY FILE  (cFile)  TO (cPathCopy) Alias CSRMENSAJE registro          1Control activo  MAIN
