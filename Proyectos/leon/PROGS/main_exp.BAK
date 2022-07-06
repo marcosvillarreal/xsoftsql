@@ -7,7 +7,9 @@
 
 LPARAMETERS oIdPrograma
 
-oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
+&&El 1 es la gestion 
+&&El 2 es el spooler
+oIdprograma = IIF(PCOUNT()<1,"3",oIdprograma)
 
 LOCAL nidprograma
 
@@ -261,7 +263,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	DO CASE
-	CASE VAL(nidprograma)=1
+	CASE VAL(nidprograma)=3
 		goapp.otherformsclose ="GENERA_LASMARIAS"
 		DO FORM genera_lasmarias WITH .t.
 	OTHERWISE
