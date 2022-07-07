@@ -1,0 +1,13 @@
+07-07-2022 13:37:32 , RINDEFLETE.LOAD, Error: El archivo 'csrcaberto.dbf' no existe.;Linea : SELECT CsrCabeRto.*,SPACE(3) as origen, SPACE(30) as planpago,SPACE(10) as sfecha ,CAST(0 as int) as idfleteplan,CAST(0 as int) as idcomproba,SPACE(22) as numcomp,0 as estadotilde ,SPACE(30) as nomzona,' ' as grupo,SPACE(1) as Clasecomp,CAST(0 as int) as idvendedor,SPACE(3) as nomtipoiva ,SPACE(30) as detaEntregado, SPACE(30) as detaReembolso, SPACE(30) as detaFlete ,CAST(0 as n(14,2)) as Saldo ,CAST(0 as n(14,2)) as Afecta ,0 as entregado_ok, 0 as flete_ok, 0 as creembolso_ok, .f. as hayajuste ,SPACE(100) as detaajuste,SPACE(100) as detaajuste_creemb, ajuste as ajuste_total ,CAST(0 as n(14,2)) as comision FROM CsrCabeRto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OV7T02DX.TMP;Ultimo Control activo: 
+07-07-2022 13:37:32 , Pila de llamadas
+07-07-2022 13:37:32 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v3.sct
+07-07-2022 13:37:32 , Objeto      : rindeflete.load
+07-07-2022 13:37:32 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v3.sct
+07-07-2022 13:37:32 , Nº de Linea :          3
+07-07-2022 13:37:32 , En el Fuente: thisform.crearcursor()
+07-07-2022 13:37:32 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v3.sct
+07-07-2022 13:37:32 , Objeto      : rindeflete.crearcursor
+07-07-2022 13:37:32 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v3.sct
+07-07-2022 13:37:32 , Nº de Linea :         15
+07-07-2022 13:37:32 , En el Fuente: SELECT CsrCabeRto.*,SPACE(3) as origen, SPACE(30) as planpago,SPACE(10) as sfecha       ,CAST(0 as int) as idfleteplan,CAST(0 as int) as idcomproba,SPACE(22) as numcomp,0 as estadotilde       ,SPACE(30) as nomzona,' ' as grupo,SPACE(1) as Clasecomp,CAST(0 as int) as idvendedor,SPACE(3) as nomtipoiva       ,SPACE(30) as detaEntregado, SPACE(30) as detaReembolso, SPACE(30) as detaFlete       ,CAST(0 as n(14,2)) as Saldo ,CAST(0 as n(14,2)) as Afecta       ,0 as entregado_ok, 0 as flete_ok, 0 as creembolso_ok, .f. as hayajuste       ,SPACE(100) as detaajuste,SPACE(100) as detaajuste_creemb, ajuste as ajuste_total       ,CAST(0 as n(14,2)) as comision       FROM CsrCabeRto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
+07-07-2022 13:37:32 , Fin
