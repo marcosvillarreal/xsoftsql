@@ -283,6 +283,7 @@ IF TYPE('goApp')='O'
 
 	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
+	LeerSucursal()
 	    
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0

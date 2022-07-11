@@ -198,6 +198,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 
 	goapp.version = "02.00.00"
+	goapp.gmsoft = "comercial"
 	
 	PUBLIC  gcicono
 	     
@@ -254,9 +255,12 @@ IF TYPE('goApp')='O'
 	ENDIF    
 
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
-
-	LeerXMLClassID("objetodll.xml")
-
+	
+	*LeerXMLClassID("objetodll.xml")
+	
+	Grabar_Log('Verificando Licencia') 
+	=  Licencia()
+	
 	 If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
