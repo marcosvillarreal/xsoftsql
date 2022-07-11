@@ -1393,41 +1393,45 @@ ENDFUNC
 
 FUNCTION Licencia
 
-*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
-*!*	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre like 'WINDSTATE' 
-*!*	ENDTEXT 
-*!*	IF NOT CrearCursorAdapter('CsrState',lcCmd)
-*!*		RETURN .f.
-*!*	ENDIF 
-*!*	IF RECCOUNT('CsrState')=0
-*!*		&&Agregamos la licencia con dos meses
-*!*		cCmdText = "INSERT paravario VALUES (1,0,'WINDSTATE',0,0,'Error Critico de Windows',GOMONTH(DATE(),2),0)"
-*!*			  
-*!*		Oca = Ocmd
-*!*		Oca.commandtext = cCmdText
-*!*		Oca.commandtype = 1
+LOCAL cServidor,cInitCatalo,lcConectionStringLocal
 
-*!*		LOCAL loCatchErr As Exception
-*!*		ldebociclar = .t.
-*!*		DO WHILE ldebociclar 
-*!*		   ldebociclar = .f.
-*!*			TRY 
-*!*			  Oca.execute()
-*!*			CATCH TO loCatchErr
-*!*		 	  ldebociclar = .t.
-*!*			ENDTRY   
-*!*		ENDDO 
-*!*		RETURN .T.
-*!*	ENDIF 
+cServidor = goapp.servidor
+cInitCatalo = Goapp.InitCatalo
 
-*!*	&&Si el estado es 1, no se valida los meses
-*!*	IF CsrState.estado = 0
-*!*		&&Validamos la fecha
-*!*		IF TTOD(CsrState.fecha) > DATE()
-*!*			oavisar.usuario("Error Critico de Windows, inconsistencia en la información presentada"+CHR(13)+"COMUNICARSE URGENTEMENTE CON EL PROGRAMADOR")
-*!*			RETURN .F.
-*!*		ENDIF 
-*!*	ENDIF 
+lcConectionStringLocal = LcConectionString
 
+LcConectionString = "Provider=SQLOLEDB.1;Persist Security Info=False;Initial Catalog=gestionweb;";
+			+"Data Source=api.preventamovil.com.ar\sqlexpress,49904;User ID=sa;pwd=pre!Venta11;"
+			
+goapp.servidor = "api.preventamovil.com.ar\sqlexpress,49904"
+Goapp.InitCatalo = "gestionweb"
+
+IF ExisteDSN()  			
+	IF !ConeccionADO()
+		IF lldesarrollo
+			oavisar.usuario('Conexion a licencia no realizada')
+		ENDIF 
+	ENDIF 
+ELSE
+	IF lldesarrollo
+		oavisar.usuario('Conexion a licencia no realizada')
+	ENDIF 
+ENDIF 
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT * FROM Empresa
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrEmpreLicencia',lcCmd)
+	RETURN 
+ENDIF 
+
+SELECT CsrEmpreLicencia
+CursorAdapterToXML('CsrEmpreLicencia',ADDBS(SYS(5)+CURDIR())+"Temporal\Lic.XML")
+
+goapp.servidor = cServidor 
+Goapp.InitCatalo = cInitCatalo
+
+LcConectionString = lcConectionStringLocal
+loConnDataSource.Close()
 
 ENDFUNC 

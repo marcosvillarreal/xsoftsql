@@ -205,6 +205,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	goapp.version = "02.01.00"
+	goapp.gmsoft = "distribuidora"
 	
 	PUBLIC  gcicono
 	     
@@ -239,6 +240,7 @@ IF TYPE('goApp')='O'
    
 	= Fwin32()    && funciones api win32
 	
+	
 	Grabar_Log('Obteniendo conexion a servidor') 
 	 =ObtenerServidor()
 	  
@@ -252,7 +254,10 @@ IF TYPE('goApp')='O'
 	
 	*Marcos 19/12/14 No tiene utilidad esto.
 	*LeerXMLClassID("objetodll.xml")
-
+	
+	Grabar_Log('Verificando Licencia') 
+	=  Licencia()
+	
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
@@ -315,12 +320,12 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	Grabar_Log('Verificando Licencia') 
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		Grabar_Log('Verificando Licencia') 
+*!*		IF NOT lEstadoLicencia 
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 

@@ -86,6 +86,7 @@ If lldesarrollo
     _rutaformimp = lcdd+'forms\importadores'
    _rutaformpm  =lcdd+'forms\pm'
     _rutaformprueba = lcdd+'forms\pruebas'
+    _rutaformpasaje = lcdd+'forms\pasaje'
     
     _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
     _rutaprogs_sureño  =lcdd+'Progs\elsureño'
@@ -96,7 +97,7 @@ If lldesarrollo
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
-               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba, &_rutaformpm
+               ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba, &_rutaformpm,&_rutaformpasaje
                
  ELSE
  	SET CONSOLE OFF     
@@ -204,6 +205,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	goapp.version = "02.01.00"
+	goapp.gmsoft = "distribuidora"
 	
 	PUBLIC  gcicono
 	     
@@ -238,6 +240,7 @@ IF TYPE('goApp')='O'
    
 	= Fwin32()    && funciones api win32
 	
+	
 	Grabar_Log('Obteniendo conexion a servidor') 
 	 =ObtenerServidor()
 	  
@@ -251,7 +254,12 @@ IF TYPE('goApp')='O'
 	
 	*Marcos 19/12/14 No tiene utilidad esto.
 	*LeerXMLClassID("objetodll.xml")
-
+	
+	Grabar_Log('Verificando Licencia') 
+	lEstadoLicencia =  Licencia()
+	
+	stop()
+	
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
@@ -315,7 +323,7 @@ IF TYPE('goApp')='O'
 	LeerEjercicioPerfil()
 	
 	Grabar_Log('Verificando Licencia') 
-	IF NOT Licencia()
+	IF NOT lEstadoLicencia 
 		CANCEL 
 		CLEAR ALL
 		RETURN 
