@@ -1,38 +1,10 @@
- Alias  registro          0
-Control activo  RINDEFLETE.LOAD
-02-12-2020 10:54:16 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONTA'.
-Linea nº SELECT (lCaliasNavega)
- Alias CSRKEY registro          1
-Control activo  ABMPARACON._TEXTBOX1.KEYPRESS
-02-12-2020 10:54:25 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONTA'.
-Linea nº return (&lcAlias)
- Alias CSRKEY registro          1
-Control activo  ABMPARACON.CMDSELECCIONAR.CLICK
-02-12-2020 12:10:32 , Error nº:       1924
-Error LOBJPRECIOACTUAL no es un objeto.
-Linea nº IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
- Alias CSRPRODCTACON registro          1
-Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
-02-12-2020 12:10:36 , Error nº:       1924
-Error LOBJPRECIOACTUAL no es un objeto.
-Linea nº IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
- Alias CSRPRODCTACON registro          1
-Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
-02-12-2020 12:10:40 , Error nº:       1924
-Error LOBJPRECIOACTUAL no es un objeto.
-Linea nº IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
- Alias CSRPRODCTACON registro          1
-Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
-02-12-2020 12:10:50 , Error nº:       1924
-Error LOBJPRECIOACTUAL no es un objeto.
-Linea nº IF lobjPrecioactual.costo#lobjprecio.costo AND lObjPrecioactual.interno = lobjprecio.interno
- Alias CSRPRODCTACON registro          1
-Control activo NUMERO ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE
-02-12-2020 16:28:00 , Error nº:          1
 Error El archivo 'csrcabefac.dbf' no existe.
 Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
+
+
+
+
+
 
 
 
@@ -334,7 +306,17 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
+
+
+
+
 
 
 
@@ -636,6 +618,11 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -787,7 +774,17 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
 
 
 
@@ -1518,6 +1515,11 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
+
+
+
+
 u WHERE idusuariofavorito=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias CSRPOPS registro          1
 Control activo  MAIN
@@ -1525,6 +1527,11 @@ Control activo  MAIN
 15-06-2021 10:48:35 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+
+
+
+
 
 
 
@@ -1683,6 +1690,11 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
+
+
+
+
 u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias  registro          0
 Control activo  MAIN
@@ -1690,6 +1702,11 @@ Control activo  MAIN
 15-06-2021 10:51:52 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+
+
+
+
 
 
 
@@ -1974,6 +1991,11 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
+
+
+
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  MAIN
@@ -1981,6 +2003,11 @@ Control activo  MAIN
 15-10-2021 15:08:01 , Error nº:          1
 Error El archivo 'csrvendedor.dbf' no existe.
 Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from CsrVendedor order by cnumero into cursor _Csr
+
+
+
+
+
 
 
 
@@ -2096,6 +2123,11 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
+
+
+
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  SUBFACTURA.INIT
@@ -2122,6 +2154,11 @@ Control activo  FRMMENU3.INIT
 15-10-2021 18:17:25 , Error nº:          1
 Error El archivo 'favoritos.dbf' no existe.
 Linea nº SELECT sec_codacce, sec_tipoacce ,datamenu.id as idmenu FROM datamenu INNER Join favoritos On datamenu.Id=favoritos.idmenu WHERE favoritos.idperfil=lsPerfilUser AND datamenu.sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'0
+
+
+
+
+
 
 
 
@@ -2369,7 +2406,17 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
+
+
+
+
 024,Campo025 ,Campo026,Campo027,Campo028,Campo029,Campo030 ,Campo031,Campo032,Campo033,Campo034,Campo035 ,Campo036,Campo037 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04
+
+
+
+
+
 
 
 
@@ -2433,7 +2480,17 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
+
+
+
+
 ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
+
+
+
+
+
 
 
 
@@ -2693,3 +2750,41 @@ Control activo  REGSTOCK.GRID2.COLUMN8.TEXT1.WHEN
 12-07-2022 13:04:12 , Verificando OCX
 12-07-2022 13:09:59 , Verificando OCX
 12-07-2022 13:12:36 , Verificando OCX
+14-07-2022 10:23:13 , Verificando OCX
+14-07-2022 11:48:05 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT(lcaliasseek)#0
+ Alias  registro          0
+Control activo  LISTADOMOVBCO.CONTENEDOR1.KITBUSCAOALTAENCTATITULAR.TXTEXISTE1.INIT
+14-07-2022 11:48:27 , Verificando OCX
+14-07-2022 11:48:50 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrCuerpo')#0
+ Alias CSRCOMPROBANTE registro          1
+Control activo  LISTADOMOVBCO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+14-07-2022 11:55:23 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrCuerpo')#0
+ Alias _CSRCOMPROBANTE registro          8
+Control activo  LISTADOMOVBCO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+14-07-2022 11:57:48 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrCuerpo')#0
+ Alias _CSRCOMPROBANTE registro          8
+Control activo  LISTADOMOVBCO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+14-07-2022 11:58:23 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('CsrCuerpo')#0
+ Alias _CSRCOMPROBANTE registro          8
+Control activo  LISTADOMOVBCO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+14-07-2022 13:10:49 , Verificando OCX
+14-07-2022 13:11:24 , Informe por excel
+14-07-2022 13:11:44 , Informe por excel
+14-07-2022 13:11:54 , Informe por excel
+14-07-2022 13:12:19 , Informe por excel
+14-07-2022 13:12:38 , Informe por excel
+14-07-2022 13:12:39 , Version 16.0
+14-07-2022 13:13:54 , Informe por excel
+14-07-2022 13:14:33 , Informe por excel
+14-07-2022 13:16:36 , Informe por excel
+14-07-2022 13:16:36 , Version 16.0
