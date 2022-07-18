@@ -317,12 +317,12 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	Grabar_Log('Verificando Licencia') 
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		Grabar_Log('Verificando Licencia') 
+*!*		IF NOT Licencia()
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
