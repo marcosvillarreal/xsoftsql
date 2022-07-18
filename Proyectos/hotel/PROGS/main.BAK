@@ -212,6 +212,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	goapp.version = "01.00.01"
+	goapp.gmsoft = "hotel"
 	
 	PUBLIC  gcicono
 	     
@@ -261,7 +262,9 @@ IF TYPE('goApp')='O'
 	
 	*Marcos 19/12/14 No tiene utilidad esto.
 	*LeerXMLClassID("objetodll.xml")
-
+	
+	=Licencia()
+	
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
