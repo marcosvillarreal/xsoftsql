@@ -116,201 +116,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
 
 
 
@@ -624,6 +431,7 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
 
 
@@ -781,7 +589,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1524,6 +1334,7 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
 u WHERE idusuariofavorito=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias CSRPOPS registro          1
 Control activo  MAIN
@@ -1531,6 +1342,7 @@ Control activo  MAIN
 15-06-2021 10:48:35 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
 
 
 
@@ -1701,6 +1513,7 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
 u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias  registro          0
 Control activo  MAIN
@@ -1708,6 +1521,7 @@ Control activo  MAIN
 15-06-2021 10:51:52 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
 
 
 
@@ -2004,6 +1818,7 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  MAIN
@@ -2011,6 +1826,7 @@ Control activo  MAIN
 15-10-2021 15:08:01 , Error nº:          1
 Error El archivo 'csrvendedor.dbf' no existe.
 Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from CsrVendedor order by cnumero into cursor _Csr
+
 
 
 
@@ -2138,6 +1954,7 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  SUBFACTURA.INIT
@@ -2164,6 +1981,7 @@ Control activo  FRMMENU3.INIT
 15-10-2021 18:17:25 , Error nº:          1
 Error El archivo 'favoritos.dbf' no existe.
 Linea nº SELECT sec_codacce, sec_tipoacce ,datamenu.id as idmenu FROM datamenu INNER Join favoritos On datamenu.Id=favoritos.idmenu WHERE favoritos.idperfil=lsPerfilUser AND datamenu.sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'0
+
 
 
 
@@ -2423,7 +2241,9 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
 024,Campo025 ,Campo026,Campo027,Campo028,Campo029,Campo030 ,Campo031,Campo032,Campo033,Campo034,Campo035 ,Campo036,Campo037 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04
+
 
 
 
@@ -2499,7 +2319,9 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
 ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
+
 
 
 
@@ -2809,3 +2631,13 @@ Control activo  LISTADOMOVBCO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 14-07-2022 14:50:52 , Version 16.0
 14-07-2022 14:51:43 , Informe por excel
 14-07-2022 14:51:44 , Version 16.0
+20-07-2022 10:17:18 , Verificando OCX
+20-07-2022 10:49:33 , Verificando OCX
+20-07-2022 11:32:10 , Error nº:       1806
+Error SQL: no se encuentra la columna 'CATEGOIVA'.
+Linea nº SELECT CsrCursor.* ,VAL(pelocuit(cuit)) as ncuit ,SPACE(254) as estado, 0 as nestado,categoiva as iva ,0 as correcto ,fecdesde as fecdesdeactual, fechasta as fechastaactual FROM CsrCursor ORDER BY cuit INTO CURSOR CsrImprimir READWRITE
+ Alias CSRCURSOR registro          1
+Control activo  PADRONAFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+20-07-2022 11:33:46 , Informe por excel
+20-07-2022 16:40:18 , Informe por excel
+20-07-2022 16:44:20 , Verificando OCX
