@@ -1429,11 +1429,13 @@ IF lok
 	IF NOT CrearCursorAdapter('CsrEmpreLicencia',lcCmd)
 		RETURN 
 	ENDIF 
-
+	
+	loConnDataSource.Close()
+	
 	SELECT CsrEmpreLicencia
 	CursorAdapterToXML('CsrEmpreLicencia',ADDBS(SYS(5)+CURDIR())+"Temporal\Lic.XML")
 ELSE
-	loConnDataSource.Close()
+	
 ENDIF 
 
 goapp.servidor = cServidor 

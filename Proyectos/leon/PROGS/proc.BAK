@@ -1,40 +1,40 @@
 *------------------------------------------------------------------------------
 FUNCTION OrigenDatos
 PARAMETERS cOrigen
-
+LOCAL cOrigenDeta
 DO CASE 
 CASE cOrigen = 'FAC'  
-	cOrigen = 'facturacion'
+	cOrigenDeta= 'facturacion'
 CASE cOrigen = 'FPE' 
-	cOrigen= 'facturacion notas de pedido'
+	cOrigenDeta= 'facturacion notas de pedido'
 CASE cOrigen = 'PAG'  
-	cOrigen = 'registracion pagos'
+	cOrigenDeta= 'registracion pagos'
 CASE cOrigen = 'COB'  
-	cOrigen = 'registracion cobros'
+	cOrigenDeta= 'registracion cobros'
 CASE cOrigen = 'RFL'  
-	cOrigen = 'rendicion fletero'
+	cOrigenDeta= 'rendicion fletero'
 CASE cOrigen = 'MPU'  
-	cOrigen = 'movimiento publico'
+	cOrigenDeta= 'movimiento publico'
 CASE cOrigen = 'ICA'
-	cOrigen  = 'ingreso caja'
+	cOrigenDeta= 'ingreso caja'
 CASE cOrigen = 'ECA'  
-	cOrigen = 'egreso caja'
+	cOrigenDeta= 'egreso caja'
 CASE cOrigen = 'BCO'  
-	cOrigen = 'registra bancos'
+	cOrigenDeta= 'registra bancos'
 CASE cOrigen = 'CAR'  
-	cOrigen = 'registra cartera'
+	cOrigenDeta= 'registra cartera'
 CASE cOrigen = 'CPR'
-	cOrigen  = 'FACTURACION COMPRA'
+	cOrigenDeta= 'FACTURACION COMPRA'
 CASE cOrigen = 'MOV'  
-	cOrigen = 'Movimientos importados'
+	cOrigenDeta= 'Movimientos importados'
 CASE cOrigen ='AST'  
-	cOrigen = 'Asientos manuales/Cierre/Reversa/etc'
+	cOrigenDeta= 'Asientos manuales/Cierre/Reversa/etc'
 CASE cOrigen = 'CBN'
-	cOrigen  = 'Conciliacionj bancaria'
+	cOrigenDeta= 'Conciliacionj bancaria'
 CASE cOrigen = 'PCA'  
-	cOrigen = 'Pasaje de cartera entre sucursales'
+	cOrigenDeta= 'Pasaje de cartera entre sucursales'
 ENDCASE 
-RETURN cOrigen
+RETURN cOrigenDeta
 ENDFUNC 
 *------------------------------------------------------------------------------
 FUNCTION DataCursor

@@ -1703,7 +1703,7 @@ IF lok
    Goapp.empresaemail			= DefaultVar('CsrEmpresa.email','')
    goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
    goapp.rutaaplicacion			= IIF(EMPTY(goapp.rutaaplicacion),SYS(5)+Curdir(),goapp.rutaaplicacion)
-   goapp.homologado			= NVL(CsrEmpresa.homologado,0)
+   goapp.homologado			= DefaultVar('CsrEmpresa.homologado',0)
   * oavisar.programador(goApp.rutaaplicacion)
 ENDIF
    
