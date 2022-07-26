@@ -1406,8 +1406,12 @@ LcConectionString = "Provider=SQLOLEDB.1;Persist Security Info=False;Initial Cat
 goapp.servidor = "api.preventamovil.com.ar\sqlexpress,49904"
 Goapp.InitCatalo = "gestionweb"
 
-IF ExisteDSN()  			
-	IF !ConeccionADO()
+*stop()
+
+lok = ExisteDSN()
+IF lok			
+	lok = ConeccionADO(.t.)
+	IF NOT lok
 		IF lldesarrollo
 			oavisar.usuario('Conexion a licencia no realizada')
 		ENDIF 
@@ -1418,20 +1422,26 @@ ELSE
 	ENDIF 
 ENDIF 
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT * FROM Empresa
-ENDTEXT 
-IF NOT CrearCursorAdapter('CsrEmpreLicencia',lcCmd)
-	RETURN 
+IF lok
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT * FROM Empresa
+	ENDTEXT 
+	IF NOT CrearCursorAdapter('CsrEmpreLicencia',lcCmd)
+		RETURN 
+	ENDIF 
+	
+	loConnDataSource.Close()
+	
+	SELECT CsrEmpreLicencia
+	CursorAdapterToXML('CsrEmpreLicencia',ADDBS(SYS(5)+CURDIR())+"Temporal\Lic.XML")
+ELSE
+	
 ENDIF 
-
-SELECT CsrEmpreLicencia
-CursorAdapterToXML('CsrEmpreLicencia',ADDBS(SYS(5)+CURDIR())+"Temporal\Lic.XML")
 
 goapp.servidor = cServidor 
 Goapp.InitCatalo = cInitCatalo
 
 LcConectionString = lcConectionStringLocal
-loConnDataSource.Close()
+
 
 ENDFUNC 

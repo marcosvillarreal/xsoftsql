@@ -1794,15 +1794,22 @@ RETURN lreturn
 
 
 FUNCTION ConeccionADO
+LPARAMETERS lLicencia
+
+lLicencia = IIF(PCOUNT()<1,.f.,lLicencia)
 
 Local  loCatchErr As Exception
-
+LOCAL lok, cMensaje
+lok = .t.
+lcMensajeError= ''
 DO case
 	CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
 		loConnDataSource = createobject('ADODB.Connection')
 		loConnDataSource.ConnectionString = LcConectionString
 		loConnDataSource.CommandTimeout = 0    && indefinidamente
-		loConnDataSource.ConnectionTimeout = 60
+		loConnDataSource.ConnectionTimeout = IIF(lLicencia,20,60)
+		
+		lcMensajeError = IIF(llicencia,'','La conexión a la Base de Datos a fallado'+CHR(13) +lcConectionString)
 		
 		TRY 
 			Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
@@ -1817,9 +1824,10 @@ DO case
 			Oavisar.proceso('N')
 		Catch To loCatchErr
 			=Oavisar.proceso('N')	
-			=Oavisar.usuario('La conexión a la Base de Datos a fallado'+CHR(13);
-					+CHR(13)+lcConectionString,0)
-			RETURN .f.
+			IF LEN(LTRIM(lcMensajeError ))<>0
+				oavisar.usuario(lcMensajeError )
+			ENDIF 
+			lok = .f.
 		ENDTRY 
 		                       			                           	  	
 	CASE LcDataSourceType='NATIVE'
@@ -1831,7 +1839,7 @@ DO case
 		ERROR 1429
 ENDCASE
 
-RETURN .t.
+RETURN lok
 
 
 FUNCTION ConeccionODBC
