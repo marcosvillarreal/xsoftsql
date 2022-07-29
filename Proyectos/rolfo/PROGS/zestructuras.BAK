@@ -23,7 +23,7 @@
 
 *!*	 MOVCTACTE.switch		1	1= factura pasada a ctacte en rend.fletero
 *!*							2	1= factura con retencion pagada
-
+*!*							3	1= movimiento automatico de ajuste
 						    
 *!*	NMAOPERA.switch			1	0 = sin facturar 1 = facturado
 *!*								2
@@ -163,5 +163,9 @@
 *!*							   1=ENTREGA EN
 
 *!*	MOVTARJETA.origen		LTA = Liquidacion de tarjetas
+*!*							   	CTA = Cierre de Lotes
+*!*							      vacio o null =  tarjeta
+
+*!*	DCABEFAC.switch			6= Estado del comprobante (0=normal,2=impreso/grabado,1=anulado)
 *!*							   	CTA = Cierre de Lotes
 *!*							      vacio o null =  tarjeta

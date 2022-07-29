@@ -26,6 +26,7 @@
 *!*	 MOVCTACTE.switch			1	1= movimiento por cheque rechazado
 *!*								2	1= factura con retencion pagada
 *!*								3	1= movimiento compactado
+*!*								4	1= movimiento interno automatico
 *!*								5	1= movimiento modificado manualmente por porgramador
 						    
 *!*	NMAOPERA.switch				1	0 = sin facturar 1 = facturado

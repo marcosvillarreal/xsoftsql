@@ -23,7 +23,8 @@
 
 *!*	 MOVCTACTE.switch		1	1= factura pasada a ctacte en rend.fletero
 *!*							2	1= factura con retencion pagada
-
+*!*							3	
+*!*							4	1= movimiento interno automatico
 						    
 *!*	NMAOPERA.switch			1	0 = sin facturar 1 = facturado
 *!*								2
