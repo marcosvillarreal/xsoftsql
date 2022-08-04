@@ -7,7 +7,7 @@
 
 LPARAMETERS oIdPrograma
 
-oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
+oIdprograma = IIF(PCOUNT()<1,"4",oIdprograma)
 
 LOCAL nidprograma
 
@@ -70,11 +70,12 @@ If lldesarrollo
    _rutaformsp  =lcdd+'forms\pedidos'
    _rutaformsc  =lcdd+'forms\caja'
    
+    _rutaformut  =lcdd+'forms\util'
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp
+               ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut  
                
       
 Endif
@@ -260,11 +261,11 @@ IF TYPE('goApp')='O'
 
 *!*		LeerEjercicioPerfil()
 	
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		IF NOT Licencia()
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	DO CASE
 	CASE VAL(nidprograma)=1
