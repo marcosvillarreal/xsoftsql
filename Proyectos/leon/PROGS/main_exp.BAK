@@ -123,7 +123,7 @@ _Screen.closable=.f.
 _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
-PUBLIC lcConectionODBC,lnconectorODBC,oConfigTermi 
+PUBLIC lcConectionODBC,lnconectorODBC,oConfigTermi ,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -258,7 +258,7 @@ IF TYPE('goApp')='O'
 
 *!*		LeerEjercicioPerfil()
 	
-	
+	pidsistema = nidprograma
 	DO CASE
 	CASE VAL(nidprograma)=3
 		goapp.otherformsclose ="GENERA_LASMARIAS"

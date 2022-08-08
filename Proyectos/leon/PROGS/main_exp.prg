@@ -123,7 +123,7 @@ _Screen.closable=.f.
 _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
-PUBLIC lcConectionODBC,lnconectorODBC,oConfigTermi ,pidsistema
+PUBLIC lcConectionODBC,lnconectorODBC,oConfigTermi ,pidsistema, cDirCloseBat
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -133,7 +133,7 @@ Oavisar=CREATEOBJECT('avisar')
 
 Public goapp,ObjReporter
 
-
+cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'closeexp.bat'
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
 
 ObjReporter= CREATEOBJECT("Custom")
