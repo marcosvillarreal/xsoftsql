@@ -176,6 +176,8 @@ IF TYPE('goApp')='O'
 	do setup
 	_screen.LockScreen=.f.
 	
+	LeerConfigTermi()
+	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 
     WAIT WINDOW "Verificando ActiveX instalados ..." nowait

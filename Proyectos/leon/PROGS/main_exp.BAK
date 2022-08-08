@@ -256,11 +256,6 @@ IF TYPE('goApp')='O'
 
 *!*		LeerEjercicioPerfil()
 	
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
 	
 	DO CASE
 	CASE VAL(nidprograma)=3
