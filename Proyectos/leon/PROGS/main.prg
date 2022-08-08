@@ -197,8 +197,9 @@ IF TYPE('goApp')='O'
 	
 	Grabar_Log('Verificando OCX') 
 	
-    WAIT WINDOW "Verificando ActiveX instalados ..." nowait
-    DO Verifica_OCX WITH "Check"
+	oavisar.proceso('S','Registrando Librerias')
+    	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+    	DO Verifica_OCX WITH "Check"
      
 	DO directivasfiscal    && en procfiscal.prg
 	DO directivasHasar
@@ -411,7 +412,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro_16x16.ICO"
+  IconFile      = "pyro.ICO"
   MenuText      = "1;Balloon;2;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Avisos de Pyro - GM Solutions"

@@ -281,7 +281,7 @@ IF TYPE('goApp')='O'
 	
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
-			DO FORM frmmenu
+			DO FORM frmmenu3
 		ELSE 
 			SET CONSOLE OFF 
 			DO FORM frmmenu_DashBoard
@@ -411,7 +411,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro_16x16.ICO"
+  IconFile      = "pyro.ICO"
   MenuText      = "1;Balloon;2;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Avisos de Pyro - GM Solutions"
