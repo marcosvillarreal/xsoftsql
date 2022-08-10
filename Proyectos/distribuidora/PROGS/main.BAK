@@ -256,9 +256,7 @@ IF TYPE('goApp')='O'
 	*LeerXMLClassID("objetodll.xml")
 	
 	Grabar_Log('Verificando Licencia') 
-	lEstadoLicencia =  Licencia()
-	
-	stop()
+	=  Licencia()
 	
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
@@ -322,12 +320,12 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	Grabar_Log('Verificando Licencia') 
-	IF NOT lEstadoLicencia 
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		Grabar_Log('Verificando Licencia') 
+*!*		IF NOT lEstadoLicencia 
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
