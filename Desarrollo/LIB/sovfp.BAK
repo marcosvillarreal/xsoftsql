@@ -57,6 +57,6 @@ FUNCTION getWindowsVersionAndBuildNo()
     ELSE
         messText = "RtlGetVersion - Error: " + ALLTRIM( STR( ret ) )
         
-        MESSAgEBOX( messText, 0 + 16 )    
+        MESSAEGBOX( messText, 0 + 16 )    
     ENDIF
 ENDFUNC
