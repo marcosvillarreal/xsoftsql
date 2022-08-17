@@ -305,7 +305,12 @@ PROCEDURE JSONDecode(pcJSON)
    IF lIsArray
     oResult.Add(uValue)
    ELSE
-    ADDPROPERTY(oResult,cProp,uValue)
+    try
+    	ADDPROPERTY(oResult,cProp,uValue)
+    CATCH TO oError
+       *stop()
+       
+    ENDTRY 
    ENDIF
    *
   ENDFOR
@@ -516,13 +521,13 @@ PROCEDURE JSONEncodeValue(puValue)
   cType = VARTYPE(puValue)
   cJSONValue = "null"
   DO CASE
-*!*	     CASE lIsArray        && Array value
-*!*	          cJSONValue = "["
-*!*	          LOCAL i
-*!*	          FOR i = 1 TO ALEN(puValue,1)
-*!*	           cJSONValue = cJSONValue + IIF(i>1,",","") + JSONEncodeValue(puValue[i])
-*!*	          ENDFOR
-*!*	          cJSONValue = cJSONValue + "]"
+     CASE lIsArray        && Array value
+          cJSONValue = "["
+          LOCAL i
+          FOR i = 1 TO ALEN(puValue,1)
+           cJSONValue = cJSONValue + IIF(i>1,",","") + JSONEncodeValue(puValue[i])
+          ENDFOR
+          cJSONValue = cJSONValue + "]"
      
      CASE cType $ "CM"    && string/char value
           cJSONValue = ['] + puValue + [']

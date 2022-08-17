@@ -305,7 +305,12 @@ PROCEDURE JSONDecode(pcJSON)
    IF lIsArray
     oResult.Add(uValue)
    ELSE
-    ADDPROPERTY(oResult,cProp,uValue)
+    *try
+    	ADDPROPERTY(oResult,cProp,uValue)
+   * CATCH TO oError
+       *stop()
+       
+    *ENDTRY 
    ENDIF
    *
   ENDFOR
