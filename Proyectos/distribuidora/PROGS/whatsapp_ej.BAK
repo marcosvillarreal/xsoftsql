@@ -16,8 +16,8 @@ DECLARE INTEGER ShellExecute IN shell32.dll ;
   *** Carga Whatsapp
   **************************
    *comando='whatsapp://send?phone=542915128797&text=Mensaje%0AWhatsapp%20espa..final...final'
-   *cNroWhatsapp =  '542915128797'
-   *cMensaje = 'Hola Amor'
+   cNroWhatsapp =  '542916436628'
+  cMensaje = '%0AC:\comprobantespdf\RTO X0000100007022.pdf'
    comando='whatsapp://send?phone='+cNroWhatsapp+"&text="+cMensaje+""
   =ShellExecute(0, 'open', Comando,'', '', 1)
   **************************
@@ -48,7 +48,7 @@ DECLARE INTEGER ShellExecute IN shell32.dll ;
 	=INKEY(1)
 	ox.sendkeys ("^{v}")
 	ox.sendkeys ("{ENTER}")
-	ox.sendkeys ("{ENTER}")
+	=INKEY(1)
 	ox.sendkeys ("{ENTER}")
      RETURN .t.
  ELSE 
