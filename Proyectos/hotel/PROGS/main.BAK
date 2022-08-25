@@ -162,7 +162,7 @@ _Screen.visible=.t.
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
-PUBLIC cFileNameLog
+PUBLIC cFileNameLog,cDirCloseBat 
 
 STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -170,6 +170,7 @@ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 pidsistema = 1
 
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
+cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -327,12 +328,12 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	Grabar_Log('Verificando Licencia') 
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		Grabar_Log('Verificando Licencia') 
+*!*		IF NOT Licencia()
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
