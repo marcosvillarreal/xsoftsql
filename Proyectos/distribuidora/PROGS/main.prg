@@ -159,7 +159,7 @@ _Screen.visible=.t.
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
-PUBLIC cFileNameLog
+PUBLIC cFileNameLog,cDirCloseBat 
 
 STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -167,6 +167,7 @@ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 pidsistema = 1
 
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
+cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -471,7 +472,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro.ICO"
+  IconFile      = ADDBS(SYS(5)+CURDIR()) + "pyro.ICO"
   MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
