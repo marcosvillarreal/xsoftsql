@@ -307,6 +307,24 @@ IF TYPE('goApp')='O'
 	
 	_screen.lockscreen=.t.		 
 	*--------------------------   
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
+	ENDTEXT 
+	=CrearCursorAdapter('CsrParaVario',lcCmd)
+	
+	****destino archivos xml
+	*stop()
+	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
+	IF nombre="XML"+strzero(goapp.terminal,4)
+		lcDestinoXML = CsrParaVario.detalle
+
+		goapp.rutasync = lcDestinoXML
+		IF LEN(LTRIM(lcDestinoXML))#0
+			IF !DIRECTORY(lcDestinoXML)
+				MKDIR &lcDestinoXML
+			ENDIF 
+		ENDIF 
+	ENDIF 
 	
 	lnuevomenu = IIF(oConfigTermi.MenuRibbon="TRUE",.t.,.f.)
 	IF NOT lnuevomenu
@@ -527,9 +545,9 @@ DEFINE CLASS WALTER_TIMER AS TIMER
     IF LEN(cVersion)> 0
     	
     	
-	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+	   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =   30000 
