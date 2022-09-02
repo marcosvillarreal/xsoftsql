@@ -2,6 +2,28 @@
 FUNCTION DataCursor
 PARAMETERS cName
 
+DO CASE
+
+CASE UPPER(RTRIM(cName)) = "CONEXION"
+	CREATE CURSOR Conexion (id i, codigo i, aliasconexion c(30), servername c(60), initcatalogo c(60),origendata c(10);
+		,sourcetype c(10), username c(20), pwdname c(20), webservice c(60), pathdatabase c(60);
+		,pwdlen n(2), userlen n(2), idservpedido c(10), passpedido c(50), pmabrevia c(5),switch c(5);
+		,emprename c(20), emprepass c(20), euserlen n(2), epwdlen n(2))
+case upper(rtrim(cName)) = "PARAVARIO"
+	CREATE CURSOR ParaVario (id i, idorigen i, nombre c(30), importe n(14), porce n(8), detalle c(30);
+		,fecha d, estado n(1))
+case upper(rtrim(cName)) = "PERFILES"
+	CREATE CURSOR Perfiles  (id i, nombre c(20), switch c(10))
+case upper(rtrim(cName)) = "SEGURIDAD"
+	CREATE CURSOR Seguridad (id i, idperfil i, idmenu i)
+case upper(rtrim(cName)) = "DATAMENU"
+	CREATE CURSOR Datamenu (id i, sec_codacce c(12), sec_descacce c(20), sec_nivelacce n(1), sec_promptacc c(50);
+		, sec_tipoacce n(1), sec_doacce c(100), sec_keyacce c(10), sec_condacce c(30), sec_fontstyle c(30);
+		,fecha d, sec_picture c(50), switch c(5))
+OTHERWISE
+	RETURN .f.
+ENDCASE
+
 RETURN .f.
 ENDFUNC 
 
@@ -1792,111 +1814,111 @@ ENDIF
    
 RETURN lreturn
 
+*!*	FUNCTION ConeccionADO
+*!*	LPARAMETERS lLicencia
 
-FUNCTION ConeccionADO
-LPARAMETERS lLicencia
+*!*	lLicencia = IIF(PCOUNT()<1,.f.,lLicencia)
 
-lLicencia = IIF(PCOUNT()<1,.f.,lLicencia)
+*!*	Local  loCatchErr As Exception
+*!*	LOCAL lok, cMensaje
+*!*	lok = .t.
+*!*	lcMensajeError= ''
+*!*	DO case
+*!*		CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
+*!*			loConnDataSource = createobject('ADODB.Connection')
+*!*			loConnDataSource.ConnectionString = LcConectionString
+*!*			loConnDataSource.CommandTimeout = 0    && indefinidamente
+*!*			loConnDataSource.ConnectionTimeout = IIF(lLicencia,20,60)
+*!*			
+*!*			lcMensajeError = IIF(llicencia,'','La conexión a la Base de Datos a fallado'+CHR(13) +lcConectionString)
+*!*			
+*!*			TRY 
+*!*				Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
+*!*			CATCH 
+*!*				MESSAGEBOX('Falta definir objeto ocx para oavisar',0)
+*!*				RETURN .f.
+*!*			ENDTRY 
+*!*			
+*!*			TRY 				                              			    
+*!*				loConnDataSource.Open()
+*!*								                        			    
+*!*				Oavisar.proceso('N')
+*!*			Catch To loCatchErr
+*!*				=Oavisar.proceso('N')	
+*!*				IF LEN(LTRIM(lcMensajeError ))<>0
+*!*					oavisar.usuario(lcMensajeError )
+*!*				ENDIF 
+*!*				lok = .f.
+*!*			ENDTRY 
+*!*			                       			                           	  	
+*!*		CASE LcDataSourceType='NATIVE'
+*!*			IF !DBUSED('&LcConectionString')        
+*!*				OPEN DATABASE (LcConectionString) SHARED
+*!*			ENDIF  
+*!*			SET DATABASE TO (LcConectionString)
+*!*		OTHERWISE 
+*!*			ERROR 1429
+*!*	ENDCASE
 
-Local  loCatchErr As Exception
-LOCAL lok, cMensaje
-lok = .t.
-lcMensajeError= ''
-DO case
-	CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
-		loConnDataSource = createobject('ADODB.Connection')
-		loConnDataSource.ConnectionString = LcConectionString
-		loConnDataSource.CommandTimeout = 0    && indefinidamente
-		loConnDataSource.ConnectionTimeout = IIF(lLicencia,20,60)
-		
-		lcMensajeError = IIF(llicencia,'','La conexión a la Base de Datos a fallado'+CHR(13) +lcConectionString)
-		
-		TRY 
-			Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
-		CATCH 
-			MESSAGEBOX('Falta definir objeto ocx para oavisar',0)
-			RETURN .f.
-		ENDTRY 
-		
-		TRY 				                              			    
-			loConnDataSource.Open()
-							                        			    
-			Oavisar.proceso('N')
-		Catch To loCatchErr
-			=Oavisar.proceso('N')	
-			IF LEN(LTRIM(lcMensajeError ))<>0
-				oavisar.usuario(lcMensajeError )
-			ENDIF 
-			lok = .f.
-		ENDTRY 
-		                       			                           	  	
-	CASE LcDataSourceType='NATIVE'
-		IF !DBUSED('&LcConectionString')        
-			OPEN DATABASE (LcConectionString) SHARED
-		ENDIF  
-		SET DATABASE TO (LcConectionString)
-	OTHERWISE 
-		ERROR 1429
-ENDCASE
-
-RETURN lok
+*!*	RETURN lok
 
 
-FUNCTION ConeccionODBC
-*!*	***Evitar que aparezca  la ventana de login
-SQLSETPROP(0,"DispLogin",3)
-lnconectorODBC =SQLSTRINGCONNECT(lcConectionODBC)
-IF lnconectorODBC<0
-	RETURN .f.
-ENDIF 
-RETURN .t.
+*!*	FUNCTION ConeccionODBC
+*!*	*!*	***Evitar que aparezca  la ventana de login
+*!*	SQLSETPROP(0,"DispLogin",3)
+*!*	lnconectorODBC =SQLSTRINGCONNECT(lcConectionODBC)
+*!*	IF lnconectorODBC<0
+*!*		RETURN .f.
+*!*	ENDIF 
+*!*	RETURN .t.
 
-FUNCTION ExisteDSN
+*!*	FUNCTION ExisteDSN
 
-IF LcDataSourceType="NATIVE"
-   RETURN .t.
-ENDIF 
+*!*	IF LcDataSourceType="NATIVE"
+*!*	   RETURN .t.
+*!*	ENDIF 
 
-#define ODBC_ADD_DSN  1    && Agregar Fuente de Datos
-#define ODBC_CONFIG_DSN  2    && Configurar (editar) fuente de datos
-#define ODBC_REMOVE_DSN  3    && Eliminar fuente de datos
-#define ODBC_ADD_SYS_DSN  4    && Agregar un DSN de Sistema
-#define ODBC_CONFIG_SYS_DSN  5    && Configurar un DSN de Sistema
-#define ODBC_REMOVE_SYS_DSN  6    && Eliminar un DSN de Sistema 
-#define vbAPINull          0    &&' NULL Pointer
+*!*	#define ODBC_ADD_DSN  1    && Agregar Fuente de Datos
+*!*	#define ODBC_CONFIG_DSN  2    && Configurar (editar) fuente de datos
+*!*	#define ODBC_REMOVE_DSN  3    && Eliminar fuente de datos
+*!*	#define ODBC_ADD_SYS_DSN  4    && Agregar un DSN de Sistema
+*!*	#define ODBC_CONFIG_SYS_DSN  5    && Configurar un DSN de Sistema
+*!*	#define ODBC_REMOVE_SYS_DSN  6    && Eliminar un DSN de Sistema 
+*!*	#define vbAPINull          0    &&' NULL Pointer
 
-DECLARE LONG SQLConfigDataSource IN ODBCCP32.DLL ;
-LONG hwndParent, LONG fRequest, ;
-STRING lpszDriver, STRING lpszAttributes
+*!*	DECLARE LONG SQLConfigDataSource IN ODBCCP32.DLL ;
+*!*	LONG hwndParent, LONG fRequest, ;
+*!*	STRING lpszDriver, STRING lpszAttributes
 
-  LOCAL intRet, strDriver, strAttributes,lcdns
+*!*	  LOCAL intRet, strDriver, strAttributes,lcdns
 
-  strDriver = "SQL Server"
-  
-  lcdns = STRTRAN(Goapp.servidor,".","_")
-  lcdns = ALLTRIM(LEFT(STRTRAN(lcdns,"\",""),8)) + "_"+ ALLTRIM(LEFT(TRIM(Goapp.InitCatalo),8))
-  
-  strAttributes = "SERVER="+TRIM(Goapp.Servidor )+ Chr(0)
-  strAttributes = strAttributes + "DESCRIPTION="+TRIM(lcDns)+ Chr(0)
-  strAttributes = strAttributes + "DSN="+TRIM(lcDns)  + Chr(0)
-  strAttributes = strAttributes + "DATABASE="+TRIM(Goapp.InitCatalo)  + Chr(0)
-*!*	  strAttributes = strAttributes + "UID="+Goapp.Usuario + Chr(0)
-*!*	  strAttributes = strAttributes + "PWD="+Goapp.Pwd + Chr(0)
-  
-  intRet = SQLConfigDataSource(vbAPINull, ODBC_CONFIG_DSN , strDriver, strAttributes)   
-  
-	IF intRet > 0    
-	      * ya existe el DNS
-	      RETURN .t.      
-	ELSE   
-		intRet = SQLConfigDataSource(vbAPINull, ODBC_ADD_DSN, strDriver, strAttributes)     
-		IF  intRet>0
-			RETURN .t.
-		ELSE 
-			RETURN .f.
-		ENDIF 
-	ENDIF 		
-ENDFUNC 
+*!*	  strDriver = "SQL Server"
+*!*	  
+*!*	  lcdns = STRTRAN(Goapp.servidor,".","_")
+*!*	  lcdns = ALLTRIM(LEFT(STRTRAN(lcdns,"\",""),8)) + "_"+ ALLTRIM(LEFT(TRIM(Goapp.InitCatalo),8))
+*!*	  
+*!*	  strAttributes = "SERVER="+TRIM(Goapp.Servidor )+ Chr(0)
+*!*	  strAttributes = strAttributes + "DESCRIPTION="+TRIM(lcDns)+ Chr(0)
+*!*	  strAttributes = strAttributes + "DSN="+TRIM(lcDns)  + Chr(0)
+*!*	  strAttributes = strAttributes + "DATABASE="+TRIM(Goapp.InitCatalo)  + Chr(0)
+*!*	*!*	  strAttributes = strAttributes + "UID="+Goapp.Usuario + Chr(0)
+*!*	*!*	  strAttributes = strAttributes + "PWD="+Goapp.Pwd + Chr(0)
+*!*	  
+*!*	  intRet = SQLConfigDataSource(vbAPINull, ODBC_CONFIG_DSN , strDriver, strAttributes)   
+*!*	  
+*!*		IF intRet > 0    
+*!*		      * ya existe el DNS
+*!*		      RETURN .t.      
+*!*		ELSE   
+*!*			intRet = SQLConfigDataSource(vbAPINull, ODBC_ADD_DSN, strDriver, strAttributes)     
+*!*			IF  intRet>0
+*!*				RETURN .t.
+*!*			ELSE 
+*!*				RETURN .f.
+*!*			ENDIF 
+*!*		ENDIF 		
+*!*	ENDFUNC 
+
 
 *=======================================================================
 *= Recupera la el ejercicio contable correspondiente a la caja activa
