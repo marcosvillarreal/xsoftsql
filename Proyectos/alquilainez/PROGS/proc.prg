@@ -1343,6 +1343,7 @@ LOCAL lreturn
 lreturn = .f.
 
 IF !OCAlista.CursorFill()
+	stop()
 	IF AERROR(laError) > 0 AND lbCartel 
 		cMensaje = VerErrorSQL(laError[1])
 		=Oavisar.Usuario("Error al obtener datos:";

@@ -115,6 +115,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO ftp.prg ADDITIVE
    SET PROCEDURE TO whatsapp_ej ADDITIVE 
    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+  SET PROCEDURE  TO  SOVfp.prg ADDITIVE
         
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -161,6 +162,7 @@ Oavisar=CREATEOBJECT('avisar')
 
 Public goapp,ObjReporter
 
+DO SYSTEM.APP
 
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
 
@@ -300,17 +302,17 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	Grabar_Log('Verificando Licencia') 
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		Grabar_Log('Verificando Licencia') 
+*!*		IF NOT Licencia()
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
-			DO FORM frmmenu
+			DO FORM frmmenu3
 		ELSE 
 			SET CONSOLE OFF 
 			DO FORM frmmenu_DashBoard
@@ -444,7 +446,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro.ICO"
+  IconFile      = ADDBS(SYS(5)+CURDIR())+"pyro.ICO"
   MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
