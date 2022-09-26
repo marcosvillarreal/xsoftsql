@@ -52,514 +52,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0) as detapiecuota09 ,00 as ProvReba,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,CAST(0 as numeric(1,0)) as ctalogistica,SPACE(13) as proximonro_rto ,SPACE(15) as nrocomplic,SPACE(30) as canalvta,SPACE(50) as filePrint,SPACE(50) as tran
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Control activo:  REGFACPUB.LOAD
 02-09-2022 19:30:26 , Verificando OCX
 02-09-2022 19:30:33 , Acceso al sistema, antes de autenticar
@@ -616,6 +108,10 @@ Control activo:  REGFACPUB.LOAD
 02-09-2022 20:12:11 , Datos de la empresa
 02-09-2022 20:12:17 , Acceso exitoso
 02-09-2022 20:12:38 , Error: No se puede crear el archivo c:\aplicaciones\synctemp\. Linea : COPY FILE (cFile) TO ADDBS(cRutaGrabados ) + cLote Error :       1102 Ultimo Alias Activo: CSRCHEKMAOPE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\
+
+
+
+
 
 
 
@@ -983,6 +479,10 @@ LOCAL\TEMP\0000E3GP01O3.TMP Ultimo Control activo:  MAIN_SYNC
 
 
 
+
+
+
+
 or :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGCTACTE.LOAD
 06-09-2022 10:14:03 , Verificando OCX
 06-09-2022 10:14:05 , Acceso al sistema, antes de autenticar
@@ -991,6 +491,10 @@ or :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo 
 06-09-2022 10:14:07 , Conectado..distribuidorakleja.ddns.net\sql2014,1170
 06-09-2022 10:14:08 , Datos de la empresa
 06-09-2022 10:22:12 , Error: El archivo 'csrcursor.dbf' no existe. Linea : SELECT CsrCursor.*,CAST(0 as n(6,3)) as porce,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as comision ,CAST(0 as n(11,2)) as totcomi FROM CsrCursor ORDER BY idvendedor,idmaop
+
+
+
+
 
 
 
@@ -1308,8 +812,16 @@ era,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias 
 
 
 
+
+
+
+
 .EXCEL.CLICK
 06-09-2022 10:23:34 , Error: No se encuentra el alias 'CSRIMPRMIR'. Linea : replace cobrado WITH red(Cobrado,2) IN CsrImprmir Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00004PHL
+
+
+
+
 
 
 
@@ -1634,6 +1146,10 @@ era,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias 
 
 
 
+
+
+
+
 .TMP Ultimo Control activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 06-09-2022 11:07:25 , Informe por excel
 06-09-2022 11:07:27 , Version 16.0
@@ -1803,7 +1319,15 @@ era,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias 
 
 
 
+
+
+
+
 era,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:         17 CNUMERO DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OYYX00Y7.TMP Ultimo Control activo:  PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1
+
+
+
+
 
 
 
@@ -2114,6 +1638,10 @@ era,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias 
 
 
 
+
+
+
+
  Alias Activo: CSRAUXPAGOS Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EC5L006W.TMP Ultimo Control activo:  SUBCAJATURNO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 09-09-2022 12:22:06 , Verificando OCX
 09-09-2022 12:22:13 , Acceso al sistema, antes de autenticar
@@ -2262,8 +1790,16 @@ era,fechacbro INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias 
 
 
 
+
+
+
+
 :\USERS\MARCO\APPDATA\LOCAL\TEMP\0000UNM100GE.TMP Ultimo Control activo:  REGFACVTA.CMDOPCIONES.CLICK
 09-09-2022 13:17:55 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct no existe o no es válido. Linea : go this.recnoareaini in (lcalias) Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ul
+
+
+
+
 
 
 
@@ -2593,6 +2129,10 @@ timo Control activo:  ON...
 
 
 
+
+
+
+
 o Control activo:  ON... 
 14-09-2022 15:09:31 , Verificando OCX
 14-09-2022 15:09:33 , Acceso al sistema, antes de autenticar
@@ -2615,6 +2155,10 @@ o Control activo:  ON...
 14-09-2022 19:03:55 , Conectado..miguel\sql2005
 14-09-2022 19:03:59 , Datos de la empresa
 14-09-2022 19:18:30 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct no existe o no es válido. Linea : IF lldesarrollo AND llchekform Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultim
+
+
+
+
 
 
 
@@ -2858,6 +2402,10 @@ o Control activo:  ON...
 
 
 
+
+
+
+
           1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000176DL007Y.TMP Ultimo Control activo:  REGFACPUB.CONTENEDORDNI.CMDSALVAR.CLICK
 14-09-2022 19:23:54 , Error: No se encuentra la variable 'LNBASESUBCIVA'. Linea : replace SubtotCiva WITH lnBaseSubSiva  ,lnBaseSubCiva  WITH lnBaseSubCiva ,BaseGra WITH lnBaseGra , BaseIva WITH lnBaseIva Error :         12 Ultimo Alias Activo: CSRAUXCAB
 
@@ -2975,8 +2523,16 @@ o Control activo:  ON...
 
 
 
+
+
+
+
 EFAC Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000176DL00VK.TMP Ultimo Control activo:  REGFACPUB.CONTENEDORDNI.CMDSALVAR.CLICK
 14-09-2022 19:26:54 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct no existe o no es válido. Linea : IF lldesarrollo AND llchekform Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultim
+
+
+
+
 
 
 
@@ -3236,8 +2792,16 @@ o Control activo:  ON...
 
 
 
+
+
+
+
 registro:        200  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MYVD00BR.TMP Ultimo Control activo:  MAIN
 19-09-2022 17:15:05 , Error: El tipo de datos no es válido para esta propiedad. Linea : thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3) Error :       1732 Ultimo Alias Activo:  Ultimo registro:
+
+
+
+
 
 
 
@@ -3443,8 +3007,16 @@ registro:        200  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MYVD00BR.TMP Ul
 
 
 
+
+
+
+
           0  DBF:  Ultimo Control activo:  FRMMENU3.ACTIVATE
 19-09-2022 17:15:09 , Error: El tipo de datos no es válido para esta propiedad. Linea : thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3) Error :       1732 Ultimo Alias Activo:  Ultimo registro:
+
+
+
+
 
 
 
@@ -3646,8 +3218,16 @@ registro:        200  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MYVD00BR.TMP Ul
 
 
 
+
+
+
+
           0  DBF:  Ultimo Control activo:  FRMMENU3.ACTIVATE
 19-09-2022 17:15:14 , Error: El tipo de datos no es válido para esta propiedad. Linea : thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3) Error :       1732 Ultimo Alias Activo:  Ultimo registro:
+
+
+
+
 
 
 
@@ -3845,8 +3425,16 @@ registro:        200  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MYVD00BR.TMP Ul
 
 
 
+
+
+
+
           0  DBF:  Ultimo Control activo:  FRMMENU3.ACTIVATE
 19-09-2022 17:15:57 , Error: El tipo de datos no es válido para esta propiedad. Linea : thisform.lblejercicio.Caption ='Ejercicio :'+STR(Goapp.ejercicio,3)+' Ultimo :'+STR(Goapp.ejercicioactual,3) Error :       1732 Ultimo Alias Activo:  Ultimo registro:
+
+
+
+
 
 
 
@@ -3952,6 +3540,10 @@ registro:        200  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MYVD00BR.TMP Ul
 19-09-2022 17:17:33 , Datos de la empresa
 19-09-2022 17:17:33 , Acceso exitoso
 19-09-2022 17:20:59 , Error: El archivo 'csrexistenc.dbf' no existe. Linea : SELECT CsrExistenc.* FROM CsrExistenc WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxExistenc READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  U
+
+
+
+
 
 
 
@@ -4203,6 +3795,10 @@ ltimo Control activo:  REGPROCESO.INIT
 
 
 
+
+
+
+
 PPDATA\LOCAL\TEMP\0000J18P00MX.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.LOAD
 20-09-2022 14:24:59 , Verificando OCX
 20-09-2022 14:25:03 , Acceso al sistema, antes de autenticar
@@ -4277,8 +3873,16 @@ PPDATA\LOCAL\TEMP\0000J18P00MX.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.LOA
 
 
 
+
+
+
+
 Ultimo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 20-09-2022 14:26:17 , Error: El archivo 'csrctacte.dbf' no existe. Linea : SELECT CsrCtacte.* FROM CsrCtacte INTO CURSOR CsrAuxCtacte READWRITE Error :          1 Ultimo Alias Activo: CSRAUXCATECTACTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPD
+
+
+
+
 
 
 
@@ -4419,7 +4023,15 @@ ATA\LOCAL\TEMP\0000J18P00QC.TMP Ultimo Control activo:  PTOVTA_IMPGESTION.LOAD
 
 
 
+
+
+
+
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
+
+
 
 
 
@@ -4543,7 +4155,15 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
+
+
 
 
 
@@ -4667,7 +4287,15 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
+
+
 
 
 
@@ -4791,7 +4419,15 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
+
+
 
 
 
@@ -4915,7 +4551,15 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
 sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo 
+
+
+
+
 
 
 
@@ -5039,6 +4683,10 @@ Control activo:  REGFACPUB.LOAD
 
 
 
+
+
+
+
 l activo: TOTAL REGFACPUB.GRID2.COLUMN7.TEXT1.WHEN
 20-09-2022 18:07:47 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct no existe o no es válido. Linea :  Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ON... 
 20-09-2022 18:08:12 , Verificando OCX
@@ -5048,6 +4696,10 @@ l activo: TOTAL REGFACPUB.GRID2.COLUMN7.TEXT1.WHEN
 20-09-2022 18:08:19 , Conectado..miguel\sql2019
 20-09-2022 18:08:26 , Datos de la empresa
 20-09-2022 18:13:22 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct no existe o no es válido. Linea : IF lldesarrollo AND llchekform Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultim
+
+
+
+
 
 
 
@@ -5192,8 +4844,16 @@ o Control activo: PARADA ON...
 
 
 
+
+
+
+
 O\APPDATA\LOCAL\TEMP\0000CEFD0189.TMP Ultimo Control activo: TOTAL REGFACPUB.GRID2.COLUMN7.TEXT1.WHEN
 20-09-2022 18:34:08 , Error: No se puede llamar a SetFocus desde un evento When, Valid, RangeHigh o RangeLow. Linea : .grid2.column1.text1.SetFocus Error :       2012 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\MARC
+
+
+
+
 
 
 
@@ -5281,8 +4941,16 @@ O\APPDATA\LOCAL\TEMP\0000CEFD0189.TMP Ultimo Control activo: TOTAL REGFACPUB.GRI
 
 
 
+
+
+
+
 O\APPDATA\LOCAL\TEMP\0000CEFD0189.TMP Ultimo Control activo: TOTAL REGFACPUB.GRID2.COLUMN7.TEXT1.WHEN
 20-09-2022 18:35:40 , Error: No se puede llamar a SetFocus desde un evento When, Valid, RangeHigh o RangeLow. Linea : .grid2.column1.text1.SetFocus Error :       2012 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\MARC
+
+
+
+
 
 
 
@@ -5370,6 +5038,10 @@ O\APPDATA\LOCAL\TEMP\0000CEFD027R.TMP Ultimo Control activo: TOTAL REGFACPUB.GRI
 
 
 
+
+
+
+
 ontrol activo:  ON... 
 20-09-2022 19:06:36 , Verificando OCX
 20-09-2022 19:06:38 , Acceso al sistema, antes de autenticar
@@ -5384,6 +5056,10 @@ ontrol activo:  ON...
 21-09-2022 17:44:16 , Conectado..miguel\sql2019
 21-09-2022 17:44:26 , Datos de la empresa
 21-09-2022 17:49:02 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : cLinea = lcCtacte + cSep + lcCliente + cSep + lcFechaEmi  + cSep + lcCodComp + cSep + lcnumcomproba + cSep  + "0" + cSep + "0" + cSep + STR(nOtrosImpue
+
+
+
+
 
 
 
@@ -5449,6 +5125,10 @@ stos ,14,2) + cSep + STR(lnTotalEX,14,2) + cSep + "0" + cSep + STR(nTotal,14,2) 
 
 
 
+
+
+
+
 Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 21-09-2022 17:54:40 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : cLinea = lcCtacte + cSep + lcCliente + cSep + lcFechaEmi  + cSep + lcCodComp + cSep + lcnumcomproba + cSep  + "0" + cSep + "0" + cSep + STR(nOtrosImpue
 
@@ -5482,7 +5162,15 @@ Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
 stos ,14,2) + cSep + STR(lnTotalEX,14,2) + cSep + "0" + cSep + STR(nTotal,14,2) + cSep + "" + cSep + "" Error :        107 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000UDC9003I.TMP Ultimo 
+
+
+
+
 
 
 
@@ -5582,7 +5270,15 @@ Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
 os ,14,2) + cSep + STR(lnTotalEX,14,2) + cSep + STR(nTotalIVA,14,2) + cSep + STR(nTotal,14,2) + cSep + "" + cSep + "" Error :         12 Ultimo Alias Activo: CSRAUXVTAALICUOTA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000KHS900
+
+
+
+
 
 
 
@@ -5623,8 +5319,16 @@ os ,14,2) + cSep + STR(lnTotalEX,14,2) + cSep + STR(nTotalIVA,14,2) + cSep + STR
 
 
 
+
+
+
+
 ltimo Alias Activo: CSRAUXVENTAS Ultimo registro:         15  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HJPL00M7.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 22-09-2022 09:58:57 , Error: No se encuentra el alias 'CSRAUXVTAALICUOTA'. Linea : SELECT CsrAuxVtaAlicuota Error :         13 Ultimo Alias Activo: CSRCOMPROBAJQ Ultimo registro:          2  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HJPL011C.TMP Ultimo 
+
+
+
+
 
 
 
@@ -5654,8 +5358,16 @@ Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
 Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 22-09-2022 10:00:51 , Error: No se encuentra el alias 'CSRAUXVTAALICUOTA'. Linea : SELECT CsrAuxVtaAlicuota Error :         13 Ultimo Alias Activo: CSRCOMPROBAJQ Ultimo registro:          2  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HJPL014C.TMP Ultimo 
+
+
+
+
 
 
 
@@ -5686,7 +5398,15 @@ Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
+
+
 
 
 
@@ -5708,7 +5428,15 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
+
+
 
 
 
@@ -5730,7 +5458,15 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
+
+
 
 
 
@@ -5752,7 +5488,15 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
+
+
 
 
 
@@ -5774,7 +5518,15 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
+
+
 sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo 
+
+
+
+
 
 
 
@@ -5809,6 +5561,10 @@ Control activo:  REGFACPUB.LOAD
 
 
 
+
+
+
+
 REGFACPUB.CONTENEDORDNI.CMDSALVAR.CLICK
 22-09-2022 15:15:48 , Verificando OCX
 22-09-2022 15:15:53 , Acceso al sistema, antes de autenticar
@@ -5828,4 +5584,21 @@ REGFACPUB.CONTENEDORDNI.CMDSALVAR.CLICK
 22-09-2022 16:14:01 , Verificando Licencia
 22-09-2022 16:14:04 , Conectado..miguel\sql2019
 22-09-2022 16:14:10 , Datos de la empresa
-22-09-2022 16:17:20 , Error: Denegado j:\dgicomprasventas\ventas_30642091359_202209.xls al acceso al archivo. Linea : DELETE FILE (lcArchivos) Error :       1705 Ultimo Alias Activo: CSRCOMPROBAJQ Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00001GY102QM.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+22-09-2022 16:17:20 , Error: Denegado j:\dgicomprasventas\ventas_30642091359_202209.xls al acceso al archivo. Linea : DELETE FILE (lcArchivos) Error :       1705 Ultimo Alias Activo: CSRCOMPROBAJQ Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\
+
+
+
+LOCAL\TEMP\00001GY102QM.TMP Ultimo Control activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+25-09-2022 12:20:46 , Verificando OCX
+25-09-2022 12:20:55 , Acceso al sistema, antes de autenticar
+25-09-2022 12:20:55 , Obteniendo conexion a servidor
+25-09-2022 12:20:56 , Verificando Licencia
+25-09-2022 12:24:42 , Conectado..miguel\sql2019
+25-09-2022 12:24:51 , Datos de la empresa
+25-09-2022 12:31:56 , Verificando OCX
+25-09-2022 12:32:01 , Acceso al sistema, antes de autenticar
+25-09-2022 12:32:02 , Obteniendo conexion a servidor
+25-09-2022 12:32:02 , Verificando Licencia
+25-09-2022 12:32:18 , Conectado..miguel\sql2019
+25-09-2022 12:32:25 , Datos de la empresa
+25-09-2022 12:32:45 , Acceso exitoso
