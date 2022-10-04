@@ -6,7 +6,7 @@ lcData = lcBase
 DO setup
 SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
 SET PROCEDURE  TO  syserror.prg ADDITIVE  
-SET PROCEDURE TO z00_elcoyote ADDITIVE 
+SET PROCEDURE TO z00_hotel_mu ADDITIVE 
 
 SET SAFETY OFF
 
@@ -19,17 +19,17 @@ llok = .t.
 llok = CargarTabla(lcData,'Ctacte',.t.)
 llok = CargarTabla(lcData,'TipoIva')
 *llok = CargarTabla(lcData,'CateCtacte',.t.)
-llok = CargarTabla(lcData,'Barrio',.t.)
-llok = CargarTabla(lcData,'PlanCue')
-llok = CargarTabla(lcData,'Sucursal',.t.)
+*llok = CargarTabla(lcData,'Barrio',.t.)
+*llok = CargarTabla(lcData,'PlanCue')
+*llok = CargarTabla(lcData,'Sucursal',.t.)
 *!*	llok = CargarTabla(lcData,'PadronAfip',.t.)
-llok = CargarTabla(lcData,'CateIBRN',.t.)
-llok = CargarTabla(lcData,'FleteCtacte',.t.)
+*llok = CargarTabla(lcData,'CateIBRN',.t.)
+*llok = CargarTabla(lcData,'FleteCtacte',.t.)
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrCateIbrng.* FROM CateIbrng as CsrCateIbrng
-ENDTEXT 
-=CrearCursorAdapter('CsrCateIbrng',lcCmd)
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT CsrCateIbrng.* FROM CateIbrng as CsrCateIbrng
+*!*	ENDTEXT 
+*!*	=CrearCursorAdapter('CsrCateIbrng',lcCmd)
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -43,20 +43,25 @@ ENDTEXT
 =CrearCursorAdapter('CsrCateCtacte',lcCmd)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrListaPrecio.* FROM ListaPrecio as CsrListaPrecio
+SELECT CsrSexo.* FROM Sexo as CsrSexo
 ENDTEXT 
-=CrearCursorAdapter('CsrListaP',lcCmd)
+=CrearCursorAdapter('CsrSexo',lcCmd)
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrZona.* FROM Zona as CsrZona
-ENDTEXT 
-=CrearCursorAdapter('CsrZona',lcCmd)
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT CsrListaPrecio.* FROM ListaPrecio as CsrListaPrecio
+*!*	ENDTEXT 
+*!*	=CrearCursorAdapter('CsrListaP',lcCmd)
 
-TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrZonaRuta.* ,CsrLocalidad.cpostal FROM ZonaRuta as CsrZonaRuta
-inner join Localidad as CsrLocalidad on CsrZonaRuta.idruta = CsrLocalidad.id
-ENDTEXT 
-=CrearCursorAdapter('CsrZonaRuta',lcCmd)
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT CsrZona.* FROM Zona as CsrZona
+*!*	ENDTEXT 
+*!*	=CrearCursorAdapter('CsrZona',lcCmd)
+
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT CsrZonaRuta.* ,CsrLocalidad.cpostal FROM ZonaRuta as CsrZonaRuta
+*!*	inner join Localidad as CsrLocalidad on CsrZonaRuta.idruta = CsrLocalidad.id
+*!*	ENDTEXT 
+*!*	=CrearCursorAdapter('CsrZonaRuta',lcCmd)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrLocalidad.*,Provincia.codsicore,Provincia.nombre as provincia FROM Localidad as CsrLocalidad
@@ -65,16 +70,8 @@ ENDTEXT
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 SELECT CsrLocalidad
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISCLI02.CSV"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"pax1.CSV"
 =LeerClientes(cArchivo)
-
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"LISPCL.CSV"
-=LeerFletes(cArchivo)
-
-SELECT CsrFlete
-replace ALL CodPostal WITH '8503' FOR VAL(CodPostal)=7101
-*vista()
-*DELETE FROM CsrDeudor WHERE VAL(estado) = 0 &&No importamos los inactivos
 
 
 SELECT distinct codlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,provincia ,SPACE(30) AS Localidad, SPACE(6) as CPostal;
@@ -123,37 +120,31 @@ SET FILTER TO
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
-lnidflete = RecuperarID('CsrFleteCtacte',Goapp.sucursal10)
-
-CREATE CURSOR CsrFleteError (detalle c(250))
-
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
-
 
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
-*nCodigo = 1
-stop()
+nCodigo = 1
+*stop()
 SCAN 
 
-	lnCodigo = VAL(CsrDeudor.codigo)
- 	SELECT CsrCtacte
- 	LOCATE FOR VAL(cnumero) = lnCodigo
- 	IF VAL(cnumero) = lnCodigo
- 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
- 		SELECT CsrDeudor
- 		LOOP 
- 		
- 	ENDIF 
+*!*		lnCodigo = VAL(CsrDeudor.codigo)
+*!*	 	SELECT CsrCtacte
+*!*	 	LOCATE FOR VAL(cnumero) = lnCodigo
+*!*	 	IF VAL(cnumero) = lnCodigo
+*!*	 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
+*!*	 		SELECT CsrDeudor
+*!*	 		LOOP 
+*!*	 		
+*!*	 	ENDIF 
  	
  	SELECT CsrDeudor 
  	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
  			,lnidcateibrng ,lncomision ,lnidlocalidad ,lnidprovincia ,lntipoiva ,lnidcategoria;
 			,lnidplanpago ,lnidcanalvta ,lnsaldoAuto ,lnlista ,lncomision ,lnconvenio,lndctalogistica;
-			,lnbonif1
+			,lnbonif1,lcPasaporte
 	
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
@@ -161,28 +152,26 @@ SCAN
  	IF lnCodigo = 128
  	*	stop()
  	ENDIF 	
- 	nCodigo			= lnCodigo	
- 	*lcReferencia	= ALLTRIM(CsrDeudor.codigo)
- 	lnctadeudor		= 1
+ 	nCodigo		= lnCodigo	
+ 	lnctadeudor	= 1
  	lnidplanpago	= 1100000001 &&Por el momento todos de efectivo	
- 	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1100000001
-	lnlista			= CsrDeudor.codlista
+	*lnlista		= CsrDeudor.codlista
 	
-	IF lnLista > 2
-		SELECT CsrCanalVta
-		LOCATE FOR numero = lnLista
-		
-		lnidcanalvta = CsrCanalVta.id
-		lnLista = 0
-	ENDIF 
+*!*		IF lnLista > 2
+*!*			SELECT CsrCanalVta
+*!*			LOCATE FOR numero = lnLista
+*!*			
+*!*			lnidcanalvta = CsrCanalVta.id
+*!*			lnLista = 0
+*!*		ENDIF 
 	&&Si el cliente tiene otra lista de precio mayor a 2. Entonces le cambiamos el canal de vta
-	SELECT CsrListaP
-	LOCATE FOR numero = lnLista
-	IF numero <> lnLista
-		GO TOP 
-		lnLista = CsrListaP.id
-	ENDIF 
+*!*		SELECT CsrListaP
+*!*		LOCATE FOR numero = lnLista
+*!*		IF numero <> lnLista
+*!*			GO TOP 
+*!*			lnLista = CsrListaP.id
+*!*		ENDIF 
 		
 	&&Localidad
 	
@@ -204,33 +193,32 @@ SCAN
 	DO CASE 
 	CASE cTipoiva = 'C.F' OR cTipoIVA$'CF'
 		lntipoiva = 3		
-	CASE cTipoiva = 'EXE'
+	CASE cTipoiva = 'EX'
 		lntipoiva = 4	
-	CASE cTipoIva = 'RI'
+	CASE cTipoIva = 'I'
 		lnTipoiva = 1
 	OTHERWISE 
 		lntipoiva = 5
 	ENDCASE 
 	
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
+	lcPasaporte	= strtrim(VAL(PeloCuit(CsrDeudor.Cuit)),15)
 	IF lntipoiva<>3
-		lcCuit			= Cuit(lcNroDoc)
-		lcNroDoc		= ''
+		lcCuit			= Cuit(lcPasaporte)
+		lcPasaporte		= ''
 	ENDIF
+	
+	SELECT CsrSexo
+	LOCATE FOR clase=CsrDeudor.sexo
+	lnidsexo = CsrSexo.id
 	
 	SELECT CsrCateCtacte
 	GO TOP 
-	IF ALLTRIM(UPPER(CsrDeudor.tipofac))$'S/F'
-		LOCATE FOR LEFT(switch,1)='1'		
-	ENDIF
-	IF  lntipoiva = 3 &&CF
-		LOCATE FOR LEFT(switch,1)='1'		
-	ENDIF 
 	lnidcategoria = CsrCateCtacte.id
 	
 	lcnumero	= strtrim(nCodigo,8)
 	
-	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
+	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.apellido))) +", "+NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
 	
 	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
   	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
@@ -264,53 +252,58 @@ SCAN
   	&&Tenemos que agregar el otro telefono a observaciones
   	ldfechac	= ctod(CsrDeudor.fecAlta)
   	lcEmail		= LTRIM(CsrDeudor.email)
-  	lcDireDespacho = ALLTRIM(CsrDeudor.DireDespacho)
-  	lnFacEmail = VAL(CsrDeudor.FacEmail)
-	nFleteImporte = CsrDeudor.flete
+  	*lcDireDespacho = ALLTRIM(CsrDeudor.DireDespacho)
+  	*lnFacEmail = VAL(CsrDeudor.FacEmail)
+	*nFleteImporte = CsrDeudor.flete
 	
 	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
 	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho,flete);
+	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1,facemail,cdiredespacho,flete;
+	,idsexo,ocupacion,pasaporte,fecnac);
 	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
 	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
 	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
 	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
-	,lnbonif1,lnFacEmail,lcDireDespacho,nFleteImporte)
+	,lnbonif1,lnFacEmail,lcDireDespacho,nFleteImporte;
+	,lnidsexo,lcocupacion,lcpasaporte,ldfecnac)
 	
 	
-	&&Agregamos el flete por zona del cliente
-	SELECT CsrFlete
-	LOCATE FOR VAL(codigo) = VAL(CsrDeudor.codigo)
-	DO WHILE NOT EOF() AND VAL(codigo) = VAL(CsrDeudor.codigo)
-*!*			SELECT CsrLocalidad
+*!*		&&Agregamos el flete por zona del cliente
+*!*		SELECT CsrFlete
+*!*		LOCATE FOR VAL(codigo) = VAL(CsrDeudor.codigo)
+*!*		DO WHILE NOT EOF() AND VAL(codigo) = VAL(CsrDeudor.codigo)
+*!*	*!*			SELECT CsrLocalidad
+*!*	*!*			LOCATE FOR VAL(cpostal) = VAL(CsrFlete.CodPostal )
+*!*	*!*			lnidruta = CsrLocalidad.id
+*!*			SELECT CsrZonaRuta
 *!*			LOCATE FOR VAL(cpostal) = VAL(CsrFlete.CodPostal )
-*!*			lnidruta = CsrLocalidad.id
-		SELECT CsrZonaRuta
-		LOCATE FOR VAL(cpostal) = VAL(CsrFlete.CodPostal )
-		IF CsrZonaRuta.idzona # 0 
-			SELECT CsrFletectacte
-			APPEND BLANK
-			replace id WITH lnidflete ,idzona WITH CsrZonaRuta.idzona, idctacte WITH lnid, feccorte WITH GOMONTH(DATE(),12*20),;
-					flete WITH CsrFlete.flete
-			lnidflete = lnidflete + 1 
-		ELSE
-			cMensaje = ('Cliente ' + ALLTRIM(CsrDeudor.codigo) + ' Localidad ' + ALLTRIM(CsrFlete.CodPostal) + ' Flete ' + strtrim(CsrFlete.flete,12,2))
+*!*			IF CsrZonaRuta.idzona # 0 
+*!*				SELECT CsrFletectacte
+*!*				APPEND BLANK
+*!*				replace id WITH lnidflete ,idzona WITH CsrZonaRuta.idzona, idctacte WITH lnid, feccorte WITH GOMONTH(DATE(),12*20),;
+*!*						flete WITH CsrFlete.flete
+*!*				lnidflete = lnidflete + 1 
+*!*			ELSE
+*!*				cMensaje = ('Cliente ' + ALLTRIM(CsrDeudor.codigo) + ' Localidad ' + ALLTRIM(CsrFlete.CodPostal) + ' Flete ' + strtrim(CsrFlete.flete,12,2))
 
-			APPEND BLANK IN  CsrFleteError 
-			replace detalle WITH cMensaje IN  CsrFleteError 
-		ENDIF 
-	
-		SELECT CsrFlete
-		SKIP 
-	ENDDO 
+*!*				APPEND BLANK IN  CsrFleteError 
+*!*				replace detalle WITH cMensaje IN  CsrFleteError 
+*!*			ENDIF 
+*!*		
+*!*			SELECT CsrFlete
+*!*			SKIP 
+*!*		ENDDO 
 	lnid = lnid + 1
-	*nCodigo = nCodigo + 1 
+	nCodigo = nCodigo + 1 
 	
 	SELECT CsrDeudor           
 ENDSCAN
+
+SELECT CsrCtacte
+vista()
 
 *!*	SELECT MAX(CAST(cnumero as i)) as codigo FROM CsrCtacte INTO CURSOR CsrMaxNumero READWRITE 
 
@@ -335,10 +328,6 @@ ENDSCAN
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
 
-SELECT CsrFleteError 
-vista()
-SELECT CsrFleteCtacte
-vista()
 
 CLOSE tables
 CLOSE INDEXES
