@@ -192,7 +192,7 @@ FUNCTION Ciudades
 PARAMETERS lcLocalidad,lcProvincia
 LOCAL lcnombre
 lcNombre = lclocalidad
-
+lcLocalidad = STRTRAN(STRTRAN(lcLocalidad," ",""),".","") 
 DO CASE
 CASE lcLocalidad = "CIUDAD ATLANTIDA"
 	lcnombre = "BARRIO CIUDAD ATLANTIDA"
@@ -210,22 +210,31 @@ CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","") $ "PALTA-PUNTAALTA-PATA-"
 	lcnombre = "PUNTA ALTA"
 CASE STRTRAN(STRTRAN(lcLocalidad," ",""),".","")$"BAHIABLANCA-BAHjABLANCA-BBLANCA-BAHÍABLANCA-BAHIABCA"
 	lcnombre = "BAHIA BLANCA"
+CASE  ALLTRIM(UPPER(lcLocalidad))  ="B. BLANCA" .OR. ALLTRIM(UPPER(lcLocalidad))  ="BAHjA BLANCA"
+	lcnombre = "BAHIA BLANCA"
+CASE "BAHABLANCA"$lcLocalidad OR "BAHIBLA"$lcLocalidad OR "BAHÌA"$lcLocalidad
+	lcnombre = "BAHIA BLANCA"	
+CASE "BLACA"$lcLocalidad OR "BLABCA"$lcLocalidad OR "BANCA"$lcLocalidad OR "BAHAI"$lcLocalidad OR "BHI"$lcLocalidad
+	lcnombre = "BAHIA BLANCA"	
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"BUENOSAIRES-CABA-CADEBSAIRES-CAPFEDERAL-CAPITAL-CIUDADBUE-CAPITALFEDERAL-CDAUTONOMABSAIRES-BS"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
-	lcProvincia = "CAPITAL FEDERAL"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
+CASE "CIUDADAUTONOMA"$STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") 
+	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"	
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"CIUDADAUTONOMABUENOSAIRES"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
-	lcProvincia = "CAPITAL FEDERAL"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $"FLORES-"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
-	lcProvincia = "CAPITAL FEDERAL"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
 CASE ALLTRIM(UPPER(lcLocalidad))  = "CAP" .or. ALLTRIM(UPPER(lcLocalidad)) = "CIUDAD BS"  .or. ALLTRIM(UPPER(lcLocalidad)) = "CABA"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
-	lcProvincia = "CAPITAL FEDERAL"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
 CASE "CAPILLADELSE"$STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CAPILLA DEL SEÑOR"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $ "CASEROS"
-	lcnombre = "CASEROS (PDO. 3 DE FEBRERO)"
+	lcnombre = "CASEROS"
 CASE STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","") $ "CIUDADELANORTE"
 	lcnombre = "CIUDADELA"
 CASE "SAGUIER" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -286,8 +295,6 @@ CASE ALLTRIM(UPPER(lcLocalidad)) = "GRAL. CONESA" .OR. ALLTRIM(UPPER(lcLocalidad
 	lcnombre = "GENERAL CONESA"
 CASE "CONESA"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "GENERAL CONESA"
-CASE ALLTRIM(UPPER(lcLocalidad))  = "G.CHAVEZ"
-	lcnombre = "GONALEZ CHAVES"
 CASE  ALLTRIM(UPPER(lcLocalidad))  = "FERREIRA"
 	lcnombre = "FERREYRA"
 CASE  ALLTRIM(UPPER(lcLocalidad))  = "E. ECHEVERRIA"
@@ -302,8 +309,6 @@ CASE  ALLTRIM(UPPER(lcLocalidad))  = "BAL. LAS GRUTAS"
 	lcnombre = "BALNEARIO LAS GRUTAS"
 CASE ALLTRIM(UPPER(lcLocalidad))  = "ARROYITO DULCE"
 	lcnombre = "ARROYO DULCE"
-CASE  ALLTRIM(UPPER(lcLocalidad))  ="B. BLANCA" .OR. ALLTRIM(UPPER(lcLocalidad))  ="BAHjA BLANCA"
-	lcnombre = "BAHIA BLANCA"
 CASE "SAN BLAS"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "BAHIA SAN BLAS"
 CASE ALLTRIM(UPPER(lcLocalidad))  = "SAN BLAS"
@@ -314,7 +319,7 @@ CASE  ALLTRIM(UPPER(lcLocalidad))  ="B.EL CONDOR"  .OR. ALLTRIM(UPPER(lcLocalida
 	lcnombre = "BALNEARIO EL CONDOR"
 CASE  ALLTRIM(UPPER(lcLocalidad)) ="BUENOS AIRES" .OR.ALLTRIM(UPPER(lcLocalidad))  ="BS"
 	lcnombre = "CIUDAD DE BUENOS AIRES"
-	lcProvincia = "CAPITAL FEDERAL"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="C. PATAGONES" .OR. ALLTRIM(UPPER(lcLocalidad))  ="C.PATAGONES"
 	lcnombre = "CARMEN DE PATAGONES"
 CASE  ALLTRIM(UPPER(lcLocalidad))  ="CAPITAL FEDERALPATAGONES"
@@ -337,18 +342,21 @@ CASE  ALLTRIM(UPPER(lcLocalidad))  ="STROEDER" .or. ALLTRIM(UPPER(lcLocalidad)) 
 	lcnombre = "EMPORIO STROEDER"
 CASE ALLTRIM(UPPER(lcLocalidad))  ="VIEMA" .OR. ALLTRIM(UPPER(lcLocalidad))  ="VEDMA"
 	lcnombre = "VIEDMA"
+	lcProvincia = "RIO NEGRO"
 CASE "CAGLIERO"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "CARDENAL CAGLIERO"
 CASE "CONDOR"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "BALNEARIO EL CONDOR"
 CASE "VIEDMA"$ALLTRIM(UPPER(lcLocalidad)) OR "VIDMA"$ALLTRIM(UPPER(lcLocalidad))
 	lcnombre = "VIEDMA"
+	lcProvincia = "RIO NEGRO"
 CASE "RAMOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "RAMOS MEJIA"
 CASE "SANJAV" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN JAVIER"
 CASE "CIUDAD DE BS AS" $ STRTRAN(STRTRAN(lcLocalidad,"-",""),".","")
 	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
 CASE "SAO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN ANTONIO OESTE"
 CASE "SANTONIO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -399,11 +407,17 @@ CASE "ANCHORENA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 CASE "SANTONIOOESTE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN ANTONIO OESTE"  	
 CASE "SANAOESTE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN ANTONIO OESTE"  	
+CASE "SANATONIOOESTE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN ANTONIO OESTE"  		
 CASE "VIILAMAZA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VILLA MAZA"  	
-CASE "CIUDADBUEN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+CASE "CIUDADBUEN" $lcLocalidad OR "BBCA"$lcLocalidad OR "BSAS"$lcLocalidad
 	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
+CASE "CIUDADDEBUENOS" $lcLocalidad OR "CASBAS"$lcLocalidad OR "CASBA"$lcLocalidad
+	lcnombre = "CIUDAD DE BUENOS AIRES"
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"
 CASE "JUNINDLANDES" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "JUNIN DE LOS ANDES"  		
 CASE "JUNINDLOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -432,6 +446,7 @@ CASE "QUEMU" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "QUEMU QUEMU"  		
 CASE "GRALPICO" $ STRTRAN(STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".",""),",","")
 	lcnombre = "GENERAL PICO"  		
+	lcProvincia = 'LA PAMPA'
 CASE "GOBCRESPO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GOBERNADOR CRESPO" 	
 CASE "SANRAFAEL" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -448,24 +463,34 @@ CASE "PAZAHUIN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "PLAZA HUINCUL"
 CASE "GRALFERNANDEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL FERNANDEZ ORO"
-CASE "BARILOCHE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+CASE "BARILOCHE" $lcLocalidad OR "BARILO" $lcLocalidad OR "BARLOCH"$lcLocalidad
 	lcnombre = "SAN CARLOS DE BARILOCHE"
+	lcProvincia = 'NEUQUEN'
+CASE "SCDEBARILOCHE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN CARLOS DE BARILOCHE"
+	lcProvincia = 'NEUQUEN'
 CASE "SANCARLOSDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAN CARLOS DE BARILOCHE"	
+	lcProvincia = 'NEUQUEN'
 CASE "LASGRUTAS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "LAS GRUTAS"
-CASE "SIERAGRANDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "SIERRA GRANDE"		
+CASE "SIERRAGRANDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SIERRA GRANDE"	
+	lcProvincia = "RIO NEGRO"	
 CASE "PATAGONES" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CARMEN DE PATAGONES" 
 CASE "GONZALEZCHAVEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "GONZALES CHAVES" 
+	lcnombre = "ADOLFO GONZALES CHAVES" 
 CASE "CLAROMECO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CLAROMECO" 
 CASE "RETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "RETA" 	
-CASE "CIPOLLETI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+CASE "CIPOLLE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CIPOLLETTI" 	
+	lcProvincia = "RIO NEGRO"
+CASE "CIPPOLE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "CIPOLLETTI" 	
+	lcProvincia = "RIO NEGRO"
 CASE "CUTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CUTRAL CO" 	
 CASE "CULTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -473,7 +498,8 @@ CASE "CULTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 CASE "GRALROCA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL ROCA" 	
 CASE "GUAYMALLEN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "SAN JOSE DE GUAYMALLEN" 	
+	lcnombre = "SAN JOSE DE GUAYMALLEN" 
+	lcProvincia = 'MENDOZA'	
 CASE "BALNEARIOSAUCEGRANDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "SAUCE GRANDE" 
 CASE "CHACICO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -497,6 +523,223 @@ CASE "CHOLE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CHOELE CHOEL" 	
 CASE "NEUQUEN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcProvincia = 'NEUQUEN'
+CASE "NQN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcProvincia = 'NEUQUEN'
+	lcnombre = "NEUQUEN" 		 
+CASE "DESEADO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "PUERTO DESEADO" 		 
+	lcProvincia = 'SANTA CRUZ'
+CASE "ITUZAINGO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "ITUZAINGÓ" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "JUNIN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "JUNÍN" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "MARDEPLATA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "MAR DEL PLATA" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "MORON" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "MORÓN" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "MTEGRANDE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "MONTE GRANDE" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "PIGUE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "PIGUÉ" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "PLOTTIER" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcProvincia = 'NEUQUEN'
+CASE "RANCHO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "RANCHOS" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "RIOCOLORADO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "RÍO COLORADO" 		 
+	lcProvincia = 'RIO NEGRO'
+CASE "RIOGALLEGOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "RÍO GALLEGOS" 		 
+	lcProvincia = 'SANTA CRUZ'
+CASE "PARAN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "PARANÁ" 		 
+	lcProvincia = 'ENTRE RIOS'
+CASE "SSDEJUJUY" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SAN SALVADOR DE JUJUY" 		 
+	lcProvincia = 'JUJUY'
+CASE "BALLESTER" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "VILLA BALLESTER" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "MADRYN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "PUERTO MADRYN" 		 
+	lcProvincia = 'CHUBUT'
+CASE "TRELEW" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "TRELEW" 		 
+	lcProvincia = 'CHUBUT'
+CASE "9DEJULIO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "9 DE JULIO" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "ASCASUBI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "HILARIO ASCASUBI" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "BONZI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "ALDO BONZI" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "BONZI" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "ALDO BONZI" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE ALLTRIM(UPPER(lcLocalidad))  = "G.CHAVEZ"
+	lcnombre = "ADOLFO GONZALES CHAVES"
+CASE "CHAVEZ"$lcLocalidad
+	lcnombre = "ADOLFO GONZALES CHAVES" 		 
+	lcProvincia = 'BUENOS AIRES'	
+CASE "ACHAVEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "ADOLFO GONZALES CHAVES" 		 
+	lcProvincia = 'BUENOS AIRES'	
+CASE "RIVADAVIA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "COMODORO RIVADAVIA" 		 
+	lcProvincia = 'CHUBUT'			
+CASE "STAROSA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "SANTA ROSA" 		 
+	lcProvincia = 'LA PAMPA'		
+CASE "HUDSOLL" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+	lcnombre = "HUDSON" 		 
+	lcProvincia = 'BUENOS AIRES'		
+CASE "KORN" $ lcLocalidad OR "KODEL" $ lcLocalidad
+	lcnombre = "ALEJANDRO KORN" 		 
+	lcProvincia = 'BUENOS AIRES'		
+CASE "ABASTO" $ lcLocalidad
+	lcnombre = "ABASTO" 		 
+	lcProvincia = 'BUENOS AIRES'		
+CASE "ACASSU"$lcLocalidad OR "ACASUS"$lcLocalidad OR "ACAZUZO"$lcLocalidad
+	lcnombre = "ABASTO" 		 
+	lcProvincia = 'BUENOS AIRES'		
+CASE "ADROG" $ lcLocalidad OR "AGROGUE" $ lcLocalidad
+	lcnombre = "ADROGUÉ" 		 
+	lcProvincia = 'BUENOS AIRES'	
+CASE "ALBERDI" $ lcLocalidad OR "ALBERTI" $ lcLocalidad
+	lcnombre = "ALBERTI" 		 
+	lcProvincia = 'BUENOS AIRES'
+CASE "ALLEN" $ lcLocalidad
+	lcnombre = "ALLEN" 		 
+	lcProvincia = 'RIO NEGRO'
+CASE "BROW" $ lcLocalidad 
+	lcnombre = "ALMIRANTE BROWN" 		 
+	lcProvincia = 'BUENOS AIRES'	
+CASE "ARREC" $ lcLocalidad 
+	lcnombre = "ARRECIFES" 		 
+	lcProvincia = 'BUENOS AIRES'	
+CASE "ARROYOSECO" $ lcLocalidad 
+	lcnombre = "ARROYO SECO" 		 
+	lcProvincia = 'SANTA FE'	
+CASE "ASCENCI"$ lcLocalidad 
+	lcnombre = "ASCENSIÓN"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "AVELLAN"$ lcLocalidad OR "AVELLLANEDA"$lcLocalidad
+	lcnombre = "AVELLANEDA"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "BANF"$ lcLocalidad OR "BAND"$lcLocalidad
+	lcnombre = "BANFIELD"
+	lcProvincia = 'BUENOS AIRES'			
+CASE "ALMAGRO"$ lcLocalidad
+	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"	
+CASE "AMEGHINO"$ lcLocalidad 
+	lcnombre = "FLORENTINO AMEGHINO"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "BELGRANO"$ lcLocalidad 
+	lcnombre = "GENERAL BELGRANO"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "BELLAVISTA"$ lcLocalidad 
+	lcnombre = "BELLA VISTA"
+	lcProvincia = 'BUENOS AIRES'			
+CASE "BENAVIDE"$ lcLocalidad 
+	lcnombre = "BENAVÍDEZ"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "BERISO"$lcLocalidad OR "BERIZZO"$lcLocalidad
+	lcnombre = "BERISSO"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "BOLIVAR"$lcLocalidad 
+	lcnombre = "BOLÍVAR"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "BOULOGNE"$lcLocalidad OR "BOULO"$lcLocalidad OR "BULOGNE"$lcLocalidad
+	lcnombre = "BOULOGNE SUR MER"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "BRANDS"$lcLocalidad OR "BRANSEN"$lcLocalidad
+	lcnombre = "BRANDSEN"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "BURAT"$lcLocalidad
+	lcnombre = "MAYOR BURATOVICH"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "BURRACO"$lcLocalidad OR "BURSACO"$lcLocalidad OR "BURZAC"$lcLocalidad OR "BUSTACO"$lcLocalidad
+	lcnombre = "BURZACO"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "BELEN"$lcLocalidad 
+	lcnombre = "BELÉN DE ESCOBAR"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "PRINGLES"$lcLocalidad 
+	lcnombre = "CORONEL PRINGLES"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "SUAREZ"$lcLocalidad 
+	lcnombre = "CORONEL SUAREZ"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "DORREGO"$lcLocalidad 
+	lcnombre = "CORONEL DORREGO"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "CALETA"$lcLocalidad 
+	lcnombre = "CALETA OLIVIA"
+	lcProvincia = 'CHUBUT'	
+CASE "CAMPABNA"$lcLocalidad OR "CAMPANIA"$lcLocalidad 
+	lcnombre = "CALETA OLIVIA"
+	lcProvincia = 'BUENOS AIRES'
+CASE "CANNING"$lcLocalidad 
+	lcnombre = "CANNING"
+	lcProvincia = 'BUENOS AIRES'
+CASE "CAPILLA"$lcLocalidad 
+	lcnombre = "CAPILLA DEL SEÑOR"
+	lcProvincia = 'BUENOS AIRES'
+CASE "CARLOSCASAR"$lcLocalidad OR  "CASERES"$lcLocalidad OR  "CASPRES"$lcLocalidad OR "CASARES"$lcLocalidad
+	lcnombre = "CARLOS CASARES"
+	lcProvincia = 'BUENOS AIRES'
+CASE "TEJEDOR"$lcLocalidad OR  "TESEROR"$lcLocalidad 
+	lcnombre = "CARLOS TEJEDOR"
+	lcProvincia = 'BUENOS AIRES'
+CASE "CARMEN"$lcLocalidad 
+	lcnombre = "CARMEN DE PATAGONES"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "CASTEL"$lcLocalidad 
+	lcnombre = "CASTELAR"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "CATRIEL"$lcLocalidad 
+	lcnombre = "CATRIEL"
+	lcProvincia = 'RIO NEGRO'			
+CASE "CATRILO"$lcLocalidad 
+	lcnombre = "CATRILO"
+	lcProvincia = 'LA PAMPA'	
+CASE "CAÑUELA"$lcLocalidad 
+	lcnombre = "CAÑUELAS "
+	lcProvincia = 'BUENOS AIRES'	
+CASE "CHASCOMUS"$lcLocalidad OR "CHASCOMU"$lcLocalidad
+	lcnombre = "CHASCOMUS"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "CHIVILCOY"$lcLocalidad OR "CHIVIL"$lcLocalidad
+	lcnombre = "CHIVILCOY"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "CHOELE"$lcLocalidad 
+	lcnombre = "CHOELE-CHOEL"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "CHUBUT"$lcLocalidad 
+	lcnombre = "TRELEW"
+	lcProvincia = 'CHUBUT'	
+CASE "CINCO SALTOS"$lcLocalidad 
+	lcnombre = "CINCO SALTOS"
+	lcProvincia = 'CHUBUT'	
+CASE "CINCO SALTOS"$lcLocalidad 
+	lcnombre = "CINCO SALTOS"
+	lcProvincia = 'CHUBUT'	
+CASE "CITY BELL"$lcLocalidad 
+	lcnombre = "CITY BELL"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "CIUDAD EVITA"$lcLocalidad 
+	lcnombre = "CIUDAD EVITA"
+	lcProvincia = 'BUENOS AIRES'	
+						
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161
