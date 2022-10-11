@@ -102,7 +102,7 @@ SELECT COUNT(*) as clientes,SPACE(6) as nada, codlocalidad,UPPER(localidad) as n
  FROM CsrDeudor ;
  LEFT JOIN CsrProvincia ON CsrDeudor.codprovincia = CsrProvincia.letracpostal;
  WHERE LEN(RTRIM(localidad))>0;
- ORDER BY CsrProvincia.nombre, CsrDeudor.localidad;
+ ORDER BY CsrDeudor.localidad,CsrProvincia.nombre;
  group by codlocalidad,localidad,codpostal,codprovincia,Csrprovincia.nombre;
  INTO CURSOR CsrCiudad READWRITE 
 
@@ -110,8 +110,9 @@ SELECT COUNT(*) as clientes,SPACE(6) as nada, codlocalidad,UPPER(localidad) as n
 SELECT CsrCiudad
 *vista()
 SCAN 
-	IF "CASEROS"$ALLTRIM(UPPER(CsrCiudad.nombre))
-	*	stop()
+	IF "UELAS"$ALLTRIM(UPPER(CsrCiudad.nombre))
+		vista()
+		stop()
 	ENDIF 
 	IF VAL(CsrCiudad.CodPostal) = 7513
 	*	stop()
@@ -133,7 +134,7 @@ SCAN
 			
 			replace cpostal WITH CsrCiudad.codpostal IN CsrCiudad
 		ENDIF 
-		replace idlocalidad WITH CsrLocalidad.id,idprovincia WITH CsrLocalidad.idprovincia in CsrCiudad
+		replace idlocalidad WITH CsrLocalidad.id,provincia WITH CsrLocalidad.provincia in CsrCiudad
 	ELSE
 		replace estado WITH 'Z' IN CsrCiudad
 	ENDIF 

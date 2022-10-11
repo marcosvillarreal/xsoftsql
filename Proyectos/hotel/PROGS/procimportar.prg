@@ -488,7 +488,7 @@ CASE "RETA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 CASE "CIPOLLE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "CIPOLLETTI" 	
 	lcProvincia = "RIO NEGRO"
-CASE "CIPPOLE" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+CASE "CIPPOLE" $lcLocalidad OR "CIPOLE" $lcLocalidad
 	lcnombre = "CIPOLLETTI" 	
 	lcProvincia = "RIO NEGRO"
 CASE "CUTRALCO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -593,7 +593,7 @@ CASE "CHAVEZ"$lcLocalidad
 CASE "ACHAVEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "ADOLFO GONZALES CHAVES" 		 
 	lcProvincia = 'BUENOS AIRES'	
-CASE "RIVADAVIA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+CASE "RIVADAVIA" $ lcLocalidad OR "CRIVAD" $ lcLocalidad
 	lcnombre = "COMODORO RIVADAVIA" 		 
 	lcProvincia = 'CHUBUT'			
 CASE "STAROSA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -638,7 +638,7 @@ CASE "AVELLAN"$ lcLocalidad OR "AVELLLANEDA"$lcLocalidad
 CASE "BANF"$ lcLocalidad OR "BAND"$lcLocalidad
 	lcnombre = "BANFIELD"
 	lcProvincia = 'BUENOS AIRES'			
-CASE "ALMAGRO"$ lcLocalidad
+CASE "ALMAGRO"$ lcLocalidad OR "CABALLITO"$lcLocalidad
 	lcProvincia = "CIUDAD AUTONOMA DE BUENOS AIRES"	
 CASE "AMEGHINO"$ lcLocalidad 
 	lcnombre = "FLORENTINO AMEGHINO"
@@ -670,7 +670,7 @@ CASE "BURAT"$lcLocalidad
 CASE "BURRACO"$lcLocalidad OR "BURSACO"$lcLocalidad OR "BURZAC"$lcLocalidad OR "BUSTACO"$lcLocalidad
 	lcnombre = "BURZACO"
 	lcProvincia = 'BUENOS AIRES'		
-CASE "BELEN"$lcLocalidad 
+CASE "BELEN"$lcLocalidad OR "ESCOBAR"$lcLocalidad
 	lcnombre = "BELÉN DE ESCOBAR"
 	lcProvincia = 'BUENOS AIRES'	
 CASE "PRINGLES"$lcLocalidad OR "PRIBLES"$lcLocalidad OR "PRINGLER"$lcLocalidad OR "PRNGLES"$lcLocalidad
@@ -682,7 +682,7 @@ CASE "SUAREZ"$lcLocalidad OR "SUEAREZ"$lcLocalidad OR "SUEREZ"$lcLocalidad OR "S
 CASE "DORREGO"$lcLocalidad 
 	lcnombre = "CORONEL DORREGO"
 	lcProvincia = 'BUENOS AIRES'	
-CASE "CALETA"$lcLocalidad 
+CASE "CALETA"$lcLocalidad OR "COLIVIA"$lcLocalidad
 	lcnombre = "CALETA OLIVIA"
 	lcProvincia = 'CHUBUT'	
 CASE "CAMPABNA"$lcLocalidad OR "CAMPANIA"$lcLocalidad 
@@ -713,7 +713,7 @@ CASE "CATRILO"$lcLocalidad
 	lcnombre = "CATRILO"
 	lcProvincia = 'LA PAMPA'	
 CASE "CAÑUELA"$lcLocalidad 
-	lcnombre = "CAÑUELAS "
+	lcnombre = "CAÑUELAS"
 	lcProvincia = 'BUENOS AIRES'	
 CASE "CHASCOMUS"$lcLocalidad OR "CHASCOMU"$lcLocalidad
 	lcnombre = "CHASCOMUS"
@@ -765,7 +765,77 @@ CASE "GENERAL PICO"$lcLocalidad
 	lcProvincia = 'LA PAMPA'	
 CASE "GENERAL ROCA"$lcLocalidad 
 	lcnombre = "GENERAL ROCA"
-	lcProvincia = 'RIO NEGRO'		
+	lcProvincia = 'RIO NEGRO'	
+CASE "CAÑUELA"$lcLocalidad OR "CAÃ‘UELA"$lcLocalidad OR "CANUELA"$lcLocalidad
+	lcnombre = "CAÑUELAS"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "CENTENARIO"$lcLocalidad 
+	lcnombre = "CENTENARIO"
+	lcProvincia = 'NEUQUEN'		
+CASE "DELVISO"$lcLocalidad 
+	lcnombre = "DEL VISO"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "ELPALOMAR"$lcLocalidad OR "ELPALMAR"$lcLocalidad
+	lcnombre = "EL PALOMAR"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "ELTALAR"$lcLocalidad 
+	lcnombre = "EL TALAR"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "ENSENA"$lcLocalidad OR "ENCENA"$lcLocalidad
+	lcnombre = "ENSENADA"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "EZPELETA"$lcLocalidad OR "EZPECE"$lcLocalidad OR "EZPOLE"$lcLocalidad
+	lcnombre = "EZPELETA"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "VARELA"$lcLocalidad 
+	lcnombre = "FLORENCIO VARELA"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "FLORIDA"$lcLocalidad 
+	lcnombre = "FLORIDA"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "FUNES"$lcLocalidad 
+	lcProvincia = 'BUENOS AIRES'	
+CASE "GARÍN"$lcLocalidad OR "GARIN"$lcLocalidad 
+	lcnombre = "GARÍN"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "GODOY"$lcLocalidad 
+	lcnombre = "GODOY CRUZ"
+	lcProvincia = 'MENDOZA'		
+CASE "GONET"$lcLocalidad OR "GONNET"$lcLocalidad OR "GOMMET"$lcLocalidad
+	lcnombre = "MANUEL BERNARDO GONNET"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "CATAN"$lcLocalidad 
+	lcnombre = "GONZÁLEZ CATÁN"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "ALVEAR"$lcLocalidad 
+	lcnombre = "GENERAL ALVEAR"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "MADRID"$lcLocalidad 
+	lcnombre = "GENERAL LA MADRID"
+	lcProvincia = 'BUENOS AIRES'		
+CASE "MADARIAGA"$lcLocalidad 
+	lcnombre = "GENERAL JUAN MADARIAGA"
+	lcProvincia = 'BUENOS AIRES'			
+CASE "PACHECO"$lcLocalidad 
+	lcnombre = "GENERAL PACHECO"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "RODRIGUEZ"$lcLocalidad 
+	lcnombre = "GENERAL RODRIGUEZ"
+	lcProvincia = 'BUENOS AIRES'	
+CASE "ALPACHIRI"$lcLocalidad 
+	lcnombre = "ALPACHIRI"
+	lcProvincia = 'LA PAMPA'		
+CASE "ALTA GRACIA"$lcLocalidad 
+	lcnombre = "ALTA GRACIA"
+	lcProvincia = 'CORDOBA'	
+CASE "CBA"$lcLocalidad  AND lcProvincia="CORDOBA"
+	lcnombre = "CORDOBA"
+	lcProvincia = 'CORDOBA'		
+CASE "CHAJAR"$lcLocalidad 
+	lcnombre = "CHAJARÍ   "
+	lcProvincia = 'ENTRE RIOS'		
+	
+		
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161
