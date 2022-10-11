@@ -121,10 +121,10 @@ SCAN
 
 	
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)),@lcProvincia)
-	
+	lcLocalidadBuscada = QuitarAcentos(lcLocalidadBuscada)
 	SELECT CsrLocalidad
 	
-	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada &&AND ALLTRIM(provincia) = lcProvincia 
+	LOCATE FOR QuitarAcentos(ALLTRIM(nombre)) = lcLocalidadBuscada &&AND ALLTRIM(provincia) = lcProvincia 
 	
 	IF CsrLocalidad.id#0
 		replace localidad WITH lcLocalidadBuscada,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad

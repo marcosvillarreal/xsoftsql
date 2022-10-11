@@ -834,8 +834,58 @@ CASE "CBA"$lcLocalidad  AND lcProvincia="CORDOBA"
 CASE "CHAJAR"$lcLocalidad 
 	lcnombre = "CHAJARÍ   "
 	lcProvincia = 'ENTRE RIOS'		
-	
-		
+CASE "EL BOLSON"$lcLocalidad 
+	lcnombre = "EL BOLSÓN"
+	lcProvincia = 'NEUQUEN'			
+CASE "EMPEDRADO"$lcLocalidad 
+	lcProvincia = 'CORRIENTES'			
+CASE "ESPERANZA"$lcLocalidad 
+	lcProvincia = 'SANTA FE'			
+CASE "FERNANDEZORO"$lcLocalidad 
+	lcProvincia = 'RIO NEGRO'	
+	lcnombre = "GENERAL FERNANDEZ ORO"		
+CASE "GAIMAN"$lcLocalidad OR "GALMAN"$lcLocalidad 
+	lcProvincia = 'CHUBUT'	
+	lcnombre = "GAIMAN"
+CASE "GOYA"$lcLocalidad 
+	lcProvincia = 'CORRIENTES'	
+CASE "HURLINGAN"$lcLocalidad OR "HURLINGAM"$lcLocalidad 
+	lcnombre = "HURLINGHAM"	
+CASE "MASCHWITZ"$lcLocalidad OR "MASCHKTIZ"$lcLocalidad 
+	lcnombre = "INGENIERO MASCHWITZ"	
+CASE "WHITE"$lcLocalidad 
+	lcnombre = "INGENIERO WHITE"	
+CASE "CASANOVA"$lcLocalidad 
+	lcnombre = "ISIDRO CASANOVA"
+CASE "ITUZAING"$lcLocalidad 
+	lcnombre = "ITUZAINGÓ"	
+CASE "JOSECPAZ"$lcLocalidad 
+	lcnombre = "JOSÉ CLEMENTE PAZ"		
+CASE "LUCILA"$lcLocalidad 
+	lcnombre = "LA LUCILA"		
+CASE "LAFERRERE"$lcLocalidad OR "LAFERRE"$lcLocalidad
+	lcnombre = "GREGORIO DE LAFERRERE"	
+CASE "HERAS"$lcLocalidad
+	lcnombre = "GENERAL LAS HERAS"	
+CASE "LUISBELTR"$lcLocalidad
+	lcnombre = "LUIS BELTRÁN"
+CASE "NDECUYO"$lcLocalidad
+	lcnombre = "LUJÁN DE CUYO"	
+CASE "MAIP"$lcLocalidad
+	lcnombre = "MAIPÚ"	
+CASE "MARDEAJ"$lcLocalidad
+	lcnombre = "MAR DE AJÓ"	
+CASE "MAIP"$lcLocalidad
+	lcnombre = "MAIPÚ"	
+CASE "MDP"$lcLocalidad OR "MDQ"$lcLocalidad
+	lcnombre = "MAR DEL PLATA"		
+CASE "TILLY"$lcLocalidad OR "TILLI"$lcLocalidad
+	lcnombre = "RADA TILLY"		
+CASE "ROCA"$lcLocalidad 
+	lcnombre = "GENERAL ROCA"
+CASE "SANNICOLAS"$lcLocalidad 
+	lcnombre = "SAN NICOLÁS DE LOS ARROYOS"
+			
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161

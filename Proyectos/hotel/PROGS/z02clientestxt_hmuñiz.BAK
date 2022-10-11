@@ -111,8 +111,8 @@ SELECT CsrCiudad
 *vista()
 SCAN 
 	IF "UELAS"$ALLTRIM(UPPER(CsrCiudad.nombre))
-		vista()
-		stop()
+		*vista()
+		*stop()
 	ENDIF 
 	IF VAL(CsrCiudad.CodPostal) = 7513
 	*	stop()
