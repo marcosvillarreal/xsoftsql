@@ -232,8 +232,8 @@ IF TYPE('goApp')='O'
 	
 	Grabar_Log('Verificando OCX') 
 	
-    WAIT WINDOW "Verificando ActiveX instalados ..." nowait
-    DO Verifica_OCX WITH "Check"
+    	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+    	DO Verifica_OCX WITH "Check"
     
 	Grabar_Log('Acceso al sistema, antes de autenticar') 
 	 
