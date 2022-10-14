@@ -204,11 +204,10 @@ SCAN
 		
 	&&Localidad
 	
-	lcProvincia = ALLTRIM(UPPER(CsrDeudor.provincia))	
-	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)),@lcProvincia)
-	
+	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)),@lcProvincia)
+	lcLocalidadBuscada = QuitarAcentos(lcLocalidadBuscada)
 	SELECT CsrCiudad
-	LOCATE FOR ALLTRIM(nombre) = alltrim(CsrDeudor.localidad) AND ALLTRIM(provincia) = ALLTRIM(CsrDeudor.provincia)
+	LOCATE FOR QuitarAcentos(ALLTRIM(nombre)) = lcLocalidadBuscada &&AND ALLTRIM(provincia) = lcProvincia 
 	IF CsrCiudad.idlocalidad # 0 
 		lnidlocalidad	= CsrCiudad.idlocalidad
 	ENDIF
