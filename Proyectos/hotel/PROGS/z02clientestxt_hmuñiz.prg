@@ -158,8 +158,9 @@ GO TOP
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
 nCodigo = 1
-*stop()
-SCAN 
+lCancelar = .t.
+stop()
+SCAN FOR nCodigo < 50000 OR lCancelar
 
 *!*		lnCodigo = VAL(CsrDeudor.codigo)
 *!*	 	SELECT CsrCtacte
@@ -204,7 +205,7 @@ SCAN
 		
 	&&Localidad
 	
-	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)),@lcProvincia)
+	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.localidad)),@lcProvincia)
 	lcLocalidadBuscada = QuitarAcentos(lcLocalidadBuscada)
 	SELECT CsrCiudad
 	LOCATE FOR QuitarAcentos(ALLTRIM(nombre)) = lcLocalidadBuscada &&AND ALLTRIM(provincia) = lcProvincia 
