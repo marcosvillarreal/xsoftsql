@@ -159,8 +159,8 @@ LOCAL nCodigo,cCadeCtacte
 cCadeCtacte = ''
 nCodigo = 1
 lCancelar = .t.
-stop()
-SCAN FOR nCodigo < 50000 OR lCancelar
+*stop()
+SCAN FOR nCodigo < 10000 AND lCancelar
 
 *!*		lnCodigo = VAL(CsrDeudor.codigo)
 *!*	 	SELECT CsrCtacte

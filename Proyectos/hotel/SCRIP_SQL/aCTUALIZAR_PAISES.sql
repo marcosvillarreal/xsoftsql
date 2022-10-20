@@ -1,0 +1,75 @@
+use hotel_mu
+go
+
+----update ctacte set idpais= 1100000003 where cuit = '50-00000209-4'
+----update ctacte set idpais= 1100000005 where cuit = '55-00000204-5'
+----update ctacte set idpais= 1100000004 where cuit = 	'50-00000405-4'
+----update ctacte set idpais= 1100000006 where cuit = 	'50-00000423-2'
+----update ctacte set idpais= 1100000007 where cuit = 	'50-00000499-2'
+----update ctacte set idpais= 1100000008 where cuit = 	'55-00000001-8'
+----update ctacte set idpais= 1100000009 where cuit = 	'55-00000002-6'
+----update ctacte set idpais= 1100000010 where cuit = 	'55-00000003-4'
+----update ctacte set idpais= 1100000011 where cuit = 	'55-00000004-2'
+----update ctacte set idpais= 1100000012 where cuit = 	'55-00000005-0'
+----update ctacte set idpais= 1100000013 where cuit = 	'55-00000131-6'
+----update ctacte set idpais= 1100000014 where cuit = 	'55-00000134-0'
+----update ctacte set idpais= 1100000015 where cuit = 	'55-00000158-8'
+----update ctacte set idpais= 1100000016 where cuit = 	'55-00000171-5'
+----update ctacte set idpais= 1100000017 where cuit = 	'55-00000205-3'
+----update ctacte set idpais= 1100000018 where cuit = 	'55-00000211-8'
+----update ctacte set idpais= 1100000019 where cuit = 	'55-00000212-6'
+----update ctacte set idpais= 1100000020 where cuit = 	'55-00000213-4'
+
+----update ctacte set idpais= 1100000021 where cuit = 	'55-00000215-0'
+----update ctacte set idpais= 1100000022 where cuit = 	'55-00000217-7'
+----update ctacte set idpais= 1100000023 where cuit = 	'55-00000218-5'
+----update ctacte set idpais= 1100000024 where cuit = 	'55-00000219-3'
+----update ctacte set idpais= 1100000025 where cuit = 	'55-00000220-7'
+----update ctacte set idpais= 1100000026 where cuit = 	'55-00000221-5'
+----update ctacte set idpais= 1100000027 where cuit = 	'55-00000222-3'
+----update ctacte set idpais= 1100000028 where cuit = 	'55-00000226-6'
+----update ctacte set idpais= 1100000029 where cuit = 	'55-00000232-0'
+
+----update ctacte set idpais= 1100000030 where cuit = 	'55-00000233-9'
+----update ctacte set idpais= 1100000032 where cuit = 	'55-00000239-8'
+----update ctacte set idpais= 1100000033 where cuit = 	'55-00000242-8'
+----update ctacte set idpais= 1100000034 where cuit = 	'55-00000287-8'
+----update ctacte set idpais= 1100000035 where cuit = 	'55-00000309-2'
+----update ctacte set idpais= 1100000036 where cuit = 	'55-00000310-6'
+----update ctacte set idpais= 1100000037 where cuit = 	'55-00000320-3'
+----update ctacte set idpais= 1100000038 where cuit = 	'55-00000324-6'
+----update ctacte set idpais= 1100000039 where cuit = 	'55-00000325-4'
+----update ctacte set idpais= 1100000040 where cuit = 	'55-00000350-5'
+
+----update ctacte set idpais= 1100000041 where cuit = 	'55-00000354-8'
+----update ctacte set idpais= 1100000042 where cuit = 	'55-00000401-3'
+----update ctacte set idpais= 1100000043 where cuit = 	'55-00000406-4'
+----update ctacte set idpais= 1100000044 where cuit = 	'55-00000409-9'
+----update ctacte set idpais= 1100000045 where cuit = 	'55-00000410-2'
+----update ctacte set idpais= 1100000047 where cuit = 	'55-00000411-0'
+----update ctacte set idpais= 1100000048 where cuit = 	'55-00000412-9'
+----update ctacte set idpais= 1100000049 where cuit = 	'55-00000413-7'
+----update ctacte set idpais= 1100000050 where cuit = 	'55-00000414-5'
+
+--update ctacte set idpais= 1100001002 where cuit = 	'55-00000415-3'
+--update ctacte set idpais= 1100001003 where cuit = 	'55-00000422-6'
+--update ctacte set idpais= 1100000006 where cuit = 	'55-00000423-4'
+--update ctacte set idpais= 1100001004 where cuit = 	'55-00000424-2'
+--update ctacte set idpais= 1100001005 where cuit = 	'55-00000425-0'
+--update ctacte set idpais= 1100001006 where cuit = 	'55-00000426-9'
+--update ctacte set idpais= 1100001007 where cuit = 	'55-00000427-7'
+--update ctacte set idpais= 1100001008 where cuit = 	'55-00000429-3'
+--update ctacte set idpais= 1100001009 where cuit = 	'55-00000430-7'
+--update ctacte set idpais= 1100001010 where cuit = 	'55-00000438-2'
+
+--update ctacte set idpais= 1100001011 where cuit = 	'55-00000442-0'
+--update ctacte set idpais= 1100001012 where cuit = 	'55-00000504-4'
+--update ctacte set idpais= 1100001013 where cuit = 	'55-00000601-6'
+--update ctacte set idpais= 1100001014 where cuit = 	'55-00000604-0'
+--update ctacte set idpais= 1100001015 where cuit = 	'55-00000605-9'
+
+select distinct replace(cuit,'-','') as ccuit from ctacte where left(cuit,1)='5' and idpais=0 order by ccuit
+
+select distinct 'update ctacte set idpais= 110000101 where cuit = ',cuit  from ctacte where left(cuit,1)='5' and idpais=0 order by cuit
+
+
