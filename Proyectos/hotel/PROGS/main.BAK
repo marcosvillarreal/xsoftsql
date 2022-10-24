@@ -199,6 +199,9 @@ ObjReserva.AddProperty("idhabit",0)
 ObjReserva.AddProperty("idreserva",0)
 ObjReserva.AddProperty("fecha_in",DATE())
 ObjReserva.AddProperty("fecha_out",DATE())
+ObjReserva.AddProperty("idreserva_ant",0)
+ObjReserva.AddProperty("Titular1","")
+ObjReserva.AddProperty("Titular2","")
 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
@@ -479,7 +482,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro.ICO"
+  IconFile      = ADDBS(SYS(5)+CURDIR())+"pyro.ICO"
   MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Ejemplo de un programa en la barra de tareas del Windows"

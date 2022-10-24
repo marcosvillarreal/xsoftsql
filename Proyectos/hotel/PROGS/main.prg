@@ -199,6 +199,9 @@ ObjReserva.AddProperty("idhabit",0)
 ObjReserva.AddProperty("idreserva",0)
 ObjReserva.AddProperty("fecha_in",DATE())
 ObjReserva.AddProperty("fecha_out",DATE())
+ObjReserva.AddProperty("idreserva_ant",0)
+ObjReserva.AddProperty("Titular","")
+ObjReserva.AddProperty("Titular_ant","")
 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
