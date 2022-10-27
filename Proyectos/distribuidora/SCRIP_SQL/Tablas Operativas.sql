@@ -1,4 +1,4 @@
-use almacen1810
+use nuevasirena7
 go
 
 delete from movstock
@@ -49,5 +49,7 @@ delete from ctacte_2
 delete from cotizadolar
 delete from padronafip
 delete from cabedeta
-execute actualizarid 1
+delete from extmaopera
+
+execute actualizarid 7
 select * from keysid order by nextid desc
