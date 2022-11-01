@@ -233,7 +233,7 @@ IF TYPE('goApp')='O'
 	Grabar_Log('Verificando OCX') 
 	
     	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
-    	DO Verifica_OCX WITH "RegALL"
+    	DO Verifica_OCX WITH "Check"
     
 	Grabar_Log('Acceso al sistema, antes de autenticar') 
 	 
@@ -351,11 +351,11 @@ IF TYPE('goApp')='O'
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 
-		IF oConfigTermi.MenuDashBoard='FALSE'
-			DO FORM frmmenu3
-		ELSE 
+		*IF oConfigTermi.MenuDashBoard='FALSE'
+		*	DO FORM frmmenu3
+		*ELSE 
 			DO FORM frmmenu_DashBoard
-		ENDIF 
+		*ENDIF 
 		IF goapp.openfac = 1
 			DO FORM regfacpub
 		ENDIF 
