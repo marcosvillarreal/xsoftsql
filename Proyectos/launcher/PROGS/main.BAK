@@ -82,7 +82,7 @@ _screen.lockscreen=.t.
 SET SYSMENU off	
 * _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='help.ico'
+_Screen.icon='laun.ico'
 _screen.picture= 'fondo.jpg'    &&'logoempresa.bmp'
 _Screen.closable=.f.
 IF !lldesarrollo
@@ -123,14 +123,14 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.00"
+	goapp.version = "02.00.00"
 	
 	PUBLIC  gcicono
 	     
 	PcmsgIU  = 'Información al Usuario'
 	PcmsgIP  = 'Información al Programador'
 	   
-	gcicono=lcdd+'LogoGM_16.ico'
+	gcicono=lcdd+'Launch.ico'
 	LcLlaveCf = SPACE(8)
 	      
 	on error do errorsys
