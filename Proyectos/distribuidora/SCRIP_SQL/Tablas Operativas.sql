@@ -1,4 +1,4 @@
-use nuevasirena7
+use nuevasirena5
 go
 
 delete from movstock
@@ -13,7 +13,6 @@ delete from movcaja
 delete from movbcocar
 delete from movbcodeta
 delete from movtarjeta
-delete from producto
 delete from subproducto
 delete from existenc
 delete from cabeord
@@ -22,9 +21,6 @@ delete from cuervariord
 delete from cuercpra
 delete from cuervaricpra
 delete from cabecpra
-delete from ctacte
-delete from bonictacte
-delete from bonirubrocate
 delete from bonirubro
 delete from prodctacon
 delete from cbioprecio
@@ -51,5 +47,5 @@ delete from padronafip
 delete from cabedeta
 delete from extmaopera
 
-execute actualizarid 7
+execute actualizarid 5
 select * from keysid order by nextid desc
