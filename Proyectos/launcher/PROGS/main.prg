@@ -76,6 +76,10 @@ Set classlib to aplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB TO odata ADDITIVE 
    SET CLASSLIB TO _reportlistener.vcx ADDITIVE 
    
+    SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+   SET PROCEDURE  TO  SOVfp.prg ADDITIVE
+   
 *clear all
 
 _screen.lockscreen=.t.
