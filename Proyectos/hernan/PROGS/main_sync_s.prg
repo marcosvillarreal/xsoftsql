@@ -250,7 +250,8 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
-	DO FORM frmlogin1 WITH .t.
+	*DO FORM frmlogin1 WITH .t.
+	Goapp.switchperfil = "00000"
 	
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
