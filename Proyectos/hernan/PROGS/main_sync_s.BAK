@@ -284,7 +284,7 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu_xml
 	
-	DO FORM regproceso_sync
+	DO FORM regproceso_sync2
 	
 	Read events   
 ENDIF
