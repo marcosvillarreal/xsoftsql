@@ -1,4 +1,7 @@
 
+FUNCTION CargarTabla
+ENDFUNC 
+*-----------------------------------------------------------------
 FUNCTION DataCursor
 PARAMETERS cName
 

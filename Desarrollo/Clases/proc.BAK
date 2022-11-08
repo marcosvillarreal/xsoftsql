@@ -21,7 +21,7 @@ case upper(rtrim(cName)) = "DATAMENU"
 		, sec_tipoacce n(1), sec_doacce c(100), sec_keyacce c(10), sec_condacce c(30), sec_fontstyle c(30);
 		,fecha d, sec_picture c(50), switch c(5))
 case upper(rtrim(cName)) = "PARACONFIG"
-	CREATE CURSOR ParaConfig  (sistema c(30), path c(200), grupo c(50), nrosistema i)
+	CREATE CURSOR ParaConfig  (sistema c(30), path c(200), grupo c(50), nrosistema i,pathupdateexe c(200), filelogo c(100))
 OTHERWISE
 	RETURN .f.
 ENDCASE
