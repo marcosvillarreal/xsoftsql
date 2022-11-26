@@ -1,16 +1,27 @@
 use kleja
+
 go
----Los clientes que mas le deben a Carlos
-select c.cnumero,c.cnombre,c.cuit,f.debe,f.haber,f.saldo from (select mo.idctacte
-,sum((case when t.debehaber='D' then t.importe else 0 end)) as debe
-,sum((case when t.debehaber='H' then t.importe else 0 end)) as haber
-,sum(t.importe * (case when t.debehaber='D' then 1  else -1 end)) as saldo
-from maopera as m
-inner join movctacte as mo on m.id = mo.idmaopera
-inner join cabeasi as casto on m.id = casto.idmaopera
-inner join tablaasi as t on m.id = t.idmaopera
-where casto.idejercicio <= 1100000033 and t.tablaori='MOCT'
-and m.origen in ('COB','FAC','FPE')
-group by mo.idctacte) as f
-left join ctacte as c on f.idctacte = c.id
-order by f.saldo desc
+select idctacte,ctacte,cnombre,cuit,sum(afecta) as afecta from 
+(select ma.numcomp,mo.fecha,mo.ctacte, isnull(afe.importe,mo.total)* afemo.signo as afecta,afemo.fecha as fechamov,mo.idctacte 
+,c.cnombre, c.cuit
+from maopera as ma
+inner join movctacte as mo on ma.id = mo.idmaopera
+inner join ctacte as c on mo.idctacte = c.id
+left join afectacte as afe on mo.id = afe.idhaber and mo.idmaopera = afe.idmaoperah
+left join movctacte as afemo on afe.iddebe = afemo.id and afe.idmaoperad = afemo.idmaopera
+left join maopera as afema on afemo.idmaopera = afema.id
+where ma.origen in ('COB') and mo.fecha  >= '20220701' and isnull(afemo.fecha,mo.fecha) < '20220701'
+and ma.clasecomp='D' and afema.clasecomp in ('A','B','C','U')) as recibos
+group by idctacte,ctacte,cnombre,cuit
+union all
+select idctacte,ctacte,cnombre,cuit,sum(afecta) as afecta from (
+select ma.numcomp,mo.fecha,mo.ctacte, mo.saldo*mo.signo as afecta,mo.fecha as fechamov,mo.idctacte  
+,c.cnombre, c.cuit
+from maopera as ma
+inner join movctacte as mo on ma.id = mo.idmaopera
+inner join ctacte as c on mo.idctacte = c.id
+inner join cabefac as ca on ma.id = ca.idmaopera
+where mo.fecha < '20220701' and  mo.saldo <> 0 and ma.clasecomp in ('A','B','C','U')
+) as fac
+group by idctacte,ctacte,cnombre,cuit
+order by afecta desc
