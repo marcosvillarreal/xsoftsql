@@ -1,62 +1,29 @@
-FUNCTION b32_2_char( intVal )    && convert Binary 32 Bit (= 4 Byte) to VFP STRING
-    LOCAL intLo
-    LOCAL intHi
-    LOCAL charVal
-    
-    intLo = INT( intVal % 65536 )
-    intHi = INT( intVal / 65536 )
-    
-    charVal = CHR( INT( intLo % 256 ) );
-            + CHR( INT( intLo / 256 ) );
-            + CHR( INT( intHi % 256 ) );
-            + CHR( INT( intHi / 256 ) )
-            
-    RETURN charVal
-ENDFUNC
-FUNCTION char_2_b32( charVal )    && convert VFP STRING to Binary 32 Bit (= 4 Byte)
-    LOCAL lenVal
-    LOCAL b32Val
-    
-    lenVal = LEN( charVal )
-    
-    IF lenVal != 4
-        messText = "Error: char_2_b32!"
-        
-        MESSAGEBOX( messText, 0 + 16 )
-        
-        RETURN 0
-    ENDIF
-    
-    b32Val = ASC( SUBSTR( charVal, 1, 1 ) );
-           + ASC( SUBSTR( charVal, 2, 1 ) ) * 256;
-           + ASC( SUBSTR( charVal, 3, 1 ) ) * 256 * 256;
-           + ASC( SUBSTR( charVal, 4, 1 ) ) * 256 * 256 * 256
-           
-    RETURN b32Val
-ENDFUNC
+*!*	DECLARE  INTEGER FindWindow IN WIN32API STRING , STRING  
+*!*	DECLARE  INTEGER SetForegroundWindow IN WIN32API INTEGER  
+*!*	DECLARE  INTEGER  ShowWindow  IN WIN32API INTEGER , INTEGER 
+*!*	DECLARE INTEGER ShellExecute IN shell32.dll ; 
+*!*	  INTEGER hndWin, ; 
+*!*	  STRING cAction, ; 
+*!*	  STRING cFileName, ; 
+*!*	  STRING cParams, ;  
+*!*	  STRING cDir, ; 
+*!*	  INTEGER nShowWin
 
-FUNCTION getWindowsVersionAndBuildNo()
-    LOCAL osVersionInfo
-    LOCAL majorVer
-    LOCAL minorVer
-    LOCAL buildNo
-    LOCAL ret
-    
-    osVersionInfo = b32_2_char( 148 ) + SPACE( 144 )    && Initialize osVersionInfo structure with size=148 = 4+144
-    
-    DECLARE INTEGER RtlGetVersion IN NTDLL.DLL;
-            STRING @osVersionInfo
-            
-    ret = RtlGetVersion( @osVersionInfo )
-    
-    IF ret = 0x00000000
-        majorVer = char_2_b32( SUBSTR( osVersionInfo, 5, 4 ) )    && 5 is offset, 4 is size in osVersionInfo structure
-        minorVer = char_2_b32( SUBSTR( osVersionInfo, 9, 4 ) )    && 9 is offset, 4 is size in ...
-        buildNo  = char_2_b32( SUBSTR( osVersionInfo, 13, 4 ) )    && 13 is ...
-        MESSAGEBOX("majorVer:"+STR(majorVer) +"   minorVer:"+STR(minorVer) +"   buildNo:"+STR(buildNo) ,0,'')
-    ELSE
-        messText = "RtlGetVersion - Error: " + ALLTRIM( STR( ret ) )
-        
-        MESSAEGBOX( messText, 0 + 16 )    
-    ENDIF
-ENDFUNC
+stop()
+
+oS = CREATEOBJECT('_ShellExecute')
+Comando = "megasync"
+lhwnd = 0
+n = 0
+DO WHILE n<10 AND lhwnd =0
+	*k=ShellExecute(0, 'open', Comando,'', '', 1)
+	k=oS.ShellExecute(Comando,'','open', 1)
+ 	 **************************
+  	WAIT "" TIMEOUT 3
+  	lt = "Whatsapp"  
+  	lhwnd = FindWindow (0, lt)  
+  	n = n + 1 
+  ENDDO 
+  IF lhwnd = 0
+  	oavisar.usuario('La aplicacion de Escritorio no se pudo iniciar')
+  ENDIF 
