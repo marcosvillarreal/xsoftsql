@@ -80,7 +80,7 @@ DO WHILE NOT EOF()
 			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
 			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLocalidad)))
 			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcTelefono)))			
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcCodCateIVA)))
+			lcTipoIVA	= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTipoIVA)))
 			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDocumento)))
 						
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
@@ -166,7 +166,7 @@ leiunarticulo = .f.
 SKIP 
 *STOP()
 SCAN 
-	lnCantCampo = 8 &&Hay un campo vacio
+	lnCantCampo = 5 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -198,16 +198,13 @@ SCAN
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodRubro)))
-			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcRubro)))
-			lcUniBulto		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcUniBulto)))
-			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcUniVenta)))
+			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
 			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
-			lcCosto			= "0"
+			lcCosto			= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcNombre)))
 			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
 			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
 			

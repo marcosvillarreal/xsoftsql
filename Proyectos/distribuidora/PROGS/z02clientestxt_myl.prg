@@ -52,7 +52,7 @@ cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
 =LeerClientes(cArchivo)
 
 SELECT CsrDeudor
-*vista()
+vista()
 
 *DELETE FROM CsrDeudor WHERE VAL(estado) = 0 &&No importamos los inactivos
 
@@ -100,7 +100,8 @@ SCAN
 	ELSE
 		LOCATE FOR VAL(cpostal) = 7500 &&TresArroyos
 		IF id#0
-			replace localidad WITH CsrLocalidad.nombre,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
+			*replace localidad WITH CsrLocalidad.nombre,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
+			replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
 		ENDIF 
 	ENDIF 
 	SELECT CsrCiudad
@@ -124,19 +125,19 @@ GO TOP
 
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
-*nCodigo = 1
+nCodigo = 1
 *stop()
 SCAN 
 
-	lnCodigo = CsrDeudor.idorigen
- 	SELECT CsrCtacte
- 	LOCATE FOR VAL(cnumero) = lnCodigo
- 	IF VAL(cnumero) = lnCodigo
- 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
- 		SELECT CsrDeudor
- 		LOOP 
- 		
- 	ENDIF 
+*!*		lnCodigo = CsrDeudor.idorigen
+*!*	 	SELECT CsrCtacte
+*!*	 	LOCATE FOR VAL(cnumero) = lnCodigo
+*!*	 	IF VAL(cnumero) = lnCodigo
+*!*	 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
+*!*	 		SELECT CsrDeudor
+*!*	 		LOOP 
+*!*	 		
+*!*	 	ENDIF 
  	
  	SELECT CsrDeudor 
  	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
@@ -148,7 +149,7 @@ SCAN
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  	
- 	nCodigo			= lnCodigo	
+*!*	 	nCodigo			= lnCodigo	
  	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
@@ -173,7 +174,7 @@ SCAN
 		
 	&&Localidad
 	SELECT CsrCiudad
-	LOCATE FOR VAL(CodLocalidad) = VAL(CsrDeudor.codlocalidad)
+	LOCATE FOR UPPER(nombre) = upper(CsrDeudor.localidad)
 	lnidlocalidad	= CsrCiudad.idlocalidad
 	
 	*lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
@@ -188,8 +189,8 @@ SCAN
 	
 	
 	&&TresPImp	
-	cTipoiva	= UPPER(CsrDeudor.lcTipoIVA)
-	lnTipoiva = 5
+	cTipoiva	= UPPER(CsrDeudor.TipoIVA)
+	
 	DO CASE 
 	CASE "FINAL"$cTipoiva &&CF
 		lntipoiva = 3		
@@ -198,7 +199,7 @@ SCAN
 	CASE "INSCRIPTO"$cTipoiva&&RI
 		lnTipoiva = 1
 	OTHERWISE 
-		lntipoiva = CsrDeudor.Codcateiva
+		lntipoiva = 5
 	ENDCASE 
 	
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
@@ -215,7 +216,7 @@ SCAN
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
 	
 	IF nCodigo = 19
-		stop()
+	*	stop()
 	ENDIF 
 	
 	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
@@ -278,7 +279,7 @@ SCAN
 	
 	
 	lnid = lnid + 1
-	*nCodigo = nCodigo + 1 
+	nCodigo = nCodigo + 1 
 	
 	SELECT CsrDeudor           
 ENDSCAN
