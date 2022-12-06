@@ -193,6 +193,8 @@ PARAMETERS lcLocalidad
 LOCAL lcnombre
 lcNombre = lclocalidad
 
+lclocalidad = STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
+
 DO CASE
 CASE lcLocalidad = "CIUDAD ATLANTIDA"
 	lcnombre = "BARRIO CIUDAD ATLANTIDA"
@@ -474,7 +476,14 @@ CASE "GENERALCAMPOS" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","
 CASE "VILLADOMINICO" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "VILLA DOMINICO" 
 CASE "LAADELA" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
-	lcnombre = "LA ADELA" 		 	 
+	lcnombre = "LA ADELA" 		
+CASE "GARMA" $lcLocalidad
+	lcnombre = "DE LA GARMA" 		 	 
+CASE "TRES" $ lcLocalidad
+	lcnombre = "TRES ARROYOS" 	
+CASE "FRANCIS" $ lcLocalidad
+	lcnombre = "SAN FRANCISCO DE BELLOCQ" 		
+	
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161
