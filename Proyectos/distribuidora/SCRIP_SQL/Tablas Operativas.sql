@@ -1,4 +1,4 @@
-use nuevasirena5
+use myl
 go
 
 delete from movstock
@@ -47,5 +47,5 @@ delete from padronafip
 delete from cabedeta
 delete from extmaopera
 
-execute actualizarid 5
+execute actualizarid 1
 select * from keysid order by nextid desc
