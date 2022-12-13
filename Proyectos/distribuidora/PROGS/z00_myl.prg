@@ -166,7 +166,7 @@ leiunarticulo = .f.
 SKIP 
 *STOP()
 SCAN 
-	lnCantCampo = 5 &&Hay un campo vacio
+	lnCantCampo = 6 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -205,6 +205,7 @@ SCAN
 			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
 			lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
+			lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
 			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
 			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
 			

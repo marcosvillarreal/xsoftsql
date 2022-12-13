@@ -204,7 +204,7 @@ SCAN
 			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
 			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
-			lcCosto			= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcNombre)))
+			lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
 			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
 			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
 			
