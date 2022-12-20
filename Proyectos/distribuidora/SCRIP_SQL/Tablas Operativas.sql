@@ -1,6 +1,6 @@
-use myl
+use nuevasirena9
 go
-
+--delete from detanrocaja
 delete from movstock
 delete from cuerfac
 delete from tablaimp
@@ -31,7 +31,7 @@ delete from anmaopera
 delete from alertas
 delete from prodcodbarra
 delete from gestion
-delete from detanrocaja
+
 delete from fleteren
 delete from seguridad
 delete from ctactectacon
@@ -46,6 +46,11 @@ delete from cotizadolar
 delete from padronafip
 delete from cabedeta
 delete from extmaopera
+DELETE FROM CABECOMBO
+delete from cuercombo
+delete from cabepromo
+delete from cuerpromo
+delete from cuerdeta
 
-execute actualizarid 1
+execute actualizarid 9
 select * from keysid order by nextid desc
