@@ -1621,8 +1621,10 @@ ENDIF
 
 lcCurdir = TRIM(SYS(5))+TRIM(CURDIR())
 
-lok =CrearCursorAdapter("Csrsistema",lcCmd)
-
+lok =CrearCursorAdapter("Csrsistema",lcCmd,,5)
+IF NOT lok
+	RETURN .f.
+ENDIF 
 STORE "" TO lcfechasis,lchorasis,lchoraExe,lcfechaexe,lcExe
 
 IF lok
