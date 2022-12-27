@@ -20,7 +20,7 @@ llok = .t.
 llok = CargarTabla(lcData,'Deudor')
 *llok = CargarTabla(lcData,'Deudor',.t.)
 *cArchivo = ADDBS(ALLTRIM(lcpath ))+"pax.CSV"
-*=LeerClientes(cArchivo)
+=LeerClientes(cArchivo)
 
 SELECT CsrDeudor
 *CursorAdapterToXML('CsrDeudor',ADDBS(SYS(5)+CURDIR())+"csrdeudor.XML" )	
@@ -160,7 +160,7 @@ cCadeCtacte = ''
 nCodigo = 1
 lCancelar = .t.
 *stop()
-SCAN FOR nCodigo < 10000 OR lCancelar
+SCAN FOR nCodigo < 10000 AND lCancelar
 
 *!*		lnCodigo = VAL(CsrDeudor.codigo)
 *!*	 	SELECT CsrCtacte

@@ -288,6 +288,7 @@ SCAN FOR nCodigo < 10000 AND lCancelar
 	*nFleteImporte = CsrDeudor.flete
 	lcocupacion = ALLTRIM(CsrDeudor.ocupacion)
 	ldfecnac = stod(CsrDeudor.fecnac)
+	lcdni = CsrDeudor.documento
 	
 	SELECT CsrCtacte
 	APPEND BLANK
