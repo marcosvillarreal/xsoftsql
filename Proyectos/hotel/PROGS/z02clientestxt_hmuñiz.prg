@@ -21,6 +21,8 @@ llok = CargarTabla(lcData,'Deudor')
 *llok = CargarTabla(lcData,'Deudor',.t.)
 *cArchivo = ADDBS(ALLTRIM(lcpath ))+"pax.CSV"
 *=LeerClientes(cArchivo)
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"empresas.CSV"
+=LeerEmpresas(cArchivo)
 
 SELECT CsrDeudor
 *CursorAdapterToXML('CsrDeudor',ADDBS(SYS(5)+CURDIR())+"csrdeudor.XML" )	
@@ -151,6 +153,7 @@ SET FILTER TO estado = 'A'
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
+
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
@@ -160,7 +163,7 @@ cCadeCtacte = ''
 nCodigo = 1
 lCancelar = .t.
 *stop()
-SCAN FOR nCodigo < 10000 AND lCancelar
+SCAN FOR nCodigo < 10000000 AND lCancelar
 
 *!*		lnCodigo = VAL(CsrDeudor.codigo)
 *!*	 	SELECT CsrCtacte
@@ -176,7 +179,7 @@ SCAN FOR nCodigo < 10000 AND lCancelar
  	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
  			,lnidcateibrng ,lncomision ,lnidlocalidad ,lnidprovincia ,lntipoiva ,lnidcategoria;
 			,lnidplanpago ,lnidcanalvta ,lnsaldoAuto ,lnlista ,lncomision ,lnconvenio,lndctalogistica;
-			,lnbonif1,lcPasaporte,lnFacEmail
+			,lnbonif1,lcPasaporte,lnFacEmail,nCtaOtro 
 	
  	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
  	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
@@ -256,6 +259,11 @@ SCAN FOR nCodigo < 10000 AND lCancelar
   	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
   	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
   	
+  	lcDire_Calle	=  STRTRAN(lcDire_Calle,'NULL','')
+  	lcDire_Nro	=  STRTRAN(lcDire_Nro,'NULL','')
+  	lcDire_Piso	=  STRTRAN(lcDire_Piso,'NULL','')
+  	lcDire_Dpto	=  STRTRAN(lcDire_Dpto,'NULL','')
+  	
   	cDireNro	= IIF(ALLTRIM(lcDire_Nro)='0' or LEN(lcDire_Nro)=0,'',lcDire_Nro)
   	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
 	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
@@ -289,7 +297,9 @@ SCAN FOR nCodigo < 10000 AND lCancelar
 	lcocupacion = ALLTRIM(CsrDeudor.ocupacion)
 	ldfecnac = stod(CsrDeudor.fecnac)
 	lcdni = CsrDeudor.documento
-	
+	IF lcOcupacion='EMPRESA'
+		nCtaOtro  = 1
+	ENDIF 
 	SELECT CsrCtacte
 	APPEND BLANK
 	replace id WITH lnId, cnumero WITH lcNumero, cnombre WITH lcNombre, cdireccion WITH lcDireccion 
@@ -299,7 +309,7 @@ SCAN FOR nCodigo < 10000 AND lCancelar
 	replace ctadeudor WITH 1, inscri01 WITH "", fecins01 WITH lcfefin,fechalta WITH ldfechac
 	replace lista WITH lnlista, email WITH lcEmail, observa WITH lcObserva, dni WITH lcdni
 	replace referencia WITH lcReferencia, idsexo WITH lnidsexo, Ocupacion WITH lcOcupacion
-	replace pasaporte WITH lcPasaporte, fecnac WITH ldfecnac
+	replace pasaporte WITH lcPasaporte, fecnac WITH ldfecnac, ctaotro WITH nCtaOtro 
 	
 *!*		INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
 *!*		,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
