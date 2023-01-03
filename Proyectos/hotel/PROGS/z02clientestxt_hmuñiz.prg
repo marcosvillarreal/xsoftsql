@@ -17,12 +17,16 @@ SET CPDIALOG ON
 Oavisar.proceso('S','Abriendo archivos') 
 llok = .t.
 
+*!*	llok = CargarTabla(lcData,'Deudor',.T.)
+
+*!*	cArchivo = ADDBS(ALLTRIM(lcpath ))+"empresas.CSV"
+*!*	=LeerEmpresas(cArchivo)
+*!*	cArchivo = ADDBS(ALLTRIM(lcpath ))+"pax.CSV"
+*!*	=LeerClientes(cArchivo)
+
+*!*	USE IN CsrDeudor
+*!*	stop()
 llok = CargarTabla(lcData,'Deudor')
-*llok = CargarTabla(lcData,'Deudor',.t.)
-*cArchivo = ADDBS(ALLTRIM(lcpath ))+"pax.CSV"
-*=LeerClientes(cArchivo)
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"empresas.CSV"
-=LeerEmpresas(cArchivo)
 
 SELECT CsrDeudor
 *CursorAdapterToXML('CsrDeudor',ADDBS(SYS(5)+CURDIR())+"csrdeudor.XML" )	
@@ -152,18 +156,55 @@ ENDSCAN
 SET FILTER TO estado = 'A'
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
-
-
+LOCAL nCodigo,cCadeCtacte 
+nCodigo = 1
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
 
-LOCAL nCodigo,cCadeCtacte 
+&&Cargamos las cuentas bancos, para poder parametrizar
+SELECT CsrCtacte
+APPEND BLANK
+STORE "" TO lcNombre 
+lcNombre = "BANCO ICBC"
+lcObserva = "CC EN PESOS"+CHR(13)+"CUENTA: 0539-02001116/59"+CHR(13)+"CBU:015 05399 0200000 111 6595"
+lcnumero	= strtrim(nCodigo,8)
+replace id WITH lnId, cnumero WITH lcnumero, cnombre WITH lcNombre, estadocta WITH 0
+replace ctabanco WITH 1 ,fechalta WITH DATE()
+replace  observa WITH lcObserva
+
+nCodigo = nCodigo + 1 
+lnid = lnid + 1 
+
+APPEND BLANK
+STORE "" TO lcNombre 
+lcNombre = "BANCO CREDICOOP"
+lcObserva = "CC EN PESOS"+CHR(13)+"SUC 127"+CHR(13)+"CUENTA: 75721/0"+CHR(13)+"CBU:191 0127 1550 12707 572 100"
+lcnumero	= strtrim(nCodigo,8)
+replace id WITH lnId, cnumero WITH lcnumero, cnombre WITH lcNombre, estadocta WITH 0
+replace ctabanco WITH 1 ,fechalta WITH DATE()
+replace  observa WITH lcObserva
+
+nCodigo = nCodigo + 1 
+lnid = lnid + 1 
+
+APPEND BLANK
+STORE "" TO lcNombre 
+lcNombre = "BANCO MACRO"
+lcObserva = "CC EN PESOS"+CHR(13)+"SUC 013"+CHR(13)+"CUENTA: 3713 0000000 1108"+CHR(13)+"CBU:2850 3713 0000000 1108-1"
+lcnumero	= strtrim(nCodigo,8)
+replace id WITH lnId, cnumero WITH lcnumero, cnombre WITH lcNombre, estadocta WITH 0
+replace ctabanco WITH 1 ,fechalta WITH DATE()
+replace  observa WITH lcObserva
+
+nCodigo = nCodigo + 1 
+lnid = lnid + 1 
+SELECT CsrDeudor
+GO TOP 
 cCadeCtacte = ''
-nCodigo = 1
 lCancelar = .t.
 *stop()
-SCAN FOR nCodigo < 10000000 AND lCancelar
+SCAN FOR  lCancelar
 
 *!*		lnCodigo = VAL(CsrDeudor.codigo)
 *!*	 	SELECT CsrCtacte
@@ -356,6 +397,8 @@ SCAN FOR nCodigo < 10000000 AND lCancelar
 	
 	SELECT CsrDeudor           
 ENDSCAN
+
+
 
 oavisar.waitwindow('',-1)
 SELECT CsrCtacte

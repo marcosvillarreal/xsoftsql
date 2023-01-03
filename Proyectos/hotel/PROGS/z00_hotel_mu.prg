@@ -34,7 +34,7 @@ ldebug = .t.
 lnLecturas = 0
 SKIP 
 *stop()
-DO WHILE NOT EOF() AND lnLecturas < 5000000
+DO WHILE NOT EOF() AND lnLecturas < 500000000
 	lnCantCampo = 39 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista

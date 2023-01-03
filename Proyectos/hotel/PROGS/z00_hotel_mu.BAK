@@ -34,7 +34,7 @@ ldebug = .t.
 lnLecturas = 0
 SKIP 
 *stop()
-DO WHILE NOT EOF() AND lnLecturas < 5000000
+DO WHILE NOT EOF() AND lnLecturas < 50000
 	lnCantCampo = 39 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
@@ -245,7 +245,7 @@ DO WHILE NOT EOF() AND lnLecturas < 5000000
 			ENDIF
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
+			lcApellido		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcApellido)))
 			*lcDocumento	= UPPER(LimpiarCadena(IIF(j + i=24,lcCadena,lcDocumento)))
 			*lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcTipoDoc)))
 			lcCuit		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcCuit)))
@@ -261,7 +261,7 @@ DO WHILE NOT EOF() AND lnLecturas < 5000000
 			lcCodProvincia	= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCodProvincia)))
 			lcCodPais		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCodPais)))
 			
-			*lcOcupacion	= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcOcupacion)))
+			lcOcupacion	= 'EMPRESA'
 			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcTipoIVA)))
 			*lcSexo		= UPPER(LimpiarCadena(IIF(j + i=31,lcCadena,lcSexo)))
 			*lcFecNac		= UPPER(LimpiarCadena(IIF(j + i=30,lcCadena,LEFT(lcFecNac,8))))
@@ -306,7 +306,7 @@ DO WHILE NOT EOF() AND lnLecturas < 5000000
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+		IF ASC(LEFT(lcApellido,1))=149 OR ASC(LEFT(lcApellido,1))=149 OR lentrim(lcApellido)=0 OR LEFT(lcApellido,3)='---'
 			SKIP 
 			LOOP 
 			
