@@ -1,0 +1,23 @@
+USE [nuevasirena]
+GO
+
+/****** Object:  Table [dbo].[CentroJQ]    Script Date: 5/1/2023 09:54:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CentroJQ](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[sucursal] [int] NOT NULL,
+	[alicuota] [numeric](9, 6) NOT NULL,
+	[codigo] [numeric](3, 0) NOT NULL,
+ CONSTRAINT [PK_CentroJQ] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
