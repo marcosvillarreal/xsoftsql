@@ -361,24 +361,24 @@ IF TYPE('goApp')='O'
 	  DO DECLARAR_FUNCIONES_API
   
 		 
-	poSysTray = CreateObject("WALTER_SYSTRAY")
-  
-  
-	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-	  	poTimer   = CreateObject("WALTER_TIMER")
-	  		
-	    #DEFINE ICONO_NADA  0
-	    #DEFINE ICONO_INFO  1
-	    #DEFINE ICONO_AVISO 2
-	    #DEFINE ICONO_ERROR 3
-	    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
-	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
-	    
-	    IF oConfigTermi.ShowBalloonTip = 'FALSE'
-	    	poTimer.Enabled = .f.
-	    ENDIF 
-	  ENDIF
+*!*		poSysTray = CreateObject("WALTER_SYSTRAY")
+*!*	  
+*!*	  
+*!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
+*!*		  	poTimer   = CreateObject("WALTER_TIMER")
+*!*		  		
+*!*		    #DEFINE ICONO_NADA  0
+*!*		    #DEFINE ICONO_INFO  1
+*!*		    #DEFINE ICONO_AVISO 2
+*!*		    #DEFINE ICONO_ERROR 3
+*!*		    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
+*!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+*!*		    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
+*!*		    
+*!*		    IF oConfigTermi.ShowBalloonTip = 'FALSE'
+*!*		    	poTimer.Enabled = .f.
+*!*		    ENDIF 
+*!*		  ENDIF
 
 	Read events   
 	
