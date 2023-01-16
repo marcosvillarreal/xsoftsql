@@ -12,7 +12,7 @@ left join rubro as r on p.idrubro = r.id
 left join familia as f on p.idfamilia = f.id
 left join existenc as e on p.id = e.idarticulo
 where p.nolista = 0 and e.iddeposito = 1100000002
-and e.existe > 0
+and e.existe > 0 and r.nolista =0
 ENDTEXT 
 =CrearCursorAdapter('CsrExp',lcCmd)
 CursorAdapterToXML('CsrExp',SYS(5)+CURDIR()+"WEB.xml")

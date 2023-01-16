@@ -17,4 +17,4 @@ ENDTEXT
 =CrearCursorAdapter('CsrExp',lcCmd)
 CursorAdapterToXML('CsrExp',SYS(5)+CURDIR()+"WEB.xml")
 USE IN CsrExp
-oavisar.usuario('Finalizado')
+oavisar.usuario('Exportacion WEB Finalizado')
