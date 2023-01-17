@@ -365,22 +365,22 @@ DEFINE CLASS JSONObject AS Custom
  
  * Add
  * Add a new property to the object
- PROCEDURE Add(pcProp, puValue)
+ PROCEDURE Add(pcProp, puValue1)
   DO CASE
-     CASE TYPE("puValue",1) = "A"
+     CASE TYPE("puValue1",1) = "A"
           LOCAL oArray,i
           oArray = THIS.addArray(pcProp)
-          FOR i = 1 TO ALEN(puValue,1)
-           oArray.Add(puValue[i,1])
+          FOR i = 1 TO ALEN(puValue1,1)
+           oArray.Add(puValue1[i,1])
           ENDFOR
           RETURN oArray
      
-     CASE JSONIsObject(puValue)
-          ADDPROPERTY(THIS.Buff,pcProp,JSONObject(puValue))
+     CASE JSONIsObject(puValue1)
+          ADDPROPERTY(THIS.Buff,pcProp,JSONObject(puValue1))
           RETURN THIS.Buff.&pcProp
      
      OTHERWISE
-          ADDPROPERTY(THIS.Buff, pcProp, puValue)
+          ADDPROPERTY(THIS.Buff, pcProp, puValue1)
   ENDCASE
  ENDPROC
  
@@ -514,60 +514,60 @@ ENDPROC
 * JSONEncodeValue
 * Internal funcion for JSON encoding. Do not use directly
 *
-PROCEDURE JSONEncodeValue(puValue)
+PROCEDURE JSONEncodeValue(puValue2)
   *
   LOCAL lIsArray, cType, cJSONValue
-  lIsArray = (TYPE("puValue",1) = "A")
-  cType = VARTYPE(puValue)
+  lIsArray = (TYPE("puValue2",1) = "A")
+  cType = VARTYPE(puValue2)
   cJSONValue = "null"
   DO CASE
      CASE lIsArray        && Array value
           cJSONValue = "["
           LOCAL i
-          FOR i = 1 TO ALEN(puValue,1)
-           cJSONValue = cJSONValue + IIF(i>1,",","") + JSONEncodeValue(puValue[i])
+          FOR i = 1 TO ALEN(puValue2,1)
+           cJSONValue = cJSONValue + IIF(i>1,",","") + JSONEncodeValue(puValue2[i])
           ENDFOR
           cJSONValue = cJSONValue + "]"
      
      CASE cType $ "CM"    && string/char value
-          cJSONValue = ['] + puValue + [']
+          cJSONValue = ['] + puValue2 + [']
           
      CASE cType $ "NIYF"   && Numeric value
-          IF puValue = INT(puValue)
-           cJSONValue = ALLTRIM(STR(puValue))
+          IF puValue2 = INT(puValue2)
+           cJSONValue = ALLTRIM(STR(puValue2))
           ELSE
-           cJSONValue = ALLTRIM(STR(puValue,10))
+           cJSONValue = ALLTRIM(STR(puValue2,10))
           ENDIF
           
      CASE cType = "L"     && boolean value
-          cJSONValue = IIF(puValue,"true","false")
+          cJSONValue = IIF(puValue2,"true","false")
           
      CASE cType = "D"     && Date value (foxpro only)
-          cJSONValue = [@] + DTOS(puValue)
+          cJSONValue = [@] + DTOS(puValue2)
           
      CASE cType = "T"     && Datetime value (foxpro only)
-          cJSONValue = [@] + TTOC(puValue,1)
+          cJSONValue = [@] + TTOC(puValue2,1)
           
      CASE cType = "O"     && Object value
           DO CASE
-             CASE JSONIsCollection(puValue)
-		          LOCAL ARRAY aItems[puValue.Count]
+             CASE JSONIsCollection(puValue2)
+		          LOCAL ARRAY aItems[puValue2.Count]
 		          LOCAL i
-		          FOR i = 1 TO puValue.Count
-		           aItems[i] = puValue.Item[i]
+		          FOR i = 1 TO puValue2.Count
+		           aItems[i] = puValue2.Item[i]
 		          ENDFOR
 		          cJSONValue = JSONEncodeValue(@aItems)
 		          RELEASE aItems
              
-             CASE PEMSTATUS(puValue,"ToJSON",5)
-                  cJSONValue = puValue.toJSON()
+             CASE PEMSTATUS(puValue2,"ToJSON",5)
+                  cJSONValue = puValue2.toJSON()
 
              OTHERWISE
-		          cJSONValue = JSONEncode(puValue)             
+		          cJSONValue = JSONEncode(puValue2)             
           ENDCASE
           
      OTHERWISE            && unknown type. Handle it as a string value
-          cJSONValue = TRANSFORM(puValue,"")
+          cJSONValue = TRANSFORM(puValue2,"")
   ENDCASE
 
   RETURN cJSONValue
