@@ -329,7 +329,7 @@ IF TYPE('goApp')='O'
 		ENDIF 
 	ENDIF 
 	
-	stop()
+	*stop()
 	=CargarXML('datamenu_sync.xml','datamenu')
 	=CargarXML('seguridad_sync.xml','seguridad')
 	=CargarXML('perfiles_sync.xml','perfiles')
