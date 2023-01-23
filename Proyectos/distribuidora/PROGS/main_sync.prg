@@ -356,8 +356,7 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu_xml
 	
-	DO FORM regproceso_sync
-	                     
+	DO FORM regproceso_sync	                     
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
