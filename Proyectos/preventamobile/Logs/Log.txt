@@ -1,12 +1,3 @@
- Alias CSRCUERPO registro         11
-Control activo  MAIN
-19-02-2016 16:06:01 , Error nº:         12
-Error No se encuentra la variable 'NUNICIVAFIN'.
-Linea nº OscCuerpo.unicivab		= ROUND(nUniCivaFin,this.ndecimaltot)
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-19-02-2016 16:07:34 , Error nº:       1923
-Error No se encuentra el objeto TIPOESTRUCTURA.
 Linea nº TipoEstructura.tipoimp = This.TipoEstructura
  Alias CSRCABEZA registro          1
 Control activo  MAIN
@@ -63,6 +54,7 @@ Control activo  PARACAE.INIT
 18-03-2016 10:45:31 , Error nº:       1230
 Error Hay demasiados argumentos.
 Linea nº select csrCabeImp.*,isnull(CsrCentroRecep.nombre,space(20)) as nomsucursal From cabeimp as CsrCabeImp left join centrorecep as CsrCentroRecep on CsrCabeImp.sucursal = CsrCentroRecep.numero where CsrCabeImp.sucursal  = &goapp.sucursal into cursor
+
 
 
 
@@ -627,7 +619,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -827,7 +821,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -1078,12 +1074,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -2023,4 +2021,14 @@ Error OCA no es un objeto.
 Linea nº Oca.commandtext = cCmdText
  Alias CFCONFIG registro          1
 Control activo  MAIN
-06/08/22 09:58:41 , Error nº:       1732Error El tipo de datos no es válido para esta propiedad.Linea nº .TOP = .nTop Alias PERFILES registro          1Control activo  MAIN
+06/08/22 09:58:41 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias PERFILES registro          1
+Control activo  MAIN
+30-01-2023 17:02:37 , Error nº:         13
+Error No se encuentra el alias 'CABEPEDIDO'.
+Linea nº SELECT CabePedido
+ Alias CLIENTESNUEVOS registro          1
+Control activo  MAIN
+30-01-2023 17:08:57 , Error nº:         13Error No se encuentra el alias 'CABEPEDIDO'.Linea nº SELECT CabePedido Alias CLIENTESNUEVOS registro          1Control activo  MAIN
