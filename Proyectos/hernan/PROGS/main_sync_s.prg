@@ -152,7 +152,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "02.00.00"
+	goapp.version = "02.00.01"
 	
 	PUBLIC  gcicono
 	     
@@ -285,7 +285,7 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu_xml
 	
-	DO FORM regproceso_sync2
+	DO FORM regproceso_sync3
 	
 	Read events   
 ENDIF

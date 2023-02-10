@@ -1951,6 +1951,8 @@ lreturn = .t.
 			RETURN .f.
 		ENDIF 
 		
+		=LeerVtoCertificado(OscParametros)		
+		
 		IF ((LEFT(Csrparametros.switchCaja,1)="1" AND  lnopcion=2) OR (lnopcion=1 AND  LEFT(Csrparametros.switchCajaFac,1)="1"))&& caja cerrada 		
 		
 			TEXT TO lccmd TEXTMERGE NOSHOW
