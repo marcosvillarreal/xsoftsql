@@ -283,9 +283,10 @@ IF TYPE('goApp')='O'
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	DO FORM frmmenu_xml
 	
-	DO FORM regproceso_sync3
+		DO FORM frmmenu_xml
+		
+		DO FORM regproceso_sync3
 	
 	Read events   
 ENDIF
