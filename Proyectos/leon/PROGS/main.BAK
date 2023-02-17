@@ -412,7 +412,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro.ICO"
+  IconFile      = ADDBS(SYS(5)+CURDIR())+"pyro.ICO"
   MenuText      = "1;Balloon;2;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Avisos de Pyro - GM Solutions"
