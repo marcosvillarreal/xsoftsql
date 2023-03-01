@@ -567,9 +567,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =   30000 
-	    IF goapp.codempresa = 6
-	    	This.Enabled = .f.
-	    ENDIF 	
+	 
 	ENDIF 
   ENDPROC
     
