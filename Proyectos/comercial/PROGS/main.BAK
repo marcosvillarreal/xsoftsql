@@ -180,6 +180,7 @@ ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
+ObjReporter.AddProperty('mensajeria_body',"")
 
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
