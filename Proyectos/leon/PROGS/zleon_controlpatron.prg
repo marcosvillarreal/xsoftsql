@@ -29,7 +29,7 @@ IF RECCOUNT('FsrPatron')#0
 	DELETE FROM FsrPAtron WHERE diferencia = 0
 	COUNT FOR !DELETED() TO lnCount
 	IF RECCOUNT('FsrPatron')#0 AND lnCount>0
-		BROWSE 
+		*BROWSE 
 		USE IN FsrPatron
 		RETURN 
 	ENDIF 

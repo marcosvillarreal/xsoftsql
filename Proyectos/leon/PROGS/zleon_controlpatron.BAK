@@ -12,7 +12,7 @@ left join NCuerfac as CsrNCuerfac on CsrNMaopera.id = CsrNCuerfac.idmaopera
 left join NCuerVari as CsrNCuervari on CsrNCuerfac.id = CsrNCuervari.idcuerfac and  CsrNcuerfac.idmaopera = CsrNCuervari.idmaopera
 left join Producto as CsrProducto on CsrNcuerfac.idarticulo = CsrProducto.id
 left join Variedad as CsrVariedad on isnull(CsrNCuervari.idvariedad,0) = CsrVariedad.id
-left join Existenc as CsrExistenc on CsrNCuerfac.idarticulo = CsrExistenc.idarticulo and isnull(CsrNCuervari.idsubarti,0) = CsrExistenc.idsubarti
+left join Existenc as CsrExistenc on CsrNCuerfac.idarticulo = CsrExistenc.idarticulo and isnull(CsrNCuervari.idsubarti,0) = CsrExistenc.idsubarti and CsrNCuerfac.iddeposito = CsrExistenc.iddeposito
 where right(CsrFletePlanilla.switch,1)='1' and left(CsrNMaopera.switch,1)='0' and CsrExistenc.iddeposito = 1100000001
 and left(CsrFletePlanilla.switch,1)='0' and LEFT(CsrNMaopera.estado,1)='0' and LEFT(CsrFleteCarga.switch,1)<>'2'
 group by CsrNCuerfac.codigo, CsrProducto.nombre, CsrVariedad.numero, CsrNCuerVari.idvariedad
