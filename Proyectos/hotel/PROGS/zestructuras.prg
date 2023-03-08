@@ -172,5 +172,5 @@
 *!*							4  1=TOTAL DIGITADO
 *!*							5  1=BONIFICACION DIGITADA
 
-*!*	MOVCARGOS.estado			0 = Activo, 2 = Cancelado
+*!*	MOVCARGOS.estado			0 = Activo, 2 = Cancelado, 3 = Facturado
 
