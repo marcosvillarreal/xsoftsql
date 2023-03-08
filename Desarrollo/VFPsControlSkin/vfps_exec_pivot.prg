@@ -1,0 +1,70 @@
+*!* EJEMPLO PARA GENERAR UN PIVOT TABLE CON VFPsControlSkin
+*!* By VFPSTEAM BI SOLUTIONS 
+
+SET CONSOLE OFF
+SET TALK OFF
+
+*!* INICIAR VFPSCONTROLSKIN (REALIZARLO SIEMPRE DESDE SU MAIN PRINCIPAL)
+*!* PARAMETROS
+*!* APPLICATION = ENTORNO PRINCIPAL DE VISUAL FOXPRO
+*!* _SCREEN     = OBJETO DONDE SE VA A CREAR VFPsControlSkin
+*!* 1           = TIPOS DE SKIN VA DESDE 1 A 8
+
+*!* SI ESTO YA LO TIENE EN TU PRG PRINCIPAL NO COLOCARLO 
+*!* INICIO 
+IF FILE("VFPsControlSkin.Exe")
+   VFPsControlSkin(APPLICATION,_SCREEN,"5") && SE ENVIA EL STYLE OFFICE 2010 BLUE
+ENDIF
+*!* FIN INICIO
+
+IF TYPE("_SCREEN.SkinFrameWork") = "U"
+   RETURN .F.
+ENDIF
+
+*!* PARA ESTE EJEMPLO USAREMOS UNA TABLA DE FOX Y QUE NOS GENERE UN ALIAS O CURSOR
+*!* EL ALIAS O CURSOR PUEDE SER OBTENIDO DESDE CUALQUIER MOTOR DE BASE DE DATOS
+LOCAL lcAlias,lcTabla
+
+lcTemp  = SYS(2015)
+lcAlias = "tbl_indicadores"
+lcTabla = ".\Datos\indicadores_de_gestion_datcorpv_2023.dbf"
+
+*!* SELECCIONAMOS LA TABLA O CURSOR A USAR PARA LA GENERACION DEL REPORTE DINÁMICO
+IF !USED(lcAlias)
+   USE (lcTabla) AGAIN SHARED ALIAS (lcalias) IN 0 
+ENDIF
+   
+*!* PROPIEDADES E INFORMACIÓN NECESARIA PARA LA CREACION DE VFPs PivotTable
+IF PEMSTATUS(_SCREEN, "laDatosPivot", 5) THEN 
+   _SCREEN.laDatosPivot[1,1] = lcAlias                   	&&NOMBRE DEL ALIAS A USAR PARA LA CREACIÓN DE VFPs PivotTable
+   _SCREEN.laDatosPivot[1,2] = "INDICADORES DE GESTIÓN"  	&&TITULO DE LA TABLA DINÁMICA
+   _SCREEN.laDatosPivot[1,3] = .F.					 	 	&&COLOCAR EN .T. SI SE DESEA CARGAR DE INICIO EL LISTADO DE CAMPOS 	
+   _SCREEN.laDatosPivot[1,4] = ""							&&SI TENEMOS UN DISEÑO DE NUESTRA TABLA DINAMICA GUARDADO PARA ESTE ALIAS Y 
+                                                            &&SON LOS MISMOS CAMPOS COLOCAR SOLO EL NOMBRE DEL ARCHIVO (el archivo debe de existir en la carpeta FilesPivot) 
+   *!* CAMPOS Y SUS TITULOS O DESCRIPCIONES
+   *!* [Campos del cursor/alias del cual se desea presentar en la tabla dinámica. se ingresan separado por ,]
+   _SCREEN.laDatosPivot[1,5] = "descri_doc,serie_nro_doc_cpe,condicion_pago,fecha_emi_doc_cpe,nombre_cliente,departamento," + ;
+                               "nom_producto,vendedor,zona_desc,cantidad,pre_unit_cigv,monto_igv,pre_total"  &&SI SE DEJA VACIO SE MUESTRAN TODOS LOS CAMPOS DEL CURSOR O ALIAS
+   *!* [Descripción para presentar en los titulos de cada campo relacionado. se ingresan separado por ,]
+   _SCREEN.laDatosPivot[1,6] = "TIPO CPE,NRO CPE,TIPO PAGO,FECHA,CLIENTE,DPTO,PRODUCTO,VENDEDOR,ZONA,CANTIDAD,PRE. UNITARIO,IGV,TOTAL" &&SI SE DEJA VACIO SE TOMA COMO TITULO EL NOMBRE DE CADA CAMPO
+
+   *!* AGREGAR CAMPOS PARA LOS FILTROS DEL REPORTE DINAMICO [los campos se ingresan separado por ,]
+   _SCREEN.laDatosPivot[1,7] = "condicion_pago,zona_desc,departamento"
+   *!* AGREGAR CAMPO PARA LA FILA[ROW] DEL REPORTE DINAMICO 
+   _SCREEN.laDatosPivot[1,8] = "nombre_cliente,descri_doc"   &&IMPORTANTE: TENER PRESENTE QUE EL CAMPO INGRESADO EN LA FILA(ROW) NO DEBE DE ESTAR DENTRO DE LOS CAMPOS DE FILTROS
+   *!* AGREGAR CAMPO PARA LOS DETALLES[DETAIL] DEL REPORTE DINAMICO 
+   _SCREEN.laDatosPivot[1,9] = "serie_nro_doc_cpe,nom_producto,cantidad,pre_unit_cigv,pre_total"
+       
+   *!* AGREGAR CAMPO PARA LOS TOTALES DEL REPORTE DINAMICO (TIPO NÚMERICO)
+   _SCREEN.laDatosPivot[1,10] = "pre_total"
+
+   *!* AGREGAR CAMPO PARA LA COLUMNA DEL REPORTE DINAMICO
+   _SCREEN.laDatosPivot[1,11] = "fecha_emi_doc_cpe"  &&IMPORTANTE: TENER PRESENTE QUE EL CAMPO INGRESADO EN LA COLUMNA NO DEBE DE ESTAR DENTRO DE LOS CAMPOS DE FILTROS
+   
+    *!* LLAMADO A VFPsPivotTable
+   LOCAL laDatosPivot
+   DIMENSION laDatosPivot[1,11]
+   
+   laDatosPivot = _SCREEN.laDatosPivot
+   VFPS_PivotTable (@laDatosPivot)
+ENDIF

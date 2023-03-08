@@ -1,0 +1,66 @@
+*!* EJEMPLO DE INTEGRACIÓN VFPsControlSkin
+*!* By VFPSTEAM BI SOLUTIONS 
+
+SET CONSOLE OFF
+SET TALK OFF
+
+*!* INICIAR VFPSCONTROLSKIN (REALIZARLO SIEMPRE DESDE SU MAIN PRINCIPAL)
+*!* PARAMETROS
+*!* APPLICATION = ENTORNO PRINCIPAL DE VISUAL FOXPRO
+*!* _SCREEN     = OBJETO DONDE SE VA A CREAR VFPsControlSkin
+*!* 1           = TIPOS DE SKIN VA DESDE 1 A 8
+
+IF FILE("VFPsControlSkin.Exe")
+   VFPsControlSkin(APPLICATION,_SCREEN,"5") && SE ENVIA EL STYLE OFFICE 2010 BLUE
+   *!* NUEVO 
+   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
+   IF VFPs_AddBar(_SCREEN,.T.) THEN 
+      *!* AGREGAR PANEL AL ESTATUS BAR
+      VFPs_AddPanelStatusBar (_SCREEN,"Estación: " + SYS(0))
+   ENDIF
+ENDIF
+
+*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+_SCREEN.lcFooterText  = "<A HREF=" + ["] + "http://www.vfpsteambi.solutions" + ["] + ">VFPSTEAM BI " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+
+DO FORM frm_ejemplo
+
+
+FUNCTION Recupera_App
+	LPARAMETER nHwnd,llEstado
+
+	DECLARE Integer SetForegroundWindow IN WIN32API Integer nHwnd
+
+	_SCREEN.MousePointer = 0    
+	SetForegroundWindow(nHwnd)   && Esto para abrir boca
+
+	DECLARE SHORT SetWindowPos IN USER32 INTEGER hWnd,INTEGER hWndInsertAfter,INTEGER x,INTEGER y,INTEGER cx,INTEGER cy,INTEGER uFlags
+
+	#DEFINE HWND_TOPMOST_WINDOW -1
+	#DEFINE SWP_NOMOVE 2
+	#DEFINE SWP_NOSIZE 1
+	#DEFINE SWP_SHOWWINDOW 0x40
+	#DEFINE SWP_BRINGTOTOP SWP_NOSIZE + SWP_NOMOVE + SWP_SHOWWINDOW
+	#DEFINE HWND_NOTOPMOST     -2
+	 
+	DECLARE INTEGER GetLastError IN WIN32API
+	&& Se asume que nHwnd es el hWnd del form que hay que poner encima
+	_SCREEN.MousePointer = 0
+	IF !llEstado
+	   IF SetWindowPos(nHwnd,HWND_TOPMOST_WINDOW,0,0,0,0,SWP_BRINGTOTOP) # 0
+	      RETURN .T.  &&  Funciona
+	     ELSE
+	      RETURN .F.  &&  Oooops
+	   ENDIF
+	 ELSE
+	   IF SetWindowPos(nHwnd,HWND_NOTOPMOST,0,0,0,0,SWP_NOSIZE + SWP_NOMOVE) # 0
+	      RETURN .T.  &&  Funciona
+	     ELSE
+	      RETURN .F.  &&  Oooops
+	   ENDIF
+	ENDIF 
+ENDFUNC	
