@@ -545,6 +545,19 @@ PROCEDURE SETS_INICIALES
   SET TALK    OFF
   
 ENDPROC
+
+PROCEDURE GMUPDATE
+LOCAL cComando
+
+cComando = ADDBS(SYS(5)+CURDIR())+'gmupdate.bat' 
+IF NOT lldesarrollo
+	RUN &cComando
+ELSE
+	oavisar.usuario('Actualizar!')
+ENDIF 
+
+ENDPROC 
+
 *
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
@@ -600,17 +613,17 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
-    cVersion = "2" &&HayVersionExe("gestion.exe")
+    cVersion = HayVersionExe("gestion.exe")
     IF LEN(cVersion)> 0
     	
     	
 	  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
 	   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
 	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-*!*		    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 
 	_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
-	_SCREEN.lcComandoPopup      = ""   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
+	_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
 	_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
 	
 	lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP

@@ -230,6 +230,26 @@ IF TYPE('goApp')='O'
 
 	LeerConfigTermi()
 	
+	* Herramienta VFPsControlSkin
+	IF FILE("VFPsControlSkin.Exe")
+	   VFPsControlSkin(APPLICATION,_SCREEN,"0") && SE ENVIA EL STYLE OFFICE 2010 BLUE
+	   *!* NUEVO 
+	   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
+	   IF VFPs_AddBar(_SCREEN,.T.) THEN 
+	      *!* AGREGAR PANEL AL ESTATUS BAR
+	      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
+	   ENDIF
+	ENDIF
+	*!* FIN INICIO
+	*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+	_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+	_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+	_SCREEN.lcFooterText  = "<A HREF=" + ["] + "http://www.vfpsteambi.solutions" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+	_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+	_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+	** Herramienta VFPsControlSkin
+	
+	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
 	Grabar_Log('Verificando OCX') 
@@ -366,24 +386,7 @@ IF TYPE('goApp')='O'
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	* Herramienta VFPsControlSkin
-	IF FILE("VFPsControlSkin.Exe")
-	   VFPsControlSkin(APPLICATION,_SCREEN,"0") && SE ENVIA EL STYLE OFFICE 2010 BLUE
-	   *!* NUEVO 
-	   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
-	   IF VFPs_AddBar(_SCREEN,.T.) THEN 
-	      *!* AGREGAR PANEL AL ESTATUS BAR
-	      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
-	   ENDIF
-	ENDIF
-	*!* FIN INICIO
-	*!* LLENAR PARAMETROS VFPS MESSAGEBOX
-	_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
-	_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-	_SCREEN.lcFooterText  = "<A HREF=" + ["] + "http://www.vfpsteambi.solutions" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
-	_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
-	_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
-	** Herramienta VFPsControlSkin
+	
 	
 
 *!*		public pcTextoBalloon, poSysTray, poTimer
@@ -545,6 +548,19 @@ PROCEDURE SETS_INICIALES
   SET TALK    OFF
   
 ENDPROC
+
+PROCEDURE GMUPDATE
+LOCAL cComando
+
+cComando = ADDBS(SYS(5)+CURDIR())+'gmupdate.bat' 
+IF NOT lldesarrollo
+	RUN &cComando
+ELSE
+	oavisar.usuario('Actualizar!')
+ENDIF 
+
+ENDPROC 
+
 *
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
@@ -600,17 +616,17 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
-    cVersion = "2" &&HayVersionExe("gestion.exe")
+    cVersion = HayVersionExe("gestion.exe")
     IF LEN(cVersion)> 0
     	
     	
 	  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
 	   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
 	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-*!*		    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 
 	_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
-	_SCREEN.lcComandoPopup      = "RUN ADDBS(SYS(5)+CURDIR())+'gmupdate.bat'"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
+	_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
 	_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
 	
 	lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
