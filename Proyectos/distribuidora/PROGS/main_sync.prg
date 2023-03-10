@@ -153,7 +153,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='pyro.ico'
+_Screen.icon='storm.ico'
 _screen.picture= 'fondo51.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.
