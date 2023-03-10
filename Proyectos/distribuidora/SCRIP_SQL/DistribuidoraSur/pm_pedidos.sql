@@ -14,13 +14,14 @@ go
 
 select clientes.nombre,cabpedido.* from cabpedido 
 left join clientes on cabpedido.idcliente = clientes.numero and cabpedido.idempresa =clientes.idempresa
-where cabpedido.idempresa = 5 
-and vendedor = 8
+where cabpedido.idempresa = 4
+--and vendedor = 8
 --and  idcliente  in (69)
-and (total <> '0' and total<>'')
-and left(isnull(loteexportacion,''),8)=''
+--and (total <> '0' and total<>'')
+and left(isnull(loteexportacion,''),8)<>''
 --AND ISNULL(TIPODEPEDIDO,'0')<>'0'
 --AND REMITO = 2
+and pagoEfectivo = '-1'
 order by fecha desc, horain desc
 --update cuepedido set cantidad = 0 where id = 22566766
 --select * from cuepedido where idcabpedido in (986873,986872)
