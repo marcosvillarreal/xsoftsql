@@ -1,4772 +1,102 @@
-22-08-2022 11:54:18 , REGFACVTA.LOAD, Error: El archivo 'csrcabefac.dbf' no existe.;Linea : SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as iva
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ri2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctav
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasaret
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-e2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-URSOR CsrAuxcabefac READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-22-08-2022 11:54:19 , Pila de llamadas
-22-08-2022 11:54:20 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-22-08-2022 11:54:20 , Objeto      : regfacvta.load
-22-08-2022 11:54:20 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-22-08-2022 11:54:20 , Nº de Linea :          2
-22-08-2022 11:54:20 , En el Fuente: thisform.crearcursor()
-22-08-2022 11:54:20 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-22-08-2022 11:54:20 , Objeto      : regfacvta.crearcursor
-22-08-2022 11:54:20 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-22-08-2022 11:54:21 , Nº de Linea :         20
-22-08-2022 11:54:21 , En el Fuente: SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1	   ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2	   ,CAST
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3	   ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4	   ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Ba
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-segra5,000.00 as tasa5	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1   	   ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2	   ,SPACE(10) as nomrete3,000000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3   	   ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4   	   ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as tasarete5   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,000000000.00 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero       ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada       ,SPACE(13) as proximonro,DATE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,CAST(0 as int) as Cuota,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck       ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso       FROM CsrCabefac WHE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-RE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
-24-08-2022 09:26:41 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct no existe o no es válido.;Linea : ...;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-24-08-2022 09:26:42 , Pila de llamadas
-24/08/2022 09:34:08 , MAIN, Error: Denegado c:\users\marco\appdata\local\temp\systray_temp_34448226.icn al acceso al archivo.;Linea : ERASE (cTempFileName);Error :       1705;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\APPDATA\LOCAL\TEMP\0000YQKP01M7.TMP;Ultimo Control activo: 
-24/08/2022 09:34:08 , Pila de llamadas
-24/08/2022 09:34:08 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-24/08/2022 09:34:08 , Objeto      : main
-24/08/2022 09:34:08 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-24/08/2022 09:34:08 , Nº de Linea :        302
-24/08/2022 09:34:09 , En el Fuente: 	poSysTray = CreateObject("WALTER_SYSTRAY")
-24/08/2022 09:34:09 , Programa    : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:34:09 , Objeto      : systray.init
-24/08/2022 09:34:09 , Base Objeto : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:34:09 , Nº de Linea :          3
-24/08/2022 09:34:09 , En el Fuente: 	THIS.AddIconToIconList(THIS.IconFile)
-24/08/2022 09:34:09 , Programa    : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:34:10 , Objeto      : systray.addicontoiconlist
-24/08/2022 09:34:10 , Base Objeto : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:34:10 , Nº de Linea :          8
-24/08/2022 09:34:10 , En el Fuente: nHandle = THIS.LoadIcon(m.cIconFileName)
-24/08/2022 09:34:10 , Programa    : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:34:10 , Objeto      : systray.loadicon
-24/08/2022 09:34:10 , Base Objeto : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:34:10 , Nº de Linea :         37
-24/08/2022 09:34:10 , En el Fuente: ERASE (cTempFileName)
-24/08/2022 09:35:35 , MAIN, Error: Denegado c:\users\marco\appdata\local\temp\systray_temp_34535237.icn al acceso al archivo.;Linea : ERASE (cTempFileName);Error :       1705;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\APPDATA\LOCAL\TEMP\0000YQKP01VE.TMP;Ultimo Control activo: 
-24/08/2022 09:35:35 , Pila de llamadas
-24/08/2022 09:35:35 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-24/08/2022 09:35:35 , Objeto      : main
-24/08/2022 09:35:35 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-24/08/2022 09:35:35 , Nº de Linea :        302
-24/08/2022 09:35:36 , En el Fuente: 	poSysTray = CreateObject("WALTER_SYSTRAY")
-24/08/2022 09:35:36 , Programa    : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:35:36 , Objeto      : systray.init
-24/08/2022 09:35:36 , Base Objeto : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:35:36 , Nº de Linea :          3
-24/08/2022 09:35:36 , En el Fuente: 	THIS.AddIconToIconList(THIS.IconFile)
-24/08/2022 09:35:36 , Programa    : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:35:37 , Objeto      : systray.addicontoiconlist
-24/08/2022 09:35:37 , Base Objeto : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:35:37 , Nº de Linea :          8
-24/08/2022 09:35:37 , En el Fuente: nHandle = THIS.LoadIcon(m.cIconFileName)
-24/08/2022 09:35:37 , Programa    : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:35:37 , Objeto      : systray.loadicon
-24/08/2022 09:35:37 , Base Objeto : j:\xsoftsql\desarrollo\clases\systray.vct
-24/08/2022 09:35:38 , Nº de Linea :         37
-24/08/2022 09:35:38 , En el Fuente: ERASE (cTempFileName)
-23-11-2022 19:15:00 , RESTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : replace ALL chrfecha WITH CTOD(fecha);Error :         11;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo regis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00017G210298.TMP;Ultimo Control activo: 
-23-11-2022 19:15:01 , Pila de llamadas
-23-11-2022 19:15:01 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-23-11-2022 19:15:01 , Objeto      : restock.imprimir_vistaprevia1.impresora.click
-23-11-2022 19:15:01 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-23-11-2022 19:15:02 , Nº de Linea :          8
-23-11-2022 19:15:02 , En el Fuente: 	llOK=thisform.CrearInforme()
-23-11-2022 19:15:02 , Programa    : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-23-11-2022 19:15:02 , Objeto      : restock.crearinforme
-23-11-2022 19:15:02 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\restock_v1.sct
-23-11-2022 19:15:02 , Nº de Linea :        201
-23-11-2022 19:15:02 , En el Fuente: replace ALL chrfecha WITH CTOD(fecha)
-15-12-2022 13:10:41 , MAIN, Error: Desbordamiento numérico (se han perdido datos).;Linea : GATHER NAME OscCabefac;Error :         39;Ultimo Alias Activo: CSRTIPOCBTE;Ultimo registro:          2 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000G5QH01GD.TMP;Ult
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-imo Control activo: 
-15-12-2022 13:10:41 , Pila de llamadas
-15-12-2022 13:10:44 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
-15-12-2022 13:10:44 , Objeto      : main
-15-12-2022 13:10:44 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\main.prg
-15-12-2022 13:10:44 , Nº de Linea :        319
-15-12-2022 13:10:44 , En el Fuente: 	Read events   
-15-12-2022 13:10:44 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-15-12-2022 13:10:44 , Objeto      : regfacvta.containerencabeza._cboptovta.lostfocus
-15-12-2022 13:10:45 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-15-12-2022 13:10:45 , Nº de Linea :          4
-15-12-2022 13:10:45 , En el Fuente: this.lostfocosay()
-15-12-2022 13:10:45 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-15-12-2022 13:10:45 , Objeto      : regfacvta.containerencabeza._cboptovta.lostfocosay
-15-12-2022 13:10:45 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-15-12-2022 13:10:46 , Nº de Linea :         13
-15-12-2022 13:10:46 , En el Fuente: 	GATHER NAME OscCabefac
-16-12-2022 17:54:01 , REGINFORMATRANSF.CMDACEPTAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : INDEX on grupo+STR(id,12) TAG korden;Error :        107;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000GPOP00G6.TMP;Ultimo Control activo: 
-16-12-2022 17:54:03 , Pila de llamadas
-16-12-2022 17:54:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\bancario\reginformatranf.sct
-16-12-2022 17:54:04 , Objeto      : reginformatransf.cmdaceptar.click
-16-12-2022 17:54:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\bancario\reginformatranf.sct
-16-12-2022 17:54:04 , Nº de Linea :          4
-16-12-2022 17:54:06 , En el Fuente: 			.leermovbco()
-16-12-2022 17:54:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\bancario\reginformatranf.sct
-16-12-2022 17:54:06 , Objeto      : reginformatransf.leermovbco
-16-12-2022 17:54:08 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\bancario\reginformatranf.sct
-16-12-2022 17:54:08 , Nº de Linea :         34
-16-12-2022 17:54:08 , En el Fuente: 	INDEX on grupo+STR(id,12) TAG korden
-04-01-2023 14:52:34 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRAUX'.;Linea : SELECT CsrAux;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-MP\0000JYMH00AA.TMP;Ultimo Control activo: 
-04-01-2023 14:52:35 , Pila de llamadas
-04-01-2023 14:52:35 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-04-01-2023 14:52:35 , Objeto      : listapadron.imprimir_vistaprevia1.impresora.click
-04-01-2023 14:52:35 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-04-01-2023 14:52:35 , Nº de Linea :          8
-04-01-2023 14:52:35 , En el Fuente: 	llOK=thisform.CrearInforme()
-04-01-2023 14:52:36 , Programa    : j:\xsoftsql\proyectos\leon\forms\listapadron.sct
-04-01-2023 14:52:36 , Objeto      : listapadron.crearinforme
-04-01-2023 14:52:36 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\listapadron.sct
-04-01-2023 14:52:36 , Nº de Linea :        205
-04-01-2023 14:52:36 , En el Fuente: SELECT CsrAux
-04-01-2023 14:54:36 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRAUX'.;Linea : SELECT CsrAux;Error :         13;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-MP\0000JYMH00DA.TMP;Ultimo Control activo: 
-04-01-2023 14:54:37 , Pila de llamadas
-04-01-2023 14:54:37 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-04-01-2023 14:54:37 , Objeto      : listapadron.imprimir_vistaprevia1.impresora.click
-04-01-2023 14:54:37 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-04-01-2023 14:54:37 , Nº de Linea :          8
-04-01-2023 14:54:37 , En el Fuente: 	llOK=thisform.CrearInforme()
-04-01-2023 14:54:37 , Programa    : j:\xsoftsql\proyectos\leon\forms\listapadron.sct
-04-01-2023 14:54:38 , Objeto      : listapadron.crearinforme
-04-01-2023 14:54:38 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\listapadron.sct
-04-01-2023 14:54:38 , Nº de Linea :        205
-04-01-2023 14:54:38 , En el Fuente: SELECT CsrAux
-06-01-2023 11:29:36 , REGCAJA.CMDSALVAR.CLICK, Error: No se encuentra la propiedad LCTITULAR.;Linea : .titulardefault = loObjValor.lcTitular;Error :       1734;Ultimo Alias Activo: CSRCTABCO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TEMP\0000696X00M7.TMP;Ultimo Control activo: 
-06-01-2023 11:29:37 , Pila de llamadas
-06-01-2023 11:29:38 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:38 , Objeto      : regcaja.cmdsalvar.click
-06-01-2023 11:29:38 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:39 , Nº de Linea :          2
-06-01-2023 11:29:39 , En el Fuente: thisform.key_43()
-06-01-2023 11:29:39 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:39 , Objeto      : regcaja.key_43
-06-01-2023 11:29:39 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:39 , Nº de Linea :          7
-06-01-2023 11:29:40 , En el Fuente: 	thisform.actualizar()
-06-01-2023 11:29:40 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:40 , Objeto      : regcaja.actualizar
-06-01-2023 11:29:40 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:41 , Nº de Linea :          6
-06-01-2023 11:29:41 , En el Fuente:  			     lbokvalor=.pidovalores('A')   
-06-01-2023 11:29:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:41 , Objeto      : regcaja.pidovalores
-06-01-2023 11:29:41 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regcaja.sct
-06-01-2023 11:29:41 , Nº de Linea :        109
-06-01-2023 11:29:42 , En el Fuente:    	DO FORM pidopagos WITH lcid,loObjValor TO thisform.quetecla 
-06-01-2023 11:29:42 , Programa    : j:\xsoftsql\proyectos\leon\forms\pidopagos.sct
-06-01-2023 11:29:42 , Objeto      : pidopagos.init
-06-01-2023 11:29:43 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pidopagos.sct
-06-01-2023 11:29:43 , Nº de Linea :         26
-06-01-2023 11:29:43 , En el Fuente: 		.titulardefault = loObjValor.lcTitular
-06-01-2023 12:27:40 , REGCAJA.OCONTABILIDAD1.INIT, Error: El archivo 'crearcursoradapter.prg' no existe.;Linea : CrearCursorAdapter('CsrParaConta',This.Initparaconta());Error :          1;Ultimo Alias Activo: CSRAUXMOVAFECTADO;Ultimo registro:          1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000696X01NQ.TMP;Ultimo Control activo: 
-06-01-2023 12:27:40 , Pila de llamadas
-06-01-2023 12:27:40 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
-06-01-2023 12:27:40 , Objeto      : regcaja.ocontabilidad1.init
-06-01-2023 12:27:40 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
-06-01-2023 12:27:40 , Nº de Linea :          2
-06-01-2023 12:27:40 , En el Fuente: 	CrearCursorAdapter('CsrParaConta',This.Initparaconta())
-17-02-2023 17:01:43 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\leon\forms\resctacte.sct no existe o no es válido.;Linea : IF lldesarrollo AND llchekform;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- activo: 
-17-02-2023 17:01:43 , Pila de llamadas
-17-02-2023 17:02:42 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.MENSAJE.CLICK, Error: No se encuentra la definición de clase WHATSAPPENVIO.;Linea : oWapp = CREATEOBJECT("whatsappenvio");Error :       1733;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1 STRID(IDCTACTE,10)+CLASE+STRID(IDMAOPERA,12)+CCUOTA;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00002UX5001R.TMP;Ultimo Control activo: 
-17-02-2023 17:02:42 , Pila de llamadas
-17-02-2023 17:02:43 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:02:43 , Objeto      : resctacte.imprimir_vistaprevia1.mensaje.click
-17-02-2023 17:02:43 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:02:43 , Nº de Linea :         11
-17-02-2023 17:02:43 , En el Fuente: 		oWapp = CREATEOBJECT("whatsappenvio")
-17-02-2023 17:02:58 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.MENSAJE.CLICK, Error: OWAPP no es un objeto.;Linea : oWapp.ConvertImage(loRPTListener ,lcquereporte);Error :       1924;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STRID(IDCTACTE,10)+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CLASE+STRID(IDMAOPERA,12)+CCUOTA;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00002UX5001R.TMP;Ultimo Control activo: 
-17-02-2023 17:02:58 , Pila de llamadas
-17-02-2023 17:02:58 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:02:58 , Objeto      : resctacte.imprimir_vistaprevia1.mensaje.click
-17-02-2023 17:02:58 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:02:59 , Nº de Linea :         35
-17-02-2023 17:02:59 , En el Fuente: 		oWapp.ConvertImage(loRPTListener ,lcquereporte)   	
-17-02-2023 17:05:14 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.MENSAJE.CLICK, Error: No se encuentra la propiedad MENSAJERIA_BODY.;Linea : oWapp.enviomsj('','',ObjReporter.mensajeria_body ,cTelefono );Error :       1734;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo reg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-istro:         47 STRID(IDCTACTE,10)+CLASE+STRID(IDMAOPERA,12)+CCUOTA;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00002UX50056.TMP;Ultimo Control activo: 
-17-02-2023 17:05:14 , Pila de llamadas
-17-02-2023 17:05:15 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:05:15 , Objeto      : resctacte.imprimir_vistaprevia1.mensaje.click
-17-02-2023 17:05:15 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:05:15 , Nº de Linea :         45
-17-02-2023 17:05:15 , En el Fuente: 		oWapp.enviomsj('','',ObjReporter.mensajeria_body ,cTelefono )
-17-02-2023 17:06:00 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.MENSAJE.CLICK, Error: No se encuentra la propiedad MENSAJERIA_BODY.;Linea : oWapp.enviomsj('','',ObjReporter.mensajeria_body ,cTelefono );Error :       1734;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo reg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-istro:         47 STRID(IDCTACTE,10)+CLASE+STRID(IDMAOPERA,12)+CCUOTA;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00002UX5006U.TMP;Ultimo Control activo: 
-17-02-2023 17:06:00 , Pila de llamadas
-17-02-2023 17:06:01 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:06:01 , Objeto      : resctacte.imprimir_vistaprevia1.mensaje.click
-17-02-2023 17:06:01 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-17-02-2023 17:06:01 , Nº de Linea :         45
-17-02-2023 17:06:01 , En el Fuente: 		oWapp.enviomsj('','',ObjReporter.mensajeria_body ,cTelefono )
-17/02/2023 18:18:33 , ON..., Error: Cancelar.;Linea : IF lldesarrollo AND llchekform;Error :       1990;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
-17/02/2023 18:18:34 , Pila de llamadas
-17-02-2023 18:41:25 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae;Error :       1940;Ultimo Alias Activo: CSRCABEIMP;Ultimo registro:          1 ;DBF: C:\USE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-RS\MARCO\APPDATA\LOCAL\TEMP\0000G1E100TH.TMP;Ultimo Control activo: 
-17-02-2023 18:41:25 , Pila de llamadas
-17-02-2023 18:41:25 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:41:25 , Objeto      : regfacvta.cmdimprimir.click
-17-02-2023 18:41:25 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:41:25 , Nº de Linea :         46
-17-02-2023 18:41:26 , En el Fuente: 	thisform.imprimir(thisform.lcimpresora,thisform.formulario,2)	
-17-02-2023 18:41:26 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:41:26 , Objeto      : regfacvta.imprimir
-17-02-2023 18:41:26 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:41:26 , Nº de Linea :         22
-17-02-2023 18:41:26 , En el Fuente: IF NOT .oFacCAE.es_caea AND NOT .oFacCAE.es_cae 
-17-02-2023 18:44:37 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: No se encuentra la propiedad SALIDAPORJPG.;Linea : thisform.objimpresor.salidaporjpg = .t.;Error :       1734;Ultimo Alias Activo: FSRCAEA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-LOCAL\TEMP\0000G1E101B7.TMP;Ultimo Control activo: 
-17-02-2023 18:44:37 , Pila de llamadas
-17-02-2023 18:44:37 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:44:37 , Objeto      : regfacvta.cmdimprimir.click
-17-02-2023 18:44:37 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:44:37 , Nº de Linea :         46
-17-02-2023 18:44:37 , En el Fuente: 	thisform.imprimir(thisform.lcimpresora,thisform.formulario,2)	
-17-02-2023 18:44:37 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:44:37 , Objeto      : regfacvta.imprimir
-17-02-2023 18:44:38 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:44:38 , Nº de Linea :         63
-17-02-2023 18:44:38 , En el Fuente: 	thisform.objimpresor.salidaporjpg = .t.
-17-02-2023 18:52:03 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: No se encuentra la propiedad ENVIOCORREO.;Linea : this.enviocorreo(thisform.Objimpresor.rutadelarchivo);Error :       1734;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:         31 GRUPO;DBF: C:\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-USERS\MARCO\APPDATA\LOCAL\TEMP\0000G1E1025A.TMP;Ultimo Control activo: 
-17-02-2023 18:52:03 , Pila de llamadas
-17-02-2023 18:52:03 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:52:03 , Objeto      : regfacvta.cmdimprimir.click
-17-02-2023 18:52:03 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
-17-02-2023 18:52:04 , Nº de Linea :         37
-17-02-2023 18:52:04 , En el Fuente: 	thisform.imprimir(thisform.lcimpresora,thisform.formulario,2)	
-17-02-2023 18:52:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
 17-02-2023 18:52:04 , Objeto      : regfacvta.imprimir
 17-02-2023 18:52:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfacvta.sct
 17-02-2023 18:52:04 , Nº de Linea :         69
 17-02-2023 18:52:04 , En el Fuente: 	this.enviocorreo(thisform.Objimpresor.rutadelarchivo)
 17-02-2023 18:57:11 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: No se encuentra la variable 'EMAIL'.;Linea : cEmail	= NVL(CsrAuxCabefac.email,'');Error :         12;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:         31 GRUPO;DBF: C:\USERS\MARCO\APPDATA\LO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4973,6 +303,100 @@ CAL\TEMP\0000G1E102OE.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 LOCAL\TEMP\0000G1E103S3.TMP;Ultimo Control activo: 
 17-02-2023 19:08:15 , Pila de llamadas
 17-02-2023 19:08:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\resctacteindv.sct
@@ -4996,6 +420,100 @@ LOCAL\TEMP\0000G1E103S3.TMP;Ultimo Control activo:
 17-02-2023 19:08:18 , Nº de Linea :        600
 17-02-2023 19:08:18 , En el Fuente: 	lnCount = THIS._oReports.COUNT
 02-03-2023 10:28:07 , REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: La propiedad CANTIDAD no es un método o evento.;Linea : Oscatter.cantidad;Error :       1738;Ultimo Alias Activo: CSREXISTENC;Ultimo registro:          2 ;DBF: C:\USERS\MARCO\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5176,6 +694,100 @@ OCAL\TEMP\00003DVT08Q4.TMP;Ultimo Control activo: CANTIDAD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 PQH01OU.TMP;Ultimo Control activo: 
 02-03-2023 13:00:59 , Pila de llamadas
 02-03-2023 13:01:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\regconcilia.sct
@@ -5189,6 +801,100 @@ PQH01OU.TMP;Ultimo Control activo:
 02-03-2023 13:01:01 , Nº de Linea :          4
 02-03-2023 13:01:01 , En el Fuente: if !empty(cArchivo)
 02-03-2023 13:08:27 , REGCONCILIA.ACEPTAR2.CLICK, Error: No se encuentra la variable 'TOTAL'.;Linea : LOCATE FOR fecha = fecha AND inf='*' AND importe = total AND estadotilde = 0;Error :         12;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:        4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5343,6 +1049,100 @@ PQH01OU.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 APPDATA\LOCAL\TEMP\0000J8Y100PZ.TMP;Ultimo Control activo: 
 02-03-2023 13:42:12 , Pila de llamadas
 02-03-2023 13:42:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\regconcilia.sct
@@ -5351,6 +1151,100 @@ APPDATA\LOCAL\TEMP\0000J8Y100PZ.TMP;Ultimo Control activo:
 02-03-2023 13:42:13 , Nº de Linea :         12
 02-03-2023 13:42:13 , En el Fuente: 					replace encontrado WITH 1 IN CsrCuerpo
 02-03-2023 13:43:20 , REGCONCILIA.ACEPTAR2.CLICK, Error: No se encuentra la propiedad VERDIFERENCIAS.;Linea : This.VerDiferencias();Error :       1734;Ultimo Alias Activo: FSRRECIBIDOS;Ultimo registro:       5570 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5515,6 +1409,100 @@ APPDATA\LOCAL\TEMP\0000J8Y100PZ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +HORA);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000J8Y101L1.TMP;Ultimo Control activo: 
 02-03-2023 14:01:16 , Pila de llamadas
 02-03-2023 14:01:17 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5538,6 +1526,100 @@ APPDATA\LOCAL\TEMP\0000J8Y100PZ.TMP;Ultimo Control activo:
 02-03-2023 14:01:19 , Nº de Linea :          2
 02-03-2023 14:01:19 , En el Fuente: SELECT CsrAuxProducto
 02-03-2023 14:03:30 , PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRAUXPRODUCTO'.;Linea : SELECT CsrAuxProducto;Error :         13;Ultimo Alias Activo: CSRAUXIMPORTAR;Ultimo registro:          1 (DTOS(FECHA)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5654,6 +1736,100 @@ APPDATA\LOCAL\TEMP\0000J8Y100PZ.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DATA\LOCAL\TEMP\0000J8Y101O0.TMP;Ultimo Control activo: 
 02-03-2023 14:05:30 , Pila de llamadas
 02-03-2023 14:05:30 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5692,6 +1868,100 @@ DATA\LOCAL\TEMP\0000J8Y101O0.TMP;Ultimo Control activo:
 02-03-2023 14:05:34 , Nº de Linea :         19
 02-03-2023 14:05:34 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
 02-03-2023 14:08:05 , PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias.;Linea : Oca = GETCURSORADAPTER(lcalias);Error :         13;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:       -227 ;DBF: C:\USERS\MARCO\APP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5783,6 +2053,100 @@ DATA\LOCAL\TEMP\0000J8Y101PD.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \APPDATA\LOCAL\TEMP\0000J8Y101R2.TMP;Ultimo Control activo: 
 02-03-2023 14:09:34 , Pila de llamadas
 02-03-2023 14:09:34 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5831,6 +2195,100 @@ DATA\LOCAL\TEMP\0000J8Y101PD.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \APPDATA\LOCAL\TEMP\0000J8Y101SK.TMP;Ultimo Control activo: 
 02-03-2023 14:11:17 , Pila de llamadas
 02-03-2023 14:11:17 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -5868,3 +2326,1121 @@ DATA\LOCAL\TEMP\0000J8Y101PD.TMP;Ultimo Control activo:
 02-03-2023 14:11:21 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
 02-03-2023 14:11:22 , Nº de Linea :         19
 02-03-2023 14:11:22 , En el Fuente: 	Oca = GETCURSORADAPTER(lcalias)
+13-03-2023 10:41:08 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: No se encuentra la propiedad DINAMICO.;Linea : thisform.dinamico = .t.;Error :       1734;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0000ETJD002R.TMP;Ultimo Control activo: 
+13-03-2023 10:41:08 , Pila de llamadas
+13-03-2023 10:41:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 10:41:09 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 10:41:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 10:41:09 , Nº de Linea :          2
+13-03-2023 10:41:09 , En el Fuente: thisform.dinamico = .t.
+13-03-2023 10:57:04 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'neto mes ant.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      44579 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX005R.TMP;Ultimo Control activo: 
+13-03-2023 10:57:04 , Pila de llamadas
+13-03-2023 10:57:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 10:57:04 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 10:57:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 10:57:05 , Nº de Linea :         85
+13-03-2023 10:57:05 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 10:57:05 , Programa    : vfps_utilidades.fxp
+13-03-2023 10:57:05 , Objeto      : vfps_pivottable
+13-03-2023 10:57:05 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 10:57:05 , Nº de Linea :        310
+13-03-2023 10:57:05 , En el Fuente: 
+13-03-2023 10:57:05 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:57:05 , Objeto      : frm_brows_pivot.init
+13-03-2023 10:57:05 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:57:06 , Nº de Linea :         39
+13-03-2023 10:57:06 , En el Fuente: 
+13-03-2023 10:57:06 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:57:06 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 10:57:06 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:57:06 , Nº de Linea :         41
+13-03-2023 10:57:06 , En el Fuente: 
+13-03-2023 10:57:06 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 10:57:06 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 10:57:06 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 10:57:07 , Nº de Linea :        223
+13-03-2023 10:57:07 , En el Fuente: 
+13-03-2023 10:59:19 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'neto mes ant.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      19216 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX008D.TMP;Ultimo Control activo: 
+13-03-2023 10:59:19 , Pila de llamadas
+13-03-2023 10:59:19 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 10:59:19 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 10:59:19 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 10:59:19 , Nº de Linea :         85
+13-03-2023 10:59:19 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 10:59:19 , Programa    : vfps_utilidades.fxp
+13-03-2023 10:59:19 , Objeto      : vfps_pivottable
+13-03-2023 10:59:19 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 10:59:20 , Nº de Linea :        310
+13-03-2023 10:59:20 , En el Fuente: 
+13-03-2023 10:59:20 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:59:20 , Objeto      : frm_brows_pivot.init
+13-03-2023 10:59:20 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:59:20 , Nº de Linea :         39
+13-03-2023 10:59:20 , En el Fuente: 
+13-03-2023 10:59:21 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:59:21 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 10:59:21 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 10:59:21 , Nº de Linea :         41
+13-03-2023 10:59:21 , En el Fuente: 
+13-03-2023 10:59:21 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 10:59:21 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 10:59:21 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 10:59:21 , Nº de Linea :        223
+13-03-2023 10:59:21 , En el Fuente: 
+13-03-2023 11:02:08 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'neto año ant.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      19216 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX00BG.TMP;Ultimo Control activo: 
+13-03-2023 11:02:08 , Pila de llamadas
+13-03-2023 11:02:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:02:08 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:02:08 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:02:08 , Nº de Linea :         85
+13-03-2023 11:02:08 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:02:08 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:02:08 , Objeto      : vfps_pivottable
+13-03-2023 11:02:08 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:02:09 , Nº de Linea :        310
+13-03-2023 11:02:09 , En el Fuente: 
+13-03-2023 11:02:09 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:02:09 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:02:09 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:02:09 , Nº de Linea :         39
+13-03-2023 11:02:09 , En el Fuente: 
+13-03-2023 11:02:10 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:02:10 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:02:10 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:02:10 , Nº de Linea :         41
+13-03-2023 11:02:10 , En el Fuente: 
+13-03-2023 11:02:10 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:02:10 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:02:10 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:02:10 , Nº de Linea :        223
+13-03-2023 11:02:10 , En el Fuente: 
+13-03-2023 11:05:52 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'netoAño Ant.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      19216 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX00ED.TMP;Ultimo Control activo: 
+13-03-2023 11:05:52 , Pila de llamadas
+13-03-2023 11:05:53 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:05:53 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:05:53 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:05:53 , Nº de Linea :         85
+13-03-2023 11:05:53 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:05:53 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:05:53 , Objeto      : vfps_pivottable
+13-03-2023 11:05:53 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:05:54 , Nº de Linea :        310
+13-03-2023 11:05:54 , En el Fuente: 
+13-03-2023 11:05:54 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:05:54 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:05:54 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:05:54 , Nº de Linea :         39
+13-03-2023 11:05:54 , En el Fuente: 
+13-03-2023 11:05:54 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:05:54 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:05:54 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:05:54 , Nº de Linea :         41
+13-03-2023 11:05:54 , En el Fuente: 
+13-03-2023 11:05:55 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:05:55 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:05:55 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:05:55 , Nº de Linea :        223
+13-03-2023 11:05:55 , En el Fuente: 
+13-03-2023 11:08:17 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'netoAñoAnt.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      19216 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX00I5.TMP;Ultimo Control activo: 
+13-03-2023 11:08:17 , Pila de llamadas
+13-03-2023 11:08:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:08:17 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:08:17 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:08:17 , Nº de Linea :         85
+13-03-2023 11:08:17 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:08:17 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:08:18 , Objeto      : vfps_pivottable
+13-03-2023 11:08:18 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:08:18 , Nº de Linea :        310
+13-03-2023 11:08:18 , En el Fuente: 
+13-03-2023 11:08:18 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:08:18 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:08:18 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:08:18 , Nº de Linea :         39
+13-03-2023 11:08:18 , En el Fuente: 
+13-03-2023 11:08:19 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:08:19 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:08:19 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:08:19 , Nº de Linea :         41
+13-03-2023 11:08:19 , En el Fuente: 
+13-03-2023 11:08:19 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:08:19 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:08:19 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:08:19 , Nº de Linea :        223
+13-03-2023 11:08:19 , En el Fuente: 
+13-03-2023 11:11:58 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'netoAnioAnt.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      19216 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX00PE.TMP;Ultimo Control activo: 
+13-03-2023 11:11:58 , Pila de llamadas
+13-03-2023 11:11:59 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:11:59 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:11:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:11:59 , Nº de Linea :         87
+13-03-2023 11:11:59 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:11:59 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:11:59 , Objeto      : vfps_pivottable
+13-03-2023 11:11:59 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:12:00 , Nº de Linea :        310
+13-03-2023 11:12:00 , En el Fuente: 
+13-03-2023 11:12:00 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:12:00 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:12:00 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:12:00 , Nº de Linea :         39
+13-03-2023 11:12:00 , En el Fuente: 
+13-03-2023 11:12:00 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:12:00 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:12:01 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:12:01 , Nº de Linea :         41
+13-03-2023 11:12:01 , En el Fuente: 
+13-03-2023 11:12:01 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:12:01 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:12:01 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:12:01 , Nº de Linea :        223
+13-03-2023 11:12:01 , En el Fuente: 
+13-03-2023 11:15:04 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'unidMes Ant.' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:      19216 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX00RW.TMP;Ultimo Control activo: 
+13-03-2023 11:15:04 , Pila de llamadas
+13-03-2023 11:15:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:15:04 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:15:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:15:05 , Nº de Linea :         87
+13-03-2023 11:15:05 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:15:05 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:15:05 , Objeto      : vfps_pivottable
+13-03-2023 11:15:05 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:15:05 , Nº de Linea :        310
+13-03-2023 11:15:05 , En el Fuente: 
+13-03-2023 11:15:05 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:15:05 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:15:05 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:15:06 , Nº de Linea :         39
+13-03-2023 11:15:06 , En el Fuente: 
+13-03-2023 11:15:06 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:15:06 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:15:06 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:15:06 , Nº de Linea :         41
+13-03-2023 11:15:06 , En el Fuente: 
+13-03-2023 11:15:06 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:15:06 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:15:07 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:15:07 , Nº de Linea :        223
+13-03-2023 11:15:07 , En el Fuente: 
+13-03-2023 11:17:36 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'neto.Mes' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt.....;E
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rror :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5540 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000065MX00UC.TMP;Ultimo Control activo: 
+13-03-2023 11:17:36 , Pila de llamadas
+13-03-2023 11:17:36 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:17:36 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:17:36 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:17:37 , Nº de Linea :         87
+13-03-2023 11:17:37 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:17:37 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:17:37 , Objeto      : vfps_pivottable
+13-03-2023 11:17:37 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:17:37 , Nº de Linea :        310
+13-03-2023 11:17:38 , En el Fuente: 
+13-03-2023 11:17:38 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:17:38 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:17:38 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:17:38 , Nº de Linea :         39
+13-03-2023 11:17:38 , En el Fuente: 
+13-03-2023 11:17:38 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:17:38 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:17:38 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:17:38 , Nº de Linea :         41
+13-03-2023 11:17:39 , En el Fuente: 
+13-03-2023 11:17:39 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:17:39 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:17:39 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:17:39 , Nº de Linea :        223
+13-03-2023 11:17:39 , En el Fuente: 
+13-03-2023 11:18:28 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct no existe o no es válido.;Linea : DELE.. ...;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control ac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tivo: 
+13-03-2023 11:18:28 , Pila de llamadas
+13-03-2023 11:19:59 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'unid.año ant' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5540 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00009XXL002N.TMP;Ultimo Control activo: 
+13-03-2023 11:19:59 , Pila de llamadas
+13-03-2023 11:19:59 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:19:59 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:20:00 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:20:00 , Nº de Linea :         87
+13-03-2023 11:20:00 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:20:00 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:20:00 , Objeto      : vfps_pivottable
+13-03-2023 11:20:00 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:20:00 , Nº de Linea :        310
+13-03-2023 11:20:00 , En el Fuente: 
+13-03-2023 11:20:01 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:20:01 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:20:01 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:20:01 , Nº de Linea :         39
+13-03-2023 11:20:01 , En el Fuente: 
+13-03-2023 11:20:01 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:20:01 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:20:01 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:20:02 , Nº de Linea :         41
+13-03-2023 11:20:02 , En el Fuente: 
+13-03-2023 11:20:02 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:20:02 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:20:03 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:20:03 , Nº de Linea :        223
+13-03-2023 11:20:03 , En el Fuente: 
+13-03-2023 11:23:10 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'boni_s/iva_mes ant' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : o
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pvt.....;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5540 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00009XXL0054.TMP;Ultimo Control activo: 
+13-03-2023 11:23:10 , Pila de llamadas
+13-03-2023 11:23:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:23:10 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:23:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:23:11 , Nº de Linea :         87
+13-03-2023 11:23:11 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:23:11 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:23:11 , Objeto      : vfps_pivottable
+13-03-2023 11:23:11 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:23:11 , Nº de Linea :        310
+13-03-2023 11:23:11 , En el Fuente: 
+13-03-2023 11:23:11 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:23:11 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:23:11 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:23:11 , Nº de Linea :         39
+13-03-2023 11:23:12 , En el Fuente: 
+13-03-2023 11:23:12 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:23:12 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:23:12 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:23:13 , Nº de Linea :         41
+13-03-2023 11:23:13 , En el Fuente: 
+13-03-2023 11:23:13 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:23:13 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:23:13 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:23:13 , Nº de Linea :        223
+13-03-2023 11:23:13 , En el Fuente: 
+13-03-2023 11:24:47 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'devol.mes' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt.....;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5540 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00009XXL007M.TMP;Ultimo Control activo: 
+13-03-2023 11:24:47 , Pila de llamadas
+13-03-2023 11:24:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:24:48 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:24:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:24:48 , Nº de Linea :         87
+13-03-2023 11:24:49 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:24:49 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:24:49 , Objeto      : vfps_pivottable
+13-03-2023 11:24:49 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:24:49 , Nº de Linea :        310
+13-03-2023 11:24:49 , En el Fuente: 
+13-03-2023 11:24:49 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:24:49 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:24:50 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:24:50 , Nº de Linea :         39
+13-03-2023 11:24:50 , En el Fuente: 
+13-03-2023 11:24:50 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:24:50 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:24:51 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:24:51 , Nº de Linea :         41
+13-03-2023 11:24:51 , En el Fuente: 
+13-03-2023 11:24:51 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:24:51 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:24:51 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:24:51 , Nº de Linea :        223
+13-03-2023 11:24:52 , En el Fuente: 
+13-03-2023 11:26:22 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'devol. mes' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt.....
+
+
+
+
+
+
+
+
+
+
+;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5540 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00009XXL00A4.TMP;Ultimo Control activo: 
+13-03-2023 11:26:22 , Pila de llamadas
+13-03-2023 11:26:23 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:26:23 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:26:23 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:26:23 , Nº de Linea :         87
+13-03-2023 11:26:23 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:26:23 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:26:23 , Objeto      : vfps_pivottable
+13-03-2023 11:26:24 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:26:24 , Nº de Linea :        310
+13-03-2023 11:26:24 , En el Fuente: 
+13-03-2023 11:26:24 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:26:25 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:26:25 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:26:25 , Nº de Linea :         39
+13-03-2023 11:26:25 , En el Fuente: 
+13-03-2023 11:26:26 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:26:26 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:26:26 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:26:26 , Nº de Linea :         41
+13-03-2023 11:26:26 , En el Fuente: 
+13-03-2023 11:26:26 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:26:26 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:26:26 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:26:26 , Nº de Linea :        223
+13-03-2023 11:26:26 , En el Fuente: 
+13-03-2023 11:27:34 , INF_DINAMICA_V4_2.COMMAND2.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'bonif. mes' is not valid. The name must contain only letters, numbers, space, ( or )..;Linea : oPvt.....
+
+
+
+
+
+;Error :       1429;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       5540 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00009XXL00CL.TMP;Ultimo Control activo: 
+13-03-2023 11:27:34 , Pila de llamadas
+13-03-2023 11:27:35 , Programa    : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:27:35 , Objeto      : inf_dinamica_v4_2.command2.click
+13-03-2023 11:27:35 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\dinamico\inf_dinamica_v4_2.sct
+13-03-2023 11:27:35 , Nº de Linea :         87
+13-03-2023 11:27:36 , En el Fuente: 	   VFPS_PivotTable (@laDatosPivot)
+13-03-2023 11:27:36 , Programa    : vfps_utilidades.fxp
+13-03-2023 11:27:36 , Objeto      : vfps_pivottable
+13-03-2023 11:27:36 , Base Objeto : J:\xsoftsql\Proyectos\leon\vfps_utilidades.prg
+13-03-2023 11:27:36 , Nº de Linea :        310
+13-03-2023 11:27:36 , En el Fuente: 
+13-03-2023 11:27:36 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:27:36 , Objeto      : frm_brows_pivot.init
+13-03-2023 11:27:36 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:27:36 , Nº de Linea :         39
+13-03-2023 11:27:37 , En el Fuente: 
+13-03-2023 11:27:37 , Programa    : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:27:37 , Objeto      : frm_brows_pivot.crear_pivot
+13-03-2023 11:27:37 , Base Objeto : j:\xsoftsql\proyectos\leon\frm_brows_pivot.sct
+13-03-2023 11:27:38 , Nº de Linea :         41
+13-03-2023 11:27:38 , En el Fuente: 
+13-03-2023 11:27:38 , Programa    : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:27:38 , Objeto      : frm_brows_pivot.vfps_pivot.crear_entorno_de_datos
+13-03-2023 11:27:39 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\vfps_controls.vct
+13-03-2023 11:27:39 , Nº de Linea :        223
+13-03-2023 11:27:39 , En el Fuente: 

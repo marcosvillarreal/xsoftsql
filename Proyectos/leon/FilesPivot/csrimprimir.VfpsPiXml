@@ -1,0 +1,1152 @@
+<xml xmlns:x="urn:schemas-microsoft-com:office:excel">
+ <x:PivotTable>
+  <x:OWCVersion>12.0.0.4518         </x:OWCVersion>
+  <x:NoDisplayToolbar/>
+  <x:DisplayScreenTips/>
+  <x:NoAutoFit/>
+  <x:Height>514</x:Height>
+  <x:Width>1389</x:Width>
+  <x:CubeProvider>msolap.2</x:CubeProvider>
+  <x:CacheDetails/>
+  <x:ConnectionString>Provider=MSDASQL.1;Extended Properties=&quot;Driver={Microsoft Visual FoxPro Driver};SourceType=DBC;SourceDB=J:\XSOFTSQL\PROYECTOS\LEON\TempPivot\AliasVFP.dbc;Exclusive=NO;NULL=NO;Collate=Machine;BACKGROUNDFETCH=NO;DELETED=NO&quot;</x:ConnectionString>
+  <x:CommandText>SELECT codigo,articulo,codvariedad,variedad,codfletero,nomfletero,ctacte,nomcliente,localidad,provincia,categoria,tipoiva,codrubro,nomrubro,codprv,proveedor,codmarca,nommarca,codvendedor,nomvendedor,zona,codcanalvta,nomcanalvta,codvdorfac,nomvdorfac,nofactura,nolista,espromocion,sucursal,ngmesant,ngmes,nganioant,unimesant,unimes,unianioant,ltsmesant,ltsmes,ltsanioant,kgsmesant,kgsmes,kgsanioant,impmesant,impmes,impanioant,bonsmesant,bonsmes,bonsanioant,totalant,totalmes,totalanio,devolmes,devolmesant,devolanioant,bonmesant,bonmes,bonanioant FROM AliasVFP</x:CommandText>
+  <x:Name>INDICADORES DE GESTIÓN</x:Name>
+  <x:DataAxisEmpty/>
+  <x:PivotField>
+   <x:Name>cod articulo</x:Name>
+   <x:SourceName>codigo</x:SourceName>
+   <x:DataType>Integer</x:DataType>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>3</x:Position>
+   <x:EncodedType>adInteger</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>articulo</x:Name>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>4</x:Position>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cod. variedad</x:Name>
+   <x:SourceName>codvariedad</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>variedad</x:Name>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cod. fletero</x:Name>
+   <x:SourceName>codfletero</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>fletero</x:Name>
+   <x:SourceName>nomfletero</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cod. cliente</x:Name>
+   <x:SourceName>ctacte</x:SourceName>
+   <x:DataType>Integer</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>3</x:Position>
+   <x:EncodedType>adInteger</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cliente</x:Name>
+   <x:SourceName>nomcliente</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>localidad</x:Name>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>provincia</x:Name>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>categoria</x:Name>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>sit. iva</x:Name>
+   <x:SourceName>tipoiva</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Cod. rubro</x:Name>
+   <x:SourceName>codrubro</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>2</x:Position>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>rubro</x:Name>
+   <x:SourceName>nomrubro</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Cod. Proveedor</x:Name>
+   <x:SourceName>codprv</x:SourceName>
+   <x:DataType>Integer</x:DataType>
+   <x:EncodedType>adInteger</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>proveedor</x:Name>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Cod. marca</x:Name>
+   <x:SourceName>codmarca</x:SourceName>
+   <x:DataType>Integer</x:DataType>
+   <x:EncodedType>adInteger</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>marca</x:Name>
+   <x:SourceName>nommarca</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cod. vendedor guia</x:Name>
+   <x:SourceName>codvendedor</x:SourceName>
+   <x:DataType>Integer</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>2</x:Position>
+   <x:EncodedType>adInteger</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>vendedor guia</x:Name>
+   <x:SourceName>nomvendedor</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>zona</x:Name>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cod. canalvta</x:Name>
+   <x:SourceName>codcanalvta</x:SourceName>
+   <x:DataType>Integer</x:DataType>
+   <x:EncodedType>adInteger</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>canalvta</x:Name>
+   <x:SourceName>nomcanalvta</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>cod.vdor fac</x:Name>
+   <x:SourceName>codvdorfac</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>vendedor fac</x:Name>
+   <x:SourceName>nomvdorfac</x:SourceName>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>no factura</x:Name>
+   <x:SourceName>nofactura</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>no lista</x:Name>
+   <x:SourceName>nolista</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>es promocion</x:Name>
+   <x:SourceName>espromocion</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>sucursal</x:Name>
+   <x:DataType>Number</x:DataType>
+   <x:Orientation>Row</x:Orientation>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>neto_Mes Ant</x:Name>
+   <x:SourceName>ngmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>neto_Mes</x:Name>
+   <x:SourceName>ngmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>netoAño Ant</x:Name>
+   <x:SourceName>nganioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>unidMes Ant</x:Name>
+   <x:SourceName>unimesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>uniMes</x:Name>
+   <x:SourceName>unimes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>unid_año ant</x:Name>
+   <x:SourceName>unianioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>lts_mes ant</x:Name>
+   <x:SourceName>ltsmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>lts mes</x:Name>
+   <x:SourceName>ltsmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>lts_año ant</x:Name>
+   <x:SourceName>ltsanioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>kgsmes ant</x:Name>
+   <x:SourceName>kgsmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>kgs mes</x:Name>
+   <x:SourceName>kgsmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>kgs_año ant</x:Name>
+   <x:SourceName>kgsanioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>importe_mes ant</x:Name>
+   <x:SourceName>impmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>importe mes</x:Name>
+   <x:SourceName>impmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>importe_año ant</x:Name>
+   <x:SourceName>impanioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>boni_s_iva_mes ant</x:Name>
+   <x:SourceName>bonsmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>boni_s_iva mes</x:Name>
+   <x:SourceName>bonsmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>boni_s_iva_año ant</x:Name>
+   <x:SourceName>bonsanioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>total ant</x:Name>
+   <x:SourceName>totalant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>total mes</x:Name>
+   <x:SourceName>totalmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>total año</x:Name>
+   <x:SourceName>totalanio</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>devol_mes</x:Name>
+   <x:SourceName>devolmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>devol_mes ant</x:Name>
+   <x:SourceName>devolmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>devol_año ant</x:Name>
+   <x:SourceName>devolanioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>bonif_mes ant</x:Name>
+   <x:SourceName>bonmesant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>bonif_mes</x:Name>
+   <x:SourceName>bonmes</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>bonif_año ant</x:Name>
+   <x:SourceName>bonanioant</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Data</x:Name>
+   <x:Orientation>Column</x:Orientation>
+   <x:Position>-1</x:Position>
+   <x:DataField/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>neto_Mes Ant1</x:Name>
+   <x:PLCaption>neto_Mes Ant</x:PLCaption>
+   <x:PLName>neto_Mes Ant</x:PLName>
+   <x:TotalNumber>0</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>1</x:Position>
+   <x:ParentField>neto_Mes Ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>107</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>neto_Mes1</x:Name>
+   <x:PLCaption>neto_Mes</x:PLCaption>
+   <x:PLName>neto_Mes</x:PLName>
+   <x:TotalNumber>1</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>2</x:Position>
+   <x:ParentField>neto_Mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>netoAño Ant1</x:Name>
+   <x:PLCaption>netoAño Ant</x:PLCaption>
+   <x:PLName>netoAño Ant</x:PLName>
+   <x:TotalNumber>2</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>3</x:Position>
+   <x:ParentField>netoAño Ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>unidMes Ant1</x:Name>
+   <x:PLCaption>unidMes Ant</x:PLCaption>
+   <x:PLName>unidMes Ant</x:PLName>
+   <x:TotalNumber>3</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>4</x:Position>
+   <x:ParentField>unidMes Ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>uniMes1</x:Name>
+   <x:PLCaption>uniMes</x:PLCaption>
+   <x:PLName>uniMes</x:PLName>
+   <x:TotalNumber>4</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>5</x:Position>
+   <x:ParentField>uniMes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>unid_año ant1</x:Name>
+   <x:PLCaption>unid_año ant</x:PLCaption>
+   <x:PLName>unid_año ant</x:PLName>
+   <x:TotalNumber>5</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>6</x:Position>
+   <x:ParentField>unid_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>lts_mes ant1</x:Name>
+   <x:PLCaption>lts_mes ant</x:PLCaption>
+   <x:PLName>lts_mes ant</x:PLName>
+   <x:TotalNumber>6</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>7</x:Position>
+   <x:ParentField>lts_mes ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>lts mes1</x:Name>
+   <x:PLCaption>lts mes</x:PLCaption>
+   <x:PLName>lts mes</x:PLName>
+   <x:TotalNumber>7</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>8</x:Position>
+   <x:ParentField>lts mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>lts_año ant1</x:Name>
+   <x:PLCaption>lts_año ant</x:PLCaption>
+   <x:PLName>lts_año ant</x:PLName>
+   <x:TotalNumber>8</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>9</x:Position>
+   <x:ParentField>lts_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>kgsmes ant1</x:Name>
+   <x:PLCaption>kgsmes ant</x:PLCaption>
+   <x:PLName>kgsmes ant</x:PLName>
+   <x:TotalNumber>9</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>10</x:Position>
+   <x:ParentField>kgsmes ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>kgs mes1</x:Name>
+   <x:PLCaption>kgs mes</x:PLCaption>
+   <x:PLName>kgs mes</x:PLName>
+   <x:TotalNumber>10</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>11</x:Position>
+   <x:ParentField>kgs mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>kgs_año ant1</x:Name>
+   <x:PLCaption>kgs_año ant</x:PLCaption>
+   <x:PLName>kgs_año ant</x:PLName>
+   <x:TotalNumber>11</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>12</x:Position>
+   <x:ParentField>kgs_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>importe_mes ant1</x:Name>
+   <x:PLCaption>importe_mes ant</x:PLCaption>
+   <x:PLName>importe_mes ant</x:PLName>
+   <x:TotalNumber>12</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>13</x:Position>
+   <x:ParentField>importe_mes ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>importe mes1</x:Name>
+   <x:PLCaption>importe mes</x:PLCaption>
+   <x:PLName>importe mes</x:PLName>
+   <x:TotalNumber>13</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>14</x:Position>
+   <x:ParentField>importe mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>importe_año ant1</x:Name>
+   <x:PLCaption>importe_año ant</x:PLCaption>
+   <x:PLName>importe_año ant</x:PLName>
+   <x:TotalNumber>14</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>15</x:Position>
+   <x:ParentField>importe_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>boni_s_iva_mes ant1</x:Name>
+   <x:PLCaption>boni_s_iva_mes ant</x:PLCaption>
+   <x:PLName>boni_s_iva_mes ant</x:PLName>
+   <x:TotalNumber>15</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>16</x:Position>
+   <x:ParentField>boni_s_iva_mes ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>boni_s_iva mes1</x:Name>
+   <x:PLCaption>boni_s_iva mes</x:PLCaption>
+   <x:PLName>boni_s_iva mes</x:PLName>
+   <x:TotalNumber>16</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>17</x:Position>
+   <x:ParentField>boni_s_iva mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>boni_s_iva_año ant1</x:Name>
+   <x:PLCaption>boni_s_iva_año ant</x:PLCaption>
+   <x:PLName>boni_s_iva_año ant</x:PLName>
+   <x:TotalNumber>17</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>18</x:Position>
+   <x:ParentField>boni_s_iva_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>total ant1</x:Name>
+   <x:PLCaption>total ant</x:PLCaption>
+   <x:PLName>total ant</x:PLName>
+   <x:TotalNumber>18</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>19</x:Position>
+   <x:ParentField>total ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>104</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>total mes1</x:Name>
+   <x:PLCaption>total mes</x:PLCaption>
+   <x:PLName>total mes</x:PLName>
+   <x:TotalNumber>19</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>20</x:Position>
+   <x:ParentField>total mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>108</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>total año1</x:Name>
+   <x:PLCaption>total año</x:PLCaption>
+   <x:PLName>total año</x:PLName>
+   <x:TotalNumber>20</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>21</x:Position>
+   <x:ParentField>total año</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>devol_mes1</x:Name>
+   <x:PLCaption>devol_mes</x:PLCaption>
+   <x:PLName>devol_mes</x:PLName>
+   <x:TotalNumber>21</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>22</x:Position>
+   <x:ParentField>devol_mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>devol_mes ant1</x:Name>
+   <x:PLCaption>devol_mes ant</x:PLCaption>
+   <x:PLName>devol_mes ant</x:PLName>
+   <x:TotalNumber>22</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>23</x:Position>
+   <x:ParentField>devol_mes ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>devol_año ant1</x:Name>
+   <x:PLCaption>devol_año ant</x:PLCaption>
+   <x:PLName>devol_año ant</x:PLName>
+   <x:TotalNumber>23</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>24</x:Position>
+   <x:ParentField>devol_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>bonif_mes ant1</x:Name>
+   <x:PLCaption>bonif_mes ant</x:PLCaption>
+   <x:PLName>bonif_mes ant</x:PLName>
+   <x:TotalNumber>24</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>25</x:Position>
+   <x:ParentField>bonif_mes ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>bonif_mes1</x:Name>
+   <x:PLCaption>bonif_mes</x:PLCaption>
+   <x:PLName>bonif_mes</x:PLName>
+   <x:TotalNumber>25</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>26</x:Position>
+   <x:ParentField>bonif_mes</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>bonif_año ant1</x:Name>
+   <x:PLCaption>bonif_año ant</x:PLCaption>
+   <x:PLName>bonif_año ant</x:PLName>
+   <x:TotalNumber>26</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>27</x:Position>
+   <x:ParentField>bonif_año ant</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotData>
+   <x:Top>0.0</x:Top>
+   <x:TopOffset>0</x:TopOffset>
+   <x:Left>0</x:Left>
+   <x:LeftOffset>0</x:LeftOffset>
+   <x:SeqNum>37</x:SeqNum>
+  </x:PivotData>
+  <x:PivotView>
+   <x:IsNotFiltered/>
+   <x:TotalFormat Style='font-family:Tahoma;font-size:8pt;font-weight:bold;
+    background:#FAFFFA'/>
+   <x:HeaderFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#365FA5;color:white;text-align:center'/>
+   <x:FieldLabelFormat Style='font-family:Tahoma;font-size:10pt;background:
+    #365FA5;color:white'/>
+   <x:Label Style='font-family:Tahoma;font-size:13pt;background:#CFE4FF;
+    color:#204D89;text-align:center'>
+    <x:Caption>INDICADORES DE GESTIÓN</x:Caption>
+   </x:Label>
+   <x:AllowEdits>false</x:AllowEdits>
+  </x:PivotView>
+  <x:PivotAxis>
+   <x:Orientation>Filter</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de filtro aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>Row</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de fila aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>Column</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de columna aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>Data</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar totales o campos de detalle aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>FifthAxis</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de página aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+ </x:PivotTable>
+</xml>

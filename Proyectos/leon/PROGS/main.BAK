@@ -154,6 +154,7 @@ objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('firma',cFirma)
 ObjReporter.AddProperty('fileqr',cRutaQR)
+ObjReporter.AddProperty('mensajeria_body',"")
 
 PUBLIC ObjInfNeg
 ObjInfNeg=CREATEOBJECT("custom")
