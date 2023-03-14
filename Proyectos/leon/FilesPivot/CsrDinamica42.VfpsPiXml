@@ -1,23 +1,21 @@
 <xml xmlns:x="urn:schemas-microsoft-com:office:excel">
  <x:PivotTable>
   <x:OWCVersion>12.0.0.4518         </x:OWCVersion>
-  <x:NoDisplayToolbar/>
   <x:DisplayScreenTips/>
   <x:NoAutoFit/>
   <x:Height>514</x:Height>
-  <x:Width>1389</x:Width>
+  <x:Width>958</x:Width>
   <x:CubeProvider>msolap.2</x:CubeProvider>
   <x:CacheDetails/>
   <x:ConnectionString>Provider=MSDASQL.1;Extended Properties=&quot;Driver={Microsoft Visual FoxPro Driver};SourceType=DBC;SourceDB=J:\XSOFTSQL\PROYECTOS\LEON\TempPivot\AliasVFP.dbc;Exclusive=NO;NULL=NO;Collate=Machine;BACKGROUNDFETCH=NO;DELETED=NO&quot;</x:ConnectionString>
   <x:CommandText>SELECT codigo,articulo,codvariedad,variedad,codfletero,nomfletero,ctacte,nomcliente,localidad,provincia,categoria,tipoiva,codrubro,nomrubro,codprv,proveedor,codmarca,nommarca,codvendedor,nomvendedor,zona,codcanalvta,nomcanalvta,codvdorfac,nomvdorfac,nofactura,nolista,espromocion,sucursal,ngmesant,ngmes,nganioant,unimesant,unimes,unianioant,ltsmesant,ltsmes,ltsanioant,kgsmesant,kgsmes,kgsanioant,impmesant,impmes,impanioant,bonsmesant,bonsmes,bonsanioant,totalant,totalmes,totalanio,devolmes,devolmesant,devolanioant,bonmesant,bonmes,bonanioant FROM AliasVFP</x:CommandText>
-  <x:Name>INDICADORES DE GESTIÓN</x:Name>
-  <x:DataAxisEmpty/>
+  <x:Name>INFORME DINAMICO</x:Name>
   <x:PivotField>
    <x:Name>cod articulo</x:Name>
    <x:SourceName>codigo</x:SourceName>
    <x:DataType>Integer</x:DataType>
    <x:Orientation>Row</x:Orientation>
-   <x:Position>3</x:Position>
+   <x:Position>2</x:Position>
    <x:EncodedType>adInteger</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -29,8 +27,7 @@
   </x:PivotField>
   <x:PivotField>
    <x:Name>articulo</x:Name>
-   <x:Orientation>Page</x:Orientation>
-   <x:Position>4</x:Position>
+   <x:PLDataOrientation/>
    <x:EncodedType>adChar</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -44,6 +41,8 @@
    <x:Name>cod. variedad</x:Name>
    <x:SourceName>codvariedad</x:SourceName>
    <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>5</x:Position>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -53,6 +52,7 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>variedad</x:Name>
@@ -70,6 +70,7 @@
    <x:SourceName>codfletero</x:SourceName>
    <x:DataType>Number</x:DataType>
    <x:Orientation>Page</x:Orientation>
+   <x:Position>2</x:Position>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -98,7 +99,7 @@
    <x:SourceName>ctacte</x:SourceName>
    <x:DataType>Integer</x:DataType>
    <x:Orientation>Page</x:Orientation>
-   <x:Position>3</x:Position>
+   <x:Position>4</x:Position>
    <x:EncodedType>adInteger</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -145,6 +146,8 @@
   </x:PivotField>
   <x:PivotField>
    <x:Name>categoria</x:Name>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>6</x:Position>
    <x:EncodedType>adChar</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -153,10 +156,13 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>sit. iva</x:Name>
    <x:SourceName>tipoiva</x:SourceName>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>7</x:Position>
    <x:EncodedType>adChar</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -165,13 +171,13 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>Cod. rubro</x:Name>
    <x:SourceName>codrubro</x:SourceName>
    <x:DataType>Number</x:DataType>
-   <x:Orientation>Row</x:Orientation>
-   <x:Position>2</x:Position>
+   <x:Orientation>Page</x:Orientation>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -198,6 +204,8 @@
    <x:Name>Cod. Proveedor</x:Name>
    <x:SourceName>codprv</x:SourceName>
    <x:DataType>Integer</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>8</x:Position>
    <x:EncodedType>adInteger</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -206,6 +214,7 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>proveedor</x:Name>
@@ -222,6 +231,8 @@
    <x:Name>Cod. marca</x:Name>
    <x:SourceName>codmarca</x:SourceName>
    <x:DataType>Integer</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>9</x:Position>
    <x:EncodedType>adInteger</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -230,6 +241,7 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>marca</x:Name>
@@ -248,7 +260,7 @@
    <x:SourceName>codvendedor</x:SourceName>
    <x:DataType>Integer</x:DataType>
    <x:Orientation>Page</x:Orientation>
-   <x:Position>2</x:Position>
+   <x:Position>3</x:Position>
    <x:EncodedType>adInteger</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -273,6 +285,8 @@
   </x:PivotField>
   <x:PivotField>
    <x:Name>zona</x:Name>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>10</x:Position>
    <x:EncodedType>adChar</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -281,11 +295,14 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>cod. canalvta</x:Name>
    <x:SourceName>codcanalvta</x:SourceName>
    <x:DataType>Integer</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>11</x:Position>
    <x:EncodedType>adInteger</x:EncodedType>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
    <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
@@ -294,6 +311,7 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>canalvta</x:Name>
@@ -311,6 +329,8 @@
    <x:Name>cod.vdor fac</x:Name>
    <x:SourceName>codvdorfac</x:SourceName>
    <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>12</x:Position>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -320,6 +340,7 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>vendedor fac</x:Name>
@@ -337,6 +358,8 @@
    <x:Name>no factura</x:Name>
    <x:SourceName>nofactura</x:SourceName>
    <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>13</x:Position>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -346,11 +369,14 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>no lista</x:Name>
    <x:SourceName>nolista</x:SourceName>
    <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>14</x:Position>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -360,11 +386,14 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>es promocion</x:Name>
    <x:SourceName>espromocion</x:SourceName>
    <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>15</x:Position>
    <x:EncodedType>adNumeric</x:EncodedType>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
@@ -374,6 +403,7 @@
     background:#F29536'/>
    <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
     bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>sucursal</x:Name>
@@ -783,7 +813,7 @@
    <x:ParentField>neto_Mes Ant</x:ParentField>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:TotalAlignment>Right</x:TotalAlignment>
-   <x:TotalWidth>107</x:TotalWidth>
+   <x:TotalWidth>90</x:TotalWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>neto_Mes1</x:Name>
@@ -999,7 +1029,7 @@
    <x:ParentField>total ant</x:ParentField>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:TotalAlignment>Right</x:TotalAlignment>
-   <x:TotalWidth>104</x:TotalWidth>
+   <x:TotalWidth>90</x:TotalWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>total mes1</x:Name>
@@ -1011,7 +1041,7 @@
    <x:ParentField>total mes</x:ParentField>
    <x:NumberFormat>#,##0.00</x:NumberFormat>
    <x:TotalAlignment>Right</x:TotalAlignment>
-   <x:TotalWidth>108</x:TotalWidth>
+   <x:TotalWidth>90</x:TotalWidth>
   </x:PivotField>
   <x:PivotField>
    <x:Name>total año1</x:Name>
@@ -1102,7 +1132,7 @@
    <x:TopOffset>0</x:TopOffset>
    <x:Left>0</x:Left>
    <x:LeftOffset>0</x:LeftOffset>
-   <x:SeqNum>37</x:SeqNum>
+   <x:SeqNum>41</x:SeqNum>
   </x:PivotData>
   <x:PivotView>
    <x:IsNotFiltered/>
@@ -1114,7 +1144,7 @@
     #365FA5;color:white'/>
    <x:Label Style='font-family:Tahoma;font-size:13pt;background:#CFE4FF;
     color:#204D89;text-align:center'>
-    <x:Caption>INDICADORES DE GESTIÓN</x:Caption>
+    <x:Caption>INFORME DINAMICO</x:Caption>
    </x:Label>
    <x:AllowEdits>false</x:AllowEdits>
   </x:PivotView>

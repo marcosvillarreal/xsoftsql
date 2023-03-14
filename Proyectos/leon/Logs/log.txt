@@ -1,77 +1,3 @@
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0._TMPNOTIFYVTOCAE.LBLACCESO.CLICK
-14-06-2021 13:31:45 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\regpedidocae.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CSRKEY registro         15
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0._TMPNOTIFYVTOCAE.LBLACCESO.CLICK
-14-06-2021 13:32:46 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\regpidocae.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CSRKEY registro         15
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0._TMPNOTIFYVTOCAE.LBLACCESO.CLICK
-14-06-2021 14:27:01 , Error nº:       1925
-Error CONT_HEADER1 es un miembro desconocido.
-Linea nº this.Top = this.Parent.cont_header1.Height + 10
- Alias CSRSEGURIDAD registro          1
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.INIT
-14-06-2021 14:27:29 , Verificando OCX
-14-06-2021 14:28:05 , Error nº:       1881
-Error Error en Label - Caption : Cadena demasiado larga.
-Linea nº .Label.Caption	= lcDetalle
- Alias CSRATERMI registro          1
-Control activo  FRMMENU_DASHBOARD1.INIT
-14-06-2021 14:29:21 , Error nº:       1881
-Error Error en Label - Caption : Cadena demasiado larga.
-Linea nº .Label.Caption	= lcDetalle
- Alias CSRATERMI registro          1
-Control activo  FRMMENU_DASHBOARD1.INIT
-14-06-2021 14:29:27 , Error nº:       1881
-Error Error en Label - Caption : Cadena demasiado larga.
-Linea nº .Label.Caption	= cCaption
- Alias CSRATERMI registro          2
-Control activo  FRMMENU_DASHBOARD1.INIT
-14-06-2021 14:32:18 , Error nº:         16
-Error No se reconoce el verbo de comando.
-Linea nº &cEjecuta
- Alias CSRATERMI registro          6
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM1.BTN.CLICK
-14-06-2021 14:35:32 , Error nº:         16
-Error No se reconoce el verbo de comando.
-Linea nº &cEjecuta
- Alias CSRATERMI registro          6
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM1.BTN.CLICK
-14-06-2021 14:35:43 , Error nº:         16
-Error No se reconoce el verbo de comando.
-Linea nº &cEjecuta
- Alias CSRATERMI registro          6
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM1.BTN.CLICK
-14-06-2021 14:37:50 , Error nº:         16
-Error No se reconoce el verbo de comando.
-Linea nº &cEjecuta
- Alias CSRATERMI registro          3
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM2.BTN.CLICK
-14-06-2021 14:38:05 , Error nº:         16
-Error No se reconoce el verbo de comando.
-Linea nº &cEjecuta
- Alias CSRATERMI registro          3
-Control activo  FRMMENU_DASHBOARD1.TEMPLATE0.CONT_NOTIFYUSER1.GROUPHOJAS.BTNDM2.BTN.CLICK
-14-06-2021 14:44:28 , Error nº:       1925
-Error _CMDPROCESAR es un miembro desconocido.
-Linea nº .containerencabeza._cmdprocesar.SetFocus
- Alias CSRAUXILIAR registro          1
-Control activo  REGPUBVARIO.CANCELAR1.CLICK
-14-06-2021 14:51:51 , Verificando OCX
-14-06-2021 15:14:04 , Error nº:       1806
-Error SQL: no se encuentra la columna 'SEC_IDPROGRAMA'.
-Linea nº SELECT * FROM datamenu WHERE sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'00000'),1)='0' ORDER BY sec_codacce INTO CURSOR curPerfil
- Alias PERFILES registro          1
-Control activo  FRMFAVORITOS.COMBO1.VALID
-14-06-2021 15:17:35 , Error nº:       1806
-Error SQL: no se encuentra la columna 'SEC_IDPROGRAMA'.
-Linea nº SELECT * FROM datamenu WHERE sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'00000'),1)='0' ORDER BY sec_codacce INTO CURSOR curPerfil
- Alias PERFILES registro          1
-Control activo  FRMFAVORITOS.INIT
-14-06-2021 15:27:53 , Error nº:         12
 Error No se encuentra la variable 'PIDSISTEMA'.
 Linea nº oMenu.createMenu('datamenu','seguridad','favoritos',Pidsistema)
  Alias FAVORITOS registro          4
@@ -111,6 +37,15 @@ Control activo  MAIN
 15-06-2021 10:47:41 , Error nº:       1806
 Error SQL: no se encuentra la columna 'IDUSUARIOFAVORITO'.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+
+
+
+
+
+
+
+
 
 
 
@@ -383,6 +318,15 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
+
+
+
+
+
+
+
+
 u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias  registro          0
 Control activo  MAIN
@@ -521,6 +465,15 @@ Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec
 
 
 
+
+
+
+
+
+
+
+
+
 u WHERE idusuariofavoritos=This.sUserId  AND csrmenu.orden<>0 ORDER By csrmenu.orden Into Cursor csrpops
  Alias  registro          0
 Control activo  MAIN
@@ -528,6 +481,15 @@ Control activo  MAIN
 15-06-2021 10:51:52 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº Select sec_codacce,ALLTRIM(sec_promptacc),sec_descacce,sec_tipoacce,sec_doacce,sec_keyacce,sec_condacce ,csrseguridad.Id As idseguridad,sec_fontstyle,sec_picture,sec_tipodoacce From csrmenu Left Join csrseguridad On csrmenu.Id=csrseguridad.idmen
+
+
+
+
+
+
+
+
+
 
 
 
@@ -924,6 +886,15 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
+
+
+
+
+
+
+
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  MAIN
@@ -931,6 +902,15 @@ Control activo  MAIN
 15-10-2021 15:08:01 , Error nº:          1
 Error El archivo 'csrvendedor.dbf' no existe.
 Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from CsrVendedor order by cnumero into cursor _Csr
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1158,6 +1138,15 @@ Linea nº SELECT 0 as ok,CsrVendedor.cnombre ,CsrVendedor.cnumero ,CsrVendedor.id
 
 
 
+
+
+
+
+
+
+
+
+
 Vendedor READWRITE
  Alias _CSRCOMPROBANTE registro          1
 Control activo  SUBFACTURA.INIT
@@ -1184,6 +1173,15 @@ Control activo  FRMMENU3.INIT
 15-10-2021 18:17:25 , Error nº:          1
 Error El archivo 'favoritos.dbf' no existe.
 Linea nº SELECT sec_codacce, sec_tipoacce ,datamenu.id as idmenu FROM datamenu INNER Join favoritos On datamenu.Id=favoritos.idmenu WHERE favoritos.idperfil=lsPerfilUser AND datamenu.sec_idprograma=thisform.idsistema AND LEFT(LTRIM(NVL(switch,'00000')+'0
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1543,7 +1541,25 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
+
+
+
+
+
+
+
+
 024,Campo025 ,Campo026,Campo027,Campo028,Campo029,Campo030 ,Campo031,Campo032,Campo033,Campo034,Campo035 ,Campo036,Campo037 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1719,7 +1735,25 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
+
+
+
+
+
+
+
+
 ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2158,7 +2192,25 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2250,7 +2302,25 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2342,7 +2412,25 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2714,4 +2802,84 @@ Error Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Component
 Linea nº oPvt.....
  Alias CSRIMPRIMIR registro       5540
 Control activo  INF_DINAMICA_V4_2.COMMAND2.CLICK
-13-03-2023 11:27:33 , Error nº:       1429Error Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'bonif. mes' is not valid. The name must contain only letters, numbers, space, ( or )..Linea nº oPvt..... Alias CSRIMPRIMIR registro       5540Control activo  INF_DINAMICA_V4_2.COMMAND2.CLICK
+13-03-2023 11:27:33 , Error nº:       1429
+Error Código de excepción OLE IDispatch 0 de Microsoft Office 2003 Web Components: The name 'bonif. mes' is not valid. The name must contain only letters, numbers, space, ( or )..
+Linea nº oPvt.....
+ Alias CSRIMPRIMIR registro       5540
+Control activo  INF_DINAMICA_V4_2.COMMAND2.CLICK
+13-03-2023 15:31:53 , Verificando OCX
+13-03-2023 15:48:31 , Error nº:       1300
+Error Falta ) en el nombre de la función.
+Linea nº IF FILE(&lcExisteFile )
+ Alias CSRDINAMICA42 registro          1
+Control activo  INF_DINAMICA_V4_2.COMMAND2.CLICK
+13-03-2023 15:51:30 , Error nº:       1300
+Error Falta ) en el nombre de la función.
+Linea nº IF FILE(&lcExisteFile )
+ Alias CSRDINAMICA42 registro          1
+Control activo  INF_DINAMICA_V4_2.COMMAND2.CLICK
+13-03-2023 17:12:17 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONTA'.
+Linea nº return (&lcAlias)
+ Alias  registro          0
+Control activo  ABMPARACON.CMDSELECCIONAR.CLICK
+13-03-2023 17:12:23 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONTA'.
+Linea nº return (&lcAlias)
+ Alias  registro          0
+Control activo  ABMPARACON.CMDSELECCIONAR.CLICK
+13-03-2023 17:21:21 , Error nº:         13
+Error No se encuentra el alias 'GOAPP'.
+Linea nº AND Csrplancue.IDEJERCICIO = <<GOAPP.IDEJERCICIO>>
+ Alias  registro          0
+Control activo  ABMPARACON.DATAENVIRONMENT.PLANCUE.INIT
+13-03-2023 17:22:21 , Verificando OCX
+13-03-2023 17:24:33 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONTA'.
+Linea nº SELECT (lCaliasNavega)
+ Alias  registro          0
+Control activo  ABMPARACON._TEXTBOX1.KEYPRESS
+13-03-2023 17:24:37 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONTA'.
+Linea nº return (&lcAlias)
+ Alias  registro          0
+Control activo  ABMPARACON.CMDSELECCIONAR.CLICK
+13-03-2023 17:24:52 , Verificando OCX
+13-03-2023 17:25:52 , Error nº:         12
+Error No se encuentra la variable 'CUENTA'.
+Linea nº loObjcol.controlsource = lCaliasNavega+'.'+lccadena
+ Alias CSRPARACONTA registro          1
+Control activo  ABMPARACON.INIT
+13-03-2023 17:26:50 , Error nº:         13
+Error No se encuentra el alias 'CSRPARACONTA'.
+Linea nº SELECT (lCaliasNavega)
+ Alias  registro          0
+Control activo  ABMPARACON._TEXTBOX1.KEYPRESS
+13-03-2023 17:28:26 , Error nº:         13
+Error No se encuentra el alias 'GOAPP'.
+Linea nº AND Csrplancue.IDEJERCICIO = <<GOAPP.IDEJERCICIO>>
+ Alias  registro          0
+Control activo  ABMPARACON.DATAENVIRONMENT.PLANCUE.INIT
+13-03-2023 17:28:35 , Verificando OCX
+14-03-2023 10:27:41 , Verificando OCX
+14-03-2023 10:43:55 , Error nº:         13
+Error No se encuentra el alias 'CSRRUBRO'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias  registro          0
+Control activo  ABMRUBROS.INIT
+14-03-2023 10:48:55 , Error nº:         13
+Error No se encuentra el alias 'CSRRUBRO'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias  registro          0
+Control activo  ABMRUBROS.INIT
+14-03-2023 10:51:07 , Error nº:         13
+Error No se encuentra el alias 'CSRRUBRO'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias  registro          0
+Control activo  ABMRUBROS.INIT
+14-03-2023 10:52:54 , Error nº:         13
+Error No se encuentra el alias 'CSRRUBRO'.
+Linea nº CASE VARTYPE(&lcclaB)='C'
+ Alias  registro          0
+Control activo  ABMRUBROS.INIT
+14-03-2023 10:58:12 , Error nº:         10Error Error de sintaxis.Linea nº CASE VARTYPE(&lcclaB)='C' Alias  registro          0Control activo  ABMRUBROS.INIT
