@@ -245,7 +245,7 @@ IF TYPE('goApp')='O'
 		*!* LLENAR PARAMETROS VFPS MESSAGEBOX
 		_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
 		_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "http://www.vfpsteambi.solutions" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
 		_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
 		_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
 		** Herramienta VFPsControlSkin
@@ -617,7 +617,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
-    cVersion = HayVersionExe("gestion.exe")
+    cVersion = HayVersionExe("gestion.exe",pidsistema )
     IF LEN(cVersion)> 0
     	
     	
