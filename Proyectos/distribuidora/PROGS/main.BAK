@@ -617,7 +617,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
-    cVersion = HayVersionExe("gestion.exe")
+    cVersion = HayVersionExe("gestion.exe",pidsistema )
     IF LEN(cVersion)> 0
     	
     	
