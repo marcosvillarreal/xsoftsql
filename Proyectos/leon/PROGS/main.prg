@@ -197,7 +197,7 @@ IF TYPE('goApp')='O'
 	IF oConfigTermi.controlskin = 'TRUE'
 		* Herramienta VFPsControlSkin
 		IF FILE("VFPsControlSkin.Exe")
-		   VFPsControlSkin(APPLICATION,_SCREEN,"0") && SE ENVIA EL STYLE OFFICE 2010 BLUE
+		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE OFFICE 2010 BLUE
 		   *!* NUEVO 
 		   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
 		   IF VFPs_AddBar(_SCREEN,.T.) THEN 
