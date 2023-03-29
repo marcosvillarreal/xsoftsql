@@ -1548,6 +1548,7 @@ IF lok
    Goapp.terminal               = Csrseteotermi.numero
    Goapp.nombreterminal = Csrseteotermi.nombre
    goapp.openfac		= NVL(CsrSeteotermi.openfac,0)
+   goapp.openres = NVL(CsrSeteotermi.openres ,0)
 ENDIF
 
 IF USED('CsrPAraVario')

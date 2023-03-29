@@ -1,0 +1,6 @@
+
+PROCEDURE MenuContextReserva
+LOCAL FormMenu
+FormMenu = CREATEOBJECT("baseconector")
+
+ENDPROC 

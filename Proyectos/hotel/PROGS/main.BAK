@@ -202,7 +202,7 @@ ObjReserva.AddProperty("fecha_out",DATE())
 ObjReserva.AddProperty("idreserva_ant",0)
 ObjReserva.AddProperty("Titular","")
 ObjReserva.AddProperty("Titular_ant","")
-
+ObjReserva.AddProperty("cod_estreserva",0)
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo
@@ -342,7 +342,9 @@ IF TYPE('goApp')='O'
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
-			DO FORM frmreserva_v3
+			IF goapp.openres = 1
+				DO FORM frmreserva_v3
+			ENDIF 
 		ELSE 
 			DO FORM frmmenu_DashBoard
 		ENDIF 

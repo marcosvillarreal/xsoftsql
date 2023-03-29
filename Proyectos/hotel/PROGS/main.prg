@@ -124,6 +124,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO FoxBarcodeQR ADDITIVE
   SET PROCEDURE TO qdfoxJSON ADDITIVE 
        
+  SET PROCEDURE TO pruebamenu.prg ADDITIVE 
+      
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
@@ -342,7 +344,9 @@ IF TYPE('goApp')='O'
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
-			DO FORM frmreserva_v3
+			IF goapp.openres = 1
+				DO FORM frmreserva_v3
+			ENDIF 
 		ELSE 
 			DO FORM frmmenu_DashBoard
 		ENDIF 
