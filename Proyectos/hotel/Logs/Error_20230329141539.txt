@@ -1,0 +1,13 @@
+29-03-2023 14:15:39 , SUBCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : INSERT INTO CsrImprimir (grupo,id,idmaopera,numcomp,codctacte,nomctacte,total,fecha,fechavto,fechasys,terminal ,nomusuario,estado,clase,chrfecha,rendida,fecrendida,numfletero) VALUES ("A",OscCursor.id,OscCursor.idmaopera,OscCursor.numcomp,OscCursor.codctacte,OscCursor.nomctacte ,OscCursor.total,OscCursor.fecha,OscCursor.fechavto,OscCursor.fechasys,OscCursor.terminal,OscCursor.nomusuario ,IIF(VAL(OscCursor.estado)=1,"ANULADO",ALLTRIM(STR(OscCursor.nrocaja))),"A",DTOS(CTOD(OscCursor.fecha)) ,OscCursor.rendida,TTOD(OscCursor.fecrendida),OscCursor.numfletero);Error :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005UYX00RA.TMP;Ultimo Control activo: 
+29-03-2023 14:15:39 , Pila de llamadas
+29-03-2023 14:15:39 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+29-03-2023 14:15:39 , Objeto      : subctacte.imprimir_vistaprevia1.impresora.click
+29-03-2023 14:15:39 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+29-03-2023 14:15:39 , Nº de Linea :          8
+29-03-2023 14:15:39 , En el Fuente: 	llOK=thisform.CrearInforme()
+29-03-2023 14:15:39 , Programa    : j:\xsoftsql\proyectos\hotel\forms\subctacte.sct
+29-03-2023 14:15:39 , Objeto      : subctacte.crearinforme
+29-03-2023 14:15:39 , Base Objeto : j:\xsoftsql\proyectos\hotel\forms\subctacte.sct
+29-03-2023 14:15:39 , Nº de Linea :        247
+29-03-2023 14:15:39 , En el Fuente: 		INSERT INTO CsrImprimir (grupo,id,idmaopera,numcomp,codctacte,nomctacte,total,fecha,fechavto,fechasys,terminal								,nomusuario,estado,clase,chrfecha,rendida,fecrendida,numfletero)		VALUES ("A",OscCursor.id,OscCursor.idmaopera,OscCursor.numcomp,OscCursor.codctacte,OscCursor.nomctacte				,OscCursor.total,OscCursor.fecha,OscCursor.fechavto,OscCursor.fechasys,OscCursor.terminal,OscCursor.nomusuario				,IIF(VAL(OscCursor.estado)=1,"ANULADO",ALLTRIM(STR(OscCursor.nrocaja))),"A",DTOS(CTOD(OscCursor.fecha))				,OscCursor.rendida,TTOD(OscCursor.fecrendida),OscCursor.numfletero)
+29-03-2023 14:15:39 , Fin
