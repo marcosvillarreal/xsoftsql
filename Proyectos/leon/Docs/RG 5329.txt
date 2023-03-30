@@ -31,7 +31,7 @@ RegFacVta
 	-TotalComprobante()
 		STORE 0 TO lnBasePerceIVA   
 		.....
-		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329 AND CsrCategoiva.fiscal$'I'
+		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329 
 			nAlicuotaPI = IIF(lnTasa = 21,3,IIF(lnTasa=10.5,1.5,0))
 			IF nAlicuotaPI #0
 				lnPerceIVA = red(lnUniSiva * nAlicuotaPI / 100,lndecimaltot)
@@ -61,7 +61,7 @@ RegFacVta
 	.TotalHoja()
 		STORE 0 TO lnBasePerceIVA   
 		....
-		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329 AND CsrCategoiva.fiscal$'I'
+		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329
 			nAlicuotaPI = IIF(lnTasa = 21,3,IIF(lnTasa=10.5,1.5,0))
 			IF nAlicuotaPI #0
 				lnPerceIVA = red(lnUniSiva * nAlicuotaPI / 100,lndecimaltot)
@@ -163,7 +163,6 @@ ImpCompVtaCAE
 			,tasarete5 WITH NVL(CsrTablaImp.tasaPI1,0) IN CsrAuxCabefac
 		replace PerceIVA5329 WITH retencion4 + retencion5 IN CsrAuxCabefac
 		
-unitariofac.VaciarImpuesto
 
 Defenir el codigo del paraconta para actualizafac.grabarastofac
 
