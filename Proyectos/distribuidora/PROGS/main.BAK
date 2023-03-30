@@ -626,15 +626,16 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 
-	_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
-	_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
-	_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
-	
-	lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
-	lcMessage = "Existe una actualización importante del sistema"	&&MENSAJE A MOSTRAR EN EL POPUP
+	IF oConfigTermi.controlskin = 'TRUE'
+		_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
+		_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
+		_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
+		
+		lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
+		lcMessage = "Existe una actualización importante del sistema"	&&MENSAJE A MOSTRAR EN EL POPUP
 
-	VFPs_MessagePopup (lcCaption,lcMessage)
-
+		VFPs_MessagePopup (lcCaption,lcMessage)
+	ENDIF 
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =   30000 
 		
