@@ -10,8 +10,160 @@ AbmRubro
 AbmCtacte
 ParaVario
 RegFacVta
+	-CrearCursor()
+		,CAST(0 as n(16,2)) as PerceIVA5329  CsrAuxCabefac
+	-ControlCtacte()
+		IF thisform.activoPerceIVA5329
+			this.Calculopiva5329 = .t.
+		ENDIF 
+		IF NVL(CsrCtacte.excluido5329,0) = 1
+			this.Calculopiva5329 = .f.
+		ENDIF 
+	-LeerParametrosConfig()
+		SELECT CsrParavario
+		LOCATE FOR ALLTRIM(nombre)="FACREG5329"
+		IF FOUND()
+			IF estado = 1
+				.activoPerceIVA5329= .t.
+				.minimopiva5329 = CsrParavario.importe
+			ENDIF 
+		ENDIF 
+	-TotalComprobante()
+		STORE 0 TO lnBasePerceIVA   
+		.....
+		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329 AND CsrCategoiva.fiscal$'I'
+			nAlicuotaPI = IIF(lnTasa = 21,3,IIF(lnTasa=10.5,1.5,0))
+			IF nAlicuotaPI #0
+				lnPerceIVA = red(lnUniSiva * nAlicuotaPI / 100,lndecimaltot)
+				lnBasePerceIVA   = lnBasePerceIVA+ lnPerceIVA 
+				
+				thisform.unitariofac.acumulaimpuesto(@loObjRetencion,"PIVA"+TRANSFORM(nAlicuotaPI ,"99.99"),lnUniSiva ,lntasa,lnPerceIVA ,"PIVA "+TRANSFORM(lntasa,"99.99"),0)
+			ENDIF 
+		ENDIF 
+		....
+		IF lnBasePerceIVA  = 0 OR  lnBasePerceIVA   < This.MinimoPIva5329  OR NOT CsrCategoiva.fiscal $ 'I' OR NOT CsrComprobante.clase$'ABCU'  		
+			thisform.unitariofac.VaciarImpuesto(@loObjRetencion,"PIVA"+TRANSFORM(21 ,"99.99"))
+			thisform.unitariofac.VaciarImpuesto(@loObjRetencion,"PIVA"+TRANSFORM(10.5 ,"99.99"))
+			lnBasePerceIVA  = 0
+		ENDIF 
+		....
+		lnBaseRetencion = red(lnBaseRetencion - lnTotNoCatego - lnBasePerceIVA  ,lndecimaltot)
+		....
+		lnTotalFac     = lnBaseGra + lnBaseExe + lnBaseInterno + lnBaseIva + lnBaseretencion + lnTotNoCatego + lnBasePerceIVA  
+		...
+		._txtperceiva.Value	 = lnBasePerceIVA  
+		...
+		replace PerceIVA5329 WITH lnBasePerceIVA   IN CsrAuxCabefac
+	.PonerLineaEnCero()
+		perceiva5329 WITH 0
+	.AgregarCuerfac()
+		perceiva5329 WITH 0
+	.TotalHoja()
+		STORE 0 TO lnBasePerceIVA   
+		....
+		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329 AND CsrCategoiva.fiscal$'I'
+			nAlicuotaPI = IIF(lnTasa = 21,3,IIF(lnTasa=10.5,1.5,0))
+			IF nAlicuotaPI #0
+				lnPerceIVA = red(lnUniSiva * nAlicuotaPI / 100,lndecimaltot)
+				lnBasePerceIVA   = lnBasePerceIVA+ lnPerceIVA 
+				
+				thisform.unitariofac.acumulaimpuesto(@loObjRetencion,"PIVA"+TRANSFORM(nAlicuotaPI ,"99.99"),lnUniSiva ,lntasa,lnPerceIVA ,"PIVA "+TRANSFORM(lntasa,"99.99"),0)
+			ENDIF 
+		ENDIF 
+		....
+		IF lnBasePerceIVA  = 0 OR  lnBasePerceIVA   < This.MinimoPIva5329  OR NOT CsrCategoiva.fiscal $ 'I' OR NOT CsrComprobante.clase$'ABCU'  		
+			thisform.unitariofac.VaciarImpuesto(@loObjRetencion,"PIVA"+TRANSFORM(21 ,"99.99"))
+			thisform.unitariofac.VaciarImpuesto(@loObjRetencion,"PIVA"+TRANSFORM(10.5 ,"99.99"))
+			lnBasePerceIVA  = 0
+		ENDIF 
+		....			
+		lnBaseRetencion = red(lnBaseRetencion - lnTotNoCatego - lnBasePerceIVA ,lndecimaltot)
+		...
+		lnTotalFac     = lnBaseGra + lnBaseExe + lnBaseInterno + lnBaseIva + lnBaseretencion + lnTotNoCatego + lnBasePerceIVA 
+		...
+		replace PerceIVA5329 WITH lnBasePerceIVA in CsrAuxCabefac
+	.KitBuscaProd.f_lostfocussay()
+		replace perceiva5329  WITH CsrProducto.perceiva5329 IN CsrAuxCuerfac
+	.MuestraComprobante()
+		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then Csrtablaimp.importe  else cast(0 as numeric(12,2)) end)) as TotalPI3
+		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=1.5 then Csrtablaimp.importe  else cast(0 as numeric(12,2)) end)) as TotalPI1
+		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then Csrtablaimp.tasa  else cast(0 as numeric(12,2)) end)) as TasaPI3
+		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=1.5 then Csrtablaimp.tasa else cast(0 as numeric(12,2)) end)) as TasaPI1
+		...
+		lnTotalPI3		= lnTotalPI3+ CsrCursor.TotalPI3
+		lnTotalPI1		= lnTotalPI1+ CsrCursor.TotalPI1 
+		lnTasaPI3		= lnTasaPI3	+ CsrCursor.tasaPI3
+		lnTasaPI1		= lnTasaPI1	+ CsrCursor.tasaPI1
+		...
+		replace  nomrete4 WITH "PIVA"+TRANSFORM(lnTasaPI3 ,"99.99"),retencion4 WITH NVL(lnTotalPI3,0);
+			,tasarete4 WITH NVL(lnTasaPI3,0);
+			nomrete5 WITH "PIVA"+TRANSFORM(lnTasaPI1 ,"99.99"),retencion5 WITH NVL(lnTotalPI1,0);
+			,tasarete5 WITH NVL(lnTasaPI1 ,0) IN CsrAuxCabefac
+		replace PerceIVA5329 WITH lnTotalPI3+ lnTotalPI1 IN CsrAuxCabefac
+		
+
 RegFacPedido
+	-CrearCursor()
+		,CAST(0 as n(16,2)) as PerceIVA5329  CsrAuxCabefac
+	.ControlCtacte()
+		IF thisform.activoPerceIVA5329
+			this.Calculopiva5329 = .t.
+		ENDIF 
+		IF thisform.activoPerceIVA5329
+			this.Calculopiva5329 = .t.
+		ENDIF 
+
+	-LeerParametrosConfig()
+		SELECT CsrParavario
+		LOCATE FOR ALLTRIM(nombre)="FACREG5329"
+		IF FOUND()
+			IF estado = 1
+				.activoPerceIVA5329= .t.
+				.minimopiva5329 = CsrParavario.importe
+			ENDIF 
+		ENDIF 
+	-TotalComprobante()
+		IF CsrAuxCuerfac.perceiva5329=1 AND  Thisform.CalculoPIVA5329 
+			nAlicuotaPI = IIF(lnTasa = 21,3,IIF(lnTasa=10.5,1.5,0))
+			IF nAlicuotaPI #0
+				lnPerceIVA = red(lnUniSiva * nAlicuotaPI / 100,lndecimaltot)
+				lnBasePerceIVA   = lnBasePerceIVA+ lnPerceIVA 
+				
+				thisform.unitariofac.acumulaimpuesto(@loObjRetencion,"PIVA"+TRANSFORM(nAlicuotaPI ,"99.99"),lnUniSiva ,lntasa,lnPerceIVA ,"PIVA "+TRANSFORM(lntasa,"99.99"),0)
+			ENDIF 
+		ENDIF 
+		....
+		IF lnBasePerceIVA  = 0 OR  lnBasePerceIVA   < This.MinimoPIva5329  OR NOT CsrCategoiva.fiscal $ 'I' OR NOT CsrComprobante.clase$'ABCU'  		
+			thisform.unitariofac.VaciarImpuesto(@loObjRetencion,"PIVA"+TRANSFORM(21 ,"99.99"))
+			thisform.unitariofac.VaciarImpuesto(@loObjRetencion,"PIVA"+TRANSFORM(10.5 ,"99.99"))
+			lnBasePerceIVA  = 0
+		ENDIF 
+		....
+		lnBaseRetencion = red(lnBaseRetencion - lnTotNoCatego - lnBasePerceIVA  ,lndecimaltot)
+		....
+		lnTotalFac     = lnBaseGra + lnBaseExe + lnBaseInterno + lnBaseIva + lnBaseretencion + lnTotNoCatego + lnBasePerceIVA  
+		...
+		replace PerceIVA5329 WITH lnBasePerceIVA   IN CsrAuxCabefac
+	.CargarAuxiliares()
+		,ISNULL(rubro.perceiva5329,0) as perceiva5329 
+		
 RegFacPub
+ImpCompVtaCAE
+	-selectoperacion_sql()
+		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then ISNULL(Csrtablaimp.importe * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TotalPI3
+		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=1.5 then ISNULL(Csrtablaimp.importe * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TotalPI1
+		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then ISNULL(Csrtablaimp.tasa * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TasaPI3
+		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=1.5 then ISNULL(Csrtablaimp.tasa * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TasaPI1
+		...
+		lnTotalFac     = Csrtablaimp.TotalNg + Csrtablaimp.totalEx + Csrtablaimp.totalII + Csrtablaimp.totalig + CsrTablaimp.totalpb1 + CsrTablaimp.totalpb2 + CsrTablaimp.TotalPN + CsrTablaimp.totalpi3 + CsrTablaimp.totalpi1
+		....
+		replace  nomrete4 WITH "PIVA"+TRANSFORM(CsrTablaImp.tasaPI3 ,"99.99"),retencion4 WITH NVL(CsrTablaimp.totalpi3,0);
+			,tasarete4 WITH NVL(CsrTablaImp.tasaPI3,0);
+			nomrete5 WITH "PIVA"+TRANSFORM(CsrTablaImp.tasaPI1 ,"99.99"),retencion5 WITH NVL(CsrTablaimp.totalpi1,0);
+			,tasarete5 WITH NVL(CsrTablaImp.tasaPI1,0) IN CsrAuxCabefac
+		replace PerceIVA5329 WITH retencion4 + retencion5 IN CsrAuxCabefac
+		
+unitariofac.VaciarImpuesto
 
 Defenir el codigo del paraconta para actualizafac.grabarastofac
 
