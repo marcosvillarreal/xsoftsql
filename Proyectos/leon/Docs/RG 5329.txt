@@ -3,7 +3,7 @@ RG 5329
 CsrRubro.perceiva5329
 CsrCtacte.excluido5329
 CsrCuerfac.perceiva5329
-CsrProducto.perceiva5329
+CsrProducto.excluido5329
 
 AbmProducto
 AbmRubro
@@ -55,9 +55,9 @@ RegFacVta
 		...
 		replace PerceIVA5329 WITH lnBasePerceIVA   IN CsrAuxCabefac
 	.PonerLineaEnCero()
-		perceiva5329 WITH 0
+		replace perceiva5329 WITH 0 IN CsrAuxCuerfac
 	.AgregarCuerfac()
-		perceiva5329 WITH 0
+		replace perceiva5329 WITH 0 IN CsrAuxCuerfac
 	.TotalHoja()
 		STORE 0 TO lnBasePerceIVA   
 		....
@@ -84,7 +84,11 @@ RegFacVta
 		replace PerceIVA5329 WITH lnBasePerceIVA in CsrAuxCabefac
 	.KitBuscaProd.f_lostfocussay()
 		replace perceiva5329  WITH CsrProducto.perceiva5329 IN CsrAuxCuerfac
+		replace perceiva5329  WITH IIF(perceiva5329  =1 AND CsrProducto.excluido5329=1,0,perceiva5329 ) IN CsrAuxCuerfac
 	.MuestraComprobante()
+		STORE 0 TO lnBasePerceIVA   
+		STORE 0 TO lnTotalPI3,lnTotalPI1,lnTasaPI3,lnTasaPI1
+		
 		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then Csrtablaimp.importe  else cast(0 as numeric(12,2)) end)) as TotalPI3
 		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=1.5 then Csrtablaimp.importe  else cast(0 as numeric(12,2)) end)) as TotalPI1
 		,((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then Csrtablaimp.tasa  else cast(0 as numeric(12,2)) end)) as TasaPI3
@@ -94,6 +98,9 @@ RegFacVta
 		lnTotalPI1		= lnTotalPI1+ CsrCursor.TotalPI1 
 		lnTasaPI3		= lnTasaPI3	+ CsrCursor.tasaPI3
 		lnTasaPI1		= lnTasaPI1	+ CsrCursor.tasaPI1
+		...
+		lnBasePerceIVA  = lnTotalPI3 + lnTotalPI1
+		lnTotalFac		= lnBaseGra + lnBaseExe + lnBaseRetencion + lnTotNoCatego +lnBaseiva + lnBaseinterno + lnBasePerceIVA  
 		...
 		replace  nomrete4 WITH "PIVA"+TRANSFORM(lnTasaPI3 ,"99.99"),retencion4 WITH NVL(lnTotalPI3,0);
 			,tasarete4 WITH NVL(lnTasaPI3,0);
@@ -148,6 +155,7 @@ RegFacPedido
 		,ISNULL(rubro.perceiva5329,0) as perceiva5329 
 		
 RegFacPub
+
 ImpCompVtaCAE
 	-selectoperacion_sql()
 		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then ISNULL(Csrtablaimp.importe * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TotalPI3
@@ -169,7 +177,7 @@ Defenir el codigo del paraconta para actualizafac.grabarastofac
 UPDATE RUBRO SET perceiva5329 = 0
 update ctacte set excluido5329 = 0
 update cuerfac set perceiva5329 = 0
-update producto set perceiva5329=0
+update producto set excluido5329=0
 
 
 update ctacte set semcomppdtepm = 0
