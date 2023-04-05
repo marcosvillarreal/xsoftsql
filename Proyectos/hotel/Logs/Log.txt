@@ -1,593 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rango, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CE(20) as detapiecuota09 ,00 as ProvReba,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,CAST(0 as numeric(1,0)) as ctalogistica,SPACE(20) as proximonro_rto ,SPACE(15) as nrocomplic,SPACE(30) as canalvta,SPACE(50) as filePrint,SPACE(50) as 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-transporte ,SPACE(2) as categoiva,SPACE(14) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso ,0 as solograbar FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     0  DBF:  Ultimo Control activo:  REGFACVTA.LOAD
-22-03-2023 15:37:46 , Verificando OCX
-22-03-2023 15:37:48 , Acceso al sistema, antes de autenticar
-22-03-2023 15:37:48 , Obteniendo conexion a servidor
-22-03-2023 15:37:51 , Conectado..server1\sql2014
-22-03-2023 15:37:51 , Datos de la empresa
-22-03-2023 15:37:58 , Acceso exitoso
 22-03-2023 15:44:32 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : OscatterCab.proximonro	= CsrCabeCAE.letra+ALLTRIM(CsrCabeCAE.talonario)+Csrcabecae.numcomp Error :         11 Ultimo Alias Activo: CSRAUXCABEFAC Ulti
+
+
+
+
+
 
 
 
@@ -732,6 +148,11 @@ transporte ,SPACE(2) as categoiva,SPACE(14) as nroasociado,DATE() as fechaaso,SP
 
 mo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003OY102KU.TMP Ultimo Control activo:  REGFACVTA.CMDOPCIONES.CLICK
 22-03-2023 16:12:00 , Error: No coinciden los tipos de datos. Linea : replace numcomp WITH Csrcabecae.numcomp,talonario WITH CsrCabeCAE.talonario, letra WITH CsrCabeCAE.letra IN CsrAuxMaopera Error :          9 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo r
+
+
+
+
+
 
 
 
@@ -1019,6 +440,11 @@ egistro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003OY1041P.TMP Ult
 
 
 
+
+
+
+
+
 1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00002JUX00CZ.TMP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 22-03-2023 18:01:02 , Verificando OCX
 22-03-2023 18:01:04 , Acceso al sistema, antes de autenticar
@@ -1026,6 +452,11 @@ egistro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003OY1041P.TMP Ult
 22-03-2023 18:01:05 , Conectado..server1\sql2014
 22-03-2023 18:01:05 , Datos de la empresa
 22-03-2023 18:09:59 , Error: El archivo memo j:\xsoftsql\proyectos\hotel\forms\reservas\regreservaanula.sct no existe o no es válido. Linea : oCa.Datasource.ActiveConnection.Begintrans() Error :         41 Ultimo Alias Activo: CSRSETEO Ultimo registro:  
+
+
+
+
+
 
 
 
@@ -1307,6 +738,11 @@ egistro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003OY1041P.TMP Ult
 
 
 
+
+
+
+
+
 \MARCO\APPDATA\LOCAL\TEMP\0000F0G9009A.TMP Ultimo Control activo:  REGFACVTA.CMDLICITA.CLICK
 23-03-2023 15:17:08 , Verificando OCX
 23-03-2023 15:17:12 , Acceso al sistema, antes de autenticar
@@ -1314,6 +750,11 @@ egistro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003OY1041P.TMP Ult
 23-03-2023 15:17:17 , Conectado..miguel\sql2014
 23-03-2023 15:17:20 , Datos de la empresa
 23-03-2023 16:32:40 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : INDEX on numgrupo+grupofecha TO kfecha Error :        107 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOC
+
+
+
+
+
 
 
 
@@ -1575,8 +1016,18 @@ AL\TEMP\0000HKI100NX.TMP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA
 
 
 
+
+
+
+
+
 P Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 23-03-2023 16:35:56 , Error: No se encuentra la variable 'KGRUPO'. Linea : SET ORDER TO kgrupo Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STR(NUMGRUPO)+GRUPOFECHA DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HKI100W1.TM
+
+
+
+
+
 
 
 
@@ -1839,8 +1290,18 @@ P Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
 BIT DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L00BW.TMP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-03-2023 17:47:32 , Error: No se encuentra la variable 'HUESPED'. Linea : SET FILTER TO LEN(LTRIM(this.txthuesped.Value))$huesped Error :         12 Ultimo Alias Activo: CSRAUXHUESPED Ultimo registro:          9  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\
+
+
+
+
+
 
 
 
@@ -2094,8 +1555,18 @@ BIT DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L00BW.TMP Ultimo Control activ
 
 
 
+
+
+
+
+
 +STR(COD_PISO)+DESC_HABIT DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L00S4.TMP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-03-2023 17:48:51 , Error: TXTHUESPED es un miembro desconocido. Linea : BROWSE Error :       1925 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          4 STR(NUMGRUPO)+STR(COD_PISO)+DESC_HABIT DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L00U8.T
+
+
+
+
+
 
 
 
@@ -2345,8 +1816,18 @@ MP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
 TA\LOCAL\TEMP\0000Q39L00XS.TMP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 28-03-2023 18:05:34 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : cFecha = DTOS(this.estado.fecha_calendario1.txtfecha.Value) Error :         11 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:          3  DBF
+
+
+
+
+
 
 
 
@@ -2592,8 +2073,18 @@ TA\LOCAL\TEMP\0000Q39L00XS.TMP Ultimo Control activo:  SUBRESERVA.IMPRIMIR_VISTA
 
 
 
+
+
+
+
+
 M.TMP Ultimo Control activo:  BUSCARRESERVA.INIT
 28-03-2023 18:06:51 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : this.parent.fecha_calendario1.txtfecha.value = TTOD(this.parent.fecha_calendario1.txtfecha.value) - 1 Error :         11 Ultimo Alias Activo: CSRCURS
+
+
+
+
+
 
 
 
@@ -2839,6 +2330,11 @@ OR Ultimo registro:          1 OK DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39
 
 
 
+
+
+
+
+
 SRCURSOR Ultimo registro:          1 OK DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L01OR.TMP Ultimo Control activo:  BUSCARRESERVA.ESTADO.BTTNBUSCAR2.BTN.CLICK
 28-03-2023 18:07:59 , Verificando OCX
 28-03-2023 18:08:01 , Acceso al sistema, antes de autenticar
@@ -2846,6 +2342,11 @@ SRCURSOR Ultimo registro:          1 OK DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
 28-03-2023 18:08:03 , Conectado..miguel\sql2014
 28-03-2023 18:08:05 , Datos de la empresa
 28-03-2023 19:09:27 , Error: LOOBJETO es un miembro desconocido. Linea : this.loobjeto.cidretorno = thisform.idretorno Error :       1925 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L0305.TMP 
+
+
+
+
+
 
 
 
@@ -3077,8 +2578,18 @@ Ultimo Control activo:  BUSCOPRODUCTO.UNLOAD
 
 
 
+
+
+
+
+
 \0000Q39L03RM.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINER1.BTTNBUSCAR.BTN.CLICK
 28-03-2023 19:35:41 , Error: No se encuentra el alias 'CSRAUXRESERVAS'. Linea : SELECT CsrAuxReservas Error :         13 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          9 OK DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L04KC.TMP Ultimo Control 
+
+
+
+
+
 
 
 
@@ -3306,8 +2817,18 @@ activo:  FRMRESERVA_V3.CONTAINER1.BTTNBUSCAR.BTN.CLICK
 
 
 
+
+
+
+
+
 ltimo Control activo:  FRMRESERVA_V3.CONTAINER1.BTTNBUSCAR.BTN.CLICK
 28-03-2023 19:49:11 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcDiaReserva = lcDiaReserva + IIF(LEN(LTRIM(lcIdHabit ))#0,",","") + dtoc(CsrCursor.fecha_in) Error :         11 Ultimo Alias Activo: CSRCURSOR Ultim
+
+
+
+
+
 
 
 
@@ -3539,8 +3060,18 @@ o registro:         10 OK DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000Q39L05NI.TM
 
 
 
+
+
+
+
+
 0000TFD500O9.TMP Ultimo Control activo:  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 09:26:17 , Error: SQL: la cláusula GROUP BY falta o no es válida. Linea : SELECT fecha,idmaopera,numcomp,cabrevia,clasecomp,abrevia,codclasevalor,cuit ,preunitario,Idarticulo,codigo,articulo + RTRIM(' ' + articulo_deta) as articulo,pesable,pes
+
+
+
+
+
 
 
 
@@ -3752,7 +3283,17 @@ o ,IdProveedor,CodProveedor,NomProveedor ,idFletero,codfletero,nomfletero,idVend
 
 
 
+
+
+
+
+
 onisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(internos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(netosinbonificar) as netosinbonificar ,SUM(totalNG) as Tota
+
+
+
+
+
 
 
 
@@ -3964,7 +3505,17 @@ lNG,SUM(promocion) as promocion,SUM(ImporteFinal) as ImporteFinal ,SUM(costosiva
 
 
 
+
+
+
+
+
 Y fecha,idmaopera,numcomp,cabrevia,clasecomp,abrevia,codclasevalor,cuit ,preunitario,Idarticulo,codigo,articulo,pesable,peso ,IdProveedor,CodProveedor,NomProveedor ,idFletero,codfletero,nomfletero,idVendedor,CodVendedor,nomvendedor ,idCtacte,ctacte,nomcl
+
+
+
+
+
 
 
 
@@ -4176,8 +3727,18 @@ iente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad,
 
 
 
+
+
+
+
+
  Ultimo Control activo:  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 09:27:23 , Error: SQL: la cláusula GROUP BY falta o no es válida. Linea : SELECT fecha,idmaopera,numcomp,cabrevia,clasecomp,abrevia,codclasevalor,cuit ,preunitario,Idarticulo,codigo,articulo + RTRIM(' ' + articulo_deta) as articulo,pesable,pes
+
+
+
+
+
 
 
 
@@ -4387,7 +3948,17 @@ o ,IdProveedor,CodProveedor,NomProveedor ,idFletero,codfletero,nomfletero,idVend
 
 
 
+
+
+
+
+
 onisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(internos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(netosinbonificar) as netosinbonificar ,SUM(totalNG) as Tota
+
+
+
+
+
 
 
 
@@ -4597,7 +4168,17 @@ lNG,SUM(promocion) as promocion,SUM(ImporteFinal) as ImporteFinal ,SUM(costosiva
 
 
 
+
+
+
+
+
 Y fecha,idmaopera,numcomp,cabrevia,clasecomp,abrevia,codclasevalor,cuit ,preunitario,Idarticulo,codigo,articulo,pesable,peso ,IdProveedor,CodProveedor,NomProveedor ,idFletero,codfletero,nomfletero,idVendedor,CodVendedor,nomvendedor ,idCtacte,ctacte,nomcl
+
+
+
+
+
 
 
 
@@ -4807,9 +4388,19 @@ iente,idcategoria,idrubro,codrubro,nomrubro ,idvariedad,codvariedad,nomvariedad,
 
 
 
+
+
+
+
+
  Ultimo Control activo:  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 09:55:26 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  FRMRESERVA_V3.CONTAINERMENU.BTTNMODFRE.BTN.CLICK
 29-03-2023 09:55:29 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -5015,8 +4606,18 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:34 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -5218,6 +4819,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:38 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -5318,6 +4924,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:39 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -5417,8 +5028,18 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:39 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -5612,6 +5233,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:40 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -5708,6 +5334,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:41 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -5803,8 +5434,18 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:41 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -5990,6 +5631,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:42 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -6082,6 +5728,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:43 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -6173,8 +5824,18 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:43 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -6352,6 +6013,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:46 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
 
@@ -6440,8 +6106,18 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:46 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -6613,8 +6289,18 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 AENPRODUCTO.GOTFOCUS
 29-03-2023 09:55:47 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : Select(this.calias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGRESERVA.PAGEFRAME1.PAGE4.PAGEFRAME1.PAGE1.KITBUSCAOALT
+
+
+
+
+
 
 
 
@@ -6789,6 +6475,11 @@ AENPRODUCTO.GOTFOCUS
 
 
 
+
+
+
+
+
 00PIQ100LQ.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINERMENU.BTTNMODFRE.BTN.CLICK
 29-03-2023 10:13:05 , Verificando OCX
 29-03-2023 10:13:08 , Acceso al sistema, antes de autenticar
@@ -6796,6 +6487,11 @@ AENPRODUCTO.GOTFOCUS
 29-03-2023 10:13:13 , Conectado..miguel\sql2014
 29-03-2023 10:13:13 , Datos de la empresa
 29-03-2023 10:15:25 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF This.Parent.kitbuscaoaltaenproducto.txtid=0 Error :        107 Ultimo Alias Activo: CSRVALOR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDAT
+
+
+
+
+
 
 
 
@@ -6956,8 +6652,18 @@ A\LOCAL\TEMP\0000PIQ1010Q.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINERMEN
 
 
 
+
+
+
+
+
 000T.TMP Ultimo Control activo:  A_EJECUTAR
 29-03-2023 11:15:41 , Error: El archivo 'csrauxiliar.dbf' no existe. Linea : SELECT &cTop CsrAuxiliar.* FROM CsrAuxiliar ORDER BY idarticulo,id DESC INTO CURSOR CsrCursor READWRITE Error :          1 Ultimo Alias Activo: _CSRCOMPROBANTE Ultimo registro: 
+
+
+
+
+
 
 
 
@@ -7101,8 +6807,18 @@ A\LOCAL\TEMP\0000PIQ1010Q.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINERMEN
 
 
 
+
+
+
+
+
         16 CNUMERO DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000PXXL005O.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 11:24:04 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : SELECT CsrCursor Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIEDAD,10)+CLAVE DBF: C:\USERS\MARCO\APPDATA\LOCAL\
+
+
+
+
+
 
 
 
@@ -7242,8 +6958,18 @@ TEMP\0000PXXL00TO.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMP
 
 
 
+
+
+
+
+
 TEMP\0000PXXL00VR.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 11:26:06 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : SELECT CsrCursor Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIEDAD,10)+CLAVE DBF: C:\USERS\MARCO\APPDATA\LOCAL\
+
+
+
+
+
 
 
 
@@ -7379,8 +7105,18 @@ TEMP\0000PXXL00Y5.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMP
 
 
 
+
+
+
+
+
 TEMP\0000PXXL010J.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 11:28:08 , Error: No se encuentra la variable 'SALDO_KIL'. Linea : REPLACE saldo_uni WITH lnsaldo_uni, saldo_kil WITH lnsaldo_kil,chrfecha WITH RIGHT(DTOS(TTOD(fecha)),2)+"-"+SUBSTR(DTOS(TTOD(fecha)),5,2)+"-"+LEFT(DTOS(TTOD(fecha)),4) Error : 
+
+
+
+
+
 
 
 
@@ -7512,6 +7248,11 @@ TEMP\0000PXXL010J.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMP
 
 
 
+
+
+
+
+
 as Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIEDAD,10)+CLAVE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000PXXL015H.TMP Ultimo Control activo:  RESVENTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-03-2023 11:34:42 , Verificando OCX
 29-03-2023 11:34:44 , Acceso al sistema, antes de autenticar
@@ -7519,6 +7260,11 @@ as Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(ID
 29-03-2023 11:34:50 , Conectado..miguel\sql2014
 29-03-2023 11:34:50 , Datos de la empresa
 29-03-2023 11:39:53 , Error: SQL: no se encuentra la columna 'ENTRA_KIL'. Linea : DELETE FROM CsrImprimir WHERE entra_kil=0 AND entra_uni=0 AND sale_uni=0 AND saldo_uni=0 AND clave='B' Error :       1806 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro: 
+
+
+
+
+
 
 
 
@@ -7652,8 +7398,18 @@ as Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(ID
 
 
 
+
+
+
+
+
 imo Control activo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 29-03-2023 13:39:41 , Error: El archivo 'menucontextreserva.prg' no existe. Linea : MenuContextReserva() Error :          1 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000T349019A.TMP Ultimo Con
+
+
+
+
+
 
 
 
@@ -7764,6 +7520,11 @@ trol activo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 
 
 
+
+
+
+
+
 00T34901C0.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 29-03-2023 13:59:21 , Verificando OCX
 29-03-2023 13:59:23 , Acceso al sistema, antes de autenticar
@@ -7771,6 +7532,11 @@ trol activo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 29-03-2023 13:59:29 , Conectado..miguel\sql2014
 29-03-2023 13:59:29 , Datos de la empresa
 29-03-2023 14:00:35 , Error: No se encuentra el alias 'CSRCURSORA'. Linea : SELECT CsrCursorA Error :         13 Ultimo Alias Activo: _CSRCTACTE Ultimo registro:          1 VAL(CNUMERO) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005UYX001X.TMP Ultimo Contr
+
+
+
+
+
 
 
 
@@ -7867,6 +7633,11 @@ ol activo:  RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
 ida,fecrendida,numfletero) VALUES ("A",OscCursor.id,OscCursor.idmaopera,OscCursor.numcomp,OscCursor.codctacte,OscCursor.nomctacte ,OscCursor.total,OscCursor.fecha,OscCursor.fechavto,OscCursor.fechasys,OscCursor.terminal,OscCursor.nomusuario ,IIF(VAL(OscC
 
 
@@ -7912,7 +7683,17 @@ ida,fecrendida,numfletero) VALUES ("A",OscCursor.id,OscCursor.idmaopera,OscCurso
 
 
 
+
+
+
+
+
 ursor.estado)=1,"ANULADO",ALLTRIM(STR(OscCursor.nrocaja))),"A",DTOS(CTOD(OscCursor.fecha)) ,OscCursor.rendida,TTOD(OscCursor.fecrendida),OscCursor.numfletero) Error :         11 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\MA
+
+
+
+
+
 
 
 
@@ -8002,6 +7783,11 @@ RCO\APPDATA\LOCAL\TEMP\00005UYX00OD.TMP Ultimo Control activo:  SUBCTACTE.IMPRIM
 
 
 
+
+
+
+
+
 ida,fecrendida,numfletero) VALUES ("A",OscCursor.id,OscCursor.idmaopera,OscCursor.numcomp,OscCursor.codctacte,OscCursor.nomctacte ,OscCursor.total,OscCursor.fecha,OscCursor.fechavto,OscCursor.fechasys,OscCursor.terminal,OscCursor.nomusuario ,IIF(VAL(OscC
 
 
@@ -8046,7 +7832,17 @@ ida,fecrendida,numfletero) VALUES ("A",OscCursor.id,OscCursor.idmaopera,OscCurso
 
 
 
+
+
+
+
+
 ursor.estado)=1,"ANULADO",ALLTRIM(STR(OscCursor.nrocaja))),"A",DTOS(CTOD(OscCursor.fecha)) ,OscCursor.rendida,TTOD(OscCursor.fecrendida),OscCursor.numfletero) Error :         11 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\MA
+
+
+
+
+
 
 
 
@@ -8138,8 +7934,18 @@ RCO\APPDATA\LOCAL\TEMP\00005UYX00RA.TMP Ultimo Control activo:  SUBCTACTE.IMPRIM
 
 
 
+
+
+
+
+
 00VITL004U.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 29-03-2023 16:12:16 , Error: No se encuentra la propiedad NOPCION. Linea : This.nOpcion = 1 Error :       1734 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000VITL00TW.TMP Ultimo Control activo: 
+
+
+
+
+
 
 
 
@@ -8221,8 +8027,18 @@ RCO\APPDATA\LOCAL\TEMP\00005UYX00RA.TMP Ultimo Control activo:  SUBCTACTE.IMPRIM
 
 
 
+
+
+
+
+
 vo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 29-03-2023 16:16:37 , Error: No se encuentra la propiedad NOPCION. Linea : This.Parent.nOpcion = 1 Error :       1734 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000VITL00YI.TMP Ultimo Control a
+
+
+
+
+
 
 
 
@@ -8300,8 +8116,18 @@ ctivo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 
 
 
+
+
+
+
+
 0VITL0142.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 29-03-2023 16:21:42 , Error: LOBUSQUEDA no es un objeto. Linea : nOpcion = loBusqueda.nOpcion Error :       1924 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          4  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000VITL0190.TMP Ultimo Control activo
+
+
+
+
+
 
 
 
@@ -8375,8 +8201,18 @@ ctivo:  FRMRESERVA_V3.CONTAINER1.BOTONDESING2.BTN.CLICK
 
 
 
+
+
+
+
+
 :  FRMRESERVA_V3.GRID2.RIGHTCLICK
 29-03-2023 16:28:49 , Error: Ya existe un objeto miembro con este nombre. Linea : oCol.addobject('EstadoHab','cDia2') Error :       1771 Ultimo Alias Activo: CSRAUXHABRESERVA Ultimo registro:        391  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000VITL01I
+
+
+
+
+
 
 
 
@@ -8449,6 +8285,11 @@ D.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 :  FRMRESERVA_V3.GRID2.RIGHTCLICK
 29-03-2023 17:19:14 , Error: LOBUSQUEDA no es un objeto. Linea : nOpcion = loBusqueda.nOpcion Error :       1924 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          6  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003VNT00B8.TMP Ultimo Control activo
 
@@ -8481,8 +8322,18 @@ D.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 :  FRMRESERVA_V3.GRID2.RIGHTCLICK
 29-03-2023 17:20:23 , Error: Ya existe un objeto miembro con este nombre. Linea : oCol.addobject('EstadoHab','cDia2') Error :       1771 Ultimo Alias Activo: CSRAUXHABRESERVA Ultimo registro:        391  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00003VNT00F
+
+
+
+
+
 
 
 
@@ -8551,8 +8402,18 @@ F.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 EMP\0000W5C900LZ.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 29-03-2023 17:34:13 , Error: No se encuentra la instrucción PARAMETER. Linea : oMenu = CREATEOBJECT("oMenuContext",nOp1,nOp2,nOp3,nOp4) Error :       1238 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          5  DBF: C:\USERS\MARCO\APPDATA\LOCAL\T
+
+
+
+
+
 
 
 
@@ -8594,6 +8455,11 @@ EMP\0000W5C900O6.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 EMP\0000W5C900QB.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 29-03-2023 17:36:06 , Error: No se encuentra la instrucción PARAMETER. Linea : oMenu = CREATEOBJECT("oMenuContext",nOp1,nOp2,nOp3,nOp4) Error :       1238 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          5  DBF: C:\USERS\MARCO\APPDATA\LOCAL\T
 
@@ -8614,8 +8480,18 @@ EMP\0000W5C900QB.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 EMP\0000W5C900SI.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 29-03-2023 17:37:09 , Error: No se encuentra la instrucción PARAMETER. Linea : oMenu = CREATEOBJECT("oMenuContext",nOp1,nOp2,nOp3,nOp4) Error :       1238 Ultimo Alias Activo: CSRAUXRESERVA Ultimo registro:          5  DBF: C:\USERS\MARCO\APPDATA\LOCAL\T
+
+
+
+
+
 
 
 
@@ -8658,8 +8534,18 @@ EMP\0000W5C900XV.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 0K5C9005M.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 03-04-2023 10:40:24 , Error: Ya existe un objeto miembro con este nombre. Linea : .column1.addobject('Multilinea','cReserva') Error :       1771 Ultimo Alias Activo: CSRAUXHABRESERVA Ultimo registro:        391  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
 
 
 
@@ -8685,6 +8571,11 @@ EMP\0000W5C900XV.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 0K5C9025V.TMP Ultimo Control activo:  FRMRESERVA_V3.CONTAINER1.BTTNHABIT.BTN.CLICK
 03-04-2023 11:53:02 , Error: SQL: no se encuentra la columna 'RESERVA_IN'. Linea : SELECT CsrCursor.*,0 as estadotilde, 1 as idTipoTarifa ,0 as pax ,0 as tipoPrecio ,0 AS idTipoPrecio,0 as pasajero, CAST(0 as n(12,2)) as total ,precio as preciobase,0 as 
 
@@ -8697,7 +8588,17 @@ EMP\0000W5C900XV.TMP Ultimo Control activo:  FRMRESERVA_V3.GRID2.RIGHTCLICK
 
 
 
+
+
+
+
+
 filtro FROM CsrCursor WHERE reserva_in=0 AND reserva_out=0 INTO CURSOR CsrBusHabit READWRITE Error :       1806 Ultimo Alias Activo: CSRCURSORF Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000K5C902BW.TMP Ultimo Control activo:  F
+
+
+
+
+
 
 
 
@@ -8729,6 +8630,11 @@ RMRESERVA_V3.CONTAINER1.BTTNHABIT.BTN.CLICK
 
 
 
+
+
+
+
+
  FRMRESERVA_V3.CONTAINER1.BTTNHABIT.BTN.CLICK
 04-04-2023 08:23:19 , Verificando OCX
 04-04-2023 08:23:33 , Acceso al sistema, antes de autenticar
@@ -8742,6 +8648,11 @@ RMRESERVA_V3.CONTAINER1.BTTNHABIT.BTN.CLICK
 04-04-2023 11:01:06 , Datos de la empresa
 04-04-2023 11:02:31 , Error: No se encuentra la propiedad NOMUSUARIO. Linea : thisform.lbltituloform.Caption = RTRIM(thisform.lbltituloform.Caption) + ' - Usuario: ' + ALLTRIM(goapp.nomusuario) Error :       1734 Ultimo Alias Activo:  Ultimo registro:   
 
+
+
+
+
+
        0  DBF:  Ultimo Control activo:  A_EJECUTAR
 04-04-2023 13:16:30 , Verificando OCX
 04-04-2023 13:16:34 , Acceso al sistema, antes de autenticar
@@ -8749,5 +8660,36 @@ RMRESERVA_V3.CONTAINER1.BTTNHABIT.BTN.CLICK
 04-04-2023 13:16:39 , Conectado..miguel\sql2014
 04-04-2023 13:16:39 , Datos de la empresa
 04-04-2023 13:29:04 , Error: CHKAGRUPAPISO es un miembro desconocido. Linea : IF this.chkagrupapiso.value = 1 Error :       1925 Ultimo Alias Activo: CSRAUXHUESPED Ultimo registro:         67  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000RTVT00OE.TMP Ultim
+
+
+
+
+
 o Control activo:  EST_OCUPACIONAL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-04-04-2023 13:43:55 , Error: No se encuentra la variable 'CONVSIVA'. Linea : replace Articulo WITH "BONIF / "+ALLTRIM (articulo), importes WITH  lnbonif+lnconv, gravado WITH (-1)*(bonisiva+convsiva), interno WITH 0 idarticulo WITH 9999999+idarticulo,unidades  WITH 0,canbultos WITH 0,litros WITH 0 Error :         12 Ultimo Alias Activo: CSRRESTAS Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000RTVT00WV.TMP Ultimo Control activo:  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+04-04-2023 13:43:55 , Error: No se encuentra la variable 'CONVSIVA'. Linea : replace Articulo WITH "BONIF / "+ALLTRIM (articulo), importes WITH  lnbonif+lnconv, gravado WITH (-1)*(bonisiva+convsiva), interno WITH 0 idarticulo WITH 9999999+idarticulo,unid
+
+
+
+
+ades  WITH 0,canbultos WITH 0,litros WITH 0 Error :         12 Ultimo Alias Activo: CSRRESTAS Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000RTVT00WV.TMP Ultimo Control activo:  EST_VENTASPORFECHA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.
+
+
+
+
+CLICK
+05-04-2023 09:04:59 , Verificando OCX
+05-04-2023 09:05:03 , Acceso al sistema, antes de autenticar
+05-04-2023 09:05:03 , Obteniendo conexion a servidor
+05-04-2023 09:05:12 , Conectado..server1\sql2014
+05-04-2023 09:05:12 , Datos de la empresa
+05-04-2023 09:10:44 , Verificando OCX
+05-04-2023 09:10:47 , Acceso al sistema, antes de autenticar
+05-04-2023 09:10:47 , Obteniendo conexion a servidor
+05-04-2023 09:10:49 , Conectado..server1\sql2014
+05-04-2023 09:10:49 , Datos de la empresa
+05-04-2023 09:21:45 , Verificando OCX
+05-04-2023 09:21:47 , Acceso al sistema, antes de autenticar
+05-04-2023 09:21:47 , Obteniendo conexion a servidor
+05-04-2023 09:21:49 , Conectado..server1\sql2014
+05-04-2023 09:21:49 , Datos de la empresa
+05-04-2023 09:21:56 , Acceso exitoso
