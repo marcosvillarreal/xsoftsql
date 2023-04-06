@@ -157,6 +157,9 @@ RegFacPedido
 RegFacPub
 
 ImpCompVtaCAE
+	-CrearCursor()
+		,CAST(0 as n(16,2)) as PerceIVA5329  CsrAuxCabefac
+		
 	-selectoperacion_sql()
 		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=3 then ISNULL(Csrtablaimp.importe * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TotalPI3
 		,SUM((Case when Csrtablaimp.tipoconce='PI' AND Csrtablaimp.nombre='PIVA' and ISNULL(Csrtablaimp.tasa,0)=1.5 then ISNULL(Csrtablaimp.importe * <<OscatterCab.signo>>,cast(0 as numeric(12,2))) else cast(0 as numeric(12,2)) end)) as TotalPI1
