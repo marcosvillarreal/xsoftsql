@@ -1,6 +1,6 @@
-goapp.idejercicio = 1400000024
-goapp.idejercicioFAC = 1400000024
-goapp.idejercicioactual = 1400000024
+goapp.idejercicio = 1100000024
+goapp.idejercicioFAC = 1100000024
+goapp.idejercicioactual = 1100000024
 goapp.terminal =5
 goapp.idusuario = 1
 oavisar.usuario('goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
