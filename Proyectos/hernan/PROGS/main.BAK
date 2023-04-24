@@ -453,7 +453,7 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro.ICO"
+  IconFile      = ADDBS(SYS(5)+CURDIR())+"pyro.ICO"
   MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Ejemplo de un programa en la barra de tareas del Windows"

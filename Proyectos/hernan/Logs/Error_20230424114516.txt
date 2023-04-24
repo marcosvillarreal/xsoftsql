@@ -1,0 +1,13 @@
+24-04-2023 11:45:16 , SUBIVAVTA.COMMAND2.CLICK, Error: SQL: no se encuentra la columna 'TOTAL_EX'.;Linea : SELECT areaneg,comprobante,LEFT(numcomp,1) as letra,RIGHT(LEFT(numcomp,5),4) as talonario,RIGHT(numcomp,8) as numcomp ,cnombre,nomcatego,cuit,total_ex,total_ng,(totalig+totaloi) as total_iva,(totalii+totalin+totalip) as total_imp ,(totalrb+totalrg+totalpb+totalpg+totalpn+totalri+totalpi) as total_otros,total,id,stoc(chrfecha) as fecha from CsrImprimir where grupo='A' into cursor csrimprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         11 STR(IDAREANEG,10)+GRUPO+CHRFECHA+STR(ID,12);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005GJT00HW.TMP;Ultimo Control activo: 
+24-04-2023 11:45:16 , Pila de llamadas
+24-04-2023 11:45:16 , Programa    : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 11:45:16 , Objeto      : subivavta.command2.click
+24-04-2023 11:45:16 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 11:45:16 , Nº de Linea :          3
+24-04-2023 11:45:16 , En el Fuente: llOK=thisform.CrearInforme()
+24-04-2023 11:45:16 , Programa    : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 11:45:16 , Objeto      : subivavta.crearinforme
+24-04-2023 11:45:16 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 11:45:16 , Nº de Linea :        536
+24-04-2023 11:45:16 , En el Fuente: SELECT areaneg,comprobante,LEFT(numcomp,1) as letra,RIGHT(LEFT(numcomp,5),4) as talonario,RIGHT(numcomp,8) as numcomp		,cnombre,nomcatego,cuit,total_ex,total_ng,(totalig+totaloi) as total_iva,(totalii+totalin+totalip) as total_imp		,(totalrb+totalrg+totalpb+totalpg+totalpn+totalri+totalpi) as total_otros,total,id,stoc(chrfecha) as fecha		from CsrImprimir 		where grupo='A' 		into cursor csrimprimir READWRITE 
+24-04-2023 11:45:16 , Fin

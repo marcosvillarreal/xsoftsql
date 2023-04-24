@@ -1,0 +1,18 @@
+24-04-2023 13:42:18 , SUBIVAVTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT grupo,id,numcomp,chrfecha,cnombre,cuit,signo,total,tasa,idareaneg,areaneg,origen ,SUM(TotalPB) as TotalPB,SUM(TotalPG) as TotalPG, SUM(TotalPI) as TotalPI,SUM(TotalPN) as TotalPN ,SUM(TotalEX) as TotalEX,SUM(TotalRB) as TotalRB, SUM(TotalRG) as TotalRG,SUM(TotalRI) as TotalRI ,SUM(TotalNG) as TotalNG,SUM(TotalIG) as TotalIG, SUM(TotalOI) as TotalOI,SUM(TotalII) as TotalII ,SUM(TotalIN) as TotalIN,SUM(TotalIP) as TotalIP,nomcatego, nomcompro, clasecomp, fac_total ,nomcompro as comprobante FROM CsrImprimir GROUP BY grupo,id,numcomp,chrfecha,cnombre,cuit,signo,total,tasa,idareaneg,areaneg ,nomcatego, nomcompro, origen, clasecomp INTO CURSOR CsrAux READWRITE;Error :       1807;Ultimo Alias Activo: CSRAUXILIAR;Ultimo registro:          1 STR(IDAREANEG,10)+GRUPO+CHRFECHA+STR(ID,12);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00005A8900RT.TMP;Ultimo Control activo: 
+24-04-2023 13:42:18 , Pila de llamadas
+24-04-2023 13:42:18 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+24-04-2023 13:42:18 , Objeto      : subivavta.imprimir_vistaprevia1.impresora.click
+24-04-2023 13:42:18 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+24-04-2023 13:42:18 , Nº de Linea :          8
+24-04-2023 13:42:18 , En el Fuente: 	llOK=thisform.CrearInforme()
+24-04-2023 13:42:18 , Programa    : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 13:42:18 , Objeto      : subivavta.crearinforme
+24-04-2023 13:42:18 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 13:42:18 , Nº de Linea :        340
+24-04-2023 13:42:18 , En el Fuente: thisform.informeactividad(2)
+24-04-2023 13:42:18 , Programa    : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 13:42:18 , Objeto      : subivavta.informeactividad
+24-04-2023 13:42:18 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\subivavta.sct
+24-04-2023 13:42:18 , Nº de Linea :        329
+24-04-2023 13:42:18 , En el Fuente: 	SELECT grupo,id,numcomp,chrfecha,cnombre,cuit,signo,total,tasa,idareaneg,areaneg,origen	,SUM(TotalPB) as TotalPB,SUM(TotalPG) as TotalPG, SUM(TotalPI) as TotalPI,SUM(TotalPN) as TotalPN	,SUM(TotalEX) as TotalEX,SUM(TotalRB) as TotalRB, SUM(TotalRG) as TotalRG,SUM(TotalRI) as TotalRI	,SUM(TotalNG) as TotalNG,SUM(TotalIG) as TotalIG, SUM(TotalOI) as TotalOI,SUM(TotalII) as TotalII	,SUM(TotalIN) as TotalIN,SUM(TotalIP) as TotalIP,nomcatego, nomcompro, clasecomp, fac_total	,nomcompro as comprobante	FROM CsrImprimir GROUP BY grupo,id,numcomp,chrfecha,cnombre,cuit,signo,total,tasa,idareaneg,areaneg	,nomcatego, nomcompro, origen, clasecomp INTO CURSOR CsrAux READWRITE 
+24-04-2023 13:42:18 , Fin

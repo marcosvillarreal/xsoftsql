@@ -173,8 +173,29 @@ IF TYPE('goApp')='O'
 	
 	LeerConfigTermi()
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
-
-    WAIT WINDOW "Verificando ActiveX instalados ..." nowait
+	
+	IF oConfigTermi.controlskin = 'TRUE'
+		* Herramienta VFPsControlSkin
+		IF FILE("VFPsControlSkin.Exe")
+		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
+		   *!* NUEVO 
+		   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
+		   IF VFPs_AddBar(_SCREEN,.T.) THEN 
+		      *!* AGREGAR PANEL AL ESTATUS BAR
+		      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
+		   ENDIF
+		ENDIF
+		*!* FIN INICIO
+		*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+		_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+		_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+		_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+		_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+		** Herramienta VFPsControlSkin
+	ENDIF 
+	
+   	 WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     DO Verifica_OCX WITH "Check"
 	
 *!*		**** aca comienza la parte de posicionamiento del escritorio
@@ -298,24 +319,24 @@ IF TYPE('goApp')='O'
 	  DO DECLARAR_FUNCIONES_API
   
 		 
-	poSysTray = CreateObject("WALTER_SYSTRAY")
-  
-  
-	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
+*!*		poSysTray = CreateObject("WALTER_SYSTRAY")
+*!*	  
+*!*	  
+*!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
 	  	poTimer   = CreateObject("WALTER_TIMER")
-	  		
-	    #DEFINE ICONO_NADA  0
-	    #DEFINE ICONO_INFO  1
-	    #DEFINE ICONO_AVISO 2
-	    #DEFINE ICONO_ERROR 3
-	    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
-	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
-	    
-	    IF oConfigTermi.ShowBalloonTip = 'FALSE'
-	    	poTimer.Enabled = .f.
-	    ENDIF 
-	  ENDIF
+*!*		  		
+*!*		    #DEFINE ICONO_NADA  0
+*!*		    #DEFINE ICONO_INFO  1
+*!*		    #DEFINE ICONO_AVISO 2
+*!*		    #DEFINE ICONO_ERROR 3
+*!*		    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
+*!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+*!*		    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
+*!*		    
+*!*		    IF oConfigTermi.ShowBalloonTip = 'FALSE'
+*!*		    	poTimer.Enabled = .f.
+*!*		    ENDIF 
+*!*		  ENDIF
 	  
 	Read events   
 ENDIF
