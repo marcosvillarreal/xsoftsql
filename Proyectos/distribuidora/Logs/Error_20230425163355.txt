@@ -1,0 +1,33 @@
+25-04-2023 16:33:55 , REGPROCESO.OTIMER.TIMER, Error: La referencia al subíndice no es válida.;Linea : DIMENSION aDatos(RECCOUNT('TempDatos'),nCountReg + 1 );Error :         31;Ultimo Alias Activo: TEMPDATOS;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000043YH02DI.TMP;Ultimo Control activo: 
+25-04-2023 16:33:55 , Pila de llamadas
+25-04-2023 16:33:55 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:55 , Objeto      : regproceso.otimer.timer
+25-04-2023 16:33:55 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:55 , Nº de Linea :          2
+25-04-2023 16:33:55 , En el Fuente: IF This.Parent.CicloBusqueda()
+25-04-2023 16:33:55 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:55 , Objeto      : regproceso.ciclobusqueda
+25-04-2023 16:33:55 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:55 , Nº de Linea :          1
+25-04-2023 16:33:55 , En el Fuente: RETURN this.Buscarfile('.TXT')
+25-04-2023 16:33:55 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:55 , Objeto      : regproceso.buscarfile
+25-04-2023 16:33:56 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:56 , Nº de Linea :          9
+25-04-2023 16:33:56 , En el Fuente: lok = This.BuscarFileXML(cExtension)
+25-04-2023 16:33:56 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:56 , Objeto      : regproceso.buscarfilexml
+25-04-2023 16:33:56 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\sync\regproceso_sync_v3.sct
+25-04-2023 16:33:56 , Nº de Linea :         29
+25-04-2023 16:33:56 , En el Fuente: 		IF NOT This.Sync1.Extraer(cArchivo)
+25-04-2023 16:33:56 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+25-04-2023 16:33:56 , Objeto      : regproceso.sync1.extraer
+25-04-2023 16:33:56 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+25-04-2023 16:33:56 , Nº de Linea :         33
+25-04-2023 16:33:56 , En el Fuente: 		IF NOT this.Extraer_datos(@loFile,@aAtributos,@aDatos)
+25-04-2023 16:33:56 , Programa    : j:\xsoftsql\desarrollo\clases\onegocio.vct
+25-04-2023 16:33:56 , Objeto      : regproceso.sync1.extraer_datos
+25-04-2023 16:33:56 , Base Objeto : j:\xsoftsql\desarrollo\clases\onegocio.vct
+25-04-2023 16:33:56 , Nº de Linea :         29
+25-04-2023 16:33:56 , En el Fuente: 				DIMENSION aDatos(RECCOUNT('TempDatos'),nCountReg + 1 )
+25-04-2023 16:33:56 , Fin
