@@ -151,6 +151,37 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
 *clear all
 
+PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
+PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
+PUBLIC oConfigTermi,pidsistema
+PUBLIC cFileNameLog,cDirCloseBat 
+
+STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
+STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+	LeerConfigTermi()
+	
+	IF oConfigTermi.controlskin = 'TRUE'
+		* Herramienta VFPsControlSkin
+		IF FILE("VFPsControlSkin.Exe")
+		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
+		   *!* NUEVO 
+		   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
+		   IF VFPs_AddBar(_SCREEN,.T.) THEN 
+		      *!* AGREGAR PANEL AL ESTATUS BAR
+		      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
+		   ENDIF
+		ENDIF
+		*!* FIN INICIO
+		*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+		_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+		_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+		_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+		_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+		** Herramienta VFPsControlSkin
+	ENDIF 
+	
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
@@ -159,13 +190,7 @@ _screen.picture= 'fondo51.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.
 
-PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
-PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
-PUBLIC oConfigTermi,pidsistema
-PUBLIC cFileNameLog,cDirCloseBat 
 
-STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
-STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
 pidsistema = 1
 
@@ -228,28 +253,7 @@ IF TYPE('goApp')='O'
 	
 	
 
-	LeerConfigTermi()
 	
-	IF oConfigTermi.controlskin = 'TRUE'
-		* Herramienta VFPsControlSkin
-		IF FILE("VFPsControlSkin.Exe")
-		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
-		   *!* NUEVO 
-		   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
-		   IF VFPs_AddBar(_SCREEN,.T.) THEN 
-		      *!* AGREGAR PANEL AL ESTATUS BAR
-		      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
-		   ENDIF
-		ENDIF
-		*!* FIN INICIO
-		*!* LLENAR PARAMETROS VFPS MESSAGEBOX
-		_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
-		_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
-		_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
-		_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
-		** Herramienta VFPsControlSkin
-	ENDIF 
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
