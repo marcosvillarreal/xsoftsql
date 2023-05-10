@@ -161,7 +161,7 @@ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
 	LeerConfigTermi()
 	
-	IF oConfigTermi.controlskin != 'TRUE'
+	IF oConfigTermi.controlskin = 'TRUE'
 		* Herramienta VFPsControlSkin
 		IF FILE("VFPsControlSkin.Exe")
 		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
