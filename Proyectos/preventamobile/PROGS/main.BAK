@@ -162,6 +162,7 @@ IF TYPE('goApp')='O'
 
 	goapp.version = "01.00.00"
 	goapp.initcatalo = "pm"
+	goapp.nameapp = "pm"
 	PUBLIC  gcicono
 	     
 	PcmsgIU  = 'Información al Usuario'
