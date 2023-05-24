@@ -1,0 +1,384 @@
+<xml xmlns:x="urn:schemas-microsoft-com:office:excel">
+ <x:PivotTable>
+  <x:OWCVersion>12.0.0.4518         </x:OWCVersion>
+  <x:DisplayScreenTips/>
+  <x:NoAutoFit/>
+  <x:Height>514</x:Height>
+  <x:Width>958</x:Width>
+  <x:CubeProvider>msolap.2</x:CubeProvider>
+  <x:CacheDetails/>
+  <x:ConnectionString>Provider=MSDASQL.1;Extended Properties=&quot;Driver={Microsoft Visual FoxPro Driver};SourceType=DBC;SourceDB=J:\XSOFTSQL\PROYECTOS\HERNAN\TempPivot\AliasVFP.dbc;Exclusive=NO;NULL=NO;Collate=Machine;BACKGROUNDFETCH=NO;DELETED=NO&quot;</x:ConnectionString>
+  <x:CommandText>SELECT areaneg,comprobante,letra,talonario,numcomp,chrfecha,cnombre,nomcatego,cuit,ex_total,ng_total,iva_total,otros_total,total,id,filtro_total,fac_total FROM AliasVFP</x:CommandText>
+  <x:Name>VFPs PivotTable</x:Name>
+  <x:PivotField>
+   <x:Name>Area</x:Name>
+   <x:SourceName>areaneg</x:SourceName>
+   <x:Orientation>Page</x:Orientation>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+   <x:GroupedWidth>0</x:GroupedWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Comprobante</x:Name>
+   <x:SourceName>comprobante</x:SourceName>
+   <x:Orientation>Row</x:Orientation>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Letra</x:Name>
+   <x:SourceName>letra</x:SourceName>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>4</x:Position>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Talonario</x:Name>
+   <x:SourceName>talonario</x:SourceName>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>2</x:Position>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Numero</x:Name>
+   <x:SourceName>numcomp</x:SourceName>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>5</x:Position>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Fecha</x:Name>
+   <x:SourceName>chrfecha</x:SourceName>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>3</x:Position>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Cliente</x:Name>
+   <x:SourceName>cnombre</x:SourceName>
+   <x:PLDataOrientation/>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Tipo</x:Name>
+   <x:SourceName>nomcatego</x:SourceName>
+   <x:PLDataOrientation/>
+   <x:PLPosition>2</x:PLPosition>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Cuit</x:Name>
+   <x:SourceName>cuit</x:SourceName>
+   <x:PLDataOrientation/>
+   <x:PLPosition>3</x:PLPosition>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Total_EX</x:Name>
+   <x:SourceName>ex_total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total_NG</x:Name>
+   <x:SourceName>ng_total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total_IVA</x:Name>
+   <x:SourceName>iva_total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total_Otros</x:Name>
+   <x:SourceName>otros_total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total</x:Name>
+   <x:SourceName>total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:Orientation>Page</x:Orientation>
+   <x:Position>2</x:Position>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:AllIncludeExclude>Exclude</x:AllIncludeExclude>
+   <x:IncludedValue>_800</x:IncludedValue>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>orden</x:Name>
+   <x:SourceName>id</x:SourceName>
+   <x:Orientation>Row</x:Orientation>
+   <x:Position>6</x:Position>
+   <x:EncodedType>adChar</x:EncodedType>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> F_Total</x:Name>
+   <x:SourceName>filtro_total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Fac Total</x:Name>
+   <x:SourceName>fac_total</x:SourceName>
+   <x:DataType>Number</x:DataType>
+   <x:EncodedType>adNumeric</x:EncodedType>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:CompareOrderedMembersBy>UniqueName</x:CompareOrderedMembersBy>
+   <x:DetailFormat Style='font-family:Tahoma;font-size:8pt;background:#FCFEFF'/>
+   <x:GroupedFormat Style='font-family:Tahoma;font-size:8pt;background:#E4ECF6'/>
+   <x:SubtotalFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#F29536'/>
+   <x:SubtotalLabelFormat Style='font-family:Tahoma;font-size:10pt;font-weight:
+    bold;background:#BADCFF;color:#204D89'/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Data</x:Name>
+   <x:Orientation>Column</x:Orientation>
+   <x:Position>-1</x:Position>
+   <x:DataField/>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Total_EX1</x:Name>
+   <x:PLCaption>Total_EX</x:PLCaption>
+   <x:PLName>Total_EX</x:PLName>
+   <x:TotalNumber>0</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>1</x:Position>
+   <x:ParentField>Total_EX</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total_NG1</x:Name>
+   <x:PLCaption> Total_NG</x:PLCaption>
+   <x:PLName> Total_NG</x:PLName>
+   <x:TotalNumber>1</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>2</x:Position>
+   <x:ParentField> Total_NG</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total_IVA1</x:Name>
+   <x:PLCaption> Total_IVA</x:PLCaption>
+   <x:PLName> Total_IVA</x:PLName>
+   <x:TotalNumber>2</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>3</x:Position>
+   <x:ParentField> Total_IVA</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total_Otros1</x:Name>
+   <x:PLCaption> Total_Otros</x:PLCaption>
+   <x:PLName> Total_Otros</x:PLName>
+   <x:TotalNumber>3</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>4</x:Position>
+   <x:ParentField> Total_Otros</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name> Total1</x:Name>
+   <x:PLCaption> Total</x:PLCaption>
+   <x:PLName> Total</x:PLName>
+   <x:TotalNumber>4</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>5</x:Position>
+   <x:ParentField> Total</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotField>
+   <x:Name>Fac Total1</x:Name>
+   <x:PLCaption>Fac Total</x:PLCaption>
+   <x:PLName>Fac Total</x:PLName>
+   <x:TotalNumber>5</x:TotalNumber>
+   <x:Orientation>Data</x:Orientation>
+   <x:Position>6</x:Position>
+   <x:ParentField>Fac Total</x:ParentField>
+   <x:NumberFormat>#,##0.00</x:NumberFormat>
+   <x:TotalAlignment>Right</x:TotalAlignment>
+   <x:TotalWidth>90</x:TotalWidth>
+  </x:PivotField>
+  <x:PivotData>
+   <x:Top>0.0.0.0</x:Top>
+   <x:TopOffset>0</x:TopOffset>
+   <x:Left>0</x:Left>
+   <x:LeftOffset>0</x:LeftOffset>
+   <x:InvertedRowMember>!.FACVTA</x:InvertedRowMember>
+   <x:InvertedRowMember>!.FACVTA.0020</x:InvertedRowMember>
+   <x:SeqNum>10</x:SeqNum>
+  </x:PivotData>
+  <x:PivotView>
+   <x:TotalFormat Style='font-family:Tahoma;font-size:8pt;font-weight:bold;
+    background:#FAFFFA'/>
+   <x:HeaderFormat Style='font-family:Tahoma;font-size:10pt;font-weight:bold;
+    background:#365FA5;color:white;text-align:center'/>
+   <x:FieldLabelFormat Style='font-family:Tahoma;font-size:10pt;background:
+    #365FA5;color:white'/>
+   <x:Label Style='font-family:Tahoma;font-size:13pt;background:#CFE4FF;
+    color:#204D89;text-align:center'>
+    <x:Caption>VFPs PivotTable</x:Caption>
+   </x:Label>
+   <x:AllowEdits>false</x:AllowEdits>
+  </x:PivotView>
+  <x:PivotAxis>
+   <x:Orientation>Filter</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de filtro aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>Row</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de fila aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>Column</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de columna aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>Data</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar totales o campos de detalle aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+  <x:PivotAxis>
+   <x:Orientation>FifthAxis</x:Orientation>
+   <x:Label>
+    <x:Caption>Soltar campos de página aquí</x:Caption>
+   </x:Label>
+  </x:PivotAxis>
+ </x:PivotTable>
+</xml>

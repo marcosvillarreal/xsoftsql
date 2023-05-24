@@ -1,0 +1,13 @@
+23-05-2023 18:44:19 , SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK, Error: SQL: no se encuentra la columna 'NUMCOMPRO'.;Linea : SELECT chrfecha,ctacte as codcliente ,cnombre,total,importecaja as caja_i ,importetarjeta as tarjeta_i ,importebco as bco_i,importepya as pedidoya_i,importectacte as ctacte_i,importebapro as bapro_i ,id as pase,fechatotal,chrfechafac as fac_chrfecha,numgrupo02 as codsucursal ,nomgrupo02 as sucursal,nomcompro,numcompro ,IIF(grupo='AAAAA','L1','L2') as origen FROM (cAlias) WHERE LEFT(grupo,2)$'AA-BA' INTO CURSOR &cAlias READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        230 STR(NUMGRUPO02,9)+GRUPO+CHRFECHA+STR(IDMAOPERA,12);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00006IVD013H.TMP;Ultimo Control activo: 
+23-05-2023 18:44:19 , Pila de llamadas
+23-05-2023 18:44:19 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+23-05-2023 18:44:19 , Objeto      : subcajaplanilla.botondynamic1.btn.click
+23-05-2023 18:44:19 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+23-05-2023 18:44:19 , Nº de Linea :          7
+23-05-2023 18:44:19 , En el Fuente: 	this.Parent.Click()
+23-05-2023 18:44:19 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\caja\subcajaplanilla.sct
+23-05-2023 18:44:19 , Objeto      : subcajaplanilla.botondynamic1.click
+23-05-2023 18:44:19 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\caja\subcajaplanilla.sct
+23-05-2023 18:44:19 , Nº de Linea :         20
+23-05-2023 18:44:19 , En el Fuente: 	SELECT chrfecha,ctacte as codcliente ,cnombre,total,importecaja as caja_i	,importetarjeta as tarjeta_i 	,importebco as bco_i,importepya as pedidoya_i,importectacte as ctacte_i,importebapro as bapro_i 	,id as pase,fechatotal,chrfechafac as fac_chrfecha,numgrupo02 as codsucursal 	,nomgrupo02 as sucursal,nomcompro,numcompro 	,IIF(grupo='AAAAA','L1','L2') as origen 	FROM (cAlias) WHERE LEFT(grupo,2)$'AA-BA' 	INTO CURSOR &cAlias READWRITE 
+23-05-2023 18:44:19 , Fin

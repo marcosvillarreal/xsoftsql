@@ -104,7 +104,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    set classlib to systray ADDITIVE 
    SET CLASSLIB  TO  controlesmenu ADDITIVE 
    SET CLASSLIB  TO  controlesdashboard ADDITIVE
-   
+    SET CLASSLIB TO _environ.vcx ADDITIVE  
 *clear all
 
 _screen.lockscreen=.t.
@@ -156,7 +156,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.00"
+	goapp.version = "04.00.00"
 	
 	PUBLIC  gcicono
 	     
