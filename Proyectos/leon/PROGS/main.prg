@@ -76,14 +76,15 @@ If lldesarrollo
    _rutaformar  =lcdd + 'forms\articulos'
    _rutaformpe  =lcdd + 'forms\pedidos'
    _rutaformct  =lcdd + 'forms\ctacte'
-   
+    _rutaformvta  =lcdd + 'forms\ventas'
+    
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaffc,&_rutalib;
                ,&_rutaformsb, &_rutareportsb, &_rutaformse, &_rutaformsp, &_rutaformsb;
                ,&_rutaformsu, &_rutaformsc, &_rutaformsd ,&_rutaformsDesarrollo;
-               ,&_rutaformar, &_rutaformpe, &_rutaformct
+               ,&_rutaformar, &_rutaformpe, &_rutaformct,&_rutaformvta
 Endif
 
 *-- CREACION DE OBJETO APLICACION
