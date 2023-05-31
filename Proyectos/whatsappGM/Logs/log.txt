@@ -1,53 +1,3 @@
-18-03-2016 10:55:45 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº select CabeImp.*,nvl(CentroRecep.nombre,space(20)) as nomsucursal From cabeimp left join centrorecep  on CabeImp.sucursal = CentroRecep.numero where CabeImp.sucursal  = goapp.sucursal into cursor CsrCabeImp READWRITE
- Alias CSRCENTRORECEP registro          1
-Control activo  PARACAE.INIT
-18-03-2016 10:56:02 , Error nº:       1967
-Error El entorno de datos ya está descargado.
-Linea nº select CabeImp.*,nvl(CentroRecep.nombre,space(20)) as nomsucursal From cabeimp left join centrorecep  on CabeImp.sucursal = CentroRecep.numero where CabeImp.sucursal  = goapp.sucursal into cursor CsrCabeImp READWRITE
- Alias CABEIMP registro          1
-Control activo  ON... 
-18-03-2016 10:58:27 , Error nº:       1925
-Error _SPINNERTALONPC1 es un miembro desconocido.
-Linea nº ._spinnertalonpc1.Value		= paraconfig.talonpc1
- Alias PARAVARIO registro          5
-Control activo  PARACONFIG.INIT
-18-03-2016 11:06:02 , Error nº:        110
-Error Debe abrir el archivo en modo exclusivo.
-Linea nº llok = .grabardato()
- Alias KEYSID registro        134
-Control activo  ON... 
-18-03-2016 11:44:34 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias CSRPARAVARIO registro          1
-Control activo  PARAVARIO.CONTAINERENCABEZA.PFRAME1.PAGE1.KITBUSCAOALTAENBA.TXTEXISTE1.INIT
-18-03-2016 12:16:12 , Error nº:        110
-Error Debe abrir el archivo en modo exclusivo.
-Linea nº llok = .grabardato()
- Alias SISTEMA registro          2
-Control activo  ON... 
-18-03-2016 12:20:43 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  BASECONECTOR1.OROBOT.OTIMER.TIMER
-18-03-2016 12:25:14 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº USE &cArchivo IN 0 ALIAS FsrCabeza EXCLUSIVE
- Alias CSRIMPUESTO registro          1
-Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
-18-03-2016 12:38:09 , Error nº:         13
-Error No se encuentra el alias 'CSRTIPOIVA'.
-Linea nº USE IN CsrTipoiva
- Alias CSRPARAVARIO registro          3
-Control activo  REGPROCESO.OROBOT.OROBOT.DESTROY
-18-03-2016 12:39:22 , Error nº:         13
-Error No se encuentra el alias 'CSRTIPOIVA'.
-Linea nº USE IN CsrTipoiva
- Alias CSRPARAVARIO registro          3
-Control activo  REGPROCESO.OROBOT.OROBOT.DESTROY
 03/18/16 12:56:29 , Error nº:       1732
 Error El tipo de datos no es válido para esta propiedad.
 Linea nº .TOP = .nTop
@@ -412,7 +362,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -630,7 +592,19 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
+
+
+
+
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
+
+
+
+
+
 
 
 
@@ -899,12 +873,24 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
+
+
+
 
 
 
@@ -1934,4 +1920,60 @@ Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº IF nDir = 0
  Alias CSRMENSAJE registro          1
 Control activo  MAIN
-05-07-2022 19:26:05 , Error nº:          1Error El archivo 'c:\aplicaciones\whatsapp\20220705_191645\' no existe.Linea nº COPY FILE  (cFile)  TO (cPathCopy) Alias CSRMENSAJE registro          1Control activo  REGPROCESO.TIMER1.TIMER
+05-07-2022 19:26:05 , Error nº:          1
+Error El archivo 'c:\aplicaciones\whatsapp\20220705_191645\' no existe.
+Linea nº COPY FILE  (cFile)  TO (cPathCopy)
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER1.TIMER
+31-05-2023 13:42:22 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº SELECT CsrParavario
+ Alias PARAVARIO registro          2
+Control activo  MAIN
+31-05-2023 13:42:37 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº SELECT CsrParavario
+ Alias PARAVARIO registro          2
+Control activo  REGPROCESO.INIT
+31-05-2023 13:46:57 , Error nº:         13
+Error No se encuentra el alias 'CSRPARAVARIO'.
+Linea nº SELECT CsrParavario
+ Alias PARAVARIO registro          2
+Control activo  REGPROCESO.INIT
+31-05-2023 13:59:20 , Error nº:       1923
+Error No se encuentra el objeto ODIR.
+Linea nº odir.Delete
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER2.TIMER
+31-05-2023 14:04:39 , Error nº:       1923
+Error No se encuentra el objeto ODIR.
+Linea nº odir.Delete
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER1.TIMER
+31-05-2023 14:05:35 , Error nº:         12
+Error No se encuentra la variable 'CNROWHATSAPP'.
+Linea nº mLink='whatsapp://send?phone='+cNroWhatsapp+"&text="+cMensaje+""
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+31-05-2023 14:06:22 , Error nº:         12
+Error No se encuentra la variable 'CMENSAJE'.
+Linea nº mLink='https://web.whatsapp.com/send?phone='+Lctelefono +"&text="+cMensaje+""
+ Alias PARAVARIO registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+31-05-2023 14:21:24 , Error nº:          1
+Error El archivo 'enviarmensajeform.prg' no existe.
+Linea nº lok = enviarMensajeForm(cNroWhatsapp, cMensaje,cFilePath)
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+05/31/23 14:27:54 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº .TOP = .nTop
+ Alias CSRARCHIVOS registro          1
+Control activo  REGPROCESO.INIT
+31-05-2023 14:32:09 , Error nº:       1734
+Error No se encuentra la propiedad USARIO.
+Linea nº oavisar.usario(lObj.Name)
+ Alias CSRMENSAJE registro          1
+Control activo  REGPROCESO.TIMER2.TIMER
+31-05-2023 14:33:10 , Error nº:       1734Error No se encuentra la propiedad USARIO.Linea nº oavisar.usario(lObj.Name) Alias CSRMENSAJE registro          1Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
+31-05-2023 15:23:28 , Error nº:       1924Error OFORMWAPP no es un objeto.Linea nº oFormWapp.Activate() Alias CSRMENSAJE registro          1Control activo  REGPROCESO.TIMER1.TIMER

@@ -104,6 +104,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE
+    SET CLASSLIB  TO  _Wapp ADDITIVE
 *clear all
 
 _screen.lockscreen=.t.

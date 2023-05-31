@@ -1,0 +1,96 @@
+WAIT "Espere por favor....cargando página...." Windows NoWait
+
+Lctelefono = "+5492916436628"
+*-valores
+*mLink	="https://web.whatsapp.com/"
+mLink	="https://web.whatsapp.com/send?phone="+Lctelefono+"&text="+tTOC(DATETIME())
+mBrowser="chrome.exe"
+*mBrowser="msedge.exe"
+lcApli	="whatsapp"&&caption o parte del caption en la ventana del navegador
+mHwnd_hija=0&&manejador de ventana
+
+*-api ejecutar navegador
+DECLARE INTEGER ShellExecute IN Shell32	INTEGER hwnd, STRING @lpOperation,STRING @lpFile,;
+	STRING @lpParameters, STRING @lpDirectory, SHORT nshow
+*-apis lozalizar ventana navegador
+Declare Integer FindWindow In Win32API Integer, String
+DECLARE INTEGER GetWindowText IN user32 INTEGER hwnd, STRING @lpString,INTEGER cch
+DECLARE Integer GetWindow IN WIN32API Integer nHwnd, Integer nCmd
+DECLARE INTEGER GetWindowTextLength IN user32 INTEGER hwnd
+*-api tiempo de espera
+Declare Integer Sleep In kernel32 Integer
+*-api emparentar navegador
+DECLARE INTEGER SetParent IN user32 INTEGER hWndChild, INTEGER hWndNewParent
+DECLARE INTEGER SetWindowPos IN user32 INTEGER hwnd,INTEGER hWndInsertAfter,;
+	INTEGER x, INTEGER y,INTEGER cx,INTEGER cy,INTEGER wFlags
+*-apis ocultar botones ventana navegador
+Declare Integer GetWindowLong In User32 Integer HWnd, Integer nIndex
+Declare Integer SetWindowLong In user32 Integer HWnd, INTEGER nIndex, Integer dwNewLong
+
+*-inicia formulario
+loForm = Createobject("Form1")
+loForm.Show(1)
+Define Class Form1 As Form
+	AutoCenter	= .T.
+	Height 		= 493
+	Width 		= 955
+	Caption 	= 'Pagina Web en formulario'
+
+	PROCEDURE Init
+
+		Shellexecute(0,"Open",mBrowser,mLink,"",7)&&ejecutar minimizado 
+
+		Sleep(6000)&&esperando cargue pagina
+		
+		GW_HWNDFIRST=0
+		GW_HWNDNEXT=2
+
+		nCurrWnd=GetWindow(FindWindow(0,""),GW_HWNDFIRST)
+
+		DO WHILE nCurrWnd # 0
+			nLength = GetWindowTextLength(nCurrWnd)
+			IF nLength > 0
+			        cTmp=REPLICATE(CHR(0),nLength+1)
+		        		nTitex=GetWindowText(nCurrWnd,@cTmp,nLength + 1 )
+	    		   	IF LOWER(lcApli) $ lower(SUBSTR(cTmp,1,nTitex))
+	        				mHwnd_hija=nCurrWnd
+	        				EXIT
+	        			EndIf	
+	        		EndIf	
+			nCurrWnd = GetWindow(nCurrWnd,GW_HWNDNEXT)
+		ENDDO  
+
+		IF mHwnd_hija==0
+			MESSAGEBOX("No se cargó la página esperada")
+			RETURN
+		EndIf	
+
+		nLeft = 1
+		nTop = -(75 + 15)
+		nWidth = ThisForm.Width
+		nHeight = ThisForm.Height+75
+
+		SetParent(mHwnd_hija,ThisForm.HWnd)
+		SetWindowPos(mHwnd_hija, 1,nLeft, nTop,nWidth, nHeight,64)&&64
+		
+		WAIT Clear
+
+		*ocultar botones del navegador
+		#Define GWL_STYLE -16
+		#Define WS_SYSMENU  524288
+		#DEFINE WS_MINIMIZEBOX  0x20000
+		#DEFINE WS_MAXIMIZEBOX  0x10000
+
+		lnStyle = GetWindowLong(mHwnd_hija, GWL_STYLE)
+
+		lnNewStyle = Bitxor(lnStyle, WS_SYSMENU)
+		*lnNewStyle = Bitxor(lnStyle,WS_MAXIMIZEBOX)    
+		*lnNewStyle = Bitxor(lnStyle,WS_MINIMIZEBOX)    
+		*lnNewStyle = Bitxor(lnStyle, WS_MAXIMIZEBOX,WS_MINIMIZEBOX)   
+		
+		=SetWindowLong(mHwnd_hija, GWL_STYLE, lnNewStyle)
+
+	EndProc
+
+ENDDEFINE
+
