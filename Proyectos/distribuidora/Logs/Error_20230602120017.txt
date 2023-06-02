@@ -1,0 +1,53 @@
+02-06-2023 12:00:17 , REGFACPUB.CMDSALVAR.BTN.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0);Error :         11;Ultimo Alias Activo: CSRBONIRUBROCATE;Ultimo registro:         14 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0001258P00LW.TMP;Ultimo Control activo: 
+02-06-2023 12:00:17 , Pila de llamadas
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+02-06-2023 12:00:17 , Objeto      : regfacpub.cmdsalvar.btn.click
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+02-06-2023 12:00:17 , Nº de Linea :          7
+02-06-2023 12:00:17 , En el Fuente: 	this.Parent.Click()
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.cmdsalvar.click
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :          2
+02-06-2023 12:00:17 , En el Fuente: thisform.cargarconcepto()
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.cargarconcepto
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :         68
+02-06-2023 12:00:17 , En el Fuente: 		this.cargardatosctacte() 
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.cargardatosctacte
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :         43
+02-06-2023 12:00:17 , En el Fuente: 	this.key_43()
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.key_43
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :          7
+02-06-2023 12:00:17 , En el Fuente: 	thisform.actualizar()
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.actualizar
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :         12
+02-06-2023 12:00:17 , En el Fuente: 			IF .pidofinanciacion('A')				
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.pidofinanciacion
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :         87
+02-06-2023 12:00:17 , En el Fuente: 				thisform.grid2_control('','')
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.grid2_control
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :        213
+02-06-2023 12:00:17 , En el Fuente: 		 	nBoniRubro = .CalculoBoniRubro()
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Objeto      : regfacpub.calculobonirubro
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct
+02-06-2023 12:00:17 , Nº de Linea :         15
+02-06-2023 12:00:17 , En el Fuente: 				IF  FechaHoraCero(NVL(CsrBoniRubroCate.fechao,DATE() )) <= FechaHoraCero(CsrAuxCabefac.fecha)  AND FechaHoraCero(CsrAuxCabefac.fecha)  <= FechaHoraCero(NVL(CsrBoniRubroCate.fecha,date()))
+02-06-2023 12:00:17 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+02-06-2023 12:00:17 , Objeto      : fechahoracero
+02-06-2023 12:00:17 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+02-06-2023 12:00:17 , Nº de Linea :       2509
+02-06-2023 12:00:17 , En el Fuente: ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
+02-06-2023 12:00:17 , Fin
