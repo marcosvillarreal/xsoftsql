@@ -1,0 +1,18 @@
+07-06-2023 17:27:05 , SUBIVAVTA.BOTONDYNAMIC1.BTN.CLICK, Error: No se encuentra la variable 'LCALIAS'.;Linea : SELECT nomcompro,letra,talonario,numcomp,cnombre,nomcatego ,cuit,provincia,stoc(chrfecha) as fecha ,totalex as exe_total,totalng as ng_total ,neto10 as ng10, neto21 as ng21 ,totalig+totaloi as iva_total, totalpb as pb_total ,totalpi as pi_total,alicuota21,alicuota10 ,(totalri+totalrb+totalrg+totalpg+totalpn+totalii+totalin+totalip+totalex) as otros_total ,total, STR(id,12) as cid FROM (lcAlias)  WHERE grupo='A' INTO CURSOR &lcAlias READWRITE;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 GRUPO+CHRFECHA+STR(ID,12);DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00004NWP03XG.TMP;Ultimo Control activo: 
+07-06-2023 17:27:05 , Pila de llamadas
+07-06-2023 17:27:05 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+07-06-2023 17:27:05 , Objeto      : subivavta.botondynamic1.btn.click
+07-06-2023 17:27:05 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+07-06-2023 17:27:05 , Nº de Linea :          7
+07-06-2023 17:27:05 , En el Fuente: 	this.Parent.Click()
+07-06-2023 17:27:05 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+07-06-2023 17:27:05 , Objeto      : subivavta.botondynamic1.click
+07-06-2023 17:27:05 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+07-06-2023 17:27:05 , Nº de Linea :         15
+07-06-2023 17:27:05 , En el Fuente: 	thisform.creardinamica(@cTitulo,@cAliasDynamic,@cListAll,@cListTitAll,@cListFilters,@cListDataDyn,@cListDataDet,@cListTotals,@cGroupTotals)
+07-06-2023 17:27:05 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+07-06-2023 17:27:05 , Objeto      : subivavta.creardinamica
+07-06-2023 17:27:05 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\subivavta.sct
+07-06-2023 17:27:05 , Nº de Linea :         11
+07-06-2023 17:27:05 , En el Fuente: SELECT nomcompro,letra,talonario,numcomp,cnombre,nomcatego		,cuit,provincia,stoc(chrfecha) as fecha		,totalex as exe_total,totalng as ng_total		,neto10 as ng10, neto21 as ng21		,totalig+totaloi as iva_total, totalpb as pb_total		,totalpi as pi_total,alicuota21,alicuota10		,(totalri+totalrb+totalrg+totalpg+totalpn+totalii+totalin+totalip+totalex) as otros_total		,total, STR(id,12) as cid 		FROM (lcAlias)  WHERE grupo='A' INTO CURSOR &lcAlias READWRITE 
+07-06-2023 17:27:05 , Fin
