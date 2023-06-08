@@ -9,558 +9,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=1  GROUP BY idvendedor,idarticulo,codigo,articulo ,codvendedor,nomvendedor,cantcomproba UNION ALL SELECT idvendedor,1 as grupo,idrubro as id,codrubro as codigo ,nomrubro as nombre ,codvendedor,nomv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-endedor,cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE  filtrorubro = 1 GROUP BY idvendedor,idarticulo,codigo,articulo ,codvendedor,nomvendedor,cantcomproba ORDER BY 
+
+
+
+
+
 
 
 
@@ -842,8 +296,18 @@ idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE Error :       1807 Ult
 
 
 
+
+
+
+
+
 REVIA1.IMPRESORA.CLICK
 15-05-2023 19:04:57 , Error: SQL: la cláusula ORDER BY no es válida. Linea : SELECT idvendedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre ,codvendedor,nomvendedor,cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as im
+
+
+
+
+
 
 
 
@@ -1123,7 +587,17 @@ porte,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 
 
 
 
+
+
+
+
+
  porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0  AND filtrorubro = 0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanal,cantcomproba UNION ALL SELECT idvendedor,
+
+
+
+
+
 
 
 
@@ -1403,7 +877,17 @@ porte,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 
 
 
 
+
+
+
+
+
 mi, 1 as clave ,idrubro as id_r,codrubro as codigo_r ,nomrubro as nombre_r ,SUM(unidades) as unidades_r,SUM(netogravado)as importe_r,SUM(vtakilos) as kilos_r ,comicanal as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND filtr
+
+
+
+
+
 
 
 
@@ -1683,7 +1167,17 @@ orubro = 0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comican
 
 
 
+
+
+
+
+
 ombre ,codvendedor,nomvendedor,cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2
+
+
+
+
+
 
 
 
@@ -1963,7 +1457,17 @@ ombre ,codvendedor,nomvendedor,cantcomproba ,SUM(unidades) as unidades,SUM(netog
 
 
 
+
+
+
+
+
 rubro,codvendedor,nomvendedor,cantcomproba UNION ALL SELECT idvendedor,1 as grupo,idarticulo as id,codigo as codigo ,articulo as nombre ,codvendedor,nomvendedor,cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CA
+
+
+
+
+
 
 
 
@@ -2243,6 +1747,11 @@ ST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 a
 
 
 
+
+
+
+
+
 6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=1  GROUP BY idvendedor,idarticulo,codigo,articulo ,codvendedor,nomvendedor,cantcomproba UNION ALL SELECT idvendedor,1 as grupo,idrubro as id,codrubro as codigo ,nomrubro as nombre ,codvendedor,nomvendedor,
 
 
@@ -2383,7 +1892,17 @@ ST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 a
 
 
 
+
+
+
+
+
 cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(1
+
+
+
+
+
 
 
 
@@ -2663,7 +2182,17 @@ cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos)
 
 
 
+
+
+
+
+
 r,grupo,codigo INTO CURSOR CsrImprimir READWRITE Error :       1808 Ultimo Alias Activo: CSRSEGUIMIENTO Ultimo registro:         63  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EO7D02ZY.TMP Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IM
+
+
+
+
+
 
 
 
@@ -2943,7 +2472,17 @@ PRESORA.CLICK
 
 
 
+
+
+
+
+
 porte,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as
+
+
+
+
+
 
 
 
@@ -3221,7 +2760,17 @@ porte,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 
 
 
 
+
+
+
+
+
 0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre ,codvendedor,nomvendedor,cantcomproba ,CAST(0 as n(11,2)) as unidades, CAST(0 as n(11,2))as importe,CAST(0 as n(11,2)) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as co
+
+
+
+
+
 
 
 
@@ -3499,7 +3048,17 @@ mi, 1 as clave ,idrubro as id_r,codrubro as codigo_r ,nomrubro as nombre_r ,SUM(
 
 
 
+
+
+
+
+
 orubro = 0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanal,idrubro,codrubro,nomrubro,cantcomproba UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomrubro as n
+
+
+
+
+
 
 
 
@@ -3777,7 +3336,17 @@ ombre ,codvendedor,nomvendedor,cantcomproba ,SUM(unidades) as unidades,SUM(netog
 
 
 
+
+
+
+
+
 )) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND filtrorubro = 0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro ,nom
+
+
+
+
+
 
 
 
@@ -4055,7 +3624,17 @@ rubro,codvendedor,nomvendedor,cantcomproba UNION ALL SELECT idvendedor,1 as grup
 
 
 
+
+
+
+
+
 ST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(
+
+
+
+
+
 
 
 
@@ -4333,7 +3912,17 @@ ST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 a
 
 
 
+
+
+
+
+
 cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(1
+
+
+
+
+
 
 
 
@@ -4611,7 +4200,17 @@ cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos)
 
 
 
+
+
+
+
+
  BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE Error :       1808 Ultimo Alias Activo: CSRSEGUIMIENTO Ultimo registro:         63  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EO7D031T.TMP Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VI
+
+
+
+
+
 
 
 
@@ -4890,7 +4489,17 @@ STAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
 orubro ,idrubro,codrubro,nomrubro,vtakilos ,idvdorfac,codvdorfac,nomvdorfac,idcanalvta,codcanalvta,nomcanalvta,comicanal ,csrfac.comproba as cantcomproba,porcecomi FROM csrobjetivos left join csrfac on csrobjetivos.idvendedor = csrfac.idvendedor INTO CUR
+
+
+
+
+
 
 
 
@@ -5156,7 +4765,17 @@ SOR csrseguimiento readwrite Error :       1806 Ultimo Alias Activo: CSRFAC Ulti
 
 
 
+
+
+
+
+
 orubro ,idrubro,codrubro,nomrubro,vtakilos ,idvdorfac,codvdorfac,nomvdorfac,idcanalvta,codcanalvta,nomcanalvta,comicanal ,csrfac.comproba as cantcomproba,porcecomi FROM csrobjetivos left join csrfac on csrobjetivos.idvendedor = csrfac.idvendedor INTO CUR
+
+
+
+
+
 
 
 
@@ -5420,7 +5039,17 @@ SOR csrseguimiento readwrite Error :       1806 Ultimo Alias Activo: CSRFAC Ulti
 
 
 
+
+
+
+
+
 do)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as comi, 1 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(
+
+
+
+
+
 
 
 
@@ -5682,7 +5311,17 @@ do)as importe,SUM(vtakilos) as kilos ,comicanal as porcomi,CAST(0 as n(6,2)) as 
 
 
 
+
+
+
+
+
 endedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre ,codvendedor,nomvendedor,cantcomproba ,CAST(0 as n(11,2)) as unidades, CAST(0 as n(11,2))as importe,CAST(0 as n(11,2)) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2
+
+
+
+
+
 
 
 
@@ -5944,7 +5583,17 @@ endedor,0 as grupo,idcanalvta as id,codcanalvta as codigo ,nomcanalvta as nombre
 
 
 
+
+
+
+
+
 ND filtrorubro = 0 AND comicanal<> 0 GROUP BY idvendedor,codvendedor,nomvendedor,comicanal ,idcanalvta,codcanalvta,nomcanalvta,comicanal,idrubro,codrubro,nomrubro,cantcomproba UNION ALL SELECT idvendedor,0 as grupo,idrubro as id,codrubro as codigo ,nomru
+
+
+
+
+
 
 
 
@@ -6206,7 +5855,17 @@ bro as nombre ,codvendedor,nomvendedor,cantcomproba ,SUM(unidades) as unidades,S
 
 
 
+
+
+
+
+
 )) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(6,2)) as comi_r FROM CsrSeguimiento WHERE filtro=0 AND filtrorubro = 0 AND comicanal = 0 GROUP BY idvendedor,idrubro,codrubro ,nom
+
+
+
+
+
 
 
 
@@ -6468,7 +6127,17 @@ rubro,codvendedor,nomvendedor,cantcomproba UNION ALL SELECT idvendedor,1 as grup
 
 
 
+
+
+
+
+
 ST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(11,2)) as importe_r,CAST(0 as n(11,2)) as kilos_r ,CAST(0 as n(6,2)) as porcomi_r,CAST(0 as n(
+
+
+
+
+
 
 
 
@@ -6730,7 +6399,17 @@ ST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 a
 
 
 
+
+
+
+
+
 cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos) as kilos ,CAST(0 as n(6,2)) as porcomi,CAST(0 as n(6,2)) as comi , 0 as clave ,0 as id_r,0 as codigo_r,SPACE(15) as nombre_r ,CAST(0 as n(11,2)) as unidades_r, CAST(0 as n(1
+
+
+
+
+
 
 
 
@@ -6992,7 +6671,17 @@ cantcomproba ,SUM(unidades) as unidades,SUM(netogravado)as importe,SUM(vtakilos)
 
 
 
+
+
+
+
+
  BY idvendedor,grupo INTO CURSOR CsrImprimir READWRITE Error :       1807 Ultimo Alias Activo: CSRSEGUIMIENTO Ultimo registro:        808  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000E6TL00GD.TMP Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREV
+
+
+
+
+
 
 
 
@@ -7260,8 +6949,18 @@ IA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
 PPDATA\LOCAL\TEMP\0000GXS900PM.TMP Ultimo Control activo:  REGFACVTA.CMDCONSULTA.CLICK
 17-05-2023 18:17:56 , Error: No se encuentra la variable 'EXCLUIDO5329'. Linea : IF NVL(CsrCtacte.excluido5329,0) = 1 Error :         12 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: CDIRECCION REGFACVTA.CONTAINERENCABEZ
+
+
+
+
+
 
 
 
@@ -7512,6 +7211,11 @@ A.KITBUSCAOALTAENCTACTE.LOSTFOCUS
 
 
 
+
+
+
+
+
 BEVD011Q.TMP Ultimo Control activo:  REGFACVTA.CMDSALVAR.CLICK
 19-05-2023 11:48:59 , Verificando OCX
 19-05-2023 11:49:04 , Acceso al sistema, antes de autenticar
@@ -7539,6 +7243,11 @@ BEVD011Q.TMP Ultimo Control activo:  REGFACVTA.CMDSALVAR.CLICK
 19-05-2023 12:40:28 , Conectado..miguel\sql2014
 19-05-2023 12:40:28 , Datos de la empresa
 19-05-2023 13:11:39 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct no existe o no es válido. Linea : oCa.Datasource.ActiveConnection.Begintrans() Error :         41 Ultimo Alias Activo:  Ultimo registro:          
+
+
+
+
+
 
 
 
@@ -7745,8 +7454,18 @@ BEVD011Q.TMP Ultimo Control activo:  REGFACVTA.CMDSALVAR.CLICK
 
 
 
+
+
+
+
+
 0L8ND00B3.TMP Ultimo Control activo:  EXPORTAR_SICORE.INIT
 22-05-2023 17:17:48 , Error: No se encuentra la propiedad TIPOPROV. Linea : lccateibto = " and CsrParaVario.nombre = " + IIF(.tipoprov$'BA',"'CATEIBBA'","'CATEIBRN'") Error :       1734 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:          1  D
+
+
+
+
+
 
 
 
@@ -7894,8 +7613,18 @@ BF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000L8ND00BX.TMP Ultimo Control activo:  E
 
 
 
+
+
+
+
+
 istro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000L8ND00CT.TMP Ultimo Control activo:  EXPORTAR_SICORE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 22-05-2023 17:21:46 , Error: No se encuentra la variable 'IMPUESTO'. Linea : IF CsrCuerpo.Impuesto=0 Error :         12 Ultimo Alias Activo: CSRCUERPO Ultimo registro:         -1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000L8ND00FA.TMP Ultimo Control act
+
+
+
+
+
 
 
 
@@ -8039,8 +7768,18 @@ ivo:  EXPORTAR_SICORE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
+
+
+
 ol activo:  EXPORTAR_SICORE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 22-05-2023 17:23:45 , Error: No se encuentra el alias 'CSRCUERDIA'. Linea : SELECT Csrcuerdia Error :         13 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000L8ND00M7.TMP Ultimo Control act
+
+
+
+
+
 
 
 
@@ -8180,8 +7919,18 @@ ivo:  EXPORTAR_SICORE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
+
+
+
 ivo:  EXPORTAR_SICORE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 22-05-2023 17:26:56 , Error: No se encuentra el alias 'CSRCUERDIA'. Linea : SELECT Csrcuerdia Error :         13 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000L8ND00NZ.TMP Ultimo Control act
+
+
+
+
+
 
 
 
@@ -8334,7 +8083,17 @@ ivo:  EXPORTAR_SICORE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
+
+
+
 IIF(grupo='AAAAA','L1','L2') as origen FROM (cAlias) WHERE LEFT(grupo,2)$'AA-BA' INTO CURSOR &cAlias READWRITE Error :       1806 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        230 STR(NUMGRUPO02,9)+GRUPO+CHRFECHA+STR(IDMAOPERA,12) DBF: C:\USER
+
+
+
+
+
 
 
 
@@ -8458,8 +8217,18 @@ S\MARCO\APPDATA\LOCAL\TEMP\0000FUH5012M.TMP Ultimo Control activo:  SUBCAJAPLANI
 
 
 
+
+
+
+
+
 ctivo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 16:17:20 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : lnWi . .... Error :       1943 Ultimo Alias Activo: SUBCAJAPLANILLA Ultimo registro:        215  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FUH502OH.TMP Ultimo Control
+
+
+
+
+
 
 
 
@@ -8579,8 +8348,18 @@ ctivo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
  activo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 16:18:36 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : lnWi . .... Error :       1943 Ultimo Alias Activo: SUBCAJAPLANILLA Ultimo registro:        215  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FUH502TV.TMP Ultimo Control
+
+
+
+
+
 
 
 
@@ -8696,8 +8475,18 @@ ctivo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 16:47:52 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : lnWi . .... Error :       1943 Ultimo Alias Activo: _6MG0ZZYLZ Ultimo registro:        215  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FUH504S5.TMP Ultimo Control acti
+
+
+
+
+
 
 
 
@@ -8809,8 +8598,18 @@ vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 17:29:53 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : lnWi . .... Error :       1943 Ultimo Alias Activo: _6MG11HZ1Z Ultimo registro:        215  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FUH505AU.TMP Ultimo Control acti
+
+
+
+
+
 
 
 
@@ -8918,8 +8717,18 @@ vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 :  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 17:58:15 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : IF ...... Error :       1943 Ultimo Alias Activo: _6MG12IFWI Ultimo registro:        216  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FUH506CX.TMP Ultimo Control activo
+
+
+
+
+
 
 
 
@@ -9023,6 +8832,11 @@ vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 L.TMP Ultimo Control activo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 17:59:56 , Error: La ruta o el nombre de archivo no es válido. Linea : SET PATH TO Clases,Images,VfpsLib,&lcPath Error :        202 Ultimo Alias Activo: _6MG12KPAX Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000FUH506H
 
@@ -9074,8 +8888,18 @@ L.TMP Ultimo Control activo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 T.TMP Ultimo Control activo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 18:01:13 , Error: La ruta o el nombre de archivo no es válido. Linea : SET PATH TO Clases,Images,VfpsLib,&lcPath Error :        202 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.
+
+
+
+
+
 
 
 
@@ -9178,8 +9002,18 @@ BTN.CLICK
 
 
 
+
+
+
+
+
 :  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 18:04:39 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : lnWi . .... Error :       1943 Ultimo Alias Activo: _6MG12QRXP Ultimo registro:        215  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OAA1005W.TMP Ultimo Control acti
+
+
+
+
+
 
 
 
@@ -9271,8 +9105,18 @@ vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 :  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 18:07:02 , Error: El miembro FIELDSETS no se evalúa como un objeto. Linea : IF ...... Error :       1943 Ultimo Alias Activo: _6MG12TT7T Ultimo registro:        216  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000OAA100D7.TMP Ultimo Control activo
+
+
+
+
+
 
 
 
@@ -9360,8 +9204,18 @@ vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 :  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 18:09:37 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\caja\subcajaplanilla.sct no existe o no es válido. Linea : DELE.. ... Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo
+
+
+
+
+
 
 
 
@@ -9466,12 +9320,22 @@ vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
+
+
+
 vo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLICK
 23-05-2023 18:39:57 , Informe por excel
 23-05-2023 18:40:16 , Version 16.0
 23-05-2023 18:41:29 , Informe por excel
 23-05-2023 18:41:31 , Version 16.0
 23-05-2023 18:44:19 , Error: SQL: no se encuentra la columna 'NUMCOMPRO'. Linea : SELECT chrfecha,ctacte as codcliente ,cnombre,total,importecaja as caja_i ,importetarjeta as tarjeta_i ,importebco as bco_i,importepya as pedidoya_i,importectacte as ctacte
+
+
+
+
+
 
 
 
@@ -9531,7 +9395,17 @@ _i,importebapro as bapro_i ,id as pase,fechatotal,chrfechafac as fac_chrfecha,nu
 
 
 
+
+
+
+
+
 WRITE Error :       1806 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        230 STR(NUMGRUPO02,9)+GRUPO+CHRFECHA+STR(IDMAOPERA,12) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00006IVD013H.TMP Ultimo Control activo:  SUBCAJAPLANILLA.BOTONDYNAMIC1.BTN.CLI
+
+
+
+
+
 
 
 
@@ -9613,6 +9487,11 @@ CK
 
 
 
+
+
+
+
+
 mo registro:         14  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0001258P00LW.TMP Ultimo Control activo:  REGFACPUB.CMDSALVAR.BTN.CLICK
 02-06-2023 12:03:01 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0) Error :         11 Ultimo Alias Activo: CSRBONIRUBROCATE Ulti
 
@@ -9636,8 +9515,18 @@ mo registro:         14  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0001258P00LW.TMP
 
 
 
+
+
+
+
+
 mo registro:         14  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0001258P01BS.TMP Ultimo Control activo:  REGFACPUB.CMDSALVAR.BTN.CLICK
 02-06-2023 12:10:28 , Error: El archivo memo j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacpub.sct no existe o no es válido. Linea : IF lldesarrollo AND llchekform Error :         41 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultim
+
+
+
+
+
 
 
 
@@ -9689,8 +9578,18 @@ o Control activo: NUMERO ON...
 
 
 
+
+
+
+
+
 ARCO\APPDATA\LOCAL\TEMP\0000EZGP0130.TMP Ultimo Control activo:  SUBPERCE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 05-06-2023 11:28:52 , Error: CHKARTICULOS es un miembro desconocido. Linea : IF this.Parent.chkarticulos.Value = 0 Error :       1925 Ultimo Alias Activo: _CSRPROVINCIA Ultimo registro:          1 VAL(CNUMERO) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000E
+
+
+
+
+
 
 
 
@@ -9721,6 +9620,11 @@ ZGP014C.TMP Ultimo Control activo:  SUBPERCE.CONTAINERORIGEN._OGROUP.VALID
 05-06-2023 11:44:19 , Conectado..distribuidorakleja.ddns.net\sql2014,1170
 05-06-2023 11:44:19 , Datos de la empresa
 05-06-2023 11:55:03 , Error: El archivo memo c:\users\marco\appdata\local\temp\0000hr7t00bn.frt no existe o no es válido. Linea : ... Error :         41 Ultimo Alias Activo: CSRSETEO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
 
 
 
@@ -9769,7 +9673,17 @@ ZGP014C.TMP Ultimo Control activo:  SUBPERCE.CONTAINERORIGEN._OGROUP.VALID
 
 
 
+
+
+
+
+
 lig+totaloi as iva_total, totalpb as pb_total ,totalpi as pi_total,alicuota21,alicuota10 ,(totalri+totalrb+totalrg+totalpg+totalpn+totalii+totalin+totalip+totalex) as otros_total ,total, STR(id,12) as cid FROM (lcAlias)  WHERE grupo='A' INTO CURSOR &lcAl
+
+
+
+
+
 
 
 
@@ -9777,10 +9691,25 @@ ias READWRITE Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registr
 07-06-2023 17:30:28 , Error: No se encuentra la variable 'LLOK'. Linea : RETURN llok Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 GRUPO+CHRFECHA+STR(ID,12) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00004NWP0414.TMP Ultimo 
 
 
+
+
+
+
+
 Control activo:  SUBIVAVTA.BOTONDYNAMIC1.BTN.CLICK
 07-06-2023 17:34:52 , Error: No se encuentra la variable 'LCALIAS'. Linea : SELECT nomcompro,letra,talonario,numcomp,cnombre,nomcatego ,cuit,provincia,stoc(chrfecha) as fecha ,totalex as exe_total,totalng as ng_total ,neto10 as ng10, neto21 as ng21 ,tota
 
+
+
+
+
+
 lig+totaloi as iva_total, totalpb as pb_total ,totalpi as pi_total,alicuota21,alicuota10 ,(totalri+totalrb+totalrg+totalpg+totalpn+totalii+totalin+totalip+totalex) as otros_total ,total, STR(id,12) as cid FROM (lcAlias)  WHERE grupo='A' INTO CURSOR &lcAl
+
+
+
+
+
 
 ias READWRITE Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 GRUPO+CHRFECHA+STR(ID,12) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00004NWP04JM.TMP Ultimo Control activo:  SUBIVAVTA.BOTONDYNAMIC1.BTN.CLICK
 08-06-2023 09:17:02 , Verificando OCX
@@ -9789,3 +9718,18 @@ ias READWRITE Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registr
 08-06-2023 09:17:14 , Verificando Licencia
 08-06-2023 09:17:17 , Conectado..distribuidorakleja.ddns.net\sql2014,1170
 08-06-2023 09:17:18 , Datos de la empresa
+08-06-2023 16:45:38 , Verificando OCX
+08-06-2023 16:45:41 , Acceso al sistema, antes de autenticar
+08-06-2023 16:45:41 , Obteniendo conexion a servidor
+08-06-2023 16:45:41 , Verificando Licencia
+08-06-2023 16:45:45 , Conectado..miguel\sql2019
+08-06-2023 16:45:46 , Datos de la empresa
+08-06-2023 16:47:31 , Error: No se encuentra el alias. Linea : XMLTOCURSOR(cFileName,"CsrAuxPlanCue",512+8192) Error :         13 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MSQX004L.TMP Ult
+
+imo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+08-06-2023 17:13:13 , Verificando OCX
+08-06-2023 17:13:16 , Acceso al sistema, antes de autenticar
+08-06-2023 17:13:16 , Obteniendo conexion a servidor
+08-06-2023 17:13:16 , Verificando Licencia
+08-06-2023 17:13:22 , Conectado..miguel\sql2019
+08-06-2023 17:13:22 , Datos de la empresa
