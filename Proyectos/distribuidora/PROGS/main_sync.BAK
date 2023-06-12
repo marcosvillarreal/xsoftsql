@@ -169,7 +169,7 @@ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 pidsistema = 1
 
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
-cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
+cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'closeserv.bat'
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
