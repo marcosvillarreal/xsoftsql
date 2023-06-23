@@ -81,6 +81,7 @@ Set Classlib  To  icontrolespersonalizados Additive
 Set Classlib To odata Additive
 Set Classlib To rcscalendar Additive
 Set Classlib To _reportlistener.vcx Additive
+SET CLASSLIB TO onegocioslocal ADDITIVE 
 
 *clear all
 Public OAvisar

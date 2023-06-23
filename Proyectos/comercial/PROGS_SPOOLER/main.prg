@@ -2,6 +2,7 @@ Parameters lnIdprograma
 
 lnIdprograma = Iif(Pcount()<1,"1",lnIdprograma)
 
+nOrigen = IIF(VARTYPE(lnIdprograma )='C',VAL(lnIdprograma ),lnIdprograma )
 *===================
 *= ARCHIVO PRINCIPAL
 *===================
@@ -107,10 +108,11 @@ ENDIF
 
 Public LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,pnsucursal
 Public lcConectionODBC,lnconectorODBC,lcConectorShape
+PUBLIC oConfigTermi,pIdSistema
 
 Store '' To LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,lcConectorShape
 Store 0 To pnsucursal,lnconectorODBC
-
+pIdSistema  = nOrigen  
 
 Public goapp,ObjReporter,ObjListaConcetor,GoVariable
 
@@ -140,8 +142,10 @@ If Type('goApp')='O'
 			Set Path To (goapp.cpath)
 		Endif
 	Endif
-
-	goapp.Version = "01.00.00"
+	
+	LeerConfigTermi()
+	
+	goapp.Version = "01.01.00"
 
 	Public  gcicono
 
