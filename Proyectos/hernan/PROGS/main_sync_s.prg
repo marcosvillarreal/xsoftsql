@@ -152,14 +152,18 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "03.00.01"
+	goapp.version = "04.00.02"
 	
 	PUBLIC  gcicono
 	     
 	PcmsgIU  = 'Información al Usuario'
 	PcmsgIP  = 'Información al Programador'
-	   
-	gcicono=lcdd+LTRIM(_Screen.icon)
+	 *stop() 
+	
+	gcicono=LTRIM(_Screen.icon)
+	IF NOT lldesarrollo
+		gcicono=lcdd+LTRIM(_Screen.icon)
+	ENDIF 
 	LcLlaveCf = SPACE(8)
 	      
 	on error do errorsys
