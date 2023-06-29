@@ -112,7 +112,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='help.ico'
+_Screen.icon='storm.ico'
 _screen.picture= 'fondoscreen.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.
@@ -159,7 +159,7 @@ IF TYPE('goApp')='O'
 	PcmsgIU  = 'Información al Usuario'
 	PcmsgIP  = 'Información al Programador'
 	   
-	gcicono=lcdd+'help.ico'
+	gcicono=lcdd+LTRIM(_Screen.icon)
 	LcLlaveCf = SPACE(8)
 	      
 	on error do errorsys
