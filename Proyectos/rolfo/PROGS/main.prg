@@ -102,6 +102,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
     SET PROCEDURE  TO  syerrhand.prg ADDITIVE  
     SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
     SET PROCEDURE TO FoxBarcodeQR ADDITIVE
+    SET PROCEDURE TO exp_web.prg ADDITIVE 
     
    SET PROCEDURE  TO  syserror.prg ADDITIVE  
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
