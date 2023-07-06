@@ -1,0 +1,23 @@
+06-07-2023 16:14:19 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: El archivo 'strsero.prg' no existe.;Linea : INSERT INTO CsrAuxiliar(estadotilde,anio,mes,CpraUnidad,cpraimporte,vtaunidad,VtaImporte,clave,anio2,nommes,periodo) VALUES (0,0,CsrAuxcuerpo.mes,lnCpraUnidad,lnCpraImporte,lnVtaUnidad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2));Error :          1;Ultimo Alias Activo: CSRAUXCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100PD.TMP;Ultimo Control activo: NOMBRE
+06-07-2023 16:14:19 , Pila de llamadas
+06-07-2023 16:14:19 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto_v30.sct
+06-07-2023 16:14:19 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
+06-07-2023 16:14:19 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto_v30.sct
+06-07-2023 16:14:19 , Nº de Linea :          2
+06-07-2023 16:14:19 , En el Fuente: DODEFAULT(this.ActiveColumn)
+06-07-2023 16:14:19 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+06-07-2023 16:14:19 , Objeto      : baseabm.contenedor1.gridabm1.afterrowcolchange
+06-07-2023 16:14:19 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+06-07-2023 16:14:19 , Nº de Linea :         21
+06-07-2023 16:14:19 , En el Fuente: 	     .ProcesarAfterRow()
+06-07-2023 16:14:19 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto_v30.sct
+06-07-2023 16:14:19 , Objeto      : abmproducto.procesarafterrow
+06-07-2023 16:14:19 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto_v30.sct
+06-07-2023 16:14:19 , Nº de Linea :         82
+06-07-2023 16:14:19 , En el Fuente: 		thisform.veocompras(lcidarticulo)
+06-07-2023 16:14:19 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto_v30.sct
+06-07-2023 16:14:19 , Objeto      : abmproducto.veocompras
+06-07-2023 16:14:19 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto_v30.sct
+06-07-2023 16:14:19 , Nº de Linea :         76
+06-07-2023 16:14:19 , En el Fuente: 		INSERT INTO CsrAuxiliar(estadotilde,anio,mes,CpraUnidad,cpraimporte,vtaunidad,VtaImporte,clave,anio2,nommes,periodo)				VALUES (0,0,CsrAuxcuerpo.mes,lnCpraUnidad,lnCpraImporte,lnVtaUnidad,lnVtaImporte				,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes))				,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2))
+06-07-2023 16:14:19 , Fin
