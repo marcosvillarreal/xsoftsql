@@ -77,7 +77,6 @@ function Mensaje_error(nError)
 *!*		+' Alias '+alias()+' registro '+str(recno())+chr(13);
 *!*		+'Control activo '+sys(18) 
 	oform=Null
-	stop()
 	
 	lcmensaje = 'Error: '+Message()+' '+'Linea : '+Message(1)+' '+"Error : "+Str(nError)+' ';
 		+'Ultimo Alias Activo: '+Alias()+' '+'Ultimo registro: '+Str(Recno())+" "+Sys(14,1)+' ';

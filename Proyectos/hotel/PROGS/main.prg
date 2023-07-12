@@ -177,7 +177,7 @@ cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
 
-Public goapp,ObjReporter,ObjReserva
+Public goapp,ObjReporter,ObjReserva,oErrorGM
 
 
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
@@ -205,6 +205,11 @@ ObjReserva.AddProperty("idreserva_ant",0)
 ObjReserva.AddProperty("Titular","")
 ObjReserva.AddProperty("Titular_ant","")
 ObjReserva.AddProperty("cod_estreserva",0)
+
+oErrorGM = CREATEOBJECT("Custom")
+oErrorGM.AddProperty("Alias","")
+oErrorGM.AddProperty("Metodo","")
+
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo

@@ -89,10 +89,11 @@ function Mensaje_error(nError)
     Grabar_log(lcmensaje)
     
     Do Form frmerror Name oform Linked With nError,lcmensaje,lclocalprogram To luvalorbuscado
-
+	
 	uvalorbuscado=luvalorbuscado
 	Release oform
 	
+	stop()
 	If Txnlevel()>0
 		If !'NATIVE'$LcDataSourceType 
 			If LcDataSourceType="ADO" 
