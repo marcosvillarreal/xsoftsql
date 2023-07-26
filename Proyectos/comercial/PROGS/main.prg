@@ -374,9 +374,9 @@ IF TYPE('goApp')='O'
 	  
 	  DO DECLARAR_FUNCIONES_API
   
-		 
-	poSysTray = CreateObject("WALTER_SYSTRAY")
-  
+	TRY 	 
+		poSysTray = CreateObject("WALTER_SYSTRAY")
+  	ENDTRY 
   
 	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
 	  	poTimer   = CreateObject("WALTER_TIMER")
@@ -506,7 +506,11 @@ ENDPROC
 *
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
-  IconFile      = "pyro.ICO"
+ * LOCAL cIcon
+ * cIcon = ADDBS(SYS(5)+CURDIR())+"pyro.ico"
+ * IF FILE(cIcon)
+  	IconFile      ="pyro.ico"
+ * ENDIF 
   MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.
   TipText       = "Notificaciones Sistema PYRO"
@@ -560,13 +564,18 @@ DEFINE CLASS WALTER_TIMER AS TIMER
     cVersion = HayVersionExe("gestion.exe")
     IF LEN(cVersion)> 0
     	
-    	
-	    poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-	    poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-	    poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
-	    &&Subimos el intervalo porque el usuario ya vio el mensaje
-	    This.Interval =   30000 
+    	    TRY 
+	    	poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+	     	poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+	   	 poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	   	 FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+		 &&Subimos el intervalo porque el usuario ya vio el mensaje
+	  	  This.Interval =   30000 
+	   CATCH TO oError
+	   	This.Enabled = .f.
+	   ENDTRY 
+	   		   	
+	  	 
 	 
 	ENDIF 
   ENDPROC
