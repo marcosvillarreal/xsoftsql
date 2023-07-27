@@ -374,9 +374,9 @@ IF TYPE('goApp')='O'
 	  
 	  DO DECLARAR_FUNCIONES_API
   
-		 
-	poSysTray = CreateObject("WALTER_SYSTRAY")
-  
+	TRY 	 
+		poSysTray = CreateObject("WALTER_SYSTRAY")
+  	ENDTRY 
   
 	  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
 	  	poTimer   = CreateObject("WALTER_TIMER")
@@ -507,9 +507,9 @@ ENDPROC
 DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
   
  * LOCAL cIcon
-  cIcon = ADDBS(SYS(5)+CURDIR())+"pyro.ico"
+ * cIcon = ADDBS(SYS(5)+CURDIR())+"pyro.ico"
  * IF FILE(cIcon)
-  	IconFile      = cIcon 
+  	IconFile      ="pyro.ico"
  * ENDIF 
   MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
   MenuTextIsMPR = .F.

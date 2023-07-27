@@ -161,8 +161,11 @@ PUBLIC lcConectionODBC,lnconectorODBC
 PUBLIC oConfigTermi,pIdSistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
- STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC,cDirCloseBat 
+
 pIdSistema  = nOrigen 
+
+cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
 
 PUBLIC OAvisar
 Oavisar=NewOBJECT('avisar','controles.vcx')
