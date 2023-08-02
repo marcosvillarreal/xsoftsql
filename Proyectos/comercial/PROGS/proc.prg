@@ -2292,7 +2292,7 @@ SET SAFETY  OFF
 
 DO CASE 
 	CASE UPPER(lcCursor)="CSRPAGO"
-	Create Cursor Csrpago (id i AUTOINC,numero n(3),cnombre c(25),fecha d,importe n(10,2),idcuenta i;
+	Create Cursor Csrpago (id i AUTOINC,numero n(3),cnombre c(25),fecha d,importe n(11,2),idcuenta i;
 	              ,ctactebco c(6),titular c(30),banco c(30),localidad c(30),nrocheque n(12),idtipobco i;
 	              ,fechavto d,entregado c(30),idvalor i,idprovincia i,tipocaja c(2),esclase c(1);
 	              ,recibido c(30),nrotarjeta c(16),cupon c(15),cuota n(2),cuit c(13),idctabco i;
