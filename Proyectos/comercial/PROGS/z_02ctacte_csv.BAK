@@ -161,7 +161,7 @@ SCAN
 	lcctelefono		= ALLTRIM(CsrDeudor.telefono)
 	ldfechalta		= DATETIME(1900,01,01,0,0,0)
 	*lcobserva		= FsrDeudor.observa
-	lccuit 		=PeloCuit(CsrDeudor.documento)
+	lccuit 		=cuit(PeloCuit(CsrDeudor.documento))
 	ldfecins01		= DATETIME(1900,01,01,0,0,0)
 	ldfecultcompra	= DATETIME(1900,01,01,0,0,0)
 	ldfecultpago	= DATETIME(1900,01,01,0,0,0)
