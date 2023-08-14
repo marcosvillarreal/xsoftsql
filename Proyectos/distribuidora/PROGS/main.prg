@@ -216,7 +216,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "02.02.00"
+	goapp.version = "02.02.01"
 	goapp.gmsoft = "distribuidora"
 	
 	PUBLIC  gcicono
