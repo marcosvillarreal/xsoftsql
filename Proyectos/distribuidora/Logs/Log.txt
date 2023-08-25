@@ -1,16 +1,3 @@
-06-06-2023 18:43:55 , Conectado..distribuidorakleja.ddns.net\sql2014,1170
-06-06-2023 18:43:56 , Datos de la empresa
-06-06-2023 18:44:33 , Verificando OCX
-06-06-2023 18:44:34 , Acceso al sistema, antes de autenticar
-06-06-2023 18:44:35 , Obteniendo conexion a servidor
-06-06-2023 18:44:35 , Verificando Licencia
-06-06-2023 18:44:37 , Conectado..miguel\sql2019
-06-06-2023 18:44:39 , Datos de la empresa
-06-06-2023 18:45:57 , Informe por excel
-06-06-2023 18:46:12 , Version 16.0
-06-06-2023 18:47:00 , Informe por excel
-06-06-2023 18:47:03 , Version 16.0
-06-06-2023 18:48:39 , Informe por excel
 06-06-2023 18:48:42 , Version 16.0
 06-06-2023 18:51:08 , Informe por excel
 06-06-2023 18:51:10 , Version 16.0
@@ -181,7 +168,11 @@
 
 
 
+
+
 lig+totaloi as iva_total, totalpb as pb_total ,totalpi as pi_total,alicuota21,alicuota10 ,(totalri+totalrb+totalrg+totalpg+totalpn+totalii+totalin+totalip+totalex) as otros_total ,total, STR(id,12) as cid FROM (lcAlias)  WHERE grupo='A' INTO CURSOR &lcAl
+
+
 
 
 
@@ -503,8 +494,12 @@ ias READWRITE Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registr
 
 
 
+
+
 Control activo:  SUBIVAVTA.BOTONDYNAMIC1.BTN.CLICK
 07-06-2023 17:34:52 , Error: No se encuentra la variable 'LCALIAS'. Linea : SELECT nomcompro,letra,talonario,numcomp,cnombre,nomcatego ,cuit,provincia,stoc(chrfecha) as fecha ,totalex as exe_total,totalng as ng_total ,neto10 as ng10, neto21 as ng21 ,tota
+
+
 
 
 
@@ -822,6 +817,8 @@ lig+totaloi as iva_total, totalpb as pb_total ,totalpi as pi_total,alicuota21,al
 
 
 
+
+
 ias READWRITE Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 GRUPO+CHRFECHA+STR(ID,12) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00004NWP04JM.TMP Ultimo Control activo:  SUBIVAVTA.BOTONDYNAMIC1.BTN.CLICK
 08-06-2023 09:17:02 , Verificando OCX
 08-06-2023 09:17:13 , Acceso al sistema, antes de autenticar
@@ -836,6 +833,8 @@ ias READWRITE Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registr
 08-06-2023 16:45:45 , Conectado..miguel\sql2019
 08-06-2023 16:45:46 , Datos de la empresa
 08-06-2023 16:47:31 , Error: No se encuentra el alias. Linea : XMLTOCURSOR(cFileName,"CsrAuxPlanCue",512+8192) Error :         13 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MSQX004L.TMP Ult
+
+
 
 
 
@@ -1167,8 +1166,12 @@ imo Control activo:  PTOVTA_IMPGESTION.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 NTE Ultimo registro:          4 VAL(CNUMERO) DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QPE1010U.TMP Ultimo Control activo:  SUBFACTURA.CMDPROCESAR.CLICK
 22-06-2023 18:18:32 , Error: SQL: no se encuentra la columna 'IDMAOPERA'. Linea : SELECT distinct 0 as estadotilde,fecha, comprobante,numcomp,total,idmaopera FROM CsrAuxiliar INTO CURSOR CsrCuerpo READWRITE Error :       1806 Ultimo Alias Activo: CSRAUXI
+
+
 
 
 
@@ -1317,6 +1320,8 @@ LIAR Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QPE
 23-06-2023 10:02:22 , Conectado..201.159.8.140\sql2014,1170
 23-06-2023 10:02:23 , Datos de la empresa
 23-06-2023 10:27:31 , Error: No se encuentra la propiedad PRECIOACTUAL. Linea : OscDatos.precioactual = lnPrecioActual Error :       1734 Ultimo Alias Activo: CSRAUXILIAR Ultimo registro:         21  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000KNBD01ZR.TM
+
+
 
 
 
@@ -1605,6 +1610,8 @@ P Ultimo Control activo:  SUBFACTURA.BOTONDYNAMIC1.BTN.CLICK
 
 
 
+
+
 o Control activo:  ON... 
 06-07-2023 15:44:45 , Verificando OCX
 06-07-2023 15:44:47 , Acceso al sistema, antes de autenticar
@@ -1740,7 +1747,11 @@ o Control activo:  ON...
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -1996,7 +2007,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100N5.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -2250,7 +2265,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100NL.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -2502,7 +2521,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100O1.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -2752,7 +2775,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100OH.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          2  DBF: 
+
+
 
 
 
@@ -3000,7 +3027,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100OH.TMP Ultimo Control activo:  ABMPR
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          3  DBF: 
+
+
 
 
 
@@ -3246,7 +3277,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100OH.TMP Ultimo Control activo:  ABMPR
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          4  DBF: 
+
+
 
 
 
@@ -3490,7 +3525,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100OH.TMP Ultimo Control activo:  ABMPR
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -3732,7 +3771,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100OX.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -3972,7 +4015,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100PD.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -4210,7 +4257,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100PT.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -4446,7 +4497,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100Q9.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -4680,7 +4735,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100QP.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -4912,7 +4971,11 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100R5.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 dad,lnVtaImporte ,CsrAuxCuerpo.clave,CsrAuxCuerpo.Anio*100+CsrAuxCuerpo.Mes,UPPER(MesArg(CsrAuxCuerpo.mes)) ,STR(CsrAuxCuerpo.anio,4)+' '+STRsero(CsrAuxCuerpo.mes,2)) Error :          1 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: 
+
+
 
 
 
@@ -5147,6 +5210,8 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100RL.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 1.PAGE5.CONTAINER1.CMDSALVAR.CLICK
 06-07-2023 16:21:51 , Verificando OCX
 06-07-2023 16:21:54 , Acceso al sistema, antes de autenticar
@@ -5264,8 +5329,12 @@ C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000I5U100RL.TMP Ultimo Control activo: NOMBRE
 
 
 
+
+
 P\00006LFT00HE.TMP Ultimo Control activo: ESTADOTILDE ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE5.CONTAINER1.CMDSALVAR.CLICK
 06-07-2023 16:27:13 , Error: No se encuentra la propiedad FC1. Linea : with This.FC1 Error :       1734 Ultimo Alias Activo: CSRAUXGRAFICO Ultimo registro:          2  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00006LFT00VE.TMP Ultimo Control activo: ESTADOT
+
+
 
 
 
@@ -5488,8 +5557,12 @@ ILDE ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE5.CONTAINER1.CMDSALVAR.CLICK
 
 
 
+
+
 USERS\MARCO\APPDATA\LOCAL\TEMP\0000GWZT0107.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE5.CONTAINERGRAFICO.CMDSALVAR.BTN.CLICK
 06-07-2023 16:48:29 , Error: No se encuentra la variable 'CLACE'. Linea : replace ALL estadotilde WITH 0 FOR clace<>'A' Error :         12 Ultimo Alias Activo: CSRAUXILIAR Ultimo registro:          1 STR(ANIO2,4)+CLAVE DBF: C:\USERS\MARCO\APPDATA\LOCAL\T
+
+
 
 
 
@@ -5710,10 +5783,14 @@ EMP\0000GWZT01VC.TMP Ultimo Control activo: ESTADOTILDE ABMPRODUCTO.CONTENEDOR1.
 
 
 
+
+
 UBFACTURA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 07-07-2023 13:38:49 , Informe por excel
 07-07-2023 13:38:52 , Version 16.0
 07-07-2023 13:38:53 , Error: COLUMN001 es un miembro desconocido. Linea : lcCampo = &lcName Error :       1925 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:         18  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000ND3D00GZ.TMP Ultimo Control activo:  S
+
+
 
 
 
@@ -5913,8 +5990,12 @@ UBFACTURA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
+
 UBFACTURA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 07-07-2023 13:45:30 , Error: No se encuentra la variable 'LCCAMPO'. Linea : this.CombinarCampo(lcCampo,lnRowTit,i,@lbDobleSubTit) Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:         18  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000
+
+
 
 
 
@@ -6122,6 +6203,8 @@ N0UH0042.TMP Ultimo Control activo:  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLIC
 
 
 
+
+
 o Control activo:  ON... 
 10-07-2023 12:26:05 , Verificando OCX
 10-07-2023 12:26:07 , Acceso al sistema, antes de autenticar
@@ -6159,6 +6242,8 @@ o Control activo:  ON...
 24-07-2023 17:42:03 , Conectado..201.159.8.140\sql2014,1170
 24-07-2023 17:42:03 , Datos de la empresa
 24-07-2023 17:50:42 , Error: _TXTFLETE es un miembro desconocido. Linea : .Page2._txtflete.value  = 0 Error :       1925 Ultimo Alias Activo: CSRBARRIO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00016VPL015A.TMP Ultimo Control ac
+
+
 
 
 
@@ -6307,8 +6392,12 @@ tivo: CNOMBRE ABMCTACTE._TEXTBOX1.KEYPRESS
 
 
 
+
+
  activo:  REGFACPUB.CMDSALVAR.BTN.CLICK
 02-08-2023 09:49:13 , Error: No se encuentra el alias 'LOBJFORM'. Linea : IF lobjform.quetecla#27 Error :         13 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         10  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000JM6H04JU.TMP Ultimo Control
+
+
 
 
 
@@ -6436,7 +6525,11 @@ tivo: CNOMBRE ABMCTACTE._TEXTBOX1.KEYPRESS
 
 
 
+
+
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
 
 
 
@@ -6546,7 +6639,11 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
 
 
 
@@ -6656,7 +6753,11 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
 
 
 
@@ -6766,7 +6867,11 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
 
 
 
@@ -6876,7 +6981,11 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
 sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso , CAST(0 as n(6,4)) as fin_recargo,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :      
+
+
 
 
 
@@ -6995,7 +7104,11 @@ sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(
 
 
 
+
+
  as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 
+
+
 
 
 
@@ -7097,7 +7210,11 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
  nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,00
+
+
 
 
 
@@ -7199,7 +7316,11 @@ as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as nomrete1,000000
 
 
 
+
+
 00000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(
+
+
 
 
 
@@ -7301,7 +7422,11 @@ DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as de
 
 
 
+
+
 o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
+
+
 
 
 
@@ -7403,7 +7528,11 @@ o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE
 
 
 
+
+
 sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(3) as compaso , CAST(0 as n(6,4)) as fin_recargo,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :      
+
+
 
 
 
@@ -7524,6 +7653,8 @@ sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(
 
 
 
+
+
 : C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000IWAX00FL.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 03-08-2023 14:14:07 , Verificando OCX
 03-08-2023 14:14:09 , Acceso al sistema, antes de autenticar
@@ -7538,6 +7669,8 @@ sporte ,SPACE(2) as Categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(
 04-08-2023 11:42:47 , Datos de la empresa
 04-08-2023 11:43:45 , Acceso exitoso
 04-08-2023 11:47:41 , Error: No se encuentra la variable 'NETOGRAVADO'. Linea : REPLACE ALL netogravado WITH netosinbonificar - bonificacion Error :         12 Ultimo Alias Activo: CSRLOGISTICA Ultimo registro:         12  DBF: C:\USERS\MARCO\APPDATA\LOC
+
+
 
 
 
@@ -7614,6 +7747,8 @@ AL\TEMP\0000R47D00AI.TMP Ultimo Control activo:  MAIN
 
 
 
+
+
 AL\TEMP\0000R47D00MZ.TMP Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 04-08-2023 12:02:11 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.INIT
 04-08-2023 12:02:19 , Verificando OCX
@@ -7647,8 +7782,12 @@ AL\TEMP\0000R47D00MZ.TMP Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTA
 
 
 
+
+
 ivo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 04-08-2023 12:14:22 , Error: No se encuentra el alias 'CSRCOMIVDOR'. Linea : SELECT csrcomivdor Error :         13 Ultimo Alias Activo: CSRSEGUIMIENTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000R47D00SL.TMP Ultimo Control act
+
+
 
 
 
@@ -7709,8 +7848,12 @@ ivo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 .TMP Ultimo Control activo: NOMBRE ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTNOMBRE.VALID
 09-08-2023 13:25:57 , Error: PAGE2 es un miembro desconocido. Linea : .page2.lblproductoactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000048AX0061
+
+
 
 
 
@@ -7742,8 +7885,12 @@ ivo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 .TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTNOMBRE.VALID
 09-08-2023 13:26:01 , Error: PAGE2 es un miembro desconocido. Linea : .page2.lblproductoactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000048AX0061
+
+
 
 
 
@@ -7771,6 +7918,8 @@ ivo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 .TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTNOMBRE.VALID
 09-08-2023 13:26:06 , Error: PAGE2 es un miembro desconocido. Linea : .page2.lblproductoactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000048AX0061
 
@@ -7784,8 +7933,12 @@ ivo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 .TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTNOMBRE.VALID
 09-08-2023 13:26:13 , Error: PAGE2 es un miembro desconocido. Linea : .page2.lblproductoactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\000048AX0061
+
+
 
 
 
@@ -7821,6 +7974,8 @@ ivo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
 P Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 14-08-2023 09:16:27 , Informe por excel
 14-08-2023 09:16:52 , Version 16.0
@@ -7839,3 +7994,9 @@ P Ultimo Control activo:  PLANCOMIVENDE_V3.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 18-08-2023 14:52:27 , Verificando Licencia
 18-08-2023 14:53:01 , Conectado..190.92.109.232\sql2005,1170
 18-08-2023 14:53:02 , Datos de la empresa
+25-08-2023 12:01:01 , Verificando OCX
+25-08-2023 12:01:05 , Acceso al sistema, antes de autenticar
+25-08-2023 12:01:05 , Obteniendo conexion a servidor
+25-08-2023 12:01:06 , Verificando Licencia
+25-08-2023 12:03:10 , Conectado..190.92.109.232\sql2005,1170
+25-08-2023 12:03:10 , Datos de la empresa
