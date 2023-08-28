@@ -1,0 +1,798 @@
+CLOSE DATABASES
+CLOSE TABLES
+OPEN DATABASE ? EXCLUSIVE
+
+SET SAFETY OFF
+
+SET CPCOMPILE TO 1252
+codepage = 1252
+SET CPDIALOG ON
+
+SET DATABASE TO LEON
+IF USED('Csrproducto')
+	USE
+ENDIF 
+USE leon!producto IN 0 ALIAS Csrproducto EXCLUSIVE
+IF USED('CsrPlanCue')
+	USE
+ENDIF 
+USE leon!plancue IN 0 ALIAS CsrPlanCue EXCLUSIVE
+*!*	IF USED('Csrcabeasi')
+*!*		USE
+*!*	ENDIF 
+*!*	USE leon!cabeasi IN 0 ALIAS Csrcabeasi EXCLUSIVE
+*!*	ZAP IN CsrCabeAsi
+IF USED('Csrctacte')
+	USE
+ENDIF 
+USE leon!ctacte IN 0 ALIAS Csrctacte EXCLUSIVE
+IF USED('Csrfletero')
+	USE
+ENDIF 
+USE leon!fletero IN 0 ALIAS Csrfletero EXCLUSIVE
+IF USED('Csrfuerzavta')
+	USE
+ENDIF 
+USE leon!fuerzavta IN 0 ALIAS Csrfuerzavta EXCLUSIVE
+IF USED('Csrcomprobante')
+	USE
+ENDIF 
+USE leon!comprobante IN 0 ALIAS Csrcomprobante EXCLUSIVE 
+IF USED('Csrparaconta')
+	USE
+ENDIF 
+USE leon!paraconta IN 0 ALIAS Csrparaconta EXCLUSIVE 
+IF USED('Csrvendedor')
+	USE
+ENDIF 
+USE leon!vendedor IN 0 ALIAS Csrvendedor EXCLUSIVE 
+IF USED('Csrdeposito')
+	USE
+ENDIF 
+USE leon!deposito IN 0 ALIAS Csrdeposito EXCLUSIVE 
+IF USED('Csrcabefac')
+	USE
+ENDIF 
+USE leon!cabefac IN 0 ALIAS Csrcabefac EXCLUSIVE 
+ZAP IN Csrcabefac
+IF USED('Csrcuerfac')
+	USE
+ENDIF 
+USE leon!cuerfac IN 0 ALIAS Csrcuerfac EXCLUSIVE
+ZAP IN Csrcuerfac
+IF USED('CsrCuervari')
+	USE
+ENDIF 
+USE leon!cuervari IN 0 ALIAS Csrcuervari EXCLUSIVE
+ZAP IN Csrcuervari
+IF USED('CsrCuerdeta')
+	USE
+ENDIF 
+USE leon!cuerdeta IN 0 ALIAS CsrCuerdeta EXCLUSIVE
+ZAP IN Csrcuerdeta
+IF USED('Csrncabefac')
+	USE
+ENDIF 
+USE leon!ncabefac IN 0 ALIAS Csrncabefac EXCLUSIVE 
+ZAP IN Csrncabefac
+IF USED('Csrncuerfac')
+	USE
+ENDIF 
+USE leon!ncuerfac IN 0 ALIAS Csrncuerfac EXCLUSIVE
+ZAP IN Csrncuerfac
+IF USED('Csrmovctacte')
+	USE
+ENDIF 
+USE leon!movctacte IN 0 ALIAS Csrmovctacte EXCLUSIVE 
+ZAP IN Csrmovctacte
+IF USED('Csrafectacte')
+	USE
+ENDIF 
+USE leon!afectacte IN 0 ALIAS Csrafectacte EXCLUSIVE
+ZAP IN Csrafectacte
+IF USED('Csrmaopera')
+	USE
+ENDIF 
+USE leon!maopera IN 0 ALIAS Csrmaopera EXCLUSIVE
+ZAP IN Csrmaopera
+IF USED('Csrnmaopera')
+	USE
+ENDIF 
+USE leon!nmaopera IN 0 ALIAS Csrnmaopera EXCLUSIVE
+ZAP IN Csrnmaopera
+IF USED('Csranmaopera')
+	USE
+ENDIF 
+USE leon!anmaopera IN 0 ALIAS Csranmaopera EXCLUSIVE
+ZAP IN Csranmaopera
+IF USED('Csrtablaimp')
+	USE
+ENDIF 
+USE leon!tablaimp IN 0 ALIAS Csrtablaimp EXCLUSIVE
+ZAP IN Csrtablaimp
+*!*	IF USED('Csrtablaasi')
+*!*		USE
+*!*	ENDIF 
+*!*	USE leon!tablaasi IN 0 ALIAS Csrtablaasi EXCLUSIVE
+*!*	ZAP IN Csrtablaasi
+IF USED('Csrmovstock')
+	USE
+ENDIF 
+USE leon!movstock IN 0 ALIAS Csrmovstock EXCLUSIVE
+ZAP IN Csrmovstock
+
+IF USED('CsrTipoFrio')
+	USE
+ENDIF
+USE leon!tipofrio IN 0 ALIAS  CsrTipoFrio EXCLUSIVE
+IF USED('Csrlocalidad')
+	USE
+ENDIF 
+USE leon!localidad IN 0 ALIAS CsrLocalidad EXCLUSIVE
+IF USED('Csrprovincia')
+	USE
+ENDIF 
+USE leon!provincia IN 0 ALIAS CsrProvincia EXCLUSIVE
+IF USED('Csrtipoiva')
+	USE
+ENDIF 
+USE leon!tipoiva IN 0 ALIAS CsrTipoIva EXCLUSIVE
+IF USED('Csrtipoctacte')
+	USE
+ENDIF 
+USE leon!catectacte IN 0 ALIAS CsrTipoCtacte EXCLUSIVE
+IF USED('CsrVariedad')
+	USE
+ENDIF 
+USE leon!variedad IN 0 ALIAS CsrVariedad EXCLUSIVE
+IF USED('CsrSubproducto')
+	USE
+ENDIF 
+USE leon!subproducto IN 0 ALIAS CsrSubproducto EXCLUSIVE
+
+USE "\soft\leon\gestion\cabefac" IN 0 ALIAS Csrcabeza  EXCLUSIVE 
+
+USE  "\soft\leon\gestion\cuerfac" in 0 alias Csrcuerleon  EXCLUSIVE
+
+USE  "\soft\leon\gestion\movimien" in 0 alias Csrmovimien EXCLUSIVE
+
+USE  "\soft\leon\gestion\movisto" in 0 alias Csrmovisto EXCLUSIVE	
+
+USE  "\soft\leon\gestion\anuladas" in 0 alias CsrAnulados EXCLUSIVE	
+
+
+SELECT CsrCuerleon.* FROM CsrCuerleon ORDER BY orden,articulo INTO CURSOR CsrCuerpo
+SELECT CsrCuerpo
+INDEX on orden TO Csrcuerpo
+
+USE IN CsrCuerLeon
+SET SAFETY ON
+lnid = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidcabeza = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidmovcte = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidcuerpo = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidmstk = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidn = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidncabefac = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidncuerfac = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidTablaasi = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidTablaimp = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidCabeAsi = VAL(str(Goapp.sucursal10+10,2)+strzero(1,10))
+lnidcuervari = VAL(STR(goapp.sucursal10+10,2)+strzero(1,10))
+lnidanmaopera = VAL(STR(goapp.sucursal10+10,2)+strzero(1,10))
+
+SELECT CsrLocalidad
+IF FSIZE('id')>4
+   lntamloc = 10
+ELSE 
+   lntamloc = 8
+ENDIF 
+
+SELECT CsrProvincia
+IF FSIZE('id')>4
+   lntamprov = 10
+ELSE 
+   lntamprov = 8
+ENDIF 
+
+SELECT CsrTipoIva
+IF FSIZE('id')>4
+   lntamiva = 10
+ELSE 
+   lntamiva = 8
+ENDIF 
+
+SELECT CsrTipoCtacte
+IF FSIZE('id')>4
+   lntamcate = 10
+ELSE 
+   lntamcate = 8
+ENDIF
+
+
+*SELECT * FROM csrCabeza2 WHERE fecha>= DATE(2009,01,01) INTO CURSOR CsrCabeza
+*SELECT * FROM CsrCuerpo2 WHERE fecha >= DATE(2009,01,01) INTO CURSOR CsrCuerpo
+
+lnnumcabe = 1
+
+SELECT Csrcabeza
+*Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+ldfecha=CsrCabeza.fecha
+ldfechaant=DATE(1900,01,01)
+SCAN FOR !EOF()
+
+	 IF recno('CsrCabeza')/1=INT(RECNO('CsrCabeza')/1)
+	    	*Oavisar.proceso('N')
+	    	lcTitulo = "Cabefac "+STR(RECNO(),10)   
+	    	?(lctitulo)  
+	    	Oavisar.proceso('S',lcTitulo,.t.,recno())
+	 ENDIF
+
+	 IF (ldfecha)<>(ldfechaant)
+	 	ldfechaant = ldfecha
+	 	*?(ldfechaant)
+	 ENDIF 
+	IF (EMPTY(CsrCabeza.fecha) OR CsrCabeza.importe=0 ) AND CsrCabeza.fecha>DATE(2009,01,01)
+		LOOP 
+	ENDIF
+	lclocalidad = CsrCabeza.localidad
+	lntipocuit	= CsrCabeza.tipocuit
+	lntipocomp = CsrCabeza.tipocomp
+	lcorden = CsrCabeza.orden
+	lcnumcomp = CsrCabeza.letra+RIGHT(STR(10000+CsrCabeza.talonario),4)+RIGHT(STR(1000000000+Csrcabeza.numcomp),8)
+	lncliente = CsrCabeza.cliente
+	lnrepartidor = CsrCabeza.repartidor
+	lnfrio = CsrCabeza.frio
+	lnvendedor = Csrcabeza.vendedor
+	lndiferida = IIF(CsrCabeza.diferida,1,0)
+	lntasa = IIF(CsrCabeza.tasamuni='S',1,0)
+	lnidnotacredito = CsrCabeza.tiponc
+	lnrendida = IIF(CsrCabeza.rendida='S',1,0)
+	lccuit		= CsrCabeza.cuit
+	ldfechasis = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
+	ldfecha       = DATETIME(YEAR(Csrcabeza.fecha),MONTH(Csrcabeza.fecha),DAY(Csrcabeza.fecha),0,0,0)
+	lntipovta	= CsrCabeza.tipovta
+	lnimporte	= CsrCabeza.importe
+	lnbonif1 = CsrCabeza.bonif1
+	lnbonif2 = CsrCabeza.bonif2
+	lcnombre = CsrCabeza.nombre
+	lcdireccion = CsrCabeza.direccion
+	lnentrega	= CsrCabeza.entrega
+	ldfecha_vto = DATETIME(YEAR(Csrcabeza.fecha_vto),MONTH(Csrcabeza.fecha_vto),DAY(Csrcabeza.fecha_vto),0,0,0)
+	lcestado = '0'
+	DEBUG
+	SUSPEND 
+	******Chequeamos que si el comprobante es anulado, recupero la cabeza en anulados.
+	IF "ANULADO"$CsrCabeza.nombre
+		SELECT CsrAnulados
+		LOCATE FOR orden = lcorden
+		IF !FOUND() AND orden <> CsrCabeza.orden
+			LOOP &&sino existe la cabeza guardada, no lo grabo.
+		ENDIF 
+		lclocalidad = CsrAnulados.localidad
+		lntipocuit 	= CsrAnulados.tipocuit
+		lntipocomp 	= CsrAnulados.tipocomp
+		lcnumcomp 	= CsrAnulados.letra+RIGHT(STR(10000+CsrAnulados.talonario),4)+RIGHT(STR(1000000000+CsrAnulados.numcomp),8)
+		lncliente 	= CsrAnulados.cliente	
+		lnrepartidor= CsrAnulados.repartidor
+		lnfrio 		= CsrAnulados.frio
+		lnvendedor 	= CsrCabeza.vendedor
+		lndiferida 	= IIF(CsrAnulados.esdiferido,1,0)
+		lnidnotacredito = CsrAnulados.tiponc
+		lnrendida 	= IIF(CsrAnulados.rendida='S',1,0)
+		ldfecha     = DATETIME(YEAR(CsrAnulados.fecha),MONTH(CsrAnulados.fecha),DAY(CsrAnulados.fecha),0,0,0)
+		lccuit		= CsrAnulados.cuit
+		lntipovta	= CsrAnulados.tipovta
+		lnimporte	= CsrAnulados.importe
+		lnbonif1 	= CsrAnulados.bonif1
+		lnbonif2 	= CsrAnulados.bonif2
+		lcnombre 	= CsrAnulados.nombre
+		lcdireccion = CsrAnulados.direccion
+		lnentrega	= CsrAnulados.entrega
+		ldfecha_vto = DATETIME(YEAR(CsrAnulados.fecha_vto),MONTH(CsrAnulados.fecha_vto),DAY(CsrAnulados.fecha_vto),0,0,0)
+		lcestado	= '1'
+	ENDIF 
+	lntipoiva =VAL(str(Goapp.sucursal10+10,2)+strzero(lntipocuit,8))
+	IF lntipoiva=VAL(str(Goapp.sucursal10+10,2)+strzero(7,8))
+	   lntipoiva =VAL(str(Goapp.sucursal10+10,2)+strzero(5,8))
+	ENDIF 
+	
+	lnidlocalidad=0		
+    lnidprovincia=22
+	DO case
+		CASE "BLANCA"$lcLOCALIDAD OR "BCA."$lclocalidad OR "BANCA"$lcLOCALIDAD OR "B.BA"$lcLOCALIDAD
+			lnidlocalidad = 6
+			lnidprovinica=2
+		CASE "LAS GRUTAS"$lclocalidad
+			lnidlocalidad =69
+		CASE "SAN ANTONIO"$lclocalidad
+			lnidlocalidad =11
+		CASE "GENERAL CONESA"$lclocalidad
+			lnidlocalidad =26
+		CASE "VALCHETA"$lclocalidad
+			lnidlocalidad =96
+		CASE "PATAG"$lclocalidad
+			lnidlocalidad  = 5
+			LNIDPROVINCIA = 2
+	ENDCASE
+	lnidlocalidad = VAL(str(Goapp.sucursal10+10,2)+strzero(lnidlocalidad,lntamloc))
+	lnidprovincia = VAL(str(Goapp.sucursal10+10,2)+strzero(lnidprovincia,lntamprov))
+	lcswitch = "00000"
+	lcDebeHaber	= "D"
+	lnsigno = 1
+	DO case
+		CASE lntipocomp=1      && remito
+			lntipocomp = 6
+		CASE lntipocomp=2	&& factura
+			lntipocomp = 1
+		CASE lntipocomp=3	&& n.deb
+			lntipocomp = 2
+		CASE lntipocomp=4	&& n.cre
+			lntipocomp = 3
+			lnsigno = -1
+			lcDebeHaber	="H"
+		CASE lntipocomp=13	&& n.deb
+			lntipocomp = 5
+	ENDCASE 
+	
+	lnidcomproba = 0
+	lcclasecomp = ""
+	
+	SELECT CsrComprobante	
+	LOCATE FOR numero=lntipocomp	
+	IF numero=lntipocomp
+		lnidcomproba = id
+		lcclasecomp = clase
+	ENDIF
+	
+    SELECT Csrctacte
+    LOCATE FOR ALLTRIM(cnumero)==LTRIM(STR(lncliente))
+    lnidctacte = 0  
+    IF FOUND()
+    	lnidctacte = Csrctacte.id
+        lntipoiva   = CsrCtacte.tipoiva
+        lcnombre  = CsrCtacte.cnombre
+        lcdireccion = CsrCtacte.cdireccion
+    ENDIF
+
+    SELECT Csrfletero
+    LOCATE FOR numero=lnrepartidor
+    lnidfletero = 0      
+    IF numero=Csrcabeza.repartidor
+    	lnidfletero = Csrfletero.id
+    ENDIF
+      
+    SELECT Csrtipofrio
+    LOCATE FOR numero=lnfrio
+    lnidfrio = 0      
+    IF numero=Csrcabeza.frio
+        lnidfrio = Csrtipofrio.id
+    ENDIF
+
+    SELECT Csrfuerzavta
+    lnidfuerzavta = 1     
+      
+    SELECT Csrvendedor
+    LOCATE FOR numero=lnvendedor
+    lnidvendedor = 0      
+    IF numero=Csrcabeza.vendedor
+       lnidvendedor = Csrvendedor.id
+    ENDIF
+		
+	INSERT INTO Csrmaopera (id,origen,programa,terminal,fechasis,idoperador,idvendedor,idcomproba,numcomp;
+	,clasecomp,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,estado,fechaserver);
+	VALUES (lnid,'FAC',"IMPORTACION FACTURAS",1,ldfechasis,1,lnidvendedor,lnidcomproba,lcnumcomp,lcclasecomp;
+	,1,1,"00000",1,1,1,1,lcestado,ldfecha)
+
+	Insert into Csrcabefac (ID, IDMAOPERA, IDCTACTE, CTACTE, CNOMBRE, CDIRECCION, CTELEFONO, CPOSTAL;
+	, IDLOCALIDAD, IDPROVINCIA,IDFRIO, IDTIPOIVA, CUIT, IDSUBCTA, FECHA, IDPLANPAGO, TOTAL, BONIF1, BONIF2;
+	, SWITCH, LISTAPRECIO, IDFLETERO, IDFUERZAVTA, IDRUTAVDOR,SIGNO,TASAMUNI,DIFERIDA,IDTIPONCREDITO,RENDIDA;
+	,NROPATRON);
+	value (lnidcabeza,lnid,lnidctacte,LTRIM(STR(lncliente)),lcnombre,lcdireccion,"";
+	,"",lnidlocalidad,lnidprovincia,lnidfrio,lntipoiva,lccuit,0,ldfecha,lntipovta,lnimporte,lnbonif1;
+	,lnbonif2,"F0000",1,lnidfletero,lnidfuerzavta,0,lnsigno,lntasa,lndiferida,lnidnotacredito,lnrendida,"")
+	
+		
+	IF lntipovta=2 AND lnidctacte<>0
+		IF !EMPTY(ldfecha_vto)
+			ldvenci = ldfecha_vto
+		ELSE
+			ldvenci = ldfecha
+		ENDIF 	
+		INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
+		,entrega,vencimien,total,detalle,switch,pefiscal,signo);
+		VALUES (lnidmovcte,lnid,ldfecha,LTRIM(STR(lncliente)),lnidctacte,'0',0,1,lnimporte;
+		,lnimporte - lnentrega,lnentrega,ldvenci,lnimporte,"",lcswitch;
+		,STR(YEAR(ldfecha),4)+RIGHT(STR(1000+MONTH(ldfecha)),2),lnsigno)
+		lnidmovcte = lnidmovcte + 1
+
+	ENDIF 
+
+		lctablaori  = 'CAFA'
+		lctipoconce = ""
+		lnidorigen  = lnidCabeza
+		lnnumcabe	= lnnumcabe + 1	
+		lnimporte = CsrCabeza.importe
+		*lnidprovincia = 0
+		lntasa = 0
+		lnbase = 0
+		
+		lnidcuenta  = 114 
+		lcdetalle = "IMP-"+lcnumcomp
+		lnidasiento = 0
+								
+*!*			INSERT INTO CsrCabeAsi	(id,idmaopera,idejercicio,numero,fecha,tipoasi,detalle);
+*!*			VALUES (lnidCabeasi,lnid,goapp.idejercicio,lnnumcabe,ldfecha,'C',lcdetalle)
+*!*			lnidCabeAsi = lnidCabeAsi + 1
+*!*		
+*!*			
+*!*			INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*			,detalle);
+*!*			VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori;
+*!*			lctipoconce,lcdetalle)
+*!*					
+
+*!*			lnidTablaasi = lnidTablaasi + 1
+		
+		lcDebeHaber = IIF(lcDebeHaber='D','H','D')  && cambio el signo para los impuestos
+
+		IF CsrCabeza.neto_iva#0
+
+			* debito fiscal
+			lccuenta = "AFIP IVA DEBITO FISCAL CP"  
+			SELECT CsrPlanCue
+			LOCATE FOR ALLTRIM(nombre)=lccuenta
+			IF !FOUND()
+				LOOP 
+			ENDIF 
+			lnidcuenta  = CsrPlanCue.id
+			lctipoconce = "IG"		
+			lntasa = 21
+			lnbase = Csrcabeza.gravado
+			lnimporte = CsrCabeza.neto_iva
+			
+*!*				INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*				,detalle);
+*!*				VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori,lctipoconce;
+*!*				,lcdetalle)
+
+*!*				lnidasiento = CsrTablaasi.id
+*!*				lnidTablaasi = lnidTablaasi + 1
+
+
+			INSERT INTO CsrTablaimp(id,idmaopera,idcuenta,tipoconce,importe,idorigen,tablaori,idasiento;
+			,tasa,baseimp,nombre,idprovincia,detalle);
+			VALUES (lnidTablaimp,lnid,lnidcuenta,lctipoconce,lnimporte,lnidorigen,lctablaori,lnidasiento;
+			,lntasa,lnbase,"",lnidprovincia,lcdetalle)
+			lnidTablaimp = lnidTablaimp + 1
+
+		ENDIF
+		
+		lntasa = 0
+		lnbase = 0
+		IF CsrCabeza.gravado#0
+			* neto gravado
+			SELECT CsrPlanCue
+			LOCATE FOR ALLTRIM(nombre)="VENTA DE MERCADERIA VARIA"
+			IF !FOUND()
+				LOOP
+			ENDIF 
+			lnidcuenta=CsrPlanCue.id
+			lctipoconce = "NG"
+			lnimporte = CsrCabeza.gravado
+			
+*!*				INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*				,detalle);
+*!*				VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori,lctipoconce;
+*!*				,lcdetalle)
+
+*!*				lnidasiento = CsrTablaasi.id
+*!*				lnidTablaasi = lnidTablaasi + 1
+
+
+			INSERT INTO CsrTablaimp(id,idmaopera,idcuenta,tipoconce,importe,idorigen,tablaori,idasiento;
+			,tasa,baseimp,nombre,idprovincia,detalle);
+			VALUES (lnidTablaimp,lnid,lnidcuenta,lctipoconce,lnimporte,lnidorigen,lctablaori,lnidasiento;
+			,lntasa,lnbase,"",lnidprovincia,lcdetalle)
+			lnidTablaimp = lnidTablaimp + 1
+
+		ENDIF
+
+		IF CsrCabeza.neto_exe#0
+			* venta exenta
+			*lnidcuenta  = 25
+			SELECT CsrPlanCue
+			LOCATE FOR ALLTRIM(nombre)="VENTA DE MERCADERIA VARIA"
+			IF !FOUND()
+				LOOP
+			ENDIF 
+			lnidcuenta=CsrPlanCue.id
+			lnimporte   = Csrcabeza.neto_exe
+			lctipoconce = "EX"
+
+*!*				INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*				,detalle);
+*!*				VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori,lctipoconce;
+*!*				,lcdetalle)
+
+*!*				lnidasiento = CsrTablaasi.id
+*!*				lnidTablaasi = lnidTablaasi + 1
+
+
+			INSERT INTO CsrTablaimp(id,idmaopera,idcuenta,tipoconce,importe,idorigen,tablaori,idasiento;
+			,tasa,baseimp,nombre,idprovincia,detalle);
+			VALUES (lnidTablaimp,lnid,lnidcuenta,lctipoconce,lnimporte,lnidorigen,lctablaori,lnidasiento;
+			,lntasa,lnbase,"",lnidprovincia,lcdetalle)
+			lnidTablaimp = lnidTablaimp + 1
+
+		ENDIF
+		
+		IF  CsrCabeza.pibba #0 
+			* ingresos brutos bsas
+			SELECT CsrPlanCue
+			LOCATE FOR ALLTRIM(nombre)="D.G.R PERC.I.BRUTOS A DEP BS.AS"
+			IF !FOUND()
+				LOOP
+			ENDIF 
+			lnidcuenta=CsrPlanCue.id
+			*lnidcuenta  = 18
+			lnimporte   =CsrCabeza.pibba
+	    	lctipoconce = "PB"
+	    	
+*!*				INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*				,detalle);
+*!*				VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori,lctipoconce;
+*!*				,lcdetalle)
+
+*!*				lnidasiento = CsrTablaasi.id
+*!*				lnidTablaasi = lnidTablaasi + 1
+
+
+			INSERT INTO CsrTablaimp(id,idmaopera,idcuenta,tipoconce,importe,idorigen,tablaori,idasiento;
+			,tasa,baseimp,nombre,idprovincia,detalle);
+			VALUES (lnidTablaimp,lnid,lnidcuenta,lctipoconce,lnimporte,lnidorigen,lctablaori,lnidasiento;
+			,lntasa,lnbase,"",lnidprovincia,lcdetalle)
+			lnidTablaimp = lnidTablaimp + 1
+
+		ENDIF
+		
+		IF  CsrCabeza.peribrn #0 
+			*ingresos brutos rio negro
+			*lnidcuenta  = 18
+			SELECT CsrPlanCue
+			LOCATE FOR ALLTRIM(nombre)="D.G.R.PERC.I.BRUTOS A DEP.RIO NEGRO"
+			IF !FOUND()
+				LOOP
+			ENDIF 
+			lnidcuenta=CsrPlanCue.id
+			lnimporte   =CsrCabeza.peribrn
+	    		lctipoconce = "PB"
+	    	
+*!*				INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*				,detalle);
+*!*				VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori,lctipoconce;
+*!*				,lcdetalle)
+
+*!*				lnidasiento = CsrTablaasi.id
+*!*				lnidTablaasi = lnidTablaasi + 1
+
+
+			INSERT INTO CsrTablaimp(id,idmaopera,idcuenta,tipoconce,importe,idorigen,tablaori,idasiento;
+			,tasa,baseimp,nombre,idprovincia,detalle);
+			VALUES (lnidTablaimp,lnid,lnidcuenta,lctipoconce,lnimporte,lnidorigen,lctablaori,lnidasiento;
+			,lntasa,lnbase,"",lnidprovincia,lcdetalle)
+			lnidTablaimp = lnidTablaimp + 1
+
+		ENDIF
+		
+	
+		IF CsrCabeza.interno#0
+			* interno
+			SELECT CsrPlanCue
+			LOCATE FOR ALLTRIM(nombre)="VENTA DE MERCADERIA VARIA"
+			IF !FOUND()
+				LOOP
+			ENDIF 
+			lnidcuenta=CsrPlanCue.id
+			*lnidcuenta  = 29
+	    
+			lnimporte = CsrCabeza.interno
+			lctipoconce = "II"
+		
+*!*				INSERT INTO CsrTablaasi (id,idmaopera,idcuenta,debehaber,importe,idorigen,tablaori,tipoconce;
+*!*				,detalle);
+*!*				VALUES (lnidTablaasi,lnid,lnidcuenta,lcdebehaber,lnimporte,lnidorigen,lctablaori,lctipoconce;
+*!*				,lcdetalle)
+
+*!*				lnidasiento = CsrTablaasi.id
+*!*				lnidTablaasi = lnidTablaasi + 1 
+
+
+			INSERT INTO CsrTablaimp(id,idmaopera,idcuenta,tipoconce,importe,idorigen,tablaori,idasiento;
+			,tasa,baseimp,nombre,idprovincia,detalle);
+			VALUES (lnidTablaimp,lnid,lnidcuenta,lctipoconce,lnimporte,lnidorigen,lctablaori,lnidasiento;
+			,lntasa,lnbase,"",lnidprovincia,lcdetalle)
+			lnidTablaimp = lnidTablaimp + 1
+
+		ENDIF
+	*Generamos la afectacion de anulados
+	IF lcestado='1'
+		lnidafecta = lnid
+		lnid = lnid + 1
+		
+		INSERT INTO Csrmaopera (id,origen,programa,terminal,fechasis,idoperador,idvendedor,idcomproba;
+		,numcomp,clasecomp,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,estado;
+		,fechaserver);
+		VALUES (lnid,'FAC',"IMPORTACION FACTURAS",1,ldfechasis,1,lnidvendedor,lnidcomproba,lcnumcomp;
+		,'K',1,1,"00000",1,1,1,1,'0',ldfecha)
+		
+		INSERT INTO anmaopera (id,idmaopera,idafecta,detalle,idmotanula);
+		VALUES (lnidanmaopera,lnid,lnidafecta,"COMPROBANTE ANULADO DE IMP.",0)
+		
+		lnid = lnid + 1
+		lnidanmaopera = lnidanmaopera +1 
+		LOOP 
+	ENDIF 
+	
+	SELECT CsrCuerpo
+	SET ORDER TO 1
+   	SEEK  lcorden
+    DO WHILE !EOF() AND CsrCuerpo.orden= lcorden
+    	lnunivta = 1
+		lnkilos = 0
+		lnvolumen = 0
+		lnespromo = 0
+
+	    SELECT Csrdeposito
+	    LOCATE FOR numero=Csrcuerpo.deposito
+	    lniddeposito = 0      
+	    IF numero=Csrcuerpo.deposito
+	    	lniddeposito = Csrdeposito.id
+	    ENDIF
+				             
+		SELECT CsrProducto
+		LOCATE FOR numero=Csrcuerpo.articulo
+		lnidarticulo = 0
+		lcnumero  =" "
+		lcnombre = " "
+		IF numero=Csrcuerpo.Articulo
+			lnidarticulo = Csrproducto.id
+			lcnumero = Csrproducto.codalfa
+			lcnombre = Csrproducto.nombre
+			lnpesable= CsrProducto.vtakilos
+			lnidfrio = CsrProducto.idfrio
+		ELSE  &&producto inexistente
+			IF csrcuerpo.articulo=999999
+				lcnombre=CsrCuerpo.nombre
+			ELSE 
+				lnidarticulo = 1
+				lcnumero = "Z"
+				lcnombre = "PRODUCTO INEXISTENTE EN IMPOR."
+				lnpesable= 0
+				lnidfrio = 0
+			ENDIF
+		ENDIF 
+			
+		
+		lnunibulto  = 1
+		IF !EMPTY(CsrCuerpo.fecha_ofer)
+			ldfecha = DATETIME(YEAR(CsrCuerpo.fecha_ofer),MONTH(CsrCuerpo.fecha_ofer),DAY(CsrCuerpo.fecha_ofer),0,0,0)
+		ENDIF 
+		lnprecosto = Csrcuerpo.costo / lnunibulto 
+		lnpreunita = Csrcuerpo.importe / lnunibulto 
+		lnprearti    = Csrcuerpo.precioart / lnunibulto 
+		lninterno   = Csrcuerpo.internos / lnunibulto 
+
+		lnprecostosiva = (lnprecosto - lninterno) / (1+Csrcuerpo.iva_ri/100) + lninterno
+		lnpreunitasiva  = (lnpreunita - lninterno) / (1+Csrcuerpo.iva_ri/100) + lninterno
+		lnpreartisiva     = (lnprearti - lninterno) / (1+Csrcuerpo.iva_ri/100) + lninterno
+		
+		lnbonif1 = Csrcuerpo.bonif
+		lnivari = Csrcuerpo.iva_ri
+		lnboniofer = Csrcuerpo.boni_ofer
+		lnbonicant = CsrCuerpo.boni_cat
+		
+		lnCantidad   = Csrcuerpo.cantidad * IIF(lnunivta=1,1,lnunibulto)
+		lnKilos      = CsrCuerpo.kilos
+		lnvolumen   = lnKilos &&* lnCantidad
+		lnescambio = IIF(CsrCuerpo.escambio='S',1,0)
+				
+		INSERT INTO CsrCuerfac (ID, IDMAOPERA, IDARTICULO, CODIGO, NOMBRE, CANTIDAD, UNIVENTA, UNIBULTO;
+		, ORICOD, SDOCANT, KILOS, LISTAPRECIO, PRECOSTO, PREUNITA, PREARTI, INTERNO, DESPOR, TASAIVA;
+		, SWITCH, IDDEPOSITO, ESPROMOCION, PERCEIBRUTO, IDCABEZA, VOLUMEN, PRECOSTOSIVA, PREUNITASIVA;
+		, PREARTISIVA,PESABLE,IDFRIO,OFERFECHA,OFERBONIF,OFERBONIFCANT, ESCAMBIO);
+		VALUES (lnidcuerpo,lnid,lnidarticulo,lcnumero,lcnombre,lncantidad,lnunivta,lnunibulto ,"D",0,lnkilos;
+		,1,lnprecosto,lnpreunita,lnprearti,lninterno,lnbonif1,lnivari,"00000",lniddeposito,lnespromo,0;
+		,lnidcabeza,lnvolumen,lnprecostosiva,lnpreunitasiva,lnpreartisiva,LNPESABLE,lnidfrio,ldfecha;
+		,lnboniofer,lnbonicant,lnescambio)
+		
+		lnidcuerpo = lnidcuerpo + 1
+		
+		lnidcuerponocambio = lnidcuerpo -1 
+		lnCuerpoCantidad   = 0
+		lnCuerpoKilos      = 0
+					
+		IF CsrCuerpo.sabor#0 &&HayCuervari
+			lnnumarticulo = CsrCuerpo.articulo
+			DO WHILE lnnumarticulo = CsrCuerpo.articulo
+				
+				lncuerpograbado = lnidcuerponocambio
+				
+				lnCantidad   = Csrcuerpo.cantidad * IIF(lnunivta=1,1,lnunibulto)
+				lnKilos      = CsrCuerpo.kilos
+				lnvolumen   = lnKilos &&* lnCantidad
+				lnescambio = IIF(CsrCuerpo.escambio='S',1,0)
+				
+				lnidvariedad = 0
+				SELECT CsrVariedad
+				LOCATE FOR numero = CsrCuerpo.sabor
+				IF FOUND() AND numero = CsrCuerpo.sabor
+					lnidvariedad = CsrVariedad.id
+				ENDIF 
+				lnidsubarti = 0
+				SELECT CsrSubproducto
+				LOCATE FOR idarticulo = lnidarticulo AND idvariedad = lnidvariedad
+				IF FOUND() AND idarticulo = lnidarticulo AND idvariedad = lnidvariedad
+					lnidsubarti = CsrSubproducto.id
+				ENDIF 
+				IF lnescambio=1	 &&Creamos una linea aparte
+					lnidcuerpoescambio = lnidcuerpo
+					INSERT INTO csrcuerfac (id, idmaopera, idarticulo, codigo, nombre, cantidad, univenta;
+					, unibulto, oricod, sdocant, kilos, listaprecio, precosto, preunita, prearti, interno;
+					, despor, tasaiva, switch, iddeposito, espromocion, perceibruto, idcabeza, volumen;
+					, precostosiva, preunitasiva, preartisiva,pesable,idfrio,oferfecha,oferbonif;
+					,oferbonifcant, escambio);
+				    VALUES (lnidcuerpo,lnid,lnidarticulo,lcnumero,lcnombre,lncantidad,lnunivta,lnunibulto;
+				    ,"D",0,lnkilos,1,lnprecosto,lnpreunita,lnprearti,lninterno,lnbonif1,lnivari,"00000";
+				    ,lniddeposito,lnespromo,0,lnidcabeza,lnvolumen,lnprecostosiva,lnpreunitasiva;
+				    ,lnpreartisiva,LNPESABLE,lnidfrio,ldfecha,lnboniofer,lnbonicant,lnescambio)
+					
+					lnidcuerpo = lnidcuerpo + 1
+					
+					lncuerpograbado = lnidcueroescambio
+				ELSE 
+					lnCuerpoCantidad   = lnCuerpoCantidad + lnCantidad 
+					lnCuerpoKilos      = lnCuerpoKilos + lnKilos 
+				ENDIF 
+				
+				INSERT INTO cuervari (id,idmaopera,idcuerfac,idarticulo,idsubarti,idvariedad,cantidad;
+						,kilos,volumen,escambio);
+				VALUES (lnidcuervari,lnid,lncuerpograbado,lnidarticulo,lnidsubarti,lnidvariedad;
+						,lncantidad,lnkilos,lnvolumen,lnescambio)
+				lnidcuervari = lnidcuervari + 1
+				
+				SELECT CsrCuerpo
+				SKIP 	
+				IF EOF()
+					EXIT
+				ENDIF 						
+			ENDDO 
+			
+			UPDATE CsrCuerfac SET cantidad = lnCuerpoCantidad, kilos = lnCuerpokilos;
+			, volumen = lnCuerpoKilos where id = lnidcuerponocambio
+			
+			SELECT CsrCuerpo
+			SKIP 
+			IF !EOF()
+				SKIP -1
+			ENDIF 
+		ELSE 
+			SELECT CsrCuerpo
+			SKIP 
+		ENDIF
+		
+	ENDDO  
+			
+	lnid = lnid + 1
+	lnidcabeza = lnidcabeza + 1
+	SELECT CsrCabeza		     				
+ENDSCAN
+
+Oavisar.proceso('N') 
+=MESSAGEBOX('Proceso terminado! ')
+CLOSE tables
+CLOSE INDEXES
+CLOSE DATABASES
+
+	

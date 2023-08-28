@@ -1,0 +1,169 @@
+PARAMETERS ldvacio,lcpath,lcBase
+ldvacio = IIF(PCOUNT()<1,"",ldvacio)
+lcpath = IIF(PCOUNT()<2,"",lcpath)
+lcData = lcBase
+
+DO setup
+SET PROCEDURE TO proc.prg ADDITIVE  && Procedimientos generales
+SET PROCEDURE TO syserror.prg ADDITIVE  
+
+SET SAFETY OFF
+
+SET CPCOMPILE TO 1252
+codepage = 1252
+SET CPDIALOG ON
+
+Oavisar.proceso('S','Abriendo archivos') 
+llok = .t.
+llok = CargarTabla(lcData,'Zona',.t.)
+llok = CargarTabla(lcData,'Ctacte')
+llok = CargarTabla(lcData,'ZonaRuta',.t.)
+llok = CargarTabla(lcData,'Ruta',.t.)
+llok = CargarTabla(lcData,'RutaVdor',.t.)
+llok = CargarTabla(lcData,'CabeRuta',.t.)
+llok = CargarTabla(lcData,'CuerRuta',.t.)
+llok = CargarTabla(lcData,'FuerzaVta')
+
+SET SAFETY ON
+
+IF !llok
+	RETURN .f.
+ENDIF
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrVendedor.* FROM Vendedor as CsrVendedor
+ENDTEXT 
+=CrearCursorAdapter('CsrVendedor',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
+ENDTEXT 
+=CrearCursorAdapter('CsrLocalidad',lcCmd)
+
+SELECT CsrLocalidad
+*vista()
+
+SELECT CsrCtacte.idlocalidad,CsrCtacte.id as idctacte,CsrLocalidad.nombre as localidad ;
+FROM CsrCtacte ;
+INNER JOIN CsrLocalidad ON Csrctacte.idlocalidad = CsrLocalidad.id ; 
+WHERE CsrCtacte.ctadeudor = 1 into cursor CsrRecorrido readwrite 
+
+SELECT CsrRecorrido
+vista()
+
+SELECT distinct localidad FROM CsrRecorrido INTO CURSOR FsrZona READWRITE 
+
+lnid = RecuperarID('CsrZona',Goapp.sucursal10)
+lnnumero = 1
+SELECT FsrZona
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()  
+	lcnombre= NombreNi(alltrim(UPPER(fsrzona.localidad)))
+   
+	INSERT INTO CsrZona (id,numero,nombre,porflete,abrevia);
+   			 VALUES (lnid,lnNUMERO,lcnombre,0,LEFT(UPPER(fsrzona.localidad),4))
+ 	lnnumero = lnnumero + 1 
+   	lnid = lnid + 1
+ENDSCAN
+
+LOCAL lnidcabeza, lnidrutavdor,lnidzonaruta,lnidcuerruta
+
+lnid = RecuperarID('CsrRuta',Goapp.sucursal10)
+*****
+lnidcabeza = RecuperarID('CsrCabeRuta',Goapp.sucursal10)
+*******
+lnidrutavdor = RecuperarID('CsrRutaVdor',Goapp.sucursal10)
+*****
+lnidzonaruta = RecuperarID('CsrZonaRuta',Goapp.sucursal10)
+*******
+lnidcuerruta = RecuperarID('CsrCuerRuta',Goapp.sucursal10)
+***
+SELECT CsrFuerzaVta
+GO TOP 
+lnidfuerzavta  = CsrFuerzaVta.id
+
+SELECT CsrVendedor
+GO TOP 
+
+stop()
+SELECT CsrRecorrido
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+vista()
+lnNumRuta = 1
+SCAN FOR !EOF()
+	
+	SELECT Csrctacte
+	LOCATE FOR id=CsrRecorrido.idctacte
+       	IF not( id=CsrRecorrido.idctacte)
+           	SELECT CsrRecorrido
+           	LOOP 
+       	ENDIF 
+		
+	SELECT CsrZona
+	LOCATE FOR abrevia=UPPER(LEFT(CsrRecorrido.localidad,4))
+	IF abrevia#UPPER(LEFT(CsrRecorrido.localidad,4))
+		SELECT CsrZona
+	 	GO TOP 
+         ENDIF 
+				
+	SELECT CsrRuta
+	LOCATE FOR nombre=TRIM(Csrzona.nombre)
+	IF nombre#TRIM(Csrzona.nombre)
+		INSERT INTO CsrRuta (id,numero,nombre) ;
+		VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre))		     		
+		lnid = lnid + 1
+		lnNumRuta = lnNumRuta + 1 
+	ENDIF 
+	
+	SELECT Csrzonaruta
+	LOCATE FOR idzona=Csrzona.id AND idruta = Csrruta.id
+	IF idzona#Csrzona.id OR idruta # Csrruta.id
+		INSERT INTO Csrzonaruta (id,idzona,idruta,switch);
+		VALUES (lnidzonaruta,Csrzona.id,Csrruta.id,'00000')
+		lnidzonaruta = lnidzonaruta + 1
+    	ENDIF 
+	      
+	SELECT CsrRutaVdor
+	LOCATE FOR idvendedor=Csrvendedor.id  AND idruta=Csrruta.id
+	IF !FOUND() OR !(idvendedor=Csrvendedor.id  AND  idruta=Csrruta.id )
+		INSERT INTO CsrRutaVdor (id,idruta,idvendedor,switch,idfuerzavta);
+		VALUES (lnidrutavdor,Csrruta.id,Csrvendedor.id,'00000',lnidfuerzavta )
+		lnidrutavdor = lnidrutavdor + 1
+
+	ENDIF 
+
+	lcdias = "2" &&ALLTRIM(STR(CsrRecorrido.carpeta)) Lunes
+	FOR i=1 TO LEN(lcdias)
+		SELECT CsrCaberuta
+		LOCATE FOR idrutavdor=Csrrutavdor.id AND dia=VAL(SUBSTR(lcdias,i,1))
+		IF idrutavdor#Csrrutavdor.id OR dia#VAL(SUBSTR(lcdias,i,1))
+			INSERT INTO Csrcaberuta (id,idrutavdor,dia) ;
+			VALUES (lnidcabeza,Csrrutavdor.id,VAL(SUBSTR(lcdias,i,1)))
+			lnidcabeza = lnidcabeza + 1
+		ENDIF 
+		
+		SELECT CsrCuerruta
+		COUNT ALL FOR idcaberuta=Csrcaberuta.id TO nOrden
+		nOrden = nOrden + 1 
+	
+
+	      SELECT CsrCuerruta
+	      LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id &&AND orden=Csrrecorrido.orden
+	      IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id &&OR orden#CsrRecorrido.orden
+   				INSERT INTO Csrcuerruta (id,idcaberuta,idctacte,orden,turno) ;
+   				VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,nOrden,1)
+   				lnidcuerruta = lnidcuerruta + 1
+		ENDIF 		   				
+				
+	NEXT 
+	
+	SELECT CsrRecorrido
+ENDSCAN
+
+Oavisar.proceso('N') 
+=MESSAGEBOX('Proceso terminado! ')
+CLOSE tables
+CLOSE INDEXES
+CLOSE DATABASES

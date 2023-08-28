@@ -1,0 +1,29 @@
+*!*	DECLARE  INTEGER FindWindow IN WIN32API STRING , STRING  
+*!*	DECLARE  INTEGER SetForegroundWindow IN WIN32API INTEGER  
+*!*	DECLARE  INTEGER  ShowWindow  IN WIN32API INTEGER , INTEGER 
+*!*	DECLARE INTEGER ShellExecute IN shell32.dll ; 
+*!*	  INTEGER hndWin, ; 
+*!*	  STRING cAction, ; 
+*!*	  STRING cFileName, ; 
+*!*	  STRING cParams, ;  
+*!*	  STRING cDir, ; 
+*!*	  INTEGER nShowWin
+
+stop()
+
+oS = CREATEOBJECT('_ShellExecute')
+Comando = "megasync"
+lhwnd = 0
+n = 0
+DO WHILE n<10 AND lhwnd =0
+	*k=ShellExecute(0, 'open', Comando,'', '', 1)
+	k=oS.ShellExecute(Comando,'','open', 1)
+ 	 **************************
+  	WAIT "" TIMEOUT 3
+  	lt = "Whatsapp"  
+  	lhwnd = FindWindow (0, lt)  
+  	n = n + 1 
+  ENDDO 
+  IF lhwnd = 0
+  	oavisar.usuario('La aplicacion de Escritorio no se pudo iniciar')
+  ENDIF 
