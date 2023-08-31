@@ -1,0 +1,38 @@
+31-08-2023 09:31:46 , REGFACVTA.BOTONERACUERPO.CMDPIDOVENDEDOR.CLICK, Error: No se encuentra la variable 'PRECIOFINAL'.;Linea : INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,Orden,Leyenda,Pase,PrecioFinal) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cOrden+'0' ,cLeyenda,cPase,cPrecioFinal);Error :         12;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000CMBT08E6.TMP;Ultimo Control activo: 
+31-08-2023 09:31:46 , Pila de llamadas
+31-08-2023 09:31:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:46 , Objeto      : regfacvta.botoneracuerpo.cmdpidovendedor.click
+31-08-2023 09:31:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:46 , Nº de Linea :         56
+31-08-2023 09:31:46 , En el Fuente: 							thisform.actualizar()
+31-08-2023 09:31:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:46 , Objeto      : regfacvta.actualizar
+31-08-2023 09:31:46 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:46 , Nº de Linea :        370
+31-08-2023 09:31:46 , En el Fuente: 						this.imprimir_comproba()
+31-08-2023 09:31:46 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:46 , Objeto      : regfacvta.imprimir_comproba
+31-08-2023 09:31:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:47 , Nº de Linea :         27
+31-08-2023 09:31:47 , En el Fuente: 			this.imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,2)		
+31-08-2023 09:31:47 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:47 , Objeto      : regfacvta.imprimir
+31-08-2023 09:31:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta_v1.sct
+31-08-2023 09:31:47 , Nº de Linea :         89
+31-08-2023 09:31:47 , En el Fuente: llok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro ,0)
+31-08-2023 09:31:47 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+31-08-2023 09:31:47 , Objeto      : regfacvta.objimpresor.inicioimpresora
+31-08-2023 09:31:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+31-08-2023 09:31:47 , Nº de Linea :         73
+31-08-2023 09:31:47 , En el Fuente: 		lok = this.report_rtoconst(lndeboActualizarNro)
+31-08-2023 09:31:47 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+31-08-2023 09:31:47 , Objeto      : regfacvta.objimpresor.report_rtoconst
+31-08-2023 09:31:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+31-08-2023 09:31:47 , Nº de Linea :         90
+31-08-2023 09:31:47 , En el Fuente: 	this.report_RtoConst_cue(loObjFactura)
+31-08-2023 09:31:47 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+31-08-2023 09:31:47 , Objeto      : regfacvta.objimpresor.report_rtoconst_cue
+31-08-2023 09:31:47 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+31-08-2023 09:31:47 , Nº de Linea :         85
+31-08-2023 09:31:47 , En el Fuente: 		    INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,Orden,Leyenda,Pase,PrecioFinal)		    VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cOrden+'0'		    			,cLeyenda,cPase,cPrecioFinal)		    			
+31-08-2023 09:31:47 , Fin
