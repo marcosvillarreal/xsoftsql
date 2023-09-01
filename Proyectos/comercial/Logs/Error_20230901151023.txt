@@ -1,0 +1,38 @@
+01-09-2023 15:10:23 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No se encuentra la variable 'NSUBTOTFHOJA'.;Linea : nSubTotFHoja = nSubTotFHoja + IIF(Oscatter.escambio=0,nTotalFinal,0);Error :         12;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00009K3T00P1.TMP;Ultimo Control activo: 
+01-09-2023 15:10:23 , Pila de llamadas
+01-09-2023 15:10:23 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:23 , Objeto      : impcomprobante.aceptar1.click
+01-09-2023 15:10:23 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:23 , Nº de Linea :          6
+01-09-2023 15:10:23 , En el Fuente: 		.ciclaoperacion()
+01-09-2023 15:10:23 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:23 , Objeto      : impcomprobante.ciclaoperacion
+01-09-2023 15:10:23 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:23 , Nº de Linea :         15
+01-09-2023 15:10:23 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera)
+01-09-2023 15:10:23 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:24 , Objeto      : impcomprobante.selectoperacion_sql
+01-09-2023 15:10:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:24 , Nº de Linea :         18
+01-09-2023 15:10:24 , En el Fuente: 	this.imprimir('RTO')		
+01-09-2023 15:10:24 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:24 , Objeto      : impcomprobante.imprimir
+01-09-2023 15:10:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+01-09-2023 15:10:24 , Nº de Linea :         40
+01-09-2023 15:10:24 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,.lcimpresora,Csrprefitermi.tipoimpresora,.formulario,.f.,lnDeboActualizarNro ,0)
+01-09-2023 15:10:24 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-09-2023 15:10:24 , Objeto      : impcomprobante.objimpresor.inicioimpresora
+01-09-2023 15:10:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-09-2023 15:10:24 , Nº de Linea :         73
+01-09-2023 15:10:24 , En el Fuente: 		lok = this.report_rtoconst(lndeboActualizarNro)
+01-09-2023 15:10:24 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-09-2023 15:10:24 , Objeto      : impcomprobante.objimpresor.report_rtoconst
+01-09-2023 15:10:24 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-09-2023 15:10:24 , Nº de Linea :         90
+01-09-2023 15:10:25 , En el Fuente: 	this.report_RtoConst_cue(loObjFactura)
+01-09-2023 15:10:25 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-09-2023 15:10:25 , Objeto      : impcomprobante.objimpresor.report_rtoconst_cue
+01-09-2023 15:10:25 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+01-09-2023 15:10:25 , Nº de Linea :         58
+01-09-2023 15:10:25 , En el Fuente: 		nSubTotFHoja = nSubTotFHoja + IIF(Oscatter.escambio=0,nTotalFinal,0)
+01-09-2023 15:10:25 , Fin
