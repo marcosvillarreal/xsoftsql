@@ -195,7 +195,9 @@ IF TYPE('goApp')='O'
 	
 	LeerConfigTermi()
 	
+	*stop()
 	IF oConfigTermi.controlskin = 'TRUE'
+		TRY 
 		* Herramienta VFPsControlSkin
 		IF FILE("VFPsControlSkin.Exe")
 		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE OFFICE 2010 BLUE
@@ -205,15 +207,19 @@ IF TYPE('goApp')='O'
 		      *!* AGREGAR PANEL AL ESTATUS BAR
 		      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
 		   ENDIF
+		
+			*!* FIN INICIO
+			*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+			_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+			_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+			_SCREEN.lcFooterText  = "<A HREF=" + ["] + "http://www.vfpsteambi.solutions" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+			_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+			_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+			** Herramienta VFPsControlSkin
 		ENDIF
-		*!* FIN INICIO
-		*!* LLENAR PARAMETROS VFPS MESSAGEBOX
-		_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
-		_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "http://www.vfpsteambi.solutions" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
-		_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
-		_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
-		** Herramienta VFPsControlSkin
+		CATCH TO oError
+			oConfigTermi.controlskin = 'FALSE'
+		ENDTRY 
 	ENDIF 
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
