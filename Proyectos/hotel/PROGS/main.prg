@@ -205,6 +205,7 @@ ObjReserva.AddProperty("idreserva_ant",0)
 ObjReserva.AddProperty("Titular","")
 ObjReserva.AddProperty("Titular_ant","")
 ObjReserva.AddProperty("cod_estreserva",0)
+ObjReserva.AddProperty("cod_estreserva_ant",0)
 
 oErrorGM = CREATEOBJECT("Custom")
 oErrorGM.AddProperty("Alias","")
@@ -222,7 +223,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.11"
+	goapp.version = "01.00.15"
 	goapp.gmsoft = "hotel"
 	
 	PUBLIC  gcicono
