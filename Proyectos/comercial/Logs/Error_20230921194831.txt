@@ -1,0 +1,33 @@
+21-09-2023 19:48:31 , CBIOPRECIO_FILE.CMDPROCESAR.CLICK, Error: No se encuentra la variable 'NIDRUBRO'.;Linea : SELECT ISNULL(MAX(convert(int,CsrProducto.codalfa)),0) as codigo FROM Producto as CsrProducto WHERE CsrProducto.idrubro = <<nIdRubro>>;Error :         12;Ultimo Alias Activo: CSRRUBRO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00008OI101AB.TMP;Ultimo Control activo: 
+21-09-2023 19:48:31 , Pila de llamadas
+21-09-2023 19:48:31 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Objeto      : cbioprecio_file.cmdprocesar.click
+21-09-2023 19:48:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Nº de Linea :          1
+21-09-2023 19:48:32 , En el Fuente: thisform.estadook = thisform.CrearInforme()
+21-09-2023 19:48:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Objeto      : cbioprecio_file.crearinforme
+21-09-2023 19:48:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Nº de Linea :         13
+21-09-2023 19:48:32 , En el Fuente: thisform.leerarchivo()
+21-09-2023 19:48:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Objeto      : cbioprecio_file.leerarchivo
+21-09-2023 19:48:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Nº de Linea :         54
+21-09-2023 19:48:32 , En el Fuente: thisform.procesararchivo()
+21-09-2023 19:48:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Objeto      : cbioprecio_file.procesararchivo
+21-09-2023 19:48:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Nº de Linea :         12
+21-09-2023 19:48:32 , En el Fuente: 	this.mapearproductos()
+21-09-2023 19:48:32 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Objeto      : cbioprecio_file.mapearproductos
+21-09-2023 19:48:32 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:32 , Nº de Linea :         91
+21-09-2023 19:48:32 , En el Fuente: 		IF NOT thisform.generarcodalfa()
+21-09-2023 19:48:33 , Programa    : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:33 , Objeto      : cbioprecio_file.generarcodalfa
+21-09-2023 19:48:33 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\stock\cbioprecio_file_excel.sct
+21-09-2023 19:48:33 , Nº de Linea :         13
+21-09-2023 19:48:33 , En el Fuente: 	SELECT ISNULL(MAX(convert(int,CsrProducto.codalfa)),0) as codigo FROM Producto as CsrProducto WHERE CsrProducto.idrubro = <<nIdRubro>>
+21-09-2023 19:48:33 , Fin
