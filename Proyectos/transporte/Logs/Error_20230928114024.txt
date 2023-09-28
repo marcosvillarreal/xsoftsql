@@ -1,0 +1,18 @@
+28-09-2023 11:40:24 , RINDEFLETE_V5.CMDPROCESAR.KEYPRESS, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : INSERT INTO CsrAuxCabefac (idmaopera,total,flete,creembolso,idcomproba,numcomp,estadotilde ,nomzona,grupo	,sfecha,signo,detaEntregado,detaFlete,detaReembolso,Saldo,Afecta,PlanPago,Origen ,entregado_ok, flete_ok,creembolso_ok,rend_flete,rend_entregado,rend_creembolso, ajuste, hayajuste ,ajuste_creemb ,ajuste_iva, ajuste_comicr,ajuste_conexion,seguro ,porcecomi,iva, conexion, comireembolso ,sucursal_o,fecha) VALUES (Csrcuerpo.idmaopera,lntotal,CsrCuerpo.flete,CsrCuerpo.creembolso,CsrCuerpo.idcomproba ,Csrcuerpo.numcomp,0,Csrcuerpo.nomzona,'F',CsrCuerpo.fecha,Csrcuerpo.signo ,cdetaEntregado,cdetaFlete,cdetaReembolso,nSaldo, 0,CsrCuerpo.planpago,CsrCuerpo.origen ,CsrCuerpo.rend_entregado,CsrCuerpo.rend_flete ,CsrCuerpo.rend_creembolso ,CsrCuerpo.rend_flete,CsrCuerpo.rend_entregado,CsrCuerpo.rend_creembolso,CsrCuerpo.ajuste ,IIF(CsrCuerpo.ajuste#0,.t.,.f.),CsrCuerpo.ajuste_creemb ,CsrCuerpo.ajuste_iva,CsrCuerpo.ajuste_comicr ,CsrCuerpo.ajuste_conexion,CsrCuerpo.seguro,CsrCuerpo.porcecomi,CsrCuerpo.iva, CsrCuerpo.conexion ,CsrCuerpo.comireembolso,CsrCuerpo.sucursal,TTOD(CsrCuerpo.fecha ));Error :         11;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000CV0P01OR.TMP;Ultimo Control activo: 
+28-09-2023 11:40:24 , Pila de llamadas
+28-09-2023 11:40:24 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+28-09-2023 11:40:24 , Objeto      : rindeflete_v5.cmdprocesar.keypress
+28-09-2023 11:40:24 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+28-09-2023 11:40:24 , Nº de Linea :          6
+28-09-2023 11:40:24 , En el Fuente: 	DODEFAULT()
+28-09-2023 11:40:24 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v5.sct
+28-09-2023 11:40:24 , Objeto      : rindeflete_v5.cmdprocesar.click
+28-09-2023 11:40:24 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v5.sct
+28-09-2023 11:40:25 , Nº de Linea :          4
+28-09-2023 11:40:25 , En el Fuente: thisform.leermovimientos()
+28-09-2023 11:40:25 , Programa    : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v5.sct
+28-09-2023 11:40:25 , Objeto      : rindeflete_v5.leermovimientos
+28-09-2023 11:40:25 , Base Objeto : j:\xsoftsql\proyectos\transporte\forms\ctacte\rindeflete_v5.sct
+28-09-2023 11:40:25 , Nº de Linea :        138
+28-09-2023 11:40:25 , En el Fuente: 			INSERT INTO CsrAuxCabefac (idmaopera,total,flete,creembolso,idcomproba,numcomp,estadotilde			,nomzona,grupo	,sfecha,signo,detaEntregado,detaFlete,detaReembolso,Saldo,Afecta,PlanPago,Origen			,entregado_ok, flete_ok,creembolso_ok,rend_flete,rend_entregado,rend_creembolso, ajuste, hayajuste			,ajuste_creemb ,ajuste_iva, ajuste_comicr,ajuste_conexion,seguro ,porcecomi,iva, conexion, comireembolso			,sucursal_o,fecha)			VALUES (Csrcuerpo.idmaopera,lntotal,CsrCuerpo.flete,CsrCuerpo.creembolso,CsrCuerpo.idcomproba			,Csrcuerpo.numcomp,0,Csrcuerpo.nomzona,'F',CsrCuerpo.fecha,Csrcuerpo.signo			,cdetaEntregado,cdetaFlete,cdetaReembolso,nSaldo, 0,CsrCuerpo.planpago,CsrCuerpo.origen			,CsrCuerpo.rend_entregado,CsrCuerpo.rend_flete			,CsrCuerpo.rend_creembolso			,CsrCuerpo.rend_flete,CsrCuerpo.rend_entregado,CsrCuerpo.rend_creembolso,CsrCuerpo.ajuste			,IIF(CsrCuerpo.ajuste#0,.t.,.f.),CsrCuerpo.ajuste_creemb ,CsrCuerpo.ajuste_iva,CsrCuerpo.ajuste_comicr			,CsrCuerpo.ajuste_conexion,CsrCuerpo.seguro,CsrCuerpo.porcecomi,CsrCuerpo.iva, CsrCuerpo.conexion			,CsrCuerpo.comireembolso,CsrCuerpo.sucursal,TTOD(CsrCuerpo.fecha ))
+28-09-2023 11:40:25 , Fin
