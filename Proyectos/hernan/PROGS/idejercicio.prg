@@ -1,5 +1,5 @@
-*goapp.idejercicio = 1100000023
-goapp.idejercicio = 1200000023
+goapp.idejercicio = 1100000023
+*goapp.idejercicio = 1200000023
 goapp.idejercicioFAC = goapp.idejercicio
 goapp.idejercicioactual = goapp.idejercicio
 goapp.terminal =5
