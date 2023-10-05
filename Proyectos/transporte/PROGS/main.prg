@@ -201,7 +201,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.01"
+	goapp.version = "01.00.10"
 	goapp.gmsoft = "transporte"
 	
 	PUBLIC  gcicono
