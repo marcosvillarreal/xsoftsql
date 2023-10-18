@@ -29,25 +29,36 @@ LOCAL llReturn, ;
  	 *loBook.Sheets[1].Range("A1:C+"TRANSFORM(lnLastLine )).columns.Autofit()
  	 *loSourceData =   loBook.Sheets[1].Range("A1:C+"TRANSFORM(lnLastLine ))
  	 XLSheet.Range("A1:D6").columns.Autofit()
- 	 loSourceData =   XLSheet.Range("A1:D6").Select
+ 	 loSourceData =  XLSheet.Range("A1:D6")
 * endwith 
  loExcel.Worksheets.Add(,loExcel.Sheets[1])
- loDestination = loExcel.Sheets[2].Range("A1")
- loPivotTable =loExcel.Sheets[1].PivotTableWizard(1,loSourceData,loDestination,"Titulo a definir",.T.,.T.) &&This.cReporttitle
- with loPivotTable 
-	.AddFields("Customer Name","order_month")
-	.PivotFields(4).Orientation = 4 &&this.ccountcolumn
-	.PivotFields("Order_month").NumberFormat = "mmmm-yyyy"
-	.NullString = ""
-	.PageFieldOrder = 3
-	.PrintTitles = .F.
-	.RepeatItemsOnEachPrintedPage = .F. 
-	.PrintTitles = .T.
-	.RepeatItemsOnEachPrintedPage = .T.
-	.PivotSelect("",0)
-	.Format(16)
-endwith 
-	
+ loExcel.Sheets(2).Select
+ XLSheet = loExcel.ActiveSheet
+ loDestination = XLSheet.Range("A1")
+ *loDestination = loExcel.Sheets[2].Range("A1")
+ XLSheet.Range("A1").Select
+ 
+ loPivotTable =XLSheet.PivotTableWizard(1,loSourceData,loDestination,"PivotTable1",.T.,.T.) &&This.cReporttitle
+ 
+ *loPivotTable =XLSheet.PivotTableWizard(,loSourceData,loDestination,"Titulo a definir",.T.,.T.) &&This.cReporttitle
+ *loPivotTable = XLSheet.ActiveWorkbook.PivotCaches.Create("xlDatabase", loSourceData , 8)
+ *.CreatePivotTable(loDestination,"TablaDinámica1", 8)
+*!*	 with loPivotTable 
+*!*		.AddFields("Customer Name","order_month")
+*!*		.PivotFields(4).Orientation = 4 &&this.ccountcolumn
+*!*		.PivotFields("Order_month").NumberFormat = "mmmm-yyyy"
+*!*		.NullString = ""
+*!*		.PageFieldOrder = 3
+*!*		.PrintTitles = .F.
+*!*		.RepeatItemsOnEachPrintedPage = .F. 
+*!*		.PrintTitles = .T.
+*!*		.RepeatItemsOnEachPrintedPage = .T.
+*!*		.PivotSelect("",0)
+*!*		.Format(16)
+*!*	endwith 
+stop()
+XLSheet.pivotTables('PivotTable1').AddFields("Product")
+
 with loExcel.Sheets[2].Cells 
 	.Select 
 	.Range("A6").Activate
@@ -94,3 +105,25 @@ ENDWITH
  loBook = null
  
  RETURN lReturn
+
+
+
+
+*!*	 Application.CutCopyMode = False
+*!*	    ActiveWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:= _
+*!*	        "Hoja1!R1C1:R1048576C4", Version:=8).CreatePivotTable TableDestination:= _
+*!*	        "Hoja2!R1C1", TableName:="TablaDinámica1", DefaultVersion:=8
+*!*	    Sheets("Hoja2").Select
+*!*	    Cells(1, 1).Select
+*!*	    ActiveSheet.PivotTables("TablaDinámica1").AddDataField ActiveSheet.PivotTables( _
+*!*	        "TablaDinámica1").PivotFields("Precio"), "Suma de Precio", xlSum
+*!*	    With ActiveSheet.PivotTables("TablaDinámica1").PivotFields("Articulo")
+*!*	        .Orientation = xlColumnField
+*!*	        .Position = 1
+*!*	    End With
+*!*	    ActiveSheet.PivotTables("TablaDinámica1").AddDataField ActiveSheet.PivotTables( _
+*!*	        "TablaDinámica1").PivotFields("Unidad "), "Suma de Unidad ", xlSum
+*!*	    With ActiveSheet.PivotTables("TablaDinámica1").PivotFields("Articulo")
+*!*	        .Orientation = xlRowField
+*!*	        .Position = 1
+*!*	    End With
