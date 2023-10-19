@@ -2154,7 +2154,7 @@ CASE UPPER(lcCursor)="CSRPAGO"
 	              ,fechavto d,entregado c(30),idvalor n(10),idprovincia n(10),tipocaja c(2),esclase c(1);
 	              ,recibido c(30),nrotarjeta c(15),cupon c(15),cuota n(2),cuit c(13),idctabco n(10);
 	              ,idmaopera n(12),idcheque M,detalle c(50),idctatitular i,idctaentregado i,idctarecibido i;
-	              ,idlocalidad i,idbanco i,nroidentificador c(50),lccuit c(13))
+	              ,idlocalidad i,idbanco i,nroidentificador c(50),lccuit c(13),esotro n(1))
 	Sele Csrpago
 CASE UPPER(lcCursor)="CSRFINANCIA"
 	Create Cursor CsrFinancia (registro i AUTOINC,numero n(3),nombre c(25),fecha d,afecta n(10,2),idvalor i;

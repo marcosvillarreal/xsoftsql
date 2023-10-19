@@ -154,14 +154,14 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
-PUBLIC cFileNameLog,cDirCloseBat 
+PUBLIC cFileNameLog,cDirCloseBat,loScriptVFP 
 
 STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
-	LeerConfigTermi()
+LeerConfigTermi()
 	
-	
+loScriptVFP = CREATEOBJECT("Scripting.FileSystemObject")	
 	
 _screen.lockscreen=.t.
 _Screen.windowstate=2
