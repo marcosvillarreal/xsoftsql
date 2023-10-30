@@ -1,4 +1,4 @@
-use nuevasirena9
+use laligabb
 go
 --delete from detanrocaja
 delete from movstock
@@ -51,6 +51,7 @@ delete from cuercombo
 delete from cabepromo
 delete from cuerpromo
 delete from cuerdeta
+delete from bonirubroctacte
 
-execute actualizarid 9
+execute actualizarid 1
 select * from keysid order by nextid desc
