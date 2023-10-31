@@ -1,15 +1,19 @@
 use laligabb
 go
---delete from detanrocaja
+delete from ctacte
+delete from producto
+delete from plancue
+
+delete from detanrocaja
 delete from movstock
---delete from cuerfac
---delete from tablaimp
---delete from cabeasi
---delete from tablaasi
+delete from cuerfac
+delete from tablaimp
+delete from cabeasi
+delete from tablaasi
 delete from renmaope
---delete from maopera
---delete from cabefac
---delete from movcaja
+delete from maopera
+delete from cabefac
+delete from movcaja
 delete from movbcocar
 delete from movbcodeta
 delete from movtarjeta
@@ -22,7 +26,7 @@ delete from cuercpra
 delete from cuervaricpra
 delete from cabecpra
 delete from bonirubro
---delete from prodctacon
+delete from prodctacon
 delete from cbioprecio
 delete from antablaasi
 delete from antablaimp
@@ -51,7 +55,78 @@ delete from cuercombo
 delete from cabepromo
 delete from cuerpromo
 delete from cuerdeta
-delete from bonirubroctacte
+
+delete from ncuerfac
+delete from anmovstock
+delete from ancuerfac
+delete from cuervari
+delete from ncuervari
+delete from cuerruta
+delete from fletecarga
+delete from nmaopera
+delete from ncabefac
+
+delete from afenpedido
+delete from pedipda
+delete from visita
+delete from ancabefac
+delete from fleteplanilla
+delete from renflete
+delete from caberuta
+delete from idasociado
+delete from movcomodato
+delete from avisouser
+delete from prefijoctacte
+delete from prefitermi
+delete from afebcocar
+delete from seteotermi
+delete from impresora
+delete from mapeoimpresora
+delete from afebcocar
+delete from variedad
+delete from paraconta
+delete from detaconta
+delete from cuerarqueo
+delete from valor
+delete from valorctacon
+delete from contactos
+delete from datamenu
+delete from comivende
+delete from afeasto
+delete from provctacon
+delete from marca
+delete from paravario
+delete from bonictacte
+delete from rubro
+delete from localidad
+delete from barrio
+delete from paradiario
+delete from seteoparam
+delete from cabemod
+delete from sucursal
+delete from cuermod
+delete from arqueo
+delete from movpub
+delete from zonaruta
+delete from rutavdor
+delete from forma
+delete from catectacte
+delete from canalvta
+delete from prefijonro
+delete from renctacte
+delete from vendedor
+delete from ruta
+delete from prefijobco
+delete from sector
+delete from cabeconcilia
+delete from fletero
+delete from favoritos
+delete from cabeobjvta
+delete from cabeunifica
+delete from cuerunifica
+delete from ctactemod
+
+
 
 execute actualizarid 1
 select * from keysid order by nextid desc
