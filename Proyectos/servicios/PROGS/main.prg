@@ -198,10 +198,10 @@ objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
 ObjReporter.AddProperty('mensajeria_body',"")
-ObjReporter.AddProperty('banner',"gmbanner.jpg")
+ObjReporter.AddProperty('banner',"gmbanner.png")
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-	ObjReporter.banner= lcdd+'graphics\gmbanner.jpg'
+	ObjReporter.banner= lcdd+'graphics\gmbanner.png'
 ENDIF 
 ObjReporter.AddProperty('cartel',"")
 
