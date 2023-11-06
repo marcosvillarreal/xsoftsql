@@ -1,0 +1,23 @@
+06-11-2023 19:10:40 , REGCTACTE.CMDIMPRIMIRPDF.CLICK, Error: No se encuentra la variable 'CNOMEMPRESA'.;Linea : INSERT INTO CsrimpCab (grupo ,EmpresaNom ,Comprobante ,Estado ,NomCliente ,NumCliente ,NumComproba ,FecComproba ,EmpresaTribu ,EmpresaOtro01 ,EmpresaDire ,EmpresaLoca ,EmpresaRamo ,EmpresaOtro02 ,DireCliente ,LocaCliente ,ivaCliente ,cuitCliente ,ibtoCliente ,EmpresaTelf,EmpresaOtro03,EmpresaOtro04 ,EmpresaOtro05) VALUES (STR(loObjRecibo.hojaactual,4)+STR(icopia,1)+"0",cNomEmpresa,cNomComproba ,cEstado,cNomCliente,cNumCliente,cNumComproba,loObjRecibo.fecha ,cEmpIVA,cEmpO01,cEmpDire,cEmpLoca,cEmpRamo,cEmpO02 ,DireCliente,LocaCliente,ivaCliente,cuitCliente,ibtoCliente,cEmpTelf ,cEmpO03,cEmpO04,cEmpO05);Error :         12;Ultimo Alias Activo: CSRAUXMOVCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000024UH01UH.TMP;Ultimo Control activo: 
+06-11-2023 19:10:40 , Pila de llamadas
+06-11-2023 19:10:40 , Programa    : j:\xsoftsql\proyectos\servicios\forms\ctacte\regctacte_v1.sct
+06-11-2023 19:10:40 , Objeto      : regctacte.cmdimprimirpdf.click
+06-11-2023 19:10:40 , Base Objeto : j:\xsoftsql\proyectos\servicios\forms\ctacte\regctacte_v1.sct
+06-11-2023 19:10:40 , Nº de Linea :          5
+06-11-2023 19:10:40 , En el Fuente: llok = thisform.imprimir_d()
+06-11-2023 19:10:40 , Programa    : j:\xsoftsql\proyectos\servicios\forms\ctacte\regctacte_v1.sct
+06-11-2023 19:10:40 , Objeto      : regctacte.imprimir_d
+06-11-2023 19:10:41 , Base Objeto : j:\xsoftsql\proyectos\servicios\forms\ctacte\regctacte_v1.sct
+06-11-2023 19:10:41 , Nº de Linea :         49
+06-11-2023 19:10:41 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora("C_P",thisform.lcimpresora,Csrprefitermi.tipoimpresora,thisform.formulario,.f.,0,lnvistapreliminar)
+06-11-2023 19:10:41 , Programa    : j:\xsoftsql\proyectos\servicios\clases\localproyeto.vct
+06-11-2023 19:10:41 , Objeto      : regctacte.objimpresor.inicioimpresora
+06-11-2023 19:10:41 , Base Objeto : j:\xsoftsql\proyectos\servicios\clases\localproyeto.vct
+06-11-2023 19:10:41 , Nº de Linea :        113
+06-11-2023 19:10:41 , En el Fuente: 		lok = this.reportctacte(lnvistapreliminar)				
+06-11-2023 19:10:41 , Programa    : j:\xsoftsql\proyectos\servicios\clases\localproyeto.vct
+06-11-2023 19:10:41 , Objeto      : regctacte.objimpresor.reportctacte
+06-11-2023 19:10:41 , Base Objeto : j:\xsoftsql\proyectos\servicios\clases\localproyeto.vct
+06-11-2023 19:10:41 , Nº de Linea :        108
+06-11-2023 19:10:41 , En el Fuente: 	INSERT INTO CsrimpCab (grupo ,EmpresaNom ,Comprobante ,Estado ,NomCliente ,NumCliente	  				,NumComproba ,FecComproba ,EmpresaTribu ,EmpresaOtro01 	  				,EmpresaDire ,EmpresaLoca ,EmpresaRamo ,EmpresaOtro02	  				,DireCliente ,LocaCliente ,ivaCliente ,cuitCliente 	  				,ibtoCliente ,EmpresaTelf,EmpresaOtro03,EmpresaOtro04	  				,EmpresaOtro05)	VALUES (STR(loObjRecibo.hojaactual,4)+STR(icopia,1)+"0",cNomEmpresa,cNomComproba			,cEstado,cNomCliente,cNumCliente,cNumComproba,loObjRecibo.fecha			,cEmpIVA,cEmpO01,cEmpDire,cEmpLoca,cEmpRamo,cEmpO02			,DireCliente,LocaCliente,ivaCliente,cuitCliente,ibtoCliente,cEmpTelf			,cEmpO03,cEmpO04,cEmpO05)
+06-11-2023 19:10:41 , Fin

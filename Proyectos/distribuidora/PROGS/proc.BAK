@@ -1,3 +1,24 @@
+FUNCTION OpenFileShell
+LPARAMETERS lcfile,nTipo
+
+IF NOT FILE(lcFile)
+	oavisar.usuario('No se encontrol el archivo'+CHR(13)+CHR(13)+'Archivo: '+lcFile)
+	RETURN 
+ENDIF 
+NTipo = IIF(PCOUNT()<2,3,nTipo)
+
+DECLARE INTEGER ShellExecute IN "Shell32.dll" ;
+INTEGER hwnd, ;
+STRING lpVerb, ;
+STRING lpFile, ;
+STRING lpParameters, ;
+STRING lpDirectory, ;
+LONG nShowCmd
+
+*lcPDFfile = "C:\ebooks\web\visual c.pdf"
+* Open PDF file
+=Shellexecute(0,"Open", lcfile, "","",nTipo)
+
 *------------------------------------------------------------------------------
 FUNCTION DataCursor
 PARAMETERS cName
@@ -20,6 +41,8 @@ case upper(rtrim(cName)) = "DATAMENU"
 	CREATE CURSOR Datamenu (id i, sec_codacce c(12), sec_descacce c(20), sec_nivelacce n(1), sec_promptacc c(50);
 		, sec_tipoacce n(1), sec_doacce c(100), sec_keyacce c(10), sec_condacce c(30), sec_fontstyle c(30);
 		,fecha d, sec_picture c(50), switch c(5))
+case upper(rtrim(cName)) = "CSRVERSCONFIG"
+	CREATE CURSOR CsrVersConfig (sistema c(30), path c(200), grupo c(50), nrosistema i,pathupdateexe c(200), filelogo c(100))
 OTHERWISE
 	RETURN .f.
 ENDCASE
