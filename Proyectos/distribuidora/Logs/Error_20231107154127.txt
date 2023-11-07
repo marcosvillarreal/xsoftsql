@@ -1,0 +1,13 @@
+07-11-2023 15:41:27 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'TOTALFAC'.;Linea : SELECT idmaopera, idvendedor , codvendedor , nomvendedor , idcabefac ,numcomp, cabrevia, totalfac as total, cobrado ,fechacbro, SUM(neto) as neto ,0 as porce,SUM(basecomi) as basecomi,AVG(comision) as comision,ctacte,idmaopecbro,'' as conceptoComi ,SUM(totcomi) as totcomi,nomvdorguia FROM CsrImprimir Group by idmaopecbro,idmaopera,idvendedor,codvendedor,nomvendedor ,idcabefac,numcomp,cabrevia,fechacbro,nomvdorguia,ctacte,totalfac,cobrado ORDER BY nomvendedor INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000A8ZT03C5.TMP;Ultimo Control activo: 
+07-11-2023 15:41:27 , Pila de llamadas
+07-11-2023 15:41:27 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+07-11-2023 15:41:27 , Objeto      : plancomivende_k.imprimir_vistaprevia1.excel.click
+07-11-2023 15:41:27 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+07-11-2023 15:41:27 , Nº de Linea :          5
+07-11-2023 15:41:27 , En el Fuente: llOK=thisform.CrearInforme()
+07-11-2023 15:41:27 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k_obj.sct
+07-11-2023 15:41:28 , Objeto      : plancomivende_k.crearinforme
+07-11-2023 15:41:28 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k_obj.sct
+07-11-2023 15:41:28 , Nº de Linea :         63
+07-11-2023 15:41:28 , En el Fuente: 	SELECT idmaopera, idvendedor , codvendedor , nomvendedor , idcabefac	,numcomp, cabrevia, totalfac as total, cobrado	,fechacbro, SUM(neto) as neto ,0 as porce,SUM(basecomi) as basecomi,AVG(comision) as comision,ctacte,idmaopecbro,'' as conceptoComi	,SUM(totcomi) as totcomi,nomvdorguia FROM CsrImprimir 	Group by idmaopecbro,idmaopera,idvendedor,codvendedor,nomvendedor ,idcabefac,numcomp,cabrevia,fechacbro,nomvdorguia,ctacte,totalfac,cobrado	ORDER BY nomvendedor INTO CURSOR CsrImprimir READWRITE 
+07-11-2023 15:41:28 , Fin

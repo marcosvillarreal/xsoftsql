@@ -1,0 +1,13 @@
+07-11-2023 15:07:50 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'FECHACOBRO'.;Linea : SELECT idmaopera, idvendedor , codvendedor , nomvendedor , idcabefac ,numcomp, cabrevia, SUM(total) as total, SUM(cobrado) as cobrado ,fechacobro, SUM(neto) as neto ,0 as porce,SUM(basecomi) as basecomi,AVG(comision) as comision ,SUM(totcomi) as totcomi,nomvdorguia FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ,comision ,nomvdorguia ORDER BY nomvendedor INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        487 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000A8ZT02IP.TMP;Ultimo Control activo: 
+07-11-2023 15:07:51 , Pila de llamadas
+07-11-2023 15:07:51 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+07-11-2023 15:07:51 , Objeto      : plancomivende_k.imprimir_vistaprevia1.excel.click
+07-11-2023 15:07:51 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+07-11-2023 15:07:51 , Nº de Linea :          5
+07-11-2023 15:07:51 , En el Fuente: llOK=thisform.CrearInforme()
+07-11-2023 15:07:51 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k_obj.sct
+07-11-2023 15:07:51 , Objeto      : plancomivende_k.crearinforme
+07-11-2023 15:07:52 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k_obj.sct
+07-11-2023 15:07:52 , Nº de Linea :         54
+07-11-2023 15:07:52 , En el Fuente: 	SELECT idmaopera, idvendedor , codvendedor , nomvendedor , idcabefac	,numcomp, cabrevia, SUM(total) as total, SUM(cobrado) as cobrado	,fechacobro, SUM(neto) as neto ,0 as porce,SUM(basecomi) as basecomi,AVG(comision) as comision	,SUM(totcomi) as totcomi,nomvdorguia FROM CsrImprimir Group by idvendedor,codvendedor,nomvendedor ,comision ,nomvdorguia	ORDER BY nomvendedor INTO CURSOR CsrImprimir READWRITE 
+07-11-2023 15:07:52 , Fin

@@ -1,0 +1,13 @@
+07-11-2023 15:01:18 , PLANCOMIVENDE_K.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El archivo 'csrrubro.dbf' no existe.;Linea : SELECT CsrCursor.*,NVL(CsrRubro.porcecomi,0) as comision,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as porce ,CAST(0 as n(11,2)) as totcomi , NVL(CsrRubro.nombre,SPACE(20)) as conceptoComi ,_CsrVendedor.cnumero as  codvendedor , _CsrVendedor.cnombre as nomvendedor ,_CsrVendedor2.nombre as nomvdorguia FROM CsrCursor LEFT JOIN CsrRubro ON CsrCursor.idrubro = CsrRubro.idrubro left JOIN _CsrVendedor ON CsrCursor.idvendedor = _CsrVendedor.cid left JOIN _CsrVendedor as _CsrVendedor2 ON CsrCursor.idvendedorguia = _CsrVendedor2.cid ORDER BY idvendedor,idmaopera,fechacbro INTO CURSOR CsrImprimir READWRITE;Error :          1;Ultimo Alias Activo: CSRCOMIVDOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000A8ZT02B6.TMP;Ultimo Control activo: 
+07-11-2023 15:01:19 , Pila de llamadas
+07-11-2023 15:01:19 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+07-11-2023 15:01:19 , Objeto      : plancomivende_k.imprimir_vistaprevia1.excel.click
+07-11-2023 15:01:19 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+07-11-2023 15:01:19 , Nº de Linea :          5
+07-11-2023 15:01:19 , En el Fuente: llOK=thisform.CrearInforme()
+07-11-2023 15:01:19 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k_obj.sct
+07-11-2023 15:01:19 , Objeto      : plancomivende_k.crearinforme
+07-11-2023 15:01:20 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\comision\plancomivende_k_obj.sct
+07-11-2023 15:01:20 , Nº de Linea :         17
+07-11-2023 15:01:20 , En el Fuente: SELECT CsrCursor.*,NVL(CsrRubro.porcecomi,0) as comision,CAST(0 as n(11,2)) as basecomi,CAST(0 as n(6,3)) as porce ,CAST(0 as n(11,2)) as totcomi , NVL(CsrRubro.nombre,SPACE(20)) as conceptoComi,_CsrVendedor.cnumero as  codvendedor , _CsrVendedor.cnombre as nomvendedor,_CsrVendedor2.nombre as nomvdorguiaFROM CsrCursor LEFT JOIN CsrRubro ON CsrCursor.idrubro = CsrRubro.idrubroleft JOIN _CsrVendedor ON CsrCursor.idvendedor = _CsrVendedor.cidleft JOIN _CsrVendedor as _CsrVendedor2 ON CsrCursor.idvendedorguia = _CsrVendedor2.cidORDER BY idvendedor,idmaopera,fechacbro INTO CURSOR CsrImprimir READWRITE 
+07-11-2023 15:01:20 , Fin
