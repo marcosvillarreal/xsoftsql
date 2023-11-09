@@ -1,58 +1,3 @@
-04-11-2021 09:48:41 , Verificando OCX
-25-11-2021 14:32:56 , Verificando OCX
-25-11-2021 14:34:51 , Verificando OCX
-26-11-2021 15:35:54 , Verificando OCX
-26-11-2021 15:44:48 , Verificando OCX
-26-11-2021 15:46:38 , Verificando OCX
-26-11-2021 15:50:32 , Verificando OCX
-26-11-2021 15:51:15 , Verificando OCX
-26-11-2021 16:10:41 , Error nº:         12
-Error No se encuentra la variable 'TIPOCBTE'.
-Linea nº cTipoCbte	= NVL(ImpCabeza.TipoCbte,'')
- Alias IMPCABEZA registro          1
-Control activo  IMPCOMPVTA.ACEPTAR1.CLICK
-26-11-2021 16:12:40 , Error nº:         12
-Error No se encuentra la variable 'TIPOCBTE'.
-Linea nº cTipoCbte	= NVL(ImpCabeza.TipoCbte,'')
- Alias IMPCABEZA registro          1
-Control activo  IMPCOMPVTA.ACEPTAR1.CLICK
-26-11-2021 16:13:37 , Error nº:       1925
-Error OFACCAE es un miembro desconocido.
-Linea nº thisform.oFACCAE.fac_qr(OscCabefac)
- Alias CSRAUXCABEFAC registro          1
-Control activo  IMPCOMPVTA.ACEPTAR1.CLICK
-26-11-2021 16:17:51 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias CSRIMPCUE registro          1
-Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.TXTEXISTE1.INIT
-26-11-2021 16:18:43 , Error nº:         13
-Error No se encuentra el alias 'CSRFLETERO'.
-Linea nº SELECT(this.calias)
- Alias CSRIMPCUE registro          1
-Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS
-26-11-2021 16:18:48 , Error nº:         13
-Error No se encuentra el alias 'CSRFLETERO'.
-Linea nº SELECT(this.calias)
- Alias CSRIMPCUE registro          1
-Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS
-26-11-2021 16:18:51 , Error nº:         13
-Error No se encuentra el alias 'CSRFLETERO'.
-Linea nº SELECT(this.calias)
- Alias CSRIMPCUE registro          1
-Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS
-26-11-2021 16:18:56 , Error nº:         13
-Error No se encuentra el alias 'CSRFLETERO'.
-Linea nº SELECT(this.calias)
- Alias CSRIMPCUE registro          1
-Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS
-26-11-2021 16:18:59 , Error nº:         13
-Error No se encuentra el alias 'CSRFLETERO'.
-Linea nº SELECT(this.calias)
- Alias CSRIMPCUE registro          1
-Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS
-26-11-2021 16:19:00 , Error nº:         13
-Error No se encuentra el alias 'CSRFLETERO'.
 Linea nº SELECT(this.calias)
  Alias CSRIMPCUE registro          1
 Control activo  IMPCOMPVTA.CONTAINERELECTOR.KITBUSCAOALTAENFLETERO.GOTFOCUS
@@ -86,6 +31,13 @@ Control activo  IMPCOMPVTA.INIT
 29-11-2021 14:13:19 , Error nº:       1581
 Error El campo NROCAE no acepta valores NULL.
 Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo005 ,Campo006,Campo007,Campo008,Campo009,Campo010 ,Campo011,Campo012,Campo013,Campo014,Campo015 ,Campo016,Campo017,Campo018,Campo019,Campo020 ,Campo021,Campo022,Campo023,Campo
+
+
+
+
+
+
+
 
 
 
@@ -367,6 +319,13 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
+
+
+
+
+
+
 ,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck,DetaHoja ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),CsrComprobante.cnombre,loObjfactura.fecha,cNumComp,loObjfactura.fecha,ImpCabeza.ctacte ,ImpCabeza.cnombre,ImpCabeza.cdireccion,Csrlocalid
 
 
@@ -508,7 +467,21 @@ Linea nº INSERT INTO CsrimpCab (grupo,Campo001,Campo002,Campo003,Campo004,Campo0
 
 
 
+
+
+
+
+
+
+
 ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
+
+
+
+
+
+
+
 
 
 
@@ -1053,7 +1026,21 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
 
 
 
@@ -1251,7 +1238,21 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
 
 
 
@@ -1449,7 +1450,21 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
+
 
 
 
@@ -2139,7 +2154,21 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
+
 
 
 
@@ -2187,7 +2216,21 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
+
 
 
 
@@ -2235,6 +2278,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -2259,7 +2309,21 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
+
+
+
+
+
+
 
 
 
@@ -2444,3 +2508,38 @@ Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-11-2023 08:07:41 , Verificando OCX
 06-11-2023 08:20:24 , Informe por excel
 06-11-2023 08:20:29 , Informe por excel
+09-11-2023 08:55:22 , Verificando OCX
+09-11-2023 09:08:05 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
+ Alias CSRAUXCABEFAC registro          1
+Control activo  REGFACVTA.INIT
+09-11-2023 09:15:25 , Verificando OCX
+09-11-2023 09:17:08 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
+ Alias CSRAUXCABEFAC registro          1
+Control activo  REGFACVTA.INIT
+09-11-2023 12:27:06 , Verificando OCX
+09-11-2023 12:27:33 , Error nº:         12
+Error No se encuentra la variable 'SUCURSAL'.
+Linea nº .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) )
+ Alias CSRPRODUCTO registro          1
+Control activo SUCURSAL MAIN
+09-11-2023 12:49:29 , Verificando OCX
+09-11-2023 12:49:49 , Error nº:         12
+Error No se encuentra la variable 'SUCURSAL'.
+Linea nº .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) )
+ Alias CSRPRODUCTO registro          1
+Control activo SUCURSAL MAIN
+09-11-2023 12:50:19 , Error nº:         12
+Error No se encuentra la variable 'SUCURSAL'.
+Linea nº .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) )
+ Alias CSRPRODUCTO registro          1
+Control activo SUCURSAL ABMPRODUCTO.RESIZE
+09-11-2023 12:50:42 , Error nº:         12
+Error No se encuentra la variable 'SUCURSAL'.
+Linea nº .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) )
+ Alias CSRPRODUCTO registro          1
+Control activo SUCURSAL ABMPRODUCTO.SIZER.LBLHIGHLIGHT.RIGHTCLICK
+09-11-2023 12:51:21 , Verificando OCX
