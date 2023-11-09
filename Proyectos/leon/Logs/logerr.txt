@@ -1,2457 +1,3 @@
-10-04-2023 11:45:24 , En el Fuente: thisform.crearcursor()
-10-04-2023 11:45:24 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-10-04-2023 11:45:24 , Objeto      : regfacvta_v1.crearcursor
-10-04-2023 11:45:24 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-10-04-2023 11:45:24 , Nº de Linea :         21
-10-04-2023 11:45:24 , En el Fuente: SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1	   ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2	   ,CAST
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(0 as int) as idctavta3,00000000.00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3	   ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4	   ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Ba
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-segra5,000.00 as tasa5	   ,SPACE(10) as nomrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1   	   ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2	   ,SPACE(10) as nomrete3,000000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00.00 as retencion3,000000000.00 as Baserete3,000.00 as tasarete3   	   ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4   	   ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- as tasarete5   	   ,00000000.00 as BaseInterno,000000000.00 as BaseDescto,00000000.00 as BaseGra,00000000.00 as BaseIva   	   ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva   	   ,000000000.00 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt,SPACE(3) as subnumero       ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada       ,SPACE(13) as proximonro,DATE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien       ,CAST(0 as int) as Cuota,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck       ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso       ,SPACE(100) as Emai
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-l,CAST(0 as n(16,2)) as PerceIVA5329        FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
-17-04-2023 13:16:58 , REGFACVTA_V1.CMDCONSULTA.CLICK, Error: El archivo 'savsql.prg' no existe.;Linea : =SavSQL(lcCmd,this.Name+"_f4_imp");Error :          1;Ultimo Alias Activo: CSRPROVINCIA;Ultimo registro:          1 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\TEMP\0000K6Q1006J.TMP;Ultimo Control activo: 
-17-04-2023 13:16:59 , Pila de llamadas
-17-04-2023 13:16:59 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-17-04-2023 13:16:59 , Objeto      : regfacvta_v1.cmdconsulta.click
-17-04-2023 13:16:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-17-04-2023 13:16:59 , Nº de Linea :          1
-17-04-2023 13:16:59 , En el Fuente: thisform.key_f4()  
-17-04-2023 13:16:59 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-17-04-2023 13:16:59 , Objeto      : regfacvta_v1.key_f4
-17-04-2023 13:16:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-17-04-2023 13:17:00 , Nº de Linea :         68
-17-04-2023 13:17:00 , En el Fuente: 		.muestracomprobante(lcidretorno)
-17-04-2023 13:17:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-17-04-2023 13:17:00 , Objeto      : regfacvta_v1.muestracomprobante
-17-04-2023 13:17:00 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-17-04-2023 13:17:00 , Nº de Linea :        210
-17-04-2023 13:17:00 , En el Fuente: 		=SavSQL(lcCmd,this.Name+"_f4_imp")
-19-04-2023 16:40:28 , REGFACVTA_V1.CMDIMPRIMIR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lccampo035  = IIF(nOtros ,TRANSFORM(nOtros ,"9999999999.99"),"");Error :         11;Ultimo Alias Activo: IMPCUERPO;Ul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-timo registro:          3 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00010X6X0501.TMP;Ultimo Control activo: 
-19-04-2023 16:40:28 , Pila de llamadas
-19-04-2023 16:40:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:40:29 , Objeto      : regfacvta_v1.cmdimprimir.click
-19-04-2023 16:40:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:40:29 , Nº de Linea :         37
-19-04-2023 16:40:29 , En el Fuente: 	thisform.imprimir(thisform.lcimpresora,thisform.formulario,2)	
-19-04-2023 16:40:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:40:30 , Objeto      : regfacvta_v1.imprimir
-19-04-2023 16:40:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:40:30 , Nº de Linea :         66
-19-04-2023 16:40:30 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
-19-04-2023 16:40:30 , Programa    : j:\xsoftsql\proyectos\leon\clases\localproyeto.vct
-19-04-2023 16:40:30 , Objeto      : regfacvta_v1.objimpresor.inicioimpresora
-19-04-2023 16:40:30 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\localproyeto.vct
-19-04-2023 16:40:30 , Nº de Linea :         40
-19-04-2023 16:40:31 , En el Fuente: 			lok = this.reportf(lndeboActualizarNro)
-19-04-2023 16:40:31 , Programa    : j:\xsoftsql\proyectos\leon\clases\localproyeto.vct
-19-04-2023 16:40:31 , Objeto      : regfacvta_v1.objimpresor.reportf
-19-04-2023 16:40:31 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\localproyeto.vct
-19-04-2023 16:40:31 , Nº de Linea :        118
-19-04-2023 16:40:31 , En el Fuente: 	    this.reportF_cab(loobjfactura)
-19-04-2023 16:40:31 , Programa    : j:\xsoftsql\proyectos\leon\clases\localproyeto.vct
-19-04-2023 16:40:31 , Objeto      : regfacvta_v1.objimpresor.reportf_cab
-19-04-2023 16:40:31 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\localproyeto.vct
-19-04-2023 16:40:32 , Nº de Linea :        112
-19-04-2023 16:40:32 , En el Fuente: 			lccampo035  = IIF(nOtros ,TRANSFORM(nOtros ,"9999999999.99"),"")
-19-04-2023 16:49:32 , ON..., Error: El archivo memo j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct no existe o no es válido.;Linea : GO RECORD lnrecno IN CsrAuxCuerfac;Error :         41;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ultimo Control activo: 
-19-04-2023 16:49:33 , Pila de llamadas
-19-04-2023 16:53:08 , REGFACVTA_V1.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra el alias 'CSRBONICATECTACTE'.;Linea : SELECT CsrBoniCateCtacte;Error :         13;Ultimo Alias Activo: CSRPRODFZAVTA;Ultimo registro:          1 ID;DBF: C:\USERS\MAR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CO\APPDATA\LOCAL\TEMP\0000VTVT018E.TMP;Ultimo Control activo: CANTIDAD
-19-04-2023 16:53:09 , Pila de llamadas
-19-04-2023 16:53:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:09 , Objeto      : regfacvta_v1.grid2.column5.text1.lostfocus
-19-04-2023 16:53:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:09 , Nº de Linea :         12
-19-04-2023 16:53:09 , En el Fuente: 			IF !.grid2_lostfocuscant()
-19-04-2023 16:53:09 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:09 , Objeto      : regfacvta_v1.grid2_lostfocuscant
-19-04-2023 16:53:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:09 , Nº de Linea :          5
-19-04-2023 16:53:10 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-19-04-2023 16:53:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:10 , Objeto      : regfacvta_v1.grid2_control
-19-04-2023 16:53:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:10 , Nº de Linea :        184
-19-04-2023 16:53:10 , En el Fuente: 	   	  	.controlbonificacion()
-19-04-2023 16:53:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:11 , Objeto      : regfacvta_v1.controlbonificacion
-19-04-2023 16:53:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:11 , Nº de Linea :         51
-19-04-2023 16:53:11 , En el Fuente: SELECT CsrBoniCateCtacte
-19-04-2023 16:53:16 , REGFACVTA_V1.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra el alias 'CSRBONICATECTACTE'.;Linea : SELECT CsrBoniCateCtacte;Error :         13;Ultimo Alias Activo: CSRPRODFZAVTA;Ultimo registro:          1 ID;DBF: C:\USERS\MAR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CO\APPDATA\LOCAL\TEMP\0000VTVT018E.TMP;Ultimo Control activo: CANTIDAD
-19-04-2023 16:53:16 , Pila de llamadas
-19-04-2023 16:53:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:17 , Objeto      : regfacvta_v1.grid2.column5.text1.lostfocus
-19-04-2023 16:53:17 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:17 , Nº de Linea :         12
-19-04-2023 16:53:17 , En el Fuente: 			IF !.grid2_lostfocuscant()
-19-04-2023 16:53:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:17 , Objeto      : regfacvta_v1.grid2_lostfocuscant
-19-04-2023 16:53:18 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:18 , Nº de Linea :          5
-19-04-2023 16:53:18 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-19-04-2023 16:53:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:18 , Objeto      : regfacvta_v1.grid2_control
-19-04-2023 16:53:18 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:18 , Nº de Linea :        184
-19-04-2023 16:53:18 , En el Fuente: 	   	  	.controlbonificacion()
-19-04-2023 16:53:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:18 , Objeto      : regfacvta_v1.controlbonificacion
-19-04-2023 16:53:18 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:53:18 , Nº de Linea :         51
-19-04-2023 16:53:19 , En el Fuente: SELECT CsrBoniCateCtacte
-19-04-2023 16:54:13 , REGFACVTA_V1.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: No se encuentra el alias 'CSRBONICATECTACTE'.;Linea : SELECT CsrBoniCateCtacte;Error :         13;Ultimo Alias Activo: CSRPRODFZAVTA;Ultimo registro:          1 ID;DBF: C:\USERS\MAR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CO\APPDATA\LOCAL\TEMP\0000VTVT01Q8.TMP;Ultimo Control activo: CANTIDAD
-19-04-2023 16:54:13 , Pila de llamadas
-19-04-2023 16:54:14 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:14 , Objeto      : regfacvta_v1.grid2.column5.text1.lostfocus
-19-04-2023 16:54:14 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:14 , Nº de Linea :         12
-19-04-2023 16:54:14 , En el Fuente: 			IF !.grid2_lostfocuscant()
-19-04-2023 16:54:14 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:14 , Objeto      : regfacvta_v1.grid2_lostfocuscant
-19-04-2023 16:54:14 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:14 , Nº de Linea :          5
-19-04-2023 16:54:15 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-19-04-2023 16:54:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:15 , Objeto      : regfacvta_v1.grid2_control
-19-04-2023 16:54:15 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:15 , Nº de Linea :        184
-19-04-2023 16:54:15 , En el Fuente: 	   	  	.controlbonificacion()
-19-04-2023 16:54:16 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:16 , Objeto      : regfacvta_v1.controlbonificacion
-19-04-2023 16:54:16 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
-19-04-2023 16:54:16 , Nº de Linea :         51
-19-04-2023 16:54:16 , En el Fuente: SELECT CsrBoniCateCtacte
-19-04-2023 17:15:03 , REGFACVTA_V1.KEYPRESS, Error: No se encuentra la propiedad LOSFTFOCOSAY.;Linea : thisForm.Containerencabeza.KitbuscaoaltaenCtacte.LosftFocoSay();Error :       1734;Ultimo Alias Activo: CSRCTACTE;Ultimo registro:          1 ;DBF: C:\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-USERS\MARCO\APPDATA\LOCAL\TEMP\0000VTVT02PZ.TMP;Ultimo Control activo: CODIGO
-19-04-2023 17:15:03 , Pila de llamadas
-19-04-2023 17:15:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
 19-04-2023 17:15:04 , Objeto      : regfacvta_v1.keypress
 19-04-2023 17:15:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_v1.sct
 19-04-2023 17:15:04 , Nº de Linea :          9
@@ -2462,6 +8,52 @@ USERS\MARCO\APPDATA\LOCAL\TEMP\0000VTVT02PZ.TMP;Ultimo Control activo: CODIGO
 19-04-2023 17:15:04 , Nº de Linea :         46
 19-04-2023 17:15:04 , En el Fuente: 	thisForm.Containerencabeza.KitbuscaoaltaenCtacte.LosftFocoSay()
 05-05-2023 11:50:22 , INF_DINAMICA_V4_2.BOTONDYNAMIC1.BTN.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF NOT FILE(&cAliasDynamic);Error :         11;Ultimo Alias Activo: INF_DINAMICA_V4_2;Ultimo registro:    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2748,6 +340,52 @@ USERS\MARCO\APPDATA\LOCAL\TEMP\0000VTVT02PZ.TMP;Ultimo Control activo: CODIGO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 000T8ND00JZ.TMP;Ultimo Control activo: 
 30-05-2023 13:44:41 , Pila de llamadas
 30-05-2023 13:44:41 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -2771,6 +409,52 @@ USERS\MARCO\APPDATA\LOCAL\TEMP\0000VTVT02PZ.TMP;Ultimo Control activo: CODIGO
 30-05-2023 13:44:43 , Nº de Linea :       1527
 30-05-2023 13:44:43 , En el Fuente: 							DO FORM &lcForm WITH lcparam1
 30-05-2023 13:44:57 , MAIN, Error: El archivo 'j:\xsoftsql\proyectos\leon\regfacvta.scx' no existe.;Linea : DO FORM &lcForm WITH lcparam1;Error :          1;Ultimo Alias Activo: CSRKEY;Ultimo registro:         15 ;DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3036,6 +720,52 @@ USERS\MARCO\APPDATA\LOCAL\TEMP\0000VTVT02PZ.TMP;Ultimo Control activo: CODIGO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Control activo: 
 07-06-2023 11:22:20 , Pila de llamadas
 08-06-2023 12:07:40 , EXPORTAR_SICORE.INIT, Error: No se encuentra la variable 'CCADEIMPUESTO'.;Linea : .lctitulo =.lctitulo+' de '+cCadeImpuesto;Error :         12;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
@@ -3053,6 +783,52 @@ Control activo:
 08-06-2023 12:08:22 , Nº de Linea :         37
 08-06-2023 12:08:22 , En el Fuente: 	.lctitulo =.lctitulo+' de '+cCadeImpuesto
 08-06-2023 12:22:41 , SUBPERCE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'IDPROVRETE'.;Linea : replace ALL idprovincia WITH CSRPARAVARIO.IDORIGEN, nomprov WITH CsrParavario.nomprov FOR CsrImprimir.idprovrete = nIDCodigo IN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3294,6 +1070,52 @@ Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rol activo: 
 21-06-2023 14:08:37 , Pila de llamadas
 21-06-2023 14:08:37 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3312,6 +1134,52 @@ rol activo:
 21-06-2023 14:08:39 , Nº de Linea :         35
 21-06-2023 14:08:39 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 21-06-2023 17:48:31 , PARAVARIO.INIT, Error: KITBUSCAOALTAENCTACALSA es un miembro desconocido.;Linea : .page3.kitbuscaoaltaenCtaCalsa.txtexiste1.Value = CsrCtaCalsa.cnumero;Error :       1925;Ultimo Alias Activo: CSRCTACALSA;Ultimo registro:          1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3533,6 +1401,52 @@ rol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0001DA8900H6.TMP;Ultimo Control activo: 
 21-06-2023 17:48:38 , Pila de llamadas
 21-06-2023 17:48:38 , Programa    : j:\xsoftsql\proyectos\leon\forms\paravario.sct
@@ -3546,6 +1460,52 @@ rol activo:
 21-06-2023 17:48:39 , Nº de Linea :        145
 21-06-2023 17:48:39 , En el Fuente: 	.page3.kitbuscaoaltaenCtaCalsa.txtid.Value      = CsrCtaCalsa.id
 21-06-2023 17:49:33 , PARAVARIO.INIT, Error: KITBUSCAOALTAENCTACALSA es un miembro desconocido.;Linea : .page3.kitbuscaoaltaenCtaCalsa.txtexiste1.Value = CsrCtaCalsa.cnumero;Error :       1925;Ultimo Alias Activo: CSRCTACALSA;Ultimo registro:          1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3751,6 +1711,52 @@ rol activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000AHAH00CH.TMP;Ultimo Control activo: 
 20-10-2023 12:47:30 , Pila de llamadas
 20-10-2023 12:47:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3774,6 +1780,52 @@ o: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEM
 20-10-2023 12:47:36 , Nº de Linea :         55
 20-10-2023 12:47:36 , En el Fuente: 	cCodigo = LEFT(ALLTRIM(str(Oscatter.numero))+strzero(0,7),7)+srzero(Oscatter.numvariedad,3)
 20-10-2023 12:49:04 , GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El archivo 'srtzero.prg' no existe.;Linea : cCodigo = LEFT(ALLTRIM(str(Oscatter.numero))+strzero(0,7),7)+srtzero(Oscatter.numvariedad,3);Error :          1;Ultimo Alias Act
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3962,6 +2014,52 @@ ivo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tivo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000AHAH00FF.TMP;Ultimo Control activo: 
 20-10-2023 12:50:26 , Pila de llamadas
 20-10-2023 12:50:27 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3985,6 +2083,52 @@ tivo: CSRCURSOR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\
 20-10-2023 12:50:31 , Nº de Linea :         59
 20-10-2023 12:50:31 , En el Fuente: 	cCodigo = LEFT(ALLTRIM(str(Oscatter.numero))+strzero(0,7),7)+strzero(Oscatter.numvariedad,3)
 20-10-2023 12:52:43 , GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : cCodigo = LEFT(ALLTRIM(str(Oscatter.codigo))+strzero(0,7),7)+strzero(Oscatter.numvariedad,3);Err
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4145,6 +2289,52 @@ or :         11;Ultimo Alias Activo: CSRCURSOR;Ultimo registro:          1 ;DBF:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 XCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00001VRD0089.TMP;Ultimo Control activo: 
 09-11-2023 09:08:06 , Pila de llamadas
 09-11-2023 09:08:07 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
@@ -4157,6 +2347,52 @@ XCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00
 09-11-2023 09:08:08 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
 09-11-2023 09:08:08 , Nº de Linea :         23
 09-11-2023 09:08:08 , En el Fuente: Insert into CsrAuxcabefac (fecha,idtipoiva,idplanpago,switch,copiatkt,vencimien,parada,idlocalidad,idprovincia,idfletero,idfuerzavta,listaprecio,idrutavdor,idtiponcredito)       value (FechaHoraCero(Csrparaconfig.fecha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4286,6 +2522,52 @@ fac),3,thisform.lnidplanpago,thisform.tipoform+"00"+thisform.tipofactura+"0",1,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 XCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00001VRD01GS.TMP;Ultimo Control activo: 
 09-11-2023 09:17:08 , Pila de llamadas
 09-11-2023 09:17:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
@@ -4354,6 +2636,52 @@ XCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 fac),3,thisform.lnidplanpago,thisform.tipoform+"00"+thisform.tipofactura+"0",1,Csrparaconfig.fechafac,0,thisform.lnidlocalidad,thisform.lnidprovincia,Csrfletero.id       		,CsrFuerzavta.id,thisform.listadefecto,0,0)
 09-11-2023 09:17:11 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
 09-11-2023 09:17:12 , Objeto      : fechahoracero
@@ -4361,6 +2689,52 @@ fac),3,thisform.lnidplanpago,thisform.tipoform+"00"+thisform.tipofactura+"0",1,C
 09-11-2023 09:17:12 , Nº de Linea :       2524
 09-11-2023 09:17:12 , En el Fuente: ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
 09-11-2023 12:27:33 , MAIN, Error: No se encuentra la variable 'SUCURSAL'.;Linea : .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) );Error :         12;Ultimo Alias Activ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4511,6 +2885,52 @@ o: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00007RWP00AA.TMP;Ultimo Control activo: SUCURSAL
 09-11-2023 12:49:50 , Pila de llamadas
 09-11-2023 12:49:51 , Programa    : j:\xsoftsql\proyectos\leon\progs\main.fxp
@@ -4554,6 +2974,52 @@ o: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\T
 09-11-2023 12:49:59 , Nº de Linea :        105
 09-11-2023 12:49:59 , En el Fuente: 		.FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * 			IIF(m.lnHeightRatio < m.lnWidthRatio, 			m.lnHeightRatio, m.lnWidthRatio) ) )
 09-11-2023 12:50:20 , ABMPRODUCTO.RESIZE, Error: No se encuentra la variable 'SUCURSAL'.;Linea : .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) );Error :         12;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4633,6 +3099,52 @@ mo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\A
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00007RWP00IW.TMP;Ultimo Control activo: SUCURSAL
 09-11-2023 12:50:43 , Pila de llamadas
 09-11-2023 12:50:44 , Programa    : j:\xsoftsql\desarrollo\clases\mwresize.vct
@@ -4685,3 +3197,358 @@ Error :         12;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:          1 
 09-11-2023 12:50:54 , Base Objeto : j:\xsoftsql\desarrollo\clases\mwresize.vct
 09-11-2023 12:50:55 , Nº de Linea :        105
 09-11-2023 12:50:55 , En el Fuente: 		.FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * 			IIF(m.lnHeightRatio < m.lnWidthRatio, 			m.lnHeightRatio, m.lnWidthRatio) ) )
+09-11-2023 15:24:28 , REGFACCPRA.GRID2.COLUMN10.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'MINIMOBONICPRA'.;Linea : This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.boni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cpra);Error :         12;Ultimo Alias Activo: CSRCLASECTA;Ultimo registro:          9 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DVK90169.TMP;Ultimo Control activo: CANTKILOS
+09-11-2023 15:24:29 , Pila de llamadas
+09-11-2023 15:24:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:30 , Objeto      : regfaccpra.grid2.column10.text1.lostfocus
+09-11-2023 15:24:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:30 , Nº de Linea :          1
+09-11-2023 15:24:30 , En el Fuente: thisform.grid2_lostfocuskilos()
+09-11-2023 15:24:30 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:31 , Objeto      : regfaccpra.grid2_lostfocuskilos
+09-11-2023 15:24:31 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:31 , Nº de Linea :         13
+09-11-2023 15:24:31 , En el Fuente: 				.grid2_procesolinea(13)		
+09-11-2023 15:24:32 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:32 , Objeto      : regfaccpra.grid2_procesolinea
+09-11-2023 15:24:32 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:32 , Nº de Linea :         11
+09-11-2023 15:24:33 , En el Fuente:     thisform.totalcomprobante(1)
+09-11-2023 15:24:33 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:33 , Objeto      : regfaccpra.totalcomprobante
+09-11-2023 15:24:34 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:34 , Nº de Linea :        152
+09-11-2023 15:24:34 , En el Fuente: 					This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.bonicpra)
+09-11-2023 15:24:40 , REGFACCPRA.GRID2.COLUMN10.TEXT1.LOSTFOCUS, Error: No se encuentra la variable 'MINIMOBONICPRA'.;Linea : This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.boni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cpra);Error :         12;Ultimo Alias Activo: CSRCLASECTA;Ultimo registro:          9 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DVK90169.TMP;Ultimo Control activo: CANTKILOS
+09-11-2023 15:24:40 , Pila de llamadas
+09-11-2023 15:24:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:41 , Objeto      : regfaccpra.grid2.column10.text1.lostfocus
+09-11-2023 15:24:41 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:42 , Nº de Linea :          1
+09-11-2023 15:24:42 , En el Fuente: thisform.grid2_lostfocuskilos()
+09-11-2023 15:24:42 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:42 , Objeto      : regfaccpra.grid2_lostfocuskilos
+09-11-2023 15:24:43 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:43 , Nº de Linea :         13
+09-11-2023 15:24:43 , En el Fuente: 				.grid2_procesolinea(13)		
+09-11-2023 15:24:43 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:43 , Objeto      : regfaccpra.grid2_procesolinea
+09-11-2023 15:24:43 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:43 , Nº de Linea :         11
+09-11-2023 15:24:44 , En el Fuente:     thisform.totalcomprobante(1)
+09-11-2023 15:24:44 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:44 , Objeto      : regfaccpra.totalcomprobante
+09-11-2023 15:24:45 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:45 , Nº de Linea :        152
+09-11-2023 15:24:45 , En el Fuente: 					This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.bonicpra)
+09-11-2023 15:24:49 , REGFACCPRA.KEYPRESS, Error: No se encuentra la variable 'MINIMOBONICPRA'.;Linea : This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.bonicpra);Error :         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12;Ultimo Alias Activo: CSRCLASECTA;Ultimo registro:          9 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DVK90169.TMP;Ultimo Control activo: 
+09-11-2023 15:24:49 , Pila de llamadas
+09-11-2023 15:24:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:50 , Objeto      : regfaccpra.keypress
+09-11-2023 15:24:50 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:50 , Nº de Linea :         13
+09-11-2023 15:24:50 , En el Fuente: 	   	    .k_escape()   		
+09-11-2023 15:24:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:50 , Objeto      : regfaccpra.k_escape
+09-11-2023 15:24:50 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:51 , Nº de Linea :         22
+09-11-2023 15:24:51 , En el Fuente:    		thisform.grid2_procesolinea(27)
+09-11-2023 15:24:51 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:51 , Objeto      : regfaccpra.grid2_procesolinea
+09-11-2023 15:24:51 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:51 , Nº de Linea :         14
+09-11-2023 15:24:52 , En el Fuente: 	thisform.containerencabeza.kitbuscaoaltaenCtacte.txtexiste1.SetFocus()
+09-11-2023 15:24:52 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:52 , Objeto      : regfaccpra.grid2.column10.text1.lostfocus
+09-11-2023 15:24:53 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:53 , Nº de Linea :          1
+09-11-2023 15:24:53 , En el Fuente: thisform.grid2_lostfocuskilos()
+09-11-2023 15:24:53 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:54 , Objeto      : regfaccpra.grid2_lostfocuskilos
+09-11-2023 15:24:54 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:54 , Nº de Linea :         13
+09-11-2023 15:24:54 , En el Fuente: 				.grid2_procesolinea(13)		
+09-11-2023 15:24:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:54 , Objeto      : regfaccpra.grid2_procesolinea
+09-11-2023 15:24:54 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:55 , Nº de Linea :         11
+09-11-2023 15:24:55 , En el Fuente:     thisform.totalcomprobante(1)
+09-11-2023 15:24:55 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:55 , Objeto      : regfaccpra.totalcomprobante
+09-11-2023 15:24:55 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:24:55 , Nº de Linea :        152
+09-11-2023 15:24:56 , En el Fuente: 					This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.bonicpra)
+09-11-2023 15:31:13 , REGFACCPRA.GRID2.COLUMN10.TEXT1.LOSTFOCUS, Error: No coinciden los tipos de datos.;Linea : nTotalBoni =  ((nBoniCpra * nBase	) / 100);Error :          9;Ultimo Alias Activo: CSRCLASECTA;Ultimo registro:          9 ;DBF: C:\USERS\MAR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COS\APPDATA\LOCAL\TEMP\00002GAX00FU.TMP;Ultimo Control activo: CANTKILOS
+09-11-2023 15:31:13 , Pila de llamadas
+09-11-2023 15:31:14 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:14 , Objeto      : regfaccpra.grid2.column10.text1.lostfocus
+09-11-2023 15:31:14 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:14 , Nº de Linea :          1
+09-11-2023 15:31:15 , En el Fuente: thisform.grid2_lostfocuskilos()
+09-11-2023 15:31:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:15 , Objeto      : regfaccpra.grid2_lostfocuskilos
+09-11-2023 15:31:15 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:15 , Nº de Linea :         13
+09-11-2023 15:31:16 , En el Fuente: 				.grid2_procesolinea(13)		
+09-11-2023 15:31:16 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:16 , Objeto      : regfaccpra.grid2_procesolinea
+09-11-2023 15:31:16 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:16 , Nº de Linea :         11
+09-11-2023 15:31:17 , En el Fuente:     thisform.totalcomprobante(1)
+09-11-2023 15:31:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:17 , Objeto      : regfaccpra.totalcomprobante
+09-11-2023 15:31:17 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:17 , Nº de Linea :        152
+09-11-2023 15:31:17 , En el Fuente: 					This.TotalBoniCpra(@lnRecoDevol,IIF(lnpesable =0,lnCant,CsrAuxCuerfac.CantKilos),CsrAuxCuerfac.minimobonicpra,CsrAuxCuerfac.bonicpra)
+09-11-2023 15:31:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:18 , Objeto      : regfaccpra.totalbonicpra
+09-11-2023 15:31:18 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:31:18 , Nº de Linea :         12
+09-11-2023 15:31:18 , En el Fuente: 	nTotalBoni =  ((nBoniCpra * nBase	) / 100)
+09-11-2023 15:44:40 , REGFACCPRA.GRID2.COLUMN1.TEXT1.LOSTFOCUS, Error: El campo MINIMOBONICPRA no acepta valores NULL.;Linea : replace minimobonicpra WITH CsrProducto.minimobonicpra, bonicpra WITH CsrProducto.boniCpra IN CsrAuxCuerfac;Error :       1581;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ultimo Alias Activo: CSRPARACONTA;Ultimo registro:         19 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00002GAX01W5.TMP;Ultimo Control activo: CODIGO
+09-11-2023 15:44:40 , Pila de llamadas
+09-11-2023 15:44:40 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:44:40 , Objeto      : regfaccpra.grid2.column1.text1.lostfocus
+09-11-2023 15:44:40 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:44:40 , Nº de Linea :          4
+09-11-2023 15:44:41 , En el Fuente: 		thisform.kitbuscarProd.f_lostfocusSay()
+09-11-2023 15:44:41 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:44:41 , Objeto      : regfaccpra.kitbuscarprod.f_lostfocussay
+09-11-2023 15:44:41 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 15:44:42 , Nº de Linea :         37
+09-11-2023 15:44:42 , En el Fuente: 	replace minimobonicpra WITH CsrProducto.minimobonicpra, bonicpra WITH CsrProducto.boniCpra IN CsrAuxCuerfac
+09-11-2023 16:18:04 , REGFACCPRA.CMDRECUPERAR.CLICK, Error: No se encuentra la propiedad CONSULTANDOCOMPROBANTE.;Linea : IF NOT thisform.consultandocomprobante;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ;DBF: C:\USE
+
+
+
+
+
+
+
+
+
+
+
+RS\MARCOS\APPDATA\LOCAL\TEMP\00002GAX09ZD.TMP;Ultimo Control activo: 
+09-11-2023 16:18:05 , Pila de llamadas
+09-11-2023 16:18:05 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:18:05 , Objeto      : regfaccpra.cmdrecuperar.click
+09-11-2023 16:18:05 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:18:05 , Nº de Linea :          1
+09-11-2023 16:18:06 , En el Fuente: IF NOT thisform.consultandocomprobante
+09-11-2023 16:19:10 , REGFACCPRA.CMDRECUPERAR.CLICK, Error: No se encuentra la propiedad ORDEN.;Linea : thisform.orden = nOrden;Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
+
+
+02GAX0AD1.TMP;Ultimo Control activo: 
+09-11-2023 16:19:10 , Pila de llamadas
+09-11-2023 16:19:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:19:11 , Objeto      : regfaccpra.cmdrecuperar.click
+09-11-2023 16:19:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:19:11 , Nº de Linea :          2
+09-11-2023 16:19:12 , En el Fuente: 	thisform.temp_load()
+09-11-2023 16:19:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:19:12 , Objeto      : regfaccpra.temp_load
+09-11-2023 16:19:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:19:12 , Nº de Linea :         76
+09-11-2023 16:19:12 , En el Fuente: thisform.orden = nOrden
+09-11-2023 16:29:28 , REGFACCPRA.CMDRECUPERAR.CLICK, Error: No se encuentra la variable 'LISTAPRECIO'.;Linea : lnLista = CsrAuxCabefac.listaprecio;Error :         12;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APP
+
+
+
+
+
+
+DATA\LOCAL\TEMP\00002GAX0BIF.TMP;Ultimo Control activo: 
+09-11-2023 16:29:29 , Pila de llamadas
+09-11-2023 16:29:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:29:29 , Objeto      : regfaccpra.cmdrecuperar.click
+09-11-2023 16:29:29 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:29:29 , Nº de Linea :          2
+09-11-2023 16:29:30 , En el Fuente: 	thisform.temp_load()
+09-11-2023 16:29:30 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:29:30 , Objeto      : regfaccpra.temp_load
+09-11-2023 16:29:30 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:29:31 , Nº de Linea :         30
+09-11-2023 16:29:31 , En el Fuente: 		lnLista = CsrAuxCabefac.listaprecio
+09-11-2023 16:30:43 , REGFACCPRA.CMDRECUPERAR.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : IF lnopcion=1;Error :        107;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          4 ;DBF: C:\USERS\MARCOS\AP
+
+
+
+PDATA\LOCAL\TEMP\00002GAX0BW7.TMP;Ultimo Control activo: CODIGO
+09-11-2023 16:30:43 , Pila de llamadas
+09-11-2023 16:30:43 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:30:43 , Objeto      : regfaccpra.cmdrecuperar.click
+09-11-2023 16:30:43 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:30:43 , Nº de Linea :          2
+09-11-2023 16:30:44 , En el Fuente: 	thisform.temp_load()
+09-11-2023 16:30:44 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:30:44 , Objeto      : regfaccpra.temp_load
+09-11-2023 16:30:44 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:30:44 , Nº de Linea :         73
+09-11-2023 16:30:44 , En el Fuente: 	thisform.totalcomprobante()
+09-11-2023 16:30:45 , Programa    : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:30:45 , Objeto      : regfaccpra.totalcomprobante
+09-11-2023 16:30:45 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regfaccpra.sct
+09-11-2023 16:30:46 , Nº de Linea :         29
+09-11-2023 16:30:46 , En el Fuente: IF lnopcion=1	
