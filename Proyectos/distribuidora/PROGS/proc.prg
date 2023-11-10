@@ -1551,6 +1551,8 @@ IF lok
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 	Goapp.empresaemail			= DefaultVar('CsrEmpresa.email','')
 	Goapp.empresaautoservicio		= DefaultVar('CsrEmpresa.autoservicio',0)
+	goapp.empresaCoorX			= DefaultVar('CsrEmpresa.coorX',0)
+	goapp.empresaCoorY			= DefaultVar('CsrEmpresa.coorY',0)
 ENDIF
    
 IF USED("Csrseteotermi")

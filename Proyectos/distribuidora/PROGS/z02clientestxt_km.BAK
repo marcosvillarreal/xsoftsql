@@ -42,8 +42,7 @@ ENDTEXT
 =CrearCursorAdapter('CsrListaP',lcCmd)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrLocalidad.*,Provincia.codsicore FROM Localidad as CsrLocalidad
-inner join Provincia on CsrLocalidad.idprovincia = Provincia.id
+SELECT CsrLocalidad.*FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 SELECT CsrLocalidad
