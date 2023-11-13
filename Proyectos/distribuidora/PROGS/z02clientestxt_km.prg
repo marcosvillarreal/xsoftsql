@@ -58,7 +58,7 @@ cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientesexp.csv"
 =LeerClientes(cArchivo)
 
 SELECT CsrDeudor
-vista()
+*vista()
 
 
 
@@ -71,7 +71,7 @@ SELECT distinct codlocalidad,CAST(0 as numeric(10)) as idlocalidad,UPPER(localid
 
 SELECT CsrCiudad
 *DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
-*vista()
+vista()
 
 *stop()
 SCAN 
@@ -91,7 +91,7 @@ SCAN
 	*lnCodProvincia = IIF(lnCodProvincia = 0 ,1,lnCodProvincia )
 	SELECT CsrLocalidad
 	
-	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada AND VAL(codsicore) = lnCodProvincia
+	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada && AND VAL(codsicore) = lnCodProvincia
 	IF VAL(CsrCiudad.codpostal)=8138
 		*vista()
 	ENDIF 
@@ -106,9 +106,8 @@ SCAN
 		ENDIF 
 		replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
 	ELSE
-		LOCATE FOR VAL(cpostal) = 7500 &&TresArroyos
+		LOCATE FOR VAL(cpostal) = 8503 &&Conesa
 		IF id#0
-			*replace localidad WITH CsrLocalidad.nombre,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
 			replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
 		ENDIF 
 	ENDIF 
@@ -116,182 +115,186 @@ SCAN
 ENDSCAN
 
 SELECT CsrCiudad
-vista()
+*vista()
 
-*!*	SELECT CsrCateIBRng
-*!*	LOCATE FOR numero = 2
+SELECT CsrCateIBRng
+LOCATE FOR numero = 1
 
-*!*	lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
-*!*	SELECT distinct UPPER(lista) as nombre,codlista FROM CsrDeudor INTO CURSOR CsrListaPrecio
-*!*	SELECT CsrListaPrecio
-*!*	*vista()
+SELECT distinct UPPER(lista) as nombre,codlista FROM CsrDeudor INTO CURSOR CsrListaPrecio
+SELECT CsrListaPrecio
+*vista()
 
-*!*	SELECT CsrDeudor
-*!*	Oavisar.proceso('S','Procesando '+alias()) 
-*!*	GO TOP
-*!*	*VISTA()
+SELECT CsrDeudor
+Oavisar.proceso('S','Procesando '+alias()) 
+GO TOP
+*VISTA()
 
-*!*	LOCAL nCodigo,cCadeCtacte 
-*!*	cCadeCtacte = ''
-*!*	nCodigo = 1
-*!*	*stop()
-*!*	SCAN 
+LOCAL nCodigo,cCadeCtacte 
+cCadeCtacte = ''
+nCodigo = 1
+*stop()
+SCAN 
 
-*!*	*!*		lnCodigo = CsrDeudor.idorigen
-*!*	*!*	 	SELECT CsrCtacte
-*!*	*!*	 	LOCATE FOR VAL(cnumero) = lnCodigo
-*!*	*!*	 	IF VAL(cnumero) = lnCodigo
-*!*	*!*	 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
-*!*	*!*	 		SELECT CsrDeudor
-*!*	*!*	 		LOOP 
-*!*	*!*	 		
-*!*	*!*	 	ENDIF 
-*!*	 	
-*!*	 	SELECT CsrDeudor 
-*!*	 	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
-*!*	 			,lnidcateibrng ,lncomision ,lnidlocalidad ,lnidprovincia ,lntipoiva ,lnidcategoria;
-*!*				,lnidplanpago ,lnidcanalvta ,lnsaldoAuto ,lnlista ,lncomision ,lnconvenio,lndctalogistica;
-*!*				,lnbonif1
-*!*		
-*!*	 	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
-*!*	 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
-*!*	 	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
-*!*	 	
-*!*	*!*	 	nCodigo			= lnCodigo	
-*!*	 	lcReferencia	= ALLTRIM(CsrDeudor.codigo)
-*!*	 	lnctadeudor		= 1
-*!*	 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
-*!*	 	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
-*!*		lnidcanalvta	= 1100000001
-*!*		lnlista			= CsrDeudor.codlista
-*!*		
-*!*		IF lnLista > 2
-*!*			SELECT CsrCanalVta
-*!*			LOCATE FOR numero = lnLista
-*!*			
-*!*			lnidcanalvta = CsrCanalVta.id
-*!*			lnLista = 0
-*!*		ENDIF 
-*!*		&&Si el cliente tiene otra lista de precio mayor a 2. Entonces le cambiamos el canal de vta
-*!*		SELECT CsrListaP
-*!*		LOCATE FOR numero = lnLista
-*!*		IF numero <> lnLista
-*!*			GO TOP 
-*!*			lnLista = CsrListaP.id
-*!*		ENDIF 
-*!*			
-*!*		&&Localidad
-*!*		SELECT CsrCiudad
-*!*		LOCATE FOR UPPER(nombre) = upper(CsrDeudor.localidad)
-*!*		lnidlocalidad	= CsrCiudad.idlocalidad
-*!*		
-*!*		*lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
-*!*		SELECT CsrLocalidad
-*!*		*GO TOP 
-*!*		LOCATE FOR id = lnidlocalidad
-*!*		IF id = lnidlocalidad
-*!*			lnidprovincia	= CsrLocalidad.idprovincia
-*!*			lccp 			= CsrLocalidad.cpostal
-*!*			lnidlocalidad	= CsrLocalidad.id
-*!*		ENDIF
-*!*		
-*!*		
-*!*		&&TresPImp	
-*!*		cTipoiva	= UPPER(CsrDeudor.TipoIVA)
-*!*		
-*!*		DO CASE 
-*!*		CASE "FINAL"$cTipoiva &&CF
-*!*			lntipoiva = 3		
-*!*		CASE"EXENTO"$cTipoiva &&EX sin impuestos?
-*!*			lntipoiva = 4	
-*!*		CASE "INSCRIPTO"$cTipoiva&&RI
-*!*			lnTipoiva = 1
-*!*		OTHERWISE 
-*!*			lntipoiva = 5
-*!*		ENDCASE 
-*!*		
-*!*		lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
-*!*		IF lntipoiva<>3
-*!*			*IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
-*!*				lcCuit			= Cuit(lcNroDoc)
-*!*				lcNroDoc		= ''
-*!*			*ENDIF 
-*!*		ENDIF
-*!*		
+*!*		lnCodigo = CsrDeudor.idorigen
+*!*	 	SELECT CsrCtacte
+*!*	 	LOCATE FOR VAL(cnumero) = lnCodigo
+*!*	 	IF VAL(cnumero) = lnCodigo
+*!*	 		cCadeCtacte = LTRIM(cCadeCtacte) + IIF(LEN(LTRIM(cCadeCtacte)) != 0,",","") + ltrim(CsrDeudor.codigo)
+*!*	 		SELECT CsrDeudor
+*!*	 		LOOP 
+*!*	 		
+*!*	 	ENDIF 
+ 	
+ 	SELECT CsrDeudor 
+ 	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
+ 			,lnidcateibrng ,lncomision ,lnidlocalidad ,lnidprovincia ,lntipoiva ,lnidcategoria;
+			,lnidplanpago ,lnidcanalvta ,lnsaldoAuto ,lnlista ,lncomision ,lnconvenio,lndctalogistica;
+			,lnbonif1
+	
+ 	STORE 1100000001 TO lnidbarrio, lnidcategoria, lnlista
+ 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
+ 	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
+ 	
+*!*	 	nCodigo			= lnCodigo	
+ 	lcReferencia	= ALLTRIM(CsrDeudor.referencia)
+ 	lnctadeudor		= 1
+ 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
+ 	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
+	lnidcanalvta	= 1100000001
+	lnlista			= CsrDeudor.codlista
+	
+	IF lnLista > 2
+		SELECT CsrCanalVta
+		LOCATE FOR numero = lnLista
+		
+		lnidcanalvta = CsrCanalVta.id
+		lnLista = 0
+	ENDIF 
+	&&Si el cliente tiene otra lista de precio mayor a 2. Entonces le cambiamos el canal de vta
+	SELECT CsrListaP
+	LOCATE FOR numero = lnLista
+	IF numero <> lnLista
+		GO TOP 
+		lnLista = CsrListaP.id
+	ENDIF 
+		
+	&&Localidad
+	SELECT CsrCiudad
+	LOCATE FOR UPPER(nombre) = upper(CsrDeudor.localidad)
+	lnidlocalidad	= CsrCiudad.idlocalidad
+	
+	*lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
+	SELECT CsrLocalidad
+	*GO TOP 
+	LOCATE FOR id = lnidlocalidad
+	IF id = lnidlocalidad
+		lnidprovincia	= CsrLocalidad.idprovincia
+		lccp 			= CsrLocalidad.cpostal
+		lnidlocalidad	= CsrLocalidad.id
+	ENDIF
+	
+	
+	&&TresPImp	
+	cTipoiva	= 1 &&UPPER(CsrDeudor.TipoIVA)
+	
+	DO CASE 
+	CASE "FINAL"$cTipoiva &&CF
+		lntipoiva = 3		
+	CASE"EXENTO"$cTipoiva &&EX sin impuestos?
+		lntipoiva = 4	
+	CASE "INSCRIPTO"$cTipoiva&&RI
+		lnTipoiva = 1
+	OTHERWISE 
+		lntipoiva = 5
+	ENDCASE 
+	
+	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
+	IF VAL(lcNroDoc)=0
+		lntipoiva = 3
+	ENDIF 
+	
+	IF lntipoiva<>3
+		*IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
+			lcCuit			= Cuit(lcNroDoc)
+			lcNroDoc		= ''
+		*ENDIF 
+	ENDIF
+	
 
-*!*		lcnumero	= strtrim(nCodigo,8)
-*!*		
-*!*		lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
-*!*		
-*!*		IF nCodigo = 19
-*!*		*	stop()
-*!*		ENDIF 
-*!*		
-*!*		lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
-*!*	  	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
-*!*	  	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
-*!*	  	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
-*!*	  	
-*!*	  	cDireNro	= IIF(ALLTRIM(lcDire_Nro)='0' or LEN(lcDire_Nro)=0,'',lcDire_Nro)
-*!*	  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
-*!*		cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
-*!*		
-*!*	  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + cDireNro + " "+ cDirePiso + " "+cDireDpto)
-*!*	 	
-*!*	  	*lcDireccion = RTRIM(UPPER(CsrDeudor.direccion)) + ' ' + ALLTRIM(CsrDeudor.direnro) + ' ' + ALLTRIM(CsrDeudor.direpiso) + ' ' + ALLTRIM(CsrDeudor.diredpto)
-*!*	  	lcTelefono	= LTRIM(CsrDeudor.telefono)
+	lcnumero	= strtrim(nCodigo,8)
+	
+	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
+	
+	IF nCodigo = 19
+	*	stop()
+	ENDIF 
+	
+	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
+  	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
+  	lcDire_Piso	= RTRIM(UPPER(CsrDeudor.direpiso))
+  	lcDire_Dpto	= RTRIM(UPPER(CsrDeudor.diredpto))
+  	
+  	cDireNro	= IIF(ALLTRIM(lcDire_Nro)='0' or LEN(lcDire_Nro)=0,'',lcDire_Nro)
+  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
+	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
+	
+  	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + cDireNro + " "+ cDirePiso + " "+cDireDpto)
+ 	
+  	*lcDireccion = RTRIM(UPPER(CsrDeudor.direccion)) + ' ' + ALLTRIM(CsrDeudor.direnro) + ' ' + ALLTRIM(CsrDeudor.direpiso) + ' ' + ALLTRIM(CsrDeudor.diredpto)
+  	lcTelefono	= LTRIM(CsrDeudor.telefono)
 
-*!*	  	IF LEN(ALLTRIM(lcTelefono)) = 0
-*!*	  		lcTelefono	= LTRIM(CsrDeudor.telefono2)
-*!*	  	ELSE
-*!*	  		IF LEN(ALLTRIM(CsrDeudor.telefono2)) <> 0
-*!*	  			lcObserva	= lcObserva + CHR(13) + "TELEFONO: " +LTRIM(CsrDeudor.telefono2)
-*!*	  		ENDIF 
-*!*	  	ENDIF 
-*!*	  	IF LEN(ALLTRIM(CsrDeudor.CELULAR)) <> 0
-*!*	  		lcObserva	= lcObserva + CHR(13) + "CELULAR: " +LTRIM(CsrDeudor.celular)
-*!*	  	ENDIF 
-*!*	  	IF LEN(ALLTRIM(CsrDeudor.fax)) <> 0
-*!*	  		lcObserva	= lcObserva + CHR(13) + "FAX: " +LTRIM(CsrDeudor.fax)
-*!*	  	ENDIF 
-*!*	  
-*!*	  	lcFax		= LTRIM(CsrDeudor.fax)
-*!*	  	&&Tenemos que agregar el otro telefono a observaciones
-*!*	  	ldfechac	= ctod(CsrDeudor.fecAlta)
-*!*	  	lcEmail		= LTRIM(CsrDeudor.email)
-*!*	  	
-*!*	  	IF lnTipoIva <> 3 &&Sin no es CF y de RN le adjuntamos la percepcion
-*!*			IF lnidprovincia = 1100000022
-*!*				lnidcateibrng = CsrCateIBRNg.id		
-*!*				lnporperce = CsrCateIbRNg.porperce
-*!*				lnporrete = CsrCateIbRNg.porrete
-*!*			ENDIF 
-*!*		ENDIF 
-*!*		
-*!*		INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
-*!*		,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
-*!*		,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
-*!*		,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
-*!*		,bonif1,email,observa,cdatosfac,dni,referencia,bonif1);
-*!*		VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
-*!*		,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
-*!*		,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
-*!*		,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
-*!*		,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
-*!*		,lnbonif1)
-*!*		
-*!*		IF lnidcateibrng#0
-*!*			INSERT INTO CsrCateIbrn(idctacte, cuit, porperce,porrete);
-*!*			VALUES (lnid, lccuit,lnporperce,lnporrete)
-*!*		ENDIF 
-*!*		
-*!*		
-*!*		lnid = lnid + 1
-*!*		nCodigo = nCodigo + 1 
-*!*		
-*!*		SELECT CsrDeudor           
-*!*	ENDSCAN
+  	IF LEN(ALLTRIM(lcTelefono)) = 0
+  		lcTelefono	= LTRIM(CsrDeudor.telefono2)
+  	ELSE
+  		IF LEN(ALLTRIM(CsrDeudor.telefono2)) <> 0
+  			lcObserva	= lcObserva + CHR(13) + "TELEFONO: " +LTRIM(CsrDeudor.telefono2)
+  		ENDIF 
+  	ENDIF 
+  	IF LEN(ALLTRIM(CsrDeudor.CELULAR)) <> 0
+  		lcObserva	= lcObserva + CHR(13) + "CELULAR: " +LTRIM(CsrDeudor.celular)
+  	ENDIF 
+  	IF LEN(ALLTRIM(CsrDeudor.fax)) <> 0
+  		lcObserva	= lcObserva + CHR(13) + "FAX: " +LTRIM(CsrDeudor.fax)
+  	ENDIF 
+  
+  	lcFax		= LTRIM(CsrDeudor.fax)
+  	&&Tenemos que agregar el otro telefono a observaciones
+  	ldfechac	= ctod(CsrDeudor.fecAlta)
+  	lcEmail		= LTRIM(CsrDeudor.email)
+  	
+  	IF lnTipoIva <> 3 &&Sin no es CF y de RN le adjuntamos la percepcion
+		IF lnidprovincia = 1100000022
+			lnidcateibrng = CsrCateIBRNg.id		
+			lnporperce = CsrCateIbRNg.porperce
+			lnporrete = CsrCateIbRNg.porrete
+		ENDIF 
+	ENDIF 
+	
+	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
+	,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
+	,bonif1,email,observa,cdatosfac,dni,referencia,bonif1);
+	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
+	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
+	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
+	,"",lnsaldoAuto,ldfechac,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
+	,lnconvenio,lndctalogistica,lnBonif1,lcEmail,lcObserva,lcDatosFac,lcDNI,lcReferencia;
+	,lnbonif1)
+	
+	IF lnidcateibrng#0
+		INSERT INTO CsrCateIbrn(idctacte, cuit, porperce,porrete);
+		VALUES (lnid, lccuit,lnporperce,lnporrete)
+	ENDIF 
+	
+	
+	lnid = lnid + 1
+	nCodigo = nCodigo + 1 
+	
+	SELECT CsrDeudor           
+ENDSCAN
 
 *!*	SELECT MAX(CAST(cnumero as i)) as codigo FROM CsrCtacte INTO CURSOR CsrMaxNumero READWRITE 
 

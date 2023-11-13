@@ -77,6 +77,9 @@ DO WHILE NOT EOF()
 			ENDIF
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
+			IF lcCodigo='181'
+			*	stop()
+			ENDIF 
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
 			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireccion)))
 			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLocalidad)))

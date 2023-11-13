@@ -35,7 +35,7 @@ leiunarticulo = .f.
 ldebug = .t.
 
 SKIP 
-*stop()
+stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 8 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -77,6 +77,9 @@ DO WHILE NOT EOF()
 			ENDIF
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
+			IF lcCodigo='181'
+				stop()
+			ENDIF 
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
 			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireccion)))
 			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLocalidad)))
@@ -127,7 +130,7 @@ DO WHILE NOT EOF()
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
-		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ),cReferencia)
+		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ),lcReferencia)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
