@@ -122,7 +122,7 @@ DO WHILE NOT EOF()
 			LOOP
 		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
-		
+		lcCodLista = '1'
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;

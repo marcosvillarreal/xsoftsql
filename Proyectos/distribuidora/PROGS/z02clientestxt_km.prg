@@ -31,6 +31,7 @@ llok = CargarTabla(lcData,'Ruta',.t.)
 llok = CargarTabla(lcData,'RutaVdor',.t.)
 llok = CargarTabla(lcData,'CabeRuta',.t.)
 llok = CargarTabla(lcData,'CuerRuta',.t.)
+llok = CargarTabla(lcData,'FuerzaVta')
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrCateIbrng.* FROM CateIbrng as CsrCateIbrng
@@ -69,9 +70,11 @@ SELECT distinct codlocalidad,CAST(0 as numeric(10)) as idlocalidad,UPPER(localid
  FROM CsrDeudor  ORDER BY PROVINCIA, NOMBRE INTO CURSOR CsrCiudad READWRITE 
 
 
+
+
 SELECT CsrCiudad
 *DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
-vista()
+*vista()
 
 *stop()
 SCAN 
@@ -125,6 +128,62 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT distinct UPPER(lista) as nombre,codlista FROM CsrDeudor INTO CURSOR CsrListaPrecio
 SELECT CsrListaPrecio
 *vista()
+
+
+sELECT distinct vendedor as nombre  FROM CsrDeudor  INTO CURSOR FsrVendedor READWRITE 
+sELECT * FROM FsrVendedor INTO CURSOR FsrZona READWRITE 
+
+
+lnid = RecuperarID('CsrVendedor',Goapp.sucursal10)
+lnCodigo = 1
+SELECT FsrVendedor
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+   IF LEN(ltrim(nombre))=0
+       loop
+   ENDIF
+   lnprevta = 1
+   lnestado = 1
+   lnnumero	= lnCodigo 
+   lcnombre	= NombreNi(alltrim(UPPER(FsrVendedor.nombre)))
+   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale);
+   			 VALUES (lnid,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0)
+   lnid = lnid + 1
+	lnCodigo = lnCodigo + 1 
+ENDSCAN
+
+lnid = RecuperarID('CsrZona',Goapp.sucursal10)
+SELECT FsrZona
+lnCodigo = 1
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()  
+   lcnombre= NombreNi(alltrim(UPPER(fsrzona.nombre)))
+   lnnumero	= lnCodigo     
+   INSERT INTO CsrZona (id,numero,nombre,porflete,abrevia);
+   			 VALUES (lnid,lnNUMERO,lcnombre,0,LEFT(lcnombre,3))
+   
+   lnid = lnid + 1
+   lnCodigo = lnCodigo + 1 
+ENDSCAN
+
+LOCAL lnidcabeza, lnidrutavdor,lnidzonaruta,lnidcuerruta,lnidruta
+
+lnidruta= RecuperarID('CsrRuta',Goapp.sucursal10)
+*****
+lnidcabeza = RecuperarID('CsrCabeRuta',Goapp.sucursal10)
+*******
+lnidrutavdor = RecuperarID('CsrRutaVdor',Goapp.sucursal10)
+*****
+lnidzonaruta = RecuperarID('CsrZonaRuta',Goapp.sucursal10)
+*******
+lnidcuerruta = RecuperarID('CsrCuerRuta',Goapp.sucursal10)
+
+
+SELECT CsrFuerzaVta
+GO TOP 
+lnidfuerzavta  = CsrFuerzaVta.id
 
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -199,26 +258,29 @@ SCAN
 	&&TresPImp	
 	cTipoiva	= 1 &&UPPER(CsrDeudor.TipoIVA)
 	
-	DO CASE 
-	CASE "FINAL"$cTipoiva &&CF
-		lntipoiva = 3		
-	CASE"EXENTO"$cTipoiva &&EX sin impuestos?
-		lntipoiva = 4	
-	CASE "INSCRIPTO"$cTipoiva&&RI
-		lnTipoiva = 1
-	OTHERWISE 
-		lntipoiva = 5
-	ENDCASE 
+*!*		DO CASE 
+*!*		CASE "FINAL"$cTipoiva &&CF
+*!*			lntipoiva = 3		
+*!*		CASE"EXENTO"$cTipoiva &&EX sin impuestos?
+*!*			lntipoiva = 4	
+*!*		CASE "INSCRIPTO"$cTipoiva&&RI
+*!*			lnTipoiva = 1
+*!*		OTHERWISE 
+*!*			lntipoiva = 5
+*!*		ENDCASE 
 	
 	lcNroDoc		= strtrim(VAL(PeloCuit(CsrDeudor.Documento)),15)
 	IF VAL(lcNroDoc)=0
 		lntipoiva = 3
 	ENDIF 
 	
-	IF lntipoiva<>3
+	lcCuit			= Cuit(lcNroDoc)
+	IF LEN(LTRIM(lcCuit))<>0
+	*IF lntipoiva<>3
 		*IF ALLTRIM(CsrDeudor.tipodoc)$'CUIT'
-			lcCuit			= Cuit(lcNroDoc)
+		*	lcCuit			= Cuit(lcNroDoc)
 			lcNroDoc		= ''
+			lntipoiva	= 1
 		*ENDIF 
 	ENDIF
 	
@@ -289,9 +351,81 @@ SCAN
 		VALUES (lnid, lccuit,lnporperce,lnporrete)
 	ENDIF 
 	
-	
 	lnid = lnid + 1
 	nCodigo = nCodigo + 1 
+	
+	&&Asiganamos la ruta
+	IF LEN(LTRIM(CsrDEudor.vendedor))>0
+	
+		SELECT CsrVendedor
+		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+		IF ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+			SELECT CsrDeudor
+			LOOP
+		ENDIF 	
+		
+		SELECT CsrZona
+		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+		IF ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+			SELECT CsrZona
+		 	GO TOP 
+	     ENDIF
+	    
+	    SELECT CsrRuta
+		LOCATE FOR nombre=TRIM(Csrzona.nombre)
+		IF nombre#TRIM(Csrzona.nombre)
+			INSERT INTO CsrRuta (id,numero,nombre) ;
+			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre))		     		
+			lnidRuta = lnidRuta + 1
+			lnNumRuta = lnNumRuta + 1 
+		ENDIF 
+		
+		SELECT Csrzonaruta
+		LOCATE FOR idzona=Csrzona.id AND idruta = Csrruta.id
+		IF idzona#Csrzona.id OR idruta # Csrruta.id
+			INSERT INTO Csrzonaruta (id,idzona,idruta,switch);
+			VALUES (lnidzonaruta,Csrzona.id,Csrruta.id,'00000')
+			lnidzonaruta = lnidzonaruta + 1
+	    ENDIF 
+	      
+		SELECT CsrRutaVdor
+		LOCATE FOR idvendedor=Csrvendedor.id  AND idruta=Csrruta.id
+		IF !FOUND() OR !(idvendedor=Csrvendedor.id  AND  idruta=Csrruta.id )
+			INSERT INTO CsrRutaVdor (id,idruta,idvendedor,switch,idfuerzavta);
+			VALUES (lnidrutavdor,Csrruta.id,Csrvendedor.id,'00000',lnidfuerzavta )
+			lnidrutavdor = lnidrutavdor + 1
+
+		ENDIF 
+		
+		lcdias = "2" &&ALLTRIM(STR(CsrRecorrido.carpeta)) Lunes
+		FOR i=1 TO LEN(lcdias)
+			SELECT CsrCaberuta
+			LOCATE FOR idrutavdor=Csrrutavdor.id AND dia=VAL(SUBSTR(lcdias,i,1))
+			IF idrutavdor#Csrrutavdor.id OR dia#VAL(SUBSTR(lcdias,i,1))
+				INSERT INTO Csrcaberuta (id,idrutavdor,dia) ;
+				VALUES (lnidcabeza,Csrrutavdor.id,VAL(SUBSTR(lcdias,i,1)))
+				lnidcabeza = lnidcabeza + 1
+			ENDIF 
+			
+			SELECT CsrCuerruta
+			COUNT ALL FOR idcaberuta=Csrcaberuta.id TO nOrden
+			nOrden = nOrden + 1 
+		
+			&&IF CsrRecorrido.orden#0
+			      SELECT CsrCuerruta
+			      LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id &&AND orden=Csrrecorrido.orden
+			      IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id &&OR orden#CsrRecorrido.orden
+	   				INSERT INTO Csrcuerruta (id,idcaberuta,idctacte,orden,turno) ;
+	   				VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,nOrden,1)
+	   				lnidcuerruta = lnidcuerruta + 1
+				ENDIF 		   				
+			&&ENDIF 	   				
+		NEXT 
+		  
+	ENDIF 
+	
+	
+	
 	
 	SELECT CsrDeudor           
 ENDSCAN
