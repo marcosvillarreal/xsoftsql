@@ -1,4 +1,4 @@
-&&Fuentes de importacion de archivos de texto para elsureño (Jaque Acces)
+&&Fuentes de importacion de archivos de texto para km (Galileo)
 FUNCTION LeerClientes(cArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
@@ -54,7 +54,7 @@ DO WHILE NOT EOF()
 		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
 		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
 		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodProvincia	,lcCodLocalidad,lcLista
-		STORE "" to lcReferencia
+		STORE "" to lcReferencia,cLista3
 		
 		j = 0
 *!*		ELSE
@@ -142,11 +142,12 @@ USE IN CsrLista
 
 ENDFUNC 
 
-FUNCTION LeerArticulos(lcArchivo)
+FUNCTION LeerArticulosKM(lcArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
-		,Alicuota c(8),UniBulto c(10),UniVenta c(1),Costo c(15),CodRubro c(6),IDJ c(8))
+		,Alicuota c(8),UniBulto c(10),UniVenta c(1),Costo c(15),CodRubro c(6);
+		,IDJ c(8),Lista1 c(15),Lista2 c(15),Lista3 c(15),Lista4 c(15))
 
 SELECT CsrLista
 APPEND FROM  &cArchivo SDF
@@ -169,8 +170,8 @@ leiunarticulo = .f.
 
 SKIP 
 *STOP()
-SCAN 
-	lnCantCampo = 6 &&Hay un campo vacio
+DO WHILE NOT EOF()
+	lnCantCampo = 21 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -184,6 +185,7 @@ SCAN
 		STORE "" TO lcAcarreo
 		STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta
 		STORE "" TO lcCosto, lcLista1, lcLista2,lcIDJ ,lcUniBulto,lcCodRubro
+		STORE "" TO lcLista3,lcLista4
 		j = 0
 *!*		ELSE
 *!*			IF !leiunarticulo
@@ -204,15 +206,17 @@ SCAN
 			ENDIF
 			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
-			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
+			*lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
+			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
-			lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
-			lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
-			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
-			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
-			
+			*lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
+			*lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
+			lcLista1		= IIF(j + i=9,lcCadena,lcLista1)
+			lcLista2		= IIF(j + i=11,lcCadena,lcLista2)
+			lcLista3		= IIF(j + i=12,lcCadena,lcLista3)
+			lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
+					
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 		ENDDO 
@@ -238,13 +242,18 @@ SCAN
 			LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
-		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto);
-		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta,lcCosto,lcCodRubro,lcIDJ,lcUniBulto)
+		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto,Lista1,Lista2;
+		,Lista4,Lista3);
+		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta,lcCosto,lcCodRubro,lcIDJ,lcUniBulto,lcLista1;
+		,lcLista2,lcLista4,lcLista3)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
 	ENDIF 
-ENDSCAN 
+	SELECT CsrLista
+	SKIP 
+*ENDSCAN 
+ENDDO 
 
 USE IN CsrLista
 

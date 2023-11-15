@@ -193,6 +193,7 @@ GO TOP
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
 nCodigo = 1
+lnNumRuta = 1
 *stop()
 SCAN 
 
@@ -359,14 +360,14 @@ SCAN
 	
 		SELECT CsrVendedor
 		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
-		IF ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+		IF ALLTRIM(nombre)<>alltrim(CsrDeudor.vendedor)
 			SELECT CsrDeudor
 			LOOP
 		ENDIF 	
 		
 		SELECT CsrZona
 		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
-		IF ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+		IF ALLTRIM(nombre)<>alltrim(CsrDeudor.vendedor)
 			SELECT CsrZona
 		 	GO TOP 
 	     ENDIF

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa con Leaflet desde Visual fox Pro9</title>
+  <!-- Incluir hojas de estilo de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Incluir la librería de Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  
+  	<style>
+	  #mapid{
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+	        }
+	</style>
+  
+</head>
+<body>
+  <div id="mapid"></div>
+  
+  <script>
+    // Crear una instancia del mapa en el div con el id "map"
+    var mymap = L.map('mapid').setView([40.432136342261074, 116.57049291549156                                          ], 12);
+    
+    // Agregar una capa de mapa base (puedes cambiar el proveedor de mapa)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+ 	
+ 	mymap.scrollWheelZoom.enable();var lugar = 'La Gran Muralla China';var pais = 'China';var marker = L.marker(new L.LatLng(40.432136342261074, 116.57049291549156), { lugar: lugar },  { pais: pais });marker.bindPopup('<b>'+lugar+'</b><br>'+pais).openPopup();marker.addTo(mymap);</script></body></html>

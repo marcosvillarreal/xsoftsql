@@ -188,12 +188,13 @@ lnidfuerzavta  = CsrFuerzaVta.id
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
+VISTA()
 
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''
 nCodigo = 1
-*stop()
+lnNumRuta = 1
+stop()
 SCAN 
 
 *!*		lnCodigo = CsrDeudor.idorigen
@@ -351,19 +352,22 @@ SCAN
 		VALUES (lnid, lccuit,lnporperce,lnporrete)
 	ENDIF 
 	
+	lnid = lnid + 1
+	nCodigo = nCodigo + 1 
+	
 	&&Asiganamos la ruta
 	IF LEN(LTRIM(CsrDEudor.vendedor))>0
 	
 		SELECT CsrVendedor
 		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
-		IF numero#VAL(CsrRecorrido.vendedor)
-			SELECT CsrRecorrido
+		IF ALLTRIM(nombre)<>alltrim(CsrDeudor.vendedor)
+			SELECT CsrDeudor
 			LOOP
 		ENDIF 	
 		
 		SELECT CsrZona
 		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
-		IF ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
+		IF ALLTRIM(nombre)<>alltrim(CsrDeudor.vendedor)
 			SELECT CsrZona
 		 	GO TOP 
 	     ENDIF
@@ -422,8 +426,7 @@ SCAN
 	ENDIF 
 	
 	
-	lnid = lnid + 1
-	nCodigo = nCodigo + 1 
+	
 	
 	SELECT CsrDeudor           
 ENDSCAN
