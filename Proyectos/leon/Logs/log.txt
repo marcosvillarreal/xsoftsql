@@ -1,310 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ad.nombre,CsrCategoiva.nombre,ImpCabeza.cuit ,lcPlanPago,cCampo012,lccampo013,lccampo014,lccampo015 ,lccampo016,lccampo017,lccampo018,lccampo019,lccampo020,lccampo021,lccampo022 ,lccampo023,lccampo024,lccampo025,lccampo026,lccampo027,lccampo028 ,lccampo0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29,lccampo030,lccampo031,lccampo032,lccampo033,lccampo034 ,lccampo035,lccampo036,lcCampo037 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra,cNroCAE,cVtoCAE,cVerificador ,cDetaHoja )
  Alias IMPCUERPO registro          2
 Control activo  REGFACVTA.CMDSALVAR.CLICK
 01-12-2021 15:31:26 , Verificando OCX
@@ -721,7 +414,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
 
 
 
@@ -945,7 +644,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
 
 
 
@@ -1169,7 +874,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
 
 
 
@@ -1885,7 +1596,13 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
 
 
 
@@ -1959,7 +1676,13 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
 
 
 
@@ -2033,6 +1756,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -2070,7 +1796,13 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
+
+
 
 
 
@@ -2345,6 +2077,37 @@ Error No se encuentra la variable 'LISTAPRECIO'.
 Linea nº lnLista = CsrAuxCabefac.listaprecio
  Alias CSRAUXCUERFAC registro          1
 Control activo  REGFACCPRA.CMDRECUPERAR.CLICK
-09-11-2023 16:30:42 , Error nº:        107Error Incompatibilidad entre el tipo de operador y el tipo de operando.Linea nº IF lnopcion=1 Alias CSRAUXCUERFAC registro          4Control activo CODIGO REGFACCPRA.CMDRECUPERAR.CLICK
+09-11-2023 16:30:42 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº IF lnopcion=1
+ Alias CSRAUXCUERFAC registro          4
+Control activo CODIGO REGFACCPRA.CMDRECUPERAR.CLICK
 10-11-2023 10:28:21 , Verificando OCX
 10-11-2023 11:56:34 , Verificando OCX
+16-11-2023 13:23:34 , Verificando OCX
+16-11-2023 13:24:37 , Verificando OCX
+16-11-2023 13:25:43 , Verificando OCX
+16-11-2023 13:36:51 , Informe por excel
+16-11-2023 13:36:54 , Version 16.0
+16-11-2023 13:44:59 , Error nº:       1925
+Error COLUMN019 es un miembro desconocido.
+Linea nº .Column019.Header = 'Cód Vendedor Guia'
+ Alias CSRGRUPOS registro          1
+Control activo  INF_DINAMICA_V4_2.IMPRIMIR_VISTAPREVIA1.PIVOT.CLICK
+16-11-2023 13:46:15 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº LPARAMETERS cFileName
+ Alias CSRIMPRIMIR registro          1
+Control activo  INF_DINAMICA_V4_2.IMPRIMIR_VISTAPREVIA1.PIVOT.CLICK
+16-11-2023 13:50:01 , Informe por excel
+16-11-2023 13:50:03 , Version 16.0
+16-11-2023 13:51:13 , Informe por excel
+16-11-2023 13:51:14 , Version 16.0
+16-11-2023 13:52:21 , Informe por excel
+16-11-2023 13:52:22 , Version 16.0
+16-11-2023 14:08:05 , Informe por excel
+16-11-2023 14:08:06 , Version 16.0
+16-11-2023 14:11:29 , Informe por excel
+16-11-2023 14:11:30 , Version 16.0
+16-11-2023 14:45:36 , Informe por excel
+16-11-2023 14:45:38 , Version 16.0
