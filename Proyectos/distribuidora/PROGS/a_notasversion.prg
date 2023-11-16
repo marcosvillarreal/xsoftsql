@@ -5,3 +5,11 @@
 
 *-2.3.1
 *-Revaluenado geolocalizacion
+
+*-2.3.2
+*-Importaciojn KM
+*-Revizando proceso de Pedidos
+
+*-2.3.3
+*-subivavta y  est_ventasxfecha dinamica
+*-expt_gestion_jaque , agrupa cf
