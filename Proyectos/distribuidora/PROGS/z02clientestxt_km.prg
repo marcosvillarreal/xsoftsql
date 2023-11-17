@@ -16,7 +16,7 @@ SET CPDIALOG ON
 
 Oavisar.proceso('S','Abriendo archivos') 
 llok = .t.
-llok = CargarTabla(lcData,'Ctacte',.t.)
+llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'TipoIva')
 *llok = CargarTabla(lcData,'CateCtacte',.t.)
 llok = CargarTabla(lcData,'Barrio',.t.)
@@ -123,7 +123,7 @@ SELECT CsrCiudad
 SELECT CsrCateIBRng
 LOCATE FOR numero = 1
 
-lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+
 
 SELECT distinct UPPER(lista) as nombre,codlista FROM CsrDeudor INTO CURSOR CsrListaPrecio
 SELECT CsrListaPrecio
@@ -181,6 +181,17 @@ lnidzonaruta = RecuperarID('CsrZonaRuta',Goapp.sucursal10)
 lnidcuerruta = RecuperarID('CsrCuerRuta',Goapp.sucursal10)
 
 
+LOCAL nCodigo,cCadeCtacte 
+
+cCadeCtacte = ''
+
+lnNumRuta = 1
+
+SELECT CsrCtacte
+lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
+GO BOTTOM 
+nCodigo = INT(VAL(CsrCtacte.cnumero)) + 1
+
 SELECT CsrFuerzaVta
 GO TOP 
 lnidfuerzavta  = CsrFuerzaVta.id
@@ -188,13 +199,6 @@ lnidfuerzavta  = CsrFuerzaVta.id
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
-
-LOCAL nCodigo,cCadeCtacte 
-cCadeCtacte = ''
-nCodigo = 1
-lnNumRuta = 1
-*stop()
 SCAN 
 
 *!*		lnCodigo = CsrDeudor.idorigen

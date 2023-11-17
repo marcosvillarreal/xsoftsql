@@ -56,11 +56,11 @@ SCAN
 			,lnbonif1
 	
  	STORE 0 TO lnidbarrio, lnidcategoria, lnlista
- 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia
+ 	STORE "" TO lcCuit,lcDNI,lcingbrutos,lcingbrutosBA,lcdatosfac,lcOtro01,lcObserva,lccp ,lcReferencia,lcemail
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  	
 *!*	 	nCodigo			= lnCodigo	
- 	lcReferencia	= ALLTRIM(CsrAcreedor.rubro) + IIF(CsrAcreedor.vtakilo=1,"/\" ,"")
+ 	lcReferencia	= ALLTRIM(CsrAcreedor.referencia) + IIF(LEN(LTRIM(CsrAcreedor.vendedor))=1,"/\" ,"")
  	lnctaacreedor	= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
@@ -95,9 +95,9 @@ SCAN
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre))) 
 	
-	IF nCodigo = 19
+	*IF nCodigo = 19
 	*	stop()
-	ENDIF 
+	*ENDIF 
 	
 	lcDire_Calle= RTRIM(UPPER(CsrAcreedor.direccion))
   	lcDire_Nro	= RTRIM(UPPER(CsrAcreedor.direnro))
@@ -128,6 +128,7 @@ SCAN
 	
 	
 	lnid = lnid + 1
+	
 	
 	SELECT CsrAcreedor
 ENDSCAN
