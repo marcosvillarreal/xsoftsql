@@ -85,6 +85,14 @@ SELECT distinct STRTRAN(referencia,'/\','') as nombre FROM CsrCtacte INTO CURSOR
 
 lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
 lnCodigo = 1
+
+INSERT INTO CsrRubro(id,numero,nombre,idtipovta,idtipoprod,idfuerzavta);
+   			 VALUES (lnid,lnCodigo,'GENERAL',1,1100000001,1100000001)
+   			 
+lnid = lnid + 1
+lnCodigo = lnCodigo + 1 
+
+   			 
 SELECT CsrSeccion 
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
@@ -96,34 +104,34 @@ SCAN FOR !EOF()
    lnestado = 1
    lnnumero	= lnCodigo 
    lcnombre	= NombreNi(alltrim(UPPER(CsrSeccion .nombre)))
-   INSERT INTO CsrRubro(id,numero,nombre,idtipoiva,idtipoprod,idfuerzavta,switch);
-   			 VALUES (lnid,lnnumero,lcnombre,1,1100000001,1100000001,'00000')
+   INSERT INTO CsrRubro(id,numero,nombre,idtipovta,idtipoprod,idfuerzavta);
+   			 VALUES (lnid,lnnumero,lcnombre,1,1100000001,1100000001)
    lnid = lnid + 1
 	lnCodigo = lnCodigo + 1 
 ENDSCAN
 
-
-
+SELECT CsrRubro
+*vista()
 
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
-GO top
-*stop()
+
 SCAN FOR !EOF()
-	SELECT CsrProducto
 	
+	
+	IF VAL(CsrArticulo.codigo) = 471
+	*	stop()
+	ENDIF 
+	
+	SELECT CsrProducto
 	LOCATE FOR numero=VAL(CsrArticulo.codigo)
 	IF numero=VAL(CsrArticulo.codigo)
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
-	
-	IF VAL(CsrArticulo.codigo) = 11016
-		*stop()
-	ENDIF 
-	
+
 		
 	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnprevta4
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnprevtaf4, lninterno
@@ -132,17 +140,17 @@ SCAN FOR !EOF()
 	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso,lnidtipocarnico
 	
 	SELECT CsrCtacte
-    LOCATE FOR VAL(cnumero)=VAL(CsrAcreedor.proveedor)
+    LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.proveedor)
     IF FOUND()
     	lnidctacte = Csrctacte.id
     ENDIF
 
-	nCodRubro = VAL(STRTRAN(CsrCtacte.referencia,'/\',''))
+	cRubro = alltrim(STRTRAN(CsrCtacte.referencia,'/\',''))
 	
     SELECT CsrRubro
-    LOCATE FOR numero=nCodRubro 
+    LOCATE FOR ALLTRIM(nombre)=cRubro 
     IF NOT FOUND()
-    	GO BOTTOM
+    	GO top
     ENDIF 
     lnidseccion = CsrRubro.id
     	
@@ -185,22 +193,29 @@ SCAN FOR !EOF()
 *!*		lnUtil4		= 0
 *!*		lnPeso		= 0
 					
-	
-		lnCosto		= VAL(CsrArticulo.costo)
-		IF lnCosto > 0
+		*Lista1 Tiene el prescio c/iva, debo componer para atras con un margen del 30%
+		lnPrevtaf1		= VAL(CsrArticulo.lista1)
+		IF lnPrevtaf1> 0
+			lnprevta1	= red(lnprevtaf1 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)			
+			lnCosto		= red((lnprevta1 * 100) /  130,2) 
 			lnCostoBon	= lnCosto
-			lnprevta1	= lnCosto	
-			lnUtil1		= red((lnprevta1 * 100) /  lnCosto,2) - 100
-			lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
+			lnprevta1	= lnPrevta1	
+			lnUtil1		= 30
+			lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,lnTasa)/100)),2)
 			
-*!*				lnprevta2	= VAL(CsrPrecio.lista2)		
-*!*				lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2) - 100
-*!*				lnprevtaf2	= red(lnprevta2 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
-*!*				
-*!*				lnprevta3	= VAL(CsrPrecio.lista3)		
-*!*				lnUtil3		= red((lnprevta3 * 100) /  lnCosto,2) - 100
-*!*				lnprevtaf3	= red(lnprevta3 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)
-*!*				
+			lnprevtaf2	= VAL(CsrArticulo.lista2)
+			lnprevta2	= red(lnprevtaf2 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
+			lnUtil2		= red((lnprevta2 * 100) /  lnCosto,2) - 100
+
+			lnprevtaf3	= VAL(CsrArticulo.lista3)
+			lnprevta3	= red(lnprevtaf3 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
+			lnUtil3		= red((lnprevta3 * 100) /  lnCosto,2) - 100
+			
+			lnprevtaf4	= VAL(CsrArticulo.lista4)
+			lnprevta4	= red(lnprevtaf4 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
+			lnUtil4		= red((lnprevta4 * 100) /  lnCosto,2) - 100
+			
+			
 *!*				lnprevta4	= VAL(CsrPrecio.lista4)		
 *!*				lnUtil4		= red((lnprevta4 * 100) /  lnCosto,2) - 100
 *!*				lnprevtaf4	= red(lnprevta4 * (1 + (IIF(lnTasa=0,21,10.5)/100)),2)

@@ -212,7 +212,7 @@ DO WHILE NOT EOF()
 			lcAlicuota		= "21"
 			*lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
 			*lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
-			lcLista1		= IIF(j + i=9,lcCadena,lcLista1)
+			lcLista1		= IIF(j + i=10,lcCadena,lcLista1)
 			lcLista2		= IIF(j + i=11,lcCadena,lcLista2)
 			lcLista3		= IIF(j + i=12,lcCadena,lcLista3)
 			lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
@@ -366,7 +366,7 @@ CREATE CURSOR CsrAcreedor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(
 		,CodPostal c(10),CodProvincia c(6),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
 		,TipoDoc c(50),Documento c(20);
-		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
+		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctaacreedor  n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40))
 	
@@ -444,7 +444,7 @@ DO WHILE NOT EOF()
 			lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcReferencia)))
 			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-							
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcZona)))		
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			
@@ -481,7 +481,7 @@ DO WHILE NOT EOF()
 		lcCodLista = '1'
 		INSERT INTO CsrAcreedor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
-		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
+		,TipoIVA,Vendedor,Zona,ctaacreedor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
 		,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor,idorigen,Referencia) ;
 		values (lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
