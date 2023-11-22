@@ -1,53 +1,3 @@
- Alias CSRPREFITERMI registro         30
-Control activo  MAIN
-07-12-2021 09:03:12 , Verificando OCX
-07-12-2021 09:03:46 , Verificando OCX
-08-12-2021 13:42:48 , Verificando OCX
-08-12-2021 13:43:56 , Verificando OCX
-08-12-2021 14:31:47 , Verificando OCX
-09-12-2021 11:00:18 , Verificando OCX
-09-12-2021 11:11:50 , Verificando OCX
-13-12-2021 12:01:38 , Verificando OCX
-13-12-2021 12:02:19 , Verificando OCX
-23-12-2021 12:47:09 , Verificando OCX
-23-12-2021 12:47:18 , Error nº:         12
-Error No se encuentra la variable 'TEMPLEATE'.
-Linea nº goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
- Alias CSRUSR registro          1
-Control activo  MAIN
-23-12-2021 12:48:10 , Error nº:         12
-Error No se encuentra la variable 'TEMPLEATE'.
-Linea nº goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
- Alias CSRUSR registro          1
-Control activo  FRMLOGIN.CMDOK.BTN.CLICK
-23-12-2021 12:48:31 , Verificando OCX
-04-01-2022 15:15:26 , Verificando OCX
-04-01-2022 15:39:41 , Verificando OCX
-11-01-2022 15:21:06 , Verificando OCX
-11-01-2022 15:22:28 , Verificando OCX
-25-01-2022 11:54:16 , Verificando OCX
-25-01-2022 11:54:49 , Verificando OCX
-25-01-2022 11:58:17 , Error nº:         13
-Error No se encuentra el alias 'CSRAUXMAOPERA'.
-Linea nº LOCATE FOR idproducto = thisform.loObjBonifica.idproducto AND idvendedor=CsrauxMaopera.idvendedor
- Alias CSRBONIVDOR registro          3
-Control activo  REGFACPEDIDO.ACEPTAR1.CLICK
-25-01-2022 12:00:02 , Verificando OCX
-25-01-2022 12:03:21 , Verificando OCX
-31-01-2022 13:52:24 , Verificando OCX
-31-01-2022 17:15:40 , Verificando OCX
-31-01-2022 17:17:41 , Verificando OCX
-31-01-2022 17:17:51 , Verificando OCX
-31-01-2022 17:21:33 , Verificando OCX
-31-01-2022 17:55:33 , Verificando OCX
-03-02-2022 17:53:13 , Verificando OCX
-03-02-2022 18:26:41 , Error nº:          1
-Error El archivo 'stzero.prg' no existe.
-Linea nº cFileName	= "Articulos" + stzero(this.coddistribuidor,6)  + DTOS(DATE()) + STRzero(HOUR(DATETIME()),2) + STRzero(MINUTE(DATETIME()),2) + STRzero(SEC(DATETIME()),2)
- Alias CSRCURSOR registro          1
-Control activo  _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-03-02-2022 18:26:49 , Error nº:         12
-Error No se encuentra la variable 'CFILENAME'.
 Linea nº cFileName	= cRuta + cFileName +".CSV"
  Alias CSRCURSOR registro          1
 Control activo  _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -411,7 +361,19 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
 
 
 
@@ -643,7 +605,19 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
 
 
 
@@ -875,7 +849,19 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
+
+
+
+
+
 
 
 
@@ -1599,7 +1585,19 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
+
+
 
 
 
@@ -1681,7 +1679,19 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
+
+
 
 
 
@@ -1763,6 +1773,12 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1804,7 +1820,19 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
+
+
+
+
+
 
 
 
@@ -2121,3 +2149,36 @@ Control activo  INF_DINAMICA_V4_2.IMPRIMIR_VISTAPREVIA1.PIVOT.CLICK
 21-11-2023 18:05:35 , Verificando OCX
 21-11-2023 18:46:38 , Verificando OCX
 21-11-2023 18:59:46 , Verificando OCX
+21-11-2023 20:09:54 , Verificando OCX
+21-11-2023 20:28:37 , Error nº:         12
+Error No se encuentra la variable 'MININIMOBONICPRA'.
+Linea nº thisform.grid2.column4.ControlSource = "CsrAuxiliar.mininimobonicpra"
+ Alias CSRAUXILIAR registro          1
+Control activo  REGDESCUENTOS.CONTAINERENCABEZA.CMDPROCESAR.CLICK
+21-11-2023 20:34:22 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº REPLACE idproducto WITH csrauxiliar.id,fecha WITH csrauxiliar.fechastabonicpra ,porce1 WITH Csrauxiliar.bonicpra, min1 WITH Csrauxiliar.minimobonicpra
+ Alias CSRAUXPIE registro          1
+Control activo  REGDESCUENTOS.GRID2.KEYPRESS
+21-11-2023 20:35:05 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº REPLACE idproducto WITH csrauxiliar.id,fecha WITH TTOD(csrauxiliar.fechastabonicpra) ,porce1 WITH Csrauxiliar.bonicpra, min1 WITH Csrauxiliar.minimobonicpra
+ Alias CSRAUXPIE registro          1
+Control activo  REGDESCUENTOS.GRID2.KEYPRESS
+21-11-2023 20:37:39 , Error nº:         12
+Error No se encuentra la variable 'IDPRODUCTO'.
+Linea nº REPLACE idproducto WITH csrauxiliar.id,fecha WITH TTOD(csrauxiliar.fechastabonicpra) ,porce1 WITH Csrauxiliar.bonicpra, min1 WITH Csrauxiliar.minimobonicpra
+ Alias CSRAUXILIAR registro          1
+Control activo  REGDESCUENTOS.GRID2.KEYPRESS
+21-11-2023 20:38:56 , Error nº:         12
+Error No se encuentra la variable 'PORCE3'.
+Linea nº replace porce3 WITH this.containerpie._txtporce3.Value IN CsrAuxPie
+ Alias CSRAUXPIE registro          1
+Control activo PORCE1 REGDESCUENTOS.CONTAINERPIE._TXTPORCE1.KEYPRESS
+21-11-2023 20:39:51 , Verificando OCX
+22-11-2023 09:10:51 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS.LOAD
+22-11-2023 09:11:03 , Verificando OCX
