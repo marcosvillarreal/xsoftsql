@@ -1,11 +1,3 @@
-Linea nº cFileName	= cRuta + cFileName +".CSV"
- Alias CSRCURSOR registro          1
-Control activo  _UTIL_CAMPARI.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-15-02-2022 09:44:18 , Verificando OCX
-15-02-2022 09:44:54 , Verificando OCX
-15-02-2022 09:53:04 , Verificando OCX
-24-02-2022 17:46:17 , Verificando OCX
-15-03-2022 11:14:34 , Verificando OCX
 15-03-2022 11:15:34 , Error nº:         11
 Error El valor, tipo o número de argumentos no es válido para la función.
 Linea nº RETURN ALLTRIM(STR(lnValor,lnTam,lnDec))
@@ -367,7 +359,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -611,7 +605,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -855,7 +851,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
+
 
 
 
@@ -1591,7 +1589,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -1685,7 +1685,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -1779,6 +1781,7 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1826,7 +1829,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
 
 
 
@@ -2182,3 +2187,11 @@ Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CUR
  Alias  registro          0
 Control activo  REGDESCUENTOS.LOAD
 22-11-2023 09:11:03 , Verificando OCX
+23-11-2023 11:44:14 , Verificando OCX
+23-11-2023 11:44:44 , Error nº:         12
+Error No se encuentra la variable 'MIN2'.
+Linea nº REPLACE fecha WITH GOMONTH(DATE(),1),min1 WITH 0,porce1 WITH 0,min2 WITH 0 ,porce2 WITH 0,min3 WITH 0,porce3 WITH 0 IN CsrAuxpie
+ Alias CSRAUXPIE registro          1
+Control activo  MAIN
+23-11-2023 11:45:40 , Verificando OCX
+23-11-2023 11:49:20 , Verificando OCX
