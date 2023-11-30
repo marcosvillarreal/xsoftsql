@@ -234,7 +234,7 @@ IF TYPE('goApp')='O'
 	do setup
 	_screen.LockScreen=.f.
 	
-	*oConfigTermi.controlskin = 'FALSE'
+	*oConfigTermi.controlskin = 'TRUE'
 	
 	IF oConfigTermi.controlskin = 'TRUE'
 		* Herramienta VFPsControlSkin

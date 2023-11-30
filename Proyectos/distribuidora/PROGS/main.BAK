@@ -218,7 +218,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "02.03.00"
+	goapp.version = "02.03.03"
 	goapp.gmsoft = "distribuidora"
 	
 	PUBLIC  gcicono
@@ -234,7 +234,7 @@ IF TYPE('goApp')='O'
 	do setup
 	_screen.LockScreen=.f.
 	
-	oConfigTermi.controlskin = 'FALSE'
+	oConfigTermi.controlskin = 'TRUE'
 	
 	IF oConfigTermi.controlskin = 'TRUE'
 		* Herramienta VFPsControlSkin
