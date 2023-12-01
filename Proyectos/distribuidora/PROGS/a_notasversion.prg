@@ -13,3 +13,7 @@
 *-2.3.3
 *-subivavta y  est_ventasxfecha dinamica
 *-expt_gestion_jaque , agrupa cf
+
+
+*-2.3.6
+*-impcompvtacae no topa el tope del paravario
