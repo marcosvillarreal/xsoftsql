@@ -9,6 +9,7 @@
 *funcion si la fecha del precio es muy inferior controla con prodprecio
 *funcion de controlar comprobantes vencidos, no permite grabar nuevos
 *funcion de tomar la fecha personalizada por cliente
+*funcion de avisar la cantidad de proximos comprobantes a vencer
 
 *Cambio de Precio archivo.
 *Se almacena correctamente el margen1 40% y fecmod
@@ -18,4 +19,3 @@
 
 *=================== Pendiente
 *Aviso de falta de stock (PuntoF)
-*Aviso de comprobantes a vencer (FPuerto)
