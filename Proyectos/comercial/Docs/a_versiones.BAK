@@ -1,5 +1,9 @@
 *Versiones
 
+*2.1.4
+*Subdiario de Caja por turno
+*Subbidarios de facturacion, ctacte
+
 *2.1.3
 *Abm de Cuenta corriente, se incorporo diasVto y CompVtoBloq
 *diasVto, estima los dias personalizados de vencimiento para un comprobante

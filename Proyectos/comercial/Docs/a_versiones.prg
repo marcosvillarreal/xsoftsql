@@ -1,5 +1,8 @@
 *Versiones
 
+*2.1.5
+*Diferentes modulos se cambio el inputMask 
+
 *2.1.4
 *Subdiario de Caja por turno
 *Subbidarios de facturacion, ctacte
