@@ -1,4 +1,6 @@
 *Versiones
+*2.1.6
+*Error en los colores de los avisos, tomaba como endolar=1, cuando es endolar=2
 
 *2.1.5
 *Diferentes modulos se cambio el inputMask 

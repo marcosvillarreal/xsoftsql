@@ -1,16 +1,11 @@
-*===================
-*= ARCHIVO PRINCIPAL
-*===================
-*
-*	VER AL PIE alguna consideracion con respecto a campos tablas
-*
-
 LPARAMETERS oOrigen
 
 oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
+
+cVersionGoapp = "02.01.06"
 
 SET SYSMENU off
 set classlib to
@@ -201,7 +196,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 
-	goapp.version = "02.01.05"
+	goapp.version = cVersionGoapp
 	goapp.gmsoft = "comercial"
 	
 	PUBLIC  gcicono
