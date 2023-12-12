@@ -1,21 +1,22 @@
-use distribuidorakm
+use urquiza
 go
-sp_helpdb distribuidorakm
+sp_helpdb urquiza
 -- Antes de truncar el log cambiamos el modelo de recuperación a SIMPLE.
-ALTER DATABASE distribuidorakm
+ALTER DATABASE urquiza
 SET RECOVERY SIMPLE;
 GO
 
 --Recucimos los archivos eliminados del principal
-DBCC SHRINKFILE(distribuidorakm, 1);
+DBCC SHRINKFILE(urquiza, 1);
 --Reducimos el log de transacciones a  1 MB.
-DBCC SHRINKFILE(distribuidorakm_log, 1);
+go
+DBCC SHRINKFILE(urquiza_log, 1);
 
 GO
 -- Cambiamos nuevamente el modelo de recuperación a Completo.
-ALTER DATABASE distribuidorakm
+ALTER DATABASE urquiza
 SET RECOVERY FULL;
 go
-sp_helpdb distribuidorakm
+sp_helpdb urquiza
 GO
  
