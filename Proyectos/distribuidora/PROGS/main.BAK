@@ -23,6 +23,8 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
+lcVersion = "02.03.07"
+
 lctituloGestion = "Gestion de Ventas"
 
 *!*	If !lldesarrollo
@@ -218,7 +220,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "02.03.06"
+	goapp.version = lcVersion
 	goapp.gmsoft = "distribuidora"
 	
 	PUBLIC  gcicono
