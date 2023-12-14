@@ -1,4 +1,10 @@
  *----Notas de Version -----------------
+*-2.3.7
+*- rendicion se mejoro la consulta union all tardaba demasiado
+*-listado de etiqueta de precios
+*-exportador de gestion jaque
+*-ofacelectronica, se estaba haciendo todo en exento por laliga
+*-abmproducto/abmctacte reorganizacion
 
 *-2.3.6
 *-impcompvtacae no topa el tope del paravario
