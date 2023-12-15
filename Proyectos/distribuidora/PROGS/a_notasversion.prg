@@ -1,5 +1,7 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 
+2.3.9
+	Parametros RegFacPUB, paravario_facvta
 2.3.8
 	Bugs en Etiquetas
 	Error Abm Articulo - Tipo de IVA - Nuevos Articulos 
