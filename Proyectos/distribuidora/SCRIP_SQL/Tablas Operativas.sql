@@ -1,6 +1,6 @@
-use laligabb
+use nuevasirena11
 go
---delete from detanrocaja
+delete from detanrocaja
 delete from movstock
 delete from cuerfac
 delete from tablaimp
@@ -33,7 +33,7 @@ delete from prodcodbarra
 delete from gestion
 
 delete from fleteren
-delete from seguridad
+--delete from seguridad
 delete from ctactectacon
 delete from movctacte
 delete from afecabecpra
@@ -46,12 +46,12 @@ delete from cotizadolar
 delete from padronafip
 delete from cabedeta
 delete from extmaopera
-DELETE FROM CABECOMBO
-delete from cuercombo
-delete from cabepromo
-delete from cuerpromo
+--DELETE FROM CABECOMBO
+--delete from cuercombo
+--delete from cabepromo
+--delete from cuerpromo
 delete from cuerdeta
-delete from bonirubroctacte
+--delete from bonirubrocta
 
 execute actualizarid 1
 select * from keysid order by nextid desc
