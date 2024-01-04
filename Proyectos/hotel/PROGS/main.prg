@@ -244,30 +244,30 @@ IF TYPE('goApp')='O'
 
 	LeerConfigTermi()
 	
-	TRY 
-		IF oConfigTermi.controlskin = 'TRUE'
-			* Herramienta VFPsControlSkin
-			IF FILE("VFPsControlSkin.Exe")
-			   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
-			   *!* NUEVO 
-			   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
-			   IF VFPs_AddBar(_SCREEN,.T.) THEN 
-			      *!* AGREGAR PANEL AL ESTATUS BAR
-			      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
-			   ENDIF
-			ENDIF
-			*!* FIN INICIO
-			*!* LLENAR PARAMETROS VFPS MESSAGEBOX
-			_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
-			_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-			_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
-			_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
-			_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
-			** Herramienta VFPsControlSkin
-		ENDIF 
-	CATCH TO oError
-		oConfigTermi.controlskin = 'FALSE'
-	ENDTRY 
+*!*		TRY 
+*!*			IF oConfigTermi.controlskin = 'TRUE'
+*!*				* Herramienta VFPsControlSkin
+*!*				IF FILE("VFPsControlSkin.Exe")
+*!*				   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
+*!*				   *!* NUEVO 
+*!*				   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
+*!*				   IF VFPs_AddBar(_SCREEN,.T.) THEN 
+*!*				      *!* AGREGAR PANEL AL ESTATUS BAR
+*!*				      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
+*!*				   ENDIF
+*!*				ENDIF
+*!*				*!* FIN INICIO
+*!*				*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+*!*				_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+*!*				_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+*!*				_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+*!*				_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+*!*				_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+*!*				** Herramienta VFPsControlSkin
+*!*			ENDIF 
+*!*		CATCH TO oError
+*!*			oConfigTermi.controlskin = 'FALSE'
+*!*		ENDTRY 
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
