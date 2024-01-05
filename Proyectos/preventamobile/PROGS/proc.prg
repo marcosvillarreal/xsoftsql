@@ -9,7 +9,7 @@ CASE UPPER(RTRIM(cName)) = "CONEXION"
 		,pwdlen n(2), userlen n(2), idservpedido c(10), passpedido c(50), pmabrevia c(5),switch c(5);
 		,emprename c(20), emprepass c(20), euserlen n(2), epwdlen n(2))
 case upper(rtrim(cName)) = "PARAVARIO"
-	CREATE CURSOR ParaVario (id i, idorigen i, nombre c(30), importe n(14), porce n(8), detalle c(30);
+	CREATE CURSOR ParaVario (id i, idorigen i, nombre c(250), importe n(14), porce n(8), detalle c(250);
 		,fecha d, estado n(1))
 case upper(rtrim(cName)) = "PERFILES"
 	CREATE CURSOR Perfiles  (id i, nombre c(20), switch c(10))
