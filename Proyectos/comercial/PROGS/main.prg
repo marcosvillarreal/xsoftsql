@@ -5,7 +5,7 @@ oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
 
-cVersionGoapp = "02.01.06"
+cVersionGoapp = "02.01.07"
 
 SET SYSMENU off
 set classlib to
@@ -179,10 +179,13 @@ objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
 ObjReporter.AddProperty('mensajeria_body',"")
+ObjReporter.AddProperty('banner',"gmbanner.png")
+
 
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
+	ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
 ENDIF 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION

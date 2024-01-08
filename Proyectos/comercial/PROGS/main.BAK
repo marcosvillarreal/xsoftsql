@@ -1,16 +1,11 @@
-*===================
-*= ARCHIVO PRINCIPAL
-*===================
-*
-*	VER AL PIE alguna consideracion con respecto a campos tablas
-*
-
 LPARAMETERS oOrigen
 
 oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
+
+cVersionGoapp = "02.01.06"
 
 SET SYSMENU off
 set classlib to
@@ -184,10 +179,13 @@ objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
 ObjReporter.AddProperty('mensajeria_body',"")
+ObjReporter.AddProperty('banner',"gmbanner.png")
+
 
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
+	ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
 ENDIF 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
@@ -201,7 +199,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 
-	goapp.version = "02.01.05"
+	goapp.version = cVersionGoapp
 	goapp.gmsoft = "comercial"
 	
 	PUBLIC  gcicono
