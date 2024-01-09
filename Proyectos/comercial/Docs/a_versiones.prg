@@ -1,4 +1,6 @@
 *Versiones
+*2.1.8
+*  Facvta - FACMARGEN0, optativo si deja facturar o no, por defecto NP
 *2.1.7
 *	Banner
 *2.1.6
