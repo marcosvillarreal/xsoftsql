@@ -1,5 +1,7 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 
+2.3.12
+	PlanillaDeCaja, comprobante asociado error convert
 2.3.11
 	RegNotaPedido_k, RegCbioPuesto, RegFacvta_k2
 	Se mantiene el precio del pedido, y permite facturar a ese precio
