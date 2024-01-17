@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.11
+	LocalProyecto separador de miles
 2.1.10
 	Imagenes
 2.1.9
