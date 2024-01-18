@@ -1,0 +1,43 @@
+18-01-2024 16:31:52 , IMPCOMPROBANTE.ACEPTAR1.CLICK, Error: No es una expresión numérica.;Linea : FOR N = 1 TO lnCount;Error :         27;Ultimo Alias Activo: CSRIMPCUE;Ultimo registro:          1 GRUPO+ORDEN;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00004T1L02XI.TMP;Ultimo Control activo: 
+18-01-2024 16:31:52 , Pila de llamadas
+18-01-2024 16:31:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:52 , Objeto      : impcomprobante.aceptar1.click
+18-01-2024 16:31:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:52 , Nº de Linea :          9
+18-01-2024 16:31:52 , En el Fuente: 		.ciclaoperacion(loTipoSalida)
+18-01-2024 16:31:52 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:52 , Objeto      : impcomprobante.ciclaoperacion
+18-01-2024 16:31:52 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:53 , Nº de Linea :         16
+18-01-2024 16:31:53 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera,loTipoSalida)
+18-01-2024 16:31:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:53 , Objeto      : impcomprobante.selectoperacion_sql
+18-01-2024 16:31:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:53 , Nº de Linea :         18
+18-01-2024 16:31:53 , En el Fuente: 	this.imprimir('RTO',loTipoSalida)		
+18-01-2024 16:31:53 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:53 , Objeto      : impcomprobante.imprimir
+18-01-2024 16:31:53 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcomprobante.sct
+18-01-2024 16:31:53 , Nº de Linea :         47
+18-01-2024 16:31:53 , En el Fuente: 	llok = .Objimpresor.inicioimpresora(cOrigen,.lcimpresora,Csrprefitermi.tipoimpresora,.formulario,.f.,lnDeboActualizarNro ,0)
+18-01-2024 16:31:53 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-01-2024 16:31:54 , Objeto      : impcomprobante.objimpresor.inicioimpresora
+18-01-2024 16:31:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-01-2024 16:31:54 , Nº de Linea :         73
+18-01-2024 16:31:54 , En el Fuente: 		lok = this.report_rtoconst(lndeboActualizarNro)
+18-01-2024 16:31:54 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-01-2024 16:31:54 , Objeto      : impcomprobante.objimpresor.report_rtoconst
+18-01-2024 16:31:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-01-2024 16:31:54 , Nº de Linea :        123
+18-01-2024 16:31:54 , En el Fuente: 	lok = this.salidapdf(loObjVariables)
+18-01-2024 16:31:54 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-01-2024 16:31:54 , Objeto      : impcomprobante.objimpresor.salidapdf
+18-01-2024 16:31:54 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-01-2024 16:31:54 , Nº de Linea :        118
+18-01-2024 16:31:55 , En el Fuente: RETURN lok
+18-01-2024 16:31:55 , Programa    : j:\xsoftsql\desarrollo\lib\foxypreviewercaller.fxp
+18-01-2024 16:31:55 , Objeto      : foxypreviewercaller.destroy
+18-01-2024 16:31:55 , Base Objeto : j:\xsoftsql\desarrollo\lib\foxypreviewercaller.prg
+18-01-2024 16:31:55 , Nº de Linea :        601
+18-01-2024 16:31:55 , En el Fuente: 	FOR N = 1 TO lnCount
+18-01-2024 16:31:55 , Fin

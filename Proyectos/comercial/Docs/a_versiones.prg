@@ -1,6 +1,10 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
 2.1.11
 	LocalProyecto separador de miles
+	Paravario_facvta GridBackColor
+	Impresiones de Respaldo, permite enviar por email
+	Empresa.logofac char(20)
+	AfeGuarda.observa char(250)
 2.1.10
 	Imagenes
 2.1.9

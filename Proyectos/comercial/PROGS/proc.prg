@@ -1704,6 +1704,8 @@ IF lok
    goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
    goapp.rutaaplicacion			= IIF(EMPTY(goapp.rutaaplicacion),SYS(5)+Curdir(),goapp.rutaaplicacion)
    goapp.homologado			= DefaultVar('CsrEmpresa.homologado',0)
+   goapp.logofac			= DefaultVar('CsrEmpresa.logofac','logofac.jpg')
+   
   * oavisar.programador(goApp.rutaaplicacion)
 ENDIF
    

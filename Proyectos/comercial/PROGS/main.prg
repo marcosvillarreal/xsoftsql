@@ -182,11 +182,7 @@ ObjReporter.AddProperty('mensajeria_body',"")
 ObjReporter.AddProperty('banner',"gmbanner.png")
 
 
-IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-	ObjReporter.logofac = lcdd+'graphics\logofac.jpg'
-	ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
-ENDIF 
+
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
 	IF lldesarrollo && Aplicacion en modo desarrollo
@@ -295,6 +291,13 @@ IF TYPE('goApp')='O'
 	
 	LeerEmpresa()
 	
+	ObjReporter.logofac =  goapp.logofac
+	IF lldesarrollo
+		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+		ObjReporter.logofac = lcdd+'graphics\'+LTRIM(goapp.logofac)
+		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+	ENDIF 
+
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
 	Goapp.nombreusuario= ""
