@@ -1,5 +1,5 @@
 goapp.idejercicio = 1100000027
-goapp.terminal = 12&&22 &&4 &&22
+goapp.terminal = 15&&22 &&4 &&22
 goapp.idusuario = 1
 *goapp.codempresa = 1
 goapp.sucursal =1
