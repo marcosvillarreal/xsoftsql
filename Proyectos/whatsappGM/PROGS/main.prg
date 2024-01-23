@@ -89,7 +89,8 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
    SET PROCEDURE TO Whatsapp.prg ADDITIVE 
      SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
-       
+   SET PROCEDURE TO _clipboard.prg ADDITIVE 
+        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
    SET CLASSLIB  TO  controles ADDITIVE 
@@ -162,7 +163,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 
-	goapp.version = "01.00.00"
+	goapp.version = "01.01.00"
 	goapp.nameapp = "gmwapp"
 	PUBLIC  gcicono
 	     
