@@ -1,4 +1,9 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.12
+	Cuerfac.idubicacion int
+	RegFacvta, almacenamos la unibacion en bdd
+	arreglo report_retiro 
+	AbmProducto impitmask importes
 2.1.11
 	LocalProyecto separador de miles
 	Paravario_facvta GridBackColor

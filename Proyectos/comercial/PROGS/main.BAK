@@ -291,7 +291,7 @@ IF TYPE('goApp')='O'
 	
 	LeerEmpresa()
 	
-	ObjReport.logofac =  goapp.logofac
+	ObjReporter.logofac =  goapp.logofac
 	IF lldesarrollo
 		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 		ObjReporter.logofac = lcdd+'graphics\'+LTRIM(goapp.logofac)
