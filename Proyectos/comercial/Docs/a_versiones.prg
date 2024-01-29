@@ -1,4 +1,7 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.13
+	Actualizador de precios a CSV
+	Parametro opcional generar resguardo de pdf
 2.1.12
 	Cuerfac.idubicacion int
 	RegFacvta, almacenamos la unibacion en bdd
