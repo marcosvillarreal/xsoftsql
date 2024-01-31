@@ -387,7 +387,7 @@ IF TYPE('goApp')='O'
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
 			IF goapp.openres = 1
-				lcDoForm = 'frmmenu_v3'
+				lcDoForm = 'frmreserva_v3'
 				IF lnVersion > 0
 					lcDoForm = lcDoForm + '_'+strtrim(lnVersion)
 				ENDIF 

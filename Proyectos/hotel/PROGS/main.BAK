@@ -372,11 +372,26 @@ IF TYPE('goApp')='O'
 *!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
+	
+	lnVersion = 0
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT * FROM Paravario
+	where nombre = 'VERSIONRESERVA'
+	ENDTEXT 
+	=CrearCursorAdapter('FsrParaVario',lcCmd)
+	IF RECCOUNT('FsrParaVario')#0
+		lnVersion = NVL(FsrParaVario.importe,0)
+	ENDIF 
+	
 	IF NOT lnuevomenu 
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
 			IF goapp.openres = 1
-				DO FORM frmreserva_v3_4
+				lcDoForm = 'frmmenu_v3'
+				IF lnVersion > 0
+					lcDoForm = lcDoForm + '_'+strtrim(lnVersion)
+				ENDIF 
+				DO FORM &lcDoForm
 			ENDIF 
 		ELSE 
 			DO FORM frmmenu_DashBoard
