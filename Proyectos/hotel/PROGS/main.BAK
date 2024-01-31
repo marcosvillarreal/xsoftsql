@@ -376,7 +376,7 @@ IF TYPE('goApp')='O'
 		IF oConfigTermi.MenuDashBoard='FALSE'
 			DO FORM frmmenu3
 			IF goapp.openres = 1
-				DO FORM frmreserva_v3
+				DO FORM frmreserva_v3_4
 			ENDIF 
 		ELSE 
 			DO FORM frmmenu_DashBoard
