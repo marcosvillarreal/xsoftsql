@@ -1,12 +1,15 @@
 DO CASE 
-CASE goapp.codempresa = 1
-
+CASE goapp.codempresa = 1 &&Fortin
 	goapp.idejercicio = 1100000026
 	goapp.terminal = 12
 	goapp.idusuario = 1
-CASE goapp.codempresa = 4
+CASE goapp.codempresa = 4 &&DelPuerto
 	goapp.idejercicio = 1100000028
 	goapp.terminal = 2
+	goapp.idusuario = 1
+CASE goapp.codempresa = 5 &&MundoHierros
+	goapp.idejercicio = 1100000027
+	goapp.terminal = 12
 	goapp.idusuario = 1
 ENDCASE 
 *goapp.codempresa = 1

@@ -1,4 +1,11 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.14
+	AbmProducto, grabar imagen
+	Exportador AFIP y Holistor, cierran periodo presentado
+	RegFacCpra, validamos al principio el ult periodo presentado
+	FacVta y ImpComproba, se agrego el retiro/autorizo para los envios.
+	FacVta, se permite enviar por correo el retiro
+	SenEmail mejoras
 2.1.13
 	Actualizador de precios a CSV
 	Parametro opcional generar resguardo de pdf
