@@ -6,6 +6,8 @@ TEXT TO lcVersiones TEXTMERGE NOSHOW
 	FacVta y ImpComproba, se agrego el retiro/autorizo para los envios.
 	FacVta, se permite enviar por correo el retiro
 	SenEmail mejoras
+	Cambio de PRecios por archivo
+	MovRetiro.retiro char(30), autorizo char(30)
 2.1.13
 	Actualizador de precios a CSV
 	Parametro opcional generar resguardo de pdf
