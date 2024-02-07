@@ -165,6 +165,7 @@ STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
 pidsistema = 1
 
+loScriptVFP = CREATEOBJECT("Scripting.FileSystemObject")
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
 
 PUBLIC OAvisar
@@ -184,9 +185,8 @@ ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
-IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-ENDIF 
+ObjReporter.AddProperty('mensajeria_body',"")
+ObjReporter.AddProperty('banner',"gmbanner.png")
 ObjReporter.AddProperty('cartel',"")
 
 IF TYPE('goApp')='O'
@@ -286,6 +286,14 @@ IF TYPE('goApp')='O'
 
 	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
+	
+	ObjReporter.logofac =  goapp.logofac
+	IF lldesarrollo
+		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+		ObjReporter.logofac = lcdd+'graphics\'+LTRIM(goapp.logofac)
+		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+	ENDIF 
+	
 	LeerSucursal()
 	    
 	Goapp.idusuario           = 0
