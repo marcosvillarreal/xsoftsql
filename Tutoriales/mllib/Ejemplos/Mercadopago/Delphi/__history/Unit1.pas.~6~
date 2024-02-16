@@ -1,0 +1,90 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button6: TButton;
+    Button4: TButton;
+    procedure Button6Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses
+  mllib_TLB;
+
+{$R *.dfm}
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+  Params, Item: IJsonObject;
+  oPayment: IPayment;
+  Id, Status, Date_Approved: string;
+  transaction_amount: Double;
+  payment_type_id: WideString;
+  mp: IMPService;
+begin
+  mp := CoMPService.Create;
+  mp.SandboxMode := true;
+  Params := CoJsonObject.Create;
+  Params.Str['title'] := 'Pago QR';
+  Params.Str['description'] := 'Pago mediante QR';
+  Params.Dbl['total_amount'] := 1.20;
+  Params.Str['external_reference'] := mp.newUuid;
+  Item := Params.Arr['items'].Obj[0];
+  Item.Str['title'] := 'Item 1';
+  Item.Dbl['total_amount'] := 1.20;
+  Item.Str['unit_measure'] := 'unit';
+  Item.Dbl['quantity'] := 1;
+  Item.Dbl['unit_price'] := 1.12;
+  if mp.QRCreateOrder(Params) then
+  begin
+    if mp.WaitQRPayment then
+    begin
+      // Obtengo informacion del pago. Json de ejemplo disponible en
+      // https://www.mercadopago.com.ar/developers/es/reference/payments/_payments_id/get
+      oPayment := mp.GetPaymentResponseAsObj;
+      // Guardar el id de pago en el sistema para consultarlo posteriormente en caso de ser necesario (mp.GetPayment(Id))
+      Id := oPayment.id;
+      Status := oPayment.status; // approved, rejected, etc.
+      if Status = 'approved' then
+      begin
+        date_approved := oPayment.date_approved;
+        transaction_amount := oPayment.transaction_amount;
+        // Es el tipo de método de pago (tarjeta, transferencia bancaria, ticket, ATM, etc.)
+        payment_type_id := oPayment.payment_type_id;
+        ShowMessage('Pago realizado con éxito. Id de operación  = ' + Id);
+      end
+      else if Status = 'rejected' then
+        ShowMessage('El pago ha sido rechazado!')
+      else
+        ShowMessage('El pago esta siendo procesado. Consulte el estado dentro de algunos minutos.');
+    end
+  end
+  else
+    ShowMessage(mp.ErrorDesc);
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+  mp: IMPService;
+begin
+  mp := CoMPService.Create;
+  mp.SandboxMode := true;
+  mp.ConfigureStore;
+end;
+
+end.
