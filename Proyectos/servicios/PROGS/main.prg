@@ -399,7 +399,7 @@ IF TYPE('goApp')='O'
 *!*	  
 *!*		  DO SETS_INICIALES
 *!*		  
-*!*		  DO DECLARAR_FUNCIONES_API
+	  DO DECLARAR_FUNCIONES_API
 *!*	  
 *!*			 
 *!*		poSysTray = CreateObject("WALTER_SYSTRAY")

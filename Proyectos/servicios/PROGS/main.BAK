@@ -201,7 +201,7 @@ ObjReporter.AddProperty('mensajeria_body',"")
 ObjReporter.AddProperty('banner',"gmbanner.png")
 IF lldesarrollo
 	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-	ObjReporter.banner= lcdd+'graphics\gmbanner.png'
+	ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
 ENDIF 
 ObjReporter.AddProperty('cartel',"")
 
