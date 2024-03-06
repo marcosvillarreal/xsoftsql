@@ -1,8 +1,11 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
----Notas de Version 
+---Notas de Version 	
 2.3.14
 	Paravario separador de CSV
 	Gemera RBF
+	Paravario ctacte
+	abmctacte
+	Resumen Individual, mejora vida
 2.3.13
 	Informe iibb e debito fiscal, separador de miles
 	Generador JAQUE

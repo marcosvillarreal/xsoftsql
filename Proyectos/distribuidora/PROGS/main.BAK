@@ -202,10 +202,10 @@ ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
 ObjReporter.AddProperty('mensajeria_body',"")
 ObjReporter.AddProperty('banner',"gmbanner.png")
-IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-	ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
-ENDIF 
+*!*	IF lldesarrollo
+*!*		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+*!*		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+*!*	ENDIF 
 ObjReporter.AddProperty('cartel',"")
 
 IF TYPE('goApp')='O'
@@ -326,6 +326,13 @@ IF TYPE('goApp')='O'
 
 	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
+	
+	ObjReporter.logofac =  goapp.logofac
+	IF lldesarrollo
+		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+		ObjReporter.logofac = lcdd+'graphics\'+LTRIM(goapp.logofac)
+		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+	ENDIF 
 	    
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
