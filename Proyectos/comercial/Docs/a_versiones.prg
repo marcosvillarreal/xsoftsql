@@ -1,4 +1,8 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.15
+	CbioPrecio grupal, por alicuota de IVA
+	ParaVario_facvta, mostrar IVA
+	Buscador_v2, para delpuerto muestra IVA
 2.1.14
 	AbmProducto, grabar imagen
 	Exportador AFIP y Holistor, cierran periodo presentado
