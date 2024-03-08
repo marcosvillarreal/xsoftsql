@@ -1,5 +1,11 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
+-Pendiente
+
+2.3.15
+	Resumen de Ctacte, Composicion Sdo - Email
+	Abm Ctacte y Producto, Order Tab
+	Estadistica, SPACE(30) para campos nombres, si vienen vacio, eran de 1
 2.3.14
 	Paravario separador de CSV
 	Gemera RBF
