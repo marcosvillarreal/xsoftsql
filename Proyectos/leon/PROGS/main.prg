@@ -156,6 +156,7 @@ ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('firma',cFirma)
 ObjReporter.AddProperty('fileqr',cRutaQR)
 ObjReporter.AddProperty('mensajeria_body',"")
+ObjReporter.AddProperty('banner',"gmbanner.png")
 
 PUBLIC ObjInfNeg
 ObjInfNeg=CREATEOBJECT("custom")
@@ -253,6 +254,7 @@ IF TYPE('goApp')='O'
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
 	
+	
 	   * en proc.prg   
 	IF ExisteDSN()  			
 		IF !ConeccionADO()
@@ -284,6 +286,10 @@ IF TYPE('goApp')='O'
 	Goapp.perfilusuario     = 0
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
+	
+	IF lldesarrollo
+		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+	ENDIF 
 	
     _screen.visible=.t.	   
 	_screen.lockscreen=.f.
