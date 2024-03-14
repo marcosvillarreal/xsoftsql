@@ -6,6 +6,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 	Resumen de Ctacte, Composicion Sdo - Email
 	Abm Ctacte y Producto, Order Tab
 	Estadistica, SPACE(30) para campos nombres, si vienen vacio, eran de 1
+	Estadistica base 1 mes, dinamica
 2.3.14
 	Paravario separador de CSV
 	Gemera RBF

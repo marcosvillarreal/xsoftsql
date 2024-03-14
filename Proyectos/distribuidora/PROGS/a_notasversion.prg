@@ -1,7 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
-
+2.3.16
+	Cartel de facturador , hace lineas
+	AbmProducto, validar si es pesable, no puede tener variedades
 2.3.15
 	Resumen de Ctacte, Composicion Sdo - Email
 	Abm Ctacte y Producto, Order Tab
