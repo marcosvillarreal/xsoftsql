@@ -1,0 +1,23 @@
+20-03-2024 08:01:07 , EXPORTAR_HOLISTOR.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No coinciden los tipos de datos.;Linea : INSERT INTO CsrImprimir (idmaopera,codtasa,letra,clasecomp,talonario,numcomproba,fechaemi,fecharecep,nomctacte ,abrevia,cuit,registro,provincia,codperce,registro) VALUES (OscCompras.idmaopera,'0000',OscCompras.letra,OscCompras.clasecomp,OscCompras.talonario,OscCompras.numcomproba ,OscCompras.fechaemi,OscCompras.fecharecep,OscCompras.nomctacte,OscCompras.abrevia,PeloCuit(OscCompras.cuit) ,RECNO(),OscCompras.provincia,'*',strzero(lnRegistro ,4));Error :          9;Ultimo Alias Activo: CSRAUXCOMPRAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DDZD00BH.TMP;Ultimo Control activo: 
+20-03-2024 08:01:07 , Pila de llamadas
+20-03-2024 08:01:07 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+20-03-2024 08:01:07 , Objeto      : exportar_holistor.imprimir_vistaprevia1.excel.click
+20-03-2024 08:01:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+20-03-2024 08:01:07 , Nº de Linea :          5
+20-03-2024 08:01:07 , En el Fuente: llOK=thisform.CrearInforme()
+20-03-2024 08:01:07 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+20-03-2024 08:01:07 , Objeto      : exportar_holistor.crearinforme
+20-03-2024 08:01:07 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+20-03-2024 08:01:08 , Nº de Linea :         20
+20-03-2024 08:01:08 , En el Fuente: 	lTodoOK = .calculacompras(cperiodo)
+20-03-2024 08:01:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+20-03-2024 08:01:08 , Objeto      : exportar_holistor.calculacompras
+20-03-2024 08:01:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+20-03-2024 08:01:08 , Nº de Linea :         85
+20-03-2024 08:01:08 , En el Fuente: RETURN This.GenerarCompras(cPeriodo)
+20-03-2024 08:01:08 , Programa    : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+20-03-2024 08:01:08 , Objeto      : exportar_holistor.generarcompras
+20-03-2024 08:01:08 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\afip_otros\exportar_holistor.sct
+20-03-2024 08:01:08 , Nº de Linea :         32
+20-03-2024 08:01:08 , En el Fuente: 		INSERT INTO CsrImprimir (idmaopera,codtasa,letra,clasecomp,talonario,numcomproba,fechaemi,fecharecep,nomctacte						,abrevia,cuit,registro,provincia,codperce,registro) VALUES 						(OscCompras.idmaopera,'0000',OscCompras.letra,OscCompras.clasecomp,OscCompras.talonario,OscCompras.numcomproba						,OscCompras.fechaemi,OscCompras.fecharecep,OscCompras.nomctacte,OscCompras.abrevia,PeloCuit(OscCompras.cuit)						,RECNO(),OscCompras.provincia,'*',strzero(lnRegistro ,4))
+20-03-2024 08:01:08 , Fin
