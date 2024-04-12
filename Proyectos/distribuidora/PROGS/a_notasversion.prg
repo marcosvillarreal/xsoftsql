@@ -1,6 +1,10 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.17
+	ParaFacvta - Tope Lote Pedidos
+	RegFacPedido_k2, valida TopeLote
+	RegCtacte_K, permite ver el comprobante
 2.3.16
 	Cartel de facturador , hace lineas
 	AbmProducto, validar si es pesable, no puede tener variedades
