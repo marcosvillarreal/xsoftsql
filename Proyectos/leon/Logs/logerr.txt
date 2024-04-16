@@ -1,36 +1,11 @@
-20-03-2024 17:14:44 , Nº de Linea :        355
-20-03-2024 17:14:45 , En el Fuente: 	Read events   
-20-03-2024 17:14:45 , Programa    : j:\xsoftsql\proyectos\leon\forms\util\frmmenu3.sct
-20-03-2024 17:14:45 , Objeto      : frmmenu3.treeview.dblclick
-20-03-2024 17:14:45 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\util\frmmenu3.sct
-20-03-2024 17:14:45 , Nº de Linea :         13
-20-03-2024 17:14:45 , En el Fuente: 	   &lcCmd
-20-03-2024 17:14:45 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-20-03-2024 17:14:46 , Objeto      : ejecutamenu
-20-03-2024 17:14:46 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-20-03-2024 17:14:46 , Nº de Linea :       1527
-20-03-2024 17:14:46 , En el Fuente: 							DO FORM &lcForm WITH lcparam1
-20-03-2024 17:14:46 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-20-03-2024 17:14:47 , Objeto      : substock.imprimir_vistaprevia1.impresora.click
-20-03-2024 17:14:47 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-20-03-2024 17:14:47 , Nº de Linea :          8
-20-03-2024 17:14:48 , En el Fuente: 	llOK=thisform.CrearInforme()
-20-03-2024 17:14:48 , Programa    : j:\xsoftsql\proyectos\leon\forms\substock.sct
-20-03-2024 17:14:48 , Objeto      : substock.crearinforme
-20-03-2024 17:14:48 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\substock.sct
-20-03-2024 17:14:48 , Nº de Linea :         85
-20-03-2024 17:14:49 , En el Fuente: DODEFAULT()
-20-03-2024 17:14:49 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
-20-03-2024 17:14:49 , Objeto      : informe.crearinforme
-20-03-2024 17:14:49 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
-20-03-2024 17:14:49 , Nº de Linea :          2
-20-03-2024 17:14:49 , En el Fuente: thisform.crearheader()
-20-03-2024 17:14:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\substock.sct
-20-03-2024 17:14:50 , Objeto      : substock.crearheader
-20-03-2024 17:14:50 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\substock.sct
 20-03-2024 17:14:50 , Nº de Linea :         25
 20-03-2024 17:14:50 , En el Fuente: 		.Column009.Header = "Concepto"&&(Indica el nombre del encabezado)
 26-03-2024 12:49:15 , REGCONCILIA.LOAD, Error: El archivo 'csrmovbcocar.dbf' no existe.;Linea : select entregado, fecha, detalle, id, idmaopera, idtipomov, importe, numero, signo , space(30) as comprobante, 0 as estadotilde from csrmovbcocar where id<-1 
+
+
+
+
+
 
 
 
@@ -356,6 +331,11 @@ INTO CURSOR CsrCuerpo READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMO
 
 
 
+
+
+
+
+
 USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BHU1005D.TMP;Ultimo Control activo: 
 26-03-2024 12:49:22 , Pila de llamadas
 26-03-2024 12:49:23 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -374,6 +354,11 @@ USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BHU1005D.TMP;Ultimo Control activo:
 26-03-2024 12:49:26 , Nº de Linea :         35
 26-03-2024 12:49:26 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
 03-04-2024 09:23:30 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: COLUMN001 es un miembro desconocido.;Linea : lcCampo = &lcName;Error :       1925;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        402 STR(SUCURSAL)+STR(IDVENDEDOR)+ST
+
+
+
+
+
 
 
 
@@ -693,7 +678,17 @@ R(IDCTACTE)+STR(IDRUBRO)+STR(IDMARCA)+STR(CODIGO);DBF: C:\USERS\MARCOS\APPDATA\L
 
 
 
+
+
+
+
+
 unidades,vtakilos,costosiva,importefinal,ganancia,margen FROM CsrImprimir INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRGRUPOS;Ultimo registro:          2 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00GG.TMP;Ultimo Con
+
+
+
+
+
 
 
 
@@ -995,8 +990,18 @@ trol activo:
 
 
 
+
+
+
+
+
 rImprimir READWRITE 
 03-04-2024 09:40:06 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'PROMEDIO'.;Linea : SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE;Error :       1806;Ultimo Alias A
+
+
+
+
+
 
 
 
@@ -1289,6 +1294,11 @@ ctivo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\
 
 
 
+
+
+
+
+
 RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo: 
 03-04-2024 11:26:34 , Pila de llamadas
 03-04-2024 11:26:35 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -1307,6 +1317,11 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo:
 03-04-2024 11:26:38 , Nº de Linea :        112
 03-04-2024 11:26:39 , En el Fuente: SaveQL(lcCmd,this.Name)
 08-04-2024 08:41:26 , INF_DEVOLUCIONES.INIT, Error: Denegado j:\xsoftsql\proyectos\leon\totales.idx al acceso al archivo.;Linea : inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,1
+
+
+
+
+
 
 
 
@@ -1562,7 +1577,17 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
       1925;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 STRID(IDZONA,10)+STRID(IDVENDEDOR,10)+STRID(IDCTACTE,10)+STRID(IDSECCION,10)+STRID(IDARTICULO,10)+STRID(IDVARIEDAD,10);DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000087WP00CW.TMP;Ultimo
+
+
+
+
+
 
 
 
@@ -1810,6 +1835,11 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 0)to totales;Error :       1705;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000087WP00LU.TMP;Ultimo Control activo: 
 08-04-2024 08:55:16 , Pila de llamadas
 08-04-2024 08:55:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\inf_devoluciones.sct
@@ -1823,6 +1853,11 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo:
 08-04-2024 08:55:18 , Nº de Linea :         15
 08-04-2024 08:55:19 , En el Fuente: inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,10)to totales
 08-04-2024 08:56:07 , INF_DEVOLUCIONES.INIT, Error: Denegado j:\xsoftsql\proyectos\leon\totales.idx al acceso al archivo.;Linea : inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,1
+
+
+
+
+
 
 
 
@@ -2055,6 +2090,11 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 0)to totales;Error :       1705;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000087WP00RK.TMP;Ultimo Control activo: 
 08-04-2024 09:03:45 , Pila de llamadas
 08-04-2024 09:03:46 , Programa    : j:\xsoftsql\proyectos\leon\forms\inf_devoluciones.sct
@@ -2068,6 +2108,11 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\000019FT00ZW.TMP;Ultimo Control activo:
 08-04-2024 09:03:48 , Nº de Linea :         16
 08-04-2024 09:03:48 , En el Fuente: inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,10)to totales
 08-04-2024 09:09:41 , MAIN, Error: Denegado j:\xsoftsql\proyectos\leon\totales.idx al acceso al archivo.;Linea : inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,10)to totales;Erro
+
+
+
+
+
 
 
 
@@ -2297,6 +2342,11 @@ r :       1705;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF
 
 
 
+
+
+
+
+
 stro:          2 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00002RD501FF.TMP;Ultimo Control activo: 
 08-04-2024 12:12:37 , Pila de llamadas
 08-04-2024 12:12:37 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -2320,6 +2370,11 @@ stro:          2 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00002RD501FF.TMP;Ultim
 08-04-2024 12:12:42 , Nº de Linea :         18
 08-04-2024 12:12:42 , En el Fuente: 		=ExcelVistaPreviaGrupo(@ObjNomGrupo,RECCOUNT('CsrGrupos'))
 08-04-2024 12:13:58 , LISHISTORICOPRECIO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: COLUMN001 es un miembro desconocido.;Linea : lcCampo = &lcName;Error :       1925;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:       1573 ;DBF: C:\USERS\MARCOS\APPDAT
+
+
+
+
+
 
 
 
@@ -2520,6 +2575,11 @@ A\LOCAL\TEMP\00002RD501GV.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 RS\MARCOS\APPDATA\LOCAL\TEMP\00002RD501MX.TMP;Ultimo Control activo: 
 08-04-2024 12:22:42 , Pila de llamadas
 08-04-2024 12:22:42 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -2533,6 +2593,11 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\00002RD501MX.TMP;Ultimo Control activo:
 08-04-2024 12:22:44 , Nº de Linea :         76
 08-04-2024 12:22:44 , En el Fuente: 	IF ._ogruporden.Value=1
 08-04-2024 16:14:44 , LISHISTORICOPRECIO.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'INTERNON'.;Linea : SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE;Error :       1806;Ultimo Ali
+
+
+
+
+
 
 
 
@@ -2728,7 +2793,17 @@ as Activo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPD
 
 
 
+
+
+
+
+
 drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idingbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as
+
+
+
+
+
 
 
 
@@ -2854,7 +2929,17 @@ drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPAC
 
 
 
+
+
+
+
+
 ol,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcli
+
+
+
+
+
 
 
 
@@ -2988,7 +3073,17 @@ ente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucurs
 
 
 
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as gana
+
+
+
+
+
 
 
 
@@ -3108,8 +3203,18 @@ ncia,CAST(0 as n(11,2)) as margen,sum(round(importefinal,2)) as importefinal,SUM
 
 
 
+
+
+
+
+
 ursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodoINTO CURSOR CsrImprimir READWRITE 
 09-04-2024 11:03:49 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrub
+
+
+
+
+
 
 
 
@@ -3227,6 +3332,11 @@ ro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30
 
 
 
+
+
+
+
+
 dades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,S
 
 
@@ -3286,7 +3396,17 @@ dades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-co
 
 
 
+
+
+
+
+
 UM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente
+
+
+
+
+
 
 
 
@@ -3412,7 +3532,17 @@ UM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(
 
 
 
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as gana
+
+
+
+
+
 
 
 
@@ -3524,8 +3654,18 @@ ncia,CAST(0 as n(11,2)) as margen,sum(round(importefinal,2)) as importefinal,SUM
 
 
 
+
+
+
+
+
 ursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodoINTO CURSOR CsrImprimir READWRITE 
 09-04-2024 11:06:34 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'MARGENUTIL'.;Linea : replace ALL margenutil WITH (round(((utilidad/costosiva)*100),4)) FOR costosiva > 0;Error :         12;Ultimo Alias Activo: C
+
+
+
+
+
 
 
 
@@ -3593,6 +3733,11 @@ SRIMPRIMIR;Ultimo registro:          2 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\
 09-04-2024 11:06:37 , Nº de Linea :         85
 09-04-2024 11:06:37 , En el Fuente: replace ALL margenutil WITH (round(((utilidad/costosiva)*100),4)) FOR costosiva > 0
 09-04-2024 11:15:10 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'DEVIL'.;Linea : SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE;Error :       1806;Ultimo Alias Acti
+
+
+
+
+
 
 
 
@@ -3714,6 +3859,11 @@ vo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOC
 
 
 
+
+
+
+
+
 vo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00002YH500WJ.TMP;Ultimo Control activo: 
 09-04-2024 11:17:14 , Pila de llamadas
 09-04-2024 11:17:15 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -3742,6 +3892,11 @@ vo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOC
 09-04-2024 11:17:20 , Nº de Linea :         77
 09-04-2024 11:17:20 , En el Fuente: 	SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE 
 09-04-2024 11:56:21 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PIVOT.CLICK, Error: COLUMN024 es un miembro desconocido.;Linea : .Column024.Header = 'Periodo';Error :       1925;Ultimo Alias Activo: CSRGRUPOS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\
+
+
+
+
+
 
 
 
@@ -3826,6 +3981,11 @@ APPDATA\LOCAL\TEMP\00002YH501EY.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
 vo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GBNT006B.TMP;Ultimo Control activo: 
 09-04-2024 18:08:25 , Pila de llamadas
 09-04-2024 18:08:26 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -3854,6 +4014,11 @@ vo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOC
 09-04-2024 18:08:33 , Nº de Linea :         77
 09-04-2024 18:08:33 , En el Fuente: 	SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE 
 09-04-2024 18:43:26 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.PIVOT.CLICK, Error: Código de excepción OLE IDispatch 0 de Microsoft Excel: Este nombre ya está ocupado. Pruebe con uno distinto..;Linea : XLSheet.NAME	= oParametros.NameGroup;Error :       1429;
+
+
+
+
+
 
 
 
@@ -3910,6 +4075,11 @@ Ultimo Alias Activo: CSRAUXHOJA;Ultimo registro:      66992 ;DBF: C:\USERS\MARCO
 
 
 
+
+
+
+
+
 vo: 
 09-04-2024 19:13:39 , Pila de llamadas
 09-04-2024 19:13:40 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_margenutil.sct
@@ -3923,6 +4093,11 @@ vo:
 09-04-2024 19:13:41 , Nº de Linea :          7
 09-04-2024 19:13:41 , En el Fuente: SELECT * FROM CsrTipoIB INTO CURSOR CsrTipoIngBrutos READWRITE 
 11-04-2024 14:45:10 , MAIN, Error: El archivo 'csrcuerpo.dbf' no existe.;Linea : SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal,0 as nocheques,CsrCuerpo.*,DTOS(CTOD(vencimien)) as chrfecha FROM CsrCuerpo ORDER BY chrfecha,CsrCuer
+
+
+
+
+
 
 
 
@@ -3956,4 +4131,29 @@ po.id, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite;Error :          1;
 11-04-2024 14:45:16 , Objeto      : listcartera.crearinforme
 11-04-2024 14:45:16 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\listcartera.sct
 11-04-2024 14:45:16 , Nº de Linea :        170
-11-04-2024 14:45:17 , En el Fuente: SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal,0 as nocheques,CsrCuerpo.*,DTOS(CTOD(vencimien)) as chrfechaFROM CsrCuerpo ORDER BY chrfecha,CsrCuerpo.id, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite
+11-04-2024 14:45:17 , En el Fuente: SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal,0 as nocheques,CsrCuerpo.*,DTOS(CTOD(vencimien)) as chrfechaFROM CsrCuerpo ORDER BY chrfecha,CsrCuerpo.id, CsrCuerpo.idmaopera INTO CURSOR CsrImpr
+
+
+
+
+imir readWrite
+16-04-2024 11:05:07 , CBIOPRECIO2.LOAD, Error: El archivo 'csrcbioprecio.dbf' no existe.;Linea : SELECT Csrcbioprecio.* FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:      
+
+
+
+    0 ;DBF: ;Ultimo Control activo: 
+16-04-2024 11:05:08 , Pila de llamadas
+16-04-2024 11:05:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\cbioprecio2.sct
+16-04-2024 11:05:09 , Objeto      : cbioprecio2.load
+16-04-2024 11:05:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\cbioprecio2.sct
+16-04-2024 11:05:09 , Nº de Linea :          4
+16-04-2024 11:05:09 , En el Fuente: SELECT Csrcbioprecio.* FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE 
+16-04-2024 11:06:54 , CBIOPRECIO2.LOAD, Error: El archivo 'csrcbioprecio.dbf' no existe.;Linea : SELECT Csrcbioprecio.* FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:      
+
+    0 ;DBF: ;Ultimo Control activo: 
+16-04-2024 11:06:54 , Pila de llamadas
+16-04-2024 11:06:55 , Programa    : j:\xsoftsql\proyectos\leon\forms\cbioprecio2.sct
+16-04-2024 11:06:55 , Objeto      : cbioprecio2.load
+16-04-2024 11:06:55 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\cbioprecio2.sct
+16-04-2024 11:06:55 , Nº de Linea :          4
+16-04-2024 11:06:56 , En el Fuente: SELECT Csrcbioprecio.* FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE 
