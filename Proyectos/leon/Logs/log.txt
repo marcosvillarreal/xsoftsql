@@ -1,10 +1,3 @@
-Error No se encuentra la variable 'CARCHIVO'.
-Linea nº if !empty(cArchivo)
- Alias CSRSALDORESUMEN registro          1
-Control activo  REGCONCILIA.ACEPTAR2.CLICK
-02-03-2023 13:08:26 , Error nº:         12
-Error No se encuentra la variable 'TOTAL'.
-Linea nº LOCATE FOR fecha = fecha AND inf='*' AND importe = total AND estadotilde = 0
  Alias CSRCUERPO registro        469
 Control activo  REGCONCILIA.ACEPTAR2.CLICK
 02-03-2023 13:41:41 , Verificando OCX
@@ -484,7 +477,9 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
 
 
 
@@ -696,7 +691,9 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
 
 
 
@@ -908,6 +905,7 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -1014,7 +1012,9 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
 
 
 
@@ -1751,6 +1751,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -1770,7 +1771,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
 
 
 
@@ -1812,6 +1815,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -1830,7 +1834,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
 
 
 
@@ -1968,4 +1974,11 @@ Error No se encuentra la propiedad FECHAANUALCION.
 Linea nº cLinea = cLinea		+ cSep + IIF(OScatter.estadocta=1,Oscatter.fechaanualcion,'')
  Alias CSRCURSOR registro          2
 Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-24-04-2024 16:22:42 , Error nº:       1734Error No se encuentra la propiedad FECHAANUALCION.Linea nº cLinea = cLinea		+ cSep + IIF(OScatter.estadocta=1,Oscatter.fechaanualcion,'') Alias CSRCURSOR registro          2Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+24-04-2024 16:22:42 , Error nº:       1734
+Error No se encuentra la propiedad FECHAANUALCION.
+Linea nº cLinea = cLinea		+ cSep + IIF(OScatter.estadocta=1,Oscatter.fechaanualcion,'')
+ Alias CSRCURSOR registro          2
+Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+25-04-2024 11:18:06 , Verificando OCX
+25-04-2024 11:22:21 , Verificando OCX
+25-04-2024 11:24:04 , Verificando OCX
