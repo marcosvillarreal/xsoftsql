@@ -1,6 +1,8 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.18
+	DistribuidoraSur, impresion de remitos truchos
 2.3.17
 	ParaFacvta - Tope Lote Pedidos
 	RegFacPedido_k2, valida TopeLote

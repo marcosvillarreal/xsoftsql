@@ -3,6 +3,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 2.3.18
 	DistribuidoraSur, impresion de remitos truchos
+	RegCtacte_v1 y RecGacte_sucv..... ver comprobante
 2.3.17
 	ParaFacvta - Tope Lote Pedidos
 	RegFacPedido_k2, valida TopeLote
