@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.16
+	Proforma
 2.1.15
 	CbioPrecio grupal, por alicuota de IVA
 	ParaVario_facvta, mostrar IVA
