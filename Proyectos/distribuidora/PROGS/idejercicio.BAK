@@ -1,18 +1,18 @@
 goapp.idsucursal = 1100000001
 GOAPP.IDUSUARIO =1
 DO CASE 
-CASE goapp.codempresa = 12
+CASE goapp.codempresa = 12 &&Don jose
 	GOAPP.IDEJERCICIO = 1100000012
 	GOAPP.IDEJERCICIOACTUAL = 1100000012	
 	goapp.terminal = 13
 	goapp.ejercicio = 1
 	goapp.idsucursal = 1100000001
-CASE goapp.codempresa = 19
-	GOAPP.IDEJERCICIO = 1100000027
-	GOAPP.IDEJERCICIOACTUAL = 1100000027
+CASE goapp.codempresa = 19 &&km
+	GOAPP.IDEJERCICIO = 1100000029
+	GOAPP.IDEJERCICIOACTUAL = 1100000029
 	GOAPP.IDUSUARIO =1
 	goapp.terminal = 13
-	goapp.ejercicio = 13
+	goapp.ejercicio = 14
 ENDCASE 	
 
 
