@@ -3,6 +3,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 2.3.19
 	RegFacPub ... se deshabilito el buscador por descripcion
+	AbmProducto ... opcion de congelar los precios de venta
 2.3.18
 	DistribuidoraSur, impresion de remitos truchos
 	RegCtacte_v1 y RecGacte_sucv..... ver comprobante
