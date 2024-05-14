@@ -349,7 +349,7 @@ IF TYPE('goApp')='O'
 	
 	public pcTextoBalloon, poSysTray, poTimer
   
-	  DO SETS_INICIALES
+	  *DO SETS_INICIALES
 	  
 	  DO DECLARAR_FUNCIONES_API
   
