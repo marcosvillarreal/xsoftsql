@@ -1,6 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.20
+	Recibos enviar por email
+	
 2.3.19
 	RegFacPub ... se deshabilito el buscador por descripcion
 	AbmProducto ... opcion de congelar los precios de venta

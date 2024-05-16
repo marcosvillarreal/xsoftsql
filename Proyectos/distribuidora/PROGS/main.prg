@@ -159,7 +159,8 @@ PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebS
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
 PUBLIC cFileNameLog,cDirCloseBat,loScriptVFP 
-
+Public m.osystray
+ 
 STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
@@ -269,6 +270,21 @@ IF TYPE('goApp')='O'
     	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     	DO Verifica_OCX WITH "Check"
     
+   
+
+
+	TEXT TO m_icon NOSHOW 
+	AAABAAEAFBQAAAEAIAC4BgAAFgAAACgAAAAUAAAAKAAAAAEAIAAAAAAAQAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4jsAA2K7gABgCFACceohMXEJJcDwiMqA0FitkMBYrtDAWJ7QwFiNoPCYerFQ+HXyYgixUAAIAANzCTAC8okADy8PsAAAAAAPj+/AAqH60AKyCtAGZX6AMZEZhPDgaPwQsCkPcLAZT/DACX/wkAmP8JAJf/CwCU/woBkP8KAor4DQeHxRkSiFRcVJ0EIhuKABoThgDv8fUAMSS5ACofrwBBNMQIFQyWfgwDkfMNAZr/DwGk/xABqv8aC7D/U0jC/01Cvv8VB6n/DgGh/w0Bmv8KAZH/CwOJ9RQNh4QwKI0KJByKADEpjwA6LMIAalj1AxcOmYANA5T7DwGj/xIBsf8UArv/EwDA/31z3P/5+P3/8/L7/2dcz/8PALD/EAGp/w4Bn/8LAZT/CgKJ/BQNh4ZdVJ0FOTGSAAQAhwAcEqBQDQOV8xABp/8UArv/FgLI/xgC0f8aA9b/rKTx////////////konl/xIAwP8TArb/EQGs/w4BoP8LAZT/CwSJ9hsUiFgAAH4AMSS5FREHmMMPAaP/FAK+/xgC0f8cAt//HgPn/x0B6/9ZRPH/zsj8/8W/+P9GM9//FQDN/xUCw/8TArf/EQGr/w4Bnv8KAZD/DwiHyjAojhkaD6FeDgOb+BMBuP8ZAtT/HgPo/yED9P8iA/j/IgP5/yEC+P8wFPf/LBHw/xwB5f8aAtr/GALO/xUCwv8SAbT/EAGm/wwBmP8KA4r6GhOIZxMJnKsQAaf/FwLM/x4D6f8iA/j/IgP6/yID+v8hAvr/Kgz6/5iK/P+Kevv/Iwbx/x0C5f8aAtf/FwLK/xQCvP8RAa3/DgGe/woBjv8SC4e1EQad3BIBtf8cAt7/IgP3/yID+v8iA/r/IgP6/yAB+v8+JPr/6+j+/9rV/v8yFfn/HwLu/xwC4P8YAtH/FQLC/xIBs/8PAaP/CwGS/w4Hh+MQBZ/uFQHB/x8D7f8iA/r/IgP6/yID+v8iA/r/HwD6/1E4+//08///6OX+/0Em+/8fAfT/HgPm/xoC1v8WAsf/EwK2/xABpv8LAZX/DQaH9hEFoe4XAsn/IQP0/yID+v8iA/r/IgP6/yID+v8eAPr/Z1H7//z8///08v//Uzv7/x8A+P8fA+r/GgLZ/xcCyf8TArj/EAGn/wsBlv8NBoj2Ewaj2hcCyv8hA/b/IgP6/yID+v8iA/r/IgP6/x4A+v9/bfz///////z8//9pVPv/HgD5/x8D7P8bAtr/FwLJ/xMCuP8QAab/CwGU/w8HiOIWCaSoFgLD/yED9f8iA/r/IgP6/yID+v8iA/r/IAH6/5mL/P///////////4Jx/P8eAPj/HwPr/xoC2f8WAsj/EwK2/w8Bo/8LAZH/EwyIsxsPp1kUA7f3HwPv/yID+/8iA/r/IgP6/yID+v8iA/r/qp/9////////////lIX9/x8A9/8eA+j/GQLV/xUCw/8SAbH/DgGe/wsDjPkbFIljMSS2EhUIq78bAtr/IgP6/yID+v8iA/r/IgP6/yID+v+sof3///////////+Xifz/HgDz/xwC4P8XAs7/FAK7/xABqf8LAZX/EAiJxTEojRYMAZsAHhKpSxYEuvAfA+7/IgP7/yID+v8iA/r/IgP6/62i/f///////////5eJ+v8cAOj/GQLV/xUCw/8SAbD/DQGd/wwEjfMbFIlRAgCBAD0vxwCMf/MCGQyodhYDw/kfA+//IgP7/yID+/8hAfr/l4j9////////////fm/w/xcA2P8WAsb/EgK0/w4Bof8MA5D7FQ6Jfm9moAM9NJQANCbAACUYsQAwJLUFGg2odRYFvO8bAt7/IAPx/yAC9v85H/X/g3Ty/3pt6f8qFdT/FAHC/xIBsf8OAZ//DQSQ8RYPins5MY4HKCCMADQskgAAAAAAHhGuACcbrwC0r+sCHhOkRxUHqrgUA7j0FgLF/xUAyf8SAMX/EQC8/xAAsf8PAqP/DgOX9RAIjrwaE4tLf3ehAiUdiwAgGIkAAAAAAAAAAAAAAAAAPTG7AEY6vwARBp0ALCOhDxoQm1EVCpydEgedzhEGm+QQBpjkEAeTzxIKj58YEYxULiiOEAkBhgA6M5QAMCiRAAAAAAAAAAAAwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAQAMAAMAA=
+	ENDTEXT
+	
+	SET SAFETY OFF 
+	STRTOFILE(STRCONV(m_icon,14),"alert.ico")
+	SET SAFETY ON 
+	
+	m.osystray = Createobject("ysystray")
+
+   
+	    
 	Grabar_Log('Acceso al sistema, antes de autenticar') 
 	 
 	DO directivasfiscal    && en procfiscal.prg
@@ -419,7 +435,12 @@ IF TYPE('goApp')='O'
 *!*	  
 *!*	  
 *!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-	  	poTimer   = CreateObject("WALTER_TIMER")
+		poTimer   = CreateObject("WALTER_TIMER")
+	  	
+	  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
+    		poTimer.Enabled = .f.
+   		ENDIF 
+    
 *!*		  		
 *!*		    #DEFINE ICONO_NADA  0
 *!*		    #DEFINE ICONO_INFO  1
@@ -429,22 +450,7 @@ IF TYPE('goApp')='O'
 *!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 *!*		    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
 *!*		
-		Public m.osystray
-
-
-		TEXT TO m_icon NOSHOW 
-		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
-		ENDTEXT
 		
-		SET SAFETY OFF 
-		STRTOFILE(STRCONV(m_icon,14),"alert.ico")
-		SET SAFETY ON 
-		
-		m.osystray = Createobject("ysystray")
-    
-	    IF oConfigTermi.ShowBalloonTip = 'FALSE'
-	    	poTimer.Enabled = .f.
-	    ENDIF 
 *!*		  ENDIF
 
 	Read events   

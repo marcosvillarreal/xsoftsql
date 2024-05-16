@@ -1,18 +1,3 @@
-*!*	Set Safety off
-*!*	Public m.osystray
-
-
-
-
-*!*	STRTOFILE(STRCONV(m_icon,14),"alert.ico")
-
-*!*	m.osystray = Createobject("ysystray")
-
-*!*	m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
-*!*	m_duracion=10
-
-*!*	*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
-*!*	m.osystray.ShowBalloonTip("Saludos a Integral", "Información zarlu" , m_tipo,m_duracion)
 
 Define Class ysystray As Systray Of "systray.vcx"
     IconFile = "ALERT.ICO"
@@ -721,7 +706,7 @@ DEFINE CLASS systray AS hyperlink
 	*-- Occurs when the user clicks on the icon in the Taskbar Notification Area ("systray").
 	PROCEDURE iconclickevent
 		* This "event" is called when the user left-clicks on the icon.
-
+		MESSAGEBOX('Click')
 		* Default behavior is to display the menu:
 		IF NOT ISBLANK(THIS.MenuText)
 			THIS.ShowMenu()	&& The ShowMenu method will handle any errors.
@@ -1064,6 +1049,7 @@ DEFINE CLASS systray AS hyperlink
 
 	*-- Occurs when user clicks on balloon tip.
 	PROCEDURE balloonclickevent
+		MESSAGEBOX("balloon tip")
 	ENDPROC
 
 
@@ -1089,6 +1075,7 @@ DEFINE CLASS systray AS hyperlink
 
 	*-- Occurs when the user double-clicks on the icon in the Taskbar Notification Area.
 	PROCEDURE icondblclickevent
+		MESSAGEBOX("Taskbar Notification Area")
 	ENDPROC
 
 
