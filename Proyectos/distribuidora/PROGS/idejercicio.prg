@@ -27,7 +27,12 @@ CASE goapp.codempresa = 19 &&km
 	GOAPP.IDUSUARIO =1
 	goapp.terminal = 1
 	goapp.ejercicio = 14
-
+CASE goapp.codempresa = 20 &&km
+	GOAPP.IDEJERCICIO = 1100000029
+	GOAPP.IDEJERCICIOACTUAL = 1100000029
+	GOAPP.IDUSUARIO =1
+	goapp.terminal = 1
+	goapp.ejercicio = 14
 ENDCASE 	
 
 
