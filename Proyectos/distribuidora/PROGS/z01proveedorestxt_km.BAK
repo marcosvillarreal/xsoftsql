@@ -63,7 +63,7 @@ SCAN
  	*	stop()
  	ENDIF 
 *!*	 	nCodigo			= lnCodigo	
- 	lcReferencia	= ALLTRIM(CsrAcreedor.referencia) + IIF(LEN(ALLTRIM(CsrAcreedor.vendedor))=1,"/\" ,"")
+ 	lcReferencia	= ALLTRIM(CsrAcreedor.referencia) + IIF(LEN(ALLTRIM(CsrAcreedor.vendedor))=1,"/\" ,"")+ IIF(LEN(ALLTRIM(CsrAcreedor.zona))=1,"$" ,"")
  	lnctaacreedor	= 1
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	

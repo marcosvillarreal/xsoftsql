@@ -40,7 +40,7 @@ lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 SELECT CsrAcreedor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
-*VISTA()
+VISTA()
 
 LOCAL nCodigo,cCadeCtacte 
 cCadeCtacte = ''

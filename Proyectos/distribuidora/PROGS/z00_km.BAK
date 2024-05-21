@@ -444,7 +444,7 @@ DO WHILE NOT EOF()
 			lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcReferencia)))
 			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-							
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcZona)))		
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			
