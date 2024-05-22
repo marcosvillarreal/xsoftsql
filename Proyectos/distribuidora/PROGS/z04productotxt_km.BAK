@@ -76,6 +76,11 @@ ENDTEXT
 =CrearCursorAdapter('CsrMarca',lcCmd)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrTipoFrio.* FROM TipoFrio  as CsrTipoFrio
+ENDTEXT 
+=CrearCursorAdapter('CsrTipoFrio',lcCmd)
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrCtacte.* FROM Ctacte as CsrCtacte WHERE ctaacreedor = 1
 ENDTEXT 
 =CrearCursorAdapter('CsrCtacte',lcCmd)
@@ -131,7 +136,10 @@ SCAN FOR !EOF()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
-
+	IF LEN(RTRIM(CsrArticulo.nombre))<3
+		SELECT CsrArticulo
+		LOOP 
+	ENDIF 
 		
 	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnprevta4
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnprevtaf4, lninterno
@@ -226,6 +234,14 @@ SCAN FOR !EOF()
 		lnnofactu= 1
 		lnnolista = 1
 	ENDIF 
+	
+	SELECT CsrTipoFrio
+	GO TOP 	
+	IF '$'$CsrCtacte.referencia
+		LOCATE FOR numero = 2		
+	ENDIF 
+	lnidfrio = CsrTipoFrio.id
+	
 	*stop()
 	INSERT INTO Csrproducto (id,numero,nombre,codalfa,idiva,costo,margen1,prevta1,margen2,; 
 	prevta2,switch,idunidad,idtprod,idtamano,idcatego,idubicacio,idorigen,incluirped,idctacte,idrubro,margen3,;

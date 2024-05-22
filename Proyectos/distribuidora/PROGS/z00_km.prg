@@ -241,8 +241,8 @@ DO WHILE NOT EOF()
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
 			LOOP 
 		ENDIF 
-		IF LEN(LTRIM(lcNombre))<=3
-			LOOP 
+		IF LEN(RTRIM(lcNombre))<=3
+		*	LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
 		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto,Lista1,Lista2;

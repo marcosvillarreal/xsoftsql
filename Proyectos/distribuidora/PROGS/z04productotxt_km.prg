@@ -86,7 +86,7 @@ ENDTEXT
 =CrearCursorAdapter('CsrCtacte',lcCmd)
 
 
-SELECT distinct STRTRAN(referencia,'/\','') as nombre FROM CsrCtacte INTO CURSOR CsrSeccion READWRITE 
+SELECT distinct STRTRAN(STRTRAN(referencia,'/\',''),'$','') as nombre FROM CsrCtacte INTO CURSOR CsrSeccion READWRITE 
 
 lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
 lnCodigo = 1
@@ -136,7 +136,10 @@ SCAN FOR !EOF()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
-
+	IF LEN(RTRIM(CsrArticulo.nombre))<3
+		SELECT CsrArticulo
+		LOOP 
+	ENDIF 
 		
 	STORE 0 TO lnFlete,lnBonif1,lnBonif2,lnBonif3,lnBonif4,lnFletePorce,lnPrevta1,lnPrevta2,lnPrevta3,lnprevta4
 	STORE 0 TO lnSugerido,lnPrevtaF1,lnPrevtaf2,lnPrevtaf3,lnprevtaf4, lninterno
