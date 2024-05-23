@@ -147,13 +147,17 @@ SCAN FOR !EOF()
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
 	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso,lnidtipocarnico
 	
+	IF 'MERME'$ALLTRIM(cSRaRTICULO.NOMBRE)
+		STOP()
+	ENDIF 
+	
 	SELECT CsrCtacte
-    LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.proveedor)
-    IF FOUND()
-    	lnidctacte = Csrctacte.id
-    ENDIF
+    	LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.proveedor)
+    	IF FOUND()
+    		lnidctacte = Csrctacte.id
+    	ENDIF
 
-	cRubro = alltrim(STRTRAN(CsrCtacte.referencia,'/\',''))
+	cRubro = alltrim(STRTRAN(STRTRAN(CsrCtacte.referencia,'/\',''),'$',''))
 	
     SELECT CsrRubro
     LOCATE FOR ALLTRIM(nombre)=cRubro 
@@ -180,6 +184,7 @@ SCAN FOR !EOF()
    	lnunibulto	= IIF(VAL(CsrArticulo.unibulto)=0,1,VAL(CsrArticulo.unibulto))
     lnidtipovta = IIF(UPPER(CsrArticulo.univenta)$"B",2,1) &&UNIDADES=1 ,	BULTOS = 2.
     lnvtakilos	= IIF('/\'$CsrCtacte.referencia,1,0)
+      lnvtakilos	= val(CsrArticulo.CodRubro)
    	lnidforma 	= 1100000001
 	lnpeso		= 1
 	lnidfrio	= 1100000001
@@ -238,7 +243,7 @@ SCAN FOR !EOF()
 	SELECT CsrTipoFrio
 	GO TOP 	
 	IF '$'$CsrCtacte.referencia
-		LOCATE FOR numero = 2		
+	*	LOCATE FOR numero = 2		
 	ENDIF 
 	lnidfrio = CsrTipoFrio.id
 	

@@ -654,8 +654,8 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
-   * cVersion = HayVersionExe("gestion.exe",pidsistema )
-   * IF LEN(cVersion)> 0
+   cVersion = HayVersionExe("gestion.exe",pidsistema )
+    IF LEN(cVersion)> 0
     	
     	
 	  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
@@ -684,7 +684,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =   30000 
 		
-*	ENDIF 
+	ENDIF 
 	This.Enabled = IIF(lldesarrollo,.f.,This.Enabled)
   ENDPROC
   *

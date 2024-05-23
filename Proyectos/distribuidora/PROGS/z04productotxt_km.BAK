@@ -86,7 +86,7 @@ ENDTEXT
 =CrearCursorAdapter('CsrCtacte',lcCmd)
 
 
-SELECT distinct STRTRAN(referencia,'/\','') as nombre FROM CsrCtacte INTO CURSOR CsrSeccion READWRITE 
+SELECT distinct STRTRAN(STRTRAN(referencia,'/\',''),'$','') as nombre FROM CsrCtacte INTO CURSOR CsrSeccion READWRITE 
 
 lnid = RecuperarID('CsrRubro',Goapp.sucursal10)
 lnCodigo = 1
@@ -153,7 +153,7 @@ SCAN FOR !EOF()
     	lnidctacte = Csrctacte.id
     ENDIF
 
-	cRubro = alltrim(STRTRAN(CsrCtacte.referencia,'/\',''))
+	cRubro = alltrim(STRTRAN(STRTRAN(CsrCtacte.referencia,'/\',''),'$',''))
 	
     SELECT CsrRubro
     LOCATE FOR ALLTRIM(nombre)=cRubro 
@@ -180,6 +180,7 @@ SCAN FOR !EOF()
    	lnunibulto	= IIF(VAL(CsrArticulo.unibulto)=0,1,VAL(CsrArticulo.unibulto))
     lnidtipovta = IIF(UPPER(CsrArticulo.univenta)$"B",2,1) &&UNIDADES=1 ,	BULTOS = 2.
     lnvtakilos	= IIF('/\'$CsrCtacte.referencia,1,0)
+      lnvtakilos	= val(CsrArticulo.CodRubro)
    	lnidforma 	= 1100000001
 	lnpeso		= 1
 	lnidfrio	= 1100000001
@@ -238,7 +239,7 @@ SCAN FOR !EOF()
 	SELECT CsrTipoFrio
 	GO TOP 	
 	IF '$'$CsrCtacte.referencia
-		LOCATE FOR numero = 2		
+	*	LOCATE FOR numero = 2		
 	ENDIF 
 	lnidfrio = CsrTipoFrio.id
 	

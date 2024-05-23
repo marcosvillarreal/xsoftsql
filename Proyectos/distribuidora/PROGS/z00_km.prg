@@ -207,9 +207,10 @@ DO WHILE NOT EOF()
 			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-			*lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
-			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcProveedor)))
+			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodRubro)))
+			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
+			
 			*lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
 			*lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
 			lcLista1		= IIF(j + i=10,lcCadena,lcLista1)
@@ -390,14 +391,14 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-*vista()
+vista()
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
 ldebug = .t.
 
 SKIP 
-*stop()
+stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 9 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1

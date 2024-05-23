@@ -159,7 +159,8 @@ PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebS
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
 PUBLIC cFileNameLog,cDirCloseBat,loScriptVFP 
-
+Public m.osystray
+ 
 STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
@@ -269,7 +270,7 @@ IF TYPE('goApp')='O'
     	WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     	DO Verifica_OCX WITH "Check"
     
-    Public m.osystray
+   
 
 
 	TEXT TO m_icon NOSHOW 
@@ -282,9 +283,7 @@ IF TYPE('goApp')='O'
 	
 	m.osystray = Createobject("ysystray")
 
-    IF oConfigTermi.ShowBalloonTip = 'FALSE'
-    	poTimer.Enabled = .f.
-    ENDIF 
+   
 	    
 	Grabar_Log('Acceso al sistema, antes de autenticar') 
 	 
@@ -436,7 +435,12 @@ IF TYPE('goApp')='O'
 *!*	  
 *!*	  
 *!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-	  	poTimer   = CreateObject("WALTER_TIMER")
+		poTimer   = CreateObject("WALTER_TIMER")
+	  	
+	  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
+    		poTimer.Enabled = .f.
+   		ENDIF 
+    
 *!*		  		
 *!*		    #DEFINE ICONO_NADA  0
 *!*		    #DEFINE ICONO_INFO  1
