@@ -59,7 +59,7 @@ cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientesexp.csv"
 =LeerClientes(cArchivo)
 
 SELECT CsrDeudor
-*vista()
+vista()
 
 
 

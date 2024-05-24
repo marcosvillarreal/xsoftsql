@@ -10,6 +10,10 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40))
+
+SET SAFETY OFF 
+INDEX on nombre TAG korden
+SET SAFETY ON 
 	
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -28,7 +32,7 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-*vista()
+vista()
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
@@ -373,7 +377,8 @@ CREATE CURSOR CsrAcreedor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(
 		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctaacreedor  n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40))
-	
+
+
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
@@ -391,14 +396,14 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
 ldebug = .t.
 
 SKIP 
-stop()
+*stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 9 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1

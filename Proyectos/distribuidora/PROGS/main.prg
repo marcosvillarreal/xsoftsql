@@ -438,7 +438,7 @@ IF TYPE('goApp')='O'
 		poTimer   = CreateObject("WALTER_TIMER")
 	  	
 	  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
-    		poTimer.Enabled = .f.
+    			poTimer.Enabled = .f.
    		ENDIF 
     
 *!*		  		

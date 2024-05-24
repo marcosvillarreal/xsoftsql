@@ -148,7 +148,7 @@ SCAN FOR !EOF()
 	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso,lnidtipocarnico
 	
 	IF 'MERME'$ALLTRIM(cSRaRTICULO.NOMBRE)
-		STOP()
+	*	STOP()
 	ENDIF 
 	
 	SELECT CsrCtacte

@@ -224,7 +224,7 @@ SCAN
 *!*	 	nCodigo			= lnCodigo	
  	lcReferencia	= ALLTRIM(CsrDeudor.referencia)
  	lnctadeudor		= 1
- 	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente	
+ 	lnidplanpago	= 1100000001 &&Por el momento todos de CONTADO
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
 	lnidcanalvta	= 1100000001
 	lnlista			= CsrDeudor.codlista

@@ -147,11 +147,15 @@ SCAN FOR !EOF()
 	STORE 0 TO lnnolista, lnnofactu, lnespromo, lnsireparto,lnidctacpra, lnidctavta , lnidfrio
 	STORE 0 TO lnCosto,lnCostoBon,lnUtil1,lnUtil2,lnUtil3,lnUtil4,lnPeso,lnidtipocarnico
 	
+	IF 'MERME'$ALLTRIM(cSRaRTICULO.NOMBRE)
+		STOP()
+	ENDIF 
+	
 	SELECT CsrCtacte
-    LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.proveedor)
-    IF FOUND()
-    	lnidctacte = Csrctacte.id
-    ENDIF
+    	LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.proveedor)
+    	IF FOUND()
+    		lnidctacte = Csrctacte.id
+    	ENDIF
 
 	cRubro = alltrim(STRTRAN(STRTRAN(CsrCtacte.referencia,'/\',''),'$',''))
 	
