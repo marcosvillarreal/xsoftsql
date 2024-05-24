@@ -438,7 +438,7 @@ IF TYPE('goApp')='O'
 		poTimer   = CreateObject("WALTER_TIMER")
 	  	
 	  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
-    		poTimer.Enabled = .f.
+    			poTimer.Enabled = .f.
    		ENDIF 
     
 *!*		  		
@@ -654,6 +654,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
   Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
   
   PROCEDURE TIMER
+  stop()
    cVersion = HayVersionExe("gestion.exe",pidsistema )
     IF LEN(cVersion)> 0
     	

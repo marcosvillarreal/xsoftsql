@@ -435,12 +435,12 @@ IF TYPE('goApp')='O'
 *!*	  
 *!*	  
 *!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-		poTimer   = CreateObject("WALTER_TIMER")
-	  	
-	  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
-    			poTimer.Enabled = .f.
-   		ENDIF 
-    
+*!*			poTimer   = CreateObject("WALTER_TIMER")
+*!*		  	
+*!*		  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
+*!*	    			poTimer.Enabled = .f.
+*!*	   		ENDIF 
+*!*	    
 *!*		  		
 *!*		    #DEFINE ICONO_NADA  0
 *!*		    #DEFINE ICONO_INFO  1
@@ -570,22 +570,22 @@ PROCEDURE DECLARAR_FUNCIONES_API
   
 ENDPROC
 *
-*
-PROCEDURE MI_PROCEDURE_SALUDA
-  
-  =Messagebox("Hola, ¿cómo estás hoy?")
-  
-ENDPROC
-*
-*
-PROCEDURE SETS_INICIALES
-  
-  SET CENTURY ON
-  SET DATE    DMY
-  SET SAFETY  OFF
-  SET TALK    OFF
-  
-ENDPROC
+*!*	*
+*!*	PROCEDURE MI_PROCEDURE_SALUDA
+*!*	  
+*!*	  =Messagebox("Hola, ¿cómo estás hoy?")
+*!*	  
+*!*	ENDPROC
+*!*	*
+*!*	*
+*!*	PROCEDURE SETS_INICIALES
+*!*	  
+*!*	  SET CENTURY ON
+*!*	  SET DATE    DMY
+*!*	  SET SAFETY  OFF
+*!*	  SET TALK    OFF
+*!*	  
+*!*	ENDPROC
 
 PROCEDURE GMUPDATE
 LOCAL cComando
@@ -601,93 +601,94 @@ ENDPROC
 
 *
 *
-DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
-  
-  IconFile      = ADDBS(SYS(5)+CURDIR()) + "pyro.ICO"
-  MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
-  MenuTextIsMPR = .F.
-  TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
-  *
-  *
-  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
-    
-   * stop()
-    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
-*!*	    LOCAL cRuta
-*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
-*!*		IF FILE(cRuta)
-*!*			RUN &cRuta
-*!*		ENDIF 
+*!*	DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
+*!*	  
+*!*	  IconFile      = ADDBS(SYS(5)+CURDIR()) + "pyro.ICO"
+*!*	  MenuText      = "4;Bienvenida;5;Mensaje;6;Salir"
+*!*	  MenuTextIsMPR = .F.
+*!*	  TipText       = "Ejemplo de un programa en la barra de tareas del Windows"
+*!*	  *
+*!*	  *
+*!*	  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
+*!*	    
+*!*	   * stop()
+*!*	    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
+*!*	*!*	    LOCAL cRuta
+*!*	*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
+*!*	*!*		IF FILE(cRuta)
+*!*	*!*			RUN &cRuta
+*!*	*!*		ENDIF 
 
-  ENDPROC
-  *
-  *
-  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
-  LPARAMETERS tnMenuItemID
-    
-    DO CASE
-      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
-      CASE tnMenuItemID = 1     && Eligió la primera opción
-        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
-      CASE tnMenuItemID = 2     && Eligió la segunda opción
-        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
-      CASE tnMenuItemID = 3     && Eligió la tercera opción
-        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
-      CASE tnMenuItemID = 4     && Eligió la cuarta opción
-        =MessageBox("Un mensaje de bienvenida")
-      CASE tnMenuItemID = 5     && Eligió la quinta opción
-        DO MI_PROCEDURE_SALUDA
-      CASE tnMenuItemID = 6     && Eligió la sexta opción
-        This.RemoveIconFromSystray()
-        CLEAR EVENTS
-    ENDCASE
-  
-  ENDPROC
-  *
-  *1
-ENDDEFINE
+*!*	  ENDPROC
+*!*	  *
+*!*	  *
+*!*	  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
+*!*	  LPARAMETERS tnMenuItemID
+*!*	    
+*!*	    DO CASE
+*!*	      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
+*!*	      CASE tnMenuItemID = 1     && Eligió la primera opción
+*!*	        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
+*!*	      CASE tnMenuItemID = 2     && Eligió la segunda opción
+*!*	        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
+*!*	      CASE tnMenuItemID = 3     && Eligió la tercera opción
+*!*	        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
+*!*	      CASE tnMenuItemID = 4     && Eligió la cuarta opción
+*!*	        =MessageBox("Un mensaje de bienvenida")
+*!*	      CASE tnMenuItemID = 5     && Eligió la quinta opción
+*!*	        DO MI_PROCEDURE_SALUDA
+*!*	      CASE tnMenuItemID = 6     && Eligió la sexta opción
+*!*	        This.RemoveIconFromSystray()
+*!*	        CLEAR EVENTS
+*!*	    ENDCASE
+*!*	  
+*!*	  ENDPROC
+*!*	  *
+*!*	  *1
+*!*	ENDDEFINE
 *
 *
-DEFINE CLASS WALTER_TIMER AS TIMER
-  
-  Enabled  = .T.
-  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
-  
-  PROCEDURE TIMER
-   cVersion = HayVersionExe("gestion.exe",pidsistema )
-    IF LEN(cVersion)> 0
-    	
-    	
-	  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-	   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+*!*	DEFINE CLASS WALTER_TIMER AS TIMER
+*!*	  
+*!*	  Enabled  = .T.
+*!*	  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+*!*	  
+*!*	  PROCEDURE TIMER
+*!*	 * stop()
+*!*	   cVersion = HayVersionExe("gestion.exe",pidsistema )
+*!*	    IF LEN(cVersion)> 0
+*!*	    	
+*!*	    	
+*!*		  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+*!*		   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+*!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+*!*		    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 
-*!*			IF oConfigTermi.controlskin = 'TRUE'
-*!*				_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
-*!*				_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
-*!*				_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
+*!*	*!*			IF oConfigTermi.controlskin = 'TRUE'
+*!*	*!*				_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
+*!*	*!*				_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
+*!*	*!*				_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
+*!*	*!*			
+*!*	*!*				lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
+*!*	*!*				lcMessage = "Existe una actualización importante del sistema"	&&MENSAJE A MOSTRAR EN EL POPUP
+
+*!*	*!*				VFPs_MessagePopup (lcCaption,lcMessage)
+*!*	*!*			ENDIF 
+
+*!*			m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
+*!*			m_duracion=10
+
+*!*			*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
+*!*			m.osystray.ShowBalloonTip("Existe una actualización importante del sistema", "GM Solutions" , m_tipo,m_duracion)
+
+
+*!*		    &&Subimos el intervalo porque el usuario ya vio el mensaje
+*!*		    This.Interval =   30000 
 *!*			
-*!*				lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
-*!*				lcMessage = "Existe una actualización importante del sistema"	&&MENSAJE A MOSTRAR EN EL POPUP
-
-*!*				VFPs_MessagePopup (lcCaption,lcMessage)
-*!*			ENDIF 
-
-		m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
-		m_duracion=10
-
-		*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
-		m.osystray.ShowBalloonTip("Existe una actualización importante del sistema", "GM Solutions" , m_tipo,m_duracion)
-
-
-	    &&Subimos el intervalo porque el usuario ya vio el mensaje
-	    This.Interval =   30000 
-		
-	ENDIF 
-	This.Enabled = IIF(lldesarrollo,.f.,This.Enabled)
-  ENDPROC
-  *
-  *
-ENDDEFINE
+*!*		ENDIF 
+*!*		This.Enabled = IIF(lldesarrollo,.f.,This.Enabled)
+*!*	  ENDPROC
+*!*	  *
+*!*	  *
+*!*	ENDDEFINE
 
