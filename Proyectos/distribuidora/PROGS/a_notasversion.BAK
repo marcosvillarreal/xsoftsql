@@ -3,7 +3,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 2.3.20
 	Recibos enviar por email
-	
+	Alertas
+	Recibos PM
 2.3.19
 	RegFacPub ... se deshabilito el buscador por descripcion
 	AbmProducto ... opcion de congelar los precios de venta
