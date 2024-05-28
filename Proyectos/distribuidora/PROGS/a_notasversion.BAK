@@ -1,6 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.21
+	Mostrar referencia
+	Otros KM
 2.3.20
 	Recibos enviar por email
 	Alertas

@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 2.3.21
 	Mostrar referencia
 	Otros KM
+	Consolidado de Pedidos, para KM verifica CF a FAC
+	RegFacPedido_K_1, toma en cuenta el valor de remito
 2.3.20
 	Recibos enviar por email
 	Alertas
