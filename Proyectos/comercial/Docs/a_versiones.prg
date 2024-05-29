@@ -1,4 +1,7 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.17
+	SubdiarioCaja
+	SubdiarioStock
 2.1.16
 	Proforma
 	Sundiario iva venta ... horizontal
