@@ -34,13 +34,13 @@ USE  ALLTRIM(lcpath)+"\gestion\clientes" in 0 alias CsrDeudorViej EXCLUSIVE
 *!*	USE  ALLTRIM(lcpath)+"\gestion\proveed" in 0 alias CsrAcreedor EXCLUSIVE
 
 Oavisar.proceso('S','Procesando '+alias()) 
-SELECT * FROM CsrDeudorViej ORDER BY codcli INTO CURSOR CsrDeudor
+SELECT * FROM CsrDeudorViej WHERE VAL(codcli)<>0 ORDER BY codcli INTO CURSOR CsrDeudor
 
 lnid = RecuperarID('CsrCtacte',Goapp.sucursal10)
 
 
 SELECT CsrCateCtacte
-LOCATE FOR numero = CsrDeudor.categoria
+LOCATE FOR numero = 1
 		
 cCadeCtacte = "" 
 
@@ -80,7 +80,8 @@ SCAN
     	lnctabanco = 0
     	lnctaotro  = 0
     	lndctalogistica = 0
-        
+
+        lnidcateibrng = 0
 		lnidcategoria = CsrCateCtacte.id
 
 		SELECT CsrDeudor
@@ -107,7 +108,7 @@ SCAN
 		ldfecultpago = lcfefin
 		
 		lcingbrutos = " "
-		lcingbrutosBA = 0
+		lcingbrutosBA = ''
 		lncomision = 0
 		lnconvenio = 0
 		
@@ -119,29 +120,38 @@ SCAN
 
 		lcnombre = NombreNi(ALLTRIM(UPPER(CsrDeudor.nomcli)))
       	
-      		
-          INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
-          ,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
-          ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
-          ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
-          ,totalizabonif);
-		  VALUES (lnid,LTRIM(STR(CsrDeudor.codcli)),lcnombre,UPPER(CsrDeudor.domcli),LTRIM(lccp);
-		  ,lnidlocalidad,lnidprovincia,CsrDeudor.tel_cli1,lntipoiva,lccuit,lnidcategoria,0,0;
-		  ,lnidplanpago,1100000006,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
-		  ,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
-		  ,lnconvenio,lndctalogistica,0,0)
+      	SELECT CsrCtacte
+      	APPEND BLANK	
+      	replace id WITH lnid, cnumero WITH LTRIM((CsrDeudor.codcli)), cnombre WITH lcnombre, cdireccion WITH UPPER(CsrDeudor.domcli)
+      	replace cpostal WITH LTRIM(lccp), idlocalidad WITH lnidlocalidad, idprovincia WITH lnidprovincia
+      	replace ctelefono WITH CsrDeudor.telcli_1, tipoiva WITH lntipoiva, cuit WITH lccuit, idcategoria WITH lnidcategoria
+      	replace saldo WITH 0, saldoant WITH 0, idplanpago WITH lnidplanpago, idcanalvta WITH 1100000006, estadocta WITH lnidestado
+      	replace ctadeudor WITH 1, inscri01 WITH '', fecins01 WITH lcfefin, inscri02 WITH lcingbrutosBA,inscri03 WITH ''
+      	replace saldoauto WITH 0,fechalta WITH lcfefin,idbarrio WITH 0,lista WITH lnlista,idcateibrng WITH lnidcateibrng
+      	
+*!*	          INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
+*!*	          ,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+*!*	          ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+*!*	          ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
+*!*	          ,totalizabonif);
+*!*			  VALUES (lnid,LTRIM((CsrDeudor.codcli)),lcnombre,UPPER(CsrDeudor.domcli),LTRIM(lccp);
+*!*			  ,lnidlocalidad,lnidprovincia,CsrDeudor.telcli_1,lntipoiva,lccuit,lnidcategoria,0,0;
+*!*			  ,lnidplanpago,1100000006,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
+*!*			  ,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
+*!*			  ,lnconvenio,lndctalogistica,0,0)
 
-		*IF lnidcateibrng<>VAL(STR(Goapp.sucursal10 + 10,2))+4 AND lntipoiva <>VAL(STR(Goapp.sucursal10 + 10,2))+ 3
-		SELECT CsrCateibrn
-		LOCATE FOR  idctacte = lnid
-		IF !FOUND() AND lnidcateibrng <> 0
-			lccuit =STRTRAN(CsrDeudor.cuit,"-","")
-			IF VAL(lccuit)<>0
-				lccuit=STRTRAN(lccuit,"-","")
-				INSERT INTO CsrCateibrn (cuit,idctacte,numero,porperce,porrete);
-				VALUES (lccuit,lnid,lnidcateibrng,CsrCateIbRNg.porperce,CsrCateibRng.porrete)
-			ENDIF 
-		ENDIF 
+	
+*!*			SELECT CsrCateibrn
+*!*			LOCATE FOR  idctacte = lnid
+*!*			IF !FOUND() AND lnidcateibrng <> 0
+*!*				lccuit =STRTRAN(CsrDeudor.cuit,"-","")
+*!*				IF VAL(lccuit)<>0
+*!*					lccuit=STRTRAN(lccuit,"-","")
+*!*					INSERT INTO CsrCateibrn (cuit,idctacte,numero,porperce,porrete);
+*!*					VALUES (lccuit,lnid,lnidcateibrng,CsrCateIbRNg.porperce,CsrCateibRng.porrete)
+*!*				ENDIF 
+*!*			ENDIF 
+
 		lnid = lnid + 1
 	          
 ENDSCAN
