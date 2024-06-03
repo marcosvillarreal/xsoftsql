@@ -395,7 +395,7 @@ IF TYPE('goApp')='O'
 *!*	  	ENDTRY 
 *!*	  
 *!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-*!*		  	poTimer   = CreateObject("WALTER_TIMER")
+	  	poTimer   = CreateObject("WALTER_TIMER")
 *!*		  		
 *!*		    #DEFINE ICONO_NADA  0
 *!*		    #DEFINE ICONO_INFO  1
@@ -405,9 +405,9 @@ IF TYPE('goApp')='O'
 *!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 *!*		    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
 *!*		    
-*!*		    IF oConfigTermi.ShowBalloonTip = 'FALSE' OR lldesarrollo
-*!*		    	poTimer.Enabled = .f.
-*!*		    ENDIF 
+	    IF oConfigTermi.ShowBalloonTip = 'FALSE' OR lldesarrollo
+	    	poTimer.Enabled = .f.
+	    ENDIF 
 *!*		  ENDIF
 
 	Read events   
@@ -571,29 +571,36 @@ DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
 ENDDEFINE
 *
 *
-*!*	DEFINE CLASS WALTER_TIMER AS TIMER
-*!*	  
-*!*	  Enabled  = .T.
-*!*	  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
-*!*	  
-*!*	  PROCEDURE TIMER
-*!*	    cVersion = HayVersionExe("gestion.exe")
-*!*	    IF LEN(cVersion)> 0
-*!*	    	
-*!*	    	    TRY 
+DEFINE CLASS WALTER_TIMER AS TIMER
+  
+  Enabled  = .T.
+  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+  
+  PROCEDURE TIMER
+    cVersion = HayVersionExe("gestion.exe")
+    IF LEN(cVersion)> 0
+    	
+    	TRY 
 *!*		    	poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
 *!*		     	poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-*!*		   	 poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-*!*		   	 FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
-*!*			 &&Subimos el intervalo porque el usuario ya vio el mensaje
-*!*		  	  This.Interval =   30000 
-*!*		   CATCH TO oError
-*!*		   	This.Enabled = .f.
-*!*		   ENDTRY 
-*!*		   		   	
-*!*		  	 
-*!*		 
-*!*		ENDIF 
-*!*	  ENDPROC
-*!*	    
-*!*	ENDDEFINE 
+*!*		   	 	poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	   	 	FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+	   	 	
+	   	 	m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
+			m_duracion=3
+
+			*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
+			m.osystray.ShowBalloonTip(cVersion, "GM Solutions" , m_tipo,m_duracion)
+
+		 	&&Subimos el intervalo porque el usuario ya vio el mensaje
+	  	  	This.Interval =   30000 
+	   CATCH TO oError
+	   		This.Enabled = .f.
+	   ENDTRY 
+	   		   	
+	  	 
+	 
+	ENDIF 
+  ENDPROC
+    
+ENDDEFINE 

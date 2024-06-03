@@ -435,11 +435,11 @@ IF TYPE('goApp')='O'
 *!*	  
 *!*	  
 *!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-*!*			poTimer   = CreateObject("WALTER_TIMER")
+		poTimer   = CreateObject("WALTER_TIMER")
 *!*		  	
-*!*		  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
-*!*	    			poTimer.Enabled = .f.
-*!*	   		ENDIF 
+	  	IF oConfigTermi.ShowBalloonTip = 'FALSE'
+    			poTimer.Enabled = .f.
+   		ENDIF 
 *!*	    
 *!*		  		
 *!*		    #DEFINE ICONO_NADA  0
@@ -648,47 +648,47 @@ ENDPROC
 *!*	ENDDEFINE
 *
 *
-*!*	DEFINE CLASS WALTER_TIMER AS TIMER
-*!*	  
-*!*	  Enabled  = .T.
-*!*	  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
-*!*	  
-*!*	  PROCEDURE TIMER
-*!*	 * stop()
-*!*	   cVersion = HayVersionExe("gestion.exe",pidsistema )
-*!*	    IF LEN(cVersion)> 0
-*!*	    	
-*!*	    	
-*!*		  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-*!*		   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-*!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-*!*		    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+DEFINE CLASS WALTER_TIMER AS TIMER
+  
+  Enabled  = .T.
+  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+  
+  PROCEDURE TIMER
+ * stop()
+   cVersion = HayVersionExe("gestion.exe",pidsistema )
+    IF LEN(cVersion)> 0
+    	
+    	
+	  *  poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+	   * poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 
-*!*	*!*			IF oConfigTermi.controlskin = 'TRUE'
-*!*	*!*				_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
-*!*	*!*				_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
-*!*	*!*				_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
-*!*	*!*			
-*!*	*!*				lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
-*!*	*!*				lcMessage = "Existe una actualización importante del sistema"	&&MENSAJE A MOSTRAR EN EL POPUP
-
-*!*	*!*				VFPs_MessagePopup (lcCaption,lcMessage)
-*!*	*!*			ENDIF 
-
-*!*			m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
-*!*			m_duracion=10
-
-*!*			*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
-*!*			m.osystray.ShowBalloonTip("Existe una actualización importante del sistema", "GM Solutions" , m_tipo,m_duracion)
-
-
-*!*		    &&Subimos el intervalo porque el usuario ya vio el mensaje
-*!*		    This.Interval =   30000 
+*!*			IF oConfigTermi.controlskin = 'TRUE'
+*!*				_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
+*!*				_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
+*!*				_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
 *!*			
-*!*		ENDIF 
-*!*		This.Enabled = IIF(lldesarrollo,.f.,This.Enabled)
-*!*	  ENDPROC
-*!*	  *
-*!*	  *
-*!*	ENDDEFINE
+*!*				lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
+*!*				lcMessage = "Existe una actualización importante del sistema"	&&MENSAJE A MOSTRAR EN EL POPUP
+
+*!*				VFPs_MessagePopup (lcCaption,lcMessage)
+*!*			ENDIF 
+
+		m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
+		m_duracion=10
+
+		*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
+		m.osystray.ShowBalloonTip(cVersion, "GM Solutions" , m_tipo,m_duracion)
+
+
+	    &&Subimos el intervalo porque el usuario ya vio el mensaje
+	    This.Interval =   30000 
+		
+	ENDIF 
+	This.Enabled = IIF(lldesarrollo,.f.,This.Enabled)
+  ENDPROC
+  *
+  *
+ENDDEFINE
 

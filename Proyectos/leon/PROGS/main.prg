@@ -450,51 +450,51 @@ PROCEDURE SETS_INICIALES
 ENDPROC
 *
 *
-DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
-  
-  IconFile      = ADDBS(SYS(5)+CURDIR())+"pyro.ICO"
-  MenuText      = "1;Balloon;2;Salir"
-  MenuTextIsMPR = .F.
-  TipText       = "Avisos de Pyro - GM Solutions"
-  *
-  *
-  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
-    
-   * stop()
-    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
-*!*	    LOCAL cRuta
-*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
-*!*		IF FILE(cRuta)
-*!*			RUN &cRuta
-*!*		ENDIF 
+*!*	DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
+*!*	  
+*!*	  IconFile      = ADDBS(SYS(5)+CURDIR())+"pyro.ICO"
+*!*	  MenuText      = "1;Balloon;2;Salir"
+*!*	  MenuTextIsMPR = .F.
+*!*	  TipText       = "Avisos de Pyro - GM Solutions"
+*!*	  *
+*!*	  *
+*!*	  PROCEDURE BalloonClickEvent     && El usuario hizo clic sobre el "balloon"
+*!*	    
+*!*	   * stop()
+*!*	    =MessageBox("Hiciste clic sobre el BalloonTip, y yo lo detecté")
+*!*	*!*	    LOCAL cRuta
+*!*	*!*		cRuta = ADDBS(SYS(5)+CURDIR())+'close.bat'
+*!*	*!*		IF FILE(cRuta)
+*!*	*!*			RUN &cRuta
+*!*	*!*		ENDIF 
 
-  ENDPROC
-  *
-  *
-  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
-  LPARAMETERS tnMenuItemID
-    
-    DO CASE
-      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
-      CASE tnMenuItemID = 1     && Eligió la primera opción
-        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
-      CASE tnMenuItemID = 2     && Eligió la segunda opción
-        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
-      CASE tnMenuItemID = 3     && Eligió la tercera opción
-        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
-      CASE tnMenuItemID = 4     && Eligió la cuarta opción
-        =MessageBox("Un mensaje de bienvenida")
-      CASE tnMenuItemID = 5     && Eligió la quinta opción
-        DO MI_PROCEDURE_SALUDA
-      CASE tnMenuItemID = 6     && Eligió la sexta opción
-        This.RemoveIconFromSystray()
-        CLEAR EVENTS
-    ENDCASE
-  
-  ENDPROC
-  *
-  *1
-ENDDEFINE
+*!*	  ENDPROC
+*!*	  *
+*!*	  *
+*!*	  PROCEDURE ProcessMenuEvent     && Aquí se debe procesar la opción elegida por el usuario
+*!*	  LPARAMETERS tnMenuItemID
+*!*	    
+*!*	    DO CASE
+*!*	      CASE tnMenuItemID = 0     && Salió sin elegir opcion, nada se debe hacer entonces
+*!*	      CASE tnMenuItemID = 1     && Eligió la primera opción
+*!*	        =ShellExecute(0, "OPEN", "NOTEPAD.EXE", "", "", 1)
+*!*	      CASE tnMenuItemID = 2     && Eligió la segunda opción
+*!*	        =ShellExecute(0, "OPEN", "CALC.EXE", "", "", 1)
+*!*	      CASE tnMenuItemID = 3     && Eligió la tercera opción
+*!*	        =ShellExecute(0, "OPEN", "MSPAINT.EXE", "", "", 1)
+*!*	      CASE tnMenuItemID = 4     && Eligió la cuarta opción
+*!*	        =MessageBox("Un mensaje de bienvenida")
+*!*	      CASE tnMenuItemID = 5     && Eligió la quinta opción
+*!*	        DO MI_PROCEDURE_SALUDA
+*!*	      CASE tnMenuItemID = 6     && Eligió la sexta opción
+*!*	        This.RemoveIconFromSystray()
+*!*	        CLEAR EVENTS
+*!*	    ENDCASE
+*!*	  
+*!*	  ENDPROC
+*!*	  *
+*!*	  *1
+*!*	ENDDEFINE
 *
 *
 DEFINE CLASS WALTER_TIMER AS TIMER
@@ -513,7 +513,7 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 		m_duracion=10
 
 		*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
-		m.osystray.ShowBalloonTip("Existe una actualización importante del sistema", "GM Solutions" , m_tipo,m_duracion)
+		m.osystray.ShowBalloonTip(cVersion, "GM Solutions" , m_tipo,m_duracion)
 
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =  30000
