@@ -39,6 +39,13 @@ CASE goapp.codempresa = 20 &&mendoza
 	GOAPP.IDUSUARIO =1
 	goapp.terminal = 1
 	goapp.ejercicio = 14
+CASE goapp.codempresa = 21 &&mendoza
+	cEmpresa = 'Gattari'
+	GOAPP.IDEJERCICIO = 1100000029
+	GOAPP.IDEJERCICIOACTUAL = 1100000029
+	GOAPP.IDUSUARIO =1
+	goapp.terminal = 1
+	goapp.ejercicio = 14
 ENDCASE 	
 
 

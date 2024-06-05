@@ -1,0 +1,18 @@
+04-06-2024 18:34:06 , EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as grupo,CsrAuxCabe.* ,ROUND((CsrauxCabe.importefinal/CsrVendedores.importefinal)*100,4) as importe ,ROUND((CsrauxCabe.vtakilos/CsrVendedores.vtakilos)*100,4) as porcekilos FROM csrauxCabe left JOIN csrvendedores ON CsrauxCabe.idvendedor=Csrvendedores.idvendedor GROUP BY CsrAuxCabe.idVendedor,CsrAuxCabe.ImporteFinal,CsrAuxCabe.Ctacte,CsrAuxCabe.NomCliente ,CsrAuxCabe.Idctacte,CsrAuxCabe.CodVendedor,CsrAuxCabe.NomVendedor,CsrAuxCabe.Bonificacion ,CsrAuxCabe.cdireccion,importe &lcorder INTO CURSOR csrimprimir readwrite;Error :       1807;Ultimo Alias Activo: CSRVENDEDORES;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00006TQH00JH.TMP;Ultimo Control activo: 
+04-06-2024 18:34:06 , Pila de llamadas
+04-06-2024 18:34:06 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
+04-06-2024 18:34:06 , Objeto      : est_rankctacte.imprimir_vistaprevia1.excel.click
+04-06-2024 18:34:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\forms.vct
+04-06-2024 18:34:07 , Nº de Linea :          5
+04-06-2024 18:34:07 , En el Fuente: llOK=thisform.CrearInforme()
+04-06-2024 18:34:07 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_rankctacte.sct
+04-06-2024 18:34:07 , Objeto      : est_rankctacte.crearinforme
+04-06-2024 18:34:07 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_rankctacte.sct
+04-06-2024 18:34:07 , Nº de Linea :          6
+04-06-2024 18:34:08 , En el Fuente: 	this.crearlistado()
+04-06-2024 18:34:08 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\est_rankctacte.sct
+04-06-2024 18:34:08 , Objeto      : est_rankctacte.crearlistado
+04-06-2024 18:34:08 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\est_rankctacte.sct
+04-06-2024 18:34:08 , Nº de Linea :        266
+04-06-2024 18:34:08 , En el Fuente: SELECT 0 as grupo,CsrAuxCabe.*,ROUND((CsrauxCabe.importefinal/CsrVendedores.importefinal)*100,4) as importe ,ROUND((CsrauxCabe.vtakilos/CsrVendedores.vtakilos)*100,4) as porcekilos FROM csrauxCabe left JOIN csrvendedores ON CsrauxCabe.idvendedor=Csrvendedores.idvendedor GROUP BY CsrAuxCabe.idVendedor,CsrAuxCabe.ImporteFinal,CsrAuxCabe.Ctacte,CsrAuxCabe.NomCliente,CsrAuxCabe.Idctacte,CsrAuxCabe.CodVendedor,CsrAuxCabe.NomVendedor,CsrAuxCabe.Bonificacion,CsrAuxCabe.cdireccion,importe &lcorder INTO CURSOR csrimprimir readwrite
+04-06-2024 18:34:09 , Fin

@@ -6,6 +6,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 	Otros KM
 	Consolidado de Pedidos, para KM verifica CF a FAC
 	RegFacPedido_K_1, toma en cuenta el valor de remito
+	RankingCtacte ->Excel muestra kilos
 2.3.20
 	Recibos enviar por email
 	Alertas
