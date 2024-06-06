@@ -201,7 +201,9 @@ CASE lcLocalidad = "CIUDAD ATLANTIDA"
 CASE "CERRI" $ STRTRAN(STRTRAN(lcLocalidad," ",""),".","")
 	lcnombre = "GENERAL DANIEL CERRI"
 CASE "PEH"$lcLocalidad
-	lcnombre = "PEHUEN CO"
+	lcnombre = "PEHUEN-CO"
+CASE "PEHU"$lcLocalidad
+	lcnombre = "PEHUEN-CO"	
 CASE "ARIAS"$lcLocalidad
 	lcnombre = "VILLA GRAL. ARIAS"
 CASE lcLocalidad  = "CNEL. DORREGO"
@@ -273,7 +275,9 @@ CASE  ALLTRIM( UPPER(lcLocalidad) )= "LA MERCED"
 CASE  ALLTRIM( UPPER(lcLocalidad)) = "GRAL. DANIEL CERRI"
 	lcnombre = "GENERAL DANIEL CERRI"
 CASE  ALLTRIM( UPPER(lcLocalidad)) = "GRAL. CERRI"
-	lcnombre = "GENERAL CERRI"
+	lcnombre = "GENERAL DANIEL CERRI"
+CASE  STRTRAN(ALLTRIM( UPPER(lcLocalidad)),' ','') = "GRALDANIELCERRI"
+	lcnombre = "GENERAL DANIEL CERRI"
 CASE  ALLTRIM( UPPER(lcLocalidad)) = "GRAL. RODRIGUEZ"
 	lcnombre = "GENERAL RODRIGUEZ"
 CASE ALLTRIM(UPPER(lcLocalidad)) = "GRAL. CONESA" .OR. ALLTRIM(UPPER(lcLocalidad))  = "GRAL. CONESAA" .OR. ALLTRIM(UPPER(lcLocalidad))  = "GRAL.CONESA"
@@ -437,6 +441,8 @@ CASE "LAREFORMAVIEJ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","
 	lcnombre = "LA REFORMA VIEJA" 
 CASE "GRALSANMARTIN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "GENERAL SAN MARTIN" 
+CASE "GENERALSANMARTIN" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "GENERAL SAN MARTIN" 
 CASE "PAZAHUIN" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
 	lcnombre = "PLAZA HUINCUL"
 CASE "GRALFERNANDEZ" $ STRTRAN(STRTRAN(STRTRAN(lcLocalidad," ",""),"-",""),".","")
@@ -483,7 +489,20 @@ CASE "TRES" $ lcLocalidad
 	lcnombre = "TRES ARROYOS" 	
 CASE "FRANCIS" $ lcLocalidad
 	lcnombre = "SAN FRANCISCO DE BELLOCQ" 		
-	
+CASE "TORNSQ" $ lcLocalidad
+	lcnombre = "TORNQUIST" 	
+CASE "WHITE" $ lcLocalidad
+	lcnombre = "INGENIERO WHITE" 	
+CASE "RIOCOLORADO" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "RIO COLORADO" 
+CASE "BURATOVICH" $ lcLocalidad
+	lcnombre = "MAYOR BURATOVICH" 
+CASE "MONTEHERMO" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "MONTE HERMOSO" 
+CASE "CONEZA" $ lcLocalidad
+	lcnombre = "GENERAL CONESA" 
+CASE "PRINGLES" $ lcLocalidad
+	lcnombre = "CORONEL PRINGLES" 
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161

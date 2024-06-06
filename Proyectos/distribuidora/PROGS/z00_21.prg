@@ -12,12 +12,12 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40))
 
 SET SAFETY OFF 
-INDEX on nombre TAG korden
+*INDEX on nombre TAG korden
 SET SAFETY ON 
 	
 Oavisar.proceso('S','Abriendo archivos') 
 
-stop()
+*stop()
 
 SELECT CsrLista
 APPEND FROM  &cArchivo SDF
@@ -36,7 +36,7 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
@@ -45,7 +45,7 @@ ldebug = .t.
 SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 12 &&Hay un campo vacio
+	lnCantCampo = 17 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -89,7 +89,7 @@ DO WHILE NOT EOF()
 			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcDireccion)))
 			*LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLocalidad)))
 			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTelefono)))			
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcDocumento)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcDocumento)))
 			*lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcReferencia)))
 			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
@@ -127,6 +127,15 @@ DO WHILE NOT EOF()
 		IF '*'$lcTelefono
 			SKIP 
 			LOOP
+		ENDIF 
+		IF ALLTRIM(STR(VAL(lcCodigo)))<>ALLTRIM(lcCodigo)
+			SKIP 
+			LOOP 
+		ENDIF 
+		IF AT(',',lcDireccion)>0
+			lcLocalidad = SUBSTR(lcDireccion,AT(',',lcDireccion)+1)
+			
+			lcDireccion = LEFT(lcDireccion,AT(',',lcDireccion)-1)
 		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
 		lcCodLista = '1'
