@@ -7,7 +7,7 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,CodPostal c(10),CodProvincia c(6),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
 		,TipoDoc c(50),Documento c(20);
-		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
+		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(20),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40))
 
@@ -43,9 +43,9 @@ leiunarticulo = .f.
 ldebug = .t.
 
 SKIP 
-*stop()
+stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 17 &&Hay un campo vacio
+	lnCantCampo = 8 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -62,7 +62,7 @@ DO WHILE NOT EOF()
 		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
 		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
 		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodProvincia	,lcCodLocalidad,lcLista
-		STORE "" to lcReferencia,cLista3
+		STORE "" to lcReferencia,cLista3,lcZona
 		
 		j = 0
 *!*		ELSE
@@ -86,19 +86,19 @@ DO WHILE NOT EOF()
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcDireccion)))
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
 			*LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLocalidad)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTelefono)))			
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcDocumento)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTelefono)))			
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDocumento)))
 			*lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcReferencia)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcVendedor)))	
+			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-							
+			lcZona			= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcZona)))				
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			
-			IF VAL(lcCodigo)=1772 and ldebug
-				*stop()
+			IF VAL(lcCodigo)=8838 and ldebug
+				stop()
 				ldebug = .f.
 			ENDIF 
 		
@@ -158,7 +158,7 @@ USE IN CsrLista
 
 ENDFUNC 
 
-FUNCTION LeerArticulosKM(lcArchivo)
+FUNCTION LeerArticulos_21(lcArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
@@ -187,12 +187,13 @@ leiunarticulo = .f.
 SKIP 
 *STOP()
 DO WHILE NOT EOF()
-	lnCantCampo = 21 &&Hay un campo vacio
+	lnCantCampo = 31 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
 
 	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		SKIP 
 		LOOP 
 	ENDIF 
 	
@@ -221,18 +222,18 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodRubro)))
-			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcProveedor)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcNombre)))
+			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcRubro)))
+			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
 			
-			*lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
+			lcCosto			= UPPER((IIF(j + i=30,lcCadena,lcCosto)))
 			*lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
-			lcLista1		= IIF(j + i=10,lcCadena,lcLista1)
-			lcLista2		= IIF(j + i=11,lcCadena,lcLista2)
-			lcLista3		= IIF(j + i=12,lcCadena,lcLista3)
-			lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
+			lcLista1		= IIF(j + i=22,lcCadena,lcLista1)
+			lcLista2		= IIF(j + i=24,lcCadena,lcLista2)
+			lcLista3		= IIF(j + i=26,lcCadena,lcLista3)
+			*lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
 					
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -256,10 +257,15 @@ DO WHILE NOT EOF()
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			SKIP 
 			LOOP 
 		ENDIF 
 		IF LEN(RTRIM(lcNombre))<=3
 		*	LOOP 
+		ENDIF 
+		IF ALLTRIM(STR(VAL(lcCodigo)))<>ALLTRIM(lcCodigo)
+			SKIP 
+			LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
 		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto,Lista1,Lista2;
@@ -378,7 +384,7 @@ SCAN
 ENDSCAN
 ENDFUNC 
 
-FUNCTION LeerProveedoresKM(cArchivo)
+FUNCTION LeerProveedores_21(cArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
@@ -417,7 +423,7 @@ ldebug = .t.
 SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 9 &&Hay un campo vacio
+	lnCantCampo = 18 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -458,14 +464,14 @@ DO WHILE NOT EOF()
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTelefono)))			
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcDocumento)))
-			lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcReferencia)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))	
+			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireccion)))
+			*lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
+			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))			
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcDocumento)))
+			lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcReferencia)))
+			*lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-			lcZona			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcZona)))		
+			*lcZona			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcZona)))		
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			
@@ -493,10 +499,16 @@ DO WHILE NOT EOF()
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			SKIP 
 			LOOP 
 		ENDIF 
 		IF '*'$lcTelefono
+			SKIP 
 			LOOP
+		ENDIF 
+		IF ALLTRIM(STR(VAL(lcCodigo)))<>ALLTRIM(lcCodigo)
+			SKIP 
+			LOOP 
 		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
 		lcCodLista = '1'
