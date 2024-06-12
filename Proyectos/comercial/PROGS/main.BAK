@@ -390,12 +390,12 @@ IF TYPE('goApp')='O'
 	  
 	  DO DECLARAR_FUNCIONES_API
   
-	TRY 	 
-		poSysTray = CreateObject("WALTER_SYSTRAY")
-  	ENDTRY 
+*!*		TRY 	 
+*!*			poSysTray = CreateObject("WALTER_SYSTRAY")
+*!*	  	ENDTRY 
 *!*	  
 *!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-*!*		  	poTimer   = CreateObject("WALTER_TIMER")
+	  	poTimer   = CreateObject("WALTER_TIMER")
 *!*		  		
 *!*		    #DEFINE ICONO_NADA  0
 *!*		    #DEFINE ICONO_INFO  1
