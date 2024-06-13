@@ -1,42 +1,3 @@
-13-03-2023 17:12:23 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONTA'.
-Linea nº return (&lcAlias)
- Alias  registro          0
-Control activo  ABMPARACON.CMDSELECCIONAR.CLICK
-13-03-2023 17:21:21 , Error nº:         13
-Error No se encuentra el alias 'GOAPP'.
-Linea nº AND Csrplancue.IDEJERCICIO = <<GOAPP.IDEJERCICIO>>
- Alias  registro          0
-Control activo  ABMPARACON.DATAENVIRONMENT.PLANCUE.INIT
-13-03-2023 17:22:21 , Verificando OCX
-13-03-2023 17:24:33 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONTA'.
-Linea nº SELECT (lCaliasNavega)
- Alias  registro          0
-Control activo  ABMPARACON._TEXTBOX1.KEYPRESS
-13-03-2023 17:24:37 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONTA'.
-Linea nº return (&lcAlias)
- Alias  registro          0
-Control activo  ABMPARACON.CMDSELECCIONAR.CLICK
-13-03-2023 17:24:52 , Verificando OCX
-13-03-2023 17:25:52 , Error nº:         12
-Error No se encuentra la variable 'CUENTA'.
-Linea nº loObjcol.controlsource = lCaliasNavega+'.'+lccadena
- Alias CSRPARACONTA registro          1
-Control activo  ABMPARACON.INIT
-13-03-2023 17:26:50 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONTA'.
-Linea nº SELECT (lCaliasNavega)
- Alias  registro          0
-Control activo  ABMPARACON._TEXTBOX1.KEYPRESS
-13-03-2023 17:28:26 , Error nº:         13
-Error No se encuentra el alias 'GOAPP'.
-Linea nº AND Csrplancue.IDEJERCICIO = <<GOAPP.IDEJERCICIO>>
- Alias  registro          0
-Control activo  ABMPARACON.DATAENVIRONMENT.PLANCUE.INIT
-13-03-2023 17:28:35 , Verificando OCX
-14-03-2023 10:27:41 , Verificando OCX
 14-03-2023 10:43:55 , Error nº:         13
 Error No se encuentra el alias 'CSRRUBRO'.
 Linea nº CASE VARTYPE(&lcclaB)='C'
@@ -344,7 +305,15 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
 00 as ivari3,000000000.00 as Basegra3,000.00 as tasa3 ,CAST(0 as int) as idctavta4,00000000.00 as ivari4,000000000.00 as Basegra4,000.00 as tasa4 ,CAST(0 as int) as idctavta5,00000000.00 as ivari5,000000000.00 as Basegra5,000.00 as tasa5 ,SPACE(10) as no
+
+
+
+
 
 
 
@@ -596,7 +565,15 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
 0 as tasarete3 ,SPACE(10) as nomrete4,00000000.00 as retencion4,000000000.00 as Baserete4,000.00 as tasarete4 ,SPACE(10) as nomrete5,00000000.00 as retencion5,000000000.00 as Baserete5,000.00 as tasarete5 ,00000000.00 as BaseInterno,000000000.00 as BaseD
+
+
+
+
 
 
 
@@ -848,6 +825,10 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
 ,SPACE(3) as subnumero ,SPACE(25) as subcnombre,0000000000 as idprefijo,00000000.00 as SubtotCiva,SPACE(40) as detalle,00 as parada ,SPACE(13) as proximonro,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,0 as
 
 
@@ -974,7 +955,15 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
+
+
+
 
 
 
@@ -1751,6 +1740,10 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -1790,7 +1783,15 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
 
 
 
@@ -1872,6 +1873,10 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -1910,7 +1915,15 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
 
 
 
@@ -2152,7 +2165,15 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
+
+
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
+
+
+
 
 
 
@@ -2174,7 +2195,15 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
+
+
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
+
+
+
 
 
 
@@ -2253,3 +2282,34 @@ Control activo  EXPORTAR_COPIAS_AFIP.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-05-2024 11:17:41 , Verificando OCX
 31-05-2024 10:06:45 , Verificando OCX
 31-05-2024 12:45:11 , Verificando OCX
+13-06-2024 10:24:54 , Verificando OCX
+13-06-2024 10:35:53 , Informe por excel
+13-06-2024 10:36:05 , Version 16.0
+13-06-2024 13:10:38 , Error nº:         12
+Error No se encuentra la variable 'COBJETO'.
+Linea nº cLinea = '['+ALLTRIM(oObjeto.Name)+']'+cObjeto
+ Alias CSRIMPRIMIR registro         25
+Control activo  EST_PENPRODUCTO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+13-06-2024 15:43:28 , Error nº:       1734
+Error No se encuentra la propiedad VALUE.
+Linea nº cObjeto = DTOC(oObjeto.Value)
+ Alias CSRIMPRIMIR registro        324
+Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+13-06-2024 15:44:54 , Error nº:       1734
+Error No se encuentra la propiedad VALUE.
+Linea nº CASE TYPE(oObjeto.Value)$'C'
+ Alias CSRIMPRIMIR registro       1143
+Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+13-06-2024 15:46:06 , Error nº:         12
+Error No se encuentra la variable 'COBJETO'.
+Linea nº cLinea = '['+ALLTRIM(oObjeto.Name)+']'+cObjeto
+ Alias CSRIMPRIMIR registro        323
+Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+13-06-2024 18:45:24 , Verificando OCX
+13-06-2024 19:01:07 , Error nº:       1435
+Error Error de análisis de XML: El sistema no puede encontrar el objeto especificado.
+ línea 0, posición 0.   (null)
+Linea nº XMLTOCURSOR(lcFileCursor ,lcAlias,512+8192)
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_PENPRODUCTO.CMDRESTAURAR.CLICK
+13-06-2024 19:01:57 , Error nº:         12Error No se encuentra la variable 'LCALIAS'.Linea nº IF FILE(lcAlias ) Alias _CSRCATECTACTE registro          1Control activo  EST_PENPRODUCTO.CMDRESTAURAR.CLICK
