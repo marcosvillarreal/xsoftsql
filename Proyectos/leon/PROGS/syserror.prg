@@ -30,6 +30,7 @@ procedure errorsys
 			     RETURN 			        
 			CASE nError=1426  && error com cuando uso excel
 			     GO BOTTOM IN ALIAS()
+			     
 			     RETURN 
 			CASE nError = 5                   && record out of range
  				if !eof()

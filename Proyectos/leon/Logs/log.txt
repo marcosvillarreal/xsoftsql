@@ -1,83 +1,3 @@
-14-03-2023 10:43:55 , Error nº:         13
-Error No se encuentra el alias 'CSRRUBRO'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias  registro          0
-Control activo  ABMRUBROS.INIT
-14-03-2023 10:48:55 , Error nº:         13
-Error No se encuentra el alias 'CSRRUBRO'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias  registro          0
-Control activo  ABMRUBROS.INIT
-14-03-2023 10:51:07 , Error nº:         13
-Error No se encuentra el alias 'CSRRUBRO'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias  registro          0
-Control activo  ABMRUBROS.INIT
-14-03-2023 10:52:54 , Error nº:         13
-Error No se encuentra el alias 'CSRRUBRO'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias  registro          0
-Control activo  ABMRUBROS.INIT
-14-03-2023 10:58:12 , Error nº:         10
-Error Error de sintaxis.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias  registro          0
-Control activo  ABMRUBROS.INIT
-14-03-2023 11:13:05 , Verificando OCX
-14-03-2023 11:17:56 , Error nº:       1734
-Error No se encuentra la propiedad PATHFILE.
-Linea nº .OBJimpresor.Pathfile = ADDBS(CsrParaVario.detalle)
- Alias CSRPARAVARIO registro         54
-Control activo  REGFACVTA.INIT
-14-03-2023 11:21:25 , Error nº:         41
-Error El archivo memo j:\xsoftsql\proyectos\leon\forms\regfacvta.sct no existe o no es válido.
-Linea nº IF lldesarrollo AND llchekform
- Alias  registro          0
-Control activo  ON... 
-14-03-2023 11:44:32 , Verificando OCX
-14-03-2023 12:05:34 , Error nº:         12
-Error No se encuentra la variable 'NTASA'.
-Linea nº nAlicuotaPI = IIF(nTasa = 21,3,IIF(nTasa=10.5,1.5,0))
- Alias CSRBLOQUEOPROD registro        581
-Control activo  REGFACVTA.KEYPRESS
-14-03-2023 12:08:15 , Error nº:         41
-Error El archivo memo j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta_vpi.sct no existe o no es válido.
-Linea nº nAlicuotaPI = IIF(nTasa = 21,3,IIF(nTasa=10.5,1.5,0))
- Alias  registro          0
-Control activo  ON... 
-14-03-2023 12:09:47 , Verificando OCX
-14-03-2023 12:11:05 , Error nº:       1734
-Error No se encuentra la propiedad MINIMOPI5329.
-Linea nº IF lnBasePerceIVA  = 0 OR  lnBasePerceIVA   < This.MinimoPI5329  OR NOT CsrCategoiva.fiscal $ 'I' OR NOT CsrComprobante.clase$'ABCU'
- Alias CSRAUXCUERFAC registro          1
-Control activo  REGFACVTA.KEYPRESS
-14-03-2023 13:34:21 , Verificando OCX
-14-03-2023 13:34:41 , Error nº:         13
-Error No se encuentra el alias 'CSRPARAVARIO'.
-Linea nº SELECT CsrParavario
- Alias CSRPLANPAGO registro          3
-Control activo  REGFACPEDIDO.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
-14-03-2023 13:36:19 , Error nº:       1734
-Error No se encuentra la propiedad MINIMOPIVA5329.
-Linea nº .minimopiva5329 = CsrParavario.importe
- Alias CSRPARAVARIO registro         53
-Control activo  REGFACPEDIDO.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
-14-03-2023 15:04:59 , Verificando OCX
-14-03-2023 15:10:32 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\pasaje_serv_exp.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CSRKEY registro         15
-Control activo  MAIN
-28-03-2023 14:27:38 , Verificando OCX
-28-03-2023 14:47:59 , Verificando OCX
-30-03-2023 18:37:28 , Verificando OCX
-31-03-2023 11:55:11 , Verificando OCX
-31-03-2023 13:57:14 , Verificando OCX
-31-03-2023 14:05:18 , Error nº:       1734
-Error No se encuentra la propiedad EXCLUIDO5329.
-Linea nº Oscatter.perceiva5329 = IIF(Oscatter.perceiva5329 = 1 and lObjProducto.excluido5329=1,0,Oscatter.perceiva5329)
- Alias CSRPRODUCTO registro         79
-Control activo  REGFACPEDIDO.ACEPTAR1.CLICK
 31-03-2023 14:06:31 , Error nº:       1734
 Error No se encuentra la propiedad EXCLUIDO5329.
 Linea nº Oscatter.perceiva5329 = IIF(Oscatter.perceiva5329 = 1 and lObjProducto.excluido5329=1,0,Oscatter.perceiva5329)
@@ -180,6 +100,16 @@ Control activo  MAIN
 10-04-2023 11:45:22 , Error nº:          1
 Error El archivo 'csrcabefac.dbf' no existe.
 Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivari1,000000000.00 as Basegra1,000.00 as tasa1 ,CAST(0 as int) as idctavta2,00000000.00 as ivari2,000000000.00 as Basegra2,000.00 as tasa2 ,CAST(0 as int) as idctavta3,00000000.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -439,7 +369,27 @@ Linea nº SELECT CsrCabefac.*,CAST(0 as n(12,0)) as idctavta1,00000000.00 as ivar
 
 
 
+
+
+
+
+
+
+
+
+
+
 mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,SPACE(10) as nomrete2,00000000.00 as retencion2,000000000.00 as Baserete2,000.00 as tasarete2 ,SPACE(10) as nomrete3,00000000.00 as retencion3,000000000.00 as Baserete3,000.0
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -699,7 +649,27 @@ mrete1,00000000.00 as retencion1,000000000.00 as Baserete1,000.00 as tasarete1 ,
 
 
 
+
+
+
+
+
+
+
+
+
+
 escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego,00000000.00 as Perceibto1,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,000000000.00 as Baseexe,00000000.00 as BaseDesctoSiva,SPACE(20) as NomProvincia,00 as copiatkt
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -959,7 +929,27 @@ escto,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as BaseNocatego
 
 
 
+
+
+
+
+
+
+
+
+
+
  SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso ,SPACE(100) as Email,CAST(0 as n(16,2)) as PerceIVA5329 FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRI
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1744,6 +1734,16 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -1787,7 +1787,27 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1877,6 +1897,16 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -1919,7 +1949,27 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2169,7 +2219,27 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
+
+
+
+
+
+
+
+
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2199,7 +2269,27 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
+
+
+
+
+
+
+
+
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2312,4 +2402,75 @@ Error Error de análisis de XML: El sistema no puede encontrar el objeto especifi
 Linea nº XMLTOCURSOR(lcFileCursor ,lcAlias,512+8192)
  Alias _CSRPRODUCTO registro          1
 Control activo  EST_PENPRODUCTO.CMDRESTAURAR.CLICK
-13-06-2024 19:01:57 , Error nº:         12Error No se encuentra la variable 'LCALIAS'.Linea nº IF FILE(lcAlias ) Alias _CSRCATECTACTE registro          1Control activo  EST_PENPRODUCTO.CMDRESTAURAR.CLICK
+13-06-2024 19:01:57 , Error nº:         12
+Error No se encuentra la variable 'LCALIAS'.
+Linea nº IF FILE(lcAlias )
+ Alias _CSRCATECTACTE registro          1
+Control activo  EST_PENPRODUCTO.CMDRESTAURAR.CLICK
+14-06-2024 12:17:10 , Verificando OCX
+14-06-2024 12:42:53 , Verificando OCX
+14-06-2024 12:43:19 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº WITH loObjParametro
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 12:45:31 , Error nº:       1734
+Error No se encuentra la propiedad CESTADO.
+Linea nº .cEstado = ''
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 12:46:44 , Error nº:          1
+Error El archivo 'foldergm.prg' no existe.
+Linea nº loFolder = FolderGM(lcDir )
+ Alias _CSRPRODUCTO registro          1
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 12:47:10 , Verificando OCX
+14-06-2024 13:06:08 , Error nº:       1924
+Error OFORM no es un objeto.
+Linea nº IF UPPER(oForm.cEstado)='OPEN' &&Guardar
+ Alias  registro          0
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 15:17:25 , Verificando OCX
+14-06-2024 15:17:42 , Error nº:       1924
+Error OPARAMETRO no es un objeto.
+Linea nº this.lbltituloform.Caption = oParametro.Titulo
+ Alias  registro          0
+Control activo  INFORMEPARAM.INIT
+14-06-2024 15:43:05 , Error nº:       1925
+Error CANCELAR es un miembro desconocido.
+Linea nº This.Top = This.Parent.Cancelar.Top
+ Alias  registro          0
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 15:43:21 , Error nº:       1925
+Error ODATOS es un miembro desconocido.
+Linea nº FOR i = 1 TO this.oDatos.items
+ Alias  registro          0
+Control activo  INFORMEPARAM.OPTIONGROUP1._TXTFOCUS.GOTFOCUS
+14-06-2024 15:43:41 , Verificando OCX
+14-06-2024 15:55:39 , Verificando OCX
+14-06-2024 15:56:58 , Verificando OCX
+14-06-2024 16:03:27 , Verificando OCX
+14-06-2024 16:06:11 , Error nº:       1426
+Error Código de error OLE 0x80020006: Unknown name.
+Linea nº loFolder = loScript.Delete(lcFolderDir,.t.)
+ Alias  registro          0
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 16:07:28 , Verificando OCX
+14-06-2024 16:10:41 , Verificando OCX
+14-06-2024 16:27:18 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº CreateFolderGM(ADDBS(SYS(5)+CURDIR()),'Config\Filters\'+ALLTRIM(This.Name)+'\'+lcFilterName)
+ Alias _CSRMARCA registro          1
+Control activo  EST_RANKPRODUCTOS.CMDCARGAGRILLA.CLICK
+14-06-2024 16:28:32 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº CreateFolderGM(ADDBS(SYS(5)+CURDIR()),'Config\Filters\'+ALLTRIM(This.Name)+'\'+lcFilterName)
+ Alias _CSRMARCA registro          1
+Control activo  EST_RANKPRODUCTOS.CMDCARGAGRILLA.CLICK
+14-06-2024 16:32:30 , Error nº:         31
+Error La referencia al subíndice no es válida.
+Linea nº .AddProperty("arrayList[loFiltersParam.items,2]",'')
+ Alias CSRFILTERS registro          1
+Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 16:34:57 , Error nº:         31Error La referencia al subíndice no es válida.Linea nº .AddProperty("arrayList[loFiltersParam.items,2]",'') Alias CSRFILTERS registro          1Control activo  EST_RANKPRODUCTOS.CMDRESTAURAR.CLICK
+14-06-2024 16:44:15 , Verificando OCX

@@ -28,9 +28,10 @@ procedure errorsys
 			       ENDIF    
 			CASE nError=1115  && error GETCURSORADAPTER en obtenercursor, cuando el alias es cursor vfp
 			     RETURN 			        
-			CASE nError=1426  && error com cuando uso excel
-			     GO BOTTOM IN ALIAS()
-			     RETURN 
+			*CASE nError=1426  && error com cuando uso excel
+			     *GO BOTTOM IN ALIAS()
+			     
+			 *    RETURN 
 			CASE nError = 5                   && record out of range
  				if !eof()
   			          go bott
@@ -119,77 +120,4 @@ function Mensaje_error(nError)
 	ENDIF
 
 RETURN
-
-*-- Ejemplo de Uso de Interface COM con Web Services AFIP (PyAfipWs)
-*-- Factura Electronica mercado interno RG2485 Version 1 
-*-- para Visual FoxPro 5.0 o superior (vfp5, vfp9.0)
-*-- Según RG2485/08 y RG2904/10 Art. 4 Opción B (sin detalle, CAE tradicional)
-*-- 2010 (C) Mariano Reingart <reingart@gmail.com>
-
-*-- Procedimiento para manejar errores WSAA
-PROCEDURE errhand1
-	*--PARAMETER merror, mess, mess1, mprog, mlineno
-	LOCAL cError
-	cError = ""
-	cError	= cError + WSAA.Excepcion + CHR(13)
-	cError	= cError + WSAA.Traceback + CHR(13)
-	*--? WSAA.XmlRequest
-	*--? WSAA.XmlResponse
-
-	*-- trato de extraer el código de error de afip (1000)
-	afiperr = ERROR() -2147221504 
-	if afiperr>1000 and afiperr<2000 then
-		cError	= cError + 'codigo error afip:' + STR(afiperr) + CHR(13)
-	else
-		afiperr = 0
-	endif
-	cError	= cError + 'Error number: ' + LTRIM(STR(ERROR())) + CHR(13)
-	cError	= cError + 'Error message: ' + MESSAGE() + CHR(13)
-	cError	= cError + 'Line of code with error: ' + MESSAGE(1) + CHR(13)
-	cError	= cError + 'Line number of error: ' + LTRIM(STR(LINENO())) + CHR(13)
-	cError	= cError + 'Program with error: ' + PROGRAM() + CHR(13)
-	
-	=Grabar_SEC(cError,"Log_ErrorFAC.txt","Aplicaciones\Temporal")
-	*-- Preguntar: Aceptar o cancelar?
-	ch = MESSAGEBOX(WSAA.Excepcion, 5 + 48, "Error: " + cErro)
-	IF ch = 2 && Cancelar
-		ON ERROR 
-		CLEAR EVENTS
-		CLOSE ALL
-		RELEASE ALL
-		CLEAR ALL
-		CANCEL
-	ENDIF	
-ENDPROC
-
-*-- Procedimiento para manejar errores WSFE
-PROCEDURE errhand2
-	*--PARAMETER merror, mess, mess1, mprog, mlineno
-	LOCAL cError
-	cError = ""
-	
-	cError	= cError + WSFE.Excepcion + CHR(13)
-	cError	= cError + WSFE.Traceback + CHR(13)
-	*--? WSFE.XmlRequest
-	*--? WSFE.XmlResponse
-		
-	cError	= cError + 'Error number: ' + LTRIM(STR(ERROR())) + CHR(13)
-	cError	= cError + 'Error message: ' + MESSAGE() + CHR(13)
-	cError	= cError + 'Line of code with error: ' + MESSAGE(1) + CHR(13)
-	cError	= cError + 'Line number of error: ' + LTRIM(STR(LINENO())) + CHR(13)
-	cError	= cError + 'Program with error: ' + PROGRAM() + CHR(13)
-	
-	=Grabar_SEC(cError,"Log_ErrorFAC.txt","Aplicaciones\Temporal")
-	
-	*-- Preguntar: Aceptar o cancelar?
-	ch = MESSAGEBOX(WSFE.Excepcion, 5 + 48, "Error " + cError)
-	IF ch = 2 && Cancelar
-		ON ERROR 
-		CLEAR EVENTS
-		CLOSE ALL
-		RELEASE ALL
-		CLEAR ALL
-		CANCEL
-	ENDIF	
-ENDPROC
 
