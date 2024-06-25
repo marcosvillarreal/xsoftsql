@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.18
+	Exportacor Holistor
 2.1.17
 	SubdiarioCaja
 	SubdiarioStock
