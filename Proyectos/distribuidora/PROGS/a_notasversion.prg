@@ -1,6 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.22
+	Paravario Fac, formato de subtototal
+	Reimpresion Lote, Error lnBaseDescuentoSiva siempre en 0
 2.3.21
 	Mostrar referencia
 	Otros KM

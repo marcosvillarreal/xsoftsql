@@ -1,0 +1,23 @@
+25-06-24 12:36:08 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : IF LEN(TRIM(lcimpresora))=0 OR lntipoimpresora=0;Error :         11;Ultimo Alias Activo: CSRMAPEOIMP;Ultimo registro:          2 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000KM4P00OJ.TMP;Ultimo Control activo: 
+25-06-24 12:36:08 , Pila de llamadas
+25-06-24 12:36:08 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+25-06-24 12:36:08 , Objeto      : regfacvta.cmdimprimir.click
+25-06-24 12:36:08 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+25-06-24 12:36:09 , Nº de Linea :         36
+25-06-24 12:36:09 , En el Fuente: 		thisform.imprimir(thisform.lcimpresora,thisform.formulario,2)	
+25-06-24 12:36:09 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+25-06-24 12:36:09 , Objeto      : regfacvta.imprimir
+25-06-24 12:36:09 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+25-06-24 12:36:09 , Nº de Linea :        118
+25-06-24 12:36:10 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
+25-06-24 12:36:10 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+25-06-24 12:36:10 , Objeto      : regfacvta.objimpresor.inicioimpresora
+25-06-24 12:36:10 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+25-06-24 12:36:10 , Nº de Linea :         14
+25-06-24 12:36:10 , En el Fuente: Miprinter = thisform.agregaobjeto.Objimpresora(lcNombreImpresora,lnTipoImpresora)
+25-06-24 12:36:11 , Programa    : j:\xsoftsql\desarrollo\clases\odata.vct
+25-06-24 12:36:11 , Objeto      : regfacvta.agregaobjeto.objimpresora
+25-06-24 12:36:11 , Base Objeto : j:\xsoftsql\desarrollo\clases\odata.vct
+25-06-24 12:36:11 , Nº de Linea :          6
+25-06-24 12:36:11 , En el Fuente: IF LEN(TRIM(lcimpresora))=0 OR lntipoimpresora=0
+25-06-24 12:36:11 , Fin
