@@ -65,7 +65,7 @@
 *!*	 MOVBCOCAR.switch			1	3RO 1=entregado / depositado
 *!*								2 	1 = cheque rechazado
 *!*								3	1 = cheque propio informado por banco
-*!*								4
+*!*								4	1 = cheque digital
 *!*								5
  							   						 
 

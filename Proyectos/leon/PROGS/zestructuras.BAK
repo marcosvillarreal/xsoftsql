@@ -103,6 +103,12 @@
 *!*								4
 *!*								5
 
+*!*	 RENFLETE.switch	       1	0= activo   1= anulado
+*!*								2	
+*!*								3
+*!*								4
+*!*								5
+
 *!*	 PARACONFIG.switch	       1	0= no permite cambiar plan pago   1= permite cambiar plan pago   en facturacion venta
 *!*								2
 *!*								3
