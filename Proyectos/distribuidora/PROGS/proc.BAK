@@ -1553,6 +1553,7 @@ IF lok
 	Goapp.empresaautoservicio		= DefaultVar('CsrEmpresa.autoservicio',0)
 	goapp.empresaCoorX			= DefaultVar('CsrEmpresa.coorX',0)
 	goapp.empresaCoorY			= DefaultVar('CsrEmpresa.coorY',0)
+	goapp.logofac			= DefaultVar('CsrEmpresa.logofac','logofac.jpg')
 ENDIF
    
 IF USED("Csrseteotermi")
