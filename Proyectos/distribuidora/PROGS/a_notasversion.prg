@@ -1,6 +1,8 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.24
+	FacVta,ParaVario ... hasta 3 bonif, buscar por codartprov
 2.3.23
 	FacVta,ParaVario ... cargar detalle de transporte
 	AbmCtacte ...cargar transporte

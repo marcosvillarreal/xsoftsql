@@ -1,6 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.23
+	FacVta,ParaVario ... cargar detalle de transporte
+	AbmCtacte ...cargar transporte
 2.3.22
 	Paravario Fac, formato de subtototal
 	Reimpresion Lote, Error lnBaseDescuentoSiva siempre en 0
@@ -19,7 +22,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 	AbmProducto ... opcion de congelar los precios de venta
 2.3.18
 	DistribuidoraSur, impresion de remitos truchos
-	RegCtacte_v1 y RecGacte_sucv..... ver comprobante
+	RegCtacte_v1 y RegCacte_sucv..... ver comprobante
 2.3.17
 	ParaFacvta - Tope Lote Pedidos
 	RegFacPedido_k2, valida TopeLote
