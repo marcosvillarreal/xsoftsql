@@ -187,7 +187,7 @@ SCAN
 			lnidcateibrng =CsrCateIbRNg.id
 		ENDIF 
 		
-		lnidplanpago = 1100000001
+		lnidplanpago = 1100000002
 		
               
 		lcfefin       = DATETIME(1900,01,01,0,0,0)
@@ -228,7 +228,7 @@ SCAN
           ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
           ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
           ,totalizabonif,referencia);
-		  VALUES (lnid,CsrDeudor.codcli,lcnombre,UPPER(CsrDeudor.domcli),LTRIM(lccp);
+		  VALUES (lnid,lcCodigo ,lcnombre,UPPER(CsrDeudor.domcli),LTRIM(lccp);
 		  ,lnidlocalidad,lnidprovincia,CsrDeudor.telcli_1,lntipoiva,lccuit,lnidcategoria,0,0;
 		  ,lnidplanpago,1100000006,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 		  ,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;

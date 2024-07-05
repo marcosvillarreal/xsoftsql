@@ -211,6 +211,8 @@ SCAN
 		lcnombre = NombreNi(ALLTRIM(UPPER(CsrDeudor.nomcli)))
 		
 		lcReferencia = ALLTRIM(CsrDeudor.ctransp)
+		
+		lcCodigo = ALLTRIM(STR(INT(VAL(CsrDeudor.codcli))))
 *!*	      	
 *!*	      	SELECT CsrCtacte
 *!*	      	APPEND BLANK	
@@ -226,7 +228,7 @@ SCAN
           ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
           ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
           ,totalizabonif,referencia);
-		  VALUES (lnid,LTRIM((CsrDeudor.codcli)),lcnombre,UPPER(CsrDeudor.domcli),LTRIM(lccp);
+		  VALUES (lnid,CsrDeudor.codcli,lcnombre,UPPER(CsrDeudor.domcli),LTRIM(lccp);
 		  ,lnidlocalidad,lnidprovincia,CsrDeudor.telcli_1,lntipoiva,lccuit,lnidcategoria,0,0;
 		  ,lnidplanpago,1100000006,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
 		  ,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
