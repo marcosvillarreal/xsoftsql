@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.19
+	RegFacVta, afectaremito =.f., excepto para facturas y remitos salida
 2.1.18
 	Exportacor Holistor
 2.1.17
