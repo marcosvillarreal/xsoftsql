@@ -40,12 +40,12 @@ GO TOP
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
-ldebug = .t.
+ldebug = .f.
 
 SKIP 
-stop()
+*stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 8 &&Hay un campo vacio
+	lnCantCampo = 10 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -90,15 +90,15 @@ DO WHILE NOT EOF()
 			*LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLocalidad)))
 			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTelefono)))			
 			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDocumento)))
-			*lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcReferencia)))
+			lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcReferencia)))
 			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
 			lcZona			= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcZona)))				
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			
-			IF VAL(lcCodigo)=8838 and ldebug
-			*	stop()
+			IF VAL(lcCodigo)=945 and ldebug
+				stop()
 				ldebug = .f.
 			ENDIF 
 		
@@ -177,6 +177,8 @@ Oavisar.proceso('S','Procesando '+alias())
 
 cCadeCtacte = "" 
 
+ldebug = .f.
+
 
 SELECT CsrLista
 GO TOP 
@@ -234,6 +236,11 @@ DO WHILE NOT EOF()
 			lcLista2		= IIF(j + i=24,lcCadena,lcLista2)
 			lcLista3		= IIF(j + i=26,lcCadena,lcLista3)
 			*lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
+			
+			IF VAL(lcCodigo)=945 and ldebug
+				stop()
+				ldebug = .f.
+			ENDIF 
 					
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -263,11 +270,15 @@ DO WHILE NOT EOF()
 		IF LEN(RTRIM(lcNombre))<=3
 		*	LOOP 
 		ENDIF 
-		IF ALLTRIM(STR(VAL(lcCodigo)))<>ALLTRIM(lcCodigo)
+		IF ALLTRIM(STRzero(VAL(lcCodigo)),3) <>ALLTRIM(lcCodigo)
 			SKIP 
 			LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
+		lcLista1 = STRTRAN(lcLista1,',','.')
+		lcLista2 = STRTRAN(lcLista2,',','.')
+		lcLista3 = STRTRAN(lcLista3,',','.')
+		lcLista4 = STRTRAN(lcLista4,',','.')
 		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto,Lista1,Lista2;
 		,Lista4,Lista3);
 		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta,lcCosto,lcCodRubro,lcIDJ,lcUniBulto,lcLista1;
@@ -423,7 +434,7 @@ ldebug = .t.
 SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 18 &&Hay un campo vacio
+	lnCantCampo = 3 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -464,11 +475,11 @@ DO WHILE NOT EOF()
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireccion)))
+			*cDireccion		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireccion)))
 			*lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))			
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcDocumento)))
-			lcReferencia	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcReferencia)))
+			*cTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))			
+			*cDocumento		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcDocumento)))
+			*cReferencia	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcReferencia)))
 			*lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcVendedor)))	
 			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
 			*lcZona			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcZona)))		

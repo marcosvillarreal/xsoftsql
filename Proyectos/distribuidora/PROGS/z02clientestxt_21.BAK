@@ -22,7 +22,11 @@ SELECT CsrDeudor
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
 =LeerProveedores_21(cArchivo)
 SELECT CsrAcreedor 
+SELECT distinct nombre,referencia,documento,telefono,telefono2 ;
+FROM CsrAcreedor INTO CURSOR CsrAcreedor2 READWRITE 
+
 *vista()
+
 
 Oavisar.proceso('S','Abriendo archivos')
 SET SAFETY OFF  
@@ -44,6 +48,7 @@ llok = CargarTabla(lcData,'RutaVdor',.t.)
 llok = CargarTabla(lcData,'CabeRuta',.t.)
 llok = CargarTabla(lcData,'CuerRuta',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
+llok = CargarTabla(lcData,'Fletero',.t.)
 SET SAFETY ON 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -174,10 +179,10 @@ ENDSCAN
 SELECT CsrVendedor
 *vista()
 
-stop()
-sELECT distinct zona as nombre FROM CsrDeudor  INTO CURSOR FsrBarrio READWRITE 
+*stop()
+sELECT distinct zona as nombre, referencia as nombre2 FROM CsrDeudor  INTO CURSOR FsrBarrio READWRITE 
 
-lnid = RecuperarID('CsrBarrio',Goapp.sucursal10)
+lnid = RecuperarID('CsrSector',Goapp.sucursal10)
 lnCodigo = 1
 
 INSERT INTO CsrSector values(lnid,'SIN ESPECIFICAR',lnCodigo )
@@ -194,12 +199,40 @@ SCAN FOR !EOF()
        loop
    ENDIF
    lnnumero	= lnCodigo 
-   lcnombre	= NombreNi(alltrim(UPPER(FsrBarrio.nombre)))
+   lcnombre	= NombreNi(alltrim(UPPER(FsrBarrio.nombre)) + ' ' + ALLTRIM(UPPER(FsrBarrio.nombre2)))
 
    INSERT INTO CsrBarrio(id,numero,nombre,idsector);
    			 VALUES (lnid,lnnumero,lcnombre,lnid)
 
 	INSERT INTO CsrSector(id,numero,nombre);
+   			 VALUES (lnid,lnnumero,lcnombre)
+   			 
+	lnid = lnid + 1
+	lnCodigo = lnCodigo + 1 
+
+ENDSCAN
+
+sELECT distinct zona as nombre FROM CsrDeudor  INTO CURSOR FsrFletero READWRITE 
+
+lnid = RecuperarID('CsrFletero',Goapp.sucursal10)
+lnCodigo = 1
+
+INSERT INTO CsrFletero values(lnid,'SIN ESPECIFICAR',lnCodigo )
+
+lnid = lnid + 1
+lnCodigo = lnCodigo + 1 
+
+SELECT FsrFletero 
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+   IF LEN(ltrim(nombre))=0
+       loop
+   ENDIF
+   lnnumero	= lnCodigo 
+   lcnombre	= NombreNi(alltrim(UPPER(FsrFletero.nombre)))
+
+	INSERT INTO CsrFletero (id,numero,nombre);
    			 VALUES (lnid,lnnumero,lcnombre)
    			 
 	lnid = lnid + 1
@@ -251,6 +284,9 @@ SCAN
 *!*	 		LOOP 
 *!*	 		
 *!*	 	ENDIF 
+ 	IF nCodigo = 611
+ 	*	stop()
+ 	ENDIF 
  	
  	SELECT CsrDeudor 
  	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
@@ -263,7 +299,7 @@ SCAN
  	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
  	
 *!*	 	nCodigo			= lnCodigo	
- 	lcReferencia	= ALLTRIM(CsrDeudor.referencia)
+ 	lcReferencia	= '' &&ALLTRIM(CsrDeudor.referencia)
  	lnctadeudor		= 1
  	lnidplanpago	= 1100000001 &&Por el momento todos de CONTADO
  	*lnidplanpago	= IIF(CsrDeudor.PlanPago<>1,1100000001,1100000002)	
@@ -303,9 +339,12 @@ SCAN
 	SELECT CsrBarrio
 	GO TOP 
 	lnidbarrio = CsrBarrio.id
-	LOCATE FOR ALLTRIM(nombre)=ALLTRIM(CsrDeudor.zona)
-	IF ALLTRIM(nombre)=ALLTRIM(CsrDeudor.zona)
-		lnidbarrio = CsrBarrio.id
+	lcBarrio = ALLTRIM(CsrDeudor.zona) +' ' +ALLTRIM(CsrDeudor.referencia)
+	IF LEN(LTRIM(lcBarrio ))<>0
+		LOCATE FOR ALLTRIM(nombre)=lcBarrio 
+		IF ALLTRIM(nombre)=lcBarrio 
+			lnidbarrio = CsrBarrio.id
+		ENDIF 
 	ENDIF 
 	
 	&&TresPImp	
@@ -526,13 +565,14 @@ INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovi
 	lnID = lnID + 1 
 	
 
-SELECT CsrAcreedor
+SELECT CsrAcreedor2
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
 *stop()
 SCAN 
  	
- 	SELECT CsrAcreedor
+ 	SELECT CsrAcreedor2
+ 	SCATTER NAME OscAcreedor
  	STORE 0 TO lnidestado, 	lnctadeudor ,	lnctaacreedor, 	lnctabanco,	lnctaotro, 	lndctalogistica;
  			,lnidcateibrng ,lncomision ,lnidlocalidad ,lnidprovincia ,lntipoiva ,lnidcategoria;
 			,lnidplanpago ,lnidcanalvta ,lnsaldoAuto ,lnlista ,lncomision ,lnconvenio,lndctalogistica;
@@ -559,7 +599,7 @@ SCAN
 	
 	cTipoiva	= 1 &&UPPER(CsrDeudor.TipoIVA)
 	
-	lcNroDoc		= strtrim(VAL(PeloCuit(CsrAcreedor.Documento)),15)
+	lcNroDoc		= strtrim(VAL(PeloCuit(OscAcreedor.Documento)),15)
 	IF VAL(lcNroDoc)=0
 		lntipoiva = 3
 	ENDIF 
@@ -573,31 +613,31 @@ SCAN
 
 	lcnumero	= strtrim(nCodigo,8)
 	
-	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre))) 
+	lcnombre	= NombreNi(ALLTRIM(UPPER(OscAcreedor.nombre))) 
 	
 	IF nCodigo = 19
 	*	stop()
 	ENDIF 
 	
-	lcDire_Calle= RTRIM(UPPER(CsrAcreedor.direccion))
-  	lcDire_Nro	= RTRIM(UPPER(CsrAcreedor.direnro))
-  	lcDire_Piso	= RTRIM(UPPER(CsrAcreedor.direpiso))
-  	lcDire_Dpto	= RTRIM(UPPER(CsrAcreedor.diredpto))
-  	
-  	cDireNro	= IIF(ALLTRIM(lcDire_Nro)='0' or LEN(lcDire_Nro)=0,'',lcDire_Nro)
-  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
-	cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
+*!*		lcDire_Calle= RTRIM(UPPER(OscAcreedor.direccion))
+*!*	  	lcDire_Nro	= RTRIM(UPPER(OscAcreedor.direnro))
+*!*	  	lcDire_Piso	= RTRIM(UPPER(OscAcreedor.direpiso))
+*!*	  	lcDire_Dpto	= RTRIM(UPPER(OscAcreedor.diredpto))
+*!*	  	
+*!*	  	cDireNro	= IIF(ALLTRIM(lcDire_Nro)='0' or LEN(lcDire_Nro)=0,'',lcDire_Nro)
+*!*	  	cDirePiso	= IIF(LEN(LcDire_Piso)=0,"","P:"+lcDire_Piso)
+*!*		cDireDpto	= IIF(LEN(LcDire_Dpto)=0,"","D:"+lcDire_Dpto)
 	
   	lcDireccion = ALLTRIM(ALLTRIM(lcDire_Calle) + " " + cDireNro + " "+ cDirePiso + " "+cDireDpto)
  	
   	*lcDireccion = RTRIM(UPPER(CsrDeudor.direccion)) + ' ' + ALLTRIM(CsrDeudor.direnro) + ' ' + ALLTRIM(CsrDeudor.direpiso) + ' ' + ALLTRIM(CsrDeudor.diredpto)
-  	lcTelefono	= LTRIM(CsrAcreedor.telefono)
+  	lcTelefono	= LTRIM(OscAcreedor.telefono)
 
   	IF LEN(ALLTRIM(lcTelefono)) = 0
-  		lcTelefono	= LTRIM(CsrAcreedor.telefono2)
+  		lcTelefono	= LTRIM(OscAcreedor.telefono2)
   	ELSE
-  		IF LEN(ALLTRIM(CsrAcreedor.telefono2)) <> 0
-  			lcObserva	= lcObserva + CHR(13) + "TELEFONO: " +LTRIM(CsrAcreedor.telefono2)
+  		IF LEN(ALLTRIM(OscAcreedor.telefono2)) <> 0
+  			lcObserva	= lcObserva + CHR(13) + "TELEFONO: " +LTRIM(OscAcreedor.telefono2)
   		ENDIF 
   	ENDIF 
 
@@ -619,7 +659,7 @@ SCAN
 	nCodigo = nCodigo + 1 
 		
 	
-	SELECT CsrAcreedor           
+	SELECT CsrAcreedor2           
 ENDSCAN
 	
 *!*		

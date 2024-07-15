@@ -15,9 +15,16 @@ SET CPCOMPILE TO 1252
 codepage = 1252
 SET CPDIALOG ON
 
-cArchivo = ALLTRIM(lcpath )+"\productosExp.csv"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"productosExp.csv"
 =LeerArticulos_21()
 SELECT CsrArticulo
+vista()
+
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
+=LeerProveedores_21(cArchivo)
+SELECT CsrAcreedor 
+SELECT distinct nombre,codigo ;
+FROM CsrAcreedor INTO CURSOR CsrAcreedor2 READWRITE 
 *vista()
 
 Oavisar.proceso('S','Abriendo archivos') 
@@ -155,12 +162,20 @@ SCAN FOR !EOF()
 	*	STOP()
 	ENDIF 
 	
-	SELECT CsrCtacte
-	LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.proveedor)
-	IF FOUND()
+	SELECT CsrAcreedor2
+	LOCATE FOR VAL(codigo) = VAL(CsrArticulo.codigo)
+	IF VAL(codigo) = VAL(CsrArticulo.codigo)
+		SELECT CsrCtacte
+		LOCATE FOR ALLTRIM(cnombre)=ALLTRIM(CsrAcreedor2.nombre)
+		IF FOUND()
+			lnidctacte = Csrctacte.id
+		ENDIF
+	ELSE
+		SELECT CsrCtacte
+		LOCATE FOR ALLTRIM(cnombre)='DISTRIBUIDORA GATTARI'
 		lnidctacte = Csrctacte.id
-	ENDIF
-
+	ENDIF 
+	
 	cRubro = ALLTRIM(CsrArticulo.rubro)
 	
     SELECT CsrRubro
