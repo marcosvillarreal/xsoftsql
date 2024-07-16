@@ -236,54 +236,74 @@ Next
 Function Reporte
 parameters nombreinforme,esvistaprevia
 
-do case
-
-	case esvistaprevia
+IF esvistaprevia
 
 		wait window 'Generando vista previa , aguarde ...' nowait
+		
+		TRY 
+			stop()
+			IF oConfigTermi.FoxyPreviewer = 'FALSE'
+		
+				SET RESOURCE OFF  
+				PUSH KEY
 
-		SET RESOURCE OFF  
-		PUSH KEY
+				DEFINE WINDOW wPreview FROM 0,0 TO 1,1; 
+				    TITLE 'Vista preliminar' in screen CLOSE float grow minimize zoom SYSTEM NAME oPreview
+				    
+				ZOOM WINDOW wPreview MAX
 
-		DEFINE WINDOW wPreview FROM 0,0 TO 1,1; 
-		    TITLE 'Vista preliminar' in screen CLOSE float grow minimize zoom SYSTEM NAME oPreview
-		    
-		ZOOM WINDOW wPreview MAX
+				ON KEY LABEL UPARROW; 
+					MOUSE CLICK AT 5,oPreview.Width-8;
+					PIXELS WINDOW wPreview
 
-		ON KEY LABEL UPARROW; 
-			MOUSE CLICK AT 5,oPreview.Width-8;
-			PIXELS WINDOW wPreview
+				ON KEY LABEL DNARROW; 
+				    MOUSE CLICK AT oPreview.Height-22,oPreview.Width-8;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL DNARROW; 
-		    MOUSE CLICK AT oPreview.Height-22,oPreview.Width-8;
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL LEFTARROW; 
+				    MOUSE CLICK AT oPreview.Height-10,6; 
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL LEFTARROW; 
-		    MOUSE CLICK AT oPreview.Height-10,6; 
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL RIGHTARROW; 
+				    MOUSE CLICK AT oPreview.Height-10,oPreview.Width-22;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL RIGHTARROW; 
-		    MOUSE CLICK AT oPreview.Height-10,oPreview.Width-22;
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL HOME; 
+				    MOUSE DBLCLICK AT 18,oPreview.Width-8;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL HOME; 
-		    MOUSE DBLCLICK AT 18,oPreview.Width-8;
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL END;
+				    MOUSE DBLCLICK AT oPreview.Height-35,oPreview.Width-8;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL END;
-		    MOUSE DBLCLICK AT oPreview.Height-35,oPreview.Width-8;
-		    PIXELS WINDOW wPreview
+				REPORT FORM (NombreInforme); 
+				    TO PRINTER PROMPT PREVIEW WINDOW wPreview
 
-		REPORT FORM (NombreInforme); 
-		    TO PRINTER PROMPT PREVIEW WINDOW wPreview
-
-		POP KEY
-		SET RESOURCE ON
-		wait clear
-	other
-		REPORT FORM (NombreInforme); 
-		    TO PRINTER PROMPT NOCONSOLE
-	endcase	
+				POP KEY
+				SET RESOURCE ON
+				wait clear
+			ELSE
+				DO FOXYPREVIEWER.APP
+				WITH _Screen.oFoxyPreviewer
+					.cLanguage = "SPANISH" && Idioma
+					lcName = NombreInforme
+					* Optional available parameters
+					.cTitle = lcName && The preview window title 
+					.cPdfTitle = lcName
+					.cSaveDefName = lcName
+					.cDestFile = lcName
+					.nCopies       = 1 && The quantity of copies to be printed
+					REPORT FORM (NombreInforme) PREVIEW
+				ENDWITH
+			ENDIF 
+		CATCH TO oError
+		
+		ENDTRY 
+ELSE  
+	REPORT FORM (NombreInforme); 
+	    TO PRINTER PROMPT NOCONSOLE
+ENDIF 
+	
 Endfunc
 
 Function report_contarpaginas
@@ -2179,6 +2199,7 @@ SET SAFETY  OFF
 
 DO CASE 
 CASE UPPER(lcCursor)="CSRPAGO"
+	*agregar el campo nuevo es odata.agregarobjeto.objpago
 	Create Cursor Csrpago (id i AUTOINC,numero n(3),cnombre c(25),fecha d,importe n(16,2),idcuenta n(10);
 	              ,ctactebco c(6),titular c(30),banco c(30),localidad c(30),nrocheque n(12),idtipobco n(10);
 	              ,fechavto d,entregado c(30),idvalor n(10),idprovincia n(10),tipocaja c(2),esclase c(1);
