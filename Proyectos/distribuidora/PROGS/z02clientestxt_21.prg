@@ -166,8 +166,8 @@ SCAN FOR !EOF()
    SELECT CsrVendedor
    LOCATE FOR ALLTRIM(nombre)= ALLTRIM(lcNombre)	
    IF NOT FOUND()	 
-	   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale);
-	   			 VALUES (lnid,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0)
+	   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale,activopm);
+	   			 VALUES (lnid,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0,1)
 	   	 lnid = lnid + 1
 		lnCodigo = lnCodigo + 1 
 	ENDIF    			 

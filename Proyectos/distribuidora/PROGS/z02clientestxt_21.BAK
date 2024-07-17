@@ -217,7 +217,7 @@ sELECT distinct zona as nombre FROM CsrDeudor  INTO CURSOR FsrFletero READWRITE
 lnid = RecuperarID('CsrFletero',Goapp.sucursal10)
 lnCodigo = 1
 
-INSERT INTO CsrFletero values(lnid,'SIN ESPECIFICAR',lnCodigo )
+INSERT INTO CsrFletero (id,nombre,numero) values(lnid,'SIN ESPECIFICAR',lnCodigo )
 
 lnid = lnid + 1
 lnCodigo = lnCodigo + 1 
