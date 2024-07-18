@@ -1,6 +1,12 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.25
+	RegPedido
+	PatronCarga_V2
+	LisImprimirPatron
+	(mejoras de teclado)
+	PROCEDURE  Funcion reporte
 2.3.24
 	FacVta,ParaVario ... hasta 3 bonif, buscar por codartprov
 2.3.23

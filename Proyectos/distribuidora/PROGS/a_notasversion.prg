@@ -1,6 +1,8 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.26
+	ParaVario Fac ... + en cantidad, cambia unidad venta
 2.3.25
 	RegPedido
 	PatronCarga_V2
