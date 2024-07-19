@@ -1,12 +1,6 @@
 Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
  Alias CSRAUXCABEFAC registro          1
 Control activo  REGFACVTA.INIT
-09-11-2023 09:15:25 , Verificando OCX
-09-11-2023 09:17:08 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
- Alias CSRAUXCABEFAC registro          1
-Control activo  REGFACVTA.INIT
 09-11-2023 12:27:06 , Verificando OCX
 09-11-2023 12:27:33 , Error nº:         12
 Error No se encuentra la variable 'SUCURSAL'.
@@ -537,6 +531,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -628,7 +623,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
 
 
 
@@ -814,6 +811,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -904,7 +902,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
 
 
 
@@ -1250,7 +1250,9 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
 
 
 
@@ -1376,7 +1378,9 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
 
 
 
@@ -1797,6 +1801,7 @@ Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal
 
 
 
+
 O CURSOR CsrImprimir readWrite
  Alias  registro          0
 Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1810,6 +1815,7 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
 
 
 
@@ -1886,6 +1892,7 @@ Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(ve
 
 
 
+
 r.ctacte INTO CURSOR CsrImprimir READWRITE
  Alias CSRGRUPOS registro          2
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -1913,6 +1920,7 @@ Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
 
 
+
 ir.ctacte,korden INTO CURSOR CsrImprimir READWRITE
  Alias  registro          0
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -1931,4 +1939,9 @@ Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 19-07-2024 09:36:46 , Version 16.0
 19-07-2024 09:39:57 , Informe por excel
 19-07-2024 09:39:59 , Version 16.0
-19-07-2024 10:39:54 , Error nº:       1734Error No se encuentra la propiedad CLASE.Linea nº lnTotal = OscCursor.total*IIF(OscCursor.clase='K',-1,1) Alias CSRCURSOR registro          1Control activo  SUBCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+19-07-2024 10:39:54 , Error nº:       1734
+Error No se encuentra la propiedad CLASE.
+Linea nº lnTotal = OscCursor.total*IIF(OscCursor.clase='K',-1,1)
+ Alias CSRCURSOR registro          1
+Control activo  SUBCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+19-07-2024 16:16:02 , Verificando OCX
