@@ -1,73 +1,3 @@
- Alias  registro          0
-Control activo  EXPORTAR_SICORE.INIT
-08-06-2023 12:22:40 , Error nº:         12
-Error No se encuentra la variable 'IDPROVRETE'.
-Linea nº replace ALL idprovincia WITH CSRPARAVARIO.IDORIGEN, nomprov WITH CsrParavario.nomprov FOR CsrImprimir.idprovrete = nIDCodigo IN CsrImprimir
- Alias CSRPARAVARIO registro          1
-Control activo  SUBPERCE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-21-06-2023 09:57:28 , Verificando OCX
-21-06-2023 14:08:36 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias  registro          0
-Control activo  PARAVARIO.CONTAINERENCABEZA.PFRAME1.PAGE1.KITBUSCAOALTAENBA.TXTEXISTE1.INIT
-21-06-2023 14:10:17 , Verificando OCX
-21-06-2023 14:37:09 , Verificando OCX
-21-06-2023 17:37:25 , Verificando OCX
-21-06-2023 17:48:31 , Error nº:       1925
-Error KITBUSCAOALTAENCTACALSA es un miembro desconocido.
-Linea nº .page3.kitbuscaoaltaenCtaCalsa.txtexiste1.Value = CsrCtaCalsa.cnumero
- Alias CSRCTACALSA registro          1
-Control activo  PARAVARIO.INIT
-21-06-2023 17:48:37 , Error nº:       1925
-Error KITBUSCAOALTAENCTACALSA es un miembro desconocido.
-Linea nº .page3.kitbuscaoaltaenCtaCalsa.txtid.Value      = CsrCtaCalsa.id
- Alias CSRCTACALSA registro          1
-Control activo  PARAVARIO.INIT
-21-06-2023 17:49:33 , Error nº:       1925
-Error KITBUSCAOALTAENCTACALSA es un miembro desconocido.
-Linea nº .page3.kitbuscaoaltaenCtaCalsa.txtexiste1.Value = CsrCtaCalsa.cnumero
- Alias CSRCTACALSA registro          1
-Control activo  PARAVARIO.INIT
-31-07-2023 13:19:56 , Verificando OCX
-11-09-2023 18:39:13 , Verificando OCX
-11-09-2023 18:40:17 , Verificando OCX
-11-09-2023 18:42:06 , Verificando OCX
-11-09-2023 18:42:43 , Verificando OCX
-04-10-2023 10:06:48 , Verificando OCX
-04-10-2023 10:07:07 , Verificando OCX
-04-10-2023 10:12:23 , Verificando OCX
-10-10-2023 11:34:06 , Verificando OCX
-20-10-2023 12:37:25 , Verificando OCX
-20-10-2023 12:47:30 , Error nº:          1
-Error El archivo 'srzero.prg' no existe.
-Linea nº cCodigo = LEFT(ALLTRIM(str(Oscatter.numero))+strzero(0,7),7)+srzero(Oscatter.numvariedad,3)
- Alias CSRCURSOR registro          1
-Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-20-10-2023 12:49:03 , Error nº:          1
-Error El archivo 'srtzero.prg' no existe.
-Linea nº cCodigo = LEFT(ALLTRIM(str(Oscatter.numero))+strzero(0,7),7)+srtzero(Oscatter.numvariedad,3)
- Alias CSRCURSOR registro          1
-Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-20-10-2023 12:50:25 , Error nº:       1734
-Error No se encuentra la propiedad NUMERO.
-Linea nº cCodigo = LEFT(ALLTRIM(str(Oscatter.numero))+strzero(0,7),7)+strzero(Oscatter.numvariedad,3)
- Alias CSRCURSOR registro          1
-Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-20-10-2023 12:52:42 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº cCodigo = LEFT(ALLTRIM(str(Oscatter.codigo))+strzero(0,7),7)+strzero(Oscatter.numvariedad,3)
- Alias CSRCURSOR registro          1
-Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-24-10-2023 17:40:04 , Verificando OCX
-03-11-2023 16:46:44 , Verificando OCX
-03-11-2023 17:43:53 , Verificando OCX
-06-11-2023 08:07:41 , Verificando OCX
-06-11-2023 08:20:24 , Informe por excel
-06-11-2023 08:20:29 , Informe por excel
-09-11-2023 08:55:22 , Verificando OCX
-09-11-2023 09:08:05 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
 Linea nº ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
  Alias CSRAUXCABEFAC registro          1
 Control activo  REGFACVTA.INIT
@@ -598,6 +528,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -680,7 +619,25 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
 
 
 
@@ -848,6 +805,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -929,7 +895,25 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1257,7 +1241,25 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
+
+
+
+
+
+
+
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1365,7 +1367,25 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
+
+
+
+
+
+
+
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1768,6 +1788,15 @@ Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal
 
 
 
+
+
+
+
+
+
+
+
+
 O CURSOR CsrImprimir readWrite
  Alias  registro          0
 Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1781,6 +1810,15 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1822,4 +1860,75 @@ Error La expresión no es válida fuera de WITH/ENDWITH.
 Linea nº IF .fecha_calendario1.txtfecha.Value < DATE()
  Alias CSRAUXCURSOR registro          1
 Control activo  LISTACOMPSDO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-18-07-2024 18:27:41 , Error nº:         12Error No se encuentra la variable 'IMPORTEAFE'.Linea nº replace ALL saldo WITH ImporteAfe IN Csrimprimir Alias CSRAUXCURSOR registro          1Control activo  LISTACOMPSDO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+18-07-2024 18:27:41 , Error nº:         12
+Error No se encuentra la variable 'IMPORTEAFE'.
+Linea nº replace ALL saldo WITH ImporteAfe IN Csrimprimir
+ Alias CSRAUXCURSOR registro          1
+Control activo  LISTACOMPSDO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+19-07-2024 08:47:57 , Verificando OCX
+19-07-2024 08:49:16 , Informe por excel
+19-07-2024 08:49:28 , Version 16.0
+19-07-2024 09:14:43 , Informe por excel
+19-07-2024 09:14:45 , Version 16.0
+19-07-2024 09:15:38 , Informe por excel
+19-07-2024 09:15:39 , Version 16.0
+19-07-2024 09:21:55 , Error nº:         12
+Error No se encuentra la variable 'OBJNOMGRUPO'.
+Linea nº =ExcelVistaPreviaGrupo(@ObjNomGrupo,RECCOUNT('CsrGrupos'))
+ Alias CSRGRUPOS registro          2
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:23:01 , Error nº:       1832
+Error CTACTE no es único y se debe calificar.
+Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(vencimien) as cfechavto,nomcomp,impdebe,imphaber,saldores FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprimi
+
+
+
+
+
+
+r.ctacte INTO CURSOR CsrImprimir READWRITE
+ Alias CSRGRUPOS registro          2
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:23:59 , Informe por excel
+19-07-2024 09:24:01 , Version 16.0
+19-07-2024 09:24:01 , Error nº:       1806
+Error SQL: no se encuentra la columna 'DETALLE'.
+Linea nº SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE
+ Alias CSRCURSORHOJAS registro          1
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:24:18 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXHOJA'.
+Linea nº SELECT CsrAuxHoja
+ Alias CSRCURSORHOJAS registro          1
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:25:15 , Informe por excel
+19-07-2024 09:25:16 , Version 16.0
+19-07-2024 09:29:15 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0')
+ Alias W13 registro          1
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:29:27 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
+
+
+ir.ctacte,korden INTO CURSOR CsrImprimir READWRITE
+ Alias  registro          0
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:31:25 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0')
+ Alias CSRIMPRIMIR registro          1
+Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+19-07-2024 09:32:35 , Informe por excel
+19-07-2024 09:32:37 , Version 16.0
+19-07-2024 09:33:16 , Informe por excel
+19-07-2024 09:33:18 , Version 16.0
+19-07-2024 09:35:50 , Informe por excel
+19-07-2024 09:35:51 , Version 16.0
+19-07-2024 09:36:45 , Informe por excel
+19-07-2024 09:36:46 , Version 16.0
+19-07-2024 09:39:57 , Informe por excel
+19-07-2024 09:39:59 , Version 16.0
+19-07-2024 10:39:54 , Error nº:       1734Error No se encuentra la propiedad CLASE.Linea nº lnTotal = OscCursor.total*IIF(OscCursor.clase='K',-1,1) Alias CSRCURSOR registro          1Control activo  SUBCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
