@@ -434,7 +434,7 @@ ldebug = .t.
 SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 3 &&Hay un campo vacio
+	lnCantCampo = 5 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -475,8 +475,8 @@ DO WHILE NOT EOF()
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			*cDireccion		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireccion)))
-			*lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
+			lcCodLista		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcCodLista)))
+			lcLista			= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLista)))
 			*cTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))			
 			*cDocumento		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcDocumento)))
 			*cReferencia	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcReferencia)))
@@ -522,7 +522,7 @@ DO WHILE NOT EOF()
 			LOOP 
 		ENDIF 
 		*lcCodigo = SUBSTR(lcCodigo,4)
-		lcCodLista = '1'
+		*lcCodLista = '1'
 		INSERT INTO CsrAcreedor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctaacreedor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;

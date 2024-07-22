@@ -2,7 +2,9 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 ---Notas de Version 	
 -Pendiente
 2.3.26
-	ParaVario Fac ... + en cantidad, cambia unidad venta
+	ParaVario_Fac ... + en cantidad, cambia unidad venta
+				.... patron , tipo de impresion
+	LisPatronCarga ... tipo de impresion (desde paravario_fac)
 2.3.25
 	RegPedido
 	PatronCarga_V2

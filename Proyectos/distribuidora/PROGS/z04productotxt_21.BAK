@@ -23,9 +23,9 @@ SELECT CsrArticulo
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
 =LeerProveedores_21(cArchivo)
 SELECT CsrAcreedor 
-SELECT distinct nombre,codigo ;
+SELECT distinct nombre,codigo,lista as univenta,(codlista) as unibulto;
 FROM CsrAcreedor INTO CURSOR CsrAcreedor2 READWRITE 
-vista()
+*vista()
 
 Oavisar.proceso('S','Abriendo archivos') 
 llok = .t.
@@ -130,7 +130,7 @@ SELECT CsrRubro
 *vista()
 
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
-
+stop()
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 
@@ -162,6 +162,9 @@ SCAN FOR !EOF()
 	*	STOP()
 	ENDIF 
 	
+	lnunibulto	= IIF(VAL(CsrArticulo.unibulto)=0,1,VAL(CsrArticulo.unibulto))
+	lnidtipovta = IIF(UPPER(CsrArticulo.univenta)$"B",2,1) &&UNIDADES=1 ,	BULTOS = 2.
+	
 	SELECT CsrAcreedor2
 	LOCATE FOR VAL(codigo) = VAL(CsrArticulo.codigo)
 	IF VAL(codigo) = VAL(CsrArticulo.codigo)
@@ -170,6 +173,8 @@ SCAN FOR !EOF()
 		IF FOUND()
 			lnidctacte = Csrctacte.id
 		ENDIF
+		lnunibulto	= IIF(CsrAcreedor2.unibulto=0,1,CsrAcreedor2.unibulto)
+		lnidtipovta = IIF(LEN(LTRIM(UPPER(CsrAcreedor2.univenta)))>0,1,2) &&UNIDADES=1 ,	BULTOS = 2.
 	ELSE
 		SELECT CsrCtacte
 		LOCATE FOR ALLTRIM(cnombre)='DISTRIBUIDORA GATTARI'
@@ -200,12 +205,14 @@ SCAN FOR !EOF()
     lnidestado 	= 1 
     lnTasa		= 21
     lnidiva     = 1100000002 &&VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,1),8))
-   	lnunibulto	= IIF(VAL(CsrArticulo.unibulto)=0,1,VAL(CsrArticulo.unibulto))
-    lnidtipovta = IIF(UPPER(CsrArticulo.univenta)$"B",2,1) &&UNIDADES=1 ,	BULTOS = 2.
+   	
+    
     lnvtakilos	= 0
    	lnidforma 	= 1100000001
 	lnpeso		= 1
 	lnidfrio	= 1100000001
+	
+ 
 	
 	ldfecha          = DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
 	ldfechaulcpr 	= ldfecha
@@ -227,6 +234,13 @@ SCAN FOR !EOF()
 		*Lista1 Tiene el prescio c/iva, debo componer para atras con un margen del 30%
 		lnPrevtaf1		= VAL(CsrArticulo.lista1)
 		lnCostoF		= VAL(CsrArticulo.costo)
+		
+		&&Si se vende por bulto, debemos transformar el precio a unidades
+		IF lnidtipovta =2 AND lnunibulto > 1
+			lnPrevtaf1 = lnPrevtaf1 / lnunibulto
+			lnCostoF = lnCostoF / lnunibulto
+		ENDIF 
+		
 		IF lnPrevtaf1> 0
 			lnCosto		= red(lnCostoF * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
 			lnCostoBon	= lnCosto

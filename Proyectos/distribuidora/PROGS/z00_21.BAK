@@ -270,7 +270,7 @@ DO WHILE NOT EOF()
 		IF LEN(RTRIM(lcNombre))<=3
 		*	LOOP 
 		ENDIF 
-		IF ALLTRIM(STRzero(VAL(lcCodigo)),3) <>ALLTRIM(lcCodigo)
+		IF ALLTRIM(STRzero(VAL(lcCodigo),3)) <>ALLTRIM(lcCodigo)
 			SKIP 
 			LOOP 
 		ENDIF 
@@ -404,7 +404,7 @@ CREATE CURSOR CsrAcreedor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
 		,TipoDoc c(50),Documento c(20);
 		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(3),obsercli c(100),ctaacreedor  n(1),IngBrutos c(20);
-		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
+		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(3),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40))
 
 
@@ -432,9 +432,9 @@ leiunarticulo = .f.
 ldebug = .t.
 
 SKIP 
-*stop()
+stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 3 &&Hay un campo vacio
+	lnCantCampo = 5 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -475,8 +475,8 @@ DO WHILE NOT EOF()
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
 			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			*cDireccion		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDireccion)))
-			*lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
+			lcCodLista		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcCodLista)))
+			lcLista			= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcLista)))
 			*cTelefono		= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcTelefono)))			
 			*cDocumento		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcDocumento)))
 			*cReferencia	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcReferencia)))
