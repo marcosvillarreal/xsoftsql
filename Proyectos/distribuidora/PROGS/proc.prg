@@ -297,7 +297,7 @@ IF esvistaprevia
 				ENDWITH
 			ENDIF 
 		CATCH TO oError
-		
+			oavisar.usuario('Reporte: ' + NombreInforme + chr(13) + 'Errores: ' + oError.Message)
 		ENDTRY 
 ELSE  
 	REPORT FORM (NombreInforme); 

@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.21
+	CbioPrecioFile
 2.1.20
 	AbmProducto stockideal
 	pidoconcepto
