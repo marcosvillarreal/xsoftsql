@@ -176,26 +176,28 @@ IF TYPE('goApp')='O'
 	LeerConfigTermi()
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
-	IF oConfigTermi.controlskin = 'TRUE'
-		* Herramienta VFPsControlSkin
-		IF FILE("VFPsControlSkin.Exe")
-		   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
-		   *!* NUEVO 
-		   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
-		   IF VFPs_AddBar(_SCREEN,.T.) THEN 
-		      *!* AGREGAR PANEL AL ESTATUS BAR
-		      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
-		   ENDIF
-		ENDIF
-		*!* FIN INICIO
-		*!* LLENAR PARAMETROS VFPS MESSAGEBOX
-		_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
-		_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-		_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
-		_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
-		_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
-		** Herramienta VFPsControlSkin
-	ENDIF 
+	oConfigTermi.controlskin = 'FALSE'
+	
+*!*		IF oConfigTermi.controlskin = 'TRUE'
+*!*			* Herramienta VFPsControlSkin
+*!*			IF FILE("VFPsControlSkin.Exe")
+*!*			   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
+*!*			   *!* NUEVO 
+*!*			   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
+*!*			   IF VFPs_AddBar(_SCREEN,.T.) THEN 
+*!*			      *!* AGREGAR PANEL AL ESTATUS BAR
+*!*			      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
+*!*			   ENDIF
+*!*			ENDIF
+*!*			*!* FIN INICIO
+*!*			*!* LLENAR PARAMETROS VFPS MESSAGEBOX
+*!*			_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
+*!*			_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
+*!*			_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
+*!*			_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
+*!*			_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
+*!*			** Herramienta VFPsControlSkin
+*!*		ENDIF 
 	
    	 WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     DO Verifica_OCX WITH "Check"
@@ -536,16 +538,16 @@ DEFINE CLASS WALTER_TIMER AS TIMER
 	    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
 	    FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
 	    
-	    IF oConfigTermi.controlskin = 'TRUE'
-		_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
-		_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
-		_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
-		
-		lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
-		lcMessage = "Existe una actualización importante del sistema, hacer click"	&&MENSAJE A MOSTRAR EN EL POPUP
+*!*		IF oConfigTermi.controlskin = 'TRUE'
+*!*			_SCREEN.lcMensajeClickPopup = "EXISTE UNA NUEVA VERSION"   &&MENSAJE QUE APARECE PARA CUANDO SE DESEA PRESIONAR CLICK EN EL POPUP
+*!*			_SCREEN.lcComandoPopup      = "GMUPDATE()"   &&COMANDO A EJECUTAR CUANDO SE PRESIONA EN EL MENSAJE CLICK DEL POPUP
+*!*			_SCREEN.lnStyloPopup        = 2         &&ESTILOS DEL POPUP
+*!*			
+*!*			lcCaption = "GM Solutions"   			&&TITULO CAPTION DEL POPUP
+*!*			lcMessage = "Existe una actualización importante del sistema, hacer click"	&&MENSAJE A MOSTRAR EN EL POPUP
 
-		VFPs_MessagePopup (lcCaption,lcMessage)
-	ENDIF 
+*!*			VFPs_MessagePopup (lcCaption,lcMessage)
+*!*		ENDIF 
 	
 	    &&Subimos el intervalo porque el usuario ya vio el mensaje
 	    This.Interval =   30000 
