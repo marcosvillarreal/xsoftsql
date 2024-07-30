@@ -1,10 +1,3 @@
-19-06-2024 18:21:01 , En el Fuente: 	.crearlistado()
-19-06-2024 18:21:01 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankproductos.sct
-19-06-2024 18:21:01 , Objeto      : est_rankproductos.crearlistado
-19-06-2024 18:21:02 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankproductos.sct
-19-06-2024 18:21:02 , Nº de Linea :        165
-19-06-2024 18:21:02 , En el Fuente: 			i = ldFechaFin - OscCursor.fecha + 1
-19-06-2024 18:33:42 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad HAYRANGO.;Linea : This.HayRango = .f.;Error :       1734;Ultimo Alias Activo: CSROBJETIVOS;Ultimo registro:          1 ;DBF: C:\USERS\MARC
 
 
 
@@ -24,1017 +17,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-OS\APPDATA\LOCAL\TEMP\0000JRWP02CF.TMP;Ultimo Control activo: 
-19-06-2024 18:33:42 , Pila de llamadas
-19-06-2024 18:33:42 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:33:42 , Objeto      : plancomivende_rend.imprimir_vistaprevia1.impresora.click
-19-06-2024 18:33:42 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:33:43 , Nº de Linea :          8
-19-06-2024 18:33:43 , En el Fuente: 	llOK=thisform.CrearInforme()
-19-06-2024 18:33:43 , Programa    : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:33:43 , Objeto      : plancomivende_rend.crearinforme
-19-06-2024 18:33:44 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:33:44 , Nº de Linea :         42
-19-06-2024 18:33:44 , En el Fuente: This.HayRango = .f.
-19-06-2024 18:34:14 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'FECHA'.;Linea : SELECT idvendedor,idarticulo, sum(netogravado) as importefinal ,idrubro,fecha from csrseguimiento group by idvendedor,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-idarticulo,idrubro,fecha order BY idvendedor,idrubro,idarticulo desc INTO CURSOR CsrAuxFecha READWRITE;Error :       1806;Ultimo Alias Activo: CSRSEGUIMIENTO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRWP02DP.TMP;Ultimo Con
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-trol activo: 
-19-06-2024 18:34:15 , Pila de llamadas
-19-06-2024 18:34:15 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:34:15 , Objeto      : plancomivende_rend.imprimir_vistaprevia1.impresora.click
-19-06-2024 18:34:15 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:34:16 , Nº de Linea :          8
-19-06-2024 18:34:16 , En el Fuente: 	llOK=thisform.CrearInforme()
-19-06-2024 18:34:16 , Programa    : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:34:17 , Objeto      : plancomivende_rend.crearinforme
-19-06-2024 18:34:17 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:34:17 , Nº de Linea :         73
-19-06-2024 18:34:18 , En el Fuente: 	SELECT idvendedor,idarticulo, sum(netogravado) as importefinal	,idrubro,fecha from csrseguimiento 	group by idvendedor,idarticulo,idrubro,fecha	order BY idvendedor,idrubro,idarticulo desc	INTO CURSOR CsrAuxFecha READW
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-RITE 
-19-06-2024 18:37:15 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'NETO_012'.;Linea : replace &lcCampo WITH OscCursor.importefinal IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRWP02FT.TMP;Ultimo Control activo: 
-19-06-2024 18:37:15 , Pila de llamadas
-19-06-2024 18:37:16 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:37:16 , Objeto      : plancomivende_rend.imprimir_vistaprevia1.impresora.click
-19-06-2024 18:37:16 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:37:16 , Nº de Linea :          8
-19-06-2024 18:37:17 , En el Fuente: 	llOK=thisform.CrearInforme()
-19-06-2024 18:37:17 , Programa    : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:37:17 , Objeto      : plancomivende_rend.crearinforme
-19-06-2024 18:37:17 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:37:18 , Nº de Linea :        153
-19-06-2024 18:37:18 , En el Fuente: 			replace &lcCampo WITH OscCursor.importefinal IN CsrImprimir
-19-06-2024 18:42:29 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'NETO_015'.;Linea : replace &lcCampo WITH OscCursor.importefinal IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRWP02VX.TMP;Ultimo Control activo: 
-19-06-2024 18:42:30 , Pila de llamadas
-19-06-2024 18:42:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:42:31 , Objeto      : plancomivende_rend.imprimir_vistaprevia1.impresora.click
-19-06-2024 18:42:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-19-06-2024 18:42:31 , Nº de Linea :          8
-19-06-2024 18:42:32 , En el Fuente: 	llOK=thisform.CrearInforme()
-19-06-2024 18:42:32 , Programa    : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:42:32 , Objeto      : plancomivende_rend.crearinforme
-19-06-2024 18:42:32 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-06-2024 18:42:32 , Nº de Linea :        158
-19-06-2024 18:42:33 , En el Fuente: 			replace &lcCampo WITH OscCursor.importefinal IN CsrImprimir
-19-06-2024 18:50:49 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'AS'.;Linea : SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE;Error :       1806;Ultimo Alias Act
 
 
 
@@ -1215,6 +197,26 @@ ivo: CSRCURSORHOJAS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LO
 19-06-2024 18:50:55 , Nº de Linea :         77
 19-06-2024 18:50:56 , En el Fuente: 	SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE 
 19-06-2024 19:04:14 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : loColumna.Header = DAY(ldFecha )+'-'+LEFT(MesArg(MONTH(ldFecha )),6);Error :        107;Ultimo Al
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1558,7 +560,47 @@ ias Activo: CSRGRUPOS;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 campo08,&lc9 as wcampo09 from &lcalias order by &lcorden into cursor &micursor READWRITE;Error :          1;Ultimo Alias Activo: _CSRVENDEDOR;Ultimo registro:          1 CNUMERO;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LX5500EL.TMP;Ultimo Control acti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1809,8 +851,48 @@ vo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ursor &micursor READWRITE
 24-06-2024 11:00:57 , PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la propiedad LISTARUBRO.;Linea : .estadistica.listarubro = lcrubros;Error :       1734;Ultimo Alias Activo: _CSRRUBRO;Ultimo registro:         54 CNUME
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2080,6 +1162,26 @@ RO;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LX550130.TMP;Ultimo Control activ
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 APPDATA\LOCAL\TEMP\0000EZNT001E.TMP;Ultimo Control activo: 
 28-06-2024 19:44:00 , Pila de llamadas
 28-06-2024 19:44:00 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -2135,6 +1237,26 @@ APPDATA\LOCAL\TEMP\0000EZNT001E.TMP;Ultimo Control activo:
 28-06-2024 19:45:35 , Nº de Linea :        302
 28-06-2024 19:45:36 , En el Fuente: USE IN CsrAuxHoja
 28-06-2024 19:50:20 , PLANCOMIVENDE_REND.PAGEFRAME1.PAGE1.KITGRILLATILDAR.INIT, Error: El archivo 'csrvendedor.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2326,8 +1448,48 @@ APPDATA\LOCAL\TEMP\0000EZNT001E.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ursor &micursor READWRITE
 28-06-2024 19:51:41 , PLANCOMIVENDE_REND.PAGEFRAME1.PAGE1.KITGRILLATILDAR.INIT, Error: El archivo 'csrvendedor.dbf' no existe.;Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2513,8 +1675,48 @@ ursor &micursor READWRITE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ursor &micursor READWRITE
 03-07-2024 08:09:13 , LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'ESDIGITAL'.;Linea : replace ALL comprobante WITH STRTRAN(comprobante,'CHEQUE','ECHEQ') ,esdigital WITH VAL(SUBSTR(SWITCH,4,1)='1') FOR SUBSTR(SWI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2699,6 +1901,26 @@ TCH,4,1)='1' IN CsrImprimir;Error :         12;Ultimo Alias Activo: CSRIMPRIMIR;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CH,4,1)='1') FOR SUBSTR(SWITCH,4,1)='1' IN CsrImprimir;Error :         11;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000027M101HN.TMP;Ultimo Control activo: 
 03-07-2024 08:09:43 , Pila de llamadas
 03-07-2024 08:09:44 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -2792,7 +2014,47 @@ CH,4,1)='1') FOR SUBSTR(SWITCH,4,1)='1' IN CsrImprimir;Error :         11;Ultimo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,DTOS(CTOD(vencimien)) as chrfecha ,VAL(SUBSTR(SWITCH,4,1)='1') as esdigital FROM CsrCuerpo ORDER BY chrfecha,CsrCuerpo.id, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite;Error :         11;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2962,6 +2224,26 @@ Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 d, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite
 03-07-2024 08:17:27 , ON..., Error: Ya existe un objeto miembro con este nombre.;Linea : ...;Error :       1771;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
 03-07-2024 08:17:27 , Pila de llamadas
@@ -3041,7 +2323,47 @@ d, CsrCuerpo.idmaopera INTO CURSOR CsrImprimir readWrite
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro order BY idvendedor,idrubro desc into cursor csraux3;Error :         36;Ultimo Alias Activo: CSRAUX;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3205,8 +2527,48 @@ registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000027M1020D.TMP;U
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 drubro,nomrubro,codrubroorder BY idvendedor,idrubro descinto cursor csraux3
 03-07-2024 08:58:26 , REGSTOCK.CONTAINERENCABEZA._CBOCONCEPTO.LOSTFOCUS, Error: No se encuentra la variable 'TIPOPRECIO'.;Linea : IF NVL(CsrConcepto.TipoPrecio,0) <> 0;Error :         12;Ultimo Alias Activo: CSRPREFITERMI;Ultimo registro:         67 ;DBF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3356,6 +2718,26 @@ drubro,nomrubro,codrubroorder BY idvendedor,idrubro descinto cursor csraux3
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 RAUXCUERFAC;Ultimo registro:          1 REGISTRO;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000FOJT02UM.TMP;Ultimo Control activo: 
 12-07-2024 19:07:44 , Pila de llamadas
 12-07-2024 19:07:44 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
@@ -3376,6 +2758,26 @@ RAUXCUERFAC;Ultimo registro:          1 REGISTRO;DBF: C:\USERS\MARCOS\APPDATA\LO
 18-07-2024 18:04:18 , Nº de Linea :         23
 18-07-2024 18:04:18 , En el Fuente: 	thi.fecha_calendario1.txtfecha.Value = DATE()
 18-07-2024 18:25:01 , LISTACOMPSDO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: La expresión no es válida fuera de WITH/ENDWITH.;Linea : IF .fecha_calendario1.txtfecha.Value < DATE();Error :       1940;Ultimo Alias Activo: CSRAUXCURSOR;Ultimo registro: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3506,6 +2908,26 @@ RAUXCUERFAC;Ultimo registro:          1 REGISTRO;DBF: C:\USERS\MARCOS\APPDATA\LO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      1 IDMOVCTACTE;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LEKP01G7.TMP;Ultimo Control activo: 
 18-07-2024 18:27:42 , Pila de llamadas
 18-07-2024 18:27:42 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -3519,6 +2941,26 @@ RAUXCUERFAC;Ultimo registro:          1 REGISTRO;DBF: C:\USERS\MARCOS\APPDATA\LO
 18-07-2024 18:27:44 , Nº de Linea :         99
 18-07-2024 18:27:44 , En el Fuente: 	replace ALL saldo WITH ImporteAfe IN Csrimprimir 
 19-07-2024 09:21:55 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: No se encuentra la variable 'OBJNOMGRUPO'.;Linea : =ExcelVistaPreviaGrupo(@ObjNomGrupo,RECCOUNT('CsrGrupos'));Error :         12;Ultimo Alias Activo: CSRGRUPOS;Ultimo registro:    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3642,7 +3084,47 @@ RAUXCUERFAC;Ultimo registro:          1 REGISTRO;DBF: C:\USERS\MARCOS\APPDATA\LO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprimir.ctacte INTO CURSOR CsrImprimir READWRITE;Error :       1832;Ultimo Alias Activo: CSRGRUPOS;Ultimo registro:          2 ;DBF: C:\USERS\MARCO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3754,8 +3236,48 @@ S\APPDATA\LOCAL\TEMP\0000LMA10119.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  CsrGrupos.grupohoja,CsrImprimir.ctacte INTO CURSOR CsrImprimir READWRITE 
 19-07-2024 09:24:02 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: SQL: no se encuentra la columna 'DETALLE'.;Linea : SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE;Error :       1806;Ultimo Alias Activo:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3858,6 +3380,26 @@ S\APPDATA\LOCAL\TEMP\0000LMA10119.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CAL\TEMP\0000LMA1013J.TMP;Ultimo Control activo: 
 19-07-2024 09:24:19 , Pila de llamadas
 19-07-2024 09:24:20 , Programa    : j:\xsoftsql\desarrollo\clases\forms.vct
@@ -3886,6 +3428,26 @@ CAL\TEMP\0000LMA1013J.TMP;Ultimo Control activo:
 19-07-2024 09:24:25 , Nº de Linea :         81
 19-07-2024 09:24:26 , En el Fuente: 	SELECT CsrAuxHoja
 19-07-2024 09:29:16 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0');Error :         11;Ultimo Alias Activo: W13;Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3952,6 +3514,26 @@ timo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LMA1018T.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BY CsrGrupos.grupohoja,CsrImprimir.ctacte,korden INTO CURSOR CsrImprimir READWRITE 
 19-07-2024 09:29:21 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
 19-07-2024 09:29:22 , Objeto      : strzero
@@ -3977,7 +3559,47 @@ BY CsrGrupos.grupohoja,CsrImprimir.ctacte,korden INTO CURSOR CsrImprimir READWRI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprimir.ctacte,korden INTO CURSOR CsrImprimir READWRITE;Error :        107;Ultimo Alias Activo: ;Ultimo registro:       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4030,8 +3652,48 @@ BY CsrGrupos.grupohoja,CsrImprimir.ctacte,korden INTO CURSOR CsrImprimir READWRI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BY CsrGrupos.grupohoja,CsrImprimir.ctacte,korden INTO CURSOR CsrImprimir READWRITE 
 19-07-2024 09:31:26 , RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0');Error :         11;Ultimo Alias Activo: CSRIMP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4074,6 +3736,26 @@ RIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000L
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LMA102FC.TMP;Ultimo Control activo: 
 19-07-2024 10:39:55 , Pila de llamadas
 19-07-2024 10:39:55 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4086,3 +3768,119 @@ RIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000L
 19-07-2024 10:39:57 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\subctacte.sct
 19-07-2024 10:39:57 , Nº de Linea :        254
 19-07-2024 10:39:57 , En el Fuente: 		lnTotal = OscCursor.total*IIF(OscCursor.clase='K',-1,1)
+30-07-2024 17:34:15 , EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : lcIdCtacte = lcIdCtacte + lcSep + STR(idctacte);Error :        107;Ultimo Alias Activo: CSRIMPRIM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000H72H02M3.TMP;Ultimo Control activo: 
+30-07-2024 17:34:16 , Pila de llamadas
+30-07-2024 17:34:18 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-07-2024 17:34:18 , Objeto      : est_rankctacte.imprimir_vistaprevia1.impresora.click
+30-07-2024 17:34:18 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-07-2024 17:34:18 , Nº de Linea :          8
+30-07-2024 17:34:18 , En el Fuente: 	llOK=thisform.CrearInforme()
+30-07-2024 17:34:18 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:34:19 , Objeto      : est_rankctacte.crearinforme
+30-07-2024 17:34:20 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:34:20 , Nº de Linea :          6
+30-07-2024 17:34:20 , En el Fuente: 	this.crearlistado()
+30-07-2024 17:34:20 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:34:20 , Objeto      : est_rankctacte.crearlistado
+30-07-2024 17:34:20 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:34:21 , Nº de Linea :        271
+30-07-2024 17:34:21 , En el Fuente: 	This.FileMaps()
+30-07-2024 17:34:21 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:34:21 , Objeto      : est_rankctacte.filemaps
+30-07-2024 17:34:22 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:34:22 , Nº de Linea :          6
+30-07-2024 17:34:22 , En el Fuente: 	lcIdCtacte = lcIdCtacte + lcSep + STR(idctacte)
+30-07-2024 17:36:02 , EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew;Error :        107;Ultimo Alias Activo: CSRCTADIRECC
+
+
+
+
+
+
+
+
+
+
+
+
+
+;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000H72H02PX.TMP;Ultimo Control activo: 
+30-07-2024 17:36:04 , Pila de llamadas
+30-07-2024 17:36:04 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-07-2024 17:36:04 , Objeto      : est_rankctacte.imprimir_vistaprevia1.impresora.click
+30-07-2024 17:36:04 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-07-2024 17:36:05 , Nº de Linea :          8
+30-07-2024 17:36:05 , En el Fuente: 	llOK=thisform.CrearInforme()
+30-07-2024 17:36:05 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:36:05 , Objeto      : est_rankctacte.crearinforme
+30-07-2024 17:36:06 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:36:06 , Nº de Linea :          6
+30-07-2024 17:36:06 , En el Fuente: 	this.crearlistado()
+30-07-2024 17:36:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:36:07 , Objeto      : est_rankctacte.crearlistado
+30-07-2024 17:36:07 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:36:07 , Nº de Linea :        271
+30-07-2024 17:36:07 , En el Fuente: 	This.FileMaps()
+30-07-2024 17:36:07 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:36:07 , Objeto      : est_rankctacte.filemaps
+30-07-2024 17:36:08 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:36:09 , Nº de Linea :         23
+30-07-2024 17:36:11 , En el Fuente: 	IF CreateFolderGM(ADDBS(SYS(5))+'GMSOLUTIONS\MYMAPS')
+30-07-2024 17:36:14 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+30-07-2024 17:36:14 , Objeto      : createfoldergm
+30-07-2024 17:36:14 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+30-07-2024 17:36:15 , Nº de Linea :         30
+30-07-2024 17:36:15 , En el Fuente: lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew
+30-07-2024 17:39:58 , EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew;Error :        107;Ultimo Alias Activo: CSRCTADIRECC
+
+
+
+
+
+;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000H72H02R7.TMP;Ultimo Control activo: 
+30-07-2024 17:39:59 , Pila de llamadas
+30-07-2024 17:40:00 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+30-07-2024 17:40:00 , Objeto      : est_rankctacte.imprimir_vistaprevia1.impresora.click
+30-07-2024 17:40:00 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+30-07-2024 17:40:00 , Nº de Linea :          8
+30-07-2024 17:40:01 , En el Fuente: 	llOK=thisform.CrearInforme()
+30-07-2024 17:40:01 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:40:01 , Objeto      : est_rankctacte.crearinforme
+30-07-2024 17:40:01 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:40:01 , Nº de Linea :          6
+30-07-2024 17:40:02 , En el Fuente: 	this.crearlistado()
+30-07-2024 17:40:02 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:40:02 , Objeto      : est_rankctacte.crearlistado
+30-07-2024 17:40:03 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:40:03 , Nº de Linea :        271
+30-07-2024 17:40:03 , En el Fuente: 	This.FileMaps()
+30-07-2024 17:40:03 , Programa    : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:40:03 , Objeto      : est_rankctacte.filemaps
+30-07-2024 17:40:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\est_rankctacte.sct
+30-07-2024 17:40:04 , Nº de Linea :         24
+30-07-2024 17:40:04 , En el Fuente: 	IF CreateFolderGM(ADDBS(SYS(5))+'GMSOLUTIONS\MYMAPS')
+30-07-2024 17:40:04 , Programa    : j:\xsoftsql\desarrollo\lib\procdesarrollo.fxp
+30-07-2024 17:40:05 , Objeto      : createfoldergm
+30-07-2024 17:40:05 , Base Objeto : j:\xsoftsql\desarrollo\lib\procdesarrollo.prg
+30-07-2024 17:40:05 , Nº de Linea :         30
+30-07-2024 17:40:05 , En el Fuente: lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew
