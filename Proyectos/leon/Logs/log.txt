@@ -1,9 +1,4 @@
  Alias CSRPRODUCTO registro          1
-Control activo SUCURSAL MAIN
-09-11-2023 12:50:19 , Error nº:         12
-Error No se encuentra la variable 'SUCURSAL'.
-Linea nº .FONTSIZE = MAX( MIN_FONT_SIZE, INT( ._nOriginalFontsize * IIF(m.lnHeightRatio < m.lnWidthRatio, m.lnHeightRatio, m.lnWidthRatio) ) )
- Alias CSRPRODUCTO registro          1
 Control activo SUCURSAL ABMPRODUCTO.RESIZE
 09-11-2023 12:50:42 , Error nº:         12
 Error No se encuentra la variable 'SUCURSAL'.
@@ -521,6 +516,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -615,7 +611,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
 
 
 
@@ -807,6 +805,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -900,7 +899,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
 
 
 
@@ -1252,7 +1253,9 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
 
 
 
@@ -1384,7 +1387,9 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
 
 
 
@@ -1811,6 +1816,7 @@ Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal
 
 
 
+
 O CURSOR CsrImprimir readWrite
  Alias  registro          0
 Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1824,6 +1830,7 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
 
 
 
@@ -1906,6 +1913,7 @@ Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(ve
 
 
 
+
 r.ctacte INTO CURSOR CsrImprimir READWRITE
  Alias CSRGRUPOS registro          2
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -1931,6 +1939,7 @@ Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 19-07-2024 09:29:27 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
+
 
 
 
@@ -1973,4 +1982,10 @@ Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew
  Alias CSRCTADIRECC registro          1
 Control activo  EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-30-07-2024 17:39:57 , Error nº:        107Error Incompatibilidad entre el tipo de operador y el tipo de operando.Linea nº lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew Alias CSRCTADIRECC registro          1Control activo  EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+30-07-2024 17:39:57 , Error nº:        107
+Error Incompatibilidad entre el tipo de operador y el tipo de operando.
+Linea nº lcFolderAux = ADDBS(lcFolderDir)+lcFolderNew
+ Alias CSRCTADIRECC registro          1
+Control activo  EST_RANKCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+31-07-2024 09:06:33 , Verificando OCX
+31-07-2024 11:00:43 , Verificando OCX
