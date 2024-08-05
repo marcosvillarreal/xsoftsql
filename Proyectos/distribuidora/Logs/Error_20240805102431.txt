@@ -1,0 +1,13 @@
+05-08-2024 10:24:31 , LISTAPADRON.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El campo IVA no acepta valores NULL.;Linea : INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, telefono ,localidad, provincia, nomvendedor, codvendedor, canal,codsector ,nomsector,nombarrio,lat,lng,lista,referencia,fechaalta) VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre) ,ALLTRIM(CsrAux.cuit),ALLTRIM(CsrAux.iva),ALLTRIM(CsrAux.cdireccion) ,ALLTRIM(CsrAux.ctelefono),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia) ,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.CodSector,CsrAux.NomSector ,CsrAux.NomBarrio,CsrAux.Lat,CsrAux.Lng,CsrAux.Lista,NVL(CsrAux.referencia,''),DTOC(CsrAux.fechaalta));Error :       1581;Ultimo Alias Activo: CSRAUX;Ultimo registro:         16 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00000F7T00GM.TMP;Ultimo Control activo: 
+05-08-2024 10:24:31 , Pila de llamadas
+05-08-2024 10:24:31 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+05-08-2024 10:24:31 , Objeto      : listapadron.imprimir_vistaprevia1.impresora.click
+05-08-2024 10:24:31 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+05-08-2024 10:24:31 , Nº de Linea :          8
+05-08-2024 10:24:31 , En el Fuente: 	llOK=thisform.CrearInforme()
+05-08-2024 10:24:32 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\listapadron.sct
+05-08-2024 10:24:32 , Objeto      : listapadron.crearinforme
+05-08-2024 10:24:32 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\listapadron.sct
+05-08-2024 10:24:32 , Nº de Linea :         60
+05-08-2024 10:24:32 , En el Fuente: 			INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, telefono			,localidad, provincia, nomvendedor, codvendedor, canal,codsector ,nomsector,nombarrio,lat,lng,lista,referencia,fechaalta)			 VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre)			,ALLTRIM(CsrAux.cuit),ALLTRIM(CsrAux.iva),ALLTRIM(CsrAux.cdireccion)			,ALLTRIM(CsrAux.ctelefono),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia)			,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codvendedor,"",CsrAux.CodSector,CsrAux.NomSector			,CsrAux.NomBarrio,CsrAux.Lat,CsrAux.Lng,CsrAux.Lista,NVL(CsrAux.referencia,''),DTOC(CsrAux.fechaalta))
+05-08-2024 10:24:32 , Fin
