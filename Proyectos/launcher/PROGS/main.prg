@@ -96,7 +96,7 @@ endif
 
 _screen.AutoCenter= .T.
 _screen.TitleBar= 0
-_Screen.ControlBox= .F.
+_Screen.ControlBox= .t.
 _Screen.visible= .f.  &&.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService
@@ -127,7 +127,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "02.06.00"
+	goapp.version = "03.00.00"
 	
 	PUBLIC  gcicono
 	     
@@ -150,30 +150,30 @@ IF TYPE('goApp')='O'
 	  
 	= Fwin32()    && funciones api win32
        
-	 =ObtenerServidor()
-	IF LEN(TRIM(LcConectionString))=0
-  		_Screen.visible=.t.
-		DO FORM configbd
-		=ObtenerServidor()
-	ENDIF    
+*!*		 =ObtenerServidor()
+*!*		IF LEN(TRIM(LcConectionString))=0
+*!*	  		_Screen.visible=.t.
+*!*			DO FORM configbd
+*!*			=ObtenerServidor()
+*!*		ENDIF    
 
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
 
-	*stop()
-	*LeerXMLClassID("objetodll.xml")
+*!*		*stop()
+*!*		*LeerXMLClassID("objetodll.xml")
 
-	   * en proc.prg   
-	IF ExisteDSN()  
-		IF !ConeccionADO()
-			CANCEL 
-			CLEAR ALL
-			RETURN 
-		ENDIF 
-	ELSE
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		   * en proc.prg   
+*!*		IF ExisteDSN()  
+*!*			IF !ConeccionADO()
+*!*				CANCEL 
+*!*				CLEAR ALL
+*!*				RETURN 
+*!*			ENDIF 
+*!*		ELSE
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	WAIT CLEAR 
 

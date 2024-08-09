@@ -1028,6 +1028,9 @@ RETURN  .t.
 
 
 FUNCTION ObtenerServidor
+PARAMETERS lcFile
+
+lcFile = IIF(PCOUNT()<1,'CFCONFIG.INI',lcFile)
 
 LOCAL lcServidor,lcUser,lcPwd
 
@@ -1044,7 +1047,7 @@ lcConectionODBC = lcSvrcfODBC
 
 Oagregaobjeto = CREATEOBJECT("agregaobjeto")
 lObjConfig = null	
-Oagregaobjeto.objconfigbd(@lObjConfig,1)
+Oagregaobjeto.objconfigbd(@lObjConfig,1,lcFile)
 		
 lcOrigenData	= lObjConfig.origendata
 lcSourceType	= lObjConfig.sourcetype

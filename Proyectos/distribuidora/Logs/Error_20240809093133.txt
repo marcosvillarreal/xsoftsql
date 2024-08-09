@@ -1,0 +1,28 @@
+09-08-24 09:31:33 , REGFACVTA.CMDIMPRIMIR.CLICK, Error: No se encuentra la variable 'ICOPIA'.;Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007,HeadTot001 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,ListaPrecio ,DetaReparto, Canal ,Pase,Talonario,NumComprobante ,Transporte, Saldo, SaldoAnt,HojaActual,HojaTotal ,ValorNom001,ValorImp001,ValorNom002,ValorImp002 ,ValorNom003,ValorImp003,ValorNom004,ValorImp004 ,NumCompPie,HojaFinal) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto ,cCanal,cPase,cTalonario,cNumComprobante,cTransporte ,cSaldo,cSaldoAnt,loObjFactura.hojaactual,loObjFactura.hojatotal ,cValorNom001,cValorImp001,cValorNom002,cValorImp002 ,cValorNom003,cValorImp003,cValorNom004,cValorImp004 ,cNumCompPie,nHojaFinal);Error :         12;Ultimo Alias Activo: CSRPAGO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000043610525.TMP;Ultimo Control activo: 
+09-08-24 09:31:34 , Pila de llamadas
+09-08-24 09:31:34 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+09-08-24 09:31:34 , Objeto      : regfacvta.cmdimprimir.click
+09-08-24 09:31:34 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+09-08-24 09:31:34 , Nº de Linea :         41
+09-08-24 09:31:34 , En el Fuente: 				.imprimir(thisform.lcimpresora,loimpresoraelegida.tipo,2)
+09-08-24 09:31:34 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+09-08-24 09:31:35 , Objeto      : regfacvta.imprimir
+09-08-24 09:31:35 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+09-08-24 09:31:35 , Nº de Linea :        118
+09-08-24 09:31:35 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
+09-08-24 09:31:36 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+09-08-24 09:31:36 , Objeto      : regfacvta.objimpresor.inicioimpresora
+09-08-24 09:31:36 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+09-08-24 09:31:36 , Nº de Linea :         69
+09-08-24 09:31:36 , En el Fuente: 			lok = this.reportfa(lndeboActualizarNro)
+09-08-24 09:31:36 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+09-08-24 09:31:36 , Objeto      : regfacvta.objimpresor.reportfa
+09-08-24 09:31:36 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+09-08-24 09:31:37 , Nº de Linea :        123
+09-08-24 09:31:37 , En el Fuente:     this.reportFa_cab(loobjfactura)
+09-08-24 09:31:37 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+09-08-24 09:31:37 , Objeto      : regfacvta.objimpresor.reportfa_cab
+09-08-24 09:31:37 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\localproyeto.vct
+09-08-24 09:31:38 , Nº de Linea :        338
+09-08-24 09:31:38 , En el Fuente: 	INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp			,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono			,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra04,Extra05,Extra06			,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005			,BodyImp006,BodyImp007,BodyTot001,BodyTot002			,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005			,HeadImp006,HeadImp007,HeadTot001			,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTelf,EmpresaLoca			,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03			,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck			,DetaHoja,ListaPrecio ,DetaReparto, Canal ,Pase,Talonario,NumComprobante			,Transporte, Saldo, SaldoAnt,HojaActual,HojaTotal			,ValorNom001,ValorImp001,ValorNom002,ValorImp002			,ValorNom003,ValorImp003,ValorNom004,ValorImp004			,NumCompPie,HojaFinal)	VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1)			,cComprobante,cFecComproba,cNumComp,cFecVtoComp			,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva			,cCUIT,cTelefono,cPlanPago,cDetaVdor			,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06			,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005			,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002			,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005			,cHeadImp006,cHeadImp007,cHeadTot001			,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA			,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra			,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto			,cCanal,cPase,cTalonario,cNumComprobante,cTransporte			,cSaldo,cSaldoAnt,loObjFactura.hojaactual,loObjFactura.hojatotal			,cValorNom001,cValorImp001,cValorNom002,cValorImp002			,cValorNom003,cValorImp003,cValorNom004,cValorImp004			,cNumCompPie,nHojaFinal)
+09-08-24 09:31:38 , Fin
