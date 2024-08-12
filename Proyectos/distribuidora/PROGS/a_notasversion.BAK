@@ -1,6 +1,8 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.27
+	Proceso de consolidar pedidos ...reviciones varias
 2.3.26
 	ParaVario_Fac ... + en cantidad, cambia unidad venta
 				.... patron , tipo de impresion

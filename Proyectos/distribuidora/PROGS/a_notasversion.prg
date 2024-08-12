@@ -1,6 +1,8 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.28
+	Facturador, nuevo proceso de copias en impresion
 2.3.27
 	Proceso de consolidar pedidos ...reviciones varias
 2.3.26
