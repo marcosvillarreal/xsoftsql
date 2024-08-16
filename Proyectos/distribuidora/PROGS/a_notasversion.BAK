@@ -3,6 +3,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 2.3.28
 	Facturador, nuevo proceso de copias en impresion
+	SubFactura_suc ... listado consolidado
 2.3.27
 	Proceso de consolidar pedidos ...reviciones varias
 2.3.26
