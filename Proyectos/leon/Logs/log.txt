@@ -1,160 +1,3 @@
- Alias CSRAUXPIE registro          1
-Control activo  REGDESCUENTOS.GRID2.KEYPRESS
-21-11-2023 20:35:05 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº REPLACE idproducto WITH csrauxiliar.id,fecha WITH TTOD(csrauxiliar.fechastabonicpra) ,porce1 WITH Csrauxiliar.bonicpra, min1 WITH Csrauxiliar.minimobonicpra
- Alias CSRAUXPIE registro          1
-Control activo  REGDESCUENTOS.GRID2.KEYPRESS
-21-11-2023 20:37:39 , Error nº:         12
-Error No se encuentra la variable 'IDPRODUCTO'.
-Linea nº REPLACE idproducto WITH csrauxiliar.id,fecha WITH TTOD(csrauxiliar.fechastabonicpra) ,porce1 WITH Csrauxiliar.bonicpra, min1 WITH Csrauxiliar.minimobonicpra
- Alias CSRAUXILIAR registro          1
-Control activo  REGDESCUENTOS.GRID2.KEYPRESS
-21-11-2023 20:38:56 , Error nº:         12
-Error No se encuentra la variable 'PORCE3'.
-Linea nº replace porce3 WITH this.containerpie._txtporce3.Value IN CsrAuxPie
- Alias CSRAUXPIE registro          1
-Control activo PORCE1 REGDESCUENTOS.CONTAINERPIE._TXTPORCE1.KEYPRESS
-21-11-2023 20:39:51 , Verificando OCX
-22-11-2023 09:10:51 , Error nº:          1
-Error El archivo 'csrproducto.dbf' no existe.
-Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
- Alias  registro          0
-Control activo  REGDESCUENTOS.LOAD
-22-11-2023 09:11:03 , Verificando OCX
-23-11-2023 11:44:14 , Verificando OCX
-23-11-2023 11:44:44 , Error nº:         12
-Error No se encuentra la variable 'MIN2'.
-Linea nº REPLACE fecha WITH GOMONTH(DATE(),1),min1 WITH 0,porce1 WITH 0,min2 WITH 0 ,porce2 WITH 0,min3 WITH 0,porce3 WITH 0 IN CsrAuxpie
- Alias CSRAUXPIE registro          1
-Control activo  MAIN
-23-11-2023 11:45:40 , Verificando OCX
-23-11-2023 11:49:20 , Verificando OCX
-23-11-2023 13:37:01 , Verificando OCX
-04-12-2023 18:56:11 , Verificando OCX
-22-12-2023 13:18:54 , Verificando OCX
-22-12-2023 16:36:54 , Verificando OCX
-22-12-2023 16:38:28 , Verificando OCX
-15-01-2024 09:26:18 , Verificando OCX
-30-01-2024 12:36:12 , Verificando OCX
-30-01-2024 13:34:45 , Verificando OCX
-02-02-2024 19:10:34 , Verificando OCX
-05-02-2024 12:35:19 , Verificando OCX
-05-02-2024 12:37:57 , Verificando OCX
-05-02-2024 12:53:30 , Verificando OCX
-06-02-2024 12:57:20 , Verificando OCX
-06-02-2024 12:59:25 , Error nº:         39
-Error Desbordamiento numérico (se han perdido datos).
-Linea nº GATHER NAME OscCabefac
- Alias CSRTIPOCBTE registro          2
-Control activo  MAIN
-06-02-2024 12:59:33 , Error nº:         39
-Error Desbordamiento numérico (se han perdido datos).
-Linea nº GATHER NAME OscCabefac
- Alias CSRTIPOCBTE registro          2
-Control activo  REGFACVTA.CONTAINERENCABEZA._CBOPTOVTA.LOSTFOCUS
-06-02-2024 12:59:40 , Error nº:         39
-Error Desbordamiento numérico (se han perdido datos).
-Linea nº GATHER NAME OscCabefac
- Alias CSRTIPOCBTE registro          2
-Control activo  REGFACVTA.KEYPRESS
-06-02-2024 13:00:02 , Verificando OCX
-06-02-2024 13:04:18 , Genero archivo Codigo Barra
-06-02-2024 13:04:23 , Genero codigo QR
-06-02-2024 13:05:50 , Genero archivo Codigo Barra
-06-02-2024 13:05:54 , Genero codigo QR
-06-02-2024 13:07:18 , Genero archivo Codigo Barra
-06-02-2024 13:07:20 , Genero codigo QR
-06-02-2024 13:10:32 , Verificando OCX
-06-02-2024 13:11:35 , Verificando OCX
-06-02-2024 13:15:19 , Genero archivo Codigo Barra
-06-02-2024 13:15:22 , Genero codigo QR
-06-02-2024 14:23:53 , Verificando OCX
-08-02-2024 10:25:32 , Verificando OCX
-08-02-2024 10:27:39 , Verificando OCX
-08-02-2024 10:46:40 , Error nº:       1734
-Error No se encuentra la propiedad CODIGO.
-Linea nº cCodigo = LEFT(ALLTRIM(str(Oscatter.codigo)),7)+strzero(Oscatter.numvariedad,3)
- Alias CSRCURSOR registro          1
-Control activo  GENERA_DANONE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-08-02-2024 10:59:20 , Verificando OCX
-19-02-2024 10:52:45 , Verificando OCX
-21-02-2024 13:09:40 , Verificando OCX
-21-02-2024 13:25:01 , Verificando OCX
-21-02-2024 13:27:12 , Verificando OCX
-21-02-2024 13:38:34 , Error nº:          1
-Error El archivo 'csrcabecombo.dbf' no existe.
-Linea nº SELECT CsrCabeCombo.* FROM CsrCabeCombo WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
- Alias  registro          0
-Control activo  MAIN
-21-02-2024 13:38:46 , Verificando OCX
-21-02-2024 13:51:37 , Error nº:          1
-Error El archivo 'csrcabecombo.dbf' no existe.
-Linea nº SELECT CsrCabeCombo.* FROM CsrCabeCombo WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
- Alias  registro          0
-Control activo  MAIN
-21-02-2024 13:52:04 , Verificando OCX
-21-02-2024 13:54:34 , Verificando OCX
-22-02-2024 14:12:38 , Verificando OCX
-22-02-2024 14:13:44 , Verificando OCX
-22-02-2024 14:46:35 , Verificando OCX
-22-02-2024 14:52:01 , Genero archivo Codigo Barra
-22-02-2024 14:52:06 , Genero codigo QR
-22-02-2024 15:03:51 , Error nº:       1734
-Error No se encuentra la propiedad BONDIGITADA.
-Linea nº Oscatter.bondigitada	= 1
- Alias CSRPRODCOMBO registro          2
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-22-02-2024 15:04:06 , Error nº:       1734
-Error No se encuentra la propiedad CANTKILOS.
-Linea nº Oscatter.cantkilos		= 0
- Alias CSRBLOQUEOPROD registro        283
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-22-02-2024 15:04:33 , Error nº:       1734
-Error No se encuentra la propiedad BONDIGITADA.
-Linea nº Oscatter.bondigitada	= 1
- Alias CSRPRODCOMBO registro          3
-Control activo  REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-22-02-2024 15:05:03 , Error nº:       1734
-Error No se encuentra la propiedad BONDIGITADA.
-Linea nº Oscatter.bondigitada	= 1
- Alias CSRPRODCOMBO registro          2
-Control activo CANTIDAD REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS
-22-02-2024 15:29:57 , Verificando OCX
-22-02-2024 19:54:20 , Verificando OCX
-28-02-2024 10:57:08 , Verificando OCX
-28-02-2024 10:58:01 , Verificando OCX
-28-02-2024 11:03:40 , Verificando OCX
-29-02-2024 16:03:59 , Verificando OCX
-29-02-2024 16:37:16 , Verificando OCX
-29-02-2024 16:38:47 , Error nº:          1
-Error El archivo 'j:\xsoftsql\proyectos\leon\pasaje_serv_exp.scx' no existe.
-Linea nº DO FORM &lcForm
- Alias CSRKEY registro         15
-Control activo  MAIN
-29-02-2024 16:39:36 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF  RECCOUNT('FsrFav') = 1
- Alias  registro          0
-Control activo  PTOVTA_EXPGESTION.BOTON_FAVORITO1.INIT
-29-02-2024 16:40:21 , Verificando OCX
-29-02-2024 16:57:44 , Verificando OCX
-01-03-2024 11:17:34 , Verificando OCX
-01-03-2024 11:18:19 , Verificando OCX
-14-03-2024 11:55:55 , Verificando OCX
-14-03-2024 12:10:54 , Genero archivo Codigo Barra
-14-03-2024 12:10:58 , Genero codigo QR
-14-03-2024 12:12:41 , Verificando OCX
-14-03-2024 12:13:17 , Genero archivo Codigo Barra
-14-03-2024 12:13:20 , Genero codigo QR
-14-03-2024 12:13:43 , Genero archivo Codigo Barra
-14-03-2024 12:13:46 , Genero codigo QR
-14-03-2024 12:16:01 , Genero archivo Codigo Barra
-14-03-2024 12:16:05 , Genero codigo QR
-14-03-2024 12:16:53 , Genero archivo Codigo Barra
-14-03-2024 12:16:56 , Genero codigo QR
-14-03-2024 12:20:02 , Verificando OCX
-14-03-2024 12:21:38 , Genero archivo Codigo Barra
 14-03-2024 12:21:43 , Genero codigo QR
 14-03-2024 12:22:41 , Genero archivo Codigo Barra
 14-03-2024 12:22:44 , Genero codigo QR
@@ -429,6 +272,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -533,7 +385,25 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
 
 
 
@@ -745,6 +615,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -848,7 +727,25 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1220,7 +1117,25 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
+
+
+
+
+
+
+
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1372,7 +1287,25 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
+
+
+
+
+
+
+
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1819,6 +1752,15 @@ Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal
 
 
 
+
+
+
+
+
+
+
+
+
 O CURSOR CsrImprimir readWrite
  Alias  registro          0
 Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1832,6 +1774,15 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1934,6 +1885,15 @@ Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(ve
 
 
 
+
+
+
+
+
+
+
+
+
 r.ctacte INTO CURSOR CsrImprimir READWRITE
  Alias CSRGRUPOS registro          2
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -1959,6 +1919,15 @@ Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 19-07-2024 09:29:27 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2050,7 +2019,25 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
+
+
+
+
+
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2070,7 +2057,25 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
+
+
+
+
+
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2104,3 +2109,145 @@ Linea nº thisform.CerrarInforme()
  Alias CSRVERCOMP registro          1
 Control activo  REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK
 16-08-2024 19:21:40 , Verificando OCX
+20-08-2024 18:46:10 , Verificando OCX
+20-08-2024 18:47:00 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+
+
+
+
+
+gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
+
+
+
+
+
+
+
+
+2)) as margen,sum(round(importefinal,2)) as neto ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devol,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(cTOD(fecha)),6) as periodo ,CAST(0 as n(11,2)) as margenutil ,sum(round(tot
+
+
+
+
+
+
+
+
+alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
+
+
+
+
+
+
+
+,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
+ Alias  registro          0
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:47:35 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRIMIR'.
+Linea nº SELECT CsrImprimir
+ Alias  registro          0
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:51:55 , Error nº:       1806
+Error SQL: no se encuentra la columna 'NOMSUCURSAL'.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal
+
+
+
+
+
+
+
+ = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
+ Alias CSRDATOS registro        263
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:52:38 , Error nº:         13
+Error No se encuentra el alias 'CSRIMPRIMIR'.
+Linea nº SELECT CsrImprimir
+ Alias CSRDATOS registro        263
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:53:22 , Error nº:       1806
+Error SQL: no se encuentra la columna 'PERIODO'.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+
+
+
+gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
+
+
+
+
+bro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
+ Alias CSRDATOS registro        263
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:54:21 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+
+
+gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
+
+
+
+ctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
+ Alias  registro          0
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:56:32 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+
+gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
+
+
+dor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
+ Alias  registro          0
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:57:41 , Error nº:         12
+Error No se encuentra la variable 'MARGEN'.
+Linea nº replace ALL margen WITH (round(((ganancia/costosiva)*100),4)) FOR costosiva > 0
+ Alias CSRIMPRIMIR registro          1
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 18:59:55 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº replace ALL fecha WITH NVL(fecha,DTOC(DATE())) IN CsrAux
+ Alias CSRDATOS registro        197
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 19:03:36 , Error nº:       1807
+Error SQL: la cláusula GROUP BY falta o no es válida.
+Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
+ Alias CSRDATOS registro        197
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 19:04:18 , Error nº:         12
+Error No se encuentra la variable 'MARGEN'.
+Linea nº replace ALL margen WITH (round(((ganancia/costosiva)*100),4)) FOR costosiva > 0
+ Alias CSRIMPRIMIR registro          1
+Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-08-2024 19:05:20 , Informe por excel
+20-08-2024 19:05:33 , Version 16.0
