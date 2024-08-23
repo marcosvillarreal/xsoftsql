@@ -169,1202 +169,6 @@
 
 
 
-DATE()),DAY(DATE()),0,0,0) as Vencimien ,CAST(0 as int) as Cuota,SPACE(40) as detaref, 0 as ComprometeMerc, 0 as rendicaja, 0 as esremito,CAST(0 as n(11,2)) as saldocta ,SPACE(30) as datosfactura,SPACE(30) as detacobranza ,00 as PlanCuota, 00 as PlanRang
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-o, 0 as HayPlan ,SPACE(20) as detapiecuota01, SPACE(20) as detapiecuota02, SPACE(20) as detapiecuota03,SPACE(20) as detapiecuota04 ,SPACE(20) as detapiecuota05, SPACE(20) as detapiecuota06, SPACE(20) as detapiecuota07,SPACE(20) as detapiecuota08 ,SPACE(2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0) as detapiecuota09 ,00 as ProvReba,0 as SolicitaDNI,SPACE(2) as TipoCbte, SPACE(50) as CAECheck ,CAST(0 as numeric(1,0)) as ctalogistica,SPACE(15) as nrocomplic ,SPACE(30) as canalvta,CAST(0 as int) as idbarrio,CAST(0 as int) as idbarrioorig FROM CsrCa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-befac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGPEDIDO.LOAD
-22-07-2024 16:38:11 , Verificando OCX
-22-07-2024 16:38:14 , Acceso al sistema, antes de autenticar
-22-07-2024 16:38:14 , Obteniendo conexion a servidor
-22-07-2024 16:38:14 , Verificando Licencia
-22-07-2024 16:38:17 , Conectado..marcos\sql2019
-22-07-2024 16:38:17 , Datos de la empresa
-22-07-2024 18:00:10 , Error: Hay demasiados argumentos. Linea : INSERT INTO CsrAuxcuerfac (ID,IDMAOPERA,IDARTICULO,CODIGO,NOMBRE,CANTIDAD,UNIVENTA,UNIBULTO ,IDUBICACION,PESABLE,CANTORIG,ctacte,cnombre,KILOS,AFACTURAR,IDVARIEDAD,VARIEDAD, ESTADO, PESO ,PE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SABLE,IDCUERVARI,IDPRODORIG,IDVARIORIG,ORIGCANTIDAD,IDCUERPO,IDCUERFAC,CodOrden,idvendedor,idmovlicita ,idfuerzavta,escombo) VALUES (Csrcuerpo.idcuerfac,Csrcuerpo.idmaopera,Csrcuerpo.idarticulo,Csrcuerpo.codigo,Csrcuerpo.cnombre ,Csrcuerpo.cantorig,Csrcu
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-erpo.univenta,Csrcuerpo.unibulto,Csrcuerpo.idubicacion,CsrCuerpo.pesable ,CsrCuerpo.CantOrig,CsrAuxCabefac.ctacte, CsrAuxCabefac.cnombre, CsrCuerpo.kilos, CsrCuerpo.cantidad ,0,"",1, CsrCuerpo.peso ,CsrCuerpo.pesable,0,CsrCuerpo.idarticulo,CsrCuerpo.idva
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-riedad ,CsrCuerpo.cantidad,CsrCuerpo.idcuerfac,CsrCuerpo.idcuerfac,VAL(CsrCuerpo.codigo),CsrCuerpo.idvendedor ,CsrCuerpo.idmovlicita,CsrCuerpo.idfuerzavta,CsrCuerpo.escombo,CsrCuerpo.escambio) Error :       1230 Ultimo Alias Activo: CSRAUXCABEFAC Ultimo 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1377,6 +181,19 @@ riedad ,CsrCuerpo.cantidad,CsrCuerpo.idcuerfac,CsrCuerpo.idcuerfac,VAL(CsrCuerpo
 
 registro:          1 IDVENDEDOR DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000KZRD03O7.TMP Ultimo Control activo:  REGCAMBIOARTICULOS.CMDBUSCAR.CLICK
 22-07-2024 18:26:54 , Error: No se encuentra la propiedad PATRONBULTO. Linea : IF NOT this.patronbulto Error :       1734 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 ORIGEN+GRUPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000KZRD04LB.TMP Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1723,6 +540,19 @@ imo Control activo:  LISPATRONCARGAPEDIDOS.KEYPRESS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 IVO',''),0) Error :         12 Ultimo Alias Activo: CSROTROCODIGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000NE2X012E.TMP Ultimo Control activo:  ABMCTACTE.CMDSALVAR.CLICK
 24-07-2024 12:12:32 , Verificando OCX
 24-07-2024 12:12:37 , Acceso al sistema, antes de autenticar
@@ -1749,6 +579,19 @@ IVO',''),0) Error :         12 Ultimo Alias Activo: CSROTROCODIGO Ultimo registr
 24-07-2024 16:29:01 , Conectado..168.196.26.241\sql2019,1170
 24-07-2024 16:29:02 , Datos de la empresa
 24-07-2024 16:41:35 , Error: No se encuentra el alias. Linea : llhayvariedad = IIF(RECCOUNT("CsrCursor")#0,.t.,.f.) Error :         13 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000INEX03
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2064,8 +907,34 @@ K6.TMP Ultimo Control activo: CODEXTEND REGPEDIDO.KEYPRESS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 FRIO.TXTEXISTE1.INIT
 24-07-2024 16:53:36 , Error: El archivo 'csrnmaopera.dbf' no existe. Linea : SELECT CsrNMaopera.* FROM CsrNMaopera WHERE RECNO()<0 INTO CURSOR CsrAuxMaopera READWRITE Error :          1 Ultimo Alias Activo: CSRAUXILIAR Ultimo registro:          1 IDVENDE
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2373,6 +1242,19 @@ DOR DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000INEX060Y.TMP Ultimo Control acti
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000INEX0AM9.TMP Ultimo Control activo:  REGPEDIDOPDTE.ACEPTAR1.CLICK
 25-07-2024 11:36:45 , Verificando OCX
 25-07-2024 11:36:55 , Acceso al sistema, antes de autenticar
@@ -2381,6 +1263,19 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000INEX0AM9.TMP Ultimo Control activo:  R
 25-07-2024 11:37:01 , Conectado..168.196.26.241\sql2019,1170
 25-07-2024 11:37:02 , Datos de la empresa
 25-07-2024 11:55:18 , Error: No se encuentra el alias. Linea : IF RECCOUNT(lcaliasseek)#0 Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  PARAVARIO.CONTAINERENCABEZA.PFRAME1.PAGE1.C_GRAL.KITBUSCAOALTAEN
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2684,8 +1579,34 @@ FRIO.TXTEXISTE1.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 RS\MARCOS\APPDATA\LOCAL\TEMP\0000K0LL00MJ.TMP Ultimo Control activo:  REGPEDIDOPDTE.CMDPROCESAR.CLICK
 26-07-2024 10:42:10 , Error: SQL: no se encuentra la columna 'CANTARTICULOS'. Linea : SELECT CsrCuerpo2.* FROM CsrCuerpo2 WHERE Cantarticulos<>0 INTO CURSOR CsrCuerpo READWRITE Error :       1806 Ultimo Alias Activo: CSRCUERPO2 Ultimo registro:          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2966,6 +1887,19 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\0000K0LL00MJ.TMP Ultimo Control activo:  REGPEDIDOP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ACPEDIDO_PDTE.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
 26-07-2024 15:42:51 , Verificando OCX
 26-07-2024 15:42:55 , Acceso al sistema, antes de autenticar
@@ -2974,6 +1908,19 @@ ACPEDIDO_PDTE.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
 26-07-2024 15:42:59 , Conectado..168.196.26.241\sql2019,1170
 26-07-2024 15:43:00 , Datos de la empresa
 26-07-2024 15:59:20 , Error: No se encuentra la variable 'HAYCUERPO'. Linea : SET FILTER TO haycuerpo > 0 Error :         12 Ultimo Alias Activo: CSRCUERPO Ultimo registro:          1 IDCABEPDTE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K0LL096Z.TMP Ul
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3235,8 +2182,34 @@ timo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 S\APPDATA\LOCAL\TEMP\0000K0LL09GX.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLICK
 26-07-2024 16:02:32 , Error: No se encuentra la variable 'NUMFLETE'. Linea : IF !SEEK(str(CsrCuerpo.numflete,8),"Csrauxiliar","numflete") Error :         12 Ultimo Alias Activo: CSRCUERPO Ultimo registro:          1 IDCABEPDTE DBF: C:\USERS\MARCOS\APPDAT
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3494,8 +2467,34 @@ A\LOCAL\TEMP\0000K0LL09QX.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\0000K0LL0A2L.TMP Ultimo Control activo: ESTADOTILDE REGFACPEDIDO_PDTE.CMDPROCESAR.CLICK
 26-07-2024 16:04:47 , Error: No se encuentra la variable 'IDFLETEPLAN'. Linea : SET FILTER TO idfleteplan = Csrauxiliar.idfleteplan Error :         12 Ultimo Alias Activo: CSRCUERPO Ultimo registro:          1 IDCABEPDTE DBF: C:\USERS\MARCOS\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3749,8 +2748,34 @@ L\TEMP\0000K0LL0A2L.TMP Ultimo Control activo: ESTADOTILDE REGFACPEDIDO_PDTE.GRI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 L\TEMP\0000K0LL0A2L.TMP Ultimo Control activo: ESTADOTILDE REGFACPEDIDO_PDTE.GRID2.AFTERROWCOLCHANGE
 26-07-2024 16:06:21 , Error: No se encuentra el alias 'CSRVALOR'. Linea : SELECT CsrValor Error :         13 Ultimo Alias Activo: CSRCAEPARAM Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K0LL0AJ4.TMP Ultimo Control activo:  RE
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4005,8 +3030,34 @@ GFACPEDIDO_PDTE.CONTAINERENCABEZA._TXTFOCO.GOTFOCUS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 \0000K0LL0E1Z.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLICK
 26-07-2024 16:27:54 , Error: No coinciden los tipos de datos. Linea : replace ALL idfleteplan WITH strzero(numflete,3)+RIGHT(DTOS(fechasis),7) IN CsrCuerpo Error :          9 Ultimo Alias Activo: CSRCUERPO Ultimo registro:          1 IDCABEPDTE DBF: C:\U
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4250,8 +3301,34 @@ SERS\MARCOS\APPDATA\LOCAL\TEMP\0000K0LL0EC3.TMP Ultimo Control activo:  REGFACPE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 PPDATA\LOCAL\TEMP\0000K0LL0EMX.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLICK
 26-07-2024 16:32:54 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcconv=STR(tnconv,lntam) Error :         11 Ultimo Alias Activo: CSRCUERPO Ultimo registro:          1 IDCABEPDTE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4491,6 +3568,19 @@ TEMP\0000K0LL0F72.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLIC
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 TEMP\0000K0LL0FH4.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLICK
 26-07-2024 16:41:08 , Error: No coinciden los tipos de datos. Linea : INSERT INTO CsrAuxiliar (idfleteplan,numero,nombre,fecha,numflete,estadotilde) VALUES (CsrCuerpo.idfleteplan,Csrcuerpo.nropatron,CsrCuerpo.nomcomproba,DTOC(CsrCuerpo.fechasis),CsrCuerp
 
@@ -4610,8 +3700,34 @@ TEMP\0000K0LL0FH4.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDPROCESAR.CLIC
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 o.numflete,0) Error :          9 Ultimo Alias Activo: CSRCUERPO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K0LL0G64.TMP Ultimo Control activo:  REGFACPEDIDO_PDTE.CMDCONSULTA.CLICK
 26-07-2024 16:48:50 , Error: El nombre de alias ya está en uso. Linea : SELECT * FROM CsrCuerpo2 INTO CURSOR CsrCuerpo READWRITE Error :         24 Ultimo Alias Activo: CSRCUERPO2 Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4850,8 +3966,34 @@ o.numflete,0) Error :          9 Ultimo Alias Activo: CSRCUERPO Ultimo registro:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ETECTACTE.CMDSALVAR.CLICK
 26-07-2024 19:09:55 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrPagos')=0 Error :         13 Ultimo Alias Activo: CSRPAGO Ultimo registro:          3  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000AHAH00II.TMP Ultimo Control activo:  RINDEFL
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5085,8 +4227,34 @@ ETECTACTE.CMDSALVAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ETECTACTE.CMDSALVAR.CLICK
 26-07-2024 19:23:31 , Error: _TXTNOMCAJA es un miembro desconocido. Linea : IF thisform.containerencabeza._txtnomcaja.Value = 0 Error :       1925 Ultimo Alias Activo: CSRPAGO Ultimo registro:          3  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000031MX0
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5366,7 +4534,33 @@ ETECTACTE.CMDSALVAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 rsor.saldovencer) #0 INTO CURSOR CsrImprimir READWRITE Error :          1 Ultimo Alias Activo: _CSRCOMPROBANTE Ultimo registro:         29 VAL(CNUMERO) DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000D155001Z.TMP Ultimo Control activo:  LISSDOCTACTE.IMPRIMIR
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5541,7 +4735,33 @@ _VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 erencia,fechaalta) VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre) ,ALLTRIM(CsrAux.cuit),ALLTRIM(CsrAux.iva),ALLTRIM(CsrAux.cdireccion) ,ALLTRIM(CsrAux.ctelefono),ALLTRIM(CsrAux.localidad),ALLTRIM(CsrAux.provincia) ,ALLTRIM(CsrAux.nomvendedor),CsrAux.Codv
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5707,8 +4927,34 @@ endedor,"",CsrAux.CodSector,CsrAux.NomSector ,CsrAux.NomBarrio,CsrAux.Lat,CsrAux
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\00000F7T00GM.TMP Ultimo Control activo:  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 05-08-2024 10:24:30 , Error: El campo IVA no acepta valores NULL. Linea : INSERT INTO  CsrImprimir (codigo, nomcliente, cuit, iva, direccion, telefono ,localidad, provincia, nomvendedor, codvendedor, canal,codsector ,nomsector,nombarrio,lat,lng,lista,ref
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5872,7 +5118,33 @@ erencia,fechaalta) VALUES (CsrAux.cnumero,ALLTRIM(CsrAux.cnombre) ,ALLTRIM(CsrAu
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 endedor,"",CsrAux.CodSector,CsrAux.NomSector ,CsrAux.NomBarrio,CsrAux.Lat,CsrAux.Lng,CsrAux.Lista,NVL(CsrAux.referencia,''),DTOC(CsrAux.fechaalta)) Error :       1581 Ultimo Alias Activo: CSRAUX Ultimo registro:         16  DBF: C:\USERS\MARCOS\APPDATA\L
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6044,6 +5316,19 @@ OCAL\TEMP\00000F7T00GM.TMP Ultimo Control activo:  LISTAPADRON.IMPRIMIR_VISTAPRE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ol activo:  REGFACVTA.CONTENEDORREMITO.CMDSALVAR.CLICK
 08-08-2024 16:33:26 , Error: La sesión de datos nº 2 no se puede liberar si hay transacciones abiertas. Linea : oEntorno = null Error :       1549 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.INIT
 08-08-2024 16:35:33 , Verificando OCX
@@ -6053,6 +5338,19 @@ ol activo:  REGFACVTA.CONTENEDORREMITO.CMDSALVAR.CLICK
 08-08-2024 16:35:40 , Conectado..marcos\sql2019
 08-08-2024 16:35:40 , Datos de la empresa
 09-08-24 09:31:29 , Error: No se encuentra la variable 'ICOPIA'. Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,E
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6200,7 +5498,33 @@ xtra04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 esaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,ListaPrecio ,DetaReparto, Canal ,Pase,Talonario,NumComprobante ,Transporte, Saldo, SaldoAnt,HojaActua
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6348,7 +5672,33 @@ l,HojaTotal ,ValorNom001,ValorImp001,ValorNom002,ValorImp002 ,ValorNom003,ValorI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 te,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHe
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6496,7 +5846,33 @@ adImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot00
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 o ,cCanal,cPase,cTalonario,cNumComprobante,cTransporte ,cSaldo,cSaldoAnt,loObjFactura.hojaactual,loObjFactura.hojatotal ,cValorNom001,cValorImp001,cValorNom002,cValorImp002 ,cValorNom003,cValorImp003,cValorNom004,cValorImp004 ,cNumCompPie,nHojaFinal) Err
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6644,8 +6020,34 @@ or :         12 Ultimo Alias Activo: CSRPAGO Ultimo registro:          1  DBF: C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 105L8.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
 09-08-2024 09:34:45 , Error: No se encuentra la variable 'CFILELOG'. Linea : =GRABAR_SEC("Orden = "+strtrim(lnidmaopera,12)+" Imprimir (salidareport)",cFileLog,"LogImpresion") Error :         12 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6811,7 +6213,33 @@ GRUPO+ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00004361062G.TMP Ultimo Cont
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ST(0 as int) as idfuerzavta,' ' as alcohol ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica,CAST(0 as int) as idprodpromo ,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,00000000.000 as InternoFin ,CAST(0 as int) as i
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6937,6 +6365,19 @@ dctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 000.000 as cantkilos , 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden ,SPACE(10+6) as clavepedido,0 as omitirlistas,SPACE(14) as codextend ,CAST(0 as numeric(12)) as idmovlicita,CAST(0 as numeric(12)) as idmaopelici
 
 
@@ -7000,7 +6441,33 @@ dctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ta ,SPACE(30) as nombre02,DATE() as fechaultprecio,0 as cfexentoiva ,kilos as peso,nombre as nomcomandera,SPACE(15) as codArtProd, kilos as PesoProd FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE Error :          1 Ultimo Al
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7128,12 +6595,38 @@ ias Activo: CSRAUXMAOPERA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\00003D3D012K.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
 14-08-2024 09:31:41 , Genero archivo Codigo Barra
 14-08-2024 09:32:22 , Genero codigo QR
 14-08-24 09:57:21 , Genero archivo Codigo Barra
 14-08-2024 09:57:27 , Genero codigo QR
 14-08-2024 09:59:05 , Error: No coinciden los tipos de datos. Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extr
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7253,7 +6746,33 @@ a04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,Bod
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 Telf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,ListaPrecio ,DetaReparto ,Saldo, SaldoAnt ,Canal ,Pase ,Talonario,NumComprobante,DocTicket,hojaactual,ho
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7373,7 +6892,33 @@ jatotal,Transporte ,ValorNom001,ValorImp001,ValorNom002,ValorImp002 ,ValorNom003
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyI
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7493,7 +7038,33 @@ mp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,c
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 pO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto ,cSaldo, cSaldoAnt, cCanal, cPase,cTalonario,cNumComprobante,cDocTicket ,loObjFactura.hojaactual,loObjFactura.hojatotal,cTransporte ,cValorNom001
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7613,11 +7184,37 @@ pO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 lias Activo: CSRPAGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00003D3D026W.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
 14-08-2024 09:59:24 , Genero archivo Codigo Barra
 14-08-2024 09:59:30 , Genero codigo QR
 14-08-24 10:01:19 , Genero archivo Codigo Barra
 14-08-24 10:01:22 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : cBodyImp009 = IIF(aImpuesto[9,2]<>0,TRANSFORM(aImpuesto[9,2],"9,999,999,999.99"),"") Error :        107 Ultimo Alias Activo: IMPCABEZA Ultimo registro:  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7769,6 +7366,19 @@ lias Activo: CSRPAGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\L
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 HS0900E4.TMP Ultimo Control activo:  MAIN
 15-08-2024 10:23:49 , Verificando OCX
 15-08-2024 10:23:53 , Acceso al sistema, antes de autenticar
@@ -7783,6 +7393,19 @@ HS0900E4.TMP Ultimo Control activo:  MAIN
 15-08-2024 10:43:09 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
 15-08-2024 10:43:10 , Datos de la empresa
 15-08-24 11:18:42 , Error: No se encuentra la variable 'LCIDMAOPERA'. Linea : where Csrcuerpo.idmaopera in (<<lcidmaopera>>) Error :         12 Ultimo Alias Activo: CSRCUERFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000APL50
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7848,8 +7471,34 @@ HS0900E4.TMP Ultimo Control activo:  MAIN
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 MPCOMPVTACAE.ACEPTAR1.CLICK
 15-08-24 11:23:39 , Error: No coinciden los tipos de datos. Linea : IF HayAComercial Error :          9 Ultimo Alias Activo: CSRCUERFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000APL5034R.TMP Ultimo Control activo:  IMPCOMPV
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7927,6 +7576,19 @@ TACAE.ACEPTAR1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 RCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 20-08-2024 11:50:51 , Verificando OCX
 20-08-2024 11:50:54 , Acceso al sistema, antes de autenticar
@@ -7957,6 +7619,19 @@ RCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 RCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 20-08-2024 11:52:58 , Verificando OCX
 20-08-2024 11:53:01 , Acceso al sistema, antes de autenticar
@@ -7965,6 +7640,19 @@ RCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 20-08-2024 11:53:05 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
 20-08-2024 11:53:06 , Datos de la empresa
 20-08-2024 11:53:16 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : i = AT(lcFolderDir,'\',i) Error :         11 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  GENERARCELU.IMPRIMIR_VI
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8017,8 +7705,34 @@ STAPREVIA1.IMPRESORA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 RS\MARCOS\APPDATA\LOCAL\TEMP\000048W9025W.TMP Ultimo Control activo:  RINDEFLETECTACTE.GRID2.COLUMN6.TEXT1.KEYPRESS
 20-08-2024 17:44:25 , Error: No se encuentra la variable 'LNIDMOVAFECTADO'. Linea : SUM importe FOR idmovafectado =  CsrAuxMovAfectado.id  TO kafecta Error :         12 Ultimo Alias Activo: CSRPAGOS Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDA
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8034,8 +7748,34 @@ TA\LOCAL\TEMP\000048W904MY.TMP Ultimo Control activo: NUMERO RINDEFLETECTACTE.GR
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 rol activo: NUMERO RINDEFLETECTACTE.GRID2.COLUMN6.TEXT1.KEYPRESS
 20-08-2024 17:47:55 , Error: El campo ID es de sólo lectura Linea : GATHER NAME OscPago Error :       2088 Ultimo Alias Activo: CSRPAGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000048W905FR.TMP Ultimo Control activo:  RINDEFLE
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8052,6 +7792,19 @@ TECTACTE.GRID2.COLUMN6.TEXT1.KEYPRESS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 P Ultimo Control activo:  RINDEFLETECTACTE.CMDPROCESAR.CLICK
 21-08-2024 16:28:32 , Verificando OCX
 21-08-2024 16:28:36 , Acceso al sistema, antes de autenticar
@@ -8064,3 +7817,49 @@ P Ultimo Control activo:  RINDEFLETECTACTE.CMDPROCESAR.CLICK
 21-08-2024 16:29:00 , Verificando Licencia
 21-08-2024 16:29:10 , Conectado..marcos\sql2019
 21-08-2024 16:29:11 , Datos de la empresa
+22-08-2024 15:44:48 , Verificando OCX
+22-08-2024 15:44:55 , Acceso al sistema, antes de autenticar
+22-08-2024 15:44:56 , Obteniendo conexion a servidor
+22-08-2024 15:44:56 , Verificando Licencia
+22-08-2024 15:45:00 , Conectado..marcos\sql2019
+22-08-2024 15:45:01 , Datos de la empresa
+22-08-2024 15:45:39 , Verificando OCX
+22-08-2024 15:45:42 , Acceso al sistema, antes de autenticar
+22-08-2024 15:45:42 , Obteniendo conexion a servidor
+22-08-2024 15:45:44 , Verificando Licencia
+22-08-2024 15:47:01 , Conectado..marcos\sql2019
+22-08-2024 15:47:01 , Datos de la empresa
+22-08-2024 16:09:11 , Verificando OCX
+22-08-2024 16:09:14 , Acceso al sistema, antes de autenticar
+22-08-2024 16:09:14 , Obteniendo conexion a servidor
+22-08-2024 16:09:14 , Verificando Licencia
+22-08-2024 16:09:18 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
+22-08-2024 16:09:19 , Datos de la empresa
+22-08-2024 16:10:35 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 GRUPO+TIPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HVRD02TH.TMP Ult
+
+
+
+
+
+imo Control activo:  REGCTACTE.CMDIMPRIMIR.CLICK
+22-08-2024 17:32:41 , Verificando OCX
+22-08-2024 17:32:44 , Acceso al sistema, antes de autenticar
+22-08-2024 17:32:44 , Obteniendo conexion a servidor
+22-08-2024 17:32:45 , Verificando Licencia
+22-08-2024 17:32:57 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
+22-08-2024 17:32:58 , Datos de la empresa
+22-08-2024 17:49:02 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 GRUPO+TIPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00005HQH04T0.TMP Ult
+
+
+imo Control activo:  REGCTACTE.CMDIMPRIMIR.CLICK
+22-08-2024 17:58:44 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 GRUPO+TIPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00005HQH0599.TMP Ult
+
+imo Control activo:  REGCTACTE.CMDIMPRIMIR.CLICK
+22-08-2024 18:04:59 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 GRUPO+TIPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00005HQH05LN.TMP Ult
+imo Control activo:  REGCTACTE.CMDIMPRIMIR.CLICK
+23-08-2024 09:30:01 , Verificando OCX
+23-08-2024 09:30:10 , Acceso al sistema, antes de autenticar
+23-08-2024 09:30:10 , Obteniendo conexion a servidor
+23-08-2024 09:30:11 , Verificando Licencia
+23-08-2024 09:30:15 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
+23-08-2024 09:30:15 , Datos de la empresa
