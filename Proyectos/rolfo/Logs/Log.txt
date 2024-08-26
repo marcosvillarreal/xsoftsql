@@ -5,28 +5,10 @@
 
 
 
-\0000EKUH0FOW.TMP Ultimo Control activo:  REGFACVTA_CAE.CMDCONSULTA.CLICK
-25-03-2016 23:07:20 , Error: No se encuentra la variable 'NOMPROVINCIA'. Linea : replace nomProvincia WITH CsrProvincia.impabre IN CsrAuxCabefac Error :         12 Ultimo Alias Activo: CSRPROVINCIA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA
-
-
-
-
-
-
-
-
-\LOCAL\TEMP\0000EKUH0FWG.TMP Ultimo Control activo:  REGFACVTA_CAE.CMDCONSULTA.CLICK
-25-03-2016 23:08:09 , Error: No se encuentra la variable 'LNBASEPERCEPCION'. Linea : ._txtpercepcion.Value	 = lnBasePercepcion Error :         12 Ultimo Alias Activo: CSRPROVINCIA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EK
-
-
-
-
-
-
-
 
 UH0GH6.TMP Ultimo Control activo:  REGFACVTA_CAE.KEYPRESS
 25-03-2016 23:09:18 , Error: No se encuentra la variable 'LNTOTNOCATEGO'. Linea : ._txtnocatego.value      = lnTotNoCatego Error :         12 Ultimo Alias Activo: CSRPROVINCIA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000EKUH0H
+
 
 
 
@@ -45,8 +27,10 @@ UH0GH6.TMP Ultimo Control activo:  REGFACVTA_CAE.KEYPRESS
 
 
 
+
 V.TMP Ultimo Control activo:  REGFACVTA_CAE.CMDCONSULTA.CLICK
 25-03-2016 23:11:52 , Error: No se encuentra la variable 'NBASEPN'. Linea : cBodyTot001	= TRANSFORM(nSubTotal + nBasePB + nBasePI + nBaseIG + nBaseII + nBasePN ,"9999999999.99") Error :         12 Ultimo Alias Activo: CSRCABECARTEL Ultimo registro:      
+
 
 
 
@@ -65,8 +49,10 @@ V.TMP Ultimo Control activo:  REGFACVTA_CAE.CMDCONSULTA.CLICK
 
 
 
+
 \TEMP\0000EKUH0J9O.TMP Ultimo Control activo:  REGFACVTA_CAE.CMDIMPRIMIR.CLICK
 25-03-2016 23:13:50 , Error: No se encuentra la variable 'COPIAS'. Linea : FOR icopia=1 TO thisform.copiastkt + NVL(CsrPlanPago.copias,0) Error :         12 Ultimo Alias Activo: CSRCABECARTEL Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL
+
 
 
 
@@ -85,8 +71,10 @@ V.TMP Ultimo Control activo:  REGFACVTA_CAE.CMDCONSULTA.CLICK
 
 
 
+
  Control activo:  REGFACVTA_CAE.CMDIMPRIMIR.CLICK
 02-04-2016 08:52:40 , Error: No se encuentra el alias 'CSRPARACONFIG'. Linea : SELECT CsrParaConfig Error :         13 Ultimo Alias Activo: CSRSETEO Ultimo registro:         20  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000D5HL01KL.TMP Ultimo Control activ
+
 
 
 
@@ -105,8 +93,10 @@ o:  IMPCOMPVTACAE.INIT
 
 
 
+
 o:  IMPCOMPVTACAE.INIT
 02-04-16 09:18:35 , Error: No se encuentra la propiedad PROXIMONRO_RTO. Linea : loObjFactura.NroRemito	= OscCabeza.proximonro_rto Error :       1734 Ultimo Alias Activo: IMPCABEZA Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000D5
+
 
 
 
@@ -125,8 +115,10 @@ HL027N.TMP Ultimo Control activo:  IMPCOMPVTACAE.ACEPTAR1.CLICK
 
 
 
+
 00D5HL02WR.TMP Ultimo Control activo:  IMPCOMPVTACAE.ACEPTAR1.CLICK
 02-04-16 09:46:00 , Error: No se encuentra la propiedad DETAPIECUOTA01. Linea : OscatterCab.detapiecuota01 = aPieCuota[1] Error :       1734 Ultimo Alias Activo: CSRCUOTAS Ultimo registro:          2  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000D5HL0388.T
+
 
 
 
@@ -145,8 +137,10 @@ MP Ultimo Control activo:  IMPCOMPVTACAE.ACEPTAR1.CLICK
 
 
 
+
 MP Ultimo Control activo:  IMPCOMPVTACAE.ACEPTAR1.CLICK
 02-04-2016 10:55:40 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as 
+
 
 
 
@@ -164,7 +158,9 @@ BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as
 
 
 
+
 25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuot
+
 
 
 
@@ -182,7 +178,9 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
 (30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWR
+
 
 
 
@@ -201,8 +199,10 @@ ITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  
 
 
 
+
 APPDATA\LOCAL\TEMP\0000BKSP012I.TMP Ultimo Control activo:  MAIN
 04-04-2016 15:16:23 , Error: No se encuentra la variable 'LNIMPORTE'. Linea : IF lnimporte # 0 Error :         12 Ultimo Alias Activo: CSRCABECARTEL Ultimo registro:          2  DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000BKSP02H8.TMP Ultimo Control activ
+
 
 
 
@@ -221,8 +221,10 @@ o:  MAIN
 
 
 
+
 o:  MAIN
 04-04-2016 15:21:48 , Error: No se encuentra la variable 'LNIMPORTE'. Linea : IF lnimporte # 0 Error :         12 Ultimo Alias Activo: CSRCABECARTEL Ultimo registro:          2  DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000BKSP0361.TMP Ultimo Control activ
+
 
 
 
@@ -241,8 +243,10 @@ o:  MAIN
 
 
 
+
 :\USERS\CHIVI\APPDATA\LOCAL\TEMP\00003JM1001D.TMP Ultimo Control activo:  __UTILBUSCAROBJETOS.ACEPTAR2.CLICK
 11-05-2016 11:19:36 , Error: No se encuentra el alias 'CSRIMPRIMIR'. Linea : SELECT CsrImprimir Error :         13 Ultimo Alias Activo: CSRENCABEZADO Ultimo registro:          1  DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\000077YH00BV.TMP Ultimo Control acti
+
 
 
 
@@ -262,8 +266,10 @@ vo:  SUBIVACPRA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 activo:  MAIN
 12-05-2016 16:24:10 , Error: No se encuentra la variable 'CTIPOCOMP'. Linea : cRespuesta = cTipoComp Error :         12 Ultimo Alias Activo: CSRAUXVENTAS Ultimo registro:         59  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00008XE100ND.TMP Ultimo Control 
+
 
 
 
@@ -282,7 +288,9 @@ activo:  MAIN
 
 
 
+
 BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(
+
 
 
 
@@ -300,6 +308,7 @@ BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as
 
 
 
+
 a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE
 
 
@@ -309,7 +318,9 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
 (30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWR
+
 
 
 
@@ -328,6 +339,7 @@ ITE Error :          1 Ultimo Alias Activo: CSRMOVBCOCAR Ultimo registro:       
 
 
 
+
 activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 14-06-2016 11:49:14 , Error: No se encuentra la variable 'CTIPOCOMP'. Linea : cRespuesta = cTipoComp Error :         12 Ultimo Alias Activo: CSRAUXVENTAS Ultimo registro:        105  DBF: C:\USERS\CHIVI\APPDATA\LOCAL\TEMP\0000A6150026.TMP Ultimo Control 
 
@@ -338,8 +350,10 @@ activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 activo:  EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 06-07-2016 10:40:05 , Error: No se encuentra el alias 'CSRCURSOR'. Linea : USE IN CsrCursor Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDCTACTE,10)+CLASE+STRID(IDMAOPERA,12)+CCUOTA DBF: C:\USERS\CHIVI\APPDATA\LO
+
 
 
 
@@ -359,8 +373,10 @@ CAL\TEMP\000067M100GY.TMP Ultimo Control activo:  MAIN
 
 
 
+
 IN
 06-07-2016 10:44:22 , Error: No se encuentra la variable 'VENCIMIEN'. Linea : INDEX on STR(idctacte,10)+DTOC(vencimien,1)+STRID(idmaopera,12) TAG fecha Error :         12 Ultimo Alias Activo: CSRMOVAVENCER Ultimo registro:          1  DBF: C:\USERS\CHIVI
+
 
 
 
@@ -379,8 +395,10 @@ IN
 
 
 
+
 \APPDATA\LOCAL\TEMP\000067M101OZ.TMP Ultimo Control activo:  MAIN
 08-07-2016 09:46:44 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          2  DBF: C:\USERS\ADMIN\APPDA
+
 
 
 
@@ -399,8 +417,10 @@ TA\LOCAL\TEMP\00007D3D00XI.TMP Ultimo Control activo:  MAIN
 
 
 
+
 TA\LOCAL\TEMP\00007D3D00YO.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABEZA._TXTLOSTFOCUS.GOTFOCUS
 08-07-2016 09:47:51 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          2  DBF: C:\USERS\ADMIN\APPDA
+
 
 
 
@@ -419,8 +439,10 @@ TA\LOCAL\TEMP\00007D3D01KA.TMP Ultimo Control activo:  MAIN
 
 
 
+
 TA\LOCAL\TEMP\00007D3D01LJ.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABEZA._TXTLOSTFOCUS.GOTFOCUS
 08-07-2016 09:48:25 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          2  DBF: C:\USERS\ADMIN\APPDA
+
 
 
 
@@ -439,8 +461,10 @@ TA\LOCAL\TEMP\00007D3D01NO.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABE
 
 
 
+
 TA\LOCAL\TEMP\00007D3D01WY.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABEZA._TXTLOSTFOCUS.GOTFOCUS
 08-07-2016 09:49:36 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          2  DBF: C:\USERS\ADMIN\APPDA
+
 
 
 
@@ -459,8 +483,10 @@ TA\LOCAL\TEMP\00007D3D01Y4.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABE
 
 
 
+
 TA\LOCAL\TEMP\00007D3D01ZA.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABEZA._TXTLOSTFOCUS.GOTFOCUS
 08-07-2016 09:49:58 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:          2  DBF: C:\USERS\ADMIN\APPDA
+
 
 
 
@@ -479,8 +505,10 @@ TA\LOCAL\TEMP\00007D3D020G.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABE
 
 
 
+
 2SA.TMP Ultimo Control activo:  REGCHEQUERECHAZADO.KEYPRESS
 14-09-2016 16:36:12 , Error: No se encuentra la variable 'NROPAGCOMI'. Linea : NroPagComi = NroPagComi Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        182 STR(IDAREANEG)+GRUPO+CHRFECHA+STR(ID,12) DBF: C:\USERS\MARCO\APPDATA\LO
+
 
 
 
@@ -499,7 +527,9 @@ CAL\TEMP\000081E1035J.TMP Ultimo Control activo:  MAIN
 
 
 
+
 BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(
+
 
 
 
@@ -517,6 +547,7 @@ BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as
 
 
 
+
 a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE
 
 
@@ -526,7 +557,9 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
 (30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWR
+
 
 
 
@@ -545,8 +578,10 @@ ITE Error :          1 Ultimo Alias Activo: CSRMOVBCOCAR Ultimo registro:       
 
 
 
+
 o Control activo:  MAIN
 22-09-2016 17:02:37 , Error: No se encuentra la variable 'CCUIT_CAPTION'. Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,
+
 
 
 
@@ -564,7 +599,9 @@ Extra03,Extra04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,Bod
 
 
 
+
 Dire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,DetaReparto,EmpresaCuit,Cuit_Caption ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) 
+
 
 
 
@@ -582,7 +619,9 @@ Dire,EmpresaTelf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOt
 
 
 
+
 05 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,
+
 
 
 
@@ -602,8 +641,10 @@ cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cDetaRep,cEmpcuit ,cCuit_Caption) Er
 
 
 
+
 N
 27-09-2016 22:28:14 , Error: No se encuentra el alias 'CSRSETEO'. Linea : SELECT CsrSeteo Error :         13 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006WAX007I.TMP Ultimo Control activo:  AC
+
 
 
 
@@ -622,8 +663,10 @@ TUALIZADOR.PRECIOPROD1.INIT
 
 
 
+
 AM1500PH.TMP Ultimo Control activo:  MAIN
 01-11-2016 07:41:13 , Error: No se encuentra la variable 'NETOGRAVADO'. Linea : REPLACE ALL netogravado WITH netosinbonificar - bonificacion Error :         12 Ultimo Alias Activo: _CSRVENDEDOR Ultimo registro:          5 CNUMERO DBF: C:\USERS\ADMIN\APPD
+
 
 
 
@@ -642,8 +685,10 @@ ATA\LOCAL\TEMP\00001ZPL0259.TMP Ultimo Control activo:  LISTCOMISIONES.IMPRIMIR_
 
 
 
+
 9N.TMP Ultimo Control activo:  LISTCOMISIONES.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 30-12-2016 14:06:15 , Error: El archivo 'csrplancue.dbf' no existe. Linea : select 0 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden 
+
 
 
 
@@ -663,8 +708,10 @@ into cursor &micursor READWRITE Error :          1 Ultimo Alias Activo: CSRORIGE
 
 
 
+
 CONCILIA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 13-09-2017 10:49:59 , Error: No hay ninguna tabla abierta en el área de trabajo actual. Linea : CURSORSETPROP("Buffering",5,"CsrCursor") Error :         52 Ultimo Alias Activo: _CSRCOMPROBANTE Ultimo registro:         41 CNUMERO DBF: C:\USERS\ADMIN\APPDA
+
 
 
 
@@ -683,8 +730,10 @@ TA\LOCAL\TEMP\000018G900O3.TMP Ultimo Control activo:  REGCONCILIA.CMDCONSULTA.C
 
 
 
+
 2) DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000018G901ZB.TMP Ultimo Control activo:  RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 13-09-2017 11:09:33 , Error: La expresión no es válida fuera de WITH/ENDWITH. Linea : IF .tipoctab=1 AND Oscatter.grupo='B' Error :       1940 Ultimo Alias Activo: CSRMOVIMIENTO Ultimo registro:          3 STR(IDCTACTE,10)+DTOC(FECHA,1)+STRID(IDMAOPERA,1
+
 
 
 
@@ -703,8 +752,10 @@ TA\LOCAL\TEMP\000018G900O3.TMP Ultimo Control activo:  REGCONCILIA.CMDCONSULTA.C
 
 
 
+
  activo: FECHA MAIN
 13-09-2017 17:01:24 , Error: La tabla csrcuerpo tiene uno o más índices no estructurales abiertos. Ciérrelos y vuelva a intentar BEGIN TRANSACTION Linea : BEGIN TRANSACTION Error :       1548 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DB
+
 
 
 
@@ -723,6 +774,7 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005L3D003M.TMP Ultimo Control activo: EST
 
 
 
+
 ias Activo: CSRCUERPO Ultimo registro:        343 ENTREGADO DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005L3D00J8.TMP Ultimo Control activo: ESTADOTILDE REGCONCILIA.GRID1.HEADERCLICK6
 13-09-2017 17:09:18 , Error: No se encuentra el alias. Linea : IF RECCOUNT(lcaliasseek)#0 Error :         13 Ultimo Alias Activo: CSRAUXMOVAFECTADO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005L3D00PD.TMP Ultimo Control activo
 
@@ -733,8 +785,10 @@ ias Activo: CSRCUERPO Ultimo registro:        343 ENTREGADO DBF: C:\USERS\ADMIN\
 
 
 
+
 :  REGCONCILIA.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT
 13-09-2017 17:10:02 , Error: No se encuentra el alias. Linea : lcordenvie=order(lcalias) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGCONCILIA.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.TXTEXISTE1.LO
+
 
 
 
@@ -754,8 +808,10 @@ STFOCUS
 
 
 
+
 F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006T5500WW.TMP Ultimo Control activo:  REGCONCILIA.ACEPTAR1.CLICK
 13-09-2017 17:27:50 , Error: La tabla csrcuerpo tiene uno o más índices no estructurales abiertos. Ciérrelos y vuelva a intentar BEGIN TRANSACTION Linea : BEGIN TRANSACTION Error :       1548 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DB
+
 
 
 
@@ -774,8 +830,10 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006T55010N.TMP Ultimo Control activo:  RE
 
 
 
+
 ERS\ADMIN\APPDATA\LOCAL\TEMP\00006T55019V.TMP Ultimo Control activo: ESTADOTILDE REGCONCILIA.KEYPRESS
 13-09-2017 17:36:09 , Error: La tabla csrcuerpo tiene uno o más índices no estructurales abiertos. Ciérrelos y vuelva a intentar BEGIN TRANSACTION Linea : BEGIN TRANSACTION Error :       1548 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DB
+
 
 
 
@@ -794,8 +852,10 @@ F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006T5501HD.TMP Ultimo Control activo:  RE
 
 
 
+
 F: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006T5501KW.TMP Ultimo Control activo:  REGCONCILIA.ACEPTAR1.CLICK
 28-09-2017 17:16:24 , Error: El archivo 'csrmovbcocar.dbf' no existe. Linea : SELECT CsrMovbcocar.*,SPACE(35) as cnombre,CAST(0 as int) as idctatransfer FROM CsrMovbcocar WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE Error :          1 U
+
 
 
 
@@ -815,8 +875,10 @@ ltimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  
 
 
 
+
 2)+CCUOTA DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00005DL5003Q.TMP Ultimo Control activo:  RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 09-04-2018 12:19:43 , Error: El archivo 'csrctacte.dbf' no existe. Linea : select 1 as ok,&lc2 as cnombre,&lc3 as cnumero,&lc4 as cid ,&lc5 as wcampo05,&lc6 as wcampo06,&lc7 as wcampo07 ,&lc8 as wcampo08,&lc9 as wcampo09 from &lcalias order by &lcorden i
+
 
 
 
@@ -836,6 +898,7 @@ nto cursor &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo r
 
 
 
+
 nto cursor &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  LISCONTROLSALDO.KITGRILLATILDARCTACTE.INIT
 09-04-2018 12:20:51 , Error: SQL: no se encuentra la columna 'NOMBRE'. Linea : SELECT 0 as ok,CsrCtacte.nombre as cnombre,CsrCtacte.numero as cnumero,CsrCtacte.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as
 
@@ -846,7 +909,9 @@ nto cursor &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo r
 
 
 
+
  wcampo08,space(10) as wcampo09 from CsrCtacte order by cnombre into cursor _CsrCtacte READWRITE Error :       1806 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00006Y2X00K7.TMP Ultimo Control activo:
+
 
 
 
@@ -865,8 +930,10 @@ nto cursor &micursor READWRITE Error :          1 Ultimo Alias Activo:  Ultimo r
 
 
 
+
 l activo: FECHA MAIN
 18-09-2018 09:59:42 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrBloqueoUser')=0 &&Esta habilitado para todo si es vacio Error :         13 Ultimo Alias Activo: CSRPROVINCIAPERCE Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
 
 
 
@@ -885,8 +952,10 @@ L\TEMP\0000845L004L.TMP Ultimo Control activo:  ABMPRODUCTO.INIT
 
 
 
+
 L\TEMP\0000845L0086.TMP Ultimo Control activo:  ABMPRODUCTO.INIT
 18-09-2018 10:00:35 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrBloqueoUser')=0 &&Esta habilitado para todo si es vacio Error :         13 Ultimo Alias Activo: CSRPROVINCIAPERCE Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
 
 
 
@@ -905,8 +974,10 @@ L\TEMP\0000845L00LI.TMP Ultimo Control activo:  MAIN
 
 
 
+
 L\TEMP\0000845L00YU.TMP Ultimo Control activo:  MAIN
 18-09-2018 10:04:34 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrBloqueoUser')=0 &&Esta habilitado para todo si es vacio Error :         13 Ultimo Alias Activo: CSRPROVINCIAPERCE Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCA
+
 
 
 
@@ -925,8 +996,10 @@ L\TEMP\0000845L014J.TMP Ultimo Control activo:  ABMPRODUCTO.INIT
 
 
 
+
 :\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000845L018R.TMP Ultimo Control activo:  CAMBIACLASES.ACEPTAR2.CLICK
 18-09-2018 10:14:41 , Error: El origen de datos para este objeto debe ser una referencia de variable. Linea : loObjcol.controlsource = lCaliasNavega+'.'+lccadena Error :       1742 Ultimo Alias Activo: _CSRFORMS Ultimo registro:          1 CNUMERO DBF: C
+
 
 
 
@@ -945,8 +1018,10 @@ L\TEMP\0000845L014J.TMP Ultimo Control activo:  ABMPRODUCTO.INIT
 
 
 
+
 ontrol activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 21-09-2018 16:06:52 , Error: SQL: no se encuentra la columna 'COSTO1V'. Linea : DELETE FROM CsrAuxCbioPrecio WHERE costo1v = costo1n Error :       1806 Ultimo Alias Activo: CSRAUXCBIOPRECIO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\T
+
 
 
 
@@ -966,8 +1041,10 @@ EMP\00002OSP0048.TMP Ultimo Control activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 
 
 
+
 LOCAL\TEMP\000099FT038K.TMP Ultimo Control activo:  RESCTACTE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 23-01-2019 12:07:04 , Error: No se encuentra la variable 'LCTIPOBUSQUEDA'. Linea : lcFiltroBco = IIF(lnOpcion=3," not ","") + lcTipoBusqueda Error :         12 Ultimo Alias Activo: _CSRCTACTE Ultimo registro:          2 VAL(CNUMERO) DBF: C:\USERS\ADMIN\A
+
 
 
 
@@ -986,8 +1063,10 @@ PPDATA\LOCAL\TEMP\000099FT03W6.TMP Ultimo Control activo:  RESCTACTE.IMPRIMIR_VI
 
 
 
+
 :  IMPUCTACTE.CONTAINERENCABEZA.ACEPTAR1.CLICK
 22-02-2019 14:23:02 , Error: No se encuentra la propiedad OBJSETEOPARAM. Linea : .agregaobjeto.objseteoparam(@lObjeto) Error :       1734 Ultimo Alias Activo: CSRPARAVARIO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\0000AOZT0058.T
+
 
 
 
@@ -1006,8 +1085,10 @@ MP Ultimo Control activo:  ABMPRODUCTO.INIT
 
 
 
+
 MP Ultimo Control activo:  ABMPRODUCTO.INIT
 03-09-2019 11:44:34 , Error: Falta alguna expresión. Linea : pIdEjercicio = IIF(PCOUNT()<1,0,&pIdEjercicio) Error :        152 Ultimo Alias Activo: CSRAUXEJERCICIO Ultimo registro:          1  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009A8901F1.TMP Ultim
+
 
 
 
@@ -1026,8 +1107,10 @@ o Control activo:  FRMEJERCICIO.INIT
 
 
 
+
 026I.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABEZA._TXTLOSTFOCUS.GOTFOCUS
 02-01-2020 12:57:09 , Error: No se encuentra la variable 'LCCMDANT'. Linea : =savesql(lccmdant,this.Name+"_sdoant") Error :         12 Ultimo Alias Activo: CSRPARACONTA Ultimo registro:         22  DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\00009R0P00KP.TMP 
+
 
 
 
@@ -1046,8 +1129,10 @@ Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 V.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 02-01-2020 13:36:47 , Error: No coinciden los tipos de datos. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,nombre,idcuenta,nrocaja,TIPOASI) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable ,lcnombre,OscCu
+
 
 
 
@@ -1066,6 +1151,7 @@ rsor.idcuenta,lnNroCaja,'C') Error :          9 Ultimo Alias Activo: CSRCURSOR U
 
 
 
+
 rol activo:  MAIN
 09-01-2020 15:29:04 , Error: No se encuentra la variable 'CDETALLEASTO'. Linea : replace id WITH CsrPlanCue.id, cuenta WITH CsrPlancue.cuenta, detalle WITH cDetalleAsto ,idcuenta WITH CsrPlanCue.id, tipoconce  WITH "",nombre WITH CsrPlanCue.nombre ,debe 
 
@@ -1076,7 +1162,9 @@ rol activo:  MAIN
 
 
 
+
 WITH 0, haber WITH 0, nombreobjeto WITH "", pos WITH RECNO() Error :         12 Ultimo Alias Activo: CSRAUXPLANCUE Ultimo registro:          1 IDCUENTA DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000038QX00BM.TMP Ultimo Control activo:  REGASIECIERRE.CONTAINE
+
 
 
 
@@ -1095,7 +1183,9 @@ RENCABEZA.CMDACEPTAR.CLICK
 
 
 
+
 etalle,lndebe,lnhaber ,Csrcursor.idcuenta,CsrCursor.tipoconce,CsrCursor.tipoconce,RECNO(),CsrCursor.idmaopera) Error :         12 Ultimo Alias Activo: CSRAUXPLANCUE Ultimo registro:          1 IDCUENTA DBF: C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\000038QX00FP.
+
 
 
 
@@ -1106,6 +1196,7 @@ etalle,lndebe,lnhaber ,Csrcursor.idcuenta,CsrCursor.tipoconce,CsrCursor.tipoconc
 
 TMP Ultimo Control activo:  REGASIECIERRE.CMDCONSULTA.CLICK
 31-07-2020 11:43:20 , Error: No se encuentra el alias 'CSRCENTRO'. Linea : SELECT CsrCentro Error :         13 Ultimo Alias Activo: CSRSUCURSAL Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00004S95001D.TMP Ultimo Control activo:  M
+
 
 
 
@@ -1127,9 +1218,11 @@ AIN
 
 
 
+
  
 12-08-2020 18:36:31 , Error: No se encuentra el alias 'CSRCLASECOMP'. Linea : .ADDPROPERTY( '_nOriginalHeight', .HEIGHT ) Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCOMPROBANTE.INIT
 13-08-2020 19:18:13 , Error: No se encuentra el alias. Linea : Oca = GETCURSORADAPTER(lcalias) Error :         13 Ultimo Alias Activo: CSRCOMPROBANTECREDITOFLETERO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QXHL093J.TMP Ultim
+
 
 
 
@@ -1148,8 +1241,10 @@ o Control activo:  PARACONFIG.INIT
 
 
 
+
 o Control activo:  PARACONFIG.INIT
 13-08-2020 19:41:25 , Error: No se encuentra la variable 'TGG'. Linea : IF this.lnidcompnenvio = 0 AND tgg Error :         12 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          3  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QXHL0DAS.TMP Ultimo 
+
 
 
 
@@ -1168,8 +1263,10 @@ Control activo:  REGFACVTA.INIT
 
 
 
+
 Control activo:  REGFACVTA.INIT
 13-08-2020 19:44:15 , Error: No se encuentra la variable 'TGG'. Linea : IF this.lnidcompnenvio = 0 AND tgg Error :         12 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          3  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QXHL0E7S.TMP Ultimo 
+
 
 
 
@@ -1188,8 +1285,10 @@ Control activo:  REGFACVTA.INIT
 
 
 
+
 Control activo:  REGFACVTA.INIT
 13-08-2020 19:45:40 , Error: No se encuentra la variable 'TGG'. Linea : IF this.lnidcompnenvio = 0 AND tgg Error :         12 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          3  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QXHL0F3W.TMP Ultimo 
+
 
 
 
@@ -1208,8 +1307,10 @@ Control activo:  REGFACVTA.INIT
 
 
 
+
 A\LOCAL\TEMP\0000DWCP00BI.TMP Ultimo Control activo:  MAIN
 15-10-2020 11:22:39 , Error: No se encuentra la variable 'NROPAGCOMI'. Linea : NroPagComi = NroPagComi + 1 Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        251 STR(IDAREANEG)+GRUPO+CHRFECHA+STR(ID,12) DBF: C:\USERS\MARCO\APPDAT
+
 
 
 
@@ -1228,8 +1329,10 @@ A\LOCAL\TEMP\0000DWCP00SH.TMP Ultimo Control activo:  MAIN
 
 
 
+
 TMP Ultimo Control activo:  MAIN
 12-01-2021 23:40:46 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrEjercicio')#0 Error :         13 Ultimo Alias Activo: _CSRORIGEN Ultimo registro:         11 CNUMERO DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00002D5500N1.TMP Ultimo Control act
+
 
 
 
@@ -1249,8 +1352,10 @@ ivo:  MAIN
 
 
 
+
 Ultimo Control activo:  MAIN
 19-08-2021 08:35:41 , Error: No se encuentra la variable 'PIDSISTEMA'. Linea : lnidprograma = pidsistema Error :         12 Ultimo Alias Activo: CSRCOMPROBANTE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00000YYX0047.TMP Ultimo Co
+
 
 
 
@@ -1269,6 +1374,7 @@ ntrol activo:  EXPORTAR_CPRA_VTA.BOTON_FAVORITO1.INIT
 
 
 
+
 r.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9 Ultimo Alias Activo: CSRCURSORANT Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MRD500CD.TMP Ultimo Control activo:  MAIN
 09-11-2021 16:40:18 , Error: No coinciden los tipos de datos. Linea : INSERT INTO Csrimprimir(grupo,clave,nomcontable,idcuenta,nrocaja,fecha,numasto,tipoasi) VALUES ("A",lcclave,TRANSFORM(OscCursor.CtaContable,"99999")+"  "+OscCursor.NomContable,OscCurso
 
@@ -1279,7 +1385,9 @@ r.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9
 
 
 
+
 r.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9 Ultimo Alias Activo: CSRCURSORANT Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MRD500EH.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1
+
 
 
 
@@ -1298,7 +1406,9 @@ r.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9
 
 
 
+
 r.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9 Ultimo Alias Activo: CSRCURSORANT Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000MRD500FW.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1
+
 
 
 
@@ -1317,8 +1427,10 @@ r.idcuenta ,thisform.cajaini,thisform.fechaini,0,tipoasi='*') Error :          9
 
 
 
+
 \TEMP\0000MRD500HE.TMP Ultimo Control activo:  LISMAYOR.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 09-11-2021 16:59:33 , Error: El archivo 'csrcabefac.dbf' no existe. Linea : SELECT CsrCabefac.* ,000000000.00 as Baseexe,00 as copiatkt ,00000000.00 as BaseInterno,000000000.00 as BaseDescto ,00000000.00 as BaseGra,00000000.00 as BaseIva ,00000000.00 as 
+
 
 
 
@@ -1336,7 +1448,9 @@ BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as
 
 
 
+
 25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,0000 as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,0 as canje, CAST(1 as int) as cuot
+
 
 
 
@@ -1354,7 +1468,9 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
 (30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia ,SPACE(2) as categoiva,SPACE(13) as nroasociado,DATE() as fechaaso,SPACE(
+
 
 
 
@@ -1365,6 +1481,7 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 2) as CompAso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.LOAD
 12-05-2022 10:46:05 , Error: No se encuentra el alias 'CSRCTACTE'. Linea : This.txtnombre.value = &lccamponombre Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  RESCTACTE.KITBUSCAOALTAENCTACTE.TXTNOMBRE
+
 
 
 
@@ -1384,7 +1501,9 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
 BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,SPACE(3) as subnumero,CAST(1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(
+
 
 
 
@@ -1402,7 +1521,9 @@ BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as
 
 
 
+
 a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPACE(50) as detacontacto,SPACE(50) as direcentrega ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as FecEntrega ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE
+
 
 
 
@@ -1420,10 +1541,12 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
 2) as CompAso FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.LOAD
 27-07-2022 11:47:47 , Error: El entorno de datos ya está descargado. Linea : DO FORM configbd Error :       1967 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
 19-12-2022 08:28:15 , Error: El archivo 'crearcursoradpater.prg' no existe. Linea : =CrearCursorAdpater('CsrExp',lcCmd) Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  EXP_WEB
 19-12-2022 08:28:52 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : = STRTOFILE(cXMLLocal,cFileName) Error :         11 Ultimo Alias Activo: CSREXP Ultimo registro:      11150  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0
+
 
 
 
@@ -1445,8 +1568,10 @@ a, SPACE(14) as ObleaLP,CAST(0 as int) as idareaneg ,SPACE(50) as clienteref,SPA
 
 
 
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000HP8P00YR.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 16-01-2023 11:50:19 , Error: LOBJPRECIOACTUAL no es un objeto. Linea : lhaycambio = IIF(lobjPrecioactual.costo#Csrproducto.costo,.t.,.f.) Error :       1924 Ultimo Alias Activo: CSRSUBPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCA
+
 
 
 
@@ -1465,8 +1590,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
 00HP8P00YR.TMP Ultimo Control activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 16-01-2023 11:50:28 , Error: No se puede ejecutar el comando dentro de una transacción. Linea : =tablerevert(.t.,this.calias) Error :       1593 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
 
 
 
@@ -1485,8 +1612,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00010ZRD008F.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 16-01-2023 12:06:29 , Error: No se puede ejecutar el comando dentro de una transacción. Linea : =tablerevert(.t.,this.calias) Error :       1593 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
 
 
 
@@ -1505,8 +1634,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
 010ZRD008F.TMP Ultimo Control activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 16-01-2023 12:06:58 , Error: No se puede ejecutar el comando dentro de una transacción. Linea : =tablerevert(.t.,this.calias) Error :       1593 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
 
 
 
@@ -1525,8 +1656,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000QVWP008M.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 16-01-2023 12:18:49 , Error: No se puede ejecutar el comando dentro de una transacción. Linea : =tablerevert(.t.,this.calias) Error :       1593 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
 
 
 
@@ -1545,8 +1678,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00018PHL008J.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 16-01-2023 12:21:23 , Error: No se puede ejecutar el comando dentro de una transacción. Linea : =tablerevert(.t.,this.calias) Error :       1593 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
 
 
 
@@ -1565,8 +1700,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00013EA100BJ.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 16-01-2023 12:25:30 , Error: No se encuentra la propiedad DEBESALVAR. Linea : IF lahijos(i).debesalvar &&Agregado para pasar de largo objetos al momento de salvar Error :       1734 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF:
+
 
 
 
@@ -1584,8 +1721,10 @@ L\TEMP\0000HP8P014Y.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 
 
 
+
 015UKP0058.TMP Ultimo Control activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 16-01-2023 12:42:08 , Error: No se encuentra la variable 'LLOK'. Linea : IF llok Error :         12 Ultimo Alias Activo: CSRCATEGOTIPO Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000TNNT00C0.TMP Ultimo Control activo:  ABMPRODUCT
+
 
 
 
@@ -1599,8 +1738,10 @@ O.CMDSALVAR.CLICK
 
 
 
+
  C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000TNNT00PR.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 16-01-2023 12:42:55 , Error: No se puede ejecutar el comando dentro de una transacción. Linea : =tablerevert(.t.,this.calias) Error :       1593 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          5 NOMBRE DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\00
+
 
 
 
@@ -1610,13 +1751,19 @@ O.CMDSALVAR.CLICK
 
 
 
+
 rol activo:  ON... 
 07-09-2023 13:47:18 , Error: No se encuentra el alias 'CSRSETEO'. Linea : SELECT CsrSeteo Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  LISINVENTARIO.PRECIOPROD1.INIT
 07-09-2023 13:47:41 , Error: SQL: no se encuentra la columna 'NUMERO'. Linea : SELECT 0 as ok,CsrPlanCue.nombre as cnombre,CsrPlanCue.numero as cnumero,CsrPlanCue.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00
 
+
  as wcampo08,space(10) as wcampo09 from CsrPlanCue order by cnombre into cursor _CsrPlanCue READWRITE Error :       1806 Ultimo Alias Activo: CSRPLANCUE Ultimo registro:          1  DBF: C:\USERS\MARCO\APPDATA\LOCAL\TEMP\0000F7D500MO.TMP Ultimo Control a
+
 
 ctivo:  LISMAYOR.INIT
 04-01-2024 16:52:42 , Error: ACTIVECONTROL no es un objeto. Linea : CASE (upper((thisform.activecontrol.baseclass))$'GRID-PAGEFRAME') .and. !thisform.editando Error :       1924 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          6  DBF: C:\USERS
+
 \MARCOS\APPDATA\LOCAL\TEMP\0000HTE1002G.TMP Ultimo Control activo:  ABMINFCONTAB.KEYPRESS
-04-01-2024 16:52:59 , Error: ACTIVECONTROL no es un objeto. Linea : CASE (upper((thisform.activecontrol.baseclass))$'GRID-PAGEFRAME') .and. !thisform.editando Error :       1924 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          6  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HTE1002G.TMP Ultimo Control activo:  ABMINFCONTAB.KEYPRESS
+04-01-2024 16:52:59 , Error: ACTIVECONTROL no es un objeto. Linea : CASE (upper((thisform.activecontrol.baseclass))$'GRID-PAGEFRAME') .and. !thisform.editando Error :       1924 Ultimo Alias Activo: CSRINFCONTAB Ultimo registro:          6  DBF: C:\USERS
+\MARCOS\APPDATA\LOCAL\TEMP\0000HTE1002G.TMP Ultimo Control activo:  ABMINFCONTAB.KEYPRESS
+26-08-2024 17:47:56 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  LISSDOCTACTE.IMPRIMIR_VISTAPREVIA1.INIT
