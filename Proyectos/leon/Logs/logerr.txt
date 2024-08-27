@@ -1,451 +1,3 @@
-13-08-2024 19:31:26 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-13-08-2024 19:31:26 , Nº de Linea :         12
-13-08-2024 19:31:26 , En el Fuente: 		   		.leermovapagar(CsrauxMovctacte.idctacte,CsrAuxMovctacte.idprovincia)
-13-08-2024 19:31:26 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-13-08-2024 19:31:26 , Objeto      : regctacte_v2.leermovapagar
-13-08-2024 19:31:27 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-13-08-2024 19:31:27 , Nº de Linea :         62
-13-08-2024 19:31:27 , En el Fuente: thisform.grid2_generarlinea(0)
-13-08-2024 19:31:28 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-13-08-2024 19:31:28 , Objeto      : regctacte_v2.grid2_generarlinea
-13-08-2024 19:31:28 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
-13-08-2024 19:31:28 , Nº de Linea :         45
-13-08-2024 19:31:29 , En el Fuente:      REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),detalle WITH lcdetalle     ,vence WITH TTOD(CsrMovctacte.vencimien),numcomp WITH Csrmovctacte.numcomp     ,importe WITH CsrMovctacte.importe*CsrM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ovctacte.signo*lnsigno,saldo WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno     ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0     ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WIT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-H CsrMovCtacte.idprovincia     ,compacreedor WITH CsrMovCtacte.compacreedor,clasecomp WITH CsrMovCtacte.clasecomp     ,provcentro WITH CsrMovCtacte.provrecep,compabrevia WITH CsrMovCtacte.compabrevia     ,idmaopera WITH CsrMovCtacte.idmaopera
-13-08-2024 19:36:46 , RESCTACTE.GRID2.COLUMN10.COMMAND1.CLICK, Error: _OREPORTS es un miembro desconocido.;Linea : lnCount = THIS._oReports.COUNT;Error :       1925;Ultimo Alias Activo: CSRVERCOMP;Ultimo registro:         16 ;DBF: C:\USERS\MARCOS\APPDATA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \LOCAL\TEMP\0000P5OP02KE.TMP;Ultimo Control activo: 
@@ -471,6 +23,13 @@ H CsrMovCtacte.idprovincia     ,compacreedor WITH CsrMovCtacte.compacreedor,clas
 13-08-2024 19:36:51 , Nº de Linea :        600
 13-08-2024 19:36:51 , En el Fuente: 	lnCount = THIS._oReports.COUNT
 13-08-2024 19:36:56 , RESCTACTE.GRID2.COLUMN10.COMMAND1.CLICK, Error: No es una expresión numérica.;Linea : FOR N = 1 TO lnCount;Error :         27;Ultimo Alias Activo: CSRVERCOMP;Ultimo registro:         16 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000P
+
+
+
+
+
+
+
 
 
 
@@ -762,6 +321,13 @@ H CsrMovCtacte.idprovincia     ,compacreedor WITH CsrMovCtacte.compacreedor,clas
 
 
 
+
+
+
+
+
+
+
 1)+STR(ESCUERFAC,1)+STR(ESIMP,1)+STR(ESIMPUTA,1)+STR(ESVALOR,1)+STR(ESASTO,1);DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00004XS900RP.TMP;Ultimo Control activo: 
 14-08-2024 17:29:26 , Pila de llamadas
 14-08-2024 17:29:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
@@ -780,6 +346,13 @@ H CsrMovCtacte.idprovincia     ,compacreedor WITH CsrMovCtacte.compacreedor,clas
 14-08-2024 17:29:30 , Nº de Linea :         16
 14-08-2024 17:29:30 , En el Fuente: 			 if !empty(thisform.aliasinforme)
 14-08-2024 17:31:19 , REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : Sele(lcaliasinforme);Error :         13;Ultimo Alias Activo: CSRVERCOMP;Ultimo registro:         15 CLASE+STR(ESHEADER,1)+STR(ESCUERFA
+
+
+
+
+
+
+
 
 
 
@@ -1045,6 +618,13 @@ C,1)+STR(ESIMP,1)+STR(ESIMPUTA,1)+STR(ESVALOR,1)+STR(ESASTO,1);DBF: C:\USERS\MAR
 
 
 
+
+
+
+
+
+
+
 ESCUERFAC,1)+STR(ESIMP,1)+STR(ESIMPUTA,1)+STR(ESVALOR,1)+STR(ESASTO,1);DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00004XS901KC.TMP;Ultimo Control activo: 
 14-08-2024 17:33:10 , Pila de llamadas
 14-08-2024 17:33:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\regctacte_v2.sct
@@ -1063,6 +643,13 @@ ESCUERFAC,1)+STR(ESIMP,1)+STR(ESIMPUTA,1)+STR(ESVALOR,1)+STR(ESASTO,1);DBF: C:\U
 14-08-2024 17:33:14 , Nº de Linea :        106
 14-08-2024 17:33:14 , En el Fuente: 	   thisform.CerrarInforme()
 20-08-2024 18:47:01 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,i
+
+
+
+
+
+
+
 
 
 
@@ -1296,7 +883,21 @@ drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPAC
 
 
 
+
+
+
+
+
+
+
  unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,2)) as margen,sum(round(importefinal,2)) as neto ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devol,SUM(pr
+
+
+
+
+
+
+
 
 
 
@@ -1530,7 +1131,21 @@ omocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(cTOD(
 
 
 
+
+
+
+
+
+
+
 mero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE;Error :         11;Ultimo Alias Activo: ;Ultimo r
+
+
+
+
+
+
+
 
 
 
@@ -1771,7 +1386,21 @@ egistro:          0 ;DBF: ;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as gana
+
+
+
+
+
+
+
 
 
 
@@ -1997,7 +1626,21 @@ ncia,CAST(0 as n(11,2)) as margen,sum(round(importefinal,2)) as neto,SUM(Bonisiv
 
 
 
+
+
+
+
+
+
+
 il,sum(round(totalng-promocion,2)) as importefinalFROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articul
+
+
+
+
+
+
+
 
 
 
@@ -2232,6 +1875,13 @@ o,idingbrutos,nomsucursal,periodoINTO CURSOR CsrImprimir READWRITE
 
 
 
+
+
+
+
+
+
+
 bro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrub
 
 
@@ -2341,7 +1991,21 @@ bro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca FRO
 
 
 
+
+
+
+
+
+
+
 ro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRDATOS;Ultimo registro:        263 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DZ49003G.TMP;Ultimo Control activo:
+
+
+
+
+
+
+
 
 
 
@@ -2566,8 +2230,22 @@ ro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrIm
 
 
 
+
+
+
+
+
+
+
 cursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodoINTO CURSOR CsrImprimir READWRITE 
 20-08-2024 18:52:39 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra el alias 'CSRIMPRIMIR'.;Linea : SELECT CsrImprimir;Error :         13;Ultimo Alias Activo: CSRDATOS;Ultimo registro:        263 ;DBF: C:\USERS\MARCOS\APPDA
+
+
+
+
+
+
+
 
 
 
@@ -2783,6 +2461,13 @@ TA\LOCAL\TEMP\0000DZ49003G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idingbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAu
 
 
@@ -2883,7 +2568,21 @@ CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarti
 
 
 
+
+
+
+
+
+
+
 x.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ult
+
+
+
+
+
+
+
 
 
 
@@ -3091,7 +2790,21 @@ imo Alias Activo: CSRDATOS;Ultimo registro:        263 ;DBF: C:\USERS\MARCOS\APP
 
 
 
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursalFROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nom
+
+
+
+
+
+
+
 
 
 
@@ -3285,6 +2998,13 @@ cliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articulo,idingbrutos,nomsucu
 
 
 
+
+
+
+
+
+
+
 drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idingbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(f
 
 
@@ -3381,7 +3101,21 @@ drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPAC
 
 
 
+
+
+
+
+
+
+
 echa)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,p
+
+
+
+
+
+
+
 
 
 
@@ -3581,7 +3315,21 @@ eriodo INTO CURSOR CsrImprimir READWRITE;Error :         11;Ultimo Alias Activo:
 
 
 
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,LEFT(DTOS(cTOD(fecha)),6) as periodoFROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idvendedor,codven
+
+
+
+
+
+
+
 
 
 
@@ -3767,6 +3515,13 @@ dedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticul
 
 
 
+
+
+
+
+
+
+
 drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idingbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(N
 
 
@@ -3859,7 +3614,21 @@ drubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPAC
 
 
 
+
+
+
+
+
+
+
 VL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbr
+
+
+
+
+
+
+
 
 
 
@@ -4050,7 +3819,21 @@ utos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE;Error :         11;Ul
 
 
 
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodoFROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal
+
+
+
+
+
+
+
 
 
 
@@ -4140,6 +3923,13 @@ utos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE;Error :         11;Ul
 
 ,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodoINTO CURSOR CsrImprimir READWRITE 
 20-08-2024 18:57:42 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'MARGEN'.;Linea : replace ALL margen WITH (round(((ganancia/costosiva)*100),4)) FOR costosiva > 0;Error :         12;Ultimo Alias Activo: CSRIM
+
+
+
+
+
+
+
 
 
 
@@ -4320,6 +4110,13 @@ PRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000
 
 
 
+
+
+
+
+
+
+
 197 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DZ4900K4.TMP;Ultimo Control activo: 
 20-08-2024 18:59:56 , Pila de llamadas
 20-08-2024 18:59:57 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
@@ -4333,6 +4130,13 @@ PRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000
 20-08-2024 18:59:58 , Nº de Linea :         69
 20-08-2024 18:59:58 , En el Fuente: replace ALL fecha WITH NVL(fecha,DTOC(DATE())) IN CsrAux
 20-08-2024 19:03:37 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: la cláusula GROUP BY falta o no es válida.;Linea : SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomr
+
+
+
+
+
+
+
 
 
 
@@ -4488,7 +4292,21 @@ ubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,i
 
 
 
+
+
+
+
+
+
+
 ),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,period
+
+
+
+
+
+
+
 
 
 
@@ -4651,7 +4469,21 @@ o INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRD
 
 
 
+
+
+
+
+
+
+
 ) as codigo,articulo,idingbrutos,NVL(sucursal,0) as sucursal,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal,'' as periodo,LEFT(DTOS(cTOD(fecha)),6) as periodoFROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numeroGROUP BY sucursal,idv
+
+
+
+
+
+
+
 
 
 
@@ -4727,6 +4559,13 @@ o INTO CURSOR CsrImprimir READWRITE;Error :       1807;Ultimo Alias Activo: CSRD
 
 endedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodoINTO CURSOR CsrImprimir READWRITE 
 20-08-2024 19:04:19 , EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'MARGEN'.;Linea : replace ALL margen WITH (round(((ganancia/costosiva)*100),4)) FOR costosiva > 0;Error :         12;Ultimo Alias Activo: CSRIM
+
+
+
+
+
+
+
 
 
 
@@ -4880,6 +4719,13 @@ PRIMIR;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000
 
 
 
+
+
+
+
+
+
+
 REFITERMI;Ultimo registro:         24 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IPL500F2.TMP;Ultimo Control activo: 
 23-08-2024 15:44:10 , Pila de llamadas
 23-08-2024 15:44:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
@@ -4898,6 +4744,13 @@ REFITERMI;Ultimo registro:         24 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0
 23-08-2024 15:44:14 , Nº de Linea :         24
 23-08-2024 15:44:15 , En el Fuente: loObjFactura.AddProperty('lcvalorizado',ALLTRIM(CsrConcepto.nombre)+' / '+lcArrayPrecio[lnlistaprecio])
 23-08-2024 15:47:01 , REGSTOCK.CMDCONSULTA.CLICK, Error: No se encuentra la propiedad TALONARIO.;Linea : ._txtptovta.Value  = VAL(._cboptovta.List(.talonario));Error :       1734;Ultimo Alias Activo: CSRCONCEPTO;Ultimo registro:          1 ;DBF: C:\USERS
+
+
+
+
+
+
+
 
 
 
@@ -5035,6 +4888,13 @@ REFITERMI;Ultimo registro:         24 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0
 
 
 
+
+
+
+
+
+
+
 REFITERMI;Ultimo registro:         24 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IPL50139.TMP;Ultimo Control activo: 
 23-08-2024 15:47:55 , Pila de llamadas
 23-08-2024 15:47:55 , Programa    : j:\xsoftsql\proyectos\leon\forms\regstock.sct
@@ -5053,6 +4913,13 @@ REFITERMI;Ultimo registro:         24 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0
 23-08-2024 15:47:59 , Nº de Linea :         25
 23-08-2024 15:47:59 , En el Fuente: loObjFactura.AddProperty('lcvalorizado',ALLTRIM(CsrConcepto.nombre)+' / '+lcArrayPrecio[lnlistaprecio])
 23-08-2024 15:48:02 , REGSTOCK.CMDIMPRIMIR.CLICK, Error: No se encuentra la propiedad LCVALORIZADO.;Linea : lccampo004 = loObjFactura.lcvalorizado;Error :       1734;Ultimo Alias Activo: CSRAUXCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APP
+
+
+
+
+
+
+
 
 
 
@@ -5170,6 +5037,13 @@ DATA\LOCAL\TEMP\0000IPL5012C.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 T000T.TMP;Ultimo Control activo: 
 27-08-2024 13:15:51 , Pila de llamadas
 27-08-2024 13:15:52 , Programa    : j:\xsoftsql\desarrollo\forms\maps_traking.sct
@@ -5178,6 +5052,13 @@ T000T.TMP;Ultimo Control activo:
 27-08-2024 13:15:52 , Nº de Linea :         42
 27-08-2024 13:15:52 , En el Fuente: This.oMaps.Zoom = This.mapszoom
 27-08-2024 13:18:04 , MAPS_TRAKING.INIT, Error: No se encuentra la propiedad ZOOM.;Linea : This.oMaps.Zoom = This.mapszoom;Error :       1734;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
 
 
 
@@ -5266,6 +5147,13 @@ T000T.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 0XSZT001Q.TMP;Ultimo Control activo: 
 27-08-2024 13:21:02 , Pila de llamadas
 27-08-2024 13:21:03 , Programa    : j:\xsoftsql\desarrollo\forms\maps_traking.sct
@@ -5274,6 +5162,13 @@ T000T.TMP;Ultimo Control activo:
 27-08-2024 13:21:04 , Nº de Linea :         42
 27-08-2024 13:21:04 , En el Fuente: This.oMaps.Zoom = This.mapszoom
 27-08-2024 13:32:34 , MAPS_TRAKING.INIT, Error: No se encuentra la propiedad ZOOM.;Linea : This.oMaps.Zoom = This.mapszoom;Error :       1734;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\000
+
+
+
+
+
+
+
 
 
 
@@ -5352,6 +5247,13 @@ T000T.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 MARCOS\APPDATA\LOCAL\TEMP\0000DEKP000T.TMP;Ultimo Control activo: 
 27-08-2024 13:34:12 , Pila de llamadas
 27-08-2024 13:34:13 , Programa    : j:\xsoftsql\desarrollo\forms\maps_traking.sct
@@ -5365,6 +5267,13 @@ MARCOS\APPDATA\LOCAL\TEMP\0000DEKP000T.TMP;Ultimo Control activo:
 27-08-2024 13:34:15 , Nº de Linea :         32
 27-08-2024 13:34:15 , En el Fuente: 		cIco = ALLTRIM(oIco)+'Icon'
 27-08-2024 13:37:06 , MAPS_TRAKING.INIT, Error: La ruta o el nombre de archivo no es válido.;Linea : = STRTOFILE(lccmd,lcRuta+"\"+lcArchivo+"."+lcExten);Error :        202;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo registro:          1 ;DBF: C:\USERS
+
+
+
+
+
+
+
 
 
 
@@ -5467,6 +5376,13 @@ MARCOS\APPDATA\LOCAL\TEMP\0000DEKP000T.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 TA\LOCAL\TEMP\0000DEKP00GX.TMP;Ultimo Control activo: 
 27-08-2024 13:59:56 , Pila de llamadas
 27-08-2024 13:59:56 , Programa    : j:\xsoftsql\desarrollo\forms\maps_traking.sct
@@ -5480,6 +5396,13 @@ TA\LOCAL\TEMP\0000DEKP00GX.TMP;Ultimo Control activo:
 27-08-2024 13:59:58 , Nº de Linea :         13
 27-08-2024 13:59:58 , En el Fuente: 	IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia
 27-08-2024 14:03:04 , MAPS_TRAKING.CMD_RUTA.CLICK, Error: No se encuentra el alias 'CSRAUXCABEZA'.;Linea : IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia;Error :         13;Ultimo Alias Activo: CSRRUTAVENDEDOR;Ultimo registro:          6 ;DBF: C:\USERS\MARCO
+
+
+
+
+
+
+
 
 
 
@@ -5512,6 +5435,13 @@ S\APPDATA\LOCAL\TEMP\0000DEKP00JH.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
 merocliente c(10),cliente c(50),concepto c(17),direccion c(50), titulo c(50), dia i);Error :       1712;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DEKP00NC.TMP;Ultimo Control activo: 
 27-08-2024 14:03:54 , Pila de llamadas
 27-08-2024 14:03:55 , Programa    : j:\xsoftsql\desarrollo\forms\maps_traking.sct
@@ -5525,8 +5455,22 @@ merocliente c(10),cliente c(50),concepto c(17),direccion c(50), titulo c(50), di
 
 
 
+
+
+
+
+
+
+
 dia i)
 27-08-2024 14:04:44 , MAPS_TRAKING.CMD_RUTA.CLICK, Error: No se encuentra el alias 'CSRAUXCABEZA'.;Linea : IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia;Error :         13;Ultimo Alias Activo: CSRRUTAVENDEDOR;Ultimo registro:          6 ;DBF: C:\USERS\MARCO
+
+
+
+
+
+
+
 
 
 
@@ -5546,6 +5490,13 @@ S\APPDATA\LOCAL\TEMP\0000DEKP00O6.TMP;Ultimo Control activo:
 27-08-2024 14:04:47 , En el Fuente: 	IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia
 27-08-2024 14:14:04 , MAPS_TRAKING.CMD_RUTA.CLICK, Error: El archivo 'sectohour.prg' no existe.;Linea : replace demora WITH sectohour(nSeg);Error :          1;Ultimo Alias Activo: CSRAUXRUTA;Ultimo registro:          2 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL
 
+
+
+
+
+
+
+
 \TEMP\0000DEKP00SR.TMP;Ultimo Control activo: 
 27-08-2024 14:14:04 , Pila de llamadas
 27-08-2024 14:14:05 , Programa    : j:\xsoftsql\desarrollo\forms\maps_traking.sct
@@ -5553,3 +5504,34 @@ S\APPDATA\LOCAL\TEMP\0000DEKP00O6.TMP;Ultimo Control activo:
 27-08-2024 14:14:05 , Base Objeto : j:\xsoftsql\desarrollo\forms\maps_traking.sct
 27-08-2024 14:14:05 , Nº de Linea :         54
 27-08-2024 14:14:06 , En el Fuente: 			replace demora WITH sectohour(nSeg)
+27-08-2024 15:55:31 , ON..., Error: Ya existe un objeto miembro con este nombre.;Linea : ...;Error :       1771;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+27-08-2024 15:55:31 , Pila de llamadas
+27-08-2024 16:38:03 , REGNOTAPEDANDROID.CMDSALVAR.CLICK, Error: No se encuentra la propiedad LAT.;Linea : INSERT INTO CsrAuxPediPad (idpedido,idctacte,idmaopera,fecha,idope,origen,pedidoid_pm,lat,lng) VALUES (STR(OscCabeza.id),CsrAuxCtacte.id,0,dfecha,Cs
+
+
+
+
+
+rAuxCabefac.idope,"ANDRO" ,CsrAuxCabefac.pedidoid_pm,OscCabeza.lat,OscCabeza.lng);Error :       1734;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:          2 STR(IDARTICULO,10)+IDOPE;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000QHAH03A0.TMP;Ultimo C
+
+
+
+
+
+ontrol activo: 
+27-08-2024 16:38:03 , Pila de llamadas
+27-08-2024 16:38:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedandroid.sct
+27-08-2024 16:38:04 , Objeto      : regnotapedandroid.cmdsalvar.click
+27-08-2024 16:38:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedandroid.sct
+27-08-2024 16:38:05 , Nº de Linea :          6
+27-08-2024 16:38:05 , En el Fuente: 		thisform.key_43()  
+27-08-2024 16:38:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedandroid.sct
+27-08-2024 16:38:06 , Objeto      : regnotapedandroid.key_43
+27-08-2024 16:38:07 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedandroid.sct
+27-08-2024 16:38:07 , Nº de Linea :          6
+27-08-2024 16:38:08 , En el Fuente: 	thisform.cargarpedido()
+27-08-2024 16:38:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedandroid.sct
+27-08-2024 16:38:08 , Objeto      : regnotapedandroid.cargarpedido
+27-08-2024 16:38:08 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedandroid.sct
+27-08-2024 16:38:08 , Nº de Linea :        248
+27-08-2024 16:38:08 , En el Fuente: 		INSERT INTO CsrAuxPediPad (idpedido,idctacte,idmaopera,fecha,idope,origen,pedidoid_pm,lat,lng) VALUES 						(STR(OscCabeza.id),CsrAuxCtacte.id,0,dfecha,CsrAuxCabefac.idope,"ANDRO"						,CsrAuxCabefac.pedidoid_pm,OscCabeza.lat,OscCabeza.lng)

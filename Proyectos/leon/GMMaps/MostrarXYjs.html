@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	
+	
+		<link rel="stylesheet" href="dist/css/leaflet.extra-markers.min.css">
+	<script src="dist/js/leaflet.extra-markers.min.js"></script>
+	
+	<style>
+		 #map { 
+			width: 100%;
+			height: 850px;
+			box-shadow: 5px 5px 5px #888;
+		 }
+	</style>
+</head>
+	<body>
+		<div id = 'map'></div>
+		<div id="Coordenada"></div>
+		
+		<script>
+			var map = L.map('map').
+			 setView([-40.1053913,-64.4580349],
+			 15);
+			Coordenada.innerHTML = -40.1053913,-64.4580349;
+         	
+           	var marker_1 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         1',
+	svg: false
+});
+		
+
+var marker_2 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         2',
+	svg: false
+});
+		
+
+var marker_3 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         3',
+	svg: false
+});
+		
+
+var marker_4 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         4',
+	svg: false
+});
+		
+
+var marker_5 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         5',
+	svg: false
+});
+		
+
+var marker_6 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         6',
+	svg: false
+});
+					
+           	
+           		var latlngs = [
+	    												
+		[-40.1053913,-64.4580349],
+		[-40.1053914,-64.4580351],
+		[-40.1095174,-64.4521604],
+		[-40.1112008,-64.4543742],
+		[-40.1105383,-64.4535201],
+		[-40.1037796,-64.4644339]
+	];
+           	
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+			maxZoom: 18
+			}).addTo(map);
+			
+			L.control.scale().addTo(map);
+			
+			
+				var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+			
+	map.fitBounds(polyline.getBounds());
+			
+			
+									
+	
+	L.marker([-40.1053913,-64.4580349] ,{icon: marker_1} ,{draggable: 'true'},{alt:'20678   '} ).bindPopup('20678,ONTIVEROS PAULA SILVINA,,27-08-2024 04:27:42 AM,                 , Demora:').addTo(map);
+	
+	L.marker([-40.1053914,-64.4580351] ,{icon: marker_2} ,{draggable: 'true'},{alt:'20686   '} ).bindPopup('20686,TAPIA LUCAS CF,,27-08-2024 04:29:40 AM,                 , Demora:0000:01:58').addTo(map);
+	
+	L.marker([-40.1095174,-64.4521604] ,{icon: marker_3} ,{draggable: 'true'},{alt:'20562   '} ).bindPopup('20562,URBAN SILVANA SOLEDAD,,27-08-2024 07:00:40 AM,                 , Demora:0002:31:00').addTo(map);
+	
+	L.marker([-40.1112008,-64.4543742] ,{icon: marker_4} ,{draggable: 'true'},{alt:'21094   '} ).bindPopup('21094,GUENUMIL GABRIELA,,27-08-2024 08:54:18 AM,                 , Demora:0001:53:37').addTo(map);
+	
+	L.marker([-40.1105383,-64.4535201] ,{icon: marker_5} ,{draggable: 'true'},{alt:'        '} ).bindPopup(',,,27-08-2024 10:15:24 AM,                 , Demora:0001:21:06').addTo(map);
+	
+	L.marker([-40.1037796,-64.4644339] ,{icon: marker_6} ,{draggable: 'true'},{alt:'        '} ).bindPopup(',,,27-08-2024 10:51:57 AM,                 , Demora:0000:36:32').addTo(map);
+			
+			var popup = L.popup();
+
+			function onMapClick(e) {
+				popup
+					.setLatLng(e.latlng)
+					.setContent("You clicked the map at " + e.latlng.toString())
+					.openOn(map);
+					Coordenada.innerHTML = e.latlng;
+			}
+
+			map.on('click', onMapClick);
+			
+ 		
+		
+
+			
+		</script>
+	</body>
+	
+</html>
