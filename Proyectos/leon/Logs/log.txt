@@ -1,79 +1,3 @@
-20-03-2024 17:57:33 , Informe por excel
-20-03-2024 17:57:34 , Version 16.0
-25-03-2024 15:57:48 , Verificando OCX
-26-03-2024 12:49:14 , Error nº:          1
-Error El archivo 'csrmovbcocar.dbf' no existe.
-Linea nº select entregado, fecha, detalle, id, idmaopera, idtipomov, importe, numero, signo , space(30) as comprobante, 0 as estadotilde from csrmovbcocar where id<-1 INTO CURSOR CsrCuerpo READWRITE
- Alias CSRAUXMOVAFECTADO registro          1
-Control activo  REGCONCILIA.LOAD
-26-03-2024 12:49:21 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT(lcaliasseek)#0
- Alias CSRAUXMOVAFECTADO registro          1
-Control activo  REGCONCILIA.CONTAINERENCABEZA.KITBUSCAOALTAENCTACTE.TXTEXISTE1.INIT
-26-03-2024 12:49:35 , Verificando OCX
-03-04-2024 08:28:58 , Verificando OCX
-03-04-2024 08:30:16 , Informe por excel
-03-04-2024 08:30:22 , Version 16.0
-03-04-2024 09:23:27 , Informe por excel
-03-04-2024 09:23:29 , Version 16.0
-03-04-2024 09:23:30 , Error nº:       1925
-Error COLUMN001 es un miembro desconocido.
-Linea nº lcCampo = &lcName
- Alias CSRIMPRIMIR registro        402
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-03-04-2024 09:25:28 , Error nº:       1806
-Error SQL: no se encuentra la columna 'NOMCLIENTE'.
-Linea nº SELECT 1 as grupohoja,codigo,articulo,ctacte,nomcliente ,Codrubro,nomrubro,codvendedor,nomvendedor,sucursal,nomsucursal ,unidades,vtakilos,costosiva,importefinal,ganancia,margen FROM CsrImprimir INTO CURSOR CsrImprimir READWRITE
- Alias CSRGRUPOS registro          2
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-03-04-2024 09:28:02 , Informe por excel
-03-04-2024 09:28:04 , Version 16.0
-03-04-2024 09:40:04 , Informe por excel
-03-04-2024 09:40:06 , Version 16.0
-03-04-2024 09:40:06 , Error nº:       1806
-Error SQL: no se encuentra la columna 'PROMEDIO'.
-Linea nº SELECT &lcSelect FROM &cCursor WHERE grupohoja = lnGrupo INTO CURSOR CsrAuxHoja READWRITE
- Alias CSRCURSORHOJAS registro          1
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
-03-04-2024 09:40:51 , Informe por excel
-03-04-2024 09:40:53 , Version 16.0
-03-04-2024 09:52:29 , Informe por excel
-03-04-2024 09:52:31 , Version 16.0
-03-04-2024 09:57:16 , Informe por excel
-03-04-2024 09:57:17 , Version 16.0
-03-04-2024 11:24:25 , Informe por excel
-03-04-2024 11:24:27 , Version 16.0
-03-04-2024 11:26:34 , Error nº:          1
-Error El archivo 'saveql.prg' no existe.
-Linea nº SaveQL(lcCmd,this.Name)
- Alias _CSRPRODUCTO registro          2
-Control activo  LISHISTORICOPRECIO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-05-04-2024 15:12:47 , Verificando OCX
-05-04-2024 15:13:46 , Informe por excel
-05-04-2024 15:14:15 , Version 16.0
-05-04-2024 15:17:21 , Verificando OCX
-05-04-2024 19:02:47 , Verificando OCX
-08-04-2024 08:11:54 , Verificando OCX
-08-04-2024 08:41:26 , Error nº:       1705
-Error Denegado j:\xsoftsql\proyectos\leon\totales.idx al acceso al archivo.
-Linea nº inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,10)to totales
- Alias CSRIMPRIMIR registro          1
-Control activo  INF_DEVOLUCIONES.INIT
-08-04-2024 08:41:45 , Verificando OCX
-08-04-2024 08:45:52 , Error nº:       1925
-Error CHKBOX_RUBRO es un miembro desconocido.
-Linea nº .estadistica.detallafamilia	= .chkbox_rubro.value &&IIF(.chkbox_devolucion.Value=1,0,1) &&.chkbox_articulo.value
- Alias CSRIMPRIMIR registro          1
-Control activo  INF_DEVOLUCIONES.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-08-04-2024 08:55:15 , Error nº:       1705
-Error Denegado j:\xsoftsql\proyectos\leon\totales.idx al acceso al archivo.
-Linea nº inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,10)to totales
- Alias CSRIMPRIMIR registro          1
-Control activo  INF_DEVOLUCIONES.INIT
-08-04-2024 08:56:06 , Error nº:       1705
-Error Denegado j:\xsoftsql\proyectos\leon\totales.idx al acceso al archivo.
-Linea nº inde on strid(idzona,10)+STRID(idvendedor,10)+STRID(idctacte,10)+STRID(idseccion,10)+STRID(idarticulo,10)+STRID(idvariedad,10)to totales
  Alias CSRIMPRIMIR registro          1
 Control activo  INF_DEVOLUCIONES.INIT
 08-04-2024 09:03:44 , Error nº:       1705
@@ -141,6 +65,16 @@ Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 09-04-2024 10:58:55 , Error nº:         11
 Error El valor, tipo o número de argumentos no es válido para la función.
 Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -372,7 +306,27 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -608,6 +562,16 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
 
 
@@ -723,7 +687,27 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as importefinal ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devool,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(fecha),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.s
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1119,7 +1103,27 @@ Linea nº SELECT fecha,sucursal,idmaopera,numcomp,clasecomp,preunitasiva,Idarticu
 
 
 
+
+
+
+
+
+
+
+
+
+
 dad,codvariedad,nomvariedad ,SUM(Boniciva) as Boniciva,SUM(Bonisiva) as Bonisiva,SUM(Bonificacion) as Bonificacion ,SUM(DevolCiva) as DevolCiva,SUM(DevolSiva) as DevolSiva,AVG(Devol) as Devol ,SUM(unidades) as Unidades,SUM(CanBultos) as CanBultos,SUM(int
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1295,7 +1299,27 @@ ernos) as Internos ,SUM(Vtakilos) as VtaKilos,SUM(VtaLitros) as VtaLitros,SUM(ne
 
 
 
+
+
+
+
+
+
+
+
+
+
 oCiva ,SUM(fac_a) as fac_a,SUM(nc_a) as nc_a,SUM(fac_b) as fac_b,SUM(nc_b) as nc_b ,SUM(Netogravado) as NetoGravado FROM &lcAlias GROUP BY sucursal,fecha,idmaopera,numcomp,clasecomp,preunitasiva,Idarticulo,codigo,articulo,pesable,peso ,idFletero,codflete
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1766,6 +1790,16 @@ Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal
 
 
 
+
+
+
+
+
+
+
+
+
+
 O CURSOR CsrImprimir readWrite
  Alias  registro          0
 Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1779,6 +1813,16 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1905,6 +1949,16 @@ Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(ve
 
 
 
+
+
+
+
+
+
+
+
+
+
 r.ctacte INTO CURSOR CsrImprimir READWRITE
  Alias CSRGRUPOS registro          2
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -1930,6 +1984,16 @@ Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 19-07-2024 09:29:27 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2045,7 +2109,27 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
+
+
+
+
+
+
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2089,7 +2173,27 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
+
+
+
+
+
+
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2150,7 +2254,27 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2174,7 +2298,27 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
+
+
+
+
+
 alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2207,6 +2351,16 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -2227,7 +2381,27 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2251,7 +2425,27 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2273,7 +2467,27 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2301,7 +2515,27 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2334,4 +2568,82 @@ Error La referencia al subíndice no es válida.
 Linea nº loObjFactura.AddProperty('lcvalorizado',ALLTRIM(CsrConcepto.nombre)+' / '+lcArrayPrecio[lnlistaprecio])
  Alias CSRPREFITERMI registro         24
 Control activo  REGSTOCK.CMDIMPRIMIR.CLICK
-23-08-2024 15:48:02 , Error nº:       1734Error No se encuentra la propiedad LCVALORIZADO.Linea nº lccampo004 = loObjFactura.lcvalorizado Alias CSRAUXCABEFAC registro          1Control activo  REGSTOCK.CMDIMPRIMIR.CLICK
+23-08-2024 15:48:02 , Error nº:       1734
+Error No se encuentra la propiedad LCVALORIZADO.
+Linea nº lccampo004 = loObjFactura.lcvalorizado
+ Alias CSRAUXCABEFAC registro          1
+Control activo  REGSTOCK.CMDIMPRIMIR.CLICK
+27-08-2024 13:13:56 , Verificando OCX
+27-08-2024 13:15:50 , Error nº:       1734
+Error No se encuentra la propiedad ZOOM.
+Linea nº This.oMaps.Zoom = This.mapszoom
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  ABM_MAPS.INIT
+27-08-2024 13:18:04 , Error nº:       1734
+Error No se encuentra la propiedad ZOOM.
+Linea nº This.oMaps.Zoom = This.mapszoom
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MAPS_TRAKING.INIT
+27-08-2024 13:21:01 , Error nº:       1734
+Error No se encuentra la propiedad ZOOM.
+Linea nº This.oMaps.Zoom = This.mapszoom
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MAPS_TRAKING.INIT
+27-08-2024 13:32:34 , Error nº:       1734
+Error No se encuentra la propiedad ZOOM.
+Linea nº This.oMaps.Zoom = This.mapszoom
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MAPS_TRAKING.INIT
+27-08-2024 13:33:39 , Verificando OCX
+27-08-2024 13:34:11 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº cIco = ALLTRIM(oIco)+'Icon'
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MAPS_TRAKING.INIT
+27-08-2024 13:37:05 , Error nº:        202
+Error La ruta o el nombre de archivo no es válido.
+Linea nº = STRTOFILE(lccmd,lcRuta+"\"+lcArchivo+"."+lcExten)
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MAPS_TRAKING.INIT
+27-08-2024 13:47:38 , Error nº:       1924
+Error OCA no es un objeto.
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias  registro          0
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 13:49:24 , Error nº:       1924
+Error GOAPP no es un objeto.
+Linea nº thisform.idmenu = goapp.idmenuactivo
+ Alias  registro          0
+Control activo  MAPS_TRAKING.BOTON_FAVORITO1.INIT
+27-08-2024 13:49:38 , Verificando OCX
+27-08-2024 13:52:34 , Error nº:       1924
+Error OCA no es un objeto.
+Linea nº oca.SelectCmd=lccmdSelect
+ Alias  registro          0
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 13:59:55 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXCABEZA'.
+Linea nº IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia
+ Alias CSRRUTAS registro          1
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 14:03:03 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXCABEZA'.
+Linea nº IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia
+ Alias CSRRUTAVENDEDOR registro          6
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 14:03:53 , Error nº:       1712
+Error El nombre de campo está duplicado o no es válido.
+Linea nº CREATE CURSOR CsrRutaVendedor(id i,vendedor c(10),latitud c(50),longitud c(50),fecserver t,horario c(8),dia i,imagen c(6),nombre c(50) ,numerocliente c(10),cliente c(50),concepto c(17),direccion c(50), titulo c(50), dia i)
+ Alias CSRCONEXIONCENTRAL registro          1
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 14:04:43 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXCABEZA'.
+Linea nº IF CsrAuxCabeza.dia <> CsrRutaVendedor.dia
+ Alias CSRRUTAVENDEDOR registro          6
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 14:14:04 , Error nº:          1
+Error El archivo 'sectohour.prg' no existe.
+Linea nº replace demora WITH sectohour(nSeg)
+ Alias CSRAUXRUTA registro          2
+Control activo  MAPS_TRAKING.CMD_RUTA.CLICK
+27-08-2024 14:15:07 , Verificando OCX

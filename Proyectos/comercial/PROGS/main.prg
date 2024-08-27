@@ -256,7 +256,7 @@ IF TYPE('goApp')='O'
    * =MESSAGEBOX(amodelofiscal[1])	  
    
 	= Fwin32()    && funciones api win32
-		STOP()
+		
 	 =ObtenerServidor()
 	  
 	IF LEN(TRIM(LcConectionString))=0

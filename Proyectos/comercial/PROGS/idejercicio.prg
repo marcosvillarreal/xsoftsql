@@ -35,6 +35,11 @@ CASE goapp.codempresa = 7
 	goapp.idejercicio = 1100000027
 	goapp.terminal = 15
 	goapp.idusuario = 1
+CASE goapp.codempresa = 8
+	lcEmpresa = 'FerreLa25'&&
+	goapp.idejercicio = 1100000027
+	goapp.terminal = 15
+	goapp.idusuario = 1
 ENDCASE 
 *goapp.codempresa = 1
 goapp.sucursal =1
