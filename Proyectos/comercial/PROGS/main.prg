@@ -1,5 +1,7 @@
 LPARAMETERS oOrigen
 
+CLEAR ALL
+
 oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
