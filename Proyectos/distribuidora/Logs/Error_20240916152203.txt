@@ -1,0 +1,53 @@
+16-09-2024 15:22:03 , ABMPRODUCTO.CONTENEDOR1.GRIDABM1.AFTERROWCOLCHANGE, Error: No se encuentra el alias.;Linea : IF RECCOUNT(lcaliasseek)#0;Error :         13;Ultimo Alias Activo: CSRPRODUCTO;Ultimo registro:         89 NOMBRE;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000M3NT0JWC.TMP;Ultimo Control activo: NOMBRE
+16-09-2024 15:22:03 , Pila de llamadas
+16-09-2024 15:22:03 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto.sct
+16-09-2024 15:22:03 , Objeto      : abmproducto.contenedor1.gridabm1.afterrowcolchange
+16-09-2024 15:22:04 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto.sct
+16-09-2024 15:22:04 , Nº de Linea :          2
+16-09-2024 15:22:04 , En el Fuente: DODEFAULT(this.ActiveColumn)
+16-09-2024 15:22:04 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+16-09-2024 15:22:04 , Objeto      : baseabm.contenedor1.gridabm1.afterrowcolchange
+16-09-2024 15:22:04 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+16-09-2024 15:22:04 , Nº de Linea :         21
+16-09-2024 15:22:04 , En el Fuente: 	     .ProcesarAfterRow()
+16-09-2024 15:22:05 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto.sct
+16-09-2024 15:22:05 , Objeto      : abmproducto.procesarafterrow
+16-09-2024 15:22:05 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\articulos\abmproducto.sct
+16-09-2024 15:22:05 , Nº de Linea :          6
+16-09-2024 15:22:05 , En el Fuente: thisform.obtenerdatos("CsrProdCtacon",lcCmd)
+16-09-2024 15:22:05 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+16-09-2024 15:22:05 , Objeto      : abmproducto.obtenerdatos
+16-09-2024 15:22:05 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+16-09-2024 15:22:05 , Nº de Linea :         11
+16-09-2024 15:22:05 , En el Fuente:         =Oavisar.Usuario("Error al obtener datos:"+laError[2]+CHR(13)+lccmdSelect,0)
+16-09-2024 15:22:06 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:06 , Objeto      : avisar.usuario
+16-09-2024 15:22:06 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:06 , Nº de Linea :         11
+16-09-2024 15:22:06 , En el Fuente: lok = MESSAGEBOX(lcmensaje,lnopcion,'INFORMACION AL USUARIO',ntimeout)
+16-09-2024 15:22:06 , Programa    : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+16-09-2024 15:22:06 , Objeto      : abmproducto.timer1.timer
+16-09-2024 15:22:06 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\clases\oformslocal.vct
+16-09-2024 15:22:07 , Nº de Linea :          3
+16-09-2024 15:22:07 , En el Fuente:     thisform.Refresh()
+16-09-2024 15:22:07 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:07 , Objeto      : abmproducto.contenedor1.pframe1.page1.c_catego.refresh
+16-09-2024 15:22:07 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:07 , Nº de Linea :          1
+16-09-2024 15:22:07 , En el Fuente: DODEFAULT()
+16-09-2024 15:22:07 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:07 , Objeto      : abmproducto.contenedor1.pframe1.page1.c_catego.kitbuscaoaltaenabm4.txtnombre.refresh
+16-09-2024 15:22:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:08 , Nº de Linea :          6
+16-09-2024 15:22:08 , En el Fuente: This.Parent.refrescardato("")
+16-09-2024 15:22:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:08 , Objeto      : abmproducto.contenedor1.pframe1.page1.c_catego.kitbuscaoaltaenabm4.refrescardato
+16-09-2024 15:22:08 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:08 , Nº de Linea :         19
+16-09-2024 15:22:08 , En el Fuente: This.traerdatos(.t.,lccmd) 
+16-09-2024 15:22:08 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:09 , Objeto      : abmproducto.contenedor1.pframe1.page1.c_catego.kitbuscaoaltaenabm4.traerdatos
+16-09-2024 15:22:09 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+16-09-2024 15:22:09 , Nº de Linea :         35
+16-09-2024 15:22:09 , En el Fuente:    IF RECCOUNT(lcaliasseek)#0   
+16-09-2024 15:22:09 , Fin
