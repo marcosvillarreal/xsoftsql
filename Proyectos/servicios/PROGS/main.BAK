@@ -24,6 +24,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Gestion de Servicios"
+lcVersion = "01.00.06"
 
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
@@ -220,7 +221,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.05"
+	goapp.version = lcVersion
 	goapp.gmsoft = "SERVICIOS"
 	
 	PUBLIC  gcicono
