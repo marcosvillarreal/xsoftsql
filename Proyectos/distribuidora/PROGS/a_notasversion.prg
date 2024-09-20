@@ -1,6 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.30
+	Recibos PM
+	Varios
 2.3.29
 	Varios arreglos de kleja
 2.3.28
