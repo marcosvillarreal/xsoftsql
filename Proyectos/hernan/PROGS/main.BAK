@@ -55,7 +55,8 @@ If lldesarrollo
    _rutafutil  =lcdd+'forms\util'
    _rutafcont  =lcdd+'forms\contabilidad'
    _rutafctacte  =lcdd+'forms\CTACTE'
-    _rutafcpra  =lcdd+'forms\compras'
+   _rutafcpra  =lcdd+'forms\compras'
+   _rutafcaja  =lcdd+'forms\caja' 
    _rutaformsDesarrollo =L+'\xsoftsql\desarrollo\forms'
    _rutaffc  =L+'\xsoftsql\desarrollo\clases\ffc'
    _rutalib  =L+'\xsoftsql\desarrollo\lib'   
@@ -65,7 +66,8 @@ If lldesarrollo
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutafutil,&_rutafcont,&_rutafctacte,&_rutafcpra  ,&_rutafvta  
+               ,&_rutafutil,&_rutafcont,&_rutafctacte,&_rutafcpra  ,&_rutafvta  ;
+               ,&_rutafcaja
    
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
