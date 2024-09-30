@@ -1,0 +1,17 @@
+goapp.idsucursal = 1100000001
+GOAPP.IDUSUARIO =1
+cEmpresa = ''
+DO CASE 
+CASE goapp.codempresa = 1 &&Meridiem
+	cEmpresa = 'Meridiem'
+	GOAPP.IDEJERCICIO = 1100000036
+	GOAPP.IDEJERCICIOACTUAL = 1100000036	
+	goapp.terminal = 1
+	goapp.ejercicio = 14
+ENDCASE 	
+
+
+OAVISAR.USUARIO('Empresa:'+cEmpresa+CHR(13)+'GOAPP.IDEJERCICIO = '+STR(GOAPP.IDEJERCICIO)+CHR(13);
++ 'GOAPP.IDUSUARIO = '+STR(GOAPP.IDUSUARIO)+CHR(13)+;
+'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13)+;
+'GOAPP.TERMINAL = ' +STR(goapp.terminal))

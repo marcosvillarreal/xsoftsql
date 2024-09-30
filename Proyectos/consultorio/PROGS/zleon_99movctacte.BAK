@@ -1,0 +1,451 @@
+PARAMETERS ldfecha
+lcfecha = IIF(PCOUNT()< 1,"01-08-2010",DTOC(ldfecha))
+
+DO setup
+SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
+SET PROCEDURE  TO  syserror.prg ADDITIVE  
+
+CLOSE DATABASES
+
+IF VARTYPE("goapp")='X' OR VARTYPE("goapp")='N'
+	messagebox('Debe establecer Conexión')
+	RETURN .f.
+ENDIF 
+
+OPEN DATABASE ? EXCLUSIVE
+IF !DBUSED('LEON')
+	oavisar.usuario("No se encontro la base de datos LEON")
+	RETURN .f.
+ENDIF 
+
+SET DATABASE TO LEON
+
+SET SAFETY OFF
+
+Oavisar.proceso('S','Vaciando archivos') 
+*Oavisar.proceso('N') 
+SET CPCOMPILE TO 1252
+codepage = 1252
+SET CPDIALOG ON
+
+TEXT TO lccmd TEXTMERGE NOSHOW 
+SELECT CsrParaConta.* FROM ParaConta as CsrParaConta
+where idejercicio = <<goapp.idejercicio>>
+ENDTEXT 
+IF !CrearCursorAdapter('CsrParaConta',lccmd)
+	MESSAGEBOX('Nose puede importar, pq no cargado el CsrParaConta')
+	RETURN .f.
+ENDIF 
+SELECT CsrParaConta
+
+IF USED("CsrCtacte")
+	USE IN CsrCtacte
+ENDIF 
+USE leon!ctacte IN 0 ALIAS Csrctacte EXCLUSIVE
+
+IF USED("CsrProvincia")
+	USE IN CsrProvincia
+ENDIF 
+USE leon!provincia IN 0 ALIAS CsrProvincia EXCLUSIVE
+
+IF USED("CsrMaopera")
+	USE IN CsrMaopera
+ENDIF 
+USE leon!maopera IN 0 ALIAS CsrMaopera EXCLUSIVE
+
+IF USED("CsrMovCtacte")
+	USE IN CsrMovCtacte
+ENDIF 
+USE leon!movctacte IN 0 ALIAS CsrMovctacte EXCLUSIVE
+
+IF USED("CsrCabefac")
+	USE IN CsrCabefac
+ENDIF 
+USE leon!Cabefac IN 0 ALIAS CsrCabefac EXCLUSIVE
+
+IF USED("CsrTablaImp")
+	USE IN CsrTablaimp
+ENDIF 
+USE leon!Tablaimp IN 0 ALIAS CsrTablaimp EXCLUSIVE
+
+IF USED("CsrMovCaja")
+	USE IN CsrMovCaja
+ENDIF 
+USE leon!movcaja IN 0 ALIAS CsrMovCaja EXCLUSIVE
+
+IF USED("CsrMovBcocar")
+	USE IN CsrMovBcocar
+ENDIF 
+USE leon!movbcocar IN 0 ALIAS CsrMovBcocar EXCLUSIVE
+
+IF USED("CsrValor")
+	USE IN CsrValor
+ENDIF 
+USE leon!valor IN 0 ALIAS CsrValor EXCLUSIVE
+
+IF USED("CsrClaseValor")
+	USE IN CsrClaseValor
+ENDIF 
+USE leon!clasevalor IN 0 ALIAS CsrClaseValor EXCLUSIVE
+
+SET SAFETY ON
+USE  "\soft\leon\gestion\clientes" in 0 alias CsrDeudor EXCLUSIVE
+
+USE  "\soft\leon\gestion\movimien" in 0 alias CsrMovipub EXCLUSIVE
+
+USE  "\soft\leon\gestion\comproba" in 0 alias CsrComproba EXCLUSIVE
+
+USE  "\soft\leon\gestion\tablaope" in 0 alias CsrTablaOpe EXCLUSIVE
+
+USE  "\soft\leon\gestion\movbacar" in 0 alias CsrMovBco EXCLUSIVE
+
+
+*fecha de importacion
+ldfecha=CTOD(lcfecha)
+lcfiscal=ALLTRIM(STR(YEAR(ldfecha)))+ALLTRIM(STR(MONTH(ldfecha)))+ALLTRIM(STR(DAY(ldfecha)))
+
+lnidmaopera=0
+SELECT CsrMaopera
+IF RECCOUNT('CsrMaopera')>0
+	GO bottom
+	lnidmaopera=VAL(SUBSTR(STR(Csrmaopera.id,12),3))
+ENDIF
+lnidmaopera = VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STRzero(lnidmaopera+1,10)))
+
+lnidmovctacte=0
+SELECT CsrMovCtacte
+IF RECCOUNT('CsrMovctacte')>0
+	GO bottom
+	lnidmovctacte=VAL(SUBSTR(ALLTRIM(STR(Csrmovctacte.id,12)),3))
+ENDIF
+lnidmovctacte =  VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STRZERO(lnidmovctacte+1,10)))
+
+lnidcabefac=0
+SELECT CsrCabefac
+IF RECCOUNT('CsrCabefac')>0
+	GO bottom
+	lnidcabefac=VAL(SUBSTR(ALLTRIM(STR(CsrCabefac.id,12)),3))
+ENDIF
+lnidcabefac =  VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STRZERO(lnidcabefac+1,10)))
+
+lnidtablaimp=1
+SELECT CsrTablaImp
+IF RECCOUNT('CsrTablaImp')>0
+	GO bottom
+	lnidtablaimp=VAL(SUBSTR(ALLTRIM(STR(CsrTablaImp.id,12)),3))
+ENDIF
+lnidtablaimp =  VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STRZERO(lnidtablaimp+1,10)))
+
+lnidmovcaja=1
+SELECT CsrMovCaja
+IF RECCOUNT('CsrMovCaja')>0
+	GO bottom
+	lnidmovcaja=VAL(SUBSTR(ALLTRIM(STR(CsrMovCaja.id,12)),3))
+ENDIF
+lnidmovcaja =  VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STRZERO(lnidmovcaja+1,10)))
+
+lnidmovbcocar=1
+SELECT CsrMovBcocar
+IF RECCOUNT('CsrMovBcocar')>0
+	GO bottom
+	lnidMovBcocar=VAL(SUBSTR(ALLTRIM(STR(CsrMovBcocar.id,12)),3))
+ENDIF
+lnidmovbcocar =  VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STRZERO(lnidMovBcocar+1,10)))
+
+
+ldfechasis=DATETIME(YEAR(ldfecha),MONTH(ldfecha),DAY(ldfecha),0,0,0)
+ldfechas=DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0)
+
+		
+		
+**** sumatoria de los movimientos anteriores
+SELECT distinct cliente,IIF(ISNULL(CsrDeudor.saldo_ant),0,CsrDeudor.saldo_ant) as saldo_ant;
+,SUM(importeco) as pago;
+FROM Csrmovipub ;
+LEFT JOIN CsrComproba ON CsrMovipub.tipocomp=CsrComproba.numero;
+left JOIN csrDeudor ON csrMovipub.cliente = CsrDeudor.numero;
+where fecha<ldfecha AND estado<>'A' AND CsrComproba.debcre='C';
+GROUP BY cliente,CsrDeudor.saldo_ant INTO CURSOR CsrAntDebito READWRITE 
+
+replace ALL pago WITH IIF(saldo_ant<0,(saldo_ant*-1)+pago,pago-saldo_ant) IN CsrAntDebito
+
+SELECT distinct cliente,SUM(importeco) as importe;
+FROM Csrmovipub;
+LEFT JOIN CsrComproba ON CsrMovipub.tipocomp=CsrComproba.numero;
+where fecha<ldfecha AND estado<>'A' AND  CsrComproba.debcre='D';
+GROUP BY cliente INTO CURSOR CsrAntCredito READWRITE 
+
+SELECT distinct cliente FROM Csrmovipub ORDER BY cliente INTO CURSOR CsrClientes READWRITE 
+
+SELECT Csrclientes.cliente;
+,IIF(ISNULL(CsrAntCredito.importe),CAST(0 as numeric(11,2)),CsrAntCredito.importe) as importe;
+,IIF(ISNULL(CsrAntDebito.pago),CAST(0 as numeric(11,2)),CsrAntDebito.pago) as pago;
+,CAST(0 as numeric(11,2)) as saldo;
+FROM CsrClientes;
+LEFT JOIN  CsrAntCredito ON Csrclientes.cliente=CsrAntCredito.cliente;
+LEFT JOIN  CsrAntDebito ON Csrclientes.cliente=CsrAntDebito.cliente;
+into CURSOR CsrAnterior READWRITE
+
+replace ALL saldo WITH importe-pago IN CsrAnterior
+DELETE FROM CsrAnterior WHERE saldo=0
+****sumatoria de los movimientos posteriores
+
+SELECT distinct cliente,SUM(importeco) as pago;
+FROM Csrmovipub ;
+LEFT JOIN CsrComproba ON CsrMovipub.tipocomp=CsrComproba.numero;
+where fecha>=ldfecha AND estado<>'A' AND CsrComproba.debcre='C';
+GROUP BY cliente INTO CURSOR CsrDebito READWRITE 
+
+SELECT distinct cliente,SUM(importeco) as importe;
+FROM Csrmovipub;
+LEFT JOIN CsrComproba ON CsrMovipub.tipocomp=CsrComproba.numero;
+where fecha>=ldfecha AND estado<>'A' AND  CsrComproba.debcre='D';
+GROUP BY cliente INTO CURSOR CsrCredito READWRITE 
+
+SELECT distinct cliente FROM Csrmovipub ORDER BY cliente INTO CURSOR CsrClientes READWRITE 
+
+SELECT Csrclientes.cliente;
+,IIF(ISNULL(CsrCredito.importe),CAST(0 as numeric(11,2)),CsrCredito.importe) as importe;
+,IIF(ISNULL(CsrDebito.pago),CAST(0 as numeric(11,2)),CsrDebito.pago) as pago;
+,CAST(0 as numeric(11,2)) as saldo;
+FROM CsrClientes;
+LEFT JOIN  CsrCredito ON Csrclientes.cliente = CsrCredito.cliente;
+LEFT JOIN  CsrDebito ON Csrclientes.cliente = CsrDebito.cliente;
+into CURSOR CsrSaldosPost READWRITE
+
+replace ALL saldo WITH importe-pago IN CsrSaldosPost
+DELETE FROM CsrSaldosPost WHERE saldo=0
+
+replace ALL saldo WITH 0 IN CsrCtacte
+
+SELECT CsrAnterior
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF('CsrAnterior')
+	SELECT CsrCtacte
+	LOCATE FOR ALLTRIM(cnumero)==ALLTRIM(STR(CsrAnterior.cliente))
+	IF  ALLTRIM(cnumero)=ALLTRIM(STR(CsrAnterior.cliente))
+		lnsigno=1
+		&&Dejamos pasar las facturas. Por el saldo.
+		replace Csrctacte.saldoant WITH 0, Csrctacte.saldo WITH CsrAnterior.Saldo IN CsrCtacte
+		ldfechas=ldfechasis
+		lnidcomproba=37
+		lnimporte=CsrCtacte.saldo
+		lcclasecomp="G"
+		IF lnimporte<0
+			lnsigno=-1
+			lnidcomproba=36
+			lcclasecomp="F"
+		ENDIF
+		lnimporte	= lnimporte*lnsigno
+		lcletra		= IIF(CsrCtacte.tipoiva=111,"A","B")
+		lcnum		= strtran(str(VAL(CsrCtacte.cnumero),8,0),' ','0')
+		lcnumero	= lcletra+"0000"+lcnum
+		lcswitch	= "00000"
+		
+		lcctacte	= CsrCtacte.cnumero
+		lnidctacte	= CsrCtacte.id
+		
+		INSERT INTO CsrMaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor;
+		,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja,idcotizadolar,switch,estado,detalle;
+		,fechaserver);
+		VALUES (lnidmaopera,"MOV","IMPORTACIÓN MOVIMIENTOS",goapp.sucursal,goapp.terminal,1,ldfechasis;
+		,111,111,100021,lnidcomproba,lcnumero,lcclasecomp,1,1,1,lcswitch,"0";
+		,"Importación. Compactación Mov Cliente.",ldfechasis)
+		
+		 &&Ponemos el Saldo en 0 de los mov compactados.  
+		INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
+		,entrega,vencimien,total,detalle,pefiscal,switch,signo);
+		VALUES (lnidmovctacte,lnidmaopera,ldfecha-1,lcctacte,lnidctacte," ",0,1,lnimporte;
+		,0,0,ldfecha-1,lnimporte,"Saldo de Importación",SUBSTR(lcfiscal,1,6),"0000",lnsigno)
+		
+		lnidmovctacte=lnidmovctacte+1
+		lnidmaopera=lnidmaopera+1
+	ENDIF
+ENDSCAN 
+
+Oavisar.proceso('S','Extrayendo comprobantes desde la fecha')		
+
+
+SELECT CsrMovipub.cliente,CsrMovipub.detalle,IIF((CsrComproba.debcre='C'),CsrMovipub.Importeco*-1,CsrMovipub.Importeco) as importe;
+,CsrMovipub.fecha,CsrMovipub.letra,CsrMovipub.talonario,CsrMovipub.numcomp ,CsrMovipub.saldocomp;
+,CsrMovipub.vencimien,CsrMovipub.orden; 
+FROM CsrMovipub ;
+LEFT JOIN CsrComproba ON CsrMovipub.tipocomp=CsrComproba.numero ;
+WHERE CsrMovipub.fecha=>ldfecha AND CsrMovipub.estado<>'A';
+AND CsrMovipub.tipocomp in (5,6);
+order by cliente into cursor CsrPosterior READWRITE 
+
+SELECT CsrTablaOpe.Orden,CsrTablaOpe.importe as impvalor;
+,IIF(ISNULL(CsrClaseValor.numero),'',CsrClaseValor.numero) as clasevalor;
+,IIF(ISNULL(CsrValor.id),0,CsrValor.id) as idvalor,CsrTablaope.cheque;
+,CsrTablaOpe.cliente,CsrTablaOpe.debehaber,CsrTablaOpe.detalle;
+FROM CsrPosterior;
+left JOIN CsrTablaOpe ON CsrPosterior.orden = CsrTablaOpe.orden;
+left JOIN CsrValor ON CsrTablaOpe.valor = CsrValor.numero;
+left JOIN CsrClaseValor ON CsrValor.idclase = CsrClaseValor.id;
+where valor<>0 into CURSOR CsrAuxTablaOpe READWRITE 
+
+SELECT CsrAuxTablaOpe
+INDEX on orden TAG korden
+SET ORDER TO korden
+
+SELECT CsrMovBco.*,CsrTablaOpe.vendedor,IIF(ISNULL(CsrClaseValor.numero),'',CsrClaseValor.numero) as clasevalor;
+,IIF(ISNULL(CsrValor.id),0,CsrValor.id) as idvalor,CsrTablaOpe.cliente;
+,IIF(ISNULL(CsrCtacte.cnombre),SPACE(25),CsrCtacte.cnombre) as nomctacte;
+FROM CsrMovBco LEFT JOIN CsrTablaOpe ON CsrMovBco.orden = CsrTablaOpe.orden AND ;
+CsrMovBco.numcomp = CsrTablaOpe.cheque;
+left JOIN CsrValor ON CsrTablaOpe.valor = CsrValor.numero;
+left JOIN CsrCtacte ON CsrTablaOpe.cliente = VAL(CsrCtacte.cnumero);
+left JOIN CsrClaseValor ON CsrValor.idclase = CsrClaseValor.id;
+where CsrMovBco.depositado <> .T. AND CsrMovBco.entregado <>.t.;
+AND LEN(LTRIM(CsrMovBco.idcheque))<>0;
+INTO CURSOR CsrAuxMovBco READWRITE 
+
+SELECT CsrAuxMovBco
+INDEX on orden+STR(numcomp,10) TAG kcheque
+SET ORDER TO kcheque
+
+SELECT CsrSaldosPost
+SCAN 
+	SELECT CsrCtacte
+	LOCATE FOR  VAL(cnumero)=CsrSaldosPost.cliente
+	IF FOUND()
+		replace Csrctacte.saldo WITH CsrCtacte.saldo+CsrSaldosPost.saldo IN CsrCtacte
+	ENDIF 
+ENDSCAN 
+
+lcidcheque = ""
+
+SELECT CsrPosterior
+Oavisar.proceso('S','Procesando '+alias()) 
+
+SCAN  FOR !EOF('CsrPosterior')
+	SELECT CsrCtacte
+	LOCATE FOR VAL(cnumero)=CsrPosterior.cliente
+	IF FOUND()
+		*ldfechas=DATETIME(YEAR(CsrPosterior.fecha),month(CsrPosterior.fecha),day(CsrPosterior.fecha),0,0,0)
+		lnsigno=1
+		lnidcomproba=37
+		lnimporte=CsrPosterior.importe
+		lcclasecomp="G"
+		IF lnimporte<0
+			lnsigno=-1
+			lnidcomproba=36
+			lcclasecomp="F"
+		ENDIF
+		lnimporte	= CsrPosterior.importe*lnsigno	
+		
+		lcletra		= LTRIM(CsrPosterior.letra)
+		lcletra		= IIF(LEN(LTRIM(lcletra))=0,IIF(CsrCtacte.tipoiva=1,"A","B"),LEFT(CsrPosterior.letra,1))
+		lcnum		= STRZERO(CsrPosterior.numcomp,8)
+		lcnum		= IIF(LEN(LTRIM(lcnum))=0,strtran(str(VAL(CsrCtacte.cnumero),8,0),' ','0'),lcnum)
+		lctalonario	= STRZERO(CsrPosterior.talonario,4)
+		lctalonario = IIF(LEN(LTRIM(lctalonario))=0,"0000",lctalonario)
+		lcnumero	= lcletra+lctalonario+lcnum
+		
+		INSERT INTO CsrMaopera (id,origen,programa,sucursal,terminal,sector	,fechasis,idoperador;
+		,idvendedor,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja,idcotizadolar,switch;
+		,estado,detalle,fechaserver);
+		VALUES (lnidmaopera,"MOV","IMPORTACION MOVIMIENTOS",goapp.sucursal,goapp.terminal,1,ldfechasis;
+		,111,111,100021,lnidcomproba,lcnumero,lcclasecomp,1,1,1,"0000","0","Importación",ldfechasis)
+
+		lnidctacte	= CsrCtacte.id
+		lcctacte	= Csrctacte.cnumero
+		ldfecha		= DATETIME(YEAR(CsrPosterior.fecha),month(CsrPosterior.fecha),day(CsrPosterior.fecha),0,0,0)
+		lcperiodo	= ALLTRIM(STR(YEAR(ldfecha)))+ALLTRIM(STR(MONTH(ldfecha)))
+		lnSaldo		= CsrPosterior.saldocomp
+		ldfechavto	= DATETIME(YEAR(CsrPosterior.vencimien),month(CsrPosterior.vencimien),day(CsrPosterior.vencimien),0,0,0)
+		
+		INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
+		,entrega,vencimien,total,detalle,pefiscal,switch,signo);
+		VALUES (lnidmovctacte,lnidmaopera,ldfecha,lcctacte,lnidctacte," ",0,1,lnimporte,lnSaldo;
+		,0,ldfechavto,lnimporte,"Movimiento ctacte Importado",lcperiodo,"0000",lnsigno)
+		
+		&&Importamos los valores
+		SELECT CsrAuxTablaOpe
+		GO TOP 
+		SEEK CsrPosterior.orden 
+		DO WHILE CsrAuxTablaOpe.orden = CsrPosterior.orden
+			
+			DO CASE 
+				CASE CsrAuxTablaOpe.clasevalor$'T-P'
+					SELECT CsrAuxMovBco
+					lcClave = LTRIM(CsrAuxTablaope.orden)+STR(CsrAuxTablaOpe.cheque,10)
+					IF !SEEK (lcClave,'CsrAuxMovBco','kcheque')
+						SELECT CsrAuxTablaOpe
+						SKIP 
+						LOOP 
+					ENDIF 
+					
+					lcidcheque  = CsrAuxMovBco.idcheque					
+					lnimporte	= CsrAuxMovBco.importe
+					lnnumero	= CsrAuxMovBco.numcomp
+					lcbanco		= CsrAuxMovBco.banco
+					lclocalidad	= CsrAuxMovBco.localidad
+					ldfecha		= CsrAuxMovBco.fecha
+					ldfechavto	= CsrauxMovBco.fecha_vto
+					lctitular	= CsrAuxMovBco.titular
+					lcrecibido	= CsrAuxMovBco.recibidode
+					lcentregado	= CsrAuxMovBco.nomctacte
+					lcdetalle	= CsrAuxMovBco.detalle
+									
+					INSERT INTO CsrMovbcocar (id,idmaopera,origen,importe,idtipomov,numero;
+					,idctabco,banco,localidad,fecha,fechavto,cuit,titular,recibido,entregado;
+					,detalle,signo,switch);
+					VALUES (lnidmovbcocar,lnidmaopera,'3RO',lnimporte,16,lnnumero,0,lcbanco;
+					,lclocalidad,ldfecha,ldfechavto,'',lctitular,lcrecibido;
+					,lcentregado,lcdetalle,1,'00000')	
+					
+					lnidmovbcocar = lnidmovbcocar + 1	
+					DELETE FROM CsrAuxMovBco WHERE idcheque = lcidcheque
+					*lcidcheque = LTRIM(lcidcheque) + IIF(LEN(LTRIM(lcidcheque))#0,',','') + LTRIM(CsrAuxMovBco.idcheque)
+				CASE CsrAuxTablaOpe.clasevalor$'E-N'
+					
+					idorigen	= lnidmovctacte
+					lctablaori	= 'MOCT'
+					lcclase 	= CsrAuxTablaOpe.debehaber
+					lnimporte 	= CsrAuxTablaOpe.impvalor
+					lcdetalle	= CsrAuxTablaOpe.detalle
+					ldfecha		= CsrMovCtacte.fecha
+					lnidvalor	= CsrAuxTablaOpe.idvalor
+
+					INSERT INTO Csrmovcaja (id,idmaopera,idorigen,tablaori,clase,importe,detalle;
+					,fecha,idvalor);
+					VALUES (lnidmovcaja,lnidmaopera,lnidmovctacte,lctablaori,clase,lnimporte;
+					,lcdetalle,ldfecha,lnidvalor)
+					
+					lnidmovcaja = lnidmovcaja + 1 
+			ENDCASE 
+			SELECT CsrAuxTablaOpe
+			SKIP 
+		ENDDO 
+		*,CsrTablaope.Valor,CsrTablaOpe.importe as impvalor,CsrTablaOpe.vendedor;
+		
+		lnidmovctacte	=lnidmovctacte+1
+		lnidmaopera		=lnidmaopera+1
+
+	ENDIF
+	SELECT CsrPosterior
+ENDSCAN 
+
+&&Generaremos un registro de cheques en cartera que no fueron grabados.
+
+Oavisar.proceso('N')
+
+*oavisar.usuario(lcidcheque)
+SELECT csrAuxMovBco
+BROWSE 
+
+Oavisar.proceso('N') 
+=MESSAGEBOX('Proceso terminado! ')
+
+USE IN CsrDeudor
+USE IN CsrMovipub
+USE IN CsrComproba
+USE IN CsrTablaOpe
+USE IN CsrMovBco
+
+CLOSE tables
+CLOSE INDEXES
+CLOSE DATABASES

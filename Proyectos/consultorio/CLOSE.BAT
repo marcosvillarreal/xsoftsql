@@ -1,0 +1,2 @@
+TASKKILL /IM GESTION.EXE /F
+initexe.EXE

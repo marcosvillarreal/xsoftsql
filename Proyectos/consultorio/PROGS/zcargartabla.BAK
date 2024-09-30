@@ -1,0 +1,41 @@
+PARAMETERS lcBdd,lcAlias,lbZap,lbEstado
+LOCAL llok
+llok = IIF(PCOUNT()<1,.f.,.t.)
+llok = IIF(PCOUNT()<2,.f.,llok)
+llok = IIF(EMPTY(lcbdd),.f.,llok)
+llok = IIF(EMPTY(lcAlias),.f.,llok)
+
+lbZap = IIF(PCOUNT()<3,.f.,lbZap)
+lbEstado = IIF(PCOUNT()<4,.f.,lbEstado)
+
+IF !lbEstado
+	RETURN &&Si entro con error, sale sin procesar
+	
+ENDIF 
+
+IF !llok
+	Oavisar.usuario('No especifico el base de datos/alias para crear el cursor')
+	lbEstado = .f.
+	RETURN 
+ENDIF 
+lcCsrAlias = 'Csr'+LTRIM(lcAlias)
+lcArchivo = LTRIM(lcbdd)+'!'+LTRIM(lcAlias)
+llok = .t.
+TRY 
+	IF USED(lcAlias)
+		USE IN lcAlias
+	ENDIF 
+	USE &lcArchivo IN 0 ALIAS &lcCsrAlias EXCLUSIVE
+	IF lbZap
+		ZAP IN &lcCsrAlias
+	ENDIF 
+CATCH TO oError
+	oavisar.usuario(oError.Details+CHR(13)+oError.LineContents+CHR(13);
+					+Oerror.Message+STR(oError.ErrorNo)+CHR(13);
+					+oError.Procedure)
+	llok = .f.
+ENDTRY
+lbEstado = llok
+RETURN  
+
+
