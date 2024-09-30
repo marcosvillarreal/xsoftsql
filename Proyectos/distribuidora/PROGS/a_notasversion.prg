@@ -1,6 +1,8 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.31
+	Errores de Recibos PM (idcuenta para cambios de valores,numeracion)
 2.3.30
 	Recibos PM
 	Varios
