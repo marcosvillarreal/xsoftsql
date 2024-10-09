@@ -2,6 +2,7 @@ TEXT TO lcVersiones TEXTMERGE NOSHOW
 2.1.21
 	CbioPrecioFile
 	ListaProductos, se filtra la familia por rubro y articulos
+	RegFacVta-modocodigo
 2.1.20
 	AbmProducto stockideal
 	pidoconcepto
