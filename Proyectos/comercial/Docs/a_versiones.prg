@@ -1,4 +1,7 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.23
+	CentroRecep.iddeposito int NULL
+	FacVta, si GMSucursal.iddeposito#0, se asigna el deposito
 2.1.22
 	Buscador por acopio
 	PidoPrecio, personabilizable

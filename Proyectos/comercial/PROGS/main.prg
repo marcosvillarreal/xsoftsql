@@ -7,7 +7,7 @@ oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
 
-cVersionGoapp = "02.01.22"
+cVersionGoapp = "02.01.23"
 
 SET SYSMENU off
 set classlib to
@@ -277,6 +277,7 @@ IF TYPE('goApp')='O'
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
 	
+	
 	   * en proc.prg   
 	IF ExisteDSN()  			
 		IF !ConeccionADO()
@@ -317,6 +318,18 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.switchperfil = '00000'
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
+	
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrSucursal.* FROM CentroRecep as CsrSucursal WHERE numero = <<goapp.sucursal>>
+	ENDTEXT 
+	=CrearCursorAdapter('CsrSucursal',lcCmd)
+	PUBLIC GMSucursal
+	
+	SELECT CsrSucursal
+	GO TOP 
+	SCATTER NAME GMSucursal
+	USE IN CsrSucursal
+	
 	
 	TEXT TO lcCmd TEXTMERGE NOSHOW 
 	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'

@@ -47,7 +47,7 @@ CASE goapp.codempresa = 9
 	goapp.idusuario = 1
 ENDCASE 
 *goapp.codempresa = 1
-goapp.sucursal =1
+
 goapp.switchusuario = '11100'
 oavisar.usuario(lcEmpresa + CHR(13)+'goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
 				+'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13);
