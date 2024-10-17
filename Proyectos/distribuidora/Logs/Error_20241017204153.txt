@@ -1,0 +1,33 @@
+17-10-2024 20:41:53 , REGFACVTA.CONTAINERINGRESO._TXTLOSTFOCUS.GOTFOCUS, Error: Error en lblcuerpo - Caption : Cadena demasiado larga.;Linea : This.lblcuerpo.Caption = ALLTRIM(cMessageText );Error :       1881;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+17-10-2024 20:41:53 , Pila de llamadas
+17-10-2024 20:41:53 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+17-10-2024 20:41:53 , Objeto      : regfacvta.containeringreso._txtlostfocus.gotfocus
+17-10-2024 20:41:53 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+17-10-2024 20:41:53 , Nº de Linea :          4
+17-10-2024 20:41:54 , En el Fuente: thisform.controlinicial()
+17-10-2024 20:41:54 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+17-10-2024 20:41:54 , Objeto      : regfacvta.controlinicial
+17-10-2024 20:41:54 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\ventas\regfacvta.sct
+17-10-2024 20:41:54 , Nº de Linea :          4
+17-10-2024 20:41:54 , En el Fuente: 		IF !Leerparametrosdiario(1)
+17-10-2024 20:41:54 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+17-10-2024 20:41:54 , Objeto      : leerparametrosdiario
+17-10-2024 20:41:54 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+17-10-2024 20:41:54 , Nº de Linea :       1754
+17-10-2024 20:41:54 , En el Fuente: lok =CrearCursorAdapter("CsrParametros",lcCmd)
+17-10-2024 20:41:55 , Programa    : j:\xsoftsql\proyectos\distribuidora\progs\proc.fxp
+17-10-2024 20:41:55 , Objeto      : crearcursoradapter
+17-10-2024 20:41:55 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+17-10-2024 20:41:55 , Nº de Linea :       1391
+17-10-2024 20:41:55 , En el Fuente: 		=Oavisar.Usuario("Error al obtener datos:"						+CHR(13)+"Código Error:" +strtrim(laError[1])        				+CHR(13)+"Mensaje al Operador: "+cMensaje        				+CHR(13)+"Mensaje de Error:"+laError[2]        				+CHR(13)+"Alias:"+lcaliasCursor        				+CHR(13)+lccmdSelectCursor,0)
+17-10-2024 20:41:55 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+17-10-2024 20:41:55 , Objeto      : avisar.usuario
+17-10-2024 20:41:55 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+17-10-2024 20:41:55 , Nº de Linea :         13
+17-10-2024 20:41:55 , En el Fuente:     oMensaje = createobjec('mensaje',lcmensaje,lnOpcion,'INFORMACION AL USUARIO',ntimeout) &&,lcmensaje,lntotalaincrementar,llbarraprogreso
+17-10-2024 20:41:56 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+17-10-2024 20:41:56 , Objeto      : mensaje.init
+17-10-2024 20:41:56 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+17-10-2024 20:41:56 , Nº de Linea :         12
+17-10-2024 20:41:56 , En el Fuente: This.lblcuerpo.Caption = ALLTRIM(cMessageText )
+17-10-2024 20:41:56 , Fin
