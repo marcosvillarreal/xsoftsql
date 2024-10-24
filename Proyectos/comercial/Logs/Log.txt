@@ -143,154 +143,9 @@
 
 
 
-BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as SubtotSiva ,00000000.00 as SubtotCiva,00000000.00 as BaseDesctoSiva ,00000000.00 as Perceiva ,0000000.00 as BasedtoCiva,0000000.00 as BaseDtoSiva ,SPACE(3) as subnumero,CAST
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 (1 AS N(1)) AS Valorizado,0 as ComprometeMerc ,SPACE(25) as subcnombre,0000000000 as idprefijo,SPACE(40) as detalle,SPACE(5) as parada ,SPACE(13) as proximonro,SPACE(15) as nroproforma,SPACE(50) as ctaemail ,DATETIME(YEAR(DATE()),MONTH(DATE()),DAY(DATE()
+
 
 
 
@@ -584,7 +439,9 @@ BaseNocatego,00000000.00 as Perceibto1 ,00000000.00 as Perceibto2,00000000.00 as
 
 
 
+
 a ,00 as RtoBultos, CAST(0 as n(11,2)) as RtoTotal, SPACE(30) as RtoTransporte ,SPACE(30) as  RtoTranspDire,SPACE(13) as proximonro_rto,CAST(0 as n(11,2)) as SaldoCta ,SPACE(2) as TipoCbte, SPACE(29) as CAECheck,SPACE(30) as NomProvincia ,SPACE(30) as re
+
 
 
 
@@ -878,7 +735,9 @@ tiro,SPACE(30) as autorizo,SPACE(30) as ubicacion ,0 as SolicitaDNI,SPACE(50) as
 
 
 
+
 ervaRtro ,SPACE(30) as cDireccionRtro,SPACE(30) as cTelefonoRtro FROM CsrCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  REGFACVTA.LO
+
 
 
 
@@ -1181,8 +1040,10 @@ AD
 
 
 
+
 ntrol activo:  SUBSTOCK.INIT
 29-05-2024 12:23:10 , Error: El archivo 'alltirm.prg' no existe. Linea : replace ALL descripcion WITH '('+alltrim(str(cnumero))+') '+ alltirm(cnombre) IN CsrImprimir Error :          1 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:
+
 
 
 
@@ -1460,8 +1321,10 @@ ntrol activo:  SUBSTOCK.INIT
 
 
 
+
 MIR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00006B6104ED.TMP Ultimo Control activo:  SUBSTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-05-2024 12:51:27 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : replace ALL descripcion WITH ALLTRIM(nomcomproba)+' '+numcomp + '(' + alltrim(str(ctacte))+ ') '+ alltrim(nomctacte)IN CsrImprimir Error :         11
+
 
 
 
@@ -1735,8 +1598,10 @@ MIR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00006B6
 
 
 
+
 o: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00006B6104M7.TMP Ultimo Control activo:  SUBSTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 29-05-2024 12:57:57 , Error: SQL: no se encuentra la columna 'IMPORTE'. Linea : SELECT DTOC(TTOD(fecha)) as fecha ,cabrevia+" "+LEFT(numcomp,1)+" "+SUBSTR(numcomp,2,4)+"-"+RIGHT(numcomp,8) as nomcomproba ,cnumero ,cnombre ,cantidad ,importe ,deposito ,id
+
 
 
 
@@ -2006,8 +1871,10 @@ maopera,nomctacte,ctacte FROM CsrImprimir INTO CURSOR CsrImprimir READWRITE Erro
 
 
 
+
 R_VISTAPREVIA1.EXCEL.CLICK
 29-05-2024 12:59:00 , Error: SQL: no se encuentra la columna 'IDMAOPERA'. Linea : SELECT DTOC(TTOD(fecha)) as fecha ,cabrevia+" "+LEFT(numcomp,1)+" "+SUBSTR(numcomp,2,4)+"-"+RIGHT(numcomp,8) as nomcomproba ,cnumero ,cnombre ,cantidad ,deposito ,idmaopera
+
 
 
 
@@ -2275,8 +2142,10 @@ R_VISTAPREVIA1.EXCEL.CLICK
 
 
 
+
 PREVIA1.EXCEL.CLICK
 29-05-2024 13:04:54 , Error: PARENT no es un objeto. Linea : IF NOT this.Parent.esreporteexcel Error :       1924 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00006B6104YI.TMP Ultimo Control activo
+
 
 
 
@@ -2422,6 +2291,7 @@ PREVIA1.EXCEL.CLICK
 30-05-2024 17:48:22 , Version 16.0
 11-06-2024 19:07:05 , Verificando Licencia
 11-06-2024 19:08:05 , Error: El archivo 'csrauxbuscar.dbf' no existe. Linea : SELECT *,DATETIME() as FecActu FROM CsrAuxBuscar INTO CURSOR CsrBusProd READWRITE Error :          1 Ultimo Alias Activo: CSRUBICACION Ultimo registro:          1  DBF: C:\USER
+
 
 
 
@@ -2697,11 +2567,13 @@ S\MARCOS\APPDATA\LOCAL\TEMP\00006I2X00DR.TMP Ultimo Control activo:  REGFACVTA.C
 
 
 
+
 L\TEMP\0000BCW904BW.TMP Ultimo Control activo:  CBIOPRECIO_FILE.CMDTEMP.CLICK
 23-07-2024 17:20:38 , Verificando Licencia
 31-07-2024 17:50:33 , Verificando Licencia
 31-07-2024 17:54:05 , Verificando Licencia
 31-07-2024 17:55:01 , Error: LBLCOTIDOLARCTACTE es un miembro desconocido. Linea : ThisForm.LblCotidolarCtacte.Caption = '$ ' + STR(ThisForm.Cotidolar,11,2) Error :       1925 Ultimo Alias Activo: CSRAUXPRECIO Ultimo registro:          1  DBF: C:\USERS\M
+
 
 
 
@@ -2925,9 +2797,11 @@ ARCOS\APPDATA\LOCAL\TEMP\0000NEO900QL.TMP Ultimo Control activo: ENDOLAR ABMPROD
 
 
 
+
 00N5E1002D.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_DOM.KITBUSCAOALTAENLOCALIDAD.TXTID.INIT
 06-08-2024 19:16:51 , Verificando Licencia
 06-08-2024 19:32:31 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : .ve_condicion(!this.validarcodigo(LTRIM(CsrCtacte.cnumero),this.odata1.cnomtabla,"cnombre","cnumero",CsrCtacte.id,@cResultado),"El código pertenece a
+
 
 
 
@@ -3135,8 +3009,10 @@ ARCOS\APPDATA\LOCAL\TEMP\0000NEO900QL.TMP Ultimo Control activo: ENDOLAR ABMPROD
 
 
 
+
 S\MARCOS\APPDATA\LOCAL\TEMP\0000LIX5002Q.TMP Ultimo Control activo:  ABMCTACTE.CMDSALVAR.CLICK
 06-08-2024 19:37:45 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lccmd=lcfrom + " where "+ALLTRIM(lccampoindice)+"= '"+ALLTRIM(STR(this.txtexiste1.value))+"'" Error :         11 Ultimo Alias Activo: CSRLOCALIDAD Ul
+
 
 
 
@@ -3340,8 +3216,10 @@ timo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LIX500B3.
 
 
 
+
 1.PAGE1.C_DOM.KITBUSCAOALTAENLOCALIDAD.GOTFOCUS
 06-08-2024 19:38:03 , Error: No se encuentra el alias 'CSRLOCALIDAD'. Linea : LOCATE FOR id = CsrLocalidad.idprovincia Error :         13 Ultimo Alias Activo: CSRPROVINCIA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LIX50017.
+
 
 
 
@@ -3542,8 +3420,10 @@ TMP Ultimo Control activo: IDPROVINCIA ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_DOM
 
 
 
+
   "+cResultado+"...") Error :         11 Ultimo Alias Activo: CSRCUERRUTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LIX500DU.TMP Ultimo Control activo:  ABMCTACTE.CMDSALVAR.CLICK
 06-08-2024 19:39:01 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : replace codigo WITH VAL(CsrCtacte.cnumero) IN CsrCtacte Error :         11 Ultimo Alias Activo: CSRCUERRUTA Ultimo registro:          1  DBF: C:\USER
+
 
 
 
@@ -3644,6 +3524,7 @@ TMP Ultimo Control activo: IDPROVINCIA ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_DOM
 S\MARCOS\APPDATA\LOCAL\TEMP\0000LIX500DU.TMP Ultimo Control activo:  ABMCTACTE.CMDSALVAR.CLICK
 06-08-2024 19:39:25 , Verificando Licencia
 06-08-2024 19:45:28 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : .ve_condicion(!this.validarcodigo(LTRIM(CsrCtacte.cnumero),this.odata1.cnomtabla,"cnombre","cnumero",CsrCtacte.id,@cResultado),"El código pertenece a
+
 
 
 
@@ -3850,6 +3731,7 @@ S\MARCOS\APPDATA\LOCAL\TEMP\0000LIX500DU.TMP Ultimo Control activo:  ABMCTACTE.C
 
 
 
+
 timo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000QPS9011E.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_DOM.KITBUSCAOALTAENLOCALIDAD.GOTFOCUS
 07-08-2024 10:32:44 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF VAL(this.Value)#0 Error :         11 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME
 
@@ -3942,8 +3824,10 @@ timo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000QPS9011E.
 
 
 
+
 1.PAGE1.C_DOM.KITBUSCAOALTAENLOCALIDAD.GOTFOCUS
 07-08-2024 10:33:53 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lccmd=lcfrom + " where "+ALLTRIM(lccampoindice)+"= '"+ALLTRIM(STR(this.txtexiste1.value))+"'" Error :         11 Ultimo Alias Activo: CSRLOCALIDAD Ul
+
 
 
 
@@ -4137,10 +4021,12 @@ timo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000QPS90192.
 
 
 
+
 0  DBF:  Ultimo Control activo:  REGPARAMETROS.LOAD
 27-08-2024 09:06:31 , Verificando Licencia
 27-08-2024 09:07:51 , Verificando Licencia
 27-08-2024 09:16:55 , Error: PRECIOPROD1 es un miembro desconocido. Linea : this.precioprod1.cfprecioagregado() Error :       1925 Ultimo Alias Activo: CSRPARAVARIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LRM100JS.TMP Ult
+
 
 
 
@@ -4306,8 +4192,10 @@ imo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 
 
 
+
 imo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 27-08-2024 09:21:15 , Error: PRECIOPROD1 es un miembro desconocido. Linea : this.precioprod1.cfprecioagregado() Error :       1925 Ultimo Alias Activo: CSRPARAVARIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LRM100P4.TMP Ult
+
 
 
 
@@ -4469,6 +4357,7 @@ imo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 
 
 
+
 imo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 27-08-2024 09:38:17 , Error: No se encuentra el alias 'CSRAUXPRODUCTO'. Linea : SELECT CsrAuxProducto Error :         13 Ultimo Alias Activo: CSRAUXCBIOPRECIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LRM10IYS.TMP Ultimo Co
 
@@ -4549,8 +4438,10 @@ imo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 
 
 
+
 ntrol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 27-08-2024 09:38:35 , Error: No se encuentra el alias 'CSRAUXPRODUCTO'. Linea : SELECT CsrAuxProducto Error :         13 Ultimo Alias Activo: CSRAUXCBIOPRECIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LRM10J1L.TMP Ultimo Co
+
 
 
 
@@ -4709,9 +4600,11 @@ ntrol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 
 
 
+
 4XO9.TMP Ultimo Control activo:  ABMMARGEN_MR.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENHIJO.TXTID.INIT
 28-08-2024 19:12:29 , Verificando Licencia
 28-08-2024 19:13:37 , Error: No se encuentra el alias 'CSRMARGEN_MR'. Linea : this.controlsource=this.parent.controlsourcetxtid Error :         13 Ultimo Alias Activo: CSRMARCA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000F6RT
+
 
 
 
@@ -4862,9 +4755,11 @@ ntrol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 
 
 
+
 4XW4.TMP Ultimo Control activo:  ABMMARGEN_MR.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENHIJO.TXTID.INIT
 28-08-2024 19:15:51 , Verificando Licencia
 28-08-2024 19:18:08 , Error: Debe especificar parámetros adicionales. Linea : PARAMETERS nidMarca,nidRubro Error :         94 Ultimo Alias Activo: CSRMARGEN_MR Ultimo registro:         -1 NOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000F6RT4Y0W.TMP Ul
+
 
 
 
@@ -5010,8 +4905,10 @@ timo Control activo:  ABMMARGEN_MR.CMDSALVAR.CLICK
 
 
 
+
 00F6RT4Y72.TMP Ultimo Control activo: PORCELISTA ABMMARGEN_MR.CONTENEDOR1.PFRAME1.PAGE1._TXTPORCELISTA.GOTFOCUS
 28-08-2024 19:50:03 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lok = MESSAGEBOX(lcmensaje,lnopcion,'INFORMACION AL USUARIO',ntimeout) Error :         11 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ul
+
 
 
 
@@ -5155,8 +5052,10 @@ timo Control activo:  ABMMARGEN_MR.CMDSALVAR.CLICK
 
 
 
+
  COSTOCIVA ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS
 29-08-2024 15:54:57 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrMArgen_mr')#0 Error :         13 Ultimo Alias Activo: CSRAUXPRECIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000RKSP00JK.TMP Ultimo Control activo:
+
 
 
 
@@ -5294,8 +5193,10 @@ timo Control activo:  ABMMARGEN_MR.CMDSALVAR.CLICK
 
 
 
+
  COSTOCIVA ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS
 29-08-2024 16:03:34 , Error: No se encuentra el alias ''. Linea : SELECT(lcAliasActual) Error :         13 Ultimo Alias Activo: CSRTIPOIVA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000RKSP01SB.TMP Ultimo Control activo: COSTOC
+
 
 
 
@@ -5429,8 +5330,10 @@ PRA ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS
 
 
 
+
 PRA ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUMN2.TEXT1.KEYPRESS
 29-08-2024 17:09:19 , Error: No se encuentra el alias. Linea : IF RECCOUNT(lcaliasseek)#0 Error :         13 Ultimo Alias Activo: CSRPARAVARIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000RKSP04KD.TMP Ultimo Control activo:  P
+
 
 
 
@@ -5561,8 +5464,10 @@ ARAVARIO_STOCK.CONTAINERENCABEZA.PFRAME1.PAGE1.C_GRAL.KITBUSCAOALTAENMARCA.TXTEX
 
 
 
+
 PARAVARIO_STOCK.CONTAINERENCABEZA.PFRAME1.PAGE1.C_GRAL.KITBUSCAOALTAENMARCA.BOTONLLAMARABM1.CLICK
 29-08-2024 17:15:45 , Error: El archivo 'j:\xsoftsql\proyectos\comercial\abmmarca.scx' no existe. Linea : DO FORM &lcabm WITH lcid,.t. TO lcidtabla Error :          1 Ultimo Alias Activo: CSRMARCA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA
+
 
 
 
@@ -5688,9 +5593,11 @@ PARAVARIO_STOCK.CONTAINERENCABEZA.PFRAME1.PAGE1.C_GRAL.KITBUSCAOALTAENMARCA.BOTO
 
 
 
+
 SP05VS.TMP Ultimo Control activo:  PARAVARIO_STOCK.INIT
 29-08-2024 19:26:15 , Verificando Licencia
 30-08-2024 09:23:58 , Error: El archivo 'csrcbioprecio.dbf' no existe. Linea : SELECT * ,CAST(0 as int) as numero,SPACE(40) as nombre,0 as estadotilde ,SPACE(10) as codalfaprov, CAST(0 as n(12,3)) as porce ,SPACE(20) as proveedor, CAST(0 as i) as idpreci
+
 
 
 
@@ -5813,9 +5720,11 @@ o FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE Error :
 
 
 
+
  Ultimo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 30-08-2024 09:51:28 , Verificando Licencia
 30-08-2024 09:53:14 , Error: La sesión de datos nº 2 no se puede liberar si hay transacciones abiertas. Linea : lobjprecio = CREATEOBJECT('custom') Error :       1549 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  CBIOPR
+
 
 
 
@@ -5934,11 +5843,13 @@ ECIO_FILE.PRECIOPROD1.INIT
 
 
 
+
 ECIO_FILE.PRECIOPROD1.INIT
 30-08-2024 10:05:11 , Verificando Licencia
 30-08-2024 10:08:11 , Verificando Licencia
 30-08-2024 10:12:02 , Verificando Licencia
 30-08-2024 10:37:06 , Error: Debe especificar parámetros adicionales. Linea : INSERT INTO CsrImprimir VALUES (CsrArticulo.id,CsrArticulo.codalfaprov,0,CsrArticulo.codalfaprecio,CsrArticulo.nombre,CsrCtacte.id,CsrCtacte.cnombre,0,NVL(CsrArticulo.saldo,0),
+
 
 
 
@@ -6052,8 +5963,10 @@ CsrArticulo.fecmodiprecio,'','') Error :         94 Ultimo Alias Activo: FSRARTI
 
 
 
+
 CsrArticulo.fecmodiprecio,'','') Error :         94 Ultimo Alias Activo: FSRARTICULO Ultimo registro:       2064 CODIGO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000PAMH1UX0.TMP Ultimo Control activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 30-08-2024 10:38:56 , Error: No se encuentra el alias 'CSRAUXPRODUCTO'. Linea : SELECT CsrAuxProducto Error :         13 Ultimo Alias Activo: CSRAUXCBIOPRECIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000PAMH1UZW.TMP Ultimo Co
+
 
 
 
@@ -6163,9 +6076,11 @@ ntrol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 
 
 
+
 ntrol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 30-08-2024 11:06:35 , Verificando Licencia
 30-08-2024 12:36:29 , Error: El archivo 'csrcbioprecio.dbf' no existe. Linea : SELECT * ,CAST(0 as int) as numero,SPACE(40) as nombre,0 as estadotilde ,SPACE(10) as codalfaprov, CAST(0 as n(12,3)) as porce ,SPACE(20) as proveedor, CAST(0 as i) as idpreci
+
 
 
 
@@ -6272,10 +6187,12 @@ o FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE Error :
 
 
 
+
 ITBUSCAOALTAENCTACTE.BOTONLLAMARABM1.CLICK
 30-08-2024 17:30:49 , Verificando Licencia
 30-08-2024 17:34:43 , Verificando Licencia
 30-08-2024 18:01:37 , Error: El archivo 'csrarticulo.dbf' no existe. Linea : SELECT *, CAST('' as memo) as Descripcion FROM CsrArticulo WHERE id < 0 INTO CURSOR CsrAuxProducto READWRITE Error :          1 Ultimo Alias Activo: CSRUBICACION Ultimo registro
+
 
 
 
@@ -6378,9 +6295,11 @@ ITBUSCAOALTAENCTACTE.BOTONLLAMARABM1.CLICK
 
 
 
+
 :          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IDQH4R9G.TMP Ultimo Control activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 30-08-2024 18:57:31 , Verificando Licencia
 30-08-2024 19:18:23 , Error: No se encuentra la variable 'LNNUEVOCOSTO'. Linea : lObjPrecio.costoconiva = lnnuevocosto Error :         12 Ultimo Alias Activo: CSRAUXPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IDQH4SQ
+
 
 
 
@@ -6478,10 +6397,12 @@ E.TMP Ultimo Control activo:  CBIOPRECIO_FILE.CMDACEPTAR.CLICK
 
 
 
+
 o FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  CBIOPRECIO_FILE.LOAD
 30-08-2024 19:20:56 , Verificando Licencia
 30-08-2024 19:28:54 , Verificando Licencia
 30-08-2024 19:45:47 , Error: No se encuentra la propiedad AUMENTO. Linea : lobjprecio.aumento		= OscPrecio.aumento Error :       1734 Ultimo Alias Activo: FSRARTICULO Ultimo registro:          2 CODIGO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000TYX500U4
+
 
 
 
@@ -6573,9 +6494,11 @@ o FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE Error :
 
 
 
+
 MP Ultimo Control activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 02-09-2024 08:46:27 , Verificando Licencia
 02-09-2024 10:06:34 , Error: El origen de datos para este objeto debe ser una referencia de variable. Linea : .column10.ControlSource = "CsrAuxCbioPrecio.CodAlfaPrecio " Error :       1742 Ultimo Alias Activo: CSRAUXCBIOPRECIO Ultimo registro:         35
+
 
 
 
@@ -6663,9 +6586,11 @@ MP Ultimo Control activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 
 
 
+
 ISTE1.INIT
 02-09-2024 17:30:23 , Verificando Licencia
 02-09-2024 17:39:40 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: CSRAUXCUERPO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000FV9L2EJR.TMP Ultimo Control 
+
 
 
 
@@ -6750,11 +6675,13 @@ activo:  ACTUALIZADOR.IMPRIMIR_VISTAPREVIA1.INIT
 
 
 
+
 ivo:  ACTUALIZADOR._TXTBUSQUEDA.KEYPRESS
 02-09-2024 17:45:18 , Verificando Licencia
 02-09-2024 17:52:04 , Verificando Licencia
 05-09-2024 09:18:53 , Verificando Licencia
 05-09-2024 09:20:47 , Error: No se encuentra el alias 'CSRMARGEN_MR'. Linea : SELECT CsrMargen_mr Error :         13 Ultimo Alias Activo: FSRARTICULO Ultimo registro:         35 CODIGO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00005I4P0039.TMP Ultimo Contr
+
 
 
 
@@ -6835,6 +6762,7 @@ ol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 
 
 
+
 5M2X01YV.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBUSCAOALTAENABMMARCA.TXTID.INIT
 18-09-2024 12:21:44 , Verificando Licencia
 20-09-2024 16:40:28 , Verificando Licencia
@@ -6843,6 +6771,7 @@ ol activo:  CBIOPRECIO_FILE.CMDPROCESAR.CLICK
 07-10-2024 15:25:57 , Verificando Licencia
 07-10-2024 17:21:03 , Verificando Licencia
 08-10-2024 07:51:32 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : this.controlsource=this.parent.controlsourcetxtid Error :         13 Ultimo Alias Activo: CSRAUXCUERPO2 Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000
+
 
 
 
@@ -6916,8 +6845,10 @@ L0CP00JK.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBU
 
 
 
+
     15 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IRK90026.TMP Ultimo Control activo:  LISTAPRODUCTO.PAGEFRAME1.PAGE4.ACTIVATE
 08-10-2024 08:04:31 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF THIS.Cantidadelegidos=THIS.Cantidadtotal AND this.forzardevolucioncadena=.f. Error :        107 Ultimo Alias Activo: _CSRRUBRO Ultimo registro:     
+
 
 
 
@@ -6983,8 +6914,10 @@ L0CP00JK.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBU
 
 
 
+
     15 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IRK90026.TMP Ultimo Control activo:  LISTAPRODUCTO.PAGEFRAME1.PAGE4.ACTIVATE
 08-10-2024 08:04:42 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF THIS.Cantidadelegidos=THIS.Cantidadtotal AND this.forzardevolucioncadena=.f. Error :        107 Ultimo Alias Activo: _CSRRUBRO Ultimo registro:     
+
 
 
 
@@ -7046,8 +6979,10 @@ L0CP00JK.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBU
 
 
 
+
     15 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IRK90026.TMP Ultimo Control activo:  LISTAPRODUCTO.PAGEFRAME1.PAGE4.ACTIVATE
 08-10-2024 08:04:54 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF THIS.Cantidadelegidos=THIS.Cantidadtotal AND this.forzardevolucioncadena=.f. Error :        107 Ultimo Alias Activo: _CSRRUBRO Ultimo registro:     
+
 
 
 
@@ -7110,9 +7045,11 @@ L0CP00JK.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.KITBU
 
 
 
+
 ol activo:  ABMCFCONFIG.INIT
 09-10-2024 18:17:51 , Verificando Licencia
 10/09/24 18:18:15 , Error: El tipo de datos no es válido para esta propiedad. Linea : .TOP = .nTop Error :       1732 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         10  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00003N6100PV.TMP Ultimo Contr
+
 
 
 
@@ -7164,8 +7101,10 @@ ol activo:  ABMCFCONFIG.INIT
 
 
 
+
 ontrol activo:  ABMCFCONFIG.INIT
 09-10-2024 18:24:15 , Error: No se encuentra el alias 'CSRCONEXION'. Linea : CASE VARTYPE(&lcclaB)='C' Error :         13 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         10  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00003N6100QQ.TMP Ultimo C
+
 
 
 
@@ -7213,8 +7152,10 @@ ontrol activo:  ABMCFCONFIG.INIT
 
 
 
+
 ontrol activo:  ABMCFCONFIG.INIT
 09-10-2024 18:29:16 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcRet=lcRet+chr(asc(substr(lc,i,1))-25-i) Error :         11 Ultimo Alias Activo: CSRCONEXION Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDA
+
 
 
 
@@ -7258,8 +7199,10 @@ TA\LOCAL\TEMP\00003N6100SK.TMP Ultimo Control activo: ALIASCONEXION ABMCFCONFIG.
 
 
 
+
 LOCAL\TEMP\00003N6100SQ.TMP Ultimo Control activo:  ABMCFCONFIG.INIT
 09-10-2024 18:35:26 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF seccion<999 Error :        107 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00003N6100U3.TMP 
+
 
 
 
@@ -7299,9 +7242,11 @@ Ultimo Control activo:  GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 Ultimo Control activo:  GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 10-10-2024 10:31:36 , Verificando Licencia
 10-10-2024 10:33:49 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrMArgen_mr')#0 Error :         13 Ultimo Alias Activo: CSRAUXPRECIO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00004WEH00H1.TMP Ultimo Control activo:
+
 
 
 
@@ -7341,9 +7286,11 @@ Ultimo Control activo:  GENERARCELU.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 
 
 
+
 CA.TXTEXISTE1.INIT
 14-10-2024 11:07:59 , Verificando Licencia
 14-10-2024 11:09:13 , Error: No se encuentra la propiedad MOSTRARCODALFAPROV. Linea : IF NOT .mostrarcodalfaprov Error :       1734 Ultimo Alias Activo: CSRPARAVARIO Ultimo registro:        206  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00002OZT0BAI.TMP Ul
+
 
 
 
@@ -7378,8 +7325,10 @@ timo Control activo: COSTOCIVA ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.GRID1.COLUM
 
 
 
+
 G2RT0325.TMP Ultimo Control activo:  RESTOCK.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 15-10-2024 16:39:52 , Error: LOFILE no es un objeto. Linea : loFile.WriteBlankLines(1)   && salto de línea Error :       1924 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1 STRID(IDARTICULO,10)+STRID(IDVARIEDAD,10)+CLAVE DBF: C:\USERS\MARCO
+
 
 
 
@@ -7397,9 +7346,11 @@ S\APPDATA\LOCAL\TEMP\0000G2RT0325.TMP Ultimo Control activo:  RESTOCK.IMPRIMIR_V
 
 
 
+
 ontrol activo:  RESTOCK.IMPRIMIR_VISTAPREVIA1.INIT
 15-10-2024 16:51:18 , Verificando Licencia
 15-10-2024 16:53:36 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: FILEADJUNTOSINFORME Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000G2RT03EZ.TMP Ultimo C
+
 
 
 
@@ -7414,8 +7365,10 @@ ontrol activo:  RESTOCK.IMPRIMIR_VISTAPREVIA1.INIT
 
 
 
+
 ontrol activo:  RESTOCK.IMPRIMIR_VISTAPREVIA1.INIT
 15-10-2024 16:55:24 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: FILEADJUNTOSINFORME Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000G2RT03HZ.TMP Ultimo C
+
 
 
 
@@ -7428,15 +7381,24 @@ ontrol activo:  RESTOCK.IMPRIMIR_VISTAPREVIA1.INIT
 23-10-2024 10:55:54 , Verificando Licencia
 23-10-2024 11:04:11 , Error: No se encuentra el alias 'CSRRUBRO'. Linea : replace bonif1 WITH CsrRubro.bonif1,bonif2 WITH CsrRubro.bonif2,bonif3 WITH CsrRubro.bonif3 ,bonif4 WITH CsrRubro.bonif4,bonif5 WITH CsrRubro.bonif5 ,margen1 WITH CsrRubro.margen1 
 
+
 in CsrAuxPrecio Error :         13 Ultimo Alias Activo: CSRCOTIZADOLAR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000FMYX00V3.TMP Ultimo Control activo:  PIDOPRECIO.INIT
 23-10-2024 11:08:10 , Verificando Licencia
 23-10-2024 11:16:10 , Error: El archivo 'csrcuerfac.dbf' no existe. Linea : SELECT CsrCuerfac.*,CAST(0 as n(12,0)) as idmovremito,CAST(0 as n(12,0)) as idcuerfac ,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol,' ' as codvalid
+
 o,CAST(0 as n(12,0)) as idcabeunifica ,CAST(0 as int) as idprodpromo,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura ,CAST(0 as int) as idenvase,CAST(0 as int) as idprodgenera,0000 as hojaactual ,0 as bondigitada, 0 as comp
+
 rome, nombre as nombre02 ,CAST(0 as int) as idctavta,CAST(0 as int) as idctacpra, CAST(0 as int) as idareaneg ,SPACE(30) as nommarca,SPACE(30) as nomrubro,SPACE(15) as codalfa, CAST( '' as m) as Descrip_memo ,0000000.00 as stock,CAST(0 as n(14,2)) as tot
+
 al, 0000000.000 as cantkilos, 00000000.000 as cantorig,0000000.000 as peso ,0000000.000 as desctoCiva,0000000.000 as DesctoSiva,00000000.000 as InternoFin ,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni,00000000.000 as UniCiva2 ,0
+
 0000000.000 as UniSiva2,00000000.000 as IvaUni2 ,000000000.00 as Basegra, 00000000.00 as BaseInterno,  000000000.00 as Baseexe ,SPACE(15) as CodExtend ,0 as actualizaprecio ,CAST(0 as n(12,2)) as prepubarti,SPACE(10) as inf_fecha ,CAST(0 as n(12,2)) as p
+
 repubartisiva ,CAST(0 as n(12,2)) as precontarti ,CAST(0 as n(12,2)) as precontartisiva ,SPACE(20) as inf_nomctacte,SPACE(20) as inf_remito ,SPACE(30) as autorizo ,CAST(0 as n(12)) as idmaoperto,0 as editaproducto,0 AS ESSUMI ,0 as haydimension, 0 as hay
+
 enguarda,SPACE(20) as ubicacion ,0 as haystock,DATE() as fecha, CAST(0 as n(6,2)) as f_topebonif, DATE() as f_fecbonif FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE Error :          1 Ultimo Alias Activo: CSRAUXMAOPERA Ulti
+
 mo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000Z40905W3.TMP Ultimo Control activo: UBICACION REGFACVTA.LOAD
 23-10-2024 11:16:17 , Verificando Licencia
 23-10-2024 11:20:52 , Error: El nombre del objeto no es válido. Linea : GO RECORD lnrecno IN CsrAuxCuerfac Error :       1575 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ON... 
+24-10-2024 09:08:17 , Verificando Licencia
