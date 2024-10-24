@@ -7,7 +7,7 @@ oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
 
-cVersionGoapp = "02.01.24"
+cVersionGoapp = "02.01.25"
 
 SET SYSMENU off
 set classlib to
@@ -172,6 +172,7 @@ PUBLIC OAvisar
 Oavisar=NewOBJECT('avisar','controles.vcx')
 
 Public goapp,ObjReporter
+public pcTextoBalloon, poSysTray, poTimer
 
 goapp=createobject('app',!lldesarrollo,lldesarrollo)
 
@@ -187,7 +188,9 @@ ObjReporter.AddProperty('fileqr',cRutaQR)
 ObjReporter.AddProperty('mensajeria_body',"")
 ObjReporter.AddProperty('banner',"gmbanner.png")
 
-
+*poTimer   = CreateObject("WALTER_TIMER")
+*poTimer   = CreateObject("TimerAlert")
+ 
 
 IF TYPE('goApp')='O'
 *-- CARGAR PROPIEDADES DE RUTA EN OBJETO APLICACION
@@ -399,31 +402,17 @@ IF TYPE('goApp')='O'
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	public pcTextoBalloon, poSysTray, poTimer
+	
   
 	 * DO SETS_INICIALES
 	  
-	  DO DECLARAR_FUNCIONES_API
-  
-*!*		TRY 	 
-*!*			poSysTray = CreateObject("WALTER_SYSTRAY")
-*!*	  	ENDTRY 
-*!*	  
-*!*		  IF Vartype(poSysTray) == "O" THEN       && Si se pudo crear el objeto
-	  	poTimer   = CreateObject("WALTER_TIMER")
-*!*		  		
-*!*		    #DEFINE ICONO_NADA  0
-*!*		    #DEFINE ICONO_INFO  1
-*!*		    #DEFINE ICONO_AVISO 2
-*!*		    #DEFINE ICONO_ERROR 3
-*!*		    *poSysTray.ShowBalloonTip(pcTextoBalloon, "Ejemplo de un balloon", ICONO_NADA, 0)
-*!*		    *poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-*!*		    *READ EVENTS                           && Procesa los eventos, o sea que le permite al usuario elegir opciones del menú
-*!*		    
-	    IF oConfigTermi.ShowBalloonTip = 'FALSE' OR lldesarrollo
-	    	poTimer.Enabled = .f.
-	    ENDIF 
-*!*		  ENDIF
+	DO DECLARAR_FUNCIONES_API
+   
+*!*		poTimer.Enabled = .t.    
+*!*	    IF oConfigTermi.ShowBalloonTip = 'FALSE' OR lldesarrollo
+*!*	    	poTimer.Enabled = .f.
+*!*	    ENDIF 
+
 
 	Read events   
 ENDIF
@@ -586,36 +575,36 @@ DEFINE CLASS WALTER_SYSTRAY AS SYSTRAY OF "SYSTRAY.VCX"
 ENDDEFINE
 *
 *
-DEFINE CLASS WALTER_TIMER AS TIMER
-  
-  Enabled  = .T.
-  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
-  
-  PROCEDURE TIMER
-    cVersion = HayVersionExe("gestion.exe")
-    IF LEN(cVersion)> 0
-    	
-    	TRY 
-*!*		    	poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
-*!*		     	poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
-*!*		   	 	poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
-	   	 	FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
-	   	 	
-	   	 	m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
-			m_duracion=3
+*!*	DEFINE CLASS WALTER_TIMER AS TIMER
+*!*	  
+*!*	  Enabled  = .T.
+*!*	  Interval = 2000     && El control TIMER trabaja con milisegundos, por lo tanto 10.000 milisegundos equivalen a 10 segundos10
+*!*	  
+*!*	  PROCEDURE TIMER
+*!*	    cVersion = HayVersionExe("gestion.exe")
+*!*	    IF LEN(cVersion)> 0
+*!*	    	
+*!*	    	TRY 
+*!*	*!*		    	poSysTray.AddIconToSystray()          && El icono del menú es mostrado para que se pueda ejecutar el método ShowBalloonTip()
+*!*	*!*		     	poSysTray.ShowBalloonTip("EXISTE UNA NUEVA VERSION"+CHR(13)+"SALIR PARA ACTUALIZAR EL SISTEMA", "Nueva Version", ICONO_INFO,30)
+*!*	*!*		   	 	poSysTray.RemoveIconFromSystray()     && El icono del menú es ocultado, el usuario no podrá verlo
+*!*		   	 	FrmMenu3.Cont_Status.Cont_Update1.lbl.Caption = "EXISTE UNA NUEVA VERSION"
+*!*		   	 	
+*!*		   	 	m_tipo=1	&& ICONO DEL MENSAJE 0=icono predeterminado 1=Información 2=Alerta 3=Error 4=Informacion importante
+*!*				m_duracion=3
 
-			*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
-			m.osystray.ShowBalloonTip(cVersion, "GM Solutions" , m_tipo,m_duracion)
+*!*				*m.osystray.ShowBalloonTip("El sistema DEMO caducara dentro de : 30 Dia(s)", "Información" , m_tipo,m_duracion)
+*!*				m.osystray.ShowBalloonTip(cVersion, "GM Solutions" , m_tipo,m_duracion)
 
-		 	&&Subimos el intervalo porque el usuario ya vio el mensaje
-	  	  	This.Interval =   30000 
-	   CATCH TO oError
-	   		This.Enabled = .f.
-	   ENDTRY 
-	   		   	
-	  	 
-	 
-	ENDIF 
-  ENDPROC
-    
-ENDDEFINE 
+*!*			 	&&Subimos el intervalo porque el usuario ya vio el mensaje
+*!*		  	  	This.Interval =   30000 
+*!*		   CATCH TO oError
+*!*		   		This.Enabled = .f.
+*!*		   ENDTRY 
+*!*		   		   	
+*!*		  	 
+*!*		 
+*!*		ENDIF 
+*!*	  ENDPROC
+*!*	    
+*!*	ENDDEFINE 
