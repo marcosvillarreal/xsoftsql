@@ -1,6 +1,8 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
 2.1.24
 	Whatsapp+Timer
+	FacVta error no buscaba por defecto por codigo interno
+	Paravario_Fac , optativo buscar por codigo interno
 2.1.23
 	CentroRecep.iddeposito int NULL
 	FacVta, si GMSucursal.iddeposito#0, se asigna el deposito
