@@ -78,3 +78,61 @@
 31-10-2024 12:37:39 , Error: No se encuentra la variable 'LCCODPOSTAL'. Linea : INSERT INTO CsrDeudor (Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia ,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento ,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista ,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor,idorigen,Referencia,Sexo ,Financiado,Plan,Carnet ) values (lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista) ,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ),lcReferencia ,lcSexo,lcFinanciado,lcPlan,lcCarnet) Error :         12 Ultimo Alias Activo: CSRLISTA Ultimo registro:          2  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000M6TL01J7.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.BTTNLEER.CLICK
 31-10-2024 12:38:05 , Error: No se encuentra la variable 'LCFINANCIADO'. Linea : INSERT INTO CsrDeudor (Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia ,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento ,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista ,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor,idorigen,Referencia,Sexo ,Financiado,Plan,Carnet ) values (lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista) ,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ),lcReferencia ,lcSexo,lcFinanciado,lcPlan,lcCarnet) Error :         12 Ultimo Alias Activo: CSRLISTA Ultimo registro:          2  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000M6TL01L4.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.BTTNLEER.CLICK
 31-10-2024 16:47:08 , Error: No se encuentra el objeto OSCATTER. Linea : Oscatter.cnombre = CsrDeudor.nombre Error :       1923 Ultimo Alias Activo: CSRAUXCTACTE Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000M6TL049X.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.ACEPTAR.CLICK
+31-10-2024 17:39:48 , Verificando OCX
+31-10-2024 17:39:49 , Acceso al sistema, antes de autenticar
+31-10-2024 17:39:49 , Obteniendo conexion a servidor
+31-10-2024 17:39:49 , Verificando Licencia
+31-10-2024 17:39:52 , Conectado..marcos\sql2019
+31-10-2024 17:39:54 , Datos de la empresa
+31-10-2024 17:41:19 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : Oscatter.idsexo = IIF(UPPER('MASCU'$CsrDeudor.sexo),2,1) Error :         11 Ultimo Alias Activo: CSRPROVINCIA Ultimo registro:         25  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P001T.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.ACEPTAR.CLICK
+31-10-2024 17:47:44 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : Oscatter.idsexo = IIF(UPPER('MASCU'$CsrDeudor.sexo),2,1) Error :         11 Ultimo Alias Activo: CSRPROVINCIA Ultimo registro:         25  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0044.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.ACEPTAR.CLICK
+31-10-2024 17:53:43 , Error: No se encuentra la propiedad IDFINANCIADO. Linea : Oscatter.idfinanciado = CsrPlanMedico.idfinanciador Error :       1734 Ultimo Alias Activo: CSRPLANMEDICO Ultimo registro:         78  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P007U.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.ACEPTAR.CLICK
+01-11-2024 09:58:43 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrCtacteFlete')<=0 Error :         13 Ultimo Alias Activo: CSRCTACTECTACON Ultimo registro:         -1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0260.TMP Ultimo Control activo: CNOMBRE ABMCTACTE.KEYPRESS
+01-11-2024 09:58:48 , Error: No se encuentra el alias 'CSRCABERUTA'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0246.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 09:58:51 , Error: No se encuentra el alias 'CSRCABERUTA'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0246.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 09:58:57 , Error: No se encuentra el alias 'CSRCABERUTA'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0246.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 09:59:56 , Verificando OCX
+01-11-2024 09:59:57 , Acceso al sistema, antes de autenticar
+01-11-2024 09:59:57 , Obteniendo conexion a servidor
+01-11-2024 09:59:57 , Verificando Licencia
+01-11-2024 10:00:03 , Conectado..marcos\sql2019
+01-11-2024 10:00:03 , Datos de la empresa
+01-11-2024 10:06:17 , Error: No se encuentra el alias. Linea : IF RECCOUNT('CsrCtacteFlete')<=0 Error :         13 Ultimo Alias Activo: CSRCTACTECTACON Ultimo registro:         -1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02DW.TMP Ultimo Control activo: CNOMBRE ABMCTACTE.KEYPRESS
+01-11-2024 10:06:24 , Error: No se encuentra el alias 'CSRCABERUTA'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02D8.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 10:06:26 , Error: No se encuentra el alias 'CSRCABERUTA'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02D8.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 10:06:30 , Error: No se encuentra el alias 'CSRCABERUTA'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02D8.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 10:06:40 , Verificando OCX
+01-11-2024 10:06:41 , Acceso al sistema, antes de autenticar
+01-11-2024 10:06:41 , Obteniendo conexion a servidor
+01-11-2024 10:06:41 , Verificando Licencia
+01-11-2024 10:06:43 , Conectado..marcos\sql2019
+01-11-2024 10:06:43 , Datos de la empresa
+01-11-2024 10:08:23 , Error: No se encuentra la variable 'IDCATEIBRNG'. Linea : oCtacteActual.AddProperty("idcateibrng",CsrCtacte.idcateibrng) Error :         12 Ultimo Alias Activo: CSRCTACTECTACON Ultimo registro:         -1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02LX.TMP Ultimo Control activo: CNOMBRE ABMCTACTE.KEYPRESS
+01-11-2024 10:08:53 , Error: No se encuentra el alias 'CSRCTACTE_2'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRPADRONAFIP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02K4.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 10:09:02 , Verificando OCX
+01-11-2024 10:09:04 , Acceso al sistema, antes de autenticar
+01-11-2024 10:09:04 , Obteniendo conexion a servidor
+01-11-2024 10:09:04 , Verificando Licencia
+01-11-2024 10:09:05 , Conectado..marcos\sql2019
+01-11-2024 10:09:05 , Datos de la empresa
+01-11-2024 10:10:14 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02TT.TMP Ultimo Control activo: CNOMBRE ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTNOMBRE.VALID
+01-11-2024 10:10:18 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02TT.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTNOMBRE.VALID
+01-11-2024 10:10:22 , Error: No se encuentra el alias 'CSRCTACTEFLETE'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P02TT.TMP Ultimo Control activo:  ABMCTACTE.CMDCANCELAR.CLICK
+01-11-2024 10:10:32 , Verificando OCX
+01-11-2024 10:10:33 , Acceso al sistema, antes de autenticar
+01-11-2024 10:10:33 , Obteniendo conexion a servidor
+01-11-2024 10:10:33 , Verificando Licencia
+01-11-2024 10:10:34 , Conectado..marcos\sql2019
+01-11-2024 10:10:34 , Datos de la empresa
+01-11-2024 10:16:07 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0360.TMP Ultimo Control activo: REFERENCIA ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTREFERENCIA.VALID
+01-11-2024 10:16:14 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0360.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTREFERENCIA.VALID
+01-11-2024 10:16:17 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0360.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTREFERENCIA.VALID
+01-11-2024 10:16:22 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0360.TMP Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.C_NOMBRE._TXTREFERENCIA.VALID
+01-11-2024 10:16:28 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0360.TMP Ultimo Control activo:  MAIN
+01-11-2024 10:16:32 , Error: PAGE5 es un miembro desconocido. Linea : .page5.lblclienteactivo.Caption = this.Value Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:          1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GV0P0360.TMP Ultimo Control activo:  A_CLEARALL
+01-11-2024 10:16:39 , Verificando OCX
+01-11-2024 10:16:40 , Acceso al sistema, antes de autenticar
+01-11-2024 10:16:40 , Obteniendo conexion a servidor
+01-11-2024 10:16:40 , Verificando Licencia
+01-11-2024 10:17:03 , Conectado..marcos\sql2019
+01-11-2024 10:17:04 , Datos de la empresa
