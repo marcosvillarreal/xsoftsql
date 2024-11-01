@@ -1,4 +1,4 @@
-goapp.idsucursal = 1100000001
+goapp.idsucursal = 1100000002
 GOAPP.IDUSUARIO =1
 cEmpresa = ''
 DO CASE 
