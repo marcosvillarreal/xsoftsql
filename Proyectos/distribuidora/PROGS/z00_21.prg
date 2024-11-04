@@ -42,7 +42,7 @@ leiunarticulo = .f.
 
 ldebug = .f.
 
-SKIP 
+*SKIP 
 *stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 10 &&Hay un campo vacio
@@ -183,13 +183,13 @@ ldebug = .f.
 SELECT CsrLista
 GO TOP 
 *vista()
-lnPrimeraOcurrencia = 13
+lnPrimeraOcurrencia = 10
 leiunarticulo = .f.
 
 SKIP 
 *STOP()
 DO WHILE NOT EOF()
-	lnCantCampo = 31 &&Hay un campo vacio
+	lnCantCampo = 13 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -224,17 +224,17 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcNombre)))
-			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcRubro)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcNombre)))
+			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcRubro)))
 			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcProveedor)))
 			lcAlicuota		= "21"
 			
-			lcCosto			= UPPER((IIF(j + i=30,lcCadena,lcCosto)))
+			lcCosto			= UPPER((IIF(j + i=9,lcCadena,lcCosto)))
 			*lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
-			lcLista1		= IIF(j + i=22,lcCadena,lcLista1)
-			lcLista2		= IIF(j + i=24,lcCadena,lcLista2)
-			lcLista3		= IIF(j + i=26,lcCadena,lcLista3)
+			lcLista1		= IIF(j + i=6,lcCadena,lcLista1)
+			lcLista2		= IIF(j + i=7,lcCadena,lcLista2)
+			lcLista3		= IIF(j + i=8,lcCadena,lcLista3)
 			*lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
 			
 			IF VAL(lcCodigo)=945 and ldebug
@@ -256,7 +256,11 @@ DO WHILE NOT EOF()
 			EXIT 
 		ENDIF 
 	ENDDO 
-
+	
+	IF VAL(lcCodigo)=3
+			stop()
+		ENDIF 
+			
 	IF lnCamposLeidos>=1 AND i+j >= lnCantCampo
 		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
 		&&Que se grabaran en csrarti.
@@ -270,10 +274,10 @@ DO WHILE NOT EOF()
 		IF LEN(RTRIM(lcNombre))<=3
 		*	LOOP 
 		ENDIF 
-		IF ALLTRIM(STRzero(VAL(lcCodigo),3)) <>ALLTRIM(lcCodigo)
-			SKIP 
-			LOOP 
-		ENDIF 
+		*IF ALLTRIM(STRzero(VAL(lcCodigo),3)) <>ALLTRIM(lcCodigo)
+		*	SKIP 
+		*	LOOP 
+		*ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
 		lcLista1 = STRTRAN(lcLista1,',','.')
 		lcLista2 = STRTRAN(lcLista2,',','.')
@@ -464,6 +468,9 @@ DO WHILE NOT EOF()
 	DO WHILE lnCamposLeidos<4
 		i = 1
 		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+		
+			
+			
 			lnpos = AT(lcDelimitador,&lcNomCampo,i)
 			IF lnPos#0 &&No es fin de linea
 				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))

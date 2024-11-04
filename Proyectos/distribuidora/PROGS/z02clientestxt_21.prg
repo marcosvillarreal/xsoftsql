@@ -22,10 +22,12 @@ SELECT CsrDeudor
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
 =LeerProveedores_21(cArchivo)
 SELECT CsrAcreedor 
+vista()
+
 SELECT distinct nombre,referencia,documento,telefono,telefono2 ;
 FROM CsrAcreedor INTO CURSOR CsrAcreedor2 READWRITE 
 
-*vista()
+vista()
 
 
 Oavisar.proceso('S','Abriendo archivos')

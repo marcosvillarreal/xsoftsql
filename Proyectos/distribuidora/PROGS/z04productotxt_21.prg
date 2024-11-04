@@ -15,16 +15,18 @@ SET CPCOMPILE TO 1252
 codepage = 1252
 SET CPDIALOG ON
 
+*stop()
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"productosExp.csv"
 =LeerArticulos_21()
 SELECT CsrArticulo
-*vista()
+vista()
 
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
 =LeerProveedores_21(cArchivo)
 SELECT CsrAcreedor 
 SELECT distinct nombre,codigo,lista as univenta,(codlista) as unibulto;
 FROM CsrAcreedor INTO CURSOR CsrAcreedor2 READWRITE 
+SELECT CsrAcreedor2 
 vista()
 
 Oavisar.proceso('S','Abriendo archivos') 
@@ -176,9 +178,12 @@ SCAN FOR !EOF()
 		lnunibulto	= IIF(CsrAcreedor2.unibulto=0,1,CsrAcreedor2.unibulto)
 		lnidtipovta = IIF(LEN(LTRIM(UPPER(CsrAcreedor2.univenta)))>0,1,2) &&UNIDADES=1 ,	BULTOS = 2.
 	ELSE
-		SELECT CsrCtacte
-		LOCATE FOR ALLTRIM(cnombre)='DISTRIBUIDORA GATTARI'
-		lnidctacte = Csrctacte.id
+		*SELECT CsrCtacte
+		*LOCATE FOR ALLTRIM(cnombre)='DISTRIBUIDORA GATTARI'
+		*lnidctacte = Csrctacte.id
+		SELECT CsrArticulo
+		LOOP 
+		
 	ENDIF 
 	
 	cRubro = ALLTRIM(CsrArticulo.rubro)
@@ -234,11 +239,17 @@ SCAN FOR !EOF()
 		*Lista1 Tiene el prescio c/iva, debo componer para atras con un margen del 30%
 		lnPrevtaf1		= VAL(CsrArticulo.lista1)
 		lnCostoF		= VAL(CsrArticulo.costo)
+		lnprevtaf2		= VAL(CsrArticulo.lista2)
+		lnprevtaf3	= VAL(CsrArticulo.lista3)
+		lnprevtaf4	= VAL(CsrArticulo.lista4)
 		
 		&&Si se vende por bulto, debemos transformar el precio a unidades
 		IF lnidtipovta =2 AND lnunibulto > 1
 			lnPrevtaf1 = lnPrevtaf1 / lnunibulto
 			lnCostoF = lnCostoF / lnunibulto
+			lnPrevtaf2 = lnPrevtaf2 / lnunibulto
+			lnPrevtaf3 = lnPrevtaf3 / lnunibulto
+			lnPrevtaf4 = lnPrevtaf4 / lnunibulto
 		ENDIF 
 		
 		IF lnPrevtaf1> 0
@@ -249,15 +260,15 @@ SCAN FOR !EOF()
 			lnUtil1		= IIF(lnCosto=0,0,round(lnprevta1 * 100 / lnCosto,2) - 100)
 			lnprevtaf1	= red(lnprevta1 * (1 + (IIF(lnTasa=0,21,lnTasa)/100)),2)
 			
-			lnprevtaf2	= VAL(CsrArticulo.lista2)
+			
 			lnprevta2	= red(lnprevtaf2 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
 			lnUtil2		= IIF(lnCosto=0,0,red((lnprevta2 * 100) /  lnCosto,2) - 100)
 
-			lnprevtaf3	= VAL(CsrArticulo.lista3)
+			
 			lnprevta3	= red(lnprevtaf3 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
 			lnUtil3		= IIF(lnCosto=0,0,red((lnprevta3 * 100) /  lnCosto,2) - 100)
 			
-			lnprevtaf4	= VAL(CsrArticulo.lista4)
+			
 			lnprevta4	= red(lnprevtaf4 * 100 / (100 + (IIF(lnTasa=0,21,lnTasa))),2)
 			lnUtil4		= IIF(lnCosto=0,0,red((lnprevta4 * 100) /  lnCosto,2) - 100)
 			
