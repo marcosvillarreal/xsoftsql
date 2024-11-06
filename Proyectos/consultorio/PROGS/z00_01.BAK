@@ -134,6 +134,11 @@ DO WHILE NOT EOF()
 			SKIP 
 			LOOP
 		ENDIF 
+		IF LEN(LTRIM(lcDocumento ))=0
+			SKIP 
+			LOOP 
+		ENDIF 
+		
 *!*			IF ALLTRIM(STR(VAL(lcCodigo)))<>ALLTRIM(lcCodigo)
 *!*				SKIP 
 *!*				LOOP 
