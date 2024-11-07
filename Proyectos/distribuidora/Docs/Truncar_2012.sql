@@ -1,24 +1,24 @@
-use distgattari
+use meridiem
 go
---execute actualizarid 1
+execute actualizarid 1
 go
-sp_helpdb distgattari
+sp_helpdb meridiem
 -- Antes de truncar el log cambiamos el modelo de recuperación a SIMPLE.
-ALTER DATABASE distgattari
+ALTER DATABASE meridiem
 SET RECOVERY SIMPLE;
 GO
 
 --Recucimos los archivos eliminados del principal
-DBCC SHRINKFILE(distgattari, 1);
+DBCC SHRINKFILE(meridiem, 1);
 --Reducimos el log de transacciones a  1 MB.
 go
-DBCC SHRINKFILE(distgattari_log, 1);
+DBCC SHRINKFILE(meridiem_log, 1);
 
 GO
 -- Cambiamos nuevamente el modelo de recuperación a Completo.
-ALTER DATABASE distgattari
+ALTER DATABASE meridiem
 SET RECOVERY FULL;
 go
-sp_helpdb distgattari
+sp_helpdb meridiem
 GO
--- execute sp_backupdatabase 'distgattari','F'
+ execute sp_backupdatabase 'meridiem','F'
