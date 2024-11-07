@@ -1,0 +1,13 @@
+07-11-2024 08:22:25 , INF_DEVOLUCIONES.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: SQL: no se encuentra la columna 'CODALFAPROV'.;Linea : SELECT grupo,zona ,vendedor ,cliente ,CodCliente ,articulo ,seccion  ,unibulto ,idzona , idvendedor , idctacte , idarticulo , idseccion ,CodArticulo , CodVendedor ,idvariedad, nomvariedad ,SUM(kilos1) as kilos1,SUM(devolk) as devolk,CAST(0 as n(12,3)) as porcek ,SUM(unidad1) as unidad1, SUM(devolu) as devolu,CAST(0 as n(12,3)) as porceu ,SUM(importe1) as importe1,SUM(devoli) as devoli,CAST(0 as n(12,3)) as porcei ,SUM(sumauni) as sumauni,codalfaprov FROM CsrImprimir GROUP BY grupo,zona ,vendedor ,cliente ,CodCliente ,articulo ,seccion ,unibulto ,idzona , idvendedor , idctacte , idarticulo , idseccion ,CodArticulo ,CodVendedor ,idvariedad, nomvariedad,codalfaprov ORDER BY idzona,idvendedor,idctacte ,idseccion,codarticulo,idvariedad INTO CURSOR CsrImprimir READWRITE;Error :       1806;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:        204 STRID(IDZONA,10)+STRID(IDVENDEDOR,10)+STRID(IDCTACTE,10)+STRID(IDSECCION,10)+STRID(IDARTICULO)+STRID(IDVARIEDAD,10);DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000RZT501P9.TMP;Ultimo Control activo: 
+07-11-2024 08:22:25 , Pila de llamadas
+07-11-2024 08:22:25 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+07-11-2024 08:22:25 , Objeto      : inf_devoluciones.imprimir_vistaprevia1.impresora.click
+07-11-2024 08:22:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+07-11-2024 08:22:25 , Nº de Linea :          8
+07-11-2024 08:22:25 , En el Fuente: 	llOK=thisform.CrearInforme()
+07-11-2024 08:22:25 , Programa    : j:\xsoftsql\proyectos\distribuidora\forms\inf_devoluciones.sct
+07-11-2024 08:22:25 , Objeto      : inf_devoluciones.crearinforme
+07-11-2024 08:22:25 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\forms\inf_devoluciones.sct
+07-11-2024 08:22:26 , Nº de Linea :        269
+07-11-2024 08:22:26 , En el Fuente: 	SELECT grupo,zona ,vendedor ,cliente ,CodCliente ,articulo ,seccion  ,unibulto ,idzona , idvendedor 		, idctacte , idarticulo , idseccion ,CodArticulo , CodVendedor ,idvariedad, nomvariedad		,SUM(kilos1) as kilos1,SUM(devolk) as devolk,CAST(0 as n(12,3)) as porcek		,SUM(unidad1) as unidad1, SUM(devolu) as devolu,CAST(0 as n(12,3)) as porceu		,SUM(importe1) as importe1,SUM(devoli) as devoli,CAST(0 as n(12,3)) as porcei		,SUM(sumauni) as sumauni,codalfaprov	FROM CsrImprimir GROUP BY grupo,zona ,vendedor ,cliente ,CodCliente ,articulo ,seccion		  ,unibulto ,idzona , idvendedor , idctacte , idarticulo , idseccion ,CodArticulo		  ,CodVendedor ,idvariedad, nomvariedad,codalfaprov ORDER BY idzona,idvendedor,idctacte		  ,idseccion,codarticulo,idvariedad INTO CURSOR CsrImprimir READWRITE 
+07-11-2024 08:22:26 , Fin

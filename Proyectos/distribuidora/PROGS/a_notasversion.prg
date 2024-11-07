@@ -3,6 +3,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 2.3.33
 	Errores Recibos PM, Sel alamacena el recibo para ver si existe
+	Arreglos inf_devoluciones
 2.3.32
 	Exportadores y listados por email
 2.3.31
