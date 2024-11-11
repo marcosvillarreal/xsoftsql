@@ -70,64 +70,63 @@ cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientesExp.csv"
 =LeerClientes(cArchivo,1)
 replace ALL ctadeudor  WITH 1 IN CsrDeudor
 SELECT CsrDeudor
-vista()
-
-RETURN .f.
 
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresExp.csv"
-=LeerClientes(cArchivo,8)
+=LeerClientes(cArchivo,2)
 SELECT CsrDeudor
-vista()
-
-*!*	SELECT distinct codlocalidad,CAST(0 as numeric(10)) as idlocalidad,UPPER(localidad) as nombre,codpostal ,codprovincia,provincia ,SPACE(30) AS Localidad, SPACE(6) as CPostal;
-*!*	 FROM CsrDeudor  ORDER BY PROVINCIA, NOMBRE INTO CURSOR CsrCiudad READWRITE 
+*vista()
 
 
-*!*	SELECT CsrCiudad
+SELECT distinct codlocalidad,CAST(0 as numeric(10)) as idlocalidad,UPPER(localidad) as nombre,codpostal ;
+,codprovincia,provincia ,SPACE(30) AS Localidad, SPACE(6) as CPostal;
+ FROM CsrDeudor  ORDER BY PROVINCIA, NOMBRE INTO CURSOR CsrCiudad READWRITE 
+
+
+SELECT CsrCiudad
 *!*	*DELETE FROM CsrCiudad WHERE VAL(codpostal)=VAL(cpostal)
 *!*	*vista()
 
-*!*	*stop()
-*!*	SCAN 
-*!*		IF VAL(CsrCiudad.codpostal)=8138
-*!*		*	stop()
-*!*		ENDIF 
-*!*		
-*!*		lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)))
-*!*		
-*!*		lnCodProvincia = VAL(CsrCiudad.codprovincia)
-*!*		
-*!*		lnCodProvincia = IIF(lnCodProvincia =0 ,1,IIF(lnCodProvincia = 1,0,lnCodProvincia ))
-*!*	*!*		lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=19 ,21,lnCodProvincia ) &&la pampa
-*!*	*!*		lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=21 ,20,lnCodProvincia ) &&neruquen
-*!*	*!*		lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=13 ,12,lnCodProvincia ) &&santa fe
+*stop()
+SCAN 
+	IF VAL(CsrCiudad.codpostal)=8138
+	*	stop()
+	ENDIF 
+	
+	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrCiudad.nombre)))
+	
+	lnCodProvincia = VAL(CsrCiudad.codprovincia)
+	
+	lnCodProvincia = IIF(lnCodProvincia =0 ,1,IIF(lnCodProvincia = 1,0,lnCodProvincia ))
+*!*		lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=19 ,21,lnCodProvincia ) &&la pampa
+*!*		lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=21 ,20,lnCodProvincia ) &&neruquen
+*!*		lnCodProvincia = IIF(VAL(CsrCiudad.codprovincia)=13 ,12,lnCodProvincia ) &&santa fe
 
-*!*		*lnCodProvincia = IIF(lnCodProvincia = 0 ,1,lnCodProvincia )
-*!*		SELECT CsrLocalidad
-*!*		
-*!*		LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada AND VAL(codsicore) = lnCodProvincia
-*!*		IF VAL(CsrCiudad.codpostal)=8138
-*!*			*vista()
-*!*		ENDIF 
-*!*		
-*!*		IF id#0
-*!*			replace localidad WITH lcLocalidadBuscada,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
-*!*			IF "CUIDAD DE BUENOS AIRES"$RTRIM(lcLocalidadBuscada)
-*!*				SELECT CsrLocalidad
-*!*				LOCATE FOR nombre = lcLocalidadBuscada AND cpostal = VAL(CsrCiudad.codpostal)
-*!*				
-*!*				replace cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
-*!*			ENDIF 
-*!*			replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
-*!*		ELSE
-*!*			LOCATE FOR VAL(cpostal) = 7500 &&TresArroyos
-*!*			IF id#0
-*!*				*replace localidad WITH CsrLocalidad.nombre,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
-*!*				replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
-*!*			ENDIF 
-*!*		ENDIF 
-*!*		SELECT CsrCiudad
-*!*	ENDSCAN
+	*lnCodProvincia = IIF(lnCodProvincia = 0 ,1,lnCodProvincia )
+	SELECT CsrLocalidad
+	
+	LOCATE FOR ALLTRIM(nombre) = lcLocalidadBuscada AND VAL(codsicore) = lnCodProvincia
+	IF VAL(CsrCiudad.codpostal)=8138
+		*vista()
+	ENDIF 
+	
+	IF id#0
+		replace localidad WITH lcLocalidadBuscada,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
+		IF "CUIDAD DE BUENOS AIRES"$RTRIM(lcLocalidadBuscada)
+			SELECT CsrLocalidad
+			LOCATE FOR nombre = lcLocalidadBuscada AND cpostal = VAL(CsrCiudad.codpostal)
+			
+			replace cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
+		ENDIF 
+		replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
+	ELSE
+		LOCATE FOR VAL(cpostal) = 8500 &&PataGones
+		IF id#0
+			*replace localidad WITH CsrLocalidad.nombre,cpostal WITH CsrLocalidad.cpostal IN CsrCiudad
+			replace idlocalidad WITH CsrLocalidad.id in CsrCiudad
+		ENDIF 
+	ENDIF 
+	SELECT CsrCiudad
+ENDSCAN
 
 lnid			= RecuperarID('CsrCtacte',Goapp.sucursal10)
 
@@ -145,7 +144,7 @@ SCAN
 	,lnctabanco,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,lnsaldo,lnsaldoant,lnestadocta;
     	,lnbonif1,lnbonif2,lncopiatkt,lnconvenio,lnsaldoauto,lnidbarrio,lnlista,lnidcateibrng,lncomision;
    	 ,lnidtipodoc,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,lnidcategoria;
-    	,lndiasvto,lnplanpago
+    	,lndiasvto,lnplanpago,lnCotiDolar
     
    	STORE "" TO lccnumero,lccnombre,lccdireccion,lccpostal,lcctelefono2,lcctelefono,lcemail,lccuit;
     	,lcobserva,lcinscri01,lcinscri02,lcinscri03,lcingbrutos,lcnumdoc
@@ -155,17 +154,23 @@ SCAN
 *!*		   Oavisar.proceso('S',lcTitulo,.t.,recno())
 *!*		 ENDIF
     
-    	STORE 1 TO 	lnlista, lnidcanalvta
-    	&&lcEmail			= FsrDeudor.cliente
-    	nNumeroCtacte	= nNumeroCtacte + 1 
+   	STORE 1 TO 	lnlista, lnidcanalvta
+   	&&lcEmail			= FsrDeudor.cliente
+    nNumeroCtacte	= nNumeroCtacte + 1 
+    IF CsrDeudor.ctadeudor = 1
+	    nNumeroCtacte	= VAL(CsrDeudor.codigo)		
+	ENDIF 
+    
+  	
 	lnestadocta		= 0
 	lccnumero		= ALLTRIM(STR(nNumeroCtacte))
 	lccnombre		= ALLTRIM(CsrDeudor.nombre)
 	lccdireccion	= ALLTRIM(CsrDeudor.direccion)
 	lcctelefono		= ALLTRIM(CsrDeudor.telefono)
+	lcctelefono2	= ALLTRIM(CsrDeudor.telefono2)
 	ldfechalta		= DATETIME(1900,01,01,0,0,0)
-	*lcobserva		= FsrDeudor.observa
-	lccuit 		=cuit(PeloCuit(CsrDeudor.documento))
+	lcobserva		= ALLTRIM(CsrDeudor.observa)
+	lccuit 			= cuit(PeloCuit(CsrDeudor.documento))
 	ldfecins01		= DATETIME(1900,01,01,0,0,0)
 	ldfecultcompra	= DATETIME(1900,01,01,0,0,0)
 	ldfecultpago	= DATETIME(1900,01,01,0,0,0)
@@ -175,6 +180,9 @@ SCAN
 	lccp = ""
 	lnidtablaint	= 0 &&Por defecto es el interes de socio
 	&&Buscamos si existen los tipo de documento valido
+	
+	
+	lnsaldo		= VAL(CseDeudor.saldo)
 	
 	SELECT CsrLocalidad
 	LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
@@ -188,13 +196,11 @@ SCAN
 	IF lnctadeudor = 0
 		lnctaacreedor = 1
 		lnidcategoria = lnidctaacreedor
+		lnCotiDolar = VAL(CsrDeudor.TopeSaldo)
+	ELSE
+		lnsaldoauto = VAL(CsrDeudor.TopeSaldo)
 	ENDIF 
-*!*		IF lntipoiva=7
-*!*			lntipoiva = 5
-*!*		ENDIF 
-*!*		IF lntipoiva=3
-*!*			lncuit=''
-*!*		ENDIF
+
 
 	cBuscar = 'CCT'
 	
@@ -210,13 +216,14 @@ SCAN
 	,ctaorden,idplanpago,idcanalvta,fechalta,observa,saldo,saldoant,estadocta,bonif1,bonif2,copiatkt;
 	,inscri01,fecins01,inscri02,inscri03,convenio,saldoauto,idbarrio,lista,idcateibrng,ingbrutos;
 	,comision,fecultcompra,fecultpago,numdoc,idtipodoc,existeibto,existegan,diasvto,idtablaint,esrecodevol;
-	,totalizabonif,codigo);
+	,totalizabonif,referencia,CotiDolar);
     VALUES(lnid,lccnumero,lccnombre,lccdireccion,lccpostal,lnidlocalidad,lnidprovincia,lcctelefono2;
     ,lcctelefono,lcemail,lntipoiva,lccuit,lnidcategoria,lnctadeudor,lnctaacreedor,lnctalogistica,lnctabanco;
     ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
     ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
     ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
-    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,VAL(lccnumero))
+    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,(lccnumero);
+    ,lnCotiDolar)
     
 	lnid = lnid + 1
 	

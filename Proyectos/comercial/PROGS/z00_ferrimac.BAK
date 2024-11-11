@@ -10,10 +10,11 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,Saldo c(20),TopeSaldo c(20),Observa c(200))
 ENDFUNC 
 
-FUNCTION LeerClientes(cArchivo,CantCampos)
+FUNCTION LeerClientes(cArchivo,nTipoForm)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
+CantCampos = IIF(nTipoForm=1,21,18)
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
@@ -78,21 +79,34 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcTelefono)))	
-			lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcTipoDoc)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDocumento)))				
-			lcTopeSaldo		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTopeSaldo)))						
-			lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcSaldo)))			
-			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEstado)))
-			lcObserva		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcObserva)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcTelefono2)))
-			lcEmail			= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcEmail)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcProvincia)))	
-			
+			IF nTipoForm = 1
+				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
+				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
+				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
+				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcTelefono)))	
+				lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcTipoDoc)))
+				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDocumento)))				
+				lcTopeSaldo		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTopeSaldo)))						
+				lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcSaldo)))			
+				lcEstado		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEstado)))
+				lcObserva		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcObserva)))
+				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcTelefono2)))
+				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcEmail)))
+				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcLocalidad)))
+				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcProvincia)))	
+			ELSE
+				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
+				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
+				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
+				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLocalidad)))
+				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcProvincia)))	
+				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTelefono)))	
+				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcEmail)))
+				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono2)))
+				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcDocumento)))	
+				lcObserva		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcObserva)))
+				lcTopeSaldo		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcTopeSaldo)))	
+			ENDIF 
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			

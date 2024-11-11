@@ -14,7 +14,7 @@ FUNCTION LeerClientes(cArchivo,nTipoForm)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
-CantCampos = IIF(nTipoForm=1,21,21)
+CantCampos = IIF(nTipoForm=1,21,18)
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
@@ -32,14 +32,14 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
 ldebug = .t.
 
 SKIP 
-stop()
+*stop()
 DO WHILE NOT EOF()
 	lnCantCampo = CantCampos &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -79,7 +79,7 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			IF nTipoForm
+			IF nTipoForm = 1
 				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
 				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
@@ -96,6 +96,16 @@ DO WHILE NOT EOF()
 				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcProvincia)))	
 			ELSE
 				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
+				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
+				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
+				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLocalidad)))
+				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcProvincia)))	
+				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTelefono)))	
+				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcEmail)))
+				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono2)))
+				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcDocumento)))	
+				lcObserva		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcObserva)))
+				lcTopeSaldo		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcTopeSaldo)))	
 			ENDIF 
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
