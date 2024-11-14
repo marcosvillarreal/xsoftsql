@@ -1,6 +1,6 @@
 use pm
 go
-select * from empresa where id = 4
+select * from empresa where id = 6
 go
 select top 1 fecupdate,idempresa,'Vendedor' as tabla from vendedor --where idempresa = 6
 order by fecupdate desc
