@@ -8,13 +8,18 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
 		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i;
 		,Saldo c(20),TopeSaldo c(20),Observa c(200))
+		
+CREATE CURSOR CsrArticulo (Codigo c(20),Nombre c(100),CodMarca c(10),Marca c(20),CodRubro c(10),Rubro c(20),CodProveedor c(10);
+		,CodArtProveed c(20),CodMoneda c(5),CodAlicuota c(5),Costo c(20),Bonif1 c(20),Bonif2 c(20),Bonif3 c(20);
+		,Bonif4 c(20), Bonif5 c(20), FletePorce c(20), Flete c(20),UtilPorce c(20), Utilidad c(20);
+		,Preciosiva c(20),Preciociva c(20),FechaPrecio c(15),Nofactura c(2),Observa c(200),Stock c(10))
 ENDFUNC 
 
 FUNCTION LeerClientes(cArchivo,nTipoForm)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 
-CantCampos = IIF(nTipoForm=1,21,18)
+CantCampos = IIF(nTipoForm=1,23,18)
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
@@ -86,26 +91,26 @@ DO WHILE NOT EOF()
 				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcTelefono)))	
 				lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcTipoDoc)))
 				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDocumento)))				
-				lcTopeSaldo		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTopeSaldo)))						
-				lcSaldo			= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcSaldo)))			
+				lcTopeSaldo		= UPPER((IIF(j + i=11,lcCadena,lcTopeSaldo)))						
+				lcSaldo			= UPPER((IIF(j + i=13,lcCadena,lcSaldo)))			
 				lcEstado		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEstado)))
 				lcObserva		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcObserva)))
 				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcTelefono2)))
 				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcEmail)))
 				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcLocalidad)))
-				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcProvincia)))	
+				lcCodProvincia	= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcCodProvincia)))	
 			ELSE
 				lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
 				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
 				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcDireccion)))
 				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLocalidad)))
-				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcProvincia)))	
+				lcCodProvincia	= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodProvincia)))	
 				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcTelefono)))	
 				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcEmail)))
 				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono2)))
 				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcDocumento)))	
 				lcObserva		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcObserva)))
-				lcTopeSaldo		= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcTopeSaldo)))	
+				lcTopeSaldo		= UPPER((IIF(j + i=18,lcCadena,lcTopeSaldo)))	
 			ENDIF 
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -165,8 +170,6 @@ ENDFUNC
 FUNCTION LeerArticulos(lcArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
-		,Alicuota c(8),UniBulto c(10),UniVenta c(1),Costo c(15),CodRubro c(6),IDJ c(8))
 
 SELECT CsrLista
 APPEND FROM  &cArchivo SDF
@@ -190,7 +193,7 @@ leiunarticulo = .f.
 SKIP 
 *STOP()
 SCAN 
-	lnCantCampo = 6 &&Hay un campo vacio
+	lnCantCampo = 34 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -202,8 +205,11 @@ SCAN
 *!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
 		leiunarticulo = .t.
 		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta
-		STORE "" TO lcCosto, lcLista1, lcLista2,lcIDJ ,lcUniBulto,lcCodRubro
+		
+		STORE "" TO lcCodigo ,lcNombre ,lcCodMarca ,lcMarca ,lcCodRubro ,lcRubro ,lcCodProveedor ;
+		, lcCodArtProveed , lcCodMoneda , lcCodAlicuota , lcCosto , lcBonif1 , lcBonif2 , lcBonif3 ;
+		, lcBonif4 , lcBonif5 , lcFletePorce , lcFlete , lcUtilPorce , lcUtilidad ;
+		, lcPreciosiva , lcPreciociva , lcFechaPrecio , lcNofactura , lcObserva , lcStock 
 		j = 0
 *!*		ELSE
 *!*			IF !leiunarticulo
@@ -222,16 +228,33 @@ SCAN
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
-			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
-			lcAlicuota		= "21"
-			lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
-			lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
-			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
-			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
+
+			lcCodigo		= UPPER((IIF(j + i=1,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))			
+			lcCodMarca		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodMarca)))
+			lcMarca 		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcMarca )))
+			lcCodRubro 		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodRubro )))
+			lcRubro 		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcRubro )))
+			lcCodProveedor 	= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodProveedor )))
+			lcCodArtProveed = UPPER((IIF(j + i=8,lcCadena,lcCodArtProveed )))
+			lcCodMoneda 	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodMoneda )))
+			lcCodAlicuota 	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcCodAlicuota )))
+			lcCosto 		= UPPER((IIF(j + i=14,lcCadena,lcCosto )))
+			lcBonif1 		= UPPER((IIF(j + i=15,lcCadena,lcBonif1 )))
+			lcBonif2 		= UPPER((IIF(j + i=16,lcCadena,lcBonif2)))
+			lcBonif3 		= UPPER((IIF(j + i=17,lcCadena,lcBonif3 )))
+			lcBonif4 		= UPPER((IIF(j + i=18,lcCadena,lcBonif4)))
+			lcBonif5 		= UPPER((IIF(j + i=19,lcCadena,lcBonif5)))
+			lcFletePorce 	= UPPER((IIF(j + i=21,lcCadena,lcFletePorce )))
+			lcFlete 		= UPPER((IIF(j + i=22,lcCadena,lcFlete )))
+			lcUtilPorce 	= UPPER((IIF(j + i=23,lcCadena,lcUtilPorce )))
+			lcUtilidad 		= UPPER((IIF(j + i=24,lcCadena,lcUtilidad )))
+			lcPreciosiva 	= UPPER((IIF(j + i=25,lcCadena,lcPreciosiva )))
+			lcPreciociva 	= UPPER((IIF(j + i=26,lcCadena,lcPreciociva )))
+			lcFechaPrecio 	= UPPER(LimpiarCadena(IIF(j + i=27,lcCadena,lcFechaPrecio )))
+			lcNofactura 	= UPPER(LimpiarCadena(IIF(j + i=30,lcCadena,lcNofactura )))
+			lcObserva 		= UPPER(LimpiarCadena(IIF(j + i=32,lcCadena,lcObserva )))
+			lcStock 		= UPPER((IIF(j + i=34,lcCadena,lcStock )))
 			
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -258,8 +281,16 @@ SCAN
 			LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
-		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto);
-		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta,lcCosto,lcCodRubro,lcIDJ,lcUniBulto)
+		
+		INSERT INTO CsrArticulo (Codigo ,Nombre ,CodMarca ,Marca ,CodRubro ,Rubro ,CodProveedor ;
+		,CodArtProveed ,CodMoneda ,CodAlicuota ,Costo ,Bonif1 ,Bonif2 ,Bonif3 ;
+		,Bonif4 , Bonif5 , FletePorce , Flete ,UtilPorce , Utilidad ;
+		,Preciosiva ,Preciociva ,FechaPrecio ,Nofactura ,Observa ,Stock );
+		values (lcCodigo ,lcNombre ,lcCodMarca ,lcMarca ,lcCodRubro ,lcRubro ,lcCodProveedor ;
+		, lcCodArtProveed , lcCodMoneda , lcCodAlicuota , lcCosto , lcBonif1 , lcBonif2 , lcBonif3 ;
+		, lcBonif4 , lcBonif5 , lcFletePorce , lcFlete , lcUtilPorce , lcUtilidad ;
+		, lcPreciosiva , lcPreciociva , lcFechaPrecio , lcNofactura , lcObserva , lcStock )
+
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

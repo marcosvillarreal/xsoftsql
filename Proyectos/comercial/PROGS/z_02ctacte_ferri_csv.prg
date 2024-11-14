@@ -60,21 +60,25 @@ lnidctadeudor = CsrCateCtacte.id
 
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-SELECT CsrLocalidad.*,Provincia.nombre as provincia FROM Localidad as CsrLocalidad
+SELECT CsrLocalidad.*,Provincia.nombre as provincia,Provincia.CodConvMult as codsicore
+FROM Localidad as CsrLocalidad
 inner join Provincia on CsrLocalidad.idprovincia = Provincia.id
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 SELECT CsrLocalidad
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientesExp.csv"
-=LeerClientes(cArchivo,1)
-replace ALL ctadeudor  WITH 1 IN CsrDeudor
-SELECT CsrDeudor
 
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresExp.csv"
 =LeerClientes(cArchivo,2)
 SELECT CsrDeudor
-*vista()
+replace ALL ctadeudor  WITH 2 IN CsrDeudor
+
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientesExp.csv"
+=LeerClientes(cArchivo,1)
+replace ALL ctadeudor  WITH 1 FOR ctadeudor = 0 IN CsrDeudor
+SELECT CsrDeudor
+
+vista()
 
 
 SELECT distinct codlocalidad,CAST(0 as numeric(10)) as idlocalidad,UPPER(localidad) as nombre,codpostal ;
@@ -157,10 +161,13 @@ SCAN
    	STORE 1 TO 	lnlista, lnidcanalvta
    	&&lcEmail			= FsrDeudor.cliente
     nNumeroCtacte	= nNumeroCtacte + 1 
-    IF CsrDeudor.ctadeudor = 1
+    IF CsrDeudor.ctadeudor = 2
 	    nNumeroCtacte	= VAL(CsrDeudor.codigo)		
 	ENDIF 
     
+    IF VAL(CsrDeudor.codigo) = 4
+    	stop()
+    ENDIF 
   	
 	lnestadocta		= 0
 	lccnumero		= ALLTRIM(STR(nNumeroCtacte))
@@ -182,7 +189,7 @@ SCAN
 	&&Buscamos si existen los tipo de documento valido
 	
 	
-	lnsaldo		= VAL(CseDeudor.saldo)
+	lnsaldo		= VAL(CsrDeudor.saldo)
 	
 	SELECT CsrLocalidad
 	LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
@@ -193,7 +200,7 @@ SCAN
 	ENDIF
 	lnctadeudor = CsrDeudor.ctadeudor  	
 	lnidcategoria = lnidctadeudor
-	IF lnctadeudor = 0
+	IF lnctadeudor = 2
 		lnctaacreedor = 1
 		lnidcategoria = lnidctaacreedor
 		lnCotiDolar = VAL(CsrDeudor.TopeSaldo)
@@ -222,7 +229,7 @@ SCAN
     ,lnctaotro,lnctaorden,lnidplanpago,lnidcanalvta,ldfechalta,lcobserva,lnsaldo,lnsaldoant,lnestadocta;
     ,lnbonif1,lnbonif2,lncopiatkt,lcinscri01,ldfecins01,lcinscri02,lcinscri03,lnconvenio,lnsaldoauto;
     ,lnidbarrio,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,lcnumdoc,lnidtipodoc;
-    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,(lccnumero);
+    ,lnexisteibto,lnexistegan,lndiasvto,lnidtablaint,lnesrecodevol,lntotalizabonif,CsrDeudor.codigo;
     ,lnCotiDolar)
     
 	lnid = lnid + 1
