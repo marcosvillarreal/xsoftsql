@@ -1,8 +1,7 @@
-@echo on
-cd \
+echo on
+cd\
+c:
 cd prog*86*
 cd winscp
-winscp.com /ini=nul /script="c:\aplicaciones\leon\danonesftp.txt"
-
-del c:\aplicaciones\danone_exp\* /Q
-
+winscp.com /ini=nul /script="J:\XSOFTSQL\PROYECTOS\LEON\danonesftp.txt"
+del C:\GMSOLUTIONS\LEON\danone_exp\* /Q
