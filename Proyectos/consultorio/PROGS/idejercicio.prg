@@ -1,3 +1,4 @@
+
 goapp.idsucursal = 1100000002
 GOAPP.IDUSUARIO =1
 cEmpresa = ''
