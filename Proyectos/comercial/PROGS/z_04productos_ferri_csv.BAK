@@ -23,6 +23,9 @@ llok = CargarTabla(lcData,'Rubro',.t.)
 llok = CargarTabla(lcData,'Marca',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
 llok = CargarTabla(lcData,'Ubicacion',.t.)
+llok = CargarTabla(lcData,'Familia')
+llok = CargarTabla(lcData,'CategoTipo')
+llok = CargarTabla(lcData,'AfeCateProd',.t.)
 SET SAFETY ON
 
 =InitCursores()
@@ -31,6 +34,11 @@ IF !llok
 	RETURN .f.
 ENDIF
 
+TEXT TO lcCmd textmerge NOSHOW 
+SELECT * FROM tipoiva
+ENDTEXT 
+=CrearCursorAdapter('CsrTipoIva',lcCmd)
+
 SET SAFETY ON
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -38,10 +46,11 @@ Oavisar.proceso('S','Abriendo archivos')
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"productosExp.csv"
 =LeerArticulos(cArchivo)
 SELECT CsrArticulo
-vista()
+GO TOP 
+*vista()
 
 
-RETURN .f.
+
 Oavisar.proceso('S','Procesando '+alias()) 
 
 LOCAL lnid
@@ -52,24 +61,59 @@ lnidfuerzavta = CsrFuerzavta.id
 
 lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
 
-SELECT distinct UPPER(marca) as nombre FROM CsrArticulo ORDER BY marca INTO CURSOR CsrMarcaVie READWRITE 
+SELECT distinct VAL(CodMarca) as codigo1,UPPER(marca) as nombre FROM CsrArticulo ORDER BY codigo1 INTO CURSOR FsrMarca READWRITE 
+SELECT distinct VAL(CodRubro) as codigo1,UPPER(rubro) as nombre FROM CsrArticulo ORDER BY codigo1 INTO CURSOR FsrRubro READWRITE 
 
-SELECT CsrMarcaVie
+
+SELECT FsrMarca 
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()
-  	lcnombre=NombreNi(ALLTRIM(UPPER(CsrMarcaVie.nombre)))
-	lcnombre	= TablaMarcas(lcNombre)
+	SCATTER NAME Oscatter
+	IF Oscatter.codigo1=0
+		LOOP 
+	ENDIF 
+  	lcnombre	= NombreNi(ALLTRIM(UPPER(Oscatter.nombre)))
 	
 	SELECT CsrMarca
 	LOCATE FOR nombre = lcnombre
 	IF NOT FOUND() 
 	   	INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
-	   	VALUES (lnid,RECNO('CsrMarca')+1,lcnombre,lnidfuerzavta)
+	   	VALUES (lnid,Oscatter.codigo1,lcnombre,lnidfuerzavta)
 	   	
 	   	lnid = lnid + 1	
 	ENDIF 
 ENDSCAN
+SELECT FsrMarca 
+GO BOTTOM 
+INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
+VALUES (lnid,FsrMarca.codigo1 + 1,'SIN MARCA',lnidfuerzavta)
+	   	
+
+SELECT FsrRubro
+Oavisar.proceso('S','Procesando '+alias()) 
+GO top
+SCAN FOR !EOF()
+	SCATTER NAME Oscatter
+	IF Oscatter.codigo1=0
+		LOOP 
+	ENDIF 
+  	lcnombre	= NombreNi(ALLTRIM(UPPER(Oscatter.nombre)))
+	
+	SELECT CsrRubro
+	LOCATE FOR nombre = lcnombre
+	IF NOT FOUND() 
+	   	INSERT INTO CsrRubro (id,numero,nombre,idfuerzavta);
+	   	VALUES (lnid,Oscatter.codigo1,lcnombre,lnidfuerzavta)
+	   	
+	   	lnid = lnid + 1	
+	ENDIF 
+ENDSCAN
+SELECT FsrRubro
+GO BOTTOM 
+INSERT INTO CsrRubro (id,numero,nombre,idfuerzavta);
+VALUES (lnid,FsrRubro.codigo1 + 1,'SIN RUBRO',lnidfuerzavta)
+
 
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
 INSERT INTO CsrUbicacion VALUES (lnid,'1','LOCAL COMERCIAL')
@@ -80,22 +124,23 @@ lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
 *stop()
 
+lnCodigo = 1
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
+SKIP 
+*stop()
 SCAN FOR !EOF()
 	*SELECT CsrProducto
 	IF DELETED()
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF 
-	IF CsrArticulo.borrado
-		LOOP 
-	ENDIF 
+
 	
 	SELECT CsrProducto
-	LOCATE FOR numero=VAL(CsrArticulo.numero )
-	IF numero=VAL(CsrArticulo.numero)
+	LOCATE FOR ALLTRIM(codalfa)=alltrim(CsrArticulo.codigo )
+	IF ALLTRIM(codalfa)=alltrim(CsrArticulo.codigo )
 		SELECT CsrArticulo
 		LOOP 
 	ENDIF
@@ -110,43 +155,61 @@ SCAN FOR !EOF()
     STORE DATE() TO  dfeculcpra , dfeculvta , dfecalta , dfecmodi , dfeculpre
            
 	cnombre		= NombreNi(alltrim(CsrArticulo.nombre))
-	ncodigo		= VAL(Csrarticulo.NUMERO)
+	ncodigo		= lnCodigo 
 	IF nCodigo = 40
-		stop()
+		*stop()
 	ENDIF 
-	ccodalfaprov	= ALLTRIM(CsrArticulo.codigo_fac)
-	ccodalfa = ALLTRIM(CsrArticulo.codigo_pro)
+	ccodalfaprov	= ALLTRIM(CsrArticulo.CodArtProveed)
+	ccodalfa 		= ALLTRIM(CsrArticulo.codigo)
 	
 	cnommayorista	= cnombre
 	ccontrolador	= cnombre
 	*Almacenamos el codigo anterior para luego importar las secciones con productos
-    nidrubro	= Csrarticulo.seccion
-    
-    nidUbicacio = CargarUbicacion(nidRubro)
-    
-    lcMarca 	= CsrArticulo.marca
-    lcMarca		= TablaMarcas(lcMarca)
-    
-    SELECT CsrMarca
-    LOCATE FOR nombre=lcMarca
-    IF NOT FOUND()
-	   	GO TOP 
-	ENDIF 
-   	nidmarca = CsrMarca.id
-    
-*!*		SELECT CsrUbicacion
-*!*		GO TOP 
-*!*		nidubicacio = CsrUbicacion.id
+	SELECT CsrRubro
+	LOCATE FOR numero = VAL(CsrArticulo.CodRubro)
+	nidrubro	= CsrRubro.id
 	
-   	nidestado 	= IIF(empty(Csrarticulo.debaja),1,2)
-    nidiva    	= VAL(STR(goapp.sucursal10+10)+strzero(IIF(Csrarticulo.tablaiva=1,2,3),8))
+    SELECT CsrMarca
+	LOCATE FOR numero = VAL(CsrArticulo.CodMarca)
+	nidmarca	= CsrMarca.id	
+	
+    SELECT CsrUbicacion
+    GO TOP 
+    nidUbicacio = CsrUbicacion.id
+    
+    SELECT CsrFamilia
+    GO TOP 
+    nidfamilia = CsrFamilia.id
+    
+    SELECT CsrCategotipo
+    GO TOP 
+    nidcategotipo = CsrCategotipo.id
+    
+	
+   	nidestado 	= 1
+   	
+   	SELECT CsrTipoIva
+   	DO CASE 
+   	CASE VAL(CsrArticulo.CodAlicuota) = 0
+   		LOCATE FOR tasa = 0
+   	CASE VAL(CsrArticulo.CodAlicuota) = 1
+   		LOCATE FOR tasa = 21   	
+   	CASE VAL(CsrArticulo.CodAlicuota) = 2
+   		LOCATE FOR tasa = 10.5   	
+   	CASE VAL(CsrArticulo.CodAlicuota) = 3
+   		LOCATE FOR tasa = 27
+   	ENDCASE 
+   	nidiva = CsrTipoIva.id
     nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
     nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
-    nredondeo	= CsrArticulo.redondeo
+    nredondeo	= 0
 	cswitch		= "00000"
 
-	IF NOT EMPTY(Csrarticulo.fechapre)   
-		dfecmodi = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
+	IF NOT EMPTY(Csrarticulo.FechaPrecio)
+		dfecmodi = ALLTRIM( Csrarticulo.FechaPrecio)
+		dfecmodi = RIGHT(dfecmodi ,2)+RIGHT(LEFT(dfecmodi ,8) ,4)+LEFT(dfecmodi ,4)
+		dfecmodi = CTOD(dfecmodi )
+		*dfecmodi = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
 	ENDIF 		
 									
 	
@@ -177,10 +240,56 @@ SCAN FOR !EOF()
     	lniddeta = lniddeta + 1 
     ENDIF 	        
 	lnid = lnid + 1
-
+	lncodigo = lncodigo + 1 
+	
 	 SELECT CsrArticulo   				
 ENDSCAN
+stop() 
+SELECT CsrAfeCateProd
+vista()
 
+lnidAfe = RecuperarID('CsrAfeCateProd',Goapp.sucursal10)
+INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+VALUES (lnidAfe,nidfamilia ,nidcategotipo ,'FT',"00000",0)
+lnidAfe= lnidAfe + 1 
+
+SELECT distinct idmarca,idrubro,idfamilia,idcategotipo FROM CsrProducto WHERE idmarca>0 AND idrubro > 0 INTO CURSOR FsrClasi READWRITE 
+
+SELECT FsrClasi 
+GO TOP
+
+SCAN 
+	SCATTER NAME Oscatter
+	nIdMarca	= Oscatter.idmarca
+	nIdRubro	= Oscatter.idRubro
+	nIdFamilia	= Oscatter.idfamilia
+	nIdCatego	= Oscatter.idcategotipo
+	
+	
+	SELECT CsrAfeCateProd
+	LOCATE FOR idpadre = nIdRubro AND idhijo = nIDFamilia AND clave='RF'
+	IF NOT (idpadre = nIdRubro AND idhijo = nIDFamilia AND clave='RF')
+		INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+		VALUES (lnidAfe,nIdRubro,nIdFamilia,'RF',"00000",0)
+		
+		lnidAfe = lnidAfe + 1 
+	ENDIF 
+	
+	SELECT CsrAfeCateProd
+	LOCATE FOR idpadre = nIdMarca AND idhijo = nIDRubro AND clave='MR'
+	IF NOT (idpadre = nIdMarca AND idhijo = nIDRubro AND clave='MR')
+		INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+		VALUES (lnidAfe,nIdMarca,nIdRubro,'MR',"00000",0)
+		
+		lnidAfe = lnidAfe + 1 
+	ENDIF 
+	
+	
+	
+ENDSCAN 
+
+SELECT CsrAfeCateProd
+vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
@@ -188,7 +297,7 @@ CLOSE tables
 CLOSE INDEXES
 CLOSE DATABASES
 	
-*USE IN  CsrSeccion 
+USE IN  FsrRubro 
 USE IN  CsrArticulo 
-USE in CsrmarcaVie 
+USE in FsrMarca 
 

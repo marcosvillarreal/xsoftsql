@@ -206,13 +206,10 @@ SCAN
 		leiunarticulo = .t.
 		STORE "" TO lcAcarreo
 		
-		lcCodigo ,lcNombre ,lcCodMarca ,lcMarca ,lcCodRubro c(10),Rubro c(20),CodProveedor c(10);
-		,CodArtProveed c(20),CodMoneda c(5),CodAlicuota c(5),Costo c(20),Bonif1 c(20),Bonif2 c(20),Bonif3 c(20);
-		,Bonif4 c(20), Bonif5 c(20), FletePorce c(20), Flete c(20),UtilPorce c(20), Utilidad c(20);
-		,Preciosiva c(20),Preciociva c(20),FechaPrecio c(15),Nofactura c(2),Observa c(200),Stock c(10))
-		
-		STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta
-		STORE "" TO lcCosto, lcLista1, lcLista2,lcIDJ ,lcUniBulto,lcCodRubro
+		STORE "" TO lcCodigo ,lcNombre ,lcCodMarca ,lcMarca ,lcCodRubro ,lcRubro ,lcCodProveedor ;
+		, lcCodArtProveed , lcCodMoneda , lcCodAlicuota , lcCosto , lcBonif1 , lcBonif2 , lcBonif3 ;
+		, lcBonif4 , lcBonif5 , lcFletePorce , lcFlete , lcUtilPorce , lcUtilidad ;
+		, lcPreciosiva , lcPreciociva , lcFechaPrecio , lcNofactura , lcObserva , lcStock 
 		j = 0
 *!*		ELSE
 *!*			IF !leiunarticulo
@@ -231,16 +228,33 @@ SCAN
 				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
 				EXIT 
 			ENDIF
-			*lcIDJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))
-			lcCodRubro		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodRubro)))
-			*lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcProveedor)))
-			lcAlicuota		= "21"
-			lcCosto			= UPPER((IIF(j + i=5,lcCadena,lcCosto)))
-			lcUniVenta			= UPPER((IIF(j + i=6,lcCadena,lcUniVenta)))
-			*lcLista1		= IIF(j + i=18,lcCadena,lcLista1)
-			*lcLista2		= IIF(j + i=20,lcCadena,lcLista2)
+
+			lcCodigo		= UPPER((IIF(j + i=1,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))			
+			lcCodMarca		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodMarca)))
+			lcMarca 		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcMarca )))
+			lcCodRubro 		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcCodRubro )))
+			lcRubro 		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcRubro )))
+			lcCodProveedor 	= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodProveedor )))
+			lcCodArtProveed = UPPER((IIF(j + i=8,lcCadena,lcCodArtProveed )))
+			lcCodMoneda 	= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcCodMoneda )))
+			lcCodAlicuota 	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcCodAlicuota )))
+			lcCosto 		= UPPER((IIF(j + i=14,lcCadena,lcCosto )))
+			lcBonif1 		= UPPER((IIF(j + i=15,lcCadena,lcBonif1 )))
+			lcBonif2 		= UPPER((IIF(j + i=16,lcCadena,lcBonif2)))
+			lcBonif3 		= UPPER((IIF(j + i=17,lcCadena,lcBonif3 )))
+			lcBonif4 		= UPPER((IIF(j + i=18,lcCadena,lcBonif4)))
+			lcBonif5 		= UPPER((IIF(j + i=19,lcCadena,lcBonif5)))
+			lcFletePorce 	= UPPER((IIF(j + i=21,lcCadena,lcFletePorce )))
+			lcFlete 		= UPPER((IIF(j + i=22,lcCadena,lcFlete )))
+			lcUtilPorce 	= UPPER((IIF(j + i=23,lcCadena,lcUtilPorce )))
+			lcUtilidad 		= UPPER((IIF(j + i=24,lcCadena,lcUtilidad )))
+			lcPreciosiva 	= UPPER((IIF(j + i=25,lcCadena,lcPreciosiva )))
+			lcPreciociva 	= UPPER((IIF(j + i=26,lcCadena,lcPreciociva )))
+			lcFechaPrecio 	= UPPER(LimpiarCadena(IIF(j + i=27,lcCadena,lcFechaPrecio )))
+			lcNofactura 	= UPPER(LimpiarCadena(IIF(j + i=30,lcCadena,lcNofactura )))
+			lcObserva 		= UPPER(LimpiarCadena(IIF(j + i=32,lcCadena,lcObserva )))
+			lcStock 		= UPPER((IIF(j + i=34,lcCadena,lcStock )))
 			
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
@@ -267,8 +281,16 @@ SCAN
 			LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
-		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,UniVenta,Costo,CodRubro,IDJ,UniBulto);
-		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta,lcCosto,lcCodRubro,lcIDJ,lcUniBulto)
+		
+		INSERT INTO CsrArticulo (Codigo ,Nombre ,CodMarca ,Marca ,CodRubro ,Rubro ,CodProveedor ;
+		,CodArtProveed ,CodMoneda ,CodAlicuota ,Costo ,Bonif1 ,Bonif2 ,Bonif3 ;
+		,Bonif4 , Bonif5 , FletePorce , Flete ,UtilPorce , Utilidad ;
+		,Preciosiva ,Preciociva ,FechaPrecio ,Nofactura ,Observa ,Stock );
+		values (lcCodigo ,lcNombre ,lcCodMarca ,lcMarca ,lcCodRubro ,lcRubro ,lcCodProveedor ;
+		, lcCodArtProveed , lcCodMoneda , lcCodAlicuota , lcCosto , lcBonif1 , lcBonif2 , lcBonif3 ;
+		, lcBonif4 , lcBonif5 , lcFletePorce , lcFlete , lcUtilPorce , lcUtilidad ;
+		, lcPreciosiva , lcPreciociva , lcFechaPrecio , lcNofactura , lcObserva , lcStock )
+
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.

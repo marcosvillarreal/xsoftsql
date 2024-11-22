@@ -25,6 +25,8 @@ llok = CargarTabla(lcData,'FuerzaVta')
 llok = CargarTabla(lcData,'Ubicacion',.t.)
 llok = CargarTabla(lcData,'Familia')
 llok = CargarTabla(lcData,'CategoTipo')
+llok = CargarTabla(lcData,'AfeCateProd',.t.)
+llok = CargarTabla(lcData,'ProdPrecio',.t.)
 SET SAFETY ON
 
 =InitCursores()
@@ -33,6 +35,11 @@ IF !llok
 	RETURN .f.
 ENDIF
 
+TEXT TO lcCmd textmerge NOSHOW 
+SELECT * FROM tipoiva
+ENDTEXT 
+=CrearCursorAdapter('CsrTipoIva',lcCmd)
+
 SET SAFETY ON
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -40,10 +47,11 @@ Oavisar.proceso('S','Abriendo archivos')
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"productosExp.csv"
 =LeerArticulos(cArchivo)
 SELECT CsrArticulo
-vista()
+GO TOP 
+*vista()
 
 
-RETURN .f.
+
 Oavisar.proceso('S','Procesando '+alias()) 
 
 LOCAL lnid
@@ -54,8 +62,8 @@ lnidfuerzavta = CsrFuerzavta.id
 
 lnid = RecuperarID('CsrMarca',Goapp.sucursal10)
 
-SELECT distinct CodMarca,UPPER(marca) as nombre FROM CsrArticulo ORDER BY VAL(codmarca) INTO CURSOR FsrMarca READWRITE 
-SELECT distinct CodRubro,UPPER(rubro) as nombre FROM CsrArticulo ORDER BY VAL(codrubro) INTO CURSOR FsrRubro READWRITE 
+SELECT distinct VAL(CodMarca) as codigo1,UPPER(marca) as nombre FROM CsrArticulo ORDER BY codigo1 INTO CURSOR FsrMarca READWRITE 
+SELECT distinct VAL(CodRubro) as codigo1,UPPER(rubro) as nombre FROM CsrArticulo ORDER BY codigo1 INTO CURSOR FsrRubro READWRITE 
 
 
 SELECT FsrMarca 
@@ -63,34 +71,50 @@ Oavisar.proceso('S','Procesando '+alias())
 GO top
 SCAN FOR !EOF()
 	SCATTER NAME Oscatter
+	IF Oscatter.codigo1=0
+		LOOP 
+	ENDIF 
   	lcnombre	= NombreNi(ALLTRIM(UPPER(Oscatter.nombre)))
 	
 	SELECT CsrMarca
 	LOCATE FOR nombre = lcnombre
 	IF NOT FOUND() 
 	   	INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
-	   	VALUES (lnid,VAL(CodMarca),lcnombre,lnidfuerzavta)
+	   	VALUES (lnid,Oscatter.codigo1,lcnombre,lnidfuerzavta)
 	   	
 	   	lnid = lnid + 1	
 	ENDIF 
 ENDSCAN
+SELECT FsrMarca 
+GO BOTTOM 
+INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
+VALUES (lnid,FsrMarca.codigo1 + 1,'SIN MARCA',lnidfuerzavta)
+	   	
 
 SELECT FsrRubro
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()
 	SCATTER NAME Oscatter
+	IF Oscatter.codigo1=0
+		LOOP 
+	ENDIF 
   	lcnombre	= NombreNi(ALLTRIM(UPPER(Oscatter.nombre)))
 	
 	SELECT CsrRubro
 	LOCATE FOR nombre = lcnombre
 	IF NOT FOUND() 
-	   	INSERT INTO CsrRubro (id,numero,nombre);
-	   	VALUES (lnid,VAL(CodRubro),lcnombre)
+	   	INSERT INTO CsrRubro (id,numero,nombre,idfuerzavta);
+	   	VALUES (lnid,Oscatter.codigo1,lcnombre,lnidfuerzavta)
 	   	
 	   	lnid = lnid + 1	
 	ENDIF 
 ENDSCAN
+SELECT FsrRubro
+GO BOTTOM 
+INSERT INTO CsrRubro (id,numero,nombre,idfuerzavta);
+VALUES (lnid,FsrRubro.codigo1 + 1,'SIN RUBRO',lnidfuerzavta)
+
 
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
 INSERT INTO CsrUbicacion VALUES (lnid,'1','LOCAL COMERCIAL')
@@ -99,11 +123,15 @@ INSERT INTO CsrUbicacion VALUES (lnid,'2','CORRALON')
 
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
+lnidprodprecio = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
 *stop()
+
 lnCodigo = 1
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
+SKIP 
+*stop()
 SCAN FOR !EOF()
 	*SELECT CsrProducto
 	IF DELETED()
@@ -157,30 +185,35 @@ SCAN FOR !EOF()
     
     SELECT CsrCategotipo
     GO TOP 
-    idcategotipo = CsrCategotipo.id
+    nidcategotipo = CsrCategotipo.id
     
 	
    	nidestado 	= 1
    	
    	SELECT CsrTipoIva
    	DO CASE 
-   	CASE VAL(CodAlicuota) = 0
+   	CASE VAL(CsrArticulo.CodAlicuota) = 0
    		LOCATE FOR tasa = 0
-   	CASE VAL(CodAlicuota) = 1
+   	CASE VAL(CsrArticulo.CodAlicuota) = 1
    		LOCATE FOR tasa = 21   	
-   	CASE VAL(CodAlicuota) = 2
+   	CASE VAL(CsrArticulo.CodAlicuota) = 2
    		LOCATE FOR tasa = 10.5   	
-   	CASE VAL(CodAlicuota) = 3
+   	CASE VAL(CsrArticulo.CodAlicuota) = 3
    		LOCATE FOR tasa = 27
    	ENDCASE 
    	nidiva = CsrTipoIva.id
+   	nAlicuota = CsrTipoIva.tasa
+   	
     nidtipovta	= 1 &&UNIDADES=1 ,	BULTOS = 2.
     nidforma 	= VAL(STR(goapp.sucursal10+10)+strzero(1,8))  &&SIN CLASIFICAR
     nredondeo	= 0
 	cswitch		= "00000"
 
-	IF NOT EMPTY(Csrarticulo.fechapre)   
-		dfecmodi = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
+	IF NOT EMPTY(Csrarticulo.FechaPrecio)
+		dfecmodi = ALLTRIM( Csrarticulo.FechaPrecio)
+		dfecmodi = RIGHT(dfecmodi ,2)+RIGHT(LEFT(dfecmodi ,8) ,4)+LEFT(dfecmodi ,4)
+		dfecmodi = CTOD(dfecmodi )
+		*dfecmodi = DATETIME(YEAR(Csrarticulo.fechapre),MONTH(Csrarticulo.fechapre),DAY(Csrarticulo.fechapre),0,0,0)
 	ENDIF 		
 									
 	
@@ -209,12 +242,126 @@ SCAN FOR !EOF()
     	VALUES (lniddeta, lnid , cObservacion , "30000")
     	
     	lniddeta = lniddeta + 1 
-    ENDIF 	        
+    ENDIF 
+    
+    nCostoCpra	= CsrArticulo.Costo
+	nAumento	= CsrArticulo.aumento							
+	nCosto		= red((nCostoCpra * nAumento) / 100,nDecimalesP) + nCostoCpra
+	nBonif1		= CsrArticulo.bonif1
+	nBonif2		= CsrArticulo.bonif2
+	nBonif3		= CsrArticulo.bonif3
+	nBonif4		= CsrArticulo.bonif4
+	nBonif5		= CsrArticulo.bonif5
+	nCostoBon	= nCosto - red(nCosto *(nbonif1/100),nDecimalesP)
+	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif2/100),nDecimalesP)
+	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif3/100),nDecimalesP)
+	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif4/100),nDecimalesP)
+	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif5/100),nDecimalesP)
+	nBonifTotal	= red((nCosto - nCostoBon)/nCosto*100 ,ndecimalesP)
+	nFlete		= CsrArticulo.Flete
+	nSegFlete	= CsrArticulo.SeFlete
+	nTotalFlete	= nFlete + red((nFlete*nSegFlete/100),ndecimalesP)
+	nIvaCosto	= red((nCostoBon + nTotalFlete) * nAlicuota/100, nDecimalesP)
+	nCostoSiva	= nCostoBon + nTotalFlete + nInterno
+	nCostoCiva	= nCostoSiva + nIvaCosto
+	nMargen1	= CsrArticulo.utilidad
+	nCostoAgre	= CsrArticulo.costoagre
+	nFleteAgre	= 0
+	nPreConCiva	= CsrArticulo.preventa
+	nPreVenta	= red(nPreConCiva * (1 - nAlicuota /100),nDecimalesP)
+	nPreventa	= IIF(nPreVenta = 0,nCosto,nPReventa)
+	IF nCostoCiva<>0	
+		nUtilCiva1	= nPreConCiva - nCostoCiva
+		nUtilSiva1	= red(nUtilCiva1 * 100 / 121,nDecimalesP)
+		nPreVenta	= nCostoSiva + nUtilSiva1
+	ENDIF 
+	nRedondeo		= 0 &&CsrArticulo.redondeo
+	
+	nPreConFSiva	= a_red(nRedondeo,nPreVenta + nCostoAgre + nFleteAgre)
+	nPreConFCiva	= a_red(nRedondeo,nPreConCIva + nCostoAgre + nFleteAgre)
+	nIncremento		= CsrArticulo.Bonlis2
+	nIncremento		= red(1+(nIncremento/100),4)
+	nPrePubCiva		= red(nPreConCiva * nIncremento,nDecimalesP)
+	
+	nPrePubFCiva	= red((nPreConCiva  + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)
+	*nPrePubFSiva	= red(nPreConCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
+	*nPrePubFSiva	= red((nPrePubFSiva + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)	
+	nPrePubFSiva	= red(nPrePubFCiva * red(1-(nAlicuota/100),nDecimalesP),nDecimalesP)
+	
+	nPrePubFCiva	= a_red(nRedondeo,nPrePubFCiva)
+	nPrePubFSiva	= a_red(nRedondeo,nPrePubFSiva)
+		
+    INSERT INTO  prodprecio  ( id, idarticulo , idctacte , idestado  , costocpra , aumento ;
+	           , costo , bonif1 , bonif2 , bonif3 , bonif4 , bonif5 , boniftotal , costobon , interno ;
+	           , internoporce , flete , segflete , totalflete , costosiva , costociva , margen1 , utilciva1 ;
+	           , utilsiva1 , redondeo , costoagre , fleteagre , preconciva , preconfsiva , preconfciva ;
+	           , prepubciva , prepubfsiva , prepubfciva , fecmodi , switch , cotidolar , endolar ;
+	           , costoulcpra , preotrociva1 , preotrofsiva1 , preotrofciva1 );
+	     VALUES  ( lnidprodprecio, lnid , nidctacte , nidestado  , ncostocpra , naumento ;
+	           , ncosto , nbonif1 , nbonif2 , nbonif3 , nbonif4 , nbonif5 , nboniftotal ,ncostobon , ninterno ;
+	           , ninternoporce , nflete , nsegflete , ntotalflete , ncostosiva , ncostociva , nmargen1 , nutilciva1 ;
+	           , nutilsiva1 , nredondeo , ncostoagre , nfleteagre , npreconciva , npreconfsiva , npreconfciva ;
+	           , nprepubciva , nprepubfsiva , nprepubfciva , dfecmodi , cswitch , ncotidolar , nendolar ;
+	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1) 
+	
+	&&Actualizamos el precio en csrproducto
+	SELECT CsrProdPrecio
+	SCATTER NAME OscPrecio
+	SELECT CsrProducto
+	GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmodi,switch,codalfaprov
+	
+    	           	        
 	lnid = lnid + 1
-
+	lncodigo = lncodigo + 1 
+	
 	 SELECT CsrArticulo   				
 ENDSCAN
+stop() 
+SELECT CsrAfeCateProd
+vista()
 
+lnidAfe = RecuperarID('CsrAfeCateProd',Goapp.sucursal10)
+INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+VALUES (lnidAfe,nidfamilia ,nidcategotipo ,'FT',"00000",0)
+lnidAfe= lnidAfe + 1 
+
+SELECT distinct idmarca,idrubro,idfamilia,idcategotipo FROM CsrProducto WHERE idmarca>0 AND idrubro > 0 INTO CURSOR FsrClasi READWRITE 
+
+SELECT FsrClasi 
+GO TOP
+
+SCAN 
+	SCATTER NAME Oscatter
+	nIdMarca	= Oscatter.idmarca
+	nIdRubro	= Oscatter.idRubro
+	nIdFamilia	= Oscatter.idfamilia
+	nIdCatego	= Oscatter.idcategotipo
+	
+	
+	SELECT CsrAfeCateProd
+	LOCATE FOR idpadre = nIdRubro AND idhijo = nIDFamilia AND clave='RF'
+	IF NOT (idpadre = nIdRubro AND idhijo = nIDFamilia AND clave='RF')
+		INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+		VALUES (lnidAfe,nIdRubro,nIdFamilia,'RF',"00000",0)
+		
+		lnidAfe = lnidAfe + 1 
+	ENDIF 
+	
+	SELECT CsrAfeCateProd
+	LOCATE FOR idpadre = nIdMarca AND idhijo = nIDRubro AND clave='MR'
+	IF NOT (idpadre = nIdMarca AND idhijo = nIDRubro AND clave='MR')
+		INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
+		VALUES (lnidAfe,nIdMarca,nIdRubro,'MR',"00000",0)
+		
+		lnidAfe = lnidAfe + 1 
+	ENDIF 
+	
+	
+	
+ENDSCAN 
+
+SELECT CsrAfeCateProd
+vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
@@ -222,7 +369,7 @@ CLOSE tables
 CLOSE INDEXES
 CLOSE DATABASES
 	
-*USE IN  CsrSeccion 
+USE IN  FsrRubro 
 USE IN  CsrArticulo 
-USE in CsrmarcaVie 
+USE in FsrMarca 
 
