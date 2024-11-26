@@ -192,7 +192,7 @@ leiunarticulo = .f.
 
 SKIP 
 *STOP()
-SCAN 
+DO WHILE NOT EOF()
 	lnCantCampo = 34 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
@@ -278,6 +278,7 @@ SCAN
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
 		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			SKIP 
 			LOOP 
 		ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
@@ -295,7 +296,8 @@ SCAN
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
 	ENDIF 
-ENDSCAN 
+	SKIP IN CsrLista
+ENDDO 
 
 USE IN CsrLista
 

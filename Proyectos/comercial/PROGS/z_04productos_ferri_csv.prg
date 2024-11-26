@@ -114,20 +114,23 @@ SCAN FOR !EOF()
 	ENDIF 
   	lcnombre	= NombreNi(ALLTRIM(UPPER(Oscatter.nombre)))
 	
-	SELECT CsrMarca
-	LOCATE FOR nombre = lcnombre
-	IF NOT FOUND() 
+	*SELECT CsrMarca
+	*LOCATE FOR nombre = lcnombre
+	*IF NOT FOUND() 
 	   	INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
 	   	VALUES (lnid,Oscatter.codigo1,lcnombre,lnidfuerzavta)
 	   	
 	   	lnid = lnid + 1	
-	ENDIF 
+	*ENDIF 
 ENDSCAN
 SELECT FsrMarca 
 GO BOTTOM 
 INSERT INTO Csrmarca (id,numero,nombre,idfuerzavta);
 VALUES (lnid,FsrMarca.codigo1 + 1,'SIN MARCA',lnidfuerzavta)
 	   	
+
+SELECT CsrRubro
+*vista()
 
 SELECT FsrRubro
 Oavisar.proceso('S','Procesando '+alias()) 
@@ -139,20 +142,23 @@ SCAN FOR !EOF()
 	ENDIF 
   	lcnombre	= NombreNi(ALLTRIM(UPPER(Oscatter.nombre)))
 	
-	SELECT CsrRubro
-	LOCATE FOR nombre = lcnombre
-	IF NOT FOUND() 
+	*SELECT CsrRubro
+	*LOCATE FOR nombre = lcnombre
+	*IF NOT FOUND() 
 	   	INSERT INTO CsrRubro (id,numero,nombre,idfuerzavta);
 	   	VALUES (lnid,Oscatter.codigo1,lcnombre,lnidfuerzavta)
 	   	
 	   	lnid = lnid + 1	
-	ENDIF 
+	*ENDIF 
 ENDSCAN
-SELECT FsrRubro
+
+SELECT CsrRubro
 GO BOTTOM 
 INSERT INTO CsrRubro (id,numero,nombre,idfuerzavta);
 VALUES (lnid,FsrRubro.codigo1 + 1,'SIN RUBRO',lnidfuerzavta)
+*vista()
 
+*RETURN .f.
 
 lnid = RecuperarID('CsrUbicacion',Goapp.sucursal10)
 INSERT INTO CsrUbicacion VALUES (lnid,'1','LOCAL COMERCIAL')
@@ -167,6 +173,7 @@ lnidprodprecio = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
 SELECT CsrParaVario
 LOCATE FOR nombre='LISTA2'
 nIncremento = NVL(CsrParavario.porce,0)
+nIncremento	= red(1 + (nIncremento/100),4)
 
 
 lnCodigo = 1
@@ -201,8 +208,8 @@ SCAN FOR !EOF()
            
 	cnombre		= NombreNi(alltrim(CsrArticulo.nombre))
 	ncodigo		= lnCodigo 
-	IF nCodigo = 40
-		*stop()
+	IF nCodigo = 4138
+	*	stop()
 	ENDIF 
 	ccodalfaprov	= ALLTRIM(CsrArticulo.CodArtProveed)
 	ccodalfa 		= ALLTRIM(CsrArticulo.codigo)
@@ -212,10 +219,16 @@ SCAN FOR !EOF()
 	*Almacenamos el codigo anterior para luego importar las secciones con productos
 	SELECT CsrRubro
 	LOCATE FOR numero = VAL(CsrArticulo.CodRubro)
+	IF numero = 0
+		GO BOTTOM 
+	ENDIF 
 	nidrubro	= CsrRubro.id
 	
     SELECT CsrMarca
 	LOCATE FOR numero = VAL(CsrArticulo.CodMarca)
+	IF numero = 0
+		GO BOTTOM 
+	ENDIF 
 	nidmarca	= CsrMarca.id	
 	
     SELECT CsrUbicacion
@@ -277,7 +290,7 @@ SCAN FOR !EOF()
            , nminimofac , npeso , nvolumen , nfracciona , npuntope, cswitch , ndivisible ;
            , ccontrolador , cnommayorista , nctaaorden, nesinsumo , nidfamilia ;
            , nidcategotipo, ccodalfaprov , ncotidolar , nendolar , ccodbarra14 ;
-           , ccodbarra13 , dfeculpre) 
+           , ccodbarra13 , dfecmodi ) 
     
     cObservacion = CsrArticulo.observa
     IF lentrim(cObservacion)<>0
