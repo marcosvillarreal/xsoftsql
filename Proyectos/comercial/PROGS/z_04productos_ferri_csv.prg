@@ -27,6 +27,13 @@ llok = CargarTabla(lcData,'Familia')
 llok = CargarTabla(lcData,'CategoTipo')
 llok = CargarTabla(lcData,'AfeCateProd',.t.)
 llok = CargarTabla(lcData,'ProdPrecio',.t.)
+
+llok = CargarTabla(lcData,'Maopera',.t.)
+llok = CargarTabla(lcData,'Existenc',.t.)
+llok = CargarTabla(lcData,'MovStock',.t.)
+llok = CargarTabla(lcData,'CabeOrd',.t.)
+llok = CargarTabla(lcData,'CuerOrd',.t.)
+
 SET SAFETY ON
 
 =InitCursores()
@@ -39,7 +46,38 @@ TEXT TO lcCmd textmerge NOSHOW
 SELECT * FROM tipoiva
 ENDTEXT 
 =CrearCursorAdapter('CsrTipoIva',lcCmd)
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT * FROM Paravario
+ENDTEXT 
+=CrearCursorAdapter('CsrParaVario',lcCmd)
 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT * FROM ParaConfig
+ENDTEXT 
+=CrearCursorAdapter('CsrParaConfig',lcCmd)
+
+SELECT CsrParaConfig
+GO TOP 
+lnidDeposito = CsrParaConfig.iddeposito
+
+lnIdComproba = 9
+
+lnidmaopera = RecuperarID('CsrMaopera',Goapp.sucursal10)
+lnidcabeord = RecuperarID('CsrCabeOrd',Goapp.sucursal10)
+lnidcuerord = RecuperarID('CsrCuerOrd',Goapp.sucursal10)
+lnidexistenc = RecuperarID('CsrExistenc',Goapp.sucursal10)
+lnidmovstock = RecuperarID('CsrMovStock',Goapp.sucursal10)
+
+INSERT INTO Csrmaopera (id,origen,programa,terminal,fechasis,idoperador,idvendedor,numcomp;
+	,iddetanrocaja,turno,switch,sucursal,sector,puestocaja,idcotizadolar,estado,detalle,idcomproba,clasecomp);
+VALUES (lnidmaopera ,'STK','REGSTOCK',Goapp.terminal,Csrparaconfig.fechaserver,goapp.idusuario,0;
+	,'x000100000001',0,Csrparaconfig.turno,"00000",Goapp.sucursal,0,0;
+	,Csrparaconfig.idcotizadolar,'0',"IMP. EXISTENCIA",lnIdComproba,'L')
+
+Insert into CsrCabeOrd (id,idmaopera,listaprecio,switch,idconcepto,iddepentra,signo,idlotemaopera) ;
+value (lnidcabeord,lnidmaopera ,1,"00000",1100000004,lnidDeposito ,1,lnidmaopera )
+
+                
 SET SAFETY ON
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -125,6 +163,11 @@ lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 lniddeta = RecuperarID('CsrProductoDeta',Goapp.sucursal10)
 lnidprodprecio = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
 *stop()
+
+SELECT CsrParaVario
+LOCATE FOR nombre='LISTA2'
+nIncremento = NVL(CsrParavario.porce,0)
+
 
 lnCodigo = 1
 SELECT CsrArticulo
@@ -244,30 +287,43 @@ SCAN FOR !EOF()
     	lniddeta = lniddeta + 1 
     ENDIF 
     
-    nCostoCpra	= CsrArticulo.Costo
-	nAumento	= CsrArticulo.aumento							
+    STORE 0 TO    ncostocpra , naumento ;
+	           , ncosto , nbonif1 , nbonif2 , nbonif3 , nbonif4 , nbonif5 , nboniftotal ;
+	           ,ncostobon , ninterno ;
+	           , ninternoporce , nflete , nsegflete , ntotalflete , ncostosiva , ncostociva ;
+	           , nmargen1 , nutilciva1 ;
+	           , nutilsiva1 , nredondeo , ncostoagre , nfleteagre , npreconciva , npreconfsiva ;
+	           , npreconfciva ;
+	           , nprepubciva , nprepubfsiva , nprepubfciva  , ncotidolar , nendolar ;
+	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1;
+	   			, nAlicuota
+	   			
+    nDecimalesP = 2
+
+    nCostoCpra	= VAL(CsrArticulo.Costo)
+	nAumento	= 0&&CsrArticulo.aumento							
 	nCosto		= red((nCostoCpra * nAumento) / 100,nDecimalesP) + nCostoCpra
-	nBonif1		= CsrArticulo.bonif1
-	nBonif2		= CsrArticulo.bonif2
-	nBonif3		= CsrArticulo.bonif3
-	nBonif4		= CsrArticulo.bonif4
-	nBonif5		= CsrArticulo.bonif5
+	nBonif1		= VAL(CsrArticulo.bonif1)
+	nBonif2		= VAL(CsrArticulo.bonif2)
+	nBonif3		= VAL(CsrArticulo.bonif3)
+	nBonif4		= VAL(CsrArticulo.bonif4)
+	nBonif5		= VAL(CsrArticulo.bonif5)
 	nCostoBon	= nCosto - red(nCosto *(nbonif1/100),nDecimalesP)
 	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif2/100),nDecimalesP)
 	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif3/100),nDecimalesP)
 	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif4/100),nDecimalesP)
 	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif5/100),nDecimalesP)
 	nBonifTotal	= red((nCosto - nCostoBon)/nCosto*100 ,ndecimalesP)
-	nFlete		= CsrArticulo.Flete
-	nSegFlete	= CsrArticulo.SeFlete
+	nFlete		= VAL(CsrArticulo.Flete)
+	nSegFlete	= 0&&VAL(CsrArticulo.SeFlete)
 	nTotalFlete	= nFlete + red((nFlete*nSegFlete/100),ndecimalesP)
 	nIvaCosto	= red((nCostoBon + nTotalFlete) * nAlicuota/100, nDecimalesP)
 	nCostoSiva	= nCostoBon + nTotalFlete + nInterno
 	nCostoCiva	= nCostoSiva + nIvaCosto
-	nMargen1	= CsrArticulo.utilidad
-	nCostoAgre	= CsrArticulo.costoagre
+	nMargen1	= VAL(CsrArticulo.UtilPorce )
+	nCostoAgre	= 0&&VAL(CsrArticulo.costoagre)
 	nFleteAgre	= 0
-	nPreConCiva	= CsrArticulo.preventa
+	nPreConCiva	= VAL(CsrArticulo.Preciociva )
 	nPreVenta	= red(nPreConCiva * (1 - nAlicuota /100),nDecimalesP)
 	nPreventa	= IIF(nPreVenta = 0,nCosto,nPReventa)
 	IF nCostoCiva<>0	
@@ -275,12 +331,24 @@ SCAN FOR !EOF()
 		nUtilSiva1	= red(nUtilCiva1 * 100 / 121,nDecimalesP)
 		nPreVenta	= nCostoSiva + nUtilSiva1
 	ENDIF 
+	IF nMargen1 > 999.99
+		STORE 0 TO    ncostocpra , naumento ;
+	           , ncosto , nbonif1 , nbonif2 , nbonif3 , nbonif4 , nbonif5 , nboniftotal ;
+	           ,ncostobon , ninterno ;
+	           , ninternoporce , nflete , nsegflete , ntotalflete , ncostosiva , ncostociva ;
+	           , nmargen1 , nutilciva1 ;
+	           , nutilsiva1 , nredondeo , ncostoagre , nfleteagre , npreconciva , npreconfsiva ;
+	           , npreconfciva ;
+	           , nprepubciva , nprepubfsiva , nprepubfciva  , ncotidolar , nendolar ;
+	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1;
+	   			, nAlicuota
+	ENDIF 
 	nRedondeo		= 0 &&CsrArticulo.redondeo
 	
 	nPreConFSiva	= a_red(nRedondeo,nPreVenta + nCostoAgre + nFleteAgre)
 	nPreConFCiva	= a_red(nRedondeo,nPreConCIva + nCostoAgre + nFleteAgre)
-	nIncremento		= CsrArticulo.Bonlis2
-	nIncremento		= red(1+(nIncremento/100),4)
+	*nIncremento		= CsrArticulo.Bonlis2
+	*nIncremento		= red(1+(nIncremento/100),4)
 	nPrePubCiva		= red(nPreConCiva * nIncremento,nDecimalesP)
 	
 	nPrePubFCiva	= red((nPreConCiva  + nCostoAgre + nFleteAgre) * nIncremento,nDecimalesP)
@@ -310,15 +378,38 @@ SCAN FOR !EOF()
 	SELECT CsrProducto
 	GATHER NAME OscPRecio FIELDS EXCEPT id,idestado,fecmodi,switch,codalfaprov
 	
+	replace idprecio WITH lnidprodprecio IN CsrProducto
+    
+    IF VAL(CsrArticulo.stock)>0
+    	INSERT INTO CsrExistenc (id,idarticulo,iddeposito,fecvto,existe,existedisp);
+    	VALUES (lnidexistenc,CsrProducto.id,lniddeposito,DATE(),VAL(CsrArticulo.stock),VAL(CsrArticulo.stock))
+    	
+    	INSERT INTO CsrCuerOrd (id,idmaopera,idcabeza,idarticulo,codigo,nombre,cantidad,univenta,unibulto,listaprecio;
+    			,precosto,precostosiva,preunita,preunitasiva,prearti,preartisiva,tasaiva,switch);
+    	VALUES (lnidcuerord,lnidmaopera ,lnidcabeord,CsrProducto.id,STRtrim(CsrProducto.numero),CsrProducto.nombre;
+    		,VAL(CsrArticulo.stock),1,1,0;
+    		,nCostoCiva,nCostoSiva,nPreConFCiva,nPreConFSiva,nPreConFCiva,nPreConFSiva,nAlicuota,'00000')
+    	
+    	INSERT INTO CsrMovStock (id,idmaopera,idorigen,idarticulo,codigo,fecha,iddeposito,cantidad,importe,signo;
+    			,existereal,existedisp);
+    	values (lnidmovstock,lnidmaopera,lnidcuerord,CsrProducto.id,STRtrim(CsrProducto.numero),DATE(),lniddeposito;
+    		,VAL(CsrArticulo.stock),VAL(CsrArticulo.stock)*nCostoSiva,1;
+    			,VAL(CsrArticulo.stock),VAL(CsrArticulo.stock))
+    			
+    	lnidcuerord = lnidcuerord + 1 
+		lnidexistenc = lnidexistenc + 1 
+		lnidmovstock = lnidmovstock + 1 
+    ENDIF 
     	           	        
 	lnid = lnid + 1
 	lncodigo = lncodigo + 1 
+	lnidprodprecio = lnidprodprecio + 1 
 	
 	 SELECT CsrArticulo   				
 ENDSCAN
-stop() 
+
 SELECT CsrAfeCateProd
-vista()
+
 
 lnidAfe = RecuperarID('CsrAfeCateProd',Goapp.sucursal10)
 INSERT INTO CsrAfeCateProd (id,idpadre,idhijo,clave,switch,estado);
