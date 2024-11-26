@@ -191,7 +191,7 @@ lnPrimeraOcurrencia = 13
 leiunarticulo = .f.
 
 SKIP 
-*STOP()
+STOP()
 DO WHILE NOT EOF()
 	lnCantCampo = 34 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -249,8 +249,8 @@ DO WHILE NOT EOF()
 			lcFlete 		= UPPER((IIF(j + i=22,lcCadena,lcFlete )))
 			lcUtilPorce 	= UPPER((IIF(j + i=23,lcCadena,lcUtilPorce )))
 			lcUtilidad 		= UPPER((IIF(j + i=24,lcCadena,lcUtilidad )))
-			lcPreciosiva 	= UPPER((IIF(j + i=25,lcCadena,lcPreciosiva )))
-			lcPreciociva 	= UPPER((IIF(j + i=26,lcCadena,lcPreciociva )))
+			lcPreciociva 	= UPPER((IIF(j + i=25,lcCadena,lcPreciosiva )))
+			lcPreciosiva 	= UPPER((IIF(j + i=26,lcCadena,lcPreciociva )))
 			lcFechaPrecio 	= UPPER(LimpiarCadena(IIF(j + i=27,lcCadena,lcFechaPrecio )))
 			lcNofactura 	= UPPER(LimpiarCadena(IIF(j + i=30,lcCadena,lcNofactura )))
 			lcObserva 		= UPPER(LimpiarCadena(IIF(j + i=32,lcCadena,lcObserva )))

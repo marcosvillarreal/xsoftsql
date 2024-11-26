@@ -27,7 +27,7 @@ llok = CargarTabla(lcData,'Familia')
 llok = CargarTabla(lcData,'CategoTipo')
 llok = CargarTabla(lcData,'AfeCateProd',.t.)
 llok = CargarTabla(lcData,'ProdPrecio',.t.)
-
+llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'Maopera',.t.)
 llok = CargarTabla(lcData,'Existenc',.t.)
 llok = CargarTabla(lcData,'MovStock',.t.)
@@ -181,7 +181,7 @@ SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SKIP 
-stop()
+*stop()
 SCAN FOR !EOF()
 	*SELECT CsrProducto
 	IF DELETED()
@@ -219,10 +219,18 @@ SCAN FOR !EOF()
 	*Almacenamos el codigo anterior para luego importar las secciones con productos
 	SELECT CsrRubro
 	LOCATE FOR numero = VAL(CsrArticulo.CodRubro)
+	IF numero = 0
+		GO BOTTOM 
+	ENDIF 
 	nidrubro	= CsrRubro.id
+	
+	ccodpieza =STRtrim(CsrRubro.numero)+'.'+ccodalfa 
 	
     SELECT CsrMarca
 	LOCATE FOR numero = VAL(CsrArticulo.CodMarca)
+	IF numero = 0
+		GO BOTTOM 
+	ENDIF 
 	nidmarca	= CsrMarca.id	
 	
     SELECT CsrUbicacion
@@ -237,6 +245,9 @@ SCAN FOR !EOF()
     GO TOP 
     nidcategotipo = CsrCategotipo.id
     
+	SELECT CsrCtacte
+	LOCATE FOR VAL(cnumero)=VAL(CsrArticulo.CodProveedor)
+	nidctacte  = CsrCtacte.id
 	
    	nidestado 	= 1
    	
@@ -283,7 +294,7 @@ SCAN FOR !EOF()
            , dfecalta , dfecmodi , nunibulto , nnofactura , nnolista , nespromocion ;
            , nminimofac , npeso , nvolumen , nfracciona , npuntope, cswitch , ndivisible ;
            , ccontrolador , cnommayorista , nctaaorden, nesinsumo , nidfamilia ;
-           , nidcategotipo, ccodalfaprov , ncotidolar , nendolar , ccodbarra14 ;
+           , nidcategotipo, ccodpieza , ncotidolar , nendolar , ccodbarra14 ;
            , ccodbarra13 , dfecmodi ) 
     
     cObservacion = CsrArticulo.observa
@@ -322,6 +333,7 @@ SCAN FOR !EOF()
 	nCostoBon	= nCostoBon - red(nCostoBon *(nbonif5/100),nDecimalesP)
 	nBonifTotal	= red((nCosto - nCostoBon)/nCosto*100 ,ndecimalesP)
 	nFlete		= VAL(CsrArticulo.Flete)
+	nfleteporce = VAL(CsrArticulo.FletePorce )
 	nSegFlete	= 0&&VAL(CsrArticulo.SeFlete)
 	nTotalFlete	= nFlete + red((nFlete*nSegFlete/100),ndecimalesP)
 	nIvaCosto	= red((nCostoBon + nTotalFlete) * nAlicuota/100, nDecimalesP)
@@ -371,13 +383,13 @@ SCAN FOR !EOF()
 	           , internoporce , flete , segflete , totalflete , costosiva , costociva , margen1 , utilciva1 ;
 	           , utilsiva1 , redondeo , costoagre , fleteagre , preconciva , preconfsiva , preconfciva ;
 	           , prepubciva , prepubfsiva , prepubfciva , fecmodi , switch , cotidolar , endolar ;
-	           , costoulcpra , preotrociva1 , preotrofsiva1 , preotrofciva1 );
+	           , costoulcpra , preotrociva1 , preotrofsiva1 , preotrofciva1 ,DESCRIPCION,CODALFAPROV, fleteporce);
 	     VALUES  ( lnidprodprecio, lnid , nidctacte , nidestado  , ncostocpra , naumento ;
 	           , ncosto , nbonif1 , nbonif2 , nbonif3 , nbonif4 , nbonif5 , nboniftotal ,ncostobon , ninterno ;
 	           , ninternoporce , nflete , nsegflete , ntotalflete , ncostosiva , ncostociva , nmargen1 , nutilciva1 ;
 	           , nutilsiva1 , nredondeo , ncostoagre , nfleteagre , npreconciva , npreconfsiva , npreconfciva ;
 	           , nprepubciva , nprepubfsiva , nprepubfciva , dfecmodi , cswitch , ncotidolar , nendolar ;
-	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1) 
+	           , ncostoulcpra , npreotrociva1 , npreotrofsiva1 , npreotrofciva1,cnombre,ccodalfaprov,nfleteporce) 
 	
 	&&Actualizamos el precio en csrproducto
 	SELECT CsrProdPrecio
@@ -459,7 +471,7 @@ SCAN
 ENDSCAN 
 
 SELECT CsrAfeCateProd
-vista()
+*vista()
 
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
