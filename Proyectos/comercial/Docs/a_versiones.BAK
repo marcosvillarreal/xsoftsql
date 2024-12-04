@@ -1,4 +1,7 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.25
+	ERROR en proceso de actualizarprecioremitos
+	Whatsapp
 2.1.24
 	Whatsapp+Timer
 	FacVta error no buscaba por defecto por codigo interno
