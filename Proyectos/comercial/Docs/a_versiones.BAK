@@ -1,4 +1,8 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.26
+	precioprod.segflete
+	precio, fleteporce
+	facturador, presupuesto+C, precio costo
 2.1.25
 	ERROR en proceso de actualizarprecioremitos
 	Whatsapp

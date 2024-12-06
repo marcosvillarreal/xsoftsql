@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.27
+	Presupuestos
 2.1.26
 	precioprod.segflete
 	precio, fleteporce
