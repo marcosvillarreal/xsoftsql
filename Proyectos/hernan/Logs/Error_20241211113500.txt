@@ -1,0 +1,33 @@
+11-12-2024 11:35:00 , EXPORTAR_CPRA_VTA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'CTIPOCOMP'.;Linea : cRespuesta = cTipoComp;Error :         12;Ultimo Alias Activo: CSRAUXVENTAS;Ultimo registro:      12359 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K749001D.TMP;Ultimo Control activo: 
+11-12-2024 11:35:00 , Pila de llamadas
+11-12-2024 11:35:00 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
+11-12-2024 11:35:00 , Objeto      : exportar_cpra_vta.imprimir_vistaprevia1.impresora.click
+11-12-2024 11:35:00 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
+11-12-2024 11:35:00 , Nº de Linea :          8
+11-12-2024 11:35:00 , En el Fuente: 	llOK=thisform.CrearInforme()
+11-12-2024 11:35:00 , Programa    : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Objeto      : exportar_cpra_vta.crearinforme
+11-12-2024 11:35:00 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Nº de Linea :         16
+11-12-2024 11:35:00 , En el Fuente: 	lTodoOK = .exportarcomprasventas(cperiodo)
+11-12-2024 11:35:00 , Programa    : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Objeto      : exportar_cpra_vta.exportarcomprasventas
+11-12-2024 11:35:00 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Nº de Linea :         12
+11-12-2024 11:35:00 , En el Fuente: 		lok = .calculaventas(cPeriodo)
+11-12-2024 11:35:00 , Programa    : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Objeto      : exportar_cpra_vta.calculaventas
+11-12-2024 11:35:00 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Nº de Linea :         79
+11-12-2024 11:35:00 , En el Fuente: RETURN This.GenerarVentas(cPeriodo)
+11-12-2024 11:35:00 , Programa    : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Objeto      : exportar_cpra_vta.generarventas
+11-12-2024 11:35:00 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Nº de Linea :         40
+11-12-2024 11:35:00 , En el Fuente: 		.tipocomp	= This.DGICPRAVTA.TablaAfip("COMPROBANTE",OscVentas.clasecomp,OscVentas.letra)
+11-12-2024 11:35:00 , Programa    : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Objeto      : exportar_cpra_vta.dgicpravta.tablaafip
+11-12-2024 11:35:00 , Base Objeto : j:\xsoftsql\proyectos\hernan\forms\exportar_cpra_vta.sct
+11-12-2024 11:35:00 , Nº de Linea :         80
+11-12-2024 11:35:00 , En el Fuente: 	cRespuesta = cTipoComp
+11-12-2024 11:35:00 , Fin
