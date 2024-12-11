@@ -21,6 +21,8 @@ set talk off
 public lldesarrollo
 lldesarrollo=(_vfp.startmode()#4)
 
+lcVersion = "01.00.12"
+
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Gestion de Ventas"
@@ -201,7 +203,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.11"
+	goapp.version = lcVersion && "01.00.11"
 	goapp.gmsoft = "transporte"
 	
 	PUBLIC  gcicono
