@@ -1,6 +1,11 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.34
+	RegCbioPedido , ordena por ubicacion+codigo
+	Mayor Historico ****
+	Abm Marca, ordenlist
+	Lista Precio, cuando es por marca el ordenlist
 2.3.33
 	Errores Recibos PM, Sel alamacena el recibo para ver si existe
 	Arreglos inf_devoluciones
