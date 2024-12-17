@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.28
+	ERROR cbioprecio_file, no se almacenba el [IVA
 2.1.27
 	Presupuestos
 2.1.26
