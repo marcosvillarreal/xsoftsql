@@ -1,0 +1,23 @@
+18-12-2024 10:33:37 , REGCTACTE.CMDIMPRIMIR.CLICK, Error: No se encuentra la variable 'CEMPRESATELF'.;Linea : INSERT INTO CsrimpCab (grupo,EmpresaNom,NomComprobante,Estado,NomCliente,NumCliente ,NumComproba,FecEmision,Empresaibto,EmpresaRete,EmpresaDire ,EmpresaLoca,EmpresaProv,EmpresaCuit,DireCliente,LocaCliente ,ivaCliente,cuitCliente,ibtoCliente,empresatelf,empresatribu,empresaotro01 ,empresaotro02,empresaotro03,empresaotro04,empresaotro05) VALUES (STR(loObjRecibo.hojaactual,4)+STR(icopia,1)+"0",cNomEmpresa,cNomComproba ,cEstado,cNomCliente,cNumCliente,cNumComproba,loObjRecibo.fecha ,cEmpresaibto,cEmpresaRete,cEmpresaDire,cEmpresaLoca,cEmpresaProv,cEmpresaCuit ,cDireCliente,cLocaCliente,civaCliente,ccuitCliente,cibtoCliente ,cempresatelf,cempresatribu,cempresaotro01 ,cempresaotro02,cempresaotro03,cempresaotro04,cempresaotro05);Error :         12;Ultimo Alias Activo: CSRAUXMOVCTACTE;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000M7M100H3.TMP;Ultimo Control activo: 
+18-12-2024 10:33:37 , Pila de llamadas
+18-12-2024 10:33:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+18-12-2024 10:33:37 , Objeto      : regctacte.cmdimprimir.click
+18-12-2024 10:33:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+18-12-2024 10:33:37 , Nº de Linea :         13
+18-12-2024 10:33:37 , En el Fuente: 	llok = thisform.imprimir_d()
+18-12-2024 10:33:37 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+18-12-2024 10:33:37 , Objeto      : regctacte.imprimir_d
+18-12-2024 10:33:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ctacte\regctacte.sct
+18-12-2024 10:33:37 , Nº de Linea :         46
+18-12-2024 10:33:37 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora("C_P",thisform.lcimpresora,Csrprefitermi.tipoimpresora,thisform.formulario,.f.,0,lnvistapreliminar)
+18-12-2024 10:33:37 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-12-2024 10:33:37 , Objeto      : regctacte.objimpresor.inicioimpresora
+18-12-2024 10:33:37 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-12-2024 10:33:37 , Nº de Linea :         96
+18-12-2024 10:33:37 , En el Fuente: 			lok = this.reportctacte(lnvistapreliminar)				
+18-12-2024 10:33:37 , Programa    : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-12-2024 10:33:37 , Objeto      : regctacte.objimpresor.reportctacte
+18-12-2024 10:33:38 , Base Objeto : j:\xsoftsql\proyectos\comercial\clases\localproyeto.vct
+18-12-2024 10:33:38 , Nº de Linea :        110
+18-12-2024 10:33:38 , En el Fuente: 	INSERT INTO CsrimpCab (grupo,EmpresaNom,NomComprobante,Estado,NomCliente,NumCliente	 	  				  ,NumComproba,FecEmision,Empresaibto,EmpresaRete,EmpresaDire	 	  				  ,EmpresaLoca,EmpresaProv,EmpresaCuit,DireCliente,LocaCliente	 	  				  ,ivaCliente,cuitCliente,ibtoCliente,empresatelf,empresatribu,empresaotro01	  				,empresaotro02,empresaotro03,empresaotro04,empresaotro05)	VALUES (STR(loObjRecibo.hojaactual,4)+STR(icopia,1)+"0",cNomEmpresa,cNomComproba			,cEstado,cNomCliente,cNumCliente,cNumComproba,loObjRecibo.fecha			,cEmpresaibto,cEmpresaRete,cEmpresaDire,cEmpresaLoca,cEmpresaProv,cEmpresaCuit			,cDireCliente,cLocaCliente,civaCliente,ccuitCliente,cibtoCliente			,cempresatelf,cempresatribu,cempresaotro01	  		,cempresaotro02,cempresaotro03,cempresaotro04,cempresaotro05)
+18-12-2024 10:33:38 , Fin

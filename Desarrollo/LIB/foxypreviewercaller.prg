@@ -597,19 +597,21 @@ PROCEDURE DESTROY
 	*/ [20100517]... Now supporting Labels also (LBX,LBT) by Nick Porfyris
 	* Clean up, delete the temporary FRX, FRT, LBX, LBT, ??X, ??T files...
 	LOCAL N, lnCount, lcFile, lcExtension, lcExtension2
-	lnCount = THIS._oReports.COUNT
-	FOR N = 1 TO lnCount
-		lcFile = THIS._oReports(N)
-		IF LEFT(JUSTFNAME(lcFile),7) = "TMP_FP_" && We have a temp ??X, ??T files to delete
-			TRY
-				DELETE FILE (lcFile)
-				lcExtension=JUSTEXT(lcFile)
-				lcExtension2=STUFF(lcExtension, LEN(lcExtension), 1, [T])
-				DELETE FILE FORCEEXT(lcFile, lcExtension2)
-			CATCH
-			ENDTRY
-		ENDIF
-	ENDFOR
+	IF TYPE('THIS._oReports')$'O'
+		lnCount = THIS._oReports.COUNT
+		FOR N = 1 TO lnCount
+			lcFile = THIS._oReports(N)
+			IF LEFT(JUSTFNAME(lcFile),7) = "TMP_FP_" && We have a temp ??X, ??T files to delete
+				TRY
+					DELETE FILE (lcFile)
+					lcExtension=JUSTEXT(lcFile)
+					lcExtension2=STUFF(lcExtension, LEN(lcExtension), 1, [T])
+					DELETE FILE FORCEEXT(lcFile, lcExtension2)
+				CATCH
+				ENDTRY
+			ENDIF
+		ENDFOR
+	ENDIF 
 ENDPROC
 
 ENDDEFINE
