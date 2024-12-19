@@ -1,0 +1,23 @@
+19-12-2024 09:39:19 , FRMMENU3.TREEVIEW.DBLCLICK, Error: El archivo 'csrcuerfac.dbf' no existe.;Linea : SELECT CsrCuerfac.*,0000000.00 as stock,0000000.00 as total,CAST(0 as n(12,0)) as idcuerfac,0000000.000 as desctoCiva ,0000000.000 as DesctoSiva,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol ,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica,CAST(0 as int) as idprodpromo ,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,00000000.000 as InternoFin ,CAST(0 as int) as idctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni ,00000000.000 as UniCiva2,00000000.000 as UniSiva2,00000000.000 as IvaUni2,CAST(0 as int) as idenvase ,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos , 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden ,SPACE(10+6) as clavepedido,0 as omitirlistas,SPACE(14) as codextend ,SPACE(30) as nombre02,DATE() as fechaultprecio,0 AS editotal ,CAST(0 as i) as idrubro ,kilos as peso,nombre as nomcomandera,SPACE(15) as codArtProd, kilos as PesoProd FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE;Error :          1;Ultimo Alias Activo: CSRAUXMAOPERA;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000QOZT00QO.TMP;Ultimo Control activo: NCONNECTIONTYPE
+19-12-2024 09:39:19 , Pila de llamadas
+19-12-2024 09:39:19 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\util\frmmenu3.sct
+19-12-2024 09:39:19 , Objeto      : frmmenu3.treeview.dblclick
+19-12-2024 09:39:19 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\util\frmmenu3.sct
+19-12-2024 09:39:19 , Nº de Linea :         13
+19-12-2024 09:39:19 , En el Fuente: 	   &lcCmd
+19-12-2024 09:39:20 , Programa    : j:\xsoftsql\proyectos\consultorio\progs\proc.fxp
+19-12-2024 09:39:20 , Objeto      : ejecutamenu
+19-12-2024 09:39:20 , Base Objeto : j:\xsoftsql\proyectos\distribuidora\progs\proc.prg
+19-12-2024 09:39:20 , Nº de Linea :       1497
+19-12-2024 09:39:20 , En el Fuente: 						DO FORM &lcForm WITH lcparam1
+19-12-2024 09:39:20 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacpub.sct
+19-12-2024 09:39:20 , Objeto      : regfacpub.load
+19-12-2024 09:39:20 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacpub.sct
+19-12-2024 09:39:20 , Nº de Linea :          2
+19-12-2024 09:39:20 , En el Fuente: thisform.crearcursor()
+19-12-2024 09:39:20 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacpub.sct
+19-12-2024 09:39:20 , Objeto      : regfacpub.crearcursor
+19-12-2024 09:39:20 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacpub.sct
+19-12-2024 09:39:20 , Nº de Linea :         50
+19-12-2024 09:39:20 , En el Fuente: SELECT CsrCuerfac.*,0000000.00 as stock,0000000.00 as total,CAST(0 as n(12,0)) as idcuerfac,0000000.000 as desctoCiva		,0000000.000 as DesctoSiva,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol		,' ' as codvalido,CAST(0 as n(12,0)) as idcabeunifica,CAST(0 as int) as idprodpromo		,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,00000000.000 as InternoFin	   	,CAST(0 as int) as idctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni	   	,00000000.000 as UniCiva2,00000000.000 as UniSiva2,00000000.000 as IvaUni2,CAST(0 as int) as idenvase	   	,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos	   	, 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden	   	,SPACE(10+6) as clavepedido,0 as omitirlistas,SPACE(14) as codextend	   	,SPACE(30) as nombre02,DATE() as fechaultprecio,0 AS editotal	   	,CAST(0 as i) as idrubro	   	,kilos as peso,nombre as nomcomandera,SPACE(15) as codArtProd, kilos as PesoProd      FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE 
+19-12-2024 09:39:20 , Fin
