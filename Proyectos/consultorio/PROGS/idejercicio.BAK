@@ -5,10 +5,10 @@ cEmpresa = ''
 DO CASE 
 CASE goapp.codempresa = 1 &&Meridiem
 	cEmpresa = 'Meridiem'
-	GOAPP.IDEJERCICIO = 1100000036
-	GOAPP.IDEJERCICIOACTUAL = 1100000036	
+	GOAPP.IDEJERCICIO = 1200000029
+	GOAPP.IDEJERCICIOACTUAL = 1200000029	
 	goapp.terminal = 1
-	goapp.ejercicio = 14
+	goapp.ejercicio = 13
 ENDCASE 	
 
 

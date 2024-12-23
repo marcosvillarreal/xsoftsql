@@ -1,29 +1,9 @@
-07-11-2023 09:07:21 , Metodo mapeoimpresora
-07-11-2023 09:07:21 , Metodo cargarvariables
-07-11-2023 09:08:30 , Metodo mapeoimpresora
-07-11-2023 09:08:39 , Metodo mapeoimpresora
-07-11-2023 09:18:12 , Metodo mapeoimpresora
-07-11-2023 09:18:12 , Metodo cargarvariables
-07-11-2023 09:22:53 , Metodo mapeoimpresora
-07-11-2023 09:22:53 , Metodo cargarvariables
-07-11-2023 09:23:45 , Metodo mapeoimpresora
-07-11-2023 09:23:51 , Metodo mapeoimpresora
-07-11-2023 09:55:40 , Verificando OCX
-07-11-2023 09:55:42 , Acceso al sistema, antes de autenticar
-07-11-2023 09:55:42 , Obteniendo conexion a servidor
-07-11-2023 09:55:43 , Verificando Licencia
-07-11-2023 09:55:45 , Conectado..marcos\sql2014
-07-11-2023 09:55:46 , Datos de la empresa
-07-11-2023 09:56:18 , Metodo mapeoimpresora
-07-11-2023 09:56:18 , Metodo cargarvariables
-07-11-2023 10:01:39 , Metodo mapeoimpresora
-07-11-2023 18:23:06 , Verificando OCX
-07-11-2023 18:23:08 , Acceso al sistema, antes de autenticar
-07-11-2023 18:23:09 , Obteniendo conexion a servidor
 07-11-2023 18:23:09 , Verificando Licencia
 07-11-2023 18:23:11 , Conectado..marcos\sql2014
 07-11-2023 18:23:12 , Datos de la empresa
 07-11-2023 18:33:02 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcvendedor = "CsrCuerpo.idvendedor "+IIF(LEN(TRIM(lcvendedor))#0,"IN ("+lcvendedor+")",">=0") Error :         11 Ultimo Alias Activo: _CSRCOMPROBANTE
+
+
 
 
 
@@ -397,7 +377,11 @@
 
 
 
+
+
 into cursor &micursor READWRITE Error :          1 Ultimo Alias Activo: _CSRCTACTE Ultimo registro:          1 VAL(CNUMERO) DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000N5ZD01KX.TMP Ultimo Control activo:  SUBFACTURA.PAGEFRAME1.PAGE2.KITGRILLATILDARAREANE
+
+
 
 
 
@@ -774,8 +758,12 @@ G.INIT
 
 
 
+
+
 imo Alias Activo: _CSRCOMPROBANTE Ultimo registro:         13 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000N5ZD01N8.TMP Ultimo Control activo:  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 07-11-2023 18:40:19 , Error: El archivo 'csrcuerpo.dbf' no existe. Linea : SELECT Csrcuerpo.*,fecha as chrfecha,fechavto as chrfechavto,SPACE(30) as detalle FROM CsrCuerpo ORDER BY grupo,sfecha,id  INTO CURSOR csrimprimir READWRITE Error :          1 Ult
+
+
 
 
 
@@ -1156,8 +1144,12 @@ imo Alias Activo: _CSRCOMPROBANTE Ultimo registro:         13 CNUMERO DBF: C:\US
 
 
 
+
+
 s wcampo08,space(10) as wcampo09 from CsrCtacte order by cnombre into cursor _CsrCtacte READWRITE Error :          1 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  LISSDOCTACTE.CMDCTACTE.CLICK
 07-11-2023 20:08:54 , Error: El archivo 'csrctacte.dbf' no existe. Linea : SELECT lnok as ok,CsrCtacte.cnombre as cnombre,CsrCtacte.cnumero as cnumero,CsrCtacte.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 a
+
+
 
 
 
@@ -1343,6 +1335,8 @@ s wcampo08,space(10) as wcampo09 from CsrCtacte order by cnombre into cursor _Cs
 07-11-2023 20:12:37 , Datos de la empresa
 07-11-2023 20:12:39 , Acceso exitoso
 07-11-2023 20:20:23 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: CSRORIGEN Ultimo registro:          8 NUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000EK21014X.TMP Ultimo Contr
+
+
 
 
 
@@ -1714,6 +1708,8 @@ ol activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.INIT
 
 
 
+
+
 CAL\TEMP\0000EFWP02FH.TMP Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 08-11-2023 19:45:03 , Verificando OCX
 08-11-2023 19:45:05 , Acceso al sistema, antes de autenticar
@@ -1761,6 +1757,8 @@ CAL\TEMP\0000EFWP02FH.TMP Ultimo Control activo:  PLANILLACAJA.IMPRIMIR_VISTAPRE
 14-11-2023 19:03:59 , Metodo mapeoimpresora
 14-11-2023 19:04:00 , Metodo cargarvariables
 14-11-2023 19:12:31 , Error: No se encuentra la propiedad ACTIVARCAJADIARIO. Linea : IF thisform.activarcajadiario Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._
+
+
 
 
 
@@ -2064,8 +2062,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:12:39 , Error: OREGFACVTA es un miembro desconocido. Linea : llok = this.oRegFacVta.cajadiaria(ldfecha) Error :       1925 Ultimo Alias Activo: CSRFECCAJA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00000C9501NC.TMP
+
+
 
 
 
@@ -2365,8 +2367,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:12:47 , Error: No se encuentra la propiedad ACTIVARCAJADIARIO. Linea : IF thisform.activarcajadiario Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._
+
+
 
 
 
@@ -2662,8 +2668,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:12:51 , Error: No se encuentra la propiedad ACTIVARCAJADIARIO. Linea : IF thisform.activarcajadiario Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._
+
+
 
 
 
@@ -2955,8 +2965,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:12:56 , Error: No se encuentra la propiedad ACTIVARCAJADIARIO. Linea : IF thisform.activarcajadiario Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._
+
+
 
 
 
@@ -3244,8 +3258,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:13:01 , Error: No se encuentra la propiedad ACTIVARCAJADIARIO. Linea : IF thisform.activarcajadiario Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._
+
+
 
 
 
@@ -3529,8 +3547,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:13:07 , Error: OREGFACVTA es un miembro desconocido. Linea : llok = this.oRegFacVta.cajadiaria(ldfecha) Error :       1925 Ultimo Alias Activo: CSRFECCAJA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00000C9501R6.TMP
+
+
 
 
 
@@ -3810,6 +3832,8 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 \00000C9501R6.TMP Ultimo Control activo:  REGCTACTE.CONTAINERENCABEZA._CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:13:16 , Error: No se encuentra la propiedad ACTIVARCAJADIARIO. Linea : IF thisform.activarcajadiario Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._
 
@@ -3949,8 +3973,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:13:19 , Error: OREGFACVTA es un miembro desconocido. Linea : llok = this.oRegFacVta.cajadiaria(ldfecha) Error :       1925 Ultimo Alias Activo: CSRFECCAJA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00000C9501RO.TMP
+
+
 
 
 
@@ -4229,8 +4257,12 @@ CBOCOMPROBANTE.GOTFOCUS
 
 
 
+
+
 RS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00FC.TMP Ultimo Control activo:  REGCTACTE.INIT
 14-11-2023 19:20:23 , Error: OREGCTACTE es un miembro desconocido. Linea : llok = this.oRegCtaCte.cajadiaria(ldfecha) Error :       1925 Ultimo Alias Activo: CSRFECCAJA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00UR.TMP
+
+
 
 
 
@@ -4498,6 +4530,8 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00FC.TMP Ultimo Control activo:  REGCTACTE.
 
 
 
+
+
  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:20:33 , Error: OREGCTACTE es un miembro desconocido. Linea : llok = this.oRegCtaCte.cajadiaria(ldfecha) Error :       1925 Ultimo Alias Activo: CSRFECCAJA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00VR.TMP
 
@@ -4631,8 +4665,12 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00FC.TMP Ultimo Control activo:  REGCTACTE.
 
 
 
+
+
  Ultimo Control activo: IDCOMPROBA REGCTACTE.CONTAINERENCABEZA._CBOCOMPROBANTE.GOTFOCUS
 14-11-2023 19:20:36 , Error: OREGCTACTE es un miembro desconocido. Linea : llok = this.oRegCtaCte.cajadiaria(ldfecha) Error :       1925 Ultimo Alias Activo: CSRFECCAJA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00W9.TMP
+
+
 
 
 
@@ -4995,6 +5033,8 @@ RS\MARCOS\APPDATA\LOCAL\TEMP\0000GWEH00FC.TMP Ultimo Control activo:  REGCTACTE.
 
 
 
+
+
 mo Control activo:  MAIN
 09-02-2024 10:47:09 , Verificando OCX
 09-02-2024 10:47:11 , Acceso al sistema, antes de autenticar
@@ -5023,6 +5063,8 @@ mo Control activo:  MAIN
 09-02-2024 11:04:15 , Datos de la empresa
 09-02-2024 11:04:18 , Acceso exitoso
 09-02-2024 11:04:28 , Error: El comando contiene una frase o palabra clave no reconocida. Linea : DO FORM &lcForm Error :         36 Ultimo Alias Activo: CURPERFIL Ultimo registro:         85  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000J5L500UJ.TMP Ulti
+
+
 
 
 
@@ -5215,8 +5257,12 @@ mo Control activo:  MAIN
 
 
 
+
+
 R(ESVALOR,1)+STR(ESASTO,1) DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002UVWP00CI.TMP Ultimo Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 06-03-2024 10:35:14 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRVERCOMP Ultimo registro:          8 CLASE+STR(ESHEADER,1)+STR(ESCUERFAC,1)+STR(ESIMP,1)+STR(ESIMPUTA,1)+ST
+
+
 
 
 
@@ -5390,8 +5436,12 @@ R(ESVALOR,1)+STR(ESASTO,1) DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002UVWP00D1.
 
 
 
+
+
 F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002UVWP00DL.TMP Ultimo Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 06-03-2024 10:35:51 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRAUXCURSOR Ultimo registro:         13 FECHA DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002UVWP00EY.TMP Ultim
+
+
 
 
 
@@ -5561,8 +5611,12 @@ o Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 
 
 
+
+
 o Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 06-03-2024 10:40:38 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRAUXCURSOR Ultimo registro:          1 FECHA DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002UVWP00KD.TMP Ultim
+
+
 
 
 
@@ -5728,6 +5782,8 @@ o Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 
 
 
+
+
 o Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 06-03-2024 10:42:54 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRAUXCURSOR Ultimo registro:         13 FECHA DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002UVWP00O2.TMP Ultim
 
@@ -5810,8 +5866,12 @@ o Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 
 
 
+
+
 o Control activo:  RESCTACTEINDV.GRID2.COLUMN10.COMMAND1.CLICK
 06-03-2024 10:43:07 , Error: El índice no corresponde a la tabla. Elimine el archivo de índice y vuelva a crear el índice. Linea : lnCount = THIS._oReports.COUNT Error :        114 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control a
+
+
 
 
 
@@ -6001,8 +6061,12 @@ ctivo:  ON...
 
 
 
+
+
 N
 10-05-2024 18:59:21 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : ... Error :        107 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          2 GRUPO+TIPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000EEBT027M.TMP U
+
+
 
 
 
@@ -6183,6 +6247,8 @@ ltimo Control activo:  MAIN
 
 
 
+
+
 N
 10-05-2024 19:41:34 , Verificando OCX
 10-05-2024 19:41:36 , Acceso al sistema, antes de autenticar
@@ -6225,6 +6291,8 @@ N
 03-06-2024 18:28:38 , Metodo mapeoimpresora
 03-06-2024 18:28:39 , Metodo cargarvariables
 03-06-2024 18:35:13 , Error: No se encuentra la variable 'IMPORTEPYA'. Linea : replace importeCaja WITH importeCaja + lnCaja, importeTarjeta WITH importeTarjeta + lnTarje ,importeBco WITH importeBco + lnBcos, importePYa WITH importePYa + lnPYa IN CsrCuer
+
+
 
 
 
@@ -6314,8 +6382,12 @@ po Error :         12 Ultimo Alias Activo: CSRAUXPAGOS Ultimo registro:         
 
 
 
+
+
 JATURNO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 04-06-2024 09:15:49 , Error: No se encuentra la variable 'ID'. Linea : replace ALL id WITH VAL(RIGHT(STR(id,12),10)) IN CsrImprimir Error :         12 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:         38 GRUPO+STR(NUMGRUPO02,9)+CHRFECHA+STR(IDMAO
+
+
 
 
 
@@ -6442,8 +6514,12 @@ PERA,12) DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JC3T03HV.TMP Ultimo Control
 
 
 
+
+
 timo Control activo:  MAIN
 11-09-2024 10:50:39 , Error: No es una expresión numérica. Linea : FOR N = 1 TO lnCount Error :         27 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 GRUPO+ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JQX500XZ.TMP Ultimo Control acti
+
+
 
 
 
@@ -6507,8 +6583,12 @@ vo:  MAIN
 
 
 
+
+
 timo Control activo:  MAIN
 11-09-2024 10:50:54 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : IF LEFT(JUSTFNAME(lcFile),7) = "TMP_FP_" && We have a temp ??X, ??T files to delete Error :         11 Ultimo Alias Activo: CSRIMPCUE Ultimo registro
+
+
 
 
 
@@ -6578,6 +6658,8 @@ timo Control activo:  MAIN
 
 
 
+
+
 imo Control activo:  MAIN
 11-09-2024 10:56:29 , Verificando OCX
 11-09-2024 10:56:32 , Acceso al sistema, antes de autenticar
@@ -6590,6 +6672,8 @@ imo Control activo:  MAIN
 11-09-2024 10:57:37 , Metodo mapeoimpresora
 11-09-2024 10:57:37 , Metodo cargarvariables
 11-09-2024 10:57:39 , Error: _OREPORTS es un miembro desconocido. Linea : lnCount = THIS._oReports.COUNT Error :       1925 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:          1 GRUPO+TIPO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JQX503B1.TMP Ult
+
+
 
 
 
@@ -6653,8 +6737,12 @@ imo Control activo:  MAIN
 
 
 
+
+
 ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo: IDPLANPAGO REGFACVTA.CONTAINERENCABEZA._CBOPLANPAGO.LOSTFOCUS
 16-10-2024 17:27:57 , Error: CONTAINERENCABEZA es un miembro desconocido. Linea : tHIS.CONtainerencabeza.lblavisoplanpago.Caption = CsrPlanPago.nombre Error :       1925 Ultimo Alias Activo: CSRVALOR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPD
+
+
 
 
 
@@ -6682,8 +6770,12 @@ ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo: IDPLANPAGO REGFACVTA.CONT
 
 
 
+
+
 ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
 16-10-2024 17:28:03 , Error: CONTAINERENCABEZA es un miembro desconocido. Linea : tHIS.CONtainerencabeza.lblavisoplanpago.Caption = CsrPlanPago.nombre Error :       1925 Ultimo Alias Activo: CSRVALOR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPD
+
+
 
 
 
@@ -6707,8 +6799,12 @@ ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
 
 
 
+
+
 ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo:  REGFACVTA.KEYPRESS
 16-10-2024 17:28:05 , Error: CONTAINERENCABEZA es un miembro desconocido. Linea : tHIS.CONtainerencabeza.lblavisoplanpago.Caption = CsrPlanPago.nombre Error :       1925 Ultimo Alias Activo: CSRVALOR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPD
+
+
 
 
 
@@ -6728,8 +6824,12 @@ ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo: IDPLANPAGO REGFACVTA.CONT
 
 
 
+
+
 ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo: IDPLANPAGO REGFACVTA.CONTAINERENCABEZA._CBOPLANPAGO.LOSTFOCUS
 16-10-2024 17:28:07 , Error: CONTAINERENCABEZA es un miembro desconocido. Linea : tHIS.CONtainerencabeza.lblavisoplanpago.Caption = CsrPlanPago.nombre Error :       1925 Ultimo Alias Activo: CSRVALOR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPD
+
+
 
 
 
@@ -6767,5 +6867,17 @@ ATA\LOCAL\TEMP\0000WRUX01IV.TMP Ultimo Control activo: IDPLANPAGO REGFACVTA.CONT
 19-11-2024 18:17:09 , Conectado..marcos\sql2014
 19-11-2024 18:17:10 , Datos de la empresa
 20-11-2024 09:29:14 , Error: No se encuentra el alias 'CSRAUXPAGO'. Linea : DELETE in CsrAuxPago Error :         13 Ultimo Alias Activo: CSRAUXPAGOS Ultimo registro:         17  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K2RT01GP.TMP Ultimo Control acti
+
+
 vo:  SUBCAJATURNO.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-20-11-2024 10:38:23 , Error: El campo DETALLE no acepta valores NULL. Linea : INSERT INTO Csrimprimir(id,idgrupo,nomgrupo,fecha,cabrevia,nrocomp,nrocaja,detalle) VALUES (CsrCursor.idmaopera,CsrCursor.idgrupo,CsrCursor.nomgrupo,Csrcursor.fecha,Csrcursor.Csrnomcompr ,Csrcursor.Csrnrocomp,Csrcursor.nrocaja,CsrCursor.detalle) Error :       1581 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          7  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K2RT02SL.TMP Ultimo Control activo:  SUBMOVCAJA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+20-11-2024 10:38:23 , Error: El campo DETALLE no acepta valores NULL. Linea : INSERT INTO Csrimprimir(id,idgrupo,nomgrupo,fecha,cabrevia,nrocomp,nrocaja,detalle) VALUES (CsrCursor.idmaopera,CsrCursor.idgrupo,CsrCursor.nomgrupo,Csrcursor.fecha,Csrcursor.C
+
+srnomcompr ,Csrcursor.Csrnrocomp,Csrcursor.nrocaja,CsrCursor.detalle) Error :       1581 Ultimo Alias Activo: CSRCURSOR Ultimo registro:          7  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000K2RT02SL.TMP Ultimo Control activo:  SUBMOVCAJA.IMPRIMIR_VIST
+
+APREVIA1.IMPRESORA.CLICK
+20-12-2024 13:12:43 , Verificando OCX
+20-12-2024 13:12:46 , Acceso al sistema, antes de autenticar
+20-12-2024 13:12:46 , Obteniendo conexion a servidor
+20-12-2024 13:12:46 , Verificando Licencia
+20-12-2024 13:12:48 , Conectado..marcos\sql2014
+20-12-2024 13:12:51 , Datos de la empresa
