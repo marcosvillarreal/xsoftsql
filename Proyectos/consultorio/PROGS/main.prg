@@ -322,6 +322,7 @@ IF TYPE('goApp')='O'
 	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
 	
+	*stop()
 	ObjReporter.logofac =  goapp.logofac
 	IF lldesarrollo
 		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'

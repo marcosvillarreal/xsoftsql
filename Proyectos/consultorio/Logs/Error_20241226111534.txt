@@ -1,0 +1,48 @@
+26-12-2024 11:15:34 , REGFACVTA.CMDSALVAR.CLICK, Error: No se encuentra la variable 'COFERFECHA'.;Linea : INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta ,Kilos,FecOferta,Orden,Leyenda,esFrio,Alicuota,Bulto,Unidad,LeyendaDto) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cPrecioUni ,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0' ,cLeyenda,nEsFrio,cAlicuota,cBulto,cUnidades,cLeyendaDto);Error :         12;Ultimo Alias Activo: IMPCUERVARI;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000O6X500HZ.TMP;Ultimo Control activo: 
+26-12-2024 11:15:34 , Pila de llamadas
+26-12-2024 11:15:34 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:34 , Objeto      : regfacvta.cmdsalvar.click
+26-12-2024 11:15:34 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:34 , Nº de Linea :          3
+26-12-2024 11:15:34 , En el Fuente: thisform.cargarconcepto()
+26-12-2024 11:15:34 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:34 , Objeto      : regfacvta.cargarconcepto
+26-12-2024 11:15:34 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:34 , Nº de Linea :         79
+26-12-2024 11:15:34 , En el Fuente: 		this.cargardatosctacte() 
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Objeto      : regfacvta.cargardatosctacte
+26-12-2024 11:15:35 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Nº de Linea :         14
+26-12-2024 11:15:35 , En el Fuente: 	this.key_43()
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Objeto      : regfacvta.key_43
+26-12-2024 11:15:35 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Nº de Linea :          8
+26-12-2024 11:15:35 , En el Fuente: 	thisform.actualizar()
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Objeto      : regfacvta.actualizar
+26-12-2024 11:15:35 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Nº de Linea :         97
+26-12-2024 11:15:35 , En el Fuente: 								llok = .imprimir(thisform.lcimpresora,Csrprefitermi.tipoimpresora,1)
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Objeto      : regfacvta.imprimir
+26-12-2024 11:15:35 , Base Objeto : j:\xsoftsql\proyectos\consultorio\forms\ventas\regfacvta.sct
+26-12-2024 11:15:35 , Nº de Linea :        118
+26-12-2024 11:15:35 , En el Fuente: lok = thisform.Objimpresor.inicioimpresora(cOrigen,nombreimpresora,tipoimpresora,thisform.formulario,_debogenerar,lnDeboActualizarNro,lnvistapreliminar)
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\clases\localproyeto.vct
+26-12-2024 11:15:35 , Objeto      : regfacvta.objimpresor.inicioimpresora
+26-12-2024 11:15:35 , Base Objeto : j:\xsoftsql\proyectos\consultorio\clases\localproyeto.vct
+26-12-2024 11:15:35 , Nº de Linea :         68
+26-12-2024 11:15:35 , En el Fuente: 	lok = this.reportfcae(lndeboActualizarNro,lcOrigen)
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\clases\localproyeto.vct
+26-12-2024 11:15:35 , Objeto      : regfacvta.objimpresor.reportfcae
+26-12-2024 11:15:35 , Base Objeto : j:\xsoftsql\proyectos\consultorio\clases\localproyeto.vct
+26-12-2024 11:15:35 , Nº de Linea :        133
+26-12-2024 11:15:35 , En el Fuente: 	this.reportFcae_cue(loObjFactura,@nTotBulos,@nTotPeso)
+26-12-2024 11:15:35 , Programa    : j:\xsoftsql\proyectos\consultorio\clases\localproyeto.vct
+26-12-2024 11:15:36 , Objeto      : regfacvta.objimpresor.reportfcae_cue
+26-12-2024 11:15:36 , Base Objeto : j:\xsoftsql\proyectos\consultorio\clases\localproyeto.vct
+26-12-2024 11:15:36 , Nº de Linea :        202
+26-12-2024 11:15:36 , En el Fuente: 		    INSERT INTO CsrimpCue (grupo,Cantidad,Descripcion,Codigo,PrecioUni,Bonif,PrecioFinal,Total,UniVenta		    			,Kilos,FecOferta,Orden,Leyenda,esFrio,Alicuota,Bulto,Unidad,LeyendaDto)		    VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1),cCantidad,cArticulo,cCodigo,cPrecioUni		    			,cBonifica,cPrecioFin,cTotal,cUniVenta,cKilos,cOferFecha,cOrden+'0'		    			,cLeyenda,nEsFrio,cAlicuota,cBulto,cUnidades,cLeyendaDto)		    			
+26-12-2024 11:15:36 , Fin
