@@ -66,7 +66,7 @@
 *!*								2 	1 = cheque rechazado
 *!*								3	1 = cheque propio informado por banco
 *!*								4	1 = cheque digital
-*!*								5
+*!*								5 	TRANSF 0=nogenerada / 1 =generada
  							   						 
 
 *!*	 MOVSTOCK.switch			1	1= es envase
