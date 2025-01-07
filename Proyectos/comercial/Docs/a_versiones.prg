@@ -1,5 +1,8 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
-Validar idIVA = 0
+2.1.29
+	Validar idIVA = 0
+	ERROR cbioprecio_file no actualiza el IVA
+	
 2.1.28
 	ERROR cbioprecio_file, no se almacenba el [IVA
 	Pidoconcepto errores asociados
