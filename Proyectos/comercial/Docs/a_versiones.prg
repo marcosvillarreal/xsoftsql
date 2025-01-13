@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.30
+	NAda
 2.1.29
 	Validar idIVA = 0
 	ERROR cbioprecio_file no actualiza el IVA
