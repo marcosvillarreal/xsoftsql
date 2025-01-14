@@ -1,28 +1,3 @@
-Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-19-06-2024 18:18:36 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0')
- Alias CSRIMPRIMIR registro          5
-Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-19-06-2024 18:19:39 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº lcval = strtran(str(tcdato,tntamfinal,tndecimal),' ','0')
- Alias CSRIMPRIMIR registro          5
-Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-19-06-2024 18:20:58 , Error nº:        107
-Error Incompatibilidad entre el tipo de operador y el tipo de operando.
-Linea nº i = ldFechaFin - OscCursor.fecha + 1
- Alias CSRIMPRIMIR registro          5
-Control activo  EST_RANKPRODUCTOS.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-19-06-2024 18:24:07 , Informe por excel
-19-06-2024 18:24:10 , Version 16.0
-19-06-2024 18:33:41 , Error nº:       1734
-Error No se encuentra la propiedad HAYRANGO.
-Linea nº This.HayRango = .f.
- Alias CSROBJETIVOS registro          1
-Control activo  PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-19-06-2024 18:34:14 , Error nº:       1806
-Error SQL: no se encuentra la columna 'FECHA'.
 Linea nº SELECT idvendedor,idarticulo, sum(netogravado) as importefinal ,idrubro,fecha from csrseguimiento group by idvendedor,idarticulo,idrubro,fecha order BY idvendedor,idrubro,idarticulo desc INTO CURSOR CsrAuxFecha READWRITE
  Alias CSRSEGUIMIENTO registro          1
 Control activo  PLANCOMIVENDE_REND.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -273,6 +248,10 @@ Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal
 
 
 
+
+
+
+
 O CURSOR CsrImprimir readWrite
  Alias  registro          0
 Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -286,6 +265,10 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
+
+
+
 
 
 
@@ -560,6 +543,10 @@ Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(ve
 
 
 
+
+
+
+
 r.ctacte INTO CURSOR CsrImprimir READWRITE
  Alias CSRGRUPOS registro          2
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -585,6 +572,10 @@ Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 19-07-2024 09:29:27 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
+
+
+
+
 
 
 
@@ -848,7 +839,15 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
+
+
 
 
 
@@ -1040,7 +1039,15 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
+
+
 
 
 
@@ -1249,7 +1256,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
+
+
+
+
 
 
 
@@ -1421,7 +1436,15 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
 alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
+
+
+
 
 
 
@@ -1602,6 +1625,10 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1696,7 +1723,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
+
+
 
 
 
@@ -1868,7 +1903,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
+
+
 
 
 
@@ -2038,7 +2081,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
+
+
 
 
 
@@ -2214,7 +2265,15 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
+
+
 
 
 
@@ -2568,6 +2627,10 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2620,12 +2683,20 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
+
 
 
 
@@ -2735,6 +2806,10 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2742,6 +2817,10 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
+
 
 
 
@@ -3065,3 +3144,26 @@ Linea nº IF tcdato<0
  Alias CSRAUXILIAR registro          1
 Control activo  REGINTERBANKING.ACEPTAR1.CLICK
 10-01-2025 18:19:42 , Verificando OCX
+14-01-2025 11:35:52 , Verificando OCX
+14-01-2025 11:48:19 , Error nº:       1925
+Error _CBOMESFISCAL es un miembro desconocido.
+Linea nº .containerencabeza._cbomesfiscal.Value = MONTH(DATE())
+ Alias  registro          0
+Control activo  REGINTERBANKING.INIT
+14-01-2025 11:50:30 , Error nº:       1925
+Error _SPINNERANIOFISCAL es un miembro desconocido.
+Linea nº lcperiodo= strzero(thisform.containerencabeza._spinneraniofiscal.Value,4)
+ Alias  registro          0
+Control activo  REGINTERBANKING.INIT
+14-01-2025 11:57:41 , Error nº:         12
+Error No se encuentra la variable 'ESTADOTILDE'.
+Linea nº thisform.grid2.column9.ControlSource = "CsrAuxiliar.estadotilde"
+ Alias CSRAUXILIAR registro          1
+Control activo  REGINTERBANKING.CONTAINERENCABEZA.CMDPROCESAR.CLICK
+14-01-2025 11:59:18 , Error nº:         12
+Error No se encuentra la variable 'ESTADOTILDE'.
+Linea nº thisform.grid2.column9.ControlSource = "CsrAuxiliar.estadotilde"
+ Alias CSRAUXILIAR registro          1
+Control activo  REGINTERBANKING.CONTAINERENCABEZA.CMDPROCESAR.CLICK
+14-01-2025 12:08:35 , Error nº:         12Error No se encuentra la variable 'CBU'.Linea nº IF LEN(LTRIM(CsrAuxiliar.cbu))<>0 Alias CSRAUXPIE registro          1Control activo  REGINTERBANKING.GRID2.KEYPRESS
+14-01-2025 12:09:17 , Error nº:         12Error No se encuentra la variable 'CBU'.Linea nº thisform.containerpie.kitbuscaoaltaenctacte.txtnombre.Value = ALLTRIM(CsrAuxiliar.cbu) Alias CSRAUXPIE registro          1Control activo  REGINTERBANKING.GRID2.KEYPRESS
