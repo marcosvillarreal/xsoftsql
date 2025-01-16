@@ -1,0 +1,56 @@
+*================================================================================================================================================
+* JSON03.PRG
+* Muestra como usar la clase W_JSON
+* Se crea un objeto que contiene otro objeto (cliente), y este objeto (cliente) a su vez contiene a otro objeto (direccion)
+* NOTA: El nombre de la propiedad "direccion" se puede escribir con tilde si se desea "dirección" y funcionará ok también
+* Walter R. Ojeda Valiente
+* 08/JUN/2024
+*================================================================================================================================================
+  
+  CLOSE ALL
+  CLEAR ALL
+  
+  SET CENTURY      ON
+  SET DATE         DMY
+  SET HOURS     TO 24
+  SET MEMOWIDTH TO 240
+  SET TALK         OFF
+  
+  SET PROCEDURE TO W_JSON
+  
+  CLEAR
+  
+  loJSON = CREATEOBJECT("W_JSON")
+  
+  WITH loJSON
+    .SET_AGREGAR_PROPIEDAD("", "L", "facturaNro"    , "001-001-1234567")
+    .SET_AGREGAR_PROPIEDAD("", "L", "fecha"         , DATE())
+    .SET_AGREGAR_PROPIEDAD("", "L", "totalVenta"    , 54321)
+    .SET_AGREGAR_PROPIEDAD("", "L", "nombreVendedor", .NULL.)
+    .SET_AGREGAR_PROPIEDAD("", "O", "cliente")
+    .SET_AGREGAR_PROPIEDAD("cliente", "L", "codigo", "CVME01")
+    .SET_AGREGAR_PROPIEDAD("cliente", "L", "nombre", "Claudia Verónica Martínez Estigarribia")
+    .SET_AGREGAR_PROPIEDAD("cliente", "O", "direccion")
+    .SET_AGREGAR_PROPIEDAD("cliente;direccion", "L", "calle" , "Avenida Colón")
+    .SET_AGREGAR_PROPIEDAD("cliente;direccion", "L", "numero", "2730")
+    .SET_AGREGAR_PROPIEDAD("cliente;direccion", "L", "ciudad", "Asunción")
+    .SET_AGREGAR_PROPIEDAD("cliente;direccion", "L", "país"  , "Paraguay")
+    .SET_AGREGAR_PROPIEDAD("cliente", "L", "email", "clauvero@hotmail.com")
+    .SET_AGREGAR_PROPIEDAD("", "L", "cobrada"           , .T.)
+    .SET_AGREGAR_PROPIEDAD("", "L", "entregaEnDomicilio", .F.)
+    lcTextoJSON    = .DO_CREAR_JSON()
+    lcMensajeError = .GET_CABECERA("MensajeError")
+    IF EMPTY(lcMensajeError) THEN     && Si está todo OK, entonces...
+      ? lcTextoJSON FONT "FixedSys", 12     && Se imprime el texto JSON creado y
+      _CLIPTEXT = lcTextoJSON     && se coloca el texto JSON en el portapapeles (lo puedes pegar y validar en: https://jsonlint.com/)
+    ELSE
+      =MESSAGEBOX(lcMensajeError)
+    ENDIF
+  ENDWITH
+  
+  loJSON = .NULL.
+  RELEASE loJSON
+  
+RETURN
+*
+*
