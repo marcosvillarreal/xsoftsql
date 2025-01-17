@@ -277,6 +277,9 @@ IF TYPE('goApp')='O'
 	CASE VAL(nidprograma)=4
 		goapp.otherformsclose ="GENERA_DANONE"
 		DO FORM genera_danone WITH .t.
+	CASE VAL(nidprograma)=5
+		goapp.otherformsclose ="GENERA_EXPGRAL"
+		DO FORM genera_expgral WITH .t.
 	OTHERWISE
 
 	ENDCASE
