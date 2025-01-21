@@ -13,7 +13,7 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 		, Financiador c(10), Plan c(10), Carnet c(20) , Sexo c(50))
 
 SET SAFETY OFF 
-*INDEX on nombre TAG korden
+INDEX on nombre TAG korden
 SET SAFETY ON 
 	
 Oavisar.proceso('S','Abriendo archivos') 
