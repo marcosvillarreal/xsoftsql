@@ -117,7 +117,11 @@ DO WHILE NOT EOF()
 			EXIT 
 		ENDIF 
 	ENDDO 
-
+	
+	IF lnpos=0 AND i+j = lnCantCampo
+		lcPlan			= UPPER(LimpiarCadena(IIF(j + i=13,lcAcarreo ,lcPlan)))	
+	ENDIF 
+		
 	*IF lnpos#0 AND i+j >= lnCantCampo
 	IF  i+j >= lnCantCampo
 		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
