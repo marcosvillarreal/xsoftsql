@@ -1,6 +1,9 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 	
 -Pendiente
+2.3.35
+	ListaPatronCarga,RegCambioArticulo, se establecio el mismo orden y
+	se agrego la opcion con contraseña para ver patrones impresos
 2.3.34
 	RegCbioPedido , ordena por ubicacion+codigo
 	Mayor Historico ****
