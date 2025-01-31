@@ -23,7 +23,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lcVersion = "0.0.5"
+lcVersion = "0.0.6"
 
 lctituloGestion = "Gestion de Consultorios"
 
