@@ -2,7 +2,7 @@ lcEmpresa = ''
 DO CASE 
 CASE goapp.codempresa = 1 &&
 	lcEmpresa = 'Fortin'
-	goapp.idejercicio = 1100000026
+	goapp.idejercicio = 1100000027
 	goapp.terminal = 12
 	goapp.idusuario = 1
 CASE goapp.codempresa = 2 &&
