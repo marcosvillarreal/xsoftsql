@@ -1,4 +1,12 @@
 lcEmpresa = ''
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+select TOP 1 * from detaconta ORDER BY id desc
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
+	RETURN 
+ENDIF 
+goapp.idejercicio = CsrDetaConta.id
 DO CASE 
 CASE goapp.codempresa = 1 &&
 	lcEmpresa = 'Fortin'
@@ -52,7 +60,7 @@ CASE goapp.codempresa = 10
 	goapp.idusuario = 1
 CASE goapp.codempresa = 11 
 	lcEmpresa = 'Antartida'&&
-	goapp.idejercicio = 1100000027
+	*goapp.idejercicio = 1100000027
 	goapp.terminal = 12
 	goapp.idusuario = 1
 ENDCASE 
