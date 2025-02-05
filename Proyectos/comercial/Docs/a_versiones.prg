@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.32
+	Buscador por orden de uso
 2.1.31
 	subcaja ****
 2.1.29

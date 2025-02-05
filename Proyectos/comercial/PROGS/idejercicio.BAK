@@ -3,7 +3,7 @@ lcEmpresa = ''
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 select TOP 1 * from detaconta ORDER BY id desc
 ENDTEXT 
-IF NOT CreaCursorAdapter('CsrDetaConta',lcCmd)
+IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
 	RETURN 
 ENDIF 
 goapp.idejercicio = CsrDetaConta.id
