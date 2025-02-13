@@ -296,6 +296,7 @@ IF TYPE('goApp')='O'
 	
 	
 	Grabar_Log('Obteniendo conexion a servidor') 
+	*stop()
 	 =ObtenerServidor()
 	  
 	IF LEN(TRIM(LcConectionString))=0
