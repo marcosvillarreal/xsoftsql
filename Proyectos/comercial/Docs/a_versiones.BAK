@@ -1,4 +1,7 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.33
+	Planilla de Caja
+	CbioPrecio2 ... basepub
 2.1.32
 	Buscador por orden de uso
 2.1.31

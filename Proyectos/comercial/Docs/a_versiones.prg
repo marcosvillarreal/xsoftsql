@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.34
+	Errores en acopio
 2.1.33
 	Planilla de Caja
 	CbioPrecio2 ... basepub

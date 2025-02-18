@@ -1,0 +1,23 @@
+17-02-2025 16:41:29 , IMPCOMPGUARDA.ACEPTAR1.CLICK, Error: No se encuentra la variable 'OBSERVA'.;Linea : replace observa WITH NVL(CsrMovRetiro.observa,''), cnombre WITH IIF(LEN(LTRIM(NVL(CsrMovRetiro.cliente,'')))=0,cnombre,CsrMovRetiro.cliente);Error :         12;Ultimo Alias Activo: CSRAUXCABERTRO;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000FTVT011U.TMP;Ultimo Control activo: 
+17-02-2025 16:41:29 , Pila de llamadas
+17-02-2025 16:41:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:29 , Objeto      : impcompguarda.aceptar1.click
+17-02-2025 16:41:29 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:29 , Nº de Linea :          9
+17-02-2025 16:41:29 , En el Fuente: 		.ciclaoperacion(loTipoSalida)
+17-02-2025 16:41:29 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:29 , Objeto      : impcompguarda.ciclaoperacion
+17-02-2025 16:41:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:30 , Nº de Linea :         16
+17-02-2025 16:41:30 , En el Fuente: 	IF NOT thisform.selectoperacion_sql(OscOpera,loTipoSalida)
+17-02-2025 16:41:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:30 , Objeto      : impcompguarda.selectoperacion_sql
+17-02-2025 16:41:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:30 , Nº de Linea :          9
+17-02-2025 16:41:30 , En el Fuente: this.recuperarremito(nidmaopera)
+17-02-2025 16:41:30 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:30 , Objeto      : impcompguarda.recuperarremito
+17-02-2025 16:41:30 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\impcompguarda.sct
+17-02-2025 16:41:30 , Nº de Linea :        333
+17-02-2025 16:41:30 , En el Fuente: 		replace observa WITH NVL(CsrMovRetiro.observa,''), cnombre WITH IIF(LEN(LTRIM(NVL(CsrMovRetiro.cliente,'')))=0,cnombre,CsrMovRetiro.cliente)
+17-02-2025 16:41:30 , Fin
