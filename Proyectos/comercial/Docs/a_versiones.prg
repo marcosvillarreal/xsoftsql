@@ -1,4 +1,6 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.35
+	Errores, puesta a punto cachitos
 2.1.34
 	Errores en acopio
 2.1.33
