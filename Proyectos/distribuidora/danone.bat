@@ -1,10 +1,8 @@
-@echo on
-cd \
+echo on
+cd\
+c:
 cd prog*86*
 cd winscp
-winscp.com /ini=nul /script="c:\aplicaciones\tapia\danonesftp.txt"
-
-copy c:\aplicaciones\danone_exp\*.csv c:\aplicaciones\danone_exp\exp
-
-del c:\aplicaciones\danone_exp\* /Q
-
+winscp.com /ini=nul /script="J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\danonesftp.txt"
+copy J:\APLICACIONES\TAPIA\*.csv J:\APLICACIONES\TAPIA\hist 
+del J:\APLICACIONES\TAPIA\*.csv /Q
