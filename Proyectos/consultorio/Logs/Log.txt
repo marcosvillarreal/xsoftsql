@@ -1,1520 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-jaactual,hojatotal,Transporte ,ValorNom001,ValorImp001,ValorNom002,ValorImp002 ,ValorNom003,ValorImp003,ValorNom004,ValorImp004 ,LeyendaDto,HeadImp008,BodyImp008,NumCompPie,HojaFinal ,HeadImp009,BodyImp009,HeadImp010,BodyImp010,HeadImp011,BodyImp011 ,Tip
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-oDoc,FecServDesde, FerServHasta ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3,cExtra04,cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-,cEmpDire,cEmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto ,cSaldo, cSaldoAnt, cCanal, cPase,cTalonario,cNumComprobante,cDocTicket ,loObjFactura.hojaactual,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-loObjFactura.hojatotal,cTransporte ,cValorNom001,cValorImp001,cValorNom002,cValorImp002 ,cValorNom003,cValorImp003,cValorNom004,cValorImp004 ,cLeyendaDto,cHeadImp008,cBodyImp008,cNumCompPie,nHojaFinal ,CHeadImp009,CBodyImp009,CHeadImp010,CBodyImp010,CHea
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-dImp011 ,CBodyImp011,cTipoDoc ,cFecServDesde, cFerServHasta) Error :         12 Ultimo Alias Activo: CSRPAGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BRIH08XC.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
-30-12-2024 17:26:11 , Genero codigo QR
-30-12-2024 17:29:09 , Genero codigo QR
-30-12-2024 17:32:02 , Verificando OCX
-30-12-2024 17:32:04 , Acceso al sistema, antes de autenticar
-30-12-2024 17:32:04 , Obteniendo conexion a servidor
-30-12-2024 17:32:04 , Verificando Licencia
-30-12-2024 17:32:34 , Conectado..marcos\sql2019
-30-12-2024 17:32:36 , Datos de la empresa
-30-12-2024 17:33:22 , Genero codigo QR
-30-12-2024 17:34:08 , Genero codigo QR
-30-12-2024 17:35:58 , Genero codigo QR
-30-12-2024 17:37:11 , Genero codigo QR
-30-12-2024 17:38:29 , Genero codigo QR
-30-12-2024 17:39:27 , Genero codigo QR
-30-12-2024 17:43:41 , Genero codigo QR
-30-12-2024 17:45:31 , Genero codigo QR
-30-12-2024 17:48:47 , Genero codigo QR
-30-12-2024 18:50:39 , Verificando OCX
-30-12-2024 18:50:40 , Acceso al sistema, antes de autenticar
-30-12-2024 18:50:41 , Obteniendo conexion a servidor
-30-12-2024 18:50:41 , Verificando Licencia
-30-12-2024 18:50:48 , Conectado..marcos\sql2019
-30-12-2024 18:50:48 , Datos de la empresa
-30-12-2024 18:51:34 , Error: No se encuentra la variable 'LLOK'. Linea : IF NOT llok Error :         12 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BRIH0CDU.TMP Ultimo Control activo:  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-REGFACVTA.CMDSALVAR.CLICK
-30-12-2024 18:53:16 , Error: No se encuentra la variable 'LLOK'. Linea : IF NOT llok Error :         12 Ultimo Alias Activo: CSRAUXCUERFAC Ultimo registro:          1 ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BRIH0DI5.TMP Ultimo Control activo:  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-REGFACVTA.CMDSALVAR.CLICK
-30-12-2024 18:54:55 , Genero codigo QR
-30-12-2024 18:55:32 , Error: No se encuentra la variable 'LLOK'. Linea : IF NOT llok Error :         12 Ultimo Alias Activo: CSRIMPCUE Ultimo registro:         22 GRUPO+ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BRIH0EJ9.TMP Ultimo Control activo:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  REGFACVTA.CMDSALVAR.CLICK
-30-12-2024 18:59:25 , Verificando OCX
-30-12-2024 18:59:26 , Acceso al sistema, antes de autenticar
-30-12-2024 18:59:26 , Obteniendo conexion a servidor
 30-12-2024 18:59:26 , Verificando Licencia
 30-12-2024 18:59:29 , Conectado..marcos\sql2019
 30-12-2024 18:59:29 , Datos de la empresa
@@ -1525,6 +8,22 @@ REGFACVTA.CMDSALVAR.CLICK
 31-12-2024 08:47:31 , Conectado..marcos\sql2019
 31-12-2024 08:47:32 , Datos de la empresa
 31-12-2024 08:55:18 , Error: PAGE5 es un miembro desconocido. Linea : .Page5.refresh() Error :       1925 Ultimo Alias Activo: CSRCTACTE Ultimo registro:         -1 CNOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JQBT00D9.TMP Ultimo Control activo:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1843,6 +342,22 @@ ABMCTACTE.CMDAGREGAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MP Ultimo Control activo:  REGFACVTA.KEYPRESS
 31-12-2024 10:26:28 , Genero codigo QR
 31-12-2024 10:26:32 , Genero codigo QR
@@ -1853,6 +368,22 @@ MP Ultimo Control activo:  REGFACVTA.KEYPRESS
 02-01-2025 07:33:57 , Conectado..marcos\sql2019
 02-01-2025 07:33:57 , Datos de la empresa
 02-01-2025 07:40:10 , Error: El archivo 'csrcuerfac.dbf' no existe. Linea : SELECT CsrCuerfac.*,0000000.00 as stock,0000000.00 as total,CAST(0 as n(12,0)) as idcuerfac,0000000.000 as desctoCiva ,0000000.000 as DesctoSiva,CAST(0 as n(12,0)) as registro,CA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2142,7 +673,39 @@ ST(0 as int) as idfuerzavta,' ' as alcohol ,' ' as codvalido,CAST(0 as n(12,0)) 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni ,00000000.000 as UniCiva2,00000000.000 as UniSiva2,00000000.000 as IvaUni2,CAST(0 as int) as idenvase ,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2432,7 +995,39 @@ dctavta,00000000.000 as UniCiva,00000000.000 as UniSiva,00000000.000 as IvaUni ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 as idrubro ,kilos as peso,nombre as nomcomandera,SPACE(15) as codArtProd, kilos as PesoProd FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE Error :          1 Ultimo Alias Activo: CSRAUXMAOPERA Ultimo registro:          1  DB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2728,8 +1323,40 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRPL00HC.TMP Ultimo Control activo:  R
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000OZ6101ND.TMP Ultimo Control activo:  REGFACVTA.CMDOPCIONES.CLICK
 02-01-2025 08:00:15 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : .Caption	= IIF(LEN(LTRIM(cCaption))=0,.Caption,cCaption) Error :         11 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3007,8 +1634,40 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRPL00HC.TMP Ultimo Control activo:  R
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000OZ6101ND.TMP Ultimo Control activo:  INFORMEPARAM.OPTIONGROUP1._TXTFOCUS.GOTFOCUS
 02-01-2025 08:00:21 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : .Caption	= IIF(LEN(LTRIM(cCaption))=0,.Caption,cCaption) Error :         11 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3282,6 +1941,22 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRPL00HC.TMP Ultimo Control activo:  R
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000OZ6101ND.TMP Ultimo Control activo:  INFORMEPARAM.OPTIONGROUP1._TXTFOCUS.GOTFOCUS
 02-01-2025 08:00:27 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : .Caption	= IIF(LEN(LTRIM(cCaption))=0,.Caption,cCaption) Error :         11 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C
 
@@ -3418,8 +2093,40 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRPL00HC.TMP Ultimo Control activo:  R
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000OZ6101ND.TMP Ultimo Control activo:  INFORMEPARAM.OPTIONGROUP1._TXTFOCUS.GOTFOCUS
 02-01-2025 08:00:28 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : .Caption	= IIF(LEN(LTRIM(cCaption))=0,.Caption,cCaption) Error :         11 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3691,6 +2398,22 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRPL00HC.TMP Ultimo Control activo:  R
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000EDC900LY.TMP Ultimo Control activo:  REGFACVTA.CMDOPCIONES.CLICK
 02-01-2025 08:34:14 , Verificando OCX
 02-01-2025 08:34:15 , Acceso al sistema, antes de autenticar
@@ -3700,6 +2423,22 @@ F: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JRPL00HC.TMP Ultimo Control activo:  R
 02-01-2025 08:34:18 , Datos de la empresa
 02-01-2025 08:35:06 , Error: No se encuentra la variable 'I'. Linea : i = i + 1 Error :         12 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo: PARADA REGFACVTA.CMDOPCIONES.CLICK
 02-01-2025 08:36:20 , Error: No se encuentra la variable 'LOTIPOSALIDA'. Linea : IF loTipoSalida>0 Error :         12 Ultimo Alias Activo: CSRPREFITERMI Ultimo registro:         21  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000QHOP0122.TMP Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3962,6 +2701,22 @@ activo:  REGFACVTA.CMDOPCIONES.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 YH00VM.TMP Ultimo Control activo:  SUBFACTURA.INIT
 02-01-2025 19:19:41 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: FILEADJUNTOSINFORME Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000XFYH013S.TMP Ultimo C
 
@@ -4084,8 +2839,40 @@ YH00VM.TMP Ultimo Control activo:  SUBFACTURA.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ontrol activo:  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.INIT
 03-01-2025 10:38:44 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: FILEADJUNTOSINFORME Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000XFYH019C.TMP Ultimo C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4334,7 +3121,39 @@ ontrol activo:  SUBCAJAPLANILLA.IMPRIMIR_VISTAPREVIA1.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 aHoraCero(Csrparaconfig.fechafac),3,thisform.lnidplanpago,thisform.tipoform+"0"+thisform.tipofactura+"00",1,Csrparaconfig.fechafac,0,thisform.lnidlocalidad,thisform.lnidprovincia,Csrfletero.id ,CsrFuerzavta.id,thisform.listadefecto,0,0) Error :          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4575,6 +3394,22 @@ aHoraCero(Csrparaconfig.fechafac),3,thisform.lnidplanpago,thisform.tipoform+"0"+
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ontrol activo:  IMPORTAR_PACIENTES.IMPRIMIR_VISTAPREVIA1.INIT
 03-01-2025 14:36:57 , Verificando OCX
 03-01-2025 14:36:58 , Acceso al sistema, antes de autenticar
@@ -4691,8 +3526,40 @@ ontrol activo:  IMPORTAR_PACIENTES.IMPRIMIR_VISTAPREVIA1.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 PDATA\LOCAL\TEMP\0002RUH5032H.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.BTTNLEER.CLICK
 03-01-2025 18:56:13 , Error: No se encuentra el alias 'CSRPARAMETROS'. Linea : USE IN Csrparametros Error :         13 Ultimo Alias Activo: FILEADJUNTOSINFORME Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002RUH503AN.TMP Ultimo C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4925,7 +3792,39 @@ ontrol activo:  IMPORTAR_PACIENTES.IMPRIMIR_VISTAPREVIA1.INIT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sde,fechasta) value (FechaHoraCero(Csrparaconfig.fechafac),3,thisform.lnidplanpago,thisform.tipoform+"0"+thisform.tipofactura+"00",1,Csrparaconfig.fechafac,'',thisform.lnidlocalidad,thisform.lnidprovincia,Csrfletero.id ,CsrFuerzavta.id,thisform.listadefe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5144,7 +4043,39 @@ cto,0,0,TTOD(Csrparaconfig.fechafac),TTOD(Csrparaconfig.fechafac)) Error :      
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a04,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007,HeadTot001 ,EmpresaRamo,EmpresaNom,EmpresaDire,Empresa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5328,7 +4259,39 @@ Telf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,Empres
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 jatotal,Transporte ,ValorNom001,ValorImp001,ValorNom002,ValorImp002 ,ValorNom003,ValorImp003,ValorNom004,ValorImp004 ,LeyendaDto,HeadImp008,BodyImp008,NumCompPie,HojaFinal ,HeadImp009,BodyImp009,HeadImp010,BodyImp010,HeadImp011,BodyImp011 ,TipoDoc,FecSer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5512,7 +4475,39 @@ vDesde, FecServHasta ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cCo
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cExtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5696,7 +4691,39 @@ EmpTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLet
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a.hojatotal,cTransporte ,cValorNom001,cValorImp001,cValorNom002,cValorImp002 ,cValorNom003,cValorImp003,cValorNom004,cValorImp004 ,cLeyendaDto,cHeadImp008,cBodyImp008,cNumCompPie,nHojaFinal ,CHeadImp009,CBodyImp009,CHeadImp010,CBodyImp010,CHeadImp011 ,CB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5887,8 +4914,40 @@ odyImp011,cTipoDoc ,cFecServDesde, cFecServHasta) Error :          9 Ultimo Alia
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 O.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.BTTNLEER.CLICK
 20-01-2025 20:12:05 , Error: El comando contiene una frase o palabra clave no reconocida. Linea : APPEND FROM  &cArchivo SDF Error :         36 Ultimo Alias Activo: CSRLISTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000YIO9002
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6105,6 +5164,22 @@ Q.TMP Ultimo Control activo:  IMPORTAR_PACIENTES.BTTNLEER.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 trol activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 06-02-2025 12:00:14 , Error: No se encuentra el alias 'CSRCBIOPRECIO'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:         18 NOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GXS9008R.TMP Ultimo Con
 
@@ -6178,8 +5253,40 @@ trol activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 trol activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 06-02-2025 12:00:22 , Error: No se encuentra el alias 'CSRCBIOPRECIO'. Linea : select (this.cAlias) Error :         13 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:         18 NOMBRE DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GXS9008R.TMP Ultimo Con
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6325,8 +5432,40 @@ trol activo:  ABMPRODUCTO.CMDCANCELAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BQX501BK.TMP Ultimo Control activo:  ABMPRODUCTO.CMDSALVAR.CLICK
 06-02-2025 12:16:36 , Error: No se encuentra la variable 'PREVTAFM1V'. Linea : lnprevtafm1v   	= IIF(lobjPrecioactual.prevtafm1=CsrCbioPrecio.prevtafm1v,CsrCbioPrecio.prevtafm1v,lobjPrecioactual.prevtafm1) Error :         12 Ultimo Alias Activo: CSROTROC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6460,7 +5599,39 @@ ODIGO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000B
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 af2,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3,CAST(0 as n(11,2)) as margen3 ,CAST(0 as n(11,2)) as prevtaf4,CAST(0 as n(11,2)) as margen4 FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE Error :          1 Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6592,8 +5763,40 @@ af2,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3,CAST(0 as n(11
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DATA\LOCAL\TEMP\0000BQX502EY.TMP Ultimo Control activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 19:40:21 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : SELECT CsrProducto Error :         13 Ultimo Alias Activo: _CSRRUBRO Ultimo registro:         13 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BQX502H2.TMP Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6721,8 +5924,40 @@ activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 19:42:37 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : SELECT CsrProducto Error :         13 Ultimo Alias Activo: _CSRRUBRO Ultimo registro:         13 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BQX502OD.TMP Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6846,8 +6081,40 @@ activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 19:45:08 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : SELECT CsrProducto Error :         13 Ultimo Alias Activo: _CSRRUBRO Ultimo registro:         13 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000BQX502V9.TMP Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6971,8 +6238,40 @@ activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 19:50:19 , Error: No se encuentra la variable 'TOTAL1V'. Linea : REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal ,numero WITH CsrProducto.numero,nombre WITH CsrProducto.nombre ,total1v WITH Csrp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7084,7 +6383,39 @@ roducto.prevta1 + CsrProducto.prevtam1 ,prevta1v WITH Csrproducto.prevta1,prevta
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TH Csrproducto.prevta2,prevtam2v WITH Csrproducto.prevtam2 ,tasav WITH CsrProducto.tasa,endolarv WITH 0 IN CsrAuxCbioprecio Error :         12 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000JR490
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7200,7 +6531,39 @@ TH Csrproducto.prevta2,prevtam2v WITH Csrproducto.prevtam2 ,tasav WITH CsrProduc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 af2,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3,CAST(0 as n(11,2)) as margen3 ,CAST(0 as n(11,2)) as prevtaf4,CAST(0 as n(11,2)) as margen4 FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbioPrecio READWRITE Error :          1 Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7306,8 +6669,40 @@ af2,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3,CAST(0 as n(11
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 20:02:49 , Error: No se encuentra el alias 'CSRPRODUCTO'. Linea : SELECT CsrProducto Error :         13 Ultimo Alias Activo: _CSRMARCA Ultimo registro:          1 CNUMERO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LWQX008B.TMP Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7409,8 +6804,40 @@ activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ctivo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 20:07:48 , Error: No se encuentra la variable 'TOTAL1V'. Linea : REPLACE idarticulo WITH Csrproducto.id,sucursal WITH Goapp.sucursal,terminal WITH Goapp.terminal ,numero WITH CsrProducto.numero,nombre WITH CsrProducto.nombre ,total1v WITH Csrp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7508,7 +6935,39 @@ roducto.prevta1 + CsrProducto.prevtam1 ,prevta1v WITH Csrproducto.prevta1,prevta
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TH Csrproducto.prevta2,prevtam2v WITH Csrproducto.prevtam2 ,tasav WITH CsrProducto.tasa,endolarv WITH 0 IN CsrAuxCbioprecio Error :         12 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LWQX0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7606,8 +7065,40 @@ TH Csrproducto.prevta2,prevtam2v WITH Csrproducto.prevtam2 ,tasav WITH CsrProduc
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ARCOS\APPDATA\LOCAL\TEMP\0000LWQX00NZ.TMP Ultimo Control activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 06-02-2025 20:15:06 , Error: No se encuentra la propiedad REDONDEO. Linea : lObjprecio.prevtaciva1 = ProximoRedondeo(lobjprecio.prevtaciva,thisform.redondeo) Error :       1734 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1  DBF: C:\USERS\M
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7701,7 +7192,39 @@ ARCOS\APPDATA\LOCAL\TEMP\0000LWQX00QH.TMP Ultimo Control activo:  CBIOPRECIO2.CM
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,prevtam2 WITH lobjprecio.prevta4 ,prevtaf2 WITH lojprecio.prevtaciva2,prevtafm2 WITH lojprecio.prevtaciva4 IN CsrProducto Error :         13 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LWQX00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7749,6 +7272,22 @@ ARCOS\APPDATA\LOCAL\TEMP\0000LWQX00QH.TMP Ultimo Control activo:  CBIOPRECIO2.CM
 
 TO.TMP Ultimo Control activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 07-02-2025 07:20:14 , Error: No se encuentra la propiedad PAGEFRAME1. Linea : WITH thisform.pageframe1 Error :       1734 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000LWQX0111.TMP Ultimo C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7846,8 +7385,40 @@ ontrol activo:  CBIOPRECIO2.CMDPROCESAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ARCOS\APPDATA\LOCAL\TEMP\00002WW900V3.TMP Ultimo Control activo:  ABMPRODUCTO.CONTENEDOR1.PFRAME1.PAGE1.C_PRECIO._TXTAUMENTO.LOSTFOCUS
 07-02-2025 14:20:13 , Error: No se encuentra la variable 'LNTOTAL2'. Linea : lnTotal1 = ProximoRedondeo(lnTotal2,thisform.redondeo) Error :         12 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7925,7 +7496,39 @@ ARCOS\APPDATA\LOCAL\TEMP\00002WW900V3.TMP Ultimo Control activo:  ABMPRODUCTO.CO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 taf2,CAST(0 as n(11,2)) as margen2 ,CAST(0 as n(11,2)) as prevtaf3,CAST(0 as n(11,2)) as margen3 ,CAST(0 as n(11,2)) as prevtaf4,CAST(0 as n(11,2)) as margen4 ,CAST(0 as n(16,2)) as total1n,CAST(0 as n(16,2)) as total1v ,CAST(0 as n(16,2)) as total2n,CAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8065,25 +7668,153 @@ T(0 as n(16,2)) as total2v FROM Csrcbioprecio WHERE id <-1 INTO CURSOR CsrAuxCbi
 10-02-25 18:11:21 , Error: No coinciden los tipos de datos. Linea : INSERT INTO CsrimpCab (grupo,Comprobante,FecComproba,NumComp,FecVtoComp ,CodCtacte,NomCtacte,Direccion,Localidad,Categoiva,CUIT,Telefono ,PlanPago,DetaVdor,Extra01,Extra02,Extra03,Extra0
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4,Extra05,Extra06 ,BodyImp001,BodyImp002,BodyImp003,BodyImp004,BodyImp005 ,BodyImp006,BodyImp007,BodyTot001,BodyTot002 ,HeadImp001,HeadImp002,HeadImp003,HeadImp004,HeadImp005 ,HeadImp006,HeadImp007,HeadTot001 ,EmpresaRamo,EmpresaNom,EmpresaDire,EmpresaTe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 lf,EmpresaLoca ,EmpresaTribu,EmpresaOtro01,EmpresaOtro02,EmpresaOtro03 ,EmpresaOtro04,EmpresaOtro05,TipoCbte,Letra,NroCAE,VtoCAE,CAECheck ,DetaHoja,ListaPrecio ,DetaReparto ,Saldo, SaldoAnt ,Canal ,Pase ,Talonario,NumComprobante,DocTicket,hojaactual,hoja
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 total,Transporte ,ValorNom001,ValorImp001,ValorNom002,ValorImp002 ,ValorNom003,ValorImp003,ValorNom004,ValorImp004 ,LeyendaDto,HeadImp008,BodyImp008,NumCompPie,HojaFinal ,HeadImp009,BodyImp009,HeadImp010,BodyImp010,HeadImp011,BodyImp011 ,TipoDoc,FecServD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 esde, FecServHasta ) VALUES (STR(loObjFactura.hojaactual,4)+STR(icopia,1) ,cComprobante,cFecComproba,cNumComp,cFecVtoComp ,cCodCtacte,cNomCtacte,cDireccion,cLocalidad,cCategoiva ,cCUIT,cTelefono,cPlanPago,cDetaVdor ,cExtra01,cExtra02,cExtra03,cExtra04,cE
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 xtra05,cExtra06 ,cBodyImp001,cBodyImp002,cBodyImp003,cBodyImp004,cBodyImp005 ,cBodyImp006,cBodyImp007,cBodyTot001,cBodyTot002 ,cHeadImp001,cHeadImp002,cHeadImp003,cHeadImp004,cHeadImp005 ,cHeadImp006,cHeadImp007,cHeadTot001 ,cEmpRamo,cEmpNom,cEmpDire,cEm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 pTelf,cEmpLoca,cEmpIVA ,cEmpO01,cEmpO02,cEmpO03,cEmpO04,cEmpO05,cTipoCbte,cLetra ,cNroCAE,cVtoCAE,cCAECheck,cDetaHoja,cListaPrecio,cDetaReparto ,cSaldo, cSaldoAnt, cCanal, cPase,cTalonario,cNumComprobante,cDocTicket ,loObjFactura.hojaactual,loObjFactura.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 hojatotal,cTransporte ,cValorNom001,cValorImp001,cValorNom002,cValorImp002 ,cValorNom003,cValorImp003,cValorNom004,cValorImp004 ,cLeyendaDto,cHeadImp008,cBodyImp008,cNumCompPie,nHojaFinal ,CHeadImp009,CBodyImp009,CHeadImp010,CBodyImp010,CHeadImp011 ,CBod
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 yImp011,cTipoDoc ,cFecServDesde, cFecServHasta) Error :          9 Ultimo Alias Activo: IMPCABEZA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000KXZD02N9.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
@@ -8096,3 +7827,86 @@ yImp011,cTipoDoc ,cFecServDesde, cFecServHasta) Error :          9 Ultimo Alias 
 24-02-2025 16:12:30 , Verificando Licencia
 24-02-2025 16:13:17 , Conectado..marcos\sql2019
 24-02-2025 16:13:20 , Datos de la empresa
+25-02-2025 18:27:37 , Verificando OCX
+25-02-2025 18:27:40 , Acceso al sistema, antes de autenticar
+25-02-2025 18:27:40 , Obteniendo conexion a servidor
+25-02-2025 18:27:41 , Verificando Licencia
+25-02-2025 18:27:43 , Conectado..marcos\sql2019
+25-02-2025 18:27:45 , Datos de la empresa
+26-02-2025 09:10:30 , Genero archivo Codigo Barra
+26-02-2025 09:10:31 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : replace nombre WITH 'Comprobante asociado - Fecha ' + CsrAuxCabefac.fechaaso, idmaopera WITH nIdMaopera  IN csrauxcuerfac Error :        107 Ultimo Ali
+
+
+
+
+
+
+
+
+
+
+
+
+as Activo: CSRAUXCUERFAC Ultimo registro:          3 ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0006LFK902CM.TMP Ultimo Control activo:  REGFACVTA.CMDIMPRIMIR.CLICK
+26-02-2025 09:12:07 , Genero archivo Codigo Barra
+26-02-2025 09:12:08 , Genero codigo QR
+26-02-2025 09:55:32 , Genero archivo Codigo Barra
+26-02-2025 09:55:35 , Genero codigo QR
+26-02-2025 10:43:27 , Error: Error al escribir el archivo c:\program files (x86)\microsoft visual foxpro 9\ffc\registry.vcx. Linea : IF lldesarrollo AND llchekform Error :       1105 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control
+
+
+
+
+
+
+
+
+
+
+ activo:  ON... 
+26-02-2025 10:47:10 , Error: No se encuentra la propiedad BUSCARVIGENCIAS. Linea : this.buscarVigencias() Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  FRMMENU3.TIMERVIG.TIMER
+26-02-2025 10:47:15 , Error: No se encuentra la propiedad BUSCARVIGENCIAS. Linea : this.buscarVigencias() Error :       1734 Ultimo Alias Activo: CSRATERMI Ultimo registro:          2  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0006LFK906FU.TMP Ultimo Contr
+
+
+
+
+
+
+
+
+ol activo:  FRMMENU3.TIMERVIG.TIMER
+26-02-2025 10:47:19 , Error: No se encuentra la propiedad BUSCARVIGENCIAS. Linea : this.buscarVigencias() Error :       1734 Ultimo Alias Activo: CSRATERMI Ultimo registro:          2  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0006LFK906FU.TMP Ultimo Contr
+
+
+
+
+
+
+
+ol activo:  FRMMENU3.TIMERVIG.TIMER
+26-02-2025 10:47:22 , Error: No se encuentra la propiedad BUSCARVIGENCIAS. Linea : this.buscarVigencias() Error :       1734 Ultimo Alias Activo: CSRATERMI Ultimo registro:          2  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0006LFK906FU.TMP Ultimo Contr
+
+
+
+
+
+
+ol activo:  FRMMENU3.TIMERVIG.TIMER
+26-02-2025 10:47:44 , Error: No se encuentra la propiedad BUSCARVIGENCIAS. Linea : this.buscarVigencias() Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  FRMMENU3.TIMERVIG.TIMER
+26-02-2025 10:48:30 , Error: Error al escribir el archivo c:\program files (x86)\microsoft visual foxpro 9\ffc\registry.vcx. Linea : IF lldesarrollo AND llchekform Error :       1105 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control
+
+
+
+
+ activo:  ON... 
+26-02-2025 10:48:57 , Error: Error al escribir el archivo c:\program files (x86)\microsoft visual foxpro 9\ffc\registry.vcx. Linea : CLEAR ALL Error :       1105 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  A_CLEARALL
+26-02-2025 10:49:08 , Error: El archivo no está abierto. Linea : Set classlib to localaplicacion.vcx additive && Objeto Aplicacion Error :       1113 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  MAIN
+26-02-2025 10:49:16 , Verificando OCX
+26-02-2025 10:49:18 , Acceso al sistema, antes de autenticar
+26-02-2025 10:49:18 , Obteniendo conexion a servidor
+26-02-2025 10:49:19 , Verificando Licencia
+26-02-2025 10:49:22 , Conectado..marcos\sql2019
+26-02-2025 10:49:22 , Datos de la empresa
+26-02-2025 11:06:11 , Error: No se encuentra el alias. Linea : Oca = GETCURSORADAPTER(lcalias) Error :         13 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0006LFK909ZL.TMP Ultimo Control a
+ctivo:  FRMMENU3.TIMERVIG.TIMER
+26-02-2025 11:08:04 , Error: No se encuentra el alias 'CSRPRODPRECIOVIG'. Linea : SELECT CsrProdPrecioVig Error :         13 Ultimo Alias Activo: CSRPRODUCTO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0006LFK90A3A.TMP Ultimo Control activo:  FRMMENU3.TIMERVIG.TIMER
