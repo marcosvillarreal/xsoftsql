@@ -7,7 +7,7 @@ oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
 
-cVersionGoapp = "02.01.34"
+cVersionGoapp = "02.01.35"
 
 SET SYSMENU off
 set classlib to
@@ -142,7 +142,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
      SET PROCEDURE TO FoxBarcodeQR ADDITIVE
    set classlib to systray ADDITIVE 
     SET PROCEDURE TO alertaelegante.prg ADDITIVE 
-    
+   SET PROCEDURE TO w_json.prg ADDITIVE  
 *clear all
 
 

@@ -1,4 +1,12 @@
+*=================== Pendiente
+*Aviso de falta de stock (PuntoF)
+
+
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.36
+	Manejo de Emails empresariales
+	ParaConfig,ParaVario,AbmUsuarios,AbmSeteoTermi,AbmEmails
+	Facturador, pregunta de limpiar datos antes de salir.
 2.1.35
 	Errores, puesta a punto cachitos
 2.1.34
@@ -114,7 +122,3 @@ Se almacena correctamente el margen1 40% y fecmod
 
 ENDTEXT 
 
-
-
-*=================== Pendiente
-*Aviso de falta de stock (PuntoF)

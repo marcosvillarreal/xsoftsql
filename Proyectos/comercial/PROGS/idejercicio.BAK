@@ -6,6 +6,7 @@ ENDTEXT
 IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
 	RETURN 
 ENDIF 
+
 goapp.idejercicio = CsrDetaConta.id
 DO CASE 
 CASE goapp.codempresa = 1 &&
@@ -15,9 +16,10 @@ CASE goapp.codempresa = 1 &&
 	goapp.idusuario = 1
 CASE goapp.codempresa = 2 &&
 	lcEmpresa = 'Cachitos'
-	goapp.idejercicio = 1100000027
+	*goapp.idejercicio = 1100000027
 	goapp.terminal = 12
 	goapp.idusuario = 1
+
 CASE goapp.codempresa = 3 
 	lcEmpresa = 'Maroña'&&
 	goapp.idejercicio = 1100000027
@@ -66,7 +68,22 @@ CASE goapp.codempresa = 11
 ENDCASE 
 *goapp.codempresa = 1
 
-goapp.switchusuario = '11100'
-oavisar.usuario(lcEmpresa + CHR(13)+'goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
+TEXT TO lccmd TEXTMERGE noshow
+SELECT Usuarios.*,Perfiles.switch 
+FROM usuarios
+left join perfiles on usuarios.idperfil= perfiles.id 
+WHERE usuarios.id = <<goapp.idusuario>> 
+ENDTEXT
+IF CrearCursorAdapter('CSRUSR',lcCmd)
+ 	goapp.perfilusuario=csrusr.idperfil
+   goapp.switchUsuario = csrusr.switch
+   goapp.nombreusuario=csrusr.nombre
+   goapp.switchPerfil = CsrUsr.switch
+   goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
+   goapp.usuarioidemail = NVL(CsrUser.idemail,0)
+
+	oavisar.usuario(lcEmpresa + CHR(13)+'goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
 				+'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13);
 				+'Goapp.terminal =' + STR(goapp.terminal))
+	USE IN CSRUSR
+ENDIF 
