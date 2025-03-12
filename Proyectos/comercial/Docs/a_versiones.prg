@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.37
+	FacVta,opcion de que el retiro sea por toda la mercaderia
 2.1.36
 	Manejo de Emails empresariales
 	ParaConfig,ParaVario,AbmUsuarios,AbmSeteoTermi,AbmEmails
