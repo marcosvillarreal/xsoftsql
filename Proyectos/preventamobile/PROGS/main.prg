@@ -17,7 +17,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Administrador PM"
-lcVersion = "01.02.03"
+lcVersion = "01.02.05"
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
