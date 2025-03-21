@@ -78,6 +78,13 @@ CASE goapp.codempresa = 23 &&SSG
 	GOAPP.IDUSUARIO =1
 	goapp.terminal = 1
 	goapp.ejercicio = 14
+CASE goapp.codempresa = 24 &&Don jose
+	cEmpresa = 'Daniel'
+	GOAPP.IDEJERCICIO = 1100000012
+	GOAPP.IDEJERCICIOACTUAL = 1100000012	
+	goapp.terminal = 13
+	goapp.ejercicio = 1
+	goapp.idsucursal = 1100000001	
 ENDCASE 	
 
 
