@@ -1,5 +1,6 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
----Notas de Version 	
+---Notas de Version 
+	
 -Pendiente
 2.3.36
 	Descuentos por cantidad, por canalvta
