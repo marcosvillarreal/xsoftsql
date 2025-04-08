@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.38
+	Soluciones en Generar jpg para whatsapp
 2.1.37
 	FacVta,opcion de que el retiro sea por toda la mercaderia
 	ImpComprobante, muestra el cliente en caso de CF y el comp original
