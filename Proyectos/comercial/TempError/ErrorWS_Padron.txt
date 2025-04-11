@@ -72,3 +72,29 @@ SoapFault: ns1:cms.cert.expired: Certificado expirado
 10-04-2025 10:13:38 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExistosaConsultando AFIP online...20-30229993-6TypeError: Tag: estadoImpuesto invalid (type not found)
 .Llamada: PADRON.Consultar ERROR NO DEFINIDO
 10-04-2025 10:15:46 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExistosaConsultando AFIP online...20-30229993-6Llamada: PADRON.Consultar ERROR NO DEFINIDO
+11-04-2025 11:14:47 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TACodigo error afip:*****Numero de Error: 1429Linea de codigo de error: ta = WSAA.LoginCMS(cms)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invoke_
+  File "win32com\server\policy.pyc", line 585, in _invokeex_
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 263, in LoginCMS
+  File "pysimplesoap\client.pyc", line 148, in <lambda>
+  File "pysimplesoap\client.pyc", line 352, in wsdl_call
+  File "pysimplesoap\client.pyc", line 223, in call
+SoapFault: ns1:cms.cert.expired: Certificado expirado
+.Exepción: ns1:cms.cert.expired: Certificado expiradoTraceback: 
+11-04-2025 11:15:01 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TACodigo error afip:*****Numero de Error: 1429Linea de codigo de error: ta = WSAA.LoginCMS(cms)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invoke_
+  File "win32com\server\policy.pyc", line 585, in _invokeex_
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 263, in LoginCMS
+  File "pysimplesoap\client.pyc", line 148, in <lambda>
+  File "pysimplesoap\client.pyc", line 352, in wsdl_call
+  File "pysimplesoap\client.pyc", line 223, in call
+SoapFault: ns1:cms.cert.expired: Certificado expirado
+.Exepción: ns1:cms.cert.expired: Certificado expiradoTraceback: 
+11-04-2025 11:15:47 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TATA Almacenado ws_sr_constancia_inscripcion_20161802914WSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...30-68496852-8Error :La CUIT del contribuyente fue limitada en los tÃ©rminos de la RG AFIP 3832/16. Motivo: CUIT  LIMITADA  -  POR FALTA PRESENTACIÃ“N DDJJ. Llamada: PADRON.Consultar ERROR NO DEFINIDO
+11-04-2025 11:16:02 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...30-51757313-9Tipo: JURIDICADenominacion: AUTO NAUTICA SUR SRLCUIT: 30-51757313-9Tipo Doc: CUITEstado: ACTIVODireccion: CHICLANA 917Localidad: BAHIA BLANCAProvincia: BUENOS AIRESCodigo Postal: 8000Llamada: PADRON.ConsultarCodigo error afip:*****Numero de Error: 1234Linea de codigo de error: Impuestos[contador,4]=cMotivoImpuestoProcedimiento: cuit_proceso_2Error VFP: El subíndice está fuera del intervalo definido.Llamada: PADRON.Consultar ERROR NO DEFINIDO
+11-04-2025 11:16:38 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-30229993-6Tipo: FISICADenominacion: VILLARREAL,MARCOS EZEQUIELCUIT: 20-30229993-6Tipo Doc: CUITEstado: ACTIVODireccion: VIEYTES 1270Localidad: BAHIA BLANCAProvincia: BUENOS AIRESCodigo Postal: 8000Llamada: PADRON.ConsultarCodigo error afip:*****Numero de Error: 1234Linea de codigo de error: Impuestos[contador,4]=cMotivoImpuestoProcedimiento: cuit_proceso_2Error VFP: El subíndice está fuera del intervalo definido.Llamada: PADRON.Consultar ERROR NO DEFINIDO
+11-04-2025 11:19:18 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-30229993-6Tipo: FISICADenominacion: VILLARREAL,MARCOS EZEQUIELCUIT: 20-30229993-6Tipo Doc: CUITEstado: ACTIVODireccion: VIEYTES 1270Localidad: BAHIA BLANCAProvincia: BUENOS AIRESCodigo Postal: 8000Llamada: PADRON.ConsultarCodigo error afip:*****Numero de Error: 1234Linea de codigo de error: Impuestos[contador,4]=cMotivoImpuestoProcedimiento: cuit_proceso_2Error VFP: El subíndice está fuera del intervalo definido.Llamada: PADRON.Consultar ERROR NO DEFINIDO
