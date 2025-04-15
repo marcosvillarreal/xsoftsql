@@ -191,9 +191,13 @@ ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
 ObjReporter.AddProperty('fileqr',cRutaQR)
-IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
-ENDIF 
+ObjReporter.AddProperty('mensajeria_body',"")
+ObjReporter.AddProperty('banner',"gmbanner.png")
+*IF lldesarrollo
+*	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+*	ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+*ENDIF 
+
 ObjReporter.AddProperty('cartel',"")
 
 ObjReserva = CREATEOBJECT("Custom")
@@ -334,6 +338,12 @@ IF TYPE('goApp')='O'
 
 	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
+	
+	IF lldesarrollo
+		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+		ObjReporter.logofac = lcdd+'graphics\'+LTRIM(goapp.logofac)
+		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+	ENDIF 
 	    
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
