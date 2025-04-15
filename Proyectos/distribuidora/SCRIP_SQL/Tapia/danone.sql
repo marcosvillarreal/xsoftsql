@@ -9,6 +9,9 @@ else ( case when len(ltrim(sp.codartprovee))=0 then
 ,sum( (case when isnull(cv.idsubarti,0)=0 then cu.cantidad else cv.cantidad end) * p.peso) as vtapeso
 ,avg(cu.preunitasiva) as preunita
 ,avg(cu.despor) as bonif
+,(sum(cu.cantidad) / (case when cu.unibulto =0 then 1 else cu.unibulto end )) as bultos
+,sum(cu.cantidad) as cantidad
+,cu.unibulto
 ,ca.fecha
 from maopera as m
 inner join cabefac as ca on m.id = ca.idmaopera
@@ -23,4 +26,4 @@ where m.estado=0 and ca.fecha between '20250201' and '20250228'
 and p.idctacte in (1100001480,1100001481)
 and m.clasecomp in ('A')
 group by ca.ctacte,ca.cnombre,ca.cdireccion,lo.nombre,cn.nombre ,cu.codigo,cu.nombre,sp.subnumero,cv.idsubarti,sp.nombre
-,ca.fecha,sp.codartprovee
+,ca.fecha,sp.codartprovee,cu.unibulto
