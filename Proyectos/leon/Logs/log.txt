@@ -1,15 +1,4 @@
-Error No se encuentra la variable 'ESDIGITAL'.
-Linea nº replace ALL comprobante WITH STRTRAN(comprobante,'CHEQUE','ECHEQ') ,esdigital WITH VAL(SUBSTR(SWITCH,4,1)='1') FOR SUBSTR(SWITCH,4,1)='1' IN CsrImprimir
- Alias CSRIMPRIMIR registro          1
-Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-03-07-2024 08:09:42 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº replace ALL comprobante WITH STRTRAN(comprobante,'CHEQUE','ECHEQ') ,esdigital WITH VAL(SUBSTR(SWITCH,4,1)='1') FOR SUBSTR(SWITCH,4,1)='1' IN CsrImprimir
- Alias CSRIMPRIMIR registro          1
-Control activo  LISTCARTERA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-03-07-2024 08:10:54 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº SELECT 'A' as BandaGrupo,0 as grupo,1 as cheques,importe as importereal,0 as nocheques,CsrCuerpo.*,DTOS(CTOD(vencimien)) as chrfecha ,VAL(SUBSTR(SWITCH,4,1)='1') as esdigital FROM CsrCuerpo ORDER BY chrfecha,CsrCuerpo.id, CsrCuerpo.idmaopera INT
+
 
 
 
@@ -156,6 +145,8 @@ Control activo  ON...
 03-07-2024 08:33:12 , Error nº:         36
 Error El comando contiene una frase o palabra clave no reconocida.
 Linea nº SELECT idvendedor,codvendedor,Nomvendedor,idarticulo,codigo,articulo, sum(totalng) as importefinal ,idrubro,nomrubro,codrubro &lcCampos from csraux group by idvendedor,idarticulo,codvendedor,codigo,articulo,nomvendedor ,idrubro,nomrubro,codrubro
+
+
 
 
 
@@ -470,6 +461,8 @@ Linea nº SELECT CsrGrupos.grupohoja,ctacte,cnombre,DTOC(fecha) as cfecha,DTOC(ve
 
 
 
+
+
 r.ctacte INTO CURSOR CsrImprimir READWRITE
  Alias CSRGRUPOS registro          2
 Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
@@ -495,6 +488,8 @@ Control activo  RESCTACTE.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 19-07-2024 09:29:27 , Error nº:        107
 Error Incompatibilidad entre el tipo de operador y el tipo de operando.
 Linea nº SELECT CsrGrupos.grupohoja,CsrImprimir.*,DTOC(fecha) as cfecha ,DTOC(vencimien) as cfechavto,clase+strzero(idmaopera) as korden FROM CsrImprimir INNER JOIN CsrGrupos ON CsrImprimir.ctacte = CsrGrupos.ctacte ORDER BY CsrGrupos.grupohoja,CsrImprim
+
+
 
 
 
@@ -798,7 +793,11 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
 
 
 
@@ -1030,7 +1029,11 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
 
 
 
@@ -1279,7 +1282,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
+
+
 
 
 
@@ -1491,7 +1498,11 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
 alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
+
 
 
 
@@ -1712,6 +1723,8 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1826,7 +1839,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
 
 
 
@@ -2038,7 +2055,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
 
 
 
@@ -2248,7 +2269,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
 
 
 
@@ -2464,7 +2489,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
 
 
 
@@ -2858,6 +2887,8 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2930,12 +2961,16 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
 
 
 
@@ -3085,6 +3120,8 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -3092,6 +3129,8 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
 
 
 
@@ -3566,3 +3605,21 @@ Linea nº MKDIR ADDBS(this.cPathpdfctacte)+CsrComprobante.cnombre+'\'+DTOS(TTOD(C
 Control activo  REGCTACTE_V2.CMDCONSULTA.CLICK
 16-04-2025 09:53:41 , Verificando OCX
 16-04-2025 11:24:53 , Verificando OCX
+17-04-2025 15:59:52 , Verificando OCX
+17-04-2025 16:04:09 , Error nº:       1771
+Error Ya existe un objeto miembro con este nombre.
+Linea nº this.AddObject("objseteoparam",'custom')
+ Alias CSRSETEOTERMI registro          1
+Control activo  REGCTACTE_V2.CMDCANCELAR.CLICK
+17-04-2025 16:14:45 , Error nº:       1103
+Error Desplazamiento de búsqueda no válido.
+Linea nº 
+ Alias  registro          0
+Control activo  REGCTACTE_V2.CMDCONSULTA.CLICK
+17-04-2025 16:14:54 , Verificando OCX
+17-04-2025 16:19:34 , Error nº:          1
+Error El archivo 'csrmovctacte.dbf' no existe.
+Linea nº SELECT CsrMovctacte.*,SPACE(35) as cnombre, CAST(0 as int) as idfletero, SPACE(35) nomflete FROM CsrMovCtacte WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxMovctacte READWRITE
+ Alias  registro          0
+Control activo  REGCTACTE_V2.LOAD
+17-04-2025 16:19:45 , Verificando OCX
