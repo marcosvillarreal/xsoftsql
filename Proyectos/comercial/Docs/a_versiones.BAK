@@ -5,6 +5,7 @@
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
 2.1.40 
 	Comandera
+	Copiar comprobante, mantiene o no el dolar.
 2.1.39
 	ERROR en pidoremito_2 al cambio de cuenta corriente
 	ERROR del foco e comprobante al imprimir
