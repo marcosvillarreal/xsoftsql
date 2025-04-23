@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.41
+	Bloqueo de actualizar precio de Rubro(EditaProducto)
 2.1.40 
 	Comandera
 	Copiar comprobante, mantiene o no el dolar.

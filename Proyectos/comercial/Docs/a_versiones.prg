@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.42
+	ERROR CbioPrecio Grupal *Rubri*
 2.1.41
 	Bloqueo de actualizar precio de Rubro(EditaProducto)
 2.1.40 
