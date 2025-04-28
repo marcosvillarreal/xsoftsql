@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.43
+	EstadoCta
 2.1.42
 	ERROR CbioPrecio Grupal *Rubri*
 2.1.41
