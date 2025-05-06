@@ -502,7 +502,19 @@ CASE "MONTEHERMO" $ STRTRAN(lcLocalidad,' ','')
 CASE "CONEZA" $ lcLocalidad
 	lcnombre = "GENERAL CONESA" 
 CASE "PRINGLES" $ lcLocalidad
-	lcnombre = "CORONEL PRINGLES" 
+	lcnombre = "CORONEL PRINGLES"
+CASE "CNIA25DEMAYO" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "25 DE MAYO"  
+CASE "PTODESEADO" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "PUERTO DESEADO" 
+CASE "PTOSANJULIA" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "PUERTO SAN JULIAN" 
+CASE "CPIEDRABUENA" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "COMANDANTE LUIS PIEDRABUENA" 
+CASE "PTOSTACRUZ" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "PUERTO SANTA CRUZ" 
+CASE "LAREFORMA" $ STRTRAN(lcLocalidad,' ','')
+	lcnombre = "LA REFORMA VIEJA" 
 ENDCASE
 
 IF ASC(SUBSTR(lcLocalidad,4,1))=161

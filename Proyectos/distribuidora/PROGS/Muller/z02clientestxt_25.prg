@@ -6,7 +6,8 @@ lcData = lcBase
 DO setup
 SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
 SET PROCEDURE  TO  syserror.prg ADDITIVE  
-SET PROCEDURE TO z00_21 ADDITIVE 
+SET PROCEDURE TO z00_25 ADDITIVE 
+SET PROCEDURE  TO  procimportar.prg ADDITIVE  
 
 SET SAFETY OFF
 
@@ -15,8 +16,13 @@ codepage = 1252
 SET CPDIALOG ON
 
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
-=LeerClientes_21(cArchivo)
+=LeerClientes_25(cArchivo)
 SELECT CsrDeudor
+*vista()
+
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"productos.csv"
+=LeerArticulos_25()
+SELECT CsrArticulo
 *vista()
 
 *!*	cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
@@ -42,7 +48,7 @@ llok = CargarTabla(lcData,'PlanCue')
 llok = CargarTabla(lcData,'Sucursal',.t.)
 *!*	llok = CargarTabla(lcData,'PadronAfip',.t.)
 llok = CargarTabla(lcData,'CateIBRN',.t.)
-llok = CargarTabla(lcData,'Vendedor',.t.)
+*llok = CargarTabla(lcData,'Vendedor',.t.)
 llok = CargarTabla(lcData,'Zona',.t.)
 llok = CargarTabla(lcData,'ZonaRuta',.t.)
 llok = CargarTabla(lcData,'Ruta',.t.)
@@ -52,6 +58,12 @@ llok = CargarTabla(lcData,'CuerRuta',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
 llok = CargarTabla(lcData,'Fletero',.t.)
 SET SAFETY ON 
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrVendedor.* FROM Vendedor as CsrVendedor ORDER BY id
+ENDTEXT 
+=CrearCursorAdapter('CsrVendedor',lcCmd)
+
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrCateIbrng.* FROM CateIbrng as CsrCateIbrng
@@ -133,11 +145,6 @@ SELECT CsrCiudad
 SELECT CsrCateIBRng
 LOCATE FOR numero = 1
 
-
-sELECT distinct vendedor as nombre , CAST(0 as int) as id FROM CsrDeudor  INTO CURSOR FsrVendedor READWRITE 
-sELECT * FROM FsrVendedor INTO CURSOR FsrZona READWRITE 
-
-
 SELECT CsrCtacte
 lnidctacte = RecuperarID('CsrCtacte',Goapp.sucursal10)
 GO BOTTOM 
@@ -153,52 +160,147 @@ INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovi
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
 	,bonif1,email,observa,cdatosfac,dni,referencia);
 	VALUES (lnidctacte , lcnumero ,'DISTRIBUIDORA MULLER','','';
-	,0,0,'',1,'',0,0,0;
+	,0,0,'',3,'',0,0,0;
 	,0,1100000003,0,0,1,0,0,"",lcfefin,'';
 	,"",0,ldfechac,0,0,0,'',0,ldfecultcompra,ldfecultpago;
 	,0,0,0,'','','','','';
 	)
 nCodCtacte = nCodCtacte+ 1 
 lnIDCtacte = lnIDCtacte + 1 
+
+SELECT distinct UPPER(proveedor) as nombre  FROM CsrArticulo INTO CURSOR CsrAcreedor READWRITE 
+SELECT CsrAcreedor 
+GO TOP 
+SCAN  
+	lcnombre=NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre)))
+	       
+	lcnumero	= strtrim(nCodCtacte ,8)
+
+	STORE DATETIME(1900,01,01,0,0,0) TO ldfechac,ldfecultcompra,ldfecultpago,lcfefin
+
+	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
+		,tipoiva,cuit,idcategoria,saldo,saldoant,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+		,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+		,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
+		,bonif1,email,observa,cdatosfac,dni,referencia);
+		VALUES (lnidctacte , lcnumero ,lcnombre,'','';
+		,0,0,'',3,'',0,0,0;
+		,0,1100000003,0,0,1,0,0,"",lcfefin,'';
+		,"",0,ldfechac,0,0,0,'',0,ldfecultcompra,ldfecultpago;
+		,0,0,0,'','','','','';
+		)
+	nCodCtacte = nCodCtacte+ 1 
+	lnIDCtacte = lnIDCtacte + 1 
+   	
+   	SELECT CsrAcreedor 		 
+ENDSCAN 
+
+nCodCtacte = nCodCtacte + 100
+sELECT distinct vendedor as nombre , CAST(0 as int) as id FROM CsrDeudor ;
+INTO CURSOR FsrVendedor READWRITE 
+
+*!*	SELECT FsrVendedor
+*!*	vista()
+
+*!*	sELECT * FROM FsrVendedor INTO CURSOR FsrZona READWRITE 
+
+SELECT CsrFuerzaVta
+GO TOP 
+lnidfuerzavta  = CsrFuerzaVta.id
 	
-	
+lnidFletero = RecuperarID('CsrFletero',Goapp.sucursal10)
+
+
+
 lnid = RecuperarID('CsrVendedor',Goapp.sucursal10)
 lnidzona = RecuperarID('CsrZona',Goapp.sucursal10)
+LOCAL lnidcabeza, lnidrutavdor,lnidzonaruta,lnidcuerruta,lnidruta
+
+lnidruta= RecuperarID('CsrRuta',Goapp.sucursal10)
+lnidcabeza = RecuperarID('CsrCabeRuta',Goapp.sucursal10)
+lnidrutavdor = RecuperarID('CsrRutaVdor',Goapp.sucursal10)
+lnidzonaruta = RecuperarID('CsrZonaRuta',Goapp.sucursal10)
+lnidcuerruta = RecuperarID('CsrCuerRuta',Goapp.sucursal10)
+
+lnNumRuta = 1
 lnCodigo = 1
 lnCodZona = 1
-SELECT FsrVendedor
+SELECT CsrVendedor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
 SCAN FOR !EOF()
    IF LEN(ltrim(nombre))=0
        loop
    ENDIF
+   
+	
    lnprevta = 1
    lnestado = 1
-   lnnumero	= lnCodigo 
-   lcnombre	= NombreNi(alltrim(UPPER(FsrVendedor.nombre)))
+   lnnumero	= CsrVendedor.numero &&lnCodigo 
+   lcnombre	= NombreNi(alltrim(UPPER(CsrVendedor.nombre)))
    lcNomZona = lcNombre
-   IF AT(' ',lcNombre)<>0 &&hay dos palabras
-	   	IF LEFT(lcNombre,AT(' ',lcNombre)-1)$'LUNES-MARTES-MIERCOLES-MIÉRCOLES-JUEVES-VIERNES-SABADO-DOMINGO'
-	   		lcNombre = SUBSTR(lcNombre,AT(' ',lcNombre)+1)
-	   	ENDIF 
+   
+   SELECT Fsrvendedor
+   LOCATE FOR NombreNi(alltrim(UPPER(nombre)))= UPPER(lcnombre)
+   IF NombreNi(alltrim(UPPER(nombre)))= UPPER(lcnombre)
+   		replace id WITH CsrVendedor.id IN FsrVendedor
    ENDIF 
+ 
+*!*	   IF AT(' ',lcNombre)<>0 &&hay dos palabras
+*!*		   	IF LEFT(lcNombre,AT(' ',lcNombre)-1)$'LUNES-MARTES-MIERCOLES-MIÉRCOLES-JUEVES-VIERNES-SABADO-DOMINGO'
+*!*		   		lcNombre = SUBSTR(lcNombre,AT(' ',lcNombre)+1)
+*!*		   	ENDIF 
+*!*	   ENDIF 
    INSERT INTO CsrZona (id,numero,nombre,porflete,abrevia);
    			 VALUES (lnidzona,lnCodZona,lcNomZona ,0,LEFT(lcNomZona ,3))
    
    lnCodZona = lnCodZona + 1 
    lnidzona = lnidzona + 1 
    
-   SELECT CsrVendedor
-   LOCATE FOR ALLTRIM(nombre)= ALLTRIM(lcNombre)	
-   IF NOT FOUND()	 
-	   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale,activopm);
-	   			 VALUES (lnid,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0,1)
-	   	 lnid = lnid + 1
-		lnCodigo = lnCodigo + 1 
-	ENDIF    			 
-   	replace id WITH CsrVendedor.id IN FsrVendedor
+*!*	   SELECT CsrVendedor
+*!*	   LOCATE FOR ALLTRIM(nombre)= ALLTRIM(lcNombre)	
+*!*	   IF NOT FOUND()	 
+*!*		   INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale,activopm);
+*!*		   			 VALUES (lnid,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0,1)
+*!*		   	 lnid = lnid + 1
+*!*			lnCodigo = lnCodigo + 1 
+*!*		ENDIF    			 
+   	
   
+  
+*!*	  	INSERT INTO CsrFletero (id,numero,nombre);
+*!*	   			 VALUES (lnidFletero,CsrVendedor.numero,CsrVendedor.nombre)
+*!*	   			 
+*!*		lnidFletero = lnidFletero + 1 
+	
+    lnNumRuta = CsrVendedor.numero
+    
+    SELECT CsrRuta
+	LOCATE FOR nombre=TRIM(lcNomZona)
+	IF nombre#TRIM(lcNomZona)
+		INSERT INTO CsrRuta (id,numero,nombre) ;
+		VALUES (lnidRuta ,lnNumRuta,TRIM(lcNomZona))		     		
+		lnidRuta = lnidRuta + 1
+		*lnNumRuta = lnNumRuta + 1 
+	ENDIF 
+	
+	SELECT Csrzonaruta
+	LOCATE FOR idzona=Csrzona.id AND idruta = Csrruta.id
+	IF idzona#Csrzona.id OR idruta # Csrruta.id
+		INSERT INTO Csrzonaruta (id,idzona,idruta,switch);
+		VALUES (lnidzonaruta,Csrzona.id,Csrruta.id,'00000')
+		lnidzonaruta = lnidzonaruta + 1
+    ENDIF 
+      
+	SELECT CsrRutaVdor
+	LOCATE FOR idvendedor=Csrvendedor.id  AND idruta=Csrruta.id
+	IF !FOUND() OR !(idvendedor=Csrvendedor.id  AND  idruta=Csrruta.id )
+		INSERT INTO CsrRutaVdor (id,idruta,idvendedor,switch,idfuerzavta);
+		VALUES (lnidrutavdor,Csrruta.id,Csrvendedor.id,'00000',lnidfuerzavta )
+		lnidrutavdor = lnidrutavdor + 1
+
+	ENDIF 
+		
   	&&Creamos un CF por cada vendedor
   	  	
 	INSERT INTO CsrCtacte (id,cnumero,cnombre,cdireccion,cpostal,idlocalidad,idprovincia,ctelefono;
@@ -206,8 +308,8 @@ SCAN FOR !EOF()
 	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
 	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica;
 	,bonif1,email,observa,cdatosfac,dni,referencia);
-	VALUES (lnIDCtacte , strtrim(nCodCtacte ,8) ,'CF - lcnombre','','';
-	,0,0,'',1,'',0,0,0;
+	VALUES (lnIDCtacte , strtrim(nCodCtacte ,8) ,'CF - '+lcnombre,'','';
+	,0,0,'',3,'',0,0,0;
 	,0,1100000003,0,0,1,0,0,"",lcfefin,'';
 	,"",0,ldfechac,0,0,0,'',0,ldfecultcompra,ldfecultpago;
 	,0,0,0,'','','','','';
@@ -215,9 +317,37 @@ SCAN FOR !EOF()
 	nCodCtacte = nCodCtacte+ 1 
 	lnIDCtacte = lnIDCtacte + 1 
 	
+	lcdias = '2'
+	FOR i=1 TO LEN(lcdias)
+		SELECT CsrCaberuta
+		LOCATE FOR idrutavdor=Csrrutavdor.id AND dia=VAL(SUBSTR(lcdias,i,1))
+		IF idrutavdor#Csrrutavdor.id OR dia#VAL(SUBSTR(lcdias,i,1))
+			INSERT INTO Csrcaberuta (id,idrutavdor,dia) ;
+			VALUES (lnidcabeza,Csrrutavdor.id,VAL(SUBSTR(lcdias,i,1)))
+			lnidcabeza = lnidcabeza + 1
+		ENDIF 
+		
+		SELECT CsrCuerruta
+		COUNT ALL FOR idcaberuta=Csrcaberuta.id TO nOrden
+		nOrden = nOrden + 1 
+	
+		&&IF CsrRecorrido.orden#0
+		      SELECT CsrCuerruta
+		      LOCATE FOR idcaberuta=Csrcaberuta.id AND idctacte=Csrctacte.id &&AND orden=Csrrecorrido.orden
+		      IF idcaberuta#Csrcaberuta.id OR idctacte#Csrctacte.id &&OR orden#CsrRecorrido.orden
+   				INSERT INTO Csrcuerruta (id,idcaberuta,idctacte,orden,turno) ;
+   				VALUES (lnidcuerruta,Csrcaberuta.id,Csrctacte.id,nOrden,1)
+   				lnidcuerruta = lnidcuerruta + 1
+			ENDIF 		   				
+		&&ENDIF 	   				
+	NEXT 
+		
+	
 ENDSCAN
 
-SELECT CsrVendedor
+INSERT INTO CsrFletero (id,nombre,numero) values(lnidFletero,'SIN ESPECIFICAR',lnCodigo )	
+
+*SELECT CsrVendedor
 *vista()
 
 *stop()
@@ -253,62 +383,52 @@ SCAN FOR !EOF()
 
 ENDSCAN
 
-sELECT distinct vendedor as nombre FROM CsrDeudor  INTO CURSOR FsrFletero READWRITE 
 
-lnid = RecuperarID('CsrFletero',Goapp.sucursal10)
-lnCodigo = 1
-
-INSERT INTO CsrFletero (id,nombre,numero) values(lnid,'SIN ESPECIFICAR',lnCodigo )
-
-lnid = lnid + 1
-lnCodigo = lnCodigo + 1 
-
-SELECT FsrFletero 
-Oavisar.proceso('S','Procesando '+alias()) 
-GO top
-SCAN FOR !EOF()
-   IF LEN(ltrim(nombre))=0
-       loop
-   ENDIF
-   lnnumero	= lnCodigo 
-   lcnombre	= NombreNi(alltrim(UPPER(FsrFletero.nombre)))
-
-	INSERT INTO CsrFletero (id,numero,nombre);
-   			 VALUES (lnid,lnnumero,lcnombre)
-   			 
-	lnid = lnid + 1
-	lnCodigo = lnCodigo + 1 
-
-ENDSCAN
+*sELECT distinct vendedor as nombre FROM CsrDeudor  INTO CURSOR FsrFletero READWRITE 
 
 
-LOCAL lnidcabeza, lnidrutavdor,lnidzonaruta,lnidcuerruta,lnidruta
 
-lnidruta= RecuperarID('CsrRuta',Goapp.sucursal10)
-*****
-lnidcabeza = RecuperarID('CsrCabeRuta',Goapp.sucursal10)
-*******
-lnidrutavdor = RecuperarID('CsrRutaVdor',Goapp.sucursal10)
-*****
-lnidzonaruta = RecuperarID('CsrZonaRuta',Goapp.sucursal10)
-*******
-lnidcuerruta = RecuperarID('CsrCuerRuta',Goapp.sucursal10)
+*!*	lnid = lnid + 1
+*!*	lnCodigo = lnCodigo + 1 
+
+*!*	SELECT FsrFletero 
+*!*	Oavisar.proceso('S','Procesando '+alias()) 
+*!*	GO top
+*!*	SCAN FOR !EOF()
+*!*	   IF LEN(ltrim(nombre))=0
+*!*	       loop
+*!*	   ENDIF
+*!*	   lnnumero	= lnCodigo 
+*!*	   lcnombre	= NombreNi(alltrim(UPPER(FsrFletero.nombre)))
+
+*!*		INSERT INTO CsrFletero (id,numero,nombre);
+*!*	   			 VALUES (lnid,lnnumero,lcnombre)
+*!*	   			 
+*!*		lnid = lnid + 1
+*!*		lnCodigo = lnCodigo + 1 
+
+*!*	ENDSCAN
+
+
+*!*	LOCAL lnidcabeza, lnidrutavdor,lnidzonaruta,lnidcuerruta,lnidruta
+
+*!*	lnidruta= RecuperarID('CsrRuta',Goapp.sucursal10)
+*!*	*****
+*!*	lnidcabeza = RecuperarID('CsrCabeRuta',Goapp.sucursal10)
+*!*	*******
+*!*	lnidrutavdor = RecuperarID('CsrRutaVdor',Goapp.sucursal10)
+*!*	*****
+*!*	lnidzonaruta = RecuperarID('CsrZonaRuta',Goapp.sucursal10)
+*!*	*******
+*!*	lnidcuerruta = RecuperarID('CsrCuerRuta',Goapp.sucursal10)
 
 
 LOCAL nCodigo,cCadeCtacte 
 
 cCadeCtacte = ''
 
-lnNumRuta = 1
+*!*	lnNumRuta = 1
 
-
-
-SELECT CsrFuerzaVta
-GO TOP 
-lnidfuerzavta  = CsrFuerzaVta.id
-
-
-	
 SELECT CsrDeudor
 Oavisar.proceso('S','Procesando '+alias()) 
 GO TOP
@@ -324,7 +444,7 @@ SCAN
 *!*	 		LOOP 
 *!*	 		
 *!*	 	ENDIF 
- 	IF nCodigo = 611
+ 	IF nCodCtacte = 611
  	*	stop()
  	ENDIF 
  	
@@ -421,9 +541,6 @@ SCAN
 	
 	lcnombre	= NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre))) 
 	
-	IF nCodigo = 19
-	*	stop()
-	ENDIF 
 	
 	lcDire_Calle= RTRIM(UPPER(CsrDeudor.direccion))
   	lcDire_Nro	= RTRIM(UPPER(CsrDeudor.direnro))
@@ -483,9 +600,6 @@ SCAN
 		VALUES (lnid, lccuit,lnporperce,lnporrete)
 	ENDIF 
 	
-	IF nCodigo  = 329
-	*	stop()
-	ENDIF 
 	
 	nCodCtacte = nCodCtacte+ 1 
 	lnIDCtacte = lnIDCtacte + 1 
@@ -505,24 +619,24 @@ SCAN
 		SELECT CsrVendedor
 		LOCATE FOR id = FsrVendedor.id
 		
-		&&Si FsrVendedor.nombre es distinto a CsrVendedor, quiere decir que tiene DIA
-		IF ALLTRIM(UPPER(FsrVendedor.nombre))<>ALLTRIM(UPPER(CsrVendedor.nombre))
-			
-	   		lcDias = LEFT(LTRIM(FsrVendedor.nombre),AT(' ',LTRIM(FsrVendedor.nombre))-1)
-	   		lcDias = IIF(lcDias$'DOMINGO','1',lcDias )
-	   		lcDias = IIF(lcDias$'LUNES','2',lcDias ) 
-	   		lcDias = IIF(lcDias$'MARTES','3',lcDias )
-	   		lcDias = IIF(lcDias$'MIÉRCOLES','4',lcDias )
-	   		lcDias = IIF(lcDias$'MIERCOLES','4',lcDias )
-	   		lcDias = IIF(lcDias$'JUEVES','5',lcDias )
-	   		lcDias = IIF(lcDias$'VIERNES','5',lcDias )
-	   		lcDias = IIF(lcDias$'SABADO','7',lcDias )
-		   	
-		ENDIF 
+*!*			&&Si FsrVendedor.nombre es distinto a CsrVendedor, quiere decir que tiene DIA
+*!*			IF ALLTRIM(UPPER(FsrVendedor.nombre))<>ALLTRIM(UPPER(CsrVendedor.nombre))
+*!*				
+*!*		   		lcDias = LEFT(LTRIM(FsrVendedor.nombre),AT(' ',LTRIM(FsrVendedor.nombre))-1)
+*!*		   		lcDias = IIF(lcDias$'DOMINGO','1',lcDias )
+*!*		   		lcDias = IIF(lcDias$'LUNES','2',lcDias ) 
+*!*		   		lcDias = IIF(lcDias$'MARTES','3',lcDias )
+*!*		   		lcDias = IIF(lcDias$'MIÉRCOLES','4',lcDias )
+*!*		   		lcDias = IIF(lcDias$'MIERCOLES','4',lcDias )
+*!*		   		lcDias = IIF(lcDias$'JUEVES','5',lcDias )
+*!*		   		lcDias = IIF(lcDias$'VIERNES','5',lcDias )
+*!*		   		lcDias = IIF(lcDias$'SABADO','7',lcDias )
+*!*			   	
+*!*			ENDIF 
 		
 		SELECT CsrZona
-		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrDeudor.vendedor)
-		IF ALLTRIM(nombre)<>alltrim(CsrDeudor.vendedor)
+		LOCATE FOR ALLTRIM(nombre)=alltrim(CsrVendedor.nombre)
+		IF ALLTRIM(nombre)<>alltrim(CsrVendedor.nombre)
 			SELECT CsrZona
 		 	GO TOP 
 	     ENDIF
@@ -531,7 +645,7 @@ SCAN
 		LOCATE FOR nombre=TRIM(Csrzona.nombre)
 		IF nombre#TRIM(Csrzona.nombre)
 			INSERT INTO CsrRuta (id,numero,nombre) ;
-			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre))		     		
+			VALUES (lnidRuta ,lnNumRuta,TRIM(Csrzona.nombre))		     		
 			lnidRuta = lnidRuta + 1
 			lnNumRuta = lnNumRuta + 1 
 		ENDIF 

@@ -14,7 +14,12 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 SET SAFETY OFF 
 *INDEX on nombre TAG korden
 SET SAFETY ON 
-	
+
+*!*	INSERT INTO CsrDeudor (Codigo,Nombre,TipoIVA,Vendedor,ctadeudor,CodLista;
+*!*			,CodVendedor) ;
+*!*			values ('0','CONSUMIDOR FINAL','CF','OFICINA',1,1,'')
+				
+					
 Oavisar.proceso('S','Abriendo archivos') 
 
 *stop()
@@ -42,10 +47,10 @@ leiunarticulo = .f.
 
 ldebug = .f.
 
-*SKIP 
+SKIP 
 *stop()
 DO WHILE NOT EOF()
-	lnCantCampo = 10 &&Hay un campo vacio
+	lnCantCampo = 5 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -161,7 +166,7 @@ ENDFUNC
 FUNCTION LeerArticulos_25(lcArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
+CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(30);
 		,Alicuota c(8),UniBulto c(10),UniVenta c(1),Costo c(15),CodRubro c(6);
 		,IDJ c(8),Lista1 c(15),Lista2 c(15),Lista3 c(15),Lista4 c(15),PesoKilos c(10);
 		,Merma c(10),Margen c(10))
@@ -240,7 +245,7 @@ DO WHILE NOT EOF()
 			*lcLista4  		= IIF(j + i=13,lcCadena,lcLista4)
 			
 			IF VAL(lcCodigo)=945 and ldebug
-				stop()
+			*	stop()
 				ldebug = .f.
 			ENDIF 
 					
@@ -260,7 +265,7 @@ DO WHILE NOT EOF()
 	ENDDO 
 	
 	IF VAL(lcCodigo)=3
-			stop()
+			*stop()
 		ENDIF 
 			
 	IF lnCamposLeidos>=1 AND i+j >= lnCantCampo
