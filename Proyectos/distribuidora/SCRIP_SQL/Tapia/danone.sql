@@ -32,3 +32,21 @@ and not ca.ctacte in (921,1060)
 group by ca.ctacte,ca.cnombre,ca.cdireccion,lo.nombre,cn.nombre ,cu.codigo,cu.nombre,sp.subnumero,cv.idsubarti,sp.nombre
 ,ca.fecha,sp.codartprovee,cu.unibulto, ca.signo
 order by ca.cnombre 
+go
+select distinct 
+rtrim(convert(char(8),p.numero)) + (case when isnull(s.id,0) = 0 then '000'
+else ( case when len(ltrim(s.codartprovee))=0 then 
+	right('000'+rtrim(ltrim(convert(char(8),s.subnumero))),3) 
+	else ltrim(s.codartprovee)  end) end)
+, p.nombre
+--,isnull(v.numero,0) as numvariedad, isnull(v.nombre,'') as nomvariedad, p.id as idarticulo, isnull(v.id,0) as idvariedad
+,isnull((select sum(existe ) from existenc  left join subproducto on existenc.idsubarti = subproducto.id
+where Existenc.iddeposito in (1100000010) and existenc.idarticulo=p.id and subproducto.idvariedad = v.id),0) as unidades
+,isnull((select sum(existe ) from existenc  left join subproducto on existenc.idsubarti = subproducto.id
+where Existenc.iddeposito in (1100000010) and existenc.idarticulo=p.id and subproducto.idvariedad = v.id) / p.unibulto,0) as bultos
+,convert(char(8),getdate(),112) as fecha--,ISNULL(s.codartprovee,'') as CodDanone
+from producto as p
+left join subproducto as s on p.id = s.idarticulo
+left join variedad as v on s.idvariedad = v.id
+where p.idctacte in (1100001480,1100001481)
+and p.espromocion = 0
