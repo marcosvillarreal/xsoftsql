@@ -2,11 +2,11 @@
  
 *!*	 MAOPERA.switch				1	0 = rtro normal G=rto en guarda
 *!*								2
-*!*								3 	0 = sin interes 1= por interes
+*!*								3 	
 *!*								4	1 = asiento modificado (regasicierre)
 *!*								5	0 =(origen ='CPR')crpa mercaderia 
 *!*									1 =(origen ='CPR')cpraregistracion
-*!*									1 =(origen ='FAC')reginteres
+*!*									1 =(origen ='FAC')historico
 *!*	 MAOPERA.estado		= 1 anulado
 *!*	 MAOPERA.origen			FAC   = facturacion
 *!*								FPE  = facturacion notas de pedido

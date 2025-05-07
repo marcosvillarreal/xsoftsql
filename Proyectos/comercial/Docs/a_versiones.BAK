@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.44
+	CalcularPrecio, para dolar 4 decimales.
 2.1.43
 	EstadoCta
 2.1.42

@@ -3,6 +3,11 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.45
+	Calculo de saldo de remito y acopio
+	Cambio en Email
+	Anotar Remito y Retiro de Acopio, historico
+	Resuemn de Cta ****
 2.1.44
 	CalcularPrecio, para dolar 4 decimales.
 2.1.43
