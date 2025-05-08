@@ -1,5 +1,19 @@
-use gestion
+use distmuller
 go
+
+--delete from caberuta
+--delete from rubro
+--delete from barrio
+--delete from zona
+--delete from fletero
+--delete from vendedor
+--delete from ruta
+--delete from rutavdor
+--delete from zonaruta
+--delete from cuerruta
+--delete from producto
+--delete from ctacte
+
 delete from cuerfac
 delete from movstock
 delete from ncuerfac
@@ -26,7 +40,6 @@ delete from movcaja
 delete from fleteren
 delete from	renflete
 delete from alertas
-delete from cuerruta
 delete from afectacte
 delete from cuervari
 delete from cabedeta
@@ -41,9 +54,7 @@ delete from dcuervari
 delete from gestion
 delete from anmaopera
 delete from existenc
-delete from producto
 delete from plancue_aux
-delete from ctacte
 delete from movpub
 delete from movtarjeta
 delete from detanrocaja
@@ -52,48 +63,47 @@ delete from movbcocar
 delete from movbcodeta
 delete from MovLicita
 delete from cuerord
-delete from caberuta
 delete from afeasto
 delete from sucursal
 delete from renctacte
 delete from bloqueoprod
 delete from cuermod
-delete from ctacte_2
-delete from subproducto
-delete from ruta
-delete from rutavdor
 delete from cabemod
-delete from zonaruta
+delete from subproducto
 delete from idasociado
 delete from cabeord
 delete from cotizadolar
 delete from afebcocar
-delete from rubro
-delete from barrio
-delete from zona
-delete from fletero
 delete from ctacteflete
 delete from cuervariord
-delete from vendedor
 delete from cuerunifica
 DELETE FROM ctactemod
---DELETE FROM BANCO	
 DELETE FROM BONIVDOR
 DELETE FROM MARCA
 DELETE FROM cabeunifica
 delete from cabepromo
 delete from gruposcomi
-
 delete from cuervariord
 delete from movbcodeta
 delete from afebcocar
 delete from ctacte_2
 delete from prodcodbarra
 delete from renctacte
-delete from movpub
 delete from idasociado
 delete from cuercombo
 delete from cabecombo
+delete from antablaasi
+delete from anmovstock
+delete from ancuerfac
+delete from cuerdeta
+delete from antablaimp
+delete from extmaopera
+delete from anmovctacte
+delete from ancabeasi
+delete from ancabefac
+delete from canalvtaneg
+delete from padronafip
+delete from rencaja
 
 execute actualizarid 1
 select * from keysid order by nextid desc
