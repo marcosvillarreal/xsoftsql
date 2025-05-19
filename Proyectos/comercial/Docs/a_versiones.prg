@@ -3,6 +3,9 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.47
+	EstadoCta, muestra negativos
+	Impresion, descuento
 2.1.46
 	Listados de Stock
 2.1.45

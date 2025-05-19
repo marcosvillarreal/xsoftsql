@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.46
+	Listados de Stock
 2.1.45
 	Calculo de saldo de remito y acopio
 	Cambio en Email
