@@ -22,7 +22,7 @@ IF !DIRECTORY(cRuta)
 	MKDIR SYS(5)+CURDIR()+'Temporal'
 ENDIF 
 
-cRuta = ADDBS(cRuta)+lcAlias+'_'+TTOC(DATETIME())+".XML"
+cRuta = ADDBS(cRuta)+lcAlias+'_'+DTOS(DATE()) + STRzero(HOUR(DATETIME()),2) + STRzero(MINUTE(DATETIME()),2) + STRzero(SEC(DATETIME()),2)+".XML"
 
 SET SAFETY OFF 
 CursorAdapterToXML(lcAlias,cRuta)
