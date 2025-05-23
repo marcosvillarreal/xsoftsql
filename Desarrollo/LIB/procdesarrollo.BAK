@@ -240,18 +240,19 @@ LPARAMETERS cReport, cProperty,cValor,lSilent
 
 lSilent = IIF(PCOUNT()<4,.f.,lSilent)
 
+LOCAL cMemo,cMemoNew ,cCopia1,cCopia2
 *'PAPERLENGTH','9999'
 IF NOT FILE(cReport)
 	RETURN 
 ENDIF 
-IF USED('DataReporte')
-	USE IN DataReporte
+IF USED('DataReporte1')
+	USE IN DataReporte1
 ENDIF 
 *!*	USE (cReport) ALIAS DataReporte
-USE (cReport) ALIAS DataReporte
-SELECT DataReporte
+USE (cReport) ALIAS DataReporte1
+SELECT DataReporte1
 GO TOP 
-cMemo = DataReporte.Expr
+cMemo = DataReporte1.Expr
 i = AT(cProperty,cMemo)
 IF i#0
 	cCopia1 = SUBSTR(cMemo,1,i +LEN(cProperty)) + cValor
@@ -262,12 +263,12 @@ IF i#0
 	 IF NOT lSilent 
 	 	oavisar.usuario(cMemoNew)
 	 ENDIF 
-	 replace Expr WITH cMemoNew IN DataReporte
+	 replace Expr WITH cMemoNew IN DataReporte1
 ELSE
 	cMemoNew = cMemo + CHR(13) + cProperty + "=" + cValor
-	replace Expr WITH cMemoNew IN DataReporte
+	replace Expr WITH cMemoNew IN DataReporte1
 ENDIF 
-USE IN DataReporte
+USE IN DataReporte1
 *----------------------------------------------------------
 FUNCTION LeerSucursal
 

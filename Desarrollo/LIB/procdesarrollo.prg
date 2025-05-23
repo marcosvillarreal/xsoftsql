@@ -1,3 +1,39 @@
+FUNCTION SaveCursorTemp
+PARAMETERS lcAlias
+&&Guardamos en un archivo los vamos de temporal
+LOCAL cRuta,nRecno
+
+lcAlias = ALLTRIM(lcAlias)
+IF NOT USED(lcAlias)
+	RETURN .t.
+ENDIF 
+
+IF RECCOUNT(lcAlias) < 1
+	RETURN .t.
+ENDIF 
+
+SELECT(lcAlias)
+nrecno = RECNO()
+
+cRuta = SYS(5)+CURDIR()
+
+cRuta  =SYS(5)+CURDIR()+'Temporal'
+IF !DIRECTORY(cRuta)
+	MKDIR SYS(5)+CURDIR()+'Temporal'
+ENDIF 
+
+cRuta = ADDBS(cRuta)+lcAlias+'_'+TTOC(DATETIME())+".XML"
+
+SET SAFETY OFF 
+CursorAdapterToXML(lcAlias,cRuta)
+SET SAFETY ON 
+
+SELECT(lcAlias)
+GO nRecno
+
+RETURN .t.
+
+
 *----------------
 FUNCTION TRANSFORM_SEP
 LPARAMETERS nValor, cMascara ,cSepDec
