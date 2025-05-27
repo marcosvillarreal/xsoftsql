@@ -1,6 +1,6 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 ---Notas de Version 
-	
+-Comisiones de Objetivos, salida por excel.	
 -Pendiente
 2.3.37
 	Letra IVA C

@@ -2,6 +2,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 ---Notas de Version 
 	
 -Pendiente
+2.3.37
+	Letra IVA C
 2.3.36
 	Descuentos por cantidad, por canalvta
 2.3.35
