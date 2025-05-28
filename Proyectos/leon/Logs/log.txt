@@ -1,10 +1,3 @@
- Alias CSRCONCEPTO registro          1
-Control activo NOMBRE ABMCONCEPTOS._TEXTBOX1.KEYPRESS
-05-08-2024 12:08:32 , Error nº:         12
-Error No se encuentra la variable 'TIPOPRECIO'.
-Linea nº IF NVL(CsrConcepto.TipoPrecio,0) <> 0
- Alias CSRPREFITERMI registro         67
-Control activo IDCONCEPTO REGSTOCK.CONTAINERENCABEZA._CBOCONCEPTO.LOSTFOCUS
 05-08-2024 12:08:44 , Error nº:         12
 Error No se encuentra la variable 'TIPOPRECIO'.
 Linea nº IF NVL(CsrConcepto.TipoPrecio,0) <> 0
@@ -155,7 +148,9 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
 
 
 
@@ -433,7 +428,9 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
 
 
 
@@ -728,7 +725,9 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
+
 
 
 
@@ -986,7 +985,9 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
 alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
 
 
 
@@ -1253,6 +1254,7 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1390,7 +1392,9 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
 
 
 
@@ -1648,7 +1652,9 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
 
 
 
@@ -1904,7 +1910,9 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
 
 
 
@@ -2166,7 +2174,9 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
 
 
 
@@ -2606,6 +2616,7 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2701,12 +2712,14 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
 
 
 
@@ -2902,6 +2915,7 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2909,6 +2923,7 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
 
 
 
@@ -3564,4 +3579,9 @@ Error No se encuentra la variable 'IDCTACTE'.
 Linea nº lcId		= RIGHT(STR(CsrImprimir.idctacte,10),8)
  Alias CSRIMPRIMIR registro          1
 Control activo  INFORME1.ACEPTAR1.CLICK
-27-05-2025 13:07:38 , Error nº:         39Error Desbordamiento numérico (se han perdido datos).Linea nº replace cbu WITH CsrCtacte.cbu, estadotilde WITH 1,idctacte WITH CsrCtacte.id IN CsrImprimir Alias CSRCTACTE registro         12Control activo  INFORME1.ACEPTAR2.CLICK
+27-05-2025 13:07:38 , Error nº:         39
+Error Desbordamiento numérico (se han perdido datos).
+Linea nº replace cbu WITH CsrCtacte.cbu, estadotilde WITH 1,idctacte WITH CsrCtacte.id IN CsrImprimir
+ Alias CSRCTACTE registro         12
+Control activo  INFORME1.ACEPTAR2.CLICK
+28-05-2025 18:56:59 , Verificando OCX
