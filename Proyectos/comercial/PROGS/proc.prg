@@ -34,7 +34,7 @@ CREATE CURSOR CsrAuxPrecio (id i,idarticulo i,idctacte i,idrubro i,idiva i;
 		,boniftotal n(6, 3),costobon n(11, 3),interno n(11, 3),internoporce n(9, 5);
 		,flete n(15, 4),segflete n(11, 3),totalflete n(15, 4) ,costosiva n(15, 4) ;
 		,costociva n(15, 4) ,margen1 n(9, 3) ,utilciva1 n(15, 4),utilsiva1 n(15, 4) ;
-		,redondeo n(11, 3) ,costoagre n(11, 3),fleteagre n(11, 3),preconciva n(15, 4) ;
+		,redondeo n(11, 3) ,costoagre n(15, 4),fleteagre n(15, 4),preconciva n(15, 4) ;
 		,preconfsiva n(15, 4),preconfciva n(15, 4),prepubciva n(15, 4) ,prepubfsiva n(15, 4);
 		,prepubfciva n(15, 4),fecmodi t ,endolar n(1, 0),costoulcpra n(15, 4) ;
 		,preotrociva1 n(15, 4),preotrofsiva1 n(15, 4),preotrofciva1 n(15, 4);
