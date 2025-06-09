@@ -93,6 +93,7 @@ If lldesarrollo
     
     _rutaprogs_sur  =lcdd+'Progs\distribuidorasur'
     _rutaprogs_sureño  =lcdd+'Progs\elsureño'
+    _rutaprogs_mull  =lcdd+'Progs\muller'
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
@@ -101,7 +102,7 @@ If lldesarrollo
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;
                ,&_rutaformart,&_rutaformpre,&_rutaformpat,&_rutaformconta,&_rutaprogs_sur;
                ,&_rutaformimp,&_rutaprogs_sureño,&_rutaformprueba, &_rutaformpm,&_rutaformpasaje;
-               ,_rutaformest
+               ,&_rutaformest,&_rutaprogs_mull
                
  ELSE
  	SET CONSOLE OFF     

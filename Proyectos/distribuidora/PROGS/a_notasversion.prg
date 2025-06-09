@@ -1,7 +1,14 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
----Notas de Version 
--Comisiones de Objetivos, salida por excel.	
+
 -Pendiente
+-Comisiones de Objetivos, salida por excel.	
+-fORMATO DE tIENDA
+
+---Notas de Version 
+
+2.3.38
+	Producto, redondear a 1, no bonificar
+	Facturadores, aplicar nobonificar	
 2.3.37
 	Letra IVA C
 2.3.36
