@@ -8,7 +8,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 
 2.3.38
 	Producto, redondear a 1, no bonificar
-	Facturadores, aplicar nobonificar	
+	Facturadores, aplicar nobonificar
+	FacPub, totales miles	
 2.3.37
 	Letra IVA C
 2.3.36
