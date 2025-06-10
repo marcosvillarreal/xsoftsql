@@ -1,19 +1,4 @@
-05-08-2024 12:08:44 , Error nº:         12
-Error No se encuentra la variable 'TIPOPRECIO'.
-Linea nº IF NVL(CsrConcepto.TipoPrecio,0) <> 0
- Alias CSRPREFITERMI registro         67
-Control activo IDCONCEPTO REGSTOCK.CONTAINERENCABEZA._CBOCONCEPTO.LOSTFOCUS
-05-08-2024 12:08:52 , Error nº:         12
-Error No se encuentra la variable 'TIPOPRECIO'.
-Linea nº IF NVL(CsrConcepto.TipoPrecio,0) <> 0
- Alias CSRPREFITERMI registro         67
-Control activo IDCONCEPTO REGSTOCK.CONTAINERENCABEZA._CBOCONCEPTO.LOSTFOCUS
-05-08-2024 15:39:57 , Verificando OCX
-12-08-2024 18:15:01 , Verificando OCX
-13-08-2024 18:59:42 , Verificando OCX
-13-08-2024 19:15:26 , Error nº:         12
-Error No se encuentra la variable 'IDMAOPERA'.
-Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),detalle WITH lcdetalle ,vence WITH TTOD(CsrMovctacte.vencimien),numcomp WITH Csrmovctacte.numcomp ,importe WITH CsrMovctacte.importe*CsrMovctacte.signo*lnsigno,saldo WITH CsrMov
+
 
 
 
@@ -150,6 +135,8 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
 
 
 
@@ -429,7 +416,11 @@ Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),det
 
 
 
+
+
 ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
+
+
 
 
 
@@ -726,7 +717,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
+
+
 
 
 
@@ -986,7 +981,11 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
 alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
+
 
 
 
@@ -1255,6 +1254,8 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1393,7 +1394,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
 
 
 
@@ -1653,7 +1658,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
 
 
 
@@ -1911,7 +1920,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
 
 
 
@@ -2175,7 +2188,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
 
 
 
@@ -2617,6 +2634,8 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2713,12 +2732,16 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
 
 
 
@@ -2916,6 +2939,8 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2923,6 +2948,8 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
 
 
 
@@ -3587,3 +3614,16 @@ Control activo  INFORME1.ACEPTAR2.CLICK
 28-05-2025 18:56:59 , Verificando OCX
 28-05-2025 19:34:19 , Verificando OCX
 02-06-2025 16:06:36 , Verificando OCX
+09-06-2025 19:23:55 , Verificando OCX
+09-06-2025 20:17:09 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº REPLACE pago01 WITH TRANSFORM(VAL(STR(pago01,",",""))+ oCursor.total,"999,999,999.99") IN Csrimprimir
+ Alias CSRAUXIMPRIMIR registro          1
+Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
+10-06-2025 09:20:59 , Error nº:       1806
+Error SQL: no se encuentra la columna 'NROPATRON'.
+Linea nº SELECT chrfecha,detalle,ctacte,cnombre,nomcatego,lista,nomgrupo,numvendedor,nomgrupo02,numfletero ,chrfechavto,total,pago01,pago02,pago03,pago04,nropedido,nropatron,concepto,nompago,id from CsrImprimir ORDER BY &lcorden into cursor CsrImprimir
+ Alias CSRIMPRIMIR registro          1
+Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+10-06-2025 09:22:04 , Informe por excel
+10-06-2025 09:22:24 , Version 16.0
