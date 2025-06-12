@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.49
+	Listado de Estado Cta
 2.1.48
 	Facturador, reorganizacion
 2.1.47

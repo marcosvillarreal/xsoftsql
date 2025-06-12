@@ -1456,6 +1456,9 @@ WITH loObjeto
 		ObjColumna.AddProperty('ColumnEnd',0)
 		ObjColumna.AddProperty('ColorIndexFirst',16777215)
 		
+		
+		ObjColumna.AddProperty('ColorIndexDatos',-4142)
+		
 		.AddProperty('Column'+strzero(i,3),ObjColumna) 
 		
 		ObjColumna=null

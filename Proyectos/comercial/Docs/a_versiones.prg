@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.50
+	Funciones en estadocta
 2.1.49
 	Listado de Estado Cta
 2.1.48
