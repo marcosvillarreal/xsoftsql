@@ -3,9 +3,12 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
-
 ---Notas de Version 
-
+2.3.39
+	CabeImpresion, por talonario (cambio estrucutra de la tabla)
+	abmcabeimpresion
+	ParaCAE, se bloqueo la impresion
+	
 2.3.38
 	Producto, redondear a 1, no bonificar
 	Facturadores, aplicar nobonificar
