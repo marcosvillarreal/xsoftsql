@@ -315,6 +315,10 @@ IF TYPE('goApp')='O'
 	
 	DO FORM frmmenu3
 	
+	IF goapp.sucursal <> 1
+		DO FORM regfacpub
+	ENDIF 
+		
 	*IF oConfigTermi.ActivarSyncSucursal='TRUE'
 	*	EjecutaMenu('regproceso_sync')
 	*ENDIF 
