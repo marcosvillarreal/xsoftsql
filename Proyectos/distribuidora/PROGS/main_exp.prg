@@ -164,7 +164,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.00"
+	goapp.version = "02.00.00"
 	
 	PUBLIC  gcicono
 	     
@@ -283,8 +283,8 @@ IF TYPE('goApp')='O'
 		goapp.otherformsclose ="GENERA_FRIG"
 		DO FORM genera_frig WITH .t.
 	CASE VAL(nidprograma)=4
-		goapp.otherformsclose ="GENERA_DANONE"
-		DO FORM genera_danone WITH .t.
+		goapp.otherformsclose ="GENERA_NEXTBYN"
+		DO FORM genera_nextbyn WITH .t.
 	CASE VAL(nidprograma)=5
 		goapp.otherformsclose ="GENERA_EXPGRAL"
 		DO FORM genera_expgral WITH .t.

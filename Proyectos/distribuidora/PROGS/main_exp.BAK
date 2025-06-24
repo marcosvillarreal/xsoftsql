@@ -243,6 +243,14 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrSeteoParam.* FROM SeteoParam as CsrSeteoParam WHERE nombre='CODEMPRESA'
+	ENDTEXT 
+	=CrearCursorAdapter('CsrSeteo',lcCmd)
+	IF RECCOUNT('CsrSeteo')> 0
+		goapp.codempresa = VAL(CsrSeteo.CVALOR)
+	ENDIF 
+
 	*--------------Codigo para que abra el form
     _screen.visible=.t.	   
 	_screen.lockscreen=.f.
