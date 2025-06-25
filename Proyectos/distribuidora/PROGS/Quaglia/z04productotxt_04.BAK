@@ -342,7 +342,7 @@ SCAN FOR !EOF()
 	idmoneda,incluirped,flete,feculcpra,fecalta,fecmodi,feculvta,bonif1,bonif2,bonif3,bonif4,costobon,idmarca,segflete,idestado,;
 	nolista,nofactura,minimofac,espromocion,prevtaf1,prevtaf2,prevtaf3,prevtaf4,idfrio,sugerido,idingbrutos,divisible,;
 	codartprod,desc1,min1,desc2,min2,desc3,min3,vtakilos,cprakilos,fecoferta,internoporce,idctacpra,idctavta;
-	,idenvase,fleteporce,codbarra13,codbarra14); 	
+	,idenvase,fleteporce,codbarra13,codbarra14,redondear,nobonifica); 	
 	values (lnid, lncodigo, lcnombre, lccodarti, lnidiva, lncosto,	;
 	lnutil1, lnprevta1, lnutil2, lnprevta2, '00000', 1,1,1,1,lnidubicacion,1,1,lnidctacte, lnidseccion, lnutil3, ;
 	lnprevta3,lnutil4 ,lnprevta4,lninterno, lnunibulto,lnpeso, lnidtipovta,lnidforma,lnfracciona,0,'',0,;
@@ -350,7 +350,7 @@ SCAN FOR !EOF()
 	lnbonif4,lnCostoBon ,lnidmarca,0, lnidestado	,lnnolista, lnnofactu,0,	lnespromo,lnprevtaf1,lnprevtaf2,lnprevtaf3,lnprevtaf4,lnidfrio,;
 	lnsugerido,1,lnsireparto,"",0, 0,;
 	0, 0, 0, 0,lnvtakilos,lnvtakilos,ldfechabonif,0;
-	,lnidctacpra,lnidctavta	,lnidenvase,lnfleteporce,lcCodBarra13,lcCodBarra14)		
+	,lnidctacpra,lnidctavta	,lnidenvase,lnfleteporce,lcCodBarra13,lcCodBarra14,1,0)		
 	
 
 	lnid = lnid + 1
