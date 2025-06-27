@@ -99,3 +99,20 @@ SoapFault: ns1:cms.cert.expired: Certificado expirado
 11-04-2025 11:16:38 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-30229993-6Tipo: FISICADenominacion: VILLARREAL,MARCOS EZEQUIELCUIT: 20-30229993-6Tipo Doc: CUITEstado: ACTIVODireccion: VIEYTES 1270Localidad: BAHIA BLANCAProvincia: BUENOS AIRESCodigo Postal: 8000Llamada: PADRON.ConsultarCodigo error afip:*****Numero de Error: 1234Linea de codigo de error: Impuestos[contador,4]=cMotivoImpuestoProcedimiento: cuit_proceso_2Error VFP: El subíndice está fuera del intervalo definido.Llamada: PADRON.Consultar ERROR NO DEFINIDO
 11-04-2025 11:19:18 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-30229993-6Tipo: FISICADenominacion: VILLARREAL,MARCOS EZEQUIELCUIT: 20-30229993-6Tipo Doc: CUITEstado: ACTIVODireccion: VIEYTES 1270Localidad: BAHIA BLANCAProvincia: BUENOS AIRESCodigo Postal: 8000Llamada: PADRON.ConsultarCodigo error afip:*****Numero de Error: 1234Linea de codigo de error: Impuestos[contador,4]=cMotivoImpuestoProcedimiento: cuit_proceso_2Error VFP: El subíndice está fuera del intervalo definido.Llamada: PADRON.Consultar ERROR NO DEFINIDO
 20-05-2025 11:21:59 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TATA Almacenado ws_sr_constancia_inscripcion_20161802914WSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-30229993-6Llamada: PADRON.Consultar ERROR NO DEFINIDO
+27-06-2025 11:43:52 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TACodigo error afip:*****Numero de Error: 1429Linea de codigo de error: ta = WSAA.LoginCMS(cms)Procedimiento: sw_wsaa_iniciarError VFP: No hay respuesta de ARCA, verificar internet e reintenar en unos minutosPosible caida del servidor de ARCAExepción: ResponseNotReady
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 263, in LoginCMS
+  File "pysimplesoap\client.pyc", line 148, in <lambda>
+  File "pysimplesoap\client.pyc", line 352, in wsdl_call
+  File "pysimplesoap\client.pyc", line 219, in call
+  File "pysimplesoap\client.pyc", line 264, in send
+  File "httplib2\__init__.pyc", line 1593, in request
+  File "httplib2\__init__.pyc", line 1335, in _request
+  File "pysimplesoap\transport.pyc", line 117, in _conn_request
+  File "httplib2\__init__.pyc", line 1291, in _conn_request
+  File "httplib.pyc", line 1119, in getresponse
+ResponseNotReady
+
+27-06-2025 11:44:02 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TATA Almacenado ws_sr_constancia_inscripcion_30717143244WSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-37212563-3Llamada: PADRON.Consultar ERROR NO DEFINIDO
+27-06-2025 11:44:24 AM , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsTA recuperadoWSSrPadronA5 1.04_2e WSSrPadronA5 InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSSrPadronA5Conexion ExitosaConsultando AFIP online...20-37212563-3Error :El contribuyente posee incumplimientos notificados por falta de presentaciÃ³n de DDJJ. PodrÃ¡ consultar los incumplimientos en el Sistema de Cuentas Tributarias.Llamada: PADRON.Consultar ERROR NO DEFINIDO
