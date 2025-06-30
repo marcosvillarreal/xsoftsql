@@ -23,537 +23,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rMovCtacte.compacreedor,clasecomp WITH CsrMovCtacte.clasecomp ,provcentro WITH CsrMovCtacte.provrecep,idmaopera WITH CsrMovCtacte.idmaopera
- Alias CSRAUXMOVAFECTADO registro          1
-Control activo FECHA REGCTACTE_V2.CONTAINERENCABEZA.KITBUSCAOALTAENPROVINCIA.LOSTFOCUS
-13-08-2024 19:21:53 , Error nº:       1734
-Error No se encuentra la propiedad COMPABREVIA.
-Linea nº INSERT INTO CsrVerComp (clase,esheader,Campo002,Campo003,Campo005,Campo007,Campo009,Campo012) VALUES ('A00',1,Oscatter.compabrevia ,Oscatter.numcomp ,DTOC(Oscatter.fecha) ,'',DTOS(Oscatter.fecha),STR(lnTotal,14,2))
- Alias CSRAUXMOVAFECTADO registro          1
-Control activo  REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK
-13-08-2024 19:31:22 , Error nº:         12
-Error No se encuentra la variable 'COMPABREVIA'.
-Linea nº REPLACE id WITH CsrMovctacte.id,fecha WITH TTOD(CsrMovctacte.fecha),detalle WITH lcdetalle ,vence WITH TTOD(CsrMovctacte.vencimien),numcomp WITH Csrmovctacte.numcomp ,importe WITH CsrMovctacte.importe*CsrMovctacte.signo*lnsigno,saldo WITH CsrMov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ctacte.saldo*CsrMovctacte.signo*lnsigno ,saldori WITH CsrMovctacte.saldo*CsrMovctacte.signo*lnsigno,afecta WITH 0 ,gravado WITH CsrMovctacte.gravado*CsrMovctacte.signo*lnsigno, estado WITH 0,idprovincia WITH CsrMovCtacte.idprovincia ,compacreedor WITH Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 rMovCtacte.compacreedor,clasecomp WITH CsrMovCtacte.clasecomp ,provcentro WITH CsrMovCtacte.provrecep,compabrevia WITH CsrMovCtacte.compabrevia ,idmaopera WITH CsrMovCtacte.idmaopera
  Alias CSRAUXMOVAFECTADO registro          1
 Control activo FECHA REGCTACTE_V2.CONTAINERENCABEZA.KITBUSCAOALTAENPROVINCIA.LOSTFOCUS
@@ -588,6 +57,11 @@ Control activo  REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK
 20-08-2024 18:47:00 , Error nº:         11
 Error El valor, tipo o número de argumentos no es válido para la función.
 Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
+
+
+
+
+
 
 
 
@@ -851,6 +325,11 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
 2)) as margen,sum(round(importefinal,2)) as neto ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devol,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(cTOD(fecha)),6) as periodo ,CAST(0 as n(11,2)) as margenutil ,sum(round(tot
 
 
@@ -983,7 +462,17 @@ gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsu
 
 
 
+
+
+
+
+
 alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
+
+
+
+
+
 
 
 
@@ -1256,6 +745,11 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -1396,7 +890,17 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
+
+
+
 
 
 
@@ -1660,7 +1164,17 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
+
+
+
 
 
 
@@ -1922,7 +1436,17 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
+
+
+
 
 
 
@@ -2190,7 +1714,17 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
+
+
+
 
 
 
@@ -2636,6 +2170,11 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2734,12 +2273,22 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
+
+
 
 
 
@@ -2941,6 +2490,11 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2948,6 +2502,11 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
+
+
 
 
 
@@ -3631,3 +3190,38 @@ Control activo  SUBFACTURA.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
 12-06-2025 12:56:06 , Informe por excel
 12-06-2025 12:56:25 , Version 16.0
 19-06-2025 11:08:05 , Verificando OCX
+30-06-2025 09:51:30 , Verificando OCX
+30-06-2025 10:12:13 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('FsrCodBarra')#0
+ Alias  registro          0
+Control activo CODIGO REGFACCPRA.GRID2.COLUMN1.TEXT1.LOSTFOCUS
+30-06-2025 10:17:20 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT(lcaliasseek)#0 AND lVerificarSiesta
+ Alias CSRAUXCUERFAC registro          1
+Control activo CODIGO REGFACCPRA.GRID2.COLUMN1.TEXT1.LOSTFOCUS
+30-06-2025 10:17:35 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT(lcaliasseek)#0 AND lVerificarSiesta
+ Alias CSRAUXCUERFAC registro          1
+Control activo CODIGO REGFACCPRA.GRID2.COLUMN1.TEXT1.LOSTFOCUS
+30-06-2025 10:23:51 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('FsrSubProducto')#0
+ Alias FSRCODBARRA registro          1
+Control activo  REGFACCPRA.GRID2.COLUMN1.TEXT1.LOSTFOCUS
+30-06-2025 10:26:25 , Error nº:         13
+Error No se encuentra el alias.
+Linea nº IF RECCOUNT('FsrSubProducto')#0
+ Alias FSRCODBARRA registro          1
+Control activo  REGFACCPRA.GRID2.COLUMN1.TEXT1.LOSTFOCUS
+30-06-2025 11:06:49 , Error nº:          1
+Error El archivo 'numeric.prg' no existe.
+Linea nº SELECT CsrCuerfac.*,0000000.00 as stock,prearti as total,CAST(0 as n(12,0)) as idcuerfac,prearti as desctoCiva ,prearti as DesctoSiva,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol ,' ' as codvalido,CAST(0 as n(12,0)
+) as idcabeunifica,CAST(0 as int) as idprodpromo ,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,prearti as InternoFin ,CAST(0 as int) as idctavta,prearti as UniCiva,prearti as UniSiva,prearti as IvaUni ,prearti as UniCiva
+2,prearti as UniSiva2,prearti as IvaUni2,CAST(0 as int) as idenvase ,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos , 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden ,0 a
+s bloquearprod,numeric(20,0) as codBuscar FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE
+ Alias  registro          0
+Control activo  REGFACVTA.LOAD
+30-06-2025 11:13:13 , Error nº:         11Error El valor, tipo o número de argumentos no es válido para la función.Linea nº IF LEN(TRIM(.grid2.column1.text1.Value))#0 OR (LEN(TRIM(.grid2.column1.text1.Value))=0 AND LEN(TRIM(.grid2.column2.text1.Value))=0) Alias CSRAUXCUERFAC registro          1Control activo CODBUSCAR REGFACVTA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS
