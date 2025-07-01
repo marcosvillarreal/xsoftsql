@@ -1,6 +1,5 @@
-use quaglia
+use distmuller
 go
-
 
 --delete from caberuta
 --delete from rubro
@@ -14,6 +13,7 @@ go
 --delete from cuerruta
 --delete from producto
 --delete from ctacte
+--DELETE FROM MARCA
 
 delete from cuerfac
 delete from movstock
@@ -58,7 +58,7 @@ delete from existenc
 delete from plancue_aux
 delete from movpub
 delete from movtarjeta
-delete from detanrocaja
+delete from detanrocaja where fecdesde< '20250601'
 delete from afecabefac
 delete from movbcocar
 delete from movbcodeta
@@ -80,7 +80,6 @@ delete from cuervariord
 delete from cuerunifica
 DELETE FROM ctactemod
 DELETE FROM BONIVDOR
-DELETE FROM MARCA
 DELETE FROM cabeunifica
 delete from cabepromo
 delete from gruposcomi
@@ -107,4 +106,4 @@ delete from padronafip
 delete from rencaja
 
 execute actualizarid 1
-select * from keysid order by nextid desc
+select * from keysid  where nextid >1 order by nextid desc
