@@ -42,6 +42,10 @@ IF !llok
 	RETURN .f.
 ENDIF
 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT Csrcomprobante.* FROM comprobante as Csrcomprobante WHERE regisc=1 and clase='O' 
+ENDTEXT 
+=CrearCursorAdapter('CsrComprobante',lcCmd)
 
 lnidmaopera = RecuperarID('CsrMaopera',Goapp.sucursal10)
 lnidmovbcocar = RecuperarID('MovBcocar',Goapp.sucursal10)
@@ -53,23 +57,59 @@ Oavisar.proceso('S','Procesando '+alias())
 
 SCAN FOR !EOF()
 	
+	SELECT CsrComprobante
+	GO TOP 
+	lnidcomproba = CsrComprobante.id
+	lcclasecomp = CsrComprobante.clase
+	lnidvalor = 
+	
+	lcswitch = '00000'
+	lcdetalle = ''
+	ldfechasis = FechaHoraCero(CsrCartera.fecha)
+	lcnumcomp = " 0000" + strzero(VAL(CsrCartera.numero),8)
+	lniddetanrocaja = 0
+	
 	INSERT INTO Csrmaopera (id,origen,programa,sucursal,terminal,sector,fechasis;
            ,idoperador,idvendedor,iddetanrocaja,idcomproba,numcomp,clasecomp;
            ,turno,puestocaja,idcotizadolar,switch,estado,,detalle,fechaserver);
-    VALUES (nidmaopera,origen,programa,sucursal,terminal,sector,fechasis,idoperador;
-            ,idvendedor,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja;
-            ,idcotizadolar,switch,estado,detalle,fechaserver)
+    VALUES (lnidmaopera,'CAR','regcartera',goapp.sucursal,0,0,ldfechasis,0;
+            ,0,lniddetanrocaja,lnidcomproba,lcnumcomp,lcclasecomp,1,0;
+            ,0,lcswitch,'0',lcdetalle,DATETIME())
 	
 	
-	lnidmaopera = lnidmaopera + 1 
 	
+	
+	
+	ldfecha		= FechaHoraCero(CsrCartera.femision)
+	lnimporte   = CsrCartera.importe
+	lnnrocheque	= VAL(CsrCartera.numero)
+	lcrecibido  = CsrCartera.cliente
+	lctitular   = CsrCartera.titular
+	lclocalidad = 'GENERAL M. CAMPOS'
+	lccuit      = PeloCuit(CsrCartera.cuit)
+	lcbanco     = CsrCartera.banco
+	lcdetalle = ''
+	lnidtipomov = lnidcomproba 
+	
+	INSERT INTO Csrmovbcocar(id,idmaopera,origen,importe,idtipomov,numero,idctabco;
+           ,banco,localidad,fecha,fechavto,cuit,titular,recibido,entregado;
+           ,detalle,signo,switch);
+    VALUES (lnidmovbcocar ,lnidmaopera,'3RO',lnimporte,lnidtipomov,lnnrocheque,0,lcbanco;
+           ,lclocalidad,ldfecha,ldfecha,lccuit,lctitular,lcrecibido,'',lcdetalle;
+           ,1,lcswitch)
 
+	INSERT INTO Csrmovbcodeta(id,idmovbcocar,codbarra,cuit,idvalor);
+    VALUES (lnidmovbcodeta,lnidmovbcocar,'',lccuit,lnidvalor)
+    
+    lnidmaopera = lnidmaopera + 1 
+	lnidmovbcocar = lnidmovbcocar + 1 
+	lnidmovbcodeta = lnidmovbcodeta + 1 
 
 	
-	SELECT CsrArticulo   				
+	SELECT CsrCartera				
 ENDSCAN
 
-SELECT CsrProducto
+SELECT Csrmovbcocar
 GO TOP 
 vista()
 
