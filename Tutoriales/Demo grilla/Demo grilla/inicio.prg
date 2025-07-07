@@ -1,0 +1,24 @@
+IF USED('orders')
+	SELECT *from  'orders' INTO CURSOR l_tabla
+ELSE
+	USE orders IN 0
+	SELECT *from  'orders' INTO CURSOR l_tabla
+ENDIF
+DO FORM form1
+*********************
+PROCEDURE msgespera
+*********************
+LPARAMETERS p_mensaje
+	IF NOT EMPTY(p_mensaje) AND p_mensaje<>"" AND p_mensaje<>"clear"
+		_screen.ScaleMode = 0
+		Wait Window p_mensaje At Int(_Screen.Height/2),Int(_Screen.Width/2 - Len(p_mensaje)/2) NOWAIT NOCLEAR
+	ELSE
+		WAIT CLEAR
+		_screen.ScaleMode = 3
+	ENDIF
+ENDPROC
+
+FUNCTION VERMENU
+PARAMETER XQUE_OPCION_SERA
+XACCION_MENU = XQUE_OPCION_SERA
+ENDPROC

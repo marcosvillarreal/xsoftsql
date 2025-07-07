@@ -18,17 +18,12 @@ SET CPDIALOG ON
 
 *stop()
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"cartera.csv"
-=LeerCartera_25()
+=LeerCartera_25(cArchivo )
 SELECT CsrCartera
-vista()
+*stop()
 
-*!*	cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedoresexp.csv"
-*!*	=LeerProveedores_21(cArchivo)
-*!*	SELECT CsrAcreedor 
-*!*	SELECT distinct nombre,codigo,lista as univenta,(codlista) as unibulto;
-*!*	FROM CsrAcreedor INTO CURSOR CsrAcreedor2 READWRITE 
-*!*	SELECT CsrAcreedor2 
-*!*	vista()
+
+SET SAFETY OFF
 
 Oavisar.proceso('S','Abriendo archivos') 
 llok = .t.
@@ -48,40 +43,51 @@ ENDTEXT
 =CrearCursorAdapter('CsrComprobante',lcCmd)
 
 lnidmaopera = RecuperarID('CsrMaopera',Goapp.sucursal10)
-lnidmovbcocar = RecuperarID('MovBcocar',Goapp.sucursal10)
-lnidmovbcodeta= RecuperarID('MovBcoDeta',Goapp.sucursal10)
+lnidmovbcocar = RecuperarID('CsrMovBcocar',Goapp.sucursal10)
+lnidmovbcodeta= RecuperarID('CsrMovBcoDeta',Goapp.sucursal10)
 
 stop()
 SELECT CsrCartera
 Oavisar.proceso('S','Procesando '+alias()) 
-
+GO TOP 
 SCAN FOR !EOF()
 	
 	SELECT CsrComprobante
 	GO TOP 
 	lnidcomproba = CsrComprobante.id
 	lcclasecomp = CsrComprobante.clase
-	lnidvalor = 
+	lnidvalor = 0
 	
 	lcswitch = '00000'
 	lcdetalle = ''
-	ldfechasis = FechaHoraCero(CsrCartera.fecha)
+	ldfechasis = dtot(CTOD(CsrCartera.fecha))
 	lcnumcomp = " 0000" + strzero(VAL(CsrCartera.numero),8)
 	lniddetanrocaja = 0
 	
-	INSERT INTO Csrmaopera (id,origen,programa,sucursal,terminal,sector,fechasis;
-           ,idoperador,idvendedor,iddetanrocaja,idcomproba,numcomp,clasecomp;
-           ,turno,puestocaja,idcotizadolar,switch,estado,,detalle,fechaserver);
-    VALUES (lnidmaopera,'CAR','regcartera',goapp.sucursal,0,0,ldfechasis,0;
-            ,0,lniddetanrocaja,lnidcomproba,lcnumcomp,lcclasecomp,1,0;
-            ,0,lcswitch,'0',lcdetalle,DATETIME())
+	SELECT CsrMaopera
+	APPEND BLANK
+	replace id WITH lnidmaopera, origen WITH 'CAR', programa WITH 'regcartera'
+	replace sucursal WITH goapp.sucursal, terminal WITH 0, sector WITH 0
+	replace fechasis WITH ldfechasis, idoperador WITH 0, idvendedor WITH 0
+	replace iddetanrocaja WITH lniddetanrocaja, idcomproba WITH lnidcomproba 
+	replace numcomp WITH lcnumcomp, clasecomp WITH lcclasecomp
+	replace turno WITH 1, puestocaja WITH 0, idcotizadolar WITH 0
+	replace switch WITH lcSwitch, estado WITH '0', detalle WITH lcDetalle
+	replace fechaserver WITH DATETIME()
+	
+*!*		INSERT INTO Csrmaopera (id,origen,programa,sucursal,terminal,sector,fechasis;
+*!*	           ,idoperador,idvendedor,iddetanrocaja,idcomproba,numcomp,clasecomp;
+*!*	           ,turno,puestocaja,idcotizadolar,switch,estado,,detalle,fechaserver);
+*!*	    VALUES (lnidmaopera,'CAR','regcartera',goapp.sucursal,0,0,ldfechasis,0;
+*!*	            ,0,lniddetanrocaja,lnidcomproba,lcnumcomp,lcclasecomp,1,0;
+*!*	            ,0,lcswitch,'0',lcdetalle,DATETIME())
 	
 	
 	
 	
 	
-	ldfecha		= FechaHoraCero(CsrCartera.femision)
-	lnimporte   = CsrCartera.importe
+	ldfecha		= dtot(CTOD(CsrCartera.femision))
+	lnimporte   = VAL(CsrCartera.importe)
 	lnnrocheque	= VAL(CsrCartera.numero)
 	lcrecibido  = CsrCartera.cliente
 	lctitular   = CsrCartera.titular

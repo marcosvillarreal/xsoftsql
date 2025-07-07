@@ -1,0 +1,370 @@
+PARAMETERS ldvacio,lcpath,lcBase
+ldvacio = IIF(PCOUNT()<1,"",ldvacio)
+lcpath = IIF(PCOUNT()<2,"",lcpath)
+lcData = lcBase
+
+DO setup
+SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
+SET PROCEDURE  TO  syserror.prg ADDITIVE  
+
+SET SAFETY OFF
+
+SET CPCOMPILE TO 1252
+codepage = 1252
+SET CPDIALOG ON
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrLocalidad',lccmd)
+	RETURN .f.
+ENDIF 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT CsrCateCtacte.* FROM CateCtacte as CsrCatectacte
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrCateCtacte',lcCmd)
+	RETURN .f.
+ENDIF 
+TEXT TO lccmd TEXTMERGE NOSHOW 
+SELECT CsrCateIbRNg.* FROM CateIbRNg as CsrCateIbRNg
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrCateIbRNg',lccmd)
+	RETURN .f.
+ENDIF 
+
+
+Oavisar.proceso('S','Abriendo archivos') 
+llok = .t.
+llok = CargarTabla(lcData,'Ctacte',.t.)
+llok = CargarTabla(lcData,'Provincia')
+llok = CargarTabla(lcData,'CateIbRn',.t.)
+llok = CargarTabla(lcData,'TipoIva')
+llok = CargarTabla(lcData,'Barrio',.t.)
+llok = CargarTabla(lcData,'PlanCue')
+SET SAFETY ON
+Oavisar.proceso('S','Abriendo archivos') 
+
+
+USE  ALLTRIM(lcpath)+"\gestion\clientes" in 0 alias CsrDeudorViej EXCLUSIVE
+
+*!*	*!*	USE  ALLTRIM(lcpath)+"\gestion\proveed" in 0 alias CsrAcreedor EXCLUSIVE
+
+Oavisar.proceso('S','Procesando '+alias()) 
+SELECT * FROM CsrDeudorViej ORDER BY numero INTO CURSOR CsrDeudor
+
+lnid = RecuperarID('CsrCtacte',goapp.sucursal10)
+
+SELECT CsrDeudor
+Oavisar.proceso('S','Procesando '+alias()) 
+GO  TOP 
+SCAN 
+	STORE 0 TO lnidlocalidad,lnidprovincia,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,lnctalogistica
+	STORE 0 TO lnidcategoria,lnidcateibrng
+	STORE "" TO lccp
+	
+	SELECT CsrProvincia
+	LOCATE FOR numero = 22 &&RioNegro
+	lnidprovincia = CsrProvincia.id
+	
+	lcLocalidadBuscada = Ciudades(CsrDeudor.Localidad)
+	SELECT CsrLocalidad
+	LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcLocalidadBuscada)
+	IF FOUND()
+		lnidlocalidad = CsrLocalidad.id
+		lnidprovincia = CsrLocalidad.idprovincia
+		lccp = LTRIM(CsrLocalidad.cpostal)
+	ENDIF
+		
+	lnctadeudor = 1
+    lcNumero =  LTRIM(STR(20000+CsrDeudor.numero))
+    lcNombre = NombreNi(ALLTRIM(UPPER(CsrDeudor.nombre)))
+    lcDireccion	= UPPER(CsrDeudor.direccion)
+    lcTelefono	= CsrDeudor.telefono
+       
+	SELECT CsrCateCtacte
+	LOCATE FOR numero = CsrDeudor.categoria
+	IF FOUND()
+		lnidcategoria = CsrCateCtacte.id
+	ENDIF 
+	lnidcanalvta = lnidcategoria
+	
+	SELECT CsrDeudor
+	lntipoiva = tipocuit
+	IF lntipoiva=7
+		lntipoiva = 5
+	ENDIF 
+	IF lntipoiva=3
+		lncuit=''
+	ENDIF
+
+	lnidplanpago = CsrDeudor.tipo_pago
+	IF CsrDeudor.tipo_pago=0
+		lnidplanpago=1
+	ENDIF 
+	IF lnidplanpago>2 &&=3 remito 3ro
+		lnidplanpago = 10
+		lnctalogistica=1
+	ENDIF 
+	lnidplanpago =VAL("11"+strzero(lnidplanpago,8))
+		      
+	lcfefin	= DATETIME(1900,01,01,0,0,0)
+	lnlista = CsrDeudor.Lista
+	ldfechac = CsrDeudor.Fechaulcpr
+	ldfeculcompra = lcfefin
+	IF !EMPTY(ldfechac)
+		ldfecultcompra = DATETIME(YEAR(ldfechac),MONTH(ldfechac),DAY(ldfechac),0,0,0)
+	ENDIF 
+	ldfechap = CsrDeudor.Fechaulpag
+	ldfeculpago = lcfefin
+	IF !EMPTY(ldfechap)
+		ldfecultpago = DATETIME(YEAR(ldfechap),MONTH(ldfechap),DAY(ldfechap),0,0,0)
+	ENDIF 
+	
+	lcingbrutos = " "
+	lcingbrutosBA = CsrDeudor.ibrutos
+	lncomision = CsrDeudor.comision
+	lnconvenio = CsrDeudor.convenio
+	
+	SELECT CsrCateIbRNg
+	LOCATE FOR numero = CsrDeudor.cateibrn
+	IF FOUND()
+		lnidcateibrng = CsrCateIbRNg.id
+	ENDIF 
+	
+	IF CsrDeudor.provincia = "R"
+		lcingbrutos = CsrDeudor.ibrutos
+		lcingbrutosBA = " "
+	ENDIF 
+	
+	lccuit =STRTRAN(STRTRAN(CsrDeudor.cuit,".","-"),"*","-")
+	IF VAL(lccuit)=0
+		lindcateibrng=0
+	ENDIF 
+      
+	INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
+	,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+	,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+	,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
+	,totalizabonif,fechaafip,idsucursal);
+	VALUES (lnid,lcNumero,lcnombre,lcDireccion,lccp;
+	,lnidlocalidad,lnidprovincia,lctelefono,lntipoiva,lccuit,lnidcategoria,0,0;
+	,lnidplanpago,lnidcanalvta,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
+	,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago;
+	,lnconvenio,lnctalogistica,0,0,lcfefin,goapp.idsucursal)
+
+	SELECT CsrCateibrn
+	LOCATE FOR  idctacte = lnid
+	IF !FOUND() AND lnidcateibrng <> 0
+		lccuit =STRTRAN(CsrDeudor.cuit,"-","")
+		IF VAL(lccuit)<>0
+			lccuit=STRTRAN(lccuit,"-","")
+			INSERT INTO CsrCateibrn (cuit,idctacte,numero,porperce,porrete);
+			VALUES (lccuit,lnid,lnidcateibrng,CsrCateIbRNg.porperce,CsrCateibRng.porrete)
+		ENDIF 
+	ENDIF 
+	lnid = lnid + 1
+	          
+ENDSCAN
+
+*!*	SELECT CsrAcreedor
+*!*	Oavisar.proceso('S','Procesando '+alias()) 
+*!*	GO  TOP 
+*!*	SCAN 
+*!*			SELECT CsrCtacte
+*!*			LOCATE FOR cnumero=LTRIM(STR(10000+CsrAcreedor.numero))
+*!*			IF FOUND()
+*!*				SELECT  CsrAcreedor
+*!*				LOOP
+*!*			ENDIF
+*!*			SELECT CsrAcreedor
+*!*			lcLocalidadBuscada = CsrAcreedor.Localidad
+*!*			DO CASE
+*!*			CASE ALLTRIM( UPPER(lcLocalidadBuscada) )= "PARERA LP"
+*!*				lcnombre = "PARERA"
+*!*			CASE  ALLTRIM( UPPER(lcLocalidadBuscada)) = "LANUS OESTE"
+*!*				lcnombre = "LANUS"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada)) = "LA PAMPA"
+*!*				lcnombre = "SANTA ROSA"
+*!*			CASE  ALLTRIM( UPPER(lcLocalidadBuscada) )= "LA MERCED"
+*!*				lcnombre = "COLONIA LA MERCED"
+*!*			CASE  ALLTRIM( UPPER(lcLocalidadBuscada)) = "GRAL. DANIEL CERRI"
+*!*				lcnombre = "GENERAL DANIEL CERRI"
+*!*			CASE  ALLTRIM( UPPER(lcLocalidadBuscada)) = "GRAL. CERRI"
+*!*				lcnombre = "GENERAL CERRI"
+*!*			CASE  ALLTRIM( UPPER(lcLocalidadBuscada)) = "GRAL. RODRIGUEZ"
+*!*				lcnombre = "GENERAL RODIGUEZ"
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada)) = "GRAL. CONESA" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  = "GRAL. CONESAA" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  = "GRAL.CONESA"
+*!*				lcnombre = "GENERAL CONESA"
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  = "G.CHAVEZ"
+*!*				lcnombre = "GONALEZ CHAVES"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  = "FERREIRA"
+*!*				lcnombre = "FERREYRA"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  = "E. ECHEVERRIA"
+*!*				lcnombre = "BARRIO ESTEBAN ECHEVERRIA"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  = "CNEL. DORREGO"
+*!*				lcnombre = "CORONEL DORREGO"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  = "CATRILLO"
+*!*				lcnombre = "CATRILO"
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  = "CAP" .or. ALLTRIM(UPPER(lcLocalidadBuscada)) = "CIUDAD BS"
+*!*				lcnombre = "CIUDAD DE BUENOS AIRES"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  = "BERNAL OESTE"
+*!*				lcnombre = "BERNAL"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  = "BAL. LAS GRUTAS"
+*!*				lcnombre = "BALNEARIO LAS GRUTAS"
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  = "ARROYITO DULCE"
+*!*				lcnombre = "ARROYO DULCE"
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="B. BLANCA" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="BAHjA BLANCA"
+*!*				lcnombre = "BAHIA BLANCA"
+
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  = "SAN BLAS"
+*!*				lcnombre = "BAHIA SAN BLAS"
+
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  ="BALN. EL CONDOR" .OR.ALLTRIM(UPPER(lcLocalidadBuscada)) ="BRIO. EL CONDOR"
+*!*				lcnombre = "BALNEARIO EL CONDOR"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="B.EL CONDOR"  .OR. ALLTRIM(UPPER(lcLocalidadBuscada)) ="B. EL CONDOR"
+*!*				lcnombre = "BALNEARIO EL CONDOR"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada)) ="BUENOS AIRES" .OR.ALLTRIM(UPPER(lcLocalidadBuscada))  ="BS"
+*!*				lcnombre = "CIUDAD DE BUENOS AIRES"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="C. PATAGONES" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="C.PATAGONES"
+*!*				lcnombre = "CARMEN DE PATAGONES"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="CAPITAL FEDERALPATAGONES"
+*!*				lcnombre = "CARMEN DE PATAGONES"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="EL CONDOR"
+*!*				lcnombre = "BALNEARIO EL CONDOR"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="GDOR. GALVEZ"
+*!*				lcnombre = "GALVEZ"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="GUADIA MITRE"
+*!*				lcnombre = "GUARDIA MITRE"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="JOSE CASAS"
+*!*				lcnombre = "JOSE B. CASAS"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="PATAGONES" .OR.ALLTRIM(UPPER(lcLocalidadBuscada))  ="C. DE PATAGONES" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="C.  PATAGONES"
+*!*				lcnombre = "CARMEN DE PATAGONES"
+
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  ="SAN ANTONIO" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="SAN A " .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="SAN A." .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="S. A. O" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="SANANTONIO" 
+*!*				lcnombre = "SAN ANTONIO OESTE"
+
+*!*			CASE  ALLTRIM(UPPER(lcLocalidadBuscada))  ="STROEDER" .or. ALLTRIM(UPPER(lcLocalidadBuscada))  ="STREDER".OR.ALLTRIM(UPPER(lcLocalidadBuscada))  ="ESTROEDER"
+*!*				lcnombre = "EMPORIO STROEDER"
+
+*!*			CASE ALLTRIM(UPPER(lcLocalidadBuscada))  ="VIEMA" .OR. ALLTRIM(UPPER(lcLocalidadBuscada))  ="VEDMA"
+*!*				lcnombre = "VIEDMA"
+
+*!*			OTHERWISE
+*!*				lcnombre=ALLTRIM(UPPER(lcLocalidadBuscada)) 
+*!*			ENDCASE
+*!*			IF ASC(SUBSTR(lcLocalidadBuscada,4,1))=161
+*!*				lcnombre='BAHIA BLANCA'
+*!*			ENDIF 
+
+*!*			lnidlocalidad =	 VAL(str(11,2)+strzero(6,lntamloc))
+*!*			lnidprovincia =	 VAL(str(11,2)+strzero(2,lntamprov))
+*!*			lccp			 = ""
+*!*			SELECT CsrLocalidad
+*!*			LOCATE FOR ALLTRIM(nombre) = ALLTRIM(lcnombre)
+*!*			IF FOUND()
+*!*				lnidlocalidad = CsrLocalidad.id
+*!*				lnidprovincia = CsrLocalidad.idprovincia
+*!*				lccp = CsrLocalidad.cpostal
+*!*			ENDIF
+*!*			
+*!*			SELECT CsrAcreedor
+*!*			lntipoiva = tipocuit
+*!*			IF lntipoiva=7
+*!*				lntipoiva = 5
+*!*			ENDIF 
+*!*			IF lntipoiva=3
+*!*				lncuit=''
+*!*			ENDIF
+*!*			lnidcateibrng =VAL(str(Goapp.sucursal10+10,2)+strzero(4,8))
+*!*			
+*!*			lnidcategoria = 22
+*!*			SELECT CsrCateCtacte
+*!*			LOCATE FOR numero=lnidcategoria
+*!*			lnidcategoria = CsrCateCtacte.id
+*!*			SELECT CsrPlanCue
+*!*			LOCATE FOR cuenta = CsrAcreedor.cuenta
+*!*			IF FOUND() AND cuenta = CsrAcreedor.cuenta AND 'MERCAD'$nombre
+*!*				lnidcategoria = 21
+*!*				SELECT CsrCateCtacte
+*!*				LOCATE FOR numero=lnidcategoria
+*!*				lnidcategoria = CsrCateCtacte.id
+*!*			ENDIF
+
+*!*			lnidestado = 0
+*!*	        	lnctadeudor = 0
+*!*	        	lnctaacreedor=1
+*!*	        	lnctabanco = 0
+*!*	        	lnctaotro  = 0
+*!*	        	lnctalogistica = 0
+*!*			lcfefin       = DATETIME(1900,01,01,0,0,0)
+*!*			lnlista = 0
+*!*			ldfechac = CsrAcreedor.Fechaulcpr
+*!*			ldfeculcompra = lcfefin
+*!*			IF !EMPTY(ldfechac)
+*!*				ldfecultcompra = DATETIME(YEAR(ldfechac),MONTH(ldfechac),DAY(ldfechac),0,0,0)
+*!*			ENDIF 
+*!*			ldfechap = CsrAcreedor.Fechaulpag
+*!*			ldfeculpago = lcfefin
+*!*			IF !EMPTY(ldfechap)
+*!*				ldfecultpago = DATETIME(YEAR(ldfechap),MONTH(ldfechap),DAY(ldfechap),0,0,0)
+*!*			ENDIF 
+*!*			lcingbrutosBA = CsrAcreedor.ibrutos
+*!*			lcingbrutos = ""
+*!*			IF CsrAcreedor.provincia = "R"
+*!*				lcingbrutos = CsrAcreedor.ibrutos
+*!*				lcingbrutosBA = " "
+*!*			ENDIF 
+*!*			
+*!*			lncomision = 0
+*!*			lntotalizabonif = 0
+*!*	    	lnesrecodevol = 0
+*!*			*lnidcateibrng =VAL(STR(Goapp.sucursal10 + 10,2)+LTRIM(STR(4)))
+*!*			lcnombre = NombreNi(ALLTRIM(UPPER(CsrAcreedor.nombre))) 
+*!*	    		IF "MASTEL"$lcnombre OR "DANON"$lcnombre OR "NUTRIC"$lcnombre
+*!*	    			lntotalizabonif = 1
+*!*	    			lnesrecodevol = 1
+*!*	    		ENDIF    
+*!*		        INSERT INTO CsrCtacte (id,CNUMERO,CNOMBRE,CDIRECCION,CPOSTAL,IDLOCALIDAD,IDPROVINCIA,CTELEFONO;
+*!*		        ,TIPOIVA,CUIT,IDCATEGORIA,SALDO,SALDOANT,idplanpago,idcanalvta,estadocta,ctadeudor,ctaacreedor;
+*!*		        ,ctabanco,ctaotro,inscri01,fecins01,inscri02,inscri03,saldoauto,fechalta,idbarrio,lista;
+*!*		        ,idcateibrng,ingbrutos,comision,fecultcompra,fecultpago,convenio,ctalogistica,esrecodevol;
+*!*		        ,totalizabonif);
+*!*			VALUES (lnid,LTRIM(STR(10000+CsrAcreedor.numero)),lcnombre,CsrAcreedor.direccion,LTRIM(lccp);
+*!*			,lnidlocalidad,lnidprovincia,CsrAcreedor.telefono,lntipoiva,CsrAcreedor.cuit,lnidcategoria,0,0;
+*!*			,1100000002,1,lnidestado,lnctadeudor,lnctaacreedor,lnctabanco,lnctaotro,"",lcfefin,lcingbrutosBA;
+*!*			,"",0,lcfefin,0,lnlista,lnidcateibrng,lcingbrutos,lncomision,ldfecultcompra,ldfecultpago,0;
+*!*			,lnctalogistica,lnesrecodevol,lntotalizabonif)
+*!*			          
+*!*			SELECT CsrCateibrn
+*!*			LOCATE FOR  idctacte = lnid
+*!*			IF !FOUND() AND lnidcateibrng <> 0
+*!*				lccuit =STRTRAN(CsrAcreedor.cuit,"-","")
+*!*				IF VAL(lccuit)<>0
+*!*					lccuit=STRTRAN(lccuit,"-","")
+*!*					INSERT INTO CsrCateibrn (cuit,idctacte,numero,porperce,porrete);
+*!*					VALUES (lccuit,lnid,lnidcateibrng,CsrCateIbRNg.porperce,CsrCateIbRNg.porrete)
+*!*				ENDIF 
+*!*			ENDIF 
+*!*	         
+*!*			lnid = lnid + 1
+*!*	ENDSCAN
+
+Oavisar.proceso('N') 
+=MESSAGEBOX('Proceso terminado! ')
+
+CLOSE tables
+CLOSE INDEXES
+CLOSE DATABASES
+USE in CsrDeudorViej 
+*!*	USE in CsrAcreedor 
+
+

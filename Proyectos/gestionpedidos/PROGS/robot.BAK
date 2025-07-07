@@ -1,0 +1,12 @@
+CLEAR
+
+LOCAL oRobot
+
+oRobot = CREATEOBJECT('oRobotFacCAE')
+oRobot.PathOrigen = "C:\AFip\"
+oRobot.modoprueba = .t.
+oRobot.IniciarSeteos()
+oRobot.CicloBusqueda()
+
+
+RELEASE oRobot

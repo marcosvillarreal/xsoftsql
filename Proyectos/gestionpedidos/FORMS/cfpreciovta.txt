@@ -1,0 +1,36 @@
+* el interno es importe fijo
+
+LOCAL mprevta,mcosto,mprevtaciva,mivari
+mivari      = lObjprecio.ivari
+mcosto      = lObjprecio.costosiniva
+IF !this.lutisobreinterno			&& no aplica utilidad a interno
+	mcosto  = lObjprecio.costosiniva - lObjprecio.interno
+ENDIF 	
+IF !this.lutisobreflete			
+	mcosto = mcosto - Lobjprecio.totalflete
+ENDIF 
+IF mcosto#0
+   IF Lobjprecio.utilidad=0 AND this.lutilidad
+	  this.cfutilidad()
+   ENDIF 
+   mprevta = mcosto + red((mcosto * (Lobjprecio.utilidad/100)),this.decimales)
+   
+   IF this.lutisobreinterno	 && si aplica utilidad sobre interno, lo saco aqui para luego calcular iva
+	   mprevta = mprevta - lObjprecio.interno
+   ENDIF 
+ELSE
+   mprevta = lObjprecio.prevta - lObjprecio.interno  
+ENDIF    
+
+mprevtaciva = red(mprevta * (1+(mivari)/100),this.decimales)
+IF !this.lutisobreflete && aca cambio gabriel
+	mprevtaciva = red((mprevta + lObjprecio.flete)* (1+(mivari)/100),this.decimales)
+ENDIF
+
+lObjprecio.prevta     = mprevta + lObjprecio.interno
+lObjprecio.prevtaciva = mprevtaciva + lObjprecio.interno
+IF !this.lutisobreflete
+	lObjprecio.prevta     = lObjprecio.prevta + lObjprecio.flete && aca tamnbien gabriel
+ENDIF
+
+lObjprecio.utilidadpesos = red(lObjprecio.prevta - lObjprecio.costosiniva,this.decimales)

@@ -601,7 +601,7 @@ leiunarticulo = .f.
 ldebug = .f.
 
 SKIP 
-stop()
+*stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 12 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -647,15 +647,16 @@ DO WHILE NOT EOF()
 			lcLocalidad	= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcLocalidad)))
 			lcImporte		= UPPER((IIF(j + i=7,lcCadena,lcImporte)))	
 			lcafecta 		= UPPER((IIF(j + i=10,lcCadena,lcafecta )))	
+			lctitular  = UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lctitular  )))
 			lccuit		= UPPER((IIF(j + i=12,lcCadena,lccuit)))	
 				
 			lnSiguienteOcurrencia = lnPos + 1
 			i = i + 1
 			
-			IF VAL(lcCodigo)=945 and ldebug
-				stop()
-				ldebug = .f.
-			ENDIF 
+*!*				IF VAL(lcCodigo)=945 and ldebug
+*!*					stop()
+*!*					ldebug = .f.
+*!*				ENDIF 
 		
 		ENDDO 
 		lnSiguienteOcurrencia = 1
@@ -675,7 +676,12 @@ DO WHILE NOT EOF()
 		&&Esta diseñado para leer hasta los precios.
 		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
 		
-		INSERT INTO CsrDeudor (Fecha ,Numero ,femision ,Importe ;
+		IF VAL(lcafecta )<>0
+			SKIP IN CsrLista
+			LOOP 
+		ENDIF 
+		
+		INSERT INTO CsrCartera (Fecha ,Numero ,femision ,Importe ;
 			,cliente ,titular ,cuit ,banco ,afecta ;
 			,localidad ) ;
 		values (lcFecha ,lcNumero ,lcfemision ,lcImporte ;
