@@ -1,581 +1,3 @@
- Alias CSRVARIEDAD registro          1
-Control activo  REGPROCESO.INIT
-21-03-2016 15:01:26 , Error nº:         52
-Error No hay ninguna tabla abierta en el área de trabajo actual.
-Linea nº LOCATE FOR "VISTAP"$nombre
- Alias  registro          0
-Control activo  MAIN
-21-03-2016 15:02:02 , Error nº:         52
-Error No hay ninguna tabla abierta en el área de trabajo actual.
-Linea nº LOCATE FOR "VISTAP"$nombre
- Alias  registro          0
-Control activo  REGPROCESO.INIT
-21-03-2016 15:02:28 , Error nº:         52
-Error No hay ninguna tabla abierta en el área de trabajo actual.
-Linea nº LOCATE FOR "VISTAP"$nombre
- Alias  registro          0
-Control activo  REGPROCESO.INIT
-21-03-2016 15:03:22 , Error nº:         52
-Error No hay ninguna tabla abierta en el área de trabajo actual.
-Linea nº LOCATE FOR "VISTAP"$nombre
- Alias  registro          0
-Control activo  MAIN
-21-03-2016 15:04:27 , Error nº:          3
-Error El archivo ya está en uso.
-Linea nº LOCATE FOR "VISTAP"$nombre
- Alias  registro          0
-Control activo  REGPROCESO.INIT
-21-03-2016 15:04:58 , Error nº:       1925
-Error OROBOT es un miembro desconocido.
-Linea nº Thisform.oROBOT.Detener()
- Alias CSRPARAVARIO registro          1
-Control activo  REGPROCESO.OROBOT.OROBOT.DESTROY
-21-03-2016 15:26:39 , Error nº:          1
-Error El archivo 'csrprefijo.dbf' no existe.
-Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrprefijo.letra,' ') as letra,NVL(Csrprefijo.idimpresora,0) as idimpresora ,NVL(Csrimpresora.nombre,SPACE(40)) as nomimpresora ,NVL(Csrimpresora.tipo,0) as tipoimpresora,NVL(Csri
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rprefijo.id left join Csrimpresora on NVL(Csrprefijo.idimpresora,0) = Csrimpresora.id where Csrprefitermi.idterminal = CsrSeteoTermi.id INTO CURSOR FsrPrefitermi READWRITE
- Alias CSRSETEOTERMI registro          1
-Control activo  MAIN
-21-03-2016 15:30:08 , Error nº:          1
-Error El archivo 'csrprefijo.dbf' no existe.
-Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrprefijo.letra,' ') as letra,NVL(Csrprefijo.idimpresora,0) as idimpresora ,NVL(Csrimpresora.nombre,SPACE(40)) as nomimpresora ,NVL(Csrimpresora.tipo,0) as tipoimpresora,NVL(Csri
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rprefijo.id left join Csrimpresora on NVL(Csrprefijo.idimpresora,0) = Csrimpresora.id where Csrprefitermi.idterminal = CsrSeteoTermi.id INTO CURSOR FsrPrefitermi READWRITE
  Alias CSRSETEOTERMI registro          1
 Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
 21-03-2016 15:31:20 , Error nº:         12
@@ -766,12 +188,30 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
+
+
+
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2102,6 +1542,92 @@ Error Error loading file - record number 6.  txt_filtro <or one of its members>.
 Linea nº DO FORM filtros_grilla.scx TO Xfiltro WITH 'C',THIS.tabla,ALLTRIM(l_header.COMMENT),l_filtro_anterior
  Alias AUTO_FILTROS registro          2
 Control activo  MAIN
-08-07-2025 10:40:08 , Error nº:       1734Error Property IDZONA is not found.Linea nº goapp.idzona = 1 Alias USUARIOS registro          1Control activo  IDEJERCICIO
+08-07-2025 10:40:08 , Error nº:       1734
+Error Property IDZONA is not found.
+Linea nº goapp.idzona = 1
+ Alias USUARIOS registro          1
+Control activo  IDEJERCICIO
 08-07-2025 11:00:54 , Informe por excel
 08-07-2025 11:00:56 , Version 15.0
+08-07-2025 18:01:55 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_combos VALUES ('nomremito','estadorto.nomremito',1)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.LOAD
+08-07-2025 18:03:02 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_combos VALUES ('nomremito','estadorto.nomremito',1)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.LOAD
+08-07-2025 18:04:24 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_combos VALUES ('nomremito','estadorto.nomremito',1)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.LOAD
+08-07-2025 18:04:48 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_combos VALUES ('nomremito','estadorto.nomremito',1)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.LOAD
+08-07-2025 18:05:38 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_combos VALUES ('nomremito','estadorto.nomremito',1)
+ Alias GRILLA_COMBOS registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.LOAD
+08-07-2025 18:06:47 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_combos VALUES ('nomremito','estadorto.nomremito',1)
+ Alias GRILLA_COMBOS registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.LOAD
+08-07-2025 18:07:45 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'')
+ Alias GRILLA_COMBOS registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+08-07-2025 18:09:21 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'')
+ Alias GRILLA_COMBOS registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+08-07-2025 18:09:48 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'',NULL)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+08-07-2025 18:10:05 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'',.NULL.)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+08-07-2025 18:10:33 , Error nº:          9
+Error No coinciden los tipos de datos.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'',.f.)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+08-07-2025 18:11:17 , Error nº:       1732
+Error El tipo de datos no es válido para esta propiedad.
+Linea nº THIS.COLUMNS[i].header1.CAPTION = THIS.arma_caption(lcNombreHeader)
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+08-07-2025 18:53:35 , Informe por excel
+08-07-2025 18:54:03 , Version 16.0
+08-07-2025 19:20:46 , Informe por excel
+08-07-2025 19:20:47 , Version 16.0
+08-07-2025 19:25:13 , Informe por excel
+08-07-2025 19:25:14 , Version 16.0
+08-07-2025 19:28:16 , Informe por excel
+08-07-2025 19:28:18 , Version 16.0
+08-07-2025 19:31:18 , Informe por excel
+08-07-2025 19:31:19 , Version 16.0
+08-07-2025 19:33:21 , Informe por excel
+08-07-2025 19:33:22 , Version 16.0
+08-07-2025 19:34:11 , Informe por excel
+08-07-2025 19:34:12 , Version 16.0
+08-07-2025 19:35:41 , Informe por excel
+08-07-2025 19:35:42 , Version 16.0
+08-07-2025 19:41:25 , Informe por excel
+08-07-2025 19:41:26 , Version 16.0
+08-07-2025 19:42:04 , Informe por excel
+08-07-2025 19:42:06 , Version 16.0
+08-07-2025 19:46:42 , Informe por excel
+08-07-2025 19:46:44 , Version 16.0

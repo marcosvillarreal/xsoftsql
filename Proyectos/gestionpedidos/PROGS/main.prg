@@ -18,7 +18,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Gestion Pedidos"
-lcVersion = "01.00.00"
+lcVersion = "01.00.01"
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
