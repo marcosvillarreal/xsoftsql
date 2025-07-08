@@ -1,16 +1,3 @@
-21-03-2016 14:44:29 , Error nº:          1
-Error El archivo 'csrtipocbte.dbf' no existe.
-Linea nº SELECT CsrTipoCbte.*,CsrComprobante.cnombre,CsrComprobante.clase FROM CsrTipoCbte left join Csrcomprobante on CsrTipoCbte.tipocomp = CsrComprobante.id into cursor FsrTipoCbte READWRITE
- Alias CSRVARIEDAD registro          1
-Control activo  MAIN
-21-03-2016 14:44:59 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT('CsrParaVario')<>0
- Alias CSRCAEPARAM registro         10
-Control activo  REGPROCESO.INIT
-21-03-2016 14:57:41 , Error nº:          1
-Error El archivo 'csrtipocbte.dbf' no existe.
-Linea nº SELECT CsrTipoCbte.*,CsrComprobante.cnombre,CsrComprobante.clase FROM CsrTipoCbte left join Csrcomprobante on CsrTipoCbte.tipocomp = CsrComprobante.id into cursor FsrTipoCbte READWRITE
  Alias CSRVARIEDAD registro          1
 Control activo  REGPROCESO.INIT
 21-03-2016 15:01:26 , Error nº:         52
@@ -179,7 +166,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -451,7 +440,9 @@ Linea nº Select Csrprefitermi.*,NVL(Csrprefijo.prefijo,-1) as prefijo ,NVL(Csrpr
 
 
 
+
 mpresora.modelofis,0) as modelofis ,NVL(Csrimpresora.puerto,0) as puerto ,NVL(Csrimpresora.direccionip,SPACE(20)) as direccionip ,NVL(Csrimpresora.portname,SPACE(40)) as nompuerto from Csrprefitermi left join Csrprefijo on Csrprefitermi.idprefijonro = Cs
+
 
 
 
@@ -774,12 +765,14 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
 
 
 
@@ -2104,3 +2097,11 @@ Control activo  ACTUALIZARPEDANDROIDSQL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
 07/07/2025 20:35:12 , Version 16.0
 07/07/2025 20:35:22 , Informe por excel
 07/07/2025 20:35:23 , Version 16.0
+08/07/2025 09:57:52 , Error nº:       2005
+Error Error loading file - record number 6.  txt_filtro <or one of its members>.  Parent : Class library file 'j:\xsoftsql\proyectos\gestionpedidos\clase abm.vcx' is not found
+Linea nº DO FORM filtros_grilla.scx TO Xfiltro WITH 'C',THIS.tabla,ALLTRIM(l_header.COMMENT),l_filtro_anterior
+ Alias AUTO_FILTROS registro          2
+Control activo  MAIN
+08-07-2025 10:40:08 , Error nº:       1734Error Property IDZONA is not found.Linea nº goapp.idzona = 1 Alias USUARIOS registro          1Control activo  IDEJERCICIO
+08-07-2025 11:00:54 , Informe por excel
+08-07-2025 11:00:56 , Version 15.0

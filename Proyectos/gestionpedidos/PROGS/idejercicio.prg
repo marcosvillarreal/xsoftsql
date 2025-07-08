@@ -4,6 +4,7 @@ goapp.terminal = 6
 goapp.ejercicio = 5
 goapp.sucursal = 1
 goapp.idsucursal = 1100000001
+goapp.zona = 1
 OAVISAR.USUARIO('GOAPP.IDEJERCICIO = '+STR(GOAPP.IDEJERCICIO)+CHR(13);
 + 'GOAPP.IDUSUARIO = '+STR(GOAPP.IDUSUARIO)+CHR(13)+;
 'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13)+;
