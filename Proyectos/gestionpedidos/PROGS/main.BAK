@@ -8,6 +8,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 *
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
+CLEAR ALL
 
 set classlib to
 l='j:'
@@ -16,8 +17,8 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lctituloGestion = "Administrador PM"
-lcVersion = "01.02.05"
+lctituloGestion = "Gestion Pedidos"
+lcVersion = "01.00.00"
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
@@ -44,7 +45,7 @@ cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 _rutadatos  = ''
 
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\preventamobile\'
+   lcdd=L+'\xsoftsql\proyectos\gestionpedidos\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
@@ -253,7 +254,7 @@ IF TYPE('goApp')='O'
 	*LeerEjercicioPerfil()
 	
 	DO FORM frmmenupm
-	DO FORM regproceso
+	*DO FORM regproceso
 	   
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.

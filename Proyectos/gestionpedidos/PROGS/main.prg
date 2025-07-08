@@ -9,6 +9,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
 
+
 set classlib to
 l='j:'
 set talk off
