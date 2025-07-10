@@ -254,6 +254,7 @@ IF TYPE('goApp')='O'
 	*LeerEjercicioPerfil()
 	
 	DO FORM frmmenupm
+    DO Form	actualizarpedandroidsql
 	*DO FORM regproceso
 	   
 	_screen.visible=.t.	   

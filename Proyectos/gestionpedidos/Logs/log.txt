@@ -1,34 +1,3 @@
-Linea nº IF NOT CsrTipoCbte.clase$"A" &&Factura
- Alias CSRIMPCUE registro          1
-Control activo  REGPROCESO.OROBOT.OTIMER.TIMER
-03/24/16 10:59:22 , Error nº:       1732
-Error El tipo de datos no es válido para esta propiedad.
-Linea nº .TOP = .nTop
- Alias CSRPARACONFIG registro          1
-Control activo  PARACONFIG.INIT
-24-03-2016 10:59:56 , Error nº:         13
-Error No se encuentra el alias 'PARAVARIO'.
-Linea nº SELECT Paravario
- Alias CSRPARACONFIG registro          1
-Control activo  PARACONFIG.INIT
-24-03-2016 11:00:29 , Error nº:         13
-Error No se encuentra el alias 'CENTRORECEP'.
-Linea nº .lblSucursal.Caption	= "Sucursal "+CentroRecep.nombre
- Alias PARAVARIO registro         12
-Control activo  PARACONFIG.INIT
-06-04-2016 11:18:42 , Error nº:       1925
-Error LBLRUTA es un miembro desconocido.
-Linea nº This.LblRuta.Caption =  This.oRobot.Ruta
- Alias CSRPARAVARIO registro          4
-Control activo  MAIN
-06-04-2016 11:28:40 , Error nº:         13
-Error No se encuentra el alias 'FSRCABEZA'.
-Linea nº USE IN FsrCabeza
- Alias CSRCABEZA registro          1
-Control activo  MAIN
-06-04-2016 11:30:44 , Error nº:          1
-Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\0003\0008150.ca2' no existe.
-Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
  Alias CSRCABEZA registro          1
 Control activo  MAIN
 06-04-2016 11:32:25 , Error nº:          1
@@ -185,12 +154,18 @@ Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.co
 
 
 
+
+
+
 efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
  Alias CSRCABEIMP registro          1
 Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
 18-04-2016 15:46:14 , Error nº:       1806
 Error SQL: no se encuentra la columna 'ACTIVOCAE'.
 Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
+
+
+
 
 
 
@@ -1633,4 +1608,31 @@ Error Unknown member LBLAYUDA.
 Linea nº this.lccadenaayuda = this.lblayuda.Caption
  Alias GRILLA_STYLE registro          6
 Control activo  ACTUALIZARPEDANDROIDSQL.INIT
-10-07-2025 09:49:16 , Error nº:       1925Error Unknown member LBLAYUDA.Linea nº this.lblayuda.Caption = this.lblayuda.Caption + ' [ * ]=Actualiza Ninguno' Alias GRILLA_STYLE registro          6Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+10-07-2025 09:49:16 , Error nº:       1925
+Error Unknown member LBLAYUDA.
+Linea nº this.lblayuda.Caption = this.lblayuda.Caption + ' [ * ]=Actualiza Ninguno'
+ Alias GRILLA_STYLE registro          6
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+10-07-2025 13:03:07 , Error nº:          1
+Error File 'j:\xsoftsql\desarrollo\graficos\fpreview.bmp' does not exist.
+Linea nº IF lldesarrollo AND llchekform
+ Alias  registro          0
+Control activo  ON... 
+10-07-2025 13:24:58 , Error nº:         13
+Error Alias 'CSRSETEOTERMI' is not found.
+Linea nº i        = AT('\',Csrseteotermi.nombre)
+ Alias  registro          0
+Control activo  MAIN
+10-07-2025 13:32:57 , Error nº:       2005
+Error Error loading file - record number 6.  txt_filtro <or one of its members>.  Parent : Class library file 'j:\xsoftsql\proyectos\gestionpedidos\clase abm.vcx' is not found
+Linea nº DO FORM filtros_grilla.scx TO Xfiltro WITH 'C',THIS.tabla,ALLTRIM(l_header.COMMENT),l_filtro_anterior
+ Alias CSROPCION registro         17
+Control activo  MAIN
+10-07-2025 13:41:39 , Error nº:         13
+Error Alias 'CSRAUXMAOPERA' is not found.
+Linea nº this.controlsource=this.parent.controlsourcetxtid
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDIDOS.KITBUSCAOALTAENVENDEDOR.TXTID.INIT
+10-07-2025 13:41:57 , Error nº:         13Error Alias 'CSRUSUARIOS' is not found.Linea nº this.combo1.Value = "" Alias  registro          0Control activo  FRMFAVORITOS.INIT
+10-07-2025 13:51:47 , Informe por excel
+10-07-2025 13:51:49 , Version 15.0
