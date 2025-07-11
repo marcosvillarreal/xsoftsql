@@ -1,168 +1,6 @@
- Alias CSRCABEZA registro          1
-Control activo  MAIN
-06-04-2016 11:32:25 , Error nº:          1
-Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\0003\0008150.ca2' no existe.
-Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
- Alias CSRCABEZA registro          1
-Control activo  MAIN
-06-04-2016 11:39:20 , Error nº:          1
-Error El archivo 'c:\soft\bertin\gestion\pasaje\afip_fe\0003\0008150.ca2' no existe.
-Linea nº RENAME this.Pathorigen+cName+".CA2" TO this.Pathorigen+cName+".CA3"
- Alias CSRCABEZA registro          1
-Control activo  MAIN
-06-04-2016 12:10:23 , Error nº:         12
-Error No se encuentra la variable 'LLDESARROLLO'.
-Linea nº If lldesarrollo
- Alias CURPERFIL registro         18
-Control activo  FRMMENU1.TREEVIEW.DBLCLICK
-18-04-2016 15:45:27 , Error nº:       1806
-Error SQL: no se encuentra la columna 'CODAFIP'.
-Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobante on csrpr
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-efitermi.idcomproba = csrcomprobante.id left join TipoCbte as CsrAfipComp on CsrPrefijonro.letra = CsrAfipComp.letra and CsrComprobante.id = CsrAfipComp.tipocomp where csrprefijonro.activocae=1 INTO CURSOR CsrPrefijos READWRITE
- Alias CSRCABEIMP registro          1
-Control activo  PARACAE.CONTAINERENCABEZA.PFRAME1.PAGE2.ACEPTAR1.CLICK
-18-04-2016 15:46:14 , Error nº:       1806
-Error SQL: no se encuentra la columna 'ACTIVOCAE'.
-Linea nº select distinct CsrPrefijonro.*,CsrPrefitermi.idcomproba,CsrAfipComp.codigo as codafip from Prefijonro as csrprefijonro left join prefitermi as csrprefitermi on csrprefijonro.id = csrprefitermi.idprefijonro left join comprobante as csrcomprobant
 
 
 
@@ -1633,6 +1471,42 @@ Error Alias 'CSRAUXMAOPERA' is not found.
 Linea nº this.controlsource=this.parent.controlsourcetxtid
  Alias CSROPCION registro          1
 Control activo  ACTUALIZARPEDIDOS.KITBUSCAOALTAENVENDEDOR.TXTID.INIT
-10-07-2025 13:41:57 , Error nº:         13Error Alias 'CSRUSUARIOS' is not found.Linea nº this.combo1.Value = "" Alias  registro          0Control activo  FRMFAVORITOS.INIT
+10-07-2025 13:41:57 , Error nº:         13
+Error Alias 'CSRUSUARIOS' is not found.
+Linea nº this.combo1.Value = ""
+ Alias  registro          0
+Control activo  FRMFAVORITOS.INIT
 10-07-2025 13:51:47 , Informe por excel
 10-07-2025 13:51:49 , Version 15.0
+11-07-2025 16:33:10 , Error nº:       2005
+Error Error al cargar el archivo - número de registro 6. txt_filtro  <o uno de sus miembros>.  Parent : No se encuentra el archivo de biblioteca de clases 'j:\xsoftsql\proyectos\gestionpedidos\clase abm.vcx'
+Linea nº DO FORM filtros_grilla.scx TO Xfiltro WITH 'C',THIS.tabla,ALLTRIM(l_header.COMMENT),l_filtro_anterior
+ Alias CSROPCION registro          3
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 17:46:31 , Error nº:       1733
+Error No se encuentra la definición de clase FILTROS_GRILLA.
+Linea nº Xfiltro =createobject('filtros_grilla','C',THIS.tabla,ALLTRIM(l_header.COMMENT),l_filtro_anterior)
+ Alias AUTO_FILTROS registro          1
+Control activo ID ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 17:49:17 , Error nº:       1733
+Error No se encuentra la definición de clase FILTROS_GRILLA.
+Linea nº Xfiltro =createobject('filtros_grilla','C',THIS.tabla,ALLTRIM(l_header.COMMENT),l_filtro_anterior)
+ Alias AUTO_FILTROS registro          1
+Control activo ID ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 17:51:05 , Error nº:       1734
+Error No se encuentra la propiedad CURSOR_.
+Linea nº THIS.cursor_=p_cursor
+ Alias AUTO_FILTROS registro          1
+Control activo ID ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 17:52:26 , Error nº:       1734
+Error No se encuentra la propiedad CURSOR_.
+Linea nº THIS.cursor_=p_cursor
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 17:54:47 , Error nº:         11
+Error El valor, tipo o número de argumentos no es válido para la función.
+Linea nº IF NOT EMPTY(Xfiltro)
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 17:56:26 , Error nº:         11Error El valor, tipo o número de argumentos no es válido para la función.Linea nº IF NOT EMPTY(Xfiltro) Alias CSROPCION registro          1Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
+11-07-2025 18:22:37 , Error nº:         11Error El valor, tipo o número de argumentos no es válido para la función.Linea nº IF NOT EMPTY(Xfiltro) Alias CSROPCION registro          1Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.MENU_DESPLEGABLE
