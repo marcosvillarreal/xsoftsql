@@ -42,9 +42,24 @@ SELECT Csrcomprobante.* FROM comprobante as Csrcomprobante WHERE regisc=1 and cl
 ENDTEXT 
 =CrearCursorAdapter('CsrComprobante',lcCmd)
 
-lnidmaopera = RecuperarID('CsrMaopera',Goapp.sucursal10)
-lnidmovbcocar = RecuperarID('CsrMovBcocar',Goapp.sucursal10)
-lnidmovbcodeta= RecuperarID('CsrMovBcoDeta',Goapp.sucursal10)
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT MAX(id) as id FROM maopera 
+ENDTEXT 
+=CrearCursorAdapter('FsrID',lcCmd)
+lnidmaopera = FsrID.id + 1 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT MAX(id) as id FROM movbcocar 
+ENDTEXT 
+=CrearCursorAdapter('FsrID',lcCmd)
+lnidmovbcocar = FsrID.id + 1
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+SELECT MAX(id) as id FROM movbcodeta 
+ENDTEXT 
+=CrearCursorAdapter('FsrID',lcCmd)
+lnidmovbcodeta= FsrID.id + 1
+*lnidmaopera = RecuperarID('CsrMaopera',Goapp.sucursal10)
+*lnidmovbcocar = RecuperarID('CsrMovBcocar',Goapp.sucursal10)
+*lnidmovbcodeta= RecuperarID('CsrMovBcoDeta',Goapp.sucursal10)
 
 stop()
 SELECT CsrCartera
