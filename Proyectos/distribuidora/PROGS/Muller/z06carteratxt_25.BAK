@@ -87,7 +87,7 @@ SCAN FOR !EOF()
 	
 	
 	ldfecha		= dtot(CTOD(CsrCartera.femision))
-	lnimporte   = CsrCartera.importe
+	lnimporte   = VAL(CsrCartera.importe)
 	lnnrocheque	= VAL(CsrCartera.numero)
 	lcrecibido  = CsrCartera.cliente
 	lctitular   = CsrCartera.titular
