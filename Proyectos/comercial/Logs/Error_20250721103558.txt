@@ -1,0 +1,28 @@
+21-07-2025 10:35:58 , REGFACVTA.BOTONERACABEZA.CMDOPE.CLICK, Error: El archivo 'ctos.prg' no existe.;Linea : SELECT *, CAST(0 as numeric(16,2)) as debe, CAST(0 as numeric(16,2)) as haber ,0 as editado,SPACE(10) as cDespor,ctos(fecha) as o_fecha FROM CsrCursor ORDER BY o_fecha,id INTO CURSOR CsrEstadoCta READWRITE;Error :          1;Ultimo Alias Activo: ;Ultimo registro:          0 ;DBF: ;Ultimo Control activo: 
+21-07-2025 10:35:58 , Pila de llamadas
+21-07-2025 10:35:58 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+21-07-2025 10:35:59 , Objeto      : regfacvta.botoneracabeza.cmdope.click
+21-07-2025 10:35:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+21-07-2025 10:35:59 , Nº de Linea :         32
+21-07-2025 10:35:59 , En el Fuente: 	&cResponse
+21-07-2025 10:35:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+21-07-2025 10:35:59 , Objeto      : regfacvta.key_estadocta
+21-07-2025 10:35:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\regfacvta.sct
+21-07-2025 10:35:59 , Nº de Linea :         11
+21-07-2025 10:35:59 , En el Fuente: DO FORM pidoestadocta WITH loObjetoEstado name LobjForm linked
+21-07-2025 10:35:59 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoestadocta.sct
+21-07-2025 10:35:59 , Objeto      : pidoestadocta.init
+21-07-2025 10:35:59 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoestadocta.sct
+21-07-2025 10:36:00 , Nº de Linea :         24
+21-07-2025 10:36:00 , En el Fuente: 	RETURN .iniciarvariables()
+21-07-2025 10:36:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoestadocta.sct
+21-07-2025 10:36:00 , Objeto      : pidoestadocta.iniciarvariables
+21-07-2025 10:36:00 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoestadocta.sct
+21-07-2025 10:36:00 , Nº de Linea :          7
+21-07-2025 10:36:00 , En el Fuente: 	IF NOT .leermovimientos() 
+21-07-2025 10:36:00 , Programa    : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoestadocta.sct
+21-07-2025 10:36:00 , Objeto      : pidoestadocta.leermovimientos
+21-07-2025 10:36:01 , Base Objeto : j:\xsoftsql\proyectos\comercial\forms\ventas\pidoestadocta.sct
+21-07-2025 10:36:01 , Nº de Linea :         16
+21-07-2025 10:36:01 , En el Fuente: 	SELECT *, CAST(0 as numeric(16,2)) as debe, CAST(0 as numeric(16,2)) as haber 	,0 as editado,SPACE(10) as cDespor,ctos(fecha) as o_fecha	FROM CsrCursor ORDER BY o_fecha,id INTO CURSOR CsrEstadoCta READWRITE 
+21-07-2025 10:36:01 , Fin
