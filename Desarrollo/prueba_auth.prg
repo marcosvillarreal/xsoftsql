@@ -8,8 +8,8 @@ oGmail = CREATEOBJECT("GmailOAuth")
 
 * 2. Configurar credenciales de Google Cloud Console
 * (Necesitas crear un proyecto en Google Cloud Console y obtener estas credenciales)
-oGmail.ClientId = "428863134595-931enbonq1f3hcuho23p0jocr9p37jcp.apps.googleusercontent.com"
-oGmail.ClientSecret = "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"
+*oGmail.ClientId = "428863134595-931enbonq1f3hcuho23p0jocr9p37jcp.apps.googleusercontent.com"
+*oGmail.ClientSecret = "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"
 oGmail.RedirectUri = "http://localhost:8080"  && O la URI que hayas configurado
 
 * 3. Intentar cargar tokens guardados
