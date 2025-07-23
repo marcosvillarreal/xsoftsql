@@ -153,6 +153,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET CLASSLIB TO _environ.vcx ADDITIVE 
    
    SET PROCEDURE TO alertaelegante.prg ADDITIVE 
+   SET PROCEDURE TO GmailOAuth.prg ADDITIVE 
    
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 

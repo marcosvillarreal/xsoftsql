@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version 
+2.3.41
+	Aceleramos el proceso de patron cuando es por puesto de carga.
 2.3.39
 	CabeImpresion, por talonario (cambio estrucutra de la tabla)
 	abmcabeimpresion
