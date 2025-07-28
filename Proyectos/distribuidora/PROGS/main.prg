@@ -155,6 +155,13 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO alertaelegante.prg ADDITIVE 
    SET PROCEDURE TO GmailOAuth.prg ADDITIVE 
    
+   SET PROCEDURE  TO  EmailSenderDLL_MODULAR.prg ADDITIVE
+   SET PROCEDURE  TO  EmailLogging.prg ADDITIVE
+   SET PROCEDURE  TO  HTTPRequests.prg ADDITIVE
+   SET PROCEDURE  TO  SystemConfig.prg ADDITIVE
+   
+   
+   
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
 *clear all
@@ -175,7 +182,7 @@ loScriptVFP = CREATEOBJECT("Scripting.FileSystemObject")
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='pyro.ico'
+_Screen.icon='gmsmart.ico'
 _screen.picture= 'fondo51.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.

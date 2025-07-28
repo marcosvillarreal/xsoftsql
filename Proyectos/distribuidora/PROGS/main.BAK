@@ -23,7 +23,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lcVersion = "02.03.41"
+lcVersion = "02.03.42"
 
 lctituloGestion = "Gestion de Ventas"
 
@@ -154,6 +154,13 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    
    SET PROCEDURE TO alertaelegante.prg ADDITIVE 
    SET PROCEDURE TO GmailOAuth.prg ADDITIVE 
+   
+   SET PROCEDURE  TO  EmailSenderDLL_MODULAR.prg ADDITIVE
+   SET PROCEDURE  TO  EmailLogging.prg ADDITIVE
+   SET PROCEDURE  TO  HTTPRequests.prg ADDITIVE
+   SET PROCEDURE  TO  SystemConfig.prg ADDITIVE
+   
+   
    
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
