@@ -1,0 +1,422 @@
+* =========================================================================
+*                    PRUEBA DE CLASE EMAILSENDER.VCX
+*                      Test de Implementación OOP
+* =========================================================================
+*
+* DESCRIPCIÓN:
+*   Archivo de prueba para validar la clase EmailSender.vcx creada
+*   manualmente y probar el envío de emails usando arquitectura OOP
+*
+* USO:
+*   DO test_emailsender_vcx.prg
+*
+* UBICACIÓN ESPERADA DE LA CLASE:
+*   J:\xsoftai\Proyectos\email_sender\dist\EmailSenderDLL_Final\ejemplos\classes\EmailSender.vcx
+*
+* AUTOR: EmailSender Project Team
+* FECHA: 2025
+* =========================================================================
+
+* =========================================================================
+* CONFIGURACIÓN INICIAL
+* =========================================================================
+
+SET TALK OFF
+SET ECHO OFF
+CLEAR
+
+? "🚀 PRUEBA DE CLASE EMAILSENDER.VCX"
+? "=================================="
+? "Fecha: " + TTOC(DATETIME())
+? ""
+
+
+* =========================================================================
+* FUNCIÓN PRINCIPAL DE PRUEBA
+* =========================================================================
+
+FUNCTION TestEmailSenderVCX()
+    LOCAL oEmailSender, llResult
+    
+    TRY
+        ? "📦 PASO 1: Creando instancia de la clase EmailSender..."
+        
+        * Establecer librería de clases
+       * SET CLASSLIB TO classes\EmailSender.vcx ADDITIVE
+        
+       
+        * Crear instancia de la clase
+        oEmailSender = CREATEOBJECT("EmailSender")
+        
+        IF ISNULL(oEmailSender)
+            ? "❌ ERROR: No se pudo crear la instancia de EmailSender"
+            RETURN .F.
+        ENDIF
+        
+        ? "✅ Clase EmailSender creada exitosamente"
+        ? "   Versión: " + oEmailSender.cVersion
+        ? ""
+        
+        * Validar sistema
+        ? "🔍 PASO 2: Validando el sistema..."
+        llResult = ValidarSistemaOOP(oEmailSender)
+        
+        IF !llResult
+            ? "❌ La validación del sistema falló"
+            RETURN .F.
+        ENDIF
+        
+        ? ""
+        
+        * Probar envío de email
+        ? "📧 PASO 3: Probando envío de email..."
+        llResult = ProbarEnvioEmail(oEmailSender)
+        
+        ? ""
+        
+        * Mostrar estado final
+        ? "📊 PASO 4: Estado final del sistema..."
+        MostrarEstadoSistema(oEmailSender)
+        
+        ? ""
+        ? IIF(llResult, "🎉 PRUEBA COMPLETADA EXITOSAMENTE", "💥 PRUEBA FALLÓ")
+        
+        * Limpiar objeto
+        oEmailSender = .NULL.
+        
+        
+        
+    CATCH TO loError
+        ? "❌ ERROR CRÍTICO EN LA PRUEBA:"
+        ? "   Mensaje: " + loError.Message
+        ? "   Línea: " + TRANSFORM(loError.LineNo)
+        ? "   Procedimiento: " + loError.Procedure
+        
+        IF !ISNULL(oEmailSender)
+            oEmailSender = .NULL.
+        ENDIF
+        
+        llResult =  .F.
+    ENDTRY
+    
+    RETURN llResult
+ENDFUNC
+
+* =========================================================================
+* FUNCIÓN: VALIDAR SISTEMA OOP
+* =========================================================================
+
+FUNCTION ValidarSistemaOOP(oEmailSender)
+    LOCAL loValidacion, llResult
+    
+    TRY
+        * Llamar método de validación de la clase
+        loValidacion = oEmailSender.ValidarSistema()
+        
+        IF ISNULL(loValidacion)
+            ? "❌ Error: El método ValidarSistema() retornó NULL"
+            RETURN .F.
+        ENDIF
+        
+        * Mostrar resultados de validación
+        ? "   📋 Resultados de validación:"
+        ? "      Sistema OK: " + IIF(loValidacion.lSistemaOK, "✅ SÍ", "❌ NO")
+        ? "      Logging OK: " + IIF(loValidacion.lLoggingOK, "✅ SÍ", "❌ NO")
+        ? "      HTTP OK: " + IIF(loValidacion.lHTTPOK, "✅ SÍ", "❌ NO")
+        ? "      Config OK: " + IIF(loValidacion.lConfigOK, "✅ SÍ", "❌ NO")
+        ? "      Ejecutable OK: " + IIF(loValidacion.lEjecutableOK, "✅ SÍ", "❌ NO")
+        
+        IF !EMPTY(loValidacion.cUltimoError)
+            ? "      Último Error: " + loValidacion.cUltimoError
+        ENDIF
+        
+        stop()
+        * Determinar si la validación es exitosa
+        llResult = loValidacion.lSistemaOK AND loValidacion.lLoggingOK
+        
+        ? "   " + IIF(llResult, "✅ Validación EXITOSA", "❌ Validación FALLIDA")
+        
+       
+        
+    CATCH TO loError
+        ? "❌ Error en validación: " + loError.Message
+        llResult =  .F.
+    ENDTRY
+    
+     RETURN llResult
+ENDFUNC
+
+* =========================================================================
+* FUNCIÓN: PROBAR ENVÍO DE EMAIL
+* =========================================================================
+
+FUNCTION ProbarEnvioEmail(oEmailSender)
+    LOCAL lcEmail, lcAsunto, lcMensaje, lcResult, llSuccess
+    
+    TRY
+        * Datos de prueba
+        lcEmail = "test@ejemplo.com"
+        lcAsunto = "Prueba EmailSender VCX - " + TTOC(DATETIME())
+        lcMensaje = "Este es un email de prueba enviado usando la clase EmailSender.vcx creada manualmente."
+        
+        ? "   📋 Datos del email:"
+        ? "      Destinatario: " + lcEmail
+        ? "      Asunto: " + lcAsunto
+        ? "      Mensaje: " + LEFT(lcMensaje, 60) + "..."
+        ? ""
+        
+        ? "   📤 Enviando email usando método de la clase..."
+        
+        * Llamar método EnviarEmail de la clase
+        lcResult = oEmailSender.EnviarEmail(lcEmail, lcAsunto, lcMensaje, "gmail")
+        
+        ? "   📋 Respuesta del servidor:"
+        ? "      " + lcResult
+        ? ""
+        
+        * Analizar resultado
+        llSuccess = ('"success": true' $ lcResult)
+        
+        ? "   " + IIF(llSuccess, "🎉 EMAIL ENVIADO EXITOSAMENTE", "💥 ERROR EN EL ENVÍO")
+        
+        IF !llSuccess AND !EMPTY(oEmailSender.cLastError)
+            ? "   📋 Error específico: " + oEmailSender.cLastError
+        ENDIF
+        
+        
+        
+    CATCH TO loError
+        ? "❌ Error en envío de email: " + loError.Message
+        llSuccess =  .F.
+    ENDTRY
+    
+    RETURN llSuccess
+ENDFUNC
+
+* =========================================================================
+* FUNCIÓN: MOSTRAR ESTADO DEL SISTEMA
+* =========================================================================
+
+FUNCTION MostrarEstadoSistema(oEmailSender)
+    LOCAL lcEstado
+    
+    TRY
+        ? "📊 ESTADO COMPLETO DEL SISTEMA:"
+        ? "=============================="
+        
+        * Obtener estado del sistema usando método de la clase
+        lcEstado = oEmailSender.GetEstadoSistema()
+        
+        ? lcEstado
+        
+        * Información adicional si está disponible
+        IF TYPE("oEmailSender.oConfig") = "O" AND !ISNULL(oEmailSender.oConfig)
+            ? ""
+            ? "📋 CONFIGURACIÓN CARGADA:"
+            ? "========================="
+            
+            * Mostrar algunas configuraciones clave
+            IF TYPE("oEmailSender.oConfig.GetConfigValue") = "C"
+                ? "   Servidor: " + oEmailSender.oConfig.GetConfigValue("DLL_HOST", "N/A")
+                ? "   Puerto: " + TRANSFORM(oEmailSender.oConfig.GetConfigValue("DLL_PORT", 0))
+                ? "   OAuth Preferido: " + IIF(oEmailSender.oConfig.GetConfigValue("PREFER_OAUTH", .F.), "SÍ", "NO")
+                ? "   Logging: " + IIF(oEmailSender.oConfig.GetConfigValue("LOG_ENABLED", .F.), "HABILITADO", "DESHABILITADO")
+            ENDIF
+        ENDIF
+        
+    CATCH TO loError
+        ? "❌ Error mostrando estado: " + loError.Message
+    ENDTRY
+    
+ENDFUNC
+
+* =========================================================================
+* FUNCIÓN: PRUEBA INTERACTIVA
+* =========================================================================
+
+FUNCTION PruebaInteractiva()
+    LOCAL oEmailSender, lcEmail, lcAsunto, lcMensaje, lcResult
+    
+    ? "🖥️ MODO INTERACTIVO - ENVÍO PERSONALIZADO"
+    ? "========================================"
+    
+    TRY
+        * Crear instancia
+        SET CLASSLIB TO classes\EmailSender.vcx ADDITIVE
+        oEmailSender = CREATEOBJECT("EmailSender")
+        
+        IF ISNULL(oEmailSender)
+            ? "❌ Error creando clase EmailSender"
+            RETURN .F.
+        ENDIF
+        
+        * Solicitar datos al usuario
+        lcEmail = INPUT("📧 Ingrese email destinatario: ")
+        IF EMPTY(lcEmail)
+            lcEmail = "test@ejemplo.com"
+            ? "Usando email por defecto: " + lcEmail
+        ENDIF
+        
+        lcAsunto = INPUT("📝 Ingrese asunto (Enter para default): ")
+        IF EMPTY(lcAsunto)
+            lcAsunto = "Email desde EmailSender VCX - " + TTOC(DATETIME())
+        ENDIF
+        
+        lcMensaje = INPUT("💬 Ingrese mensaje (Enter para default): ")
+        IF EMPTY(lcMensaje)
+            lcMensaje = "Este email fue enviado usando la clase EmailSender.vcx en modo interactivo."
+        ENDIF
+        
+        ? ""
+        ? "📤 Enviando email personalizado..."
+        
+        * Enviar usando la clase
+        lcResult = oEmailSender.EnviarEmail(lcEmail, lcAsunto, lcMensaje)
+        
+        ? ""
+        ? "📋 RESULTADO:"
+        ? lcResult
+        
+        * Limpiar
+        oEmailSender = .NULL.
+        
+        llSuccess = .t.
+        RETURN .T.
+        
+    CATCH TO loError
+        ? "❌ Error en prueba interactiva: " + loError.Message
+        llSuccess  =  .F.
+    ENDTRY
+    
+    RETURN llSuccess 
+ENDFUNC
+
+* =========================================================================
+* MENÚ PRINCIPAL
+* =========================================================================
+
+FUNCTION MenuPrincipal()
+    LOCAL lnOpcion, llContinuar
+    
+    llContinuar = .T.
+    
+    DO WHILE llContinuar
+        CLEAR
+        ? "🧪 PROBADOR DE CLASE EMAILSENDER.VCX"
+        ? "===================================="
+        ? "1. 🚀 Ejecutar prueba automática completa"
+        ? "2. 🖥️ Modo interactivo (personalizar email)"
+        ? "3. 🔍 Solo validar sistema"
+        ? "4. 📊 Ver información de la clase"
+        ? "5. ❌ Salir"
+        ? ""
+        
+        lnOpcion = VAL(INPUT("Seleccione opción (1-5): "))
+        
+        ? ""
+        
+        DO CASE
+            CASE lnOpcion = 1
+                TestEmailSenderVCX()
+                
+            CASE lnOpcion = 2
+                PruebaInteractiva()
+                
+            CASE lnOpcion = 3
+                LOCAL oEmail
+                SET CLASSLIB TO classes\EmailSender.vcx ADDITIVE
+                oEmail = CREATEOBJECT("EmailSender")
+                IF !ISNULL(oEmail)
+                    ValidarSistemaOOP(oEmail)
+                    oEmail = .NULL.
+                ENDIF
+                
+            CASE lnOpcion = 4
+                MostrarInfoClase()
+                
+            CASE lnOpcion = 5
+                llContinuar = .F.
+                
+            OTHERWISE
+                ? "❌ Opción no válida (1-5)"
+        ENDCASE
+        
+        IF llContinuar
+            ? ""
+            ? "Presione Enter para continuar..."
+            INKEY(0)
+        ENDIF
+    ENDDO
+    
+ENDFUNC
+
+* =========================================================================
+* FUNCIÓN: MOSTRAR INFORMACIÓN DE LA CLASE
+* =========================================================================
+
+FUNCTION MostrarInfoClase()
+    LOCAL oEmailSender
+    
+    TRY
+        SET CLASSLIB TO classes\EmailSender.vcx ADDITIVE
+        oEmailSender = CREATEOBJECT("EmailSender")
+        
+        IF !ISNULL(oEmailSender)
+            ? "📋 INFORMACIÓN DE LA CLASE EMAILSENDER"
+            ? "====================================="
+            ? "Clase: " + oEmailSender.Name
+            ? "Versión: " + oEmailSender.cVersion
+            ? "Inicializada: " + IIF(oEmailSender.lInitialized, "✅ SÍ", "❌ NO")
+            ? "Servidor URL: " + oEmailSender.cServerURL
+            ? "Proveedor Default: " + oEmailSender.cDefaultProvider
+            ? "Debug Mode: " + IIF(oEmailSender.lDebugMode, "✅ ON", "❌ OFF")
+            
+            IF !EMPTY(oEmailSender.cLastError)
+                ? "Último Error: " + oEmailSender.cLastError
+            ENDIF
+            
+            oEmailSender = .NULL.
+        ELSE
+            ? "❌ No se pudo crear instancia de la clase"
+        ENDIF
+        
+    CATCH TO loError
+        ? "❌ Error mostrando información: " + loError.Message
+    ENDTRY
+    
+ENDFUNC
+
+* =========================================================================
+* EJECUCIÓN AUTOMÁTICA
+* =========================================================================
+
+* Verificar si se ejecuta directamente o desde menú
+IF UPPER(PROGRAM()) = UPPER("test_emailsender_vcx.prg")
+    ? "🎯 MODO DE EJECUCIÓN:"
+    ? "1 = Prueba automática"
+    ? "2 = Menú interactivo"
+    ? ""
+    
+    LOCAL lnModo
+    lnModo = VAL(INPUT("Seleccione modo (1-2): "))
+    
+    ? ""
+    
+    IF lnModo = 1
+        TestEmailSenderVCX()
+    ELSE
+        MenuPrincipal()
+    ENDIF
+ENDIF
+
+* =========================================================================
+* MENSAJE FINAL
+* =========================================================================
+
+? ""
+? "🧪 Probador de EmailSender.vcx finalizado"
+? "Para ejecutar manualmente:"
+? "• TestEmailSenderVCX() - Prueba automática"
+? "• PruebaInteractiva() - Modo interactivo"
+? "• MenuPrincipal() - Menú completo"
+? ""
