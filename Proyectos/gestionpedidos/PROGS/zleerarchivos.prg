@@ -186,18 +186,39 @@ cCadeCtacte = ""
 ldebug = .f.
 
 
+stop()
+
 SELECT CsrLista
 GO TOP 
 *vista()
-lnPrimeraOcurrencia = 10
+lnPrimeraOcurrencia = 0
 leiunarticulo = .f.
-
+i = 1
+lnSiguienteOcurrencia = 1
+&&Vamos a hacer dinamico y buscar la palabra SKU para saber el encabezado
+DO WHILE NOT EOF() AND lnPos<>999
+	lnpos = AT(lcDelimitador,CsrLista.deta01,i)
+	IF lnPos#0 &&No es fin de linea
+		lccadena = SUBSTR(CsrLista.deta01,lnSiguienteOcurrencia ,lnpos-(lnSiguienteOcurrencia ))
+		
+		IF lccadena='SKU'
+			lnPrimeraOcurrencia = lnSiguienteOcurrencia 
+			lnPos = 999
+		ELSE
+		lnSiguienteOcurrencia = lnPos + 1
+		
+	ENDIF 
+	i = i + 1 
+	IF lnpos=0
+		SKIP 
+	ENDIF 
+ENDDO 
 
 FOR i=1 TO 6
 	SKIP 
 ENDFOR
 
-*STOP()
+STOP()
 DO WHILE NOT EOF()
 	lnCantCampo = 10 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -236,11 +257,11 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcUniVenta))) &&Marca
-			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcRubro)))
-			lcSAP			= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcSAP)))
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1 + lnPrimeraOcurrencia  ,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3 + lnPrimeraOcurrencia ,lcCadena,lcNombre)))
+			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=4 + lnPrimeraOcurrencia ,lcCadena,lcUniVenta))) &&Marca
+			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=5 + lnPrimeraOcurrencia ,lcCadena,lcRubro)))
+			lcSAP			= UPPER(LimpiarCadena(IIF(j + i=9 + lnPrimeraOcurrencia ,lcCadena,lcSAP)))
 			IF VAL(lcCodigo)=945 and ldebug
 			*	stop()
 				ldebug = .f.
