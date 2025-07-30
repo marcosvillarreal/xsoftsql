@@ -34,7 +34,7 @@ replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
 DELETE FROM CsrLista WHERE LEFT(deta01,5)=REPLICATE(lcDelimitador,5)
 
-Oavisar.proceso('S','Procesando '+alias()) 
+Oavisar.proceso('S','Procesando '+lcArchivo) 
 
 cCadeCtacte = "" 
 
@@ -159,6 +159,8 @@ DO WHILE NOT EOF()
 	SKIP IN CsrLista
 ENDDO 
 
+Oavisar.proceso('N') 
+
 USE IN CsrLista
 
 ENDFUNC 
@@ -177,7 +179,7 @@ replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
 replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
 replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
-Oavisar.proceso('S','Procesando '+alias()) 
+Oavisar.proceso('S','Procesando '+lcArchivo) 
 
 cCadeCtacte = "" 
 
@@ -286,7 +288,7 @@ DO WHILE NOT EOF()
 *ENDSCAN 
 ENDDO 
 
-
+Oavisar.proceso('N') 
 
 USE IN CsrLista
 

@@ -46,8 +46,8 @@ lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
 ldebug = .f.
+ 
 
-SKIP 
 *stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 5 &&Hay un campo vacio
@@ -168,7 +168,7 @@ ENDFUNC
 FUNCTION LeerArticulos(lcArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),UniVenta c(1))
+CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),UniVenta c(1),SAP c(8))
 
 
 SELECT CsrLista
@@ -192,10 +192,14 @@ GO TOP
 lnPrimeraOcurrencia = 10
 leiunarticulo = .f.
 
-SKIP 
+
+FOR i=1 TO 6
+	SKIP 
+ENDFOR
+
 *STOP()
 DO WHILE NOT EOF()
-	lnCantCampo = 6 &&Hay un campo vacio
+	lnCantCampo = 10 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
 	lnCamposLeidos = 1 &&Campos de CsrLista
 	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
@@ -210,7 +214,9 @@ DO WHILE NOT EOF()
 		STORE "" TO lcAcarreo
 		STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcUniVenta
 		STORE "" TO lcCosto, lcLista1, lcLista2,lcIDJ ,lcUniBulto,lcCodRubro
-		STORE "" TO lcLista3,lcLista4,lcMarca,lcPesoKilos,lcMerma, lcMargen
+		STORE "" TO lcLista3,lcLista4,lcMarca,lcPesoKilos,lcMerma, lcMargen,lcSAP
+		
+		UniVenta = 'U'
 		j = 0
 *!*		ELSE
 *!*			IF !leiunarticulo
@@ -230,11 +236,11 @@ DO WHILE NOT EOF()
 				EXIT 
 			ENDIF
 			
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre)))
-			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcUniVenta))) &&Marca
-			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcRubro)))
-			
+			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
+			lcUniVenta		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcUniVenta))) &&Marca
+			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcRubro)))
+			lcSAP			= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcSAP)))
 			IF VAL(lcCodigo)=945 and ldebug
 			*	stop()
 				ldebug = .f.
@@ -277,8 +283,8 @@ DO WHILE NOT EOF()
 		*	LOOP 
 		*ENDIF 
 		lcCodigo = ALLTRIM(lcCodigo)
-		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,UniVenta);
-		values (lcCodigo,lcRubro,lcNombre,lcUniVenta)
+		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,UniVenta,SAP);
+		values (lcCodigo,lcRubro,lcNombre,lcUniVenta,lcSAP)
 				
 		*replace descripcion WITH lmDescripcion IN FsrArticulo
 		leiunarticulo = .f.
