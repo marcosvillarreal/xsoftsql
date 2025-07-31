@@ -789,6 +789,24 @@ lcCadena = STRTRAN(lcCadena,"'",'')
 lcCadena = STRTRAN(lcCadena,'.','')
 RETURN lcCadena
 *----------------------------------------------------------------
+FUNCTION QuitarComillasExternas
+LPARAMETERS tcCadena
+tcCadena = STRTRAN(tcCadena,'""','"')
+tcCadena = STRTRAN(tcCadena,"'",'')
+tcCadena = STRTRAN(tcCadena,'.','')
+
+* Verificamos si la cadena comienza y termina con comillas dobles.
+IF LEFT(tcCadena, 1) = '"' AND RIGHT(tcCadena, 1) = '"'
+    * Si la condición es verdadera, quitamos la primera y la última comilla.
+    * La función SUBSTR() extrae una porción de la cadena.
+    * Empezamos en el segundo carácter (2) y tomamos todos los caracteres hasta el penúltimo (LEN(tcCadena) - 2).
+    RETURN SUBSTR(tcCadena, 2, LEN(tcCadena) - 2)
+ELSE
+    * Si no empieza y termina con comillas, devolvemos la cadena original sin cambios.
+    RETURN tcCadena
+ENDIF
+
+ENDFUNC
 
 FUNCTION TrazaQuery
 PARAMETERS lcNameQueary,nTipo,tInicio
