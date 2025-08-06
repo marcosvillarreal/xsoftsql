@@ -2,7 +2,7 @@ LOCAL lcCmdConfig
 LOCAL nIdDeposito 
 
 TEXT TO lcCmdConfig TEXTMERGE NOSHOW 
-select praconfig.iddeposito from centrorecep
+select paraconfig.iddeposito from centrorecep
 inner join paraconfig on centrorecep.id = paraconfig.idcentrorecep
 where centrorecep.numero = <<goapp.sucursal>>
 ENDTEXT 
