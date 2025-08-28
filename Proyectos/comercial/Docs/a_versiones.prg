@@ -3,6 +3,9 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.52
+	Listado de vencimiento y consolidado, muestran f.vto
+	Facturador, al consultar carga correctamente el vencimiento
 2.1.51
 	AbmCtacte y PidoPrecio, flete fijo en $.
 	RegCtacte, muestra el ajuste diario

@@ -3,6 +3,17 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.51
+	AbmCtacte y PidoPrecio, flete fijo en $.
+	RegCtacte, muestra el ajuste diario
+	PidoEstadCta
+		*Reporte muestra observaciones
+		*Muestra saldo de ctacte
+		*Muestra Descuentos
+	FacVta, ParaVario_FacVta . Bloquar descuentos Gral
+	FacVta, impresion, muestra valores recibidos
+	ListaEstadoCta, muestra en rojo los saldos deudores
+	FacVta, muestra observaciobes
 2.1.50
 	Funciones en estadocta
 2.1.49
