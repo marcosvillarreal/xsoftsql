@@ -1,5 +1,10 @@
 FUNCTION ExportarDatosWeb
+
 cRuta = ADDBS(oConfigTermi.NetDriveGS1)
+cSep = ';'
+
+LOCAL loScript, loFile
+loScript = CREATEOBJECT("Scripting.FileSystemObject")
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 select p.numero,p.nombre,p.codalfaprov,isnull(c.cnombre,'GENERICO') as proveedor, m.nombre as marca,r.nombre as rubro,p.prevtaf2 as precio
@@ -34,7 +39,39 @@ and r.numero = 20
 ENDTEXT 
 
 =CrearCursorAdapter('CsrExp',lcCmd)
-CursorAdapterToXML('CsrExp',cRuta  + "WEB.xml")
+*CursorAdapterToXML('CsrExp',cRuta  + "WEB.xml")
+
+cFileName	= cRuta + "WEB.csv"
+IF FILE(cFileName)
+	DELETE FILE &cFileName
+ENDIF 
+*stop()
+loFile = loScript.CreateTextFile(cFileName,.T.)
+cLinea = "numero"+ cSep + "nombre"+ cSep + "codalfaprov"+ cSep + "proveedor"+ cSep + "marca" 
+cLinea = cLinea + cSep + "rubro"+ cSep + "precio"+ cSep + "familia"+ cSep + "stock"+ cSep + "descripcion"
+cLinea = cLinea + cSep + "comentario"+ cSep + "web"+ cSep + "observacion"
+
+loFile.Write(cLinea)
+loFile.WriteBlankLines(1)   && salto de línea
+
+SELECT CsrExp
+GO TOP 
+SCAN 
+	
+	cLinea = LTRIM(STR(CsrExp.numero,10))+ cSep + RTRIM(CsrExp.nombre)+ cSep + RTRIM(CsrExp.codalfaprov)+ cSep + RTRIM(CsrExp.proveedor) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.marca) + cSep + RTRIM(CsrExp.rubro) + cSep + LTRIM(STR(CsrExp.precio,16,2) )
+	cLinea = cLinea + cSep + RTRIM(CsrExp.familia)+ cSep + LTRIM(STR(CsrExp.stock,16,2)) + cSep + RTRIM(CsrExp.descripcion) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.comentario) + cSep + RTRIM(CsrExp.web) + cSep + RTRIM(CsrExp.observacion)
+
+	loFile.Write(cLinea)
+	loFile.WriteBlankLines(1)   && salto de línea
+
+
+ENDSCAN 
+
+
+
+
 USE IN CsrExp
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -55,7 +92,37 @@ and r.nolista =0 and ( r.numero in (12,13,19)
 or   f.numero  in ( 18))
 ENDTEXT 
 =CrearCursorAdapter('CsrExp',lcCmd)
-CursorAdapterToXML('CsrExp',cRuta  + "WEB_marca.xml")
+*CursorAdapterToXML('CsrExp',cRuta  + "WEB_marca.xml")
+
+cFileName	= cRuta + "WEB_marca.csv"
+IF FILE(cFileName)
+	DELETE FILE &cFileName
+ENDIF 
+
+loFile = loScript.CreateTextFile(cFileName,.T.)
+cLinea = "numero"+ cSep + "nombre"+ cSep + "codalfaprov"+ cSep + "proveedor"+ cSep + "marca" 
+cLinea = cLinea + cSep + "rubro"+ cSep + "precio"+ cSep + "familia"+ cSep + "stock"+ cSep + "descripcion"
+cLinea = cLinea + cSep + "comentario"+ cSep + "web"+ cSep + "observacion"
+
+loFile.Write(cLinea)
+loFile.WriteBlankLines(1)   && salto de línea
+
+SELECT CsrExp
+GO TOP 
+SCAN 
+	
+	cLinea = LTRIM(STR(CsrExp.numero,10))+ cSep + RTRIM(CsrExp.nombre)+ cSep + RTRIM(CsrExp.codalfaprov)+ cSep + RTRIM(CsrExp.proveedor) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.marca) + cSep + RTRIM(CsrExp.rubro) + cSep + LTRIM(STR(CsrExp.precio,16,2) )
+	cLinea = cLinea + cSep + RTRIM(CsrExp.familia)+ cSep + LTRIM(STR(CsrExp.stock,16,2)) + cSep + RTRIM(CsrExp.descripcion) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.comentario) + cSep + RTRIM(CsrExp.web) + cSep + RTRIM(CsrExp.observacion)
+
+	loFile.Write(cLinea)
+	loFile.WriteBlankLines(1)   && salto de línea
+
+
+ENDSCAN 
+
+
 USE IN CsrExp
 
 oavisar.usuario('Exportacion WEB Finalizado')

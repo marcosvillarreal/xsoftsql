@@ -1,6 +1,14 @@
+FUNCTION ExportarDatosWeb
+
+cRuta = ADDBS(oConfigTermi.NetDriveGS1)
+cSep = ';'
+
+LOCAL loScript, loFile
+loScript = CREATEOBJECT("Scripting.FileSystemObject")
+
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-select p.numero,p.nombre,p.codalfa as codalfaprov,isnull(c.cnombre,'GENERICO') as proveedor, m.nombre as marca,r.nombre as rubro,p.prevtaf2 as precio
-,f.nombre as familia,e.existe as stock
+select p.numero,p.nombre,p.codalfaprov,isnull(c.cnombre,'GENERICO') as proveedor, m.nombre as marca,r.nombre as rubro,p.prevtaf2 as precio
+,f.nombre as familia,ISNULL(e.existe ,0) as stock
 ,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='0'),'') as descripcion
 ,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='1'),'') as comentario
 ,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='2'),'') as web
@@ -11,10 +19,112 @@ left join marca as m on p.idmarca= m.id
 left join rubro as r on p.idrubro = r.id
 left join familia as f on p.idfamilia = f.id
 left join existenc as e on p.id = e.idarticulo
-where p.nolista = 0 and e.iddeposito = 1100000002
-and e.existe > 0 and r.nolista =0
+where p.nolista = 0 and ISNULL(e.iddeposito,1100000002) = 1100000002
+and r.nolista =0 and not r.numero in (12,13,19,20)
+union all
+select p.numero,p.nombre,p.codalfaprov,isnull(c.cnombre,'GENERICO') as proveedor, m.nombre as marca,f.nombre as rubro,p.prevtaf2 as precio
+,r.nombre as familia,ISNULL(e.existe,0) as stock
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='0'),'') as descripcion
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='1'),'') as comentario
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='2'),'') as web
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='3'),'') as observacion
+from producto as p
+left join ctacte as c on p.idctacte = c.id
+left join marca as m on p.idmarca= m.id
+left join rubro as r on p.idrubro = r.id
+left join familia as f on p.idfamilia = f.id
+left join existenc as e on p.id = e.idarticulo
+where p.nolista = 0 and ISNULL(e.iddeposito,1100000002) = 1100000002
+and r.numero = 20
+ENDTEXT 
+
+=CrearCursorAdapter('CsrExp',lcCmd)
+*CursorAdapterToXML('CsrExp',cRuta  + "WEB.xml")
+
+cFileName	= cRuta + "WEB.csv"
+IF FILE(cFileName)
+	DELETE FILE &cFileName
+ENDIF 
+*stop()
+loFile = loScript.CreateTextFile(cFileName,.T.)
+cLinea = "numero"+ cSep + "nombre"+ cSep + "codalfaprov"+ cSep + "proveedor"+ cSep + "marca" 
+cLinea = cLinea + cSep + "rubro"+ cSep + "precio"+ cSep + "familia"+ cSep + "stock"+ cSep + "descripcion"
+cLinea = cLinea + cSep + "comentario"+ cSep + "web"+ cSep + "observacion"
+
+loFile.Write(cLinea)
+loFile.WriteBlankLines(1)   && salto de línea
+
+SELECT CsrExp
+GO TOP 
+SCAN 
+	
+	cLinea = STR(CsrExp.numero,10)+ cSep + CsrExp.nombre+ cSep + CsrExp.codalfaprov+ cSep + CsrExp.proveedor 
+	cLinea = cLinea + cSep + CsrExp.marca + cSep + CsrExp.rubro+ cSep + STR(CsrExp.precio,16,2) 
+	cLinea = cLinea + cSep + CsrExp.familia+ cSep + STR(CsrExp.stock,16,2) + cSep + CsrExp.descripcion 
+	cLinea = cLinea + cSep + CsrExp.comentario + cSep + CsrExp.web + cSep + CsrExp.observacion
+
+	loFile.Write(cLinea)
+	loFile.WriteBlankLines(1)   && salto de línea
+
+
+ENDSCAN 
+
+
+
+
+USE IN CsrExp
+
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+select p.numero,p.nombre,p.codalfaprov,isnull(c.cnombre,'GENERICO') as proveedor, m.nombre as marca,r.nombre as rubro,p.prevtaf2 as precio
+,f.nombre as familia,ISNULL(e.existe ,0)as stock
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='0'),'') as descripcion
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='1'),'') as comentario
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='2'),'') as web
+,isnull((select top 1 descripcion from productodeta as pd where pd.idarticulo = p.id and  left(switch,1)='3'),'') as observacion
+from producto as p
+left join ctacte as c on p.idctacte = c.id
+left join marca as m on p.idmarca= m.id
+left join rubro as r on p.idrubro = r.id
+left join familia as f on p.idfamilia = f.id
+left join existenc as e on p.id = e.idarticulo
+where p.nolista = 0 and ISNULL(e.iddeposito,1100000002) = 1100000002
+and r.nolista =0 and ( r.numero in (12,13,19)
+or   f.numero  in ( 18))
 ENDTEXT 
 =CrearCursorAdapter('CsrExp',lcCmd)
-CursorAdapterToXML('CsrExp',"c:\archivo_web\WEB.xml")
+*CursorAdapterToXML('CsrExp',cRuta  + "WEB_marca.xml")
+
+cFileName	= cRuta + "WEB_marca.csv"
+IF FILE(cFileName)
+	DELETE FILE &cFileName
+ENDIF 
+
+loFile = loScript.CreateTextFile(cFileName,.T.)
+cLinea = "numero"+ cSep + "nombre"+ cSep + "codalfaprov"+ cSep + "proveedor"+ cSep + "marca" 
+cLinea = cLinea + cSep + "rubro"+ cSep + "precio"+ cSep + "familia"+ cSep + "stock"+ cSep + "descripcion"
+cLinea = cLinea + cSep + "comentario"+ cSep + "web"+ cSep + "observacion"
+
+loFile.Write(cLinea)
+loFile.WriteBlankLines(1)   && salto de línea
+
+SELECT CsrExp
+GO TOP 
+SCAN 
+	
+	cLinea = STR(CsrExp.numero,10) + cSep + CsrExp.nombre+ cSep + CsrExp.codalfaprov+ cSep + CsrExp.proveedor 
+	cLinea = cLinea + cSep + CsrExp.marca + cSep + CsrExp.rubro+ cSep + STR(CsrExp.precio,16,2) 
+	cLinea = cLinea + cSep + CsrExp.familia+ cSep + STR(CsrExp.stock,16,2) + cSep + CsrExp.descripcion 
+	cLinea = cLinea + cSep + CsrExp.comentario + cSep + CsrExp.web + cSep + CsrExp.observacion
+
+	loFile.Write(cLinea)
+	loFile.WriteBlankLines(1)   && salto de línea
+
+
+ENDSCAN 
+
+
 USE IN CsrExp
+
 oavisar.usuario('Exportacion WEB Finalizado')
+
+ENDFUNC 
