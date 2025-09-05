@@ -53,15 +53,21 @@ cFileName = ADDBS(SYS(5)+CURDIR())+'TempRecorrido.CSV'
 
 cFileNameO = ADDBS(SYS(5)+CURDIR())+'TempRecorrido_Optimizado.CSV'
 
+*cFileNameKML = ADDBS(SYS(5)+CURDIR())+'TempRecorrido_Optimizado.KML'
 *!*	oM.ArmarArchivoRecorrido('CsrDire',cFileName)
 
 oavisar.proceso('A','Optimizando')
 
-IF oM.EjecutarOptimizador(cFileName,cFileNameO)
+*IF oM.EjecutarOptimizador(cFileName,cFileNameO)
 
 	oavisar.proceso('A','Archivo Google')
 
-	oM.FormatoGMaps(cFileNameO,'Oficina',DATE())
+	*oM.FormatoGMaps(cFileNameO,'Oficina',DATE())
+	
+	stop()
+	
+	oM.Tema = oM.ElegirTemaKML()
+	
 	cArchivoKML = oM.GenerarKMLConRuta(cFileNameO , 'Oficina', DATE())
 	
 	IF NOT EMPTY(cArchivoKML)
@@ -75,7 +81,7 @@ IF oM.EjecutarOptimizador(cFileName,cFileNameO)
         RETURN .T.
     ENDIF
         
-ENDIF 
+*ENDIF 
 
 oavisar.proceso('N')
 

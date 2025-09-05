@@ -65,6 +65,9 @@ oavisar.proceso('A','Optimizando')
 	*oM.FormatoGMaps(cFileNameO,'Oficina',DATE())
 	
 	stop()
+	
+	 = oM.ElegirTemaKML()
+	
 	cArchivoKML = oM.GenerarKMLConRuta(cFileNameO , 'Oficina', DATE())
 	
 	IF NOT EMPTY(cArchivoKML)
