@@ -24,7 +24,7 @@ left join canalvta as cn on ctacte.idcanalvta = cn.id
 left join localidad as lo on ctacte.idlocalidad = lo.id
 inner join producto as p on cu.idarticulo = p.id
 left join subproducto as sp on cv.idsubarti = sp.id
-where m.estado=0 and ca.fecha between '20250201' and '20250228' 
+where m.estado=0 and ca.fecha between '20250801' and '20250831' 
 and p.idctacte in (1100001480,1100001481)
 and (cu.escambio = 0 or p.espromocion = 0)
 and M.claseCOMP in ('A','B','C')

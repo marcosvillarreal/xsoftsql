@@ -17,13 +17,13 @@
 </head>
 	<body>
 		<div id = 'map'></div>
-		<div id="Coordenada"></div>
+		<div id="Coordenada">Click para buscar direccion</div>
 		
 		<script>
 			var map = L.map('map').
-			 setView([-38.70204,-62.2770911],
+			 setView([-38.709144,-62.282856],
 			 15);
-			Coordenada.innerHTML = -38.70204,-62.2770911;
+			Coordenada.innerHTML = 'LatLng(-38.709144,-62.282856)';
          	
            				var greenIcon = new L.Icon({
 			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -119,30 +119,16 @@
 			
 			
 			
-											
+				
 	
-	L.marker([-38.70204,-62.2770911] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'272     '} ).bindPopup('272,PEREZ JAILLITA FELICIDAD,,02-07-2025 09:47:26,                 , Demora:').addTo(map);
-	
-	L.marker([-38.722034,-62.2468251] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'2445    '} ).bindPopup('2445,NUÑEZ ROSA,,02-07-2025 12:06:45,                 , Demora:0002:19:18').addTo(map);
-	
-	L.marker([-38.722034,-62.2468251] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'1559    '} ).bindPopup('1559,TAPIA IVAN ALEXIS,,02-07-2025 17:36:39,                 , Demora:').addTo(map);
-	
-	L.marker([-38.722034,-62.2468251] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'2679    '} ).bindPopup('2679,FUENTES BERTA SILVANA,,02-07-2025 18:41:14,                 , Demora:0001:04:35').addTo(map);
-	
-	L.marker([-38.7228448,-62.2464822] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'        '} ).bindPopup(',,,02-07-2025 20:22:02,                 , Demora:0001:40:48').addTo(map);
-	
-	L.marker([-38.7228448,-62.2464822] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'2734    '} ).bindPopup('2734,GOMEZ DA SILVA MARCOS RAMON AN,,02-07-2025 20:22:38,                 , Demora:0000:00:35').addTo(map);
-	
-	L.marker([-38.7228448,-62.2464822] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'2518    '} ).bindPopup('2518,ALARCON TORRES ALICIA MARIA,,02-07-2025 20:23:42,                 , Demora:0000:01:03').addTo(map);
-	
-	L.marker([-38.7228448,-62.2464822] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'1525    '} ).bindPopup('1525,JODURCHA SANDRA  FABIANA,,02-07-2025 20:25:54,                 , Demora:0000:02:11').addTo(map);
+	L.marker([-38.709144,-62.282856] ,{icon: greenIcon} ,{draggable: 'true'},{alt:'1'} ).bindPopup('VIEYTES 1270, BAHIA BLANCA, BUENOS AIRES').addTo(map);
 			
 			var popup = L.popup();
 
 			function onMapClick(e) {
 				popup
 					.setLatLng(e.latlng)
-					.setContent("You clicked the map at " + e.latlng.toString())
+					.setContent("Usted cliqueo en el mapa la posicion " + e.latlng.toString())
 					.openOn(map);
 					Coordenada.innerHTML = e.latlng;
 			}
