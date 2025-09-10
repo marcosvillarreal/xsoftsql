@@ -90,7 +90,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO proc_importar.prg ADDITIVE 
    *SET PROCEDURE TO Tablas.prg ADDITIVE 
      SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
-   SET PROCEDURE TO zLeerArchivos.prg ADDITIVE 
+   *SET PROCEDURE TO zLeerArchivos.prg ADDITIVE 
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 

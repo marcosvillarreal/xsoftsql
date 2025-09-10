@@ -1,100 +1,3 @@
-Linea nº IF LEN(str(cDocumento,15))=0 &&No vienen nada en el campo, chequeamos el campo cuit
- Alias CSRIMPUESTO registro          2
-Control activo  MAIN
-02-08-2016 11:54:36 , Error nº:         12
-Error No se encuentra la variable 'DOCUMENTO'.
-Linea nº IF len(Documento)<11
- Alias CSRIMPUESTO registro          2
-Control activo  MAIN
-18-10-2018 09:57:35 , Error nº:         13
-Error No se encuentra el alias 'CSRPARACONFIG'.
-Linea nº lntipocaja = VAL(Csrparaconfig.tipocaja)
- Alias CSRPARADIARIO registro          1
-Control activo  MAIN
-18-10-2018 10:11:21 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT('CsrCabeImp')=0
- Alias CSRCENTRORECEP registro          1
-Control activo  MAIN
-18-10-2018 10:11:29 , Error nº:       1967
-Error El entorno de datos ya está descargado.
-Linea nº DO FORM &lcForm
- Alias CURPERFIL registro         10
-Control activo  MAIN
-18-10-2018 10:18:59 , Error nº:         13
-Error No se encuentra el alias.
-Linea nº IF RECCOUNT('CsrCabeImp')=0
- Alias CSRCENTRORECEP registro          1
-Control activo  MAIN
-18-10-2018 10:19:08 , Error nº:       1967
-Error El entorno de datos ya está descargado.
-Linea nº DO FORM &lcForm
- Alias CURPERFIL registro         10
-Control activo  MAIN
-10/18/18 10:30:22 , Error nº:          1
-Error El archivo 'c:\xsoftsql\proyectos\robotcae\datos\datos.dbc' no existe.
-Linea nº open database (lcDBC)
- Alias CSRCABEIMP registro          1
-Control activo  ABMCABEIMP.DATAENVIRONMENT.CABEIMP.INIT
-10/18/18 10:31:53 , Error nº:          1
-Error El archivo 'c:\xsoftsql\proyectos\robotcae\datos\datos.dbc' no existe.
-Linea nº open database (lcDBC)
- Alias CSRCABEIMP registro          1
-Control activo  MAIN
-10/18/18 10:32:36 , Error nº:       1732
-Error El tipo de datos no es válido para esta propiedad.
-Linea nº .TOP = .nTop
- Alias CSRCABEIMP registro          1
-Control activo  MAIN
-18-10-2018 11:03:25 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº thisform.Move(thisform.Left+MCOL(thisform.Name,3)-nXCoord,thisform.Top + MROW(thisform.Name,3) - nYCoord)
- Alias CURPERFIL registro          1
-Control activo  MAIN
-18-10-2018 11:08:24 , Error nº:         13
-Error No se encuentra el alias 'IMPRESORA'.
-Linea nº .ADDPROPERTY( '_nOriginalHeight', .HEIGHT )
- Alias _SETEOTERMI registro          1
-Control activo  MAIN
-18-10-2018 11:14:47 , Error nº:       1586
-Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
-Linea nº =tablerevert(.t.,this.calias)
- Alias PREFIJONRO registro         17
-Control activo  MAIN
-18-10-2018 11:14:56 , Error nº:       1586
-Error La función requiere el modo de almacenamiento en búfer de filas o tablas.
-Linea nº =tablerevert(.t.,this.calias)
- Alias PREFIJONRO registro         17
-Control activo  ABMPREFIJOS.CMDCANCELAR.CLICK
-18-10-2018 11:43:58 , Error nº:       1734
-Error No se encuentra la propiedad CONSIGNA.
-Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-18-10-2018 11:48:00 , Error nº:       1734
-Error No se encuentra la propiedad CONSIGNA.
-Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-18-10-2018 11:48:33 , Error nº:       1734
-Error No se encuentra la propiedad CONSIGNA.
-Linea nº OscCuerpo.detanombre	= OscCuerpo.consigna
- Alias FSRCUERPO registro          1
-Control activo  MAIN
-18-10-2018 11:48:46 , Error nº:         12
-Error No se encuentra la variable 'LLDESARROLLO'.
-Linea nº If lldesarrollo
- Alias CURPERFIL registro         16
-Control activo  FRMMENU1.TREEVIEW.DBLCLICK
-18-10-2018 11:48:50 , Error nº:         12
-Error No se encuentra la variable 'LLDESARROLLO'.
-Linea nº If lldesarrollo
- Alias CURPERFIL registro         17
-Control activo  FRMMENU1.TREEVIEW.DBLCLICK
-18-10-2018 11:48:53 , Error nº:         12
-Error No se encuentra la variable 'LLDESARROLLO'.
-Linea nº If lldesarrollo
- Alias CURPERFIL registro         17
 Control activo  FRMMENU1.TREEVIEW.DBLCLICK
 18-10-2018 11:50:07 , Error nº:       1734
 Error No se encuentra la propiedad CONSIGNA.
@@ -1385,7 +1288,88 @@ Linea nº this.bttnArticulos.Visible = .t.
 Control activo  REGPROCESO.CMDVERIFICAR.BTN.CLICK
 31-07-2025 11:56:16 , Informe por excel
 31-07-2025 11:56:17 , Version 15.0
-07-08-2025 12:32:46 , Error nº:       1925Error Unknown member CMDOK.Linea nº ThisForm.cmdok.SetFocus() Alias USUARIOS registro          1Control activo  MAIN
+07-08-2025 12:32:46 , Error nº:       1925
+Error Unknown member CMDOK.
+Linea nº ThisForm.cmdok.SetFocus()
+ Alias USUARIOS registro          1
+Control activo  MAIN
 10-09-2025 10:51:24 , Informe por excel
 10-09-2025 10:51:29 , Version 15.0
-10-09-2025 10:58:14 , Error nº:       1981Error Compile error in file j:\xsoftsql\proyectos\gestionpedidos\gestionpm.app.Linea nº IF lldesarrollo AND llchekform Alias  registro          0Control activo  ON... 
+10-09-2025 10:58:14 , Error nº:       1981
+Error Compile error in file j:\xsoftsql\proyectos\gestionpedidos\gestionpm.app.
+Linea nº IF lldesarrollo AND llchekform
+ Alias  registro          0
+Control activo  ON... 
+10-09-2025 14:52:24 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\gestionpedidos\actualizarpedandroidsql.scx' no existe.
+Linea nº DO Form	actualizarpedandroidsql
+ Alias CSRPOPS registro          1
+Control activo  MAIN
+10-09-2025 14:55:07 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\gestionpedidos\actualizarpedandroidsql2.scx' no existe.
+Linea nº DO FORM &lcForm
+ Alias CURPERFIL registro         10
+Control activo  MAIN
+10-09-2025 14:56:38 , Error nº:          1
+Error El archivo 'j:\xsoftsql\proyectos\gestionpedidos\actualizarpedandroidsql2.scx' no existe.
+Linea nº DO FORM &lcForm
+ Alias CURPERFIL registro         10
+Control activo  MAIN
+10-09-2025 15:09:22 , Error nº:         13
+Error No se encuentra el alias 'USUARIOS'.
+Linea nº SELECT Usuarios
+ Alias CSREMPRESA registro          1
+Control activo  FRMLOGIN.CMDOK.CLICK
+10-09-2025 15:09:56 , Error nº:         13
+Error No se encuentra el alias 'USUARIOS'.
+Linea nº SELECT Usuarios
+ Alias CSREMPRESA registro          1
+Control activo  FRMLOGIN.LOAD
+10-09-2025 15:11:29 , Error nº:         12
+Error No se encuentra la variable 'IDPERFIL'.
+Linea nº goapp.perfilusuario=usuarios.idperfil
+ Alias USUARIOS registro          1
+Control activo  FRMLOGIN.CMDOK.CLICK
+10-09-2025 15:21:20 , Error nº:         13
+Error No se encuentra el alias 'USUARIOSTEMP'.
+Linea nº goapp.perfilusuario=UsuariosTemp.idperfil
+ Alias ZONAS registro          1
+Control activo  FRMLOGIN.CMDOK.CLICK
+10-09-2025 15:35:50 , Error nº:       1734
+Error No se encuentra la propiedad DYNAMICBACKCOLOR.
+Linea nº this.SetAll('DynamicBackColor','IIF(estadorto.id = 1,RGB(255,0,0),'+lcBackColor+')','ComboBox')
+ Alias INICIAL registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+10-09-2025 15:39:51 , Error nº:       1734
+Error No se encuentra la propiedad DYNAMICBACKCOLOR.
+Linea nº this.SetAll('DynamicBackColor','IIF(estadorto.id = 1,RGB(255,0,0),'+lcBackColor+')','ComboBox')
+ Alias INICIAL registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+10-09-2025 15:43:00 , Error nº:       1925
+Error COLUMN10 es un miembro desconocido.
+Linea nº This.Column10.DynamicBackColor = 'IIF(estadorto.id = 1,RGB(255,0,0),'+lcBackColor+')'
+ Alias INICIAL registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+10-09-2025 15:47:26 , Error nº:       1230
+Error Hay demasiados argumentos.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'Estado',.t.,'IIF(estadorto.id = 1,RGB(255,0,0),'+lcBackColor+')')
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+10-09-2025 15:48:07 , Error nº:         94
+Error Debe especificar parámetros adicionales.
+Linea nº INSERT INTO grilla_style VALUES ('id',60,'Nº Pedido',.t.)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+10-09-2025 15:48:46 , Error nº:         12
+Error No se encuentra la variable 'LCBACKCOLOR'.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'Estado',.t.,'IIF(estadorto.id = 1,RGB(255,0,0),'+lcBackColor+')')
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+10-09-2025 15:52:30 , Informe por excel
+10-09-2025 15:52:55 , Version 16.0
+10-09-2025 15:53:24 , Error nº:         13
+Error No se encuentra el alias 'CSRAUXHOJA'.
+Linea nº USE IN CsrAuxHoja
+ Alias  registro          0
+Control activo  ACTUALIZARPEDANDROIDSQL.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK
+10-09-2025 15:56:41 , Error nº:       1925Error COLUMN9 es un miembro desconocido.Linea nº This.Column9.DynamicBackColor = 'IIF(estadorto.id = 1,RGB(255,0,0),'+lcBackColor+')' Alias INICIAL registro          1Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT

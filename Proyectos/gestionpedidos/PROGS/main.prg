@@ -255,13 +255,15 @@ IF TYPE('goApp')='O'
 
 	*LeerEjercicioPerfil()
 	
+	_screen.visible=.t.	   
+	_screen.lockscreen=.f.
+
+
 	DO FORM frmmenupm
     DO Form	actualizarpedandroidsql
 	*DO FORM regproceso
 	   
-	_screen.visible=.t.	   
-	_screen.lockscreen=.f.
-
+	
 	Read events   
 ENDIF
 
