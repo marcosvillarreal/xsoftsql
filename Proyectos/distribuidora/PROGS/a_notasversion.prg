@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version 
+2.3.43
+	Lote de Creditos
 2.3.42
 	Genera Android, solo un cliente x ruta para el mismo dia
 	AbmCtaCtePub, avisar si la catergoria rio negro esta cargada

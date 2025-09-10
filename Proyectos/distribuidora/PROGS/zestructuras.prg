@@ -106,6 +106,8 @@
 *!*								MBCO = movbcocar (REG.BANCO)
 *!*								MCAR = movbcocar (REG.CARTERA)
 *!*								MOCT = movctacte 
+*!*								MASI = movctacte (asientos/impuestos)
+			
 
 *!*	 RENMAOPE.switch	         1	0= cobranza cta cte anterior   1= rendicion de valores 2=operaciones afectadas en la rendicion (fac / rem)
 *!*						2	0 = facturas 1 = recibos cobro

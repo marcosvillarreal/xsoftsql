@@ -1,442 +1,9 @@
-Control activo  RESCTACTE.GRID2.COLUMN10.COMMAND1.CLICK
-14-08-2024 17:25:28 , Verificando OCX
-14-08-2024 17:29:25 , Error nº:       1734
-Error No se encuentra la propiedad ALIASINFORME.
-Linea nº if !empty(thisform.aliasinforme)
- Alias CSRVERCOMP registro         15
-Control activo  REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK
-14-08-2024 17:31:18 , Error nº:         13
-Error No se encuentra el alias 'CSRIMPRIMIR'.
-Linea nº Sele(lcaliasinforme)
- Alias CSRVERCOMP registro         15
-Control activo  REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK
-14-08-2024 17:33:09 , Error nº:       1734
-Error No se encuentra la propiedad CERRARINFORME.
-Linea nº thisform.CerrarInforme()
- Alias CSRVERCOMP registro          1
-Control activo  REGCTACTE_V2.GRID2.COLUMN7.COMMAND1.CLICK
-16-08-2024 19:21:40 , Verificando OCX
-20-08-2024 18:46:10 , Verificando OCX
-20-08-2024 18:47:00 , Error nº:         11
-Error El valor, tipo o número de argumentos no es válido para la función.
-Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca ,idarticulo,INT(VAL(codigo)) as codigo,articulo,idin
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,SUM(unidades) as unidades,SUM(vtakilos) as vtakilos ,SUM(costosiva) as costosiva,sum(importefinal-costosiva-promocion-bonisiva-devolsiva) as ganancia ,CAST(0 as n(11,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2)) as margen,sum(round(importefinal,2)) as neto ,SUM(Bonisiva) as Bonif, SUM(Devolsiva) as Devol,SUM(promocion) as promocion ,SUM(importefinal - costosiva) as utilidad,LEFT(DTOS(cTOD(fecha)),6) as periodo ,CAST(0 as n(11,2)) as margenutil ,sum(round(tot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-alng-promocion,2)) as importefinal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos
 
 
 
@@ -723,6 +290,13 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
  Alias CSRDATOS registro        263
 Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
@@ -870,7 +444,21 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
+
+
+
+
+
 
 
 
@@ -1148,7 +736,21 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
+
+
+
+
+
 
 
 
@@ -1424,7 +1026,21 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
+
+
+
+
+
 
 
 
@@ -1706,7 +1322,21 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
+
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
+
+
+
+
+
 
 
 
@@ -2166,6 +1796,13 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2271,12 +1908,26 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
+
+
+
+
 
 
 
@@ -2492,6 +2143,13 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
+
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2499,6 +2157,13 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
+
+
+
+
 
 
 
@@ -3220,10 +2885,31 @@ Error El archivo 'numeric.prg' no existe.
 Linea nº SELECT CsrCuerfac.*,0000000.00 as stock,prearti as total,CAST(0 as n(12,0)) as idcuerfac,prearti as desctoCiva ,prearti as DesctoSiva,CAST(0 as n(12,0)) as registro,CAST(0 as int) as idfuerzavta,' ' as alcohol ,' ' as codvalido,CAST(0 as n(12,0)
 
 
+
+
+
+
+
+
+
 ) as idcabeunifica,CAST(0 as int) as idprodpromo ,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,prearti as InternoFin ,CAST(0 as int) as idctavta,prearti as UniCiva,prearti as UniSiva,prearti as IvaUni ,prearti as UniCiva
 
 
+
+
+
+
+
+
+
 2,prearti as UniSiva2,prearti as IvaUni2,CAST(0 as int) as idenvase ,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos , 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden ,0 a
+
+
+
+
+
+
+
 
 
 s bloquearprod,numeric(20,0) as codBuscar FROM CsrCuerfac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCuerfac READWRITE
@@ -3247,3 +2933,55 @@ Control activo CODBUSCAR REGFACVTA.CONTAINERENCABEZA._TXTPARADA.LOSTFOCUS
 10-07-2025 11:40:34 , Verificando OCX
 10-07-2025 11:41:32 , Informe por excel
 10-07-2025 11:42:05 , Version 16.0
+05-08-2025 12:20:43 , Verificando OCX
+05-08-2025 15:38:33 , Verificando OCX
+07-08-2025 11:45:58 , Verificando OCX
+07-08-2025 11:46:49 , Genero archivo Codigo Barra
+07-08-2025 11:46:53 , Genero codigo QR
+07-08-2025 11:47:19 , Genero archivo Codigo Barra
+07-08-2025 11:47:22 , Genero codigo QR
+07-08-2025 11:47:37 , Genero archivo Codigo Barra
+07-08-2025 11:47:40 , Genero codigo QR
+07-08-2025 15:13:02 , Verificando OCX
+07-08-2025 19:07:07 , Verificando OCX
+08-08-2025 09:23:27 , Verificando OCX
+27-08-2025 16:05:57 , Verificando OCX
+27-08-2025 16:15:32 , Error nº:       1113
+Error El archivo no está abierto.
+Linea nº ...
+ Alias  registro          0
+Control activo  ON... 
+27-08-2025 16:15:38 , Error nº:       1113
+Error El archivo no está abierto.
+Linea nº ...
+ Alias  registro          0
+Control activo  ON... 
+27-08-2025 16:16:29 , Verificando OCX
+27-08-2025 16:17:28 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS.LOAD
+27-08-2025 16:19:51 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS.LOAD
+27-08-2025 16:20:33 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS.LOAD
+27-08-2025 16:38:59 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS_PROV.LOAD
+27-08-2025 16:39:11 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS_PROV.LOAD
+27-08-2025 16:39:28 , Error nº:          1Error El archivo 'csrproducto.dbf' no existe.Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE Alias  registro          0Control activo  REGDESCUENTOS_PROV.LOAD
+27-08-2025 16:39:57 , Verificando OCX
+01-09-2025 10:12:26 , Verificando OCX

@@ -155,11 +155,11 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO alertaelegante.prg ADDITIVE 
    SET PROCEDURE TO GmailOAuth.prg ADDITIVE 
    
-   SET PROCEDURE  TO  EmailSenderDLL_MODULAR.prg ADDITIVE
-   SET PROCEDURE  TO  EmailLogging.prg ADDITIVE
-   SET PROCEDURE  TO  HTTPRequests.prg ADDITIVE
-   SET PROCEDURE  TO  SystemConfig.prg ADDITIVE
-   
+   *SET PROCEDURE  TO  EmailSenderDLL_MODULAR.prg ADDITIVE
+   **SET PROCEDURE  TO  EmailLogging.prg ADDITIVE
+   *SET PROCEDURE  TO  HTTPRequests.prg ADDITIVE
+   *SET PROCEDURE  TO  SystemConfig.prg ADDITIVE
+   SET CLASSLIB TO emailsender.vcx ADDITIVE 
    
    
    PUBLIC FOXHELPFILE 
