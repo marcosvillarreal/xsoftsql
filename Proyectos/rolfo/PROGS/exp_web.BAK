@@ -58,10 +58,10 @@ SELECT CsrExp
 GO TOP 
 SCAN 
 	
-	cLinea = STR(CsrExp.numero,10)+ cSep + CsrExp.nombre+ cSep + CsrExp.codalfaprov+ cSep + CsrExp.proveedor 
-	cLinea = cLinea + cSep + CsrExp.marca + cSep + CsrExp.rubro+ cSep + STR(CsrExp.precio,16,2) 
-	cLinea = cLinea + cSep + CsrExp.familia+ cSep + STR(CsrExp.stock,16,2) + cSep + CsrExp.descripcion 
-	cLinea = cLinea + cSep + CsrExp.comentario + cSep + CsrExp.web + cSep + CsrExp.observacion
+	cLinea = LTRIM(STR(CsrExp.numero,10))+ cSep + RTRIM(CsrExp.nombre)+ cSep + RTRIM(CsrExp.codalfaprov)+ cSep + RTRIM(CsrExp.proveedor) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.marca) + cSep + RTRIM(CsrExp.rubro) + cSep + LTRIM(STR(CsrExp.precio,16,2) )
+	cLinea = cLinea + cSep + RTRIM(CsrExp.familia)+ cSep + LTRIM(STR(CsrExp.stock,16,2)) + cSep + RTRIM(CsrExp.descripcion) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.comentario) + cSep + RTRIM(CsrExp.web) + cSep + RTRIM(CsrExp.observacion)
 
 	loFile.Write(cLinea)
 	loFile.WriteBlankLines(1)   && salto de línea
@@ -111,10 +111,10 @@ SELECT CsrExp
 GO TOP 
 SCAN 
 	
-	cLinea = STR(CsrExp.numero,10) + cSep + CsrExp.nombre+ cSep + CsrExp.codalfaprov+ cSep + CsrExp.proveedor 
-	cLinea = cLinea + cSep + CsrExp.marca + cSep + CsrExp.rubro+ cSep + STR(CsrExp.precio,16,2) 
-	cLinea = cLinea + cSep + CsrExp.familia+ cSep + STR(CsrExp.stock,16,2) + cSep + CsrExp.descripcion 
-	cLinea = cLinea + cSep + CsrExp.comentario + cSep + CsrExp.web + cSep + CsrExp.observacion
+	cLinea = LTRIM(STR(CsrExp.numero,10))+ cSep + RTRIM(CsrExp.nombre)+ cSep + RTRIM(CsrExp.codalfaprov)+ cSep + RTRIM(CsrExp.proveedor) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.marca) + cSep + RTRIM(CsrExp.rubro) + cSep + LTRIM(STR(CsrExp.precio,16,2) )
+	cLinea = cLinea + cSep + RTRIM(CsrExp.familia)+ cSep + LTRIM(STR(CsrExp.stock,16,2)) + cSep + RTRIM(CsrExp.descripcion) 
+	cLinea = cLinea + cSep + RTRIM(CsrExp.comentario) + cSep + RTRIM(CsrExp.web) + cSep + RTRIM(CsrExp.observacion)
 
 	loFile.Write(cLinea)
 	loFile.WriteBlankLines(1)   && salto de línea
