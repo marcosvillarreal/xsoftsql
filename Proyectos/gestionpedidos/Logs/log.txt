@@ -1,43 +1,3 @@
-18-10-2018 12:19:27 , Error nº:          1
-Error El archivo 'j:\robotcae\pasaje\afip_fe\fa000001.cu0' no existe.
-Linea nº USE &cArchivoCue IN 0 ALIAS FsrCuerpo EXCLUSIVE
- Alias CSRCUERPO registro          1
-Control activo  MAIN
-18-10-2018 12:30:04 , Error nº:       1734
-Error No se encuentra la propiedad ARCHIVO.
-Linea nº IF ".CA0"$oCabeCAE.archivo
- Alias CSRIMPUESTO registro          3
-Control activo  MAIN
-18-10-2018 12:42:11 , Error nº:       1734
-Error No se encuentra la propiedad MERCADERIA.
-Linea nº replace mercaderia WITH OscCabefac.mercaderia, nomvendedor WITH OscCabefac.corredor ,detalle WITH OscCabefac.detalle IN CsrCabeDeta
- Alias CSRCABEDETA registro          1
-Control activo  MAIN
-30-03-2020 17:31:18 , Error nº:       1734
-Error No se encuentra la propiedad PRODUCCION.
-Linea nº this.produccion = .f.
- Alias CSRPARAMETROCAE registro          3
-Control activo  MAIN
-30-03-2020 18:08:41 , Error nº:         13
-Error No se encuentra el alias 'CSRPARAVARIO'.
-Linea nº SELECT CsrParaVario
- Alias PARAVARIO registro          3
-Control activo  REGPROCESO.INIT
-30-03-2020 18:10:11 , Error nº:       1923
-Error No se encuentra el objeto OVISAR.
-Linea nº ovisar.usuario('Click_Imagen')
- Alias PARAVARIO registro          3
-Control activo  REGPROCESO.CONTAINER1.IMAGE2.CLICK
-04/03/20 19:59:08 , Error nº:       1732
-Error El tipo de datos no es válido para esta propiedad.
-Linea nº .TOP = .nTop
- Alias PARAVARIO registro          1
-Control activo  REGPROCESO.INIT
-04/03/20 19:59:23 , Error nº:       1732
-Error El tipo de datos no es válido para esta propiedad.
-Linea nº .TOP = .nTop
- Alias PARAVARIO registro          1
-Control activo  REGPROCESO.INIT
 04/03/20 20:00:10 , Error nº:       1732
 Error El tipo de datos no es válido para esta propiedad.
 Linea nº .TOP = .nTop
@@ -1371,4 +1331,39 @@ Error No se encuentra el alias 'ZONAS'.
 Linea nº SELECT Zonas
  Alias USUARIOS registro          1
 Control activo  MAIN
-11-09-2025 08:18:43 , Error nº:         13Error No se encuentra el alias 'ZONAS'.Linea nº SELECT Zonas Alias USUARIOS registro          1Control activo  FRMLOGIN.CMDOK.CLICK
+11-09-2025 08:18:43 , Error nº:         13
+Error No se encuentra el alias 'ZONAS'.
+Linea nº SELECT Zonas
+ Alias USUARIOS registro          1
+Control activo  FRMLOGIN.CMDOK.CLICK
+12-09-2025 11:11:19 , Error nº:        107
+Error Operator/operand type mismatch.
+Linea nº lcDynamicColor = 'IIF(csropcion.remito = 2,RGB(255,0,0),'+ 'IIF( CsrOpcion.remito = 1 ,RGB(0,255,0), '+RGB(0,0,0)+')'+ ')'
+ Alias CSROPCION registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.INIT
+12-09-2025 11:11:31 , Error nº:        107
+Error Operator/operand type mismatch.
+Linea nº lcDynamicColor = 'IIF(csropcion.remito = 2,RGB(255,0,0),'+ 'IIF( CsrOpcion.remito = 1 ,RGB(0,255,0), '+RGB(0,0,0)+')'+ ')'
+ Alias CSROPCION registro          1
+Control activo  MAIN
+12-09-2025 11:30:38 , Error nº:       1238
+Error No PARAMETER statement is found.
+Linea nº IF This.ColumnCount > 1
+ Alias INICIAL registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+12-09-2025 12:23:11 , Error nº:         94
+Error Must specify additional parameters.
+Linea nº INSERT INTO grilla_style VALUES ('id',60,'Nº Pedido',.t.)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+12-09-2025 12:23:14 , Error nº:         94
+Error Must specify additional parameters.
+Linea nº INSERT INTO grilla_style VALUES ('nomremito',150,'Estado',.t.)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+12-09-2025 12:23:37 , Error nº:         94
+Error Must specify additional parameters.
+Linea nº INSERT INTO grilla_style VALUES ('id',60,'Nº Pedido',.t.)
+ Alias GRILLA_STYLE registro          1
+Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
+12-09-2025 12:25:49 , Error nº:       1230Error Too many arguments.Linea nº INSERT INTO grilla_style VALUES ('solped',50,'SOLPED',.t.,.t.,.f.) Alias GRILLA_STYLE registro          8Control activo  ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.INIT
