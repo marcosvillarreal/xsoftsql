@@ -1,25 +1,3 @@
-Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
-06-04-2020 16:55:24 , Error nº:         96
-Error Error de anidamiento.
-Linea nº ENDSCAN
- Alias CONEXION registro          2
-Control activo  ABMCFCONFIG.CMDSALVAR.CLICK
-06-04-2020 17:00:49 , Error nº:         13
-Error No se encuentra el alias 'CONEXION'.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias CFCONFIG2 registro          1
-Control activo  ABMCFCONFIG.INIT
-06-04-2020 17:00:54 , Error nº:       1967
-Error El entorno de datos ya está descargado.
-Linea nº CASE VARTYPE(&lcclaB)='C'
- Alias CONEXION registro          2
-Control activo  ON... 
-06-04-2020 17:27:58 , Error nº:         12
-Error No se encuentra la variable 'FECHAHORA'.
-Linea nº replace fechahora WITH DATETIME(), detalle WITH sTraza
- Alias PARAVARIO registro          3
-Control activo  REGPROCESO.BTTNNOENTER1.CLICK
-06-04-2020 17:28:41 , Error nº:         12
 Error No se encuentra la variable 'FECHAHORA'.
 Linea nº replace fechahora WITH TTOC(DATETIME()) , detalle WITH sTraza
  Alias PARAVARIO registro          3
@@ -1334,4 +1312,24 @@ Error Data type is invalid for this property.
 Linea nº .LEFT =.nLeft
  Alias PERFILES registro          1
 Control activo  MAIN
-13-09-2025 12:48:44 , Error nº:         10Error Syntax error.Linea nº lvValorCampo = EVALUATE(lcAlias + "." + lcNombreCampo) Alias CSROPCION registro          1Control activo  MAIN
+13-09-2025 12:48:44 , Error nº:         10
+Error Syntax error.
+Linea nº lvValorCampo = EVALUATE(lcAlias + "." + lcNombreCampo)
+ Alias CSROPCION registro          1
+Control activo  MAIN
+13-09-2025 14:28:48 , Error nº:       1923
+Error Object CSROPCION is not found.
+Linea nº lnid       = &lcnomcampo
+ Alias CSROPCION registro          1
+Control activo ID ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.BEFOREROWCOLCHANGE
+13-09-2025 14:34:20 , Error nº:       1734
+Error Property CONTROLSOURCE is not found.
+Linea nº this.valoresviejos(this.controlsource)
+ Alias CSROPCION registro          1
+Control activo ID ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.BEFOREROWCOLCHANGE
+13-09-2025 14:36:58 , Error nº:       1923
+Error Object _OCSROPCION is not found.
+Linea nº MESSAGEBOX(&lcOldVal,48,"" )
+ Alias CSROPCION registro          1
+Control activo SOLPED ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.BEFOREROWCOLCHANGE
+13-09-2025 14:40:20 , Error nº:         12Error Variable '_OCSROPCION' is not found.Linea nº IF USED(&lcOldVar) Alias CSROPCION registro          1Control activo SOLPED ACTUALIZARPEDANDROIDSQL.GRILLAORDEN1.TEXTBOX_VALUECHANGE
