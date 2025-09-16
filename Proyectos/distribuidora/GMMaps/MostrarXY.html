@@ -5,12 +5,13 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
 	
 	
-	
+		<link rel="stylesheet" href="dist/css/leaflet.extra-markers.min.css">
+	<script src="dist/js/leaflet.extra-markers.min.js"></script>
 	
 	<style>
 		 #map { 
 			width: 100%;
-			height: 350px;
+			height: 700px;
 			box-shadow: 5px 5px 5px #888;
 		 }
 	</style>
@@ -21,90 +22,1946 @@
 		
 		<script>
 			var map = L.map('map').
-			 setView([-40.7878027,-62.9571322],
+			 setView([-38.390477,-60.273844],
 			 15);
-			Coordenada.innerHTML = 'LatLng(-40.7878027,-62.9571322)';
+			Coordenada.innerHTML = 'LatLng(-38.390477,-60.273844)';
          	
-           				var greenIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
+           	var marker_1 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         1',
+	svg: false
+});
+		
 
-			var blueIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var goldIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var redIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var orangeIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var yellowIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var violetIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var greyIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});
-			
-			var blackIcon = new L.Icon({
-			  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-			  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			  iconSize: [25, 41],
-			  iconAnchor: [12, 41],
-			  popupAnchor: [1, -34],
-			  shadowSize: [41, 41]
-			});			
+var marker_2 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         2',
+	svg: false
+});
+		
+
+var marker_3 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         3',
+	svg: false
+});
+		
+
+var marker_4 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         4',
+	svg: false
+});
+		
+
+var marker_5 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         5',
+	svg: false
+});
+		
+
+var marker_6 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         6',
+	svg: false
+});
+		
+
+var marker_7 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         7',
+	svg: false
+});
+		
+
+var marker_8 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         8',
+	svg: false
+});
+		
+
+var marker_9 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '         9',
+	svg: false
+});
+		
+
+var marker_10 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        10',
+	svg: false
+});
+		
+
+var marker_11 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        11',
+	svg: false
+});
+		
+
+var marker_12 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        12',
+	svg: false
+});
+		
+
+var marker_13 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        13',
+	svg: false
+});
+		
+
+var marker_14 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        14',
+	svg: false
+});
+		
+
+var marker_15 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        15',
+	svg: false
+});
+		
+
+var marker_16 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        16',
+	svg: false
+});
+		
+
+var marker_17 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        17',
+	svg: false
+});
+		
+
+var marker_18 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        18',
+	svg: false
+});
+		
+
+var marker_19 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        19',
+	svg: false
+});
+		
+
+var marker_20 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        20',
+	svg: false
+});
+		
+
+var marker_21 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        21',
+	svg: false
+});
+		
+
+var marker_22 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        22',
+	svg: false
+});
+		
+
+var marker_23 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        23',
+	svg: false
+});
+		
+
+var marker_24 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        24',
+	svg: false
+});
+		
+
+var marker_25 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        25',
+	svg: false
+});
+		
+
+var marker_26 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        26',
+	svg: false
+});
+		
+
+var marker_27 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        27',
+	svg: false
+});
+		
+
+var marker_28 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        28',
+	svg: false
+});
+		
+
+var marker_29 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        29',
+	svg: false
+});
+		
+
+var marker_30 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        30',
+	svg: false
+});
+		
+
+var marker_31 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        31',
+	svg: false
+});
+		
+
+var marker_32 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        32',
+	svg: false
+});
+		
+
+var marker_33 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        33',
+	svg: false
+});
+		
+
+var marker_34 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        34',
+	svg: false
+});
+		
+
+var marker_35 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        35',
+	svg: false
+});
+		
+
+var marker_36 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        36',
+	svg: false
+});
+		
+
+var marker_37 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        37',
+	svg: false
+});
+		
+
+var marker_38 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        38',
+	svg: false
+});
+		
+
+var marker_39 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        39',
+	svg: false
+});
+		
+
+var marker_40 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        40',
+	svg: false
+});
+		
+
+var marker_41 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        41',
+	svg: false
+});
+		
+
+var marker_42 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        42',
+	svg: false
+});
+		
+
+var marker_43 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        43',
+	svg: false
+});
+		
+
+var marker_44 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        44',
+	svg: false
+});
+		
+
+var marker_45 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        45',
+	svg: false
+});
+		
+
+var marker_46 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        46',
+	svg: false
+});
+		
+
+var marker_47 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        47',
+	svg: false
+});
+		
+
+var marker_48 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        48',
+	svg: false
+});
+		
+
+var marker_49 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        49',
+	svg: false
+});
+		
+
+var marker_50 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        50',
+	svg: false
+});
+		
+
+var marker_51 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        51',
+	svg: false
+});
+		
+
+var marker_52 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        52',
+	svg: false
+});
+		
+
+var marker_53 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        53',
+	svg: false
+});
+		
+
+var marker_54 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        54',
+	svg: false
+});
+		
+
+var marker_55 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        55',
+	svg: false
+});
+		
+
+var marker_56 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        56',
+	svg: false
+});
+		
+
+var marker_57 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        57',
+	svg: false
+});
+		
+
+var marker_58 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        58',
+	svg: false
+});
+		
+
+var marker_59 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        59',
+	svg: false
+});
+		
+
+var marker_60 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        60',
+	svg: false
+});
+		
+
+var marker_61 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        61',
+	svg: false
+});
+		
+
+var marker_62 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        62',
+	svg: false
+});
+		
+
+var marker_63 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        63',
+	svg: false
+});
+		
+
+var marker_64 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        64',
+	svg: false
+});
+		
+
+var marker_65 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        65',
+	svg: false
+});
+		
+
+var marker_66 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        66',
+	svg: false
+});
+		
+
+var marker_67 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        67',
+	svg: false
+});
+		
+
+var marker_68 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        68',
+	svg: false
+});
+		
+
+var marker_69 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        69',
+	svg: false
+});
+		
+
+var marker_70 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        70',
+	svg: false
+});
+		
+
+var marker_71 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        71',
+	svg: false
+});
+		
+
+var marker_72 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        72',
+	svg: false
+});
+		
+
+var marker_73 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        73',
+	svg: false
+});
+		
+
+var marker_74 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        74',
+	svg: false
+});
+		
+
+var marker_75 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        75',
+	svg: false
+});
+		
+
+var marker_76 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        76',
+	svg: false
+});
+		
+
+var marker_77 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        77',
+	svg: false
+});
+		
+
+var marker_78 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        78',
+	svg: false
+});
+		
+
+var marker_79 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        79',
+	svg: false
+});
+		
+
+var marker_80 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        80',
+	svg: false
+});
+		
+
+var marker_81 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        81',
+	svg: false
+});
+		
+
+var marker_82 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        82',
+	svg: false
+});
+		
+
+var marker_83 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        83',
+	svg: false
+});
+		
+
+var marker_84 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        84',
+	svg: false
+});
+		
+
+var marker_85 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        85',
+	svg: false
+});
+		
+
+var marker_86 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        86',
+	svg: false
+});
+		
+
+var marker_87 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        87',
+	svg: false
+});
+		
+
+var marker_88 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        88',
+	svg: false
+});
+		
+
+var marker_89 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        89',
+	svg: false
+});
+		
+
+var marker_90 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        90',
+	svg: false
+});
+		
+
+var marker_91 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        91',
+	svg: false
+});
+		
+
+var marker_92 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        92',
+	svg: false
+});
+		
+
+var marker_93 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        93',
+	svg: false
+});
+		
+
+var marker_94 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        94',
+	svg: false
+});
+		
+
+var marker_95 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        95',
+	svg: false
+});
+		
+
+var marker_96 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        96',
+	svg: false
+});
+		
+
+var marker_97 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        97',
+	svg: false
+});
+		
+
+var marker_98 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        98',
+	svg: false
+});
+		
+
+var marker_99 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '        99',
+	svg: false
+});
+		
+
+var marker_100 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       100',
+	svg: false
+});
+		
+
+var marker_101 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       101',
+	svg: false
+});
+		
+
+var marker_102 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       102',
+	svg: false
+});
+		
+
+var marker_103 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       103',
+	svg: false
+});
+		
+
+var marker_104 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       104',
+	svg: false
+});
+		
+
+var marker_105 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       105',
+	svg: false
+});
+		
+
+var marker_106 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       106',
+	svg: false
+});
+		
+
+var marker_107 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       107',
+	svg: false
+});
+		
+
+var marker_108 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       108',
+	svg: false
+});
+		
+
+var marker_109 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       109',
+	svg: false
+});
+		
+
+var marker_110 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       110',
+	svg: false
+});
+		
+
+var marker_111 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       111',
+	svg: false
+});
+		
+
+var marker_112 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       112',
+	svg: false
+});
+		
+
+var marker_113 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       113',
+	svg: false
+});
+		
+
+var marker_114 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       114',
+	svg: false
+});
+		
+
+var marker_115 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       115',
+	svg: false
+});
+		
+
+var marker_116 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       116',
+	svg: false
+});
+		
+
+var marker_117 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       117',
+	svg: false
+});
+		
+
+var marker_118 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       118',
+	svg: false
+});
+		
+
+var marker_119 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       119',
+	svg: false
+});
+		
+
+var marker_120 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       120',
+	svg: false
+});
+		
+
+var marker_121 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       121',
+	svg: false
+});
+		
+
+var marker_122 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       122',
+	svg: false
+});
+		
+
+var marker_123 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       123',
+	svg: false
+});
+		
+
+var marker_124 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       124',
+	svg: false
+});
+		
+
+var marker_125 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       125',
+	svg: false
+});
+		
+
+var marker_126 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       126',
+	svg: false
+});
+		
+
+var marker_127 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       127',
+	svg: false
+});
+		
+
+var marker_128 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       128',
+	svg: false
+});
+		
+
+var marker_129 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       129',
+	svg: false
+});
+		
+
+var marker_130 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       130',
+	svg: false
+});
+		
+
+var marker_131 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       131',
+	svg: false
+});
+		
+
+var marker_132 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       132',
+	svg: false
+});
+		
+
+var marker_133 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       133',
+	svg: false
+});
+		
+
+var marker_134 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       134',
+	svg: false
+});
+		
+
+var marker_135 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       135',
+	svg: false
+});
+		
+
+var marker_136 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       136',
+	svg: false
+});
+		
+
+var marker_137 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       137',
+	svg: false
+});
+		
+
+var marker_138 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       138',
+	svg: false
+});
+		
+
+var marker_139 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       139',
+	svg: false
+});
+		
+
+var marker_140 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       140',
+	svg: false
+});
+		
+
+var marker_141 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       141',
+	svg: false
+});
+		
+
+var marker_142 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       142',
+	svg: false
+});
+		
+
+var marker_143 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       143',
+	svg: false
+});
+		
+
+var marker_144 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       144',
+	svg: false
+});
+		
+
+var marker_145 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       145',
+	svg: false
+});
+		
+
+var marker_146 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       146',
+	svg: false
+});
+		
+
+var marker_147 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'green',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       147',
+	svg: false
+});
+		
+
+var marker_148 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       148',
+	svg: false
+});
+		
+
+var marker_149 = L.ExtraMarkers.icon({
+	shape: 'circle',
+	markerColor: 'red',
+	prefix: 'glyphicon',
+	icon: 'fa-number',
+	iconColor: '#fff',
+	iconRotate: 0,
+	extraClasses: '',
+	number: '       149',
+	svg: false
+});
+					
            	
            	
            	
@@ -119,9 +1976,305 @@
 			
 			
 			
-				
+																																																																																																																																																								
 	
-	L.marker([-40.7878027,-62.9571322] ,{icon: blueIcon} ,{draggable: 'true'},{alt:'1'} ).bindPopup('Calle I. 4  Nº 284 - P. Ind.').addTo(map);
+	L.marker([-38.390477,-60.273844] ,{icon: marker_1} ,{draggable: 'true'},{alt:'1100000416'} ).bindPopup('TABOADA LORENA / 1171 / AV.LIBERTAD 815').addTo(map);
+	
+	L.marker([-38.394190,-60.268691] ,{icon: marker_2} ,{draggable: 'true'},{alt:'1100000317'} ).bindPopup('MENDOZA MARIA ANDREA / 1055 / CASTELLI 1495').addTo(map);
+	
+	L.marker([-38.392077,-60.277790] ,{icon: marker_3} ,{draggable: 'true'},{alt:'1100000050'} ).bindPopup('LOFRANO ANDREA / 146 / MAR DEL PLATA 895').addTo(map);
+	
+	L.marker([-38.374434,-60.263135] ,{icon: marker_4} ,{draggable: 'true'},{alt:'1100000528'} ).bindPopup('FERNANDEZ ULISES AUBEL / 1286 / ROCA 809').addTo(map);
+	
+	L.marker([-38.387429,-60.269313] ,{icon: marker_5} ,{draggable: 'true'},{alt:'1100000344'} ).bindPopup('FONTENLA MARCELO ERNESTO / 1088 / AVDA.LIBERTAD 386').addTo(map);
+	
+	L.marker([-38.378652,-60.273641] ,{icon: marker_6} ,{draggable: 'true'},{alt:'1100000406'} ).bindPopup('GATTAR DIONISIO PEDRO / 1158 / AVDA.MORENO 215').addTo(map);
+	
+	L.marker([-38.385263,-60.280162] ,{icon: marker_7} ,{draggable: 'true'},{alt:'1100000926'} ).bindPopup('FRANCO LUCAS / 1727 / CASTELLI 302').addTo(map);
+	
+	L.marker([-38.372319,-60.260496] ,{icon: marker_8} ,{draggable: 'true'},{alt:'1100000212'} ).bindPopup('GALLUCCI NAZARENO IVAN / 917 / ROCA 1075').addTo(map);
+	
+	L.marker([-38.375885,-60.255235] ,{icon: marker_9} ,{draggable: 'true'},{alt:'1100000285'} ).bindPopup('DASSEVILLE GABRIELA ELISA / 1021 / CONSTITUYENTES 558').addTo(map);
+	
+	L.marker([-38.385467,-60.286092] ,{icon: marker_10} ,{draggable: 'true'},{alt:'1100000499'} ).bindPopup('RAMIL RUBEN HORACIO / 1256 / AVDA.RIVADAVIA 1100').addTo(map);
+	
+	L.marker([-38.394738,-60.276466] ,{icon: marker_11} ,{draggable: 'true'},{alt:'1100000758'} ).bindPopup('ESPINOSA LAURA / 1555 / 12 DE OCTUBRE 1214').addTo(map);
+	
+	L.marker([-38.382675,-60.279926] ,{icon: marker_12} ,{draggable: 'true'},{alt:'1100000968'} ).bindPopup('PEREZ NATALIA VANINA / 1769 / PUEYRREDON 151').addTo(map);
+	
+	L.marker([-38.389253,-60.269140] ,{icon: marker_13} ,{draggable: 'true'},{alt:'1100000978'} ).bindPopup('ANDRADA MONICA SUSANA / 1782 / SAAVEDRA 1134').addTo(map);
+	
+	L.marker([-38.377295,-60.253302] ,{icon: marker_14} ,{draggable: 'true'},{alt:'1100001588'} ).bindPopup('ARANDA CLAUDIA / 1794 / BENITO MACHADO 475').addTo(map);
+	
+	L.marker([-38.384633,-60.265894] ,{icon: marker_15} ,{draggable: 'true'},{alt:'1100000161'} ).bindPopup('TOLABA MATIAS EZEQUIEL / 818 / AV.LIBERTAD 2').addTo(map);
+	
+	L.marker([-38.373653,-60.271516] ,{icon: marker_16} ,{draggable: 'true'},{alt:'1100000820'} ).bindPopup('ZHUANG SHUJUAN / 1617 / AVDA.BELGRANO 433').addTo(map);
+	
+	L.marker([-38.378069,-60.272289] ,{icon: marker_17} ,{draggable: 'true'},{alt:'1100000171'} ).bindPopup('TUMINI SANTIAGO EZEQUIEL / 843 / SARMIENTO 255').addTo(map);
+	
+	L.marker([-38.388291,-60.262718] ,{icon: marker_18} ,{draggable: 'true'},{alt:'1100000747'} ).bindPopup('MINOR LUSI MARIANA / 1544 / COLON 1408').addTo(map);
+	
+	L.marker([-38.382100,-60.281913] ,{icon: marker_19} ,{draggable: 'true'},{alt:'1100000300'} ).bindPopup('SOTO JUAN / 1038 / AV.RIVADAVIA 676').addTo(map);
+	
+	L.marker([-38.381149,-60.278886] ,{icon: marker_20} ,{draggable: 'true'},{alt:'1100000044'} ).bindPopup('BALBUENA FERNANDO JORGE / 122 / BETOLAZA 448').addTo(map);
+	
+	L.marker([-38.374751,-60.271376] ,{icon: marker_21} ,{draggable: 'true'},{alt:'1100000263'} ).bindPopup('ROGALPLAST S.A. / 992 / LUCIO V.LOPEZ 1254').addTo(map);
+	
+	L.marker([-38.386589,-60.268277] ,{icon: marker_22} ,{draggable: 'true'},{alt:'1100000246'} ).bindPopup('LA BOUTIQUE DE LA CARNADA / 971 / AV.LIBERTAD 272').addTo(map);
+	
+	L.marker([-38.376469,-60.265898] ,{icon: marker_23} ,{draggable: 'true'},{alt:'1100000393'} ).bindPopup('POLAKO JORGE ARIEL / 1143 / ROCA 532').addTo(map);
+	
+	L.marker([-38.388151,-60.262746] ,{icon: marker_24} ,{draggable: 'true'},{alt:'1100000603'} ).bindPopup('LOPEZ FABRICIO - / 1399 / URQUIZA 98').addTo(map);
+	
+	L.marker([-38.388226,-60.270572] ,{icon: marker_25} ,{draggable: 'true'},{alt:'1100000119'} ).bindPopup('YAN XUEFENG / 594 / AV.LIBERTAD 343').addTo(map);
+	
+	L.marker([-38.379384,-60.267390] ,{icon: marker_26} ,{draggable: 'true'},{alt:'1100000997'} ).bindPopup('LI YUDONG / 1812 / SEBASTIAN COSTA 261').addTo(map);
+	
+	L.marker([-38.400657,-60.264447] ,{icon: marker_27} ,{draggable: 'true'},{alt:'1100000999'} ).bindPopup('GAN SHAOQUN / 1814 / AVDA.GUEMES 68').addTo(map);
+	
+	L.marker([-38.379931,-60.263052] ,{icon: marker_28} ,{draggable: 'true'},{alt:'1100000228'} ).bindPopup('ARBALLO JUAN CARLOS / 938 / BOLIVIA 2').addTo(map);
+	
+	L.marker([-38.380965,-60.270611] ,{icon: marker_29} ,{draggable: 'true'},{alt:'1100000802'} ).bindPopup('TIENDA DE CARNE LOS GAUCHOS S.A. / 1599 / AV.MORENO 533').addTo(map);
+	
+	L.marker([-38.378244,-60.274180] ,{icon: marker_30} ,{draggable: 'true'},{alt:'1100000047'} ).bindPopup('CONFITERIA LA PERLA S.A. / 137 / AV.MORENO 171').addTo(map);
+	
+	L.marker([-38.400657,-60.264447] ,{icon: marker_31} ,{draggable: 'true'},{alt:'1100000170'} ).bindPopup('YOU JUNJUN / 838 / AV.GUEMES 975').addTo(map);
+	
+	L.marker([-38.390319,-60.264130] ,{icon: marker_32} ,{draggable: 'true'},{alt:'1100000827'} ).bindPopup('FONTENLA ALEJANDRO / 1625 / 25 DE MAYO 1485').addTo(map);
+	
+	L.marker([-38.377944,-60.252401] ,{icon: marker_33} ,{draggable: 'true'},{alt:'1100000358'} ).bindPopup('ARIAS MIRTA HAYDEE / 1103 / CORDOBA 1300').addTo(map);
+	
+	L.marker([-38.383374,-60.281871] ,{icon: marker_34} ,{draggable: 'true'},{alt:'1100000125'} ).bindPopup('RIDINO EDUARDO NICOLAS / 605 / BETOLAZA 757').addTo(map);
+	
+	L.marker([-38.369448,-60.266380] ,{icon: marker_35} ,{draggable: 'true'},{alt:'1100000219'} ).bindPopup('LIBRITOS S.R.L. / 926 / BELGRANO 999').addTo(map);
+	
+	L.marker([-38.372594,-60.264855] ,{icon: marker_36} ,{draggable: 'true'},{alt:'1100000193'} ).bindPopup('KEUKEN / 887 / ISTILART 854').addTo(map);
+	
+	L.marker([-38.393707,-60.267400] ,{icon: marker_37} ,{draggable: 'true'},{alt:'1100000265'} ).bindPopup('GARCIA LUCIANA / 995 / MATHEU 1515').addTo(map);
+	
+	L.marker([-38.375146,-60.273365] ,{icon: marker_38} ,{draggable: 'true'},{alt:'1100000090'} ).bindPopup('ARNAIS FERNANDO ALFONSO - RI / 528 / BELGRANO 235').addTo(map);
+	
+	L.marker([-38.374158,-60.264892] ,{icon: marker_39} ,{draggable: 'true'},{alt:'1100000561'} ).bindPopup('MIO FIGLIO SRL / 1321 / PELLEGRINI 744').addTo(map);
+	
+	L.marker([-38.379369,-60.278230] ,{icon: marker_40} ,{draggable: 'true'},{alt:'1100000073'} ).bindPopup('GARCIA MONICA SUSANA / 202 / 25 DE MAYO 16').addTo(map);
+	
+	L.marker([-38.371886,-60.269762] ,{icon: marker_41} ,{draggable: 'true'},{alt:'1100000582'} ).bindPopup('IBARLUCIA ALICIA EVA / 1378 / BELGRANO 646').addTo(map);
+	
+	L.marker([-38.385924,-60.279130] ,{icon: marker_42} ,{draggable: 'true'},{alt:'1100000899'} ).bindPopup('SORGUE ANGEL CRUZ / 1700 / MAIPU 798').addTo(map);
+	
+	L.marker([-38.373656,-60.266194] ,{icon: marker_43} ,{draggable: 'true'},{alt:'1100000132'} ).bindPopup('DI CROCE LAURA OFELIA / 621 / ISTILART 702').addTo(map);
+	
+	L.marker([-38.390319,-60.264130] ,{icon: marker_44} ,{draggable: 'true'},{alt:'1100000841'} ).bindPopup('FONTENLA ALEJANDRO / 1642 / 25 DE MAYO 1485').addTo(map);
+	
+	L.marker([-38.397167,-60.266486] ,{icon: marker_45} ,{draggable: 'true'},{alt:'1100000163'} ).bindPopup('PUEBLAS MARIA GUILLERMINA / 823 / SOLIS 1776').addTo(map);
+	
+	L.marker([-38.375357,-60.254139] ,{icon: marker_46} ,{draggable: 'true'},{alt:'1100000508'} ).bindPopup('MUGNAGA G.INES / 1265 / SANTA FE 1015').addTo(map);
+	
+	L.marker([-38.383166,-60.277380] ,{icon: marker_47} ,{draggable: 'true'},{alt:'1100001008'} ).bindPopup('ZUBILLAGA NOELIA / 1823 / SAAVEDRA 311').addTo(map);
+	
+	L.marker([-38.388999,-60.289552] ,{icon: marker_48} ,{draggable: 'true'},{alt:'1100000700'} ).bindPopup('PEREZ PABLO / 1497 / JUJUY 55').addTo(map);
+	
+	L.marker([-38.389278,-60.269725] ,{icon: marker_49} ,{draggable: 'true'},{alt:'1100000326'} ).bindPopup('ROMAN MARIA ANDREA / 1065 / 12 DE OCTUBRE 520').addTo(map);
+	
+	L.marker([-38.384040,-60.268518] ,{icon: marker_50} ,{draggable: 'true'},{alt:'1100000351'} ).bindPopup('TOLABA IVAN / 1095 / COLON 853').addTo(map);
+	
+	L.marker([-38.379405,-60.276263] ,{icon: marker_51} ,{draggable: 'true'},{alt:'1100000195'} ).bindPopup('CANTERA ANA CLAUDIA / 891 / CHACABUCO 128').addTo(map);
+	
+	L.marker([-38.376505,-60.254306] ,{icon: marker_52} ,{draggable: 'true'},{alt:'1100000253'} ).bindPopup('PAGANINI / 980 / CORDOBA 1100').addTo(map);
+	
+	L.marker([-38.381817,-60.274086] ,{icon: marker_53} ,{draggable: 'true'},{alt:'1100000472'} ).bindPopup('NOGUEIRA ALEJANDRO (HELADERIA) / 1228 / MAIPU 244').addTo(map);
+	
+	L.marker([-38.379279,-60.252597] ,{icon: marker_54} ,{draggable: 'true'},{alt:'1100000233'} ).bindPopup('MOSCOSO RICO ANA MARIA (LO DE ANITA) / 946 / PRIMERA JUNTA 1366').addTo(map);
+	
+	L.marker([-38.396503,-60.270012] ,{icon: marker_55} ,{draggable: 'true'},{alt:'1100000242'} ).bindPopup('RECARI ROBERTO / 964 / AVDA.GUEMES 1575').addTo(map);
+	
+	L.marker([-38.394510,-60.268715] ,{icon: marker_56} ,{draggable: 'true'},{alt:'1100000245'} ).bindPopup('TESSONE JOSE MARIA / 969 / BUCHARDO 824').addTo(map);
+	
+	L.marker([-38.390044,-60.273888] ,{icon: marker_57} ,{draggable: 'true'},{alt:'1100000281'} ).bindPopup('MORAN HECTOR MARIO / 1015 / CASTELLI 970').addTo(map);
+	
+	L.marker([-38.377663,-60.274471] ,{icon: marker_58} ,{draggable: 'true'},{alt:'1100000357'} ).bindPopup('RODRIGUEZ CLAUDIA MARCELA / 1101 / MORENO 102').addTo(map);
+	
+	L.marker([-38.399329,-60.274642] ,{icon: marker_59} ,{draggable: 'true'},{alt:'1100000379'} ).bindPopup('ARANDA RICARDO / 1126 / BUCHARDO 1434').addTo(map);
+	
+	L.marker([-38.387887,-60.265403] ,{icon: marker_60} ,{draggable: 'true'},{alt:'1100000851'} ).bindPopup('MENNA LUIS PABLO / 1652 / CHACABUCO 1247').addTo(map);
+	
+	L.marker([-38.382687,-60.264310] ,{icon: marker_61} ,{draggable: 'true'},{alt:'1100000884'} ).bindPopup('QUIROGA GUILLERMINA ANAHI / 1685 / BRANDSEN 999').addTo(map);
+	
+	L.marker([-38.369423,-60.265845] ,{icon: marker_62} ,{draggable: 'true'},{alt:'1100000429'} ).bindPopup('RAMOS ADRIANA / 1185 / PRIMERA JUNTA 370').addTo(map);
+	
+	L.marker([-38.393392,-60.276665] ,{icon: marker_63} ,{draggable: 'true'},{alt:'1100000559'} ).bindPopup('COLANTONIO STELLA MARIS / 1319 / AVDA.LIBERTAD 1136').addTo(map);
+	
+	L.marker([-38.399520,-60.267774] ,{icon: marker_64} ,{draggable: 'true'},{alt:'1100000768'} ).bindPopup('GONZALEZ EMANUEL RODOLFO / 1565 / MAR DEL PLATA 1860').addTo(map);
+	
+	L.marker([-38.388918,-60.284726] ,{icon: marker_65} ,{draggable: 'true'},{alt:'1100000992'} ).bindPopup('MIRANDA ALBA / 1806 / 9 DE JULIO 1256').addTo(map);
+	
+	L.marker([-38.381871,-60.267322] ,{icon: marker_66} ,{draggable: 'true'},{alt:'1100000136'} ).bindPopup('ALEM SERGIO ABEL / 630 / SARMIENTO 781').addTo(map);
+	
+	L.marker([-38.387412,-60.280975] ,{icon: marker_67} ,{draggable: 'true'},{alt:'1100000097'} ).bindPopup('DIAZ / 541 / MAIPU 990').addTo(map);
+	
+	L.marker([-38.394527,-60.278024] ,{icon: marker_68} ,{draggable: 'true'},{alt:'1100000323'} ).bindPopup('ALMEIRA NATALIA / 1062 / LIBERTAD 1296').addTo(map);
+	
+	L.marker([-38.390150,-60.274009] ,{icon: marker_69} ,{draggable: 'true'},{alt:'1100000769'} ).bindPopup('MORAN HECTOR MARIO / 1566 / CASTELLI 965').addTo(map);
+	
+	L.marker([-38.380063,-60.277345] ,{icon: marker_70} ,{draggable: 'true'},{alt:'1100000479'} ).bindPopup('MARINANGELLI GABRIEL / 1235 / 25 DE MAYO 108').addTo(map);
+	
+	L.marker([-38.394301,-60.266815] ,{icon: marker_71} ,{draggable: 'true'},{alt:'1100000948'} ).bindPopup('RODRIGUEZ VERONICA / 1749 / AV.ALEM 707').addTo(map);
+	
+	L.marker([-38.374751,-60.271376] ,{icon: marker_72} ,{draggable: 'true'},{alt:'1100000054'} ).bindPopup('MANSILLA LILIANA / 158 / LUCIO V.LOPEZ  1224').addTo(map);
+	
+	L.marker([-38.382961,-60.282991] ,{icon: marker_73} ,{draggable: 'true'},{alt:'1100000287'} ).bindPopup('BURCHKARDT DANIEL / 1024 / AV.RIVADAVIA 794').addTo(map);
+	
+	L.marker([-38.377912,-60.251981] ,{icon: marker_74} ,{draggable: 'true'},{alt:'1100000068'} ).bindPopup('ANAYA MARIANA / 189 / 17 DE AGOSTO 1125').addTo(map);
+	
+	L.marker([-38.377855,-60.269226] ,{icon: marker_75} ,{draggable: 'true'},{alt:'1100000256'} ).bindPopup('PARRAVICINI AGUSTINA / 985 / PELLEGRINI 271').addTo(map);
+	
+	L.marker([-38.377855,-60.269226] ,{icon: marker_76} ,{draggable: 'true'},{alt:'1100000255'} ).bindPopup('PARRAVICINI AGUSTINA / 984 / PELLEGRINI 271').addTo(map);
+	
+	L.marker([-38.394527,-60.278024] ,{icon: marker_77} ,{draggable: 'true'},{alt:'1100000322'} ).bindPopup('ALMEIRA NATALIA / 1061 / AV.LIBERTAD 1296').addTo(map);
+	
+	L.marker([-38.398680,-60.268851] ,{icon: marker_78} ,{draggable: 'true'},{alt:'1100000784'} ).bindPopup('GOMEZ DANIELA / 1581 / MAR DEL PLATA 1744').addTo(map);
+	
+	L.marker([-38.374751,-60.271376] ,{icon: marker_79} ,{draggable: 'true'},{alt:'1100000118'} ).bindPopup('LEGUIZAMON JUAN LUIS / 593 / LUCIO V LOPEZ 945').addTo(map);
+	
+	L.marker([-38.395482,-60.267026] ,{icon: marker_80} ,{draggable: 'true'},{alt:'1100000165'} ).bindPopup('FLORES LAURA MAGDALENA / 830 / CASTELLI 1635').addTo(map);
+	
+	L.marker([-38.374244,-60.266928] ,{icon: marker_81} ,{draggable: 'true'},{alt:'1100000225'} ).bindPopup('LOFIEGO JOSE LUIS / 935 / ISTILART 630').addTo(map);
+	
+	L.marker([-38.377470,-60.264991] ,{icon: marker_82} ,{draggable: 'true'},{alt:'1100000270'} ).bindPopup('SALTAPE SARA / 1000 / SEBASTIAN COSTA 503').addTo(map);
+	
+	L.marker([-38.389801,-60.288500] ,{icon: marker_83} ,{draggable: 'true'},{alt:'1100000395'} ).bindPopup('KAUANI / 1145 / JUJUY 165').addTo(map);
+	
+	L.marker([-38.372338,-60.262653] ,{icon: marker_84} ,{draggable: 'true'},{alt:'1100000420'} ).bindPopup('CARNICERIA MACIAS S.R.L. / 1175 / PELLEGRINI 996').addTo(map);
+	
+	L.marker([-38.382908,-60.277293] ,{icon: marker_85} ,{draggable: 'true'},{alt:'1100000483'} ).bindPopup('LARSEN CESAR GERARDO / 1239 / 9 DE JULIO 494').addTo(map);
+	
+	L.marker([-38.380250,-60.271556] ,{icon: marker_86} ,{draggable: 'true'},{alt:'1100000838'} ).bindPopup('LA ESTANCIA-MARIA INES MARZARI / 1639 / AVDA MORENO 433').addTo(map);
+	
+	L.marker([-38.396113,-60.267841] ,{icon: marker_87} ,{draggable: 'true'},{alt:'1100000848'} ).bindPopup('MOSTO CARLOS / 1649 / SOLIS 1634').addTo(map);
+	
+	L.marker([-38.395508,-60.280043] ,{icon: marker_88} ,{draggable: 'true'},{alt:'1100000894'} ).bindPopup('JUAREZ MARCELINO EMILIANO / 1695 / AVDA.LIBERTAD 1465').addTo(map);
+	
+	L.marker([-38.384585,-60.259921] ,{icon: marker_89} ,{draggable: 'true'},{alt:'1100000995'} ).bindPopup('AMAT MARTA / 1810 / FALUCHO 1315').addTo(map);
+	
+	L.marker([-38.382363,-60.270732] ,{icon: marker_90} ,{draggable: 'true'},{alt:'1100000330'} ).bindPopup('PANADERIA LA MODERNA / 1071 / COLON 619').addTo(map);
+	
+	L.marker([-38.383236,-60.264155] ,{icon: marker_91} ,{draggable: 'true'},{alt:'1100000394'} ).bindPopup('DUFOURG MARIA ALEJANDRA / 1144 / AV.CONSTITUYENTES 169').addTo(map);
+	
+	L.marker([-38.379697,-60.275465] ,{icon: marker_92} ,{draggable: 'true'},{alt:'1100000973'} ).bindPopup('MICELI LUIS ALBERTO / 1774 / HIPOLITO YRIGOYEN 177').addTo(map);
+	
+	L.marker([-38.370224,-60.267295] ,{icon: marker_93} ,{draggable: 'true'},{alt:'1100000495'} ).bindPopup('PEREZ ANDREA / 1252 / AVDA.BELGRANO 895').addTo(map);
+	
+	L.marker([-38.386210,-60.260320] ,{icon: marker_94} ,{draggable: 'true'},{alt:'1100000087'} ).bindPopup('BORNATICI NELSON GABRIEL / 523 / 20 DE JUNIO 165').addTo(map);
+	
+	L.marker([-38.385885,-60.285655] ,{icon: marker_95} ,{draggable: 'true'},{alt:'1100000396'} ).bindPopup('GONZALEZ PATRICIA ALEJANDRA / 1146 / MAR DEL PLATA 60').addTo(map);
+	
+	L.marker([-38.388810,-60.266143] ,{icon: marker_96} ,{draggable: 'true'},{alt:'1100000401'} ).bindPopup('MOSCOSO CAROLINA / 1152 / 25 DE MAYO 1275').addTo(map);
+	
+	L.marker([-38.391133,-60.266988] ,{icon: marker_97} ,{draggable: 'true'},{alt:'1100000541'} ).bindPopup('MARTINEZ MARIA CAROLINA / 1301 / SAAVEDRA 1385').addTo(map);
+	
+	L.marker([-38.378652,-60.273641] ,{icon: marker_98} ,{draggable: 'true'},{alt:'1100000405'} ).bindPopup('GATTAR DIONISIO PEDRO / 1157 / AV.MORENO 215').addTo(map);
+	
+	L.marker([-38.373653,-60.271516] ,{icon: marker_99} ,{draggable: 'true'},{alt:'1100000549'} ).bindPopup('LOLO - VERDULERIA 1617 / 1309 / AVDA BELGRANO 433').addTo(map);
+	
+	L.marker([-38.384025,-60.281767] ,{icon: marker_100} ,{draggable: 'true'},{alt:'1100000550'} ).bindPopup('FERNANDEZ EVA / 1310 / CASTELLI 140').addTo(map);
+	
+	L.marker([-38.386666,-60.269216] ,{icon: marker_101} ,{draggable: 'true'},{alt:'1100000554'} ).bindPopup('AUED PASCAL JAVIER / 1314 / DORREGO 313').addTo(map);
+	
+	L.marker([-38.393215,-60.272720] ,{icon: marker_102} ,{draggable: 'true'},{alt:'1100000407'} ).bindPopup('ALANIS GABRIELA / 1160 / LEON 950').addTo(map);
+	
+	L.marker([-38.391493,-60.270833] ,{icon: marker_103} ,{draggable: 'true'},{alt:'1100000409'} ).bindPopup('LABARRAZ GISELA / 1162 / LEON 731').addTo(map);
+	
+	L.marker([-38.369723,-60.265878] ,{icon: marker_104} ,{draggable: 'true'},{alt:'1100000534'} ).bindPopup('NIEVAS NOELIA MARILIN / 1293 / AV. PRIMERA JUNTA 49').addTo(map);
+	
+	L.marker([-38.387462,-60.281036] ,{icon: marker_105} ,{draggable: 'true'},{alt:'1100000417'} ).bindPopup('REYES ANDREA / 1172 / MAIPU 998').addTo(map);
+	
+	L.marker([-38.388582,-60.262335] ,{icon: marker_106} ,{draggable: 'true'},{alt:'1100000419'} ).bindPopup('CALIGIURI GISELA MARIANELA / 1174 / COLON 1460').addTo(map);
+	
+	L.marker([-38.372599,-60.270215] ,{icon: marker_107} ,{draggable: 'true'},{alt:'1100000382'} ).bindPopup('BORCANO MARIA FLORENCIA / 1130 / AV.BELGRANO 581').addTo(map);
+	
+	L.marker([-38.400657,-60.264447] ,{icon: marker_108} ,{draggable: 'true'},{alt:'1100000907'} ).bindPopup('LUQUEZ JORGE / 1708 / AV.GUEMES 545').addTo(map);
+	
+	L.marker([-38.385696,-60.286385] ,{icon: marker_109} ,{draggable: 'true'},{alt:'1100000500'} ).bindPopup('GONZALEZ RICARDO INDALECIO / 1257 / AV.RIVADAVIA 1110').addTo(map);
+	
+	L.marker([-38.380970,-60.276138] ,{icon: marker_110} ,{draggable: 'true'},{alt:'1100000715'} ).bindPopup('ROTISERIA LA NEGRITA / 1512 / 25 DE MAYO 240').addTo(map);
+	
+	L.marker([-38.384998,-60.269205] ,{icon: marker_111} ,{draggable: 'true'},{alt:'1100000445'} ).bindPopup('CHAMUS FABIANA / 1201 / CHACABUCO 885').addTo(map);
+	
+	L.marker([-38.386108,-60.262077] ,{icon: marker_112} ,{draggable: 'true'},{alt:'1100000591'} ).bindPopup('PEREZ MARIA / 1387 / 17 DE AGOSTO 85').addTo(map);
+	
+	L.marker([-38.378817,-60.276302] ,{icon: marker_113} ,{draggable: 'true'},{alt:'1100000798'} ).bindPopup('MORENO NORMA GRACIELA / 1595 / BETOLAZA 155').addTo(map);
+	
+	L.marker([-38.388151,-60.262746] ,{icon: marker_114} ,{draggable: 'true'},{alt:'1100000598'} ).bindPopup('LOPEZ FABRICIO / 1394 / URQUIZA 98').addTo(map);
+	
+	L.marker([-38.381071,-60.280632] ,{icon: marker_115} ,{draggable: 'true'},{alt:'1100000436'} ).bindPopup('MANDRAGORA / 1192 / RIVADAVIA 530').addTo(map);
+	
+	L.marker([-38.378152,-60.279109] ,{icon: marker_116} ,{draggable: 'true'},{alt:'1100000601'} ).bindPopup('MORISET DANIEL HORACIO / 1397 / PRINGLES 260').addTo(map);
+	
+	L.marker([-38.391253,-60.289623] ,{icon: marker_117} ,{draggable: 'true'},{alt:'1100000611'} ).bindPopup('BARRERA NARELLA / 1407 / H.YRIGOYEN 838').addTo(map);
+	
+	L.marker([-38.383826,-60.262978] ,{icon: marker_118} ,{draggable: 'true'},{alt:'1100000244'} ).bindPopup('ALMIRON MELINA / 966 / 20 DE ABRIL 195').addTo(map);
+	
+	L.marker([-38.388107,-60.281857] ,{icon: marker_119} ,{draggable: 'true'},{alt:'1100000773'} ).bindPopup('CONTI ALBERTO - COCINA / 1570 / MAIPU 1050').addTo(map);
+	
+	L.marker([-38.377875,-60.262007] ,{icon: marker_120} ,{draggable: 'true'},{alt:'1100000492'} ).bindPopup('RIOS OLINDA / 1249 / SUIPACHA 640').addTo(map);
+	
+	L.marker([-38.383106,-60.267358] ,{icon: marker_121} ,{draggable: 'true'},{alt:'1100000494'} ).bindPopup('KIOSCO EL TATA / 1251 / AVDA.MORENO 856').addTo(map);
+	
+	L.marker([-38.391800,-60.265836] ,{icon: marker_122} ,{draggable: 'true'},{alt:'1100000502'} ).bindPopup('ROJAS LILIANA / 1259 / SAAVEDRA 1490').addTo(map);
+	
+	L.marker([-38.380521,-60.275078] ,{icon: marker_123} ,{draggable: 'true'},{alt:'1100000510'} ).bindPopup('FOTOGRAFIA  IMAGEN / 1268 / CHACABUCO 273').addTo(map);
+	
+	L.marker([-38.388446,-60.264664] ,{icon: marker_124} ,{draggable: 'true'},{alt:'1100000517'} ).bindPopup('SABADINI DAIANA / 1275 / CHACABUCO 1315').addTo(map);
+	
+	L.marker([-38.378671,-60.263536] ,{icon: marker_125} ,{draggable: 'true'},{alt:'1100000738'} ).bindPopup('BESIMENCO SERGIO / 1535 / HUMBERTO PRIMO 768').addTo(map);
+	
+	L.marker([-38.390735,-60.264053] ,{icon: marker_126} ,{draggable: 'true'},{alt:'1100000810'} ).bindPopup('BELON VIVIANA / 1607 / BUCHARDO 324').addTo(map);
+	
+	L.marker([-38.386780,-60.264689] ,{icon: marker_127} ,{draggable: 'true'},{alt:'1100000750'} ).bindPopup('ELGART GABRIELA / 1547 / COLON 1202').addTo(map);
+	
+	L.marker([-38.374434,-60.263135] ,{icon: marker_128} ,{draggable: 'true'},{alt:'1100000385'} ).bindPopup('FERNANDEZ ULISES AUBEL / 1133 / ROCA 809').addTo(map);
+	
+	L.marker([-38.380385,-60.273311] ,{icon: marker_129} ,{draggable: 'true'},{alt:'1100000661'} ).bindPopup('BURON FRANCO / 1457 / COLON 357').addTo(map);
+	
+	L.marker([-38.380483,-60.274321] ,{icon: marker_130} ,{draggable: 'true'},{alt:'1100000693'} ).bindPopup('ANGELA BULL S.A.S. / 1490 / 9 DE JULIO 170').addTo(map);
+	
+	L.marker([-38.387930,-60.278586] ,{icon: marker_131} ,{draggable: 'true'},{alt:'1100000972'} ).bindPopup('FRACCIONADORA SUR SRL / 1773 / SOLIS 580').addTo(map);
+	
+	L.marker([-38.383931,-60.278521] ,{icon: marker_132} ,{draggable: 'true'},{alt:'1100000149'} ).bindPopup('KIOSCO LA RUSA / 681 / 9 DE JULIO 610').addTo(map);
+	
+	L.marker([-38.376656,-60.268115] ,{icon: marker_133} ,{draggable: 'true'},{alt:'1100000728'} ).bindPopup('ACOSTA JULIANA / 1525 / MITRE 398').addTo(map);
+	
+	L.marker([-38.383305,-60.264241] ,{icon: marker_134} ,{draggable: 'true'},{alt:'1100000861'} ).bindPopup('BARATTIERI MELISA / 1662 / CONSTITUYENTES 157').addTo(map);
+	
+	L.marker([-38.380280,-60.273215] ,{icon: marker_135} ,{draggable: 'true'},{alt:'1100000860'} ).bindPopup('ACOSTA MARIO CESAR / 1661 / COLON 354').addTo(map);
+	
+	L.marker([-38.391164,-60.273950] ,{icon: marker_136} ,{draggable: 'true'},{alt:'1100000918'} ).bindPopup('ERCAN / 1719 / AVDA LIBERTAD 880').addTo(map);
+	
+	L.marker([-38.384859,-60.265063] ,{icon: marker_137} ,{draggable: 'true'},{alt:'1100000914'} ).bindPopup('PIZZARRO MARGARITA / 1715 / AVDA MORENO 1070').addTo(map);
+	
+	L.marker([-38.375304,-60.252451] ,{icon: marker_138} ,{draggable: 'true'},{alt:'1100000928'} ).bindPopup('ARIAS PABLO SEBASTIÀN / 1729 / 20 DE ABRIL 1295').addTo(map);
+	
+	L.marker([-38.372594,-60.264855] ,{icon: marker_139} ,{draggable: 'true'},{alt:'1100000786'} ).bindPopup('VAN STRIEN EMILIA / 1583 / ISTILART 854').addTo(map);
+	
+	L.marker([-38.377539,-60.265220] ,{icon: marker_140} ,{draggable: 'true'},{alt:'1100000789'} ).bindPopup('DISTRIBUIDORA RIVOLTA / 1586 / S.COSTA 875').addTo(map);
+	
+	L.marker([-38.381110,-60.273486] ,{icon: marker_141} ,{draggable: 'true'},{alt:'1100000940'} ).bindPopup('ROLDAN MATEO ALEJANDRO-CANDY SHOP / 1741 / MAIPU 167').addTo(map);
+	
+	L.marker([-38.382986,-60.275461] ,{icon: marker_142} ,{draggable: 'true'},{alt:'1100000113'} ).bindPopup('DI TOMMASO MARTIN ALBERTO / 580 / DORREGO 406').addTo(map);
+	
+	L.marker([-38.372105,-60.250316] ,{icon: marker_143} ,{draggable: 'true'},{alt:'1100000952'} ).bindPopup('ARMANDO ALFREDO - GOLF / 1753 / JUAN B JUSTO 200').addTo(map);
+	
+	L.marker([-38.378014,-60.276410] ,{icon: marker_144} ,{draggable: 'true'},{alt:'1100000896'} ).bindPopup('LIBRERIA LETRAS / 1697 / COLON 25').addTo(map);
+	
+	L.marker([-38.387620,-60.265760] ,{icon: marker_145} ,{draggable: 'true'},{alt:'1100000581'} ).bindPopup('VILAJA CASTRO CRISTIAN / 1377 / CHACABUCO 1201').addTo(map);
+	
+	L.marker([-38.373656,-60.266194] ,{icon: marker_146} ,{draggable: 'true'},{alt:'1100001683'} ).bindPopup('FARIAS GISELA / 623 / ISTILART 702').addTo(map);
+	
+	L.marker([-38.377142,-60.287477] ,{icon: marker_147} ,{draggable: 'true'},{alt:'1100000471'} ).bindPopup('MOHANA / 1227 / VIAMONTE 615').addTo(map);
+	
+	L.marker([-38.395949,-60.279771] ,{icon: marker_148} ,{draggable: 'true'},{alt:'1100000877'} ).bindPopup('DUFAUR ELIANA / 1678 / SALTA 1490').addTo(map);
+	
+	L.marker([-38.388226,-60.270572] ,{icon: marker_149} ,{draggable: 'true'},{alt:'1100000111'} ).bindPopup('LA ROTY - AGUSTIN / 578 / AV.LIBERTAD 125 Ó 162').addTo(map);
 			
 			var popup = L.popup();
 
