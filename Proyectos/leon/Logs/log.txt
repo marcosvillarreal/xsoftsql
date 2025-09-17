@@ -142,159 +142,6 @@
 
 
 
-,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
- Alias  registro          0
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-20-08-2024 18:47:35 , Error nº:         13
-Error No se encuentra el alias 'CSRIMPRIMIR'.
-Linea nº SELECT CsrImprimir
- Alias  registro          0
-Control activo  EST_MARGENUTIL.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK
-20-08-2024 18:51:55 , Error nº:       1806
-Error SQL: no se encuentra la columna 'NOMSUCURSAL'.
-Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente as nomctacte ,idrubro,codrubro,nomrubro,CAST(0 as i) as idmarca, CAST(0 as i) as codmarca, SPACE(30) as nommarca FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
  = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codrubro,nomrubro ,idarticulo,codigo,articulo,idingbrutos,nomsucursal,periodo INTO CURSOR CsrImprimir READWRITE
@@ -451,7 +298,13 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,nomcliente,idrubro,codru
+
+
+
 
 
 
@@ -743,7 +596,13 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor,nomvendedor,id
+
+
+
 
 
 
@@ -1033,7 +892,13 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,LEFT(DTOS(cTOD(NVL(fecha,DTOC(DATE())))),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvende
+
+
+
 
 
 
@@ -1329,7 +1194,13 @@ Linea nº SELECT 0 as grupo,idvendedor,codvendedor,nomvendedor,idctacte,ctacte,no
 
 
 
+
+
+
 gbrutos ,NVL(sucursal,0) as sucursal ,NVL(CsrSucursal.nombre,SPACE(30)) as nomsucursal ,'' as periodo ,LEFT(DTOS(cTOD(fecha)),6) as periodo FROM Csraux LEFT JOIN CsrSucursal ON CsrAux.sucursal = CsrSucursal.numero GROUP BY sucursal,idvendedor,codvendedor
+
+
+
 
 
 
@@ -1803,6 +1674,9 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -1915,12 +1789,18 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRDEPOSITO registro          9
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 15:35:25 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
 
 
 
@@ -2150,6 +2030,9 @@ Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as
 
 
 
+
+
+
 y cnombre into cursor _CsrConcepto READWRITE
  Alias _CSRCOMPROBANTE registro         22
 Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
@@ -2157,6 +2040,9 @@ Control activo  SUBSTOCK.PAGEFRAME1.PAGE2.ACTIVATE
 03-09-2024 16:09:58 , Error nº:          1
 Error El archivo 'csrconcepto.dbf' no existe.
 Linea nº SELECT 0 as ok,Csrconcepto.nombre as cnombre,STR(Csrconcepto.numero) as cnumero,CsrComprobante.id as cid ,SPACE(10) as wcampo05,space(10) as wcampo06,00000000.00 as wcampo07 ,00000000.00 as wcampo08,space(10) as wcampo09 from Csrconcepto order b
+
+
+
 
 
 
@@ -2892,6 +2778,9 @@ Linea nº SELECT CsrCuerfac.*,0000000.00 as stock,prearti as total,CAST(0 as n(12
 
 
 
+
+
+
 ) as idcabeunifica,CAST(0 as int) as idprodpromo ,CAST(0 as int) as idprodregalo,000000 as cada,000000 as entrega,0 as nofactura,prearti as InternoFin ,CAST(0 as int) as idctavta,prearti as UniCiva,prearti as UniSiva,prearti as IvaUni ,prearti as UniCiva
 
 
@@ -2902,7 +2791,13 @@ Linea nº SELECT CsrCuerfac.*,0000000.00 as stock,prearti as total,CAST(0 as n(12
 
 
 
+
+
+
 2,prearti as UniSiva2,prearti as IvaUni2,CAST(0 as int) as idenvase ,CAST(0 as int) as idprodgenera,0000 as hojaactual,0 as bondigitada, 0000000.000 as cantkilos , 00000000.000 as cantorig, 0 as comprome,CAST(0 as int) as idoriginal, 000000 as orden ,0 a
+
+
+
 
 
 
@@ -2982,6 +2877,22 @@ Error El archivo 'csrproducto.dbf' no existe.
 Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
  Alias  registro          0
 Control activo  REGDESCUENTOS_PROV.LOAD
-27-08-2025 16:39:28 , Error nº:          1Error El archivo 'csrproducto.dbf' no existe.Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE Alias  registro          0Control activo  REGDESCUENTOS_PROV.LOAD
+27-08-2025 16:39:28 , Error nº:          1
+Error El archivo 'csrproducto.dbf' no existe.
+Linea nº SELECT Csrproducto.* FROM CsrProducto WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxCabeza READWRITE
+ Alias  registro          0
+Control activo  REGDESCUENTOS_PROV.LOAD
 27-08-2025 16:39:57 , Verificando OCX
 01-09-2025 10:12:26 , Verificando OCX
+16-09-2025 11:17:07 , Verificando OCX
+16-09-2025 11:44:50 , Error nº:         13
+Error No se encuentra el alias 'CSRCUERPO'.
+Linea nº SELECT CsrCuerpo
+ Alias CSRAUXRUTA registro          1
+Control activo  UTIL_GPSCTACTE.CONTAINERENCABEZA.KITBUSCAOALTAENRUTAS.LOSTFOCUS
+16-09-2025 11:45:34 , Error nº:         13
+Error No se encuentra el alias 'CSRCUERPO'.
+Linea nº SELECT CsrCuerpo
+ Alias CSRAUXRUTA registro          1
+Control activo  UTIL_GPSCTACTE.CONTAINERENCABEZA.KITBUSCAOALTAENRUTAS.LOSTFOCUS
+16-09-2025 11:47:38 , Error nº:         13Error No se encuentra el alias 'CSRCABERUTA'.Linea nº WHERE Csrcuerpo.idcaberuta=<<CsrCaberuta.id>> Alias CSRAUXRUTA registro         65Control activo  UTIL_GPSCTACTE.COMMAND1.CLICK
