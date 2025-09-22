@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- GM SOLUTIONS - MAPA v2.3.2 ARQUITECTURA MODULAR -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Clientes GM Solutions v2.3.2</title>
+    
+    <!-- Librerías externas -->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- ARQUITECTURA MODULAR GM SOLUTIONS -->
+    
+    <!-- 📋 Configuraciones (Solo datos, sin lógica) -->
+    <script src="js/config/mapa-config.js"></script>
+    <script src="js/config/campos-config.js"></script>
+    <script src="js/config/campos-config-vfp.js"></script>
+    <script src="js/config/iconos-config.js"></script>
+    <script src="js/config/estados-config.js"></script>
+    
+    <!-- 📊 Datos (Solo datos, sin lógica) -->
+    <script src="js/data/clientes-data.js"></script>
+    
+    <!-- ⚙️ Módulos de Lógica (Solo funciones, sin datos) -->
+    <script src="js/modules/campos-validator.js"></script>
+    <script src="js/modules/estados-manager.js"></script>
+    <script src="js/modules/iconos-manager.js"></script>
+    <script src="js/modules/marcadores-manager.js"></script>
+    <script src="js/modules/iconos-helper.js"></script>
+    <script src="js/modules/filtros.js"></script>
+    <script src="js/modules/busqueda.js"></script>
+    <script src="js/modules/popups.js"></script>
+    <script src="js/modules/main.js"></script>
+    
+    <style>
+        /* === ESTILOS BASE === */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+            transition: all 0.3s ease;
+        }
+        
+        /* === BARRA SUPERIOR === */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+            z-index: 1001;
+            height: 60px;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+            background: white;
+            border-radius: 8px;
+            padding: 4px;
+        }
+        
+        .logo-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .title-info h1 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .version-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            margin-left: 10px;
+        }
+        
+        /* === CONTROL VISTA POR === */
+        .priority-field-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 15px;
+        }
+        
+        .priority-field-control label {
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .priority-field-control select {
+            padding: 6px 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+            background: rgba(255,255,255,0.9);
+            color: #1e40af;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        
+        .priority-field-control select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+            border-color: rgba(255,255,255,0.6);
+        }
+        
+        .priority-field-control select:hover {
+            background: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        /* === CONTROLES SUPERIORES === */
+        .controls-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .sidebar-toggle-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sidebar-toggle-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        .sidebar-toggle-btn i {
+            transition: transform 0.2s ease;
+        }
+        
+        .sidebar-toggle-btn.collapsed i {
+            transform: rotate(180deg);
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 8px 35px 8px 12px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            font-size: 14px;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+            width: 280px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        /* === SIDEBAR === */
+        .sidebar {
+            width: 320px;
+            background: white;
+            margin-top: 84px;
+            height: calc(100vh - 84px);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .sidebar.collapsed {
+            width: 0;
+            overflow: hidden;
+            box-shadow: none;
+        }
+        
+        .container.sidebar-collapsed .map-container {
+            margin-left: 0;
+        }
+        
+        .sidebar-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+        
+        .client-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+        
+        /* === CONTENIDO SIDEBAR === */
+        .sidebar-content {
+            padding: 20px;
+        }
+        
+        .search-section {
+            margin-bottom: 25px;
+        }
+        
+        .search-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .search-section input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-section input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        /* === FILTROS === */
+        .filters {
+            margin-bottom: 20px;
+        }
+        
+        .filter-group {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .filter-group:last-child {
+            border-bottom: none;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .filter-btn {
+            padding: 6px 12px;
+            border: 2px solid #e9ecef;
+            background: white;
+            color: #666;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .filter-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        /* === LEYENDA === */
+        .legend-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .map-legend h4 {
+            margin: 0 0 12px 0;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .legend-color {
+            margin-right: 8px;
+        }
+        
+        /* === MAPA === */
+        .map-container {
+            flex: 1;
+            margin-top: 84px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        
+        /* === BOTÓN CENTRAR MAPA === */
+        .center-map-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .center-map-btn:hover {
+            background: #3b82f6;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .center-map-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* === TOOLTIP PARA BOTÓN === */
+        .center-map-btn::after {
+            content: 'Centrar Dinámico';
+            position: absolute;
+            right: 55px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .center-map-btn:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* === BOTONES PRINCIPALES === */
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .center-map-btn {
+                top: 15px;
+                right: 15px;
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                position: fixed;
+                left: -100%;
+                transition: left 0.3s ease;
+                z-index: 1002;
+            }
+            
+            .sidebar.open {
+                left: 0;
+            }
+            
+            .map-container {
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: rgba(255,255,255,0.2);
+                border: none;
+                color: white;
+                padding: 8px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            .sidebar-toggle-btn {
+                display: none;
+            }
+            
+            .center-map-btn {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+            
+            .center-map-btn::after {
+                display: none;
+            }
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="logo-section">
+            <img src="gmsolutions.png" alt="GM Solutions" class="logo-img" 
+                 onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+            <span class="logo-text" style="display: none;">GM</span>
+            <div class="title-info">
+                <h1>GM Solutions</h1>
+                <span class="version-badge">v2.3.2 🏗️</span>
+            </div>
+        </div>
+        
+        <div class="controls-container">
+            <button class="sidebar-toggle-btn" onclick="toggleSidebarDesktop()" title="Mostrar/Ocultar Panel">
+                <i class="fas fa-chevron-left"></i>
+                <span>Panel</span>
+            </button>
+            
+            <div class="search-box">
+                <input type="text" id="search-client" placeholder="Buscar cliente..." onkeyup="searchClient()">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container" id="main-container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>🗺️ Mapa de Clientes</h2>
+                <div class="client-stats">
+                    <div class="stat-item">
+                        <span class="stat-number client-count">0</span>
+                        <span class="stat-label">Mostrando</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number total-count">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="search-section">
+                    <label>🔍 Búsqueda Avanzada:</label>
+                    <input type="text" id="client-search" placeholder="Buscar por nombre, teléfono, email...">
+                </div>
+                
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>📋 Acciones Rápidas:</label>
+                        <div class="filter-buttons">
+                            <button class="btn btn-primary" onclick="showAllClients()">🔄 Ver Todos</button>
+                            <button class="btn btn-outline" onclick="resetearTodo()">🧹 Reset</button>
+                            <button class="btn btn-outline" onclick="centrarMapa()">🎯 Centrar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="legend-container"></div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="exportarDatos()">📊 Exportar</button>
+                    <button class="btn btn-outline" onclick="abrirEstadisticas()">📈 Stats</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <button class="center-map-btn" onclick="centrarMapa()" title="Centrar Dinámico">
+                <i class="fas fa-crosshairs"></i>
+            </button>
+            <div id="map"></div>
+        </div>
+    </div>
+    
+    <script>
+        // === FUNCIONES PRINCIPALES ===
+        
+        function toggleSidebarDesktop() {
+            const sidebar = document.getElementById('sidebar');
+            const container = document.getElementById('main-container');
+            const toggleBtn = document.querySelector('.sidebar-toggle-btn');
+            const toggleIcon = toggleBtn.querySelector('i');
+            const toggleText = toggleBtn.querySelector('span');
+            
+            sidebar.classList.toggle('collapsed');
+            container.classList.toggle('sidebar-collapsed');
+            toggleBtn.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                toggleIcon.className = 'fas fa-chevron-right';
+                toggleText.textContent = 'Mostrar';
+            } else {
+                toggleIcon.className = 'fas fa-chevron-left';
+                toggleText.textContent = 'Panel';
+            }
+            
+            setTimeout(() => {
+                if (window.map) {
+                    window.map.invalidateSize();
+                }
+            }, 300);
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+        
+        // FUNCIÓN ACTUALIZADA: Centrar mapa dinámicamente
+        function centrarMapa() {
+            if (!window.mapaGMSolutions || !window.mapaGMSolutions.map) {
+                console.error('❌ Mapa no disponible');
+                return;
+            }
+            
+            // Usar centro dinámico basado en clientes visibles
+            const exito = window.mapaGMSolutions.centrarEnClientesVisibles(true);
+            
+            if (exito) {
+                // Feedback visual en el botón
+                const btn = document.querySelector('.center-map-btn');
+                const originalIcon = btn.innerHTML;
+                
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                btn.style.background = '#28a745';
+                btn.style.color = 'white';
+                btn.style.borderColor = '#28a745';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalIcon;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                }, 1000);
+            } else {
+                console.error('❌ Error al centrar mapa');
+            }
+        }
+        
+        function resetearTodo() {
+            document.querySelectorAll('#client-search, #search-client').forEach(input => input.value = '');
+            document.querySelectorAll('.filter-btn.active').forEach(btn => btn.classList.remove('active'));
+            
+            if (window.mapaGMSolutions) {
+                window.mapaGMSolutions.mostrarResultados([...window.clientesData]);
+            }
+        }
+        
+        function exportarDatos() {
+            const datos = window.mapaGMSolutions?.clientesFiltrados || window.clientesData;
+            alert(`Exportando ${datos.length} clientes (función en desarrollo)`);
+        }
+        
+        function abrirEstadisticas() {
+            const stats = window.estadosManager?.obtenerEstadisticas() || {};
+            let mensaje = 'ESTADÍSTICAS DEL SISTEMA:\n\n';
+            Object.entries(stats).forEach(([campo, valores]) => {
+                const config = window.camposConfig?.dinamicos[campo];
+                mensaje += `${config ? config.nombre : campo}:\n`;
+                Object.entries(valores).forEach(([valor, count]) => {
+                    mensaje += `  • ${valor}: ${count} clientes\n`;
+                });
+                mensaje += '\n';
+            });
+            alert(mensaje);
+        }
+        
+        // Atajos de teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'b') {
+                e.preventDefault();
+                if (window.innerWidth > 576) {
+                    toggleSidebarDesktop();
+                } else {
+                    toggleSidebar();
+                }
+            }
+            
+            if (e.key === 'Escape' && window.innerWidth <= 576) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+            
+            // Ctrl + M o Home = Centrar Mapa
+            if ((e.ctrlKey && e.key === 'm') || e.key === 'Home') {
+                e.preventDefault();
+                centrarMapa();
+            }
+        });
+        
+        // Resize handler
+        window.addEventListener('resize', function() {
+            if (window.map) {
+                setTimeout(() => {
+                    window.map.invalidateSize();
+                }, 100);
+            }
+        });
+        
+        console.log('🚀 GM Solutions Mapa v2.3.2 ARQUITECTURA MODULAR - Cargado');
+        console.log('🏗️ Nueva estructura:');
+        console.log('  📋 Config: Configuraciones separadas');
+        console.log('  📊 Data: Datos separados');
+        console.log('  ⚙️ Modules: Lógica separada');
+    </script>
+</body>
+</html>

@@ -1388,10 +1388,9 @@ IF !OCAlista.CursorFill()
         				+CHR(13)+"Mensaje al Operador: "+cMensaje;
         				+CHR(13)+"Mensaje de Error:"+laError[2];
         				+CHR(13)+"Alias:"+lcaliasCursor;
-        				+CHR(13)+lccmdSelectCursor;
-        				+CHR(13)+'Parent: '+This.NaME
+        				+CHR(13)+lccmdSelectCursor
         				
-        =Oavisar.Usuario(lcMensaje,0)
+        *=Oavisar.Usuario(lcMensaje,0)
         				
         Grabar_log(lcmensaje)
 		oavisar.proceso('N')

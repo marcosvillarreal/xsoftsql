@@ -1382,10 +1382,10 @@ lreturn = .f.
 
 IF !OCAlista.CursorFill()
 	IF AERROR(laError) > 0 AND lbCartel 
-		cMensaje = VerErrorSQL(laError[1])
-		cMensaje = "Error al obtener datos:";
+		lcMensaje = VerErrorSQL(laError[1])
+		lcMensaje = "Error al obtener datos:";
 						+CHR(13)+"Código Error:" +strtrim(laError[1]);
-        				+CHR(13)+"Mensaje al Operador: "+cMensaje;
+        				+CHR(13)+"Mensaje al Operador: "+lcMensaje;
         				+CHR(13)+"Mensaje de Error:"+laError[2];
         				+CHR(13)+"Alias:"+lcaliasCursor;
         				+CHR(13)+lccmdSelectCursor
