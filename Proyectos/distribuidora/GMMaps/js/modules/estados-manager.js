@@ -15,26 +15,13 @@ window.estadosManager = {
         let campo = this.campoPrioritario;
         let valor = cliente[campo];
         
-        if (valor && window.estadosConfig[campo] && window.estadosConfig[campo][valor]) {
-            const configuracion = window.estadosConfig[campo][valor];
-            const iconoInfo = window.iconosManager ? window.iconosManager.obtenerIcono(configuracion.codigo, 'emoji') : '📍';
-            const color = window.iconosManager ? window.iconosManager.obtenerColor(configuracion.codigo) : '#6c757d';
+        if (valor && window.estadosConfig[campo]) {
+            // Buscar coincidencia case-insensitive
+            const valorNormalizado = valor.toString().toLowerCase();
+            const configuracionValor = window.estadosConfig[campo][valorNormalizado];
             
-            return {
-                color: color,
-                icon: iconoInfo,
-                descripcion: configuracion.descripcion,
-                codigo: configuracion.codigo,
-                campo: campo,
-                valor: valor
-            };
-        }
-        
-        // Si no tiene el campo prioritario, buscar en otros campos
-        for (const [nombreCampo, opciones] of Object.entries(window.estadosConfig)) {
-            const valorCampo = cliente[nombreCampo];
-            if (valorCampo && opciones[valorCampo]) {
-                const configuracion = opciones[valorCampo];
+            if (configuracionValor) {
+                const configuracion = configuracionValor;
                 const iconoInfo = window.iconosManager ? window.iconosManager.obtenerIcono(configuracion.codigo, 'emoji') : '📍';
                 const color = window.iconosManager ? window.iconosManager.obtenerColor(configuracion.codigo) : '#6c757d';
                 
@@ -43,9 +30,33 @@ window.estadosManager = {
                     icon: iconoInfo,
                     descripcion: configuracion.descripcion,
                     codigo: configuracion.codigo,
-                    campo: nombreCampo,
-                    valor: valorCampo
+                    campo: campo,
+                    valor: valor
                 };
+            }
+        }
+        
+        // Si no tiene el campo prioritario, buscar en otros campos
+        for (const [nombreCampo, opciones] of Object.entries(window.estadosConfig)) {
+            const valorCampo = cliente[nombreCampo];
+            if (valorCampo) {
+                // Buscar coincidencia case-insensitive
+                const valorNormalizado = valorCampo.toString().toLowerCase();
+                const configuracion = opciones[valorNormalizado];
+                
+                if (configuracion) {
+                    const iconoInfo = window.iconosManager ? window.iconosManager.obtenerIcono(configuracion.codigo, 'emoji') : '📍';
+                    const color = window.iconosManager ? window.iconosManager.obtenerColor(configuracion.codigo) : '#6c757d';
+                    
+                    return {
+                        color: color,
+                        icon: iconoInfo,
+                        descripcion: configuracion.descripcion,
+                        codigo: configuracion.codigo,
+                        campo: nombreCampo,
+                        valor: valorCampo
+                    };
+                }
             }
         }
         
@@ -90,16 +101,24 @@ window.estadosManager = {
     // Obtener estadísticas de estados basadas en datos actuales
     obtenerEstadisticas: function() {
         if (!window.clientesData || !window.estadosConfig) {
+            console.warn('⚠️ clientesData o estadosConfig no disponible para estadísticas');
             return {};
         }
         
+        console.log('📊 Calculando estadísticas para:', this.campoPrioritario);
         const stats = {};
         
         Object.keys(window.estadosConfig).forEach(campo => {
             stats[campo] = {};
             this.obtenerValoresCampo(campo).forEach(valor => {
-                const count = window.clientesData.filter(cliente => cliente[campo] === valor).length;
+                // Contar con comparación case-insensitive
+                const count = window.clientesData.filter(cliente => {
+                    const valorCliente = cliente[campo];
+                    if (!valorCliente) return false;
+                    return valorCliente.toString().toLowerCase() === valor.toLowerCase();
+                }).length;
                 stats[campo][valor] = count;
+                console.log(`  ${valor}: ${count} clientes`);
             });
         });
         

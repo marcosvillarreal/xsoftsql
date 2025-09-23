@@ -28,7 +28,7 @@ window.filtrosManager = {
         if (config.tipo === 'select') {
             // Filtros por opciones predefinidas
             grupoDiv.innerHTML = `
-                <label>${config.icono} Por ${config.nombre}:</label>
+                <label>${window.iconosHelper.obtenerIconoCampo(config)} Por ${config.nombre}:</label>
                 <div class="filter-buttons">
                     ${config.opciones.map(opcion => 
                         `<button class="filter-btn" onclick="filtrosManager.aplicarFiltroEspecifico('${campo}', '${opcion}', this)">${this.formatearOpcion(opcion)}</button>`
@@ -40,7 +40,7 @@ window.filtrosManager = {
             const valoresUnicos = this.obtenerValoresUnicos(campo);
             if (valoresUnicos.length > 0) {
                 grupoDiv.innerHTML = `
-                    <label>${config.icono} Por ${config.nombre}:</label>
+                    <label>${window.iconosHelper.obtenerIconoCampo(config)} Por ${config.nombre}:</label>
                     <div class="filter-buttons" id="${campo}-filters">
                         ${valoresUnicos.map(valor => 
                             `<button class="filter-btn" onclick="filtrosManager.aplicarFiltroEspecifico('${campo}', '${valor}', this)">${valor}</button>`

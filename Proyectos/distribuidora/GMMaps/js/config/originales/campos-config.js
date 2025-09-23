@@ -1,4 +1,4 @@
-// js/campos.js - Configuración dinámica de campos
+// config/campos-config.js - SOLO CONFIGURACIONES (Sin emojis, sin lógica)
 window.camposConfig = {
     // Campos básicos (siempre requeridos)
     basicos: ['num', 'coords', 'nombre', 'direccion', 'activo'],
@@ -8,7 +8,7 @@ window.camposConfig = {
         vendedor: {
             nombre: 'Vendedor',
             tipo: 'texto',
-            icono: '👤',
+            icono_texto: 'user',
             filtrable: true,
             buscable: true,
             mostrar_popup: true
@@ -16,8 +16,8 @@ window.camposConfig = {
         canal_venta: {
             nombre: 'Canal de Venta',
             tipo: 'select',
-            icono: '💰',
-            opciones: ['online', 'presencial', 'telefono', 'mixto'],
+            icono_texto: 'dollar',
+            opciones: ['online', 'presencial', 'telefono', 'mixto', 'otros'],
             filtrable: true,
             buscable: true,
             mostrar_popup: true
@@ -25,7 +25,7 @@ window.camposConfig = {
         categoria_cliente: {
             nombre: 'Categoría Cliente',
             tipo: 'select',
-            icono: '⭐',
+            icono_texto: 'star',
             opciones: ['bronze', 'silver', 'gold', 'premium', 'vip'],
             filtrable: true,
             buscable: false,
@@ -34,7 +34,7 @@ window.camposConfig = {
         telefono: {
             nombre: 'Teléfono',
             tipo: 'texto',
-            icono: '📞',
+            icono_texto: 'phone',
             filtrable: false,
             buscable: true,
             mostrar_popup: true
@@ -42,7 +42,7 @@ window.camposConfig = {
         email: {
             nombre: 'Email',
             tipo: 'email',
-            icono: '✉️',
+            icono_texto: 'mail',
             filtrable: false,
             buscable: true,
             mostrar_popup: true
@@ -50,7 +50,7 @@ window.camposConfig = {
         facturacion_anual: {
             nombre: 'Facturación Anual',
             tipo: 'numero',
-            icono: '💵',
+            icono_texto: 'money',
             filtrable: false,
             buscable: false,
             mostrar_popup: true,
@@ -59,7 +59,7 @@ window.camposConfig = {
         zona_geografica: {
             nombre: 'Zona Geográfica',
             tipo: 'select',
-            icono: '🌍',
+            icono_texto: 'globe',
             opciones: ['norte', 'sur', 'este', 'oeste', 'centro'],
             filtrable: true,
             buscable: false,
@@ -68,32 +68,13 @@ window.camposConfig = {
         estado_cuenta: {
             nombre: 'Estado de Cuenta',
             tipo: 'select',
-            icono: '💳',
+            icono_texto: 'credit-card',
             opciones: ['al_dia', 'con_deuda', 'moroso', 'bloqueado'],
-            filtrable: true,
+            filtrable: false,
             buscable: false,
             mostrar_popup: true
         }
-    },
-    
-    // Función para validar que un cliente tenga los campos mínimos
-    validarCliente: function(cliente) {
-        const clienteValidado = {};
-        
-        // Campos básicos con valores por defecto
-        clienteValidado.num = cliente.num || 'SIN_ID';
-        clienteValidado.coords = cliente.coords || [0, 0];
-        clienteValidado.nombre = cliente.nombre || 'Cliente sin nombre';
-        clienteValidado.direccion = cliente.direccion || 'Dirección no especificada';
-        clienteValidado.activo = cliente.activo !== undefined ? cliente.activo : true;
-        clienteValidado.fecha_alta = cliente.fecha_alta || 'N/A';
-        clienteValidado.tipo_negocio = cliente.tipo_negocio || 'no especificado';
-        
-        // Campos dinámicos (mantener valor original o vacío)
-        Object.keys(this.dinamicos).forEach(campo => {
-            clienteValidado[campo] = cliente[campo] || '';
-        });
-        
-        return clienteValidado;
     }
 };
+
+console.log('Campos-config cargado:', Object.keys(window.camposConfig.dinamicos).length, 'campos');

@@ -17,7 +17,7 @@ window.camposConfig = {
             nombre: 'Canal de Venta',
             tipo: 'select',
             icono_texto: 'dollar',
-            opciones: ['almacen_y_desp','club/soc_fomento','otros'],
+            opciones: ['Almacen_y_desp','Clubsoc_fomento','Minimercado','Otros'],
             filtrable: true,
             buscable: true,
             mostrar_popup: true
@@ -26,7 +26,7 @@ window.camposConfig = {
             nombre: 'Categoría Cliente',
             tipo: 'select',
             icono_texto: 'star',
-            opciones: ['clientes'],
+            opciones: ['Clientes','Cta_cte_servicio'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
@@ -60,7 +60,7 @@ window.camposConfig = {
             nombre: 'Zona Geográfica',
             tipo: 'select',
             icono_texto: 'globe',
-            opciones: ['sin_sector'],
+            opciones: ['Jueves_1_vrosas_whi','Jueves_2_centro_sude','Martes_1_centro_nort','Martes_2_norte','Martes_3_centro','Miecoles_3_espora','Miercoles_1_vmitre','Miercoles_2_aldea_ro','Sin_sector','Viernes_1_bordeux_ma','Viernes_2','Viernes_4'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true

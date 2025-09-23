@@ -113,7 +113,11 @@ window.marcadoresManager = {
         
         Object.entries(configuraciones).forEach(([valor, config]) => {
             const count = window.clientesData ? 
-                window.clientesData.filter(cliente => cliente[campo] === valor).length : 0;
+                window.clientesData.filter(cliente => {
+                    const valorCliente = cliente[campo];
+                    if (!valorCliente) return false;
+                    return valorCliente.toString().toLowerCase() === valor.toLowerCase();
+                }).length : 0;
             
             // Obtener icono y color usando el sistema de códigos
             const icono = window.iconosManager ? window.iconosManager.obtenerIcono(config.codigo, 'emoji') : '📍';

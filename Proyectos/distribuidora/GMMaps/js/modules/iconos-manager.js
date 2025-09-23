@@ -68,9 +68,12 @@ window.iconosManager = {
             'crown': '👑',
             'laptop': '💻',
             'store': '🏪',
+            'warehouse': '🏢',
             'phone': '📞',
             'sync-alt': '🔄',
             'file-alt': '📄',
+            'question-circle': '❓',
+            'calendar-day': '📅',
             'arrow-up': '⬆️',
             'arrow-down': '⬇️',
             'arrow-right': '➡️',
@@ -96,6 +99,15 @@ window.iconosManager = {
     // Generar HTML de icono completo
     generarHTMLIcono: function(codigo, tamaño = '16px') {
         const config = this.obtenerIconoConfig(codigo);
+        
+        // Verificar que config tiene todas las propiedades necesarias
+        if (!config || !config.css || !config.color) {
+            console.warn(`⚠️ Configuración incompleta para código: ${codigo}`, config);
+            const defaultConfig = this.obtenerIconoDefault();
+            return `<i class="fas ${defaultConfig.css}" style="color: ${defaultConfig.color}; font-size: ${tamaño};"></i>`;
+        }
+        
+        console.log('🎨 Iconos-manager, generando HTML para:', codigo, config);
         return `<i class="fas ${config.css}" style="color: ${config.color}; font-size: ${tamaño};"></i>`;
     }
 };

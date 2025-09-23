@@ -15,9 +15,10 @@ window.popupManager = {
         // Generar información adicional basada en campos configurados
         if (window.camposConfig && window.camposConfig.dinamicos) {
             Object.entries(window.camposConfig.dinamicos).forEach(([campo, fieldConfig]) => {
-                if (fieldConfig.mostrar_popup && cliente[campo]) {
+                if (fieldConfig.mostrar_popup && (cliente[campo] || cliente[campo] === 'false' || cliente[campo] === '0')) {
                     const valor = this.formatearValor(cliente[campo], fieldConfig);
-                    infoAdicional += `${fieldConfig.icono} ${fieldConfig.nombre}: ${valor}<br>`;
+                    const icono = window.iconosHelper ? window.iconosHelper.obtenerIconoCampo(fieldConfig) : '📋';
+                    infoAdicional += `${icono} ${fieldConfig.nombre}: ${valor}<br>`;
                 }
             });
         }
@@ -41,7 +42,7 @@ window.popupManager = {
     
     // Formatear valor según el tipo de campo
     formatearValor: function(valor, fieldConfig) {
-        if (!valor) return '';
+        if (!valor && valor !== 'false' && valor !== '0') return '';
         
         switch (fieldConfig.tipo) {
             case 'numero':
@@ -58,9 +59,15 @@ window.popupManager = {
         }
     },
     
-    // Formatear opción para mostrar (capitalizar)
+    // Formatear opción para mostrar (capitalizar) - Ahora solo maneja strings
     formatearOpcion: function(opcion) {
-        if (!opcion) return '';
+        if (!opcion && opcion !== 'false' && opcion !== '0') return '';
+        
+        // Formatear valores booleanos como strings
+        if (opcion === 'true') return 'Activo';
+        if (opcion === 'false') return 'Inactivo';
+        
+        // Formatear otros strings normalmente
         return opcion.toString().charAt(0).toUpperCase() + opcion.slice(1).replace(/_/g, ' ');
     }
 };

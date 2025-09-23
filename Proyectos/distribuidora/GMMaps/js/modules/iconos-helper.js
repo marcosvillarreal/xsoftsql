@@ -3,6 +3,7 @@ window.iconosHelper = {
     
     // Mapeo de iconos de texto a HTML
     iconosTexto: {
+		'check-circle': '<i class="fas fa-check-circle"></i>',
         'user': '<i class="fas fa-user"></i>',
         'dollar': '<i class="fas fa-dollar-sign"></i>',
         'star': '<i class="fas fa-star"></i>',
