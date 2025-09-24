@@ -17,7 +17,7 @@ window.camposConfig = {
             nombre: 'Canal de Venta',
             tipo: 'select',
             icono_texto: 'dollar',
-            opciones: ['Almacen_y_desp','Clubsoc_fomento','Minimercado','Otros'],
+            opciones: ['almacen','almacen_y_desp','carnic_y_desp','cine','cotillon','est_servicio','kiosco','otros','panaderia','polleria','restaurant','terminal_omnibus','universidad','verd_y_desp','verduleria'],
             filtrable: true,
             buscable: true,
             mostrar_popup: true
@@ -26,7 +26,7 @@ window.camposConfig = {
             nombre: 'Categoría Cliente',
             tipo: 'select',
             icono_texto: 'star',
-            opciones: ['Clientes','Cta_cte_servicio'],
+            opciones: ['categoria_a','categoria_b','categoria_d','categoria_e','categoria_f','categoria_g','kiosco_b','morosos','proximidad','sin_presupuesto'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
@@ -60,7 +60,7 @@ window.camposConfig = {
             nombre: 'Zona Geográfica',
             tipo: 'select',
             icono_texto: 'globe',
-            opciones: ['Jueves_1_vrosas_whi','Jueves_2_centro_sude','Martes_1_centro_nort','Martes_2_norte','Martes_3_centro','Miecoles_3_espora','Miercoles_1_vmitre','Miercoles_2_aldea_ro','Sin_sector','Viernes_1_bordeux_ma','Viernes_2','Viernes_4'],
+            opciones: ['a1__milpaterno','a2__indflrjarca','v1__hospcagl','v2__guiinapielb','v3__riosst_clara','v4__belgrano','v5__amr20centro','v6__ippvterminal'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
@@ -71,6 +71,15 @@ window.camposConfig = {
             icono_texto: 'credit-card',
             opciones: ['al_dia', 'con_deuda', 'moroso', 'bloqueado'],
             filtrable: false,
+            buscable: false,
+            mostrar_popup: true
+        },
+        estado: {
+            nombre: 'Estado',
+            tipo: 'select',
+            icono_texto: 'credit-card',
+            opciones: ['ninguno','venta', 'no_venta','cerrado','negocio_no_encontrado','no_estaba_el_comprador','no_ternia_dinero'],
+            filtrable: true,
             buscable: false,
             mostrar_popup: true
         }
