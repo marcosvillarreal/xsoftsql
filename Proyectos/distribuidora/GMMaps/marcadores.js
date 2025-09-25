@@ -29,236 +29,126 @@ icons = {
 	black: createColorIcon('black')
 };
 
-const marcadores = [																						
+const marcadores = [											
 	
 	{
-		lat: -40.8158675,
-		lng: -63.0033763,
+		lat: -38.692389,
+		lng: -62.219799,
 		icon: 'green',
-		popup: 'WIMTER 418',
-		alt: '3135',
-		nombre: 'MORALESFREDY ORLANDO'
+		popup: 'TRES SARGENTOS 3008',
+		alt: '1701',
+		nombre: 'LA SALMUERIA S CAP I SECC IV'
 	}
 	,
 	{
-		lat: -40.8222724,
-		lng: -62.9966591,
-		icon: 'red',
-		popup: 'WINTER 703',
-		alt: '1138',
-		nombre: 'LINARES GABRIEL ADRIAN'
-	}
-	,
-	{
-		lat: -40.8244054,
-		lng: -63.0000572,
-		icon: 'red',
-		popup: 'BERUTTI  389',
-		alt: '2190',
-		nombre: 'ROMERO MARIO'
-	}
-	,
-	{
-		lat: -40.8213590,
-		lng: -63.0002412,
-		icon: 'red',
-		popup: 'MIRANDA 266',
-		alt: '2561',
-		nombre: 'GUAQUIAN DONATO ELVIO'
-	}
-	,
-	{
-		lat: -40.8205014,
-		lng: -62.9983147,
-		icon: 'red',
-		popup: 'MIRANDA  114',
-		alt: '1250',
-		nombre: 'CARRIQUEO MARTA'
-	}
-	,
-	{
-		lat: -40.8268960,
-		lng: -62.9890289,
-		icon: 'red',
-		popup: 'CHACO Y SAN JUAN',
-		alt: '2999',
-		nombre: 'REYES RAUL MOISES'
-	}
-	,
-	{
-		lat: -40.8187358,
-		lng: -63.0011611,
-		icon: 'red',
-		popup: 'GUIDO Y O`HIGGINS',
-		alt: '2460',
-		nombre: 'CARDOZO FRANCO ARNALDO'
-	}
-	,
-	{
-		lat: -40.819661,
-		lng: -63.003720,
-		icon: 'red',
-		popup: 'GUIDO 1635',
-		alt: '3340',
-		nombre: 'FLORES ABRAHAM'
-	}
-	,
-	{
-		lat: -40.819708,
-		lng: -63.003831,
-		icon: 'red',
-		popup: 'JOSE MARIA GUIDO 1645',
-		alt: '2815',
-		nombre: 'VILCA MIRIAM LILANA (1)'
-	}
-	,
-	{
-		lat: -40.8199901,
-		lng: -63.0039250,
+		lat: -38.692389,
+		lng: -62.219799,
 		icon: 'green',
-		popup: 'GUIDO 1650',
-		alt: '2070',
-		nombre: 'KCO LA TERMINAL'
+		popup: 'TRES SARGENTOS 3008',
+		alt: '1701',
+		nombre: 'LA SALMUERIA S CAP I SECC IV'
 	}
 	,
 	{
-		lat: -40.8268348,
-		lng: -62.9975319,
-		icon: 'red',
-		popup: 'AVPERON (PARISI) 228',
-		alt: '1645',
-		nombre: 'IBAÑEZ KARINA FABIANA'
-	}
-	,
-	{
-		lat: -40.8161928,
-		lng: -63.0026233,
-		icon: 'red',
-		popup: 'ALVARO BARROS 1374',
-		alt: '3047',
-		nombre: 'RIOS FRANCO DAYSI'
-	}
-	,
-	{
-		lat: -40.8204715,
-		lng: -63.0066373,
-		icon: 'red',
-		popup: 'AGUADA CECILIO 21',
-		alt: '3065',
-		nombre: 'ANDRADE CAILLAHUA IRIS JHOANA'
-	}
-	,
-	{
-		lat: -40.8058418,
-		lng: -63.0133976,
-		icon: 'red',
-		popup: 'CASTELLI 180',
-		alt: '3171',
-		nombre: 'RETAMAL MARCELA BEATRIZ'
-	}
-	,
-	{
-		lat: -40.8205498,
-		lng: -63.0079883,
-		icon: 'red',
-		popup: 'LOS MENUCOS 114',
-		alt: '2180',
-		nombre: 'RODRIGUEZ JUAN BAUTISTA'
-	}
-	,
-	{
-		lat: -40.8118883,
-		lng: -62.9961589,
-		icon: 'red',
-		popup: 'RAMOS MEXIAS 159',
-		alt: '1320',
-		nombre: 'CONDORI MARTIN'
-	}
-	,
-	{
-		lat: -40.8118883,
-		lng: -62.9961589,
-		icon: 'red',
-		popup: 'RAMOS MEXIA Y CASTELLI',
-		alt: '2787',
-		nombre: 'ABAN CASTRO CARLOS'
-	}
-	,
-	{
-		lat: -40.8231325,
-		lng: -63.0129092,
-		icon: 'red',
-		popup: 'CASTELLI 670',
-		alt: '2677',
-		nombre: 'RAMOS RUEDA LUIS MIGUEL'
-	}
-	,
-	{
-		lat: -40.8118883,
-		lng: -62.9961589,
+		lat: -38.729681613883,
+		lng: -62.2675203779102,
 		icon: 'green',
-		popup: 'CASTELLI 732',
-		alt: '2982',
-		nombre: 'ABAN NOEL EVARISTO'
+		popup: 'UNDIANO 634',
+		alt: '1356',
+		nombre: 'SANCHEZ SEBASTIAN DANIEL'
 	}
 	,
 	{
-		lat: -40.8241372,
-		lng: -63.0066876,
-		icon: 'red',
-		popup: 'RAMOS MEXIA 492',
-		alt: '3003',
-		nombre: 'AILLAPI LEANDRO RAMIRO'
+		lat: -38.7339997984646,
+		lng: -62.2658631779102,
+		icon: 'green',
+		popup: 'ANGEL BRUNEL 935',
+		alt: '2055',
+		nombre: 'CHEN CAIYUN ( ANGEL BRUNEL )'
 	}
 	,
 	{
-		lat: -40.8105041,
-		lng: -63.0123305,
-		icon: 'red',
-		popup: 'CASTELLI 648',
-		alt: '1374',
-		nombre: 'JULIAN SACACALICIAR'
+		lat: -38.7425628131513,
+		lng: -62.2668325490743,
+		icon: 'green',
+		popup: 'ALVAREZ JONTE 1360',
+		alt: '808',
+		nombre: 'YAN YUXIN'
 	}
 	,
 	{
-		lat: -40.824711,
-		lng: -63.004701,
-		icon: 'red',
-		popup: 'CARLOS ROMAN 236',
-		alt: '4141',
-		nombre: 'LARA JULIO'
+		lat: -38.744191,
+		lng: -62.264318,
+		icon: 'green',
+		popup: 'TENIENTE FARIAS 1557',
+		alt: '1281',
+		nombre: 'GUERRERO CLAUDIA CAROLINA'
+	}
+	,
+	{
+		lat: -38.7436924126308,
+		lng: -62.2627269355821,
+		icon: 'green',
+		popup: 'PIEDRA BUENA 1226',
+		alt: '1981',
+		nombre: 'YAÑEZ EMILIANO JOSE'
+	}
+	,
+	{
+		lat: -38.737743,
+		lng: -62.259936,
+		icon: 'green',
+		popup: 'RIO NEGRO 747',
+		alt: '1676',
+		nombre: 'CABION ANGELA TERESA'
+	}
+	,
+	{
+		lat: -38.7334196241747,
+		lng: -62.2668631644178,
+		icon: 'green',
+		popup: 'ANGEL BRUNEL 849',
+		alt: '1525',
+		nombre: 'JODURCHA SANDRA  FABIANA'
+	}
+	,
+	{
+		lat: -38.731598,
+		lng: -62.259579,
+		icon: 'green',
+		popup: 'DARREGUEIRA 1064',
+		alt: '1679',
+		nombre: 'LEGUIZAMON PUCCINELLI GONZALO EZEQU'
+	}
+	,
+	{
+		lat: -38.7349845354555,
+		lng: -62.2746139932539,
+		icon: 'green',
+		popup: 'UNDIANO 1259',
+		alt: '940',
+		nombre: 'CHEN LAN SOCIEDAD ANONIMA'
 	}]
 
 
 const recorridos = {		
 		ruta1:{
-			nombre: "Miercoles                                         ",
+			nombre: "REPARTO_MARTIN                                    ",
 			color: "#e74c3c",
 			peso:4,
 			puntos: [
 				
-[-40.8158675,-63.0033763],
-[-40.8222724,-62.9966591],
-[-40.8244054,-63.0000572],
-[-40.8213590,-63.0002412],
-[-40.8205014,-62.9983147],
-[-40.8268960,-62.9890289],
-[-40.8187358,-63.0011611],
-[-40.819661,-63.003720],
-[-40.819708,-63.003831],
-[-40.8199901,-63.0039250],
-[-40.8268348,-62.9975319],
-[-40.8161928,-63.0026233],
-[-40.8204715,-63.0066373],
-[-40.8058418,-63.0133976],
-[-40.8205498,-63.0079883],
-[-40.8118883,-62.9961589],
-[-40.8118883,-62.9961589],
-[-40.8231325,-63.0129092],
-[-40.8118883,-62.9961589],
-[-40.8241372,-63.0066876],
-[-40.8105041,-63.0123305],
-[-40.824711,-63.004701]
+[-38.692389,-62.219799],
+[-38.692389,-62.219799],
+[-38.729681613883,-62.2675203779102],
+[-38.7339997984646,-62.2658631779102],
+[-38.7425628131513,-62.2668325490743],
+[-38.744191,-62.264318],
+[-38.7436924126308,-62.2627269355821],
+[-38.737743,-62.259936],
+[-38.7334196241747,-62.2668631644178],
+[-38.731598,-62.259579],
+[-38.7349845354555,-62.2746139932539]
 			]
 		}}
 
@@ -423,4 +313,29 @@ function obtenerMarcadores() {
 // Función para obtener un marcador por su alt
 function obtenerMarcadorPorAlt(alt) {
     return marcadores.find(marcador => marcador.alt === alt);
+}
+
+// Función para obtener información de los puntos de un recorrido
+function obtenerPuntosRecorrido(nombreRuta) {    
+	if (!recorridos[nombreRuta]) return [];        
+	
+	const ruta = recorridos[nombreRuta];    
+	return ruta.puntos.map((punto, index) => {        
+		// Buscar si hay un marcador exacto en esta coordenada        
+		const marcadorExacto = marcadores.find(m =>             
+			Math.abs(m.lat - punto[0]) < 0.0001 &&             
+			Math.abs(m.lng - punto[1]) < 0.0001        
+		);
+		                
+		return {            
+			paso: index + 1,            
+			lat: punto[0],            
+			lng: punto[1],            
+			nombre: marcadorExacto ? marcadorExacto.nombre : `Punto ${index + 1}`,            
+			direccion: marcadorExacto ? marcadorExacto.popup : `Coordenadas: ${punto[0].toFixed(6)}, ${punto[1].toFixed(6)}`,            
+			alt: marcadorExacto ? marcadorExacto.alt : `paso-${index}`,            
+			esInicio: index === 0,            
+			esFin: index === ruta.puntos.length - 1        
+		};    
+	});
 }

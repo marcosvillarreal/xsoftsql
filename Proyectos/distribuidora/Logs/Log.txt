@@ -56,1780 +56,29 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-trol activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
-22-09-2025 11:58:50 , Verificando OCX
-22-09-2025 11:58:52 , Acceso al sistema, antes de autenticar
-22-09-2025 11:58:53 , Obteniendo conexion a servidor
-22-09-2025 11:58:53 , Verificando Licencia
-22-09-2025 11:58:56 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
-22-09-2025 11:58:57 , Datos de la empresa
-22-09-2025 11:59:12 , Error: No se encuentra la variable 'LCMENSAJE'. Linea : Grabar_log(lcmensaje) Error :         12 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM101F3.TMP Ultimo Control act
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ivo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
-22-09-2025 11:59:56 , Verificando OCX
-22-09-2025 11:59:58 , Acceso al sistema, antes de autenticar
-22-09-2025 11:59:58 , Obteniendo conexion a servidor
-22-09-2025 11:59:59 , Verificando Licencia
-22-09-2025 12:00:01 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
-22-09-2025 12:00:02 , Datos de la empresa
-22-09-2025 12:00:23 , Error al obtener datos:
-Código Error:1435
-Mensaje al Operador: 
-Mensaje de Error:Microsoft OLE DB Provider for SQL Server : Invalid column name 'fechaalta'.
-Alias:CsrDirecciones
-select ctacte.id as ID,ctacte.cnombre as Nombre,ctacte.cdireccion as Direccion  ,localidad.nombre as Localidad,provincia.nombre as Provincia  ,ISNULL(lat,0) as lat,ISNULL(lng,0) as lng ,ctacte.cnumero as codigo   ,ctacte.ctelefono as telefono,ctacte.fech
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-aalta  from ctacte   left join localidad on ctacte.idlocalidad = localidad.id  left join provincia on ctacte.idprovincia = provincia.id  left join ctacte_2 on ctacte.id = ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,1100000100,1100000107,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1100000108,1100000112,1100000128,1100000135,1100000146,1100000288,1100000359,1100000366,1100000611,1100000615,1100000616,1100000625,1100000637,1100000642,1100000686,1100000709,1100000710,1100000714,1100000717,1100000731,1100000794,1100000846,1100000997,1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-100001124,1100001136,1100001156,1100001158,1100001173,1100001178,1100001180,1100001193,1100001244,1100001258,1100001259,1100001282,1100001287,1100001297,1100001305,1100001335,1100001371,1100001377,1100001380,1100001388,1100001398,1100001415,1100001417,11
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00001438,1100001442,1100001451,1100001479,1100001484,1100001486,1100001598,1100001644,1100001655,1100001671,1100001687,1100001718,1100001721,1100001745,1100001750,1100001751,1100001773,1100001775,1100001776,1100001780,1100001799,1100001825,1100001851,110
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0001864,1100001882,1100001886,1100001888,1100001912,1100002028,1100002034,1100002097,1100002118,1100002127,1100002135,1100002136,1100002147,1100002160,1100002161,1100002196,1100002236,1100002267,1100002268,1100002269,1100002283,1100002319,1100002341,1100
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-002362,1100002504,1100002540,1100002562,1100002637,1100002642,1100002726,1100002757,1100002853,1100002876,1100002890,1100002901,1100002919,1100002947,1100002948,1100002975,1100003040)
-22-09-2025 12:00:27 , Error: El archivo 'csrdirecciones.dbf' no existe. Linea : SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-srDirecciones.provincia,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,IIF(RTRIM(CsrImprimir.estado)='VENTA','V',(IIF(RTRIM(CsrImprimir.estado)='NO VENTA','N','Z'))) as estado FROM CsrDirecciones LEFT JOIN Csr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Imprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE Error :          1 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM101J3.TMP 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ultimo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
-22-09-2025 12:02:47 , Error: No coinciden los tipos de datos. Linea : IF NOT this.Parent.chkjson Error :          9 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM101OL.TMP Ultimo Control activo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
-22-09-2025 12:05:34 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : ncont		= ncont+1 Error :        107 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM10201.TM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-P Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
-22-09-2025 12:06:32 , Error: No se encuentra la propiedad COUNTOBJECT. Linea : i = oObjeto.countobject Error :       1734 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM1024J.TMP Ultimo Control 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
-22-09-2025 12:08:01 , Error: No se encuentra el objeto OOBJETO. Linea : oObjeto.AddProperty("num"+strzero(i+1,3),oDatos.codigo) Error :       1923 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-102A3.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
-22-09-2025 12:09:43 , Error: No se encuentra la propiedad FECHA_ALTA. Linea : "fecha_alta": "<<oDatos.fecha_alta>>", Error :       1734 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM102CL.TMP U
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ltimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
-22-09-2025 12:12:01 , Error: SQL: no se encuentra la columna 'EMAIL'. Linea : SELECT ' ' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.pro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-vincia ,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,CsrDirecciones.codigo ,' ' as estado ,nomvendedor, canal,nomsector,SPACE(10) as categoria_cliente ,DTOC(CsrDirecciones.fechaalta) as fecha_alta,SPACE(10) as zona ,CsrDirecciones
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.telefono,CsrDirecciones.email,SPACE(10) as sector ,0 as saldo, 0 as facturacion_mensual FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE Error :       180
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 6 Ultimo Alias Activo: CSRDIRECCIONES Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM102JS.TMP Ultimo Control activo:  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 22-09-2025 12:13:53 , Error: No se encuentra la propiedad ESTADO_CUENTA. Linea : "estado_cuenta": "<<oDatos.estado_cuenta>>", Error :       1734 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2007,8 +256,50 @@ vincia ,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,Csr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 12:15:32 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : cSinRuta = cSinRuta + "CLIENTE: "+cNomCtacte+" // Dir:"+cdireccion+CHR(13) Error :        107 Ultimo Alias Activo: CSRREMFAC Ultimo registro:         3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2182,8 +473,50 @@ Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 _FAC.CMD_CARGAR.CLICK
 22-09-2025 15:02:52 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : IF i = 1 Error :        107 Ultimo Alias Activo: CSRREMFAC Ultimo registro:        114  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM103AC.TMP Ultimo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2353,8 +686,50 @@ _FAC.CMD_CARGAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 15:04:51 , Error: No se encuentra la variable 'CFILENAME'. Linea : loFile = loScript.OpenTextFile(cFileName,8) Error :         12 Ultimo Alias Activo: CSRREMFAC Ultimo registro:        114  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM103DU.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2520,8 +895,50 @@ TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \0000HRM103NR.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 15:25:39 , Error: No se encuentra la propiedad ID. Linea : IF oDatos.id = 1100002637 Error :       1734 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM1041H.TMP Ultimo Control activo:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2683,8 +1100,50 @@ TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 _FAC.CMD_CARGAR.CLICK
 22-09-2025 15:27:41 , Error: Falta ) en el nombre de la función. Linea : "nombre": "<<ALLTRIM(lcNombre>>", Error :       1300 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM10450.TMP Ultimo Cont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2847,7 +1306,49 @@ select ctacte.id as ID,ctacte.cnombre as Nombre,ctacte.cdireccion as Direccion  
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 s fechaalta,ctacte.email  ,(case when ctacte.idestado=0,'true','false') as estado_cuenta  from ctacte   left join localidad on ctacte.idlocalidad = localidad.id  left join provincia on ctacte.idprovincia = provincia.id  left join ctacte_2 on ctacte.id = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3003,7 +1504,49 @@ ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,1100000100,11000001
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0637,1100000642,1100000686,1100000709,1100000710,1100000714,1100000717,1100000731,1100000794,1100002118,1100002127,1100002135,1100002136,1100002147,1100002160,1100002161,1100000846,1100000997,1100001124,1100001136,1100002196,1100001156,1100001158,1100001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3159,7 +1702,49 @@ ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,1100000100,11000001
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 38,1100001442,1100001451,1100001479,1100001484,1100001486,1100001598,1100001644,1100001655,1100001671,1100001687,1100001718,1100001721,1100001745,1100001750,1100001751,1100001773,1100001775,1100001776,1100001780,1100001799,1100001825,1100001851,110000186
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3315,8 +1900,50 @@ ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,1100000100,11000001
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,1100001912)
 22-09-2025 15:33:44 , Error: El archivo 'csrdirecciones.dbf' no existe. Linea : SELECT ' ' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.p
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3470,7 +2097,49 @@ rovincia ,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 es.telefono,CsrDirecciones.email,SPACE(10) as sector ,0 as saldo, 0 as facturacion_mensual,estado_cuenta FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE CsrImprimir.idctacte <> 0 INTO CURSOR CsrRemFac READWRITE E
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3629,7 +2298,49 @@ select ctacte.id as ID,ctacte.cnombre as Nombre,ctacte.cdireccion as Direccion  
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 s fechaalta,ctacte.email  ,(case when ctacte.idestado=0 then 'true' else 'false' end) as estado_cuenta  from ctacte   left join localidad on ctacte.idlocalidad = localidad.id  left join provincia on ctacte.idprovincia = provincia.id  left join ctacte_2 o
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3781,7 +2492,49 @@ n ctacte.id = ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,11000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0000625,1100000637,1100000642,1100000686,1100000709,1100000710,1100000714,1100000717,1100000731,1100000794,1100002118,1100002127,1100002135,1100002136,1100002147,1100002160,1100002161,1100000846,1100000997,1100001124,1100001136,1100002196,1100001156,1100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3933,7 +2686,49 @@ n ctacte.id = ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,11000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 01417,1100001438,1100001442,1100001451,1100001479,1100001484,1100001486,1100001598,1100001644,1100001655,1100001671,1100001687,1100001718,1100001721,1100001745,1100001750,1100001751,1100001773,1100001775,1100001776,1100001780,1100001799,1100001825,110000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4085,8 +2880,50 @@ n ctacte.id = ctacte_2.idctacte  where ctacte.id in (1100000012,1100000091,11000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 975,1100003040,1100001912)
 22-09-2025 16:27:11 , Error: No se encuentra la propiedad INICIARVARIABLES. Linea : this.iniciarvariables() Error :       1734 Ultimo Alias Activo: CSRDIRECCIONES Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM106J2.TMP Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4236,8 +3073,50 @@ o Control activo:  LISTAPADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OCAL\TEMP\0000HRM10703.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 16:40:38 , Error: No se encuentra la variable 'NOMBRE'. Linea : lcCanalVta = lcCanalVta + lcSep + "'"+ALLTRIM(LOWER(nombre))+"'" Error :         12 Ultimo Alias Activo: ZSRCANALVTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4388,7 +3267,49 @@ select ctacte.id as ID,ctacte.cnombre as Nombre,ctacte.cdireccion as Direccion  
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 s fechaalta,ctacte.email  ,(case when ctacte.estadocta=0 then 'true' else 'false' end) as activo  ,ISNULL(catectacte.nombre,'ninguno') as categoria_cliente  from ctacte   left join localidad on ctacte.idlocalidad = localidad.id  left join provincia on ct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4532,7 +3453,49 @@ acte.idprovincia = provincia.id  left join ctacte_2 on ctacte.id = ctacte_2.idct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 100000146,1100002028,1100002034,1100000288,1100000359,1100000366,1100002097,1100000611,1100000615,1100000616,1100000625,1100000637,1100000642,1100000686,1100000709,1100000710,1100000714,1100000717,1100000731,1100000794,1100002118,1100002127,1100002135,11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4676,7 +3639,49 @@ acte.idprovincia = provincia.id  left join ctacte_2 on ctacte.id = ctacte_2.idct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0001335,1100002267,1100002268,1100002269,1100001371,1100001377,1100001380,1100001388,1100001398,1100001415,1100001417,1100001438,1100001442,1100001451,1100001479,1100001484,1100001486,1100001598,1100001644,1100001655,1100001671,1100001687,1100001718,1100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4820,8 +3825,50 @@ acte.idprovincia = provincia.id  left join ctacte_2 on ctacte.id = ctacte_2.idct
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 02642,1100002726,1100002757,1100002853,1100002876,1100002890,1100002901,1100002919,1100002947,1100002948,1100002975,1100003040,1100001912)
 22-09-2025 16:47:48 , Error: El archivo 'csrdirecciones.dbf' no existe. Linea : SELECT ' ' as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad,CsrDirecciones.p
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4963,7 +4010,49 @@ rovincia ,CsrDirecciones.lat,CsrDirecciones.lng,CsrDirecciones.id as idctacte ,C
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ones.telefono,CsrDirecciones.email,SPACE(10) as sector ,0 as saldo, 0 as facturacion_mensual,activo,'al_dia' as estado_cuenta FROM CsrDirecciones LEFT JOIN CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE CsrImprimir.idctacte <> 0 INTO CURSOR 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5105,8 +4194,50 @@ CsrRemFac READWRITE Error :          1 Ultimo Alias Activo: CSRAUXGOOGLE Ultimo 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ror :        107 Ultimo Alias Activo: ZSRCANALVTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM1085V.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 17:31:23 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcCanalVta_E = lcCanalVta_E + lcSep + CHR(13) + lcNom + ": { codigo: '"+UPPER(lcNom)+"', descripcion :'"+UPPER(LEFT(lcNom,1))+STRTRAN(lcNom,2)+"' }" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5244,6 +4375,27 @@ Error :         11 Ultimo Alias Activo: ZSRCANALVTA Ultimo registro:          1 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Activo: ZSRCANALVTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM108EI.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 17:36:44 , Error: OMAPS es un miembro desconocido. Linea : oParam = ThisForm.oMaps.JS_Create() Error :       1925 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000HRM108F8.TMP Ultim
 
@@ -5312,8 +4464,50 @@ Activo: ZSRCANALVTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LO
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 o Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 22-09-2025 19:46:40 , Error: Error al cargar el archivo - número de registro 15. Kitgrillatildarvendedor  <o uno de sus miembros>.  ControlSource : No se encuentra el alias 'CSRVENDEDOR' Linea : IF lldesarrollo AND llchekform Error :       2005 Ultimo Al
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5452,8 +4646,50 @@ ias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ON...
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rol activo:  UTIL_GPSCTACTE.CONTAINERENCABEZA.KITBUSCAOALTAENRUTAS.LOSTFOCUS
 23-09-2025 09:06:58 , Error: No se encuentra la variable 'LCVENDEDOR_'. Linea : This.js_config_dynamic(@lcCanalVta,@lcCategoria,@lcZona,@lcEstado,@lcCanalVta_E,@lcCategoria_E,@lcZona_E,@lcVendedor_ ,@lcVendedor_E,@lcColoresEmpresa) Error :         12 Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5576,7 +4812,49 @@ Alias:CsrAux
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ia.nombre,SPACE(20)) as provincia ,ISNULL(CsrVendedor.nombre,SPACE(20)) as nomvendedor ,ISNULL(convert(int,CsrVendedor.numero),0000) as codvendedor     ,ISNULL(CsrBarrio.nombre,'SIN BARRIO') as nombarrio     ,ISNULL(CsrSector.nombre,'SIN SECTOR') as noms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5690,7 +4968,49 @@ ector     ,ISNULL(CsrSector.numero,0) as codsector     ,ISNULL(CsrCanalVta.nombr
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a.lista=0 then isnull(CsrVendedor.lista,0) else isnull(CsrCanalVta.lista,0) end)     else CsrCtacte.lista end) as lista, CsrCtacte.referencia, CsrCtacte.fechalta as fechaalta     from Ctacte as CsrCtacte     left join CategoIva as CsrCategoIva on CsrCtac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5804,7 +5124,49 @@ te.tipoiva = CsrCategoIva.id     left join Localidad as CsrLocalidad on CsrCtact
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ta = CsrCanalvta.id     left join PlanPago as CsrPlanPago on CsrCtacte.idplanpago = CsrPlanPago.id     left join CuerRuta as CsrCuerruta on Csrctacte.id = CsrCuerruta.idCtacte     left join CabeRuta as CsrCaberuta on CsrCuerruta.idcaberuta = CsrCaberuta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5918,7 +5280,49 @@ id     left join RutaVdor as CsrRutaVdor on CsrCaberuta.idrutaVdor = CsrRutaVdor
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 left join Barrio as CsrBarrio on CsrCtacte.idbarrio = CsrBarrio.id     left join Sector as CsrSector on CsrBarrio.idsector = CsrSector.id     left join Ctacte_2 as CsrCtacte_2 on CsrCtacte.id = CsrCtacte_2.idctacte     where CsrCtacte.Id>-1 and CsrCtacte
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6032,7 +5436,49 @@ left join Barrio as CsrBarrio on CsrCtacte.idbarrio = CsrBarrio.id     left join
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 7,1100000018,1100000029,1100000023,1100000006,1100000001,1100000026,1100000035,1100000038,1100000022,1100000020,1100000024,1100000019,1100000043,1100000045,1100000013,1100000041) and CsrLocalidad.Id>-1      and  CsrCtacte.estadocta>-1 and   (CsrPlanPAgo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6146,8 +5592,50 @@ numero <> '')   and CsrFuerzaVta.Id>-1  and CsrVendedor.Id IN (1100000011,110000
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cte.idbarrio,0) >= 0      Order by codvendedor, CONVERT(int,CsrCtacte.cnumero),CsrCtacte.id
 23-09-2025 10:03:01 , Error: No se encuentra el alias 'CSRAUX'. Linea : SELECT CsrAux Error :         13 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002G4Y101G0.TMP Ultimo Control activo:  LISTAP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6264,6 +5752,27 @@ ADRON.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 RCOS\APPDATA\LOCAL\TEMP\0002G4Y101MV.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 23-09-2025 11:59:21 , Verificando OCX
 23-09-2025 11:59:27 , Acceso al sistema, antes de autenticar
@@ -6278,6 +5787,27 @@ RCOS\APPDATA\LOCAL\TEMP\0002G4Y101MV.TMP Ultimo Control activo:  MOSTRAR_MAPS_FA
 23-09-2025 14:36:36 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
 23-09-2025 14:36:37 , Datos de la empresa
 23-09-2025 15:49:11 , Error: SQL: no se encuentra la columna 'NOMVENDEDOR'. Linea : SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6371,7 +5901,49 @@ ad,CsrDirecciones.provincia ,CsrDirecciones.lat,CsrDirecciones.lng,CsrDireccione
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 r,CsrDirecciones.categoria_cliente ,DTOC(CsrDirecciones.fechaalta) as fecha_alta,SPACE(10) as zona ,CsrDirecciones.telefono,CsrDirecciones.email ,0 as saldo, 0 as facturacion_mensual,activo,'al_dia' as estado_cuenta FROM CsrDirecciones LEFT JOIN CsrImpri
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6465,8 +6037,50 @@ mir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ultimo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 23-09-2025 15:52:57 , Error: SQL: no se encuentra la columna 'NOMVENDEDOR'. Linea : SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6558,7 +6172,49 @@ ad,CsrDirecciones.provincia ,CsrDirecciones.lat,CsrDirecciones.lng,CsrDireccione
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 r,CsrDirecciones.categoria_cliente ,DTOC(CsrDirecciones.fechaalta) as fecha_alta,SPACE(10) as zona ,CsrDirecciones.telefono,CsrDirecciones.email ,0 as saldo, 0 as facturacion_mensual,activo,'al_dia' as estado_cuenta FROM CsrDirecciones LEFT JOIN CsrImpri
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6650,8 +6306,50 @@ mir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 imo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 23-09-2025 15:53:42 , Error: SQL: no se encuentra la columna 'NOMSECTOR'. Linea : SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6741,7 +6439,49 @@ imo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,nomsector,CsrDirecciones.categoria_cliente ,DTOC(CsrDirecciones.fechaalta) as fecha_alta,SPACE(10) as zona ,CsrDirecciones.telefono,CsrDirecciones.email ,0 as saldo, 0 as facturacion_mensual,activo,'al_dia' as estado_cuenta FROM CsrDirecciones LEFT JOIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6831,8 +6571,50 @@ imo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Y.TMP Ultimo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
 23-09-2025 15:56:09 , Error: SQL: no se encuentra la columna 'NOMSECTOR'. Linea : SELECT CsrImprimir.estado as Detalle,DATE() as Fecha,1 as Tilde,CsrDirecciones.direccion as direccion ,CsrDirecciones.nombre as Nombre,CsrDirecciones.localidad as localidad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6920,6 +6702,27 @@ Y.TMP Ultimo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ,nomsector,CsrDirecciones.categoria_cliente ,DTOC(CsrDirecciones.fechaalta) as fecha_alta,SPACE(10) as zona ,CsrDirecciones.telefono,CsrDirecciones.email ,0 as saldo, 0 as facturacion_mensual,activo,'al_dia' as estado_cuenta FROM CsrDirecciones LEFT JOIN
 
 
@@ -6964,7 +6767,49 @@ Y.TMP Ultimo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  CsrImprimir on CsrDirecciones.id=CsrImprimir.idctacte WHERE VAL(CsrImprimir.ctacte) <> 0 INTO CURSOR CsrRemFac READWRITE Error :       1806 Ultimo Alias Activo: CSRIMPRIMIR Ultimo registro:        113  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002YOZT012
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7056,8 +6901,50 @@ Y.TMP Ultimo Control activo:  EST_VENTAVISITAS.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLI
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 istro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002YOZT040K.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
 23-09-2025 18:57:27 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : lcEstado_E= lcEstado_E+ lcSep + CHR(13) + lcNom + ": { codigo: '"+UPPER(lcNom)+"', descripcion :'"+lcNomDeta+"' }" Error :        107 Ultimo Alias Acti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7137,6 +7024,27 @@ vo: ZSRESTADO Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GPSCTACTE.COMMAND1.CLICK
 23-09-2025 19:11:31 , Error: LOFILE no es un objeto. Linea : loFile.Write(lcMaps) Error :       1924 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002YOZT04K9.TMP Ultimo Control activo:  UTIL_
 
@@ -7176,8 +7084,50 @@ GPSCTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GPSCTACTE.COMMAND1.CLICK
 23-09-2025 19:12:50 , Error: LOFILE no es un objeto. Linea : loFile.Write(lcMaps) Error :       1924 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002YOZT04MX.TMP Ultimo Control activo:  UTIL_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7256,8 +7206,50 @@ GPSCTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GPSCTACTE.COMMAND1.CLICK
 24-09-2025 09:30:22 , Error: LOFILE no es un objeto. Linea : loFile.Write(lcMaps) Error :       1924 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T006R.TMP Ultimo Control activo:  UTIL_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7325,8 +7317,50 @@ GPSCTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GPSCTACTE.COMMAND1.CLICK
 24-09-2025 09:41:43 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : cIco = ALLTRIM(oIco)+'Icon' Error :         11 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         21  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7390,8 +7424,50 @@ TEMP\0002BJ7T00XM.TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TACTE.COMMAND1.CLICK
 24-09-2025 09:48:43 , Error: LOFILE no es un objeto. Linea : loFile.Write(lcMaps) Error :       1924 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         20  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T016L.TMP Ultimo Control activo:  RUTAC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7451,8 +7527,50 @@ TACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TACTE.COMMAND1.CLICK
 24-09-2025 10:05:07 , Error: OIE es un miembro desconocido. Linea : this.oie.Navigate2(cFile) Error :       1925 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         21  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T019K.TMP Ultimo Control ac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7508,8 +7626,50 @@ tivo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 503.TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 12:37:25 , Error: No se encuentra la variable 'CMARK'. Linea : cMarkAux = cMark Error :         12 Ultimo Alias Activo: CSRRECORRIDO Ultimo registro:          1 RECORRIDO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T053I.TMP Ultimo Control 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7561,8 +7721,50 @@ activo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OS\APPDATA\LOCAL\TEMP\0002BJ7T054R.TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 12:39:05 , Error: No se encuentra la variable 'LCSEP'. Linea : lcPuntos = lcPuntos + lcSep + '{'+ALLTRIM(CsrRecorrido.coords)+'};' Error :         12 Ultimo Alias Activo: CSRRECORRIDO Ultimo registro:          1 RECORRIDO DBF: C:\USERS\MARCOS\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7610,8 +7812,50 @@ APPDATA\LOCAL\TEMP\0002BJ7T0557.TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EMP\0002BJ7T0573.TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 12:40:01 , Error: No se encuentra la variable 'LCMAPS'. Linea : loFile.Write(lcMaps) Error :         12 Ultimo Alias Activo: CSRRECORRIDO Ultimo registro:         33 RECORRIDO DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T057J.TMP Ultimo Con
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7655,8 +7899,50 @@ trol activo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tivo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 14:47:03 , Error: No se reconoce el verbo de comando. Linea : ,Coordenadas,cClave,cDetalle,cColor,nNro,cRecorrido Error :         16 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T069Q.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7696,8 +7982,50 @@ TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 14:48:50 , Error: No se encuentra la propiedad CODIGO. Linea : lnNro = ALLTRIM(oDatos.codigo) Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T06II.TMP Ultimo Control a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7733,8 +8061,50 @@ ctivo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ctivo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 14:49:46 , Error: Incompatibilidad entre el tipo de operador y el tipo de operando. Linea : lcNro = STR(IIF(lnNro=0,i,lnNro)) Error :        107 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7766,8 +8136,50 @@ ctivo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 02BJ7T06RP.TMP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 24-09-2025 14:50:59 , Error: No se encuentra la variable 'CCOLOR'. Linea : oObjeto.AddProperty("ico"+strzero(i+1,3),cColor) Error :         12 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T06UL.T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7795,8 +8207,50 @@ MP Ultimo Control activo:  RUTACTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ivo:  UTIL_GPSCTACTE.COMMAND1.CLICK
 24-09-2025 15:14:26 , Error: No se encuentra la propiedad DIRECCION. Linea : lcDireccion = This.Formtearnombre(oDatos.direccion,.f.) Error :       1734 Ultimo Alias Activo: CSRAUXRUTA Ultimo registro:          1 ORDEN DBF: C:\USERS\MARCOS\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7820,8 +8274,50 @@ EMP\0002BJ7T07PA.TMP Ultimo Control activo:  UTIL_GPSCTACTE.COMMAND1.CLICK
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  activo:  UTIL_GPSCTACTE.COMMAND1.CLICK
 24-09-2025 15:24:34 , Error: El archivo 'csrmap.dbf' no existe. Linea : SELECT CsrAuxRuta.*,CsrAuxMap.* FROM CsrAuxRuta INNER JOIN CsrMap ON CsrAuxRuta.idctacte = CsrAuxMap.idctacte into CURSOR CsrMap READWRITE Error :          1 Ultimo Alias Activo: CSR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7841,6 +8337,27 @@ AUXMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Activo: CSRAUXMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T08VY.TMP Ultimo Control activo:  UTIL_GPSCTACTE.COMMAND1.CLICK
 24-09-2025 15:25:31 , Error: SQL: no se encuentra la columna 'IDCTACTE'. Linea : SELECT CsrAuxRuta.*,CsrAuxMap.* FROM CsrAuxRuta INNER JOIN CsrAuxMap ON CsrAuxRuta.idctacte = CsrAuxMap.idctacte into CURSOR CsrMap READWRITE Error :       1806 Ultimo Alias
 
@@ -7850,8 +8367,50 @@ AUXMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Activo: CSRAUXMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T08Z1.TMP Ultimo Control activo:  UTIL_GPSCTACTE.COMMAND1.CLICK
 24-09-2025 15:26:55 , Error: SQL: no se encuentra la columna 'IDCTACTE2'. Linea : SELECT CsrAuxRuta.*,CsrAuxMap.* FROM CsrAuxRuta INNER JOIN CsrAuxMap ON CsrAuxRuta.idctacte = CsrAuxMap.idctacte2 into CURSOR CsrMap READWRITE Error :       1806 Ultimo Ali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7870,14 +8429,77 @@ Select Csrcuerpo.idctacte as idctacte2  ,CsrCabeRuta.nombre,CsrCabeRuta.dia  ,SP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 t join caberuta as Csrcaberuta on Csrcaberuta.idrutavdor = rutavdor.id  inner join cuerruta as Csrcuerpo on CsrCabeRuta.id = CsrCuerpo.idcaberuta  WHERE rutavdor.idruta=1100000019 
 24-09-2025 15:28:48 , Error: No se encuentra la variable 'OPARAM'. Linea : oMap.CoordAdd_o(@oParam,OscMap ) Error :         12 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T09AK.TMP Ultimo Contro
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 l activo:  UTIL_GPSCTACTE.COMMAND1.CLICK
 24-09-2025 15:33:46 , Error: La clase maps está en uso por MODIFY CLASS. Linea : oM= CREATEOBJECT("maps") Error :       1752 Ultimo Alias Activo: CSREMPRELICENCIA Ultimo registro:         21  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0002BJ7T09PT.TMP Ultim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7888,3 +8510,121 @@ o Control activo:  UTIL_GPSCTACTE.INIT
 24-09-2025 15:57:32 , Verificando Licencia
 24-09-2025 15:57:41 , Conectado..170.81.231.33\sql2014,1170
 24-09-2025 15:57:42 , Datos de la empresa
+25-09-2025 11:01:47 , Verificando OCX
+25-09-2025 11:01:51 , Acceso al sistema, antes de autenticar
+25-09-2025 11:01:52 , Obteniendo conexion a servidor
+25-09-2025 11:01:53 , Verificando Licencia
+25-09-2025 11:01:55 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
+25-09-2025 11:01:57 , Datos de la empresa
+25-09-2025 17:02:08 , Verificando OCX
+25-09-2025 17:02:13 , Acceso al sistema, antes de autenticar
+25-09-2025 17:02:13 , Obteniendo conexion a servidor
+25-09-2025 17:02:14 , Verificando Licencia
+25-09-2025 17:03:54 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
+25-09-2025 17:03:55 , Datos de la empresa
+25-09-2025 17:15:40 , Error: No se encuentra la propiedad COODCENTRO. Linea : ThisForm.Coodcentro = '0,0' Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.CONTAINERLAB
+
+
+
+
+
+
+
+
+
+
+
+
+EL6.CMDGOOGLE.CLICK
+25-09-2025 17:15:47 , Error: No se encuentra la propiedad COODCENTRO. Linea : ThisForm.Coodcentro = '0,0' Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.CONTAINERLAB
+
+
+
+
+
+
+
+
+
+
+
+EL6.CMDGOOGLE.CLICK
+25-09-2025 17:15:51 , Error: No se encuentra la propiedad COODCENTRO. Linea : ThisForm.Coodcentro = '0,0' Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.CONTAINERLAB
+
+
+
+
+
+
+
+
+
+
+EL6.CMDGOOGLE.CLICK
+25-09-2025 17:23:29 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : lcDireccionActual = SUBSTR(thisform.labelDireccion.Caption,'Dirección:','') Error :         11 Ultimo Alias Activo:  Ultimo registro:          0  DBF
+
+
+
+
+
+
+
+
+
+:  Ultimo Control activo:  ABMCTACTE.CONTENEDOR1.PFRAME1.PAGE1.CONTAINERLABEL6.CMDGOOGLE.CLICK
+25-09-2025 18:44:43 , Error: SQL: no se encuentra la columna 'CANAL'. Linea : SELECT distinct canal as nombre FROM CsrRemFac INTO CURSOR ZsrCanalVta Error :       1806 Ultimo Alias Activo: CSRREMFAC Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDA
+
+
+
+
+
+
+
+
+TA\LOCAL\TEMP\00009CZT01LM.TMP Ultimo Control activo:  MOSTRAR_MAPS_FAC.CMD_CARGAR.CLICK
+25-09-2025 18:58:50 , Error: No se encuentra la propiedad DIA. Linea : OscMap.color = ALLTRIM(GETWORDNUM(lcColores ,OscMap.dia,',')) Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00009
+
+
+
+
+
+
+
+CZT0225.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 19:00:12 , Error: No se encuentra la propiedad COLOR. Linea : OscMap.color = 'green' &&ALLTRIM(GETWORDNUM(lcColores ,OscMap.dia,',')) Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCA
+
+
+
+
+
+
+L\TEMP\00009CZT0256.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 19:01:13 , Error: No se encuentra la propiedad NOMFLETERO. Linea : OscMap.ruta = 'REPARTO '+ OscMap.nomFletero Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00009CZT02BL.TMP
+
+
+
+
+
+ Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 19:04:32 , Error: No se encuentra la propiedad NOMBRE. Linea : OscMap.nombre = OscMap.cnombre Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00009CZT02DS.TMP Ultimo Control a
+
+
+
+
+ctivo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 19:05:53 , Error: No se encuentra la propiedad CODIGO. Linea : OscMap.codigo = VAL(OscMap.ctacte) Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\00009CZT02HO.TMP Ultimo Contr
+
+
+
+ol activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 19:51:52 , Verificando OCX
+25-09-2025 19:51:56 , Acceso al sistema, antes de autenticar
+25-09-2025 19:51:56 , Obteniendo conexion a servidor
+25-09-2025 19:51:57 , Verificando Licencia
+25-09-2025 19:52:03 , Conectado..klejadistribuidora.ddns.net\sql2014,1170
+25-09-2025 19:52:04 , Datos de la empresa
+25-09-2025 19:52:31 , Error: No se encuentra la propiedad CODIGO. Linea : OscMap.codigo = VAL(OscMap.ctacte) Error :       1734 Ultimo Alias Activo: CSRMAP Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DYX5002S.TMP Ultimo Contr
+
+ol activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 20:18:00 , Error: No se encuentra la propiedad VERRECORRIDO. Linea : oMap.VerRecorrido= .t. Error :       1734 Ultimo Alias Activo:  Ultimo registro:          0  DBF:  Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK
+25-09-2025 20:18:48 , Error: El valor, tipo o número de argumentos no es válido para la función. Linea : RETURN ALLTRIM(STR(lnValor,lnTam,lnDec)) Error :         11 Ultimo Alias Activo: CSRDIRERUTA Ultimo registro:          1  DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000DYX5016X.TMP Ultimo Control activo:  SUBFACREPARTO.IMPRIMIR_VISTAPREVIA1.VERMAPA.CLICK

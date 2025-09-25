@@ -17,7 +17,7 @@ window.camposConfig = {
             nombre: 'Canal de Venta',
             tipo: 'select',
             icono_texto: 'dollar',
-            opciones: ['almacen','almacen_y_desp','carnic_y_desp','cine','cotillon','est_servicio','kiosco','otros','panaderia','polleria','restaurant','terminal_omnibus','universidad','verd_y_desp','verduleria'],
+            opciones: ['almacen_y_desp','minimercado','otros'],
             filtrable: true,
             buscable: true,
             mostrar_popup: true
@@ -26,7 +26,7 @@ window.camposConfig = {
             nombre: 'Categoría Cliente',
             tipo: 'select',
             icono_texto: 'star',
-            opciones: ['categoria_a','categoria_b','categoria_d','categoria_e','categoria_f','categoria_g','kiosco_b','morosos','proximidad','sin_presupuesto'],
+            opciones: ['clientes','cta_cte_servicio'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
@@ -60,7 +60,7 @@ window.camposConfig = {
             nombre: 'Zona Geográfica',
             tipo: 'select',
             icono_texto: 'globe',
-            opciones: ['a1__milpaterno','a2__indflrjarca','v1__hospcagl','v2__guiinapielb','v3__riosst_clara','v4__belgrano','v5__amr20centro','v6__ippvterminal'],
+            opciones: ['jueves_1_vrosas_whi','jueves_2_centro_sude','jueves_3_resto','martes_1_centro_nort','martes_2_norte','martes_3_centro','miecoles_3_espora','miercoles_1_vmitre','miercoles_2_aldea_ro','viernes_1_bordeux_ma','viernes_2','viernes_3','viernes_4'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
@@ -78,8 +78,8 @@ window.camposConfig = {
             nombre: 'Estado',
             tipo: 'select',
             icono_texto: 'credit-card',
-            opciones: ['ninguno','venta', 'no_venta','cerrado','negocio_no_encontrado','no_estaba_el_comprador','no_ternia_dinero'],
-            filtrable: true,
+            opciones: ['ninguno','venta', 'no_venta'],
+            filtrable: false,
             buscable: false,
             mostrar_popup: true
         }

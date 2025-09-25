@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- GM SOLUTIONS - MAPA INTEGRACIÓN v2.3.6 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e40af">
+    <title>Mapa Integración GM Solutions v2.3.6</title>
+    
+    <!-- Librerías externas -->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- ===== ESTILOS MODULARES v2.3.6 ===== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/theme-base.css">
+    <link rel="stylesheet" href="css/theme-oscuro.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- ===== ARQUITECTURA MODULAR GM SOLUTIONS ===== -->
+    
+    <!-- 📋 Configuraciones (Solo datos, sin lógica) -->
+    <script src="js/config/mapa-config.js"></script>
+    <script src="js/config/campos-config.js"></script>
+    <script src="js/config/campos-config-vfp.js"></script>
+    <script src="js/config/iconos-config.js"></script>
+    <script src="js/config/estados-config.js"></script>
+    
+    <!-- 📊 Datos (Solo datos, sin lógica) -->
+    <script src="js/data/clientes-data.js"></script>
+    
+    <!-- ⚙️ Módulos de Lógica Core -->
+    <script src="js/modules/campos-validator.js"></script>
+    <script src="js/modules/estados-manager.js"></script>
+    <script src="js/modules/iconos-manager.js"></script>
+    <script src="js/modules/marcadores-manager.js"></script>
+    <script src="js/modules/iconos-helper.js"></script>
+    <script src="js/modules/filtros.js"></script>
+    <script src="js/modules/busqueda.js"></script>
+    <script src="js/modules/popups.js"></script>
+    <script src="js/modules/main.js"></script>
+    
+    <!-- 🎨 Módulos de UI v2.3.6 (NUEVO) -->
+    <script src="js/ui/sidebar-controller.js"></script>
+    <script src="js/ui/theme-controller.js"></script>
+    <script src="js/ui/stats-controller.js"></script>
+    <script src="js/ui/notifications.js"></script>
+    <script src="js/ui/map-controls.js"></script>
+    <script src="js/ui/export-tools.js"></script>
+    <script src="js/ui/keyboard-shortcuts.js"></script>
+    <script src="js/ui/ui-init.js"></script>
+</head>
+<body data-theme="base">
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="logo-section">
+            <img src="gmsolutions.png" alt="GM Solutions" class="logo-img" 
+                 onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+            <span class="logo-text" style="display: none;">GM</span>
+            <div class="title-info">
+                <h1>GM Solutions</h1>
+                <span class="version-badge">v2.3.6 🚀</span>
+            </div>
+        </div>
+        
+        <div class="controls-container">
+            <!-- Control Vista por se genera dinámicamente desde main.js -->
+            <div id="priority-field-container"></div>
+            
+            <button class="theme-toggle-btn" title="Cambiar tema de colores">
+                <i class="fas fa-sun"></i>
+                <span>Tema</span>
+            </button>
+            
+            <button class="sidebar-toggle-btn" title="Mostrar/Ocultar Panel">
+                <i class="fas fa-chevron-left"></i>
+                <span>Panel</span>
+            </button>
+            
+            <div class="search-box">
+                <input type="text" id="search-client" placeholder="Buscar cliente..." 
+                       onkeyup="if(window.searchClient) searchClient()">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container" id="main-container">
+        <!-- SIDEBAR -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>🗺️ Mapa de Clientes</h2>
+                <div class="client-stats">
+                    <div class="stat-item">
+                        <span class="stat-number client-count">0</span>
+                        <span class="stat-label">Mostrando</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number total-count">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-content">
+                <!-- Búsqueda Avanzada -->
+                <div class="search-section">
+                    <label>🔍 Búsqueda Avanzada:</label>
+                    <input type="text" id="client-search" 
+                           placeholder="Buscar por nombre, teléfono, email...">
+                </div>
+                
+                <!-- Filtros -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>📋 Acciones Rápidas:</label>
+                        <div class="filter-buttons">
+                            <button class="btn btn-primary" onclick="showAllClients()">
+                                🔄 Ver Todos
+                            </button>
+                            <button class="btn btn-outline" onclick="resetearTodo()">
+                                🧹 Reset
+                            </button>
+                            <button class="btn btn-outline" onclick="centrarMapa()">
+                                🎯 Centrar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Los filtros dinámicos se generan automáticamente aquí -->
+                </div>
+                
+                <!-- Leyenda -->
+                <div class="legend">
+                    <h3>🎨 Leyenda</h3>
+                    <div id="legend-content">
+                        <!-- La leyenda se genera dinámicamente -->
+                    </div>
+                </div>
+                
+                <!-- Herramientas -->
+                <div class="actions-section">
+                    <label>🔧 Herramientas:</label>
+                    <div class="filter-buttons">
+                        <button class="btn btn-outline" onclick="exportarDatos()">
+                            📊 Exportar
+                        </button>
+                        <button class="btn btn-outline" onclick="imprimirMapa()">
+                            🖨️ Imprimir
+                        </button>
+                        <button class="btn btn-outline" onclick="compartirMapa()">
+                            📤 Compartir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CONTENEDOR DEL MAPA -->
+        <div class="map-container">
+            <!-- BOTÓN CENTRAR DINÁMICO (RESTAURADO) -->
+            <!-- Se crea dinámicamente desde map-controls.js -->
+            
+            <!-- MAPA -->
+            <div id="map"></div>
+            
+            <!-- ESTADÍSTICAS FLOTANTES -->
+            <div class="stats-overlay">
+                <div class="stats-title">
+                    <i class="fas fa-chart-pie"></i>
+                    <span id="stats-field-name">Estadísticas</span>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number client-count">0</span>
+                        <span class="stat-label">Visibles</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number total-count">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                </div>
+                
+                <div class="stats-breakdown" id="stats-breakdown">
+                    <!-- Se genera dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPT MÍNIMO DE INICIALIZACIÓN ===== -->
+    <script>
+        /**
+         * GM SOLUTIONS v2.3.6
+         * Script mínimo de inicialización
+         * Toda la lógica está modularizada en archivos separados
+         */
+        
+        // === CONFIGURACIÓN INICIAL ===
+        console.log('🚀 GM Solutions Mapa v2.3.6 - Iniciando...');
+        console.log('📦 Arquitectura modular activa');
+        console.log('🎨 Sistema de temas múltiples');
+        console.log('⌨️ Atajos de teclado disponibles (F1 para ayuda)');
+        
+        // === ESPERAR CARGA COMPLETA ===
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM cargado - iniciando módulos...');
+            
+            // El UIController se auto-inicializa desde ui-init.js
+            // Solo verificamos que esté disponible
+            if (window.UIController) {
+                console.log('✅ UIController detectado');
+            } else {
+                console.error('❌ UIController no disponible');
+            }
+            
+            // Verificar módulos principales
+            const modulosRequeridos = [
+                'SidebarController',
+                'ThemeController', 
+                'StatsController',
+                'NotificationSystem',
+                'MapControls',
+                'ExportTools',
+                'KeyboardShortcuts'
+            ];
+            
+            let modulosCargados = 0;
+            modulosRequeridos.forEach(modulo => {
+                if (window[modulo]) {
+                    modulosCargados++;
+                    console.log(`✅ ${modulo} cargado`);
+                } else {
+                    console.warn(`⚠️ ${modulo} no encontrado`);
+                }
+            });
+            
+            console.log(`📊 Módulos UI cargados: ${modulosCargados}/${modulosRequeridos.length}`);
+            
+            // Funciones de compatibilidad con versiones anteriores
+            configurarCompatibilidad();
+        });
+        
+        // === FUNCIONES DE COMPATIBILIDAD ===
+        function configurarCompatibilidad() {
+            // Mantener funciones globales para compatibilidad con código existente
+            
+            // Si las funciones no existen, crearlas
+            if (!window.resetearTodo) {
+                window.resetearTodo = function() {
+                    console.log('🔄 Reseteando filtros...');
+                    if (window.mapaGMSolutions && window.mapaGMSolutions.resetearFiltros) {
+                        window.mapaGMSolutions.resetearFiltros();
+                    }
+                    // Limpiar inputs de búsqueda
+                    document.querySelectorAll('#client-search, #search-client').forEach(input => {
+                        input.value = '';
+                    });
+                };
+            }
+            
+            if (!window.showAllClients) {
+                window.showAllClients = function() {
+                    console.log('👁️ Mostrando todos los clientes...');
+                    if (window.mapaGMSolutions && window.clientesData) {
+                        window.mapaGMSolutions.mostrarResultados([...window.clientesData]);
+                    }
+                };
+            }
+            
+            if (!window.searchClient) {
+                window.searchClient = function() {
+                    const searchValue = document.getElementById('search-client')?.value;
+                    console.log('🔍 Buscando:', searchValue);
+                    // La búsqueda real se maneja en busqueda.js
+                };
+            }
+            
+            console.log('✅ Funciones de compatibilidad configuradas');
+        }
+        
+        // === MANEJO DE ERRORES GLOBAL ===
+        window.addEventListener('error', function(e) {
+            console.error('❌ Error global:', e.error);
+            // El NotificationSystem manejará la notificación visual
+        });
+        
+        // === INFORMACIÓN DE VERSIÓN ===
+        window.GM_VERSION = '2.3.6';
+        window.GM_BUILD_DATE = '2024-01-24';
+        window.GM_FEATURES = [
+            'Arquitectura modular',
+            'Temas claro/oscuro',
+            'Exportación múltiples formatos',
+            'Atajos de teclado',
+            'Estadísticas dinámicas',
+            'Botón centrar dinámico',
+            'Responsive design'
+        ];
+        
+        // === CONSOLA DE AYUDA ===
+        console.log('%c💡 Tip: Presiona F1 para ver todos los atajos de teclado', 
+                    'background: #3b82f6; color: white; padding: 5px 10px; border-radius: 5px;');
+        console.log('%c🎨 Tip: Alt+T para cambiar entre tema claro y oscuro', 
+                    'background: #8b5cf6; color: white; padding: 5px 10px; border-radius: 5px;');
+    </script>
+
+    <!-- Estilos adicionales para el botón centrar dinámico -->
+    <style>
+        /* === BOTÓN CENTRAR DINÁMICO === */
+        .center-map-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .center-map-btn:hover {
+            background: #3b82f6;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .center-map-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Tooltip para el botón */
+        .map-control-tooltip {
+            position: absolute;
+            right: 55px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .center-map-btn:hover .map-control-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* === ESTILOS PARA ESTADÍSTICAS MEJORADAS === */
+        .stat-breakdown-item {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .stat-breakdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-breakdown-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .stat-breakdown-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .stat-breakdown-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .stat-breakdown-label {
+            flex: 1;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .stat-breakdown-count {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e40af;
+        }
+        
+        .stat-breakdown-bar {
+            position: relative;
+            height: 4px;
+            background: #f3f4f6;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+        
+        .stat-breakdown-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+        
+        .stat-breakdown-percentage {
+            position: absolute;
+            right: 0;
+            top: -16px;
+            font-size: 10px;
+            color: #9ca3af;
+        }
+        
+        /* === MEJORAS PARA TEMA OSCURO === */
+        body[data-theme="oscuro"] .center-map-btn {
+            background: #1e293b;
+            border-color: #60a5fa;
+            color: #60a5fa;
+        }
+        
+        body[data-theme="oscuro"] .center-map-btn:hover {
+            background: #60a5fa;
+            color: white;
+        }
+        
+        body[data-theme="oscuro"] .stat-breakdown-item:hover {
+            background: rgba(96, 165, 250, 0.1);
+        }
+        
+        body[data-theme="oscuro"] .stat-breakdown-bar {
+            background: #334155;
+        }
+        
+        /* === NOTIFICACIONES MEJORADAS === */
+        .notification-container {
+            position: fixed;
+            z-index: 10000;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-container.top-center {
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+        }
+        
+        .gm-notification {
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 200px;
+            max-width: 400px;
+            animation: slideIn 0.3s ease-out;
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>

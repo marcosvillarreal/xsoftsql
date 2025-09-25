@@ -1,0 +1,325 @@
+/* ===================================================================
+   GM SOLUTIONS - TEMA BASE (CLARO)
+   Definición de colores y estilos visuales del tema base
+   ================================================================= */
+
+/* === COLORES BASE DEL BODY === */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* === BARRA SUPERIOR - COLORES === */
+.top-bar {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-img {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-text {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.title-info h1 {
+    background: linear-gradient(45deg, #ffffff, #e0f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.version-badge {
+    background: linear-gradient(45deg, #4ade80, #22c55e);
+    color: white;
+    box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3);
+}
+
+/* === CONTROLES - COLORES === */
+.priority-field-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.priority-field-control label {
+    color: white;
+}
+
+.priority-field-control select {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e40af;
+}
+
+.priority-field-control select:focus {
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-toggle-btn, .mobile-menu-btn, .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.sidebar-toggle-btn:hover, .mobile-menu-btn:hover, .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.search-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-box input {
+    color: white;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-box i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* === ESTADÍSTICAS - COLORES === */
+.stats-overlay {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.stats-title {
+    color: #1e40af;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    color: #1e40af;
+}
+
+.stat-label {
+    color: #64748b;
+}
+
+/* === SIDEBAR - COLORES === */
+.sidebar {
+    background: rgba(255, 255, 255, 0.95);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-item .stat-number {
+    color: white;
+}
+
+.stat-item .stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
+}
+
+/* === BÚSQUEDA - COLORES === */
+.search-section label {
+    color: #1e40af;
+}
+
+.search-section input {
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.search-section input:focus {
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* === FILTROS - COLORES === */
+.filter-group label {
+    color: #1e40af;
+}
+
+.filter-btn, .btn {
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.filter-btn:hover, .btn:hover {
+    border-color: #3b82f6;
+    background: #dbeafe;
+    color: #1e40af;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+    border-color: #1e40af;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.filter-btn.active:hover {
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-color: #059669;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: #64748b;
+    color: #64748b;
+}
+
+/* === LEYENDA - COLORES === */
+.legend {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.legend h3 {
+    color: #1e40af;
+}
+
+.legend-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.legend-icon {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.legend-text {
+    color: #374151;
+}
+
+.legend-count {
+    background: #e2e8f0;
+    color: #64748b;
+}
+
+/* === ACCIONES - COLORES === */
+.actions-section label {
+    color: #1e40af;
+}
+
+/* === MAPA - COLORES === */
+.map-container {
+    background: #f1f5f9;
+}
+
+/* === NOTIFICACIONES - COLORES === */
+.notification {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* === SCROLLBAR - COLORES === */
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.stats-breakdown::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.stats-breakdown::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+
+/* === LEAFLET - COLORES === */
+.leaflet-popup-content-wrapper {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-tip {
+    background: white;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-control-zoom a:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* === MARCADORES - COLORES === */
+.custom-marker {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.custom-marker:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* === ESTADOS DE CARGA - COLORES === */
+.loading::after {
+    border: 2px solid #3b82f6;
+    border-top: 2px solid transparent;
+}
+
+/* === TOOLTIPS - COLORES === */
+[title]:hover::after {
+    background: #1f2937;
+    color: white;
+}
+
+[title]:hover::before {
+    border-top-color: #1f2937;
+}
+
+/* === FOCUS - COLORES === */
+button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #60a5fa;
+}
