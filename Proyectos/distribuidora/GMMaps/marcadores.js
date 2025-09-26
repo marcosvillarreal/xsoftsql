@@ -29,126 +29,186 @@ icons = {
 	black: createColorIcon('black')
 };
 
-const marcadores = [											
+const marcadores = [																	
 	
 	{
-		lat: -38.692389,
-		lng: -62.219799,
+		lat: -38.6967923029844,
+		lng: -62.3144030202384,
 		icon: 'green',
-		popup: 'TRES SARGENTOS 3008',
-		alt: '1701',
-		nombre: 'LA SALMUERIA S CAP I SECC IV'
+		popup: 'EDUARDO GUTIERREZ 825',
+		alt: '2466',
+		nombre: 'MARTINEZ ROSANA EDITH'
 	}
 	,
 	{
-		lat: -38.692389,
-		lng: -62.219799,
+		lat: -38.7207578893172,
+		lng: -62.3132003509256,
 		icon: 'green',
-		popup: 'TRES SARGENTOS 3008',
-		alt: '1701',
-		nombre: 'LA SALMUERIA S CAP I SECC IV'
+		popup: 'PACIFICO 2020',
+		alt: '157',
+		nombre: 'MAO YINBING'
 	}
 	,
 	{
-		lat: -38.729681613883,
-		lng: -62.2675203779102,
+		lat: -38.7104222734131,
+		lng: -62.3031717644179,
 		icon: 'green',
-		popup: 'UNDIANO 634',
-		alt: '1356',
-		nombre: 'SANCHEZ SEBASTIAN DANIEL'
+		popup: 'ENRIQUE JULIO 1121',
+		alt: '117',
+		nombre: 'DIETRICH JOSE LUIS'
 	}
 	,
 	{
-		lat: -38.7339997984646,
-		lng: -62.2658631779102,
+		lat: -38.7069681616448,
+		lng: -62.3101690914025,
 		icon: 'green',
-		popup: 'ANGEL BRUNEL 935',
-		alt: '2055',
-		nombre: 'CHEN CAIYUN ( ANGEL BRUNEL )'
+		popup: 'AVELLANEDA 2736',
+		alt: '256',
+		nombre: 'LIN MAOCHUN'
 	}
 	,
 	{
-		lat: -38.7425628131513,
-		lng: -62.2668325490743,
+		lat: -38.7168196442165,
+		lng: -62.3182139595157,
 		icon: 'green',
-		popup: 'ALVAREZ JONTE 1360',
-		alt: '808',
-		nombre: 'YAN YUXIN'
+		popup: 'PACIFICO 2500',
+		alt: '2502',
+		nombre: 'VILLEGAS JUAN'
 	}
 	,
 	{
-		lat: -38.744191,
-		lng: -62.264318,
+		lat: -38.719587986097,
+		lng: -62.3100046932538,
 		icon: 'green',
-		popup: 'TENIENTE FARIAS 1557',
-		alt: '1281',
-		nombre: 'GUERRERO CLAUDIA CAROLINA'
+		popup: 'SANTA CRUZ 1927',
+		alt: '63',
+		nombre: 'BAEZA DEL CARMEN PINO NURIA'
 	}
 	,
 	{
-		lat: -38.7436924126308,
-		lng: -62.2627269355821,
+		lat: -38.724227147632,
+		lng: -62.2995211220898,
 		icon: 'green',
-		popup: 'PIEDRA BUENA 1226',
-		alt: '1981',
-		nombre: 'YAÑEZ EMILIANO JOSE'
+		popup: 'PAMPA CENTRAL 1141',
+		alt: '807',
+		nombre: 'CHEN JINYING'
 	}
 	,
 	{
-		lat: -38.737743,
-		lng: -62.259936,
+		lat: -38.7171489474687,
+		lng: -62.3107878797605,
 		icon: 'green',
-		popup: 'RIO NEGRO 747',
-		alt: '1676',
-		nombre: 'CABION ANGELA TERESA'
+		popup: 'MARTIN GIL 2099',
+		alt: '272',
+		nombre: 'PEREZ JAILLITA FELICIDAD'
 	}
 	,
 	{
-		lat: -38.7334196241747,
-		lng: -62.2668631644178,
+		lat: -38.7015540573844,
+		lng: -62.3019792747933,
 		icon: 'green',
-		popup: 'ANGEL BRUNEL 849',
-		alt: '1525',
-		nombre: 'JODURCHA SANDRA  FABIANA'
+		popup: 'TERRADA 2670  ENTRE LAS CALLE',
+		alt: '2592',
+		nombre: 'SCARFI LEONEL'
 	}
 	,
 	{
-		lat: -38.731598,
-		lng: -62.259579,
+		lat: -38.7020321920878,
+		lng: -62.3054132067465,
 		icon: 'green',
-		popup: 'DARREGUEIRA 1064',
-		alt: '1679',
-		nombre: 'LEGUIZAMON PUCCINELLI GONZALO EZEQU'
+		popup: 'FABIAN GONZALEZ 683',
+		alt: '2650',
+		nombre: 'ULLOA BERTA MAGDALENA'
 	}
 	,
 	{
-		lat: -38.7349845354555,
-		lng: -62.2746139932539,
+		lat: -38.6843936645244,
+		lng: -62.3377268220897,
 		icon: 'green',
-		popup: 'UNDIANO 1259',
-		alt: '940',
-		nombre: 'CHEN LAN SOCIEDAD ANONIMA'
+		popup: 'HARRIGTON 5754  BARRIO  DON',
+		alt: '2484',
+		nombre: 'LLAMAS GINA DANILA'
+	}
+	,
+	{
+		lat: -38.7134708088937,
+		lng: -62.3214318730166,
+		icon: 'green',
+		popup: 'PACIFICO 2755',
+		alt: '1272',
+		nombre: 'CURUIL DANIEL'
+	}
+	,
+	{
+		lat: -38.710584,
+		lng: -62.305953,
+		icon: 'green',
+		popup: 'AVELLANEDA 2298',
+		alt: '1276',
+		nombre: 'HOLZMAN GUSTAVO'
+	}
+	,
+	{
+		lat: -38.712905,
+		lng: -62.303681,
+		icon: 'green',
+		popup: '17 DE MAYO 1259',
+		alt: '1350',
+		nombre: 'CASTRO ROCIO LUZ CLARA'
+	}
+	,
+	{
+		lat: -38.70075,
+		lng: -62.33819,
+		icon: 'green',
+		popup: 'RUTA 35 KM 83 0',
+		alt: '692',
+		nombre: 'GARCIA ADRIAN HECTOR OMAR'
+	}
+	,
+	{
+		lat: -38.7216403592276,
+		lng: -62.3082197349483,
+		icon: 'green',
+		popup: 'MALDONADO 2030',
+		alt: '1058',
+		nombre: 'MANSILLA ANA'
+	}
+	,
+	{
+		lat: -38.6782996650503,
+		lng: -62.3343030085975,
+		icon: 'green',
+		popup: '9 DE JULIO 5277',
+		alt: '46',
+		nombre: 'ROBERT JUAN'
 	}]
 
 
 const recorridos = {		
 		ruta1:{
-			nombre: "REPARTO_MARTIN                                    ",
+			nombre: "MARTIN                                            ",
 			color: "#e74c3c",
 			peso:4,
 			puntos: [
 				
-[-38.692389,-62.219799],
-[-38.692389,-62.219799],
-[-38.729681613883,-62.2675203779102],
-[-38.7339997984646,-62.2658631779102],
-[-38.7425628131513,-62.2668325490743],
-[-38.744191,-62.264318],
-[-38.7436924126308,-62.2627269355821],
-[-38.737743,-62.259936],
-[-38.7334196241747,-62.2668631644178],
-[-38.731598,-62.259579],
-[-38.7349845354555,-62.2746139932539]
+[-38.6967923029844,-62.3144030202384],
+[-38.7207578893172,-62.3132003509256],
+[-38.7104222734131,-62.3031717644179],
+[-38.7069681616448,-62.3101690914025],
+[-38.7168196442165,-62.3182139595157],
+[-38.719587986097,-62.3100046932538],
+[-38.724227147632,-62.2995211220898],
+[-38.7171489474687,-62.3107878797605],
+[-38.7015540573844,-62.3019792747933],
+[-38.7020321920878,-62.3054132067465],
+[-38.6843936645244,-62.3377268220897],
+[-38.7134708088937,-62.3214318730166],
+[-38.710584,-62.305953],
+[-38.712905,-62.303681],
+[-38.70075,-62.33819],
+[-38.7216403592276,-62.3082197349483],
+[-38.6782996650503,-62.3343030085975]
 			]
 		}}
 
