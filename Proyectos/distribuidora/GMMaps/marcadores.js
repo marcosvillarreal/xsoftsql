@@ -29,186 +29,176 @@ icons = {
 	black: createColorIcon('black')
 };
 
-const marcadores = [																	
+const marcadores = [																
 	
 	{
-		lat: -38.6967923029844,
-		lng: -62.3144030202384,
+		lat: -39.250789,
+		lng: -62.611782,
 		icon: 'green',
-		popup: 'EDUARDO GUTIERREZ 825',
-		alt: '2466',
-		nombre: 'MARTINEZ ROSANA EDITH'
+		popup: 'CALLE 6 1576',
+		alt: '195',
+		nombre: 'RESCHKE OSCAR DANIEL'
 	}
 	,
 	{
-		lat: -38.7207578893172,
-		lng: -62.3132003509256,
+		lat: -39.259055,
+		lng: -62.615444,
 		icon: 'green',
-		popup: 'PACIFICO 2020',
-		alt: '157',
-		nombre: 'MAO YINBING'
+		popup: 'JULIO A COUSTE 745',
+		alt: '227',
+		nombre: 'FANG KAI'
 	}
 	,
 	{
-		lat: -38.7104222734131,
-		lng: -62.3031717644179,
+		lat: -39.495092,
+		lng: -62.692337,
 		icon: 'green',
-		popup: 'ENRIQUE JULIO 1121',
-		alt: '117',
-		nombre: 'DIETRICH JOSE LUIS'
+		popup: '16   422',
+		alt: '311',
+		nombre: 'VERON SERGIO ALEJANDRO'
 	}
 	,
 	{
-		lat: -38.7069681616448,
-		lng: -62.3101690914025,
+		lat: -39.49517,
+		lng: -62.68425,
 		icon: 'green',
-		popup: 'AVELLANEDA 2736',
-		alt: '256',
-		nombre: 'LIN MAOCHUN'
+		popup: '19 Y 30 0',
+		alt: '926',
+		nombre: 'BAKOS MAXIMILIANO'
 	}
 	,
 	{
-		lat: -38.7168196442165,
-		lng: -62.3182139595157,
+		lat: -39.260379,
+		lng: -62.614460,
 		icon: 'green',
-		popup: 'PACIFICO 2500',
-		alt: '2502',
-		nombre: 'VILLEGAS JUAN'
+		popup: 'SARMIENTO 1410',
+		alt: '992',
+		nombre: 'RESIDENCIA EL PINAR DE BURATO SRL'
 	}
 	,
 	{
-		lat: -38.719587986097,
-		lng: -62.3100046932538,
+		lat: -39.502910,
+		lng: -62.683985,
 		icon: 'green',
-		popup: 'SANTA CRUZ 1927',
-		alt: '63',
-		nombre: 'BAEZA DEL CARMEN PINO NURIA'
+		popup: 'CALLE 26  1162',
+		alt: '1019',
+		nombre: 'LARZABAL DELIA HAYDEE'
 	}
 	,
 	{
-		lat: -38.724227147632,
-		lng: -62.2995211220898,
+		lat: -39.499949,
+		lng: -62.680723,
 		icon: 'green',
-		popup: 'PAMPA CENTRAL 1141',
-		alt: '807',
-		nombre: 'CHEN JINYING'
+		popup: 'CALLE 32  244',
+		alt: '1268',
+		nombre: 'TITO JESICA PAMELA'
 	}
 	,
 	{
-		lat: -38.7171489474687,
-		lng: -62.3107878797605,
+		lat: -39.37703,
+		lng: -62.6486,
 		icon: 'green',
-		popup: 'MARTIN GIL 2099',
-		alt: '272',
-		nombre: 'PEREZ JAILLITA FELICIDAD'
+		popup: 'AMEDIA DEHENEN Y CALLE 12',
+		alt: '1280',
+		nombre: 'LIN JIANHONG'
 	}
 	,
 	{
-		lat: -38.7015540573844,
-		lng: -62.3019792747933,
+		lat: -39.261653,
+		lng: -62.619503,
 		icon: 'green',
-		popup: 'TERRADA 2670  ENTRE LAS CALLE',
-		alt: '2592',
-		nombre: 'SCARFI LEONEL'
+		popup: 'SANTIAGO BURATOVICH 1756',
+		alt: '1321',
+		nombre: 'ALZORRIZ ANDRES ANTONIO'
 	}
 	,
 	{
-		lat: -38.7020321920878,
-		lng: -62.3054132067465,
+		lat: -39.262633,
+		lng: -62.620249,
 		icon: 'green',
-		popup: 'FABIAN GONZALEZ 683',
-		alt: '2650',
-		nombre: 'ULLOA BERTA MAGDALENA'
+		popup: 'SAN MARTIN 766',
+		alt: '1327',
+		nombre: 'HERRADA GIL ADRIAN NICOLAS'
 	}
 	,
 	{
-		lat: -38.6843936645244,
-		lng: -62.3377268220897,
+		lat: -39.260803,
+		lng: -62.607636,
 		icon: 'green',
-		popup: 'HARRIGTON 5754  BARRIO  DON',
-		alt: '2484',
-		nombre: 'LLAMAS GINA DANILA'
+		popup: 'RENE FAVALORO 756',
+		alt: '1329',
+		nombre: 'FUNES ANA MARIA'
 	}
 	,
 	{
-		lat: -38.7134708088937,
-		lng: -62.3214318730166,
+		lat: -39.50464,
+		lng: -62.68194,
 		icon: 'green',
-		popup: 'PACIFICO 2755',
-		alt: '1272',
-		nombre: 'CURUIL DANIEL'
+		popup: 'CALLE 28 N 103',
+		alt: '2081',
+		nombre: 'CHEN QUIN'
 	}
 	,
 	{
-		lat: -38.710584,
-		lng: -62.305953,
+		lat: -39.264692,
+		lng: -62.615710,
 		icon: 'green',
-		popup: 'AVELLANEDA 2298',
-		alt: '1276',
-		nombre: 'HOLZMAN GUSTAVO'
+		popup: 'REPUBLICA ARGENTINA 562',
+		alt: '2121',
+		nombre: 'CONDORI ABIGAIL'
 	}
 	,
 	{
-		lat: -38.712905,
-		lng: -62.303681,
+		lat: -39.494713,
+		lng: -62.690331,
 		icon: 'green',
-		popup: '17 DE MAYO 1259',
-		alt: '1350',
-		nombre: 'CASTRO ROCIO LUZ CLARA'
+		popup: 'CALLE 22 N163',
+		alt: '2161',
+		nombre: 'PRODUCTOS Y SERVICIOS MISKY MAYO SRL EN'
 	}
 	,
 	{
-		lat: -38.70075,
-		lng: -62.33819,
+		lat: -39.50381,
+		lng: -62.68234,
 		icon: 'green',
-		popup: 'RUTA 35 KM 83 0',
-		alt: '692',
-		nombre: 'GARCIA ADRIAN HECTOR OMAR'
+		popup: 'CALLE 28 Y 3',
+		alt: '2253',
+		nombre: 'SARTISON NICOLAS MARTIN'
 	}
 	,
 	{
-		lat: -38.7216403592276,
-		lng: -62.3082197349483,
+		lat: -39.376025,
+		lng: -62.648389,
 		icon: 'green',
-		popup: 'MALDONADO 2030',
-		alt: '1058',
-		nombre: 'MANSILLA ANA'
-	}
-	,
-	{
-		lat: -38.6782996650503,
-		lng: -62.3343030085975,
-		icon: 'green',
-		popup: '9 DE JULIO 5277',
-		alt: '46',
-		nombre: 'ROBERT JUAN'
+		popup: 'CALLE 5   399',
+		alt: '1335',
+		nombre: 'GARAT MATIAS URIEL'
 	}]
 
 
 const recorridos = {		
 		ruta1:{
-			nombre: "MARTIN                                            ",
+			nombre: "PEDRO_LURO                                        ",
 			color: "#e74c3c",
 			peso:4,
 			puntos: [
 				
-[-38.6967923029844,-62.3144030202384],
-[-38.7207578893172,-62.3132003509256],
-[-38.7104222734131,-62.3031717644179],
-[-38.7069681616448,-62.3101690914025],
-[-38.7168196442165,-62.3182139595157],
-[-38.719587986097,-62.3100046932538],
-[-38.724227147632,-62.2995211220898],
-[-38.7171489474687,-62.3107878797605],
-[-38.7015540573844,-62.3019792747933],
-[-38.7020321920878,-62.3054132067465],
-[-38.6843936645244,-62.3377268220897],
-[-38.7134708088937,-62.3214318730166],
-[-38.710584,-62.305953],
-[-38.712905,-62.303681],
-[-38.70075,-62.33819],
-[-38.7216403592276,-62.3082197349483],
-[-38.6782996650503,-62.3343030085975]
+[-39.250789,-62.611782],
+[-39.259055,-62.615444],
+[-39.495092,-62.692337],
+[-39.49517,-62.68425],
+[-39.260379,-62.614460],
+[-39.502910,-62.683985],
+[-39.499949,-62.680723],
+[-39.37703,-62.6486],
+[-39.261653,-62.619503],
+[-39.262633,-62.620249],
+[-39.260803,-62.607636],
+[-39.50464,-62.68194],
+[-39.264692,-62.615710],
+[-39.494713,-62.690331],
+[-39.50381,-62.68234],
+[-39.376025,-62.648389]
 			]
 		}}
 
