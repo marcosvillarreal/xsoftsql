@@ -170,7 +170,7 @@ PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebS
 PUBLIC lcConectionODBC,lnconectorODBC,GoogleMapsKeyAPI
 PUBLIC oConfigTermi,pidsistema
 PUBLIC cFileNameLog,cDirCloseBat,loScriptVFP 
-Public m.osystray
+Public m.osystray,loEnviarSender
  
 STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC,cFileNameLog
 STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
@@ -433,7 +433,7 @@ IF TYPE('goApp')='O'
 	 _screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
-	
+	*loEnviarSender = CREATEOBJECT('EmailSender_oAuth')
 	
 
 *!*		public pcTextoBalloon, poSysTray, poTimer

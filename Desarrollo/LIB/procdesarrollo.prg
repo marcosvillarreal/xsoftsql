@@ -594,6 +594,7 @@ oConfigTermi.AddProperty('ControlSkin','FALSE')
 oConfigTermi.AddProperty('FacVta_ForeColor_Label',"BLACK")
 oConfigTermi.AddProperty('FacVta_ForeColor_TextBox',"BLACK")
 oConfigTermi.AddProperty('AutoLogin',"FALSE")
+oConfigTermi.AddProperty('EmailSender',"FALSE")
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -661,7 +662,9 @@ IF FILE(cFile)
 			CASE lclabel="FACVTA_FORECOLOR_TEXTBOX"
 				oConfigTermi.facvta_forecolor_textbox=  ALLTRIM(SUBSTR(lcActDato,i))	
 			CASE lclabel="AUTOLOGIN"
-				oConfigTermi.autologin=  ALLTRIM(SUBSTR(lcActDato,i))	
+				oConfigTermi.autologin=  ALLTRIM(SUBSTR(lcActDato,i))
+			CASE lclabel="EMAILSENDER"
+				oConfigTermi.emailsender=  ALLTRIM(SUBSTR(lcActDato,i))		
 		ENDCASE		 
 	ENDDO 
                     
@@ -1693,7 +1696,7 @@ Parameters tcTexto,tcArchivo,tcCarpeta
 Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
 Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
 
-tcArchivo=IIF(PCOUNT()<2,'Log.txt',tcArchivo)
+tcArchivo=IIF(PCOUNT()<2,'Log_'+dtos(DATE())+'.txt',tcArchivo)
 tcCarpeta=IIF(PCOUNT()<3,'Logs',tcCarpeta)
 
 Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta

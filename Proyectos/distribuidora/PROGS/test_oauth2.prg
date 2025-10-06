@@ -1,0 +1,50 @@
+* Eliminar antes
+IF FILE("email_result.json")    
+	DELETE FILE email_result.json
+ENDIF
+
+* Probar con adjunto
+lcCmd = 'EmailSender_OAuth.exe ' + ;
+        '--to "marcosevillarreal@gmail.com" ' + ;
+        '--subject "Test con Adjunto" ' + ;
+        '--body "Email con archivo adjunto - silencio" ' + ;
+        '--attachments "gm.ico" ' + ;
+        '--silent '+;
+        '--provider gmail'
+RUN &lcCmd
+
+* Verificar después
+IF FILE("email_result.json")    
+	lcResult = FILETOSTR("email_result.json")    
+	llExito = ("success" $ lcResult AND "true" $ lcResult)        
+	* Limpiar    
+	DELETE FILE email_result.json
+ENDIF
+IF NOT llExito
+	oavisar.usuario('Error al enviar el email')
+ENDIF 
+
+*!*	* Eliminar antes
+*!*	IF FILE("email_result.json")    
+*!*		DELETE FILE email_result.json
+*!*	ENDIF
+
+*!*	* Probar HTML
+*!*	lcCmd = 'EmailSender_OAuth.exe ' + ;
+*!*	        '--to "marcosevillarreal@gmail.com" ' + ;
+*!*	        '--subject "Test HTML" ' + ;
+*!*	        '--body "<h1>Email HTML</h1><p>Con formato</p>" ' + ;
+*!*	        '--html ' + ;
+*!*	        '--provider gmail'
+*!*	RUN &lcCmd
+
+*!*	* Verificar después
+*!*	IF FILE("email_result.json")    
+*!*		lcResult = FILETOSTR("email_result.json")    
+*!*		llExito = ("success" $ lcResult AND "true" $ lcResult)        
+*!*		* Limpiar    
+*!*		DELETE FILE email_result.json
+*!*	ENDIF
+*!*	IF NOT llExito
+*!*		oavisar.usuario('Error al enviar el email')
+*!*	ENDIF 
