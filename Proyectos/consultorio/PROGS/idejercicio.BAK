@@ -8,7 +8,7 @@ CASE goapp.codempresa = 1 &&Meridiem
 	GOAPP.IDEJERCICIO = 1100000029
 	GOAPP.IDEJERCICIOACTUAL = 1100000029	
 	goapp.terminal = 1
-	goapp.ejercicio = 13
+	goapp.ejercicio = 1
 ENDCASE 	
 
 

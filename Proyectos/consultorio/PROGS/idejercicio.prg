@@ -1,14 +1,22 @@
 
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+select TOP 1 * from detaconta ORDER BY id desc
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
+	RETURN 
+ENDIF 
+
+goapp.idejercicio = CsrDetaConta.id
+GOAPP.IDEJERCICIOACTUAL = goapp.idejercicio
+goapp.ejercicio = CsrDetaConta.ejercicio
+
 goapp.idsucursal = 1100000002
 GOAPP.IDUSUARIO =1
 cEmpresa = ''
 DO CASE 
 CASE goapp.codempresa = 1 &&Meridiem
 	cEmpresa = 'Meridiem'
-	GOAPP.IDEJERCICIO = 1100000029
-	GOAPP.IDEJERCICIOACTUAL = 1100000029	
 	goapp.terminal = 1
-	goapp.ejercicio = 1
 ENDCASE 	
 
 
