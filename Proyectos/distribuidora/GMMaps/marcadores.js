@@ -29,267 +29,159 @@ icons = {
 	black: createColorIcon('black')
 };
 
-const marcadores = [																													
+const marcadores = [																	
 	
 	{
-		lat: -38.7446507551018,
-		lng: -62.1894231779108,
+		lat: -38.7058520930991,
+		lng: -62.2783245067465,
 		icon: 'green',
-		popup: 'INGENIERO LUNA 2361  BARRIO',
-		alt: '2797',
-		nombre: 'GONZALEZ SARA'
+		popup: 'ZELARRAYAN 1241',
+		alt: '2761',
+		nombre: 'MOYANO JUAN PABLO (SUCURSAL)'
 	}
 	,
 	{
-		lat: -38.7199204870122,
-		lng: -62.2007585220892,
+		lat: -38.706615,
+		lng: -62.273103,
 		icon: 'green',
-		popup: 'LUIS AGOTE 3171',
-		alt: '1175',
-		nombre: 'MARDONES NOEMI GRACIELA'
+		popup: 'ALVARADO 985',
+		alt: '2210',
+		nombre: 'BACCINI ALEJANDRA ANGELA'
 	}
 	,
 	{
-		lat: -38.729701635509,
-		lng: -62.2219596423237,
+		lat: -38.7117987495476,
+		lng: -62.2899623288352,
 		icon: 'green',
-		popup: 'DORBIGNY 2718',
-		alt: '2146',
-		nombre: 'STELE CLAUDIA PATRICIA'
+		popup: 'BRASIL 595',
+		alt: '1668',
+		nombre: 'FERNANDEZ ZABALY LUCAS'
 	}
 	,
 	{
-		lat: -38.7146180874,
-		lng: -62.1887942017722,
+		lat: -38.7031876136764,
+		lng: -62.2779403576705,
 		icon: 'green',
-		popup: 'QUINQUELA MARTIN 4144HARDEEN',
-		alt: '49',
-		nombre: 'SAVOF NATALIA'
+		popup: 'ALVARADO 1356',
+		alt: '1156',
+		nombre: 'BENEITES PATRICIA MONICA'
 	}
 	,
 	{
-		lat: -38.72319,
-		lng: -62.19881,
+		lat: -38.7115050495797,
+		lng: -62.2752050991464,
 		icon: 'green',
-		popup: 'ROBERTO CLEGG 3338',
-		alt: '226',
-		nombre: 'PERFECTIVA SANTOS'
+		popup: 'ESTOMBA 798',
+		alt: '134',
+		nombre: 'MACCARI ORLANDO'
 	}
 	,
 	{
-		lat: -38.7295586046741,
-		lng: -62.2180488067465,
+		lat: -38.6978200395894,
+		lng: -62.2733644558236,
 		icon: 'green',
-		popup: 'GUARDIA VIEJA Y ROJAS',
-		alt: '36',
-		nombre: 'MARTINEZ MARISOL'
+		popup: 'AV ALEM 1540',
+		alt: '1571',
+		nombre: 'NARETTO SERGIO NICOLAS'
 	}
 	,
 	{
-		lat: -38.730232,
-		lng: -62.218521,
+		lat: -38.706758,
+		lng: -62.280712,
 		icon: 'green',
-		popup: 'GUARDIA VIEJA 1821',
-		alt: '1665',
-		nombre: 'FANTAGUSI PATRICIA'
+		popup: 'URUGUAY 15',
+		alt: '1711',
+		nombre: 'RUPEL ANDREA MABEL'
 	}
 	,
 	{
-		lat: -38.7518419429706,
-		lng: -62.1772842067465,
+		lat: -38.702580,
+		lng: -62.275078,
 		icon: 'green',
-		popup: 'CONSTANCIO VIGIL 1445',
-		alt: '2757',
-		nombre: 'DURAN MARCOS DANIEL'
+		popup: 'HUMBERTO PRIMO 398',
+		alt: '2812',
+		nombre: 'BELLONE ALBANO'
 	}
 	,
 	{
-		lat: -38.74331,
-		lng: -62.16455,
+		lat: -38.719006,
+		lng: -62.285124,
 		icon: 'green',
-		popup: 'TTE MAYO 3625',
-		alt: '2771',
-		nombre: 'SAGRIPANTI GABRIELA EDITH'
+		popup: 'ALMAFUERTE 821',
+		alt: '1155',
+		nombre: 'ESPINAZO MIGUEL ANGEL'
 	}
 	,
 	{
-		lat: -38.7462102270709,
-		lng: -62.1898763509248,
+		lat: -38.7104222734131,
+		lng: -62.3031717644179,
 		icon: 'green',
-		popup: 'LUCIO MANSILLA 2235',
-		alt: '2775',
-		nombre: 'MONTENEGRO MARIANA SOLEDAD'
+		popup: 'ENRIQUE JULIO 1121',
+		alt: '117',
+		nombre: 'DIETRICH JOSE LUIS'
 	}
 	,
 	{
-		lat: -38.7490517672229,
-		lng: -62.1931233797605,
+		lat: -38.7211365728133,
+		lng: -62.2690049153411,
 		icon: 'green',
-		popup: 'MANSILLA 1867',
-		alt: '1079',
-		nombre: 'MATEO JORGE DANIE'
+		popup: 'SAAVEDRA  41 (SE ENTREGA POR E',
+		alt: '1295',
+		nombre: 'DON CORNELIO SA'
 	}
 	,
 	{
-		lat: -38.7366654706984,
-		lng: -62.2269195644178,
+		lat: -38.7051690913797,
+		lng: -62.287391,
 		icon: 'green',
-		popup: 'GUARDIA VIEJA Y NEWTON',
-		alt: '1085',
-		nombre: 'MERCADITO LA CHOLA'
+		popup: 'VIEYTES 1701',
+		alt: '1790',
+		nombre: 'PACHECO RAMOS MYRIAM'
 	}
 	,
 	{
-		lat: -38.717112066038,
-		lng: -62.1940632779108,
+		lat: -38.7167229049993,
+		lng: -62.2954226288353,
 		icon: 'green',
-		popup: 'MARTIN A MALHARRO 3328',
-		alt: '133',
-		nombre: 'ECHARRI SEBASTIAN HORACIO'
+		popup: 'BRASIL 1124',
+		alt: '550',
+		nombre: 'TRUJILLO NORMA'
 	}
 	,
 	{
-		lat: -38.7124309162762,
-		lng: -62.1940299435559,
+		lat: -38.7031903298223,
+		lng: -62.2861413186436,
 		icon: 'green',
-		popup: 'SALINAS 3814',
-		alt: '823',
-		nombre: 'SAVOFF MAURO DEMETRIO'
+		popup: 'ESTOMBA 1778',
+		alt: '152',
+		nombre: 'SABATTINI SERGIO'
 	}
 	,
 	{
-		lat: -38.7392921088297,
-		lng: -62.2136199644178,
+		lat: -38.7263168546087,
+		lng: -62.3006909711639,
 		icon: 'green',
-		popup: 'SAN JOSE 1260',
-		alt: '2594',
-		nombre: 'ZHENG XUEQIN'
+		popup: 'MENDOZA 1980',
+		alt: '1097',
+		nombre: 'INALAF BERNARDO'
 	}
 	,
 	{
-		lat: -38.7384382008263,
-		lng: -62.2293984220892,
+		lat: -38.705053,
+		lng: -62.312286,
 		icon: 'green',
-		popup: 'GUARDIA VIEJA 554',
-		alt: '141',
-		nombre: 'GARRIDO HIDALGO EDUARDO ENRIQUE'
+		popup: 'BIGGIO 1181',
+		alt: '1868',
+		nombre: 'MANSILLA GIULIANA ANABELLA'
 	}
 	,
 	{
-		lat: -38.7383510377534,
-		lng: -62.2177226067465,
+		lat: -38.7272690868215,
+		lng: -62.2996100711647,
 		icon: 'green',
-		popup: 'RINCON 3435',
-		alt: '2766',
-		nombre: 'SALGADO PEREZ ALEXANDER JESUS'
-	}
-	,
-	{
-		lat: -38.7484528003969,
-		lng: -62.1814511644178,
-		icon: 'green',
-		popup: 'MARTIN CORONADO 5433',
-		alt: '2798',
-		nombre: 'SEPULVEDA MABEL'
-	}
-	,
-	{
-		lat: -38.7134043529495,
-		lng: -62.1946649220892,
-		icon: 'green',
-		popup: 'INDIADA 4035',
-		alt: '1505',
-		nombre: 'FUENTES BERTA SILVANA (SUCURSAL)'
-	}
-	,
-	{
-		lat: -38.7324793294383,
-		lng: -62.2231330932535,
-		icon: 'green',
-		popup: 'LAINEZ 2840',
-		alt: '981',
-		nombre: 'CHEN JIANFA'
-	}
-	,
-	{
-		lat: -38.7387003769744,
-		lng: -62.2241723139313,
-		icon: 'green',
-		popup: 'INDIADA 700',
-		alt: '929',
-		nombre: 'LI HAIXIA'
-	}
-	,
-	{
-		lat: -38.74901,
-		lng: -62.19397,
-		icon: 'green',
-		popup: 'BAIGORRIA 4638',
-		alt: '1759',
-		nombre: 'FUENTES VERONICA ANDREA'
-	}
-	,
-	{
-		lat: -38.749930,
-		lng: -62.194112,
-		icon: 'green',
-		popup: 'LUCIO MANSILLA 2193',
-		alt: '2776',
-		nombre: 'VEDOVALDI SILVINA ALEJANDRA'
-	}
-	,
-	{
-		lat: -38.683669,
-		lng: -62.293461,
-		icon: 'green',
-		popup: 'REPUBLICA SIRIA 3301',
-		alt: '2355',
-		nombre: 'SACOMANI MARIANO NICOLAS'
-	}
-	,
-	{
-		lat: -38.666957,
-		lng: -62.266102,
-		icon: 'green',
-		popup: 'VERA 3025',
-		alt: '212',
-		nombre: 'LLEIFUL CARLOS DARIO'
-	}
-	,
-	{
-		lat: -38.206600,
-		lng: -61.771590,
-		icon: 'green',
-		popup: 'BELGRANO 202',
-		alt: '2803',
-		nombre: 'DUBE ARIEL ALEJANDRO'
-	}
-	,
-	{
-		lat: -38.781871,
-		lng: -62.267963,
-		icon: 'green',
-		popup: 'AV SAN MARTIN 3489',
-		alt: '1667',
-		nombre: 'VEGA MARCELO MARTIN'
-	}
-	,
-	{
-		lat: -38.768586,
-		lng: -62.275307,
-		icon: 'green',
-		popup: 'MAESTRO PICCIOLI 3391',
-		alt: '1607',
-		nombre: 'BOBADILLA DANIEL'
-	}
-	,
-	{
-		lat: -38.783548,
-		lng: -62.265757,
-		icon: 'green',
-		popup: 'SAN MARTIN 3671',
-		alt: '892',
-		nombre: 'KE WUJIN'
+		popup: 'CHARLONE 1980',
+		alt: '1852',
+		nombre: 'AIMES RUBEN ALBERTO'
 	}]
 
 
@@ -300,35 +192,23 @@ const recorridos = {
 			peso:4,
 			puntos: [
 				
-[-38.7446507551018,-62.1894231779108],
-[-38.7199204870122,-62.2007585220892],
-[-38.729701635509,-62.2219596423237],
-[-38.7146180874,-62.1887942017722],
-[-38.72319,-62.19881],
-[-38.7295586046741,-62.2180488067465],
-[-38.730232,-62.218521],
-[-38.7518419429706,-62.1772842067465],
-[-38.74331,-62.16455],
-[-38.7462102270709,-62.1898763509248],
-[-38.7490517672229,-62.1931233797605],
-[-38.7366654706984,-62.2269195644178],
-[-38.717112066038,-62.1940632779108],
-[-38.7124309162762,-62.1940299435559],
-[-38.7392921088297,-62.2136199644178],
-[-38.7384382008263,-62.2293984220892],
-[-38.7383510377534,-62.2177226067465],
-[-38.7484528003969,-62.1814511644178],
-[-38.7134043529495,-62.1946649220892],
-[-38.7324793294383,-62.2231330932535],
-[-38.7387003769744,-62.2241723139313],
-[-38.74901,-62.19397],
-[-38.749930,-62.194112],
-[-38.683669,-62.293461],
-[-38.666957,-62.266102],
-[-38.206600,-61.771590],
-[-38.781871,-62.267963],
-[-38.768586,-62.275307],
-[-38.783548,-62.265757]
+[-38.7058520930991,-62.2783245067465],
+[-38.706615,-62.273103],
+[-38.7117987495476,-62.2899623288352],
+[-38.7031876136764,-62.2779403576705],
+[-38.7115050495797,-62.2752050991464],
+[-38.6978200395894,-62.2733644558236],
+[-38.706758,-62.280712],
+[-38.702580,-62.275078],
+[-38.719006,-62.285124],
+[-38.7104222734131,-62.3031717644179],
+[-38.7211365728133,-62.2690049153411],
+[-38.7051690913797,-62.287391],
+[-38.7167229049993,-62.2954226288353],
+[-38.7031903298223,-62.2861413186436],
+[-38.7263168546087,-62.3006909711639],
+[-38.705053,-62.312286],
+[-38.7272690868215,-62.2996100711647]
 			]
 		}}
 
