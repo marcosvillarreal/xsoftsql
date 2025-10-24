@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.53
+	Listados de stock
 2.1.52
 	Listado de vencimiento y consolidado, muestran f.vto
 	Facturador, al consultar carga correctamente el vencimiento

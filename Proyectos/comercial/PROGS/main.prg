@@ -7,7 +7,7 @@ oOrigen = IIF(PCOUNT()<1,1,oOrigen)
 nOrigen = IIF(VARTYPE(oOrigen)='C',VAL(oOrigen),oOrigen)
 
 
-cVersionGoapp = "02.01.53"
+cVersionGoapp = "02.01.54"
 
 SET SYSMENU off
 set classlib to

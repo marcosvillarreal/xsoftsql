@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.54
+	Ranking de Productos
 2.1.53
 	Listados de stock
 2.1.52
