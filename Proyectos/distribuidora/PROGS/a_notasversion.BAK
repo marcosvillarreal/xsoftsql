@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version 
+2.3.46
+	Pasaje
 2.3.45
 	Mapas
 2.3.44
