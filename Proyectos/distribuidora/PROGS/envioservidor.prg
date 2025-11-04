@@ -1,0 +1,115 @@
+
+* --- 1. Definición de Variables y Rutas Absolutas ---
+LOCAL lcAPIUrl, lcSucursalID, lcArchivoLocal, lcComandoCurl
+LOCAL lcCarpetaTempAbsoluta, lcRutaCompletaResultado, lcRutaBat, lcContenidoBat
+LOCAL lcCodigoHTTP
+
+lcAPIUrl = "http:///181.24.76.173:1337/api/v1/upload/"
+lcSucursalID = "003"
+lcArchivoLocal = "J:\aplicaciones\LNS\Sync\Sync\Datos\011\210000063951_C_20251001.txt"
+
+lcNombreResultado = "curl_result.log"
+lcNombreBat = "curl_exec.bat"
+lcNombreTempOut = "curl_out.tmp"
+
+* Garantizar la ruta ABSOLUTA de Windows (ej: C:\Users\...\Temp\)
+lcCarpetaTempAbsoluta = ADDBS(FULLPATH('Temporal') )
+lcRutaCompletaResultado = lcCarpetaTempAbsoluta + lcNombreResultado
+lcRutaBat = lcCarpetaTempAbsoluta + lcNombreBat
+lcRutaTempOut = lcCarpetaTempAbsoluta + lcNombreTempOut && Ruta completa del archivo intermedio
+
+* ----------------------------------------------------* 
+**CRUCIAL: Validar y Crear la Carpeta Temporal
+*** ----------------------------------------------------
+IF NOT DIRECTORY(lcCarpetaTempAbsoluta)    
+	* Si la carpeta temporal absoluta no existe (es poco común, pero posible)    
+	*MESSAGEBOX("ERROR VFP: La carpeta temporal no existe. Intentando crear: " + lcCarpetaTempAbsoluta, 16, "Error de Sistema")        
+	* Usar MKDIR para crear el directorio    
+	MKDIR &lcCarpetaTempAbsoluta
+	IF NOT DIRECTORY(lcCarpetaTempAbsoluta)
+		MESSAGEBOX("ERROR FATAL: No se pudo crear la carpeta temporal.", 16, "Error de Permisos/Sistema")        
+		RETURN  && Detener la ejecución si no podemos escribir los archivos de control    
+	ENDIF
+ENDIF
+* ----------------------------------------------------
+
+* 2. Limpieza y Construcción del Comando cURL
+IF FILE(lcRutaCompletaResultado)
+    ERASE (lcRutaCompletaResultado)
+ENDIF
+IF FILE(lcRutaTempOut)    
+	ERASE (lcRutaTempOut)
+ENDIF
+
+* Comando cURL: Subida y guardar la RESPUESTA COMPLETA en el archivo de log.
+* -o: Guarda la salida del servidor directamente en el archivo.
+* -s: Silencioso (no muestra progreso).
+lcComandoCurl = "cURL -X POST " + CHR(34) + lcAPIUrl + lcSucursalID + CHR(34) + ;
+                " -F comprobante=@" + CHR(34) + lcArchivoLocal + CHR(34) + ;
+                " -s " + ; &&// Silencioso
+                " -o " + CHR(34) + lcRutaCompletaResultado + CHR(34) && Guardar respuesta en el LOG
+
+* Crear el Contenido del Script .BAT
+lcContenidoBat = "ECHO OFF" + CHR(13) + CHR(10) + ;
+                 "REM Ejecutar cURL y guardar la respuesta JSON directamente en el log" + CHR(13) + CHR(10) + ;
+                 lcComandoCurl + CHR(13) + CHR(10) + ;
+                 "EXIT"
+                 
+*!*	* Comando cURL (usando los parámetros fijos)
+*!*	lcComandoCurl = "cURL -X POST " + ;                
+*!*			CHR(34) + "http://localhost:1337/api/v1/upload/" + lcSucursalID + CHR(34) + ;                
+*!*			" -F comprobante=@" + CHR(34) + lcArchivoLocal + CHR(34) + ;                
+*!*			" -s -o NUL -w " + CHR(34) + "%{http_code}" + CHR(34)
+
+
+*!*	* 3. Crear el Contenido del Script .BAT (Versión más segura)
+*!*	* La redirección ">" se hace en la misma línea que la ejecución de cURL.
+*!*	lcContenidoBat = "ECHO OFF" + CHR(13) + CHR(10) + ;                 
+*!*					"REM 1. Ejecutar cURL y guardar solo el código HTTP en un temporal" + CHR(13) + CHR(10) + ;
+*!*		            "cURL -X POST " + CHR(34) + lcAPIUrl + lcSucursalID + CHR(34) + ;                 
+*!*		            " -F comprobante=@" + CHR(34) + lcArchivoLocal + CHR(34) + ;                 
+*!*		            " -s -o NUL -w " + CHR(34) + "%{http_code}" + CHR(34) + ;                 
+*!*		            " > " + CHR(34) + lcRutaTempOut + CHR(34) + CHR(13) + CHR(10) + ;
+*!*		           "REM 2. Volcar el contenido del temporal al log final para lectura de VFP" + CHR(13) + CHR(10) + ;                 
+*!*		           "TYPE " + CHR(34) + lcRutaTempOut + CHR(34) + " > " + CHR(34) + lcRutaCompletaResultado + CHR(34) + CHR(13) + CHR(10) + ;
+*!*		           "EXIT"
+	           
+* 3. Crear el Contenido del Script .BAT
+*!*	lcContenidoBat = "ECHO OFF" + CHR(13) + CHR(10) + ;
+*!*	                 "REM Ejecutar cURL y redirigir la salida (código HTTP) al archivo log" + CHR(13) + CHR(10) + ;
+*!*	                 lcComandoCurl + " > " + CHR(34) + lcRutaCompletaResultado + CHR(34) + CHR(13) + CHR(10) + ;
+*!*	                 "EXIT"
+
+* 4. Guardar el Contenido y Ejecutar el .BAT
+= STRTOFILE(lcContenidoBat, lcRutaBat)
+
+* RUN en segundo plano (no bloqueante)
+RUN /N CMD /C START /B /WAIT "" &lcRutaBat
+
+* 5. Esperar y Leer el Resultado (Verificación)
+=Retardo(2)  && Dar 5 segundos para que la transferencia y la escritura finalicen
+
+
+stop()
+
+IF FILE(lcRutaCompletaResultado)  
+    lcResultadoJSON = ALLTRIM(FILETOSTR(lcRutaCompletaResultado))  
+	* 1. Buscar la cadena clave de éxito    
+	IF AT("Archivo de comprobante recibido y guardado exitosamente.", lcResultadoJSON) > 0                
+		MESSAGEBOX("Éxito: Archivo " + JUSTFNAME(lcArchivoLocal) + " subido y confirmado.", 64, "Transferencia API OK") 
+		 * --- ACCIÓN FINAL REQUERIDA ---        
+		 * La transferencia fue exitosa, puedes borrar o mover el archivo local        
+		 ERASE (lcArchivoLocal)             
+	ELSE       
+		* 2. Si no es la cadena de éxito, es un fallo (el log contiene un error JSON o un HTML)        
+		MESSAGEBOX("Fallo: Respuesta inesperada o error del servidor: " + lcResultadoJSON, 16, "Error de Subida")    
+	ENDIF        
+	ERASE (lcRutaCompletaResultado) 
+ELSE    
+	MESSAGEBOX("Fallo: El script no generó el archivo de resultado. (Problema de permisos o ejecución)", 16, "Error Fatal")
+ENDIF
+
+* 6. Limpieza
+IF FILE(lcRutaBat)
+    ERASE (lcRutaBat)
+ENDIF
