@@ -3,7 +3,9 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Pendiente
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
----Notas de Version 
+---Notas de Version
+2.3.47
+	FacPub, por parametros permite para los remitos, cargar valores 
 2.3.46
 	Pasaje
 2.3.45
