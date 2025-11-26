@@ -117,6 +117,9 @@ CASE goapp.codempresa = 25 &&Muller
 	goapp.terminal = 1
 	*goapp.ejercicio = 1
 	*goapp.idsucursal = 1100000001	
+CASE goapp.codempresa = 26 &&Heladeria
+	cEmpresa = 'Heladeria'	
+	goapp.terminal = 1
 ENDCASE 	
 
 
