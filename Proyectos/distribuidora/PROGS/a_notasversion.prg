@@ -5,7 +5,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -fORMATO DE tIENDA
 ---Notas de Version
 2.4.03
-	Comandas
+	Comandas, RegFacPub (cambio en leerproximonro)
 2.4.01-02
 	Errores en Sync API
 2.3.48
