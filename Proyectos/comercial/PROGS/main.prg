@@ -142,7 +142,10 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
      SET PROCEDURE TO FoxBarcodeQR ADDITIVE
    set classlib to systray ADDITIVE 
     SET PROCEDURE TO alertaelegante.prg ADDITIVE 
-   SET PROCEDURE TO w_json.prg ADDITIVE  
+   SET PROCEDURE TO w_json.prg ADDITIVE
+   
+   SET CLASSLIB TO emailsender.vcx ADDITIVE 
+     
 *clear all
 
 
