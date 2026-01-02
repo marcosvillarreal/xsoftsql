@@ -309,7 +309,7 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	
+	=Grabar_Log('Accediendo al sistema')
 	_screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	
