@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.04
+	ERROR en comandas. Mejora de la planilla con egresos de caja
 2.4.03
 	Comandas, RegFacPub (cambio en leerproximonro)
 2.4.01-02
