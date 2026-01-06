@@ -117,6 +117,12 @@ CASE goapp.codempresa = 25 &&Muller
 CASE goapp.codempresa = 26 &&Heladeria
 	cEmpresa = 'Heladeria'	
 	goapp.terminal = 1
+CASE goapp.codempresa = 27 &&Fiambreria
+	cEmpresa = 'Maruca F.'	
+	goapp.terminal = 1
+CASE goapp.codempresa = 28 &&Autoserivicio Teo
+	cEmpresa = 'Teo'	
+	goapp.terminal = 1
 ENDCASE 	
 
 
