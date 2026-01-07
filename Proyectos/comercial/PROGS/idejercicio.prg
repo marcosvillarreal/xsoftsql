@@ -1,17 +1,18 @@
 lcEmpresa = ''
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-select TOP 1 * from detaconta ORDER BY id desc
+select TOP 1 * from detaconta ORDER BY ejercicio desc
 ENDTEXT 
 IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
 	RETURN 
 ENDIF 
 
 goapp.idejercicio = CsrDetaConta.id
+goapp.idejerciciofac = CsrDetaConta.id
 DO CASE 
 CASE goapp.codempresa = 1 &&
 	lcEmpresa = 'Fortin'
-	goapp.idejercicio = 1100000027
+	*goapp.idejercicio = 1100000027
 	goapp.terminal = 12
 	goapp.idusuario = 1
 CASE goapp.codempresa = 2 &&
@@ -27,7 +28,7 @@ CASE goapp.codempresa = 3
 	goapp.idusuario = 1
 CASE goapp.codempresa = 4 
 	lcEmpresa = 'DelPuerto'&&
-	goapp.idejercicio = 1100000029
+	*goapp.idejercicio = 1100000029
 	goapp.terminal = 2
 	goapp.idusuario = 1
 CASE goapp.codempresa = 5 
@@ -37,27 +38,27 @@ CASE goapp.codempresa = 5
 	goapp.idusuario = 1
 CASE goapp.codempresa = 6 
 	lcEmpresa = 'PuntoF'&&
-	goapp.idejercicio = 1100000027
+	*goapp.idejercicio = 1100000027
 	goapp.terminal = 15
 	goapp.idusuario = 1
 CASE goapp.codempresa = 7 
 	lcEmpresa = 'Campisi'&&
-	goapp.idejercicio = 1100000027
+	*goapp.idejercicio = 1100000027
 	goapp.terminal = 15
 	goapp.idusuario = 1
 CASE goapp.codempresa = 8
 	lcEmpresa = 'FerreLa25'&&
-	goapp.idejercicio = 1100000027
+	*goapp.idejercicio = 1100000027
 	goapp.terminal = 2
 	goapp.idusuario = 1
 CASE goapp.codempresa = 9
 	lcEmpresa = 'SurSeco'&&
-	goapp.idejercicio = 1200000029
+	*goapp.idejercicio = 1200000029
 	goapp.terminal = 2
 	goapp.idusuario = 1
 CASE goapp.codempresa = 10
 	lcEmpresa = 'Ferrimac'&&
-	goapp.idejercicio = 1100000026
+	*goapp.idejercicio = 1100000026
 	goapp.terminal = 12
 	goapp.idusuario = 1
 CASE goapp.codempresa = 11 
