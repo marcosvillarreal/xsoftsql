@@ -17,7 +17,7 @@ window.camposConfig = {
             nombre: 'Canal de Venta',
             tipo: 'select',
             icono_texto: 'dollar',
-            opciones: ['almacen_y_desp','minimercado','otros'],
+            opciones: ['almacen','almacen_y_desp','carnic_y_desp','cine','cotillon','kiosco','minimercado','otros','superchino','supermercado','verd_y_desp','verduleria'],
             filtrable: true,
             buscable: true,
             mostrar_popup: true
@@ -26,7 +26,7 @@ window.camposConfig = {
             nombre: 'Categoría Cliente',
             tipo: 'select',
             icono_texto: 'star',
-            opciones: ['clientes','cta_cte_servicio'],
+            opciones: ['categoria_a','categoria_b','categoria_c','categoria_d','categoria_e','categoria_g','verduleria_b'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
@@ -60,7 +60,7 @@ window.camposConfig = {
             nombre: 'Zona Geográfica',
             tipo: 'select',
             icono_texto: 'globe',
-            opciones: ['jueves_1_vrosas_whi','jueves_2_centro_sude','jueves_3_resto','martes_1_centro_nort','martes_2_norte','martes_3_centro','miecoles_3_espora','miercoles_1_vmitre','miercoles_2_aldea_ro','viernes_1_bordeux_ma','viernes_2','viernes_3','viernes_4'],
+            opciones: ['a2__indflrjarca','a3__san_martinnor','a6__banadobicesj','m1__centro_patagon','m2__centro_viedma','m3__resto_mabel','t1__san_javier','v1__hospcagl','v2__guiinapielb','v6__ippvterminal'],
             filtrable: true,
             buscable: false,
             mostrar_popup: true
