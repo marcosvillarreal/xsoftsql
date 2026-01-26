@@ -1389,6 +1389,42 @@ LOCAL tInicio
 
 tInicio =  DATETIME()
 
+IF TYPE('loConnDataSource') = 'O' AND NOT ISNULL(loConnDataSource)
+    
+    * FORZAR VALIDACIÓN REAL
+    LOCAL llConexionReal, loErrorADO
+    llConexionReal = .T.
+    
+    TRY
+        * Intentamos una operación ultra liviana que solo el servidor puede responder
+        loConnDataSource.Execute("SELECT 1")
+    CATCH
+        llConexionReal = .F.
+    ENDTRY
+
+    IF !llConexionReal
+        * Si llegamos aquí, el State podría decir 1, pero la realidad es 0.
+        TRY
+            Grabar_log("Detectado microcorte. Intentando reconectar...")
+            loConnDataSource.Close() && Cerramos por si quedó en estado 'limbo'
+           * loConnDataSource.Open()  && Intentamos abrir de nuevo
+            lok = ConeccionADO() 
+            llConexionReal = .T.
+        CATCH
+            llConexionReal = .F.
+           
+        ENDTRY
+        IF lbCartel AND NOT llConexionReal 
+            =Oavisar.Usuario("Error crítico: Se perdió la conexión al servidor y no se pudo restablecer.", 0)
+             RETURN .F.
+        ENDIF
+           
+    ENDIF
+ELSE
+	* Si el objeto ni siquiera existe, no podemos seguir    
+	RETURN .F.
+ENDIF
+
 *=TrazaQuery(lcaliasCursor)
 
 Orslista = null 
@@ -1439,6 +1475,42 @@ cursorbuffermodeoverride = IIF(PCOUNT()<3,5,cursorbuffermodeoverride)
 lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(13)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(10)," ")
+
+IF TYPE('loConnDataSource') = 'O' AND NOT ISNULL(loConnDataSource)
+    
+    * FORZAR VALIDACIÓN REAL
+    LOCAL llConexionReal, loErrorADO
+    llConexionReal = .T.
+    
+    TRY
+        * Intentamos una operación ultra liviana que solo el servidor puede responder
+        loConnDataSource.Execute("SELECT 1")
+    CATCH
+        llConexionReal = .F.
+    ENDTRY
+
+    IF !llConexionReal
+        * Si llegamos aquí, el State podría decir 1, pero la realidad es 0.
+        TRY
+            Grabar_log("Detectado microcorte. Intentando reconectar...")
+            loConnDataSource.Close() && Cerramos por si quedó en estado 'limbo'
+           * loConnDataSource.Open()  && Intentamos abrir de nuevo
+            lok = ConeccionADO() 
+            llConexionReal = .T.
+        CATCH
+            llConexionReal = .F.
+           
+        ENDTRY
+        IF lbCartel AND NOT llConexionReal 
+            =Oavisar.Usuario("Error crítico: Se perdió la conexión al servidor y no se pudo restablecer.", 0)
+             RETURN .F.
+        ENDIF
+           
+    ENDIF
+ELSE
+	* Si el objeto ni siquiera existe, no podemos seguir    
+	RETURN .F.
+ENDIF
 
 Orslista = null 
 Ocalista = null
@@ -1873,97 +1945,7 @@ ENDIF
 RETURN lreturn
 
 
-*!*	FUNCTION ConeccionADO
 
-*!*	Local  loCatchErr As Exception
-
-*!*	TRY 
-*!*		DO case
-*!*			CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
-*!*				loConnDataSource = createobject('ADODB.Connection')
-*!*				loConnDataSource.ConnectionString = LcConectionString
-*!*				loConnDataSource.CommandTimeout = 0    && indefinidamente
-*!*				loConnDataSource.ConnectionTimeout = 60
-
-*!*				*Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
-*!*								                              			    
-*!*				loConnDataSource.Open()
-*!*								                        			    
-*!*				Oavisar.proceso('N')
-*!*			                       			                           	  	
-*!*			CASE LcDataSourceType='NATIVE'
-*!*				IF !DBUSED('&LcConectionString')        
-*!*					OPEN DATABASE (LcConectionString) SHARED
-*!*				ENDIF  
-*!*				SET DATABASE TO (LcConectionString)
-*!*			OTHERWISE 
-*!*				ERROR 1429
-*!*			ENDCASE
-*!*	Catch To loCatchErr
-*!*		=Oavisar.proceso('N')	
-*!*		=Oavisar.usuario('La conexión a la Base de Datos a fallado'+CHR(13);
-*!*						+CHR(13)+lcConectionString,0)
-*!*		RETURN .f.
-*!*	ENDTRY 
-
-*!*	RETURN .t.
-
-
-*!*	FUNCTION ConeccionODBC
-*!*	*!*	***Evitar que aparezca  la ventana de login
-*!*	SQLSETPROP(0,"DispLogin",3)
-*!*	lnconectorODBC =SQLSTRINGCONNECT(lcConectionODBC)
-*!*	IF lnconectorODBC<0
-*!*		RETURN .f.
-*!*	ENDIF 
-*!*	RETURN .t.
-
-*!*	FUNCTION ExisteDSN
-
-*!*	IF LcDataSourceType="NATIVE"
-*!*	   RETURN .t.
-*!*	ENDIF 
-
-*!*	#define ODBC_ADD_DSN  1    && Agregar Fuente de Datos
-*!*	#define ODBC_CONFIG_DSN  2    && Configurar (editar) fuente de datos
-*!*	#define ODBC_REMOVE_DSN  3    && Eliminar fuente de datos
-*!*	#define ODBC_ADD_SYS_DSN  4    && Agregar un DSN de Sistema
-*!*	#define ODBC_CONFIG_SYS_DSN  5    && Configurar un DSN de Sistema
-*!*	#define ODBC_REMOVE_SYS_DSN  6    && Eliminar un DSN de Sistema 
-*!*	#define vbAPINull          0    &&' NULL Pointer
-
-*!*	DECLARE LONG SQLConfigDataSource IN ODBCCP32.DLL ;
-*!*	LONG hwndParent, LONG fRequest, ;
-*!*	STRING lpszDriver, STRING lpszAttributes
-
-*!*	  LOCAL intRet, strDriver, strAttributes,lcdns
-
-*!*	  strDriver = "SQL Server"
-*!*	  
-*!*	  lcdns = STRTRAN(Goapp.servidor,".","_")
-*!*	  lcdns = ALLTRIM(LEFT(STRTRAN(lcdns,"\",""),8)) + "_"+ ALLTRIM(LEFT(TRIM(Goapp.InitCatalo),8))
-*!*	  
-*!*	  strAttributes = "SERVER="+TRIM(Goapp.Servidor )+ Chr(0)
-*!*	  strAttributes = strAttributes + "DESCRIPTION="+TRIM(lcDns)+ Chr(0)
-*!*	  strAttributes = strAttributes + "DSN="+TRIM(lcDns)  + Chr(0)
-*!*	  strAttributes = strAttributes + "DATABASE="+TRIM(Goapp.InitCatalo)  + Chr(0)
-*!*	*!*	  strAttributes = strAttributes + "UID="+Goapp.Usuario + Chr(0)
-*!*	*!*	  strAttributes = strAttributes + "PWD="+Goapp.Pwd + Chr(0)
-*!*	  
-*!*	  intRet = SQLConfigDataSource(vbAPINull, ODBC_CONFIG_DSN , strDriver, strAttributes)   
-*!*	  
-*!*		IF intRet > 0    
-*!*		      * ya existe el DNS
-*!*		      RETURN .t.      
-*!*		ELSE   
-*!*			intRet = SQLConfigDataSource(vbAPINull, ODBC_ADD_DSN, strDriver, strAttributes)     
-*!*			IF  intRet>0
-*!*				RETURN .t.
-*!*			ELSE 
-*!*				RETURN .f.
-*!*			ENDIF 
-*!*		ENDIF 		
-*!*	ENDFUNC 
 
 *=======================================================================
 *= Recupera la el ejercicio contable correspondiente a la caja activa
