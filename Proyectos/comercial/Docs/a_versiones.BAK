@@ -3,6 +3,8 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.55
+	ERROR en Precios
 2.1.54
 	Ranking de Productos
 2.1.53
