@@ -1,7 +1,17 @@
-GOAPP.IDEJERCICIO = 1100000025
+TEXT TO lcCmd TEXTMERGE NOSHOW 
+select TOP 1 * from detaconta ORDER BY id desc
+ENDTEXT 
+IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
+	RETURN 
+ENDIF 
+
+goapp.idejercicio = CsrDetaConta.id
+GOAPP.IDEJERCICIOACTUAL = goapp.idejercicio
+goapp.ejercicio = CsrDetaConta.ejercicio
+
+
 GOAPP.IDUSUARIO =1100000008 &&1
 goapp.terminal = 6
-goapp.ejercicio = 15
 goapp.sucursal = 1
 goapp.idsucursal = 1100000001
 OAVISAR.USUARIO('GOAPP.IDEJERCICIO = '+STR(GOAPP.IDEJERCICIO)+CHR(13);
