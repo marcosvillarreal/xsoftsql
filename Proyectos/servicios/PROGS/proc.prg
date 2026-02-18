@@ -1334,7 +1334,43 @@ lbcartel				=  IIF(PCOUNT()<4,.t.,lbCartel)
 lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(13)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(10)," ")
+tInicio =  DATETIME()
 
+IF TYPE('loConnDataSource') = 'O' AND NOT ISNULL(loConnDataSource)
+    
+    * FORZAR VALIDACIÓN REAL
+    LOCAL llConexionReal, loErrorADO
+    llConexionReal = .T.
+    
+    TRY
+        * Intentamos una operación ultra liviana que solo el servidor puede responder
+        loConnDataSource.Execute("SELECT 1")
+    CATCH
+        llConexionReal = .F.
+    ENDTRY
+
+    IF !llConexionReal
+        * Si llegamos aquí, el State podría decir 1, pero la realidad es 0.
+        TRY
+            Grabar_log("Detectado microcorte. Intentando reconectar...")
+            loConnDataSource.Close() && Cerramos por si quedó en estado 'limbo'
+           * loConnDataSource.Open()  && Intentamos abrir de nuevo
+            lok = ConeccionADO() 
+            llConexionReal = .T.
+        CATCH
+            llConexionReal = .F.
+           
+        ENDTRY
+        IF lbCartel AND NOT llConexionReal 
+            =Oavisar.Usuario("Error crítico: Se perdió la conexión al servidor y no se pudo restablecer.", 0)
+             RETURN .F.
+        ENDIF
+           
+    ENDIF
+ELSE
+	* Si el objeto ni siquiera existe, no podemos seguir    
+	RETURN .F.
+ENDIF
 Orslista = null 
 Ocalista = null
 Orslista= createobject('ADODB.RecordSet')
