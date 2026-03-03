@@ -9,6 +9,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
 
+PUBLIC lldesarrollo
 
 set classlib to
 l='j:'
@@ -18,7 +19,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Gestion Pedidos"
-lcVersion = "01.00.01"
+lcVersion = "01.00.02"
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  

@@ -9,6 +9,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 *	VER AL PIE alguna consideracion con respecto a campos tablas
 *
 
+PUBLIC lldesarrollo
 
 set classlib to
 l='j:'
@@ -255,13 +256,15 @@ IF TYPE('goApp')='O'
 
 	*LeerEjercicioPerfil()
 	
+	_screen.visible=.t.	   
+	_screen.lockscreen=.f.
+
+
 	DO FORM frmmenupm
     DO Form	actualizarpedandroidsql
 	*DO FORM regproceso
 	   
-	_screen.visible=.t.	   
-	_screen.lockscreen=.f.
-
+	
 	Read events   
 ENDIF
 
