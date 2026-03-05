@@ -48,6 +48,7 @@ lcdd=alltrim(curdir()) && directorio de arranque
 
 cRutaCAE = sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
+cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\frigorifico\'
@@ -66,7 +67,7 @@ If lldesarrollo
    _rutalib = L +'\xsoftsql\desarrollo\lib'   
    cRutaCAE	= _rutabmps + '\caevacio.jpg'
    cLogoFAC	= _rutabmps + '\logofac.jpg'
-   
+   cRutaQR	= _rutabmps + '\qr.jpg'
    _rutaformsd  =lcdd+'forms\dinamico'
    _rutaformsb  =lcdd+'forms\bancario'
    _rutaformsp  =lcdd+'forms\pedidos'
@@ -108,8 +109,10 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET PROCEDURE TO procfiscal.prg ADDITIVE 
    SET PROCEDURE  TO registry.prg ADDITIVE 
    SET PROCEDURE TO googlemaps.prg ADDITIVE 
-	SET PROCEDURE TO formposition.prg ADDITIVE 
+   sET PROCEDURE TO formposition.prg ADDITIVE 
    SET PROCEDURE TO ftp.prg ADDITIVE
+   SET PROCEDURE TO  foxypreviewercaller ADDITIVE 
+   SET PROCEDURE TO FoxBarcodeQR ADDITIVE
        
    SET CLASSLIB  TO  reindexer ADDITIVE 
    SET CLASSLIB  TO  clasesgenerales ADDITIVE 
@@ -125,24 +128,36 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    SET  CLASSLIB  TO  xfrxlib ADDITIVE 
    SET LIBRARY TO xfrxlib.fll ADDITIVE 
    SET CLASSLIB  TO  ZIP ADDITIVE 
-
+	
+	SET PROCEDURE TO GmailOAuth.prg ADDITIVE
+	SET CLASSLIB TO emailsender.vcx ADDITIVE 
+	
    PUBLIC FOXHELPFILE 
    FOXHELPFILE  =  "FRIGORIFICO.CHM" 
 *clear all
 
+
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='help.ico'
+_Screen.icon='gmsmart.ico'
 _screen.picture= 'fondo51.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi,pidsistema
+PUBLIC cFileNameLog,cDirCloseBat,loScriptVFP 
+Public m.osystray,loEnviarSender
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+LeerConfigTermi()
+loScriptVFP = CREATEOBJECT("Scripting.FileSystemObject")	
+
+cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -160,8 +175,11 @@ ObjReporter.AddProperty('titulo4',"")
 ObjReporter.AddProperty('logo',"logogestion.jpg")
 objReporter.AddProperty('logofac',cLogoFac)
 ObjReporter.AddProperty('numcae',cRutaCAE)
+ObjReporter.AddProperty('fileqr',cRutaQR)
+ObjReporter.AddProperty('mensajeria_body',"")
+ObjReporter.AddProperty('banner',"gmbanner.png")
 IF lldesarrollo
-	ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+	*ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
 ENDIF 
 ObjReporter.AddProperty('cartel',"")
 
@@ -178,6 +196,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	goapp.version = "01.00.00"
+	goapp.gmsoft = "frigorifico"
 	
 	PUBLIC  gcicono
 	     
@@ -217,7 +236,9 @@ IF TYPE('goApp')='O'
 	
 	*Marcos 19/12/14 No tiene utilidad esto.
 	*LeerXMLClassID("objetodll.xml")
-
+	Grabar_Log('Verificando Licencia') 
+	Licencia()
+	
 	If lldesarrollo 
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
@@ -248,6 +269,13 @@ IF TYPE('goApp')='O'
 *!*		ENDIF 
 
 	LeerEmpresa()
+	
+	ObjReporter.logofac =  goapp.logofac
+	IF lldesarrollo
+		ObjReporter.logo = lcdd+'graphics\logogestion.jpg'
+		ObjReporter.logofac = lcdd+'graphics\'+LTRIM(goapp.logofac)
+		ObjReporter.banner= ADDBS(_rutabmpd)+'gmbanner.png'
+	ENDIF 
 	    
 	Goapp.idusuario           = 0
 	Goapp.perfilusuario     = 0
@@ -263,6 +291,24 @@ IF TYPE('goApp')='O'
 	
 	_screen.lockscreen=.t.		 
 	*--------------------------   
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrParaVario.* FROM ParaVario as CsrParaVario WHERE nombre='XML<<strzero(goapp.terminal,4)>>'
+	ENDTEXT 
+	=CrearCursorAdapter('CsrParaVario',lcCmd)
+	
+	****destino archivos xml
+	*stop()
+	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
+	IF nombre="XML"+strzero(goapp.terminal,4)
+		lcDestinoXML = CsrParaVario.detalle
+
+		goapp.rutasync = lcDestinoXML
+		IF LEN(LTRIM(lcDestinoXML))#0
+			IF !DIRECTORY(lcDestinoXML)
+				MKDIR &lcDestinoXML
+			ENDIF 
+		ENDIF 
+	ENDIF 
 	
 	LOCAL oMenu
 	oDesktop = ''
@@ -272,11 +318,11 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		IF NOT Licencia()
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	 DO FORM frmmenu
 	                     
