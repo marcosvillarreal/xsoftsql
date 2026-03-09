@@ -6,6 +6,7 @@ lcData = lcBase
 DO setup
 SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
 SET PROCEDURE  TO  syserror.prg ADDITIVE  
+SET PROCEDURE TO z00_01 ADDITIVE 
 
 SET SAFETY OFF
 
@@ -46,107 +47,15 @@ ENDIF
 lniddetanrocaja = CsrDetaNroCaja.id
 
 
-SET SAFETY ON
-CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-
-CREATE CURSOR CsrSaldos (Codigo c(8),Saldo c(20))
-
-Oavisar.proceso('S','Abriendo archivos') 
-
-cCadeCtacte = "" 
-
-SELECT CsrLista
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_clientes.csv"
-APPEND FROM  &cArchivo SDF
+=LeerSaldos_01(cArchivo)
+SELECT CsrSaldos
 
-lcDelimitador = ";"
-replace ALL deta01 WITH ALLTRIM(STRTRAN(deta01,"	",lcDelimitador))
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
 
-Oavisar.proceso('S','Procesando '+alias()) 
 
 cCadeCtacte = "" 
 
 
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-ldebug = .t.
-
-*SKIP 
-*stop()
-DO WHILE NOT EOF()
-	lnCantCampo = 3 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		SKIP 
-		LOOP 
-	ENDIF 
-	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcSaldo
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			SKIP 
-			LOOP 
-		ENDIF 
-	ENDIF 
-	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			*lcSaldo		= UPPER(LimpiarCadena(IIF(j + i=3,STRTRAN(STRTRAN(lcCadena,'.',''),',','.'),lcSaldo)))
-			lcSaldo			= UPPER((IIF(j + i=3,strtran(lcCadena,'.',''),lcSaldo)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-					
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		lcSaldo = STRTRAN(lcSaldo,',','.')
-		INSERT INTO CsrSaldos (Codigo,Saldo) ;
-		values (lcCodigo,lcSaldo)
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
-	ENDIF 
-	SKIP IN CsrLista
-ENDDO 
 
 SELECT CsrSaldos
 *vista()

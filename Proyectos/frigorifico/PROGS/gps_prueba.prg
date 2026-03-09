@@ -1,0 +1,88 @@
+oM = CREATEOBJECT("maps")
+
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT 'DEPOSITO' as tipo, 'DEPOSITO' as cliente
+*!*	, LTRIM(RTRIM(direccion)) as direccion
+*!*	,ltrim(RTRIM(localidad)) as localidad
+*!*	,SPACE(30) as Lat, SPACE(30) as lnG
+*!*	,SPACE(15) as hora_desde, SPACE(15) as hora_hasta
+*!*	From Empresa
+*!*	union all
+*!*	SELECT top 70 'CLIENTE' as tipo, '('+LTRIM(RTRIM(cnumero))+') '+LTRIM(RTRIM(cnombre)) as cliente
+*!*	,LTRIM(cdireccion) as direccion, RTRIM(l.nombre) as localidad
+*!*	,SPACE(30) as Lat, SPACE(30) as lnG
+*!*	,SPACE(15) as hora_desde, SPACE(15) as hora_hasta
+*!*	From vendedor as v
+*!*	Inner join rutavdor as rv on v.id = rv.idvendedor
+*!*	inner join caberuta as ca on rv.id = ca.idrutavdor
+*!*	inner join cuerruta as cu on ca.id = cu.idcaberuta
+*!*	inner join ctacte as c on cu.idctacte = c.id
+*!*	inner join localidad as l on c.idlocalidad = l.id
+*!*	where v.numero = 3 and c.ctadeudor = 1 and ca.dia = 4
+*!*	ENDTEXT 
+
+*!*	=CrearcursorAdapter('CsrDire',lccmd)
+*!*	LOCAL lcLat, lcLng ,lcResponse,i
+
+*!*	lcResponse = ''
+*!*	i = 1
+*!*	oavisar.proceso('A','Leyendo coordenadas')
+*!*	SELECT CsrDire
+*!*	GO TOP 
+*!*	SCAN 
+*!*		STORE '' TO lcLat, lcLng
+*!*		lok = .t.
+*!*		lcDireccion = ALLTRIM(CsrDire.direccion)+','+aLLTRIM(CsrDire.localidad)
+*!*		
+*!*		lok = oM.geocodenominatim(lcDireccion,@lcLat, @lcLng)
+*!*		IF lok
+*!*			replace lat WITH lcLat, lng WITH lcLng IN CsrDire
+*!*			lcResponse = lcResponse + CHR(13)+ lcDireccion + ':'+lcLat+','+lcLng
+*!*			IF i = 3
+*!*				replace hora_desde WITH '12:00', hora_hasta WITH '14:00' IN CsrDire
+*!*			ENDIF 
+*!*		ENDIF
+*!*		i = i + 1  
+*!*	ENDSCAN 
+
+*oavisar.usuario(lcResponse)
+
+oavisar.proceso('A','Armando Archivo')
+
+cFileName = ADDBS(SYS(5)+CURDIR())+'TempRecorrido.CSV'
+
+cFileNameO = ADDBS(SYS(5)+CURDIR())+'TempRecorrido_Optimizado.CSV'
+
+*cFileNameKML = ADDBS(SYS(5)+CURDIR())+'TempRecorrido_Optimizado.KML'
+*!*	oM.ArmarArchivoRecorrido('CsrDire',cFileName)
+
+oavisar.proceso('A','Optimizando')
+
+*IF oM.EjecutarOptimizador(cFileName,cFileNameO)
+
+	oavisar.proceso('A','Archivo Google')
+
+	*oM.FormatoGMaps(cFileNameO,'Oficina',DATE())
+	
+	stop()
+	
+	 = oM.ElegirTemaKML()
+	
+	cArchivoKML = oM.GenerarKMLConRuta(cFileNameO , 'Oficina', DATE())
+	
+	IF NOT EMPTY(cArchivoKML)
+        WAIT CLEAR
+       * AbrirGoogleMyMaps()
+        MESSAGEBOX("? KML generado: " + cArchivoKML + CHR(10) + CHR(10) + ;
+                  "INSTRUCCIONES:" + CHR(10) + ;
+                  "1. En Google My Maps: Importar" + CHR(10) + ;
+                  "2. Seleccionar: " + cArchivoKML + CHR(10) + ;
+                  "3. ¡Verás puntos + ruta completa!", 64, "KML Listo")
+        RETURN .T.
+    ENDIF
+        
+*ENDIF 
+
+oavisar.proceso('N')
+
+oM = null

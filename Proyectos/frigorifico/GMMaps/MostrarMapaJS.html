@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa con Marcadores y Recorridos</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .lista-puntos {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 10px 0;
+        }
+        
+        .punto-item {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .punto-item:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .punto-item:last-child {
+            border-bottom: none;
+        }
+        
+        .punto-alt {
+            font-weight: bold;
+            color: #007cba;
+            font-size: 12px;
+        }
+        
+        .punto-nombre {
+            font-weight: bold;
+            color: #333;
+            margin: 2px 0;
+        }
+        
+        .punto-direccion {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .color-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .green { background-color: #4CAF50; }
+        .red { background-color: #f44336; }
+        .blue { background-color: #2196F3; }
+        .gold { background-color: #FFD700; }
+        .orange { background-color: #FF9800; }
+        .yellow { background-color: #FFEB3B; }
+        .violet { background-color: #9C27B0; }
+        .grey { background-color: #9E9E9E; }
+        .black { background-color: #000000; }
+        
+        .buscador {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        
+        .contenedor-principal {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .controles-superiores {
+            padding: 10px;
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+            text-align: center;
+        }
+        
+        .contenedor-lateral {
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .contenedor-izquierda {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+        }
+        
+        .contenedor-mapa {
+            flex: 2;
+            min-width: 400px;
+        }
+        
+        .contenedor-derecha {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .lista-recorrido {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 10px 0;
+        }
+        
+        .punto-recorrido {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .punto-recorrido:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .punto-recorrido.activo {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            font-weight: bold;
+        }
+        
+        .punto-recorrido.completado {
+            background-color: #e8f5e8;
+            color: #4caf50;
+        }
+        
+        .numero-paso {
+            display: inline-block;
+            background-color: #007cba;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .numero-paso.activo {
+            background-color: #ff9800;
+            animation: pulse 1s infinite;
+        }
+        
+        .numero-paso.completado {
+            background-color: #4caf50;
+        }
+        
+        .coordenadas-paso {
+            font-size: 11px;
+            color: #666;
+            margin-left: 32px;
+        }
+        
+        #map { 
+            width: 100%;
+            height: 585px;
+            box-shadow: 5px 5px 5px #888;
+        }
+        
+        #Coordenada {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .controles {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+            text-align: center;
+        }
+        
+        .controles button {
+            margin: 5px;
+            padding: 8px 15px;
+            background-color: #007cba;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .controles button:hover {
+            background-color: #005a87;
+        }
+        
+        .controles button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .controles select {
+            margin: 5px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .emoji-icon {
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            background: transparent;
+            border: none;
+        }
+        
+        .seguimiento {
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- Controles superiores para recorridos -->
+        <div class="controles-superiores">
+            <h3>Control de Recorridos</h3>
+            <select id="selectorRuta">
+                <option value="">Seleccionar recorrido</option>
+                <!-- Las opciones se cargan dinámicamente desde marcadores.js -->
+            </select>
+            
+            <button onclick="mostrarRecorrido()">Mostrar Ruta</button>
+            <button onclick="iniciarSeguimientoRuta()">Iniciar Seguimiento</button>
+            <button onclick="detenerSeguimientoLocal()" id="btnDetener" disabled>Detener</button>
+            <button onclick="limpiarMapa()">Limpiar Rutas</button>
+            
+            <label style="margin-left: 20px;">Velocidad: </label>
+            <select id="velocidadSeguimiento">
+                <option value="2000">Lento (2s)</option>
+                <option value="1000" selected>Normal (1s)</option>
+                <option value="500">Rápido (0.5s)</option>
+            </select>
+        </div>
+        
+        <div class="contenedor-lateral">
+            <!-- Lista de puntos del recorrido activo -->
+            <div class="contenedor-izquierda">
+                <div class="controles">
+                    <h3>Puntos del Recorrido</h3>
+                    <div id="infoRecorrido" style="margin-bottom: 10px; font-style: italic; color: #666;">
+                        Selecciona un recorrido para ver sus puntos
+                    </div>
+                    <div class="lista-recorrido" id="listaRecorrido">
+                        <!-- Los puntos del recorrido se cargan dinámicamente -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa y coordenadas -->
+            <div class="contenedor-mapa">
+                <div id='map'></div>
+                <div id="Coordenada">Click para buscar direccion</div>
+            </div>
+            
+            <!-- Lista de todos los puntos -->
+            <div class="contenedor-derecha">
+                <div class="controles">
+                    <h3>Todos los Puntos</h3>
+                    <input type="text" id="buscadorPuntos" class="buscador" placeholder="Buscar puntos..." onkeyup="filtrarPuntos()">
+                    <div class="lista-puntos" id="listaPuntos">
+                        <!-- Los puntos se cargan dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Archivo con los marcadores -->
+    <script src="marcadores.js"></script>
+    
+    <script>
+        // Configuración inicial del mapa
+        const coordenadasIniciales = [-40.8259114, -62.9782270];
+        const map = L.map('map').setView(coordenadasIniciales, 15);
+        
+        // Mostrar coordenadas iniciales
+        document.getElementById('Coordenada').innerHTML = `LatLng(${coordenadasIniciales.join(', ')})`;
+        
+        // Agregar capa de tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 18
+        }).addTo(map);
+        
+        // Agregar control de escala
+        L.control.scale().addTo(map);
+        
+        // Agregar todos los marcadores usando la función del archivo externo
+        agregarMarcadores(map);
+        
+        // Cargar recorridos dinámicamente
+        cargarRecorridosEnSelector();
+        
+        // Cargar lista de puntos
+        cargarListaPuntos();
+        
+        // Función para manejar clicks en el mapa
+        function onMapClick(e) {
+            L.popup()
+                .setLatLng(e.latlng)
+                .setContent(`Usted hizo click en la posición: ${e.latlng.toString()}`)
+                .openOn(map);
+            
+            document.getElementById('Coordenada').innerHTML = e.latlng.toString();
+        }
+        
+        // Agregar evento de click al mapa
+        map.on('click', onMapClick);
+        
+        // Función para cargar recorridos dinámicamente
+        function cargarRecorridosEnSelector() {
+            const selector = document.getElementById('selectorRuta');
+            
+            // Obtener recorridos del archivo marcadores.js
+            const recorridosDisponibles = obtenerRecorridos();
+            
+            // Limpiar opciones existentes (excepto la primera)
+            while (selector.children.length > 1) {
+                selector.removeChild(selector.lastChild);
+            }
+            
+            // Agregar cada recorrido como opción
+            recorridosDisponibles.forEach(claveRecorrido => {
+                const recorrido = obtenerRecorrido(claveRecorrido);
+                const option = document.createElement('option');
+                option.value = claveRecorrido;
+                option.textContent = recorrido.nombre;
+                selector.appendChild(option);
+            });
+        }
+        let rutasDibujadas = [];
+        
+        // Función para actualizar coordenadas (usada por el seguimiento)
+        function actualizarCoordenadas(latlng) {
+            document.getElementById('Coordenada').innerHTML = latlng.toString();
+        }
+        
+        // Función para mostrar un recorrido seleccionado
+        function mostrarRecorrido() {
+            const selector = document.getElementById('selectorRuta');
+            const rutaSeleccionada = selector.value;
+            
+            if (!rutaSeleccionada) {
+                alert('Por favor selecciona un recorrido');
+                return;
+            }
+            
+            const ruta = dibujarRecorrido(map, rutaSeleccionada);
+            if (ruta) {
+                rutasDibujadas.push(ruta);
+                // Ajustar vista para mostrar toda la ruta
+                map.fitBounds(ruta.getBounds());
+                
+                // Cargar lista de puntos del recorrido
+                cargarPuntosRecorrido(rutaSeleccionada);
+            }
+        }
+        
+        // Función para iniciar seguimiento de ruta
+        function iniciarSeguimientoRuta() {
+            const selector = document.getElementById('selectorRuta');
+            const velocidadSelector = document.getElementById('velocidadSeguimiento');
+            const rutaSeleccionada = selector.value;
+            const velocidad = parseInt(velocidadSelector.value);
+            
+            if (!rutaSeleccionada) {
+                alert('Por favor selecciona un recorrido');
+                return;
+            }
+            
+            iniciarSeguimiento(map, rutaSeleccionada, velocidad);
+            
+            // Actualizar estados de botones
+            document.getElementById('btnDetener').disabled = false;
+            
+            // Cargar lista de puntos del recorrido
+            cargarPuntosRecorrido(rutaSeleccionada);
+        }
+        
+        // Función para detener seguimiento local
+        function detenerSeguimientoLocal() {
+            detenerSeguimiento(); // Función del archivo marcadores.js
+            document.getElementById('btnDetener').disabled = true;
+        }
+        
+        // Función para limpiar todas las rutas del mapa
+        function limpiarMapa() {
+            rutasDibujadas.forEach(ruta => {
+                map.removeLayer(ruta);
+            });
+            rutasDibujadas = [];
+            
+            // Limpiar marcadores de inicio/fin y seguimiento
+            map.eachLayer(layer => {
+                if (layer instanceof L.Marker && layer.options.icon && layer.options.icon.options) {
+                    const html = layer.options.icon.options.html;
+                    if (html === '🚩' || html === '🏁' || html === '🚗') {
+                        map.removeLayer(layer);
+                    }
+                }
+            });
+            
+            detenerSeguimientoLocal();
+            
+            // Limpiar lista de recorrido
+            limpiarListaRecorrido();
+        }
+        
+        // Función para cargar la lista de puntos
+        function cargarListaPuntos() {
+            const listaPuntos = document.getElementById('listaPuntos');
+            const puntos = obtenerMarcadores();
+            
+            listaPuntos.innerHTML = '';
+            
+            puntos.forEach(punto => {
+                const item = document.createElement('div');
+                item.className = 'punto-item';
+                item.onclick = () => centrarEnPunto(punto);
+                
+                item.innerHTML = `
+                    <span class="color-dot ${punto.icon}"></span>
+                    <div class="punto-alt">ID: ${punto.alt}</div>
+                    <div class="punto-nombre">${punto.nombre}</div>
+                    <div class="punto-direccion">${punto.popup}</div>
+                `;
+                
+                listaPuntos.appendChild(item);
+            });
+        }
+        
+        // Función para centrar el mapa en un punto específico
+        function centrarEnPunto(punto) {
+            const latlng = [punto.lat, punto.lng];
+            
+            // Centrar el mapa en el punto
+            map.setView(latlng, 18);
+            
+            // Encontrar el marcador correspondiente y abrirle el popup
+            map.eachLayer(layer => {
+                if (layer instanceof L.Marker && 
+                    layer.getLatLng().lat === punto.lat && 
+                    layer.getLatLng().lng === punto.lng &&
+                    layer.options.alt === punto.alt) {
+                    
+                    // Abrir popup del marcador
+                    layer.openPopup();
+                    
+                    // Actualizar coordenadas
+                    actualizarCoordenadas(layer.getLatLng());
+                }
+            });
+        }
+        
+        // Función para cargar los puntos del recorrido seleccionado
+        function cargarPuntosRecorrido(rutaSeleccionada) {
+            const listaRecorrido = document.getElementById('listaRecorrido');
+            const infoRecorrido = document.getElementById('infoRecorrido');
+            const recorrido = obtenerRecorrido(rutaSeleccionada);
+            const puntosRecorrido = obtenerPuntosRecorrido(rutaSeleccionada);
+            
+            // Actualizar información del recorrido
+            infoRecorrido.innerHTML = `<strong>${recorrido.nombre}</strong> - ${puntosRecorrido.length} puntos`;
+            
+            // Limpiar y llenar lista
+            listaRecorrido.innerHTML = '';
+            
+            puntosRecorrido.forEach((punto, index) => {
+                const item = document.createElement('div');
+                item.className = 'punto-recorrido';
+                item.id = `punto-paso-${index}`;
+                item.onclick = () => centrarEnPuntoRecorrido(punto);
+                
+                let icono = '📍';
+                if (punto.esInicio) icono = '🚩';
+                else if (punto.esFin) icono = '🏁';
+                
+                item.innerHTML = `
+                    <span class="numero-paso" id="numero-${index}">${punto.paso}</span>
+                    ${icono} <strong>${punto.nombre}</strong>
+                    <div class="coordenadas-paso">${punto.direccion}</div>
+                `;
+                
+                listaRecorrido.appendChild(item);
+            });
+        }
+        
+        // Función para centrar en un punto específico del recorrido
+        function centrarEnPuntoRecorrido(punto) {
+            const latlng = [punto.lat, punto.lng];
+            map.setView(latlng, 18);
+            
+            // Mostrar popup con información del punto
+            L.popup()
+                .setLatLng(latlng)
+                .setContent(`
+                    <b>Paso ${punto.paso}</b><br>
+                    <strong>${punto.nombre}</strong><br>
+                    ${punto.direccion}
+                `)
+                .openOn(map);
+            
+            actualizarCoordenadas({lat: punto.lat, lng: punto.lng});
+        }
+        
+        // Función para actualizar el estado visual del recorrido durante el seguimiento
+        function actualizarEstadoRecorrido(pasoActual) {
+            // Resetear todos los estados
+            document.querySelectorAll('.punto-recorrido').forEach((item, index) => {
+                const numeroSpan = document.getElementById(`numero-${index}`);
+                
+                item.classList.remove('activo', 'completado');
+                numeroSpan.classList.remove('activo', 'completado');
+                
+                if (index < pasoActual) {
+                    // Pasos completados
+                    item.classList.add('completado');
+                    numeroSpan.classList.add('completado');
+                } else if (index === pasoActual) {
+                    // Paso actual
+                    item.classList.add('activo');
+                    numeroSpan.classList.add('activo');
+                }
+            });
+            
+            // Scroll automático para mostrar el paso actual
+            const pasoElemento = document.getElementById(`punto-paso-${pasoActual}`);
+            if (pasoElemento) {
+                pasoElemento.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+        
+        // Función para limpiar la lista de recorrido
+        function limpiarListaRecorrido() {
+            document.getElementById('listaRecorrido').innerHTML = '';
+            document.getElementById('infoRecorrido').innerHTML = 'Selecciona un recorrido para ver sus puntos';
+        }
+        
+        // Función para filtrar puntos en la lista
+        function filtrarPuntos() {
+            const buscador = document.getElementById('buscadorPuntos');
+            const filtro = buscador.value.toLowerCase();
+            const items = document.querySelectorAll('.punto-item');
+            
+            items.forEach(item => {
+                const texto = item.textContent.toLowerCase();
+                if (texto.includes(filtro)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

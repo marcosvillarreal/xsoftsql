@@ -7,7 +7,7 @@
 
 LPARAMETERS oIdPrograma
 
-oIdprograma = IIF(PCOUNT()<1,"1",oIdprograma)
+oIdprograma = IIF(PCOUNT()<1,"4",oIdprograma)
 
 LOCAL nidprograma
 
@@ -70,11 +70,12 @@ If lldesarrollo
    _rutaformsp  =lcdd+'forms\pedidos'
    _rutaformsc  =lcdd+'forms\caja'
    
+    _rutaformut  =lcdd+'forms\util'
    Set default to (lcdd) &&;(lcddc)
 
    Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
-               ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp
+               ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut  
                
       
 Endif
@@ -123,9 +124,12 @@ _Screen.visible=.t.
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
 PUBLIC lcConectionODBC,lnconectorODBC
+PUBLIC oConfigTermi,pidsistema
    
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
+
+pidsistema = nidprograma
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
@@ -160,7 +164,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.00"
+	goapp.version = "02.00.00"
 	
 	PUBLIC  gcicono
 	     
@@ -176,7 +180,9 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.f.
 	
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
-
+	
+	LeerConfigTermi()
+	
     WAIT WINDOW "Verificando ActiveX instalados ..." nowait
     DO Verifica_OCX WITH "Check"
     
@@ -195,7 +201,7 @@ IF TYPE('goApp')='O'
 		DO FORM configbd
 		=ObtenerServidor()
 	ENDIF    
-
+	
 	PUBLIC loConnDataSource,lcIdObjCon,lcIdObjneg,lcServidor,ObjNeg
 	
 	*Marcos 19/12/14 No tiene utilidad esto.
@@ -237,6 +243,14 @@ IF TYPE('goApp')='O'
 	Goapp.nombreusuario= ""
 	Goapp.sucursal10   = Goapp.sucursal   && si sucursal10#0 en proc almacenado de insert suma 10 y concatena el numero de id obtenido, ver odata
 	
+	TEXT TO lcCmd TEXTMERGE NOSHOW 
+	SELECT CsrSeteoParam.* FROM SeteoParam as CsrSeteoParam WHERE nombre='CODEMPRESA'
+	ENDTEXT 
+	=CrearCursorAdapter('CsrSeteo',lcCmd)
+	IF RECCOUNT('CsrSeteo')> 0
+		goapp.codempresa = VAL(CsrSeteo.CVALOR)
+	ENDIF 
+
 	*--------------Codigo para que abra el form
     _screen.visible=.t.	   
 	_screen.lockscreen=.f.
@@ -255,11 +269,11 @@ IF TYPE('goApp')='O'
 
 *!*		LeerEjercicioPerfil()
 	
-	IF NOT Licencia()
-		CANCEL 
-		CLEAR ALL
-		RETURN 
-	ENDIF 
+*!*		IF NOT Licencia()
+*!*			CANCEL 
+*!*			CLEAR ALL
+*!*			RETURN 
+*!*		ENDIF 
 	
 	DO CASE
 	CASE VAL(nidprograma)=1
@@ -268,6 +282,12 @@ IF TYPE('goApp')='O'
 	CASE VAL(nidprograma)=2
 		goapp.otherformsclose ="GENERA_FRIG"
 		DO FORM genera_frig WITH .t.
+	CASE VAL(nidprograma)=4
+		goapp.otherformsclose ="GENERA_NEXTBYN"
+		DO FORM genera_nextbyn WITH .t.
+	CASE VAL(nidprograma)=5
+		goapp.otherformsclose ="GENERA_EXPGRAL"
+		DO FORM genera_expgral WITH .t.
 	OTHERWISE
 
 	ENDCASE

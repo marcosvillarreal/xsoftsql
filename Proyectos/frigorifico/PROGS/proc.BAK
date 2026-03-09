@@ -1,3 +1,36 @@
+
+
+*------------------------------------------------------------------------------
+FUNCTION DataCursor
+PARAMETERS cName
+
+DO CASE
+
+CASE UPPER(RTRIM(cName)) = "CONEXION"
+	CREATE CURSOR Conexion (id i, codigo i, aliasconexion c(30), servername c(60), initcatalogo c(60),origendata c(10);
+		,sourcetype c(10), username c(20), pwdname c(20), webservice c(60), pathdatabase c(60);
+		,pwdlen n(2), userlen n(2), idservpedido c(10), passpedido c(50), pmabrevia c(5),switch c(5);
+		,emprename c(20), emprepass c(20), euserlen n(2), epwdlen n(2))
+case upper(rtrim(cName)) = "PARAVARIO"
+	CREATE CURSOR ParaVario (id i, idorigen i, nombre c(30), importe n(14), porce n(8), detalle c(30);
+		,fecha d, estado n(1))
+case upper(rtrim(cName)) = "PERFILES"
+	CREATE CURSOR Perfiles  (id i, nombre c(20), switch c(10))
+case upper(rtrim(cName)) = "SEGURIDAD"
+	CREATE CURSOR Seguridad (id i, idperfil i, idmenu i)
+case upper(rtrim(cName)) = "DATAMENU"
+	CREATE CURSOR Datamenu (id i, sec_codacce c(12), sec_descacce c(20), sec_nivelacce n(1), sec_promptacc c(50);
+		, sec_tipoacce n(1), sec_doacce c(100), sec_keyacce c(10), sec_condacce c(30), sec_fontstyle c(30);
+		,fecha d, sec_picture c(50), switch c(5))
+case upper(rtrim(cName)) = "CSRVERSCONFIG"
+	CREATE CURSOR CsrVersConfig (sistema c(30), path c(200), grupo c(50), nrosistema i,pathupdateexe c(200), filelogo c(100))
+OTHERWISE
+	RETURN .f.
+ENDCASE
+
+RETURN .t.
+ENDFUNC 
+
 *----------------------------------------------------------------------------
 * FUNCION DevolverEjercicioContable(lcpefiscal,lnidejercicio,lnejercicio)
 *----------------------------------------------------------------------------
@@ -35,15 +68,7 @@ FUNCTION GuardaPagina
 PARAMETERS lnRecno
 replace ultpagina with nropagina + lnrecno in CsrEncabezado
 RETURN 
-*----------------------------------------
-FUNCTION pelocuit
-PARAMETERS lccuit
-LOCAL cCuit
-cCuit=ALLTRIM(STRTRAN(lccuit,'-',''))
-cCuit=ALLTRIM(STRTRAN(cCuit,'/',''))
-cCuit=ALLTRIM(STRTRAN(cCuit,'.',''))
-cCuit=LEFT(cCuit+space(11),11)
-RETURN cCuit
+*----------------------------------------------------------
 		
 function NNUEVOID(TCALIAS,tcnombreids)
 tcnombreids=iif(pcount()<2,'IDS',tcnombreids)
@@ -211,54 +236,74 @@ Next
 Function Reporte
 parameters nombreinforme,esvistaprevia
 
-do case
-
-	case esvistaprevia
+IF esvistaprevia
 
 		wait window 'Generando vista previa , aguarde ...' nowait
+		
+		TRY 
+			*stop()
+			IF oConfigTermi.FoxyPreviewer = 'FALSE'
+		
+				SET RESOURCE OFF  
+				PUSH KEY
 
-		SET RESOURCE OFF  
-		PUSH KEY
+				DEFINE WINDOW wPreview FROM 0,0 TO 1,1; 
+				    TITLE 'Vista preliminar' in screen CLOSE float grow minimize zoom SYSTEM NAME oPreview
+				    
+				ZOOM WINDOW wPreview MAX
 
-		DEFINE WINDOW wPreview FROM 0,0 TO 1,1; 
-		    TITLE 'Vista preliminar' in screen CLOSE float grow minimize zoom SYSTEM NAME oPreview
-		    
-		ZOOM WINDOW wPreview MAX
+				ON KEY LABEL UPARROW; 
+					MOUSE CLICK AT 5,oPreview.Width-8;
+					PIXELS WINDOW wPreview
 
-		ON KEY LABEL UPARROW; 
-			MOUSE CLICK AT 5,oPreview.Width-8;
-			PIXELS WINDOW wPreview
+				ON KEY LABEL DNARROW; 
+				    MOUSE CLICK AT oPreview.Height-22,oPreview.Width-8;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL DNARROW; 
-		    MOUSE CLICK AT oPreview.Height-22,oPreview.Width-8;
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL LEFTARROW; 
+				    MOUSE CLICK AT oPreview.Height-10,6; 
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL LEFTARROW; 
-		    MOUSE CLICK AT oPreview.Height-10,6; 
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL RIGHTARROW; 
+				    MOUSE CLICK AT oPreview.Height-10,oPreview.Width-22;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL RIGHTARROW; 
-		    MOUSE CLICK AT oPreview.Height-10,oPreview.Width-22;
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL HOME; 
+				    MOUSE DBLCLICK AT 18,oPreview.Width-8;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL HOME; 
-		    MOUSE DBLCLICK AT 18,oPreview.Width-8;
-		    PIXELS WINDOW wPreview
+				ON KEY LABEL END;
+				    MOUSE DBLCLICK AT oPreview.Height-35,oPreview.Width-8;
+				    PIXELS WINDOW wPreview
 
-		ON KEY LABEL END;
-		    MOUSE DBLCLICK AT oPreview.Height-35,oPreview.Width-8;
-		    PIXELS WINDOW wPreview
+				REPORT FORM (NombreInforme); 
+				    TO PRINTER PROMPT PREVIEW WINDOW wPreview
 
-		REPORT FORM (NombreInforme); 
-		    TO PRINTER PROMPT PREVIEW WINDOW wPreview
-
-		POP KEY
-		SET RESOURCE ON
-		wait clear
-	other
-		REPORT FORM (NombreInforme); 
-		    TO PRINTER PROMPT NOCONSOLE
-	endcase	
+				POP KEY
+				SET RESOURCE ON
+				wait clear
+			ELSE
+				DO FOXYPREVIEWER.APP
+				WITH _Screen.oFoxyPreviewer
+					.cLanguage = "SPANISH" && Idioma
+					lcName = NombreInforme
+					* Optional available parameters
+					.cTitle = lcName && The preview window title 
+					.cPdfTitle = lcName
+					.cSaveDefName = lcName
+					.cDestFile = lcName
+					.nCopies       = 1 && The quantity of copies to be printed
+					REPORT FORM (NombreInforme) PREVIEW
+				ENDWITH
+			ENDIF 
+		CATCH TO oError
+			oavisar.usuario('Reporte: ' + NombreInforme + chr(13) + 'Errores: ' + oError.Message)
+		ENDTRY 
+ELSE  
+	REPORT FORM (NombreInforme); 
+	    TO PRINTER PROMPT NOCONSOLE
+ENDIF 
+	
 Endfunc
 
 Function report_contarpaginas
@@ -1312,6 +1357,48 @@ lccmdSelectCursor=  CHRTRAN(lccmdSelectCursor,CHR(9)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(13)," ")
 lccmdSelectCursor= CHRTRAN(lccmdSelectCursor,CHR(10)," ")
 
+&& Definir constante ADO si no la tienes
+#DEFINE adStateOpen 1
+
+* ... dentro de tu función CrearCursorAdapter ...
+
+IF TYPE('loConnDataSource') = 'O' AND NOT ISNULL(loConnDataSource)
+    
+    * FORZAR VALIDACIÓN REAL
+    LOCAL llConexionReal, loErrorADO
+    llConexionReal = .T.
+    
+    TRY
+        * Intentamos una operación ultra liviana que solo el servidor puede responder
+        loConnDataSource.Execute("SELECT 1")
+    CATCH
+        llConexionReal = .F.
+    ENDTRY
+
+    IF !llConexionReal
+        * Si llegamos aquí, el State podría decir 1, pero la realidad es 0.
+        TRY
+            Grabar_log("Detectado microcorte. Intentando reconectar...")
+            loConnDataSource.Close() && Cerramos por si quedó en estado 'limbo'
+           * loConnDataSource.Open()  && Intentamos abrir de nuevo
+            lok = ConeccionADO() 
+            llConexionReal = .T.
+        CATCH
+            llConexionReal = .F.
+           
+        ENDTRY
+        IF lbCartel AND NOT llConexionReal 
+            =Oavisar.Usuario("Error crítico: Se perdió la conexión al servidor y no se pudo restablecer.", 0)
+             RETURN .F.
+        ENDIF
+           
+    ENDIF
+ELSE
+	* Si el objeto ni siquiera existe, no podemos seguir    
+	RETURN .F.
+ENDIF
+
+
 Orslista = null 
 Ocalista = null
 Orslista= createobject('ADODB.RecordSet')
@@ -1336,14 +1423,19 @@ LOCAL lreturn
 lreturn = .f.
 
 IF !OCAlista.CursorFill()
+	
 	IF AERROR(laError) > 0 AND lbCartel 
-		cMensaje = VerErrorSQL(laError[1])
-		=Oavisar.Usuario("Error al obtener datos:";
+		lcMensaje = VerErrorSQL(laError[1])
+		lcMensaje = "Error al obtener datos:";
 						+CHR(13)+"Código Error:" +strtrim(laError[1]);
-        				+CHR(13)+"Mensaje al Operador: "+cMensaje;
+        				+CHR(13)+"Mensaje al Operador: "+lcMensaje;
         				+CHR(13)+"Mensaje de Error:"+laError[2];
         				+CHR(13)+"Alias:"+lcaliasCursor;
-        				+CHR(13)+lccmdSelectCursor,0)
+        				+CHR(13)+lccmdSelectCursor
+        				
+        =Oavisar.Usuario(lcMensaje,0)
+        				
+        Grabar_log(lcmensaje)
 		oavisar.proceso('N')
 	ENDIF
 ELSE
@@ -1442,6 +1534,8 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 		IF _siactiva=1 OR UPPER(lcForm) = "FRMLOGOUT" OR Goapp.perfilusuario=1
 			RELEASE OrsTerminal
 			RELEASE OCaterminal
+			_Screen.LockScreen = .t.
+			
 			IF LEN(TRIM(lcform))#0 
 				DO CASE 
 					CASE LEN(TRIM(lcparam1))=0
@@ -1470,6 +1564,7 @@ PARAMETERS lcForm,lcparam1,lcparam2,lcparam3,lcparam4,lcparam5,lcparam6,lcparam7
 			ELSE
 				=Oavisar.usuario("OPCION NO DISPONIBLE")
 			ENDIF 
+			_Screen.LockScreen = .f.
 		ELSE
 			=Oavisar.usuario('LA TERMINAL SE ENCUENTRA BLOQUEADA'+CHR(13)+'CONSULTE CON EL ADMINISTRADOR',0) 
 		ENDIF 
@@ -1522,6 +1617,10 @@ IF lok
 	goApp.rutaaplicacion			= DefaultVar('CsrEmpresa.rutaaplicacion',SYS(5)+Curdir())
 	goApp.empresaretegan			= DefaultVar('CsrEmpresa.retegan',0)
 	Goapp.empresaemail			= DefaultVar('CsrEmpresa.email','')
+	Goapp.empresaautoservicio		= DefaultVar('CsrEmpresa.autoservicio',0)
+	goapp.empresaCoorX			= DefaultVar('CsrEmpresa.coorX',0)
+	goapp.empresaCoorY			= DefaultVar('CsrEmpresa.coorY',0)
+	goapp.logofac			= DefaultVar('CsrEmpresa.logofac','logofac.jpg')
 ENDIF
    
 IF USED("Csrseteotermi")
@@ -1536,6 +1635,7 @@ lok =CrearCursorAdapter("Csrseteotermi",lcCmd)
 IF lok
    Goapp.terminal               = Csrseteotermi.numero
    Goapp.nombreterminal = Csrseteotermi.nombre
+   goapp.openfac		= NVL(CsrSeteotermi.openfac,0)
 ENDIF
 
 IF USED('CsrPAraVario')
@@ -1595,8 +1695,10 @@ ENDIF
 
 lcCurdir = TRIM(SYS(5))+TRIM(CURDIR())
 
-lok =CrearCursorAdapter("Csrsistema",lcCmd)
-
+lok =CrearCursorAdapter("Csrsistema",lcCmd,,5)
+IF NOT lok
+	RETURN .f.
+ENDIF 
 STORE "" TO lcfechasis,lchorasis,lchoraExe,lcfechaexe,lcExe
 
 IF lok
@@ -1780,103 +1882,111 @@ ENDIF
    
 RETURN lreturn
 
+*!*	FUNCTION ConeccionADO
+*!*	LPARAMETERS lLicencia
 
-FUNCTION ConeccionADO
+*!*	lLicencia = IIF(PCOUNT()<1,.f.,lLicencia)
 
-Local  loCatchErr As Exception
+*!*	Local  loCatchErr As Exception
+*!*	LOCAL lok, cMensaje
+*!*	lok = .t.
+*!*	lcMensajeError= ''
+*!*	DO case
+*!*		CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
+*!*			loConnDataSource = createobject('ADODB.Connection')
+*!*			loConnDataSource.ConnectionString = LcConectionString
+*!*			loConnDataSource.CommandTimeout = 0    && indefinidamente
+*!*			loConnDataSource.ConnectionTimeout = IIF(lLicencia,20,60)
+*!*			
+*!*			lcMensajeError = IIF(llicencia,'','La conexión a la Base de Datos a fallado'+CHR(13) +lcConectionString)
+*!*			
+*!*			TRY 
+*!*				Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
+*!*			CATCH 
+*!*				MESSAGEBOX('Falta definir objeto ocx para oavisar',0)
+*!*				RETURN .f.
+*!*			ENDTRY 
+*!*			
+*!*			TRY 				                              			    
+*!*				loConnDataSource.Open()
+*!*								                        			    
+*!*				Oavisar.proceso('N')
+*!*			Catch To loCatchErr
+*!*				=Oavisar.proceso('N')	
+*!*				IF LEN(LTRIM(lcMensajeError ))<>0
+*!*					oavisar.usuario(lcMensajeError )
+*!*				ENDIF 
+*!*				lok = .f.
+*!*			ENDTRY 
+*!*			                       			                           	  	
+*!*		CASE LcDataSourceType='NATIVE'
+*!*			IF !DBUSED('&LcConectionString')        
+*!*				OPEN DATABASE (LcConectionString) SHARED
+*!*			ENDIF  
+*!*			SET DATABASE TO (LcConectionString)
+*!*		OTHERWISE 
+*!*			ERROR 1429
+*!*	ENDCASE
 
-DO case
-	CASE LcDataSourceType='ADO' OR LcDataSourceType='ODBC'
-		loConnDataSource = createobject('ADODB.Connection')
-		loConnDataSource.ConnectionString = LcConectionString
-		loConnDataSource.CommandTimeout = 0    && indefinidamente
-		loConnDataSource.ConnectionTimeout = 60
-		
-		TRY 
-			Oavisar.proceso('S','Conectando con Base de Datos, tiempo de espera '+LTRIM(STR(loConnDataSource.ConnectionTimeout))+'"' ,.f.,0)
-		CATCH 
-			MESSAGEBOX('Falta definir objeto ocx para oavisar',0)
-			RETURN .f.
-		ENDTRY 
-		
-		TRY 				                              			    
-			loConnDataSource.Open()
-							                        			    
-			Oavisar.proceso('N')
-		Catch To loCatchErr
-			=Oavisar.proceso('N')	
-			=Oavisar.usuario('La conexión a la Base de Datos a fallado'+CHR(13);
-					+CHR(13)+lcConectionString,0)
-			RETURN .f.
-		ENDTRY 
-		                       			                           	  	
-	CASE LcDataSourceType='NATIVE'
-		IF !DBUSED('&LcConectionString')        
-			OPEN DATABASE (LcConectionString) SHARED
-		ENDIF  
-		SET DATABASE TO (LcConectionString)
-	OTHERWISE 
-		ERROR 1429
-ENDCASE
-
-RETURN .t.
+*!*	RETURN lok
 
 
-FUNCTION ConeccionODBC
-*!*	***Evitar que aparezca  la ventana de login
-SQLSETPROP(0,"DispLogin",3)
-lnconectorODBC =SQLSTRINGCONNECT(lcConectionODBC)
-IF lnconectorODBC<0
-	RETURN .f.
-ENDIF 
-RETURN .t.
+*!*	FUNCTION ConeccionODBC
+*!*	*!*	***Evitar que aparezca  la ventana de login
+*!*	SQLSETPROP(0,"DispLogin",3)
+*!*	lnconectorODBC =SQLSTRINGCONNECT(lcConectionODBC)
+*!*	IF lnconectorODBC<0
+*!*		RETURN .f.
+*!*	ENDIF 
+*!*	RETURN .t.
 
-FUNCTION ExisteDSN
+*!*	FUNCTION ExisteDSN
 
-IF LcDataSourceType="NATIVE"
-   RETURN .t.
-ENDIF 
+*!*	IF LcDataSourceType="NATIVE"
+*!*	   RETURN .t.
+*!*	ENDIF 
 
-#define ODBC_ADD_DSN  1    && Agregar Fuente de Datos
-#define ODBC_CONFIG_DSN  2    && Configurar (editar) fuente de datos
-#define ODBC_REMOVE_DSN  3    && Eliminar fuente de datos
-#define ODBC_ADD_SYS_DSN  4    && Agregar un DSN de Sistema
-#define ODBC_CONFIG_SYS_DSN  5    && Configurar un DSN de Sistema
-#define ODBC_REMOVE_SYS_DSN  6    && Eliminar un DSN de Sistema 
-#define vbAPINull          0    &&' NULL Pointer
+*!*	#define ODBC_ADD_DSN  1    && Agregar Fuente de Datos
+*!*	#define ODBC_CONFIG_DSN  2    && Configurar (editar) fuente de datos
+*!*	#define ODBC_REMOVE_DSN  3    && Eliminar fuente de datos
+*!*	#define ODBC_ADD_SYS_DSN  4    && Agregar un DSN de Sistema
+*!*	#define ODBC_CONFIG_SYS_DSN  5    && Configurar un DSN de Sistema
+*!*	#define ODBC_REMOVE_SYS_DSN  6    && Eliminar un DSN de Sistema 
+*!*	#define vbAPINull          0    &&' NULL Pointer
 
-DECLARE LONG SQLConfigDataSource IN ODBCCP32.DLL ;
-LONG hwndParent, LONG fRequest, ;
-STRING lpszDriver, STRING lpszAttributes
+*!*	DECLARE LONG SQLConfigDataSource IN ODBCCP32.DLL ;
+*!*	LONG hwndParent, LONG fRequest, ;
+*!*	STRING lpszDriver, STRING lpszAttributes
 
-  LOCAL intRet, strDriver, strAttributes,lcdns
+*!*	  LOCAL intRet, strDriver, strAttributes,lcdns
 
-  strDriver = "SQL Server"
-  
-  lcdns = STRTRAN(Goapp.servidor,".","_")
-  lcdns = ALLTRIM(LEFT(STRTRAN(lcdns,"\",""),8)) + "_"+ ALLTRIM(LEFT(TRIM(Goapp.InitCatalo),8))
-  
-  strAttributes = "SERVER="+TRIM(Goapp.Servidor )+ Chr(0)
-  strAttributes = strAttributes + "DESCRIPTION="+TRIM(lcDns)+ Chr(0)
-  strAttributes = strAttributes + "DSN="+TRIM(lcDns)  + Chr(0)
-  strAttributes = strAttributes + "DATABASE="+TRIM(Goapp.InitCatalo)  + Chr(0)
-*!*	  strAttributes = strAttributes + "UID="+Goapp.Usuario + Chr(0)
-*!*	  strAttributes = strAttributes + "PWD="+Goapp.Pwd + Chr(0)
-  
-  intRet = SQLConfigDataSource(vbAPINull, ODBC_CONFIG_DSN , strDriver, strAttributes)   
-  
-	IF intRet > 0    
-	      * ya existe el DNS
-	      RETURN .t.      
-	ELSE   
-		intRet = SQLConfigDataSource(vbAPINull, ODBC_ADD_DSN, strDriver, strAttributes)     
-		IF  intRet>0
-			RETURN .t.
-		ELSE 
-			RETURN .f.
-		ENDIF 
-	ENDIF 		
-ENDFUNC 
+*!*	  strDriver = "SQL Server"
+*!*	  
+*!*	  lcdns = STRTRAN(Goapp.servidor,".","_")
+*!*	  lcdns = ALLTRIM(LEFT(STRTRAN(lcdns,"\",""),8)) + "_"+ ALLTRIM(LEFT(TRIM(Goapp.InitCatalo),8))
+*!*	  
+*!*	  strAttributes = "SERVER="+TRIM(Goapp.Servidor )+ Chr(0)
+*!*	  strAttributes = strAttributes + "DESCRIPTION="+TRIM(lcDns)+ Chr(0)
+*!*	  strAttributes = strAttributes + "DSN="+TRIM(lcDns)  + Chr(0)
+*!*	  strAttributes = strAttributes + "DATABASE="+TRIM(Goapp.InitCatalo)  + Chr(0)
+*!*	*!*	  strAttributes = strAttributes + "UID="+Goapp.Usuario + Chr(0)
+*!*	*!*	  strAttributes = strAttributes + "PWD="+Goapp.Pwd + Chr(0)
+*!*	  
+*!*	  intRet = SQLConfigDataSource(vbAPINull, ODBC_CONFIG_DSN , strDriver, strAttributes)   
+*!*	  
+*!*		IF intRet > 0    
+*!*		      * ya existe el DNS
+*!*		      RETURN .t.      
+*!*		ELSE   
+*!*			intRet = SQLConfigDataSource(vbAPINull, ODBC_ADD_DSN, strDriver, strAttributes)     
+*!*			IF  intRet>0
+*!*				RETURN .t.
+*!*			ELSE 
+*!*				RETURN .f.
+*!*			ENDIF 
+*!*		ENDIF 		
+*!*	ENDFUNC 
+
 
 *=======================================================================
 *= Recupera la el ejercicio contable correspondiente a la caja activa
@@ -2135,14 +2245,19 @@ ENDIF
 SET SAFETY  OFF 
 
 DO CASE 
-	CASE UPPER(lcCursor)="CSRPAGO"
-	Create Cursor Csrpago (id i AUTOINC,numero n(3),cnombre c(25),fecha d,importe n(10,2),idcuenta n(10);
+CASE UPPER(lcCursor)="CSRPAGO"
+	*agregar el campo nuevo es odata.agregarobjeto.objpago
+	Create Cursor Csrpago (id i AUTOINC,numero n(3),cnombre c(25),fecha d,importe n(16,2),idcuenta n(10);
 	              ,ctactebco c(6),titular c(30),banco c(30),localidad c(30),nrocheque n(12),idtipobco n(10);
 	              ,fechavto d,entregado c(30),idvalor n(10),idprovincia n(10),tipocaja c(2),esclase c(1);
 	              ,recibido c(30),nrotarjeta c(15),cupon c(15),cuota n(2),cuit c(13),idctabco n(10);
 	              ,idmaopera n(12),idcheque M,detalle c(50),idctatitular i,idctaentregado i,idctarecibido i;
 	              ,idlocalidad i,idbanco i,nroidentificador c(50),lccuit c(13))
 	Sele Csrpago
+CASE UPPER(lcCursor)="CSRFINANCIA"
+	Create Cursor CsrFinancia (registro i AUTOINC,numero n(3),nombre c(25),fecha d,afecta n(10,2),idvalor i;
+	              ,esclase c(3),detalle c(50),tasa n(6,3),importe n(10,2),cuota n(2),totcuota n(10,2))
+	Sele Csrfinancia
 ENDCASE 
 
 SET  SAFETY  ON 
@@ -2540,3 +2655,16 @@ RETURN ldfechahoracero
 *!*	=Fclose(pnFich)                                    && Cerrar archivo
 
 *!*	Return plRet
+
+
+*----------------------------------------------------------------
+*------Funcion para un numero random-----------------------------
+*----------------------------------------------------------------
+
+FUNCTION NumeroRandom
+PARAMETERS primero, segundo
+
+RAND(-1)
+RETURN INT((segundo - primero + 1) * RAND() + primero)
+
+ENDFUNC

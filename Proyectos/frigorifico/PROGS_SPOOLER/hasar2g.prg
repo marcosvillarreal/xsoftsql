@@ -114,7 +114,7 @@ ENDFUNC
 FUNCTION CancelarTodo()
 	TRY
 		oHasar2G.Cancelar()
-	CATCH TO 
+	CATCH TO Err
 		=DeterminarError()
 	ENDTRY 
 	IF oErrorHasar.UltimoError = "CMD_INVALID_STATE"

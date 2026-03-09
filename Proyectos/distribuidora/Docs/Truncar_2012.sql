@@ -1,24 +1,24 @@
-use teomayorista04
+use frigosur
 go
 --execute actualizarid 1
 go
-sp_helpdb teomayorista04
+sp_helpdb frigosur
 -- Antes de truncar el log cambiamos el modelo de recuperación a SIMPLE.
-ALTER DATABASE teomayorista04
+ALTER DATABASE frigosur
 SET RECOVERY SIMPLE;
 GO
 
 --Recucimos los archivos eliminados del principal
-DBCC SHRINKFILE(teomayorista04, 1);
+DBCC SHRINKFILE(frigosur, 1);
 --Reducimos el log de transacciones a  1 MB.
 go
-DBCC SHRINKFILE(teomayorista04_log, 1);
+DBCC SHRINKFILE(frigosur_log, 1);
 
 GO
 -- Cambiamos nuevamente el modelo de recuperación a Completo.
-ALTER DATABASE teomayorista04
+ALTER DATABASE frigosur
 SET RECOVERY FULL;
 go
-sp_helpdb teomayorista04
+sp_helpdb frigosur
 GO
- execute sp_backupdatabase 'teomayorista04','F'
+ execute sp_backupdatabase 'frigosur','F'

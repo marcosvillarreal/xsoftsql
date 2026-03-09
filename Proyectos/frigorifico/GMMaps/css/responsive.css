@@ -1,0 +1,514 @@
+/* ===================================================================
+   GM SOLUTIONS - RESPONSIVE CSS
+   Media queries y adaptación responsive para todos los dispositivos
+   ================================================================= */
+
+/* === TABLET Y MÓVIL (máx 768px) === */
+@media (max-width: 768px) {
+    /* === BARRA SUPERIOR MÓVIL === */
+    .top-bar {
+        padding: 10px 15px;
+        height: 60px;
+    }
+    
+    .logo-section .title-info h1 {
+        font-size: 1.2em;
+    }
+    
+    .logo-img {
+        height: 38px;
+    }
+    
+    .logo-text {
+        font-size: 1.5em;
+    }
+    
+    .version-badge {
+        padding: 3px 8px;
+        font-size: 0.65em;
+        margin-left: 8px;
+    }
+    
+    /* === CONTROLES MÓVIL === */
+    .controls-container {
+        gap: 10px;
+    }
+    
+    .search-box input {
+        width: 180px;
+        padding: 8px 35px 8px 12px;
+    }
+    
+    .search-box i {
+        right: 12px;
+    }
+    
+    .sidebar-toggle-btn {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .priority-field-control {
+        display: none;
+    }
+    
+    .theme-toggle-btn {
+        padding: 8px 12px;
+    }
+    
+    /* === ESTADÍSTICAS MÓVIL === */
+    .stats-overlay {
+        top: 80px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+        padding: 15px;
+    }
+    
+    .stats-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    .stat-card {
+        padding: 10px;
+    }
+    
+    .stat-number {
+        font-size: 18px;
+    }
+    
+    .stat-label {
+        font-size: 10px;
+    }
+    
+    /* === CONTENEDOR PRINCIPAL MÓVIL === */
+    .container {
+        margin-top: 60px;
+    }
+    
+    /* === SIDEBAR MÓVIL === */
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: calc(100vh - 60px);
+        z-index: 1000;
+        width: 320px;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sidebar.mobile-hidden {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-header {
+        padding: 20px 15px;
+    }
+    
+    .sidebar-header h2 {
+        font-size: 1.2em;
+        margin-bottom: 12px;
+    }
+    
+    .client-stats {
+        gap: 15px;
+    }
+    
+    .stat-item {
+        padding: 8px 10px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 18px;
+    }
+    
+    .stat-item .stat-label {
+        font-size: 10px;
+    }
+    
+    .sidebar-content {
+        padding: 20px 15px;
+    }
+    
+    /* === SECCIONES MÓVIL === */
+    .search-section {
+        margin-bottom: 20px;
+    }
+    
+    .search-section label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    
+    .search-section input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .filters {
+        margin-bottom: 20px;
+    }
+    
+    .filter-group {
+        margin-bottom: 15px;
+    }
+    
+    .filter-group label {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .filter-buttons {
+        gap: 6px;
+    }
+    
+    .filter-btn, .btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    /* === LEYENDA MÓVIL === */
+    .legend {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .legend h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .legend-item {
+        margin-bottom: 6px;
+        padding: 4px;
+    }
+    
+    .legend-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    
+    .legend-text {
+        font-size: 12px;
+    }
+    
+    .legend-count {
+        padding: 1px 6px;
+        font-size: 10px;
+    }
+    
+    /* === ACCIONES MÓVIL === */
+    .actions-section {
+        margin-top: 15px;
+    }
+    
+    .actions-section label {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    /* === MAPA MÓVIL === */
+    .map-container {
+        margin-left: 0;
+    }
+    
+    /* === NOTIFICACIONES MÓVIL === */
+    .notification {
+        top: 80px;
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 20px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+    }
+    
+    @keyframes slideInFromTopMobile {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    .notification {
+        animation: slideInFromTopMobile 0.3s ease-out;
+    }
+}
+
+/* === MÓVIL PEQUEÑO (máx 480px) === */
+@media (max-width: 480px) {
+    .logo-section .title-info h1 {
+        font-size: 1em;
+    }
+    
+    .logo-text {
+        font-size: 1.2em;
+    }
+    
+    .search-box input {
+        width: 140px;
+        font-size: 12px;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    
+    .stat-card {
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .stat-number {
+        font-size: 16px;
+    }
+    
+    .stat-label {
+        margin-left: 10px;
+    }
+}
+
+/* === TABLET LANDSCAPE (769px - 1024px) === */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 340px;
+    }
+    
+    .sidebar.desktop-hidden {
+        margin-left: -340px;
+    }
+    
+    .stats-overlay {
+        right: 15px;
+        min-width: 250px;
+    }
+    
+    .search-box input {
+        width: 200px;
+    }
+}
+
+/* === DESKTOP (mín 769px) === */
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    .sidebar.mobile-hidden {
+        transform: translateX(0);
+    }
+    
+    .sidebar-toggle-btn {
+        display: flex;
+    }
+}
+
+/* === DESKTOP GRANDE (mín 1440px) === */
+@media (min-width: 1440px) {
+    .sidebar {
+        width: 420px;
+    }
+    
+    .sidebar.desktop-hidden {
+        margin-left: -420px;
+    }
+    
+    .stats-overlay {
+        min-width: 320px;
+        padding: 25px;
+    }
+    
+    .search-box input {
+        width: 300px;
+    }
+    
+    .top-bar {
+        padding: 15px 30px;
+        height: 75px;
+    }
+    
+    .container {
+        margin-top: 75px;
+    }
+}
+
+/* === ULTRA WIDE (mín 1920px) === */
+@media (min-width: 1920px) {
+    .sidebar {
+        width: 450px;
+    }
+    
+    .sidebar.desktop-hidden {
+        margin-left: -450px;
+    }
+    
+    .stats-overlay {
+        min-width: 360px;
+        right: 30px;
+    }
+    
+    .stats-grid {
+        gap: 15px;
+    }
+    
+    .sidebar-header {
+        padding: 30px 25px;
+    }
+    
+    .sidebar-content {
+        padding: 30px 25px;
+    }
+}
+
+/* === ORIENTACIÓN LANDSCAPE EN MÓVIL === */
+@media (max-width: 768px) and (orientation: landscape) {
+    .top-bar {
+        height: 50px;
+        padding: 8px 15px;
+    }
+    
+    .container {
+        margin-top: 50px;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .stats-overlay {
+        top: 60px;
+        padding: 10px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    
+    .stat-card {
+        padding: 8px;
+    }
+    
+    .stat-number {
+        font-size: 16px;
+    }
+    
+    .stat-label {
+        font-size: 9px;
+    }
+}
+
+/* === PRINT RESPONSIVO === */
+@media print {
+    .top-bar,
+    .sidebar,
+    .stats-overlay,
+    .controls-container,
+    .sidebar-toggle-btn,
+    .mobile-menu-btn,
+    .theme-toggle-btn,
+    .notification {
+        display: none !important;
+    }
+    
+    .container {
+        margin-top: 0 !important;
+    }
+    
+    .map-container {
+        width: 100% !important;
+        height: 100vh !important;
+        margin: 0 !important;
+    }
+    
+    #map {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Asegurar que los marcadores sean visibles en impresión */
+    .custom-marker {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* === ACCESIBILIDAD RESPONSIVA === */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .version-badge {
+        animation: none;
+    }
+    
+    .sidebar,
+    .stats-overlay,
+    .notification {
+        animation: none;
+    }
+}
+
+/* === HIGH CONTRAST MODE === */
+@media (prefers-contrast: high) {
+    .filter-btn,
+    .btn {
+        border-width: 3px;
+    }
+    
+    .search-section input,
+    .priority-field-control select {
+        border-width: 3px;
+    }
+    
+    .stat-card {
+        border-width: 2px;
+    }
+    
+    button:focus,
+    input:focus,
+    select:focus {
+        outline-width: 3px;
+        outline-offset: 3px;
+    }
+}
+
+/* === RETINA DISPLAYS === */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    .custom-marker {
+        border-width: 2px;
+    }
+}

@@ -1,0 +1,373 @@
+/* ===================================================================
+   GM SOLUTIONS - TEMA OSCURO
+   Definición de colores y estilos visuales del tema oscuro
+   ================================================================= */
+
+/* === SELECTOR DE TEMA === */
+body[data-theme="oscuro"] {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* === BARRA SUPERIOR - TEMA OSCURO === */
+body[data-theme="oscuro"] .top-bar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: #e2e8f0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.5);
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+body[data-theme="oscuro"] .logo-img {
+    background: #1e293b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body[data-theme="oscuro"] .logo-text {
+    color: #e2e8f0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body[data-theme="oscuro"] .title-info h1 {
+    background: linear-gradient(45deg, #e2e8f0, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body[data-theme="oscuro"] .version-badge {
+    background: linear-gradient(45deg, #059669, #047857);
+    color: #e2e8f0;
+    box-shadow: 0 2px 6px rgba(5, 150, 105, 0.4);
+}
+
+/* === CONTROLES - TEMA OSCURO === */
+body[data-theme="oscuro"] .priority-field-control {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+body[data-theme="oscuro"] .priority-field-control label {
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .priority-field-control select {
+    background: rgba(30, 41, 59, 0.95);
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .priority-field-control select:focus {
+    background: #1e293b;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+}
+
+body[data-theme="oscuro"] .sidebar-toggle-btn,
+body[data-theme="oscuro"] .mobile-menu-btn,
+body[data-theme="oscuro"] .theme-toggle-btn {
+    background: rgba(51, 65, 85, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .sidebar-toggle-btn:hover,
+body[data-theme="oscuro"] .mobile-menu-btn:hover,
+body[data-theme="oscuro"] .theme-toggle-btn:hover {
+    background: rgba(71, 85, 105, 0.6);
+}
+
+body[data-theme="oscuro"] .search-box {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+body[data-theme="oscuro"] .search-box input {
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .search-box input::placeholder {
+    color: rgba(148, 163, 184, 0.7);
+}
+
+body[data-theme="oscuro"] .search-box input:focus {
+    background: rgba(30, 41, 59, 0.3);
+}
+
+body[data-theme="oscuro"] .search-box i {
+    color: rgba(148, 163, 184, 0.8);
+}
+
+/* === ESTADÍSTICAS - TEMA OSCURO === */
+body[data-theme="oscuro"] .stats-overlay {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="oscuro"] .stats-title {
+    color: #60a5fa;
+}
+
+body[data-theme="oscuro"] .stat-card {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+body[data-theme="oscuro"] .stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="oscuro"] .stat-number {
+    color: #60a5fa;
+}
+
+body[data-theme="oscuro"] .stat-label {
+    color: #94a3b8;
+}
+/* === STATS BREAKDOWN - TEMA OSCURO === */
+body[data-theme="oscuro"] .stat-breakdown-item {
+    color: #e2e8f0;  /* Texto blanco */
+}
+
+body[data-theme="oscuro"] .stat-breakdown-label {
+    color: #e2e8f0;  /* Etiquetas en blanco */
+}
+
+body[data-theme="oscuro"] .stat-breakdown-count {
+    color: #60a5fa;  /* Números en azul claro */
+}
+
+body[data-theme="oscuro"] .stat-breakdown-percentage {
+    color: #94a3b8;  /* Porcentajes en gris claro */
+}
+
+body[data-theme="oscuro"] .stat-empty {
+    color: #94a3b8;  /* Mensaje "Sin datos" en gris claro */
+}
+body[data-theme="oscuro"] .stat-summary {
+    color: #e2e8f0;  /* Texto blanco */
+}
+
+/* === SIDEBAR - TEMA OSCURO === */
+body[data-theme="oscuro"] .sidebar {
+    background: rgba(15, 23, 42, 0.95);
+    border-right: 1px solid rgba(71, 85, 105, 0.3);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .sidebar-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+body[data-theme="oscuro"] .stat-item {
+    background: rgba(51, 65, 85, 0.3);
+}
+
+body[data-theme="oscuro"] .stat-item .stat-label {
+    opacity: 0.9;
+}
+
+/* === BÚSQUEDA - TEMA OSCURO === */
+body[data-theme="oscuro"] .search-section label {
+    color: #60a5fa;
+}
+
+body[data-theme="oscuro"] .search-section input {
+    border: 2px solid #475569;
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .search-section input:focus {
+    border-color: #60a5fa;
+    background: #1e293b;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* === FILTROS - TEMA OSCURO === */
+body[data-theme="oscuro"] .filter-group label {
+    color: #60a5fa;
+}
+
+body[data-theme="oscuro"] .filter-btn,
+body[data-theme="oscuro"] .btn {
+    border: 2px solid #475569;
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .filter-btn:hover,
+body[data-theme="oscuro"] .btn:hover {
+    border-color: #60a5fa;
+    background: #1e293b;
+    color: #60a5fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="oscuro"] .filter-btn.active {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border-color: #1d4ed8;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+body[data-theme="oscuro"] .filter-btn.active:hover {
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+}
+
+body[data-theme="oscuro"] .btn-primary {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white;
+    border-color: #047857;
+}
+
+body[data-theme="oscuro"] .btn-primary:hover {
+    background: linear-gradient(135deg, #047857, #065f46);
+}
+
+body[data-theme="oscuro"] .btn-outline {
+    background: transparent;
+    border-color: #64748b;
+    color: #94a3b8;
+}
+
+/* === LEYENDA - TEMA OSCURO === */
+body[data-theme="oscuro"] .legend {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+body[data-theme="oscuro"] .legend h3 {
+    color: #60a5fa;
+}
+
+body[data-theme="oscuro"] .legend-item:hover {
+    background: rgba(96, 165, 250, 0.1);
+}
+
+body[data-theme="oscuro"] .legend-icon {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+body[data-theme="oscuro"] .legend-text {
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .legend-count {
+    background: #475569;
+    color: #cbd5e1;
+}
+
+/* === ACCIONES - TEMA OSCURO === */
+body[data-theme="oscuro"] .actions-section label {
+    color: #60a5fa;
+}
+
+/* === MAPA - TEMA OSCURO === */
+body[data-theme="oscuro"] .map-container {
+    background: #0f172a;
+}
+
+/* === NOTIFICACIONES - TEMA OSCURO === */
+body[data-theme="oscuro"] .notification {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+}
+
+body[data-theme="oscuro"] .notification.error {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+}
+
+/* === SCROLLBAR - TEMA OSCURO === */
+body[data-theme="oscuro"] .sidebar::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+body[data-theme="oscuro"] .sidebar::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+body[data-theme="oscuro"] .sidebar::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+body[data-theme="oscuro"] .stats-breakdown::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+body[data-theme="oscuro"] .stats-breakdown::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+/* === LEAFLET - TEMA OSCURO === */
+body[data-theme="oscuro"] .leaflet-popup-content-wrapper {
+    background: #1e293b;
+    color: #e2e8f0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body[data-theme="oscuro"] .leaflet-popup-tip {
+    background: #1e293b;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+body[data-theme="oscuro"] .leaflet-control-zoom a {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] .leaflet-control-zoom a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* === MARCADORES - TEMA OSCURO === */
+body[data-theme="oscuro"] .custom-marker {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+body[data-theme="oscuro"] .custom-marker:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* === ESTADOS DE CARGA - TEMA OSCURO === */
+body[data-theme="oscuro"] .loading::after {
+    border: 2px solid #60a5fa;
+    border-top: 2px solid transparent;
+}
+
+/* === TOOLTIPS - TEMA OSCURO === */
+body[data-theme="oscuro"] [title]:hover::after {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body[data-theme="oscuro"] [title]:hover::before {
+    border-top-color: #0f172a;
+}
+
+/* === FOCUS - TEMA OSCURO === */
+body[data-theme="oscuro"] button:focus,
+body[data-theme="oscuro"] input:focus,
+body[data-theme="oscuro"] select:focus {
+    outline: 2px solid #60a5fa;
+}
+
+/* === COMPATIBILIDAD CON PREFERENCIAS DEL SISTEMA === */
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="base"]) {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    }
+    
+    /* Aplicar automáticamente los estilos oscuros si no hay tema definido */
+    body:not([data-theme]) .sidebar {
+        background: rgba(15, 23, 42, 0.95);
+        color: #e2e8f0;
+    }
+    
+    /* ... resto de estilos oscuros para modo automático ... */
+}

@@ -26,6 +26,7 @@
 *!*	 MOVCTACTE.switch			1	1= movimiento por cheque rechazado
 *!*								2	1= factura con retencion pagada
 *!*								3	1= movimiento compactado
+*!*								4	1= movimiento interno automatico
 *!*								5	1= movimiento modificado manualmente por porgramador
 						    
 *!*	NMAOPERA.switch				1	0 = sin facturar 1 = facturado
@@ -41,6 +42,9 @@
 *!*								3	tipofactura
 *!*								4   Mercaderia previamente comprometida
 *!*								5	Estado de la rendicion A (anular) V (cobra vendedor) R (cobra repartidor)
+
+*!*	 CABEFAC.status				1	TipoForm (Estado del Form al hacer el comprobante)
+
 
 *!*	cabefac.rendida			0 = no rendida, 1=rendida
 
@@ -102,12 +106,14 @@
 *!*								MBCO = movbcocar (REG.BANCO)
 *!*								MCAR = movbcocar (REG.CARTERA)
 *!*								MOCT = movctacte 
+*!*								MASI = movctacte (asientos/impuestos)
+			
 
-*!*	 RENMAOPE.switch	       1	0= cobranza cta cte anterior   1= rendicion de valores 2=operaciones afectadas en la rendicion (fac / rem)
-*!*								2	0 = facturas 1 = recibos cobro
-*!*								3
-*!*								4
-*!*								5
+*!*	 RENMAOPE.switch	         1	0= cobranza cta cte anterior   1= rendicion de valores 2=operaciones afectadas en la rendicion (fac / rem)
+*!*						2	0 = facturas 1 = recibos cobro
+*!*						3       1 = entregadas
+*!*						4 	1 = felte cobrado
+*!*						5	1 = reembolso cobrado
 
 *!*	 PARACONFIG.switch	       1	0= no permite cambiar plan pago   1= permite cambiar plan pago   en facturacion venta
 *!*								2
@@ -153,6 +159,8 @@
 
 *!*	CABEDETA.switch			1  0=NRO REMITO
 *!*							   1=REFERENCIA DE PEDIDO
+*!*							   3=REFERENCIA DE COMP ASOCIADO PARA N.C
+*!*							   4=REFERENCIA DE MOTIVO AJUSTE REMITO
 
 *!*	FLETEREN.switch			1  0=REMITO GRABADO
 *!*							   1=REMITO ANULADO
@@ -162,4 +170,5 @@
 *!*	FLETERO.switch			1  1=SOLO CONTADO/CTACTE EN VENTAS
 
 *!*	CUERFAC.switch			1  
+*!*							4  1=TOTAL DIGITADO
 *!*							5  1=BONIFICACION DIGITADA
