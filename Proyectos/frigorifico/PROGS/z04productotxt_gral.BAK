@@ -26,7 +26,7 @@ llok = CargarTabla(lcData,'Deposito')
 llok = CargarTabla(lcData,'FuerzaVta')
 llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'MapeoCarnico',.t.)
-llok = CargarTabla(lcData,'ProductoPrecio',.t.)
+llok = CargarTabla(lcData,'ProdPrecio',.t.)
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
 SELECT CsrTipoCarnico.* FROM Carnico_TipoCarne as CsrTipoCarnico
@@ -100,13 +100,13 @@ SCAN
 ENDSCAN 
 
 
-lnidlista = RecuperarID('CsrProductoPrecio',Goapp.sucursal10)
+lnidlista = RecuperarID('CsrProdPrecio',Goapp.sucursal10)
 lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-stop()
+*stop()
 SCAN FOR !EOF()
 	SELECT CsrProducto
 	
@@ -209,27 +209,39 @@ SCAN FOR !EOF()
 	SELECT CsrPrecio
 	LOCATE FOR VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) 
 	IF VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) 
-		SELECT CsrListaPrecio
-		LOCATE FOR numero = VAL(CsrPrecio.lista)
-		
-		lnCosto		= VAL(CsrPrecio.costo)
-		lnCostoSiva	= lnCosto
-		
-		lnUtil1		= 100
-		lnprevta1	= lnCostoSiva
-		lnprevtaf1	= lnprevta1*IIF(lnTasa=0,21,10.5)
-		lnCosto		= lnCosto * IIF(lnTasa=0,21,10.5)
-		
-		IF lnidlista = 1100000006
-			*stop()
-		ENDIF 
-		
-		IF lnCosto < 1000000
-			INSERT INTO CsrProductoPrecio (id,idlista,idarticulo,costo,costosiva,margen,prevta,prevtaf);
-			VALUES (lnidlista,CsrListaPrecio.id,lnid,lnCosto,lnCostoSiva,lnUtil1,lnprevta1,lnprevta1)
-		
-			lnidlista = lnidlista + 1 
-		ENDIF 
+		SET FILTER TO VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo) 
+		DO WHILE VAL(CsrPrecio.codigo) = VAL(CsrArticulo.codigo)  AND NOT EOF()
+			SELECT CsrListaPrecio
+			LOCATE FOR numero = VAL(CsrPrecio.lista)
+			IF CsrListaPrecio.id <> 0
+			
+				IF lnidlista = 1100000001
+					stop()
+				ENDIF 
+				
+				lnCosto		= VAL(CsrPrecio.costo)
+				
+				lnFactor = 1 + (IIF(lnTasa = 0, 21, 10.5) / 100)
+				
+				lnCostoSiva	= lnCosto / lnFactor 
+				
+				lnUtil1		= 0
+				lnprevta1	= lnCostoSiva
+				lnprevtaf1	= lnprevta1 * lnFactor 
+				*lnCosto		= lnCostoSiva*(1 +  IIF(lnTasa=0,21,10.5)/100)
+				
+				
+				
+				IF lnCosto < 1000000
+					INSERT INTO CsrProdPrecio (id,idlista,idarticulo,costo,costosiva,margen,prevta,prevtaf);
+					VALUES (lnidlista,CsrListaPrecio.id,lnid,lnCosto,lnCostoSiva,lnUtil1,lnprevta1,lnprevtaf1)
+				
+					lnidlista = lnidlista + 1 
+				ENDIF 
+			ENDIF 
+			SELECT CsrPrecio
+			SKIP 
+		ENDDO 
 	ENDIF 
 	
 	lnid = lnid + 1
@@ -240,8 +252,8 @@ ENDSCAN
 SELECT CsrProducto
 GO TOP 
 *vista()
-SELECT CsrProductoPrecio 
-vista()
+SELECT CsrProdPrecio 
+*vista()
    	
 Oavisar.proceso('N') 
 =MESSAGEBOX('Proceso terminado! ')
