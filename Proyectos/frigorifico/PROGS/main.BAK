@@ -23,7 +23,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lcVersion = "2.4.08"
+lcVersion = "1.0.0"
 
 lctituloGestion = "Gestion de Ventas"
 
@@ -52,7 +52,7 @@ cRutaCAE 	= sys(5)+CURDIR()+"caevacio.jpg"
 cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\distribuidora\'
+   lcdd=L+'\xsoftsql\proyectos\frigorifico\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
@@ -163,7 +163,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
    
    
    PUBLIC FOXHELPFILE 
-   FOXHELPFILE  =  "DISTRIBUIDORA.CHM" 
+   FOXHELPFILE  =  "FRIGORIFICO.CHM" 
 *clear all
 
 PUBLIC LcConectionString,LcDataSourceType,lcOrigenPublico,PcmsgIU,PcmsgIP,LcWebService,LcLlaveCf,Pnterminal,pnsucursal
@@ -235,7 +235,7 @@ IF TYPE('goApp')='O'
 	ENDIF 
 	
 	goapp.version = lcVersion
-	goapp.gmsoft = "distribuidora"
+	goapp.gmsoft = "frigorifico"
 	
 	PUBLIC  gcicono
 	     
@@ -251,29 +251,7 @@ IF TYPE('goApp')='O'
 	_screen.LockScreen=.f.
 	
 	oConfigTermi.controlskin = 'FALSE'
-	
-*!*		IF oConfigTermi.controlskin = 'TRUE'
-*!*			* Herramienta VFPsControlSkin
-*!*			IF FILE("VFPsControlSkin.Exe")
-*!*			   VFPsControlSkin(APPLICATION,_SCREEN,"8") && SE ENVIA EL STYLE W8
-*!*			   *!* NUEVO 
-*!*			   *!* AGREGAR BARA DE ESTADO Y HERRAMIENTAS
-*!*			   IF VFPs_AddBar(_SCREEN,.T.) THEN 
-*!*			      *!* AGREGAR PANEL AL ESTATUS BAR
-*!*			      VFPs_AddPanelStatusBar (_SCREEN,"Terminal: " + SYS(0))
-*!*			   ENDIF
-*!*			ENDIF
-*!*			*!* FIN INICIO
-*!*			*!* LLENAR PARAMETROS VFPS MESSAGEBOX
-*!*			_SCREEN.llHyperLinks  = .T.                 &&COLOCAR EN .T. SI SE DESEA USAR HYPERLINKS.
-*!*			_SCREEN.lcTituloText  = "Atención !!"       &&TITULO OPCIONAL QUE DESEAMOS VISUALIZAR ANTES DEL MENSAJE EN EL VFPS MESSAGEBOX
-*!*			_SCREEN.lcFooterText  = "<A HREF=" + ["] + "" + ["] + ">GM SOLUTIONS " + ALLTRIM(STR(YEAR(DATE()))) + "</A> Todos los Derechos Reservados"
-*!*			_SCREEN.llVista8      = .F.				    &&SI DESEA USAR EL ESTILO DE VFPS MESSAGEBOX DE WINDOWS 8 COLOCARLO EN .T.
-*!*			_SCREEN.lnDialogWidth = 0					&&TAMAÑO DE LA VENTANA DE VFPS MESSAGEBOX
-*!*			** Herramienta VFPsControlSkin
-*!*		ENDIF 
-	
-	
+		
 	oavisar.proceso('S','Inicializando el sistema, aguarde unos instantes por favor ...')
 	
 	Grabar_Log('Verificando OCX') 
@@ -344,15 +322,6 @@ IF TYPE('goApp')='O'
 	
 	WAIT CLEAR 
 
-* en proc.prg
-
-*!*		IF !lldesarrollo 
-*!*			IF !LeerVersionExe(1)
-*!*				CANCEL
-*!*				CLEAR ALL
-*!*				RETURN 	
-*!*		      ENDIF 
-*!*		ENDIF 
 
 	Grabar_Log('Datos de la empresa') 
 	LeerEmpresa()
@@ -411,12 +380,6 @@ IF TYPE('goApp')='O'
 
 	LeerEjercicioPerfil()
 	
-*!*		Grabar_Log('Verificando Licencia') 
-*!*		IF NOT lEstadoLicencia 
-*!*			CANCEL 
-*!*			CLEAR ALL
-*!*			RETURN 
-*!*		ENDIF 
 	
 	Grabar_Log('Acceso exitoso') 
 	IF NOT lnuevomenu 

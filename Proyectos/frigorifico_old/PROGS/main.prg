@@ -51,7 +51,7 @@ cLogoFac	= SYS(5)+CURDIR()+"logofac.jpg"
 cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 
 If lldesarrollo
-   lcdd=L+'\xsoftsql\proyectos\frigorifico\'
+   lcdd=L+'\xsoftsql\proyectos\frigorifico_old\'
 *-- RUTA
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'

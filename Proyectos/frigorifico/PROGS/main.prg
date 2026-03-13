@@ -54,6 +54,7 @@ cRutaQR		= SYS(5)+CURDIR()+"qr.jpg"
 If lldesarrollo
    lcdd=L+'\xsoftsql\proyectos\frigorifico\'
 *-- RUTA
+	_rutafoxbin = L+'\xsoftsql\desarrollo\foxbin2prg'
    _rutaclases =lcdd+'Clases'
    _rutaclased =L+'\xsoftsql\desarrollo\clases'
    _rutabmpd   =L+'\xsoftsql\desarrollo\graficos'
@@ -98,7 +99,7 @@ If lldesarrollo
     _rutaprogs_04  =lcdd+'Progs\quaglia'
    Set default to (lcdd) &&;(lcddc)
 
-   Set path to &_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
+   Set path to &_rutafoxbin,&_rutaclases,&_rutaprogs,&_rutamenu,&_rutadatos,&_rutabmps,&_rutaforms;
                ,&_rutareports,&_rutaclased,&_rutabmpd,&_rutaformsDesarrollo,&_rutaffc,&_rutalib;
                ,&_rutaformsd,&_rutaformsb,&_rutaformsc,&_rutaformsp,&_rutaformut,&_rutaformur;
                ,&_rutaforcomi,&_rutaforcta,&_rutaforafip,&_rutaformv,&_rutaformcpr;

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+  <style>
+    .fila-seleccionada { background-color: #bbdefb !important; }
+    .tabla-buscador tr:hover { cursor: pointer; background: #f1f8ff; }
+  </style>
+</head>
+<body class="bg-grey-3">
+  <script src="clientes.js"></script>
+
+  <div id="q-app">
+    <q-layout view="lHh Lpr lFf">
+      <q-page-container>
+        <q-page class="q-pa-md">
+          
+          <q-card class="shadow-2">
+            <q-card-section class="bg-blue-9 text-white row items-center">
+              <div class="text-h6">NUEVA FACTURA</div>
+              <q-space></q-space>
+              <div class="text-subtitle2">Punto de Venta: 0005</div>
+            </q-card-section>
+
+            <q-card-section class="row q-col-gutter-sm">
+              <div class="col-12 col-md-6">
+                <q-input 
+                  readonly 
+                  filled 
+                  v-model="factura.cliente_nombre" 
+                  label="Cliente (F2 para buscar)" 
+                  @click="abrirBuscador"
+                >
+                  <template v-slot:append>
+                    <q-btn flat round icon="search" @click="abrirBuscador" />
+                  </template>
+                </q-input>
+              </div>
+              <div class="col-6 col-md-3">
+                <q-input readonly filled v-model="factura.cliente_cuit" label="CUIT" />
+              </div>
+              <div class="col-6 col-md-3">
+                <q-input filled v-model="factura.fecha" type="date" label="Fecha" />
+              </div>
+            </q-card-section>
+          </q-card>
+
+          <q-card class="q-mt-md shadow-2">
+             <q-table
+                flat
+                :rows="factura.items"
+                :columns="columnasItems"
+                no-data-label="No hay artículos cargados"
+             ></q-table>
+          </q-card>
+
+        </q-page>
+      </q-page-container>
+    </q-layout>
+
+    <q-dialog v-model="mostrarBuscador" @show="enfocarInput">
+      <q-card style="width: 800px; max-width: 90vw; height: 600px;" class="column">
+        <q-card-section class="bg-blue-10 text-white row items-center q-pb-none">
+          <div class="text-h6">BUSCADOR DE CLIENTES</div>
+          <q-space></q-space>
+          <q-btn icon="close" flat round dense v-close-popup />
+        </q-card-section>
+
+        <q-card-section>
+          <q-input 
+            ref="inputBusqueda"
+            filled 
+            v-model="filtro" 
+            label="Buscar por Nombre, Código o CUIT" 
+            @update:model-value="ejecutarBusqueda"
+            @keydown.down.prevent="bajarFila"
+            @keydown.up.prevent="subirFila"
+            @keydown.enter="confirmarSeleccion"
+            autofocus
+          />
+        </q-card-section>
+
+        <q-card-section class="col q-pa-none">
+          <q-table
+            class="tabla-buscador full-height"
+            flat
+            :rows="clientesFiltrados"
+            :columns="columnasBuscador"
+            row-key="id"
+            binary-state-sort
+            :pagination="{rowsPerPage: 0}"
+            hide-pagination
+          >
+            <template v-slot:body="props">
+              <q-tr 
+                :props="props" 
+                @click="seleccionarManual(props.row)"
+                :class="{ 'fila-seleccionada': props.row.id === clienteIdActivo }"
+              >
+                <q-td key="codigo">{{ props.row.codigo }}</q-td>
+                <q-td key="nombre" class="text-bold">{{ props.row.nombre }}</q-td>
+                <q-td key="cuit">{{ props.row.cuit }}</q-td>
+                <q-td key="saldo" align="right">
+                  $ {{ Number(props.row.saldo).toLocaleString('es-AR') }}
+                </q-td>
+              </q-tr>
+            </template>
+          </q-table>
+        </q-card-section>
+        
+        <q-card-section class="bg-grey-2 text-caption">
+            Use ↑ ↓ para navegar y ENTER para confirmar selección
+        </q-card-section>
+      </q-card>
+    </q-dialog>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.umd.prod.js"></script>
+  <script src="clientes.js"></script>
+  
+  <script>
+    const { createApp, ref, onMounted, nextTick } = Vue
+
+    const app = createApp({
+      setup() {
+        // --- ESTADO FACTURADOR ---
+        const factura = ref({
+          fecha: new Date().toISOString().substr(0, 10),
+          cliente_nombre: '',
+          cliente_cuit: '',
+          items: []
+        })
+
+        // --- ESTADO BUSCADOR ---
+        const mostrarBuscador = ref(false)
+        const filtro = ref('')
+        const clientesBase = ref([])
+        const clientesFiltrados = ref([])
+        const indexSeleccionado = ref(0)
+        const clienteIdActivo = ref(null)
+        const inputBusqueda = ref(null)
+
+        const columnasBuscador = [
+          { name: 'codigo', label: 'CÓD', field: 'codigo', align: 'left' },
+          { name: 'nombre', label: 'RAZÓN SOCIAL', field: 'nombre', align: 'left' },
+          { name: 'cuit', label: 'CUIT', field: 'cuit', align: 'left' },
+          { name: 'saldo', label: 'SALDO', field: 'saldo', align: 'right' }
+        ]
+
+        // --- LÓGICA BUSCADOR ---
+        const abrirBuscador = () => {
+          mostrarBuscador.value = true
+          filtro.value = ''
+          // Cargamos desde la variable global del clientes.js
+          clientesBase.value = typeof MIS_CLIENTES_REALES !== 'undefined' ? MIS_CLIENTES_REALES : []
+          clientesFiltrados.value = clientesBase.value.slice(0, 20)
+          indexSeleccionado.value = 0
+          if(clientesFiltrados.value.length > 0) clienteIdActivo.value = clientesFiltrados.value[0].id
+        }
+
+        const ejecutarBusqueda = (val) => {
+          const q = val.toLowerCase()
+          clientesFiltrados.value = clientesBase.value.filter(c => 
+            c.nombre.toLowerCase().includes(q) || c.cuit.includes(q) || c.codigo.toString().includes(q)
+          ).slice(0, 20)
+          indexSeleccionado.value = 0
+          if(clientesFiltrados.value.length > 0) clienteIdActivo.value = clientesFiltrados.value[0].id
+        }
+
+        // Navegación teclado
+        const bajarFila = () => {
+          if (indexSeleccionado.value < clientesFiltrados.value.length - 1) {
+            indexSeleccionado.value++
+            clienteIdActivo.value = clientesFiltrados.value[indexSeleccionado.value].id
+          }
+        }
+
+        const subirFila = () => {
+          if (indexSeleccionado.value > 0) {
+            indexSeleccionado.value--
+            clienteIdActivo.value = clientesFiltrados.value[indexSeleccionado.value].id
+          }
+        }
+
+        const confirmarSeleccion = () => {
+          const cliente = clientesFiltrados.value[indexSeleccionado.value]
+          if(cliente) aplicarCliente(cliente)
+        }
+
+        const seleccionarManual = (cliente) => aplicarCliente(cliente)
+
+        const aplicarCliente = (cliente) => {
+          factura.value.cliente_nombre = cliente.nombre
+          factura.value.cliente_cuit = cliente.cuit
+          mostrarBuscador.value = false
+          Quasar.Notify.create({ message: `Cliente: ${cliente.nombre}`, color: 'blue-10' })
+        }
+
+        const enfocarInput = () => {
+          nextTick(()

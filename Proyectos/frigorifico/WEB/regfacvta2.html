@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+</head>
+<body class="bg-grey-2">
+  <div id="q-app">
+    <q-layout view="lHh Lpr lFf">
+      <q-page-container>
+        <q-page class="q-pa-md flex flex-center">
+          
+          <q-card class="shadow-10" style="width: 100%; max-width: 1100px; min-height: 80vh;">
+            <q-card-section class="bg-blue-9 text-white row items-center q-pb-none">
+              <div class="col">
+                <div class="text-h6">REGISTRACIÓN DE VENTAS (MODO F)</div>
+                <div class="text-caption">Terminal: MARCOS | Sucursal: 001</div>
+              </div>
+              <div class="col-auto">
+                <q-chip icon="person" color="white" text-color="blue-9">Cliente: {{ cliente.nombre }}</q-chip>
+              </div>
+            </q-card-section>
+
+            <q-card-section class="row q-col-gutter-sm bg-blue-1 q-pb-md">
+              <q-input class="col-12 col-md-2" filled v-model="form.codigoCliente" label="Código (F2)" dense bg-color="white" @keyup.f2="abrirBuscador" />
+              <q-input class="col-12 col-md-5" filled v-model="cliente.nombre" label="Razón Social" dense readonly bg-color="white" />
+              <q-select class="col-12 col-md-3" filled v-model="form.lista" :options="['Lista General', 'Mayorista', 'Oferta']" label="Lista de Precios" dense bg-color="white" />
+              <q-input class="col-12 col-md-2" filled v-model="form.fecha" label="Fecha" dense bg-color="white" mask="##/##/####" />
+            </q-card-section>
+
+            <q-card-section class="q-pa-none">
+              <q-table
+                flat bordered
+                :rows="articulos"
+                :columns="columns"
+                row-key="id"
+                :pagination="{rowsPerPage: 0}"
+                hide-pagination
+                separator="cell"
+              >
+                <template v-slot:body-cell-codigo="props">
+                  <q-td :props="props">
+                    <q-input 
+                      v-model="props.row.codigo" 
+                      borderless dense 
+                      input-class="text-bold"
+                      @keydown.enter="validarArticulo(props.row)"
+                      placeholder="F3 buscar"
+                    />
+                  </q-td>
+                </template>
+
+                <template v-slot:body-cell-cantidad="props">
+                  <q-td :props="props">
+                    <q-input v-model.number="props.row.cantidad" type="number" borderless dense @update:model-value="recalcularFila(props.row)" />
+                  </q-td>
+                </template>
+
+                <template v-slot:body-cell-precio="props">
+                  <q-td :props="props" class="bg-yellow-1">
+                    $ {{ props.row.precio.toFixed(2) }}
+                  </q-td>
+                </template>
+
+                <template v-slot:bottom-row>
+                  <q-tr class="bg-grey-1">
+                    <q-td colspan="4" class="text-right text-bold">SUBTOTAL:</q-td>
+                    <q-td class="text-bold">$ {{ totales.subtotal.toFixed(2) }}</q-td>
+                  </q-tr>
+                </template>
+              </q-table>
+            </q-card-section>
+
+            <q-spacer />
+            <q-card-section class="bg-dark text-white q-pa-md">
+              <div class="row items-center justify-around text-center">
+                <div class="col">
+                  <div class="text-caption text-grey-5">NETO</div>
+                  <div class="text-h6">$ {{ totales.neto.toFixed(2) }}</div>
+                </div>
+                <div class="col">
+                  <div class="text-caption text-grey-5">IVA (21%)</div>
+                  <div class="text-h6">$ {{ totales.iva.toFixed(2) }}</div>
+                </div>
+                <div class="col">
+                  <div class="text-caption text-grey-5">PERCEPCIONES</div>
+                  <div class="text-h6">$ 0.00</div>
+                </div>
+                <div class="col">
+                  <div class="text-caption text-orange-5 text-bold">TOTAL FACTURA</div>
+                  <div class="text-h4 text-orange-5 text-bold">$ {{ totales.total.toFixed(2) }}</div>
+                </div>
+              </div>
+            </q-card-section>
+
+            <q-card-actions align="right" class="q-pa-md">
+              <q-btn flat color="negative" label="Cancelar (Esc)" />
+              <q-btn unelevated color="primary" icon="save" label="Grabar Factura (F12)" @click="grabar" />
+            </q-card-actions>
+          </q-card>
+
+        </q-page>
+      </q-page-container>
+    </q-layout>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.umd.prod.js"></script>
+
+  <script>
+    const { createApp, ref, computed } = Vue
+
+    const app = createApp({
+      setup() {
+        const form = ref({ codigoCliente: '1025', lista: 'Lista General', fecha: '12/03/2026' })
+        const cliente = ref({ nombre: 'BAHIA SOFTWARE S.A.' })
+        
+        const articulos = ref([
+          { id: 1, codigo: '779001', desc: 'Artículo de prueba A', cantidad: 1, precio: 1250, total: 1250 },
+          { id: 2, codigo: '779002', desc: 'Artículo de prueba B', cantidad: 2, precio: 3400, total: 6800 },
+          { id: 3, codigo: '', desc: '', cantidad: 0, precio: 0, total: 0 } // Fila vacía para nueva carga
+        ])
+
+        const columns = [
+          { name: 'codigo', label: 'CÓDIGO', align: 'left', style: 'width: 150px' },
+          { name: 'desc', label: 'DESCRIPCIÓN', align: 'left', field: 'desc' },
+          { name: 'cantidad', label: 'CANT.', align: 'center', field: 'cantidad' },
+          { name: 'precio', label: 'PRECIO UNIT.', align: 'right' },
+          { name: 'total', label: 'TOTAL', align: 'right', field: row => row.cantidad * row.precio }
+        ]
+
+        const totales = computed(() => {
+          const neto = articulos.value.reduce((sum, item) => sum + (item.cantidad * item.precio), 0)
+          const iva = neto * 0.21
+          return { neto, iva, subtotal: neto, total: neto + iva }
+        })
+
+        function recalcularFila(row) {
+          row.total = row.cantidad * row.precio
+        }
+
+        function grabar() {
+          Quasar.Notify.create({ message: 'Llamando a GrabarDato() y obteniendo CAE...', color: 'positive', icon: 'cloud_done' })
+        }
+
+        return { form, cliente, articulos, columns, totales, recalcularFila, grabar }
+      }
+    })
+
+    app.use(Quasar)
+    app.mount('#q-app')
+  </script>
+</body>
+</html>

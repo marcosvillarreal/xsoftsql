@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+  
+  <script src="clientes.js"></script>
+  <script src="articulos.js"></script>
+  <script src="buscador-componente.js"></script>
+
+  <style>
+    .bg-blue-1 { background-color: #e3f2fd; }
+    .text-orange-5 { color: #ff9800; }
+  </style>
+</head>
+<body class="bg-grey-2">
+  <div id="q-app">
+    <q-layout view="lHh Lpr lFf">
+      <q-page-container>
+        <q-page class="q-pa-md flex flex-center">
+          
+          <q-card class="shadow-10" style="width: 100%; max-width: 1100px; min-height: 80vh;">
+            <q-card-section class="bg-blue-9 text-white row items-center">
+              <div class="col">
+                <div class="text-h6">REGISTRACIÓN DE VENTAS</div>
+                <div class="text-caption">Terminal: MARCOS | Bahía Blanca</div>
+              </div>
+            </q-card-section>
+
+            <q-card-section class="row q-col-gutter-sm bg-blue-1 q-pb-md">
+              <q-input class="col-md-2" filled v-model="form.codigoCliente" label="Código (F2)" dense bg-color="white" @keyup.f2="modalBuscaCliente = true" />
+              <q-input class="col-md-5" filled v-model="cliente.nombre" label="Razón Social" dense readonly bg-color="white" />
+              <q-input class="col-md-2" filled v-model="form.fecha" label="Fecha" dense bg-color="white" />
+            </q-card-section>
+
+            <q-card-section class="q-pa-none">
+              <q-table
+                flat bordered
+                :rows="articulos"
+                :columns="columns"
+                row-key="id"
+                :pagination="{rowsPerPage: 0}"
+                hide-pagination
+                separator="cell"
+              >
+                <template v-slot:body-cell-codigo="props">
+                  <q-td :props="props">
+                    <q-input 
+                      v-model="props.row.codigo" 
+                      borderless dense 
+                      input-class="text-bold"
+                      placeholder="Código + Enter"
+                      @keydown.enter="validarArticulo(props.row)"
+                    />
+                  </q-td>
+                </template>
+
+                <template v-slot:body-cell-cantidad="props">
+                  <q-td :props="props">
+                    <q-input 
+                      v-model.number="props.row.cantidad" 
+                      type="number" 
+                      borderless dense 
+                      :readonly="!props.row.desc"
+                      @update:model-value="recalcularTotales" 
+                    />
+                  </q-td>
+                </template>
+
+                <template v-slot:body-cell-precio="props">
+                  <q-td :props="props" align="right">
+                    $ {{ Number(props.row.precio).toFixed(2) }}
+                  </q-td>
+                </template>
+
+                <template v-slot:body-cell-total="props">
+                  <q-td :props="props" align="right" class="text-bold">
+                    $ {{ (props.row.cantidad * props.row.precio).toFixed(2) }}
+                  </q-td>
+                </template>
+              </q-table>
+            </q-card-section>
+
+            <q-card-section class="bg-dark text-white q-pa-md q-mt-auto">
+              <div class="row items-center justify-around text-center">
+                <div class="col">
+                  <div class="text-caption text-grey-5">TOTAL FACTURA</div>
+                  <div class="text-h4 text-orange-5 text-bold">$ {{ totales.total.toFixed(2) }}</div>
+                </div>
+              </div>
+            </q-card-section>
+          </q-card>
+
+          <buscador-clientes v-model="modalBuscaCliente" @seleccionado="cargarCliente" />
+
+        </q-page>
+      </q-page-container>
+    </q-layout>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.umd.prod.js"></script>
+
+  <script>
+    const { createApp, ref, computed } = Vue
+
+    const app = createApp({
+      components: { 'buscador-clientes': BuscadorClientes },
+      setup() {
+        const modalBuscaCliente = ref(false)
+        const form = ref({ codigoCliente: '', fecha: '12/03/2026' })
+        const cliente = ref({ nombre: 'Consumidor Final' })
+        
+        // Iniciamos con una fila vacía
+        const articulos = ref([{ id: Date.now(), codigo: '', desc: '', cantidad: 0, precio: 0 }])
+
+        const columns = [
+          { name: 'codigo', label: 'CÓDIGO', align: 'left', style: 'width: 150px' },
+          { name: 'desc', label: 'DESCRIPCIÓN', align: 'left', field: 'desc' },
+          { name: 'cantidad', label: 'CANT.', align: 'center', field: 'cantidad', style: 'width: 100px' },
+          { name: 'precio', label: 'PRECIO UNIT.', align: 'right' },
+          { name: 'total', label: 'TOTAL', align: 'right' }
+        ]
+
+        // --- LÓGICA DE CARGA DE ARTÍCULOS ---
+        const validarArticulo = (row) => {
+          if (!row.codigo) return;
+
+          // Buscamos en el archivo articulos.js
+          const encontrado = MIS_ARTICULOS_REALES.find(a => a.codigo === row.codigo);
+
+          if (encontrado) {
+            row.desc = encontrado.desc;
+            row.precio = encontrado.precio;
+            row.cantidad = 1;
+
+            // Si es la última fila, agregamos una nueva vacía para seguir cargando
+            const esUltimo = articulos.value[articulos.value.length - 1].id === row.id;
+            if (esUltimo) {
+              articulos.value.push({ id: Date.now(), codigo: '', desc: '', cantidad: 0, precio: 0 });
+            }
+            
+            Quasar.Notify.create({ message: `Agregado: ${encontrado.desc}`, color: 'positive', timeout: 1000 });
+          } else {
+            Quasar.Notify.create({ message: 'Artículo no encontrado', color: 'negative', position: 'center' });
+            row.codigo = '';
+          }
+        };
+
+        const totales = computed(() => {
+          const total = articulos.value.reduce((sum, item) => sum + (item.cantidad * item.precio), 0);
+          return { total };
+        });
+
+        const cargarCliente = (c) => {
+          cliente.value.nombre = c.nombre;
+          form.value.codigoCliente = c.codigo;
+        };
+
+        return { 
+          form, cliente, articulos, columns, totales, 
+          modalBuscaCliente, validarArticulo, cargarCliente 
+        };
+      }
+    })
+
+    app.use(Quasar)
+    app.mount('#q-app')
+  </script>
+</body>
+</html>

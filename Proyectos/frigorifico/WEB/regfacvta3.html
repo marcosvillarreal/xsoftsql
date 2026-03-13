@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+</head>
+<body class="bg-grey-3">
+  <div id="q-app">
+    <q-layout view="lHh Lpr lFf">
+      <q-page-container>
+        <q-page class="q-pa-md row justify-center">
+          
+          <q-card style="width: 100%; max-width: 800px; height: 600px" class="column">
+            <q-card-section class="bg-primary text-white row items-center">
+              <div class="text-h6">Buscador de Clientes (Simulación F2)</div>
+              <q-space></q-space>
+              <q-btn icon="close" flat round v-close-popup></q-btn>
+            </q-card-section>
+
+            <q-card-section>
+              <q-input 
+                filled 
+                v-model="filtro" 
+                label="Buscar por Nombre, CUIT o Código" 
+                autofocus
+                @update:model-value="filtrarClientes"
+                :loading="buscando"
+              >
+                <template v-slot:append>
+                  <q-icon name="search" />
+                </template>
+              </q-input>
+            </q-card-section>
+
+            <q-card-section class="col q-pa-none">
+              <q-table
+                flat
+                :rows="resultados"
+                :columns="columnas"
+                row-key="id"
+                :pagination="{rowsPerPage: 10}"
+                virtual-scroll
+                binary-state-sort
+                no-data-label="No se encontraron clientes"
+              >
+                <template v-slot:body-cell-nombre="props">
+                  <q-td :props="props" class="text-bold cursor-pointer" @click="seleccionar(props.row)">
+                    {{ props.row.nombre }}
+                  </q-td>
+                </template>
+                
+                <template v-slot:body-cell-saldo="props">
+                  <q-td :props="props" :class="props.row.saldo < 0 ? 'text-red' : 'text-green'">
+                    $ {{ props.row.saldo.toFixed(2) }}
+                  </q-td>
+                </template>
+              </q-table>
+            </q-card-section>
+
+            <q-card-actions align="right" class="bg-grey-2">
+              <div class="q-mr-md text-caption">Total registros cargados: {{ clientesFull.length }}</div>
+              <q-btn flat label="Cerrar" color="primary" />
+            </q-card-actions>
+          </q-card>
+
+        </q-page>
+      </q-page-container>
+    </q-layout>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.umd.prod.js"></script>
+
+  <script>
+    const { createApp, ref, onMounted } = Vue
+
+    const app = createApp({
+      setup() {
+        const filtro = ref('')
+        const buscando = ref(false)
+        const clientesFull = ref([]) // Aquí guardamos los 1000
+        const resultados = ref([])   // Aquí lo que se muestra
+        
+        const columnas = [
+          { name: 'codigo', label: 'CÓDIGO', field: 'codigo', align: 'left', sortable: true },
+          { name: 'nombre', label: 'RAZÓN SOCIAL', field: 'nombre', align: 'left', sortable: true },
+          { name: 'cuit', label: 'CUIT', field: 'cuit', align: 'left' },
+          { name: 'saldo', label: 'SALDO CTATE.', field: 'saldo', align: 'right', sortable: true }
+        ]
+
+        // Generador de datos de prueba (Simula lo que vendría de SQL Server)
+        const generarDatosProvisorios = () => {
+          const nombres = ['JUAN', 'PEDRO', 'MARIA', 'SIDERAR', 'TELEFONICA', 'TECHINT', 'YPF', 'GALICIA', 'ARCOR']
+          const apellidos = ['GARCIA', 'LOPEZ', 'Perez', 'S.A.', 'S.R.L.', 'INGENIERIA', 'GRUPO']
+          
+          for (let i = 1; i <= 1000; i++) {
+            const nom = nombres[Math.floor(Math.random() * nombres.length)]
+            const ape = apellidos[Math.floor(Math.random() * apellidos.length)]
+            clientesFull.value.push({
+              id: i,
+              codigo: (1000 + i).toString(),
+              nombre: `${nom} ${ape} ${i}`,
+              cuit: `30-${50000000 + i}-9`,
+              saldo: (Math.random() * 20000) - 5000
+            })
+          }
+          resultados.value = [...clientesFull.value]
+        }
+
+        const filtrarClientes = (val) => {
+          buscando.value = true
+          
+          // Simulamos un pequeño retraso de red (300ms) como si fuera al backend
+          setTimeout(() => {
+            const busqueda = val.toLowerCase()
+            resultados.value = clientesFull.value.filter(c => 
+              c.nombre.toLowerCase().includes(busqueda) || 
+              c.cuit.includes(busqueda) || 
+              c.codigo.includes(busqueda)
+            ).slice(0, 50) // Mostramos solo los primeros 50 por performance
+            buscando.value = false
+          }, 300)
+        }
+
+        const seleccionar = (cliente) => {
+          Quasar.Notify.create({
+            message: `Seleccionado: ${cliente.nombre} (Cód: ${cliente.codigo})`,
+            color: 'secondary'
+          })
+        }
+
+        onMounted(() => {
+          generarDatosProvisorios()
+        })
+
+        return { filtro, buscando, clientesFull, resultados, columnas, filtrarClientes, seleccionar }
+      }
+    })
+
+    app.use(Quasar)
+    app.mount('#q-app')
+  </script>
+</body>
+</html>

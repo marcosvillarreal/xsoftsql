@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="q-app">
+    <div class="q-pa-md">
+      <q-card class="shadow-5" style="max-width: 900px; margin: auto;">
+        <q-card-section class="bg-primary text-white">
+          <div class="text-h6">Registración de Factura (Idealización Web)</div>
+          <div class="text-subtitle2">Basado en regfacvta.scx</div>
+        </q-card-section>
+
+        <q-stepper v-model="step" ref="stepper" color="primary" animated>
+          
+          <q-step :name="1" title="Artículos" icon="shopping_cart" :done="step > 1">
+            <div class="row q-col-gutter-sm q-mb-md">
+              <q-input class="col-8" outlined dense v-model="cliente" label="Cliente" readonly />
+              <q-input class="col-4" outlined dense v-model="fecha" label="Fecha" />
+            </div>
+
+            <q-table
+              flat bordered
+              :rows="articulos"
+              :columns="columns"
+              row-key="id"
+              hide-pagination
+            >
+              <template v-slot:top>
+                <div class="text-subtitle1">Detalle de Comprobante</div>
+              </template>
+            </q-table>
+          </q-step>
+
+          <q-step :name="2" title="Formas de Pago" icon="payments" :done="step > 2">
+            <q-list bordered separator>
+              <q-item tag="label" v-ripple>
+                <q-item-section avatar><q-radio v-model="pago" val="efectivo" /></q-item-section>
+                <q-item-section><q-item-label>Efectivo / Caja</q-item-label></q-item-section>
+              </q-item>
+              <q-item tag="label" v-ripple>
+                <q-item-section avatar><q-radio v-model="pago" val="tarjeta" /></q-item-section>
+                <q-item-section><q-item-label>Tarjetas de Crédito</q-item-label></q-item-section>
+              </q-item>
+            </q-list>
+          </q-step>
+
+          <q-step :name="3" title="Confirmar" icon="assignment_turned_in">
+            <div class="text-center q-pa-lg">
+              <q-icon name="cloud_upload" size="64px" color="blue" />
+              <div class="text-h6">Listo para enviar a AFIP</div>
+              <p>Se generará el CAE para la factura.</p>
+            </div>
+          </q-step>
+
+          <template v-slot:navigation>
+            <q-stepper-navigation>
+              <q-btn @click="$refs.stepper.next()" color="primary" :label="step === 3 ? 'Finalizar' : 'Continuar'" />
+              <q-btn v-if="step > 1" flat color="primary" @click="$refs.stepper.previous()" label="Atrás" class="q-ml-sm" />
+            </q-stepper-navigation>
+          </template>
+        </q-stepper>
+      </q-card>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.umd.prod.js"></script>
+
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        return {
+          step: ref(1),
+          cliente: ref('CLIENTE GENERICO S.A.'),
+          fecha: ref('12/03/2026'),
+          pago: ref('efectivo'),
+          columns: [
+            { name: 'desc', label: 'Descripción', field: 'desc', align: 'left' },
+            { name: 'cant', label: 'Cant', field: 'cant' },
+            { name: 'total', label: 'Total', field: 'total' }
+          ],
+          articulos: [
+            { id: 1, desc: 'Producto de prueba A', cant: 1, total: '$ 1.500' },
+            { id: 2, desc: 'Producto de prueba B', cant: 2, total: '$ 3.000' }
+          ]
+        }
+      }
+    })
+
+    app.use(Quasar)
+    app.mount('#q-app')
+  </script>
+</body>
+</html>

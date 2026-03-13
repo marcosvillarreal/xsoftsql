@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+  <style>
+    /* Estilo para que se note que la fila es clickeable */
+    .tabla-gestion tr:hover { background-color: #e3f2fd !important; cursor: pointer; }
+    .text-bold { font-weight: bold; }
+  </style>
+</head>
+<body class="bg-grey-2">
+  <div id="q-app">
+    <q-layout view="lHh Lpr lFf">
+      <q-page-container>
+        <q-page class="flex flex-center">
+          
+          <q-card style="width: 100%; max-width: 950px; height: 650px;" class="column shadow-24">
+            <q-card-section class="bg-blue-10 text-white row items-center">
+              <div class="text-h6 text-uppercase">Buscador: Datos desde clientes.json</div>
+              <q-space></q-space>
+              <q-badge color="orange" v-if="clientesBase.length > 0">
+                {{ clientesBase.length }} Registros
+              </q-badge>
+            </q-card-section>
+
+            <q-card-section>
+              <q-input 
+                filled 
+                v-model="filtro" 
+                label="Buscar por nombre, código o CUIT..." 
+                @update:model-value="filtrar" 
+                autofocus 
+                bg-color="white"
+                clearable
+              />
+            </q-card-section>
+
+            <q-card-section class="col q-pa-none">
+              <q-table
+                class="tabla-gestion full-height"
+                flat bordered
+                :rows="clientesFiltrados"
+                :columns="columnas"
+                row-key="id"
+                :pagination="{rowsPerPage: 12}"
+                no-data-label="No se encontraron datos. Verifique clientes.json"
+              >
+                <template v-slot:body="props">
+                  <q-tr :props="props" @click="seleccionar(props.row)">
+                    <q-td key="codigo" :props="props">{{ props.row.codigo }}</q-td>
+                    <q-td key="nombre" :props="props" class="text-bold">{{ props.row.nombre }}</q-td>
+                    <q-td key="cuit" :props="props">{{ props.row.cuit }}</q-td>
+                    <q-td key="saldo" :props="props" align="right">
+                      <span :class="props.row.saldo < 0 ? 'text-red text-bold' : 'text-green text-bold'">
+                        $ {{ Number(props.row.saldo || 0).toLocaleString('es-AR', {minimumFractionDigits: 2}) }}
+                      </span>
+                    </q-td>
+                  </q-tr>
+                </template>
+              </q-table>
+            </q-card-section>
+          </q-card>
+
+        </q-page>
+      </q-page-container>
+    </q-layout>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.12.0/dist/quasar.umd.prod.js"></script>
+  <script src="clientes.js"></script>
+  
+  <script>
+    const { createApp, ref, onMounted } = Vue
+    const app = createApp({
+      setup() {
+        const filtro = ref('')
+        const clientesBase = ref([])
+        const clientesFiltrados = ref([])
+
+        const columnas = [
+          { name: 'codigo', label: 'CÓDIGO', field: 'codigo', align: 'left' },
+          { name: 'nombre', label: 'RAZÓN SOCIAL', field: 'nombre', align: 'left' },
+          { name: 'cuit', label: 'CUIT', field: 'cuit', align: 'left' },
+          { name: 'saldo', label: 'SALDO', field: 'saldo', align: 'right' }
+        ]
+
+        // FUNCIÓN QUE CARGA EL ARCHIVO REAL
+        const cargarArchivo = async () => {
+          try {
+            // Buscamos el archivo en la misma carpeta
+            const res = await fetch('clientes.json')
+            
+            if (!res.ok) {
+              throw new Error(`No se pudo cargar: ${res.statusText}`);
+            }
+
+            const data = await res.json()
+            clientesBase.value = data
+            clientesFiltrados.value = data // Carga inicial
+            
+            console.log("Datos cargados correctamente:", data.length);
+          } catch (error) {
+            console.error("Error al leer clientes.json:", error)
+            Quasar.Notify.create({
+              message: 'Error al leer clientes.json. Asegúrese de usar un servidor local.',
+              color: 'negative',
+              position: 'top',
+              timeout: 0,
+              actions: [{ label: 'Cerrar', color: 'white' }]
+            })
+          }
+        }
+
+        const filtrar = (val) => {
+          if (!val) {
+            clientesFiltrados.value = clientesBase.value
+            return
+          }
+          const q = val.toLowerCase()
+          clientesFiltrados.value = clientesBase.value.filter(c => 
+            (c.nombre && c.nombre.toLowerCase().includes(q)) || 
+            (c.codigo && c.codigo.toString().includes(q)) ||
+            (c.cuit && c.cuit.includes(q))
+          )
+        }
+
+        const seleccionar = (cliente) => {
+          Quasar.Notify.create({
+            message: `SELECCIONADO: ${cliente.nombre}`,
+            caption: `Código: ${cliente.codigo}`,
+            color: 'blue-10',
+            icon: 'person'
+          })
+          // Aquí podés disparar la lógica para cerrar el buscador y pasar los datos a la factura
+        }
+
+        onMounted(() => {
+		  clientesBase.value = MIS_CLIENTES_REALES; // <--- ¡Y listo!
+		  clientesFiltrados.value = MIS_CLIENTES_REALES.slice(0, 50);
+		})
+
+        return { filtro, clientesFiltrados, clientesBase, columnas, seleccionar, filtrar }
+      }
+    })
+    app.use(Quasar).mount('#q-app')
+  </script>
+</body>
+</html>
