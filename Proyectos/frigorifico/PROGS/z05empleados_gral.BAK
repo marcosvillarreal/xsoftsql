@@ -91,7 +91,7 @@ cCadeCtacte = ''
 
 *stop()
 SCAN 
-	IF VAL(CsrEmpleados.legajo) = 0
+	IF CsrEmpleados.legajo = 0
 		LOOP
 	ENDIF 
 		
@@ -130,7 +130,7 @@ SCAN
  		
  	lnidplanpago	= 1100000002 &&Por el momento todos de cuenta corriente		
 	lnidcanalvta	= 1
-	lcDatosFac		= ALLTRIM((CsrEmpleados.legajo))
+	lcDatosFac		= ALLTRIM(STR(CsrEmpleados.legajo,10))
 	
 	&&Localidad
 	lnidlocalidad	= 1100000345  &&Bahia Blanca

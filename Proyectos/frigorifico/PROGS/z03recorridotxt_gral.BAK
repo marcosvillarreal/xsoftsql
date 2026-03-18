@@ -7,6 +7,7 @@ DO setup
 SET PROCEDURE TO proc.prg ADDITIVE  && Procedimientos generales
 SET PROCEDURE TO syserror.prg ADDITIVE  
 
+
 SET SAFETY OFF
 
 SET CPCOMPILE TO 1252
@@ -24,7 +25,7 @@ llok = CargarTabla(lcData,'RutaVdor',.t.)
 llok = CargarTabla(lcData,'CabeRuta',.t.)
 llok = CargarTabla(lcData,'CuerRuta',.t.)
 llok = CargarTabla(lcData,'FuerzaVta')
-llok = CargarTabla(lcData,'PlanCue')
+*llok = CargarTabla(lcData,'PlanCue')
 SET SAFETY ON
 
 IF !llok
@@ -33,123 +34,45 @@ ENDIF
 
 Oavisar.proceso('S','Abriendo archivos') 
 SET SAFETY ON
-CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
-CREATE CURSOR CsrRecorrido (Codigo c(8),Vendedor c(3),Zona c(3))
+
+CREATE CURSOR CsrRecorrido (Codigo c(8),Vendedor c(30),Zona c(30),CodVendedor c(3))
 Oavisar.proceso('S','Abriendo archivos') 
 
 SELECT CsrLista
-cArchivo = ALLTRIM(lcpath )+"\clientes.txt"
-APPEND FROM  &cArchivo SDF
+cArchivo = ALLTRIM(lcpath )+"\clientes.xml"
 
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+LOCAL lcXml, lnFilas, i, loReg
+lcXml = FILETOSTR(cArchivo)
 
-Oavisar.proceso('S','Procesando '+alias()) 
+* Usamos un truco: Convertimos los nodos <row> en registros de un array
+lnFilas = ALINES(laRows, lcXml, 1 + 4, "<row>", "</row>")
 
-cCadeCtacte = "" 
+FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
+    lcFila = laRows[i]
+	STORE "" TO lcCodigo,lcCodVendedor,lcVendedor,lcLocalidad,lcZona
 
+	lcCodigo		= STREXTRACT(lcFila, 'name="codigo">', '</field>')
+	lcNombre		= STREXTRACT(lcFila, 'name="cnombre">', '</field>')
+	LcLocalidad		= STREXTRACT(lcFila, 'name="nomlocalidad">', '</field>')
+	lcZona			= STREXTRACT(lcFila, 'name="zona">', '</field>')
+	lcCodVendedor	= STREXTRACT(lcFila, 'name="idvendedor">', '</field>')
+	lcVendedor		= STREXTRACT(lcFila, 'name="nomvendedor">', '</field>')
 
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-*STOP()
-SCAN 
-	lnCantCampo = 29 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		LOOP 
-	ENDIF 
 	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
-		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
-		STORE "" TO lcTipoIVA,lcVendedor,lcZona
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			LOOP 
-		ENDIF 
-	ENDIF 
+    
+	INSERT INTO CsrRecorrido (Codigo,Vendedor,Zona,CodVendedor) ;
+	values (lcCodigo,lcVendedor,lcLocalidad,lcCodVendedor)
+ENDFOR
+
 	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-*!*				lcCategoria		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCategoria)))
-*!*				lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-*!*				lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireccion)))
-*!*				LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcLocalidad)))
-*!*				lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
-*!*				lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcProvincia)))
-*!*				lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcTelefono)))
-*!*				lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono2)))
-*!*				lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
-*!*				lcCelular		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCelular)))
-*!*				lcEmail			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEmail)))
-*!*				lcfecAlta		= IIF(j + i=19,lcCadena,lcFecAlta)
-*!*				lcTipoDoc		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-*!*				lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcDocumento)))
-*!*				lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcTipoIVA)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=28,lcCadena,lcVendedor)))
-			lcZona			= UPPER(LimpiarCadena(IIF(j + i=29,lcCadena,lcZona)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		
-
-		
-		INSERT INTO CsrRecorrido (Codigo,Vendedor,Zona) ;
-		values (lcCodigo,lcVendedor,lcZona)
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
-	ENDIF 
-ENDSCAN 
-
 SELECT CsrRecorrido
-vista()
+*vista()
 
 LOCAL lnid
 
 
-sELECT distinct vendedor as numero FROM CsrRecorrido INTO CURSOR FsrVendedor READWRITE 
-sELECT distinct zona as numero FROM CsrRecorrido INTO CURSOR FsrZona READWRITE 
+sELECT distinct vendedor ,codvendedor as numero FROM CsrRecorrido INTO CURSOR FsrVendedor READWRITE 
+sELECT distinct zona FROM CsrRecorrido INTO CURSOR FsrZona READWRITE 
 
 lnid = RecuperarID('CsrVendedor',Goapp.sucursal10)
 SELECT FsrVendedor
@@ -162,7 +85,7 @@ SCAN FOR !EOF()
    lnprevta = 1
    lnestado = 1
    lnnumero	= VAL(FsrVendedor.numero)
-   lcnombre	= "VENDEDOR " + NombreNi(alltrim(UPPER(FsrVendedor.numero)))
+   lcnombre	= NombreNi(alltrim(UPPER(FsrVendedor.vendedor)))
    INSERT INTO Csrvendedor (id,numero,nombre,comision,planilla,prevta,estado,lista,idctacte,acumulavale);
    			 VALUES (lnid,lnnumero,lcnombre,0,1,lnprevta,lnestado,1,0,0)
    lnid = lnid + 1
@@ -174,11 +97,12 @@ lnid = RecuperarID('CsrZona',Goapp.sucursal10)
 SELECT FsrZona
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
+lnNumZona = 0
 SCAN FOR !EOF()  
-   lcnombre= 'ZONA '+ NombreNi(alltrim(UPPER(fsrzona.numero)))
-   lnnumero	= VAL(fsrzona.numero)    
+   lcnombre= NombreNi(alltrim(UPPER(fsrzona.zona)))
+   lnnumzona = lnnumzona + 1 
    INSERT INTO CsrZona (id,numero,nombre,porflete,abrevia);
-   			 VALUES (lnid,lnNUMERO,lcnombre,0,fsrzona.numero)
+   			 VALUES (lnid,lnnumzona,lcnombre,0,'')
    
    lnid = lnid + 1
 ENDSCAN
@@ -199,7 +123,7 @@ SELECT CsrFuerzaVta
 GO TOP 
 lnidfuerzavta  = CsrFuerzaVta.id
 
-stop()
+*stop()
 SELECT CsrRecorrido
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
@@ -208,22 +132,22 @@ SCAN FOR !EOF()
 
 	SELECT Csrctacte
 	LOCATE FOR VAL(cnumero)=VAL(CsrRecorrido.codigo)
-       IF VAL(cnumero) # VAL(CsrRecorrido.codigo)
-           SELECT CsrRecorrido
-           LOOP 
-       ENDIF 
+   IF VAL(cnumero) # VAL(CsrRecorrido.codigo)
+       SELECT CsrRecorrido
+       LOOP 
+   ENDIF 
 		
 *	IF CsrRecorrido.carpeta#0
 		SELECT CsrVendedor
-		LOCATE FOR numero=VAL(CsrRecorrido.vendedor)
-		IF numero#VAL(CsrRecorrido.vendedor)
+		LOCATE FOR numero=VAL(CsrRecorrido.codvendedor)
+		IF numero#VAL(CsrRecorrido.codvendedor)
 			SELECT CsrRecorrido
 			LOOP
 		ENDIF 	
 		
 		SELECT CsrZona
-		LOCATE FOR abrevia=CsrRecorrido.zona
-		IF abrevia#CsrRecorrido.zona OR EMPTY(CsrRecorrido.zona)
+		LOCATE for CsrZona.nombre=CsrRecorrido.zona
+		IF CsrZona.nombre#CsrRecorrido.zona OR EMPTY(CsrRecorrido.zona)
 			SELECT CsrZona
 		 	GO TOP 
 	      ENDIF 
@@ -232,7 +156,7 @@ SCAN FOR !EOF()
 		LOCATE FOR nombre=TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3)
 		IF nombre#TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3)
 			INSERT INTO CsrRuta (id,numero,nombre) ;
-			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+" "+STR(Csrvendedor.numero,3))		     		
+			VALUES (lnid,lnNumRuta,TRIM(Csrzona.nombre)+" V"+STR(Csrvendedor.numero,3))		     		
 			lnid = lnid + 1
 			lnNumRuta = lnNumRuta + 1 
 		ENDIF 

@@ -35,38 +35,12 @@ SELECT CsrLocalidad.* FROM Localidad as CsrLocalidad
 ENDTEXT 
 =CrearCursorAdapter('CsrLocalidad',lcCmd)
 
+*stop()
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
 =LeerClientes_01(cArchivo)
 SELECT CsrDeudor
-*vista()
+vista()
 		
-Oavisar.proceso('S','Abriendo archivos') 
-
-SELECT CsrLista
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.csv"
-APPEND FROM  &cArchivo SDF
-
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
-
-Oavisar.proceso('S','Procesando '+alias()) 
-
-cCadeCtacte = "" 
-
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-ldebug = .t.
-
-*SKIP 
-*stop()
-
 
 SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
 
@@ -91,11 +65,13 @@ Oavisar.proceso('S','Procesando '+alias())
 GO TOP
 *VISTA()
 
+cCadeCtacte = ''
+
 *stop()
 SCAN 
 	
-	IF VAL(codigo)=9007
-		*stop()
+	IF VAL(codigo)=36
+		stop()
 	ENDIF 
 	
 	lnCodigo = VAL(CsrDeudor.codigo)

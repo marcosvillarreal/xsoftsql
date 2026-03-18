@@ -66,13 +66,14 @@ GO TOP
 lnidfuerzavta = CsrFuerzavta.id
 
 *stop()
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"articulos.csv"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"articulos.xml"
 =LeerArticulos_01(cArchivo)
 SELECT CsrArticulo 
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"precios.csv"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"precios.xml"
 =LeerPrecios_01(cArchivo)
 SELECT CsrPrecio 
+vista()
 
 Oavisar.proceso('S','Abriendo archivos') 
 
@@ -106,7 +107,7 @@ lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-*stop()
+stop()
 SCAN FOR !EOF()
 	SELECT CsrProducto
 	
@@ -219,15 +220,15 @@ SCAN FOR !EOF()
 				*	stop()
 				ENDIF 
 				
-				lnCosto		= VAL(CsrPrecio.costo)
+				lnCostoSiva		= VAL(CsrPrecio.costo)
 				
 				lnFactor = 1 + (lnTasa / 100)
 				
-				lnCostoSiva	= lnCosto / lnFactor 
+				lnCosto	= lnCostoSiva * lnFactor 
 				
 				lnUtil1		= 0
 				lnprevta1	= lnCostoSiva
-				lnprevtaf1	= lnprevta1 * lnFactor 
+				lnprevtaf1	= lnCosto
 				*lnCosto		= lnCostoSiva*(1 +  IIF(lnTasa=0,21,10.5)/100)
 				
 				

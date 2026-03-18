@@ -2,7 +2,7 @@
 FUNCTION LeerClientes_01(cArchivo)
 
 SET SAFETY ON
-CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
+
 
 CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),Localidad c(50),CodPostal c(10),Provincia c(50);
 		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15),TipoDoc c(50),Documento c(20);
@@ -16,131 +16,44 @@ SET SAFETY ON
 	
 Oavisar.proceso('S','Abriendo archivos') 
 
-*stop()
+LOCAL lcXml, lnFilas, i, loReg
+lcXml = FILETOSTR(cArchivo)
 
-SELECT CsrLista
-APPEND FROM  &cArchivo SDF
+* Usamos un truco: Convertimos los nodos <row> en registros de un array
+lnFilas = ALINES(laRows, lcXml, 1 + 4, "<row>", "</row>")
 
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
+    lcFila = laRows[i]
+	STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
+	STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
+	STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
+	STORE "" TO lcEstado,lcCodLista,lcCodCateIVA
 
-DELETE FROM CsrLista WHERE LEFT(deta01,5)=REPLICATE(lcDelimitador,5)
-
-Oavisar.proceso('S','Procesando '+alias()) 
-
-cCadeCtacte = "" 
-
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-ldebug = .f.
-
-*SKIP 
-*stop()
-DO WHILE NOT EOF()
-	lnCantCampo = 23 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		SKIP 
-		LOOP 
-	ENDIF 
+	lcCodigo		= STREXTRACT(lcFila, 'name="codigo">', '</field>')
+	lcNombre		= STREXTRACT(lcFila, 'name="cnombre">', '</field>')
+	lcDocumento		= STREXTRACT(lcFila, 'name="cuit">', '</field>')
+	lcDireccion		= STREXTRACT(lcFila, 'name="cdireccion">', '</field>')
+	lcDireNro		= STREXTRACT(lcFila, 'name="cdirenro">', '</field>')
+	lcDirePiso		= STREXTRACT(lcFila, 'name="cdire_piso">', '</field>')
+	lcDireDpto		= STREXTRACT(lcFila, 'name="cdire_dpto">', '</field>')
+	LcLocalidad		= STREXTRACT(lcFila, 'name="nomlocalidad">', '</field>')
+	lcProvincia		= STREXTRACT(lcFila, 'name="nomprov">', '</field>')
+	lcTelefono		= STREXTRACT(lcFila, 'name="ctelefono">', '</field>')
+	lcCodCateIVA	= STREXTRACT(lcFila, 'name="idcategoiva">', '</field>')
+	lcTipoIVA		= STREXTRACT(lcFila, 'name="nomcategoiva">', '</field>')
+	lcTelefono2		= STREXTRACT(lcFila, 'name="ctelefono2">', '</field>')
+	lcEstado		= STREXTRACT(lcFila, 'name="estado">', '</field>')
+	lcCodLista		= STREXTRACT(lcFila, 'name="idlista">', '</field>')
+	lcLista			= STREXTRACT(lcFila, 'name="nomlista">', '</field>')
+	lcZona			= STREXTRACT(lcFila, 'name="zona">', '</field>')
+	lcCodVendedor	= STREXTRACT(lcFila, 'name="idvendedor">', '</field>')
+	lcVendedor		= STREXTRACT(lcFila, 'name="nomvendedor">', '</field>')
+	lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
 	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
-		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
-		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
-		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			SKIP 
-			LOOP 
-		ENDIF 
-	ENDIF 
+    
+	IF not(ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---')
 	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDocumento)))
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireNro)))
-			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcDirePiso)))
-			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcTelefono)))
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCodCateIVA)))
-			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcTipoIVA)))
-			*lcCategoria	= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcCategoria)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=16,lcCadena,lcTelefono2)))
-			lcEstado		= UPPER(LimpiarCadena(IIF(j + i=17,lcCadena,lcEstado)))
-			lcCodLista			= UPPER(LimpiarCadena(IIF(j + i=18,lcCadena,lcCodLista)))
-			lcLista			= UPPER(LimpiarCadena(IIF(j + i=19,lcCadena,lcLista)))
-			lcZona			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcZona)))
-			lcCodVendedor	= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcCodVendedor)))
-			lcVendedor		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcVendedor)))
-			
-			*lcCodPostal		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcCodPostal)))
-			*lcFax			= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcFax)))
-			*lcCelular		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcCelular)))
-			*lcEmail			= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcEmail)))
-			*lcfecAlta		= IIF(j + i=19,lcCadena,lcFecAlta)
-			lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
-			*lcZona			= UPPER(LimpiarCadena(IIF(j + i=29,lcCadena,lcZona)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-			
-			IF VAL(lcCodigo)=1772 and ldebug
-				*stop()
-				ldebug = .f.
-			ENDIF 
-		
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		
-		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
-			LOOP 
-		ENDIF 
-		
-		
+	
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
@@ -149,15 +62,10 @@ DO WHILE NOT EOF()
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,lcVendedor,lcZona,1,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado;
 		,VAL(lcCodLista),VAL(lcCodCateIVA))
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
 	ENDIF 
-	SKIP IN CsrLista
-ENDDO 
+ENDFOR
 
-
-USE IN CsrLista
+SELECT CsrDeudor 
 
 ENDFUNC 
 
@@ -167,100 +75,29 @@ CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 CREATE CURSOR CsrArticulo (Codigo c(8),Rubro c(20),Nombre c(100),Proveedor c(8);
 		,Alicuota c(8),IdJAque c(10))
 
-SELECT CsrLista
-APPEND FROM  &cArchivo SDF
+LOCAL lcXml, lnFilas, i, loReg
+lcXml = FILETOSTR(cArchivo)
 
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+* Usamos un truco: Convertimos los nodos <row> en registros de un array
+lnFilas = ALINES(laRows, lcXml, 1 + 4, "<row>", "</row>")
 
-Oavisar.proceso('S','Procesando '+alias()) 
+FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
+    lcFila = laRows[i]
+	STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcIdJaque
 
-cCadeCtacte = "" 
+	lcCodigo		= STREXTRACT(lcFila, 'name="codigo">', '</field>')
+	lcNombre		= STREXTRACT(lcFila, 'name="nombre">', '</field>')
+	lcRubro			= STREXTRACT(lcFila, 'name="nomrubro">', '</field>')
+	lcProveedor		= STREXTRACT(lcFila, 'name="NomProveedor">', '</field>')
+	lcAlicuota		= STREXTRACT(lcFila, 'name="alicIVA">', '</field>')
+	lcIdJaque		= STREXTRACT(lcFila, 'name="id">', '</field>')
 
-ldebug = .f.
-
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-
-*STOP()
-SCAN 
-	lnCantCampo = 9 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		LOOP 
-	ENDIF 
-	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcIdJaque
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			LOOP 
-		ENDIF 
-	ENDIF 
-	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcCodigo)))
-			lcRubro			= UPPER(LimpiarCadena(IIF(j + i=8,lcCadena,lcRubro)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcNombre)))
-			lcProveedor		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcProveedor)))
-			lcAlicuota		= IIF(j + i=9,lcCadena,lcalicuota)
-			lcIdJaque		= IIF(j + i=2,lcCadena,lcIdJaque)				
-			
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		
-		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
-			LOOP 
-		ENDIF 
-		
+	IF LEN(LTRIM(lcCodigo))<>0
 		INSERT INTO CsrArticulo (Codigo,Rubro,Nombre,Proveedor,Alicuota,IdJaque);
 		values (lcCodigo,lcRubro,lcNombre,lcProveedor,lcAlicuota,lcIdJaque)
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
 	ENDIF 
-ENDSCAN 
+ENDFOR
 
-USE IN CsrLista
 
 ENDFUNC 
 
@@ -270,89 +107,26 @@ CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
 		
 CREATE CURSOR CsrPrecio (Codigo c(8),Lista c(8), Costo c(15))
 
-SELECT CsrLista
-APPEND FROM  &cArchivo SDF
+LOCAL lcXml, lnFilas, i, loReg
+lcXml = FILETOSTR(cArchivo)
 
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+* Usamos un truco: Convertimos los nodos <row> en registros de un array
+lnFilas = ALINES(laRows, lcXml, 1 + 4, "<row>", "</row>")
 
-Oavisar.proceso('S','Procesando '+alias()) 
+FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
+    lcFila = laRows[i]
+	STORE "" TO lcCodigo,lcLista,lcCosto
 
-cCadeCtacte = "" 
+	lcCodigo		= STREXTRACT(lcFila, 'name="codigo">', '</field>')
+	lcLista			= STREXTRACT(lcFila, 'name="codlista">', '</field>')
+	lcCosto			= STREXTRACT(lcFila, 'name="prevta">', '</field>')
 
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-*STOP()
-SCAN 
-	lnCantCampo = 6 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		LOOP 
-	ENDIF 
-	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcLista,lcCosto
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			LOOP 
-		ENDIF 
-	ENDIF 
-	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo	= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcLista		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcLista)))
-			lcCosto		= UPPER((IIF(j + i=6,lcCadena,lcCosto)))
-							
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		
-		lcCosto = STRTRAN(lcCosto,',','.')
+	IF LEN(LTRIM(lcCodigo))<>0
 		INSERT INTO CsrPRecio (Codigo,Lista,Costo);
-		values (lcCodigo,lcLista,lcCosto)
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
+			values (lcCodigo,lcLista,lcCosto)
 	ENDIF 
-ENDSCAN
+ENDFOR
+
 
 FUNCTION LeerProveedores_01(cArchivo)
 
@@ -368,115 +142,46 @@ CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(10
 CREATE CURSOR CsrSaldos (Codigo c(8),Saldo c(20))
 
 
-Oavisar.proceso('S','Abriendo archivos') 
+LOCAL lcXml, lnFilas, i, loReg
+lcXml = FILETOSTR(cArchivo)
 
-SELECT CsrLista
-APPEND FROM  &cArchivo SDF
+* Usamos un truco: Convertimos los nodos <row> en registros de un array
+lnFilas = ALINES(laRows, lcXml, 1 + 4, "<row>", "</row>")
 
-lcDelimitador = ";"
-replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
-replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
-replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
+    lcFila = laRows[i]
+	STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
+	STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
+	STORE "" TO lcobservacion,lcIngBrutos,lcGanancia
+	STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
+	STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodGan,lcPlanPago,lcDiasVto,lcCBU
 
-Oavisar.proceso('S','Procesando '+alias()) 
-
-cCadeCtacte = "" 
-
-
-SELECT CsrLista
-GO TOP 
-*vista()
-lnPrimeraOcurrencia = 1
-leiunarticulo = .f.
-*STOP()
-*SKIP 
-
-DO WHILE NOT EOF() 
-	lnCantCampo = 25 &&Hay un campo vacio
-	lnSiguienteOcurrencia = 1
-	lnCamposLeidos = 1 &&Campos de CsrLista
-	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-
-	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
-		SKIP 
-		LOOP 
-	ENDIF 
+	lcCodigo		= STREXTRACT(lcFila, 'name="codigo">', '</field>')
+	lcNombre		= STREXTRACT(lcFila, 'name="cnombre">', '</field>')
+	lcDocumento		= STREXTRACT(lcFila, 'name="cuit">', '</field>')
+	lcDireccion		= STREXTRACT(lcFila, 'name="cdireccion">', '</field>')
+	lcDireNro		= STREXTRACT(lcFila, 'name="cdire_nro">', '</field>')
+	lcDirePiso		= STREXTRACT(lcFila, 'name="cdire_piso">', '</field>')
+	lcDireDpto		= STREXTRACT(lcFila, 'name="cdire_dpto">', '</field>')
+	LcLocalidad		= STREXTRACT(lcFila, 'name="nomlocalidad">', '</field>')
+	lcProvincia		= STREXTRACT(lcFila, 'name="nomprov">', '</field>')
+	lcTelefono		= STREXTRACT(lcFila, 'name="ctelefono">', '</field>')
+	lcCodCateIVA	= STREXTRACT(lcFila, 'name="idcategoiva">', '</field>')
+	lcTipoIVA		= STREXTRACT(lcFila, 'name="nomcategoiva">', '</field>')
+	lcTelefono2		= STREXTRACT(lcFila, 'name="ctelefono2">', '</field>')
+	lcGanancia		= STREXTRACT(lcFila, 'name="ganestado">', '</field>')
+	lcCodGan		= STREXTRACT(lcFila, 'name="idganancia">', '</field>')
+	lcPlanPago		= STREXTRACT(lcFila, 'name="tipocta">', '</field>')
+	lcIngBrutos		= STREXTRACT(lcFila, 'name="nroiibb">', '</field>')
+	lcCBU			= STREXTRACT(lcFila, 'name="cbu">', '</field>')
+	lcTipoDoc		= 'CUIT'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
+	lcDiasVto		= STREXTRACT(lcFila, 'name="diasvto">', '</field>')
 	
-	IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
-		leiunarticulo = .t.
-		STORE "" TO lcAcarreo
-		STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
-		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
-		STORE "" TO lcobservacion,lcIngBrutos,lcGanancia
-		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
-		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodGan,lcPlanPago,lcDiasVto,lcCBU
-		
-		j = 0
-	ELSE
-		IF !leiunarticulo
-			SKIP 
-			LOOP 
-		ENDIF 
-	ENDIF 
+  
 	
-	DO WHILE lnCamposLeidos<4
-		i = 1
-		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
-			lnpos = AT(lcDelimitador,&lcNomCampo,i)
-			IF lnPos#0 &&No es fin de linea
-				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
-				lcAcarreo = ""
-			ELSE 
-				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
-				EXIT 
-			ENDIF
-			lcCodigo		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcCodigo)))
-			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=3,lcCadena,lcNombre)))	
-			lcDireccion		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcDireccion)))
-			lcDireNro		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcDireNro)))
-			lcDirePiso		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcDirePiso)))
-			lcDireDpto		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDireDpto)))
-			LcLocalidad		= UPPER(LimpiarCadena(IIF(j + i=09,lcCadena,lcLocalidad)))
-			lcProvincia		= UPPER(LimpiarCadena(IIF(j + i=10,lcCadena,lcProvincia)))
-			lcTelefono		= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcTelefono)))			
-			lcCodCateIVA	= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCodCateIVA)))
-			lcTipoIVA		= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcTipoIVA)))
-			lcIngBrutos		= UPPER(LimpiarCadena(IIF(j + i=14,lcCadena,lcIngBrutos)))
-			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=15,lcCadena,lcDocumento)))
-			lcTipoDoc		= 'CUIT'
-			
-			lcCBU			= UPPER(LimpiarCadena(IIF(j + i=20,lcCadena,lcCBU)))
-			lcTelefono2		= UPPER(LimpiarCadena(IIF(j + i=21,lcCadena,lcTelefono2)))
-			lcGanancia		= UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcGanancia)))
-			lcCodGan		= UPPER(LimpiarCadena(IIF(j + i=23,lcCadena,lcCodGan)))
-			lcPlanPago		= UPPER(LimpiarCadena(IIF(j + i=24,lcCadena,lcPlanPago)))
-			lcDiasVto		= UPPER(LimpiarCadena(IIF(j + i=25,lcCadena,lcDiasVto)))
-										
-			lnSiguienteOcurrencia = lnPos + 1
-			i = i + 1
-		ENDDO 
-		lnSiguienteOcurrencia = 1
-		lnCamposLeidos = lnCamposLeidos + 1
-		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
-		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
-			 j = j + (i - 1)
-		ENDIF 
-		IF lnpos#0 AND i+j >= lnCantCampo
-			EXIT 
-		ENDIF 
-	ENDDO 
-
-	IF lnpos#0 AND i+j >= lnCantCampo
-		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
-		&&Que se grabaran en csrarti.
-		&&Esta diseñado para leer hasta los precios.
-		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
-		
-		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
-			LOOP 
-		ENDIF 
-		
-		
+	IF not(ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---')
+	
+	
 		INSERT INTO CsrDeudor (Codigo,Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
 		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
 		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
@@ -485,19 +190,10 @@ DO WHILE NOT EOF()
 		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
 		,lcTipoIVA,"","",0,lcDireNro,lcDirePiso,lcDireDpto,"",lcEstado;
 		,0,VAL(lcCodCateIVA),VAL(lcCodGan),VAL(lcPlanPago),VAL(lcDiasVto),VAL(lcGanancia))
-				
-		*replace descripcion WITH lmDescripcion IN FsrArticulo
-		leiunarticulo = .f.
 		
-
-
 	ENDIF 
-	SKIP 
-ENDDO 
+ENDFOR
 
-
-
-USE IN CsrLista
 
 ENDFUNC 
 
@@ -603,5 +299,48 @@ ENDDO
 
 
 USE IN CsrLista
+
+ENDFUNC 
+
+FUNCTION LeerEmpleados_01(cArchivo)
+
+SET SAFETY ON
+CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
+
+CREATE CURSOR CsrEmpleados (Legajo c(8),Apellido c(20),Nombre c(70))
+
+CREATE CURSOR CsrSaldos (Codigo c(8),Saldo c(20))
+
+
+LOCAL lcXml, lnFilas, i, loReg
+lcXml = FILETOSTR(cArchivo)
+
+* Usamos un truco: Convertimos los nodos <row> en registros de un array
+lnFilas = ALINES(laRows, lcXml, 1 + 4, "<row>", "</row>")
+
+FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
+    lcFila = laRows[i]
+	STORE "" TO lcCodigo,lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia
+	STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
+	STORE "" TO lcobservacion,lcIngBrutos,lcGanancia
+	STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
+	STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodGan,lcPlanPago,lcDiasVto,lcCBU
+	STORE "" TO lcApellido
+	
+	lcNombre		= STREXTRACT(lcFila, 'name="nombre">', '</field>')
+	lcDocumento		= STREXTRACT(lcFila, 'name="legajo">', '</field>')
+	lcApellido		= STREXTRACT(lcFila, 'name="apellido">', '</field>')
+	  
+	
+	IF not(ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---')
+	
+		*lcNombre= = lcNombre= + ', '+lcApellido
+		
+		INSERT INTO CsrEmpleados (Legajo,Apellido,Nombre) ;
+		values (LcDocumento,LcApellido,lcNombre)
+		
+	ENDIF 
+ENDFOR
+
 
 ENDFUNC 
