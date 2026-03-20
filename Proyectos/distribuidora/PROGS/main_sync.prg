@@ -24,6 +24,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Sync de Datos"
+lcVersion _= "01.03.08"
 
 If !lldesarrollo
    If f_activawin(lctituloGestion)
@@ -208,7 +209,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.03.07"
+	goapp.version = lcVersion &&"01.03.07"
 	goapp.gmsoft = "sync"
 	
 	PUBLIC  gcicono
