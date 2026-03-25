@@ -181,7 +181,7 @@ LeerConfigTermi()
 loScriptVFP = CREATEOBJECT("Scripting.FileSystemObject")	
 	
 _screen.lockscreen=.t.
-_Screen.windowstate=2
+_Screen.windowstate=IIF(lldesarrollo,0,2)
 _Screen.caption=lctituloGestion
 _Screen.icon='gmsmart.ico'
 _screen.picture= 'fondo51.jpg'
