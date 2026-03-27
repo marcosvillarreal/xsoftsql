@@ -6,6 +6,7 @@ lcData = lcBase
 DO setup
 SET PROCEDURE  TO  proc.prg ADDITIVE  && Procedimientos generales
 SET PROCEDURE  TO  syserror.prg ADDITIVE  
+SET PROCEDURE TO z00_01 ADDITIVE 
 
 SET SAFETY OFF
 
@@ -46,7 +47,7 @@ ENDIF
 lniddetanrocaja = CsrDetaNroCaja.id
 
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_clientes.csv"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldos.xml"
 =LeerSaldos_01(cArchivo)
 SELECT CsrSaldos
 

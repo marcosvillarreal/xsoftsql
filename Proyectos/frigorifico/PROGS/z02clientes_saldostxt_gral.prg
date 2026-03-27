@@ -19,8 +19,8 @@ llok = .t.
 
 llok = CargarTabla(lcData,'Ctacte')
 llok = CargarTabla(lcData,'PlanCue')
-llok = CargarTabla(lcData,'MovCtacte')
-llok = CargarTabla(lcData,'Maopera')
+llok = CargarTabla(lcData,'MovCtacte',.t.)
+llok = CargarTabla(lcData,'Maopera',.t.)
 
 
 TEXT TO lccmd TEXTMERGE NOSHOW 
@@ -47,7 +47,7 @@ ENDIF
 lniddetanrocaja = CsrDetaNroCaja.id
 
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_clientes.csv"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldos.xml"
 =LeerSaldos_01(cArchivo)
 SELECT CsrSaldos
 
@@ -76,8 +76,8 @@ Oavisar.proceso('S','Procesando '+alias())
 GO TOP
 SCAN 
 	
-	IF VAL(codigo)=1
-		*stop()
+	IF VAL(codigo)=7307 OR VAL(codigo)=7305
+		stop()
 	ENDIF 
 	
 	lnCodigo = VAL(CsrSaldos.codigo)

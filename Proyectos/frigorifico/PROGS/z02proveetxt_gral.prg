@@ -66,17 +66,17 @@ ENDIF
 lniddetanrocaja = CsrDetaNroCaja.id
 
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedores.csv"
+cArchivo = ADDBS(ALLTRIM(lcpath ))+"proveedores.xml"
 =LeerProveedores_01(cArchivo)
 SELECT CsrDeudor 
 
-cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_proveedores.csv"
-IF FILE(cArchivo)
-	=LeerSaldos_01(cArchivo)
-	SELECT CsrSaldos
-ELSE 
-	oavisar.usuario('El saldo no se importara, no existe el archivo')
-ENDIF 
+*!*	cArchivo = ADDBS(ALLTRIM(lcpath ))+"saldo_proveedores.csv"
+*!*	IF FILE(cArchivo)
+*!*		=LeerSaldos_01(cArchivo)
+*!*		SELECT CsrSaldos
+*!*	ELSE 
+*!*		oavisar.usuario('El saldo no se importara, no existe el archivo')
+*!*	ENDIF 
 
 cCadeCtacte = "" 
 
