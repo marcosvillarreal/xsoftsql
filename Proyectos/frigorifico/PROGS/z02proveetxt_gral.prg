@@ -302,47 +302,48 @@ SCAN
 	SELECT CsrSaldos
 	LOCATE FOR VAL(CsrSaldos.Codigo)=VAL(CsrDeudor.codigo)
 	IF VAL(CsrSaldos.Codigo)=VAL(CsrDeudor.codigo)
-		stop()
+		*stop()
 		
 		lnSaldo = VAL(CsrSaldos.saldo)
-
-		&&Debemos insertar un movimiento de interno para generar saldos
-		lnsigno=1
-		replace saldoant WITH 0, saldo WITH lnSaldo IN CsrCtacte
-		ldfechas=ldfechasis
-		lnidcomproba=36
-		lcclasecomp="F"
-		IF lnSaldo<0
-			lnsigno=-1
-			lnidcomproba=37
-			lcclasecomp="G"
-		ENDIF
-		lnimporte		= lnSaldo*lnsigno
-		lcletra			= "X"
-		lcnum			= strtran(str(VAL(CsrCtacte.cnumero),8,0),' ','0')
-		lcnumero		= lcletra+"0000"+lcnum
-		lcswitch		= "00000"
-		lnSaldo			= ABS(lnSaldo)
-		lcctacte		= CsrCtacte.cnumero
-		lnidctacte		= CsrCtacte.id
-		ldfechaserver	= DATETIME()
-		ldfechasis		= FechaHoraCero(ldfechaserver)
-		
-		INSERT INTO CsrMaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor;
-		,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja,idcotizadolar,switch,estado,detalle;
-		,fechaserver);
-		VALUES (lnidmaopera,"MOV","IMPORTACIÓN MOVIMIENTOS",goapp.sucursal,goapp.terminal,1,ldfechasis;
-		,1,0,lniddetanrocaja,lnidcomproba,lcnumero,lcclasecomp,1,1,1,lcswitch,"0";
-		,"Importación. Compactación Mov Cliente.",ldfechaserver)
-		
-		lcswitch		= "00100"
-		INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
-		,entrega,vencimien,total,detalle,pefiscal,switch,signo);
-		VALUES (lnidmovctacte,lnidmaopera,ldfecha-1,lcctacte,lnidctacte," ",0,1,ABS(lnimporte);
-		,lnSaldo,0,ldfecha-1,ABS(lnimporte),"Saldo de Importación",SUBSTR(lcfiscal,1,6),lcswitch,lnsigno)
-		
-		lnidmovctacte=lnidmovctacte+1
-		lnidmaopera=lnidmaopera+1
+		IF lnSaldo <> 0
+			&&Debemos insertar un movimiento de interno para generar saldos
+			lnsigno=1
+			replace saldoant WITH 0, saldo WITH lnSaldo IN CsrCtacte
+			ldfechas=ldfechasis
+			lnidcomproba=36
+			lcclasecomp="F"
+			IF lnSaldo<0
+				lnsigno=-1
+				lnidcomproba=37
+				lcclasecomp="G"
+			ENDIF
+			lnimporte		= lnSaldo*lnsigno
+			lcletra			= "X"
+			lcnum			= strtran(str(VAL(CsrCtacte.cnumero),8,0),' ','0')
+			lcnumero		= lcletra+"0000"+lcnum
+			lcswitch		= "00000"
+			lnSaldo			= ABS(lnSaldo)
+			lcctacte		= CsrCtacte.cnumero
+			lnidctacte		= CsrCtacte.id
+			ldfechaserver	= DATETIME()
+			ldfechasis		= FechaHoraCero(ldfechaserver)
+			
+			INSERT INTO CsrMaopera (id,origen,programa,sucursal,terminal,sector,fechasis,idoperador,idvendedor;
+			,iddetanrocaja,idcomproba,numcomp,clasecomp,turno,puestocaja,idcotizadolar,switch,estado,detalle;
+			,fechaserver);
+			VALUES (lnidmaopera,"MOV","IMPORTACIÓN MOVIMIENTOS",goapp.sucursal,goapp.terminal,1,ldfechasis;
+			,1,0,lniddetanrocaja,lnidcomproba,lcnumero,lcclasecomp,1,1,1,lcswitch,"0";
+			,"Importación. Compactación Mov Cliente.",ldfechaserver)
+			
+			lcswitch		= "00100"
+			INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
+			,entrega,vencimien,total,detalle,pefiscal,switch,signo);
+			VALUES (lnidmovctacte,lnidmaopera,ldfecha-1,lcctacte,lnidctacte," ",0,1,ABS(lnimporte);
+			,lnSaldo,0,ldfecha-1,ABS(lnimporte),"Saldo de Importación",SUBSTR(lcfiscal,1,6),lcswitch,lnsigno)
+			
+			lnidmovctacte=lnidmovctacte+1
+			lnidmaopera=lnidmaopera+1
+		ENDIF 
 	ENDIF 
 	lnid = lnid + 1
 	

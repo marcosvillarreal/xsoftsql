@@ -107,7 +107,7 @@ lnid = RecuperarID('CsrProducto',Goapp.sucursal10)
 SELECT CsrArticulo
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
-stop()
+*stop()
 SCAN FOR !EOF()
 	SELECT CsrProducto
 	
