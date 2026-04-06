@@ -373,7 +373,9 @@ IF TYPE('goApp')='O'
     _screen.visible=.t.	   
 	_screen.lockscreen=.f.
 	_screen.Show() 
-
+	
+	Grabar_Log('login terminal '+STR(goapp.terminal)) 
+	
 	DO FORM frmlogin
 	
 	_screen.lockscreen=.t.		 
@@ -388,8 +390,11 @@ IF TYPE('goApp')='O'
 	LOCATE FOR nombre="XML"+strzero(goapp.terminal,4)
 	IF nombre="XML"+strzero(goapp.terminal,4)
 		lcDestinoXML = CsrParaVario.detalle
-
+		
 		goapp.rutasync = lcDestinoXML
+		
+		Grabar_Log(goapp.rutasync) 
+		
 		IF LEN(LTRIM(lcDestinoXML))#0
 			IF !DIRECTORY(lcDestinoXML)
 				MKDIR &lcDestinoXML
