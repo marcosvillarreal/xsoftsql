@@ -1,4 +1,176 @@
 &&Fuentes de importacion de archivos de texto para 
+FUNCTION LeerClientes_02(cArchivo)
+
+CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )
+
+CREATE CURSOR CsrDeudor (Codigo c(8),Categoria c(20),Nombre c(70),Direccion c(100),CodLocalidad c(6),Localidad c(50);
+		,CodPostal c(10),CodProvincia c(6),Provincia c(50);
+		,Telefono c(20),Telefono2 c(20),Fax c(20),Celular c(20),Email c(50),fecAlta c(15);
+		,TipoDoc c(50),Documento c(20);
+		,TipoIVA c(50),CodVendedor c(6),Vendedor c(30),Zona c(20),obsercli c(100),ctadeudor n(1),IngBrutos c(20);
+		,DireNro c(5),DirePiso c(5),DireDpto c(5),Lista c(30),CodLista n(2),Estado c(1);
+		,CodCateIVA n(2),CodGan n(3),PlanPago n(1),DiasVto n(3),Ganancia n(1),idlocalidad n(12),idorigen i,Referencia c(40);
+		, Financiador c(10), Plan c(10), Carnet c(20) , Sexo c(50))
+
+SET SAFETY OFF 
+INDEX on nombre TAG korden
+SET SAFETY ON 
+	
+Oavisar.proceso('S','Abriendo archivos') 
+
+*stop()
+
+SELECT CsrLista
+APPEND FROM  &cArchivo SDF
+
+lcDelimitador = ";"
+replace ALL deta01 WITH STRTRAN(deta01,"	",lcDelimitador)
+replace ALL deta02 WITH STRTRAN(deta02,"	",lcDelimitador)
+replace ALL deta03 WITH STRTRAN(deta03,"	",lcDelimitador)
+
+DELETE FROM CsrLista WHERE LEFT(deta01,5)=REPLICATE(lcDelimitador,5)
+
+Oavisar.proceso('S','Procesando '+alias()) 
+
+cCadeCtacte = "" 
+
+
+SELECT CsrLista
+GO TOP 
+*vista()
+lnPrimeraOcurrencia = 44
+leiunarticulo = .f.
+
+ldebug = .f.
+
+SKIP 1
+*stop()
+DO WHILE NOT EOF()
+	lnCantCampo = 13 &&Hay un campo vacio
+	lnSiguienteOcurrencia = 1
+	lnCamposLeidos = 1 &&Campos de CsrLista
+	lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+
+	IF AT(lcDelimitador,deta01)=1 AND (AT(lcDelimitador,deta01,2)=AT(lcDelimitador,deta01)+1 OR AT(lcDelimitador,deta01,3)=AT(lcDelimitador,deta01,2)+1)
+		SKIP 
+		LOOP 
+	ENDIF 
+	
+*!*		IF AT(lcDelimitador,deta01)=lnPrimeraOcurrencia
+		leiunarticulo = .t.
+		STORE "" TO lcAcarreo,lcIdJ
+		STORE "" TO lcCodigo,lcNombre2,lcNombre,lcApellido,lcApellido2,lcSexo,lcFechaNac
+		STORE "" TO lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento
+		STORE "" TO lcTipoIVA,lcVendedor,lcZona,lcCodVendedor,lcDireNro,lcDirePiso,lcDireDpto,lcLista
+		STORE "" TO lcEstado,lcCodLista,lcCodCateIVA,lcCodProvincia	,lcCodLocalidad,lcLista
+		STORE "" to lcReferencia,cLista3,lcZona,lcFinanciador,lcPlan,lcCarnet,lcDireccion, lcProvincia
+		STORE "" TO lcLocalidad,lcCategoria,lcCodPostal
+		
+		j = 0
+*!*		ELSE
+*!*			IF !leiunarticulo
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+*!*		ENDIF 
+	
+	DO WHILE lnCamposLeidos<4
+		i = 1
+		DO WHILE i + j <= lnCantCampo &&Campos de CsrArti + 1
+			lnpos = AT(lcDelimitador,&lcNomCampo,i)
+			IF lnPos#0 &&No es fin de linea
+				lccadena = ALLTRIM(lcAcarreo) + SUBSTR(&lcNomCampo,lnSiguienteOcurrencia,lnpos-(lnSiguienteOcurrencia))
+				lcAcarreo = ""
+			ELSE 
+				lcAcarreo = ALLTRIM(lcAcarreo) + ALLTRIM(SUBSTR(&lcNomCampo,lnSiguienteOcurrencia))
+				EXIT 
+			ENDIF
+			*lcIdJ			= UPPER(LimpiarCadena(IIF(j + i=1,lcCadena,lcIdJ)))
+			lcNombre		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcNombre)))
+			*lcNombre2		= UPPER(LimpiarCadena(IIF(j + i=2,lcCadena,lcNombre2))) &&SEgundo Nombre
+			lcApellido		= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcApellido))) &&Apellido
+			*lcApellido2		= UPPER(LimpiarCadena(IIF(j + i=4,lcCadena,lcApellido2))) &&Apellido
+			*lcSexo			= UPPER(LimpiarCadena(IIF(j + i=6,lcCadena,lcSexo)))			
+			*lcfecAlta		= UPPER(LimpiarCadena(IIF(j + i=5,lcCadena,lcfecAlta)))
+			lcDocumento		= UPPER(LimpiarCadena(IIF(j + i=7,lcCadena,lcDocumento)))
+			*lcEmail			= UPPER(LimpiarCadena(IIF(j + i=9,lcCadena,lcEmail)))	
+			lcTipoDoc		= 'DNI'&&UPPER(LimpiarCadena(IIF(j + i=22,lcCadena,lcTipoDoc)))
+			lcFinanciador	= UPPER(LimpiarCadena(IIF(j + i=11,lcCadena,lcFinanciador)))			
+			lcCarnet		= UPPER(LimpiarCadena(IIF(j + i=12,lcCadena,lcCarnet)))
+			lcPlan			= UPPER(LimpiarCadena(IIF(j + i=13,lcCadena,lcPlan)))				
+			lnSiguienteOcurrencia = lnPos + 1
+			i = i + 1
+			
+			IF VAL(lcCodigo)=945 and ldebug
+				stop()
+				ldebug = .f.
+			ENDIF 
+		
+		ENDDO 
+		lnSiguienteOcurrencia = 1
+		lnCamposLeidos = lnCamposLeidos + 1
+		lcNomCampo = "CsrLista.deta"+strzero(lnCamposLeidos,2)
+		IF lnPos = 0 AND i <= lnCantCampo &&Si no termino, y no es un campo csrati q nop existe
+			 j = j + (i - 1)
+		ENDIF 
+		IF lnpos#0 AND i+j >= lnCantCampo
+			EXIT 
+		ENDIF 
+	ENDDO 
+	
+	IF lnpos=0 AND i+j = lnCantCampo
+		lcPlan			= UPPER(LimpiarCadena(IIF(j + i=13,lcAcarreo ,lcPlan)))	
+	ENDIF 
+		
+	*IF lnpos#0 AND i+j >= lnCantCampo
+	IF  i+j >= lnCantCampo
+		&&Insertamos si se encontro una ultima ocurrencia con respecto a la cantidad de registros
+		&&Que se grabaran en csrarti.
+		&&Esta diseñado para leer hasta los precios.
+		&&Si se quiere leer todo. Se necesita un caracter de finalizado de linea.
+		
+		lcNombre = ALLTRIM(lcApellido)+ ' ' + ALLTRIM(lcApellido2) + ', ' + ALLTRIM(lcNombre)+ ' ' + alltrim(lcNombre2)
+		IF ASC(LEFT(lcNombre,1))=149 OR ASC(LEFT(lcNombre,1))=149 OR lentrim(lcNombre)=0 OR LEFT(lcNombre,3)='---'
+			SKIP 
+			LOOP 
+		ENDIF 
+		IF '*'$lcTelefono
+			SKIP 
+			LOOP
+		ENDIF 
+		IF LEN(LTRIM(lcDocumento ))=0
+			SKIP 
+			LOOP 
+		ENDIF 
+		
+*!*			IF ALLTRIM(STR(VAL(lcCodigo)))<>ALLTRIM(lcCodigo)
+*!*				SKIP 
+*!*				LOOP 
+*!*			ENDIF 
+		
+		*lcCodigo = SUBSTR(lcCodigo,4)
+		lcCodLista = '1'
+		INSERT INTO CsrDeudor (Categoria,Nombre,Direccion,Localidad,CodPostal,Provincia;
+		,Telefono,Telefono2,Fax,Celular,Email,fecAlta,TipoDoc,Documento;
+		,TipoIVA,Vendedor,Zona,ctadeudor,DireNro,DirePiso,DireDpto,Lista,Estado,CodLista;
+		,CodCateIVA,CodLocalidad,CodProvincia,CodVendedor,idorigen,Referencia,Sexo;
+		,Financiador,Plan,Carnet ) ;
+		values (lcCategoria,lcNombre,lcDireccion,LcLocalidad,lcCodPostal,lcProvincia ;
+		,lcTelefono,lcTelefono2,lcFax,lcCelular,lcEmail,lcfecAlta,lcTipoDoc,lcDocumento ;
+		,lcTipoIVA,lcVendedor,lcZona,0,lcDireNro,lcDirePiso,lcDireDpto,lcLista,lcEstado,VAL(lcCodLista);
+		,VAL(lcCodCateIVA),lcCodLocalidad,lcCodProvincia,lcCodVendedor,VAL(lcIdJ),lcReferencia;
+		,lcSexo,lcFinanciador,lcPlan,lcCarnet)
+				
+		*replace descripcion WITH lmDescripcion IN FsrArticulo
+		leiunarticulo = .f.
+	ENDIF 
+	SKIP IN CsrLista
+ENDDO 
+
+USE IN CsrLista
+
+ENDFUNC 
+
 FUNCTION LeerClientes_01(cArchivo)
 
 CREATE CURSOR CsrLista (deta01 c(250),deta02 c(250),deta03 c(250) )

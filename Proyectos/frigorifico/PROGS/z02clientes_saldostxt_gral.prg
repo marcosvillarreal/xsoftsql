@@ -121,7 +121,7 @@ SCAN
 	,1,0,lniddetanrocaja,lnidcomproba,lcnumero,lcclasecomp,1,1,1,lcswitch,"0";
 	,"Importación. Compactación Mov Cliente.",ldfechaserver)
 	
-	lcswitch		= "00100"
+	lcswitch		= "00000"
 	INSERT INTO CsrMovctacte (id,idmaopera,fecha,ctacte,idctacte,subnumero,idsubcta,cuota,importe,saldo;
 	,entrega,vencimien,total,detalle,pefiscal,switch,signo);
 	VALUES (lnidmovctacte,lnidmaopera,ldfecha-1,lcctacte,lnidctacte," ",0,1,ABS(lnimporte);

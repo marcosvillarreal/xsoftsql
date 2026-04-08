@@ -37,14 +37,14 @@ cCadeCtacte = ""
 
 SELECT CsrLista
 GO TOP 
-vista()
+*vista()
 lnPrimeraOcurrencia = 44
 leiunarticulo = .f.
 
 ldebug = .f.
 
 SKIP 1
-stop()
+*stop()
 DO WHILE NOT EOF()
 	lnCantCampo = 13 &&Hay un campo vacio
 	lnSiguienteOcurrencia = 1
@@ -118,7 +118,7 @@ DO WHILE NOT EOF()
 		ENDIF 
 	ENDDO 
 	
-	IF lnpos=0 AND i+j >= lnCantCampo
+	IF lnpos=0 AND i+j = lnCantCampo
 		lcPlan			= UPPER(LimpiarCadena(IIF(j + i=13,lcAcarreo ,lcPlan)))	
 	ENDIF 
 		
