@@ -3,6 +3,10 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.56
+	BuscadorDescripcion , busca palabras (2letras)
+	Regdacvta, error quedo .accion=C, luego de buscar comprobantes para creditos
+	
 2.1.55
 	ERROR en Precios
 2.1.54

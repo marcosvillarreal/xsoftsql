@@ -1,7 +1,7 @@
 lcEmpresa = ''
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-select TOP 1 * from detaconta ORDER BY numero desc
+select TOP 1 * from detaconta ORDER BY ejercicio desc
 ENDTEXT 
 IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
 	RETURN 

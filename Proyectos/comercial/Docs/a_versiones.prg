@@ -3,6 +3,9 @@
 
 
 TEXT TO lcVersiones TEXTMERGE NOSHOW 
+2.1.57
+	Resuemn de Cuena
+	Facturador error CsrParaVario
 2.1.56
 	BuscadorDescripcion , busca palabras (2letras)
 	Regdacvta, error quedo .accion=C, luego de buscar comprobantes para creditos
