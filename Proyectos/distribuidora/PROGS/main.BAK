@@ -374,7 +374,8 @@ IF TYPE('goApp')='O'
 	_screen.lockscreen=.f.
 	_screen.Show() 
 	
-	Grabar_Log('lOGGIN ') 
+	Grabar_Log('login terminal '+STR(goapp.terminal)) 
+	
 	DO FORM frmlogin
 	
 	_screen.lockscreen=.t.		 
