@@ -1,3 +1,29 @@
+*!*	FUNCTION AbrirCajaDiaria
+
+*!*	LOCAL oRegFacVta
+
+*!*	oRegFacVta = CREATEOBJECT('oregfacvta')
+
+*!*	ldfecha = DATE()
+*!*	lcfecha = "'"+DTOS(ldfecha)+"'"
+*!*	TEXT TO lcCmd TEXTMERGE NOSHOW 
+*!*	SELECT CsrDetanrocaja.* FROM DetaNrocaja as CsrDetanrocaja
+*!*	where fecdesde <= <<lcfecha>> and <<lcfecha>> <=fechasta
+*!*	ENDTEXT 
+*!*	IF !CrearCursorAdapter('CsrFecCaja',lcCmd)
+*!*		oavisar.usuario('No se pudo buscar la caja automatica del '+DTOC(ldfecha ))
+*!*		RETURN .t.
+*!*	ENDIF 
+*!*	llok = .t.
+*!*	IF RECCOUNT('CsrFecCaja')=0
+*!*		*DO FORM regcajaactiva
+*!*		llok = oRegFacVta.cajadiaria(ldfecha)
+*!*	ENDIF 
+*!*	IF NOT llok
+*!*		oavisar.usuario('No se pudo crear la caja automatica del '+DTOC(ldfecha ))
+*!*		RETURN .f.
+*!*	ENDIF 
+
 
 
 *------------------------------------------------------------------------------
