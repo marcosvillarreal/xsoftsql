@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.12
+	Errores vercontado
 2.4.11
 	Ctacte, facturador - Ver Contado en impresion
 2.4.10
