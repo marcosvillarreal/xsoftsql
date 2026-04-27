@@ -53,14 +53,17 @@ FOR i = 2 TO lnFilas && Empezamos en 2 para saltar el encabezado
 	lcCodigo		= STREXTRACT(lcFila, 'name="codigo">', '</field>')
 	lcNombre		= STREXTRACT(lcFila, 'name="cnombre">', '</field>')
 	LcLocalidad		= STREXTRACT(lcFila, 'name="nomlocalidad">', '</field>')
-	lcZona			= STREXTRACT(lcFila, 'name="zona">', '</field>')
+	lcZona			= STREXTRACT(lcFila, 'name="codvendedor">', '</field>')
 	lcCodVendedor	= STREXTRACT(lcFila, 'name="idvendedor">', '</field>')
 	lcVendedor		= STREXTRACT(lcFila, 'name="nomvendedor">', '</field>')
 
-	
-    
+	IF NOT LEFT(lcZona,2)$"82-83-27-26-40-50-60-29-08-06-25-MD"
+    	lcZona = "OFICINA"
+    	lcVendedor = ""
+    	lcCodVendedor = "1"
+    ENDIF 
 	INSERT INTO CsrRecorrido (Codigo,Vendedor,Zona,CodVendedor) ;
-	values (lcCodigo,lcVendedor,lcLocalidad,lcCodVendedor)
+	values (lcCodigo,lcVendedor,lcZona+ ' ' +lcVendedor ,lcCodVendedor)
 ENDFOR
 
 	
@@ -91,11 +94,12 @@ SCAN FOR !EOF()
 
 ENDSCAN
 
-
+stop()
 lnid = RecuperarID('CsrZona',Goapp.sucursal10)
 SELECT FsrZona
 Oavisar.proceso('S','Procesando '+alias()) 
 GO top
+vista()
 lnNumZona = 0
 SCAN FOR !EOF()  
    lcnombre= NombreNi(alltrim(UPPER(fsrzona.zona)))
