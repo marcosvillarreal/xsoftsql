@@ -16,7 +16,7 @@ goapp.ejercicio = CsrDetaConta.ejercicio
 DO CASE 
 CASE goapp.codempresa = 1 &&Frigorifico Sur
 	cEmpresa = 'Sur'
-	goapp.terminal = 9
+	goapp.terminal = 2
 ENDCASE 	
 
 
