@@ -39,8 +39,11 @@ ENDTEXT
 cArchivo = ADDBS(ALLTRIM(lcpath ))+"clientes.xml"
 =LeerClientes_01(cArchivo)
 SELECT CsrDeudor
-vista()
+*vista()
 		
+SELECT distinct UPPER(lista) as nombre,codlista  FROM CsrDeudor  INTO CURSOR CsrListas READWRITE 
+SELECT CsrListas 
+*vista()
 
 SELECT distinct UPPER(localidad) as nombre ,SPACE(30) AS Localidad FROM CsrDeudor  INTO CURSOR CsrCiudad READWRITE 
 
@@ -70,8 +73,8 @@ cCadeCtacte = ''
 *stop()
 SCAN 
 	
-	IF VAL(codigo)=36
-		stop()
+	IF VAL(codigo)=610000
+	*	stop()
 	ENDIF 
 	
 	lnCodigo = VAL(CsrDeudor.codigo)
@@ -105,7 +108,7 @@ SCAN
 		lnLista = 1
 	OTHERWISE
 		&&Falta el resto de listas que nose cuales seran las por defecto
-		lnLista = lnLista + 3
+		*lnLista = lnLista + 3
 	ENDCASE
 	SELECT CsrListaP
 	LOCATE FOR numero = lnLista
@@ -121,6 +124,7 @@ SCAN
 	
 	&&Localidad
 	lnidlocalidad	= 1100000345  &&Bahia Blanca
+	lnidprovincia	= 1100000002 &&Bahia Blanca
 	lcLocalidadBuscada = Ciudades(ALLTRIM(UPPER(CsrDeudor.Localidad)))
 	SELECT CsrLocalidad
 	LOCATE FOR nombre = lcLocalidadBuscada
@@ -129,7 +133,7 @@ SCAN
 		lccp 			= CsrLocalidad.cpostal
 		lnidlocalidad	= CsrLocalidad.id
 	ELSE
-		lnidestado = 1
+		*htkdlnidestado = 1
 	ENDIF
 	
 	&&TresPImp	
