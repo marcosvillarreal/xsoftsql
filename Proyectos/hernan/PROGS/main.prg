@@ -14,7 +14,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Gestión de Ventas"
-lcVersion = "04.00.11"
+lcVersion = "04.00.12"
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
@@ -114,7 +114,7 @@ Set classlib to localaplicacion.vcx additive && Objeto Aplicacion
 _screen.lockscreen=.t.
 _Screen.windowstate=2
 _Screen.caption=lctituloGestion
-_Screen.icon='help.ico'
+_Screen.icon='gmsmart.ico'
 _screen.picture= 'fondoscreen.jpg'
 _Screen.closable=.f.
 _Screen.visible=.t.
