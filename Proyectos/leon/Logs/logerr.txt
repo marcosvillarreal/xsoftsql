@@ -189,1736 +189,6 @@
 
 
 
-
-
-
-M(unidades) as unidades,SUM(importe)as importe,SUM(kilos) as kilos ,avg(porcomi) as porcecomi,SUM(comi) as comi &lcSumCampos FROM CsrImprimir group BY idvendedor,grupo,id,codigo,nombre,codvendedor,nomvendedor,idprov nomproveedor,codprov ORDER BY idvended
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-or,grupo,codigo INTO CURSOR CsrImprimir READWRITE;Error :         36;Ultimo Alias Activo: CSRIMPRIMIR;Ultimo registro:         38 STR(IDVENDEDOR,10)+STR(GRUPO,1)+CODPROV+STR(CODIGO,10);DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000F7K902EZ.TMP;Ultimo Contr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ol activo: 
-19-02-2026 10:13:57 , Pila de llamadas
-19-02-2026 10:13:58 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-19-02-2026 10:13:58 , Objeto      : plancomivende_rend.imprimir_vistaprevia1.impresora.click
-19-02-2026 10:13:59 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-19-02-2026 10:13:59 , Nº de Linea :          8
-19-02-2026 10:13:59 , En el Fuente: 	llOK=thisform.CrearInforme()
-19-02-2026 10:14:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-02-2026 10:14:00 , Objeto      : plancomivende_rend.crearinforme
-19-02-2026 10:14:01 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\estad\plancomivende_rend.sct
-19-02-2026 10:14:01 , Nº de Linea :        245
-19-02-2026 10:14:02 , En el Fuente: 		SELECT idvendedor,grupo,id,codigo		,nombre ,codvendedor,nomvendedor,idprov,nomproveedor,codprov		,SUM(unidades) as unidades,SUM(importe)as importe,SUM(kilos) as kilos 		,avg(porcomi) as porcecomi,SUM(comi) as comi 		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lcSumCampos  		FROM CsrImprimir 		group BY idvendedor,grupo,id,codigo,nombre,codvendedor,nomvendedor,idprov		nomproveedor,codprov		ORDER BY idvendedor,grupo,codigo INTO CURSOR CsrImprimir READWRITE 
-19-02-2026 17:40:23 , PLANCOMIVENDE.IMPRIMIR_VISTAPREVIA1.IMPRESORA.CLICK, Error: No se encuentra la variable 'NETOGRAVADO'.;Linea : REPLACE ALL netogravado WITH netogravado - devolsiva;Error :         12;Ultimo Alias Activo: CSRLOGISTICA;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:         12 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000IQ6H00BK.TMP;Ultimo Control activo: 
-19-02-2026 17:40:24 , Pila de llamadas
-19-02-2026 17:40:25 , Programa    : j:\xsoftsql\desarrollo\clases\controles.vct
-19-02-2026 17:40:25 , Objeto      : plancomivende.imprimir_vistaprevia1.impresora.click
-19-02-2026 17:40:25 , Base Objeto : j:\xsoftsql\desarrollo\clases\controles.vct
-19-02-2026 17:40:26 , Nº de Linea :          8
-19-02-2026 17:40:26 , En el Fuente: 	llOK=thisform.CrearInforme()
-19-02-2026 17:40:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\plancomivende.sct
-19-02-2026 17:40:27 , Objeto      : plancomivende.crearinforme
-19-02-2026 17:40:27 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\plancomivende.sct
-19-02-2026 17:40:27 , Nº de Linea :         19
-19-02-2026 17:40:28 , En el Fuente: 	.estadistica.generarcursor()
-19-02-2026 17:40:28 , Programa    : j:\xsoftsql\proyectos\leon\clases\onegocioslocal.vct
-19-02-2026 17:40:28 , Objeto      : plancomivende.estadistica.generarcursor
-19-02-2026 17:40:29 , Base Objeto : j:\xsoftsql\proyectos\leon\clases\onegocioslocal.vct
-19-02-2026 17:40:29 , Nº de Linea :          4
-19-02-2026 17:40:30 , En el Fuente: 	REPLACE ALL netogravado WITH netogravado - devolsiva
-27-02-2026 13:40:52 , REGFACVTA.INIT, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0);Error :         11;Ultimo Alias Activo: CSRAU
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-XCABEFAC;Ultimo registro:          1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GY6H01FE.TMP;Ultimo Control activo: 
-27-02-2026 13:40:52 , Pila de llamadas
-27-02-2026 13:40:53 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:40:53 , Objeto      : regfacvta.init
-27-02-2026 13:40:53 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:40:54 , Nº de Linea :         88
-27-02-2026 13:40:54 , En el Fuente:     .insertacursor()
-27-02-2026 13:40:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:40:55 , Objeto      : regfacvta.insertacursor
-27-02-2026 13:40:55 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:40:55 , Nº de Linea :         23
-27-02-2026 13:40:56 , En el Fuente: Insert into CsrAuxcabefac (fecha,idtipoiva,idplanpago,switch,copiatkt,vencimien,parada,idlocalidad,idprovincia,idfletero,idfuerzavta,listaprecio,idrutavdor,idtiponcredito)       value (FechaHoraCero(Csrparaconfig.fecha
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fac),3,thisform.lnidplanpago,thisform.tipoform+"00"+thisform.tipofactura+"0",1,Csrparaconfig.fechafac,0,thisform.lnidlocalidad,thisform.lnidprovincia,Csrfletero.id       		,CsrFuerzavta.id,thisform.listadefecto,0,0)
-27-02-2026 13:40:56 , Programa    : j:\xsoftsql\proyectos\leon\progs\proc.fxp
-27-02-2026 13:40:57 , Objeto      : fechahoracero
-27-02-2026 13:40:57 , Base Objeto : j:\xsoftsql\proyectos\leon\progs\proc.prg
-27-02-2026 13:40:57 , Nº de Linea :       2507
-27-02-2026 13:40:58 , En el Fuente: ldfechahoracero = DATETIME(YEAR(ldfechahora),MONTH(ldfechahora),DAY(ldfechahora),0,0,0)
-27-02-2026 13:53:09 , REGFACVTA.GRID2.COLUMN5.TEXT1.LOSTFOCUS, Error: Incompatibilidad entre el tipo de operador y el tipo de operando.;Linea : lncantactual = thisform.loObjBonifica.cantidad + lnCantCuerfac;Error :        107;Ultimo Alias Activo: CSRPROD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-FZAVTA;Ultimo registro:          1 ID;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000GY6H01TF.TMP;Ultimo Control activo: CANTIDAD
-27-02-2026 13:53:10 , Pila de llamadas
-27-02-2026 13:53:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:10 , Objeto      : regfacvta.grid2.column5.text1.lostfocus
-27-02-2026 13:53:10 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:11 , Nº de Linea :         12
-27-02-2026 13:53:11 , En el Fuente: 			IF !.grid2_lostfocuscant()
-27-02-2026 13:53:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:11 , Objeto      : regfacvta.grid2_lostfocuscant
-27-02-2026 13:53:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:12 , Nº de Linea :          5
-27-02-2026 13:53:13 , En el Fuente: 		IF !.grid2_control(lcSetFocus,lcGotFocus)
-27-02-2026 13:53:13 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:13 , Objeto      : regfacvta.grid2_control
-27-02-2026 13:53:14 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:14 , Nº de Linea :        187
-27-02-2026 13:53:15 , En el Fuente: 	   	  	.controlbonificacion()
-27-02-2026 13:53:15 , Programa    : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:15 , Objeto      : regfacvta.controlbonificacion
-27-02-2026 13:53:16 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\ventas\regfacvta.sct
-27-02-2026 13:53:16 , Nº de Linea :         95
-27-02-2026 13:53:16 , En el Fuente: 	lncantactual = thisform.loObjBonifica.cantidad + lnCantCuerfac   
-03-03-2026 09:45:05 , EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: Hay demasiados argumentos.;Linea : INSERT INTO Csrauximprimir (cuit ,fecha ,sucursal,emision,importe,operacion) VALUES (lccuit ,lcfecha ,lcsucursal ,lcemision,lcbaseimp,lcalicu
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ota,lcimporte,'A');Error :       1230;Ultimo Alias Activo: CSRCUERPO;Ultimo registro:         -1 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000WTU10048.TMP;Ultimo Control activo: 
-03-03-2026 09:45:05 , Pila de llamadas
-03-03-2026 09:45:06 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
-03-03-2026 09:45:06 , Objeto      : exportar_afip.imprimir_vistaprevia1.excel.click
-03-03-2026 09:45:07 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
-03-03-2026 09:45:07 , Nº de Linea :          5
-03-03-2026 09:45:08 , En el Fuente: llOK=thisform.CrearInforme(1)
-03-03-2026 09:45:08 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
-03-03-2026 09:45:08 , Objeto      : exportar_afip.crearinforme
-03-03-2026 09:45:09 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
-03-03-2026 09:45:09 , Nº de Linea :         41
-03-03-2026 09:45:09 , En el Fuente: 			.exportaribtorete(lndias)
-03-03-2026 09:45:10 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
-03-03-2026 09:45:10 , Objeto      : exportar_afip.exportaribtorete
-03-03-2026 09:45:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
-03-03-2026 09:45:11 , Nº de Linea :        256
-03-03-2026 09:45:11 , En el Fuente: 		INSERT INTO Csrauximprimir (cuit ,fecha ,sucursal,emision,importe,operacion)		VALUES (lccuit ,lcfecha ,lcsucursal ,lcemision,lcbaseimp,lcalicuota,lcimporte,'A')
-04-03-26 18:15:58 , EXPORTAR_AFIP.IMPRIMIR_VISTAPREVIA1.EXCEL.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : _alicuota	= strzero(VAL(lntasa),5,2);Error :         11;Ultimo Alias Activo: CSRCUERPO;Ultimo registro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :         -5 ;DBF: C:\USERS\MARCOS\APPDATA\LOCAL\TEMP\0000XG5L01AQ.TMP;Ultimo Control activo: 
 04-03-26 18:15:59 , Pila de llamadas
 04-03-26 18:16:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\exportar_afip.sct
@@ -1937,6 +207,37 @@ ota,lcimporte,'A');Error :       1230;Ultimo Alias Activo: CSRCUERPO;Ultimo regi
 04-03-26 18:16:03 , Nº de Linea :        125
 04-03-26 18:16:04 , En el Fuente: 				_alicuota	= strzero(VAL(lntasa),5,2)
 15-05-2026 16:05:17 , REGNOTAPEDANDROID.INIT, Error: KITBUSCAOALTAENCONEXION es un miembro desconocido.;Linea : this.kitbuscaoaltaenConexion.txtexiste1.Value = CsrConexionCentral.codigo;Error :       1925;Ultimo Alias Activo: CSRCONEXIONCENTRAL;Ultimo re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2310,6 +611,37 @@ gistro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W9005N.TMP;Ul
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 900KP.TMP;Ultimo Control activo: 
 15-05-2026 16:22:26 , Pila de llamadas
 15-05-2026 16:22:27 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -2328,6 +660,37 @@ gistro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W9005N.TMP;Ul
 15-05-2026 16:22:32 , Nº de Linea :          6
 15-05-2026 16:22:33 , En el Fuente: thisform.temporal = lcruta
 15-05-2026 16:34:03 , REGNOTAPEDXML.CMDLEER.CLICK, Error: IMPRIMIR_VISTAPREVIA1 es un miembro desconocido.;Linea : .Imprimir_vistaprevia1.Visible = .t.;Error :       1925;Ultimo Alias Activo: CSRAUXIMPORTAR;Ultimo registro:          1 (DTOS(FECHA)+HORA);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2559,6 +922,37 @@ DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W901GG.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W901LU.TMP;Ultimo Control activo: 
 15-05-2026 16:36:29 , Pila de llamadas
 15-05-2026 16:36:30 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -2675,7 +1069,69 @@ DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W901LU.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 R(DATE()),MONTH(DATE()),DAY(DATE()),0,0,0) as Vencimien ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm ,000 as chksum FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE;Error :          1;Ult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2891,8 +1347,70 @@ imo Alias Activo: CSROPCION;Ultimo registro:          1 (DTOS(FECHA)+HORA);DBF: 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ncimien       ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)) as pedidoid_pm       ,000 as chksum       FROM CsrNCabefac WHERE RECNO()=1 AND id=0 INTO CURSOR CsrAuxcabefac READWRITE  
 15-05-2026 16:48:56 , REGNOTAPEDXML.CMDLEER.CLICK, Error: No se encuentra el alias 'CSRAUXIMPORTAR'.;Linea : .Grid1.Column1.ControlSource = 'CsrauxImportar.archivo';Error :         13;Ultimo Alias Activo: CSROPCION;Ultimo registro:          1 (DTOS(FECHA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3100,6 +1618,37 @@ ncimien       ,'00000' as idope,CAST(0 as n(12)) as idpedmobile,CAST(0 as v(200)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AL\TEMP\000094W9025G.TMP;Ultimo Control activo: 
 15-05-2026 17:01:41 , Pila de llamadas
 15-05-2026 17:01:42 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -3124,6 +1673,37 @@ AL\TEMP\000094W9025G.TMP;Ultimo Control activo:
 15-05-2026 17:01:49 , En el Fuente: SET ORDER TO karchi
 15-05-2026 17:05:54 , REGNOTAPEDXML.CMDLEER.CLICK, Error: Error de análisis de XML: El sistema no puede encontrar el objeto especificado.;
  línea 0, posición 0.   (null);Linea : XMLTOCURSOR(cFileName,"CabePedido",512+8192);Error :       1435;Ultimo Alias
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3315,6 +1895,37 @@ AL\TEMP\000094W9025G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Activo: CABEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W902JF.TMP;Ultimo Control activo: 
 15-05-2026 17:10:49 , Pila de llamadas
 15-05-2026 17:10:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -3339,6 +1950,37 @@ AL\TEMP\000094W9025G.TMP;Ultimo Control activo:
 15-05-2026 17:10:56 , En el Fuente: 		XMLTOCURSOR(cFileName,"CabePedido",512+8192)
 15-05-2026 17:14:11 , REGNOTAPEDXML.CMDLEER.CLICK, Error: Error de análisis de XML: El sistema no puede encontrar el objeto especificado.;
  línea 0, posición 0.   (null);Linea : XMLTOCURSOR(cFileName,"CabePedido",512+8192);Error :       1435;Ultimo Alias
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3504,6 +2146,37 @@ AL\TEMP\000094W9025G.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Activo: CABEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W902UH.TMP;Ultimo Control activo: 
 15-05-2026 17:19:19 , Pila de llamadas
 15-05-2026 17:19:20 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -3527,6 +2200,37 @@ AL\TEMP\000094W9025G.TMP;Ultimo Control activo:
 15-05-2026 17:19:25 , Nº de Linea :         75
 15-05-2026 17:19:26 , En el Fuente: 		XMLTOCURSOR(cFileName,"CabePedido",512+8192)
 15-05-2026 17:45:32 , REGNOTAPEDXML.CMDLEER.CLICK, Error: No se encuentra la variable 'IDPEDIDO'.;Linea : LOCATE FOR id = CsrOpcion.idpedido;Error :         12;Ultimo Alias Activo: CABEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3666,6 +2370,37 @@ AL\TEMP\000094W903H4.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 094W903UJ.TMP;Ultimo Control activo: 
 15-05-2026 18:06:10 , Pila de llamadas
 15-05-2026 18:06:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -3679,6 +2414,37 @@ AL\TEMP\000094W903H4.TMP;Ultimo Control activo:
 15-05-2026 18:06:13 , Nº de Linea :          6
 15-05-2026 18:06:13 , En el Fuente: INDEX on (dtos(fecha)+hora) TAG fecha
 15-05-2026 18:06:55 , REGNOTAPEDXML.CMDLEER.CLICK, Error: No se encuentra la variable 'HORA'.;Linea : replace  archivo with RTRIM(laAux[i,1]),fecha with lcFecha,detalle with lcDetalle,hora with subs(lcNombre,5,2)+':'+subs(lcNombre,7,2) , caja with val(ri
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3793,6 +2559,37 @@ ght(lcNombre,2)),va WITH .t.,proceso WITH '';Error :         12;Ultimo Alias Act
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 stro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W9043J.TMP;Ultimo Control activo: 
 15-05-2026 18:12:31 , Pila de llamadas
 15-05-2026 18:12:31 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -3816,6 +2613,37 @@ stro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W9043J.TMP;Ulti
 15-05-2026 18:12:35 , Nº de Linea :         77
 15-05-2026 18:12:35 , En el Fuente: 		replace cliente WITH CabePedido.clientes_numero, Detalle WITH CabePedido.observaciones
 15-05-2026 18:18:37 , REGNOTAPEDXML.CMDLEER.CLICK, Error: No coinciden los tipos de datos.;Linea : replace cliente WITH CabePedido.clientes_numero, Detalle WITH CabePedido.observaciones IN CsrOpcion;Error :          9;Ultimo Alias Activo: CABEPEDIDO;Ulti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3909,6 +2737,37 @@ mo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W9049Q.T
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 s Activo: CUEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\000094W9058B.TMP;Ultimo Control activo: 
 15-05-2026 19:01:50 , Pila de llamadas
 15-05-2026 19:01:51 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -3932,6 +2791,37 @@ s Activo: CUEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\L
 15-05-2026 19:01:55 , Nº de Linea :         53
 15-05-2026 19:01:55 , En el Fuente: 		XMLTOCURSOR(cFileCuerpo,"CuePedido",512+8192)
 15-05-2026 19:05:33 , REGNOTAPEDXML.CMDLEER.CLICK, Error: No se encuentra la variable 'ID'.;Linea : LOCATE FOR idcabpedido = CsrOpcion.id;Error :         12;Ultimo Alias Activo: CUEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3997,6 +2887,37 @@ EMP\000094W905D3.TMP;Ultimo Control activo:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 P\000094W905OK.TMP;Ultimo Control activo: 
 15-05-2026 19:17:28 , Pila de llamadas
 15-05-2026 19:17:29 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -4021,6 +2942,37 @@ P\000094W905OK.TMP;Ultimo Control activo:
 15-05-2026 19:17:32 , En el Fuente: SET ORDER TO idpedido
 18-05-2026 08:17:14 , REGNOTAPEDXML.CMDLEER.CLICK, Error: Error de análisis de XML: El documento XML debe tener un elemento de nivel superior.;
  línea 0, posición 0.   (null);Linea : XMLTOCURSOR(cFileName,"CabePedido",512+8192);Error :       1435;Ultimo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4063,6 +3015,37 @@ Alias Activo: CABEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 s Activo: CUEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\0000EHOP003W.TMP;Ultimo Control activo: 
 18-05-2026 08:18:50 , Pila de llamadas
 18-05-2026 08:18:51 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
@@ -4085,3 +3068,240 @@ s Activo: CUEPEDIDO;Ultimo registro:          1 ;DBF: C:\USERS\USUARIO\APPDATA\L
 18-05-2026 08:18:57 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
 18-05-2026 08:18:57 , Nº de Linea :         59
 18-05-2026 08:18:58 , En el Fuente: 		XMLTOCURSOR(cFileCuerpo,"CuePedido",512+8192)
+18-05-2026 10:52:49 , REGNOTAPEDXML.CMDSALVAR.CLICK, Error: No coinciden los tipos de datos.;Linea : replace idope WITH strzero(nIdOpe,5),idpedmobile WITH OscCabeza.id IN CsrAuxCabefac;Error :          9;Ultimo Alias Activo: CSRAUXCTACTE;Ultimo registro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          1 VAL(CNUMERO);DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00007WND01FT.TMP;Ultimo Control activo: 
+18-05-2026 10:52:49 , Pila de llamadas
+18-05-2026 10:52:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:52:50 , Objeto      : regnotapedxml.cmdsalvar.click
+18-05-2026 10:52:50 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:52:50 , Nº de Linea :          6
+18-05-2026 10:52:50 , En el Fuente: 		thisform.key_43()  
+18-05-2026 10:52:50 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:52:50 , Objeto      : regnotapedxml.key_43
+18-05-2026 10:52:51 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:52:51 , Nº de Linea :          6
+18-05-2026 10:52:51 , En el Fuente: 	thisform.cargarpedido()
+18-05-2026 10:52:51 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:52:51 , Objeto      : regnotapedxml.cargarpedido
+18-05-2026 10:52:51 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:52:51 , Nº de Linea :        130
+18-05-2026 10:52:52 , En el Fuente: 		replace idope WITH strzero(nIdOpe,5),idpedmobile WITH OscCabeza.id IN CsrAuxCabefac
+18-05-2026 10:55:02 , REGNOTAPEDXML.CMDSALVAR.CLICK, Error: No coinciden los tipos de datos.;Linea : iNSERT INTO CsrAuxVisitas(idcliente,idmaopera,idmotivo,idvendedor,idpedido,fecha,idope) VALUES (CsrAuxCtacte.id,0,nidmotivo,nidvendedor,OscCabeza.id,dfec
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ha,CsrAuxCabefac.idope);Error :          9;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         19 STR(IDARTICULO,10)+IDOPE;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00007WND01KD.TMP;Ultimo Control activo: 
+18-05-2026 10:55:02 , Pila de llamadas
+18-05-2026 10:55:03 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:55:03 , Objeto      : regnotapedxml.cmdsalvar.click
+18-05-2026 10:55:03 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:55:03 , Nº de Linea :          6
+18-05-2026 10:55:04 , En el Fuente: 		thisform.key_43()  
+18-05-2026 10:55:04 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:55:04 , Objeto      : regnotapedxml.key_43
+18-05-2026 10:55:04 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:55:05 , Nº de Linea :          6
+18-05-2026 10:55:05 , En el Fuente: 	thisform.cargarpedido()
+18-05-2026 10:55:05 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:55:05 , Objeto      : regnotapedxml.cargarpedido
+18-05-2026 10:55:05 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:55:05 , Nº de Linea :        245
+18-05-2026 10:55:06 , En el Fuente: 		iNSERT INTO CsrAuxVisitas(idcliente,idmaopera,idmotivo,idvendedor,idpedido,fecha,idope)			VALUES (CsrAuxCtacte.id,0,nidmotivo,nidvendedor,OscCabeza.id,dfecha,CsrAuxCabefac.idope)
+18-05-2026 10:56:52 , REGNOTAPEDXML.CMDSALVAR.CLICK, Error: No coinciden los tipos de datos.;Linea : iNSERT INTO CsrAuxVisitas(idcliente,idmaopera,idmotivo,idvendedor,idpedido,fecha,idope) VALUES (CsrAuxCtacte.id,0,nidmotivo,nidvendedor,OscCabeza.id,dfec
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ha,CsrAuxCabefac.idope);Error :          9;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         19 STR(IDARTICULO,10)+IDOPE;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00007WND01KD.TMP;Ultimo Control activo: 
+18-05-2026 10:56:53 , Pila de llamadas
+18-05-2026 10:56:53 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:56:53 , Objeto      : regnotapedxml.cmdsalvar.click
+18-05-2026 10:56:53 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:56:53 , Nº de Linea :          6
+18-05-2026 10:56:54 , En el Fuente: 		thisform.key_43()  
+18-05-2026 10:56:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:56:54 , Objeto      : regnotapedxml.key_43
+18-05-2026 10:56:54 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:56:54 , Nº de Linea :          6
+18-05-2026 10:56:54 , En el Fuente: 	thisform.cargarpedido()
+18-05-2026 10:56:54 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:56:54 , Objeto      : regnotapedxml.cargarpedido
+18-05-2026 10:56:54 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:56:55 , Nº de Linea :        245
+18-05-2026 10:56:55 , En el Fuente: 		iNSERT INTO CsrAuxVisitas(idcliente,idmaopera,idmotivo,idvendedor,idpedido,fecha,idope)			VALUES (CsrAuxCtacte.id,0,nidmotivo,nidvendedor,OscCabeza.id,dfecha,CsrAuxCabefac.idope)
+18-05-2026 10:59:11 , REGNOTAPEDXML.CMDSALVAR.CLICK, Error: No coinciden los tipos de datos.;Linea : iNSERT INTO CsrAuxVisitas(idcliente,idmaopera,idmotivo,idvendedor,idpedido,fecha,idope) VALUES (CsrAuxCtacte.id,0,nidmotivo,nidvendedor,OscCabeza.id,dfec
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ha,CsrAuxCabefac.idope);Error :          9;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         19 STR(IDARTICULO,10)+IDOPE;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00007WND01RO.TMP;Ultimo Control activo: 
+18-05-2026 10:59:11 , Pila de llamadas
+18-05-2026 10:59:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:59:12 , Objeto      : regnotapedxml.cmdsalvar.click
+18-05-2026 10:59:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:59:12 , Nº de Linea :          6
+18-05-2026 10:59:13 , En el Fuente: 		thisform.key_43()  
+18-05-2026 10:59:13 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:59:13 , Objeto      : regnotapedxml.key_43
+18-05-2026 10:59:13 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:59:14 , Nº de Linea :          6
+18-05-2026 10:59:14 , En el Fuente: 	thisform.cargarpedido()
+18-05-2026 10:59:14 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:59:15 , Objeto      : regnotapedxml.cargarpedido
+18-05-2026 10:59:15 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 10:59:15 , Nº de Linea :        245
+18-05-2026 10:59:17 , En el Fuente: 		iNSERT INTO CsrAuxVisitas(idcliente,idmaopera,idmotivo,idvendedor,idpedido,fecha,idope)			VALUES (CsrAuxCtacte.id,0,nidmotivo,nidvendedor,OscCabeza.id,dfecha,CsrAuxCabefac.idope)
+18-05-2026 11:02:10 , REGNOTAPEDXML.CMDSALVAR.CLICK, Error: El valor, tipo o número de argumentos no es válido para la función.;Linea : INSERT INTO CsrAuxPediPad (idpedido,idctacte,idmaopera,fecha,idope,origen,pedidoid_pm,lat,lng) VALUES (STR(OscCabeza.i
+
+
+
+
+
+
+
+
+
+
+d),CsrAuxCtacte.id,0,dfecha,CsrAuxCabefac.idope,"ANDRO" ,CsrAuxCabefac.pedidoid_pm,OscCabeza.lat,OscCabeza.lng);Error :         11;Ultimo Alias Activo: CSRAUXCUERFAC;Ultimo registro:         19 STR(IDARTICULO,10)+IDOPE;DBF: C:\USERS\USUARIO\APPDATA\LOCAL
+
+
+
+
+
+
+
+
+
+
+\TEMP\00007WND01XX.TMP;Ultimo Control activo: 
+18-05-2026 11:02:10 , Pila de llamadas
+18-05-2026 11:02:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:02:11 , Objeto      : regnotapedxml.cmdsalvar.click
+18-05-2026 11:02:11 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:02:11 , Nº de Linea :          6
+18-05-2026 11:02:11 , En el Fuente: 		thisform.key_43()  
+18-05-2026 11:02:11 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:02:12 , Objeto      : regnotapedxml.key_43
+18-05-2026 11:02:12 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:02:12 , Nº de Linea :          6
+18-05-2026 11:02:12 , En el Fuente: 	thisform.cargarpedido()
+18-05-2026 11:02:12 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:02:12 , Objeto      : regnotapedxml.cargarpedido
+18-05-2026 11:02:13 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:02:13 , Nº de Linea :        249
+18-05-2026 11:02:13 , En el Fuente: 		INSERT INTO CsrAuxPediPad (idpedido,idctacte,idmaopera,fecha,idope,origen,pedidoid_pm,lat,lng) VALUES 						(STR(OscCabeza.id),CsrAuxCtacte.id,0,dfecha,CsrAuxCabefac.idope,"ANDRO"						,CsrAuxCabefac.pedidoid_pm,OscC
+
+
+
+
+
+
+abeza.lat,OscCabeza.lng)
+18-05-2026 11:05:57 , REGNOTAPEDXML.CMDSALVAR.CLICK, Error: No hay ninguna tabla abierta en el área de trabajo actual.;Linea : CURSORSETPROP("Buffering",3,"CsrProducto");Error :         52;Ultimo Alias Activo: CSRAUXCUERPED;Ultimo registro:         20 CO
+
+
+
+
+
+DIGO;DBF: C:\USERS\USUARIO\APPDATA\LOCAL\TEMP\00007WND024G.TMP;Ultimo Control activo: 
+18-05-2026 11:05:58 , Pila de llamadas
+18-05-2026 11:05:58 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:05:58 , Objeto      : regnotapedxml.cmdsalvar.click
+18-05-2026 11:05:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:05:59 , Nº de Linea :          6
+18-05-2026 11:05:59 , En el Fuente: 		thisform.key_43()  
+18-05-2026 11:05:59 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:05:59 , Objeto      : regnotapedxml.key_43
+18-05-2026 11:05:59 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:05:59 , Nº de Linea :          6
+18-05-2026 11:06:00 , En el Fuente: 	thisform.cargarpedido()
+18-05-2026 11:06:00 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:06:00 , Objeto      : regnotapedxml.cargarpedido
+18-05-2026 11:06:00 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:06:01 , Nº de Linea :         54
+18-05-2026 11:06:01 , En el Fuente: thisform.cargarproductos(lcCodarticulo,lcCodCtacte)
+18-05-2026 11:06:01 , Programa    : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:06:01 , Objeto      : regnotapedxml.cargarproductos
+18-05-2026 11:06:01 , Base Objeto : j:\xsoftsql\proyectos\leon\forms\pedidos\regnotapedxml.sct
+18-05-2026 11:06:01 , Nº de Linea :         15
+18-05-2026 11:06:02 , En el Fuente: CURSORSETPROP("Buffering",3,"CsrProducto")
