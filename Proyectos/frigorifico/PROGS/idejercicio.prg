@@ -18,7 +18,7 @@ CASE goapp.codempresa = 1 &&Frigorifico Sur
 	cEmpresa = 'Sur'
 	goapp.terminal =2 &&4
 	goapp.terminal =9 &&despacho
-	goapp.terminal = 6 &&rrhh
+	*goapp.terminal = 6 &&rrhh
 	*GOAPP.IDUSUARIO = 1100000012 &&despacho
 ENDCASE 	
 
