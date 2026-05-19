@@ -23,7 +23,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lcVersion = "1.0.17"
+lcVersion = "1.0.18"
 
 lctituloGestion = "Gestion de Ventas"
 

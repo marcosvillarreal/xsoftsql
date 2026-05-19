@@ -1,4 +1,4 @@
-use frigosur
+use quaglia
 go
 SELECT *  FROM sys.objects
 WHERE type = 'U'
