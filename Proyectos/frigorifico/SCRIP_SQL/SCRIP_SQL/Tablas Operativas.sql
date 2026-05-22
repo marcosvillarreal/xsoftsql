@@ -1,4 +1,4 @@
-use nuevasirena11
+
 go
 delete from detanrocaja
 delete from movstock
