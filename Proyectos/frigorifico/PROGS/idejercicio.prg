@@ -1,5 +1,5 @@
 goapp.idsucursal = 1100000001
-GOAPP.IDUSUARIO = 1 &&1100000006
+GOAPP.IDUSUARIO = 1100000006
 cEmpresa = ''
 
 TEXT TO lcCmd TEXTMERGE NOSHOW 
@@ -16,9 +16,10 @@ goapp.ejercicio = CsrDetaConta.ejercicio
 DO CASE 
 CASE goapp.codempresa = 1 &&Frigorifico Sur
 	cEmpresa = 'Sur'
-	goapp.terminal =2 &&4
-	goapp.terminal =9 &&despacho
-	*goapp.terminal = 6 &&rrhh
+	*goapp.terminal =2 &&4
+	*goapp.terminal =9 &&despacho
+	*goapp.terminal = 6 &&yesi
+	goapp.terminal = 5 &&caro
 	*GOAPP.IDUSUARIO = 1100000012 &&despacho
 ENDCASE 	
 
