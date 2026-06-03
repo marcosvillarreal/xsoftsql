@@ -1,4 +1,4 @@
-use tapia
+
 go
 SELECT *  FROM sys.objects
 WHERE type = 'U'
