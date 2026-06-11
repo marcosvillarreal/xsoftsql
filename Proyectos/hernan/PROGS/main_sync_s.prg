@@ -152,7 +152,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "04.00.05"
+	goapp.version = "04.00.06"
 	
 	PUBLIC  gcicono
 	     
