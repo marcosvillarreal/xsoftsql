@@ -1,5 +1,5 @@
 TEXT TO lcCmd TEXTMERGE NOSHOW 
-select TOP 1 * from detaconta ORDER BY id desc
+select TOP 1 * from detaconta WHERE ejercicio=16 ORDER BY id desc
 ENDTEXT 
 IF NOT CrearCursorAdapter('CsrDetaConta',lcCmd)
 	RETURN 

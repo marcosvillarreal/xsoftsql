@@ -11,11 +11,11 @@ and isnull(idctafortin ,-1) = -1
 and cnombre > 'D'
 order by c.cnombre,c.cuit desc
 
---select r.id,r.numero+334,r.nombre,recargo,idtipovta,idtipoprod,perceibruto,idfuerzavta,nolista,porcecomi,porcedev,porcesuge,switch,nocomisiona,oferta,fechainicio,fechafin,observaciones,idproveedor1,idproveedor2,idproveedor3,idproveedor4,margen1,bonif1,bonif2,bonif3,bonif4,bonif5,flete,tipoflete,tienedimension
---from  rubro r 
---where not id in (1100001111,1100001116)
---union all
---select r.id,r.numero+333,r.nombre,recargo,idtipovta,idtipoprod,perceibruto,idfuerzavta,nolista,porcecomi,porcedev,porcesuge,switch,nocomisiona,oferta,fechainicio,fechafin,observaciones,idproveedor1,idproveedor2,idproveedor3,idproveedor4,margen1,bonif1,bonif2,bonif3,bonif4,bonif5,flete,tipoflete,tienedimension
---from  rubro r 
---where  id in (1100001111)
+--use fortin
+--go
 
+--select distinct c.id,cnumero,c.cnombre,c.cuit
+----select distinct r.*
+--from producto p
+--inner join ctacte  c on p.idctacte = c.id
+--where cnombre > 'D' order by c.cnombre,c.cuit desc
