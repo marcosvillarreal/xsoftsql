@@ -18,8 +18,9 @@ CASE goapp.codempresa = 1 &&Frigorifico Sur
 	cEmpresa = 'Sur'
 	GOAPP.IDUSUARIO = 1 
 	*GOAPP.IDUSUARIO = 1100000006 && Caro
-	GOAPP.IDUSUARIO = 14 && dEP
+	*GOAPP.IDUSUARIO = 14 && dEP
 	*GOAPP.IDUSUARIO = 1100000014 && YESI
+	*GOAPP.IDUSUARIO = 1100000009 &&cali
 	
 	goapp.terminal =1 &&4
 	goapp.terminal =9 &&despacho
@@ -27,7 +28,9 @@ CASE goapp.codempresa = 1 &&Frigorifico Sur
 	*goapp.terminal = 5 &&caro
 	**goapp.terminal = 7 &&romina
 	*goapp.terminal = 8 &&mable
+	goapp.terminal =4 &&cali
 	*GOAPP.IDUSUARIO = 1100000012 &&despacho
+	
 ENDCASE 	
 
 
