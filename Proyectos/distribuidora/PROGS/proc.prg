@@ -1,3 +1,36 @@
+FUNCTION CrearCodigoBarras
+PARAMETERS lcCódigoEAN 
+
+IF LEN(LTRIM(lcCódigoEAN))=0
+	lcArchivoImagen = ADDBS(SYS(5)+CURDIR()) + "CodBarra\cod_default.png" 
+	RETURN lcArchivoImagen 
+ENDIF 
+
+* 1. Definimos la ruta donde se va a guardar la imagen temporal
+lcArchivoImagen = ADDBS(SYS(5)+CURDIR()) + "CodBarra\cod_"+lcCódigoEAN+".png" 
+
+IF NOT FILE(lcArchivoImagen)
+	* 3. Inicializamos FoxBarcode
+	*SET PROCEDURE TO FoxBarcode.prg ADDITIVE
+	loBarcode = CREATEOBJECT("FoxBarcode")
+
+	IF TYPE("loBarcode") # "O"    
+		MESSAGEBOX("No se pudo cargar la librería FoxBarcode. Verificá que los PRG estén en el PATH.", 16, "Error")    
+		RETURN
+	ENDIF
+
+	* 4. Configuramos las propiedades para que quede idéntico a una góndola
+	WITH loBarcode    
+		.nBarcodeType     = 110 && 110 corresponde al estándar EAN-13    
+		.nImageHeight     = 80  && Altura de la barra en píxeles (ajustalo a tu diseño)    
+		.cImageType       = "PNG"    
+		.lShowHumanReadableText = .T. && .T. si querés que abajo de las barras dibuje el número (como la imagen 1)
+	ENDWITH
+	* 5. Generamos el archivo físico en el disco
+	loBarcode.BarcodeImage(lcCódigoEAN, lcArchivoImagen)
+ENDIF 
+
+RETURN lcArchivoImagen 
 
 
 *------------------------------------------------------------------------------

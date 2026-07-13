@@ -1,4 +1,4 @@
-USE [delpuerto]
+
 GO
 
 /****** Object:  Table [dbo].[listaprecio]    Script Date: 26/11/2025 18:33:44 ******/
@@ -13,6 +13,7 @@ CREATE TABLE [dbo].[listaprecio](
 	[numero] [int] NOT NULL,
 	[nombre] [nvarchar](50) NOT NULL,
 	[margen] [numeric](6, 3) NOT NULL,
+	[abrevia] [char](2) NOT NULL,
  CONSTRAINT [PK_listaprecio] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

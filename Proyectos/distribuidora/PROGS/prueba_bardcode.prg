@@ -1,0 +1,30 @@
+*-------------------------------------------------------------------------
+* PRUEBA DE GENERACIÓN DE CÓDIGO DE BARRAS EAN-13
+*-------------------------------------------------------------------------
+LOCAL loBarcode, lcArchivoImagen, lcCódigoEAN
+stop()
+* 1. Definimos la ruta donde se va a guardar la imagen temporal
+lcArchivoImagen = ADDBS(SYS(5)+CURDIR()) + "gondola_temp.png" 
+* 2. El código EAN-13 (12 o 13 dígitos. Si ponés 12, la clase calcula el dígito verificador sola)
+lcCódigoEAN = "7798062540109" 
+* 3. Inicializamos FoxBarcode
+*SET PROCEDURE TO FoxBarcode.prg ADDITIVE
+loBarcode = CREATEOBJECT("FoxBarcode")
+
+IF TYPE("loBarcode") # "O"    
+	MESSAGEBOX("No se pudo cargar la librería FoxBarcode. Verificá que los PRG estén en el PATH.", 16, "Error")    
+	RETURN
+ENDIF
+* 4. Configuramos las propiedades para que quede idéntico a una góndola
+WITH loBarcode    
+	.nBarcodeType     = 110 && 110 corresponde al estándar EAN-13    
+	.nImageHeight     = 80  && Altura de la barra en píxeles (ajustalo a tu diseño)    
+	.cImageType       = "PNG"    
+	.lShowHumanReadableText = .T. && .T. si querés que abajo de las barras dibuje el número (como la imagen 1)
+ENDWITH
+* 5. Generamos el archivo físico en el disco
+loBarcode.BarcodeImage(lcCódigoEAN, lcArchivoImagen)
+*-------------------------------------------------------------------------
+* ¡Listo! Ahora la variable 'lcArchivoImagen' tiene la ruta del PNG listo 
+* para meter en el control Image del reporte (.FRX)
+*-------------------------------------------------------------------------
