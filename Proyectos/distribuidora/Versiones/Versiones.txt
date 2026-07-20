@@ -494,4 +494,12 @@ Pmbio34EchHEExRwUkForCdjscgH9vnRhNVnxCVbHdQ=
 21/04/2026 Muller
 18/05/2026 Quaglia
 
+20/07/2026
+	Comprobante idclasecomp int
+	
+	update comprobante set idclasecomp = clasecomp.id
+	from comprobante 
+	inner join clasecomp on comprobante.clase = clasecomp.codigo and comprobante.clasetipo = clasecomp.tipo
 
+20/07/2026 Quaglia
+20/07/2026 LNS
