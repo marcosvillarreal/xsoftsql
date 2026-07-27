@@ -476,3 +476,213 @@ RuntimeError: Archivos no encontrados: J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipC
   File "wsaa.pyc", line 96, in sign_tra
 RuntimeError: Archivos no encontrados: J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Gestion.key                                                                               , J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\LyrisCDP.crt                                                                              
 
+24-07-2026 15:56:41 , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionError al cargar el certificado crtError al cargar la clave del certificadoCodigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cRuta + this.pcrt, cRuta + this.pkey) && Cert. DemoProcedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invoke_
+  File "win32com\server\policy.pyc", line 585, in _invokeex_
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 96, in sign_tra
+RuntimeError: Archivos no encontrados: J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Produccion.key, J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Produccion.crt
+.Exepción: RuntimeError: Archivos no encontrados: J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Produccion.key, J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Produccion.crt
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 96, in sign_tra
+RuntimeError: Archivos no encontrados: J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Produccion.key, J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\Produccion.crt
+
+24-07-2026 15:57:02 , Iniciando FeedBackWSSA Version 2.11c WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados DesarrolloCodigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cruta + this.hcrt, cruta + this.hkey)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.pyc", line 277, in _Invoke_
+  File "win32com\server\policy.pyc", line 282, in _invoke_
+  File "win32com\server\policy.pyc", line 585, in _invokeex_
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 100, in sign_tra
+  File "M2Crypto\SMIME.pyc", line 143, in load_key_bio
+  File "M2Crypto\EVP.pyc", line 389, in load_key_bio
+EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+.Exepción: EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 100, in sign_tra
+  File "M2Crypto\SMIME.pyc", line 143, in load_key_bio
+  File "M2Crypto\EVP.pyc", line 389, in load_key_bio
+EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+
+24-07-2026 17:06:13 , Iniciando FeedBackCodigo error afip:*****Numero de Error: 1426Linea de codigo de error: WSAA = CREATEOBJECT("WSAA")Procedimiento: sw_wsaa_iniciarError VFP: Código de error OLE 0x80004005: Unspecified error.Exepción: EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 100, in sign_tra
+  File "M2Crypto\SMIME.pyc", line 143, in load_key_bio
+  File "M2Crypto\EVP.pyc", line 389, in load_key_bio
+EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+
+24-07-2026 17:06:24 , Iniciando FeedBackCodigo error afip:*****Numero de Error: 1426Linea de codigo de error: WSAA = CREATEOBJECT("WSAA")Procedimiento: sw_wsaa_iniciarError VFP: Código de error OLE 0x80004005: Unspecified error.Exepción: EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 100, in sign_tra
+  File "M2Crypto\SMIME.pyc", line 143, in load_key_bio
+  File "M2Crypto\EVP.pyc", line 389, in load_key_bio
+EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+
+24-07-2026 17:06:35 , Iniciando FeedBackCodigo error afip:*****Numero de Error: 1426Linea de codigo de error: WSAA = CREATEOBJECT("WSAA")Procedimiento: sw_wsaa_iniciarError VFP: Código de error OLE 0x80004005: Unspecified error.Exepción: EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 100, in sign_tra
+  File "M2Crypto\SMIME.pyc", line 143, in load_key_bio
+  File "M2Crypto\EVP.pyc", line 389, in load_key_bio
+EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+
+24-07-2026 17:11:22 , Iniciando FeedBackCodigo error afip:*****Numero de Error: 1426Linea de codigo de error: WSAA = CREATEOBJECT("WSAA")Procedimiento: sw_wsaa_iniciarError VFP: Código de error OLE 0x80004005: Unspecified error.Exepción: EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+Traceback: Traceback (most recent call last):
+  File "utils.pyc", line 157, in capturar_errores_wrapper
+  File "wsaa.pyc", line 258, in SignTRA
+  File "wsaa.pyc", line 100, in sign_tra
+  File "M2Crypto\SMIME.pyc", line 143, in load_key_bio
+  File "M2Crypto\EVP.pyc", line 389, in load_key_bio
+EVPError: 19276:error:0906D06C:PEM routines:PEM_read_bio:no start line:.\crypto\pem\pem_lib.c:696:Expecting: ANY PRIVATE KEY
+
+
+24-07-2026 17:23:58 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados ProduccionError al cargar el certificado crtError al cargar la clave del certificadoCodigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cRuta + this.pcrt, cRuta + this.pkey) && Cert. DemoProcedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 446, in SignTRA
+AttributeError: 'memoryview' object has no attribute 'decode'
+.Exepción: AttributeError: 'memoryview' object has no attribute 'decode'
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 446, in SignTRA
+AttributeError: 'memoryview' object has no attribute 'decode'
+
+24-07-2026 17:25:47 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados DesarrolloCodigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cruta + this.hcrt, cruta + this.hkey)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 446, in SignTRA
+AttributeError: 'memoryview' object has no attribute 'decode'
+.Exepción: AttributeError: 'memoryview' object has no attribute 'decode'
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 446, in SignTRA
+AttributeError: 'memoryview' object has no attribute 'decode'
+
+24-07-2026 17:40:44 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados DesarrolloCodigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cruta + this.hcrt, cruta + this.hkey)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 447, in SignTRA
+  File "pyafipws\wsaa.py", line 263, in sign_tra
+  File "pyafipws\wsaa.py", line 127, in sign_tra_new
+  File "cryptography\hazmat\primitives\serialization\base.py", line 25, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 747, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 929, in _load_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 950, in _handle_key_loading_error
+ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorit.Exepción: ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 447, in SignTRA
+  File "pyafipws\wsaa.py", line 263, in sign_tra
+  File "pyafipws\wsaa.py", line 127, in sign_tra_new
+  File "cryptography\hazmat\primitives\serialization\base.py", line 25, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 747, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 929, in _load_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 950, in _handle_key_loading_error
+ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+
+24-07-2026 17:41:26 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados DesarrolloCodigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cruta + this.hcrt, cruta + this.hkey)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 447, in SignTRA
+  File "pyafipws\wsaa.py", line 263, in sign_tra
+  File "pyafipws\wsaa.py", line 127, in sign_tra_new
+  File "cryptography\hazmat\primitives\serialization\base.py", line 25, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 747, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 929, in _load_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 950, in _handle_key_loading_error
+ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorit.Exepción: ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 447, in SignTRA
+  File "pyafipws\wsaa.py", line 263, in sign_tra
+  File "pyafipws\wsaa.py", line 127, in sign_tra_new
+  File "cryptography\hazmat\primitives\serialization\base.py", line 25, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 747, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 929, in _load_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 950, in _handle_key_loading_error
+ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+
+24-07-2026 17:46:22 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados DesarrolloJ:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\homo_20126112824.CRT                                                                      J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\homo_20126112824.CRT                                                                      Codigo error afip:*****Numero de Error: 1429Linea de codigo de error: cms = WSAA.SignTRA(tra, cruta + this.hcrt, cruta + this.hkey)Procedimiento: sw_wsaa_iniciarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 447, in SignTRA
+  File "pyafipws\wsaa.py", line 263, in sign_tra
+  File "pyafipws\wsaa.py", line 127, in sign_tra_new
+  File "cryptography\hazmat\primitives\serialization\base.py", line 25, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 747, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 929, in _load_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 950, in _handle_key_loading_error
+ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorit.Exepción: ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsaa.py", line 447, in SignTRA
+  File "pyafipws\wsaa.py", line 263, in sign_tra
+  File "pyafipws\wsaa.py", line 127, in sign_tra_new
+  File "cryptography\hazmat\primitives\serialization\base.py", line 25, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 747, in load_pem_private_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 929, in _load_key
+  File "cryptography\hazmat\backends\openssl\backend.py", line 950, in _handle_key_loading_error
+ValueError: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+
+24-07-2026 17:47:09 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados DesarrolloJ:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\homo_20126112824.CRT                                                                      J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\homo_20126112824.key                                                                      Solicitando TAError sw_iniciar pero continua Ya posee un TA activoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TACodigo error afip:*****Numero de Error: 1429Linea de codigo de error: wsfe.SetTicketAcceso(ta)Procedimiento: sw_wsfe_conectarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\utils.py", line 471, in SetTicketAcceso
+RuntimeError: Ticket de Acceso vacio!
+.Exepción: RuntimeError: Ticket de Acceso vacio!
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\utils.py", line 471, in SetTicketAcceso
+RuntimeError: Ticket de Acceso vacio!
+
+24-07-2026 17:49:17 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distCertificados DesarrolloJ:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\homo_20126112824.CRT                                                                      J:\XSOFTSQL\PROYECTOS\DISTRIBUIDORA\AfipCert\homo_20126112824.key                                                                      Solicitando TATA Almacenado wsfe_20126112824WSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFECodigo error afip:*****Numero de Error: 1429Linea de codigo de error: ok = WSFE.Conectar()      && HomologaciÃ³nProcedimiento: sw_wsfe_conectarError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 335, in Conectar
+  File "pysimplesoap\client.py", line 169, in __init__
+  File "pysimplesoap\client.py", line 839, in wsdl_parse
+TypeError: Strings must be encoded before hashing
+.Exepción: TypeError: Strings must be encoded before hashing
+Traceback: Traceback (most recent call last):
+  File "pyafipws\utils.py", line 335, in Conectar
+  File "pysimplesoap\client.py", line 169, in __init__
+  File "pysimplesoap\client.py", line 839, in wsdl_parse
+TypeError: Strings must be encoded before hashing
+
+24-07-2026 17:59:09 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distTA recuperadoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OK
+24-07-2026 18:12:42 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distTA recuperadoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OKWSFE.CompUltimoAutorizado(6,3)
+24-07-2026 18:21:13 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distTA recuperadoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OKWSFE.CompUltimoAutorizado(6,3)Consultamos la fecha del ultimo comprobanteWSFE.CompConsultar(6,3,1)Fecha Ulti: 24-07-2026Llamada: WSFE.CAESolicitarOrden:11000004677410246: Campo Condicion Frente al IVA del receptor es obligatorio conforme a lo reglamentado por la Resolucion General Nro 5616. Para mas informacion consular metodo FEParamGetCondicionIvaReceptor
