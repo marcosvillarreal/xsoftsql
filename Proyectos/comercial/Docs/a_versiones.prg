@@ -2,7 +2,9 @@
 *Aviso de falta de stock (PuntoF)
 
 
-TEXT TO lcVersiones TEXTMERGE NOSHOW 
+TEXT TO lcVersiones TEXTMERGE NOSHOW
+2.1.59
+	Subdiario de Acopio 
 2.1.58
 	Desactivar las paramatrixacion de bonifdicaciones
 2.1.57
