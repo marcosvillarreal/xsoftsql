@@ -686,3 +686,50 @@ TypeError: Strings must be encoded before hashing
 24-07-2026 17:59:09 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distTA recuperadoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OK
 24-07-2026 18:12:42 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distTA recuperadoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OKWSFE.CompUltimoAutorizado(6,3)
 24-07-2026 18:21:13 , Iniciando FeedBackWSSA Version 3.13b HomologaciónWSSA InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distTA recuperadoWSFE Version 3.28b HomologaciónWSFE InstallDir E:\GitHub\xsoftai\Proyectos\SistemasAgiles\pyafipws\distEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OKWSFE.CompUltimoAutorizado(6,3)Consultamos la fecha del ultimo comprobanteWSFE.CompConsultar(6,3,1)Fecha Ulti: 24-07-2026Llamada: WSFE.CAESolicitarOrden:11000004677410246: Campo Condicion Frente al IVA del receptor es obligatorio conforme a lo reglamentado por la Resolucion General Nro 5616. Para mas informacion consular metodo FEParamGetCondicionIvaReceptor
+03-08-2026 09:39:13 , Iniciando FeedBackWSSA Version 3.13b WSSA InstallDir C:\GMSOLU~1\PyAfipWsCertificados ProduccionSolicitando TATA Almacenado wsfe_20180659030WSFE Version 3.28b WSFE InstallDir C:\GMSOLU~1\PyAfipWsEnviando TAConectando al servicio WSFEConexion Exitosaappserver status OKdbserver status OKauthserver status OKWSFE.CompUltimoAutorizado(8,6)Codigo error afip:*****Numero de Error: 1429Linea de codigo de error: UltCBTE = WSFE.CompUltimoAutorizado(cTipoCbte, cPrefijo)Procedimiento: sw_ultimocomprobaError VFP: Código de excepción OLE IDispatch 0 de Python COM Server Internal Error: Unexpected Python Error: Traceback (most recent call last):
+  File "win32com\server\policy.py", line 298, in _Invoke_
+  File "win32com\server\policy.py", line 303, in _invoke_
+  File "win32com\server\policy.py", line 631, in _invokeex_
+  File "pyafipws\utils.py", line 193, in capturar_errores_wrapper
+TypeError: 'ConnectionResetError' object is not subscriptable
+.Exepción: TypeError: 'ConnectionResetError' object is not subscriptable
+Traceback: Traceback (most recent call last):
+  File "pysimplesoap\transport.py", line 118, in _conn_request
+  File "httplib2\__init__.py", line 1398, in _conn_request
+  File "http\client.py", line 1367, in request
+  File "http\client.py", line 1413, in _send_request
+  File "http\client.py", line 1362, in endheaders
+  File "http\client.py", line 1122, in _send_output
+  File "http\client.py", line 1086, in send
+  File "ssl.py", line 1263, in sendall
+  File "ssl.py", line 1232, in send
+ConnectionResetError: [Errno 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyafipws\utils.py", line 191, in capturar_errores_wrapper
+  File "pyafipws\wsfev1.py", line 537, in CompUltimoAutorizado
+  File "pysimplesoap\client.py", line 159, in <lambda>
+  File "pysimplesoap\client.py", line 354, in wsdl_call
+  File "pysimplesoap\client.py", line 230, in call
+  File "pysimplesoap\client.py", line 265, in send
+  File "httplib2\__init__.py", line 1755, in request
+  File "httplib2\__init__.py", line 1475, in _request
+  File "pysimplesoap\transport.py", line 134, in _conn_request
+  File "pysimplesoap\transport.py", line 118, in _conn_request
+  File "httplib2\__init__.py", line 1427, in _conn_request
+  File "http\client.py", line 1459, in getresponse
+  File "http\client.py", line 336, in begin
+  File "http\client.py", line 297, in _read_status
+  File "socket.py", line 729, in readinto
+  File "ssl.py", line 1304, in recv_into
+  File "ssl.py", line 1138, in read
+ConnectionResetError: [Errno 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyafipws\utils.py", line 193, in capturar_errores_wrapper
+TypeError: 'ConnectionResetError' object is not subscriptable
+
