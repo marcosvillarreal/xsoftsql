@@ -1,4 +1,4 @@
-USE [juma]
+
 GO
 
 /****** Object:  Table [dbo].[productoimg]    Script Date: 10/7/2025 16:03:41 ******/
