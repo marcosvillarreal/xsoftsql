@@ -35,3 +35,10 @@
 --ON [dbo].[maopera] ([idvendedor], [origen], [idcomproba])
 --INCLUDE ([numcomp], [clasecomp])
 --WHERE estado <> '1'; -- Solo incluye las filas que realmente consulta el reporte
+--go
+
+--CREATE NONCLUSTERED INDEX IX_movstock_articulo_subarti_deposito_fecha
+--ON [dbo].[movstock] ([idarticulo], [idsubarti], [iddeposito], [fecha])
+--INCLUDE ([cantidad], [signo]);
+
+
