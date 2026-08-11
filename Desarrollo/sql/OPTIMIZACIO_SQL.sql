@@ -41,4 +41,19 @@
 --ON [dbo].[movstock] ([idarticulo], [idsubarti], [iddeposito], [fecha])
 --INCLUDE ([cantidad], [signo]);
 
+-- Resuelve la lectura masiva de 57k filas en fleteplanilla
+--CREATE NONCLUSTERED INDEX IX_fleteplanilla_numero_opt 
+--ON dbo.fleteplanilla (numero, idfletero) 
+--INCLUDE (fecha, switch, estado, nombre, espedido, estadomov, comprometida);
 
+---- Optimiza los joins y conteos de ncuerfac
+--CREATE NONCLUSTERED INDEX IX_ncuerfac_idcabeza_cant 
+--ON dbo.ncuerfac (idcabeza, cantidad);
+
+--CREATE NONCLUSTERED INDEX IX_cabeasi_renumeracion 
+--ON dbo.cabeasi (idejercicio, fecha, tipoasi, id) 
+--INCLUDE (numero);
+
+--CREATE NONCLUSTERED INDEX IX_MovCtacte_fecha_opt
+--ON dbo.MovCtacte (fecha, idctacte, idmaopera)
+--INCLUDE (importe, signo, saldo, vencimien);

@@ -2,6 +2,13 @@ use leon
 
 go
 
+---- 1. Limpia los planes compilados en caché (fuerza a recompilar usando el nuevo índice)
+--DBCC FREEPROCCACHE;
+
+---- 2. Limpia los datos de las tablas de la memoria RAM (fuerza a leer desde el disco por primera vez)
+--DBCC DROPCLEANBUFFERS;
+--go
+
 SELECT TOP 10
     qs.total_elapsed_time / 1000 AS TiempoTotal_ms,
     qs.total_elapsed_time / qs.execution_count / 1000 AS TiempoPromedio_ms,
