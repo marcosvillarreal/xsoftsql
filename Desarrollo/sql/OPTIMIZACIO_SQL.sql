@@ -57,3 +57,17 @@
 --CREATE NONCLUSTERED INDEX IX_MovCtacte_fecha_opt
 --ON dbo.MovCtacte (fecha, idctacte, idmaopera)
 --INCLUDE (importe, signo, saldo, vencimien);
+
+-- 2. Crear los índices optimizados
+--CREATE NONCLUSTERED INDEX IX_maopera_sucursal_vendedor_opt
+--ON dbo.maopera (sucursal, estado, clasecomp, idvendedor)
+--INCLUDE (idcomproba, numcomp);
+
+--CREATE NONCLUSTERED INDEX IX_cabefac_rendida_idmaopera
+--ON dbo.cabefac (rendida, idmaopera)
+--INCLUDE (idctacte, total, fecha, idtipoiva, idplanpago);
+
+---- Para acelerar consultas y reportes por fecha de facturación estimada
+--CREATE NONCLUSTERED INDEX IX_cabefac_fechafacest
+--ON dbo.cabefac (fechafacest)
+--INCLUDE (idmaopera, idctacte, fecha);
