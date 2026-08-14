@@ -318,6 +318,11 @@ IF TYPE('goApp')='O'
 		_screen.picture= 'fondo512.jpg'
 	ENDIF 
 	
+	TEXT TO lcCmd NOSHOW
+    EXEC dbo.sp_ReconciliarSaldosCtaCte;
+	ENDTEXT
+	=CrearCursorAdapter('csrDummy', lcCmd)
+
 	lnuevomenu = .f.
 	LOCAL oMenu
 	oDesktop = ''

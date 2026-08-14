@@ -71,3 +71,9 @@
 --CREATE NONCLUSTERED INDEX IX_cabefac_fechafacest
 --ON dbo.cabefac (fechafacest)
 --INCLUDE (idmaopera, idctacte, fecha);
+
+--DROP INDEX IF EXISTS IX_cabefac_rendida_idmaopera ON dbo.cabefac;
+
+--CREATE NONCLUSTERED INDEX IX_cabefac_rendida_idmaopera
+--ON dbo.cabefac (rendida, idmaopera)
+--INCLUDE (idctacte, ctacte, cnombre, total, fecha, bonif1, bonif2, signo, idtipoiva, idtiponcredito, idplanpago);
