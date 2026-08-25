@@ -41,7 +41,7 @@
 --ON [dbo].[movstock] ([idarticulo], [idsubarti], [iddeposito], [fecha])
 --INCLUDE ([cantidad], [signo]);
 
--- Resuelve la lectura masiva de 57k filas en fleteplanilla
+---- Resuelve la lectura masiva de 57k filas en fleteplanilla
 --CREATE NONCLUSTERED INDEX IX_fleteplanilla_numero_opt 
 --ON dbo.fleteplanilla (numero, idfletero) 
 --INCLUDE (fecha, switch, estado, nombre, espedido, estadomov, comprometida);
@@ -58,7 +58,7 @@
 --ON dbo.MovCtacte (fecha, idctacte, idmaopera)
 --INCLUDE (importe, signo, saldo, vencimien);
 
--- 2. Crear los índices optimizados
+---- 2. Crear los índices optimizados
 --CREATE NONCLUSTERED INDEX IX_maopera_sucursal_vendedor_opt
 --ON dbo.maopera (sucursal, estado, clasecomp, idvendedor)
 --INCLUDE (idcomproba, numcomp);
@@ -72,7 +72,7 @@
 --ON dbo.cabefac (fechafacest)
 --INCLUDE (idmaopera, idctacte, fecha);
 
---DROP INDEX IF EXISTS IX_cabefac_rendida_idmaopera ON dbo.cabefac;
+----DROP INDEX IF EXISTS IX_cabefac_rendida_idmaopera ON dbo.cabefac;
 
 --CREATE NONCLUSTERED INDEX IX_cabefac_rendida_idmaopera
 --ON dbo.cabefac (rendida, idmaopera)

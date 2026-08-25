@@ -21,7 +21,7 @@ set talk off
 public lldesarrollo
 lldesarrollo=(_vfp.startmode()#4)
 
-lcVersion = "01.00.12"
+lcVersion = "01.00.13"
 
 _vfp.AutoYield = .f.
 
