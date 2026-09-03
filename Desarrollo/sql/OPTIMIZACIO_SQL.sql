@@ -44,7 +44,7 @@
 ---- Resuelve la lectura masiva de 57k filas en fleteplanilla
 --CREATE NONCLUSTERED INDEX IX_fleteplanilla_numero_opt 
 --ON dbo.fleteplanilla (numero, idfletero) 
---INCLUDE (fecha, switch, estado, nombre, espedido, estadomov, comprometida);
+--INCLUDE (fecha, switch, estado, nombre, estadomov, comprometida);
 
 ---- Optimiza los joins y conteos de ncuerfac
 --CREATE NONCLUSTERED INDEX IX_ncuerfac_idcabeza_cant 
