@@ -1,4 +1,4 @@
-USE montenegro
+
 GO
 
 /****** Object:  Table [dbo].[categoria]    Script Date: 22/1/2026 18:56:15 ******/
