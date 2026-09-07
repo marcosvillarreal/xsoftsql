@@ -229,7 +229,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 	
-	goapp.version = "01.00.19"
+	goapp.version = "01.00.20"
 	goapp.gmsoft = "hotel"
 	
 	PUBLIC  gcicono
