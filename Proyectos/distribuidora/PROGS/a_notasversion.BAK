@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.19
+	Remitos de Descartes , no se listan en el resuemn de cierre
 2.4.18
 	ListaEstadistica, nofactura<>2 cuando no se elige
 2.4.17
