@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.22
+	RegFacVta - Percepcion IVA - Consultar
 2.4.21
 	ERROR RegFacPub F3
 2.4.20
