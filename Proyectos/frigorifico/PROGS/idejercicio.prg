@@ -27,7 +27,7 @@ CASE goapp.codempresa = 1 &&Frigorifico Sur
 	*goapp.terminal = 6 &&yesi
 	*goapp.terminal = 5 &&caro
 	goapp.terminal = 7 &&romina
-	*goapp.terminal = 8 &&mable
+	goapp.terminal = 8 &&mable
 	*goapp.terminal =4 &&cali
 	*GOAPP.IDUSUARIO = 1100000012 &&despacho
 	
