@@ -14,7 +14,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Gestión de Ventas"
-lcVersion = "04.00.12"
+lcVersion = "04.00.13"
 *!*	If !lldesarrollo
 *!*	   If f_activawin(lctituloGestion)
 *!*	  
