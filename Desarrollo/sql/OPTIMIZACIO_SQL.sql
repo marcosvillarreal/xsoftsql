@@ -1,4 +1,8 @@
 --OPTIMIZACION SQL
+
+
+
+
 go
 CREATE NONCLUSTERED INDEX IX_CabeAsi_ejercicio_numero 
 ON [dbo].[CabeAsi] ([idejercicio], [numero] DESC);
