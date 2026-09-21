@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.24
+	RegFacVta P , habre ventana de articulos pesables
 2.4.23
 	RegFacPub, se estan grabando descartes al usear ORDEN
 2.4.22

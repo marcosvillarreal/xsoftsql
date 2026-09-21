@@ -6,6 +6,7 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 ---Notas de Version
 2.4.24
 	RegFacVta P , habre ventana de articulos pesables
+	RegFacPub Bloq para LNS F9
 2.4.23
 	RegFacPub, se estan grabando descartes al usear ORDEN
 2.4.22
