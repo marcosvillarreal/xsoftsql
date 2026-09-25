@@ -56,6 +56,7 @@ CASE goapp.codempresa = 9
 	*goapp.idejercicio = 1200000029
 	goapp.terminal = 2
 	goapp.idusuario = 1
+	goapp.sucursal = 2
 CASE goapp.codempresa = 10
 	lcEmpresa = 'Ferrimac'&&
 	*goapp.idejercicio = 1100000026
@@ -70,23 +71,23 @@ CASE goapp.codempresa = 11
 ENDCASE 
 *goapp.codempresa = 1
 
-TEXT TO lccmd TEXTMERGE noshow
-SELECT Usuarios.*,Perfiles.switch 
-FROM usuarios
-left join perfiles on usuarios.idperfil= perfiles.id 
-WHERE usuarios.id = <<goapp.idusuario>> 
-ENDTEXT
-IF CrearCursorAdapter('CSRUSR',lcCmd)
+*!*	TEXT TO lccmd TEXTMERGE noshow
+*!*	SELECT Usuarios.*,Perfiles.switch 
+*!*	FROM usuarios
+*!*	left join perfiles on usuarios.idperfil= perfiles.id 
+*!*	WHERE usuarios.id = <<goapp.idusuario>> 
+*!*	ENDTEXT
+*!*	IF CrearCursorAdapter('CSRUSR',lcCmd)
 
- 	goapp.perfilusuario=csrusr.idperfil
-   goapp.switchUsuario = csrusr.switch
-   goapp.nombreusuario=csrusr.nombre
-   goapp.switchPerfil = CsrUsr.switch
-   goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
-   goapp.usuarioidemail = NVL(CsrUsr.idemail,0)
+*!*	 	goapp.perfilusuario=csrusr.idperfil
+*!*	   goapp.switchUsuario = csrusr.switch
+*!*	   goapp.nombreusuario=csrusr.nombre
+*!*	   goapp.switchPerfil = CsrUsr.switch
+*!*	   goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
+*!*	   goapp.usuarioidemail = NVL(CsrUsr.idemail,0)
 
-	oavisar.usuario(lcEmpresa + CHR(13)+'goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
-				+'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13);
-				+'Goapp.terminal =' + STR(goapp.terminal))
-	USE IN CSRUSR
-ENDIF 
+*!*		oavisar.usuario(lcEmpresa + CHR(13)+'goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
+*!*					+'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13);
+*!*					+'Goapp.terminal =' + STR(goapp.terminal))
+*!*		USE IN CSRUSR
+*!*	ENDIF 

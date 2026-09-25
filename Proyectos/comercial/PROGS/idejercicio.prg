@@ -84,7 +84,7 @@ IF CrearCursorAdapter('CSRUSR',lcCmd)
    goapp.nombreusuario=csrusr.nombre
    goapp.switchPerfil = CsrUsr.switch
    goapp.usuariotempleate = NVL(CsrUsr.templeate,1)
-   goapp.usuarioidemail = NVL(CsrUsr.idemail,0)
+   *goapp.usuarioidemail = NVL(CsrUsr.idemail,0)
 
 	oavisar.usuario(lcEmpresa + CHR(13)+'goapp.idejercicio = '+LTRIM(STR(goapp.idejercicio))+CHR(13);
 				+'GOAPP.SUCURSAL10 = '+STR(GOAPP.SUCURSAL10)+CHR(13);
