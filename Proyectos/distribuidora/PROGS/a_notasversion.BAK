@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.25
+	ERROR en el Sync-Lote
 2.4.24
 	RegFacVta P , habre ventana de articulos pesables
 	RegFacPub Bloq para LNS F9
