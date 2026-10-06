@@ -24,7 +24,7 @@ lldesarrollo=(_vfp.startmode()#4)
 _vfp.AutoYield = .f.
 
 lctituloGestion = "Sync de Datos"
-lcVersion _= "01.03.08"
+lcVersion = "01.03.09"
 
 If !lldesarrollo
    If f_activawin(lctituloGestion)
