@@ -23,7 +23,7 @@ lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
 
-lcVersion = "2.4.27"
+lcVersion = "2.4.28"
 
 lctituloGestion = "Gestion de Ventas"
 
@@ -195,6 +195,13 @@ pidsistema = 1
 
 GoogleMapsKeyAPI = 'AIzaSyBcWBS6HjNKZ2QkFWeQoiOQFtP6thnE8to'
 cDirCloseBat = ADDBS(SYS(5)+CURDIR())+'close.bat'
+
+lcTmp = ADDBS(SYS(5)+CURDIR())+'temporal'
+
+IF !DIRECTORY(lcTmp)      
+	MKDIR (lcTmp)
+ENDIF
+
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')

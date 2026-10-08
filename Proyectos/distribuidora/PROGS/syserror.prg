@@ -85,6 +85,14 @@ function Mensaje_error(nError)
 		+'Ultimo Alias Activo: '+Alias()+' '+'Ultimo registro: '+Str(Recno())+" "+Sys(14,1)+' ';
 		+'DBF: '+Dbf()+' '+'Ultimo Control activo: '+Sys(18)
 	
+	IF nError = 109 OR nError = 108      
+		lcmensaje = lcmensaje + ' | Lock: ' + SYS(2011) ;
+		              + ' Reccount: ' + LTRIM(STR(RECCOUNT())) ;
+		              + ' Buffering: ' + LTRIM(STR(CURSORGETPROP('Buffering'))) ;              
+		              + ' Reprocess: ' + LTRIM(STR(SET('REPROCESS'))) ;              
+		              + ' DataSession: ' + LTRIM(STR(SET('DATASESSION')))
+	ENDIF
+	
 	lclocalprogram = PROGRAM(1) &&""	
 	lcmensaje = lcmensaje +" "+ lclocalprogram
     
