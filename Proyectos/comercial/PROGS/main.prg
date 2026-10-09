@@ -278,7 +278,7 @@ IF TYPE('goApp')='O'
 	
 	*LeerXMLClassID("objetodll.xml")
 	
-	stop()
+	*stop()
 	Grabar_Log('Verificando Licencia') 
 	=  Licencia()
 	
