@@ -1696,7 +1696,7 @@ Parameters tcTexto,tcArchivo,tcCarpeta
 Private plRet, pnFich, pnFichn, pnFtama, pnTammax, pnLongAc
 Private pcChar, pnPos,Lcdirlog,Lcfilelog,Lcnewlog
 
-tcArchivo=IIF(PCOUNT()<2,'Log_'+dtos(DATE())'.txt',tcArchivo)
+tcArchivo=IIF(PCOUNT()<2,'Log_'+dtos(DATE())+'.txt',tcArchivo)
 tcCarpeta=IIF(PCOUNT()<3,'Logs',tcCarpeta)
 
 Lcdirlog=Sys(5)+Sys(2003)+'\'+tcCarpeta

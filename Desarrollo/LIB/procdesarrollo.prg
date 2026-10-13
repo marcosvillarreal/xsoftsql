@@ -595,6 +595,8 @@ oConfigTermi.AddProperty('FacVta_ForeColor_Label',"BLACK")
 oConfigTermi.AddProperty('FacVta_ForeColor_TextBox',"BLACK")
 oConfigTermi.AddProperty('AutoLogin',"FALSE")
 oConfigTermi.AddProperty('EmailSender',"FALSE")
+oConfigTermi.AddProperty('SyncGMPath',"C:\GMSolutions\SyncGM")
+
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX
 i = 1
@@ -664,7 +666,9 @@ IF FILE(cFile)
 			CASE lclabel="AUTOLOGIN"
 				oConfigTermi.autologin=  ALLTRIM(SUBSTR(lcActDato,i))
 			CASE lclabel="EMAILSENDER"
-				oConfigTermi.emailsender=  ALLTRIM(SUBSTR(lcActDato,i))		
+				oConfigTermi.emailsender=  ALLTRIM(SUBSTR(lcActDato,i))	
+			CASE lclabel="SYNCGM"
+				oConfigTermi.syncgm=  ALLTRIM(SUBSTR(lcActDato,i))		
 		ENDCASE		 
 	ENDDO 
                     
