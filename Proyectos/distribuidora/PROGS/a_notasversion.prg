@@ -4,6 +4,8 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.30
+	Abrir SyncGM
 2.4.28
 	Control de errores, cambios en setup, syserror, y main
 2.4.27
