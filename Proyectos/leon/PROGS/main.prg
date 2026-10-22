@@ -182,7 +182,7 @@ IF TYPE('goApp')='O'
 		ENDIF          
 	ENDIF 
 
-	goapp.version = "01.00.04"
+	goapp.version = "01.00.05"
 	
 	PUBLIC  gcicono
 	     
@@ -267,7 +267,7 @@ IF TYPE('goApp')='O'
 		oavisar.usuario('Conectado a  '+ALLTRIM(goapp.servidor)+'\'+LTRIM(goapp.initcatalo))
 	ENDIF 
 	
-	
+	*stop()
 	   * en proc.prg   
 	IF ExisteDSN()  			
 		IF !ConeccionADO()
@@ -293,6 +293,7 @@ IF TYPE('goApp')='O'
 *!*		      ENDIF 
 	ENDIF 
 
+	*stop()
 	LeerEmpresa()
 	    
 	Goapp.idusuario           = 0
