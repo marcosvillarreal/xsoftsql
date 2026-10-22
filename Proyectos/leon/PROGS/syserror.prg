@@ -80,7 +80,15 @@ function Mensaje_error(nError)
 	lcmensaje ="Error nº: "+STR(nError)+CHR(13);
 	+'Error '+MESSAGE()+ CHR(13)+'Linea nº '+MESSAGE(1) +chr(13)+' Alias '+alias()+' registro '+str(recno())+chr(13);
 	+'Control activo '+sys(18) 
-
+	
+	IF nError = 109 OR nError = 108      
+		lcmensaje = lcmensaje + ' | Lock: ' + SYS(2011) ;
+		              + ' Reccount: ' + LTRIM(STR(RECCOUNT())) ;
+		              + ' Buffering: ' + LTRIM(STR(CURSORGETPROP('Buffering'))) ;              
+		              + ' Reprocess: ' + LTRIM(STR(SET('REPROCESS'))) ;              
+		              + ' DataSession: ' + LTRIM(STR(SET('DATASESSION')))
+	ENDIF
+	
 	lclocalprogram = PROGRAM(1) &&""
 	lcmensaje = lcmensaje +" "+ lclocalprogram
 	*=Oavisar.usuario(lcmensaje,0)

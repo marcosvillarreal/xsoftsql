@@ -12,10 +12,12 @@ set confirm on
 set status off
 set status bar off
 set multilocks on
+set reprocess to 3 SECONDS && con ON ERROR activo, sin esto falla al primer intento
 set autoincerror on
 set escape off
 set cursor on
 Set EngineBehavior 80
 SET MEMOWIDTH TO 8192
 SET REPORTBEHAVIOR 90
+SET HOURS TO 24
 SET EXACT ON 
