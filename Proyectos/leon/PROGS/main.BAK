@@ -139,7 +139,11 @@ Public m.osystray
  STORE '' TO LcConectionString,LcDataSourceType,lcOrigenPublico,LcWebService,lcConectionODBC
  STORE 0 TO Pnterminal,Pnsucursal,lnconectorODBC
 
+lcTmp = ADDBS(SYS(5)+CURDIR())+'temporal'
 
+IF !DIRECTORY(lcTmp)      
+	MKDIR (lcTmp)
+ENDIF
 
 PUBLIC OAvisar
 Oavisar=CREATEOBJECT('avisar')
