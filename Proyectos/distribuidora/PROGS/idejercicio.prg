@@ -76,7 +76,7 @@ CASE goapp.codempresa = 28 &&Autoserivicio Teo
 	goapp.terminal = 1
 CASE goapp.codempresa = 29 &&El Calden
 	cEmpresa = 'Calden'	
-	goapp.terminal = 1
+	goapp.terminal = 6
 ENDCASE 	
 
 

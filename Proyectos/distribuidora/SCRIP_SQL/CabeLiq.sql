@@ -60,6 +60,11 @@ CREATE TABLE [dbo].[cabeLiq](
 	[idzona] [int] NULL,
 	[iddeposito] [int] NULL,
 
+	-- NC / ND: liquidacion original (28/10/2026)
+	[idmaoperaliq] [numeric](12, 0) NULL,
+	[caeajuste] [char](14) NULL,
+	[tipoajuste] [char](10) NULL,
+
  CONSTRAINT [PK_cabeliq] PRIMARY KEY NONCLUSTERED 
 (
 	[id] ASC
