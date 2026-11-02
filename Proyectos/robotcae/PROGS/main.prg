@@ -1,6 +1,6 @@
 LPARAMETERS cModulo
 
-cModulo = IIF(PCOUNT()<1,'0',cModulo)
+cModulo = IIF(PCOUNT()<1,'1',cModulo)
 
 *===================
 *= ARCHIVO PRINCIPAL
