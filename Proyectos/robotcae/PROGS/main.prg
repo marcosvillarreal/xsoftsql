@@ -12,6 +12,7 @@ cModulo = IIF(PCOUNT()<1,'0',cModulo)
 set classlib to
 l='j:'
 set talk off
+PUBLIC lldesarrollo
 lldesarrollo=(_vfp.startmode()#4)
 
 _vfp.AutoYield = .f.
