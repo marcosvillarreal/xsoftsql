@@ -2,8 +2,8 @@ FUNCTION CrearCodigoBarras
 PARAMETERS lcCódigoEAN 
 
 IF LEN(LTRIM(lcCódigoEAN))=0
-	*lcArchivoImagen = ADDBS(SYS(5)+CURDIR()) + "CodBarra\cod_default.png" 
-	RETURN ''
+	lcArchivoImagen = ADDBS(SYS(5)+CURDIR()) + "CodBarra\cod_default.png" 
+	RETURN lcArchivoImagen 
 ENDIF 
 
 * 1. Definimos la ruta donde se va a guardar la imagen temporal

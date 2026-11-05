@@ -595,7 +595,7 @@ oConfigTermi.AddProperty('FacVta_ForeColor_Label',"BLACK")
 oConfigTermi.AddProperty('FacVta_ForeColor_TextBox',"BLACK")
 oConfigTermi.AddProperty('AutoLogin',"FALSE")
 oConfigTermi.AddProperty('EmailSender',"FALSE")
-oConfigTermi.AddProperty('SyncGMPath',"C:\GMSolutions\SyncGM")
+oConfigTermi.AddProperty('SyncGM',"C:\GMSolutions\SyncGM")
 
 
 LOCAL i,LenRegistro,Arc,lcActDato,lntamano,XX

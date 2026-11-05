@@ -1,3 +1,23 @@
+FUNCTION AbrirGMSmart
+LOCAL lcUrl,lnRes
+lcUrl = ALLTRIM(oConfigTermi.UrlGMSmart)
+IF EMPTY(lcUrl)        
+	=Oavisar.usuario("Falta configurar [UrlGMSmart] en SETUP.INI")        
+	RETURN .f.
+ENDIF
+DECLARE INTEGER ShellExecute IN SHELL32.Dll ;        
+		INTEGER nWinHandle , ;        
+		STRING  cOperation , ;        
+		STRING  cFileName  , ;        
+		STRING  cParameters, ;        
+		STRING  cDirectory , ;        
+		INTEGER nShowWindow
+* Primero Chrome; si no esta instalado, el navegador predeterminado
+lnRes = ShellExecute(0,"open","chrome.exe",lcUrl,"",1)
+IF lnRes <= 32        
+	lnRes = ShellExecute(0,"open",lcUrl,"","",1)
+ENDIF
+
 FUNCTION CrearCodigoBarras
 PARAMETERS lcCódigoEAN 
 
