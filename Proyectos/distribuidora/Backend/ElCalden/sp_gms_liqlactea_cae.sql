@@ -6,6 +6,9 @@
 --      percepciones por separado (RI / RB de tablaimp) y el numero original de maopera.
 --   2) maopera.numcomp = numero asignado por ARCA (control de repetido como el alta).
 --   3) cabeLiq: CAE, vencimiento, tipo, infocae = 1, fecha de ARCA; movctacte.fecha.
+--      (04/11/2026) pefiscal de cabeLiq y movctacte = AAAAMM de la fecha de ARCA (lum_proceso arma el
+--      periodo de la LUM a partir de la fecha del comprobante).
+--      (04/11/2026) prefijonro.numero del talonario del comprobante = numero de ARCA (solo avanza).
 --   4) Si vinieron importes (> 0): cabeLiq t_neto / t_iva / t_impuestos / total, tablaimp (NG, IG y su
 --      base, RI, RB), tablaasi (ZZ, NG, IG, RI, RB), movctacte (importe, total, saldo) y ctacte.saldo por
 --      la diferencia. El asiento tiene que balancear; si ARCA trae una percepcion que la LUM no tenia
@@ -71,22 +74,38 @@ BEGIN
         -- 2) y 3) Numero, CAE y fecha de ARCA.
         -- F se graba sin numero (00000000): el detalle de la operacion, la cuenta corriente y el asiento
         -- llevan ese numero y se reemplaza por el de ARCA.
-        SELECT @numviejo = numcomp FROM dbo.maopera WHERE id = @idmaopera;
-        IF @numviejo <> @numcomp
+        -- (04/11/2026) Sin numero = numcomp vacio: el detalle es 'ABREV - nombre' y pasa a 'ABREV numero - nombre'.
+        -- Grabadas antes con 00000000: se reemplaza el numero. LEFT al largo de cada columna (el texto crece).
+        DECLARE @dviejo VARCHAR(60), @dnuevo VARCHAR(60);
+        SELECT @numviejo = m.numcomp, @dviejo = RTRIM(c.cabrevia) + ' - ', @dnuevo = RTRIM(c.cabrevia) + ' ' + RTRIM(@numcomp) + ' - '
+        FROM dbo.maopera m INNER JOIN dbo.comprobante c ON c.id = m.idcomproba WHERE m.id = @idmaopera;
+        IF RTRIM(@numviejo) <> ''
+            SELECT @dviejo = RTRIM(@numviejo), @dnuevo = RTRIM(@numcomp);
+        IF ISNULL(RTRIM(@numviejo), '') <> RTRIM(@numcomp)
         BEGIN
-            UPDATE dbo.maopera  SET detalle = REPLACE(detalle, RTRIM(@numviejo), RTRIM(@numcomp)) WHERE id = @idmaopera;
-            UPDATE dbo.movctacte SET detalle = REPLACE(detalle, RTRIM(@numviejo), RTRIM(@numcomp)) WHERE idmaopera = @idmaopera;
-            UPDATE dbo.cabeasi  SET detalle = REPLACE(detalle, RTRIM(@numviejo), RTRIM(@numcomp)) WHERE idmaopera = @idmaopera;
-            UPDATE dbo.tablaasi SET detalle = REPLACE(detalle, RTRIM(@numviejo), RTRIM(@numcomp)) WHERE idmaopera = @idmaopera;
-            UPDATE dbo.tablaimp SET detalle = REPLACE(detalle, RTRIM(@numviejo), RTRIM(@numcomp)) WHERE idmaopera = @idmaopera;
+            UPDATE dbo.maopera   SET detalle = LEFT(REPLACE(detalle, @dviejo, @dnuevo), 40) WHERE id = @idmaopera;
+            UPDATE dbo.movctacte SET detalle = LEFT(REPLACE(detalle, @dviejo, @dnuevo), 30) WHERE idmaopera = @idmaopera;
+            UPDATE dbo.cabeasi   SET detalle = LEFT(REPLACE(detalle, @dviejo, @dnuevo), 50) WHERE idmaopera = @idmaopera;
+            UPDATE dbo.tablaasi  SET detalle = LEFT(REPLACE(detalle, @dviejo, @dnuevo), 40) WHERE idmaopera = @idmaopera;
+            UPDATE dbo.tablaimp  SET detalle = LEFT(REPLACE(detalle, @dviejo, @dnuevo), 30) WHERE idmaopera = @idmaopera;
         END
         UPDATE dbo.maopera SET numcomp = @numcomp WHERE id = @idmaopera;
 
+        -- (04/11/2026) Numerador del talonario del comprobante (LUM, NC y ND tienen cada uno su fila
+        -- en prefijonro con la misma letra y prefijo: se ubica por prefitermi.idcomproba). Solo avanza.
+        UPDATE p SET numero = CAST(RIGHT(RTRIM(@numcomp), 8) AS INT)
+        FROM dbo.prefijonro p
+        WHERE p.id IN (SELECT t.idprefijonro FROM dbo.prefitermi t WHERE t.idcomproba = @idcomproba)
+          AND p.letra = LEFT(@numcomp, 1) AND p.prefijo = CAST(SUBSTRING(@numcomp, 2, 4) AS INT)
+          AND p.numero < CAST(RIGHT(RTRIM(@numcomp), 8) AS INT);
+
         UPDATE dbo.cabeLiq SET caetipo = @caetipo, infocae = 1, cae = @cae, vtocae = CAST(@vtocae AS DATETIME),
-                               fecha = CAST(@fecha AS DATETIME), fechaarca = GETDATE()
+                               fecha = CAST(@fecha AS DATETIME), fechaarca = GETDATE(),
+                               pefiscal = CONVERT(CHAR(6), @fecha, 112)
         WHERE idmaopera = @idmaopera;
 
-        UPDATE dbo.movctacte SET fecha = CAST(@fecha AS DATETIME) WHERE idmaopera = @idmaopera;
+        UPDATE dbo.movctacte SET fecha = CAST(@fecha AS DATETIME), pefiscal = CONVERT(CHAR(6), @fecha, 112)
+        WHERE idmaopera = @idmaopera;
 
         -- 4) Importes de ARCA
         IF @total > 0 AND @neto > 0

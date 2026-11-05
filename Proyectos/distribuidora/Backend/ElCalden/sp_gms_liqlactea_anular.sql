@@ -61,7 +61,8 @@ BEGIN
         WHERE m.id = @idmaopera AND m.origen = 'LUM' AND m.estado = '0';
         IF @numcomp IS NULL
             THROW 50001, 'LUM: el comprobante no existe, no es una LUM o ya esta anulado.', 1;
-        IF @cae <> '' OR RIGHT(@numcomp, 8) <> '00000000'
+        -- Sin numero = numcomp vacio (desde 04/11/2026) o letra + pto vta + 00000000 (grabadas antes)
+        IF @cae <> '' OR (RTRIM(@numcomp) <> '' AND RIGHT(@numcomp, 8) <> '00000000')
             THROW 50001, 'LUM: el comprobante tiene CAE: no se puede borrar (corresponde una nota de credito).', 1;
         IF EXISTS (SELECT 1 FROM dbo.afectacte WHERE idmaoperad = @idmaopera OR idmaoperah = @idmaopera)
             THROW 50001, 'LUM: el comprobante esta afectado a otro (imputado en la cuenta corriente).', 1;

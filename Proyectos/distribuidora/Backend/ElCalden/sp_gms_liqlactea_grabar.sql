@@ -114,7 +114,7 @@ BEGIN
         THROW 50001, 'LUM: la cuenta corriente no existe.', 1;
 
     -- Numero no repetido (no anulado).
-    -- F se graba SIN NUMERO (letra + pto vta + 00000000, como regfacvta con CAE): el numero lo asigna ARCA
+    -- F llega SIN NUMERO (letra + pto vta + 00000000) y se graba con numcomp vacio (sp_gms_liqlactea_maopera): el numero lo asigna ARCA
     -- y lo graba sp_gms_liqlactea_cae. Asi una LUM que ARCA no autorizo no ocupa un numero de otra.
     IF ISNULL(LTRIM(@numcomp), '') = '' OR LEN(RTRIM(@numcomp)) <> 13
         THROW 50001, 'LUM: falta el numero del comprobante (letra + pto vta + numero).', 1;
@@ -142,11 +142,11 @@ BEGIN
         THROW 50001, 'LUM: el periodo no pertenece a ningun ejercicio contable.', 1;
 
     -- Cuentas contables (paraconta del ejercicio)
-    SELECT @idctaZZ = MAX(CASE WHEN numero = 3  THEN idcuenta END),
-           @idctaRI = MAX(CASE WHEN numero = 7  THEN idcuenta END),
-           @idctaRB = MAX(CASE WHEN numero = 9  THEN idcuenta END),
-           @idctaIG = MAX(CASE WHEN numero = 13 THEN idcuenta END),
-           @idctaNG = MAX(CASE WHEN numero = 19 THEN idcuenta END)
+    SELECT @idctaZZ = MAX(CASE WHEN numero = 3  THEN idcuenta ELSE 0 END),
+           @idctaRI = MAX(CASE WHEN numero = 7  THEN idcuenta ELSE 0 END),
+           @idctaRB = MAX(CASE WHEN numero = 9  THEN idcuenta ELSE 0 END),
+           @idctaIG = MAX(CASE WHEN numero = 13 THEN idcuenta ELSE 0 END),
+           @idctaNG = MAX(CASE WHEN numero = 19 THEN idcuenta ELSE 0 END)
     FROM dbo.paraconta
     WHERE idejercicio = @idejercicio AND numero IN (3, 7, 9, 13, 19);
     IF ISNULL(@idctaZZ, 0) = 0 OR ISNULL(@idctaRI, 0) = 0 OR ISNULL(@idctaRB, 0) = 0
@@ -186,13 +186,16 @@ BEGIN
             THROW 50001, 'LUM: falta el vencimiento del CAE.', 1;
     END
 
-    -- Liquidacion: no repetir cuenta + periodo (no anulada)
+    -- Una sola LUM por cuenta (tambo) y periodo, como ARCA (error 2078: unica por periodo, operador, productor
+    -- y tambo, AUNQUE una NC la haya anulado por el total). Desactivada y REACTIVADA el 04/11/2026: sin esto
+    -- el ERP grababa una LUM que ARCA rechazaba y quedaba sin numero tomando la liquidacion y la ctacte.
+    -- No cuentan las anuladas en el ERP (estado 1: nunca llegaron a ARCA). La correccion va con ND / NC.
     IF @clase = 'A' AND EXISTS (
         SELECT 1 FROM dbo.cabeLiq cl
         INNER JOIN dbo.maopera m ON m.id = cl.idmaopera
         WHERE cl.idctacte = @idctacte AND cl.pefiscal = @periodo
           AND m.idcomproba = @idcomproba AND m.estado <> '1')
-        THROW 50001, 'LUM: ya hay una liquidacion grabada para la cuenta en el periodo.', 1;
+        THROW 50001, 'LUM: ya hay una liquidacion de la cuenta en el periodo (ARCA admite una sola). Corregir con ND o NC.', 1;
 
     -- NC / ND: liquidacion original (existente, misma cuenta, no anulada) y tipo de ajuste
     SET @caeajuste = NULL;
@@ -236,8 +239,13 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Detalle como VFP: abreviatura + numero + ' - ' + nombre de la cuenta
-    SELECT @detalle = RTRIM(c.cabrevia) + ' ' + RTRIM(@numcomp) + ' - ' + RTRIM(ct.cnombre)
+    -- (04/11/2026) F llega como letra + pto vta + 00000000 (validar toma la letra de ahi) y se graba
+    -- con numcomp VACIO hasta que ARCA la autorice (sp_gms_liqlactea_cae pone el numero).
+    IF RIGHT(@numcomp, 8) = '00000000' SET @numcomp = '';
+
+    -- Detalle como VFP: abreviatura + numero + ' - ' + nombre de la cuenta (sin numero: abreviatura + ' - ' + nombre)
+    SELECT @detalle = RTRIM(c.cabrevia) + CASE WHEN RTRIM(@numcomp) = '' THEN '' ELSE ' ' + RTRIM(@numcomp) END
+                      + ' - ' + RTRIM(ct.cnombre)
     FROM dbo.comprobante c CROSS JOIN dbo.ctacte ct
     WHERE c.id = @idcomproba AND ct.id = @idctacte;
 
@@ -431,10 +439,10 @@ BEGIN
     INSERT INTO dbo.tablaasi (id, idmaopera, idorigen, tablaori, idcuenta, tipoconce, debehaber, importe, detalle)
     SELECT id, @idmaopera, idorigen, tablaori, idcuenta, tipoconce, debehaber, importe, detalle FROM @l ORDER BY orden;
 
-    SELECT @idasiNG = ISNULL(MAX(CASE WHEN tipoconce = 'NG' THEN id END), 0),
-           @idasiIG = ISNULL(MAX(CASE WHEN tipoconce = 'IG' THEN id END), 0),
-           @idasiRI = ISNULL(MAX(CASE WHEN tipoconce = 'RI' THEN id END), 0),
-           @idasiRB = ISNULL(MAX(CASE WHEN tipoconce = 'RB' THEN id END), 0)
+    SELECT @idasiNG = ISNULL(MAX(CASE WHEN tipoconce = 'NG' THEN id ELSE 0 END), 0),
+           @idasiIG = ISNULL(MAX(CASE WHEN tipoconce = 'IG' THEN id ELSE 0 END), 0),
+           @idasiRI = ISNULL(MAX(CASE WHEN tipoconce = 'RI' THEN id ELSE 0 END), 0),
+           @idasiRB = ISNULL(MAX(CASE WHEN tipoconce = 'RB' THEN id ELSE 0 END), 0)
     FROM @l;
 END
 GO
