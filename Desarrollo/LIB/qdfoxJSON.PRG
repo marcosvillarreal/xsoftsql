@@ -366,6 +366,7 @@ DEFINE CLASS JSONObject AS Custom
  * Add
  * Add a new property to the object
  PROCEDURE Add(pcProp, puValue1)
+ EXTERNAL ARRAY puValue1
   DO CASE
      CASE TYPE("puValue1",1) = "A"
           LOCAL oArray,i
@@ -515,6 +516,7 @@ ENDPROC
 * Internal funcion for JSON encoding. Do not use directly
 *
 PROCEDURE JSONEncodeValue(puValue2)
+	 EXTERNAL ARRAY puValue2
   *
   LOCAL lIsArray, cType, cJSONValue
   lIsArray = (TYPE("puValue2",1) = "A")
