@@ -1,6 +1,6 @@
 # Hotel - Factura T (WSCT / RG 3971): memoria para retomar
 
-Ultima actualizacion: 05/11/2026. Historial completo: `E:\GitHub\xsoftai\Proyectos\GMSmart\mimemoria.md` (lineas ~2897-3005, buscar "HOTEL Factura T").
+Ultima actualizacion: 06/11/2026. Historial completo: `E:\GitHub\xsoftai\Proyectos\GMSmart\mimemoria.md` (lineas ~2897-3005, buscar "HOTEL Factura T").
 Este archivo manda sobre los pendientes viejos de esa memoria. Anotar aca lo nuevo de Factura T.
 
 ## Estado al 05/11/2026
@@ -10,14 +10,18 @@ Este archivo manda sobre los pendientes viejos de esa memoria. Anotar aca lo nue
 
 ## Novedades 06/11/2026
 - **Primera T emitida en produccion:** T 0009-00000001, CAE 86451391538549, vto 16/11, $826,45, cliente 134472. El usuario la corrige con una NC T y borra el pago a mano; no volver a plantearlo.
-- **Descarte accidental 09:52:** se descartaron cambios en muchos archivos de `Desarrollo` y `Proyectos\hotel` (el usuario: "fue un error"; "no busques, hacemos de vuelta"). Rehecho a las 10:12: `regfacvta` scx `AB830931` / SCT `DB9BE42D` (version del usuario 09:03 + extras) y `onegocioslocal` vcx `1CF8C27D` / VCT `45CC3E97` (1002 + strzero; lo demas que el usuario haya hecho 08:55-09:34 en esa clase no se recupero). Compilan; ida y vuelta identica en la clase.
+- **Descarte accidental 09:52:** se descartaron cambios en muchos archivos de `Desarrollo` y `Proyectos\hotel` (el usuario: "fue un error"; "no busques, hacemos de vuelta"). Rehecho a las 10:12: `regfacvta` (version del usuario 09:03 + extras) y `onegocioslocal` vcx `1CF8C27D` / VCT `45CC3E97` (1002 + strzero; lo demas que el usuario haya hecho 08:55-09:34 en esa clase no se recupero). Compilan; ida y vuelta identica en la clase. Los demas archivos descartados (por ejemplo `odata.vcx`, forms y reportes) no se revisaron, a pedido del usuario; siguen en la Papelera de E:, no vaciarla hasta confirmar que no falta nada. Conviene commitear estos cambios.
+- **Version instalada de `regfacvta` (10:15):** scx `8E5F4A36` / SCT `28FFC1DD`; contiene 09:03 + `FT_EXTRAS_0611` + `FT_NC_PAGOS_0611`. Compila; la ida y vuelta solo difiere en tabs de lineas en blanco. Respaldo previo a la copia de pagos: `C:\Users\Usuario\AppData\Local\Temp\claude\635cdcac9a4f9356\ca92ae03-ce99-4b42-988a-a96480245c01\scratchpad\rfv\pre_pagos\` (carpeta temporal, puede desaparecer).
 - **Error 1002 de WSCT:** el manual lo define como excluyente si no hay comprobantes para CUIT + PV + tipo (WSFE/WSLUM devuelven 0 sin error). `sw_wsct_ultcomproba`: `LEFT(LTRIM(WSCT.ErrMsg),4)=='1002'` -> `UltCBTE='0'`.
 - **Codigo de item WSCT:** minimo 3 caracteres -> `strzero(VAL(CsrTurItems.codigo),3)` en los dos `WSCT.AgregarItem`.
 - **Solo extras (`FT_EXTRAS_0611`, 5 lineas en regfacvta, sin probar en ejecucion):** T sin reintegro pasa a consumidor final sin preguntar; no exige pasaporte; `validarcomproba` recalcula el reintegro antes. `preguntoreintegrotur` corre para TODAS las facturas: el control de letra T es obligatorio.
 - **Configuracion produccion 06/11:** FACTURA T (1100000066), N CREDITO T (1100000067), talonarios CAE FAC T y CAE NCR T cargados, solo terminales 37 y 38. Faltan terminales 19 y 1100000036 (si van a emitir T) y ND T. `prefijonro.numero` de CAE FAC T sigue en 0 tras emitir la 1: revisar con la NC.
 - **NC T con pagos de la factura (`FT_NC_PAGOS_0611`, instalado 10:1x, compila, sin probar en ejecucion):** `pidovalores` llama al metodo nuevo `copiarpagofactura`, que carga `Csrpago` desde `movtarjeta` y `movbcocar` de la factura (`CsrCompAsociado.idmaopera`) y no abre `pidopagos`. `grabarpago` genera los movimientos de la NC; el de la factura no se toca. Frena si no hay pagos, si no coinciden con el total o si no encuentra el valor. Transferencia: el valor se busca por clase L + `idctabco` + `pagointer`=1. Fechas: las de la factura. Sin probar con transferencia: la unica T emitida fue con tarjeta.
+- **Pruebas pendientes, en orden:** (1) NC T real con Ctrl+V: debe grabarse sin pedir pagos, con un `movtarjeta` VISA de $826,45; si el pago de la factura ya se borro, frena con "no tiene pagos con tarjeta ni transferencia". Despues verificar en la base los movimientos de la NC y `prefijonro`. (2) NC T de una factura con transferencia, en homologacion. (3) `FT_EXTRAS_0611`: T solo con extras, T con alojamiento, y que una factura A comun no cambie.
 
-## 1. Cambio pendiente en regfacvta: factura solo con extras
+## 1. Antecedente (ya resuelto por `FT_EXTRAS_0611`): factura solo con extras
+**La propuesta de esta seccion NO se aplico y es incorrecta:** sin el control de letra T pasaria toda factura A comun a consumidor final. Lo vigente esta en "Novedades 06/11/2026".
+
 **Decision del usuario (05/11):** si la factura tiene solo extras (sin alojamiento, reintegro 0), regfacvta no la deja como T.
 
 **Hoy no lo hace** (verificado leyendo el codigo; el usuario creia que si):
