@@ -669,7 +669,7 @@ IF FILE(cFile)
 			CASE lclabel="EMAILSENDER"
 				oConfigTermi.emailsender=  ALLTRIM(SUBSTR(lcActDato,i))	
 			CASE lclabel="SYNCGM"
-				oConfigTermi.syncgm=  ALLTRIM(SUBSTR(lcActDato,i))	
+				oConfigTermi.SyncGM=  ALLTRIM(SUBSTR(lcActDato,i))	
 			CASE lclabel="URLGMSMART"    
 				oConfigTermi.UrlGMSmart=  ALLTRIM(SUBSTR(lcActDato,i))	
 		ENDCASE		 
