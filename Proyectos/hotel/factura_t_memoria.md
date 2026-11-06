@@ -6,7 +6,16 @@ Este archivo manda sobre los pendientes viejos de esa memoria. Anotar aca lo nue
 ## Estado al 05/11/2026
 - Codigo instalado en el proyecto local (`E:\GitHub\xsoftsql\Proyectos\hotel`), **sin emitir ninguna T contra ARCA**: la primera sera un comprobante real.
 - Scripts SQL ya aplicados en produccion (verificado abajo). Falta configuracion, exe y PCs.
-- **Se retoma por:** decidir y aplicar el cambio de `regfacvta` para factura solo con extras (seccion siguiente).
+- **Se retoma por:** ver "Novedades 06/11/2026" (manda sobre el resto de este archivo).
+
+## Novedades 06/11/2026
+- **Primera T emitida en produccion:** T 0009-00000001, CAE 86451391538549, vto 16/11, $826,45, cliente 134472. El usuario la corrige con una NC T y borra el pago a mano; no volver a plantearlo.
+- **Descarte accidental 09:52:** se descartaron cambios en muchos archivos de `Desarrollo` y `Proyectos\hotel` (el usuario: "fue un error"; "no busques, hacemos de vuelta"). Rehecho a las 10:12: `regfacvta` scx `AB830931` / SCT `DB9BE42D` (version del usuario 09:03 + extras) y `onegocioslocal` vcx `1CF8C27D` / VCT `45CC3E97` (1002 + strzero; lo demas que el usuario haya hecho 08:55-09:34 en esa clase no se recupero). Compilan; ida y vuelta identica en la clase.
+- **Error 1002 de WSCT:** el manual lo define como excluyente si no hay comprobantes para CUIT + PV + tipo (WSFE/WSLUM devuelven 0 sin error). `sw_wsct_ultcomproba`: `LEFT(LTRIM(WSCT.ErrMsg),4)=='1002'` -> `UltCBTE='0'`.
+- **Codigo de item WSCT:** minimo 3 caracteres -> `strzero(VAL(CsrTurItems.codigo),3)` en los dos `WSCT.AgregarItem`.
+- **Solo extras (`FT_EXTRAS_0611`, 5 lineas en regfacvta, sin probar en ejecucion):** T sin reintegro pasa a consumidor final sin preguntar; no exige pasaporte; `validarcomproba` recalcula el reintegro antes. `preguntoreintegrotur` corre para TODAS las facturas: el control de letra T es obligatorio.
+- **Configuracion produccion 06/11:** FACTURA T (1100000066), N CREDITO T (1100000067), talonarios CAE FAC T y CAE NCR T cargados, solo terminales 37 y 38. Faltan terminales 19 y 1100000036 (si van a emitir T) y ND T. `prefijonro.numero` de CAE FAC T sigue en 0 tras emitir la 1: revisar con la NC.
+- **NC T con pagos de la factura (`FT_NC_PAGOS_0611`, instalado 10:1x, compila, sin probar en ejecucion):** `pidovalores` llama al metodo nuevo `copiarpagofactura`, que carga `Csrpago` desde `movtarjeta` y `movbcocar` de la factura (`CsrCompAsociado.idmaopera`) y no abre `pidopagos`. `grabarpago` genera los movimientos de la NC; el de la factura no se toca. Frena si no hay pagos, si no coinciden con el total o si no encuentra el valor. Transferencia: el valor se busca por clase L + `idctabco` + `pagointer`=1. Fechas: las de la factura. Sin probar con transferencia: la unica T emitida fue con tarjeta.
 
 ## 1. Cambio pendiente en regfacvta: factura solo con extras
 **Decision del usuario (05/11):** si la factura tiene solo extras (sin alojamiento, reintegro 0), regfacvta no la deja como T.
