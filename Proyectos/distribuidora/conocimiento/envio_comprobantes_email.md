@@ -66,10 +66,33 @@ Confirmación, `Begintrans`, según el caso impresión, `GrabarDato`, `committra
 - Según la memoria del proyecto EmailSender, `EmailSender_OAuth.exe` admite `--silent` y responde en `email_result.json`. Es un único archivo por carpeta: dos envíos seguidos podrían pisarse.
 - La autorización OAuth es por terminal, y la pantalla de consentimiento de Google figuraba en modo Testing.
 
-## Propuesta vigente (06/11/2026, sin instalar)
+## Rumbo actual (06/11/2026): archivo en carpeta + GmEmailLocal
+Decisión de Marcos: **distribuidora solo deja un archivo; toda la lógica de envío está en `E:\GitHub\xsoftai\Proyectos\GmEmailLocal`** (Python, programa local por terminal, PDF adjunto). `GmEmail` es otro proyecto (servicio con Supabase y link) y no se usa acá. La referencia completa es `CONTRATO.md` de GmEmailLocal.
+
+### Archivo que deja distribuidora
+**Ruta:** `C:\GmEmailLocal\inbox\<idmaopera>_<sufijo>.json`. Grabarlo como `.tmp` y renombrarlo a `.json` al final.
+
+```json
+{
+  "idmaopera": 110000012345,
+  "email": "cliente@ejemplo.com",
+  "archivo": "C:\\comprobantespdf\\0001\\FAC A 0001-00000123.pdf",
+  "comprobante": "FAC A 0001-00000123",
+  "asunto": "Empresa - FAC A 0001-00000123",
+  "cuerpo": "Estimado: le adjuntamos el comprobante..."
+}
+```
+Obligatorios: `email`, `archivo`, `asunto`. Dentro de un string, `\` va como `\\` y `"` como `\"`.
+
+### Qué hace distribuidora antes de dejarlo
+Sale sin hacer nada si: la terminal no usa EmailSender, el comprobante no tiene `maopera.numcomp`, o el cliente no tiene tilde o email. Si `C:\GmEmailLocal\lector.vivo` falta o tiene más de 2 minutos, lanza `C:\GmEmailLocal\GmEmailLocal.exe`.
+
+La propuesta de abajo, con el envío directo y la espera de 30 segundos, queda reemplazada.
+
+## Propuesta anterior (06/11/2026, sin instalar, reemplazada)
 Marcos aclaró que "segundo plano" significa **sin ninguna ventana, salvo que haya un error, y ahí se le informa al operador**. Por eso se descartó la tabla de pendientes y el proceso aparte.
 
-- **Método:** `sendemail.envioauto(idctacte, archivo, detalle)` en `onegocio.vcx`. Texto para pasar a mano en `conocimiento\sendemail_envioauto.prg`.
+- **Método:** `sendemail.envioauto(idctacte, idmaopera, archivo, detalle)` en `onegocio.vcx`. Texto para pasar a mano en `conocimiento\sendemail_envioauto.prg`.
 - **Lanza** `EmailSender_OAuth.exe --silent` oculto y espera el resultado hasta 30 segundos. **La venta espera ese tiempo.**
 - **No usa `EmailSender_OAuth.Enviar`:** ante un error abre el JSON con `RUN notepad.exe`, que deja VFP esperando, y si `provider` está vacío usa `toParams`, que no existe.
 - **Salida en un archivo temporal único** (`--output`), así no se pisan los resultados.
@@ -91,6 +114,7 @@ Marcos aclaró que "segundo plano" significa **sin ninguna ventana, salvo que ha
 3. **Si responden No a imprimir o eligen solo grabar:** se envía igual, generando el PDF sin imprimir.
 4. **Método:** solo con `EmailSender`; si la terminal no lo usa, no funciona.
 5. **Dónde va:** un objeto en `onegocio` que se encargue del proceso; puede ser el mismo `sendemail`. Rige la regla de entregar un `.prg` para pasar a mano.
+6. **Sin número:** si el comprobante no tiene `maopera.numcomp`, no se envía. `envioauto` lo lee de la base después del commit y sale sin avisar (el silencio es una decisión provisoria, a confirmar con Marcos). Es el mismo dato que controla `regfacvta.cmdimprimir`.
 
 ## Sin verificar
 - No se encontró dónde se define la clase `EmailSender_OAuth` (búsqueda en los `.prg` de `Desarrollo` y `distribuidora`).
