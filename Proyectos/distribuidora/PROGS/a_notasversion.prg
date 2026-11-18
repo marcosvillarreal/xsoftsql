@@ -4,6 +4,9 @@ TEXT TO lcCmd TEXTMERGE NOSHOW
 -Comisiones de Objetivos, salida por excel.	
 -fORMATO DE tIENDA
 ---Notas de Version
+2.4.36
+	Planilla de Caja v2, mostraba duplicado NC
+	RegFacPub , pidovalores, no grababa el valor correcto si se usaba uno por default distinto
 2.4.35
 	Manejo de error numberformat excel
 2.4.33
